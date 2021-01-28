@@ -1,0 +1,26 @@
+name: gc
+summary: A standalone CLI package to interface with the Genesys Cloud Platform API.
+description: |
+  A standalone CLI package to interface with the Genesys Cloud Platform API.
+version: '1.0'
+
+apps:
+  gc:
+    command: gc
+
+base: core20
+parts:
+  go:
+    plugin: go
+    go-channel: "1.13/stable"
+    # go-packages: [./build/src/gc.go]
+    source: ./build/src
+    go-importpath: gc
+
+confinement: strict
+
+plugs:
+  gc-home:
+    interface: home
+  gc-network:
+    interface: network

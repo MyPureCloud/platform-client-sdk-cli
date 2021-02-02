@@ -11,6 +11,8 @@ This CLI focuses mainly on exposing the following operations:
 - **update** - Update a Genesys Cloud object via data passed in via stdin or via file.
 - **delete** - Delete a Genesys Cloud object via data passed in via stdin or via file.
 
+**Note** Most operations exposed by the `list` command and some operations exposed by the `get` command support the `pageSize` parameter. It's important to set this to an appropriate value if a large amount of resources are being listed to reduce load on the API and reduce wait times.
+
 The following objects are currently supported by the CLI:
 - campaigns
 - divisions
@@ -68,7 +70,7 @@ Since this is a CLI, the output from the tool can be passed to other command too
 gc queues list|  jq -c '.[] | select( .name | contains("Chat2"))' | jq -r '. | .id' | xargs -I{} gc queues users {} | jq -r '.[] | [.id,.name] | @csv'> output.csv
 ```
 
-To create users you can pass in JSON via stdin or via the -f file path command.  So for example, to create the user in `src/examples-json/create.json` you would issue the following commands:
+To create users you can pass in JSON via stdin or via the -f file path command.  So for example, to create the user in `gc/examples-json/create.json` you would issue the following commands:
 
 ```
 cat examples-json/create.json | gc users create

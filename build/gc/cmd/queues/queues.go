@@ -22,21 +22,21 @@ func init() {
 }
 
 func Cmdqueues() *cobra.Command { 
-	createCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/queues", utils.FormatPermissions([]string{ "routing:queue:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/queues", utils.FormatPermissions([]string{ "routing:queue:add",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
 	queuesCmd.AddCommand(createCmd)
 	
 	utils.AddFlag(deleteCmd.Flags(), "bool", "forceDelete", "", "forceDelete")
-	deleteCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:delete",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
 	queuesCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(estimatedwaitCmd.Flags(), "string", "conversationId", "", "conversationId")
-	estimatedwaitCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", estimatedwaitCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/estimatedwaittime", utils.FormatPermissions([]string{ "routing:queue:view",  })))
+	estimatedwaitCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", estimatedwaitCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/estimatedwaittime", utils.FormatPermissions([]string{ "routing:queue:view",  })))
 	utils.AddFileFlagIfUpsert(estimatedwaitCmd.Flags(), "GET")
 	queuesCmd.AddCommand(estimatedwaitCmd)
 	
-	getCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:view",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
 	queuesCmd.AddCommand(getCmd)
 	
@@ -46,11 +46,11 @@ func Cmdqueues() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "ID(s)")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
-	listCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues", utils.FormatPermissions([]string{ "routing:queue:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues", utils.FormatPermissions([]string{ "routing:queue:view",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
 	queuesCmd.AddCommand(listCmd)
 	
-	updateCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:edit",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
 	queuesCmd.AddCommand(updateCmd)
 	

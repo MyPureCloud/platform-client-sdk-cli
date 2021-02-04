@@ -22,17 +22,17 @@ func init() {
 }
 
 func Cmddivisions() *cobra.Command { 
-	createCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/divisions", utils.FormatPermissions([]string{ "authorization:division:add", "authorization:grant:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/divisions", utils.FormatPermissions([]string{ "authorization:division:add", "authorization:grant:add",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
 	divisionsCmd.AddCommand(createCmd)
 	
 	utils.AddFlag(deleteCmd.Flags(), "bool", "force", "false", "Force delete this division as well as the grants and objects associated with it")
-	deleteCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/authorization/divisions/{divisionId}", utils.FormatPermissions([]string{ "authorization:division:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/authorization/divisions/{divisionId}", utils.FormatPermissions([]string{ "authorization:division:delete",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
 	divisionsCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "bool", "objectCount", "false", "Get count of objects in this division, grouped by type")
-	getCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/divisions/{divisionId}", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/divisions/{divisionId}", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
 	divisionsCmd.AddCommand(getCmd)
 	
@@ -45,11 +45,11 @@ func Cmddivisions() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "objectCount", "false", "Include the count of objects contained in the division")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Optionally request specific divisions by their IDs")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Search term to filter by division name")
-	listCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/authorization/divisions", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/authorization/divisions", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
 	divisionsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/divisions/{divisionId}", utils.FormatPermissions([]string{ "authorization:division:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/divisions/{divisionId}", utils.FormatPermissions([]string{ "authorization:division:edit",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
 	divisionsCmd.AddCommand(updateCmd)
 	

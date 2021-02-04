@@ -22,12 +22,12 @@ func init() {
 }
 
 func Cmdroles() *cobra.Command { 
-	createCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/roles", utils.FormatPermissions([]string{ "authorization:role:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/roles", utils.FormatPermissions([]string{ "authorization:role:add",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
 	rolesCmd.AddCommand(createCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role Valid values: unusedPermissions")
-	getCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:view",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
 	rolesCmd.AddCommand(getCmd)
 	
@@ -42,15 +42,15 @@ func Cmdroles() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "defaultRoleId", "", "")
 	utils.AddFlag(listCmd.Flags(), "bool", "userCount", "true", "")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
-	listCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles", utils.FormatPermissions([]string{ "authorization:role:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles", utils.FormatPermissions([]string{ "authorization:role:view",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
 	rolesCmd.AddCommand(listCmd)
 	
-	removeCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", removeCmd.UsageTemplate(), "DELETE", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:delete",  })))
+	removeCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", removeCmd.UsageTemplate(), "DELETE", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:delete",  })))
 	utils.AddFileFlagIfUpsert(removeCmd.Flags(), "DELETE")
 	rolesCmd.AddCommand(removeCmd)
 	
-	updateCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:edit",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
 	rolesCmd.AddCommand(updateCmd)
 	

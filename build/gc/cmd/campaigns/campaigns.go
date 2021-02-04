@@ -22,15 +22,15 @@ func init() {
 }
 
 func Cmdcampaigns() *cobra.Command { 
-	createCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/campaigns", utils.FormatPermissions([]string{ "outbound:campaign:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/campaigns", utils.FormatPermissions([]string{ "outbound:campaign:add",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
 	campaignsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:delete",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
 	campaignsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:view",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
 	campaignsCmd.AddCommand(getCmd)
 	
@@ -47,11 +47,11 @@ func Cmdcampaigns() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "Sort order Valid values: ascending, descending")
-	listCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns", utils.FormatPermissions([]string{ "outbound:campaign:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns", utils.FormatPermissions([]string{ "outbound:campaign:view",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
 	campaignsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:edit",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
 	campaignsCmd.AddCommand(updateCmd)
 	

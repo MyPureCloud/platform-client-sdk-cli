@@ -22,15 +22,15 @@ func init() {
 }
 
 func Cmdsubscriptions() *cobra.Command { 
-	deleteCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/notifications/channels/{channelId}/subscriptions", utils.FormatPermissions([]string{  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/notifications/channels/{channelId}/subscriptions", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
 	subscriptionsCmd.AddCommand(deleteCmd)
 	
-	listCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/notifications/channels/{channelId}/subscriptions", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/notifications/channels/{channelId}/subscriptions", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
 	subscriptionsCmd.AddCommand(listCmd)
 	
-	subscribeCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", subscribeCmd.UsageTemplate(), "POST", "/api/v2/notifications/channels/{channelId}/subscriptions", utils.FormatPermissions([]string{  })))
+	subscribeCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", subscribeCmd.UsageTemplate(), "POST", "/api/v2/notifications/channels/{channelId}/subscriptions", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(subscribeCmd.Flags(), "POST")
 	subscriptionsCmd.AddCommand(subscribeCmd)
 	

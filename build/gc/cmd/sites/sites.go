@@ -22,15 +22,15 @@ func init() {
 }
 
 func Cmdsites() *cobra.Command { 
-	createCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/sites", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/sites", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
 	sitesCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/telephony/providers/edges/sites/{siteId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/telephony/providers/edges/sites/{siteId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
 	sitesCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/sites/{siteId}", utils.FormatPermissions([]string{ "telephony:plugin:all", "telephony:sites:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/sites/{siteId}", utils.FormatPermissions([]string{ "telephony:plugin:all", "telephony:sites:view",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
 	sitesCmd.AddCommand(getCmd)
 	
@@ -41,11 +41,11 @@ func Cmdsites() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "string", "locationId", "", "Location Id")
 	utils.AddFlag(listCmd.Flags(), "bool", "managed", "", "Filter by managed")
-	listCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/sites", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/sites", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
 	sitesCmd.AddCommand(listCmd)
 	
-	updateCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/sites/{siteId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/sites/{siteId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
 	sitesCmd.AddCommand(updateCmd)
 	

@@ -22,11 +22,11 @@ func init() {
 }
 
 func Cmdqueueuser() *cobra.Command { 
-	activateCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", activateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
+	activateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", activateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(activateCmd.Flags(), "PATCH")
 	queueuserCmd.AddCommand(activateCmd)
 	
-	deleteCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/queues/{queueId}/users/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/queues/{queueId}/users/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
 	queueuserCmd.AddCommand(deleteCmd)
 	
@@ -41,16 +41,16 @@ func Cmdqueueuser() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "[]string", "languages", "", "Filter by language")
 	utils.AddFlag(getCmd.Flags(), "[]string", "routingStatus", "", "Filter by routing status")
 	utils.AddFlag(getCmd.Flags(), "[]string", "presence", "", "Filter by presence")
-	getCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:view", "routing:queueMember:manage",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:view", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
 	queueuserCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(moveCmd.Flags(), "bool", "delete", "false", "True to delete queue members")
-	moveCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", moveCmd.UsageTemplate(), "POST", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
+	moveCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", moveCmd.UsageTemplate(), "POST", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(moveCmd.Flags(), "POST")
 	queueuserCmd.AddCommand(moveCmd)
 	
-	updateCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/users/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/users/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH")
 	queueuserCmd.AddCommand(updateCmd)
 	

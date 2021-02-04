@@ -22,15 +22,15 @@ func init() {
 }
 
 func Cmdskills() *cobra.Command { 
-	createCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/skills", utils.FormatPermissions([]string{ "routing:skill:manage",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/skills", utils.FormatPermissions([]string{ "routing:skill:manage",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
 	skillsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/skills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:manage",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/skills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:manage",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
 	skillsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/skills/{skillId}", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/skills/{skillId}", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
 	skillsCmd.AddCommand(getCmd)
 	
@@ -38,7 +38,7 @@ func Cmdskills() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter for results that start with this value")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
-	listCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/skills", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/skills", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
 	skillsCmd.AddCommand(listCmd)
 	

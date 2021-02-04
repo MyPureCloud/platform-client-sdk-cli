@@ -42,7 +42,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("1.1.0")
+		fmt.Println("1.1.1")
 	},
 }
 
@@ -51,7 +51,7 @@ var versionCmd = &cobra.Command{
 func Execute() {
 	flag.CommandLine.Parse(nil)
 	if err := rootCmd.Execute(); err != nil {
-		logger.Fatal(err)
+		logger.Fatal(fmt.Sprintf("%v\n", err.Error()))
 	}
 }
 

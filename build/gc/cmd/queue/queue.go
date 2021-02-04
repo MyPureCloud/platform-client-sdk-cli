@@ -26,16 +26,16 @@ func Cmdqueue() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(getCmd.Flags(), "bool", "joined", "true", "Is joined to the queue")
 	utils.AddFlag(getCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
-	getCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/queues", utils.FormatPermissions([]string{ "routing:queue:view", "routing:queue:join", "routing:queueMember:manage",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/queues", utils.FormatPermissions([]string{ "routing:queue:view", "routing:queue:join", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
 	queueCmd.AddCommand(getCmd)
 	
-	joinCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", joinCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:join", "routing:queueMember:manage",  })))
+	joinCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", joinCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:join", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(joinCmd.Flags(), "PATCH")
 	queueCmd.AddCommand(joinCmd)
 	
 	utils.AddFlag(joinsetCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
-	joinsetCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", joinsetCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/queues", utils.FormatPermissions([]string{ "routing:queue:join", "routing:queueMember:manage",  })))
+	joinsetCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", joinsetCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/queues", utils.FormatPermissions([]string{ "routing:queue:join", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(joinsetCmd.Flags(), "PATCH")
 	queueCmd.AddCommand(joinsetCmd)
 	

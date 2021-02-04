@@ -22,7 +22,7 @@ func init() {
 }
 
 func Cmdstations() *cobra.Command { 
-	getCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/stations/{stationId}", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/stations/{stationId}", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
 	stationsCmd.AddCommand(getCmd)
 	
@@ -34,7 +34,7 @@ func Cmdstations() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "webRtcUserId", "", "Filter for the webRtc station of the webRtcUserId")
 	utils.AddFlag(listCmd.Flags(), "string", "id", "", "Comma separated list of stationIds")
 	utils.AddFlag(listCmd.Flags(), "string", "lineAppearanceId", "", "lineAppearanceId")
-	listCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/stations", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/stations", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
 	stationsCmd.AddCommand(listCmd)
 	

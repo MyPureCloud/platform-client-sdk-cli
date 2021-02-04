@@ -22,15 +22,15 @@ func init() {
 }
 
 func Cmdgroups() *cobra.Command { 
-	createCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/groups", utils.FormatPermissions([]string{ "directory:group:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/groups", utils.FormatPermissions([]string{ "directory:group:add",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
 	groupsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/groups/{groupId}", utils.FormatPermissions([]string{ "directory:group:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/groups/{groupId}", utils.FormatPermissions([]string{ "directory:group:delete",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
 	groupsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/groups/{groupId}", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/groups/{groupId}", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
 	groupsCmd.AddCommand(getCmd)
 	
@@ -39,11 +39,11 @@ func Cmdgroups() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
 	utils.AddFlag(listCmd.Flags(), "[]string", "jabberId", "", "A list of jabberIds to fetch by bulk (cannot be used with the id parameter)")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Ascending or descending sort order Valid values: ascending, descending")
-	listCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/groups", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/groups", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
 	groupsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/groups/{groupId}", utils.FormatPermissions([]string{ "directory:group:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/groups/{groupId}", utils.FormatPermissions([]string{ "directory:group:edit",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
 	groupsCmd.AddCommand(updateCmd)
 	

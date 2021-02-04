@@ -22,17 +22,17 @@ func init() {
 }
 
 func Cmdroleuser() *cobra.Command { 
-	addCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", addCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/{roleId}/users/add", utils.FormatPermissions([]string{ "authorization:grant:add",  })))
+	addCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", addCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/{roleId}/users/add", utils.FormatPermissions([]string{ "authorization:grant:add",  })))
 	utils.AddFileFlagIfUpsert(addCmd.Flags(), "PUT")
 	roleuserCmd.AddCommand(addCmd)
 	
-	deleteCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/{roleId}/users/remove", utils.FormatPermissions([]string{ "authorization:grant:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/{roleId}/users/remove", utils.FormatPermissions([]string{ "authorization:grant:delete",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "PUT")
 	roleuserCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(getCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	getCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles/{roleId}/users", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles/{roleId}/users", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
 	roleuserCmd.AddCommand(getCmd)
 	

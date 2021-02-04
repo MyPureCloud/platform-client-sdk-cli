@@ -26,12 +26,12 @@ func Cmdmembers() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(getCmd.Flags(), "string", "sortOrder", "ASC", "Ascending or descending sort order Valid values: ascending, descending")
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography")
-	getCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
 	membersCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(removeCmd.Flags(), "string", "ids", "", "Comma separated list of userIds to remove - REQUIRED")
-	removeCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", removeCmd.UsageTemplate(), "DELETE", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
+	removeCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", removeCmd.UsageTemplate(), "DELETE", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(removeCmd.Flags(), "DELETE")
 	membersCmd.AddCommand(removeCmd)
 	

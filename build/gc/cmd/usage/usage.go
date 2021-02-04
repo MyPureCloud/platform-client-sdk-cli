@@ -22,7 +22,7 @@ func init() {
 }
 
 func Cmdusage() *cobra.Command { 
-	resultsCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", resultsCmd.UsageTemplate(), "GET", "/api/v2/usage/query/{executionId}/results", utils.FormatPermissions([]string{ "oauth:client:view",  })))
+	resultsCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", resultsCmd.UsageTemplate(), "GET", "/api/v2/usage/query/{executionId}/results", utils.FormatPermissions([]string{ "oauth:client:view",  })))
 	utils.AddFileFlagIfUpsert(resultsCmd.Flags(), "GET")
 	usageCmd.AddCommand(resultsCmd)
 	

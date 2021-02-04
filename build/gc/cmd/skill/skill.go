@@ -22,30 +22,30 @@ func init() {
 }
 
 func Cmdskill() *cobra.Command { 
-	bulkremoveCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", bulkremoveCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
+	bulkremoveCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", bulkremoveCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
 	utils.AddFileFlagIfUpsert(bulkremoveCmd.Flags(), "PATCH")
 	skillCmd.AddCommand(bulkremoveCmd)
 	
-	bulkupdateCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", bulkupdateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
+	bulkupdateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", bulkupdateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
 	utils.AddFileFlagIfUpsert(bulkupdateCmd.Flags(), "PUT")
 	skillCmd.AddCommand(bulkupdateCmd)
 	
-	createCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/{userId}/routingskills", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/{userId}/routingskills", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
 	skillCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}/routingskills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}/routingskills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
 	skillCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Ascending or descending sort order Valid values: ascending, descending")
-	listCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/routingskills", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/routingskills", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
 	skillCmd.AddCommand(listCmd)
 	
-	updateCmd.SetHelpTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
 	skillCmd.AddCommand(updateCmd)
 	

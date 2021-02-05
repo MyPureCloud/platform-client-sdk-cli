@@ -22,31 +22,31 @@ func init() {
 }
 
 func Cmddids() *cobra.Command { 
-	getsdidCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getsdidCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/dids/{didId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(getsdidCmd.Flags(), "GET")
-	didsCmd.AddCommand(getsdidCmd)
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/dids/{didId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	didsCmd.AddCommand(getCmd)
 	
-	utils.AddFlag(listsdidCmd.Flags(), "int", "pageSize", "25", "Page size")
-	utils.AddFlag(listsdidCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listsdidCmd.Flags(), "string", "sortBy", "number", "Sort by")
-	utils.AddFlag(listsdidCmd.Flags(), "string", "sortOrder", "ASC", "Sort order")
-	utils.AddFlag(listsdidCmd.Flags(), "string", "phoneNumber", "", "Filter by phoneNumber")
-	utils.AddFlag(listsdidCmd.Flags(), "string", "ownerId", "", "Filter by the owner of a phone number")
-	utils.AddFlag(listsdidCmd.Flags(), "string", "didPoolId", "", "Filter by the DID Pool assignment")
-	utils.AddFlag(listsdidCmd.Flags(), "[]string", "id", "", "Filter by a specific list of ID`s")
-	listsdidCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listsdidCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/dids", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(listsdidCmd.Flags(), "GET")
-	didsCmd.AddCommand(listsdidCmd)
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
+	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "number", "Sort by")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Sort order")
+	utils.AddFlag(listCmd.Flags(), "string", "phoneNumber", "", "Filter by phoneNumber")
+	utils.AddFlag(listCmd.Flags(), "string", "ownerId", "", "Filter by the owner of a phone number")
+	utils.AddFlag(listCmd.Flags(), "string", "didPoolId", "", "Filter by the DID Pool assignment")
+	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Filter by a specific list of ID`s")
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/dids", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	didsCmd.AddCommand(listCmd)
 	
-	updatesdidCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updatesdidCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/dids/{didId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(updatesdidCmd.Flags(), "PUT")
-	didsCmd.AddCommand(updatesdidCmd)
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/dids/{didId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
+	didsCmd.AddCommand(updateCmd)
 	
 	return didsCmd
 }
 
-var getsdidCmd = &cobra.Command{
-	Use:   "getsdid [didId]",
+var getCmd = &cobra.Command{
+	Use:   "get [didId]",
 	Short: "Get a DID by ID.",
 	Long:  `Get a DID by ID.`,
 	Args:  utils.DetermineArgs([]string{ "didId", }),
@@ -67,7 +67,7 @@ var getsdidCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "getsdid", urlString, "/api/v2/telephony/providers/edges/dids/{didId}")
+		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/telephony/providers/edges/dids/{didId}")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			MaxRetriesBeforeQuitting: 3,
@@ -81,8 +81,8 @@ var getsdidCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var listsdidCmd = &cobra.Command{
-	Use:   "listsdid",
+var listCmd = &cobra.Command{
+	Use:   "list",
 	Short: "Get a listing of DIDs",
 	Long:  `Get a listing of DIDs`,
 	Args:  utils.DetermineArgs([]string{ }),
@@ -133,7 +133,7 @@ var listsdidCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "listsdid", urlString, "/api/v2/telephony/providers/edges/dids")
+		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/telephony/providers/edges/dids")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			MaxRetriesBeforeQuitting: 3,
@@ -147,8 +147,8 @@ var listsdidCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var updatesdidCmd = &cobra.Command{
-	Use:   "updatesdid [didId]",
+var updateCmd = &cobra.Command{
+	Use:   "update [didId]",
 	Short: "Update a DID by ID.",
 	Long:  `Update a DID by ID.`,
 	Args:  utils.DetermineArgs([]string{ "didId", }),
@@ -169,7 +169,7 @@ var updatesdidCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", "updatesdid", urlString, "/api/v2/telephony/providers/edges/dids/{didId}")
+		retryFunc := CommandService.DetermineAction("PUT", "update", urlString, "/api/v2/telephony/providers/edges/dids/{didId}")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			MaxRetriesBeforeQuitting: 3,

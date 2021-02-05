@@ -121,12 +121,15 @@ func (c *commandService) List(uri string) (string, error) {
 
 	//Convert the data into one big string
 	var finalJSONString string
-	if len(totalResults) > 1 {
-		finalJSONString = fmt.Sprintf("[%s]", strings.Join(totalResults, ","))
-	} else {
+	switch len(totalResults) {
+	case 0:
+		finalJSONString = "[]"
+	case 1:
 		finalJSONString = fmt.Sprintf("[%s]", totalResults[0])
+	default:
+		finalJSONString = fmt.Sprintf("[%s]", strings.Join(totalResults, ","))
 	}
-	
+
 	return finalJSONString, nil
 }
 

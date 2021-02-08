@@ -71,7 +71,15 @@ func FormatUsageDescription(message string) string {
 		message = strings.ReplaceAll(message, "role", "")
 		message = strings.ReplaceAll(message, "queue", "")
 	}
-	if !strings.HasSuffix(message, "s") && !strings.HasSuffix(message, "usage") {
+
+	notPluralCommands := make([]string, 0)
+	notPluralCommands = append(notPluralCommands, "usage")
+	for _, command := range notPluralCommands {
+		if strings.HasSuffix(message, command) {
+			return message
+		}
+	}
+	if !strings.HasSuffix(message, "s") {
 		return fmt.Sprintf("%v%v", message, "s")
 	}
 	

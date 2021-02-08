@@ -8,22 +8,21 @@ import (
 
 	"flag"
 	"fmt"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/campaigns"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/divisions"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/edges"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/groups"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/locations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/campaigns"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/phones"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/roles"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/queues"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/roles"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/sites"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/skills"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/edges"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/usage"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
-	
 	"os"
 )
 
@@ -42,7 +41,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("1.1.5")
+		fmt.Println("1.1.6")
 	},
 }
 
@@ -74,22 +73,21 @@ func init() {
 	rootCmd.PersistentFlags().StringVarP(&profileName, "profile", "p", "DEFAULT", "Name of the profile to use for configuring the cli")
 
 	rootCmd.AddCommand(versionCmd)
+	rootCmd.AddCommand(campaigns.Cmdcampaigns())
 	rootCmd.AddCommand(divisions.Cmddivisions())
+	rootCmd.AddCommand(edges.Cmdedges())
 	rootCmd.AddCommand(groups.Cmdgroups())
 	rootCmd.AddCommand(locations.Cmdlocations())
-	rootCmd.AddCommand(campaigns.Cmdcampaigns())
 	rootCmd.AddCommand(phones.Cmdphones())
-	rootCmd.AddCommand(roles.Cmdroles())
 	rootCmd.AddCommand(queues.Cmdqueues())
+	rootCmd.AddCommand(roles.Cmdroles())
 	rootCmd.AddCommand(sites.Cmdsites())
 	rootCmd.AddCommand(skills.Cmdskills())
 	rootCmd.AddCommand(stations.Cmdstations())
-	rootCmd.AddCommand(edges.Cmdedges())
 	rootCmd.AddCommand(usage.Cmdusage())
 	rootCmd.AddCommand(users.Cmdusers())
 	rootCmd.AddCommand(notifications.Cmdnotifications())
 	rootCmd.AddCommand(profiles.Cmdprofiles())
-	
 
 	if os.Getenv("GenerateGcDocs") != "" {
 		if _, err := os.Stat("/tmp/gc_docs"); os.IsNotExist(err) {

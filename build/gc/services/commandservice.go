@@ -228,10 +228,10 @@ func (c *commandService) DetermineAction(httpMethod string, operationId string, 
 	switch httpMethod {
 	case http.MethodGet:
 		listOverrides := make(map[string]int)
-		// Add overrides here for resources with custom operationIds requiring pagination
+		// Overrides for resources with custom operationIds requiring pagination
+		listOverrides["/api/v2/groups/{groupId}/members"] = 1
 		listOverrides["/api/v2/routing/queues/{queueId}/users"] = 1
 		listOverrides["/api/v2/users/{userId}/queues"] = 1
-		listOverrides["/api/v2/groups/{groupId}/members"] = 1
 
 		_, ok := listOverrides[originalURI]
 		if operationId == "list" || ok {

@@ -13,5 +13,6 @@ var profileCmd = &cobra.Command{
 func Cmdprofiles() *cobra.Command {
 	profileCmd.AddCommand(currentProfileCmd)
 	profileCmd.AddCommand(createProfilesCmd)
+	profileCmd.AddCommand(listProfilesCmd)
 	return profileCmd
 }

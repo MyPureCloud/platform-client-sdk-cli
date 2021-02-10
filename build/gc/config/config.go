@@ -74,6 +74,30 @@ func GetConfig(profileName string) (Configuration, error) {
 	}, nil
 }
 
+func ListConfigs() ([]configuration, error) {
+	if err := viper.ReadInConfig(); err != nil {
+		return nil, fmt.Errorf("Error reading config file, %s", err)
+	}
+
+	settings := viper.GetViper().AllSettings()
+	if settings == nil || len(settings) == 0 {
+		return nil, fmt.Errorf("No profiles have been found.")
+	}
+
+	configurations := make([]configuration, 0)
+	for profileName, _ := range settings {
+		configurations = append(configurations, configuration{
+			profileName:      profileName,
+			clientID:         viper.GetString(fmt.Sprintf("%s.client_credentials", profileName)),
+			clientSecret:     viper.GetString(fmt.Sprintf("%s.client_secret", profileName)),
+			environment:      viper.GetString(fmt.Sprintf("%s.environment", profileName)),
+			oAuthTokenData:   viper.GetString(fmt.Sprintf("%s.oauth_token_data", profileName)),
+		})
+	}
+
+	return configurations, nil
+}
+
 func SaveConfig(config Configuration) error {
 	return writeConfig(config, nil)
 }

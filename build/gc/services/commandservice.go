@@ -103,8 +103,8 @@ func (c *commandService) List(uri string) (string, error) {
 			logger.Info("Paginating with URI: ", pagedURI)
 			retryFunc := retry.Retry(pagedURI, restClient.Get)
 			data, err = retryFunc(&retry.RetryConfiguration{
-				MaxRetryTimeSec: 20,
-				MaxRetriesBeforeQuitting: 10,
+				MaxRetryTimeSec: 1000,
+				MaxRetriesBeforeQuitting: 100,
 			})
 			if err != nil {
 				return "", err

@@ -1,21 +1,25 @@
 package skill
+
 import (
 	"fmt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
+	"time"
 )
 
-var skillCmd = &cobra.Command{
-	Use:   utils.FormatUsageDescription("skill"),
-	Short: utils.FormatUsageDescription("Manages Genesys Cloud skill"),
-	Long:  utils.FormatUsageDescription(`Manages Genesys Cloud skill`),
-}
-var CommandService services.CommandService
+var (
+	skillCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("skill"),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud skill"),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud skill`),
+	}
+	CommandService services.CommandService
+)
 
 func init() {
 	CommandService = services.NewCommandService(skillCmd)
@@ -77,8 +81,9 @@ var bulkremoveCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("PATCH", "bulkremove", urlString, "/api/v2/users/{userId}/routingskills/bulk")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -113,8 +118,9 @@ var bulkupdateCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("PUT", "bulkupdate", urlString, "/api/v2/users/{userId}/routingskills/bulk")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -149,8 +155,9 @@ var createCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("POST", "create", urlString, "/api/v2/users/{userId}/routingskills")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -187,8 +194,9 @@ var deleteCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("DELETE", "delete", urlString, "/api/v2/users/{userId}/routingskills/{skillId}")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -235,8 +243,9 @@ var listCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/users/{userId}/routingskills")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -273,8 +282,9 @@ var updateCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("PUT", "update", urlString, "/api/v2/users/{userId}/routingskills/{skillId}")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {

@@ -3,6 +3,12 @@ package services
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
+	"regexp"
+	"strconv"
+	"strings"
+	"time"
+
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
@@ -10,10 +16,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
-	"net/http"
-	"regexp"
-	"strconv"
-	"strings"
 )
 
 //CommandService holds the method signatures for all common Command object invocations
@@ -95,7 +97,7 @@ func (c *commandService) List(uri string) (string, error) {
 		totalResults = append(totalResults, string(val))
 	}
 
-    //Looks up the rest of the pages
+	//Looks up the rest of the pages
 	if firstPage.PageCount > 1 {
 		pagedURI := uri
 		for x := 2; x <= firstPage.PageCount; x++ {
@@ -103,8 +105,9 @@ func (c *commandService) List(uri string) (string, error) {
 			logger.Info("Paginating with URI: ", pagedURI)
 			retryFunc := retry.Retry(pagedURI, restClient.Get)
 			data, err = retryFunc(&retry.RetryConfiguration{
-				MaxRetryTimeSec: 1000,
-				MaxRetriesBeforeQuitting: 100,
+				RetryWaitMax: 1000 * time.Second,
+				RetryWaitMin: 1000 * time.Second,
+				RetryMax:     100,
 			})
 			if err != nil {
 				return "", err
@@ -134,7 +137,7 @@ func (c *commandService) List(uri string) (string, error) {
 }
 
 func updatePageNumber(pagedURI string, index int) string {
-	if strings.Contains(pagedURI,"pageNumber=") {
+	if strings.Contains(pagedURI, "pageNumber=") {
 		re := regexp.MustCompile("pageNumber=([0-9]+)")
 		result := re.FindStringSubmatch(pagedURI)
 		pageNumber, _ := strconv.Atoi(result[1])
@@ -238,7 +241,7 @@ func (c *commandService) DetermineAction(httpMethod string, operationId string, 
 			return retry.Retry(uri, c.List)
 		} else {
 			return retry.Retry(uri, c.Get)
-		} 
+		}
 	case http.MethodPatch:
 		return retry.RetryWithData(uri, utils.ResolveInputData(c.cmd), c.Patch)
 	case http.MethodPost:

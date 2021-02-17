@@ -1,14 +1,14 @@
 package channels
 
 import (
-	"flag"
 	"fmt"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"os"
 	"os/signal"
 	"time"
+
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 
 	"github.com/gorilla/websocket"
 	"github.com/spf13/cobra"
@@ -81,8 +81,6 @@ var listenChannelCmd = &cobra.Command{
 		if err != nil {
 			logger.Fatal(err)
 		}
-
-		flag.Parse()
 
 		//Set up the websocket connection
 		targetURI := fmt.Sprintf("wss://streaming.%s/channels/%s", config.Environment(), args[0])

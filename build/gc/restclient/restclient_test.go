@@ -3,14 +3,16 @@ package restclient
 import (
 	"encoding/base64"
 	"fmt"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/mocks"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"io/ioutil"
 	"net/http"
 	"strings"
 	"testing"
 	"time"
+
+	"github.com/hashicorp/go-retryablehttp"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/mocks"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 )
 
 type apiClientTest struct {
@@ -33,7 +35,7 @@ func TestAuthorize(t *testing.T) {
 
 	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", utils.GenerateGuid(), utils.GenerateGuid(), "")
 	accessToken := "aJdvugb8k1kwnOovm2qX6LXTctJksYvdzcoXPrRDi-nL1phQhcKRN-bjcflq7CUDOmUCQv5OWuBSkPQr0peWhw"
-	Client = buildRestClientDoMockForAuthorize(t, *mockConfig, accessToken)
+	setRestClientDoMockForAuthorize(t, *mockConfig, accessToken)
 
 	oauthData, err := Authorize(mockConfig)
 	if err != nil {
@@ -44,7 +46,7 @@ func TestAuthorize(t *testing.T) {
 	}
 
 	// Check that the same token is returned when the the expiry time stamp is in the future
-	mockConfig = buildMockConfig(mockConfig.ProfileName() ,mockConfig.Environment(), mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
+	mockConfig = buildMockConfig(mockConfig.ProfileName(), mockConfig.Environment(), mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
 	oauthData, err = Authorize(mockConfig)
 	if err != nil {
 		t.Fatalf("err should be nil, got: %s", err)
@@ -56,7 +58,7 @@ func TestAuthorize(t *testing.T) {
 	// Check that a new token is retrieved when the the expiry time stamp is in the past
 	oauthData.OAuthTokenExpiry = time.Now().AddDate(0, 0, -1).Format(time.RFC3339)
 	accessToken = "aJdvugb8k1kwnOovm2qX6LXTctJksYvdzcoXPrRDi-nL1phQhcKRN-bjcflq7CUDOmUCQv5OWuBSkPQr0peWhw"
-	mockConfig = buildMockConfig(mockConfig.ProfileName() ,mockConfig.Environment(), mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
+	mockConfig = buildMockConfig(mockConfig.ProfileName(), mockConfig.Environment(), mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
 	oauthData, err = Authorize(mockConfig)
 	if err != nil {
 		t.Fatalf("err should be nil, got: %s", err)
@@ -75,7 +77,7 @@ func TestLowLevelRestClient(t *testing.T) {
 			token:       tc.oAuthToken,
 		}
 
-		Client = buildRestClientDoMock(t, tc)
+		setRestClientDoMock(t, tc)
 
 		//First checking the low level API call
 		results, err := restClient.callAPI(tc.targetVerb, tc.targetPath, "")
@@ -104,7 +106,7 @@ func TestHighLevelRestClient(t *testing.T) {
 			token:       tc.oAuthToken,
 		}
 
-		Client = buildRestClientDoMock(t, tc)
+		setRestClientDoMock(t, tc)
 		var results string
 		var err error
 
@@ -162,9 +164,8 @@ func buildMockConfig(profileName string, environment string, clientID string, cl
 	return mockConfig
 }
 
-func buildRestClientDoMockForAuthorize(t *testing.T, mockConfig mocks.MockClientConfig, accessToken string) *mocks.MockHttpClient {
-	mock := &mocks.MockHttpClient{}
-	mock.DoFunc = func(request *http.Request) (*http.Response, error) {
+func setRestClientDoMockForAuthorize(t *testing.T, mockConfig mocks.MockClientConfig, accessToken string) {
+	ClientDo = func(request *retryablehttp.Request) (*http.Response, error) {
 		authHeaderString := fmt.Sprintf("%s:%s", mockConfig.ClientID(), mockConfig.ClientSecret())
 		expectedAuthHeader := fmt.Sprintf("Basic %s", base64.StdEncoding.EncodeToString([]byte(authHeaderString)))
 		requestAuthHeader := request.Header.Get("Authorization")
@@ -206,16 +207,11 @@ func buildRestClientDoMockForAuthorize(t *testing.T, mockConfig mocks.MockClient
 		}
 		return response, nil
 	}
-
-	return mock
 }
 
-//buildRestClientDoMock returns a mock Do object for the RestClient tests
-func buildRestClientDoMock(t *testing.T, tc apiClientTest) *mocks.MockHttpClient {
-	mock := &mocks.MockHttpClient{}
-
+func setRestClientDoMock(t *testing.T, tc apiClientTest) {
 	//Building a Mock HTTP Functions
-	mock.DoFunc = func(request *http.Request) (*http.Response, error) {
+	ClientDo = func(request *retryablehttp.Request) (*http.Response, error) {
 		urlHost := request.URL.Host
 		urlPath := request.URL.Path
 
@@ -242,8 +238,6 @@ func buildRestClientDoMock(t *testing.T, tc apiClientTest) *mocks.MockHttpClient
 		}
 		return response, nil
 	}
-
-	return mock
 }
 
 func buildTestCaseTable() []apiClientTest {

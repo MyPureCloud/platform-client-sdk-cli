@@ -1,21 +1,25 @@
 package channels
+
 import (
 	"fmt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
+	"time"
 )
 
-var channelsCmd = &cobra.Command{
-	Use:   utils.FormatUsageDescription("channels"),
-	Short: utils.FormatUsageDescription("Manages Genesys Cloud channels"),
-	Long:  utils.FormatUsageDescription(`Manages Genesys Cloud channels`),
-}
-var CommandService services.CommandService
+var (
+	channelsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("channels"),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud channels"),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud channels`),
+	}
+	CommandService services.CommandService
+)
 
 func init() {
 	CommandService = services.NewCommandService(channelsCmd)
@@ -57,8 +61,9 @@ var createCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("POST", "create", urlString, "/api/v2/notifications/channels")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -95,8 +100,9 @@ var listCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/notifications/channels")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {

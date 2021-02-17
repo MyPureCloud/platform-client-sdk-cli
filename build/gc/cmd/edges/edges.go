@@ -1,21 +1,25 @@
 package edges
+
 import (
 	"fmt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
+	"time"
 )
 
-var edgesCmd = &cobra.Command{
-	Use:   utils.FormatUsageDescription("edges"),
-	Short: utils.FormatUsageDescription("Manages Genesys Cloud edges"),
-	Long:  utils.FormatUsageDescription(`Manages Genesys Cloud edges`),
-}
-var CommandService services.CommandService
+var (
+	edgesCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("edges"),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud edges"),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud edges`),
+	}
+	CommandService services.CommandService
+)
 
 func init() {
 	CommandService = services.NewCommandService(edgesCmd)
@@ -80,8 +84,9 @@ var createCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("POST", "create", urlString, "/api/v2/telephony/providers/edges")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -116,8 +121,9 @@ var deleteCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("DELETE", "delete", urlString, "/api/v2/telephony/providers/edges/{edgeId}")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -156,8 +162,9 @@ var getCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/telephony/providers/edges/{edgeId}")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -218,8 +225,9 @@ var listCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/telephony/providers/edges")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -254,8 +262,9 @@ var rebootCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("POST", "reboot", urlString, "/api/v2/telephony/providers/edges/{edgeId}/reboot")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -290,8 +299,9 @@ var updateCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("PUT", "update", urlString, "/api/v2/telephony/providers/edges/{edgeId}")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {

@@ -3,13 +3,15 @@ package members
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
+	"strings"
+	"time"
+
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
-	"net/http"
-	"strings"
 )
 
 func init() {
@@ -30,11 +32,11 @@ type addGroupMembersBody struct {
 
 var (
 	addMembersCommand = models.HandWrittenCommand{
-		Path: "/api/v2/groups/{groupId}/members",
+		Path:   "/api/v2/groups/{groupId}/members",
 		Method: http.MethodPost,
 	}
 	getMembersCommand = models.HandWrittenCommand{
-		Path: "/api/v2/groups/{groupId}/members",
+		Path:   "/api/v2/groups/{groupId}/members",
 		Method: http.MethodGet,
 	}
 )
@@ -43,7 +45,7 @@ var addCmd = &cobra.Command{
 	Use:   "add [groupId]",
 	Short: "Add members",
 	Long:  `Add members`,
-	Args:  utils.DetermineArgs([]string{ "groupId" }),
+	Args:  utils.DetermineArgs([]string{"groupId"}),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		groupId, args := args[0], args[1:]
@@ -64,14 +66,15 @@ var addCmd = &cobra.Command{
 		retryFunc := retry.RetryWithData(path, string(bodyString), CommandService.Post)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
 			logger.Fatal(err)
 		}
-		
+
 		utils.Render(results)
 	},
 }
@@ -79,8 +82,9 @@ var addCmd = &cobra.Command{
 func getGroupVersion(path string) int {
 	retryFunc := CommandService.DetermineAction(getMembersCommand.Method, "get", path, getMembersCommand.Path)
 	retryConfig := &retry.RetryConfiguration{
-		MaxRetriesBeforeQuitting: 3,
-		MaxRetryTimeSec: 10,
+		RetryWaitMin: 5 * time.Second,
+		RetryWaitMax: 60 * time.Second,
+		RetryMax:     20,
 	}
 	results, err := retryFunc(retryConfig)
 	if err != nil {

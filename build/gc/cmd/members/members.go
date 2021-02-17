@@ -1,21 +1,25 @@
 package members
+
 import (
 	"fmt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
+	"time"
 )
 
-var membersCmd = &cobra.Command{
-	Use:   utils.FormatUsageDescription("members"),
-	Short: utils.FormatUsageDescription("Manages Genesys Cloud members"),
-	Long:  utils.FormatUsageDescription(`Manages Genesys Cloud members`),
-}
-var CommandService services.CommandService
+var (
+	membersCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("members"),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud members"),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud members`),
+	}
+	CommandService services.CommandService
+)
 
 func init() {
 	CommandService = services.NewCommandService(membersCmd)
@@ -79,8 +83,9 @@ var getCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/groups/{groupId}/members")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -119,8 +124,9 @@ var removeCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("DELETE", "remove", urlString, "/api/v2/groups/{groupId}/members")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {

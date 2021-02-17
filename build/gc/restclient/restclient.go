@@ -1,9 +1,10 @@
 package restclient
 
 import (
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"net/http"
 	"time"
 
@@ -16,19 +17,16 @@ import (
 	"net/url"
 	"strings"
 
+	"github.com/hashicorp/go-retryablehttp"
 	"github.com/tidwall/pretty"
 )
 
 var (
-	Client           HTTPClient
-	RestClient       *RESTClient
+	Client             retryablehttp.Client
+	ClientDo         = Client.Do
+	RestClient         *RESTClient
 	UpdateOAuthToken = config.UpdateOAuthToken
 )
-
-// HTTPClient interface
-type HTTPClient interface {
-	Do(req *http.Request) (*http.Response, error)
-}
 
 type RESTClient struct {
 	environment string
@@ -73,11 +71,13 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
 	logger.Infof("Calling API with method: %v, URI: %v, data: %v", method, uri, data)
 
-	request := &http.Request{
-		URL:    apiURI,
-		Close:  true,
-		Method: strings.ToUpper(method),
-		Header: make(map[string][]string),
+	request := &retryablehttp.Request{
+		Request: &http.Request{
+			URL:    apiURI,
+			Close:  true,
+			Method: strings.ToUpper(method),
+			Header: make(map[string][]string),
+		},
 	}
 
 	//Setting up the auth header
@@ -87,14 +87,33 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
 	//User-Agent and SDK version headers
 	request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-	request.Header.Set("purecloud-sdk", "1.1.8")
+	request.Header.Set("purecloud-sdk", "2.0.0")
 
 	if data != "" {
 		request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
 	}
 
+	retryConfiguration := retry.GetRetryConfiguration()
+	if retryConfiguration == nil {
+		Client.RetryMax = 0
+		Client.RetryWaitMax = 0
+	} else {
+		Client.RetryWaitMax = retryConfiguration.RetryWaitMax
+		Client.RetryWaitMin = retryConfiguration.RetryWaitMin
+		Client.RetryMax = retryConfiguration.RetryMax
+		if retryConfiguration.RequestLogHook == nil {
+			Client.RequestLogHook = func(_ retryablehttp.Logger, req *http.Request, retryNumber int) {
+				logger.Warnf("%v %v request failed. Retry count: %v\n", req.Method, req.URL, retryNumber)
+			}
+		} else {
+			Client.RequestLogHook = func(_ retryablehttp.Logger, req *http.Request, retryNumber int) {
+				retryConfiguration.RequestLogHook(req, retryNumber)
+			}
+		}
+	}
+	
 	//Executing the request
-	resp, err := Client.Do(request)
+	resp, err := ClientDo(request)
 	if err != nil {
 		return "", err
 	}
@@ -156,11 +175,13 @@ func ReAuthenticate(c config.Configuration) (models.OAuthTokenData, error) {
 func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 	loginURI, _ := url.Parse(fmt.Sprintf("https://login.%s/oauth/token", c.Environment()))
 
-	request := &http.Request{
-		URL:    loginURI,
-		Close:  true,
-		Method: http.MethodPost,
-		Header: make(map[string][]string),
+	request := &retryablehttp.Request{
+		Request: &http.Request{
+			URL:    loginURI,
+			Close:  true,
+			Method: http.MethodPost,
+			Header: make(map[string][]string),
+		},
 	}
 
 	//Setting up the basic auth headers for the call
@@ -171,7 +192,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
 	//User-Agent and SDK version headers
 	request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-	request.Header.Set("purecloud-sdk", "1.1.8")
+	request.Header.Set("purecloud-sdk", "2.0.0")
 
 	//Setting up the form data
 	form := url.Values{}
@@ -179,7 +200,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 	request.Body = ioutil.NopCloser(strings.NewReader(form.Encode()))
 
 	//Executing the request
-	resp, err := Client.Do(request)
+	resp, err := ClientDo(request)
 	if err != nil {
 		logger.Fatal(err)
 	}
@@ -232,5 +253,7 @@ func NewRESTClient(config config.Configuration) *RESTClient {
 }
 
 func init() {
-	Client = &http.Client{}
+	Client = *retryablehttp.NewClient()
+	Client.Logger = nil
+	ClientDo = Client.Do
 }

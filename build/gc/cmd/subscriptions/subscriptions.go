@@ -1,21 +1,25 @@
 package subscriptions
+
 import (
 	"fmt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
+	"time"
 )
 
-var subscriptionsCmd = &cobra.Command{
-	Use:   utils.FormatUsageDescription("subscriptions"),
-	Short: utils.FormatUsageDescription("Manages Genesys Cloud subscriptions"),
-	Long:  utils.FormatUsageDescription(`Manages Genesys Cloud subscriptions`),
-}
-var CommandService services.CommandService
+var (
+	subscriptionsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("subscriptions"),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud subscriptions"),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud subscriptions`),
+	}
+	CommandService services.CommandService
+)
 
 func init() {
 	CommandService = services.NewCommandService(subscriptionsCmd)
@@ -62,8 +66,9 @@ var deleteCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("DELETE", "delete", urlString, "/api/v2/notifications/channels/{channelId}/subscriptions")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -98,8 +103,9 @@ var listCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/notifications/channels/{channelId}/subscriptions")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -134,8 +140,9 @@ var subscribeCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("POST", "subscribe", urlString, "/api/v2/notifications/channels/{channelId}/subscriptions")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {

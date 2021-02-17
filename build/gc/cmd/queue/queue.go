@@ -1,21 +1,25 @@
 package queue
+
 import (
 	"fmt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
+	"time"
 )
 
-var queueCmd = &cobra.Command{
-	Use:   utils.FormatUsageDescription("queue"),
-	Short: utils.FormatUsageDescription("Manages Genesys Cloud queue"),
-	Long:  utils.FormatUsageDescription(`Manages Genesys Cloud queue`),
-}
-var CommandService services.CommandService
+var (
+	queueCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("queue"),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud queue"),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud queue`),
+	}
+	CommandService services.CommandService
+)
 
 func init() {
 	CommandService = services.NewCommandService(queueCmd)
@@ -83,8 +87,9 @@ var getCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/users/{userId}/queues")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -121,8 +126,9 @@ var joinCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("PATCH", "join", urlString, "/api/v2/users/{userId}/queues/{queueId}")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
@@ -161,8 +167,9 @@ var joinsetCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("PATCH", "joinset", urlString, "/api/v2/users/{userId}/queues")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {

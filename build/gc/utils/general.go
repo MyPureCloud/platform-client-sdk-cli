@@ -67,10 +67,7 @@ func GetFlag(flags *pflag.FlagSet, paramType string, name string) string {
 }
 
 func FormatUsageDescription(message string) string {
-	if strings.Contains(message, "user") {
-		message = strings.ReplaceAll(message, "role", "")
-		message = strings.ReplaceAll(message, "queue", "")
-	}
+	message = strings.Split(message, "_")[0]
 
 	notPluralCommands := make([]string, 0)
 	notPluralCommands = append(notPluralCommands, "usage")

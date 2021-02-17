@@ -1,28 +1,33 @@
 package topics
+
 import (
 	"fmt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
+	"time"
 )
 
-var topicsCmd = &cobra.Command{
-	Use:   utils.FormatUsageDescription("topics"),
-	Short: utils.FormatUsageDescription("Manages Genesys Cloud topics"),
-	Long:  utils.FormatUsageDescription(`Manages Genesys Cloud topics`),
-}
-var CommandService services.CommandService
+var (
+	topicsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("topics"),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud topics"),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud topics`),
+	}
+	CommandService services.CommandService
+)
 
 func init() {
 	CommandService = services.NewCommandService(topicsCmd)
 }
 
 func Cmdtopics() *cobra.Command { 
-	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: description, requiresPermissions, schema, transports, publicApiTemplateUriPaths")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: description, requiresPermissions, enforced, schema, visibility, transports, publicApiTemplateUriPaths")
+	utils.AddFlag(listCmd.Flags(), "bool", "includePreview", "true", "Whether or not to include Preview topics")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/notifications/availabletopics", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
 	topicsCmd.AddCommand(listCmd)
@@ -45,6 +50,10 @@ var listCmd = &cobra.Command{
 		if expand != "" {
 			queryParams["expand"] = expand
 		}
+		includePreview := utils.GetFlag(cmd.Flags(), "bool", "includePreview")
+		if includePreview != "" {
+			queryParams["includePreview"] = includePreview
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -57,8 +66,9 @@ var listCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/notifications/availabletopics")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {

@@ -1,21 +1,25 @@
 package usage
+
 import (
 	"fmt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
+	"time"
 )
 
-var usageCmd = &cobra.Command{
-	Use:   utils.FormatUsageDescription("usage"),
-	Short: utils.FormatUsageDescription("Manages Genesys Cloud usage"),
-	Long:  utils.FormatUsageDescription(`Manages Genesys Cloud usage`),
-}
-var CommandService services.CommandService
+var (
+	usageCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("usage"),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud usage"),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud usage`),
+	}
+	CommandService services.CommandService
+)
 
 func init() {
 	CommandService = services.NewCommandService(usageCmd)
@@ -54,8 +58,9 @@ var resultsCmd = &cobra.Command{
 		retryFunc := CommandService.DetermineAction("GET", "results", urlString, "/api/v2/usage/query/{executionId}/results")
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
-			MaxRetriesBeforeQuitting: 3,
-			MaxRetryTimeSec: 10,
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {

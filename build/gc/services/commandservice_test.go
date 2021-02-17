@@ -2,6 +2,14 @@ package services
 
 import (
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"strconv"
+	"strings"
+	"testing"
+	"time"
+
+	"github.com/hashicorp/go-retryablehttp"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/mocks"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
@@ -9,10 +17,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
-	"io/ioutil"
-	"net/http"
-	"strings"
-	"testing"
 )
 
 type apiClientTest struct {
@@ -39,16 +43,16 @@ func TestRetryWithData(t *testing.T) {
 	headers["Retry-After"] = []string{"10"}
 
 	tc := apiClientTest{
-		targetHeaders: headers,
-		targetStatusCode: http.StatusTooManyRequests,
-		expectedResponse: fmt.Sprintf(`{"numRetries":"%v"}`, maxRetriesBeforeQuitting - 1),
+		targetHeaders:      headers,
+		targetStatusCode:   http.StatusTooManyRequests,
+		expectedResponse:   fmt.Sprintf(`{"numRetries":"%v"}`, maxRetriesBeforeQuitting),
 		expectedStatusCode: http.StatusTooManyRequests}
-	restclient.Client = buildRestClientDoMockForRetry(tc, 10)
+	setRestClientDoMockForRetry(tc, 10)
 
 	retryFunc := retry.RetryWithData(tc.targetPath, "", c.Patch)
 	retryConfig := &retry.RetryConfiguration{
-		MaxRetryTimeSec:          100,
-		MaxRetriesBeforeQuitting: maxRetriesBeforeQuitting,
+		RetryWaitMax: 100 * time.Second,
+		RetryMax:     maxRetriesBeforeQuitting,
 	}
 	_, err := retryFunc(retryConfig)
 	if err != nil {
@@ -64,15 +68,15 @@ func TestRetryWithData(t *testing.T) {
 	}
 
 	// Check that RESTClient DoFunc is called 1 time when the retry-after value is increased and MaxRetryTimeSec is reduced below it
-	maxRetryTimeSec := 1
-	headers["Retry-After"] = []string{"2000"}
+	maxRetryTimeSec := 1 * time.Second
+	tc.targetHeaders["Retry-After"] = []string{"2000"}
 	expectedNumCalls := 1
 
 	tc.expectedResponse = fmt.Sprintf(`{"numRetries":"%v"}`, expectedNumCalls)
-	restclient.Client = buildRestClientDoMockForRetry(tc, 10)
+	setRestClientDoMockForRetry(tc, 10)
 
 	retryFunc = retry.RetryWithData(tc.targetPath, "", c.Patch)
-	retryConfig.MaxRetryTimeSec = maxRetryTimeSec
+	retryConfig.RetryWaitMax = maxRetryTimeSec
 	_, err = retryFunc(retryConfig)
 	if err != nil {
 		//Check to see if its an HTTP error and if its check to see if its what we are expecting
@@ -88,15 +92,14 @@ func TestRetryWithData(t *testing.T) {
 
 	// Check that RESTClient DoFunc is called 4 times when it fails the first 3 times
 	maxRetriesBeforeQuitting = 5
-	headers["Retry-After"] = []string{"10"}
+	tc.targetHeaders["Retry-After"] = []string{"10"}
 	expectedNumCalls = 4
 
 	tc.expectedResponse = fmt.Sprintf(`{"numRetries":"%v"}`, expectedNumCalls)
-	restclient.Client = buildRestClientDoMockForRetry(tc, 3)
+	setRestClientDoMockForRetry(tc, 3)
 
 	retryFunc = retry.RetryWithData(tc.targetPath, "", c.Patch)
-	retryConfig.MaxRetryTimeSec = maxRetryTimeSec
-	retryConfig.MaxRetriesBeforeQuitting = maxRetriesBeforeQuitting
+	retryConfig.RetryMax = maxRetriesBeforeQuitting
 	results, err := retryFunc(retryConfig)
 	if err != nil {
 		t.Errorf("Error should not be nil, got: %s", err)
@@ -108,7 +111,7 @@ func TestRetryWithData(t *testing.T) {
 }
 
 func TestReAuthentication(t *testing.T) {
-	restclientNewRESTClient = mockNewRESTClient
+	//restclientNewRESTClient = mockNewRESTClient
 	restclient.UpdateOAuthToken = mocks.UpdateOAuthToken
 	configGetConfig = mockGetConfigReAuthenticate
 
@@ -117,12 +120,12 @@ func TestReAuthentication(t *testing.T) {
 	}
 
 	tc := apiClientTest{
-		targetStatusCode: http.StatusUnauthorized,
-		expectedStatusCode: http.StatusUnauthorized,
-		expectedResponse: `{"numCalls": 2}`,
+		targetStatusCode:    http.StatusUnauthorized,
+		expectedStatusCode:  http.StatusUnauthorized,
+		expectedResponse:    `{"numCalls": 2}`,
 		expectedAccessToken: "c-Iyx66JoLCLVTkmQMXx-luHI3wpm-MQI1THRftzXEhgS4pNtBOaxfCzDSFw25LhcFZ3UjiczIlXVcwfoYvxfw",
 	}
-	restclient.Client = buildRestClientDoMockForReAuthenticate(tc)
+	setRestClientDoMockForReAuthenticate(tc)
 
 	value, err := c.Get("")
 	if err != nil {
@@ -136,40 +139,57 @@ func TestReAuthentication(t *testing.T) {
 	}
 }
 
-//buildRestClientDoMockForRetry returns a mock HttpClient object for the commandservice Retry test
-func buildRestClientDoMockForRetry(tc apiClientTest, numberOfFailedCalls int) *mocks.MockHttpClient {
-	mock := &mocks.MockHttpClient{}
+//setRestClientDoMockForRetry sets the restclient.ClientDo method for the commandservice Retry test
+func setRestClientDoMockForRetry(tc apiClientTest, numberOfFailedCalls int) {
 	numCalls := 0
 
 	//Building a Mock HTTP Functions
-	mock.DoFunc = func(request *http.Request) (*http.Response, error) {
+	restclient.ClientDo = func(request *retryablehttp.Request) (*http.Response, error) {
 		//Setting up the response body
-		stringReader := strings.NewReader(fmt.Sprintf(`{"numRetries": "%v"}`, numCalls))
-		stringReadCloser := ioutil.NopCloser(stringReader)
-
 		response := &http.Response{
 			Header:     tc.targetHeaders,
 			StatusCode: tc.targetStatusCode,
-			Body:       stringReadCloser,
 		}
-		if numCalls > numberOfFailedCalls {
-			response.StatusCode = http.StatusOK
+
+		startTime := time.Now()
+		retryAfterValue := int64(0)
+		for _, retryAfter := range tc.targetHeaders["Retry-After"] {
+			if retryAfter != "" {
+				retryAfterValue, _ = strconv.ParseInt(retryAfter, 10, 64)
+				break
+			}
 		}
-		numCalls++
+
+		for i := 0; i < restclient.Client.RetryMax; i++ {
+			numCalls++
+
+			stringReader := strings.NewReader(fmt.Sprintf(`{"numRetries": "%v"}`, numCalls))
+			stringReadCloser := ioutil.NopCloser(stringReader)
+			response.Body = stringReadCloser
+			if numCalls > numberOfFailedCalls {
+				response.StatusCode = http.StatusOK
+				break
+			}
+
+			if retryAfterValue > 0 {
+				fmt.Println("sleeping for", time.Duration(time.Duration(retryAfterValue)*time.Millisecond))
+				time.Sleep(time.Duration(time.Duration(retryAfterValue) * time.Millisecond))
+			}
+			if time.Now().Sub(startTime) > restclient.Client.RetryWaitMax {
+				break
+			}
+		}
 
 		return response, nil
 	}
-
-	return mock
 }
 
-//buildRestClientDoMockForReAuthenticate returns a mock HttpClient object for the commandservice ReAuthenticate test
-func buildRestClientDoMockForReAuthenticate(tc apiClientTest) *mocks.MockHttpClient {
-	mock := &mocks.MockHttpClient{}
+//setRestClientDoMockForReAuthenticate sets the restclient.ClientDo method for the commandservice ReAuthenticate test
+func setRestClientDoMockForReAuthenticate(tc apiClientTest) {
 	numCalls := 0
 
 	//Building a Mock HTTP Functions
-	mock.DoFunc = func(request *http.Request) (*http.Response, error) {
+	restclient.ClientDo = func(request *retryablehttp.Request) (*http.Response, error) {
 		//Setting up the response body
 		responseString := ""
 		statusCode := 0
@@ -209,8 +229,6 @@ func buildRestClientDoMockForReAuthenticate(tc apiClientTest) *mocks.MockHttpCli
 
 		return response, nil
 	}
-
-	return mock
 }
 
 //mockNewRESTClient returns a mock RESTClient object for the commandservice tests and sets the object in the restclient package

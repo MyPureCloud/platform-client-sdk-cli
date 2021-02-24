@@ -8,8 +8,9 @@ import (
 )
 
 var (
-	warningLogger *log.Logger
+	traceLogger   *log.Logger
 	infoLogger    *log.Logger
+	warningLogger *log.Logger
 	fatalLogger   *log.Logger
 )
 
@@ -43,7 +44,8 @@ func InitLogger() {
 		return
 	}
 
-	flags := log.Ldate|log.Ltime
+	flags := log.Ldate | log.Ltime
+	traceLogger = log.New(file, "TRACE: ", flags)
 	infoLogger = log.New(file, "INFO: ", flags)
 	warningLogger = log.New(file, "WARNING: ", flags)
 	fatalLogger = log.New(file, "FATAL: ", flags)
@@ -51,15 +53,29 @@ func InitLogger() {
 	log.SetOutput(file)
 }
 
+func Trace(v ...interface{}) {
+	fmt.Fprint(os.Stderr, v...)
+	if traceLogger != nil {
+		traceLogger.Println(v...)
+	}
+}
+
+func Tracef(format string, v ...interface{}) {
+	fmt.Fprintf(os.Stderr, format, v...)
+	if traceLogger != nil {
+		traceLogger.Printf(format, v...)
+	}
+}
+
 func Info(v ...interface{}) {
 	if infoLogger != nil {
-		infoLogger.Println(v ...)
+		infoLogger.Println(v...)
 	}
 }
 
 func Infof(format string, v ...interface{}) {
 	if infoLogger != nil {
-		infoLogger.Printf(format, v ...)
+		infoLogger.Printf(format, v...)
 	}
 }
 

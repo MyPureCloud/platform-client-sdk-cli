@@ -21,7 +21,7 @@ func init() {
 	membersCmd.AddCommand(addCmd)
 }
 
-type groupMembers struct {
+type group struct {
 	Version int `json:"version"`
 }
 
@@ -36,7 +36,7 @@ var (
 		Method: http.MethodPost,
 	}
 	getMembersCommand = models.HandWrittenCommand{
-		Path:   "/api/v2/groups/{groupId}/members",
+		Path:   "/api/v2/groups/{groupId}",
 		Method: http.MethodGet,
 	}
 )
@@ -49,7 +49,7 @@ var addCmd = &cobra.Command{
 
 	Run: func(cmd *cobra.Command, args []string) {
 		groupId, args := args[0], args[1:]
-		path := strings.Replace(addMembersCommand.Path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
+		path := strings.Replace(getMembersCommand.Path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
 
 		currentVersion := getGroupVersion(path)
 
@@ -63,6 +63,7 @@ var addCmd = &cobra.Command{
 		body.Version = currentVersion
 		bodyString, _ := json.Marshal(body)
 
+		path = strings.Replace(addMembersCommand.Path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
 		retryFunc := retry.RetryWithData(path, string(bodyString), CommandService.Post)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
@@ -91,11 +92,11 @@ func getGroupVersion(path string) int {
 		logger.Fatal(err)
 	}
 
-	groupMember := make([]groupMembers, 0)
-	err = json.Unmarshal([]byte(results), &groupMember)
+	groupResult := group{}
+	err = json.Unmarshal([]byte(results), &groupResult)
 	if err != nil {
 		logger.Fatal(err)
 	}
 
-	return groupMember[0].Version
+	return groupResult.Version
 }

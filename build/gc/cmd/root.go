@@ -24,11 +24,14 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemgt"
 	"os"
 )
 
-var profileName string
-var output string
+var (
+	profileName string
+	output string
+)
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -42,7 +45,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("2.0.1")
+		fmt.Println("2.0.2")
 	},
 }
 
@@ -72,6 +75,7 @@ func init() {
 	initViperConfig()
 
 	rootCmd.PersistentFlags().StringVarP(&profileName, "profile", "p", "DEFAULT", "Name of the profile to use for configuring the cli")
+	rootCmd.PersistentFlags().BoolP("indicateprogress", "i", false, "Trace progress indicators to stderr")
 
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(campaigns.Cmdcampaigns())
@@ -90,6 +94,7 @@ func init() {
 	rootCmd.AddCommand(externalcontacts.Cmdexternalcontacts())
 	rootCmd.AddCommand(notifications.Cmdnotifications())
 	rootCmd.AddCommand(profiles.Cmdprofiles())
+	rootCmd.AddCommand(responsemgt.Cmdresponsemgt())
 
 	if os.Getenv("GenerateGcDocs") != "" {
 		if _, err := os.Stat("/tmp/gc_docs"); os.IsNotExist(err) {

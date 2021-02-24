@@ -11,7 +11,7 @@ This CLI focuses mainly on exposing the following operations:
 - **update** - Update a Genesys Cloud object via data passed in via stdin or via file.
 - **delete** - Delete a Genesys Cloud object via data passed in via stdin or via file.
 
-**Note** Most operations exposed by the `list` command and some operations exposed by the `get` command support the `pageSize` parameter. It's important to set this to an appropriate value if a large amount of resources are being listed to reduce load on the API and reduce wait times.
+**Note** Most operations exposed by the `list` command and some operations exposed by the `get` command support the `pageSize` parameter. It's important to set this to an appropriate value if a large number of resources are being listed to reduce the load on the API and reduce wait times.
 
 The following objects are currently supported by the CLI:
 - campaigns
@@ -61,10 +61,25 @@ client_secret="OAUTH CLIENT SECRET"
 # Using the CLI
 The CLI follows standard POSIX command name and command flag parameter styles.  To see all of the available objects you can issue a `gc` command.  To see all the sub-commands under a particular entity (eg. users) type `gc <<subcommand>>`.  For example to see all of the users in the org you can type `gc users list`.
 
+# Application logging
+The CLI logs Information, Warning and Fatal data to a log file, the location of which depends on the operating system:
+
+### Linux
+`/tmp/GenesysCloud`
+
+### Windows
+`%TEMP%\GenesysCloud`
+
+### macOS
+`~/Library/Logs/GenesysCloud`
+
+# Tracing progress information
+Passing the flag `-i` or `--indicateprogress` to any command will result in progress information traced to stderr and written to the application log file.  For example to see progress information for a list operation and ignore API output, use `gc users list -i > /dev/null`.
+
 # Additional Tools
 Since this is a CLI, the output from the tool can be passed to other command tools and scripts.  Two of the most common helpful tools are:
 
-[jq](https://stedolan.github.io/jq/):  A JSON query, filter and transformation tools.  This tool can do just about anything with JSON.  For instance to retrieve all of the members of a specific queues, lookup their CLI and names and transform the output into CSV you issue the following CSV you can issue the following `gc` and `jq` commands:
+[jq](https://stedolan.github.io/jq/):  A JSON query, filter and transformation tools.  This tool can do just about anything with JSON.  For instance to retrieve all of the members of a specific queue, lookup their CLI and names and transform the output into CSV you issue the following CSV you can issue the following `gc` and `jq` commands:
 
 ```
 gc queues list|  jq -c '.[] | select( .name | contains("Chat2"))' | jq -r '. | .id' | xargs -I{} gc queues users {} | jq -r '.[] | [.id,.name] | @csv'> output.csv
@@ -107,7 +122,7 @@ This command:
 - uses xargs to pipe the CLI over to the `gc queue users` command
 - parses out the CLI and name field for each record
 - formats results into a csv format 
-- redirects the output to a file call output.csv
+- redirects the output to a file called output.csv
 
 [yq](https://github.com/mikefarah/yq) - A YAML conversion and manipulation tool.  You could use `yq` to convert yaml to and from JSON.  For example, to convert the output of the `gc users list` to yaml via `gc users list | yq r - -P`
 

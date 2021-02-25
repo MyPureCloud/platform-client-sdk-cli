@@ -7,12 +7,31 @@ import (
 	"github.com/tidwall/pretty"
 	"io/ioutil"
 	"net/http"
+	"testing"
 )
 
-var swaggerURL = "https://api.mypurecloud.com/api/v2/docs/Swagger"
+var swaggerURL = "https://api.mypurecloud.com/api/v2/docs/swagger"
 
-func GetResourceDefinition(path string) (*models.Path, error) {
-	swaggerFile, err := DownloadFile(swaggerURL)
+func TestAgainstSwaggerDefinition(t *testing.T, command models.HandWrittenOperation) {
+	path, err := getResourceDefinition(command.Path)
+	if err != nil {
+		t.Fatalf("Received error getting path structure from swagger, err: %v", err)
+	}
+
+	method := path.GetMethod(command.Method)
+	if method == nil {
+		t.Fatalf("Failed to retrieve method definition from swagger")
+	}
+
+	if command.Description != "" {
+		if command.Description != method.Description {
+			t.Errorf("Description doesn't match swagger. got: %v, want :%v", command.Description, method.Description)
+		}
+	}
+}
+
+func getResourceDefinition(path string) (*models.Path, error) {
+	swaggerFile, err := downloadFile(swaggerURL)
 	if err != nil {
 		return nil, err
 	}
@@ -35,7 +54,7 @@ func GetResourceDefinition(path string) (*models.Path, error) {
 	return pathObject, nil
 }
 
-func DownloadFile(uri string) (string, error) {
+func downloadFile(uri string) (string, error) {
 	resp, err := http.Get(uri)
 	if err != nil {
 		return "", err

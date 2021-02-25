@@ -28,14 +28,32 @@ func init() {
 func Cmdcampaigns() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/campaigns", utils.FormatPermissions([]string{ "outbound:campaign:add",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Campaign&quot;
+  }
+}`)
 	campaignsCmd.AddCommand(createCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:delete",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Campaign&quot;
+  }
+}`)
 	campaignsCmd.AddCommand(deleteCmd)
 	
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:view",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Campaign&quot;
+  }
+}`)
 	campaignsCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size. The max that will be returned is 100.")
@@ -53,10 +71,22 @@ func Cmdcampaigns() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "Sort order Valid values: ascending, descending")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns", utils.FormatPermissions([]string{ "outbound:campaign:view",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/CampaignEntityListing&quot;
+  }
+}`)
 	campaignsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:edit",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Campaign&quot;
+  }
+}`)
 	campaignsCmd.AddCommand(updateCmd)
 	
 	return campaignsCmd
@@ -82,7 +112,7 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", "create", urlString, "/api/v2/outbound/campaigns")
+		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -119,7 +149,7 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", "delete", urlString, "/api/v2/outbound/campaigns/{campaignId}")
+		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -156,7 +186,7 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/outbound/campaigns/{campaignId}")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -243,7 +273,7 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/outbound/campaigns")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -280,7 +310,7 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", "update", urlString, "/api/v2/outbound/campaigns/{campaignId}")
+		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

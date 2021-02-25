@@ -2,9 +2,9 @@
 package queues
 
 import (
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/user_queues"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_queues"
 )
 
 func init() {
-	queuesCmd.AddCommand(user_queues.Cmduser_queues())
+	queuesCmd.AddCommand(users_queues.Cmdusers_queues())
 }

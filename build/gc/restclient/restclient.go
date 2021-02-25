@@ -87,7 +87,7 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
 	//User-Agent and SDK version headers
 	request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-	request.Header.Set("purecloud-sdk", "2.0.2")
+	request.Header.Set("purecloud-sdk", "3.0.0")
 
 	if data != "" {
 		request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
@@ -103,7 +103,9 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 		Client.RetryMax = retryConfiguration.RetryMax
 		if retryConfiguration.RequestLogHook == nil {
 			Client.RequestLogHook = func(_ retryablehttp.Logger, req *http.Request, retryNumber int) {
-				logger.Warnf("%v %v request failed. Retry count: %v\n", req.Method, req.URL, retryNumber)
+				if retryNumber > 1 {
+					logger.Warnf("%v %v request failed. Retry count: %v\n", req.Method, req.URL, retryNumber)
+				}
 			}
 		} else {
 			Client.RequestLogHook = func(_ retryablehttp.Logger, req *http.Request, retryNumber int) {
@@ -192,7 +194,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
 	//User-Agent and SDK version headers
 	request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-	request.Header.Set("purecloud-sdk", "2.0.2")
+	request.Header.Set("purecloud-sdk", "3.0.0")
 
 	//Setting up the form data
 	form := url.Values{}

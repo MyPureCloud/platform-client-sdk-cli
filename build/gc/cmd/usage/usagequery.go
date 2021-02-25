@@ -3,12 +3,13 @@ package usage
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"net/http"
 	"strings"
 	"time"
+
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 
 	"github.com/spf13/cobra"
 )
@@ -17,17 +18,17 @@ import (
 func init() {
 	queryUsageCmd.Flags().StringP("file", "f", "", "File name containing the JSON for creating a query")
 	queryUsageCmd.Flags().IntP("timeout", "t", 0, "Maximum time to wait for the results (X minutes) to complete.  The code will wait 5 seconds between each call")
-	
+
 	usageCmd.AddCommand(queryUsageCmd)
 }
 
 var (
-	usageQueryCommand = models.HandWrittenCommand{
-		Path: "/api/v2/usage/query",
+	usageQueryOperation = models.HandWrittenOperation{
+		Path:   "/api/v2/usage/query",
 		Method: http.MethodPost,
 	}
-	usageQueryResultsCommand = models.HandWrittenCommand{
-		Path: "/api/v2/usage/query/{executionId}/results",
+	usageQueryResultsOperation = models.HandWrittenOperation{
+		Path:   "/api/v2/usage/query/{executionId}/results",
 		Method: http.MethodGet,
 	}
 )
@@ -41,7 +42,7 @@ var queryUsageCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		timeout, _ := cmd.Flags().GetInt("timeout")
 
-		retryFunc := CommandService.DetermineAction(usageQueryCommand.Method, "", usageQueryCommand.Path, "")
+		retryFunc := CommandService.DetermineAction(usageQueryOperation.Method, usageQueryOperation.Path, nil)
 		results, err := retryFunc(nil)
 		if err != nil {
 			logger.Fatal(err)
@@ -58,9 +59,9 @@ var queryUsageCmd = &cobra.Command{
 			currentIteration := 1
 
 			for true {
-				path := usageQueryResultsCommand.Path
+				path := usageQueryResultsOperation.Path
 				targetURI := strings.Replace(path, "{executionId}", fmt.Sprintf("%v", usageSubmitResponse.ExecutionID), -1)
-				retryFunc := CommandService.DetermineAction(usageQueryResultsCommand.Method, "", targetURI, "")
+				retryFunc := CommandService.DetermineAction(usageQueryResultsOperation.Method, targetURI, nil)
 				rawData, commandErr := retryFunc(nil)
 				if commandErr != nil {
 					logger.Fatal(commandErr)

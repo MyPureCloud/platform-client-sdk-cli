@@ -28,14 +28,29 @@ func init() {
 func Cmdskills() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/skills", utils.FormatPermissions([]string{ "routing:skill:manage",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/RoutingSkill&quot;
+  }
+}`)
 	skillsCmd.AddCommand(createCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/skills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:manage",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+  &quot;description&quot; : &quot;Operation was successful.&quot;
+}`)
 	skillsCmd.AddCommand(deleteCmd)
 	
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/skills/{skillId}", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/RoutingSkill&quot;
+  }
+}`)
 	skillsCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
@@ -44,6 +59,12 @@ func Cmdskills() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/skills", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/SkillEntityListing&quot;
+  }
+}`)
 	skillsCmd.AddCommand(listCmd)
 	
 	return skillsCmd
@@ -69,7 +90,7 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", "create", urlString, "/api/v2/routing/skills")
+		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -106,7 +127,7 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", "delete", urlString, "/api/v2/routing/skills/{skillId}")
+		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -143,7 +164,7 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/routing/skills/{skillId}")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -194,7 +215,7 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/routing/skills")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

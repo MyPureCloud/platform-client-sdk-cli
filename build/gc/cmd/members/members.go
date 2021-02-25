@@ -32,11 +32,23 @@ func Cmdmembers() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/UserEntityListing&quot;
+  }
+}`)
 	membersCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(removeCmd.Flags(), "string", "ids", "", "Comma separated list of userIds to remove - REQUIRED")
 	removeCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", removeCmd.UsageTemplate(), "DELETE", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(removeCmd.Flags(), "DELETE")
+	utils.AddPaginateFlagsIfListingResponse(removeCmd.Flags(), "DELETE", `{
+  &quot;description&quot; : &quot;Success, group membership was updated&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Empty&quot;
+  }
+}`)
 	membersCmd.AddCommand(removeCmd)
 	
 	return membersCmd
@@ -80,7 +92,7 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/groups/{groupId}/members")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -121,7 +133,7 @@ var removeCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", "remove", urlString, "/api/v2/groups/{groupId}/members")
+		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

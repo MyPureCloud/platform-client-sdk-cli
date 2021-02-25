@@ -28,11 +28,23 @@ func init() {
 func Cmdroles() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/roles", utils.FormatPermissions([]string{ "authorization:role:add",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/DomainOrganizationRole&quot;
+  }
+}`)
 	rolesCmd.AddCommand(createCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role Valid values: unusedPermissions")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:view",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/DomainOrganizationRole&quot;
+  }
+}`)
 	rolesCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
@@ -48,14 +60,36 @@ func Cmdroles() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles", utils.FormatPermissions([]string{ "authorization:role:view",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/OrganizationRoleEntityListing&quot;
+  }
+}`)
 	rolesCmd.AddCommand(listCmd)
 	
 	removeCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", removeCmd.UsageTemplate(), "DELETE", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:delete",  })))
 	utils.AddFileFlagIfUpsert(removeCmd.Flags(), "DELETE")
+	utils.AddPaginateFlagsIfListingResponse(removeCmd.Flags(), "DELETE", `{
+  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  },
+  &quot;x-inin-error-codes&quot; : {
+    &quot;bad.request&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
+    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;
+  }
+}`)
 	rolesCmd.AddCommand(removeCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:edit",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/DomainOrganizationRole&quot;
+  }
+}`)
 	rolesCmd.AddCommand(updateCmd)
 	
 	return rolesCmd
@@ -81,7 +115,7 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", "create", urlString, "/api/v2/authorization/roles")
+		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -122,7 +156,7 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/authorization/roles/{roleId}")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -201,7 +235,7 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/authorization/roles")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -238,7 +272,7 @@ var removeCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", "remove", urlString, "/api/v2/authorization/roles/{roleId}")
+		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -275,7 +309,7 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", "update", urlString, "/api/v2/authorization/roles/{roleId}")
+		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

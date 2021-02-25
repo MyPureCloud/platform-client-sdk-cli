@@ -9,6 +9,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/spf13/pflag"
+
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
@@ -22,11 +24,12 @@ import (
 type CommandService interface {
 	Get(uri string) (string, error)
 	List(uri string) (string, error)
+	Stream(uri string) (string, error)
 	Post(uri string, payload string) (string, error)
 	Patch(uri string, payload string) (string, error)
 	Put(uri string, payload string) (string, error)
 	Delete(uri string) (string, error)
-	DetermineAction(httpMethod string, operationId string, uri string, originalURI string) func(retryConfiguration *retry.RetryConfiguration) (string, error)
+	DetermineAction(httpMethod string, uri string, flags *pflag.FlagSet) func(retryConfiguration *retry.RetryConfiguration) (string, error)
 }
 
 type commandService struct {
@@ -71,6 +74,53 @@ func (c *commandService) Get(uri string) (string, error) {
 	return c.Get(uri)
 }
 
+func (c *commandService) Stream(uri string) (string, error) {
+	profileName, _ := c.cmd.Root().Flags().GetString("profile")
+	config, err := configGetConfig(profileName)
+	if err != nil {
+		return "", err
+	}
+
+	restClient := restclientNewRESTClient(config)
+
+	//Looks up first page
+	data, err := restClient.Get(uri)
+	if err != nil {
+		err = reAuthenticateIfNecessary(config, err)
+		if err != nil {
+			return "", err
+		}
+		return c.Stream(uri)
+	}
+
+	utils.Render(data)
+
+	firstPage := &models.Entities{}
+	json.Unmarshal([]byte(data), firstPage)
+	if firstPage.PageCount == 1 || firstPage.PageNumber >= firstPage.PageCount {
+		return "", nil
+	}
+
+	pagedURI := uri
+	for x := firstPage.PageNumber + 1; x <= firstPage.PageCount; x++ {
+		pagedURI = updatePageNumber(pagedURI, x)
+		logger.Info("Paginating with URI: ", pagedURI)
+		retryFunc := retry.Retry(pagedURI, restClient.Get)
+		data, err = retryFunc(&retry.RetryConfiguration{
+			RetryWaitMax: 1000 * time.Second,
+			RetryWaitMin: 1000 * time.Second,
+			RetryMax:     100,
+		})
+		if err != nil {
+			return "", err
+		}
+
+		utils.Render(data)
+	}
+
+	return "", nil
+}
+
 func (c *commandService) List(uri string) (string, error) {
 	profileName, _ := c.cmd.Root().Flags().GetString("profile")
 	config, err := configGetConfig(profileName)
@@ -105,7 +155,7 @@ func (c *commandService) List(uri string) (string, error) {
 	//Looks up the rest of the pages
 	if firstPage.PageCount > 1 {
 		pagedURI := uri
-		for x := 2; x <= firstPage.PageCount; x++ {
+		for x := firstPage.PageNumber + 1; x <= firstPage.PageCount; x++ {
 			pagedURI = updatePageNumber(pagedURI, x)
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
@@ -237,21 +287,23 @@ func reAuthenticateIfNecessary(config config.Configuration, err error) error {
 	return nil
 }
 
-func (c *commandService) DetermineAction(httpMethod string, operationId string, uri string, originalURI string) func(retryConfiguration *retry.RetryConfiguration) (string, error) {
+func (c *commandService) DetermineAction(httpMethod string, uri string, flags *pflag.FlagSet) func(retryConfiguration *retry.RetryConfiguration) (string, error) {
 	switch httpMethod {
 	case http.MethodGet:
-		listOverrides := make(map[string]int)
-		// Overrides for resources with custom operationIds requiring pagination
-		listOverrides["/api/v2/groups/{groupId}/members"] = 1
-		listOverrides["/api/v2/routing/queues/{queueId}/users"] = 1
-		listOverrides["/api/v2/users/{userId}/queues"] = 1
-
-		_, ok := listOverrides[originalURI]
-		if operationId == "list" || ok {
-			return retry.Retry(uri, c.List)
-		} else {
+		if flags == nil {
 			return retry.Retry(uri, c.Get)
 		}
+		// These flags will be false if they're not available on the command (simple GETs) or if they haven't been set on a paginatable command
+		autoPaginate, _ := flags.GetBool("autopaginate")
+		stream, _ := flags.GetBool("stream")
+		if !autoPaginate && !stream {
+			return retry.Retry(uri, c.Get)
+		}
+		// Stream if the user just sets stream or stream and autopaginate
+		if stream {
+			return retry.Retry(uri, c.Stream)
+		}
+		return retry.Retry(uri, c.List)
 	case http.MethodPatch:
 		return retry.RetryWithData(uri, utils.ResolveInputData(c.cmd), c.Patch)
 	case http.MethodPost:

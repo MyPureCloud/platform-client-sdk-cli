@@ -30,6 +30,12 @@ func Cmdtopics() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "includePreview", "true", "Whether or not to include Preview topics")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/notifications/availabletopics", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/AvailableTopicEntityListing&quot;
+  }
+}`)
 	topicsCmd.AddCommand(listCmd)
 	
 	return topicsCmd
@@ -63,7 +69,7 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/notifications/availabletopics")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

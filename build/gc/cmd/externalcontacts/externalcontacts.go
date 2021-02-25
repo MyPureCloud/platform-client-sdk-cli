@@ -1,3 +1,4 @@
+
 package externalcontacts
 
 import (
@@ -6,8 +7,8 @@ import (
 
 var externalcontactsCmd = &cobra.Command{
 	Use:   "externalcontacts",
-	Short: "Manages Genesys Cloud external contacts",
-	Long:  `Manages Genesys Cloud external contacts`,
+	Short: "Manages Genesys Cloud externalcontacts",
+	Long:  `Manages Genesys Cloud externalcontacts`,
 }
 
 func Cmdexternalcontacts() *cobra.Command {

@@ -1,9 +1,10 @@
 Platform API version: 4480
 
 
-Adding /api/v2/responsemanagement/ APIs to the CLI
-Fixing bug in custom add groups members command due to using wrong API
-Adding progress indicator flag and documenting logging behaviour
+Changing pagination behaviour for the CLI:
+- The default behaviour is now to not paginate unless --autopaginate is set
+- Paginated results can be streamed with --stream
+- JSON schema of 200 response is used to determine if a resource is paginatable
 
 # Major Changes (0 changes)
 

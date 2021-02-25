@@ -1,4 +1,4 @@
-package skill
+package skills_users
 
 import (
 	"fmt"
@@ -13,47 +13,80 @@ import (
 )
 
 var (
-	skillCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("skill"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud skill"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud skill`),
+	skills_usersCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("skills_users"),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud skills_users"),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud skills_users`),
 	}
 	CommandService services.CommandService
 )
 
 func init() {
-	CommandService = services.NewCommandService(skillCmd)
+	CommandService = services.NewCommandService(skills_usersCmd)
 }
 
-func Cmdskill() *cobra.Command { 
+func Cmdskills_users() *cobra.Command { 
 	bulkremoveCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", bulkremoveCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
 	utils.AddFileFlagIfUpsert(bulkremoveCmd.Flags(), "PATCH")
-	skillCmd.AddCommand(bulkremoveCmd)
+	utils.AddPaginateFlagsIfListingResponse(bulkremoveCmd.Flags(), "PATCH", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/UserSkillEntityListing&quot;
+  }
+}`)
+	skills_usersCmd.AddCommand(bulkremoveCmd)
 	
 	bulkupdateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", bulkupdateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
 	utils.AddFileFlagIfUpsert(bulkupdateCmd.Flags(), "PUT")
-	skillCmd.AddCommand(bulkupdateCmd)
+	utils.AddPaginateFlagsIfListingResponse(bulkupdateCmd.Flags(), "PUT", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/UserSkillEntityListing&quot;
+  }
+}`)
+	skills_usersCmd.AddCommand(bulkupdateCmd)
 	
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/{userId}/routingskills", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
-	skillCmd.AddCommand(createCmd)
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/UserRoutingSkill&quot;
+  }
+}`)
+	skills_usersCmd.AddCommand(createCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}/routingskills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
-	skillCmd.AddCommand(deleteCmd)
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+  &quot;description&quot; : &quot;Operation was successful.&quot;
+}`)
+	skills_usersCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Ascending or descending sort order Valid values: ascending, descending")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/routingskills", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
-	skillCmd.AddCommand(listCmd)
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/UserSkillEntityListing&quot;
+  }
+}`)
+	skills_usersCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
-	skillCmd.AddCommand(updateCmd)
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/UserRoutingSkill&quot;
+  }
+}`)
+	skills_usersCmd.AddCommand(updateCmd)
 	
-	return skillCmd
+	return skills_usersCmd
 }
 
 var bulkremoveCmd = &cobra.Command{
@@ -78,7 +111,7 @@ var bulkremoveCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PATCH", "bulkremove", urlString, "/api/v2/users/{userId}/routingskills/bulk")
+		retryFunc := CommandService.DetermineAction("PATCH", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -115,7 +148,7 @@ var bulkupdateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", "bulkupdate", urlString, "/api/v2/users/{userId}/routingskills/bulk")
+		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -152,7 +185,7 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", "create", urlString, "/api/v2/users/{userId}/routingskills")
+		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -191,7 +224,7 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", "delete", urlString, "/api/v2/users/{userId}/routingskills/{skillId}")
+		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -240,7 +273,7 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/users/{userId}/routingskills")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -279,7 +312,7 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", "update", urlString, "/api/v2/users/{userId}/routingskills/{skillId}")
+		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

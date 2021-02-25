@@ -28,16 +28,31 @@ func init() {
 func Cmddivisions() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/divisions", utils.FormatPermissions([]string{ "authorization:division:add", "authorization:grant:add",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/AuthzDivision&quot;
+  }
+}`)
 	divisionsCmd.AddCommand(createCmd)
 	
 	utils.AddFlag(deleteCmd.Flags(), "bool", "force", "false", "Force delete this division as well as the grants and objects associated with it")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/authorization/divisions/{divisionId}", utils.FormatPermissions([]string{ "authorization:division:delete",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+  &quot;description&quot; : &quot;Deleted&quot;
+}`)
 	divisionsCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "bool", "objectCount", "false", "Get count of objects in this division, grouped by type")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/divisions/{divisionId}", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/AuthzDivision&quot;
+  }
+}`)
 	divisionsCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
@@ -51,10 +66,22 @@ func Cmddivisions() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Search term to filter by division name")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/authorization/divisions", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/AuthzDivisionEntityListing&quot;
+  }
+}`)
 	divisionsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/divisions/{divisionId}", utils.FormatPermissions([]string{ "authorization:division:edit",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/AuthzDivision&quot;
+  }
+}`)
 	divisionsCmd.AddCommand(updateCmd)
 	
 	return divisionsCmd
@@ -80,7 +107,7 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", "create", urlString, "/api/v2/authorization/divisions")
+		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -121,7 +148,7 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", "delete", urlString, "/api/v2/authorization/divisions/{divisionId}")
+		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -162,7 +189,7 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/authorization/divisions/{divisionId}")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -233,7 +260,7 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/authorization/divisions")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -270,7 +297,7 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", "update", urlString, "/api/v2/authorization/divisions/{divisionId}")
+		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

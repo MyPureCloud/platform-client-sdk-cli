@@ -29,15 +29,37 @@ func Cmdresponses() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: substitutionsSchema")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/responsemanagement/responses", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Response&quot;
+  }
+}`)
 	responsesCmd.AddCommand(createCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/responsemanagement/responses/{responseId}", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  },
+  &quot;x-inin-error-codes&quot; : {
+    &quot;bad.request&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
+    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;
+  }
+}`)
 	responsesCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: substitutionsSchema")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/responsemanagement/responses/{responseId}", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Response&quot;
+  }
+}`)
 	responsesCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "string", "libraryId", "", "Library ID - REQUIRED")
@@ -46,15 +68,33 @@ func Cmdresponses() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: substitutionsSchema")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/responsemanagement/responses", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/ResponseEntityListing&quot;
+  }
+}`)
 	responsesCmd.AddCommand(listCmd)
 	
 	searchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", searchCmd.UsageTemplate(), "POST", "/api/v2/responsemanagement/responses/query", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(searchCmd.Flags(), "POST")
+	utils.AddPaginateFlagsIfListingResponse(searchCmd.Flags(), "POST", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/ResponseQueryResults&quot;
+  }
+}`)
 	responsesCmd.AddCommand(searchCmd)
 	
 	utils.AddFlag(updateCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: substitutionsSchema")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/responsemanagement/responses/{responseId}", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Response&quot;
+  }
+}`)
 	responsesCmd.AddCommand(updateCmd)
 	
 	return responsesCmd
@@ -84,7 +124,7 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", "create", urlString, "/api/v2/responsemanagement/responses")
+		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -121,7 +161,7 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", "delete", urlString, "/api/v2/responsemanagement/responses/{responseId}")
+		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -162,7 +202,7 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/responsemanagement/responses/{responseId}")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -213,7 +253,7 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "list", urlString, "/api/v2/responsemanagement/responses")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -248,7 +288,7 @@ var searchCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", "search", urlString, "/api/v2/responsemanagement/responses/query")
+		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -289,7 +329,7 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", "update", urlString, "/api/v2/responsemanagement/responses/{responseId}")
+		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

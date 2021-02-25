@@ -5,13 +5,14 @@ import (
 	"bytes"
 	"crypto/rand"
 	"fmt"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
@@ -46,6 +47,13 @@ func AddFileFlagIfUpsert(flags *pflag.FlagSet, method string) {
 	}
 }
 
+func AddPaginateFlagsIfListingResponse(flags *pflag.FlagSet, method, jsonSchema string) {
+	if method == http.MethodGet && strings.Contains(jsonSchema, "Listing") {
+		flags.BoolP("autopaginate", "a", false, "Automatically paginate through the results stripping page information")
+		flags.BoolP("stream", "s", false, "Paginate and stream data as it is being processed leaving page information intact")
+	}
+}
+
 func GetFlag(flags *pflag.FlagSet, paramType string, name string) string {
 	flag := ""
 	switch paramType {
@@ -69,17 +77,6 @@ func GetFlag(flags *pflag.FlagSet, paramType string, name string) string {
 func FormatUsageDescription(message string) string {
 	message = strings.Split(message, "_")[0]
 
-	notPluralCommands := make([]string, 0)
-	notPluralCommands = append(notPluralCommands, "usage")
-	for _, command := range notPluralCommands {
-		if strings.HasSuffix(message, command) {
-			return message
-		}
-	}
-	if !strings.HasSuffix(message, "s") {
-		return fmt.Sprintf("%v%v", message, "s")
-	}
-	
 	return message
 }
 
@@ -92,7 +89,7 @@ func FormatPermissions(permissions []string) string {
 	for _, permission := range permissions {
 		permissionString = fmt.Sprintf("%s  %s\n", permissionString, permission)
 	}
-	
+
 	return permissionString
 }
 

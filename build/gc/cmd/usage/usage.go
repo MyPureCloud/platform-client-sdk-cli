@@ -28,6 +28,12 @@ func init() {
 func Cmdusage() *cobra.Command { 
 	resultsCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", resultsCmd.UsageTemplate(), "GET", "/api/v2/usage/query/{executionId}/results", utils.FormatPermissions([]string{ "oauth:client:view",  })))
 	utils.AddFileFlagIfUpsert(resultsCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(resultsCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/ApiUsageQueryResult&quot;
+  }
+}`)
 	usageCmd.AddCommand(resultsCmd)
 	
 	return usageCmd
@@ -55,7 +61,7 @@ var resultsCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "results", urlString, "/api/v2/usage/query/{executionId}/results")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

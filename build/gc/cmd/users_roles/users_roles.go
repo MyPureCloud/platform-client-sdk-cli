@@ -1,4 +1,4 @@
-package user_roles
+package users_roles
 
 import (
 	"fmt"
@@ -13,34 +13,58 @@ import (
 )
 
 var (
-	user_rolesCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("user_roles"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud user_roles"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud user_roles`),
+	users_rolesCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("users_roles"),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud users_roles"),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud users_roles`),
 	}
 	CommandService services.CommandService
 )
 
 func init() {
-	CommandService = services.NewCommandService(user_rolesCmd)
+	CommandService = services.NewCommandService(users_rolesCmd)
 }
 
-func Cmduser_roles() *cobra.Command { 
+func Cmdusers_roles() *cobra.Command { 
 	addCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", addCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/{roleId}/users/add", utils.FormatPermissions([]string{ "authorization:grant:add",  })))
 	utils.AddFileFlagIfUpsert(addCmd.Flags(), "PUT")
-	user_rolesCmd.AddCommand(addCmd)
+	utils.AddPaginateFlagsIfListingResponse(addCmd.Flags(), "PUT", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;type&quot; : &quot;array&quot;,
+    &quot;items&quot; : {
+      &quot;type&quot; : &quot;string&quot;
+    }
+  }
+}`)
+	users_rolesCmd.AddCommand(addCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/{roleId}/users/remove", utils.FormatPermissions([]string{ "authorization:grant:delete",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "PUT")
-	user_rolesCmd.AddCommand(deleteCmd)
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "PUT", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;type&quot; : &quot;array&quot;,
+    &quot;items&quot; : {
+      &quot;type&quot; : &quot;string&quot;
+    }
+  }
+}`)
+	users_rolesCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(getCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles/{roleId}/users", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
-	user_rolesCmd.AddCommand(getCmd)
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/UserEntityListing&quot;
+  }
+}`)
+	users_rolesCmd.AddCommand(getCmd)
 	
-	return user_rolesCmd
+	return users_rolesCmd
 }
 
 var addCmd = &cobra.Command{
@@ -65,7 +89,7 @@ var addCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", "add", urlString, "/api/v2/authorization/roles/{roleId}/users/add")
+		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -102,7 +126,7 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", "delete", urlString, "/api/v2/authorization/roles/{roleId}/users/remove")
+		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -147,7 +171,7 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/authorization/roles/{roleId}/users")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

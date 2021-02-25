@@ -28,22 +28,46 @@ func init() {
 func Cmdorganizations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/organizations", utils.FormatPermissions([]string{ "relate:externalOrganization:add", "externalContacts:externalOrganization:add",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/ExternalOrganization&quot;
+  }
+}`)
 	organizationsCmd.AddCommand(createCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/externalcontacts/organizations/{externalOrganizationId}", utils.FormatPermissions([]string{ "relate:externalOrganization:delete", "externalContacts:externalOrganization:delete",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Empty&quot;
+  }
+}`)
 	organizationsCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "which fields, if any, to expand (externalDataSources) Valid values: externalDataSources")
 	utils.AddFlag(getCmd.Flags(), "bool", "includeTrustors", "", "(true or false) whether or not to include trustor information embedded in the externalOrganization")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/organizations/{externalOrganizationId}", utils.FormatPermissions([]string{ "relate:externalOrganization:view", "externalContacts:externalOrganization:view",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/ExternalOrganization&quot;
+  }
+}`)
 	organizationsCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(scanCmd.Flags(), "int", "limit", "", "The number of organizations per page; must be between 10 and 200, default is 100)")
 	utils.AddFlag(scanCmd.Flags(), "string", "cursor", "", "Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL")
 	scanCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", scanCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/scan/organizations", utils.FormatPermissions([]string{ "externalContacts:externalOrganization:view",  })))
 	utils.AddFileFlagIfUpsert(scanCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(scanCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/CursorOrganizationListing&quot;
+  }
+}`)
 	organizationsCmd.AddCommand(scanCmd)
 	
 	utils.AddFlag(searchCmd.Flags(), "int", "pageSize", "20", "Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000)")
@@ -55,10 +79,22 @@ func Cmdorganizations() *cobra.Command {
 	utils.AddFlag(searchCmd.Flags(), "bool", "includeTrustors", "", "(true or false) whether or not to include trustor information embedded in the externalOrganization")
 	searchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", searchCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/organizations", utils.FormatPermissions([]string{ "relate:externalOrganization:view", "externalContacts:externalOrganization:view",  })))
 	utils.AddFileFlagIfUpsert(searchCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(searchCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/ExternalOrganizationListing&quot;
+  }
+}`)
 	organizationsCmd.AddCommand(searchCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/externalcontacts/organizations/{externalOrganizationId}", utils.FormatPermissions([]string{ "relate:externalOrganization:edit", "externalContacts:externalOrganization:edit",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/ExternalOrganization&quot;
+  }
+}`)
 	organizationsCmd.AddCommand(updateCmd)
 	
 	return organizationsCmd
@@ -84,7 +120,7 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", "create", urlString, "/api/v2/externalcontacts/organizations")
+		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -121,7 +157,7 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", "delete", urlString, "/api/v2/externalcontacts/organizations/{externalOrganizationId}")
+		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -166,7 +202,7 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/externalcontacts/organizations/{externalOrganizationId}")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -209,7 +245,7 @@ var scanCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "scan", urlString, "/api/v2/externalcontacts/scan/organizations")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -272,7 +308,7 @@ var searchCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "search", urlString, "/api/v2/externalcontacts/organizations")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -309,7 +345,7 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", "update", urlString, "/api/v2/externalcontacts/organizations/{externalOrganizationId}")
+		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

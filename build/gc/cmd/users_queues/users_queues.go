@@ -1,4 +1,4 @@
-package user_queues
+package users_queues
 
 import (
 	"fmt"
@@ -13,26 +13,35 @@ import (
 )
 
 var (
-	user_queuesCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("user_queues"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud user_queues"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud user_queues`),
+	users_queuesCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("users_queues"),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud users_queues"),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud users_queues`),
 	}
 	CommandService services.CommandService
 )
 
 func init() {
-	CommandService = services.NewCommandService(user_queuesCmd)
+	CommandService = services.NewCommandService(users_queuesCmd)
 }
 
-func Cmduser_queues() *cobra.Command { 
+func Cmdusers_queues() *cobra.Command { 
 	activateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", activateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(activateCmd.Flags(), "PATCH")
-	user_queuesCmd.AddCommand(activateCmd)
+	utils.AddPaginateFlagsIfListingResponse(activateCmd.Flags(), "PATCH", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/QueueMemberEntityListing&quot;
+  }
+}`)
+	users_queuesCmd.AddCommand(activateCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/queues/{queueId}/users/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
-	user_queuesCmd.AddCommand(deleteCmd)
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+  &quot;description&quot; : &quot;Operation was successful.&quot;
+}`)
+	users_queuesCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "int", "pageSize", "25", "Page size [max 100]")
 	utils.AddFlag(getCmd.Flags(), "int", "pageNumber", "1", "Page number")
@@ -47,18 +56,36 @@ func Cmduser_queues() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "[]string", "presence", "", "Filter by presence")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:view", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
-	user_queuesCmd.AddCommand(getCmd)
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/QueueMemberEntityListing&quot;
+  }
+}`)
+	users_queuesCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(moveCmd.Flags(), "bool", "delete", "false", "True to delete queue members")
 	moveCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", moveCmd.UsageTemplate(), "POST", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(moveCmd.Flags(), "POST")
-	user_queuesCmd.AddCommand(moveCmd)
+	utils.AddPaginateFlagsIfListingResponse(moveCmd.Flags(), "POST", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;type&quot; : &quot;string&quot;
+  }
+}`)
+	users_queuesCmd.AddCommand(moveCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/users/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH")
-	user_queuesCmd.AddCommand(updateCmd)
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/QueueMember&quot;
+  }
+}`)
+	users_queuesCmd.AddCommand(updateCmd)
 	
-	return user_queuesCmd
+	return users_queuesCmd
 }
 
 var activateCmd = &cobra.Command{
@@ -83,7 +110,7 @@ var activateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PATCH", "activate", urlString, "/api/v2/routing/queues/{queueId}/users")
+		retryFunc := CommandService.DetermineAction("PATCH", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -122,7 +149,7 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", "delete", urlString, "/api/v2/routing/queues/{queueId}/users/{memberId}")
+		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -203,7 +230,7 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", "get", urlString, "/api/v2/routing/queues/{queueId}/users")
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -244,7 +271,7 @@ var moveCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", "move", urlString, "/api/v2/routing/queues/{queueId}/users")
+		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -283,7 +310,7 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PATCH", "update", urlString, "/api/v2/routing/queues/{queueId}/users/{memberId}")
+		retryFunc := CommandService.DetermineAction("PATCH", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

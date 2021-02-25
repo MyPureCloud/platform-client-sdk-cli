@@ -1,10 +1,7 @@
 Platform API version: 4480
 
 
-Changing pagination behaviour for the CLI:
-- The default behaviour is now to not paginate unless --autopaginate is set
-- Paginated results can be streamed with --stream
-- JSON schema of 200 response is used to determine if a resource is paginatable
+Refactored the gc groups members command to have a list command.  This command originally mapped to a get 
 
 # Major Changes (0 changes)
 

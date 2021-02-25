@@ -26,19 +26,19 @@ func init() {
 }
 
 func Cmdmembers() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "int", "pageSize", "25", "Page size")
-	utils.AddFlag(getCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(getCmd.Flags(), "string", "sortOrder", "ASC", "Ascending or descending sort order Valid values: ascending, descending")
-	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
-	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
+	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Ascending or descending sort order Valid values: ascending, descending")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography")
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
     &quot;$ref&quot; : &quot;#/definitions/UserEntityListing&quot;
   }
 }`)
-	membersCmd.AddCommand(getCmd)
+	membersCmd.AddCommand(listCmd)
 	
 	utils.AddFlag(removeCmd.Flags(), "string", "ids", "", "Comma separated list of userIds to remove - REQUIRED")
 	removeCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", removeCmd.UsageTemplate(), "DELETE", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
@@ -54,8 +54,8 @@ func Cmdmembers() *cobra.Command {
 	return membersCmd
 }
 
-var getCmd = &cobra.Command{
-	Use:   "get [groupId]",
+var listCmd = &cobra.Command{
+	Use:   "list [groupId]",
 	Short: "Get group members, includes individuals, owners, and dynamically included people",
 	Long:  `Get group members, includes individuals, owners, and dynamically included people`,
 	Args:  utils.DetermineArgs([]string{ "groupId", }),

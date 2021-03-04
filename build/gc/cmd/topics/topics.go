@@ -26,7 +26,7 @@ func init() {
 }
 
 func Cmdtopics() *cobra.Command { 
-	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: description, requiresPermissions, enforced, schema, visibility, transports, publicApiTemplateUriPaths")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: description, enforced, schema, visibility, transports, publicApiTemplateUriPaths, requiresPermissions, permissionDetails")
 	utils.AddFlag(listCmd.Flags(), "bool", "includePreview", "true", "Whether or not to include Preview topics")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/notifications/availabletopics", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")

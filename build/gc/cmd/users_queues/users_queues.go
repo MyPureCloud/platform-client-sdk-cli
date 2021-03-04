@@ -68,9 +68,16 @@ func Cmdusers_queues() *cobra.Command {
 	moveCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", moveCmd.UsageTemplate(), "POST", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(moveCmd.Flags(), "POST")
 	utils.AddPaginateFlagsIfListingResponse(moveCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
   &quot;schema&quot; : {
-    &quot;type&quot; : &quot;string&quot;
+    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  },
+  &quot;x-inin-error-codes&quot; : {
+    &quot;bad.request&quot; : &quot;Invalid request data.  Make sure you submit a valid number of queue members.&quot;,
+    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;,
+    &quot;invalid.date&quot; : &quot;Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ&quot;,
+    &quot;queue.size.limit&quot; : &quot;Adding all requested members would exceed queue member limit.&quot;,
+    &quot;invalid.value&quot; : &quot;Value [%s] is not valid for field type [%s]. Allowable values are: %s&quot;
   }
 }`)
 	users_queuesCmd.AddCommand(moveCmd)

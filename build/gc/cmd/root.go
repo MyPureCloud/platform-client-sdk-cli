@@ -22,9 +22,9 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/usage"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemgt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemgt"
 	"os"
 )
 
@@ -45,7 +45,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("3.1.0")
+		fmt.Println("4.0.0")
 	},
 }
 
@@ -92,9 +92,9 @@ func init() {
 	rootCmd.AddCommand(usage.Cmdusage())
 	rootCmd.AddCommand(users.Cmdusers())
 	rootCmd.AddCommand(profiles.Cmdprofiles())
-	rootCmd.AddCommand(responsemgt.Cmdresponsemgt())
 	rootCmd.AddCommand(notifications.Cmdnotifications())
 	rootCmd.AddCommand(externalcontacts.Cmdexternalcontacts())
+	rootCmd.AddCommand(responsemgt.Cmdresponsemgt())
 
 	if os.Getenv("GenerateGcDocs") != "" {
 		if _, err := os.Stat("/tmp/gc_docs"); os.IsNotExist(err) {

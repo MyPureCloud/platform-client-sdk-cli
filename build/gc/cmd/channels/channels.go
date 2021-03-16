@@ -27,7 +27,7 @@ func init() {
 
 func Cmdchannels() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/notifications/channels", utils.FormatPermissions([]string{  })))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -38,7 +38,7 @@ func Cmdchannels() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "string", "includechannels", "token", "Show user`s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. Valid values: token, oauthclient")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/notifications/channels", utils.FormatPermissions([]string{  })))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

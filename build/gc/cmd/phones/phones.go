@@ -27,7 +27,15 @@ func init() {
 
 func Cmdphones() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/phones", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Phone&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Phone&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -37,14 +45,14 @@ func Cmdphones() *cobra.Command {
 	phonesCmd.AddCommand(createCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/telephony/providers/edges/phones/{phoneId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;Operation was successful.&quot;
 }`)
 	phonesCmd.AddCommand(deleteCmd)
 	
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/phones/{phoneId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -69,7 +77,7 @@ func Cmdphones() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in the response, comma-separated Valid values: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines")
 	utils.AddFlag(listCmd.Flags(), "[]string", "fields", "", "Fields and properties to get, comma-separated Valid values: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/phones", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -79,7 +87,7 @@ func Cmdphones() *cobra.Command {
 	phonesCmd.AddCommand(listCmd)
 	
 	rebootCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", rebootCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/phones/{phoneId}/reboot", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(rebootCmd.Flags(), "POST")
+	utils.AddFileFlagIfUpsert(rebootCmd.Flags(), "POST", ``)
 	utils.AddPaginateFlagsIfListingResponse(rebootCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
   &quot;schema&quot; : {
@@ -95,7 +103,15 @@ func Cmdphones() *cobra.Command {
 	phonesCmd.AddCommand(rebootCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/phones/{phoneId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Phone&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Phone&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

@@ -27,7 +27,18 @@ func init() {
 
 func Cmdskills_users() *cobra.Command { 
 	bulkremoveCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", bulkremoveCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
-	utils.AddFileFlagIfUpsert(bulkremoveCmd.Flags(), "PATCH")
+	utils.AddFileFlagIfUpsert(bulkremoveCmd.Flags(), "PATCH", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Skill&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;type&quot; : &quot;array&quot;,
+    &quot;items&quot; : {
+      &quot;$ref&quot; : &quot;#/definitions/UserRoutingSkillPost&quot;
+    }
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(bulkremoveCmd.Flags(), "PATCH", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -37,7 +48,18 @@ func Cmdskills_users() *cobra.Command {
 	skills_usersCmd.AddCommand(bulkremoveCmd)
 	
 	bulkupdateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", bulkupdateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
-	utils.AddFileFlagIfUpsert(bulkupdateCmd.Flags(), "PUT")
+	utils.AddFileFlagIfUpsert(bulkupdateCmd.Flags(), "PUT", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Skill&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;type&quot; : &quot;array&quot;,
+    &quot;items&quot; : {
+      &quot;$ref&quot; : &quot;#/definitions/UserRoutingSkillPost&quot;
+    }
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(bulkupdateCmd.Flags(), "PUT", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -47,7 +69,15 @@ func Cmdskills_users() *cobra.Command {
 	skills_usersCmd.AddCommand(bulkupdateCmd)
 	
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/{userId}/routingskills", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Skill&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/UserRoutingSkillPost&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -57,7 +87,7 @@ func Cmdskills_users() *cobra.Command {
 	skills_usersCmd.AddCommand(createCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}/routingskills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;Operation was successful.&quot;
 }`)
@@ -67,7 +97,7 @@ func Cmdskills_users() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Ascending or descending sort order Valid values: ascending, descending")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/routingskills", utils.FormatPermissions([]string{  })))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -77,7 +107,15 @@ func Cmdskills_users() *cobra.Command {
 	skills_usersCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Skill&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/UserRoutingSkill&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

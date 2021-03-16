@@ -27,7 +27,15 @@ func init() {
 
 func Cmdqueues() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/queues", utils.FormatPermissions([]string{ "routing:queue:add",  })))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Queue&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/CreateQueueRequest&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -38,7 +46,7 @@ func Cmdqueues() *cobra.Command {
 	
 	utils.AddFlag(deleteCmd.Flags(), "bool", "forceDelete", "", "forceDelete")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:delete",  })))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;Operation was successful.&quot;
 }`)
@@ -46,7 +54,7 @@ func Cmdqueues() *cobra.Command {
 	
 	utils.AddFlag(estimatedwaitCmd.Flags(), "string", "conversationId", "", "conversationId")
 	estimatedwaitCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", estimatedwaitCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/estimatedwaittime", utils.FormatPermissions([]string{ "routing:queue:view",  })))
-	utils.AddFileFlagIfUpsert(estimatedwaitCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(estimatedwaitCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(estimatedwaitCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -56,7 +64,7 @@ func Cmdqueues() *cobra.Command {
 	queuesCmd.AddCommand(estimatedwaitCmd)
 	
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:view",  })))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -72,7 +80,7 @@ func Cmdqueues() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "ID(s)")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues", utils.FormatPermissions([]string{ "routing:queue:view",  })))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -82,7 +90,15 @@ func Cmdqueues() *cobra.Command {
 	queuesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:edit",  })))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Queue&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/QueueRequest&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

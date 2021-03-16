@@ -36,14 +36,17 @@ func AddFlag(flags *pflag.FlagSet, paramType string, name string, value string, 
 	}
 }
 
-func AddFileFlagIfUpsert(flags *pflag.FlagSet, method string) {
+func AddFileFlagIfUpsert(flags *pflag.FlagSet, method string, jsonSchema string) {
+	if jsonSchema == "" {
+		return
+	}
 	switch method {
 	case http.MethodPatch:
 		fallthrough
 	case http.MethodPost:
 		fallthrough
 	case http.MethodPut:
-		flags.StringP("file", "f", "", "File name containing the JSON for creating a user object")
+		flags.StringP("file", "f", "", "File name containing the JSON for creating an object")
 	}
 }
 

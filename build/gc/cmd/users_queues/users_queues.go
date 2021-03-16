@@ -27,7 +27,18 @@ func init() {
 
 func Cmdusers_queues() *cobra.Command { 
 	activateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", activateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
-	utils.AddFileFlagIfUpsert(activateCmd.Flags(), "PATCH")
+	utils.AddFileFlagIfUpsert(activateCmd.Flags(), "PATCH", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Queue Members&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;type&quot; : &quot;array&quot;,
+    &quot;items&quot; : {
+      &quot;$ref&quot; : &quot;#/definitions/QueueMember&quot;
+    }
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(activateCmd.Flags(), "PATCH", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -37,7 +48,7 @@ func Cmdusers_queues() *cobra.Command {
 	users_queuesCmd.AddCommand(activateCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/queues/{queueId}/users/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;Operation was successful.&quot;
 }`)
@@ -55,7 +66,7 @@ func Cmdusers_queues() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "[]string", "routingStatus", "", "Filter by routing status")
 	utils.AddFlag(getCmd.Flags(), "[]string", "presence", "", "Filter by presence")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:view", "routing:queueMember:manage",  })))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -66,7 +77,18 @@ func Cmdusers_queues() *cobra.Command {
 	
 	utils.AddFlag(moveCmd.Flags(), "bool", "delete", "false", "True to delete queue members")
 	moveCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", moveCmd.UsageTemplate(), "POST", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
-	utils.AddFileFlagIfUpsert(moveCmd.Flags(), "POST")
+	utils.AddFileFlagIfUpsert(moveCmd.Flags(), "POST", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Queue Members&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;type&quot; : &quot;array&quot;,
+    &quot;items&quot; : {
+      &quot;$ref&quot; : &quot;#/definitions/WritableEntity&quot;
+    }
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(moveCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
   &quot;schema&quot; : {
@@ -83,7 +105,15 @@ func Cmdusers_queues() *cobra.Command {
 	users_queuesCmd.AddCommand(moveCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/users/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH")
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Queue Member&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/QueueMember&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

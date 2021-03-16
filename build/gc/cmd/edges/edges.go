@@ -27,7 +27,15 @@ func init() {
 
 func Cmdedges() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Edge&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Edge&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -37,7 +45,7 @@ func Cmdedges() *cobra.Command {
 	edgesCmd.AddCommand(createCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/telephony/providers/edges/{edgeId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;Operation was successful.&quot;
 }`)
@@ -45,7 +53,7 @@ func Cmdedges() *cobra.Command {
 	
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Fields to expand in the response, comma-separated Valid values: site")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -62,7 +70,7 @@ func Cmdedges() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "bool", "managed", "", "Filter by managed")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -72,7 +80,15 @@ func Cmdedges() *cobra.Command {
 	edgesCmd.AddCommand(listCmd)
 	
 	rebootCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", rebootCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/{edgeId}/reboot", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(rebootCmd.Flags(), "POST")
+	utils.AddFileFlagIfUpsert(rebootCmd.Flags(), "POST", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Parameters for the edge reboot&quot;,
+  &quot;required&quot; : false,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/EdgeRebootParameters&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(rebootCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -82,7 +98,15 @@ func Cmdedges() *cobra.Command {
 	edgesCmd.AddCommand(rebootCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/{edgeId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Edge&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Edge&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

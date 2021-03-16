@@ -27,7 +27,15 @@ func init() {
 
 func Cmdgroups() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/groups", utils.FormatPermissions([]string{ "directory:group:add",  })))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Group&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/GroupCreate&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -37,7 +45,7 @@ func Cmdgroups() *cobra.Command {
 	groupsCmd.AddCommand(createCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/groups/{groupId}", utils.FormatPermissions([]string{ "directory:group:delete",  })))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
   &quot;schema&quot; : {
@@ -51,7 +59,7 @@ func Cmdgroups() *cobra.Command {
 	groupsCmd.AddCommand(deleteCmd)
 	
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/groups/{groupId}", utils.FormatPermissions([]string{  })))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -66,7 +74,7 @@ func Cmdgroups() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "jabberId", "", "A list of jabberIds to fetch by bulk (cannot be used with the id parameter)")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Ascending or descending sort order Valid values: ascending, descending")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/groups", utils.FormatPermissions([]string{  })))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -76,7 +84,15 @@ func Cmdgroups() *cobra.Command {
 	groupsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/groups/{groupId}", utils.FormatPermissions([]string{ "directory:group:edit",  })))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Group&quot;,
+  &quot;required&quot; : false,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/GroupUpdate&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

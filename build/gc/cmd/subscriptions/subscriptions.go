@@ -27,7 +27,7 @@ func init() {
 
 func Cmdsubscriptions() *cobra.Command { 
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/notifications/channels/{channelId}/subscriptions", utils.FormatPermissions([]string{  })))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
   &quot;schema&quot; : {
@@ -41,7 +41,7 @@ func Cmdsubscriptions() *cobra.Command {
 	subscriptionsCmd.AddCommand(deleteCmd)
 	
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/notifications/channels/{channelId}/subscriptions", utils.FormatPermissions([]string{  })))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -51,7 +51,18 @@ func Cmdsubscriptions() *cobra.Command {
 	subscriptionsCmd.AddCommand(listCmd)
 	
 	subscribeCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", subscribeCmd.UsageTemplate(), "POST", "/api/v2/notifications/channels/{channelId}/subscriptions", utils.FormatPermissions([]string{  })))
-	utils.AddFileFlagIfUpsert(subscribeCmd.Flags(), "POST")
+	utils.AddFileFlagIfUpsert(subscribeCmd.Flags(), "POST", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Body&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;type&quot; : &quot;array&quot;,
+    &quot;items&quot; : {
+      &quot;$ref&quot; : &quot;#/definitions/ChannelTopic&quot;
+    }
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(subscribeCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

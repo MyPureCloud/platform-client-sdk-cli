@@ -27,7 +27,15 @@ func init() {
 
 func Cmdorganizations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/organizations", utils.FormatPermissions([]string{ "relate:externalOrganization:add", "externalContacts:externalOrganization:add",  })))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;ExternalOrganization&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/ExternalOrganization&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -37,7 +45,7 @@ func Cmdorganizations() *cobra.Command {
 	organizationsCmd.AddCommand(createCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/externalcontacts/organizations/{externalOrganizationId}", utils.FormatPermissions([]string{ "relate:externalOrganization:delete", "externalContacts:externalOrganization:delete",  })))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -49,7 +57,7 @@ func Cmdorganizations() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "which fields, if any, to expand (externalDataSources) Valid values: externalDataSources")
 	utils.AddFlag(getCmd.Flags(), "bool", "includeTrustors", "", "(true or false) whether or not to include trustor information embedded in the externalOrganization")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/organizations/{externalOrganizationId}", utils.FormatPermissions([]string{ "relate:externalOrganization:view", "externalContacts:externalOrganization:view",  })))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -61,7 +69,7 @@ func Cmdorganizations() *cobra.Command {
 	utils.AddFlag(scanCmd.Flags(), "int", "limit", "", "The number of organizations per page; must be between 10 and 200, default is 100)")
 	utils.AddFlag(scanCmd.Flags(), "string", "cursor", "", "Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL")
 	scanCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", scanCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/scan/organizations", utils.FormatPermissions([]string{ "externalContacts:externalOrganization:view",  })))
-	utils.AddFileFlagIfUpsert(scanCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(scanCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(scanCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -78,7 +86,7 @@ func Cmdorganizations() *cobra.Command {
 	utils.AddFlag(searchCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: externalDataSources")
 	utils.AddFlag(searchCmd.Flags(), "bool", "includeTrustors", "", "(true or false) whether or not to include trustor information embedded in the externalOrganization")
 	searchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", searchCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/organizations", utils.FormatPermissions([]string{ "relate:externalOrganization:view", "externalContacts:externalOrganization:view",  })))
-	utils.AddFileFlagIfUpsert(searchCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(searchCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(searchCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -88,7 +96,15 @@ func Cmdorganizations() *cobra.Command {
 	organizationsCmd.AddCommand(searchCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/externalcontacts/organizations/{externalOrganizationId}", utils.FormatPermissions([]string{ "relate:externalOrganization:edit", "externalContacts:externalOrganization:edit",  })))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT")
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;ExternalOrganization&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/ExternalOrganization&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

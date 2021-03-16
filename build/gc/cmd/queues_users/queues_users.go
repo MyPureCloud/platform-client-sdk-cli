@@ -31,7 +31,7 @@ func Cmdqueues_users() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "bool", "joined", "true", "Is joined to the queue")
 	utils.AddFlag(getCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/queues", utils.FormatPermissions([]string{ "routing:queue:view", "routing:queue:join", "routing:queueMember:manage",  })))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -41,7 +41,15 @@ func Cmdqueues_users() *cobra.Command {
 	queues_usersCmd.AddCommand(getCmd)
 	
 	joinCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", joinCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:join", "routing:queueMember:manage",  })))
-	utils.AddFileFlagIfUpsert(joinCmd.Flags(), "PATCH")
+	utils.AddFileFlagIfUpsert(joinCmd.Flags(), "PATCH", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;Queue Member&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/UserQueue&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(joinCmd.Flags(), "PATCH", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -52,7 +60,18 @@ func Cmdqueues_users() *cobra.Command {
 	
 	utils.AddFlag(joinsetCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
 	joinsetCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", joinsetCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/queues", utils.FormatPermissions([]string{ "routing:queue:join", "routing:queueMember:manage",  })))
-	utils.AddFileFlagIfUpsert(joinsetCmd.Flags(), "PATCH")
+	utils.AddFileFlagIfUpsert(joinsetCmd.Flags(), "PATCH", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;User Queues&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;type&quot; : &quot;array&quot;,
+    &quot;items&quot; : {
+      &quot;$ref&quot; : &quot;#/definitions/UserQueue&quot;
+    }
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(joinsetCmd.Flags(), "PATCH", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

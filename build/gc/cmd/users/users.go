@@ -27,7 +27,15 @@ func init() {
 
 func Cmdusers() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users", utils.FormatPermissions([]string{ "directory:user:add",  })))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST")
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;User&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/CreateUser&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -37,7 +45,7 @@ func Cmdusers() *cobra.Command {
 	usersCmd.AddCommand(createCmd)
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}", utils.FormatPermissions([]string{ "directory:user:delete",  })))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE")
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -50,7 +58,7 @@ func Cmdusers() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "string", "integrationPresenceSource", "", "Gets an integration presence for a user instead of their default. Valid values: MicrosoftTeams, ZoomPhone, RingCentral")
 	utils.AddFlag(getCmd.Flags(), "string", "state", "active", "Search for a user with this state Valid values: active, deleted")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}", utils.FormatPermissions([]string{  })))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -68,7 +76,7 @@ func Cmdusers() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "integrationPresenceSource", "", "Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 10. Valid values: MicrosoftTeams, ZoomPhone, RingCentral")
 	utils.AddFlag(listCmd.Flags(), "string", "state", "active", "Only list users of this state Valid values: active, inactive, deleted, any")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users", utils.FormatPermissions([]string{  })))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -78,7 +86,15 @@ func Cmdusers() *cobra.Command {
 	usersCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}", utils.FormatPermissions([]string{ "directory:user:edit",  })))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH")
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;description&quot; : &quot;User&quot;,
+  &quot;required&quot; : true,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/UpdateUser&quot;
+  }
+}`)
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

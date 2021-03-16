@@ -27,7 +27,7 @@ func init() {
 
 func Cmdusage() *cobra.Command { 
 	resultsCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", resultsCmd.UsageTemplate(), "GET", "/api/v2/usage/query/{executionId}/results", utils.FormatPermissions([]string{ "oauth:client:view",  })))
-	utils.AddFileFlagIfUpsert(resultsCmd.Flags(), "GET")
+	utils.AddFileFlagIfUpsert(resultsCmd.Flags(), "GET", ``)
 	utils.AddPaginateFlagsIfListingResponse(resultsCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

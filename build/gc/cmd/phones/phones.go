@@ -63,7 +63,7 @@ func Cmdphones() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Value by which to sort")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "The field to sort by Valid values: name, status.operationalStatus, secondaryStatus.operationalStatus")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Sort order")
 	utils.AddFlag(listCmd.Flags(), "string", "siteId", "", "Filter by site.id")
 	utils.AddFlag(listCmd.Flags(), "string", "webRtcUserId", "", "Filter by webRtcUser.id")
@@ -74,6 +74,8 @@ func Cmdphones() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "linesId", "", "Filter by lines.id")
 	utils.AddFlag(listCmd.Flags(), "string", "linesName", "", "Filter by lines.name")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name of the Phone to filter by")
+	utils.AddFlag(listCmd.Flags(), "string", "statusOperationalStatus", "", "The primary status to filter by")
+	utils.AddFlag(listCmd.Flags(), "string", "secondaryStatusOperationalStatus", "", "The secondary status to filter by")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in the response, comma-separated Valid values: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines")
 	utils.AddFlag(listCmd.Flags(), "[]string", "fields", "", "Fields and properties to get, comma-separated Valid values: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/phones", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
@@ -294,6 +296,14 @@ var listCmd = &cobra.Command{
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {
 			queryParams["name"] = name
+		}
+		statusOperationalStatus := utils.GetFlag(cmd.Flags(), "string", "statusOperationalStatus")
+		if statusOperationalStatus != "" {
+			queryParams["statusOperationalStatus"] = statusOperationalStatus
+		}
+		secondaryStatusOperationalStatus := utils.GetFlag(cmd.Flags(), "string", "secondaryStatusOperationalStatus")
+		if secondaryStatusOperationalStatus != "" {
+			queryParams["secondaryStatusOperationalStatus"] = secondaryStatusOperationalStatus
 		}
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {

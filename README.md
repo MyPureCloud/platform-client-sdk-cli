@@ -1,6 +1,5 @@
 ---
 title: Platform API CLI SDK
-ispreview: false
 ---
 
 This CLI focuses mainly on exposing the following operations:

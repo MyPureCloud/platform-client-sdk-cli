@@ -51,7 +51,7 @@ var addCmd = &cobra.Command{
 		groupId, args := args[0], args[1:]
 		path := strings.Replace(getMembersOperation.Path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
 
-		currentVersion := getGroupVersion(path)
+		currentVersion := getGroupVersion(path, cmd)
 
 		inputData := utils.ResolveInputData(cmd)
 		body := &addGroupMembersBody{}
@@ -80,8 +80,8 @@ var addCmd = &cobra.Command{
 	},
 }
 
-func getGroupVersion(path string) int {
-	retryFunc := CommandService.DetermineAction(getMembersOperation.Method, path, nil)
+func getGroupVersion(path string, cmd *cobra.Command) int {
+	retryFunc := CommandService.DetermineAction(getMembersOperation.Method, path, cmd.Flags())
 	retryConfig := &retry.RetryConfiguration{
 		RetryWaitMin: 5 * time.Second,
 		RetryWaitMax: 60 * time.Second,

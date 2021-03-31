@@ -39,6 +39,7 @@ func Cmdusers_queues() *cobra.Command {
     }
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(activateCmd.Flags(), "PATCH", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -49,6 +50,7 @@ func Cmdusers_queues() *cobra.Command {
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/queues/{queueId}/users/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;Operation was successful.&quot;
 }`)
@@ -67,6 +69,7 @@ func Cmdusers_queues() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "[]string", "presence", "", "Filter by presence")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:view", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -89,6 +92,7 @@ func Cmdusers_queues() *cobra.Command {
     }
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(moveCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
   &quot;schema&quot; : {
@@ -114,6 +118,7 @@ func Cmdusers_queues() *cobra.Command {
     &quot;$ref&quot; : &quot;#/definitions/QueueMember&quot;
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

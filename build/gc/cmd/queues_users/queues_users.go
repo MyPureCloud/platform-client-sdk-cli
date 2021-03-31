@@ -32,6 +32,7 @@ func Cmdqueues_users() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/queues", utils.FormatPermissions([]string{ "routing:queue:view", "routing:queue:join", "routing:queueMember:manage",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -50,6 +51,7 @@ func Cmdqueues_users() *cobra.Command {
     &quot;$ref&quot; : &quot;#/definitions/UserQueue&quot;
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(joinCmd.Flags(), "PATCH", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -72,6 +74,7 @@ func Cmdqueues_users() *cobra.Command {
     }
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(joinsetCmd.Flags(), "PATCH", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

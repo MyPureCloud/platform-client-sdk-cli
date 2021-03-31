@@ -36,6 +36,7 @@ func Cmdcontacts_externalcontacts() *cobra.Command {
     &quot;$ref&quot; : &quot;#/definitions/ExternalContact&quot;
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -46,6 +47,7 @@ func Cmdcontacts_externalcontacts() *cobra.Command {
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/externalcontacts/contacts/{contactId}", utils.FormatPermissions([]string{ "externalContacts:contact:delete",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -57,6 +59,7 @@ func Cmdcontacts_externalcontacts() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand (externalOrganization,externalDataSources) Valid values: externalOrganization, externalDataSources")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/contacts/{contactId}", utils.FormatPermissions([]string{ "externalContacts:contact:view",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -69,6 +72,7 @@ func Cmdcontacts_externalcontacts() *cobra.Command {
 	utils.AddFlag(scanCmd.Flags(), "string", "cursor", "", "Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL")
 	scanCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", scanCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/scan/contacts", utils.FormatPermissions([]string{ "externalContacts:contact:view",  })))
 	utils.AddFileFlagIfUpsert(scanCmd.Flags(), "GET", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(scanCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -84,6 +88,7 @@ func Cmdcontacts_externalcontacts() *cobra.Command {
 	utils.AddFlag(searchCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: externalOrganization, externalDataSources")
 	searchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", searchCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/contacts", utils.FormatPermissions([]string{ "externalContacts:contact:view",  })))
 	utils.AddFileFlagIfUpsert(searchCmd.Flags(), "GET", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(searchCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -102,6 +107,7 @@ func Cmdcontacts_externalcontacts() *cobra.Command {
     &quot;$ref&quot; : &quot;#/definitions/ExternalContact&quot;
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

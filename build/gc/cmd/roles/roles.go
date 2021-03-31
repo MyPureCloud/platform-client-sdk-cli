@@ -36,6 +36,7 @@ func Cmdroles() *cobra.Command {
     &quot;$ref&quot; : &quot;#/definitions/DomainOrganizationRoleCreate&quot;
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -47,6 +48,7 @@ func Cmdroles() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role Valid values: unusedPermissions")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:view",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -68,6 +70,7 @@ func Cmdroles() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles", utils.FormatPermissions([]string{ "authorization:role:view",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -78,6 +81,7 @@ func Cmdroles() *cobra.Command {
 	
 	removeCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", removeCmd.UsageTemplate(), "DELETE", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:delete",  })))
 	utils.AddFileFlagIfUpsert(removeCmd.Flags(), "DELETE", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(removeCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
   &quot;schema&quot; : {
@@ -100,6 +104,7 @@ func Cmdroles() *cobra.Command {
     &quot;$ref&quot; : &quot;#/definitions/DomainOrganizationRoleUpdate&quot;
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

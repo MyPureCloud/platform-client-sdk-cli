@@ -36,6 +36,7 @@ func Cmdcontactlists() *cobra.Command {
     &quot;$ref&quot; : &quot;#/definitions/ContactList&quot;
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -46,6 +47,7 @@ func Cmdcontactlists() *cobra.Command {
 	
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/contactlists/{contactListId}", utils.FormatPermissions([]string{ "outbound:contactList:delete",  })))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;Operation was successful.&quot;
 }`)
@@ -55,6 +57,7 @@ func Cmdcontactlists() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "bool", "includeSize", "false", "Include size")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/contactlists/{contactListId}", utils.FormatPermissions([]string{ "outbound:contactList:view",  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -76,6 +79,7 @@ func Cmdcontactlists() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "Sort order Valid values: ascending, descending")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/contactlists", utils.FormatPermissions([]string{ "outbound:contactList:view",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -94,6 +98,7 @@ func Cmdcontactlists() *cobra.Command {
     &quot;$ref&quot; : &quot;#/definitions/ContactList&quot;
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

@@ -32,6 +32,7 @@ func Cmdmembers() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -43,6 +44,7 @@ func Cmdmembers() *cobra.Command {
 	utils.AddFlag(removeCmd.Flags(), "string", "ids", "", "Comma separated list of userIds to remove - REQUIRED")
 	removeCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", removeCmd.UsageTemplate(), "DELETE", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(removeCmd.Flags(), "DELETE", ``)
+	removeCmd.MarkFlagRequired("ids")
 	utils.AddPaginateFlagsIfListingResponse(removeCmd.Flags(), "DELETE", `{
   &quot;description&quot; : &quot;Success, group membership was updated&quot;,
   &quot;schema&quot; : {

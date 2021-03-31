@@ -39,6 +39,7 @@ func Cmdusers_roles() *cobra.Command {
     }
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(addCmd.Flags(), "PUT", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -63,6 +64,7 @@ func Cmdusers_roles() *cobra.Command {
     }
   }
 }`)
+	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "PUT", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
@@ -78,6 +80,7 @@ func Cmdusers_roles() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles/{roleId}/users", utils.FormatPermissions([]string{  })))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {

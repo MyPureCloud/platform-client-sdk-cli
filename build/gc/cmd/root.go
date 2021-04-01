@@ -23,6 +23,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/usage"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/nlu"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemgt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
@@ -46,7 +47,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("7.0.0")
+		fmt.Println("7.1.0")
 	},
 }
 
@@ -94,6 +95,7 @@ func init() {
 	rootCmd.AddCommand(usage.Cmdusage())
 	rootCmd.AddCommand(users.Cmdusers())
 	rootCmd.AddCommand(profiles.Cmdprofiles())
+	rootCmd.AddCommand(nlu.Cmdnlu())
 	rootCmd.AddCommand(externalcontacts.Cmdexternalcontacts())
 	rootCmd.AddCommand(responsemgt.Cmdresponsemgt())
 	rootCmd.AddCommand(notifications.Cmdnotifications())

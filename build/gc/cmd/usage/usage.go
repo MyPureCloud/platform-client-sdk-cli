@@ -15,8 +15,8 @@ import (
 var (
 	usageCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("usage"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud usage"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud usage`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud usage", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud usage`, "", ),
 	}
 	CommandService services.CommandService
 )

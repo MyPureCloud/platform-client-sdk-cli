@@ -15,8 +15,8 @@ import (
 var (
 	domainsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("domains"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud domains"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud domains`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud domains", "SWAGGER_OVERRIDE_natural language understanding domains", "", "", "SWAGGER_OVERRIDE_natural language understanding domains", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud domains`, "SWAGGER_OVERRIDE_natural language understanding domains", "", "", "SWAGGER_OVERRIDE_natural language understanding domains", "", ),
 	}
 	CommandService services.CommandService
 )

@@ -288,6 +288,7 @@ func reAuthenticateIfNecessary(config config.Configuration, err error) error {
 }
 
 func (c *commandService) DetermineAction(httpMethod string, uri string, flags *pflag.FlagSet) func(retryConfiguration *retry.RetryConfiguration) (string, error) {
+	logger.InitLogger(c.cmd)
 	switch httpMethod {
 	case http.MethodGet:
 		if flags == nil {

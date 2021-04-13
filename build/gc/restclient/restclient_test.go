@@ -149,6 +149,14 @@ func buildMockConfig(profileName string, environment string, clientID string, cl
 		return environment
 	}
 
+	mockConfig.LogFilePathFunc = func() string {
+		return ""
+	}
+
+	mockConfig.LoggingEnabledFunc = func() bool {
+		return false
+	}
+
 	mockConfig.ClientIDFunc = func() string {
 		return clientID
 	}

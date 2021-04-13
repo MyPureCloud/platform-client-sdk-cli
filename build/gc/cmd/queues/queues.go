@@ -15,8 +15,8 @@ import (
 var (
 	queuesCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("queues"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud queues"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud queues`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud queues", "", "", "", "", "", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud queues`, "", "", "", "", "", "", ),
 	}
 	CommandService services.CommandService
 )

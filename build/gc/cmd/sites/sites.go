@@ -15,8 +15,8 @@ import (
 var (
 	sitesCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("sites"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud sites"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud sites`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud sites", "SWAGGER_OVERRIDE_edge sites", "", "", "SWAGGER_OVERRIDE_edge sites", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud sites`, "SWAGGER_OVERRIDE_edge sites", "", "", "SWAGGER_OVERRIDE_edge sites", "", ),
 	}
 	CommandService services.CommandService
 )

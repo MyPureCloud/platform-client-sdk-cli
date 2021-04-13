@@ -14,11 +14,13 @@ This CLI focuses mainly on exposing the following operations:
 
 At the time of writing the following objects are supported by the CLI:
 - campaigns
+- contactlists
 - divisions
 - edges
 - externalcontacts
 - groups
 - locations
+- nlu
 - notifications
 - phones
 - queues
@@ -68,16 +70,37 @@ client_secret="OAUTH CLIENT SECRET"
 The CLI follows standard POSIX command name and command flag parameter styles.  To see all of the available objects you can issue a `gc` command.  To see all the sub-commands under a particular entity (eg. users) type `gc <<subcommand>>`.  For example to see all of the users in the org you can type `gc users list --autopaginate`.
 
 # Application logging
-The CLI logs Information, Warning and Fatal data to a log file, the location of which depends on the operating system:
+
+By default, the CLI does not log information to a file. To enable logging, use the following command:
+
+```
+gc logging enable
+```  
+
+And to disable:
+
+```
+gc logging disable
+```
+
+The default location of the log file depends on the operating system:
 
 ### Linux
-`/tmp/GenesysCloud`
+`/tmp/GenesysCloud/gc.log`
 
 ### Windows
-`%TEMP%\GenesysCloud`
+`%TEMP%\GenesysCloud\gc.txt`
 
 ### macOS
-`~/Library/Logs/GenesysCloud`
+`~/Library/Logs/GenesysCloud/gc.log`
+
+To set a custom path, use the following command:
+
+```
+gc logging path /path/to/log.log
+```
+
+Logging is configured on a per-profile basis so the above commands will only configure logging for the default profile.
 
 # Tracing progress information
 Passing the flag `-i` or `--indicateprogress` to any command will result in progress information traced to stderr and written to the application log file.  For example to see progress information for a list operation and ignore API output, use `gc users list --autopaginate -i > /dev/null`.
@@ -114,7 +137,7 @@ gc users create -f examples-json/create-user.json
 To perform a delete:
 
 ```
-gc users delete 
+gc users delete [userId]
 ```
 
 # Additional Tools

@@ -15,8 +15,8 @@ import (
 var (
 	membersCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("members"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud members"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud members`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud members", "SWAGGER_OVERRIDE_group members", "SWAGGER_OVERRIDE_group members", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud members`, "SWAGGER_OVERRIDE_group members", "SWAGGER_OVERRIDE_group members", ),
 	}
 	CommandService services.CommandService
 )

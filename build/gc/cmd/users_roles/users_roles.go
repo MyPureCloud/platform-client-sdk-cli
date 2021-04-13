@@ -15,8 +15,8 @@ import (
 var (
 	users_rolesCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("users_roles"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud users_roles"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud users_roles`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud users_roles", "", "", "SWAGGER_OVERRIDE_authorization roles users", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud users_roles`, "", "", "SWAGGER_OVERRIDE_authorization roles users", ),
 	}
 	CommandService services.CommandService
 )

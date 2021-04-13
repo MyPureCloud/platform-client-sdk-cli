@@ -15,8 +15,8 @@ import (
 var (
 	feedbackCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("feedback"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud feedback"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud feedback`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud feedback", "SWAGGER_OVERRIDE_natural language understanding domain feedback", "", "", "SWAGGER_OVERRIDE_natural language understanding domain feedback", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud feedback`, "SWAGGER_OVERRIDE_natural language understanding domain feedback", "", "", "SWAGGER_OVERRIDE_natural language understanding domain feedback", ),
 	}
 	CommandService services.CommandService
 )

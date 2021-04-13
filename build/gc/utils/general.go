@@ -77,10 +77,30 @@ func GetFlag(flags *pflag.FlagSet, paramType string, name string) string {
 	return flag
 }
 
-func FormatUsageDescription(message string) string {
-	message = strings.Split(message, "_")[0]
+func FormatUsageDescription(inputs ...string) string {
+	messages := make([]string, 0)
+	// Only add non-empty strings to the messages slice
+	for _, input := range inputs {
+		if len(input) != 0 {
+			messages = append(messages, input)
+		}
+	}
 
-	return message
+	// Some command names are separated by underscores. We only want the first name
+	message := strings.Split(messages[0], "_")[0]
+	if len(messages) == 1 {
+		return message
+	}
+
+	// Add a description if it was specified in the resource definition
+	const SwaggerOverride = "SWAGGER_OVERRIDE_"
+	var description string
+	for _, description = range messages {
+		if strings.Contains(description, SwaggerOverride) {
+			break
+		}
+	}
+	return fmt.Sprintf("Manages Genesys Cloud %s", strings.Replace(description, SwaggerOverride, "", 1))
 }
 
 func FormatPermissions(permissions []string) string {
@@ -112,12 +132,28 @@ func AliasOperationId(operationId string, classVarName string) string {
 
 func ConvertStdInString() string {
 	consolescanner := bufio.NewScanner(os.Stdin)
-
 	var inputBuffer bytes.Buffer
+
+	done := make(chan struct{})
+	gotText := false
+
 	// by default, bufio.Scanner scans newline-separated lines
-	for consolescanner.Scan() {
-		input := consolescanner.Text()
-		inputBuffer.WriteString(input)
+	go func() {
+		for consolescanner.Scan() {
+			input := consolescanner.Text()
+			gotText = true
+			inputBuffer.WriteString(input)
+		}
+		close(done)
+	}()
+
+	// if no input is read after 1 second then the command will error out
+	select {
+	case <-done:
+	case <-time.After(1000 * time.Millisecond):
+		if !gotText {
+			logger.Fatal("This command requires a body to be piped to it, or provided from a file via the \"--file\" flag\n")
+		}
 	}
 
 	return string(inputBuffer.Bytes())

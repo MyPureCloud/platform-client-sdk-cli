@@ -15,8 +15,8 @@ import (
 var (
 	groupsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("groups"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud groups"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud groups`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud groups", "", "", "", "", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud groups`, "", "", "", "", "", ),
 	}
 	CommandService services.CommandService
 )

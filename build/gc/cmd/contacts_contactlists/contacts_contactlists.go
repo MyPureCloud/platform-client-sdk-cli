@@ -15,8 +15,8 @@ import (
 var (
 	contacts_contactlistsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("contacts_contactlists"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud contacts_contactlists"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud contacts_contactlists`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud contacts_contactlists", "SWAGGER_OVERRIDE_outbound contacts", "", "", "SWAGGER_OVERRIDE_outbound contacts", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud contacts_contactlists`, "SWAGGER_OVERRIDE_outbound contacts", "", "", "SWAGGER_OVERRIDE_outbound contacts", "", ),
 	}
 	CommandService services.CommandService
 )

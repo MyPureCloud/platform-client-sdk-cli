@@ -15,8 +15,8 @@ import (
 var (
 	edgesCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("edges"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud edges"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud edges`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud edges", "", "", "", "", "", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud edges`, "", "", "", "", "", "", ),
 	}
 	CommandService services.CommandService
 )

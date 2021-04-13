@@ -15,8 +15,8 @@ import (
 var (
 	organizationsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("organizations"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud organizations"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud organizations`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud organizations", "", "SWAGGER_OVERRIDE_externalcontacts organizations", "SWAGGER_OVERRIDE_externalcontacts organizations", "", "", "SWAGGER_OVERRIDE_externalcontacts organizations", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud organizations`, "", "SWAGGER_OVERRIDE_externalcontacts organizations", "SWAGGER_OVERRIDE_externalcontacts organizations", "", "", "SWAGGER_OVERRIDE_externalcontacts organizations", ),
 	}
 	CommandService services.CommandService
 )

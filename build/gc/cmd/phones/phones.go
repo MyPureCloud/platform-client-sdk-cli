@@ -15,8 +15,8 @@ import (
 var (
 	phonesCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("phones"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud phones"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud phones`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud phones", "SWAGGER_OVERRIDE_edge phones", "", "", "SWAGGER_OVERRIDE_edge phones", "", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud phones`, "SWAGGER_OVERRIDE_edge phones", "", "", "SWAGGER_OVERRIDE_edge phones", "", "", ),
 	}
 	CommandService services.CommandService
 )

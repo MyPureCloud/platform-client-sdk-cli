@@ -24,6 +24,14 @@ func constructConfig(profileName string, environment string, clientID string, cl
 		return environment
 	}
 
+	config.LogFilePathFunc = func() string {
+		return ""
+	}
+
+	config.LoggingEnabledFunc = func() bool {
+		return false
+	}
+
 	config.ClientIDFunc = func() string {
 		return clientID
 	}

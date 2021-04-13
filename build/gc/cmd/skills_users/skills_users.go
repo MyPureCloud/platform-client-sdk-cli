@@ -15,8 +15,8 @@ import (
 var (
 	skills_usersCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("skills_users"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud skills_users"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud skills_users`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud skills_users", "", "", "SWAGGER_OVERRIDE_users routing skills", "", "SWAGGER_OVERRIDE_users routing skills", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud skills_users`, "", "", "SWAGGER_OVERRIDE_users routing skills", "", "SWAGGER_OVERRIDE_users routing skills", "", ),
 	}
 	CommandService services.CommandService
 )

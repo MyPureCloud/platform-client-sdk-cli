@@ -15,8 +15,8 @@ import (
 var (
 	channelsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("channels"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud channels"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud channels`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud channels", "SWAGGER_OVERRIDE_notification channels", "SWAGGER_OVERRIDE_notification channels", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud channels`, "SWAGGER_OVERRIDE_notification channels", "SWAGGER_OVERRIDE_notification channels", ),
 	}
 	CommandService services.CommandService
 )

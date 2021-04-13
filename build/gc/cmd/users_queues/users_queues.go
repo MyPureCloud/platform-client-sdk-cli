@@ -15,8 +15,8 @@ import (
 var (
 	users_queuesCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("users_queues"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud users_queues"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud users_queues`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud users_queues", "SWAGGER_OVERRIDE_queue users", "", "SWAGGER_OVERRIDE_queue users", "SWAGGER_OVERRIDE_queue users", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud users_queues`, "SWAGGER_OVERRIDE_queue users", "", "SWAGGER_OVERRIDE_queue users", "SWAGGER_OVERRIDE_queue users", "", ),
 	}
 	CommandService services.CommandService
 )

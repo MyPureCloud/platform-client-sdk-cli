@@ -15,8 +15,8 @@ import (
 var (
 	versionsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("versions"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud versions"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud versions`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud versions", "SWAGGER_OVERRIDE_natural language understanding domain versions", "", "", "", "SWAGGER_OVERRIDE_natural language understanding domain versions", "", "", "", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud versions`, "SWAGGER_OVERRIDE_natural language understanding domain versions", "", "", "", "SWAGGER_OVERRIDE_natural language understanding domain versions", "", "", "", "", ),
 	}
 	CommandService services.CommandService
 )

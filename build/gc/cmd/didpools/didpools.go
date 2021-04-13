@@ -15,8 +15,8 @@ import (
 var (
 	didpoolsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("didpools"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud didpools"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud didpools`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud didpools", "SWAGGER_OVERRIDE_edge didpools", "", "", "SWAGGER_OVERRIDE_edge didpools", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud didpools`, "SWAGGER_OVERRIDE_edge didpools", "", "", "SWAGGER_OVERRIDE_edge didpools", "", ),
 	}
 	CommandService services.CommandService
 )

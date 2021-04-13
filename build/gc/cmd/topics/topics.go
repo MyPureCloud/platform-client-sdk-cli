@@ -15,8 +15,8 @@ import (
 var (
 	topicsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("topics"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud topics"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud topics`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud topics", "SWAGGER_OVERRIDE_notification topics", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud topics`, "SWAGGER_OVERRIDE_notification topics", ),
 	}
 	CommandService services.CommandService
 )

@@ -15,8 +15,8 @@ import (
 var (
 	campaignsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("campaigns"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud campaigns"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud campaigns`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud campaigns", "SWAGGER_OVERRIDE_outbound campaigns", "", "", "SWAGGER_OVERRIDE_outbound campaigns", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud campaigns`, "SWAGGER_OVERRIDE_outbound campaigns", "", "", "SWAGGER_OVERRIDE_outbound campaigns", "", ),
 	}
 	CommandService services.CommandService
 )

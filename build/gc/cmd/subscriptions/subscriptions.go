@@ -15,8 +15,8 @@ import (
 var (
 	subscriptionsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("subscriptions"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud subscriptions"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud subscriptions`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud subscriptions", "SWAGGER_OVERRIDE_notification subscriptions", "SWAGGER_OVERRIDE_notification subscriptions", "SWAGGER_OVERRIDE_notification subscriptions", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud subscriptions`, "SWAGGER_OVERRIDE_notification subscriptions", "SWAGGER_OVERRIDE_notification subscriptions", "SWAGGER_OVERRIDE_notification subscriptions", ),
 	}
 	CommandService services.CommandService
 )

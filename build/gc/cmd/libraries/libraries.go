@@ -15,8 +15,8 @@ import (
 var (
 	librariesCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("libraries"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud libraries"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud libraries`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud libraries", "SWAGGER_OVERRIDE_response management libraries", "", "", "SWAGGER_OVERRIDE_response management libraries", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud libraries`, "SWAGGER_OVERRIDE_response management libraries", "", "", "SWAGGER_OVERRIDE_response management libraries", "", ),
 	}
 	CommandService services.CommandService
 )

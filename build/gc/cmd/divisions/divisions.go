@@ -15,8 +15,8 @@ import (
 var (
 	divisionsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("divisions"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud divisions"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud divisions`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud divisions", "SWAGGER_OVERRIDE_authorization divisions", "", "", "SWAGGER_OVERRIDE_authorization divisions", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud divisions`, "SWAGGER_OVERRIDE_authorization divisions", "", "", "SWAGGER_OVERRIDE_authorization divisions", "", ),
 	}
 	CommandService services.CommandService
 )

@@ -15,8 +15,8 @@ import (
 var (
 	responsesCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("responses"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud responses"),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud responses`),
+		Short: utils.FormatUsageDescription("Manages Genesys Cloud responses", "SWAGGER_OVERRIDE_response management responses", "", "", "SWAGGER_OVERRIDE_response management responses", "", "", ),
+		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud responses`, "SWAGGER_OVERRIDE_response management responses", "", "", "SWAGGER_OVERRIDE_response management responses", "", "", ),
 	}
 	CommandService services.CommandService
 )

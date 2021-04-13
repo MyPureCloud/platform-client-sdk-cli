@@ -30,7 +30,7 @@ type apiClientTest struct {
 
 func TestRetryWithData(t *testing.T) {
 	restclientNewRESTClient = mockNewRESTClient
-	configGetConfig = mockGetConfigRetry
+	configGetConfig = mockGetConfig
 	restclient.UpdateOAuthToken = mocks.UpdateOAuthToken
 
 	c := commandService{
@@ -113,7 +113,7 @@ func TestRetryWithData(t *testing.T) {
 func TestReAuthentication(t *testing.T) {
 	//restclientNewRESTClient = mockNewRESTClient
 	restclient.UpdateOAuthToken = mocks.UpdateOAuthToken
-	configGetConfig = mockGetConfigReAuthenticate
+	configGetConfig = mockGetConfig
 
 	c := commandService{
 		cmd: &cobra.Command{},
@@ -237,8 +237,8 @@ func mockNewRESTClient(_ config.Configuration) *restclient.RESTClient {
 	return restclient.RestClient
 }
 
-//mockGetConfigRetry returns a mock MockClientConfig object for the commandservice Retry test
-func mockGetConfigRetry(profileName string) (config.Configuration, error) {
+//mockGetConfig returns a mock MockClientConfig object
+func mockGetConfig(profileName string) (config.Configuration, error) {
 	mockConfig := &mocks.MockClientConfig{}
 
 	mockConfig.ProfileNameFunc = func() string {
@@ -249,31 +249,12 @@ func mockGetConfigRetry(profileName string) (config.Configuration, error) {
 		return "mypurecloud.com"
 	}
 
-	mockConfig.ClientIDFunc = func() string {
-		return utils.GenerateGuid()
-	}
-
-	mockConfig.ClientSecretFunc = func() string {
-		return utils.GenerateGuid()
-	}
-
-	mockConfig.OAuthTokenDataFunc = func() string {
+	mockConfig.LogFilePathFunc = func() string {
 		return ""
 	}
 
-	return mockConfig, nil
-}
-
-//mockGetConfigReAuthenticate returns a mock MockClientConfig object for the commandservice ReAuthenticate test
-func mockGetConfigReAuthenticate(profileName string) (config.Configuration, error) {
-	mockConfig := &mocks.MockClientConfig{}
-
-	mockConfig.ProfileNameFunc = func() string {
-		return profileName
-	}
-
-	mockConfig.EnvironmentFunc = func() string {
-		return "mypurecloud.com"
+	mockConfig.LoggingEnabledFunc = func() bool {
+		return false
 	}
 
 	mockConfig.ClientIDFunc = func() string {

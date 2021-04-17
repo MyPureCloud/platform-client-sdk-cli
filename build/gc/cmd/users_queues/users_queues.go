@@ -120,10 +120,7 @@ func Cmdusers_queues() *cobra.Command {
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/QueueMember&quot;
-  }
+  &quot;description&quot; : &quot;User update has been accepted&quot;
 }`)
 	users_queuesCmd.AddCommand(updateCmd)
 	

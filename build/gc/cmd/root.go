@@ -24,10 +24,10 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemgt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/nlu"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemgt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/nlu"
 	"os"
 )
 
@@ -48,7 +48,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("8.0.0")
+		fmt.Println("9.0.0")
 	},
 }
 
@@ -96,10 +96,10 @@ func init() {
 	rootCmd.AddCommand(users.Cmdusers())
 	rootCmd.AddCommand(logging.Cmdlogging())
 	rootCmd.AddCommand(profiles.Cmdprofiles())
-	rootCmd.AddCommand(responsemgt.Cmdresponsemgt())
 	rootCmd.AddCommand(notifications.Cmdnotifications())
-	rootCmd.AddCommand(nlu.Cmdnlu())
+	rootCmd.AddCommand(responsemgt.Cmdresponsemgt())
 	rootCmd.AddCommand(externalcontacts.Cmdexternalcontacts())
+	rootCmd.AddCommand(nlu.Cmdnlu())
 
 	if os.Getenv("GenerateGcDocs") != "" {
 		if _, err := os.Stat("/tmp/gc_docs"); os.IsNotExist(err) {

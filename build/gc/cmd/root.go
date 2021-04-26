@@ -20,6 +20,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/sites"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/skills"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/subjects"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/usage"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
@@ -48,7 +49,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("10.0.0")
+		fmt.Println("10.1.0")
 	},
 }
 
@@ -92,6 +93,7 @@ func init() {
 	rootCmd.AddCommand(sites.Cmdsites())
 	rootCmd.AddCommand(skills.Cmdskills())
 	rootCmd.AddCommand(stations.Cmdstations())
+	rootCmd.AddCommand(subjects.Cmdsubjects())
 	rootCmd.AddCommand(usage.Cmdusage())
 	rootCmd.AddCommand(users.Cmdusers())
 	rootCmd.AddCommand(logging.Cmdlogging())

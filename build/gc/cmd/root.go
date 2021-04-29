@@ -12,11 +12,15 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/contactlists"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/divisions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/edges"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/emergencygroups"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/groups"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/ivr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/locations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/phones"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/queues"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/roles"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/schedulegroups"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/schedules"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/sites"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/skills"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
@@ -25,10 +29,10 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/nlu"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemgt"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemgt"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/nlu"
 	"os"
 )
 
@@ -49,7 +53,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("10.1.0")
+		fmt.Println("11.0.0")
 	},
 }
 
@@ -85,11 +89,15 @@ func init() {
 	rootCmd.AddCommand(contactlists.Cmdcontactlists())
 	rootCmd.AddCommand(divisions.Cmddivisions())
 	rootCmd.AddCommand(edges.Cmdedges())
+	rootCmd.AddCommand(emergencygroups.Cmdemergencygroups())
 	rootCmd.AddCommand(groups.Cmdgroups())
+	rootCmd.AddCommand(ivr.Cmdivr())
 	rootCmd.AddCommand(locations.Cmdlocations())
 	rootCmd.AddCommand(phones.Cmdphones())
 	rootCmd.AddCommand(queues.Cmdqueues())
 	rootCmd.AddCommand(roles.Cmdroles())
+	rootCmd.AddCommand(schedulegroups.Cmdschedulegroups())
+	rootCmd.AddCommand(schedules.Cmdschedules())
 	rootCmd.AddCommand(sites.Cmdsites())
 	rootCmd.AddCommand(skills.Cmdskills())
 	rootCmd.AddCommand(stations.Cmdstations())
@@ -98,10 +106,10 @@ func init() {
 	rootCmd.AddCommand(users.Cmdusers())
 	rootCmd.AddCommand(logging.Cmdlogging())
 	rootCmd.AddCommand(profiles.Cmdprofiles())
-	rootCmd.AddCommand(nlu.Cmdnlu())
-	rootCmd.AddCommand(responsemgt.Cmdresponsemgt())
 	rootCmd.AddCommand(externalcontacts.Cmdexternalcontacts())
 	rootCmd.AddCommand(notifications.Cmdnotifications())
+	rootCmd.AddCommand(responsemgt.Cmdresponsemgt())
+	rootCmd.AddCommand(nlu.Cmdnlu())
 
 	if os.Getenv("GenerateGcDocs") != "" {
 		if _, err := os.Stat("/tmp/gc_docs"); os.IsNotExist(err) {

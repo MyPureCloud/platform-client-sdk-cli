@@ -27,11 +27,12 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/subjects"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/usage"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemgt"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/nlu"
 	"os"
 )
@@ -53,7 +54,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("11.0.0")
+		fmt.Println("12.0.0")
 	},
 }
 
@@ -104,11 +105,12 @@ func init() {
 	rootCmd.AddCommand(subjects.Cmdsubjects())
 	rootCmd.AddCommand(usage.Cmdusage())
 	rootCmd.AddCommand(users.Cmdusers())
+	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(logging.Cmdlogging())
 	rootCmd.AddCommand(profiles.Cmdprofiles())
-	rootCmd.AddCommand(externalcontacts.Cmdexternalcontacts())
-	rootCmd.AddCommand(notifications.Cmdnotifications())
 	rootCmd.AddCommand(responsemgt.Cmdresponsemgt())
+	rootCmd.AddCommand(notifications.Cmdnotifications())
+	rootCmd.AddCommand(externalcontacts.Cmdexternalcontacts())
 	rootCmd.AddCommand(nlu.Cmdnlu())
 
 	if os.Getenv("GenerateGcDocs") != "" {

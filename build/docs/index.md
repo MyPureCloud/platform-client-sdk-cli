@@ -58,7 +58,7 @@ environment="mypurecloud.com"
 client_credentials="OAUTH CLIENT CREDENTIAL GRANT"
 client_secret="OAUTH CLIENT SECRET"
 
-[hollywoo]
+[test]
 environment="mypurecloud.com"
 client_credentials="OAUTH CLIENT CREDENTIAL GRANT"
 client_secret="OAUTH CLIENT SECRET"
@@ -105,8 +105,75 @@ Logging is configured on a per-profile basis so the above commands will only con
 # Tracing progress information
 Passing the flag `-i` or `--indicateprogress` to any command will result in progress information traced to stderr and written to the application log file.  For example to see progress information for a list operation and ignore API output, use `gc users list --autopaginate -i > /dev/null`.
 
-# Pagnation
+# Pagination
 As of version `3.0.0` the default behaviour will be to *not* automatically paginate any paginatable resources. To automatically paginate, you must pass the `--autopaginate` or `-a` flag. In addition, there is a new `--stream` or `-s` flag for paginatable resources. This will paginate through the results and print them one page at a time leaving the page information intact.
+
+# Autocompletion
+
+See below for instructions on how to enable autocompletion for supported shells:
+
+### Bash (macOs)
+
+Firstly, install `bash-completion` if it is not already installed:
+
+```
+brew install bash-completion
+```
+
+Configure the `bash-completion` package in your `~/.bash_profile` or `~/.profile` by adding the following:
+
+```
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+```
+
+Finally, run the following command:
+
+```
+gc completion bash > /usr/local/etc/bash_completion.d/gc
+```
+
+### Bash (Linux)
+
+```
+gc completion bash > /etc/bash_completion.d/gc
+```
+
+### Zsh
+
+If shell completion is not already enabled in your environment, you will need to enable it. You can execute the following once:
+
+```
+echo "autoload -U compinit; compinit" >> ~/.zshrc
+```
+
+```
+gc completion zsh > "${fpath[1]}/_gc"
+```
+
+You will need to start a new shell for this setup to take effect.
+
+### Fish
+
+```
+gc completion fish > ~/.config/fish/completions/gc.fish
+```
+
+### Powershell
+
+```
+gc completion powershell > gc.ps1
+```
+
+And source this file from your PowerShell profile.  
+
+To see further examples of enabling autocompletion, run the following command:
+
+```
+gc completion --help
+```
+
 
 # Examples
 

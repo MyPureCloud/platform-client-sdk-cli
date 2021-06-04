@@ -13,10 +13,11 @@ import (
 )
 
 var (
+	Description = utils.FormatUsageDescription("stations", "SWAGGER_OVERRIDE_/api/v2/stations", "SWAGGER_OVERRIDE_/api/v2/stations", )
 	stationsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("stations"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud stations", "", "", ),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud stations`, "", "", ),
+		Short: Description,
+		Long:  Description,
 	}
 	CommandService services.CommandService
 )
@@ -51,7 +52,7 @@ func Cmdstations() *cobra.Command {
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/StationEntityListing&quot;
+    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
   }
 }`)
 	stationsCmd.AddCommand(listCmd)
@@ -62,7 +63,7 @@ func Cmdstations() *cobra.Command {
 var getCmd = &cobra.Command{
 	Use:   "get [stationId]",
 	Short: "Get station.",
-	Long:  `Get station.`,
+	Long:  "Get station.",
 	Args:  utils.DetermineArgs([]string{ "stationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -99,7 +100,7 @@ var getCmd = &cobra.Command{
 var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "Get the list of available stations.",
-	Long:  `Get the list of available stations.`,
+	Long:  "Get the list of available stations.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

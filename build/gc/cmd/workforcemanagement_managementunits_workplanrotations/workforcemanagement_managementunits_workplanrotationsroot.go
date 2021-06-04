@@ -1,0 +1,12 @@
+package workforcemanagement_managementunits_workplanrotations
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_managementunits_workplanrotations_copy"
+)
+
+func init() {
+	workforcemanagement_managementunits_workplanrotationsCmd.AddCommand(workforcemanagement_managementunits_workplanrotations_copy.Cmdworkforcemanagement_managementunits_workplanrotations_copy())
+	workforcemanagement_managementunits_workplanrotationsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_managementunits_workplanrotationsCmd.Short, workforcemanagement_managementunits_workplanrotations_copy.Description, )
+	workforcemanagement_managementunits_workplanrotationsCmd.Long = workforcemanagement_managementunits_workplanrotationsCmd.Short
+}

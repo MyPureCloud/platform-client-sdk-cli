@@ -1,0 +1,14 @@
+package telephony_providers_edges_phonebasesettings
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_phonebasesettings_availablemetabases"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_phonebasesettings_template"
+)
+
+func init() {
+	telephony_providers_edges_phonebasesettingsCmd.AddCommand(telephony_providers_edges_phonebasesettings_availablemetabases.Cmdtelephony_providers_edges_phonebasesettings_availablemetabases())
+	telephony_providers_edges_phonebasesettingsCmd.AddCommand(telephony_providers_edges_phonebasesettings_template.Cmdtelephony_providers_edges_phonebasesettings_template())
+	telephony_providers_edges_phonebasesettingsCmd.Short = utils.GenerateCustomDescription(telephony_providers_edges_phonebasesettingsCmd.Short, telephony_providers_edges_phonebasesettings_availablemetabases.Description, telephony_providers_edges_phonebasesettings_template.Description, )
+	telephony_providers_edges_phonebasesettingsCmd.Long = telephony_providers_edges_phonebasesettingsCmd.Short
+}

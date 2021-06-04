@@ -1,14 +1,24 @@
-
 package externalcontacts
 
 import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
+
 	"github.com/spf13/cobra"
 )
 
-var externalcontactsCmd = &cobra.Command{
-	Use:   "externalcontacts",
-	Short: "Manages Genesys Cloud externalcontacts",
-	Long:  `Manages Genesys Cloud externalcontacts`,
+var (
+	Description = utils.FormatUsageDescription("externalcontacts", "SWAGGER_OVERRIDE_/api/v2/externalcontacts")
+	externalcontactsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("externalcontacts"),
+		Short: Description,
+		Long:  Description,
+	}
+	CommandService services.CommandService
+)
+
+func init() {
+	CommandService = services.NewCommandService(externalcontactsCmd)
 }
 
 func Cmdexternalcontacts() *cobra.Command {

@@ -9,9 +9,9 @@ import (
 )
 
 var currentProfileCmd = &cobra.Command{
-	Use:   "get [profile name]",
-	Short: "Retrieves profile by name.  If no name is provided then returns the default",
-	Long:  "Retrieves profile by name.  If no name is provided then returns the default",
+	Use:   "get [profileName]",
+	Short: "Retrieves profile by name. The default profile is returned if no name is provided",
+	Long:  "Retrieves profile by name. The default profile is returned if no name is provided",
 	Args:  cobra.RangeArgs(0, 1),
 
 	Run: func(cmd *cobra.Command, args []string) {

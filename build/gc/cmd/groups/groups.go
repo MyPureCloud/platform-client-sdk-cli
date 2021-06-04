@@ -13,10 +13,11 @@ import (
 )
 
 var (
+	Description = utils.FormatUsageDescription("groups", "SWAGGER_OVERRIDE_/api/v2/groups", "SWAGGER_OVERRIDE_/api/v2/groups", "SWAGGER_OVERRIDE_/api/v2/groups", "SWAGGER_OVERRIDE_/api/v2/groups", "SWAGGER_OVERRIDE_/api/v2/groups", )
 	groupsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("groups"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud groups", "", "", "", "", "", ),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud groups`, "", "", "", "", "", ),
+		Short: Description,
+		Long:  Description,
 	}
 	CommandService services.CommandService
 )
@@ -82,7 +83,7 @@ func Cmdgroups() *cobra.Command {
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/GroupEntityListing&quot;
+    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
   }
 }`)
 	groupsCmd.AddCommand(listCmd)
@@ -112,7 +113,7 @@ func Cmdgroups() *cobra.Command {
 var createCmd = &cobra.Command{
 	Use:   "create",
 	Short: "Create a group",
-	Long:  `Create a group`,
+	Long:  "Create a group",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -147,7 +148,7 @@ var createCmd = &cobra.Command{
 var deleteCmd = &cobra.Command{
 	Use:   "delete [groupId]",
 	Short: "Delete group",
-	Long:  `Delete group`,
+	Long:  "Delete group",
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -184,7 +185,7 @@ var deleteCmd = &cobra.Command{
 var getCmd = &cobra.Command{
 	Use:   "get [groupId]",
 	Short: "Get group",
-	Long:  `Get group`,
+	Long:  "Get group",
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -221,7 +222,7 @@ var getCmd = &cobra.Command{
 var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "Get a group list",
-	Long:  `Get a group list`,
+	Long:  "Get a group list",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -276,7 +277,7 @@ var listCmd = &cobra.Command{
 var updateCmd = &cobra.Command{
 	Use:   "update [groupId]",
 	Short: "Update group",
-	Long:  `Update group`,
+	Long:  "Update group",
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -13,10 +13,11 @@ import (
 )
 
 var (
+	Description = utils.FormatUsageDescription("locations", "SWAGGER_OVERRIDE_/api/v2/locations", "SWAGGER_OVERRIDE_/api/v2/locations", "SWAGGER_OVERRIDE_/api/v2/locations", "SWAGGER_OVERRIDE_/api/v2/locations", "SWAGGER_OVERRIDE_/api/v2/locations", )
 	locationsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("locations"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud locations", "", "", "", "", "", ),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud locations`, "", "", "", "", "", ),
+		Short: Description,
+		Long:  Description,
 	}
 	CommandService services.CommandService
 )
@@ -75,7 +76,7 @@ func Cmdlocations() *cobra.Command {
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LocationEntityListing&quot;
+    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
   }
 }`)
 	locationsCmd.AddCommand(listCmd)
@@ -105,7 +106,7 @@ func Cmdlocations() *cobra.Command {
 var createCmd = &cobra.Command{
 	Use:   "create",
 	Short: "Create a location",
-	Long:  `Create a location`,
+	Long:  "Create a location",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -140,7 +141,7 @@ var createCmd = &cobra.Command{
 var deleteCmd = &cobra.Command{
 	Use:   "delete [locationId]",
 	Short: "Delete a location",
-	Long:  `Delete a location`,
+	Long:  "Delete a location",
 	Args:  utils.DetermineArgs([]string{ "locationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -177,7 +178,7 @@ var deleteCmd = &cobra.Command{
 var getCmd = &cobra.Command{
 	Use:   "get [locationId]",
 	Short: "Get Location by ID.",
-	Long:  `Get Location by ID.`,
+	Long:  "Get Location by ID.",
 	Args:  utils.DetermineArgs([]string{ "locationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -218,7 +219,7 @@ var getCmd = &cobra.Command{
 var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "Get a list of all locations.",
-	Long:  `Get a list of all locations.`,
+	Long:  "Get a list of all locations.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -269,7 +270,7 @@ var listCmd = &cobra.Command{
 var updateCmd = &cobra.Command{
 	Use:   "update [locationId]",
 	Short: "Update a location",
-	Long:  `Update a location`,
+	Long:  "Update a location",
 	Args:  utils.DetermineArgs([]string{ "locationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

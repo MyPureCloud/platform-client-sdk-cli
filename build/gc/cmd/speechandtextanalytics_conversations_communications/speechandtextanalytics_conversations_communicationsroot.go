@@ -1,0 +1,12 @@
+package speechandtextanalytics_conversations_communications
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_conversations_communications_transcripturl"
+)
+
+func init() {
+	speechandtextanalytics_conversations_communicationsCmd.AddCommand(speechandtextanalytics_conversations_communications_transcripturl.Cmdspeechandtextanalytics_conversations_communications_transcripturl())
+	speechandtextanalytics_conversations_communicationsCmd.Short = utils.GenerateCustomDescription(speechandtextanalytics_conversations_communicationsCmd.Short, speechandtextanalytics_conversations_communications_transcripturl.Description, )
+	speechandtextanalytics_conversations_communicationsCmd.Long = speechandtextanalytics_conversations_communicationsCmd.Short
+}

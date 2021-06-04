@@ -12,34 +12,6 @@ This CLI focuses mainly on exposing the following operations:
 
 **Note:** Most operations exposed by the `list` command and some operations exposed by the `get` command support the `pageSize` parameter. It's important to set this to an appropriate value if a large number of resources are being listed to reduce the load on the API and reduce wait times.
 
-At the time of writing the following objects are supported by the CLI:
-- campaigns
-- contactlists
-- divisions
-- edges
-- externalcontacts
-- groups
-- locations
-- nlu
-- notifications
-- phones
-- queues
-- responsemgt
-- roles
-- sites
-- skills
-- stations
-- usage
-- users
-
-In addition, a few objects provide additional capabilities, including:
-- edges - Rebooting Edges
-- phones - Rebooting Phones
-- queues - Get estimated wait time
-- queues - Get users assigned to queue
-- notifications - Manage and listen to notifications from the event service
-- usage - Retrieve Usage Reports
-
 # Installation
 
 The [Developer Center](https://developer.mypurecloud.com/api/rest/command-line-interface/) contains installation instructions for supported operating systems.
@@ -103,7 +75,7 @@ gc logging path /path/to/log.log
 Logging is configured on a per-profile basis so the above commands will only configure logging for the default profile.
 
 # Tracing progress information
-Passing the flag `-i` or `--indicateprogress` to any command will result in progress information traced to stderr and written to the application log file.  For example to see progress information for a list operation and ignore API output, use `gc users list --autopaginate -i > /dev/null`.
+Passing the flag `-i` or `--indicateprogress` to any command will result in progress information traced to stderr and written to the application log file.  For example, to see progress information for a list operation and ignore API output, use `gc users list --autopaginate -i > /dev/null`.
 
 # Pagination
 As of version `3.0.0` the default behaviour will be to *not* automatically paginate any paginatable resources. To automatically paginate, you must pass the `--autopaginate` or `-a` flag. In addition, there is a new `--stream` or `-s` flag for paginatable resources. This will paginate through the results and print them one page at a time leaving the page information intact.
@@ -213,14 +185,14 @@ Since this is a CLI, the output from the tool can be passed to other command too
 [jq](https://stedolan.github.io/jq/) - A JSON query, filter and transformation tools.  This tool can do just about anything with JSON.  For instance to retrieve all of the members of a specific queue, lookup their CLI and names and transform the output into CSV you issue the following CSV you can issue the following `gc` and `jq` commands:
 
 ```
-gc queues list --autopaginate | jq -c '.[] | select( .name | contains("Chat2"))' | jq -r '. | .id' | xargs -I{} gc queues users {} | jq -r '.[] | [.id,.name] | @csv'> output.csv
+gc routing queues list --autopaginate | jq -c '.[] | select( .name | contains("Chat2"))' | jq -r '. | .id' | xargs -I{} gc routing queues members {} | jq -r '.[] | [.id,.name] | @csv'> output.csv
 ```
 
 This command:
 - retrieves a list of all the queues
 - filters out the queue named Chat2 
 - parses out its CLI
-- uses xargs to pipe the CLI over to the `gc queue users` command
+- uses xargs to pipe the CLI over to the `gc routing queues members` command
 - parses out the CLI and name field for each record
 - formats results into a csv format 
 - redirects the output to a file called output.csv

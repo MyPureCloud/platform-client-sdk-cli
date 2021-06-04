@@ -6,8 +6,8 @@ import (
 
 var profileCmd = &cobra.Command{
 	Use:   "profiles",
-	Short: "Manages the profiles for the configuration tool",
-	Long:  `Manages the profiles for the configuration tool`,
+	Short: "Manages the application profiles",
+	Long:  `Manages the application profiles`,
 }
 
 func Cmdprofiles() *cobra.Command {

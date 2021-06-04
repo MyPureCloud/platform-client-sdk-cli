@@ -1,0 +1,269 @@
+package orphanrecordings
+
+import (
+	"fmt"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/spf13/cobra"
+	"net/url"
+	"strings"
+	"time"
+)
+
+var (
+	Description = utils.FormatUsageDescription("orphanrecordings", "SWAGGER_OVERRIDE_/api/v2/orphanrecordings", "SWAGGER_OVERRIDE_/api/v2/orphanrecordings", "SWAGGER_OVERRIDE_/api/v2/orphanrecordings", "SWAGGER_OVERRIDE_/api/v2/orphanrecordings", )
+	orphanrecordingsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("orphanrecordings"),
+		Short: Description,
+		Long:  Description,
+	}
+	CommandService services.CommandService
+)
+
+func init() {
+	CommandService = services.NewCommandService(orphanrecordingsCmd)
+}
+
+func Cmdorphanrecordings() *cobra.Command { 
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/orphanrecordings/{orphanId}", utils.FormatPermissions([]string{ "recording:orphan:delete",  })))
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/OrphanRecording&quot;
+  }
+}`)
+	orphanrecordingsCmd.AddCommand(deleteCmd)
+	
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/orphanrecordings/{orphanId}", utils.FormatPermissions([]string{ "recording:orphan:view",  })))
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/OrphanRecording&quot;
+  }
+}`)
+	orphanrecordingsCmd.AddCommand(getCmd)
+	
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
+	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "variable name requested by expand list")
+	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "next page token")
+	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
+	utils.AddFlag(listCmd.Flags(), "bool", "hasConversation", "false", "Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.")
+	utils.AddFlag(listCmd.Flags(), "string", "media", "", "Filter resulting orphans based on their media type Valid values: Call, Screen")
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/orphanrecordings", utils.FormatPermissions([]string{ "recording:orphan:view",  })))
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  }
+}`)
+	orphanrecordingsCmd.AddCommand(listCmd)
+	
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/orphanrecordings/{orphanId}", utils.FormatPermissions([]string{ "recording:orphan:edit",  })))
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
+  &quot;in&quot; : &quot;body&quot;,
+  &quot;name&quot; : &quot;body&quot;,
+  &quot;required&quot; : false,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/OrphanUpdateRequest&quot;
+  }
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;$ref&quot; : &quot;#/definitions/Recording&quot;
+  }
+}`)
+	orphanrecordingsCmd.AddCommand(updateCmd)
+	
+	return orphanrecordingsCmd
+}
+
+var deleteCmd = &cobra.Command{
+	Use:   "delete [orphanId]",
+	Short: "Deletes a single orphan recording",
+	Long:  "Deletes a single orphan recording",
+	Args:  utils.DetermineArgs([]string{ "orphanId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/orphanrecordings/{orphanId}"
+		orphanId, args := args[0], args[1:]
+		path = strings.Replace(path, "{orphanId}", fmt.Sprintf("%v", orphanId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}
+var getCmd = &cobra.Command{
+	Use:   "get [orphanId]",
+	Short: "Gets a single orphan recording",
+	Long:  "Gets a single orphan recording",
+	Args:  utils.DetermineArgs([]string{ "orphanId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/orphanrecordings/{orphanId}"
+		orphanId, args := args[0], args[1:]
+		path = strings.Replace(path, "{orphanId}", fmt.Sprintf("%v", orphanId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}
+var listCmd = &cobra.Command{
+	Use:   "list",
+	Short: "Gets all orphan recordings",
+	Long:  "Gets all orphan recordings",
+	Args:  utils.DetermineArgs([]string{ }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/orphanrecordings"
+
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
+		if pageNumber != "" {
+			queryParams["pageNumber"] = pageNumber
+		}
+		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
+		if sortBy != "" {
+			queryParams["sortBy"] = sortBy
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
+		nextPage := utils.GetFlag(cmd.Flags(), "string", "nextPage")
+		if nextPage != "" {
+			queryParams["nextPage"] = nextPage
+		}
+		previousPage := utils.GetFlag(cmd.Flags(), "string", "previousPage")
+		if previousPage != "" {
+			queryParams["previousPage"] = previousPage
+		}
+		hasConversation := utils.GetFlag(cmd.Flags(), "bool", "hasConversation")
+		if hasConversation != "" {
+			queryParams["hasConversation"] = hasConversation
+		}
+		media := utils.GetFlag(cmd.Flags(), "string", "media")
+		if media != "" {
+			queryParams["media"] = media
+		}
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}
+var updateCmd = &cobra.Command{
+	Use:   "update [orphanId]",
+	Short: "Updates an orphan recording to a regular recording with retention values",
+	Long:  "Updates an orphan recording to a regular recording with retention values",
+	Args:  utils.DetermineArgs([]string{ "orphanId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/orphanrecordings/{orphanId}"
+		orphanId, args := args[0], args[1:]
+		path = strings.Replace(path, "{orphanId}", fmt.Sprintf("%v", orphanId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}

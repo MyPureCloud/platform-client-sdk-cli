@@ -10,13 +10,13 @@ all: test build ## Build and run tests
 test:
 	cd gc && go test -cover -v ./...
 
-build: windows linux darwin ## Build binaries
+build: clean windows linux darwin ## Build binaries
 
-windows: $(WINDOWS) ## Build for Windows
+windows: clean $(WINDOWS) ## Build for Windows
 
-linux: $(LINUX) ## Build for Linux
+linux: clean $(LINUX) ## Build for Linux
 
-darwin: $(DARWIN) ## Build for Darwin (macOS)
+darwin: clean $(DARWIN) ## Build for Darwin (macOS)
 
 $(WINDOWS):
 	cd gc && env GOOS=windows GOARCH=amd64 go build -v -o ../$(WINDOWS)
@@ -28,4 +28,4 @@ $(DARWIN):
 	cd gc && env GOOS=darwin GOARCH=amd64 go build -v -o ../$(DARWIN)
 
 clean:
-	rm -f $(WINDOWS) $(LINUX) $(DARWIN)
+	rm -rf bin/

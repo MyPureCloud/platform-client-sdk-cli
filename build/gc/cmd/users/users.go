@@ -13,10 +13,11 @@ import (
 )
 
 var (
+	Description = utils.FormatUsageDescription("users", "SWAGGER_OVERRIDE_/api/v2/users", "SWAGGER_OVERRIDE_/api/v2/users", "SWAGGER_OVERRIDE_/api/v2/users", "SWAGGER_OVERRIDE_/api/v2/users", "SWAGGER_OVERRIDE_/api/v2/users", )
 	usersCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("users"),
-		Short: utils.FormatUsageDescription("Manages Genesys Cloud users", "", "", "", "", "", ),
-		Long:  utils.FormatUsageDescription(`Manages Genesys Cloud users`, "", "", "", "", "", ),
+		Short: Description,
+		Long:  Description,
 	}
 	CommandService services.CommandService
 )
@@ -84,7 +85,7 @@ func Cmdusers() *cobra.Command {
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserEntityListing&quot;
+    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
   }
 }`)
 	usersCmd.AddCommand(listCmd)
@@ -114,7 +115,7 @@ func Cmdusers() *cobra.Command {
 var createCmd = &cobra.Command{
 	Use:   "create",
 	Short: "Create user",
-	Long:  `Create user`,
+	Long:  "Create user",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -149,7 +150,7 @@ var createCmd = &cobra.Command{
 var deleteCmd = &cobra.Command{
 	Use:   "delete [userId]",
 	Short: "Delete user",
-	Long:  `Delete user`,
+	Long:  "Delete user",
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -186,7 +187,7 @@ var deleteCmd = &cobra.Command{
 var getCmd = &cobra.Command{
 	Use:   "get [userId]",
 	Short: "Get user.",
-	Long:  `Get user.`,
+	Long:  "Get user.",
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -235,7 +236,7 @@ var getCmd = &cobra.Command{
 var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "Get the list of available users.",
-	Long:  `Get the list of available users.`,
+	Long:  "Get the list of available users.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -302,7 +303,7 @@ var listCmd = &cobra.Command{
 var updateCmd = &cobra.Command{
 	Use:   "update [userId]",
 	Short: "Update user",
-	Long:  `Update user`,
+	Long:  "Update user",
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

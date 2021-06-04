@@ -1,0 +1,16 @@
+package knowledge_knowledgebases_languages
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_languages_trainings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_languages_documents"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_languages_categories"
+)
+
+func init() {
+	knowledge_knowledgebases_languagesCmd.AddCommand(knowledge_knowledgebases_languages_trainings.Cmdknowledge_knowledgebases_languages_trainings())
+	knowledge_knowledgebases_languagesCmd.AddCommand(knowledge_knowledgebases_languages_documents.Cmdknowledge_knowledgebases_languages_documents())
+	knowledge_knowledgebases_languagesCmd.AddCommand(knowledge_knowledgebases_languages_categories.Cmdknowledge_knowledgebases_languages_categories())
+	knowledge_knowledgebases_languagesCmd.Short = utils.GenerateCustomDescription(knowledge_knowledgebases_languagesCmd.Short, knowledge_knowledgebases_languages_trainings.Description, knowledge_knowledgebases_languages_documents.Description, knowledge_knowledgebases_languages_categories.Description, )
+	knowledge_knowledgebases_languagesCmd.Long = knowledge_knowledgebases_languagesCmd.Short
+}

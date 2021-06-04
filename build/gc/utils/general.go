@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -26,6 +27,8 @@ func AddFlag(flags *pflag.FlagSet, paramType string, name string, value string, 
 	case "bool":
 		usage = fmt.Sprintf("%v %v", usage, "Valid values: true, false")
 		fallthrough
+	case "time.Time":
+		fallthrough
 	case "string":
 		flags.String(name, "", usage)
 		break
@@ -33,6 +36,16 @@ func AddFlag(flags *pflag.FlagSet, paramType string, name string, value string, 
 		intValue, _ := strconv.Atoi(value)
 		flags.Int(name, intValue, usage)
 		break
+	case "float32":
+		floatValue, _ := strconv.ParseFloat(value, 32)
+		flags.Float32(name, float32(floatValue), usage)
+		break
+	case "float64":
+		floatValue, _ := strconv.ParseFloat(value, 64)
+		flags.Float64(name, floatValue, usage)
+		break
+	default:
+		logger.Fatal("Unknown parameter type. Support must be added for it: ", paramType)
 	}
 }
 
@@ -46,12 +59,12 @@ func AddFileFlagIfUpsert(flags *pflag.FlagSet, method string, jsonSchema string)
 	case http.MethodPost:
 		fallthrough
 	case http.MethodPut:
-		flags.StringP("file", "f", "", "File name containing the JSON for creating an object")
+		flags.StringP("file", "f", "", "File name containing the JSON body")
 	}
 }
 
 func AddPaginateFlagsIfListingResponse(flags *pflag.FlagSet, method, jsonSchema string) {
-	if method == http.MethodGet && strings.Contains(jsonSchema, "Listing") {
+	if method == http.MethodGet && strings.Contains(jsonSchema, "SWAGGER_OVERRIDE_list") {
 		flags.BoolP("autopaginate", "a", false, "Automatically paginate through the results stripping page information")
 		flags.BoolP("stream", "s", false, "Paginate and stream data as it is being processed leaving page information intact")
 	}
@@ -66,6 +79,8 @@ func GetFlag(flags *pflag.FlagSet, paramType string, name string) string {
 		break
 	case "bool":
 		fallthrough
+	case "time.Time":
+		fallthrough
 	case "string":
 		flag, _ = flags.GetString(name)
 		break
@@ -73,6 +88,16 @@ func GetFlag(flags *pflag.FlagSet, paramType string, name string) string {
 		flagInt, _ := flags.GetInt(name)
 		flag = strconv.Itoa(flagInt)
 		break
+	case "float32":
+		flagFloat, _ := flags.GetFloat32(name)
+		flag = strconv.FormatFloat(float64(flagFloat), 'E', -1, 32)
+		break
+	case "float64":
+		flagFloat, _ := flags.GetFloat64(name)
+		flag = strconv.FormatFloat(flagFloat, 'E', -1, 64)
+		break
+	default:
+		logger.Fatal("Unknown parameter type. Support must be added for it.", paramType)
 	}
 	return flag
 }
@@ -86,8 +111,11 @@ func FormatUsageDescription(inputs ...string) string {
 		}
 	}
 
-	// Some command names are separated by underscores. We only want the first name
-	message := strings.Split(messages[0], "_")[0]
+	// Some command names are separated by underscores. We only want the last name
+	name := strings.Split(messages[0], "_")
+	message := name[len(name) - 1]
+	message = strings.Replace(message, "testfile" , "test", -1)
+	message = strings.Replace(message, "documentationfile" , "documentation", -1)
 	if len(messages) == 1 {
 		return message
 	}
@@ -95,12 +123,72 @@ func FormatUsageDescription(inputs ...string) string {
 	// Add a description if it was specified in the resource definition
 	const SwaggerOverride = "SWAGGER_OVERRIDE_"
 	var description string
+	var descriptions = make([]string, 0)
 	for _, description = range messages {
 		if strings.Contains(description, SwaggerOverride) {
-			break
+			alreadyIncluded := false
+			for _, existingDescription := range descriptions {
+				if existingDescription == description {
+					alreadyIncluded = true
+				}
+			}
+			if !alreadyIncluded {
+				descriptions = append(descriptions, description)
+			}
 		}
 	}
-	return fmt.Sprintf("Manages Genesys Cloud %s", strings.Replace(description, SwaggerOverride, "", 1))
+	return strings.Replace(strings.Join(descriptions, " "), SwaggerOverride, "", -1)
+}
+
+// GenerateCustomDescription determines the description given to a command if its subcommands lead to separate paths
+// For example, `gc telephony providers edges trunks` leads to
+// /api/v2/telephony/providers/edges/trunks and /api/v2/telephony/providers/edges/{edgeId}/trunks
+// so it will return the description "/api/v2/telephony/providers/edges/trunks /api/v2/telephony/providers/edges/{edgeId}/trunks"
+func GenerateCustomDescription(description string, subcommandDescriptions ...string) string {
+	// Don't do anything if there is only one subcommand
+	if len(subcommandDescriptions) == 1 {
+		return description
+	}
+
+	newSubcommandDescriptions := make([]string, 0)
+	for _, subcommandDescription := range subcommandDescriptions {
+		if !strings.Contains(subcommandDescription, " ") {
+			newSubcommandDescriptions = append(newSubcommandDescriptions, subcommandDescription)
+		} else {
+			// If one of the subcommands leads to separate paths they must be split up
+			for _, path := range strings.Split(subcommandDescription, " ") {
+				newSubcommandDescriptions = append(newSubcommandDescriptions, path)
+			}
+		}
+	}
+
+	paths := make([]string, 0)
+	trailingPathRegex := regexp.MustCompile(`\/.[A-Za-z0-9]{0,}(\/*)$`)
+	trailingPathParamRegex := regexp.MustCompile(`\/{[A-Za-z0-9]{0,}}$`)
+	for _, subcommandDescription := range newSubcommandDescriptions {
+		subcommandDescription = trailingPathRegex.ReplaceAllString(subcommandDescription, "")
+		for ok := true; ok; ok = strings.HasSuffix(subcommandDescription, "}") {
+			subcommandDescription = trailingPathParamRegex.ReplaceAllString(subcommandDescription, "")
+		}
+		if len(strings.Split(subcommandDescription, "/")) == 4 {
+			return subcommandDescription
+		}
+		alreadyIncluded := false
+		for _, existingString := range paths {
+			if existingString == subcommandDescription {
+				alreadyIncluded = true
+			}
+		}
+		if !alreadyIncluded {
+			paths = append(paths, subcommandDescription)
+		}
+	}
+
+	if len(paths) == 1 {
+		return description
+	}
+
+	return strings.Join(paths, " ")
 }
 
 func FormatPermissions(permissions []string) string {
@@ -124,10 +212,6 @@ func DetermineArgs(args []string) cobra.PositionalArgs {
 		}
 	}
 	return cobra.ExactArgs(validArgs)
-}
-
-func AliasOperationId(operationId string, classVarName string) string {
-	return strings.ReplaceAll(operationId, classVarName, "")
 }
 
 func ConvertStdInString() string {

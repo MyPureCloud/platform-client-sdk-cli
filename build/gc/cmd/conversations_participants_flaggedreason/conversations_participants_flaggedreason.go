@@ -1,0 +1,126 @@
+package conversations_participants_flaggedreason
+
+import (
+	"fmt"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/spf13/cobra"
+	"net/url"
+	"strings"
+	"time"
+)
+
+var (
+	Description = utils.FormatUsageDescription("conversations_participants_flaggedreason", "SWAGGER_OVERRIDE_/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason", "SWAGGER_OVERRIDE_/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason", )
+	conversations_participants_flaggedreasonCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("conversations_participants_flaggedreason"),
+		Short: Description,
+		Long:  Description,
+	}
+	CommandService services.CommandService
+)
+
+func init() {
+	CommandService = services.NewCommandService(conversations_participants_flaggedreasonCmd)
+}
+
+func Cmdconversations_participants_flaggedreason() *cobra.Command { 
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason", utils.FormatPermissions([]string{  })))
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+  &quot;description&quot; : &quot;The flagged reason was removed successfully.&quot;
+}`)
+	conversations_participants_flaggedreasonCmd.AddCommand(deleteCmd)
+	
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason", utils.FormatPermissions([]string{  })))
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
+  &quot;description&quot; : &quot;The flagged reason was set successfully.&quot;
+}`)
+	conversations_participants_flaggedreasonCmd.AddCommand(updateCmd)
+	
+	return conversations_participants_flaggedreasonCmd
+}
+
+var deleteCmd = &cobra.Command{
+	Use:   "delete [conversationId] [participantId]",
+	Short: "Remove flagged reason from conversation participant.",
+	Long:  "Remove flagged reason from conversation participant.",
+	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason"
+		conversationId, args := args[0], args[1:]
+		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
+		participantId, args := args[0], args[1:]
+		path = strings.Replace(path, "{participantId}", fmt.Sprintf("%v", participantId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}
+var updateCmd = &cobra.Command{
+	Use:   "update [conversationId] [participantId]",
+	Short: "Set flagged reason on conversation participant to indicate bad conversation quality.",
+	Long:  "Set flagged reason on conversation participant to indicate bad conversation quality.",
+	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason"
+		conversationId, args := args[0], args[1:]
+		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
+		participantId, args := args[0], args[1:]
+		path = strings.Replace(path, "{participantId}", fmt.Sprintf("%v", participantId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}

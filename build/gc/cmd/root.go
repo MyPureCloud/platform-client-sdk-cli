@@ -22,11 +22,11 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/mobiledevices"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presencedefinitions"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scripts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/search"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/systempresences"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/timezones"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
@@ -34,49 +34,49 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webchat"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/coaching"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/quality"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/configuration"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gamification"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/architect"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/contentmanagement"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orgauthorization"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/organizations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/license"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recording"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/coaching"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webchat"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/quality"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/uploads"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/oauth"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/certificate"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languageunderstanding"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/voicemail"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/alerting"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/organizations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languageunderstanding"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recordings"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/oauth"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/textbots"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dataextensions"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemanagement"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profile"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/documentationfile"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/audits"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/widgets"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/architect"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/alerting"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemanagement"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recording"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orgauthorization"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gamification"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/billing"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/certificate"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/widgets"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/configuration"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dataextensions"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/textbots"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/usage"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/documentationfile"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recordings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/audits"
 	"os"
 )
 
@@ -97,7 +97,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("13.0.0")
+		fmt.Println("14.0.0")
 	},
 }
 
@@ -143,11 +143,11 @@ func init() {
 	rootCmd.AddCommand(mobiledevices.Cmdmobiledevices())
 	rootCmd.AddCommand(orphanrecordings.Cmdorphanrecordings())
 	rootCmd.AddCommand(presencedefinitions.Cmdpresencedefinitions())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(scripts.Cmdscripts())
 	rootCmd.AddCommand(search.Cmdsearch())
 	rootCmd.AddCommand(stations.Cmdstations())
 	rootCmd.AddCommand(systempresences.Cmdsystempresences())
-	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(timezones.Cmdtimezones())
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
@@ -155,49 +155,49 @@ func init() {
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(logging.Cmdlogging())
 	rootCmd.AddCommand(profiles.Cmdprofiles())
+	rootCmd.AddCommand(analytics.Cmdanalytics())
 	rootCmd.AddCommand(telephony.Cmdtelephony())
-	rootCmd.AddCommand(externalcontacts.Cmdexternalcontacts())
-	rootCmd.AddCommand(webchat.Cmdwebchat())
-	rootCmd.AddCommand(coaching.Cmdcoaching())
-	rootCmd.AddCommand(routing.Cmdrouting())
-	rootCmd.AddCommand(knowledge.Cmdknowledge())
-	rootCmd.AddCommand(quality.Cmdquality())
-	rootCmd.AddCommand(outbound.Cmdoutbound())
-	rootCmd.AddCommand(configuration.Cmdconfiguration())
-	rootCmd.AddCommand(gamification.Cmdgamification())
-	rootCmd.AddCommand(speechandtextanalytics.Cmdspeechandtextanalytics())
-	rootCmd.AddCommand(architect.Cmdarchitect())
-	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(contentmanagement.Cmdcontentmanagement())
-	rootCmd.AddCommand(authorization.Cmdauthorization())
-	rootCmd.AddCommand(orgauthorization.Cmdorgauthorization())
+	rootCmd.AddCommand(organizations.Cmdorganizations())
 	rootCmd.AddCommand(license.Cmdlicense())
-	rootCmd.AddCommand(recording.Cmdrecording())
-	rootCmd.AddCommand(journey.Cmdjourney())
+	rootCmd.AddCommand(externalcontacts.Cmdexternalcontacts())
+	rootCmd.AddCommand(outbound.Cmdoutbound())
+	rootCmd.AddCommand(coaching.Cmdcoaching())
+	rootCmd.AddCommand(webchat.Cmdwebchat())
+	rootCmd.AddCommand(quality.Cmdquality())
 	rootCmd.AddCommand(uploads.Cmduploads())
-	rootCmd.AddCommand(notifications.Cmdnotifications())
+	rootCmd.AddCommand(oauth.Cmdoauth())
+	rootCmd.AddCommand(journey.Cmdjourney())
+	rootCmd.AddCommand(certificate.Cmdcertificate())
+	rootCmd.AddCommand(knowledge.Cmdknowledge())
+	rootCmd.AddCommand(languageunderstanding.Cmdlanguageunderstanding())
 	rootCmd.AddCommand(voicemail.Cmdvoicemail())
 	rootCmd.AddCommand(workforcemanagement.Cmdworkforcemanagement())
-	rootCmd.AddCommand(alerting.Cmdalerting())
-	rootCmd.AddCommand(organizations.Cmdorganizations())
-	rootCmd.AddCommand(gdpr.Cmdgdpr())
-	rootCmd.AddCommand(languageunderstanding.Cmdlanguageunderstanding())
-	rootCmd.AddCommand(analytics.Cmdanalytics())
-	rootCmd.AddCommand(chat.Cmdchat())
-	rootCmd.AddCommand(recordings.Cmdrecordings())
-	rootCmd.AddCommand(oauth.Cmdoauth())
-	rootCmd.AddCommand(geolocations.Cmdgeolocations())
-	rootCmd.AddCommand(textbots.Cmdtextbots())
-	rootCmd.AddCommand(dataextensions.Cmddataextensions())
-	rootCmd.AddCommand(responsemanagement.Cmdresponsemanagement())
-	rootCmd.AddCommand(learning.Cmdlearning())
+	rootCmd.AddCommand(routing.Cmdrouting())
 	rootCmd.AddCommand(profile.Cmdprofile())
-	rootCmd.AddCommand(documentationfile.Cmddocumentationfile())
-	rootCmd.AddCommand(audits.Cmdaudits())
-	rootCmd.AddCommand(widgets.Cmdwidgets())
+	rootCmd.AddCommand(architect.Cmdarchitect())
+	rootCmd.AddCommand(gdpr.Cmdgdpr())
+	rootCmd.AddCommand(alerting.Cmdalerting())
+	rootCmd.AddCommand(notifications.Cmdnotifications())
+	rootCmd.AddCommand(responsemanagement.Cmdresponsemanagement())
+	rootCmd.AddCommand(scim.Cmdscim())
+	rootCmd.AddCommand(recording.Cmdrecording())
+	rootCmd.AddCommand(orgauthorization.Cmdorgauthorization())
+	rootCmd.AddCommand(gamification.Cmdgamification())
 	rootCmd.AddCommand(billing.Cmdbilling())
-	rootCmd.AddCommand(certificate.Cmdcertificate())
+	rootCmd.AddCommand(authorization.Cmdauthorization())
+	rootCmd.AddCommand(widgets.Cmdwidgets())
+	rootCmd.AddCommand(configuration.Cmdconfiguration())
+	rootCmd.AddCommand(dataextensions.Cmddataextensions())
+	rootCmd.AddCommand(speechandtextanalytics.Cmdspeechandtextanalytics())
+	rootCmd.AddCommand(chat.Cmdchat())
+	rootCmd.AddCommand(textbots.Cmdtextbots())
 	rootCmd.AddCommand(usage.Cmdusage())
+	rootCmd.AddCommand(documentationfile.Cmddocumentationfile())
+	rootCmd.AddCommand(recordings.Cmdrecordings())
+	rootCmd.AddCommand(learning.Cmdlearning())
+	rootCmd.AddCommand(geolocations.Cmdgeolocations())
+	rootCmd.AddCommand(audits.Cmdaudits())
 
 	if os.Getenv("GenerateGcDocs") != "" {
 		if _, err := os.Stat("/tmp/gc_docs"); os.IsNotExist(err) {

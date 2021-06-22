@@ -69,7 +69,9 @@ func Cmdjourney_actionmaps() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Field(s) to sort by. Prefix with `-` for descending (e.g. sortBy=displayName,-createdDate).")
 	utils.AddFlag(listCmd.Flags(), "string", "filterField", "", "Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires `filterField` to also be set.")
 	utils.AddFlag(listCmd.Flags(), "string", "filterValue", "", "Value to filter by. Requires `filterValue` to also be set.")
-	utils.AddFlag(listCmd.Flags(), "[]string", "actionMapIds", "", "IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request.")
+	utils.AddFlag(listCmd.Flags(), "[]string", "actionMapIds", "", "IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.")
+	utils.AddFlag(listCmd.Flags(), "[]string", "queryFields", "", "Action Map field(s) to query on. Requires `queryValue` to also be set.")
+	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on. Requires `queryFields` to also be set.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/actionmaps", utils.FormatPermissions([]string{ "journey:actionmap:view",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -245,6 +247,14 @@ var listCmd = &cobra.Command{
 		actionMapIds := utils.GetFlag(cmd.Flags(), "[]string", "actionMapIds")
 		if actionMapIds != "" {
 			queryParams["actionMapIds"] = actionMapIds
+		}
+		queryFields := utils.GetFlag(cmd.Flags(), "[]string", "queryFields")
+		if queryFields != "" {
+			queryParams["queryFields"] = queryFields
+		}
+		queryValue := utils.GetFlag(cmd.Flags(), "string", "queryValue")
+		if queryValue != "" {
+			queryParams["queryValue"] = queryValue
 		}
 		urlString := path
 		if len(queryParams) > 0 {

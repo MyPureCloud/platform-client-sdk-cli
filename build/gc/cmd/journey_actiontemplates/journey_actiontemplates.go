@@ -69,7 +69,9 @@ func Cmdjourney_actiontemplates() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Field(s) to sort by. Prefix with `-` for descending (e.g. sortBy=name,-createdDate).")
 	utils.AddFlag(listCmd.Flags(), "string", "mediaType", "", "Media type Valid values: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow")
-	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Action template state Valid values: Active, Inactive, Deleted")
+	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Action template state. Valid values: Active, Inactive, Deleted")
+	utils.AddFlag(listCmd.Flags(), "[]string", "queryFields", "", "ActionTemplate field(s) to query on. Requires `queryValue` to also be set.")
+	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on. Requires `queryFields` to also be set.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/actiontemplates", utils.FormatPermissions([]string{ "journey:actiontemplate:view",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -245,6 +247,14 @@ var listCmd = &cobra.Command{
 		state := utils.GetFlag(cmd.Flags(), "string", "state")
 		if state != "" {
 			queryParams["state"] = state
+		}
+		queryFields := utils.GetFlag(cmd.Flags(), "[]string", "queryFields")
+		if queryFields != "" {
+			queryParams["queryFields"] = queryFields
+		}
+		queryValue := utils.GetFlag(cmd.Flags(), "string", "queryValue")
+		if queryValue != "" {
+			queryParams["queryValue"] = queryValue
 		}
 		urlString := path
 		if len(queryParams) > 0 {

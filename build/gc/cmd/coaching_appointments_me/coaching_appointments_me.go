@@ -30,7 +30,7 @@ func Cmdcoaching_appointments_me() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "interval", "", "Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
-	utils.AddFlag(listCmd.Flags(), "[]string", "statuses", "", "Appointment Statuses to filter by Valid values: Scheduled, InProgress, Completed")
+	utils.AddFlag(listCmd.Flags(), "[]string", "statuses", "", "Appointment Statuses to filter by Valid values: Scheduled, InProgress, Completed, InvalidSchedule")
 	utils.AddFlag(listCmd.Flags(), "[]string", "facilitatorIds", "", "The facilitator IDs for which to retrieve appointments")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Sort (by due date) either Asc or Desc Valid values: Desc, Asc")
 	utils.AddFlag(listCmd.Flags(), "[]string", "relationships", "", "Relationships to filter by Valid values: Creator, Facilitator, Attendee")

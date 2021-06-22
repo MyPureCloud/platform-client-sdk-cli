@@ -72,6 +72,7 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name of the KnowledgeBase to filter.")
+	utils.AddFlag(listCmd.Flags(), "string", "coreLanguage", "", "To filter knowledgebases by corelanguage. Valid values: en-US, de-DE")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases", utils.FormatPermissions([]string{ "knowledge:knowledgebase:view",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -243,6 +244,10 @@ var listCmd = &cobra.Command{
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {
 			queryParams["name"] = name
+		}
+		coreLanguage := utils.GetFlag(cmd.Flags(), "string", "coreLanguage")
+		if coreLanguage != "" {
+			queryParams["coreLanguage"] = coreLanguage
 		}
 		urlString := path
 		if len(queryParams) > 0 {

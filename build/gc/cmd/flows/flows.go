@@ -87,7 +87,7 @@ func Cmdflows() *cobra.Command {
 }`)
 	flowsCmd.AddCommand(getCmd)
 	
-	utils.AddFlag(listCmd.Flags(), "[]string", "varType", "", "Type Valid values: bot, commonmodule, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow, workitem")
+	utils.AddFlag(listCmd.Flags(), "[]string", "varType", "", "Type Valid values: bot, commonmodule, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, workflow, workitem")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "id", "Sort by")

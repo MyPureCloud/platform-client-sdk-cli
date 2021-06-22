@@ -68,7 +68,9 @@ func Cmdjourney_segments() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "bool", "isActive", "", "Determines whether or not to show only active segments.")
-	utils.AddFlag(listCmd.Flags(), "[]string", "segmentIds", "", "IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request.")
+	utils.AddFlag(listCmd.Flags(), "[]string", "segmentIds", "", "IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.")
+	utils.AddFlag(listCmd.Flags(), "[]string", "queryFields", "", "Segment field(s) to query on. Requires `queryValue` to also be set.")
+	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on. Requires `queryFields` to also be set.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/segments", utils.FormatPermissions([]string{ "journey:segment:view",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -240,6 +242,14 @@ var listCmd = &cobra.Command{
 		segmentIds := utils.GetFlag(cmd.Flags(), "[]string", "segmentIds")
 		if segmentIds != "" {
 			queryParams["segmentIds"] = segmentIds
+		}
+		queryFields := utils.GetFlag(cmd.Flags(), "[]string", "queryFields")
+		if queryFields != "" {
+			queryParams["queryFields"] = queryFields
+		}
+		queryValue := utils.GetFlag(cmd.Flags(), "string", "queryValue")
+		if queryValue != "" {
+			queryParams["queryValue"] = queryValue
 		}
 		urlString := path
 		if len(queryParams) > 0 {

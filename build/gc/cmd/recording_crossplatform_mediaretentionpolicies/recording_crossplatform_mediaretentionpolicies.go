@@ -103,7 +103,7 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
   &quot;description&quot; : &quot;Policy&quot;,
   &quot;required&quot; : true,
   &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CrossPlatformPolicy&quot;
+    &quot;$ref&quot; : &quot;#/definitions/CrossPlatformPolicyUpdate&quot;
   }
 }`)
 	

@@ -85,7 +85,7 @@ func Cmdorgauthorization_trustees() *cobra.Command {
   &quot;description&quot; : &quot;Client&quot;,
   &quot;required&quot; : true,
   &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Trustee&quot;
+    &quot;$ref&quot; : &quot;#/definitions/TrustUpdate&quot;
   }
 }`)
 	

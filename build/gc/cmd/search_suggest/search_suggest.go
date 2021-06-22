@@ -28,7 +28,7 @@ func init() {
 
 func Cmdsearch_suggest() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "bool", "profile", "true", "profile")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/search/suggest", utils.FormatPermissions([]string{  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/search/suggest", utils.FormatPermissions([]string{ "directory:user:divisionview",  })))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -50,7 +50,7 @@ func Cmdsearch_suggest() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "q64", "", "q64 - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails")
 	utils.AddFlag(listCmd.Flags(), "bool", "profile", "true", "profile")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/search/suggest", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/search/suggest", utils.FormatPermissions([]string{ "directory:user:divisionview",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("q64")
 	

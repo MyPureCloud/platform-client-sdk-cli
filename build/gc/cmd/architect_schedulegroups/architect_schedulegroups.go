@@ -70,6 +70,7 @@ func Cmdarchitect_schedulegroups() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Sort order")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name of the Schedule Group to filter by.")
 	utils.AddFlag(listCmd.Flags(), "string", "scheduleIds", "", "A comma-delimited list of Schedule IDs to filter by.")
+	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "List of divisionIds on which to filter.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/schedulegroups", utils.FormatPermissions([]string{ "routing:scheduleGroup:view",  })))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -245,6 +246,10 @@ var listCmd = &cobra.Command{
 		scheduleIds := utils.GetFlag(cmd.Flags(), "string", "scheduleIds")
 		if scheduleIds != "" {
 			queryParams["scheduleIds"] = scheduleIds
+		}
+		divisionId := utils.GetFlag(cmd.Flags(), "[]string", "divisionId")
+		if divisionId != "" {
+			queryParams["divisionId"] = divisionId
 		}
 		urlString := path
 		if len(queryParams) > 0 {

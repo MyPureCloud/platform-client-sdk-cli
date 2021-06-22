@@ -103,7 +103,7 @@ func Cmdrecording_mediaretentionpolicies() *cobra.Command {
   &quot;description&quot; : &quot;Policy&quot;,
   &quot;required&quot; : true,
   &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Policy&quot;
+    &quot;$ref&quot; : &quot;#/definitions/PolicyUpdate&quot;
   }
 }`)
 	

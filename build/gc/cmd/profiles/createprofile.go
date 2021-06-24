@@ -14,37 +14,37 @@ import (
 )
 
 func constructConfig(profileName string, environment string, clientID string, clientSecret string) config.Configuration {
-	config := &mocks.MockClientConfig{}
+	c := &mocks.MockClientConfig{}
 
-	config.ProfileNameFunc = func() string {
+	c.ProfileNameFunc = func() string {
 		return profileName
 	}
 
-	config.EnvironmentFunc = func() string {
-		return environment
+	c.EnvironmentFunc = func() string {
+		return config.MapEnvironment(environment)
 	}
 
-	config.LogFilePathFunc = func() string {
+	c.LogFilePathFunc = func() string {
 		return ""
 	}
 
-	config.LoggingEnabledFunc = func() bool {
+	c.LoggingEnabledFunc = func() bool {
 		return false
 	}
 
-	config.ClientIDFunc = func() string {
+	c.ClientIDFunc = func() string {
 		return clientID
 	}
 
-	config.ClientSecretFunc = func() string {
+	c.ClientSecretFunc = func() string {
 		return clientSecret
 	}
 
-	config.OAuthTokenDataFunc = func() string {
+	c.OAuthTokenDataFunc = func() string {
 		return ""
 	}
 
-	return config
+	return c
 }
 
 func requestUserInput() config.Configuration {

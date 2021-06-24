@@ -17,7 +17,12 @@ This CLI focuses mainly on exposing the following operations:
 The [Developer Center](https://developer.mypurecloud.com/api/rest/command-line-interface/) contains installation instructions for supported operating systems.
 
 # Setup and Configuration
+
 All access to Genesys Cloud is provided via OAuth client credentials.  Security is enforced via the OAuth client credentials.
+
+If you are using the CLI in a pipeline or don't wish to set up a config file, see [environment variables](#environment-variables) and [parameter overrides](#parameter-overrides).  
+
+The "environment" value can be provided as the API base path such as `mypurecloud.com` or AWS region.
 
 To setup and configure your gc CLI run `gc profiles new` command and answer the questions.  If everything works correctly you should have a file created in your home directory called .gc/config.toml.  If for some reason you have problems with the `gc profiles new` command, you can manually create the config file by following the steps below.
 
@@ -37,6 +42,28 @@ client_secret="OAUTH CLIENT SECRET"
 ```
 
 **Note:** You can setup up multiple profiles.  The default profile is what will be used by the CLI by default.  You can use a different profile by passing in a `-p=profile_name` flag on the CLI.
+
+## Environment variables
+
+The following environment variables can be used as overrides or alternatives to their corresponding config file values
+
+```
+GENESYSCLOUD_REGION
+GENESYSCLOUD_OAUTHCLIENT_ID
+GENESYSCLOUD_OAUTHCLIENT_SECRET
+```
+
+`GENESYSCLOUD_REGION` can refer to the API base path or AWS region
+
+## Parameter overrides
+
+The following flags can be used as overrides or alternatives to their corresponding config file values
+
+```
+--environment
+--clientid
+--clientsecret
+```
 
 # Using the CLI
 The CLI follows standard POSIX command name and command flag parameter styles.  To see all of the available objects you can issue a `gc` command.  To see all the sub-commands under a particular entity (eg. users) type `gc <<subcommand>>`.  For example to see all of the users in the org you can type `gc users list --autopaginate`.

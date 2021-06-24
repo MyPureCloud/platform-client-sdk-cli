@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/spf13/cobra"
 	"github.com/spf13/cobra/doc"
@@ -97,7 +98,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("14.0.0")
+		fmt.Println("14.0.1")
 	},
 }
 
@@ -127,6 +128,10 @@ func init() {
 
 	rootCmd.PersistentFlags().StringVarP(&profileName, "profile", "p", "DEFAULT", "Name of the profile to use for configuring the cli")
 	rootCmd.PersistentFlags().BoolP("indicateprogress", "i", false, "Trace progress indicators to stderr")
+
+	rootCmd.PersistentFlags().StringVar(&config.Environment, "environment", "", "environment override. E.g. mypurecloud.com.au or ap-southeast-2")
+	rootCmd.PersistentFlags().StringVar(&config.ClientId, "clientid", "", "clientId override")
+	rootCmd.PersistentFlags().StringVar(&config.ClientSecret, "clientsecret", "", "clientSecret override")
 
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(date.Cmddate())

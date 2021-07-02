@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdflows_milestones() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/milestones", utils.FormatPermissions([]string{ "architect:flowMilestone:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/milestones", utils.FormatPermissions([]string{ "architect:flowMilestone:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/milestones")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -45,7 +45,7 @@ func Cmdflows_milestones() *cobra.Command {
 }`)
 	flows_milestonesCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/flows/milestones/{milestoneId}", utils.FormatPermissions([]string{ "architect:flowMilestone:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/flows/milestones/{milestoneId}", utils.FormatPermissions([]string{ "architect:flowMilestone:delete",  }), utils.GenerateDevCentreLink("DELETE", "Architect", "/api/v2/flows/milestones/{milestoneId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -56,7 +56,7 @@ func Cmdflows_milestones() *cobra.Command {
 }`)
 	flows_milestonesCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/milestones/{milestoneId}", utils.FormatPermissions([]string{ "architect:flowMilestone:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/milestones/{milestoneId}", utils.FormatPermissions([]string{ "architect:flowMilestone:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/milestones/{milestoneId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -76,7 +76,7 @@ func Cmdflows_milestones() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "description", "", "Description")
 	utils.AddFlag(listCmd.Flags(), "string", "nameOrDescription", "", "Name or description")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "division ID(s)")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/milestones", utils.FormatPermissions([]string{ "architect:flowMilestone:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/milestones", utils.FormatPermissions([]string{ "architect:flowMilestone:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/milestones")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -87,7 +87,7 @@ func Cmdflows_milestones() *cobra.Command {
 }`)
 	flows_milestonesCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/flows/milestones/{milestoneId}", utils.FormatPermissions([]string{ "architect:flowMilestone:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/flows/milestones/{milestoneId}", utils.FormatPermissions([]string{ "architect:flowMilestone:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/flows/milestones/{milestoneId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

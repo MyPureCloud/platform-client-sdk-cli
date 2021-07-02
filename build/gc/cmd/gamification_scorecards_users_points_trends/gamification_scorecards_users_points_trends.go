@@ -30,7 +30,7 @@ func Cmdgamification_scorecards_users_points_trends() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "time.Time", "startWorkday", "", "Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "endWorkday", "", "End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "string", "dayOfWeek", "", "Optional filter to specify which day of weeks to be included in the response Valid values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/scorecards/users/{userId}/points/trends", utils.FormatPermissions([]string{ "gamification:scorecard:viewAll",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/scorecards/users/{userId}/points/trends", utils.FormatPermissions([]string{ "gamification:scorecard:viewAll",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/scorecards/users/{userId}/points/trends")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("startWorkday")
 	getCmd.MarkFlagRequired("endWorkday")

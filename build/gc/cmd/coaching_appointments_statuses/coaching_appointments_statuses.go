@@ -29,7 +29,7 @@ func init() {
 func Cmdcoaching_appointments_statuses() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/coaching/appointments/{appointmentId}/statuses", utils.FormatPermissions([]string{ "coaching:appointmentStatus:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/coaching/appointments/{appointmentId}/statuses", utils.FormatPermissions([]string{ "coaching:appointmentStatus:view",  }), utils.GenerateDevCentreLink("GET", "Coaching", "/api/v2/coaching/appointments/{appointmentId}/statuses")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

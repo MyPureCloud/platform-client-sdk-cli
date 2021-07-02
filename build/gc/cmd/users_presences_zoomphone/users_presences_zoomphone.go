@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdusers_presences_zoomphone() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/presences/zoomphone", utils.FormatPermissions([]string{ "integration:zoomPhone:view", "integrations:integration:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/presences/zoomphone", utils.FormatPermissions([]string{ "integration:zoomPhone:view", "integrations:integration:view",  }), utils.GenerateDevCentreLink("GET", "Presence", "/api/v2/users/{userId}/presences/zoomphone")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

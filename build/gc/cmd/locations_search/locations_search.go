@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdlocations_search() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/locations/search", utils.FormatPermissions([]string{  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/locations/search", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Search", "/api/v2/locations/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -48,7 +48,7 @@ func Cmdlocations_search() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "string", "q64", "", "q64 - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Provides more details about a specified resource Valid values: images, addressVerificationDetails")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/locations/search", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/locations/search", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Search", "/api/v2/locations/search")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("q64")
 	

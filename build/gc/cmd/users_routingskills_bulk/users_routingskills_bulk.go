@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdusers_routingskills_bulk() *cobra.Command { 
-	bulkaddCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", bulkaddCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
+	bulkaddCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", bulkaddCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/users/{userId}/routingskills/bulk")))
 	utils.AddFileFlagIfUpsert(bulkaddCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -49,7 +49,7 @@ func Cmdusers_routingskills_bulk() *cobra.Command {
 }`)
 	users_routingskills_bulkCmd.AddCommand(bulkaddCmd)
 	
-	bulkupdateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", bulkupdateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  })))
+	bulkupdateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", bulkupdateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/users/{userId}/routingskills/bulk")))
 	utils.AddFileFlagIfUpsert(bulkupdateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

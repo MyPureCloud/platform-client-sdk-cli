@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdconversations_emails_messages_draft() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/emails/{conversationId}/messages/draft", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/emails/{conversationId}/messages/draft", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/emails/{conversationId}/messages/draft")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -38,7 +38,7 @@ func Cmdconversations_emails_messages_draft() *cobra.Command {
 }`)
 	conversations_emails_messages_draftCmd.AddCommand(getCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/emails/{conversationId}/messages/draft", utils.FormatPermissions([]string{  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/emails/{conversationId}/messages/draft", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Conversations", "/api/v2/conversations/emails/{conversationId}/messages/draft")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

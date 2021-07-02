@@ -29,7 +29,7 @@ func init() {
 func Cmdbilling_reports_billableusage() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "time.Time", "startDate", "", "The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "endDate", "", "The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z - REQUIRED")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/billing/reports/billableusage", utils.FormatPermissions([]string{ "billing:subscription:read", "billing:subscription:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/billing/reports/billableusage", utils.FormatPermissions([]string{ "billing:subscription:read", "billing:subscription:view",  }), utils.GenerateDevCentreLink("GET", "Billing", "/api/v2/billing/reports/billableusage")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("startDate")
 	getCmd.MarkFlagRequired("endDate")

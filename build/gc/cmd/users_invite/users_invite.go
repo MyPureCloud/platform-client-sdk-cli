@@ -28,7 +28,7 @@ func init() {
 
 func Cmdusers_invite() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "bool", "force", "false", "Resend the invitation even if one is already outstanding")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/{userId}/invite", utils.FormatPermissions([]string{ "directory:user:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/{userId}/invite", utils.FormatPermissions([]string{ "directory:user:add",  }), utils.GenerateDevCentreLink("POST", "Users", "/api/v2/users/{userId}/invite")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdarchitect_dependencytracking_build() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/architect/dependencytracking/build", utils.FormatPermissions([]string{ "architect:dependencyTracking:rebuild",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/architect/dependencytracking/build", utils.FormatPermissions([]string{ "architect:dependencyTracking:rebuild",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/architect/dependencytracking/build")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -35,7 +35,7 @@ func Cmdarchitect_dependencytracking_build() *cobra.Command {
 }`)
 	architect_dependencytracking_buildCmd.AddCommand(createCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/dependencytracking/build", utils.FormatPermissions([]string{ "architect:dependencyTracking:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/dependencytracking/build", utils.FormatPermissions([]string{ "architect:dependencyTracking:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/dependencytracking/build")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

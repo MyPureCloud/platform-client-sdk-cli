@@ -39,7 +39,7 @@ func Cmdflows_divisionviews() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "publishedBefore", "", "Published before")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "division ID(s)")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeSchemas", "false", "Include variable schemas")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/divisionviews", utils.FormatPermissions([]string{ "architect:flow:search",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/divisionviews", utils.FormatPermissions([]string{ "architect:flow:search",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/divisionviews")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

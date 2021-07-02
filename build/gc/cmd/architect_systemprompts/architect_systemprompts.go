@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdarchitect_systemprompts() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/systemprompts/{promptId}", utils.FormatPermissions([]string{ "architect:systemPrompt:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/systemprompts/{promptId}", utils.FormatPermissions([]string{ "architect:systemPrompt:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/systemprompts/{promptId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -45,7 +45,7 @@ func Cmdarchitect_systemprompts() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "string", "description", "", "Description")
 	utils.AddFlag(listCmd.Flags(), "string", "nameOrDescription", "", "Name or description")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/systemprompts", utils.FormatPermissions([]string{ "architect:systemPrompt:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/systemprompts", utils.FormatPermissions([]string{ "architect:systemPrompt:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/systemprompts")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

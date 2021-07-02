@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdrouting_settings_transcription() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/settings/transcription", utils.FormatPermissions([]string{ "routing:transcriptionSettings:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/settings/transcription", utils.FormatPermissions([]string{ "routing:transcriptionSettings:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/settings/transcription")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -38,7 +38,7 @@ func Cmdrouting_settings_transcription() *cobra.Command {
 }`)
 	routing_settings_transcriptionCmd.AddCommand(getCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/settings/transcription", utils.FormatPermissions([]string{ "routing:transcriptionSettings:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/settings/transcription", utils.FormatPermissions([]string{ "routing:transcriptionSettings:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/settings/transcription")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

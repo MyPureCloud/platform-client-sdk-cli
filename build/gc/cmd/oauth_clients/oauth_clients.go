@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoauth_clients() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/oauth/clients", utils.FormatPermissions([]string{ "oauth:client:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/oauth/clients", utils.FormatPermissions([]string{ "oauth:client:add",  }), utils.GenerateDevCentreLink("POST", "OAuth", "/api/v2/oauth/clients")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdoauth_clients() *cobra.Command {
 }`)
 	oauth_clientsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/oauth/clients/{clientId}", utils.FormatPermissions([]string{ "oauth:client:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/oauth/clients/{clientId}", utils.FormatPermissions([]string{ "oauth:client:delete",  }), utils.GenerateDevCentreLink("DELETE", "OAuth", "/api/v2/oauth/clients/{clientId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -62,7 +62,7 @@ func Cmdoauth_clients() *cobra.Command {
 }`)
 	oauth_clientsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/oauth/clients/{clientId}", utils.FormatPermissions([]string{ "oauth:client:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/oauth/clients/{clientId}", utils.FormatPermissions([]string{ "oauth:client:view",  }), utils.GenerateDevCentreLink("GET", "OAuth", "/api/v2/oauth/clients/{clientId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -73,7 +73,7 @@ func Cmdoauth_clients() *cobra.Command {
 }`)
 	oauth_clientsCmd.AddCommand(getCmd)
 	
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/oauth/clients", utils.FormatPermissions([]string{ "oauth:client:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/oauth/clients", utils.FormatPermissions([]string{ "oauth:client:view",  }), utils.GenerateDevCentreLink("GET", "OAuth", "/api/v2/oauth/clients")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -84,7 +84,7 @@ func Cmdoauth_clients() *cobra.Command {
 }`)
 	oauth_clientsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/oauth/clients/{clientId}", utils.FormatPermissions([]string{ "oauth:client:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/oauth/clients/{clientId}", utils.FormatPermissions([]string{ "oauth:client:edit",  }), utils.GenerateDevCentreLink("PUT", "OAuth", "/api/v2/oauth/clients/{clientId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

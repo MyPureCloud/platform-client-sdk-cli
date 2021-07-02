@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdflows_executions() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/executions", utils.FormatPermissions([]string{ "architect:flow:launch",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/executions", utils.FormatPermissions([]string{ "architect:flow:launch",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/executions")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;flowLaunchRequest&quot;,
@@ -45,7 +45,7 @@ func Cmdflows_executions() *cobra.Command {
 }`)
 	flows_executionsCmd.AddCommand(createCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/executions/{flowExecutionId}", utils.FormatPermissions([]string{ "architect:flowExecution:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/executions/{flowExecutionId}", utils.FormatPermissions([]string{ "architect:flowExecution:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/executions/{flowExecutionId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

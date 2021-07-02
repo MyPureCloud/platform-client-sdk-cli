@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdjourney_outcomes() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/journey/outcomes", utils.FormatPermissions([]string{ "journey:outcome:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/journey/outcomes", utils.FormatPermissions([]string{ "journey:outcome:add",  }), utils.GenerateDevCentreLink("POST", "Journey", "/api/v2/journey/outcomes")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -45,7 +45,7 @@ func Cmdjourney_outcomes() *cobra.Command {
 }`)
 	journey_outcomesCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/journey/outcomes/{outcomeId}", utils.FormatPermissions([]string{ "journey:outcome:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/journey/outcomes/{outcomeId}", utils.FormatPermissions([]string{ "journey:outcome:delete",  }), utils.GenerateDevCentreLink("DELETE", "Journey", "/api/v2/journey/outcomes/{outcomeId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -53,7 +53,7 @@ func Cmdjourney_outcomes() *cobra.Command {
 }`)
 	journey_outcomesCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/journey/outcomes/{outcomeId}", utils.FormatPermissions([]string{ "journey:outcome:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/journey/outcomes/{outcomeId}", utils.FormatPermissions([]string{ "journey:outcome:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/outcomes/{outcomeId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -70,7 +70,7 @@ func Cmdjourney_outcomes() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "outcomeIds", "", "IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queryFields", "", "Outcome field(s) to query on. Requires `queryValue` to also be set.")
 	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on. Requires `queryFields` to also be set.")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/outcomes", utils.FormatPermissions([]string{ "journey:outcome:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/outcomes", utils.FormatPermissions([]string{ "journey:outcome:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/outcomes")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -81,7 +81,7 @@ func Cmdjourney_outcomes() *cobra.Command {
 }`)
 	journey_outcomesCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/journey/outcomes/{outcomeId}", utils.FormatPermissions([]string{ "journey:outcome:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/journey/outcomes/{outcomeId}", utils.FormatPermissions([]string{ "journey:outcome:edit",  }), utils.GenerateDevCentreLink("PATCH", "Journey", "/api/v2/journey/outcomes/{outcomeId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

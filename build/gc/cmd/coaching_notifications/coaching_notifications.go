@@ -28,7 +28,7 @@ func init() {
 
 func Cmdcoaching_notifications() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Indicates a field in the response which should be expanded. Valid values: appointment")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/coaching/notifications/{notificationId}", utils.FormatPermissions([]string{ "coaching:notification:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/coaching/notifications/{notificationId}", utils.FormatPermissions([]string{ "coaching:notification:view",  }), utils.GenerateDevCentreLink("GET", "Coaching", "/api/v2/coaching/notifications/{notificationId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -42,7 +42,7 @@ func Cmdcoaching_notifications() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Indicates a field in the response which should be expanded. Valid values: appointment")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/coaching/notifications", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/coaching/notifications", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Coaching", "/api/v2/coaching/notifications")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -53,7 +53,7 @@ func Cmdcoaching_notifications() *cobra.Command {
 }`)
 	coaching_notificationsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/coaching/notifications/{notificationId}", utils.FormatPermissions([]string{  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/coaching/notifications/{notificationId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Coaching", "/api/v2/coaching/notifications/{notificationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

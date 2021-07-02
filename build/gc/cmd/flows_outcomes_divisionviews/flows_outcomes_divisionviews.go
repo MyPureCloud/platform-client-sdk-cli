@@ -34,7 +34,7 @@ func Cmdflows_outcomes_divisionviews() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "ID")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "division ID(s)")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/outcomes/divisionviews", utils.FormatPermissions([]string{ "architect:flowOutcome:search",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/outcomes/divisionviews", utils.FormatPermissions([]string{ "architect:flowOutcome:search",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/outcomes/divisionviews")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

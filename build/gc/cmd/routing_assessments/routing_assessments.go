@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdrouting_assessments() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/assessments", utils.FormatPermissions([]string{ "routing:assessment:add", "routing:queue:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/assessments", utils.FormatPermissions([]string{ "routing:assessment:add", "routing:queue:view",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/assessments")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -45,7 +45,7 @@ func Cmdrouting_assessments() *cobra.Command {
 }`)
 	routing_assessmentsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/assessments/{assessmentId}", utils.FormatPermissions([]string{ "routing:assessment:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/assessments/{assessmentId}", utils.FormatPermissions([]string{ "routing:assessment:delete",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/assessments/{assessmentId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -53,7 +53,7 @@ func Cmdrouting_assessments() *cobra.Command {
 }`)
 	routing_assessmentsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/assessments/{assessmentId}", utils.FormatPermissions([]string{ "routing:assessment:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/assessments/{assessmentId}", utils.FormatPermissions([]string{ "routing:assessment:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/assessments/{assessmentId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -69,7 +69,7 @@ func Cmdrouting_assessments() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queueId", "", "Queue ID(s) to filter assessments by.")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/assessments", utils.FormatPermissions([]string{ "routing:queue:view", "routing:assessment:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/assessments", utils.FormatPermissions([]string{ "routing:queue:view", "routing:assessment:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/assessments")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

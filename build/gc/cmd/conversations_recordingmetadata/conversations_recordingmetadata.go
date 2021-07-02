@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdconversations_recordingmetadata() *cobra.Command { 
-	conversationmetadataCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", conversationmetadataCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordingmetadata", utils.FormatPermissions([]string{  })))
+	conversationmetadataCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", conversationmetadataCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordingmetadata", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordingmetadata")))
 	utils.AddFileFlagIfUpsert(conversationmetadataCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(conversationmetadataCmd.Flags(), "GET", `{
@@ -41,7 +41,7 @@ func Cmdconversations_recordingmetadata() *cobra.Command {
 }`)
 	conversations_recordingmetadataCmd.AddCommand(conversationmetadataCmd)
 	
-	recordingmetadataCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", recordingmetadataCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view",  })))
+	recordingmetadataCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", recordingmetadataCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}")))
 	utils.AddFileFlagIfUpsert(recordingmetadataCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(recordingmetadataCmd.Flags(), "GET", `{

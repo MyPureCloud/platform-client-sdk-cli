@@ -30,7 +30,7 @@ func Cmdgamification_scorecards_users_points_average() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "string", "filterType", "", "Filter type for the query request. - REQUIRED Valid values: PerformanceProfile, Division")
 	utils.AddFlag(getCmd.Flags(), "string", "filterId", "", "ID for the filter type. - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "workday", "", "The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/scorecards/users/points/average", utils.FormatPermissions([]string{ "gamification:scorecard:viewAll",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/scorecards/users/points/average", utils.FormatPermissions([]string{ "gamification:scorecard:viewAll",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/scorecards/users/points/average")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("filterType")
 	getCmd.MarkFlagRequired("filterId")

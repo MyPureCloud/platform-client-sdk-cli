@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmduploads_publicassets_images() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/uploads/publicassets/images", utils.FormatPermissions([]string{ "uploads:publicasset:upload",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/uploads/publicassets/images", utils.FormatPermissions([]string{ "uploads:publicasset:upload",  }), utils.GenerateDevCentreLink("POST", "Uploads", "/api/v2/uploads/publicassets/images")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

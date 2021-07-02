@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdwebchat_settings() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/webchat/settings", utils.FormatPermissions([]string{ "webchat:deployment:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/webchat/settings", utils.FormatPermissions([]string{ "webchat:deployment:delete",  }), utils.GenerateDevCentreLink("DELETE", "WebChat", "/api/v2/webchat/settings")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -35,7 +35,7 @@ func Cmdwebchat_settings() *cobra.Command {
 }`)
 	webchat_settingsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/webchat/settings", utils.FormatPermissions([]string{ "webchat:deployment:read",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/webchat/settings", utils.FormatPermissions([]string{ "webchat:deployment:read",  }), utils.GenerateDevCentreLink("GET", "WebChat", "/api/v2/webchat/settings")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -46,7 +46,7 @@ func Cmdwebchat_settings() *cobra.Command {
 }`)
 	webchat_settingsCmd.AddCommand(getCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/webchat/settings", utils.FormatPermissions([]string{ "webchat:deployment:update",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/webchat/settings", utils.FormatPermissions([]string{ "webchat:deployment:update",  }), utils.GenerateDevCentreLink("PUT", "WebChat", "/api/v2/webchat/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

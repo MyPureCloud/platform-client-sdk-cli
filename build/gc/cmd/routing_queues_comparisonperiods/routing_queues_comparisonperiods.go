@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdrouting_queues_comparisonperiods() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}", utils.FormatPermissions([]string{ "routing:comparisonPeriod:view", "routing:queue:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}", utils.FormatPermissions([]string{ "routing:comparisonPeriod:view", "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -38,7 +38,7 @@ func Cmdrouting_queues_comparisonperiods() *cobra.Command {
 }`)
 	routing_queues_comparisonperiodsCmd.AddCommand(getCmd)
 	
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/comparisonperiods", utils.FormatPermissions([]string{ "routing:comparisonPeriod:view", "routing:queue:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/comparisonperiods", utils.FormatPermissions([]string{ "routing:comparisonPeriod:view", "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/{queueId}/comparisonperiods")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

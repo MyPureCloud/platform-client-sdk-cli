@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdconversations_callbacks_participants_wrapupcodes() *cobra.Command { 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

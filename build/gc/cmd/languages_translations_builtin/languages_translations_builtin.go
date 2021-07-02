@@ -28,7 +28,7 @@ func init() {
 
 func Cmdlanguages_translations_builtin() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "language", "", "The language of the builtin translation to retrieve - REQUIRED")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/languages/translations/builtin", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/languages/translations/builtin", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Languages", "/api/v2/languages/translations/builtin")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("language")
 	

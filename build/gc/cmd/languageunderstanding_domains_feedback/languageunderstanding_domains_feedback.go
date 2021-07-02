@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdlanguageunderstanding_domains_feedback() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/languageunderstanding/domains/{domainId}/feedback", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:add", "dialog:bot:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/languageunderstanding/domains/{domainId}/feedback", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:add", "dialog:bot:add",  }), utils.GenerateDevCentreLink("POST", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/feedback")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdlanguageunderstanding_domains_feedback() *cobra.Command {
 }`)
 	languageunderstanding_domains_feedbackCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:delete", "dialog:bot:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:delete", "dialog:bot:delete",  }), utils.GenerateDevCentreLink("DELETE", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -55,7 +55,7 @@ func Cmdlanguageunderstanding_domains_feedback() *cobra.Command {
 	languageunderstanding_domains_feedbackCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "[]string", "fields", "", "Fields and properties to get, comma-separated Valid values: version, dateCreated, text, intents")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:view", "dialog:bot:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:view", "dialog:bot:view",  }), utils.GenerateDevCentreLink("GET", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -76,7 +76,7 @@ func Cmdlanguageunderstanding_domains_feedback() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "enableCursorPagination", "false", "Enable Cursor Pagination")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true")
 	utils.AddFlag(listCmd.Flags(), "[]string", "fields", "", "Fields and properties to get, comma-separated Valid values: version, dateCreated, text, intents")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/languageunderstanding/domains/{domainId}/feedback", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:view", "dialog:bot:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/languageunderstanding/domains/{domainId}/feedback", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:view", "dialog:bot:view",  }), utils.GenerateDevCentreLink("GET", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/feedback")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

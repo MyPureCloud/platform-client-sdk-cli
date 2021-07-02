@@ -28,7 +28,7 @@ func init() {
 
 func Cmdflows_actions_checkout() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "string", "flow", "", "Flow ID - REQUIRED")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/actions/checkout", utils.FormatPermissions([]string{ "architect:flow:edit",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/actions/checkout", utils.FormatPermissions([]string{ "architect:flow:edit",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/actions/checkout")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	createCmd.MarkFlagRequired("flow")
 	

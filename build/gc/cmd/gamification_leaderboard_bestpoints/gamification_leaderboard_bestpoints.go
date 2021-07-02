@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdgamification_leaderboard_bestpoints() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/leaderboard/bestpoints", utils.FormatPermissions([]string{ "gamification:leaderboard:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/leaderboard/bestpoints", utils.FormatPermissions([]string{ "gamification:leaderboard:view",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/leaderboard/bestpoints")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

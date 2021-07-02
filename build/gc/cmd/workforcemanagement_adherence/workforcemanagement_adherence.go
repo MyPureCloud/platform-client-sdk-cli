@@ -28,7 +28,7 @@ func init() {
 
 func Cmdworkforcemanagement_adherence() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "[]string", "userId", "", "User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request - REQUIRED")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/adherence", utils.FormatPermissions([]string{ "wfm:realtimeAdherence:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/adherence", utils.FormatPermissions([]string{ "wfm:realtimeAdherence:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/adherence")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("userId")
 	

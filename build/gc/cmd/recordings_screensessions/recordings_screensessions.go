@@ -29,7 +29,7 @@ func init() {
 func Cmdrecordings_screensessions() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recordings/screensessions", utils.FormatPermissions([]string{ "recording:screenRecording:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recordings/screensessions", utils.FormatPermissions([]string{ "recording:screenRecording:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recordings/screensessions")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -40,7 +40,7 @@ func Cmdrecordings_screensessions() *cobra.Command {
 }`)
 	recordings_screensessionsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/recordings/screensessions/{recordingSessionId}", utils.FormatPermissions([]string{ "recording:screenRecording:stop",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/recordings/screensessions/{recordingSessionId}", utils.FormatPermissions([]string{ "recording:screenRecording:stop",  }), utils.GenerateDevCentreLink("PATCH", "Recording", "/api/v2/recordings/screensessions/{recordingSessionId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

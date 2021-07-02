@@ -28,7 +28,7 @@ func init() {
 
 func Cmdtelephony_providers_edges_sites_numberplans_classifications() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "string", "classification", "", "Classification")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

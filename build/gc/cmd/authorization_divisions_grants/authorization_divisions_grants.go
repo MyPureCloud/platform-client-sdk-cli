@@ -29,7 +29,7 @@ func init() {
 func Cmdauthorization_divisions_grants() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/authorization/divisions/{divisionId}/grants", utils.FormatPermissions([]string{ "authorization:grant:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/authorization/divisions/{divisionId}/grants", utils.FormatPermissions([]string{ "authorization:grant:view",  }), utils.GenerateDevCentreLink("GET", "Authorization", "/api/v2/authorization/divisions/{divisionId}/grants")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

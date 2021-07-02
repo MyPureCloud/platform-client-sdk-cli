@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoutbound_sequences() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/sequences", utils.FormatPermissions([]string{ "outbound:campaignSequence:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/sequences", utils.FormatPermissions([]string{ "outbound:campaignSequence:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/sequences")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdoutbound_sequences() *cobra.Command {
 }`)
 	outbound_sequencesCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:campaignSequence:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:campaignSequence:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/sequences/{sequenceId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -54,7 +54,7 @@ func Cmdoutbound_sequences() *cobra.Command {
 }`)
 	outbound_sequencesCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:campaignSequence:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:campaignSequence:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/sequences/{sequenceId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -72,7 +72,7 @@ func Cmdoutbound_sequences() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "Sort order Valid values: ascending, descending")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/sequences", utils.FormatPermissions([]string{ "outbound:campaignSequence:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/sequences", utils.FormatPermissions([]string{ "outbound:campaignSequence:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/sequences")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -83,7 +83,7 @@ func Cmdoutbound_sequences() *cobra.Command {
 }`)
 	outbound_sequencesCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:campaignSequence:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:campaignSequence:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/sequences/{sequenceId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

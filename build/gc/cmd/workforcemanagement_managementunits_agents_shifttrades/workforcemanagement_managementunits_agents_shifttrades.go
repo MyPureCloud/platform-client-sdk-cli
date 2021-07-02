@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdworkforcemanagement_managementunits_agents_shifttrades() *cobra.Command { 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades", utils.FormatPermissions([]string{ "wfm:shiftTradeRequest:edit", "wfm:shiftTradeRequest:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades", utils.FormatPermissions([]string{ "wfm:shiftTradeRequest:edit", "wfm:shiftTradeRequest:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdpresencedefinitions() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/presencedefinitions", utils.FormatPermissions([]string{ "presence:presenceDefinition:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/presencedefinitions", utils.FormatPermissions([]string{ "presence:presenceDefinition:add",  }), utils.GenerateDevCentreLink("POST", "Presence", "/api/v2/presencedefinitions")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdpresencedefinitions() *cobra.Command {
 }`)
 	presencedefinitionsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/presencedefinitions/{presenceId}", utils.FormatPermissions([]string{ "presence:presenceDefinition:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/presencedefinitions/{presenceId}", utils.FormatPermissions([]string{ "presence:presenceDefinition:delete",  }), utils.GenerateDevCentreLink("DELETE", "Presence", "/api/v2/presencedefinitions/{presenceId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -62,7 +62,7 @@ func Cmdpresencedefinitions() *cobra.Command {
 	presencedefinitionsCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "string", "localeCode", "", "The locale code to fetch for the presence definition. Use ALL to fetch everything.")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/presencedefinitions/{presenceId}", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/presencedefinitions/{presenceId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Presence", "/api/v2/presencedefinitions/{presenceId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -77,7 +77,7 @@ func Cmdpresencedefinitions() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "deleted", "false", "Deleted query can be TRUE, FALSE or ALL")
 	utils.AddFlag(listCmd.Flags(), "string", "localeCode", "", "The locale code to fetch for each presence definition. Use ALL to fetch everything.")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/presencedefinitions", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/presencedefinitions", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Presence", "/api/v2/presencedefinitions")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -88,7 +88,7 @@ func Cmdpresencedefinitions() *cobra.Command {
 }`)
 	presencedefinitionsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/presencedefinitions/{presenceId}", utils.FormatPermissions([]string{ "presence:presenceDefinition:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/presencedefinitions/{presenceId}", utils.FormatPermissions([]string{ "presence:presenceDefinition:edit",  }), utils.GenerateDevCentreLink("PUT", "Presence", "/api/v2/presencedefinitions/{presenceId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

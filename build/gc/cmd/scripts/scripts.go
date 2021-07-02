@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdscripts() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/scripts/{scriptId}", utils.FormatPermissions([]string{ "scripter:script:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/scripts/{scriptId}", utils.FormatPermissions([]string{ "scripter:script:view",  }), utils.GenerateDevCentreLink("GET", "Scripts", "/api/v2/scripts/{scriptId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -47,7 +47,7 @@ func Cmdscripts() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "SortBy Valid values: modifiedDate, createdDate")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "SortOrder Valid values: ascending, descending")
 	utils.AddFlag(listCmd.Flags(), "string", "scriptDataVersion", "", "Advanced usage - controls the data version of the script")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/scripts", utils.FormatPermissions([]string{ "scripter:script:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/scripts", utils.FormatPermissions([]string{ "scripter:script:view",  }), utils.GenerateDevCentreLink("GET", "Scripts", "/api/v2/scripts")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

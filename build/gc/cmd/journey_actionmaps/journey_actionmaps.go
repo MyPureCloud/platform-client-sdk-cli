@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdjourney_actionmaps() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/journey/actionmaps", utils.FormatPermissions([]string{ "journey:actionmap:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/journey/actionmaps", utils.FormatPermissions([]string{ "journey:actionmap:add",  }), utils.GenerateDevCentreLink("POST", "Journey", "/api/v2/journey/actionmaps")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -45,7 +45,7 @@ func Cmdjourney_actionmaps() *cobra.Command {
 }`)
 	journey_actionmapsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/journey/actionmaps/{actionMapId}", utils.FormatPermissions([]string{ "journey:actionmap:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/journey/actionmaps/{actionMapId}", utils.FormatPermissions([]string{ "journey:actionmap:delete",  }), utils.GenerateDevCentreLink("DELETE", "Journey", "/api/v2/journey/actionmaps/{actionMapId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -53,7 +53,7 @@ func Cmdjourney_actionmaps() *cobra.Command {
 }`)
 	journey_actionmapsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/journey/actionmaps/{actionMapId}", utils.FormatPermissions([]string{ "journey:actionmap:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/journey/actionmaps/{actionMapId}", utils.FormatPermissions([]string{ "journey:actionmap:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/actionmaps/{actionMapId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -72,7 +72,7 @@ func Cmdjourney_actionmaps() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "actionMapIds", "", "IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queryFields", "", "Action Map field(s) to query on. Requires `queryValue` to also be set.")
 	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on. Requires `queryFields` to also be set.")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/actionmaps", utils.FormatPermissions([]string{ "journey:actionmap:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/actionmaps", utils.FormatPermissions([]string{ "journey:actionmap:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/actionmaps")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -83,7 +83,7 @@ func Cmdjourney_actionmaps() *cobra.Command {
 }`)
 	journey_actionmapsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/journey/actionmaps/{actionMapId}", utils.FormatPermissions([]string{ "journey:actionmap:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/journey/actionmaps/{actionMapId}", utils.FormatPermissions([]string{ "journey:actionmap:edit",  }), utils.GenerateDevCentreLink("PATCH", "Journey", "/api/v2/journey/actionmaps/{actionMapId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

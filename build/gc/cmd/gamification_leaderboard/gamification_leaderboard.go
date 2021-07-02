@@ -30,7 +30,7 @@ func Cmdgamification_leaderboard() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "time.Time", "startWorkday", "", "Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "endWorkday", "", "End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "string", "metricId", "", "Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/leaderboard", utils.FormatPermissions([]string{ "gamification:leaderboard:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/leaderboard", utils.FormatPermissions([]string{ "gamification:leaderboard:view",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/leaderboard")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("startWorkday")
 	getCmd.MarkFlagRequired("endWorkday")

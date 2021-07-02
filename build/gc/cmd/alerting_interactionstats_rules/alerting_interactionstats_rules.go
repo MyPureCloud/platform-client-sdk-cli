@@ -28,7 +28,7 @@ func init() {
 
 func Cmdalerting_interactionstats_rules() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/alerting/interactionstats/rules", utils.FormatPermissions([]string{ "alerting:rule:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/alerting/interactionstats/rules", utils.FormatPermissions([]string{ "alerting:rule:add",  }), utils.GenerateDevCentreLink("POST", "Alerting", "/api/v2/alerting/interactionstats/rules")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -47,7 +47,7 @@ func Cmdalerting_interactionstats_rules() *cobra.Command {
 }`)
 	alerting_interactionstats_rulesCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/alerting/interactionstats/rules/{ruleId}", utils.FormatPermissions([]string{ "alerting:rule:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/alerting/interactionstats/rules/{ruleId}", utils.FormatPermissions([]string{ "alerting:rule:delete",  }), utils.GenerateDevCentreLink("DELETE", "Alerting", "/api/v2/alerting/interactionstats/rules/{ruleId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -56,7 +56,7 @@ func Cmdalerting_interactionstats_rules() *cobra.Command {
 	alerting_interactionstats_rulesCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/alerting/interactionstats/rules/{ruleId}", utils.FormatPermissions([]string{ "alerting:rule:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/alerting/interactionstats/rules/{ruleId}", utils.FormatPermissions([]string{ "alerting:rule:view",  }), utils.GenerateDevCentreLink("GET", "Alerting", "/api/v2/alerting/interactionstats/rules/{ruleId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -68,7 +68,7 @@ func Cmdalerting_interactionstats_rules() *cobra.Command {
 	alerting_interactionstats_rulesCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/alerting/interactionstats/rules", utils.FormatPermissions([]string{ "alerting:rule:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/alerting/interactionstats/rules", utils.FormatPermissions([]string{ "alerting:rule:view",  }), utils.GenerateDevCentreLink("GET", "Alerting", "/api/v2/alerting/interactionstats/rules")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -80,7 +80,7 @@ func Cmdalerting_interactionstats_rules() *cobra.Command {
 	alerting_interactionstats_rulesCmd.AddCommand(listCmd)
 	
 	utils.AddFlag(updateCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/alerting/interactionstats/rules/{ruleId}", utils.FormatPermissions([]string{ "alerting:rule:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/alerting/interactionstats/rules/{ruleId}", utils.FormatPermissions([]string{ "alerting:rule:edit",  }), utils.GenerateDevCentreLink("PUT", "Alerting", "/api/v2/alerting/interactionstats/rules/{ruleId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

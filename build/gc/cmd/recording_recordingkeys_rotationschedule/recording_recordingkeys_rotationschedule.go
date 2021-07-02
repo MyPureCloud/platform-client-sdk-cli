@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdrecording_recordingkeys_rotationschedule() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/recording/recordingkeys/rotationschedule", utils.FormatPermissions([]string{ "recording:encryptionKey:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/recording/recordingkeys/rotationschedule", utils.FormatPermissions([]string{ "recording:encryptionKey:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/recordingkeys/rotationschedule")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -38,7 +38,7 @@ func Cmdrecording_recordingkeys_rotationschedule() *cobra.Command {
 }`)
 	recording_recordingkeys_rotationscheduleCmd.AddCommand(getCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/recordingkeys/rotationschedule", utils.FormatPermissions([]string{ "recording:encryptionKey:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/recordingkeys/rotationschedule", utils.FormatPermissions([]string{ "recording:encryptionKey:edit",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/recordingkeys/rotationschedule")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

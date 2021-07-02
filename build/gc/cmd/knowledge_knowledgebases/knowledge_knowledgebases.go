@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdknowledge_knowledgebases() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/knowledge/knowledgebases", utils.FormatPermissions([]string{ "knowledge:knowledgebase:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/knowledge/knowledgebases", utils.FormatPermissions([]string{ "knowledge:knowledgebase:add",  }), utils.GenerateDevCentreLink("POST", "Knowledge", "/api/v2/knowledge/knowledgebases")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -45,7 +45,7 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
 }`)
 	knowledge_knowledgebasesCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}", utils.FormatPermissions([]string{ "knowledge:knowledgebase:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}", utils.FormatPermissions([]string{ "knowledge:knowledgebase:delete",  }), utils.GenerateDevCentreLink("DELETE", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -56,7 +56,7 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
 }`)
 	knowledge_knowledgebasesCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}", utils.FormatPermissions([]string{ "knowledge:knowledgebase:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}", utils.FormatPermissions([]string{ "knowledge:knowledgebase:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -71,9 +71,10 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
-	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name of the KnowledgeBase to filter.")
-	utils.AddFlag(listCmd.Flags(), "string", "coreLanguage", "", "To filter knowledgebases by corelanguage. Valid values: en-US, de-DE")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases", utils.FormatPermissions([]string{ "knowledge:knowledgebase:view",  })))
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by Name.")
+	utils.AddFlag(listCmd.Flags(), "string", "coreLanguage", "", "Filter by core language. Valid values: en-US, de-DE")
+	utils.AddFlag(listCmd.Flags(), "bool", "published", "", "Filter by published status.")
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases", utils.FormatPermissions([]string{ "knowledge:knowledgebase:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -84,7 +85,7 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
 }`)
 	knowledge_knowledgebasesCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}", utils.FormatPermissions([]string{ "knowledge:knowledgebase:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}", utils.FormatPermissions([]string{ "knowledge:knowledgebase:edit",  }), utils.GenerateDevCentreLink("PATCH", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -248,6 +249,10 @@ var listCmd = &cobra.Command{
 		coreLanguage := utils.GetFlag(cmd.Flags(), "string", "coreLanguage")
 		if coreLanguage != "" {
 			queryParams["coreLanguage"] = coreLanguage
+		}
+		published := utils.GetFlag(cmd.Flags(), "bool", "published")
+		if published != "" {
+			queryParams["published"] = published
 		}
 		urlString := path
 		if len(queryParams) > 0 {

@@ -31,7 +31,7 @@ func Cmdcontentmanagement_shared() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "string", "disposition", "attachment", "Request how the share content will be downloaded: attached as a file or inline. Default is attachment. Valid values: attachment, inline, none")
 	utils.AddFlag(getCmd.Flags(), "string", "contentType", "", "The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav")
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand some document fields Valid values: document.acl")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/contentmanagement/shared/{sharedId}", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/contentmanagement/shared/{sharedId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Content Management", "/api/v2/contentmanagement/shared/{sharedId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

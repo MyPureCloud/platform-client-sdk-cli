@@ -33,7 +33,7 @@ func Cmdtelephony_siptraces() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "string", "conversationId", "", "Unique identification of the conversation")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "dateStart", "", "Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "dateEnd", "", "End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z - REQUIRED")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/siptraces", utils.FormatPermissions([]string{ "telephony:pcap:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/siptraces", utils.FormatPermissions([]string{ "telephony:pcap:view",  }), utils.GenerateDevCentreLink("GET", "Telephony", "/api/v2/telephony/siptraces")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("dateStart")
 	getCmd.MarkFlagRequired("dateEnd")

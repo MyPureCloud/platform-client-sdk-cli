@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdquality_forms_surveys() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/forms/surveys", utils.FormatPermissions([]string{ "quality:surveyForm:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/forms/surveys", utils.FormatPermissions([]string{ "quality:surveyForm:add",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/forms/surveys")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdquality_forms_surveys() *cobra.Command {
 }`)
 	quality_forms_surveysCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:delete",  }), utils.GenerateDevCentreLink("DELETE", "Quality", "/api/v2/quality/forms/surveys/{formId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -54,7 +54,7 @@ func Cmdquality_forms_surveys() *cobra.Command {
 }`)
 	quality_forms_surveysCmd.AddCommand(deleteCmd)
 	
-	disableCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", disableCmd.UsageTemplate(), "PATCH", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:disable",  })))
+	disableCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", disableCmd.UsageTemplate(), "PATCH", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:disable",  }), utils.GenerateDevCentreLink("PATCH", "Quality", "/api/v2/quality/forms/surveys/{formId}")))
 	utils.AddFileFlagIfUpsert(disableCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -73,7 +73,7 @@ func Cmdquality_forms_surveys() *cobra.Command {
 }`)
 	quality_forms_surveysCmd.AddCommand(disableCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/forms/surveys/{formId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -92,7 +92,7 @@ func Cmdquality_forms_surveys() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Expand")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Order to sort results, either asc or desc")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/forms/surveys", utils.FormatPermissions([]string{ "quality:surveyForm:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/forms/surveys", utils.FormatPermissions([]string{ "quality:surveyForm:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/forms/surveys")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -103,7 +103,7 @@ func Cmdquality_forms_surveys() *cobra.Command {
 }`)
 	quality_forms_surveysCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:edit",  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/forms/surveys/{formId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

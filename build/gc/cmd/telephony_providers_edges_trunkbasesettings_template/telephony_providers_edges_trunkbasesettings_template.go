@@ -28,7 +28,7 @@ func init() {
 
 func Cmdtelephony_providers_edges_trunkbasesettings_template() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "trunkMetabaseId", "", "The id of a metabase object upon which to base this Trunk Base Settings - REQUIRED")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/trunkbasesettings/template", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/trunkbasesettings/template", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/trunkbasesettings/template")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("trunkMetabaseId")
 	

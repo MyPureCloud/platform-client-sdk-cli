@@ -29,7 +29,7 @@ func init() {
 func Cmdauthorization_divisionspermitted_me() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "name", "", "Search term to filter by division name")
 	utils.AddFlag(getCmd.Flags(), "string", "permission", "", "The permission string, including the object to access, e.g. routing:queue:view - REQUIRED")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/divisionspermitted/me", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/divisionspermitted/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Authorization", "/api/v2/authorization/divisionspermitted/me")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("permission")
 	

@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdfax_documents_content() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/fax/documents/{documentId}/content", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/fax/documents/{documentId}/content", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Fax", "/api/v2/fax/documents/{documentId}/content")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

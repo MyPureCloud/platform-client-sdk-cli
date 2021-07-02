@@ -28,7 +28,7 @@ func init() {
 
 func Cmdauthorization_roles_default() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "bool", "force", "false", "Restore default roles")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/roles/default", utils.FormatPermissions([]string{ "authorization:role:edit",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/roles/default", utils.FormatPermissions([]string{ "authorization:role:edit",  }), utils.GenerateDevCentreLink("POST", "Authorization", "/api/v2/authorization/roles/default")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -39,7 +39,7 @@ func Cmdauthorization_roles_default() *cobra.Command {
 }`)
 	authorization_roles_defaultCmd.AddCommand(createCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/default", utils.FormatPermissions([]string{ "authorization:role:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/default", utils.FormatPermissions([]string{ "authorization:role:edit",  }), utils.GenerateDevCentreLink("PUT", "Authorization", "/api/v2/authorization/roles/default")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

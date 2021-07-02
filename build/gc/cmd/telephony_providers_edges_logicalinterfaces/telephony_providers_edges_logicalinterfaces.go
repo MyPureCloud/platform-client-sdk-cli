@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command {
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("DELETE", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -62,7 +62,7 @@ func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command {
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Field to expand in the response Valid values: externalTrunkBaseAssignments, phoneTrunkBaseAssignments")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -74,7 +74,7 @@ func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command {
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(getedgelogicalinterfacesCmd.Flags(), "[]string", "expand", "", "Field to expand in the response Valid values: externalTrunkBaseAssignments, phoneTrunkBaseAssignments")
-	getedgelogicalinterfacesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getedgelogicalinterfacesCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	getedgelogicalinterfacesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getedgelogicalinterfacesCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces")))
 	utils.AddFileFlagIfUpsert(getedgelogicalinterfacesCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getedgelogicalinterfacesCmd.Flags(), "GET", `{
@@ -87,7 +87,7 @@ func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "string", "edgeIds", "", "Comma separated list of Edge Id`s - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Field to expand in the response Valid values: externalTrunkBaseAssignments, phoneTrunkBaseAssignments")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/logicalinterfaces", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/logicalinterfaces", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/logicalinterfaces")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("edgeIds")
 	
@@ -99,7 +99,7 @@ func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command {
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdrecording_jobs() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/jobs", utils.FormatPermissions([]string{ "recording:job:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/jobs", utils.FormatPermissions([]string{ "recording:job:add",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recording/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdrecording_jobs() *cobra.Command {
 }`)
 	recording_jobsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/recording/jobs/{jobId}", utils.FormatPermissions([]string{ "recording:job:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/recording/jobs/{jobId}", utils.FormatPermissions([]string{ "recording:job:delete",  }), utils.GenerateDevCentreLink("DELETE", "Recording", "/api/v2/recording/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -54,7 +54,7 @@ func Cmdrecording_jobs() *cobra.Command {
 }`)
 	recording_jobsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/recording/jobs/{jobId}", utils.FormatPermissions([]string{ "recording:job:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/recording/jobs/{jobId}", utils.FormatPermissions([]string{ "recording:job:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -71,7 +71,7 @@ func Cmdrecording_jobs() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Filter by state Valid values: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED")
 	utils.AddFlag(listCmd.Flags(), "bool", "showOnlyMyJobs", "", "Show only my jobs")
 	utils.AddFlag(listCmd.Flags(), "string", "jobType", "", "Job Type (Can be left empty for both) Valid values: DELETE, EXPORT")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recording/jobs", utils.FormatPermissions([]string{ "recording:job:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recording/jobs", utils.FormatPermissions([]string{ "recording:job:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/jobs")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -82,7 +82,7 @@ func Cmdrecording_jobs() *cobra.Command {
 }`)
 	recording_jobsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/jobs/{jobId}", utils.FormatPermissions([]string{ "recording:job:edit", "recording:recording:editRetention", "recording:screenRecording:editRetention",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/jobs/{jobId}", utils.FormatPermissions([]string{ "recording:job:edit", "recording:recording:editRetention", "recording:screenRecording:editRetention",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

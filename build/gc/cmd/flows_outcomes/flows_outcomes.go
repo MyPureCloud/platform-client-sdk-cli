@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdflows_outcomes() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/outcomes", utils.FormatPermissions([]string{ "architect:flowOutcome:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/outcomes", utils.FormatPermissions([]string{ "architect:flowOutcome:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/outcomes")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -45,7 +45,7 @@ func Cmdflows_outcomes() *cobra.Command {
 }`)
 	flows_outcomesCmd.AddCommand(createCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/outcomes/{flowOutcomeId}", utils.FormatPermissions([]string{ "architect:flowOutcome:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/outcomes/{flowOutcomeId}", utils.FormatPermissions([]string{ "architect:flowOutcome:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/outcomes/{flowOutcomeId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -65,7 +65,7 @@ func Cmdflows_outcomes() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "description", "", "Description")
 	utils.AddFlag(listCmd.Flags(), "string", "nameOrDescription", "", "Name or description")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "division ID(s)")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/outcomes", utils.FormatPermissions([]string{ "architect:flowOutcome:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/outcomes", utils.FormatPermissions([]string{ "architect:flowOutcome:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/outcomes")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -76,7 +76,7 @@ func Cmdflows_outcomes() *cobra.Command {
 }`)
 	flows_outcomesCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/flows/outcomes/{flowOutcomeId}", utils.FormatPermissions([]string{ "architect:flowOutcome:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/flows/outcomes/{flowOutcomeId}", utils.FormatPermissions([]string{ "architect:flowOutcome:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/flows/outcomes/{flowOutcomeId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

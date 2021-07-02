@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdusers_presences_microsoftteams() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/presences/microsoftteams", utils.FormatPermissions([]string{ "integration:microsoftTeams:view", "integrations:integration:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/presences/microsoftteams", utils.FormatPermissions([]string{ "integration:microsoftTeams:view", "integrations:integration:view",  }), utils.GenerateDevCentreLink("GET", "Presence", "/api/v2/users/{userId}/presences/microsoftteams")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

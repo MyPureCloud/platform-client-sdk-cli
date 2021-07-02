@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdworkforcemanagement_adhocmodelingjobs() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/adhocmodelingjobs/{jobId}", utils.FormatPermissions([]string{ "wfm:adhocModel:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/adhocmodelingjobs/{jobId}", utils.FormatPermissions([]string{ "wfm:adhocModel:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/adhocmodelingjobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

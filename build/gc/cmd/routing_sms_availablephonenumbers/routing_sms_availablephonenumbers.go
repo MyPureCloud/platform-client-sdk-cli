@@ -34,7 +34,7 @@ func Cmdrouting_sms_availablephonenumbers() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "phoneNumberType", "", "Type of available phone numbers searched - REQUIRED Valid values: local, mobile, tollfree")
 	utils.AddFlag(listCmd.Flags(), "string", "pattern", "", "A pattern to match phone numbers. Valid characters are `*` and [0-9a-zA-Z]. The `*` character will match any single digit.")
 	utils.AddFlag(listCmd.Flags(), "string", "addressRequirement", "", "This indicates whether the phone number requires to have an Address registered. Valid values: none, any, local, foreign")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/sms/availablephonenumbers", utils.FormatPermissions([]string{ "sms:phoneNumber:add",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/sms/availablephonenumbers", utils.FormatPermissions([]string{ "sms:phoneNumber:add",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/sms/availablephonenumbers")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("countryCode")
 	listCmd.MarkFlagRequired("phoneNumberType")

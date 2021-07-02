@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoutbound_callanalysisresponsesets() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/callanalysisresponsesets", utils.FormatPermissions([]string{ "outbound:responseSet:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/callanalysisresponsesets", utils.FormatPermissions([]string{ "outbound:responseSet:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/callanalysisresponsesets")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdoutbound_callanalysisresponsesets() *cobra.Command {
 }`)
 	outbound_callanalysisresponsesetsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}", utils.FormatPermissions([]string{ "outbound:responseSet:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}", utils.FormatPermissions([]string{ "outbound:responseSet:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -54,7 +54,7 @@ func Cmdoutbound_callanalysisresponsesets() *cobra.Command {
 }`)
 	outbound_callanalysisresponsesetsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}", utils.FormatPermissions([]string{ "outbound:responseSet:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}", utils.FormatPermissions([]string{ "outbound:responseSet:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -72,7 +72,7 @@ func Cmdoutbound_callanalysisresponsesets() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "Sort order Valid values: ascending, descending")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/callanalysisresponsesets", utils.FormatPermissions([]string{ "outbound:responseSet:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/callanalysisresponsesets", utils.FormatPermissions([]string{ "outbound:responseSet:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/callanalysisresponsesets")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -83,7 +83,7 @@ func Cmdoutbound_callanalysisresponsesets() *cobra.Command {
 }`)
 	outbound_callanalysisresponsesetsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}", utils.FormatPermissions([]string{ "outbound:responseSet:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}", utils.FormatPermissions([]string{ "outbound:responseSet:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

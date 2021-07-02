@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdusage_query() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/usage/query", utils.FormatPermissions([]string{ "oauth:client:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/usage/query", utils.FormatPermissions([]string{ "oauth:client:view",  }), utils.GenerateDevCentreLink("POST", "Usage", "/api/v2/usage/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

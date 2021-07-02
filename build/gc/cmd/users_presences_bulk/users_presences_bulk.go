@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdusers_presences_bulk() *cobra.Command { 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/presences/bulk", utils.FormatPermissions([]string{ "directory:user:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/presences/bulk", utils.FormatPermissions([]string{ "directory:user:edit",  }), utils.GenerateDevCentreLink("PUT", "Presence", "/api/v2/users/presences/bulk")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

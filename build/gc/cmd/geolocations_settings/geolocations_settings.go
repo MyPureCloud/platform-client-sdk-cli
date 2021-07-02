@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdgeolocations_settings() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/geolocations/settings", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/geolocations/settings", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Geolocation", "/api/v2/geolocations/settings")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -38,7 +38,7 @@ func Cmdgeolocations_settings() *cobra.Command {
 }`)
 	geolocations_settingsCmd.AddCommand(getCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/geolocations/settings", utils.FormatPermissions([]string{ "geolocation:settings:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/geolocations/settings", utils.FormatPermissions([]string{ "geolocation:settings:edit",  }), utils.GenerateDevCentreLink("PATCH", "Geolocation", "/api/v2/geolocations/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

@@ -28,7 +28,7 @@ func init() {
 
 func Cmdbilling_trusteebillingoverview() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "int", "billingPeriodIndex", "0", "0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on.")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/billing/trusteebillingoverview/{trustorOrgId}", utils.FormatPermissions([]string{ "affiliateOrganization:clientBilling:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/billing/trusteebillingoverview/{trustorOrgId}", utils.FormatPermissions([]string{ "affiliateOrganization:clientBilling:view",  }), utils.GenerateDevCentreLink("GET", "Billing", "/api/v2/billing/trusteebillingoverview/{trustorOrgId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

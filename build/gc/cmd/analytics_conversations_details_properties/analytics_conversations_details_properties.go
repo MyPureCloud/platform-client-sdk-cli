@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdanalytics_conversations_details_properties() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/conversations/{conversationId}/details/properties", utils.FormatPermissions([]string{ "analytics:conversationProperties:index",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/conversations/{conversationId}/details/properties", utils.FormatPermissions([]string{ "analytics:conversationProperties:index",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/analytics/conversations/{conversationId}/details/properties")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdlocations_sublocations() *cobra.Command { 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/locations/{locationId}/sublocations", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/locations/{locationId}/sublocations", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Locations", "/api/v2/locations/{locationId}/sublocations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

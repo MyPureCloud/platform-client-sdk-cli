@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/crossplatform/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/crossplatform/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:add",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:delete",  }), utils.GenerateDevCentreLink("DELETE", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -55,7 +55,7 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(deletepoliciesCmd.Flags(), "string", "ids", "", " - REQUIRED")
-	deletepoliciesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deletepoliciesCmd.UsageTemplate(), "DELETE", "/api/v2/recording/crossplatform/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:delete",  })))
+	deletepoliciesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deletepoliciesCmd.UsageTemplate(), "DELETE", "/api/v2/recording/crossplatform/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:delete",  }), utils.GenerateDevCentreLink("DELETE", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies")))
 	utils.AddFileFlagIfUpsert(deletepoliciesCmd.Flags(), "DELETE", ``)
 	deletepoliciesCmd.MarkFlagRequired("ids")
 	
@@ -64,7 +64,7 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(deletepoliciesCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -85,7 +85,7 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "enabled", "", "checks to see if policy is enabled - use enabled = true or enabled = false")
 	utils.AddFlag(listCmd.Flags(), "bool", "summary", "false", "provides a less verbose response of policy lists.")
 	utils.AddFlag(listCmd.Flags(), "bool", "hasErrors", "", "provides a way to fetch all policies with errors or policies that do not have errors")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recording/crossplatform/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recording/crossplatform/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -96,7 +96,7 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(listCmd)
 	
-	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:edit",  })))
+	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:edit",  }), utils.GenerateDevCentreLink("PATCH", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -115,7 +115,7 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(patchCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:edit",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

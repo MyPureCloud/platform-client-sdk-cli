@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdjourney_actiontargets() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/journey/actiontargets/{actionTargetId}", utils.FormatPermissions([]string{ "journey:actiontarget:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/journey/actiontargets/{actionTargetId}", utils.FormatPermissions([]string{ "journey:actiontarget:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/actiontargets/{actionTargetId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -39,8 +39,8 @@ func Cmdjourney_actiontargets() *cobra.Command {
 	journey_actiontargetsCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/actiontargets", utils.FormatPermissions([]string{ "journey:actiontarget:view",  })))
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size. The max that will be returned is 100.")
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/actiontargets", utils.FormatPermissions([]string{ "journey:actiontarget:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/actiontargets")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -51,7 +51,7 @@ func Cmdjourney_actiontargets() *cobra.Command {
 }`)
 	journey_actiontargetsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/journey/actiontargets/{actionTargetId}", utils.FormatPermissions([]string{ "journey:actiontarget:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/journey/actiontargets/{actionTargetId}", utils.FormatPermissions([]string{ "journey:actiontarget:edit",  }), utils.GenerateDevCentreLink("PATCH", "Journey", "/api/v2/journey/actiontargets/{actionTargetId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

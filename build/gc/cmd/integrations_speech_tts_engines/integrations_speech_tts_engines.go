@@ -28,7 +28,7 @@ func init() {
 
 func Cmdintegrations_speech_tts_engines() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "bool", "includeVoices", "false", "Include voices for the engine")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/integrations/speech/tts/engines/{engineId}", utils.FormatPermissions([]string{ "integrations:integration:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/integrations/speech/tts/engines/{engineId}", utils.FormatPermissions([]string{ "integrations:integration:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/speech/tts/engines/{engineId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -44,7 +44,7 @@ func Cmdintegrations_speech_tts_engines() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "includeVoices", "false", "Include voices for the engine")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter on engine name")
 	utils.AddFlag(listCmd.Flags(), "string", "language", "", "Filter on supported language. If includeVoices=true then the voices are also filtered.")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations/speech/tts/engines", utils.FormatPermissions([]string{ "integrations:integration:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations/speech/tts/engines", utils.FormatPermissions([]string{ "integrations:integration:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/speech/tts/engines")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

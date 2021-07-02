@@ -28,7 +28,7 @@ func init() {
 
 func Cmdquality_forms_surveys_bulk() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "A comma-delimited list of valid survey form ids - REQUIRED")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/forms/surveys/bulk", utils.FormatPermissions([]string{ "quality:surveyForm:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/forms/surveys/bulk", utils.FormatPermissions([]string{ "quality:surveyForm:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/forms/surveys/bulk")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("id")
 	

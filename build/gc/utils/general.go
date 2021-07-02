@@ -204,6 +204,21 @@ func FormatPermissions(permissions []string) string {
 	return permissionString
 }
 
+func GenerateDevCentreLink(method, category, path string) string {
+	category = strings.ToLower(strings.Replace(category, " ", "", -1))
+	path = strings.Replace(path, "/", "-", -1)
+	path = strings.Replace(path, "{", "-", -1)
+	path = strings.Replace(path, "}", "-", -1)
+
+	linkString := "Documentation:\n"
+	linkString += fmt.Sprintf("  https://developer.genesys.cloud/api/rest/v2/%v/#%v%v\n",
+						category,
+						strings.ToLower(method),
+						path)
+
+	return linkString
+}
+
 func DetermineArgs(args []string) cobra.PositionalArgs {
 	validArgs := 0
 	for _, arg := range args {

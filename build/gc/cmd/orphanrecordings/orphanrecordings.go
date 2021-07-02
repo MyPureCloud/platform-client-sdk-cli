@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdorphanrecordings() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/orphanrecordings/{orphanId}", utils.FormatPermissions([]string{ "recording:orphan:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/orphanrecordings/{orphanId}", utils.FormatPermissions([]string{ "recording:orphan:delete",  }), utils.GenerateDevCentreLink("DELETE", "Recording", "/api/v2/orphanrecordings/{orphanId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -38,7 +38,7 @@ func Cmdorphanrecordings() *cobra.Command {
 }`)
 	orphanrecordingsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/orphanrecordings/{orphanId}", utils.FormatPermissions([]string{ "recording:orphan:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/orphanrecordings/{orphanId}", utils.FormatPermissions([]string{ "recording:orphan:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/orphanrecordings/{orphanId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -57,7 +57,7 @@ func Cmdorphanrecordings() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
 	utils.AddFlag(listCmd.Flags(), "bool", "hasConversation", "false", "Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.")
 	utils.AddFlag(listCmd.Flags(), "string", "media", "", "Filter resulting orphans based on their media type Valid values: Call, Screen")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/orphanrecordings", utils.FormatPermissions([]string{ "recording:orphan:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/orphanrecordings", utils.FormatPermissions([]string{ "recording:orphan:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/orphanrecordings")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -68,7 +68,7 @@ func Cmdorphanrecordings() *cobra.Command {
 }`)
 	orphanrecordingsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/orphanrecordings/{orphanId}", utils.FormatPermissions([]string{ "recording:orphan:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/orphanrecordings/{orphanId}", utils.FormatPermissions([]string{ "recording:orphan:edit",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/orphanrecordings/{orphanId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

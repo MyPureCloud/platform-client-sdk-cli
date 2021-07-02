@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoutbound_events() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/events/{eventId}", utils.FormatPermissions([]string{ "outbound:eventLog:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/events/{eventId}", utils.FormatPermissions([]string{ "outbound:eventLog:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/events/{eventId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -45,7 +45,7 @@ func Cmdoutbound_events() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "level", "", "Level")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "Sort order Valid values: ascending, descending")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/events", utils.FormatPermissions([]string{ "outbound:eventLog:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/events", utils.FormatPermissions([]string{ "outbound:eventLog:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/events")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

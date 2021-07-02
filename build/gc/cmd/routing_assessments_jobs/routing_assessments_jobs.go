@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdrouting_assessments_jobs() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/assessments/jobs", utils.FormatPermissions([]string{ "routing:assessment:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/assessments/jobs", utils.FormatPermissions([]string{ "routing:assessment:add",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/assessments/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -45,7 +45,7 @@ func Cmdrouting_assessments_jobs() *cobra.Command {
 }`)
 	routing_assessments_jobsCmd.AddCommand(createCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/assessments/jobs/{jobId}", utils.FormatPermissions([]string{ "routing:assessment:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/assessments/jobs/{jobId}", utils.FormatPermissions([]string{ "routing:assessment:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/assessments/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -57,7 +57,7 @@ func Cmdrouting_assessments_jobs() *cobra.Command {
 	routing_assessments_jobsCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Division ID(s) to filter assessment jobs by.")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/assessments/jobs", utils.FormatPermissions([]string{ "routing:queue:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/assessments/jobs", utils.FormatPermissions([]string{ "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/assessments/jobs")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

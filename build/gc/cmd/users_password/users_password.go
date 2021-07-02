@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdusers_password() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/{userId}/password", utils.FormatPermissions([]string{ "directory:user:setPassword",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/{userId}/password", utils.FormatPermissions([]string{ "directory:user:setPassword",  }), utils.GenerateDevCentreLink("POST", "Users", "/api/v2/users/{userId}/password")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

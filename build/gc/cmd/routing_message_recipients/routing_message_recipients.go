@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdrouting_message_recipients() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/message/recipients/{recipientId}", utils.FormatPermissions([]string{ "routing:message:manage",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/message/recipients/{recipientId}", utils.FormatPermissions([]string{ "routing:message:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/message/recipients/{recipientId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -41,7 +41,7 @@ func Cmdrouting_message_recipients() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "messengerType", "", "Messenger Type Valid values: sms, facebook, twitter, line, whatsapp, open")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/message/recipients", utils.FormatPermissions([]string{ "routing:message:manage",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/message/recipients", utils.FormatPermissions([]string{ "routing:message:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/message/recipients")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -52,7 +52,7 @@ func Cmdrouting_message_recipients() *cobra.Command {
 }`)
 	routing_message_recipientsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/message/recipients/{recipientId}", utils.FormatPermissions([]string{ "routing:message:manage",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/message/recipients/{recipientId}", utils.FormatPermissions([]string{ "routing:message:manage",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/message/recipients/{recipientId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

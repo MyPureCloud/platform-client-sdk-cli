@@ -32,7 +32,7 @@ func Cmdoutbound_audits() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "string", "sortBy", "entity.name", "Sort by")
 	utils.AddFlag(createCmd.Flags(), "string", "sortOrder", "ascending", "Sort order")
 	utils.AddFlag(createCmd.Flags(), "bool", "facetsOnly", "false", "Facets only")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/audits", utils.FormatPermissions([]string{ "outbound:audit:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/audits", utils.FormatPermissions([]string{ "outbound:audit:view",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/audits")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

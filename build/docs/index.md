@@ -173,6 +173,13 @@ To see further examples of enabling autocompletion, run the following command:
 gc completion --help
 ```
 
+## Operation data
+
+Running any API operation command followed by '--help' will print out the following information:
+
+* Operation. e.g. `POST /api/v2/users`
+* Permissions (where applicable)
+* Documentation. e.g. https://developer.genesys.cloud/api/rest/v2/users/#post-api-v2-users
 
 # Examples
 

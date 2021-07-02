@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdintegrations_eventlog() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/integrations/eventlog/{eventId}", utils.FormatPermissions([]string{ "integrations:integration:view", "bridge:notification:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/integrations/eventlog/{eventId}", utils.FormatPermissions([]string{ "integrations:integration:view", "bridge:notification:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/eventlog/{eventId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -43,7 +43,7 @@ func Cmdintegrations_eventlog() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "timestamp", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "descending", "Order by")
 	utils.AddFlag(listCmd.Flags(), "string", "entityId", "", "Include only events with this entity ID")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations/eventlog", utils.FormatPermissions([]string{ "integrations:integration:view", "bridge:notification:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations/eventlog", utils.FormatPermissions([]string{ "integrations:integration:view", "bridge:notification:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/eventlog")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

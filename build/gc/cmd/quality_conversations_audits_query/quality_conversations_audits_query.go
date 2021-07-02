@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdquality_conversations_audits_query() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/conversations/audits/query", utils.FormatPermissions([]string{ "audits:interactionDetails:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/conversations/audits/query", utils.FormatPermissions([]string{ "audits:interactionDetails:view",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/conversations/audits/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdquality_conversations_audits_query() *cobra.Command {
 }`)
 	quality_conversations_audits_queryCmd.AddCommand(createCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/conversations/audits/query/{transactionId}", utils.FormatPermissions([]string{ "audits:interactionDetails:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/conversations/audits/query/{transactionId}", utils.FormatPermissions([]string{ "audits:interactionDetails:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/conversations/audits/query/{transactionId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

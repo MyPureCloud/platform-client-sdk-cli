@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdflows_history() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/{flowId}/history", utils.FormatPermissions([]string{ "architect:flow:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/{flowId}/history", utils.FormatPermissions([]string{ "architect:flow:view",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/{flowId}/history")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -43,7 +43,7 @@ func Cmdflows_history() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "desc", "Sort order")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "timestamp", "Sort by Valid values: action, timestamp, user")
 	utils.AddFlag(listCmd.Flags(), "[]string", "action", "", "Flow actions to include (omit to include all) Valid values: checkin, checkout, create, deactivate, debug, delete, publish, revert, save")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/{flowId}/history/{historyId}", utils.FormatPermissions([]string{ "architect:flow:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/{flowId}/history/{historyId}", utils.FormatPermissions([]string{ "architect:flow:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/{flowId}/history/{historyId}")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdchat_settings() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/chat/settings", utils.FormatPermissions([]string{ "chat:setting:view", "chat:setting:edit",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/chat/settings", utils.FormatPermissions([]string{ "chat:setting:view", "chat:setting:edit",  }), utils.GenerateDevCentreLink("GET", "Chat", "/api/v2/chat/settings")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -38,7 +38,7 @@ func Cmdchat_settings() *cobra.Command {
 }`)
 	chat_settingsCmd.AddCommand(getCmd)
 	
-	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/chat/settings", utils.FormatPermissions([]string{ "chat:setting:edit",  })))
+	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/chat/settings", utils.FormatPermissions([]string{ "chat:setting:edit",  }), utils.GenerateDevCentreLink("PATCH", "Chat", "/api/v2/chat/settings")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -57,7 +57,7 @@ func Cmdchat_settings() *cobra.Command {
 }`)
 	chat_settingsCmd.AddCommand(patchCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/chat/settings", utils.FormatPermissions([]string{ "chat:setting:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/chat/settings", utils.FormatPermissions([]string{ "chat:setting:edit",  }), utils.GenerateDevCentreLink("PUT", "Chat", "/api/v2/chat/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

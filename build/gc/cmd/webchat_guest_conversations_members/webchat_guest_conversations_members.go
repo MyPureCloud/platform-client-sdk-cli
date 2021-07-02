@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdwebchat_guest_conversations_members() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}", utils.FormatPermissions([]string{  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "WebChat", "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -35,7 +35,7 @@ func Cmdwebchat_guest_conversations_members() *cobra.Command {
 }`)
 	webchat_guest_conversations_membersCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "WebChat", "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -49,7 +49,7 @@ func Cmdwebchat_guest_conversations_members() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The number of entries to return per page, or omitted for the default.")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number to return, or omitted for the first page.")
 	utils.AddFlag(listCmd.Flags(), "bool", "excludeDisconnectedMembers", "false", "If true, the results will not contain members who have a DISCONNECTED state.")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/webchat/guest/conversations/{conversationId}/members", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/webchat/guest/conversations/{conversationId}/members", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "WebChat", "/api/v2/webchat/guest/conversations/{conversationId}/members")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

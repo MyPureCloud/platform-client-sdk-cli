@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoutbound_dnclists_export() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/dnclists/{dncListId}/export", utils.FormatPermissions([]string{ "outbound:dnc:view", "outbound:dncList:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/dnclists/{dncListId}/export", utils.FormatPermissions([]string{ "outbound:dnc:view", "outbound:dncList:view",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/dnclists/{dncListId}/export")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -39,7 +39,7 @@ func Cmdoutbound_dnclists_export() *cobra.Command {
 	outbound_dnclists_exportCmd.AddCommand(createCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "string", "download", "false", "Redirect to download uri")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/dnclists/{dncListId}/export", utils.FormatPermissions([]string{ "outbound:dnc:view", "outbound:dncList:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/dnclists/{dncListId}/export", utils.FormatPermissions([]string{ "outbound:dnc:view", "outbound:dncList:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/dnclists/{dncListId}/export")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

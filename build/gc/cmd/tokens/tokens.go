@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdtokens() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/tokens/{userId}", utils.FormatPermissions([]string{ "oauth:token:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/tokens/{userId}", utils.FormatPermissions([]string{ "oauth:token:delete",  }), utils.GenerateDevCentreLink("DELETE", "Tokens", "/api/v2/tokens/{userId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{

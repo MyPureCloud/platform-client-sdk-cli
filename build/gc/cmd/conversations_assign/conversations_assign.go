@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdconversations_assign() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/assign", utils.FormatPermissions([]string{ "conversation:call:pull", "conversation:call:assign", "conversation:callback:pull", "conversation:callback:assign", "conversation:webchat:pull", "conversation:webchat:assign", "conversation:email:pull", "conversation:email:assign", "conversation:message:pull", "conversation:message:assign",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/assign", utils.FormatPermissions([]string{ "conversation:call:pull", "conversation:call:assign", "conversation:callback:pull", "conversation:callback:assign", "conversation:webchat:pull", "conversation:webchat:assign", "conversation:email:pull", "conversation:email:assign", "conversation:message:pull", "conversation:message:assign",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/{conversationId}/assign")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

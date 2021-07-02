@@ -29,7 +29,7 @@ func init() {
 func Cmdvoicemail_queues_messages() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/voicemail/queues/{queueId}/messages", utils.FormatPermissions([]string{ "voicemail:acdVoicemail:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/voicemail/queues/{queueId}/messages", utils.FormatPermissions([]string{ "voicemail:acdvoicemail:view",  }), utils.GenerateDevCentreLink("GET", "Voicemail", "/api/v2/voicemail/queues/{queueId}/messages")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

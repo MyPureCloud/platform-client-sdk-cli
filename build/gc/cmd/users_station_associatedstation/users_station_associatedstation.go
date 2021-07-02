@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdusers_station_associatedstation() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}/station/associatedstation", utils.FormatPermissions([]string{  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}/station/associatedstation", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Users", "/api/v2/users/{userId}/station/associatedstation")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -35,7 +35,7 @@ func Cmdusers_station_associatedstation() *cobra.Command {
 }`)
 	users_station_associatedstationCmd.AddCommand(deleteCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/station/associatedstation/{stationId}", utils.FormatPermissions([]string{  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/station/associatedstation/{stationId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/station/associatedstation/{stationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{

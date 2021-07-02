@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoutbound_campaigns_divisionviews() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns/divisionviews/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:search",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns/divisionviews/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:search",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/campaigns/divisionviews/{campaignId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -45,7 +45,7 @@ func Cmdoutbound_campaigns_divisionviews() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "Sort order Valid values: ascending, descending")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns/divisionviews", utils.FormatPermissions([]string{ "outbound:campaign:search",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns/divisionviews", utils.FormatPermissions([]string{ "outbound:campaign:search",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/campaigns/divisionviews")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

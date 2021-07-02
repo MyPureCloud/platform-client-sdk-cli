@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdusers_callforwarding() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/callforwarding", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/callforwarding", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/{userId}/callforwarding")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -38,7 +38,7 @@ func Cmdusers_callforwarding() *cobra.Command {
 }`)
 	users_callforwardingCmd.AddCommand(getCmd)
 	
-	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/callforwarding", utils.FormatPermissions([]string{ "conversation:callForwarding:edit",  })))
+	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/callforwarding", utils.FormatPermissions([]string{ "conversation:callForwarding:edit",  }), utils.GenerateDevCentreLink("PATCH", "Users", "/api/v2/users/{userId}/callforwarding")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -57,7 +57,7 @@ func Cmdusers_callforwarding() *cobra.Command {
 }`)
 	users_callforwardingCmd.AddCommand(patchCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/callforwarding", utils.FormatPermissions([]string{ "conversation:callForwarding:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/callforwarding", utils.FormatPermissions([]string{ "conversation:callForwarding:edit",  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/callforwarding")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

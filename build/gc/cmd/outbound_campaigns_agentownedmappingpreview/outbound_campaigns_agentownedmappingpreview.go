@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoutbound_campaigns_agentownedmappingpreview() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview", utils.FormatPermissions([]string{ "outbound:campaign:view", "outbound:contact:view", "directory:user:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview", utils.FormatPermissions([]string{ "outbound:campaign:view", "outbound:contact:view", "directory:user:view",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

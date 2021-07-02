@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdspeechandtextanalytics_settings() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/settings", utils.FormatPermissions([]string{ "speechAndTextAnalytics:settings:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/settings", utils.FormatPermissions([]string{ "speechAndTextAnalytics:settings:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/settings")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -38,7 +38,7 @@ func Cmdspeechandtextanalytics_settings() *cobra.Command {
 }`)
 	speechandtextanalytics_settingsCmd.AddCommand(getCmd)
 	
-	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/speechandtextanalytics/settings", utils.FormatPermissions([]string{ "speechAndTextAnalytics:settings:edit",  })))
+	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/speechandtextanalytics/settings", utils.FormatPermissions([]string{ "speechAndTextAnalytics:settings:edit",  }), utils.GenerateDevCentreLink("PATCH", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/settings")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -57,7 +57,7 @@ func Cmdspeechandtextanalytics_settings() *cobra.Command {
 }`)
 	speechandtextanalytics_settingsCmd.AddCommand(patchCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/speechandtextanalytics/settings", utils.FormatPermissions([]string{ "speechAndTextAnalytics:settings:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/speechandtextanalytics/settings", utils.FormatPermissions([]string{ "speechAndTextAnalytics:settings:edit",  }), utils.GenerateDevCentreLink("PUT", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

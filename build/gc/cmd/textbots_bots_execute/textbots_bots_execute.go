@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdtextbots_bots_execute() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/textbots/bots/execute", utils.FormatPermissions([]string{ "textbots:session:execute",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/textbots/bots/execute", utils.FormatPermissions([]string{ "textbots:session:execute",  }), utils.GenerateDevCentreLink("POST", "Textbots", "/api/v2/textbots/bots/execute")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;postTextRequest&quot;,

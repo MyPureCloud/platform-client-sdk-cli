@@ -28,7 +28,7 @@ func init() {
 
 func Cmdquality_surveys_scorable() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "customerSurveyUrl", "", "customerSurveyUrl - REQUIRED")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/surveys/scorable", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/surveys/scorable", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/surveys/scorable")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("customerSurveyUrl")
 	
@@ -41,7 +41,7 @@ func Cmdquality_surveys_scorable() *cobra.Command {
 	quality_surveys_scorableCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(updateCmd.Flags(), "string", "customerSurveyUrl", "", "customerSurveyUrl - REQUIRED")
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/surveys/scorable", utils.FormatPermissions([]string{  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/surveys/scorable", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/surveys/scorable")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

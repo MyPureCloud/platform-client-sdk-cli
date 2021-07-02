@@ -28,7 +28,7 @@ func init() {
 
 func Cmdquality_calibrations() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "string", "expand", "", "calibratorId")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/calibrations", utils.FormatPermissions([]string{ "quality:calibration:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/calibrations", utils.FormatPermissions([]string{ "quality:calibration:add",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/calibrations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -48,7 +48,7 @@ func Cmdquality_calibrations() *cobra.Command {
 	quality_calibrationsCmd.AddCommand(createCmd)
 	
 	utils.AddFlag(deleteCmd.Flags(), "string", "calibratorId", "", "calibratorId - REQUIRED")
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/quality/calibrations/{calibrationId}", utils.FormatPermissions([]string{ "quality:calibration:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/quality/calibrations/{calibrationId}", utils.FormatPermissions([]string{ "quality:calibration:delete",  }), utils.GenerateDevCentreLink("DELETE", "Quality", "/api/v2/quality/calibrations/{calibrationId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	deleteCmd.MarkFlagRequired("calibratorId")
 	
@@ -62,7 +62,7 @@ func Cmdquality_calibrations() *cobra.Command {
 	
 	utils.AddFlag(getCmd.Flags(), "string", "calibratorId", "", "calibratorId")
 	utils.AddFlag(getCmd.Flags(), "string", "conversationId", "", "conversationId")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/calibrations/{calibrationId}", utils.FormatPermissions([]string{ "quality:calibration:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/calibrations/{calibrationId}", utils.FormatPermissions([]string{ "quality:calibration:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/calibrations/{calibrationId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -83,7 +83,7 @@ func Cmdquality_calibrations() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "time.Time", "startTime", "", "Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
 	utils.AddFlag(listCmd.Flags(), "time.Time", "endTime", "", "end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
 	utils.AddFlag(listCmd.Flags(), "string", "calibratorId", "", "user id of calibrator - REQUIRED")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/calibrations", utils.FormatPermissions([]string{ "quality:calibration:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/calibrations", utils.FormatPermissions([]string{ "quality:calibration:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/calibrations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("calibratorId")
 	
@@ -95,7 +95,7 @@ func Cmdquality_calibrations() *cobra.Command {
 }`)
 	quality_calibrationsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/calibrations/{calibrationId}", utils.FormatPermissions([]string{ "quality:calibration:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/calibrations/{calibrationId}", utils.FormatPermissions([]string{ "quality:calibration:edit",  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/calibrations/{calibrationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

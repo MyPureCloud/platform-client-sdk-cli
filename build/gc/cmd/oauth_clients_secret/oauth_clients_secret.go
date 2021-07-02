@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoauth_clients_secret() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/oauth/clients/{clientId}/secret", utils.FormatPermissions([]string{ "oauth:client:edit",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/oauth/clients/{clientId}/secret", utils.FormatPermissions([]string{ "oauth:client:edit",  }), utils.GenerateDevCentreLink("POST", "OAuth", "/api/v2/oauth/clients/{clientId}/secret")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

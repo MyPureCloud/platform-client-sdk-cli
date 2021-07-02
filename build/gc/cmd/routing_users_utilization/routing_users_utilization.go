@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdrouting_users_utilization() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/users/{userId}/utilization", utils.FormatPermissions([]string{ "routing:utilization:manage",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/users/{userId}/utilization", utils.FormatPermissions([]string{ "routing:utilization:manage",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/users/{userId}/utilization")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -35,7 +35,7 @@ func Cmdrouting_users_utilization() *cobra.Command {
 }`)
 	routing_users_utilizationCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/users/{userId}/utilization", utils.FormatPermissions([]string{ "routing:utilization:manage", "routing:utilization:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/users/{userId}/utilization", utils.FormatPermissions([]string{ "routing:utilization:manage", "routing:utilization:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/users/{userId}/utilization")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -46,7 +46,7 @@ func Cmdrouting_users_utilization() *cobra.Command {
 }`)
 	routing_users_utilizationCmd.AddCommand(getCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/users/{userId}/utilization", utils.FormatPermissions([]string{ "routing:utilization:manage",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/users/{userId}/utilization", utils.FormatPermissions([]string{ "routing:utilization:manage",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/users/{userId}/utilization")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

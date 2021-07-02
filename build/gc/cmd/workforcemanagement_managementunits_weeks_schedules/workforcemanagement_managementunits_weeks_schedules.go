@@ -29,7 +29,7 @@ func init() {
 func Cmdworkforcemanagement_managementunits_weeks_schedules() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Which fields, if any, to expand Valid values: generationResults, headcountForecast")
 	utils.AddFlag(getCmd.Flags(), "bool", "forceDownloadService", "", "Force the result of this operation to be sent via download service.  For testing/app development purposes")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}", utils.FormatPermissions([]string{ "wfm:publishedSchedule:view", "wfm:schedule:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}", utils.FormatPermissions([]string{ "wfm:publishedSchedule:view", "wfm:schedule:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -43,7 +43,7 @@ func Cmdworkforcemanagement_managementunits_weeks_schedules() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "includeOnlyPublished", "", "Return only published schedules")
 	utils.AddFlag(listCmd.Flags(), "string", "earliestWeekDate", "", "The start date of the earliest week to query in yyyy-MM-dd format")
 	utils.AddFlag(listCmd.Flags(), "string", "latestWeekDate", "", "The start date of the latest week to query in yyyy-MM-dd format")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules", utils.FormatPermissions([]string{ "wfm:publishedSchedule:view", "wfm:schedule:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules", utils.FormatPermissions([]string{ "wfm:publishedSchedule:view", "wfm:schedule:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

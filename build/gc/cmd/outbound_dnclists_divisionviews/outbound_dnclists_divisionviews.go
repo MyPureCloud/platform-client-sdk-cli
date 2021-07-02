@@ -29,7 +29,7 @@ func init() {
 func Cmdoutbound_dnclists_divisionviews() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "bool", "includeImportStatus", "false", "Include import status")
 	utils.AddFlag(getCmd.Flags(), "bool", "includeSize", "false", "Include size")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/dnclists/divisionviews/{dncListId}", utils.FormatPermissions([]string{ "outbound:dncList:search",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/dnclists/divisionviews/{dncListId}", utils.FormatPermissions([]string{ "outbound:dncList:search",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/dnclists/divisionviews/{dncListId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -50,7 +50,7 @@ func Cmdoutbound_dnclists_divisionviews() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "Sort order Valid values: ascending, descending")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/dnclists/divisionviews", utils.FormatPermissions([]string{ "outbound:dncList:search",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/dnclists/divisionviews", utils.FormatPermissions([]string{ "outbound:dncList:search",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/dnclists/divisionviews")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

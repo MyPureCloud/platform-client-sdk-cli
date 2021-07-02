@@ -28,7 +28,7 @@ func init() {
 
 func Cmdarchitect_prompts() *cobra.Command { 
 	utils.AddFlag(batchdeleteCmd.Flags(), "[]string", "id", "", "List of Prompt IDs - REQUIRED")
-	batchdeleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", batchdeleteCmd.UsageTemplate(), "DELETE", "/api/v2/architect/prompts", utils.FormatPermissions([]string{ "architect:userPrompt:delete",  })))
+	batchdeleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", batchdeleteCmd.UsageTemplate(), "DELETE", "/api/v2/architect/prompts", utils.FormatPermissions([]string{ "architect:userPrompt:delete",  }), utils.GenerateDevCentreLink("DELETE", "Architect", "/api/v2/architect/prompts")))
 	utils.AddFileFlagIfUpsert(batchdeleteCmd.Flags(), "DELETE", ``)
 	batchdeleteCmd.MarkFlagRequired("id")
 	
@@ -40,7 +40,7 @@ func Cmdarchitect_prompts() *cobra.Command {
 }`)
 	architect_promptsCmd.AddCommand(batchdeleteCmd)
 	
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/architect/prompts", utils.FormatPermissions([]string{ "architect:userPrompt:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/architect/prompts", utils.FormatPermissions([]string{ "architect:userPrompt:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/architect/prompts")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -59,7 +59,7 @@ func Cmdarchitect_prompts() *cobra.Command {
 	architect_promptsCmd.AddCommand(createCmd)
 	
 	utils.AddFlag(deleteCmd.Flags(), "bool", "allResources", "", "Whether or not to delete all the prompt resources")
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/architect/prompts/{promptId}", utils.FormatPermissions([]string{ "architect:userPrompt:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/architect/prompts/{promptId}", utils.FormatPermissions([]string{ "architect:userPrompt:delete",  }), utils.GenerateDevCentreLink("DELETE", "Architect", "/api/v2/architect/prompts/{promptId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -74,7 +74,7 @@ func Cmdarchitect_prompts() *cobra.Command {
 }`)
 	architect_promptsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/prompts/{promptId}", utils.FormatPermissions([]string{ "architect:userPrompt:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/prompts/{promptId}", utils.FormatPermissions([]string{ "architect:userPrompt:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/prompts/{promptId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -92,7 +92,7 @@ func Cmdarchitect_prompts() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "nameOrDescription", "", "Name or description")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "id", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Sort order")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/prompts", utils.FormatPermissions([]string{ "architect:userPrompt:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/prompts", utils.FormatPermissions([]string{ "architect:userPrompt:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/prompts")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -103,7 +103,7 @@ func Cmdarchitect_prompts() *cobra.Command {
 }`)
 	architect_promptsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/architect/prompts/{promptId}", utils.FormatPermissions([]string{ "architect:userPrompt:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/architect/prompts/{promptId}", utils.FormatPermissions([]string{ "architect:userPrompt:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/architect/prompts/{promptId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdtelephony_providers_edges_phones_reboot() *cobra.Command { 
-	rebootCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", rebootCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/phones/{phoneId}/reboot", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	rebootCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", rebootCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/phones/{phoneId}/reboot", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/phones/{phoneId}/reboot")))
 	utils.AddFileFlagIfUpsert(rebootCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(rebootCmd.Flags(), "POST", `{
@@ -44,7 +44,7 @@ func Cmdtelephony_providers_edges_phones_reboot() *cobra.Command {
 }`)
 	telephony_providers_edges_phones_rebootCmd.AddCommand(rebootCmd)
 	
-	rebootphonesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", rebootphonesCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/phones/reboot", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	rebootphonesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", rebootphonesCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/phones/reboot", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/phones/reboot")))
 	utils.AddFileFlagIfUpsert(rebootphonesCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

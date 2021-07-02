@@ -29,7 +29,7 @@ func init() {
 func Cmdconfiguration_schemas_edges_vnext() *cobra.Command { 
 	utils.AddFlag(getcategoryschemasCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(getcategoryschemasCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	getcategoryschemasCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getcategoryschemasCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}", utils.FormatPermissions([]string{  })))
+	getcategoryschemasCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getcategoryschemasCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}")))
 	utils.AddFileFlagIfUpsert(getcategoryschemasCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getcategoryschemasCmd.Flags(), "GET", `{
@@ -40,7 +40,7 @@ func Cmdconfiguration_schemas_edges_vnext() *cobra.Command {
 }`)
 	configuration_schemas_edges_vnextCmd.AddCommand(getcategoryschemasCmd)
 	
-	getjsonschemaCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getjsonschemaCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}", utils.FormatPermissions([]string{  })))
+	getjsonschemaCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getjsonschemaCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}")))
 	utils.AddFileFlagIfUpsert(getjsonschemaCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getjsonschemaCmd.Flags(), "GET", `{
@@ -52,7 +52,7 @@ func Cmdconfiguration_schemas_edges_vnext() *cobra.Command {
 	configuration_schemas_edges_vnextCmd.AddCommand(getjsonschemaCmd)
 	
 	utils.AddFlag(getschemametadataCmd.Flags(), "string", "varType", "", "Type")
-	getschemametadataCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getschemametadataCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}", utils.FormatPermissions([]string{  })))
+	getschemametadataCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getschemametadataCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}")))
 	utils.AddFileFlagIfUpsert(getschemametadataCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getschemametadataCmd.Flags(), "GET", `{
@@ -65,7 +65,7 @@ func Cmdconfiguration_schemas_edges_vnext() *cobra.Command {
 	
 	utils.AddFlag(listcategoryschemasCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listcategoryschemasCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	listcategoryschemasCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listcategoryschemasCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}", utils.FormatPermissions([]string{  })))
+	listcategoryschemasCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listcategoryschemasCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}")))
 	utils.AddFileFlagIfUpsert(listcategoryschemasCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listcategoryschemasCmd.Flags(), "GET", `{
@@ -78,7 +78,7 @@ func Cmdconfiguration_schemas_edges_vnext() *cobra.Command {
 	
 	utils.AddFlag(listschemacategoriesCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listschemacategoriesCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	listschemacategoriesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listschemacategoriesCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext", utils.FormatPermissions([]string{  })))
+	listschemacategoriesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listschemacategoriesCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/configuration/schemas/edges/vnext")))
 	utils.AddFileFlagIfUpsert(listschemacategoriesCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listschemacategoriesCmd.Flags(), "GET", `{

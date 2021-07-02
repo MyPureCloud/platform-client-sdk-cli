@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdflows_datatables_import_jobs() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/datatables/{datatableId}/import/jobs", utils.FormatPermissions([]string{ "architect:datatable:edit",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/datatables/{datatableId}/import/jobs", utils.FormatPermissions([]string{ "architect:datatable:edit",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/datatables/{datatableId}/import/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdflows_datatables_import_jobs() *cobra.Command {
 }`)
 	flows_datatables_import_jobsCmd.AddCommand(createCmd)
 	
-	getstateinformationCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getstateinformationCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}", utils.FormatPermissions([]string{ "architect:datatable:view",  })))
+	getstateinformationCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getstateinformationCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}", utils.FormatPermissions([]string{ "architect:datatable:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}")))
 	utils.AddFileFlagIfUpsert(getstateinformationCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getstateinformationCmd.Flags(), "GET", `{
@@ -59,7 +59,7 @@ func Cmdflows_datatables_import_jobs() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/{datatableId}/import/jobs", utils.FormatPermissions([]string{ "architect:datatable:edit",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/{datatableId}/import/jobs", utils.FormatPermissions([]string{ "architect:datatable:edit",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/datatables/{datatableId}/import/jobs")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

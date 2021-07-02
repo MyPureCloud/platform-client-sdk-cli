@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdjourney_actiontemplates() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/journey/actiontemplates", utils.FormatPermissions([]string{ "journey:actiontemplate:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/journey/actiontemplates", utils.FormatPermissions([]string{ "journey:actiontemplate:add",  }), utils.GenerateDevCentreLink("POST", "Journey", "/api/v2/journey/actiontemplates")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdjourney_actiontemplates() *cobra.Command {
 	journey_actiontemplatesCmd.AddCommand(createCmd)
 	
 	utils.AddFlag(deleteCmd.Flags(), "bool", "hardDelete", "", "Determines whether Action Template should be soft-deleted (have it`s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.")
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/journey/actiontemplates/{actionTemplateId}", utils.FormatPermissions([]string{ "journey:actiontemplate:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/journey/actiontemplates/{actionTemplateId}", utils.FormatPermissions([]string{ "journey:actiontemplate:delete",  }), utils.GenerateDevCentreLink("DELETE", "Journey", "/api/v2/journey/actiontemplates/{actionTemplateId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -54,7 +54,7 @@ func Cmdjourney_actiontemplates() *cobra.Command {
 }`)
 	journey_actiontemplatesCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/journey/actiontemplates/{actionTemplateId}", utils.FormatPermissions([]string{ "journey:actiontemplate:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/journey/actiontemplates/{actionTemplateId}", utils.FormatPermissions([]string{ "journey:actiontemplate:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/actiontemplates/{actionTemplateId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -72,7 +72,7 @@ func Cmdjourney_actiontemplates() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Action template state. Valid values: Active, Inactive, Deleted")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queryFields", "", "ActionTemplate field(s) to query on. Requires `queryValue` to also be set.")
 	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on. Requires `queryFields` to also be set.")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/actiontemplates", utils.FormatPermissions([]string{ "journey:actiontemplate:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/actiontemplates", utils.FormatPermissions([]string{ "journey:actiontemplate:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/actiontemplates")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -83,7 +83,7 @@ func Cmdjourney_actiontemplates() *cobra.Command {
 }`)
 	journey_actiontemplatesCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/journey/actiontemplates/{actionTemplateId}", utils.FormatPermissions([]string{ "journey:actiontemplate:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/journey/actiontemplates/{actionTemplateId}", utils.FormatPermissions([]string{ "journey:actiontemplate:edit",  }), utils.GenerateDevCentreLink("PATCH", "Journey", "/api/v2/journey/actiontemplates/{actionTemplateId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

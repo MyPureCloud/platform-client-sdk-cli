@@ -28,7 +28,7 @@ func init() {
 
 func Cmdaudits_query_realtime() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: user")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/audits/query/realtime", utils.FormatPermissions([]string{ "audits:audit:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/audits/query/realtime", utils.FormatPermissions([]string{ "audits:audit:view",  }), utils.GenerateDevCentreLink("POST", "Audit", "/api/v2/audits/query/realtime")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

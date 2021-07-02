@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdcoaching_scheduleslots_query() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/coaching/scheduleslots/query", utils.FormatPermissions([]string{ "coaching:scheduleSlot:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/coaching/scheduleslots/query", utils.FormatPermissions([]string{ "coaching:scheduleSlot:view",  }), utils.GenerateDevCentreLink("POST", "Coaching", "/api/v2/coaching/scheduleslots/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

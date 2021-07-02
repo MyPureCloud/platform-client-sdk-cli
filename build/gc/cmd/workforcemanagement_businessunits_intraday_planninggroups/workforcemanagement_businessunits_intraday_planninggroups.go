@@ -28,7 +28,7 @@ func init() {
 
 func Cmdworkforcemanagement_businessunits_intraday_planninggroups() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "time.Time", "date", "", "yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups", utils.FormatPermissions([]string{ "wfm:intraday:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups", utils.FormatPermissions([]string{ "wfm:intraday:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("date")
 	

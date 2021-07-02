@@ -28,7 +28,7 @@ func init() {
 
 func Cmdflows() *cobra.Command { 
 	utils.AddFlag(batchdeleteCmd.Flags(), "[]string", "id", "", "List of Flow IDs - REQUIRED")
-	batchdeleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", batchdeleteCmd.UsageTemplate(), "DELETE", "/api/v2/flows", utils.FormatPermissions([]string{ "architect:flow:delete",  })))
+	batchdeleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", batchdeleteCmd.UsageTemplate(), "DELETE", "/api/v2/flows", utils.FormatPermissions([]string{ "architect:flow:delete",  }), utils.GenerateDevCentreLink("DELETE", "Architect", "/api/v2/flows")))
 	utils.AddFileFlagIfUpsert(batchdeleteCmd.Flags(), "DELETE", ``)
 	batchdeleteCmd.MarkFlagRequired("id")
 	
@@ -41,7 +41,7 @@ func Cmdflows() *cobra.Command {
 	flowsCmd.AddCommand(batchdeleteCmd)
 	
 	utils.AddFlag(createCmd.Flags(), "string", "language", "", "Language")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows", utils.FormatPermissions([]string{ "architect:flow:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows", utils.FormatPermissions([]string{ "architect:flow:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -59,7 +59,7 @@ func Cmdflows() *cobra.Command {
 }`)
 	flowsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/flows/{flowId}", utils.FormatPermissions([]string{ "architect:flow:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/flows/{flowId}", utils.FormatPermissions([]string{ "architect:flow:delete",  }), utils.GenerateDevCentreLink("DELETE", "Architect", "/api/v2/flows/{flowId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -76,7 +76,7 @@ func Cmdflows() *cobra.Command {
 	flowsCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "bool", "deleted", "false", "Deleted flows")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/{flowId}", utils.FormatPermissions([]string{ "architect:flow:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/{flowId}", utils.FormatPermissions([]string{ "architect:flow:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/{flowId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -106,7 +106,7 @@ func Cmdflows() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "publishedAfter", "", "Published after")
 	utils.AddFlag(listCmd.Flags(), "string", "publishedBefore", "", "Published before")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "division ID(s)")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows", utils.FormatPermissions([]string{ "architect:flow:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows", utils.FormatPermissions([]string{ "architect:flow:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -117,7 +117,7 @@ func Cmdflows() *cobra.Command {
 }`)
 	flowsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/flows/{flowId}", utils.FormatPermissions([]string{ "architect:flow:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/flows/{flowId}", utils.FormatPermissions([]string{ "architect:flow:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/flows/{flowId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

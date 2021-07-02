@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdconversations_messaging_facebook_app() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/messaging/facebook/app", utils.FormatPermissions([]string{ "messaging:integration:add",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/messaging/facebook/app", utils.FormatPermissions([]string{ "messaging:integration:add",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/messaging/facebook/app")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

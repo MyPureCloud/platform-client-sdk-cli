@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdlearning_modules_publish() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/modules/{moduleId}/publish", utils.FormatPermissions([]string{ "learning:module:publish",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/modules/{moduleId}/publish", utils.FormatPermissions([]string{ "learning:module:publish",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/modules/{moduleId}/publish")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

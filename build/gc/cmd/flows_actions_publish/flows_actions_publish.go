@@ -29,7 +29,7 @@ func init() {
 func Cmdflows_actions_publish() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "string", "flow", "", "Flow ID - REQUIRED")
 	utils.AddFlag(createCmd.Flags(), "string", "version", "", "version")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/actions/publish", utils.FormatPermissions([]string{ "architect:flow:unlock", "architect:flow:publish",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/actions/publish", utils.FormatPermissions([]string{ "architect:flow:unlock", "architect:flow:publish",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/actions/publish")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	createCmd.MarkFlagRequired("flow")
 	

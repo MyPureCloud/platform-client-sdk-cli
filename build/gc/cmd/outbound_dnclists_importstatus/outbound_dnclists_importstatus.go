@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoutbound_dnclists_importstatus() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/dnclists/{dncListId}/importstatus", utils.FormatPermissions([]string{ "outbound:dncList:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/dnclists/{dncListId}/importstatus", utils.FormatPermissions([]string{ "outbound:dncList:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/dnclists/{dncListId}/importstatus")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

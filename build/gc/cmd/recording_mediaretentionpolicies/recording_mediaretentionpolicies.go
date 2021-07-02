@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdrecording_mediaretentionpolicies() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:retentionPolicy:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:retentionPolicy:add",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recording/mediaretentionpolicies")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdrecording_mediaretentionpolicies() *cobra.Command {
 }`)
 	recording_mediaretentionpoliciesCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/recording/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:retentionPolicy:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/recording/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:retentionPolicy:delete",  }), utils.GenerateDevCentreLink("DELETE", "Recording", "/api/v2/recording/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -55,7 +55,7 @@ func Cmdrecording_mediaretentionpolicies() *cobra.Command {
 	recording_mediaretentionpoliciesCmd.AddCommand(deleteCmd)
 	
 	utils.AddFlag(deletepoliciesCmd.Flags(), "string", "ids", "", " - REQUIRED")
-	deletepoliciesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deletepoliciesCmd.UsageTemplate(), "DELETE", "/api/v2/recording/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:retentionPolicy:delete",  })))
+	deletepoliciesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deletepoliciesCmd.UsageTemplate(), "DELETE", "/api/v2/recording/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:retentionPolicy:delete",  }), utils.GenerateDevCentreLink("DELETE", "Recording", "/api/v2/recording/mediaretentionpolicies")))
 	utils.AddFileFlagIfUpsert(deletepoliciesCmd.Flags(), "DELETE", ``)
 	deletepoliciesCmd.MarkFlagRequired("ids")
 	
@@ -64,7 +64,7 @@ func Cmdrecording_mediaretentionpolicies() *cobra.Command {
 }`)
 	recording_mediaretentionpoliciesCmd.AddCommand(deletepoliciesCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/recording/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:retentionPolicy:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/recording/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:retentionPolicy:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -85,7 +85,7 @@ func Cmdrecording_mediaretentionpolicies() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "enabled", "", "checks to see if policy is enabled - use enabled = true or enabled = false")
 	utils.AddFlag(listCmd.Flags(), "bool", "summary", "false", "provides a less verbose response of policy lists.")
 	utils.AddFlag(listCmd.Flags(), "bool", "hasErrors", "", "provides a way to fetch all policies with errors or policies that do not have errors")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recording/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:retentionPolicy:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recording/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:retentionPolicy:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/mediaretentionpolicies")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -96,7 +96,7 @@ func Cmdrecording_mediaretentionpolicies() *cobra.Command {
 }`)
 	recording_mediaretentionpoliciesCmd.AddCommand(listCmd)
 	
-	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/recording/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:retentionPolicy:edit",  })))
+	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/recording/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:retentionPolicy:edit",  }), utils.GenerateDevCentreLink("PATCH", "Recording", "/api/v2/recording/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -115,7 +115,7 @@ func Cmdrecording_mediaretentionpolicies() *cobra.Command {
 }`)
 	recording_mediaretentionpoliciesCmd.AddCommand(patchCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:retentionPolicy:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:retentionPolicy:edit",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

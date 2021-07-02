@@ -31,7 +31,7 @@ func Cmdorgauthorization_trustees_audits() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(createCmd.Flags(), "string", "sortBy", "timestamp", "Sort by")
 	utils.AddFlag(createCmd.Flags(), "string", "sortOrder", "descending", "Sort order")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/orgauthorization/trustees/audits", utils.FormatPermissions([]string{ "authorization:audit:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/orgauthorization/trustees/audits", utils.FormatPermissions([]string{ "authorization:audit:view",  }), utils.GenerateDevCentreLink("POST", "Organization Authorization", "/api/v2/orgauthorization/trustees/audits")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

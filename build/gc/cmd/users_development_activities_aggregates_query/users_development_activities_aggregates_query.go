@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdusers_development_activities_aggregates_query() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/development/activities/aggregates/query", utils.FormatPermissions([]string{ "learning:assignment:view", "coaching:appointment:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/development/activities/aggregates/query", utils.FormatPermissions([]string{ "learning:assignment:view", "coaching:appointment:view",  }), utils.GenerateDevCentreLink("POST", "Users", "/api/v2/users/development/activities/aggregates/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

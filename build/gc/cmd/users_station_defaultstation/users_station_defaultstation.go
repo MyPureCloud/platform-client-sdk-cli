@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdusers_station_defaultstation() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}/station/defaultstation", utils.FormatPermissions([]string{ "telephony:plugin:all", "telephony:phone:assign",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}/station/defaultstation", utils.FormatPermissions([]string{ "telephony:plugin:all", "telephony:phone:assign",  }), utils.GenerateDevCentreLink("DELETE", "Users", "/api/v2/users/{userId}/station/defaultstation")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -35,7 +35,7 @@ func Cmdusers_station_defaultstation() *cobra.Command {
 }`)
 	users_station_defaultstationCmd.AddCommand(deleteCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/station/defaultstation/{stationId}", utils.FormatPermissions([]string{ "telephony:plugin:all", "telephony:phone:assign",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/station/defaultstation/{stationId}", utils.FormatPermissions([]string{ "telephony:plugin:all", "telephony:phone:assign",  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/station/defaultstation/{stationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{

@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdquality_surveys() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/surveys/{surveyId}", utils.FormatPermissions([]string{ "quality:survey:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/surveys/{surveyId}", utils.FormatPermissions([]string{ "quality:survey:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/surveys/{surveyId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

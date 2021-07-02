@@ -31,7 +31,7 @@ func Cmdintegrations_speech_lex_bot_aliases() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "status", "", "Filter on alias status Valid values: READY, FAILED, BUILDING, NOT_BUILT")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter on alias name")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations/speech/lex/bot/{botId}/aliases", utils.FormatPermissions([]string{ "integrations:integration:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations/speech/lex/bot/{botId}/aliases", utils.FormatPermissions([]string{ "integrations:integration:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/speech/lex/bot/{botId}/aliases")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

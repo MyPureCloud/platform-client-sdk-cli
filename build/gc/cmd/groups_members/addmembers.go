@@ -16,9 +16,9 @@ import (
 
 func init() {
 	note := "Note: The 'version' value from the command input will be ignored and the latest version value will be retrieved from the API instead"
-	addCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n\n%s\n", addCmd.UsageTemplate(), "POST", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  }), note))
+	AddCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n\n%s\n", AddCmd.UsageTemplate(), "POST", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  }), note))
 
-	createCmd = addCmd
+	addCmd = AddCmd
 }
 
 type group struct {
@@ -41,7 +41,7 @@ var (
 	}
 )
 
-var addCmd = &cobra.Command{
+var AddCmd = &cobra.Command{
 	Use:   "add [groupId]",
 	Short: "Add members",
 	Long:  `Add members`,

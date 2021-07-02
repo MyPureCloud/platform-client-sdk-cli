@@ -37,7 +37,7 @@ func Cmdusers_development_activities_me() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the activity types. Valid values: Informational, Coaching, AssessedContent, Questionnaire, Assessment")
 	utils.AddFlag(listCmd.Flags(), "[]string", "statuses", "", "Specifies the activity statuses to filter by Valid values: Planned, InProgress, Completed, InvalidSchedule")
 	utils.AddFlag(listCmd.Flags(), "[]string", "relationship", "", "Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. Valid values: Creator, Facilitator, Attendee")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/development/activities/me", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/development/activities/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/development/activities/me")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

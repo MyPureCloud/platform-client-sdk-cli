@@ -29,7 +29,7 @@ func init() {
 func Cmdconversations_messaging_stickers() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/messaging/stickers/{messengerType}", utils.FormatPermissions([]string{ "conversation:message:create",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/messaging/stickers/{messengerType}", utils.FormatPermissions([]string{ "conversation:message:create",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/messaging/stickers/{messengerType}")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

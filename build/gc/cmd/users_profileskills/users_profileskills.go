@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdusers_profileskills() *cobra.Command { 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/profileskills", utils.FormatPermissions([]string{ "directory:userProfile:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/profileskills", utils.FormatPermissions([]string{ "directory:userProfile:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/{userId}/profileskills")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -41,7 +41,7 @@ func Cmdusers_profileskills() *cobra.Command {
 }`)
 	users_profileskillsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/profileskills", utils.FormatPermissions([]string{ "directory:userProfile:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/profileskills", utils.FormatPermissions([]string{ "directory:userProfile:edit",  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/profileskills")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

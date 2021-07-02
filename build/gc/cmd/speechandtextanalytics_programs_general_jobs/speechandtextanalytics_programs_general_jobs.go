@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdspeechandtextanalytics_programs_general_jobs() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/speechandtextanalytics/programs/general/jobs", utils.FormatPermissions([]string{ "speechAndTextAnalytics:program:add", "speechAndTextAnalytics:program:edit", "speechAndTextAnalytics:topic:add", "speechAndTextAnalytics:topic:edit",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/speechandtextanalytics/programs/general/jobs", utils.FormatPermissions([]string{ "speechAndTextAnalytics:program:add", "speechAndTextAnalytics:program:edit", "speechAndTextAnalytics:topic:add", "speechAndTextAnalytics:topic:edit",  }), utils.GenerateDevCentreLink("POST", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/programs/general/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdspeechandtextanalytics_programs_general_jobs() *cobra.Command {
 }`)
 	speechandtextanalytics_programs_general_jobsCmd.AddCommand(createCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/programs/general/jobs/{jobId}", utils.FormatPermissions([]string{ "speechAndTextAnalytics:program:add", "speechAndTextAnalytics:program:edit", "speechAndTextAnalytics:topic:add", "speechAndTextAnalytics:topic:edit",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/programs/general/jobs/{jobId}", utils.FormatPermissions([]string{ "speechAndTextAnalytics:program:add", "speechAndTextAnalytics:program:edit", "speechAndTextAnalytics:topic:add", "speechAndTextAnalytics:topic:edit",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/programs/general/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

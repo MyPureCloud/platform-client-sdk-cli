@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdtelephony_siptraces_download() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/siptraces/download", utils.FormatPermissions([]string{ "telephony:pcap:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/siptraces/download", utils.FormatPermissions([]string{ "telephony:pcap:add",  }), utils.GenerateDevCentreLink("POST", "Telephony", "/api/v2/telephony/siptraces/download")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;SIPSearchPublicRequest&quot;,
@@ -45,7 +45,7 @@ func Cmdtelephony_siptraces_download() *cobra.Command {
 }`)
 	telephony_siptraces_downloadCmd.AddCommand(createCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/siptraces/download/{downloadId}", utils.FormatPermissions([]string{ "telephony:pcap:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/siptraces/download/{downloadId}", utils.FormatPermissions([]string{ "telephony:pcap:view",  }), utils.GenerateDevCentreLink("GET", "Telephony", "/api/v2/telephony/siptraces/download/{downloadId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

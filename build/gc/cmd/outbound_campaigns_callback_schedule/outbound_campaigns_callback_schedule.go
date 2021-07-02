@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoutbound_campaigns_callback_schedule() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/campaigns/{campaignId}/callback/schedule", utils.FormatPermissions([]string{  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/campaigns/{campaignId}/callback/schedule", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/campaigns/{campaignId}/callback/schedule")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

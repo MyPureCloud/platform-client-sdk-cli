@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdrouting_wrapupcodes() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/wrapupcodes", utils.FormatPermissions([]string{ "routing:wrapupCode:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/wrapupcodes", utils.FormatPermissions([]string{ "routing:wrapupCode:add",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/wrapupcodes")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdrouting_wrapupcodes() *cobra.Command {
 }`)
 	routing_wrapupcodesCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/wrapupcodes/{codeId}", utils.FormatPermissions([]string{ "routing:wrapupCode:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/wrapupcodes/{codeId}", utils.FormatPermissions([]string{ "routing:wrapupCode:delete",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/wrapupcodes/{codeId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -54,7 +54,7 @@ func Cmdrouting_wrapupcodes() *cobra.Command {
 }`)
 	routing_wrapupcodesCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/wrapupcodes/{codeId}", utils.FormatPermissions([]string{ "routing:wrapupCode:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/wrapupcodes/{codeId}", utils.FormatPermissions([]string{ "routing:wrapupCode:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/wrapupcodes/{codeId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -70,7 +70,7 @@ func Cmdrouting_wrapupcodes() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by Valid values: name, id")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ascending", "Sort order Valid values: ascending, descending")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Wrapup code`s name (`Sort by` param is ignored unless this field is provided)")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/wrapupcodes", utils.FormatPermissions([]string{ "routing:wrapupCode:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/wrapupcodes", utils.FormatPermissions([]string{ "routing:wrapupCode:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/wrapupcodes")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -81,7 +81,7 @@ func Cmdrouting_wrapupcodes() *cobra.Command {
 }`)
 	routing_wrapupcodesCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/wrapupcodes/{codeId}", utils.FormatPermissions([]string{ "routing:wrapupCode:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/wrapupcodes/{codeId}", utils.FormatPermissions([]string{ "routing:wrapupCode:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/wrapupcodes/{codeId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

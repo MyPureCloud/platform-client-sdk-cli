@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdalerting_alerts_active() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/alerting/alerts/active", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/alerting/alerts/active", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Alerting", "/api/v2/alerting/alerts/active")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

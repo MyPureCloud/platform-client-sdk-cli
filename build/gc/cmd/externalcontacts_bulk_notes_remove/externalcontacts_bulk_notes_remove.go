@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdexternalcontacts_bulk_notes_remove() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/bulk/notes/remove", utils.FormatPermissions([]string{ "externalContacts:contact:delete", "externalContacts:externalOrganization:delete",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/bulk/notes/remove", utils.FormatPermissions([]string{ "externalContacts:contact:delete", "externalContacts:externalOrganization:delete",  }), utils.GenerateDevCentreLink("POST", "External Contacts", "/api/v2/externalcontacts/bulk/notes/remove")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

@@ -29,7 +29,7 @@ func init() {
 func Cmdworkforcemanagement_businessunits_scheduling_runs_result() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "[]string", "managementUnitIds", "", "The IDs of the management units for which to fetch the reschedule results - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "The fields to expand. Omitting will return an empty response - REQUIRED Valid values: headcountForecast, generationResults, agentSchedules")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result", utils.FormatPermissions([]string{ "wfm:schedule:edit", "wfm:schedule:generate",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result", utils.FormatPermissions([]string{ "wfm:schedule:edit", "wfm:schedule:generate",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("managementUnitIds")
 	getCmd.MarkFlagRequired("expand")

@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdlearning_assignments_aggregates_query() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/assignments/aggregates/query", utils.FormatPermissions([]string{ "learning:assignment:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/assignments/aggregates/query", utils.FormatPermissions([]string{ "learning:assignment:view",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/assignments/aggregates/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

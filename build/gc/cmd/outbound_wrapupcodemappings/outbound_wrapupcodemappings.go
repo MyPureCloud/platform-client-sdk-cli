@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoutbound_wrapupcodemappings() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/wrapupcodemappings", utils.FormatPermissions([]string{ "outbound:wrapUpCodeMapping:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/wrapupcodemappings", utils.FormatPermissions([]string{ "outbound:wrapUpCodeMapping:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/wrapupcodemappings")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -38,7 +38,7 @@ func Cmdoutbound_wrapupcodemappings() *cobra.Command {
 }`)
 	outbound_wrapupcodemappingsCmd.AddCommand(getCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/wrapupcodemappings", utils.FormatPermissions([]string{ "outbound:wrapUpCodeMapping:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/wrapupcodemappings", utils.FormatPermissions([]string{ "outbound:wrapUpCodeMapping:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/wrapupcodemappings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

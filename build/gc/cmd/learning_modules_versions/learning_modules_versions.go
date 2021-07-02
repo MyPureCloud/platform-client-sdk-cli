@@ -28,7 +28,7 @@ func init() {
 
 func Cmdlearning_modules_versions() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Fields to expand in response(case insensitive) Valid values: assessmentForm")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/learning/modules/{moduleId}/versions/{versionId}", utils.FormatPermissions([]string{ "learning:module:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/learning/modules/{moduleId}/versions/{versionId}", utils.FormatPermissions([]string{ "learning:module:view",  }), utils.GenerateDevCentreLink("GET", "Learning", "/api/v2/learning/modules/{moduleId}/versions/{versionId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

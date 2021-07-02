@@ -27,8 +27,8 @@ func init() {
 }
 
 func Cmdgroups_members() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+	addCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", addCmd.UsageTemplate(), "POST", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Groups", "/api/v2/groups/{groupId}/members")))
+	utils.AddFileFlagIfUpsert(addCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
   &quot;description&quot; : &quot;Add members&quot;,
@@ -38,16 +38,16 @@ func Cmdgroups_members() *cobra.Command {
   }
 }`)
 	
-	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+	utils.AddPaginateFlagsIfListingResponse(addCmd.Flags(), "POST", `{
   &quot;description&quot; : &quot;Success, group membership was updated&quot;,
   &quot;schema&quot; : {
     &quot;$ref&quot; : &quot;#/definitions/Empty&quot;
   }
 }`)
-	groups_membersCmd.AddCommand(createCmd)
+	groups_membersCmd.AddCommand(addCmd)
 	
 	utils.AddFlag(deleteCmd.Flags(), "string", "ids", "", "Comma separated list of userIds to remove - REQUIRED")
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Groups", "/api/v2/groups/{groupId}/members")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	deleteCmd.MarkFlagRequired("ids")
 	
@@ -63,7 +63,7 @@ func Cmdgroups_members() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Ascending or descending sort order Valid values: ascending, descending")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Groups", "/api/v2/groups/{groupId}/members")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -77,8 +77,8 @@ func Cmdgroups_members() *cobra.Command {
 	return groups_membersCmd
 }
 
-var createCmd = &cobra.Command{
-	Use:   "create [groupId]",
+var addCmd = &cobra.Command{
+	Use:   "add [groupId]",
 	Short: "Add members",
 	Long:  "Add members",
 	Args:  utils.DetermineArgs([]string{ "groupId", }),

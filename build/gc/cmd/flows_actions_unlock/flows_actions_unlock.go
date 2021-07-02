@@ -28,7 +28,7 @@ func init() {
 
 func Cmdflows_actions_unlock() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "string", "flow", "", "Flow ID - REQUIRED")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/actions/unlock", utils.FormatPermissions([]string{ "architect:flow:unlock",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/actions/unlock", utils.FormatPermissions([]string{ "architect:flow:unlock",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/actions/unlock")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	createCmd.MarkFlagRequired("flow")
 	

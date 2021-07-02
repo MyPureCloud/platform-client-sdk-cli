@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdspeechandtextanalytics_topics_publishjobs() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/speechandtextanalytics/topics/publishjobs", utils.FormatPermissions([]string{ "speechAndTextAnalytics:topic:publish",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/speechandtextanalytics/topics/publishjobs", utils.FormatPermissions([]string{ "speechAndTextAnalytics:topic:publish",  }), utils.GenerateDevCentreLink("POST", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/topics/publishjobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdspeechandtextanalytics_topics_publishjobs() *cobra.Command {
 }`)
 	speechandtextanalytics_topics_publishjobsCmd.AddCommand(createCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/topics/publishjobs/{jobId}", utils.FormatPermissions([]string{ "speechAndTextAnalytics:topic:publish",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/topics/publishjobs/{jobId}", utils.FormatPermissions([]string{ "speechAndTextAnalytics:topic:publish",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/topics/publishjobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

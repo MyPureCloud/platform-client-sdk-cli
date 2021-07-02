@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdtelephony_providers_edges_trunks() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/trunks/{trunkId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/trunks/{trunkId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/trunks/{trunkId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -45,7 +45,7 @@ func Cmdtelephony_providers_edges_trunks() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "edgeId", "", "Filter by Edge Ids")
 	utils.AddFlag(listCmd.Flags(), "string", "trunkBaseId", "", "Filter by Trunk Base Ids")
 	utils.AddFlag(listCmd.Flags(), "string", "trunkType", "", "Filter by a Trunk type Valid values: EXTERNAL, PHONE, EDGE")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/trunks", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/trunks", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/trunks")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -62,7 +62,7 @@ func Cmdtelephony_providers_edges_trunks() *cobra.Command {
 	utils.AddFlag(listedgetrunksCmd.Flags(), "string", "sortOrder", "ASC", "Sort order")
 	utils.AddFlag(listedgetrunksCmd.Flags(), "string", "trunkBaseId", "", "Filter by Trunk Base Ids")
 	utils.AddFlag(listedgetrunksCmd.Flags(), "string", "trunkType", "", "Filter by a Trunk type Valid values: EXTERNAL, PHONE, EDGE")
-	listedgetrunksCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listedgetrunksCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/trunks", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	listedgetrunksCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listedgetrunksCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/trunks", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/trunks")))
 	utils.AddFileFlagIfUpsert(listedgetrunksCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listedgetrunksCmd.Flags(), "GET", `{

@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdrouting_predictors() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/predictors", utils.FormatPermissions([]string{ "routing:predictor:add", "routing:queue:edit",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/predictors", utils.FormatPermissions([]string{ "routing:predictor:add", "routing:queue:edit",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/predictors")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -45,7 +45,7 @@ func Cmdrouting_predictors() *cobra.Command {
 }`)
 	routing_predictorsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/predictors/{predictorId}", utils.FormatPermissions([]string{ "routing:predictor:delete", "routing:queue:edit",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/predictors/{predictorId}", utils.FormatPermissions([]string{ "routing:predictor:delete", "routing:queue:edit",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/predictors/{predictorId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -53,7 +53,7 @@ func Cmdrouting_predictors() *cobra.Command {
 }`)
 	routing_predictorsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/predictors/{predictorId}", utils.FormatPermissions([]string{ "routing:predictor:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/predictors/{predictorId}", utils.FormatPermissions([]string{ "routing:predictor:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/predictors/{predictorId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -69,7 +69,7 @@ func Cmdrouting_predictors() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queueId", "", "Comma-separated list of queue Ids to filter by.")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/predictors", utils.FormatPermissions([]string{ "routing:predictor:view", "routing:queue:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/predictors", utils.FormatPermissions([]string{ "routing:predictor:view", "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/predictors")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -80,7 +80,7 @@ func Cmdrouting_predictors() *cobra.Command {
 }`)
 	routing_predictorsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/predictors/{predictorId}", utils.FormatPermissions([]string{ "routing:predictor:edit", "routing:queue:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/predictors/{predictorId}", utils.FormatPermissions([]string{ "routing:predictor:edit", "routing:queue:edit",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/routing/predictors/{predictorId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

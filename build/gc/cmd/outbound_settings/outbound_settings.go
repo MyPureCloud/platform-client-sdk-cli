@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoutbound_settings() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/settings", utils.FormatPermissions([]string{ "outbound:settings:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/settings", utils.FormatPermissions([]string{ "outbound:settings:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/settings")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -38,7 +38,7 @@ func Cmdoutbound_settings() *cobra.Command {
 }`)
 	outbound_settingsCmd.AddCommand(getCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/outbound/settings", utils.FormatPermissions([]string{ "outbound:settings:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/outbound/settings", utils.FormatPermissions([]string{ "outbound:settings:edit",  }), utils.GenerateDevCentreLink("PATCH", "Outbound", "/api/v2/outbound/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

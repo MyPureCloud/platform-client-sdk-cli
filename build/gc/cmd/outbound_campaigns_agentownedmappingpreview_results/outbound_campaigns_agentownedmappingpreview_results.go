@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoutbound_campaigns_agentownedmappingpreview_results() *cobra.Command { 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results", utils.FormatPermissions([]string{ "outbound:campaign:view", "outbound:contact:view", "routing:queue:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results", utils.FormatPermissions([]string{ "outbound:campaign:view", "outbound:contact:view", "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

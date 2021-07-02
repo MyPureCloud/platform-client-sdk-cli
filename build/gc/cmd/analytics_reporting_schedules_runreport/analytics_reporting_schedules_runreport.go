@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdanalytics_reporting_schedules_runreport() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/reporting/schedules/{scheduleId}/runreport", utils.FormatPermissions([]string{  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/reporting/schedules/{scheduleId}/runreport", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/reporting/schedules/{scheduleId}/runreport")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

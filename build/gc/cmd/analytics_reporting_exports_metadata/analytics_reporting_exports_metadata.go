@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdanalytics_reporting_exports_metadata() *cobra.Command { 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/reporting/exports/metadata", utils.FormatPermissions([]string{ "analytics:dataExport:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/reporting/exports/metadata", utils.FormatPermissions([]string{ "analytics:dataExport:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/reporting/exports/metadata")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

@@ -28,7 +28,7 @@ func init() {
 
 func Cmdworkforcemanagement_managementunits_divisionviews() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "The divisionIds to filter by. If omitted, will return all divisions")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/divisionviews", utils.FormatPermissions([]string{ "wfm:managementUnit:search",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/divisionviews", utils.FormatPermissions([]string{ "wfm:managementUnit:search",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/managementunits/divisionviews")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

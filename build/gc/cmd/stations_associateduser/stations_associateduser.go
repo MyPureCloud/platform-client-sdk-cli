@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdstations_associateduser() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/stations/{stationId}/associateduser", utils.FormatPermissions([]string{  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/stations/{stationId}/associateduser", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Stations", "/api/v2/stations/{stationId}/associateduser")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{

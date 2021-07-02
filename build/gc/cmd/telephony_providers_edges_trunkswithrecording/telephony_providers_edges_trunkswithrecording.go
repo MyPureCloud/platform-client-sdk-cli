@@ -28,7 +28,7 @@ func init() {
 
 func Cmdtelephony_providers_edges_trunkswithrecording() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "trunkType", "", "The type of this trunk base. Valid values: EXTERNAL, PHONE, EDGE")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/trunkswithrecording", utils.FormatPermissions([]string{ "recording:retentionPolicy:view", "telephony:plugin:all",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/trunkswithrecording", utils.FormatPermissions([]string{ "recording:retentionPolicy:view", "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/trunkswithrecording")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

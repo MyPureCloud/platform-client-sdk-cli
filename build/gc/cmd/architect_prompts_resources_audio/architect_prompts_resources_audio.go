@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdarchitect_prompts_resources_audio() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio", utils.FormatPermissions([]string{ "architect:userPrompt:edit",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio", utils.FormatPermissions([]string{ "architect:userPrompt:edit",  }), utils.GenerateDevCentreLink("DELETE", "Architect", "/api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{

@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdvoicemail_messages() *cobra.Command { 
-	copyCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", copyCmd.UsageTemplate(), "POST", "/api/v2/voicemail/messages", utils.FormatPermissions([]string{  })))
+	copyCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", copyCmd.UsageTemplate(), "POST", "/api/v2/voicemail/messages", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Voicemail", "/api/v2/voicemail/messages")))
 	utils.AddFileFlagIfUpsert(copyCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -45,7 +45,7 @@ func Cmdvoicemail_messages() *cobra.Command {
 }`)
 	voicemail_messagesCmd.AddCommand(copyCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Voicemail", "/api/v2/voicemail/messages/{messageId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -53,7 +53,7 @@ func Cmdvoicemail_messages() *cobra.Command {
 }`)
 	voicemail_messagesCmd.AddCommand(deleteCmd)
 	
-	deleteallCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteallCmd.UsageTemplate(), "DELETE", "/api/v2/voicemail/messages", utils.FormatPermissions([]string{  })))
+	deleteallCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteallCmd.UsageTemplate(), "DELETE", "/api/v2/voicemail/messages", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Voicemail", "/api/v2/voicemail/messages")))
 	utils.AddFileFlagIfUpsert(deleteallCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteallCmd.Flags(), "DELETE", `{
@@ -62,7 +62,7 @@ func Cmdvoicemail_messages() *cobra.Command {
 	voicemail_messagesCmd.AddCommand(deleteallCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "If the caller is a known user, which fields, if any, to expand Valid values: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Voicemail", "/api/v2/voicemail/messages/{messageId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -75,7 +75,7 @@ func Cmdvoicemail_messages() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "string", "ids", "", "An optional comma separated list of VoicemailMessage ids")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "If the caller is a known user, which fields, if any, to expand Valid values: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/voicemail/messages", utils.FormatPermissions([]string{  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/voicemail/messages", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Voicemail", "/api/v2/voicemail/messages")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -86,7 +86,7 @@ func Cmdvoicemail_messages() *cobra.Command {
 }`)
 	voicemail_messagesCmd.AddCommand(listCmd)
 	
-	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  })))
+	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Voicemail", "/api/v2/voicemail/messages/{messageId}")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -105,7 +105,7 @@ func Cmdvoicemail_messages() *cobra.Command {
 }`)
 	voicemail_messagesCmd.AddCommand(patchCmd)
 	
-	putCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", putCmd.UsageTemplate(), "PUT", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  })))
+	putCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", putCmd.UsageTemplate(), "PUT", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Voicemail", "/api/v2/voicemail/messages/{messageId}")))
 	utils.AddFileFlagIfUpsert(putCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

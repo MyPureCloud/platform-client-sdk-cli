@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdanalytics_evaluations_aggregates_query() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/evaluations/aggregates/query", utils.FormatPermissions([]string{ "analytics:evaluationAggregate:view",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/evaluations/aggregates/query", utils.FormatPermissions([]string{ "analytics:evaluationAggregate:view",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/analytics/evaluations/aggregates/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

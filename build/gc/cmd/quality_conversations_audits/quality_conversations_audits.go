@@ -35,7 +35,7 @@ func Cmdquality_conversations_audits() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
 	utils.AddFlag(listCmd.Flags(), "string", "recordingId", "", "id of the recording")
 	utils.AddFlag(listCmd.Flags(), "string", "entityType", "Recording", "entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/conversations/{conversationId}/audits", utils.FormatPermissions([]string{ "quality:calibration:viewAudit", "quality:evaluation:viewAudit", "quality:survey:viewAudit", "recording:recording:viewAudit", "recording:annotation:viewAudit", "recording:screenRecording:viewAudit",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/conversations/{conversationId}/audits", utils.FormatPermissions([]string{ "quality:calibration:viewAudit", "quality:evaluation:viewAudit", "quality:survey:viewAudit", "recording:recording:viewAudit", "recording:annotation:viewAudit", "recording:screenRecording:viewAudit",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/conversations/{conversationId}/audits")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

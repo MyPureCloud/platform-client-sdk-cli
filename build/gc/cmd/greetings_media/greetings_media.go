@@ -28,7 +28,7 @@ func init() {
 
 func Cmdgreetings_media() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "formatId", "WAV", "The desired media format. Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/greetings/{greetingId}/media", utils.FormatPermissions([]string{  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/greetings/{greetingId}/media", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Greetings", "/api/v2/greetings/{greetingId}/media")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

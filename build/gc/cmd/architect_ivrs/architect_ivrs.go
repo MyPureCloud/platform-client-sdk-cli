@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdarchitect_ivrs() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/architect/ivrs", utils.FormatPermissions([]string{ "routing:callRoute:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/architect/ivrs", utils.FormatPermissions([]string{ "routing:callRoute:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/architect/ivrs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -45,7 +45,7 @@ func Cmdarchitect_ivrs() *cobra.Command {
 }`)
 	architect_ivrsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/architect/ivrs/{ivrId}", utils.FormatPermissions([]string{ "routing:callRoute:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/architect/ivrs/{ivrId}", utils.FormatPermissions([]string{ "routing:callRoute:delete",  }), utils.GenerateDevCentreLink("DELETE", "Architect", "/api/v2/architect/ivrs/{ivrId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -53,7 +53,7 @@ func Cmdarchitect_ivrs() *cobra.Command {
 }`)
 	architect_ivrsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/ivrs/{ivrId}", utils.FormatPermissions([]string{ "routing:callRoute:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/ivrs/{ivrId}", utils.FormatPermissions([]string{ "routing:callRoute:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/ivrs/{ivrId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -69,7 +69,7 @@ func Cmdarchitect_ivrs() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Sort order")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name of the IVR to filter by.")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/ivrs", utils.FormatPermissions([]string{ "routing:callRoute:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/ivrs", utils.FormatPermissions([]string{ "routing:callRoute:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/ivrs")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -80,7 +80,7 @@ func Cmdarchitect_ivrs() *cobra.Command {
 }`)
 	architect_ivrsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/architect/ivrs/{ivrId}", utils.FormatPermissions([]string{ "routing:callRoute:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/architect/ivrs/{ivrId}", utils.FormatPermissions([]string{ "routing:callRoute:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/architect/ivrs/{ivrId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

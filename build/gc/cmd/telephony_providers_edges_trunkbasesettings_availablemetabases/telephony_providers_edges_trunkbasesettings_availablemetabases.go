@@ -30,7 +30,7 @@ func Cmdtelephony_providers_edges_trunkbasesettings_availablemetabases() *cobra.
 	utils.AddFlag(listCmd.Flags(), "string", "varType", "", " Valid values: EXTERNAL, PHONE, EDGE")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases", utils.FormatPermissions([]string{ "telephony:plugin:all",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

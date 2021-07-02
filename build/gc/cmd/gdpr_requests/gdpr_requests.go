@@ -28,7 +28,7 @@ func init() {
 
 func Cmdgdpr_requests() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "bool", "deleteConfirmed", "false", "Confirm delete")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/gdpr/requests", utils.FormatPermissions([]string{ "gdpr:request:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/gdpr/requests", utils.FormatPermissions([]string{ "gdpr:request:add",  }), utils.GenerateDevCentreLink("POST", "General Data Protection Regulation", "/api/v2/gdpr/requests")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -47,7 +47,7 @@ func Cmdgdpr_requests() *cobra.Command {
 }`)
 	gdpr_requestsCmd.AddCommand(createCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gdpr/requests/{requestId}", utils.FormatPermissions([]string{ "gdpr:request:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gdpr/requests/{requestId}", utils.FormatPermissions([]string{ "gdpr:request:view",  }), utils.GenerateDevCentreLink("GET", "General Data Protection Regulation", "/api/v2/gdpr/requests/{requestId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -60,7 +60,7 @@ func Cmdgdpr_requests() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/gdpr/requests", utils.FormatPermissions([]string{ "gdpr:request:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/gdpr/requests", utils.FormatPermissions([]string{ "gdpr:request:view",  }), utils.GenerateDevCentreLink("GET", "General Data Protection Regulation", "/api/v2/gdpr/requests")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

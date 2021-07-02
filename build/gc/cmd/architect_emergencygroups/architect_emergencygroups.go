@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdarchitect_emergencygroups() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/architect/emergencygroups", utils.FormatPermissions([]string{ "routing:emergencyGroup:add",  })))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/architect/emergencygroups", utils.FormatPermissions([]string{ "routing:emergencyGroup:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/architect/emergencygroups")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -45,7 +45,7 @@ func Cmdarchitect_emergencygroups() *cobra.Command {
 }`)
 	architect_emergencygroupsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/architect/emergencygroups/{emergencyGroupId}", utils.FormatPermissions([]string{ "routing:emergencyGroup:delete",  })))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/architect/emergencygroups/{emergencyGroupId}", utils.FormatPermissions([]string{ "routing:emergencyGroup:delete",  }), utils.GenerateDevCentreLink("DELETE", "Architect", "/api/v2/architect/emergencygroups/{emergencyGroupId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -53,7 +53,7 @@ func Cmdarchitect_emergencygroups() *cobra.Command {
 }`)
 	architect_emergencygroupsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/emergencygroups/{emergencyGroupId}", utils.FormatPermissions([]string{ "routing:emergencyGroup:view",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/emergencygroups/{emergencyGroupId}", utils.FormatPermissions([]string{ "routing:emergencyGroup:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/emergencygroups/{emergencyGroupId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -69,7 +69,7 @@ func Cmdarchitect_emergencygroups() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Sort order")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name of the Emergency Group to filter by.")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/emergencygroups", utils.FormatPermissions([]string{ "routing:emergencyGroup:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/emergencygroups", utils.FormatPermissions([]string{ "routing:emergencyGroup:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/emergencygroups")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -80,7 +80,7 @@ func Cmdarchitect_emergencygroups() *cobra.Command {
 }`)
 	architect_emergencygroupsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/architect/emergencygroups/{emergencyGroupId}", utils.FormatPermissions([]string{ "routing:emergencyGroup:edit",  })))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/architect/emergencygroups/{emergencyGroupId}", utils.FormatPermissions([]string{ "routing:emergencyGroup:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/architect/emergencygroups/{emergencyGroupId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

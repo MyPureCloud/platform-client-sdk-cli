@@ -38,7 +38,7 @@ func Cmdquality_evaluators_activity() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Evaluator name")
 	utils.AddFlag(listCmd.Flags(), "[]string", "permission", "", "permission strings")
 	utils.AddFlag(listCmd.Flags(), "string", "group", "", "group id")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/evaluators/activity", utils.FormatPermissions([]string{ "quality:evaluation:view",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/evaluators/activity", utils.FormatPermissions([]string{ "quality:evaluation:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/evaluators/activity")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

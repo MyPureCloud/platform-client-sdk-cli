@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoauth_authorizations() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/oauth/authorizations/{clientId}", utils.FormatPermissions([]string{ "oauth:client:authorize",  })))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/oauth/authorizations/{clientId}", utils.FormatPermissions([]string{ "oauth:client:authorize",  }), utils.GenerateDevCentreLink("GET", "OAuth", "/api/v2/oauth/authorizations/{clientId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -38,7 +38,7 @@ func Cmdoauth_authorizations() *cobra.Command {
 }`)
 	oauth_authorizationsCmd.AddCommand(getCmd)
 	
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/oauth/authorizations", utils.FormatPermissions([]string{ "oauth:client:authorize",  })))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/oauth/authorizations", utils.FormatPermissions([]string{ "oauth:client:authorize",  }), utils.GenerateDevCentreLink("GET", "OAuth", "/api/v2/oauth/authorizations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

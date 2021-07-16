@@ -46,7 +46,7 @@ func Cmdorganizations_limits_namespaces() *cobra.Command {
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LimitsEntityListing&quot;
+    &quot;$ref&quot; : &quot;#/definitions/PagedNamespaceListing&quot;
   }
 }`)
 	organizations_limits_namespacesCmd.AddCommand(listCmd)

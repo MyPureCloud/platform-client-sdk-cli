@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdknowledge_knowledgebases_search() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search", utils.FormatPermissions([]string{ "knowledge:knowledgebase:search",  }), utils.GenerateDevCentreLink("POST", "Search", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search", utils.FormatPermissions([]string{ "knowledge:knowledgebase:search",  }), utils.GenerateDevCentreLink("POST", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

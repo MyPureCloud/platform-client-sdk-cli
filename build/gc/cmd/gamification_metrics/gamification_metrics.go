@@ -46,6 +46,7 @@ func Cmdgamification_metrics() *cobra.Command {
 }`)
 	gamification_metricsCmd.AddCommand(createCmd)
 	
+	utils.AddFlag(getCmd.Flags(), "time.Time", "workday", "", "The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
 	utils.AddFlag(getCmd.Flags(), "string", "performanceProfileId", "", "The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/metrics/{metricId}", utils.FormatPermissions([]string{ "gamification:profile:view", "gamification:leaderboard:view", "gamification:scorecard:view",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/metrics/{metricId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -59,6 +60,7 @@ func Cmdgamification_metrics() *cobra.Command {
 	gamification_metricsCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "string", "performanceProfileId", "", "The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.")
+	utils.AddFlag(listCmd.Flags(), "time.Time", "workday", "", "The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/gamification/metrics", utils.FormatPermissions([]string{ "gamification:profile:view", "gamification:leaderboard:view", "gamification:scorecard:view",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/metrics")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -141,6 +143,10 @@ var getCmd = &cobra.Command{
 		metricId, args := args[0], args[1:]
 		path = strings.Replace(path, "{metricId}", fmt.Sprintf("%v", metricId), -1)
 
+		workday := utils.GetFlag(cmd.Flags(), "time.Time", "workday")
+		if workday != "" {
+			queryParams["workday"] = workday
+		}
 		performanceProfileId := utils.GetFlag(cmd.Flags(), "string", "performanceProfileId")
 		if performanceProfileId != "" {
 			queryParams["performanceProfileId"] = performanceProfileId
@@ -183,6 +189,10 @@ var listCmd = &cobra.Command{
 		performanceProfileId := utils.GetFlag(cmd.Flags(), "string", "performanceProfileId")
 		if performanceProfileId != "" {
 			queryParams["performanceProfileId"] = performanceProfileId
+		}
+		workday := utils.GetFlag(cmd.Flags(), "time.Time", "workday")
+		if workday != "" {
+			queryParams["workday"] = workday
 		}
 		urlString := path
 		if len(queryParams) > 0 {

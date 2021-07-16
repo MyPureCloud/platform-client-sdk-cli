@@ -66,7 +66,7 @@ func Cmdrouting_assessments() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.")
+	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queueId", "", "Queue ID(s) to filter assessments by.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/assessments", utils.FormatPermissions([]string{ "routing:queue:view", "routing:assessment:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/assessments")))

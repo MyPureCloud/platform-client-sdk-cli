@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdanalytics_users_details_jobs_availability() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/analytics/users/details/jobs/availability", utils.FormatPermissions([]string{ "analytics:userDetail:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/analytics/users/details/jobs/availability")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/analytics/users/details/jobs/availability", utils.FormatPermissions([]string{ "analytics:userDetail:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/users/details/jobs/availability")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

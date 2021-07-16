@@ -52,7 +52,7 @@ func Cmdoutbound_messagingcampaigns_progress() *cobra.Command {
 }`)
 	outbound_messagingcampaigns_progressCmd.AddCommand(createCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view", "outbound:emailCampaign:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

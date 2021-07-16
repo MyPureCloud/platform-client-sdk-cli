@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdanalytics_conversations_details() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/analytics/conversations/{conversationId}/details", utils.FormatPermissions([]string{ "analytics:conversationDetail:view",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/analytics/conversations/{conversationId}/details")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/analytics/conversations/{conversationId}/details", utils.FormatPermissions([]string{ "analytics:conversationDetail:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/conversations/{conversationId}/details")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -39,7 +39,7 @@ func Cmdanalytics_conversations_details() *cobra.Command {
 	analytics_conversations_detailsCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Comma-separated conversation ids")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/conversations/details", utils.FormatPermissions([]string{ "analytics:conversationDetail:view",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/analytics/conversations/details")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/conversations/details", utils.FormatPermissions([]string{ "analytics:conversationDetail:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/conversations/details")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

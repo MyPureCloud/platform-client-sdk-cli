@@ -26,6 +26,7 @@ var (
 	ClientDo         = Client.Do
 	RestClient         *RESTClient
 	UpdateOAuthToken = config.UpdateOAuthToken
+	OverridesApplied = config.OverridesApplied
 )
 
 type RESTClient struct {
@@ -87,7 +88,7 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
 	//User-Agent and SDK version headers
 	request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-	request.Header.Set("purecloud-sdk", "15.0.0")
+	request.Header.Set("purecloud-sdk", "16.0.0")
 
 	if data != "" {
 		request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
@@ -149,7 +150,7 @@ func Authorize(c config.Configuration) (models.OAuthTokenData, error) {
 	}
 
 	oAuthTokenData := &models.OAuthTokenData{}
-	if !config.OverridesApplied() && c.OAuthTokenData() != "" {
+	if !OverridesApplied() && c.OAuthTokenData() != "" {
 		err := json.Unmarshal([]byte(c.OAuthTokenData()), oAuthTokenData)
 		if err != nil {
 			return models.OAuthTokenData{}, err
@@ -194,7 +195,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
 	//User-Agent and SDK version headers
 	request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-	request.Header.Set("purecloud-sdk", "15.0.0")
+	request.Header.Set("purecloud-sdk", "16.0.0")
 
 	//Setting up the form data
 	form := url.Values{}
@@ -232,7 +233,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 		OAuthTokenExpiry: oAuthTokenExpiry.Format(time.RFC3339),
 	}
 
-	if !config.OverridesApplied() {
+	if !OverridesApplied() {
 		err = UpdateOAuthToken(c, oAuthTokenResponse)
 		if err != nil {
 			return *oAuthTokenResponse, err

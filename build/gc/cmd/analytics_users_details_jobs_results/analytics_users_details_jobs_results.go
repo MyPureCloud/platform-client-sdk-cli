@@ -29,7 +29,7 @@ func init() {
 func Cmdanalytics_users_details_jobs_results() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "string", "cursor", "", "Indicates where to resume query results (not required for first page)")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "", "The desired maximum number of results")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/users/details/jobs/{jobId}/results", utils.FormatPermissions([]string{ "analytics:userDetail:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/analytics/users/details/jobs/{jobId}/results")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/users/details/jobs/{jobId}/results", utils.FormatPermissions([]string{ "analytics:userDetail:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/users/details/jobs/{jobId}/results")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

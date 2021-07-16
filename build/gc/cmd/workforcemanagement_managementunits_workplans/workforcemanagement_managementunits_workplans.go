@@ -55,6 +55,7 @@ func Cmdworkforcemanagement_managementunits_workplans() *cobra.Command {
 }`)
 	workforcemanagement_managementunits_workplansCmd.AddCommand(deleteCmd)
 	
+	utils.AddFlag(getCmd.Flags(), "[]string", "includeOnly", "", "limit response to the specified fields Valid values: agentCount, agents, optionalDays, shifts, shiftStartVariances")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}", utils.FormatPermissions([]string{ "wfm:workPlanRotation:view", "wfm:workPlan:view", "wfm:schedule:edit",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -196,6 +197,10 @@ var getCmd = &cobra.Command{
 		workPlanId, args := args[0], args[1:]
 		path = strings.Replace(path, "{workPlanId}", fmt.Sprintf("%v", workPlanId), -1)
 
+		includeOnly := utils.GetFlag(cmd.Flags(), "[]string", "includeOnly")
+		if includeOnly != "" {
+			queryParams["includeOnly"] = includeOnly
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

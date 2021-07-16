@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdanalytics_users_details_jobs() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/users/details/jobs", utils.FormatPermissions([]string{ "analytics:userDetail:view",  }), utils.GenerateDevCentreLink("POST", "Users", "/api/v2/analytics/users/details/jobs")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/users/details/jobs", utils.FormatPermissions([]string{ "analytics:userDetail:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/users/details/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,
@@ -46,7 +46,7 @@ func Cmdanalytics_users_details_jobs() *cobra.Command {
 }`)
 	analytics_users_details_jobsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/analytics/users/details/jobs/{jobId}", utils.FormatPermissions([]string{ "analytics:userDetail:view",  }), utils.GenerateDevCentreLink("DELETE", "Users", "/api/v2/analytics/users/details/jobs/{jobId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/analytics/users/details/jobs/{jobId}", utils.FormatPermissions([]string{ "analytics:userDetail:view",  }), utils.GenerateDevCentreLink("DELETE", "Analytics", "/api/v2/analytics/users/details/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -54,7 +54,7 @@ func Cmdanalytics_users_details_jobs() *cobra.Command {
 }`)
 	analytics_users_details_jobsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/analytics/users/details/jobs/{jobId}", utils.FormatPermissions([]string{ "analytics:userDetail:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/analytics/users/details/jobs/{jobId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/analytics/users/details/jobs/{jobId}", utils.FormatPermissions([]string{ "analytics:userDetail:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/users/details/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

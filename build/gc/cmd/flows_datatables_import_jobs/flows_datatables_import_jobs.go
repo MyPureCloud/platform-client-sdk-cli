@@ -65,7 +65,7 @@ func Cmdflows_datatables_import_jobs() *cobra.Command {
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EntityListing&quot;
+    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
   }
 }`)
 	flows_datatables_import_jobsCmd.AddCommand(listCmd)

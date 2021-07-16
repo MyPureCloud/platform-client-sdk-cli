@@ -54,3 +54,7 @@ func UpdateOAuthToken(_ config.Configuration, oauthTokenData *models.OAuthTokenD
 	UpdatedAccessToken = oauthTokenData.AccessToken
 	return nil
 }
+
+func OverridesApplied() bool {
+	return false
+}

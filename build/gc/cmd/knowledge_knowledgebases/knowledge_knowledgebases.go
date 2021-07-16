@@ -69,7 +69,7 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.")
+	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by Name.")
 	utils.AddFlag(listCmd.Flags(), "string", "coreLanguage", "", "Filter by core language. Valid values: en-US, de-DE")

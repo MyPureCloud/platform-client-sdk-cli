@@ -111,7 +111,7 @@ func TestRetryWithData(t *testing.T) {
 }
 
 func TestReAuthentication(t *testing.T) {
-	//restclientNewRESTClient = mockNewRESTClient
+	restclient.OverridesApplied = mocks.OverridesApplied
 	restclient.UpdateOAuthToken = mocks.UpdateOAuthToken
 	configGetConfig = mockGetConfig
 

@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("notifications_channels", "SWAGGER_OVERRIDE_/api/v2/notifications/channels", "SWAGGER_OVERRIDE_/api/v2/notifications/channels", )
+	Description = utils.FormatUsageDescription("notifications_channels", "SWAGGER_OVERRIDE_/api/v2/notifications/channels", "SWAGGER_OVERRIDE_/api/v2/notifications/channels", "SWAGGER_OVERRIDE_/api/v2/notifications/channels", )
 	notifications_channelsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("notifications_channels"),
 		Short: Description,
@@ -37,6 +37,17 @@ func Cmdnotifications_channels() *cobra.Command {
   }
 }`)
 	notifications_channelsCmd.AddCommand(createCmd)
+	
+	headCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", headCmd.UsageTemplate(), "HEAD", "/api/v2/notifications/channels/{channelId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("HEAD", "Notifications", "/api/v2/notifications/channels/{channelId}")))
+	utils.AddFileFlagIfUpsert(headCmd.Flags(), "HEAD", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(headCmd.Flags(), "HEAD", `{
+  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;schema&quot; : {
+    &quot;type&quot; : &quot;boolean&quot;
+  }
+}`)
+	notifications_channelsCmd.AddCommand(headCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "string", "includechannels", "token", "Show user`s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. Valid values: token, oauthclient")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/notifications/channels", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Notifications", "/api/v2/notifications/channels")))
@@ -74,6 +85,43 @@ var createCmd = &cobra.Command{
 		}
 
 		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}
+var headCmd = &cobra.Command{
+	Use:   "head [channelId]",
+	Short: "Verify a channel still exists and is valid",
+	Long:  "Verify a channel still exists and is valid",
+	Args:  utils.DetermineArgs([]string{ "channelId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/notifications/channels/{channelId}"
+		channelId, args := args[0], args[1:]
+		path = strings.Replace(path, "{channelId}", fmt.Sprintf("%v", channelId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		retryFunc := CommandService.DetermineAction("HEAD", urlString, cmd.Flags())
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

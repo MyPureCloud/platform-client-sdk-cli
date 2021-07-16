@@ -39,7 +39,7 @@ func Cmdjourney_actiontargets() *cobra.Command {
 	journey_actiontargetsCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size. The max that will be returned is 100.")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/actiontargets", utils.FormatPermissions([]string{ "journey:actiontarget:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/actiontargets")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

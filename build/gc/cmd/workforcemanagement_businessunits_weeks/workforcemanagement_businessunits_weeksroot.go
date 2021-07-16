@@ -2,13 +2,13 @@ package workforcemanagement_businessunits_weeks
 
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_weeks_schedules"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_weeks_shorttermforecasts"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_weeks_schedules"
 )
 
 func init() {
-	workforcemanagement_businessunits_weeksCmd.AddCommand(workforcemanagement_businessunits_weeks_schedules.Cmdworkforcemanagement_businessunits_weeks_schedules())
 	workforcemanagement_businessunits_weeksCmd.AddCommand(workforcemanagement_businessunits_weeks_shorttermforecasts.Cmdworkforcemanagement_businessunits_weeks_shorttermforecasts())
-	workforcemanagement_businessunits_weeksCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_weeksCmd.Short, workforcemanagement_businessunits_weeks_schedules.Description, workforcemanagement_businessunits_weeks_shorttermforecasts.Description, )
+	workforcemanagement_businessunits_weeksCmd.AddCommand(workforcemanagement_businessunits_weeks_schedules.Cmdworkforcemanagement_businessunits_weeks_schedules())
+	workforcemanagement_businessunits_weeksCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_weeksCmd.Short, workforcemanagement_businessunits_weeks_shorttermforecasts.Description, workforcemanagement_businessunits_weeks_schedules.Description, )
 	workforcemanagement_businessunits_weeksCmd.Long = workforcemanagement_businessunits_weeksCmd.Short
 }

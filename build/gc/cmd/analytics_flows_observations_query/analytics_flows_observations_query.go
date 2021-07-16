@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdanalytics_flows_observations_query() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/flows/observations/query", utils.FormatPermissions([]string{ "analytics:flowObservation:view",  }), utils.GenerateDevCentreLink("POST", "Flows", "/api/v2/analytics/flows/observations/query")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/flows/observations/query", utils.FormatPermissions([]string{ "analytics:flowObservation:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/flows/observations/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   &quot;in&quot; : &quot;body&quot;,
   &quot;name&quot; : &quot;body&quot;,

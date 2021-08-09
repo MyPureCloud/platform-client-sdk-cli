@@ -34,14 +34,14 @@ func Cmdrouting_conversations() *cobra.Command {
   &quot;description&quot; : &quot;Conversation Attributes&quot;,
   &quot;required&quot; : true,
   &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/RoutingConversationAttributes&quot;
+    &quot;$ref&quot; : &quot;#/definitions/RoutingConversationAttributesRequest&quot;
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   &quot;description&quot; : &quot;successful operation&quot;,
   &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/RoutingConversationAttributes&quot;
+    &quot;$ref&quot; : &quot;#/definitions/RoutingConversationAttributesResponse&quot;
   }
 }`)
 	routing_conversationsCmd.AddCommand(updateCmd)

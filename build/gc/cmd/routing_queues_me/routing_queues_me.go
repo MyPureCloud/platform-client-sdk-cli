@@ -27,11 +27,10 @@ func init() {
 }
 
 func Cmdrouting_queues_me() *cobra.Command { 
-	utils.AddFlag(listCmd.Flags(), "bool", "joined", "", "Joined")
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by")
-	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Sort order")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
+	utils.AddFlag(listCmd.Flags(), "bool", "joined", "", "Filter by joined status.")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Note: results are sorted by name. Valid values: asc, desc")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/me")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -57,21 +56,17 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/routing/queues/me"
 
-		joined := utils.GetFlag(cmd.Flags(), "bool", "joined")
-		if joined != "" {
-			queryParams["joined"] = joined
+		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
+		if pageNumber != "" {
+			queryParams["pageNumber"] = pageNumber
 		}
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
 			queryParams["pageSize"] = pageSize
 		}
-		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
-		if pageNumber != "" {
-			queryParams["pageNumber"] = pageNumber
-		}
-		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
-		if sortBy != "" {
-			queryParams["sortBy"] = sortBy
+		joined := utils.GetFlag(cmd.Flags(), "bool", "joined")
+		if joined != "" {
+			queryParams["joined"] = joined
 		}
 		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
 		if sortOrder != "" {

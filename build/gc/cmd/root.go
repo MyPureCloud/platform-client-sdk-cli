@@ -3,12 +3,16 @@ package cmd
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
+
 	"github.com/spf13/cobra"
 	"github.com/spf13/cobra/doc"
 	"github.com/spf13/viper"
 
 	"flag"
 	"fmt"
+	"strings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dummy_command"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/date"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
@@ -24,7 +28,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/mobiledevices"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presencedefinitions"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scripts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/search"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
@@ -33,8 +36,9 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/alerting"
@@ -52,6 +56,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profile"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/organizations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gamification"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge"
@@ -98,7 +103,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("17.0.0")
+		fmt.Println("18.0.0")
 	},
 }
 
@@ -149,7 +154,6 @@ func init() {
 	rootCmd.AddCommand(mobiledevices.Cmdmobiledevices())
 	rootCmd.AddCommand(orphanrecordings.Cmdorphanrecordings())
 	rootCmd.AddCommand(presencedefinitions.Cmdpresencedefinitions())
-	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(scripts.Cmdscripts())
 	rootCmd.AddCommand(search.Cmdsearch())
 	rootCmd.AddCommand(stations.Cmdstations())
@@ -158,8 +162,9 @@ func init() {
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
-	rootCmd.AddCommand(gdpr.Cmdgdpr())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(completion.Cmdcompletion())
+	rootCmd.AddCommand(experimental.Cmdexperimental())
 	rootCmd.AddCommand(logging.Cmdlogging())
 	rootCmd.AddCommand(profiles.Cmdprofiles())
 	rootCmd.AddCommand(alerting.Cmdalerting())
@@ -177,6 +182,7 @@ func init() {
 	rootCmd.AddCommand(profile.Cmdprofile())
 	rootCmd.AddCommand(organizations.Cmdorganizations())
 	rootCmd.AddCommand(gamification.Cmdgamification())
+	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(geolocations.Cmdgeolocations())
 	rootCmd.AddCommand(journey.Cmdjourney())
 	rootCmd.AddCommand(knowledge.Cmdknowledge())
@@ -204,6 +210,10 @@ func init() {
 	rootCmd.AddCommand(learning.Cmdlearning())
 	rootCmd.AddCommand(widgets.Cmdwidgets())
 
+    if config.GetExperimentalFeature(getProfileName(os.Args), models.DummyCommand.String()) {
+        rootCmd.AddCommand(dummy_command.Cmddummy_command())
+    }
+
 	if os.Getenv("GenerateGcDocs") != "" {
 		if _, err := os.Stat("/tmp/gc_docs"); os.IsNotExist(err) {
 			err = os.Mkdir("/tmp/gc_docs", 0755)
@@ -216,4 +226,22 @@ func init() {
 			}
 		}
 	}
+}
+
+func getProfileName(args []string) string {
+	name := ""
+	for i, s := range args {
+		if (s == "-p" || s == "--profile") && i < len(args)-1 {
+			return args[i+1]
+		}
+		if strings.HasPrefix(s, "--profile=") {
+			name = strings.Replace(s, "--profile=", "", -1)
+		} else if strings.HasPrefix(s, "-p=") {
+			name = strings.Replace(s, "-p=", "", -1)
+		}
+	}
+	if name == "" {
+		return "DEFAULT"
+	}
+	return name
 }

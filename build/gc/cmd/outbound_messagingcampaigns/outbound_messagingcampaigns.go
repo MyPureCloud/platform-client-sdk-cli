@@ -78,7 +78,7 @@ func Cmdoutbound_messagingcampaigns() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "varType", "", "Campaign Type Valid values: EMAIL, SMS")
 	utils.AddFlag(listCmd.Flags(), "string", "senderSmsPhoneNumber", "", "Sender SMS Phone Number")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "A list of messaging campaign ids to bulk fetch")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view", "outbound:emailCampaign:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

@@ -67,6 +67,9 @@ func Cmdspeechandtextanalytics_topics() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "The key for listing the next page")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "20", "The page size for the listing")
+	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Topic state Valid values: latest, published")
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Case insensitive partial name to filter by")
+	utils.AddFlag(listCmd.Flags(), "[]string", "ids", "", "Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/topics", utils.FormatPermissions([]string{ "speechAndTextAnalytics:topic:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/topics")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -227,6 +230,18 @@ var listCmd = &cobra.Command{
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
 			queryParams["pageSize"] = pageSize
+		}
+		state := utils.GetFlag(cmd.Flags(), "string", "state")
+		if state != "" {
+			queryParams["state"] = state
+		}
+		name := utils.GetFlag(cmd.Flags(), "string", "name")
+		if name != "" {
+			queryParams["name"] = name
+		}
+		ids := utils.GetFlag(cmd.Flags(), "[]string", "ids")
+		if ids != "" {
+			queryParams["ids"] = ids
 		}
 		urlString := path
 		if len(queryParams) > 0 {

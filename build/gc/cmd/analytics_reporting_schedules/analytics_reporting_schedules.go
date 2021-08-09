@@ -67,7 +67,7 @@ func Cmdanalytics_reporting_schedules() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/reporting/schedules", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/reporting/schedules")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/reporting/schedules", utils.FormatPermissions([]string{ "reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/reporting/schedules")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

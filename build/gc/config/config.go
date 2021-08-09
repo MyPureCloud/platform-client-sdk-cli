@@ -33,9 +33,9 @@ type configuration struct {
 }
 
 var (
-	Environment  string
-	ClientId     string
-	ClientSecret string
+	Environment    string
+	ClientId       string
+	ClientSecret   string
 	regionMappings = map[string]string{
 		"us-east-1":      "mypurecloud.com",
 		"eu-west-1":      "mypurecloud.ie",
@@ -138,10 +138,10 @@ func GetConfig(profileName string) (Configuration, error) {
 		if _, ok := err.(viper.ConfigFileNotFoundError); ok {
 			if OverridesApplied() {
 				return &configuration{
-					profileName: profileName,
-					clientID:       ClientId,
-					clientSecret:   ClientSecret,
-					environment:    Environment,
+					profileName:  profileName,
+					clientID:     ClientId,
+					clientSecret: ClientSecret,
+					environment:  Environment,
 				}, nil
 			}
 			homeDir, _ := os.UserHomeDir()
@@ -206,7 +206,7 @@ func SaveConfig(c Configuration) error {
 
 func UpdateOAuthToken(c Configuration, data *models.OAuthTokenData) error {
 	return updateConfig(configuration{
-		profileName: c.ProfileName(),
+		profileName:    c.ProfileName(),
 		oAuthTokenData: data.String(),
 	}, nil)
 }
@@ -215,13 +215,26 @@ func UpdateLogFilePath(c Configuration, filePath string) error {
 	return updateConfig(configuration{
 		profileName: c.ProfileName(),
 		logFilePath: filePath,
-	},nil)
+	}, nil)
 }
 
 func SetLoggingEnabled(c Configuration, loggingEnabled bool) error {
 	return updateConfig(configuration{
 		profileName: c.ProfileName(),
 	}, &loggingEnabled)
+}
+
+func SetExperimentalFeature(profileName string, featureName string, enabled bool) error {
+	viper.Set(fmt.Sprintf("%s.%s_enabled", profileName, featureName), enabled)
+	return viper.WriteConfig()
+}
+
+func GetExperimentalFeature(profileName string, featureName string) bool {
+	err := viper.ReadInConfig()
+	if err != nil {
+		return false
+	}
+	return viper.GetBool(fmt.Sprintf("%s.%s_enabled", profileName, featureName))
 }
 
 func OverridesApplied() bool {
@@ -265,6 +278,7 @@ func writeConfig(c Configuration, data *models.OAuthTokenData, logFilePath strin
 	if loggingEnabled != nil {
 		viper.Set(fmt.Sprintf("%s.logging_enabled", c.ProfileName()), *loggingEnabled)
 	}
+
 	//Checking to see if the file does not exist.  It it doesnt we write out the config as default config.toml
 	if err := viper.ReadInConfig(); err != nil {
 		if _, ok := err.(viper.ConfigFileNotFoundError); ok {

@@ -57,9 +57,9 @@ func Cmdrouting_queues_users() *cobra.Command {
 }`)
 	routing_queues_usersCmd.AddCommand(deleteCmd)
 	
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size [max 100]")
-	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by")
+	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Max value is 100")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Note: results are sorted by name. Valid values: asc, desc")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography")
 	utils.AddFlag(listCmd.Flags(), "bool", "joined", "", "Filter by joined status")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by queue member name")
@@ -217,17 +217,17 @@ var listCmd = &cobra.Command{
 		queueId, args := args[0], args[1:]
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
 
-		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
-		if pageSize != "" {
-			queryParams["pageSize"] = pageSize
-		}
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
 		}
-		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
-		if sortBy != "" {
-			queryParams["sortBy"] = sortBy
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
+		if sortOrder != "" {
+			queryParams["sortOrder"] = sortOrder
 		}
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {

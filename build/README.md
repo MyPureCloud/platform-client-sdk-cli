@@ -173,13 +173,36 @@ To see further examples of enabling autocompletion, run the following command:
 gc completion --help
 ```
 
-## Operation data
+# Operation data
 
 Running any API operation command followed by '--help' will print out the following information:
 
 * Operation. e.g. `POST /api/v2/users`
 * Permissions (where applicable)
 * Documentation. e.g. https://developer.genesys.cloud/api/rest/v2/users/#post-api-v2-users
+
+# Experimental features
+
+Experimental features are features which may not be fully fleshed out yet. The features may be removed or have their interface changed at any time.  
+
+
+To see the list of experimental features, run the following command:
+
+```
+gc experimental list
+```
+
+To enable an experimental feature:
+
+```
+gc experimental enable [feature_name]
+```
+
+To disable an experimental feature:
+
+```
+gc experimental disable [feature_name]
+```
 
 # Examples
 

@@ -52,8 +52,8 @@ func Cmdaudits_query_realtime() *cobra.Command {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.",
-	Long:  "This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.",
+	Short: "This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.",
+	Long:  "This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

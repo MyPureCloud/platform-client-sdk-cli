@@ -66,12 +66,12 @@ func Cmdrouting_queues() *cobra.Command {
 }`)
 	routing_queuesCmd.AddCommand(getCmd)
 	
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by")
-	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
-	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "ID(s)")
-	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Note: results are sorted by name. Valid values: asc, desc")
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by queue name")
+	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Filter by queue ID(s)")
+	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Filter by queue division ID(s)")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues", utils.FormatPermissions([]string{ "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -229,17 +229,17 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/routing/queues"
 
-		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
-		if pageSize != "" {
-			queryParams["pageSize"] = pageSize
-		}
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
 		}
-		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
-		if sortBy != "" {
-			queryParams["sortBy"] = sortBy
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
+		if sortOrder != "" {
+			queryParams["sortOrder"] = sortOrder
 		}
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {

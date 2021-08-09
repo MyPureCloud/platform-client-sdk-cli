@@ -57,17 +57,18 @@ func Cmdrouting_queues_members() *cobra.Command {
 }`)
 	routing_queues_membersCmd.AddCommand(deleteCmd)
 	
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size [max 100]")
-	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by")
+	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Max value is 100")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Note: results are sorted by name. Valid values: asc, desc")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography")
-	utils.AddFlag(listCmd.Flags(), "bool", "joined", "", "Filter by joined status")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by queue member name")
 	utils.AddFlag(listCmd.Flags(), "[]string", "profileSkills", "", "Filter by profile skill")
 	utils.AddFlag(listCmd.Flags(), "[]string", "skills", "", "Filter by skill")
 	utils.AddFlag(listCmd.Flags(), "[]string", "languages", "", "Filter by language")
 	utils.AddFlag(listCmd.Flags(), "[]string", "routingStatus", "", "Filter by routing status")
 	utils.AddFlag(listCmd.Flags(), "[]string", "presence", "", "Filter by presence")
+	utils.AddFlag(listCmd.Flags(), "string", "memberBy", "", "Filter by member type Valid values: user, group")
+	utils.AddFlag(listCmd.Flags(), "bool", "joined", "", "Filter by joined status")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/members", utils.FormatPermissions([]string{ "routing:queue:view", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/{queueId}/members")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -217,25 +218,21 @@ var listCmd = &cobra.Command{
 		queueId, args := args[0], args[1:]
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
 
-		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
-		if pageSize != "" {
-			queryParams["pageSize"] = pageSize
-		}
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
 		}
-		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
-		if sortBy != "" {
-			queryParams["sortBy"] = sortBy
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
+		if sortOrder != "" {
+			queryParams["sortOrder"] = sortOrder
 		}
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
-		}
-		joined := utils.GetFlag(cmd.Flags(), "bool", "joined")
-		if joined != "" {
-			queryParams["joined"] = joined
 		}
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {
@@ -260,6 +257,14 @@ var listCmd = &cobra.Command{
 		presence := utils.GetFlag(cmd.Flags(), "[]string", "presence")
 		if presence != "" {
 			queryParams["presence"] = presence
+		}
+		memberBy := utils.GetFlag(cmd.Flags(), "string", "memberBy")
+		if memberBy != "" {
+			queryParams["memberBy"] = memberBy
+		}
+		joined := utils.GetFlag(cmd.Flags(), "bool", "joined")
+		if joined != "" {
+			queryParams["joined"] = joined
 		}
 		urlString := path
 		if len(queryParams) > 0 {

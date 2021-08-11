@@ -33,6 +33,9 @@ func Cmdlearning_assignments_me() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "overdue", "Any", "Specifies if only the non-overdue (overdue is False) or overdue (overdue is True) assignments are returned. If overdue is Any or if the overdue parameter is not supplied, all assignments are returned Valid values: True, False, Any")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
+	utils.AddFlag(listCmd.Flags(), "string", "pass", "Any", "Specifies if only the failed (pass is False) or passed (pass is True) assignments (completed with assessment)are returned. If pass is Any or if the pass parameter is not supplied, all assignments are returned Valid values: True, False, Any")
+	utils.AddFlag(listCmd.Flags(), "float32", "minPercentageScore", "", "The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)")
+	utils.AddFlag(listCmd.Flags(), "float32", "maxPercentageScore", "", "The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "Desc", "Specifies result set sort order; if not specified, default sort order is descending (Desc) Valid values: Asc, Desc")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Specifies which field to sort the results by, default sort is by recommendedCompletionDate Valid values: RecommendedCompletionDate, DateModified")
 	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned Valid values: Informational, AssessedContent, Questionnaire, Assessment")
@@ -86,6 +89,18 @@ var listCmd = &cobra.Command{
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
+		}
+		pass := utils.GetFlag(cmd.Flags(), "string", "pass")
+		if pass != "" {
+			queryParams["pass"] = pass
+		}
+		minPercentageScore := utils.GetFlag(cmd.Flags(), "float32", "minPercentageScore")
+		if minPercentageScore != "" {
+			queryParams["minPercentageScore"] = minPercentageScore
+		}
+		maxPercentageScore := utils.GetFlag(cmd.Flags(), "float32", "maxPercentageScore")
+		if maxPercentageScore != "" {
+			queryParams["maxPercentageScore"] = maxPercentageScore
 		}
 		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
 		if sortOrder != "" {

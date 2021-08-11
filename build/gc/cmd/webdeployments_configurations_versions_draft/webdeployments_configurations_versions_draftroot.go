@@ -1,0 +1,12 @@
+package webdeployments_configurations_versions_draft
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webdeployments_configurations_versions_draft_publish"
+)
+
+func init() {
+	webdeployments_configurations_versions_draftCmd.AddCommand(webdeployments_configurations_versions_draft_publish.Cmdwebdeployments_configurations_versions_draft_publish())
+	webdeployments_configurations_versions_draftCmd.Short = utils.GenerateCustomDescription(webdeployments_configurations_versions_draftCmd.Short, webdeployments_configurations_versions_draft_publish.Description, )
+	webdeployments_configurations_versions_draftCmd.Long = webdeployments_configurations_versions_draftCmd.Short
+}

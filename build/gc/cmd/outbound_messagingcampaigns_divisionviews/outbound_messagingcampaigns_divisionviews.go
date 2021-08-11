@@ -27,7 +27,7 @@ func init() {
 }
 
 func Cmdoutbound_messagingcampaigns_divisionviews() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaign:search",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaign:search", "outbound:emailCampaign:search",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -42,9 +42,10 @@ func Cmdoutbound_messagingcampaigns_divisionviews() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "The direction to sort Valid values: ascending, descending")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
+	utils.AddFlag(listCmd.Flags(), "string", "varType", "", "Campaign Type Valid values: EMAIL, SMS")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
 	utils.AddFlag(listCmd.Flags(), "string", "senderSmsPhoneNumber", "", "Sender SMS Phone Number")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns/divisionviews", utils.FormatPermissions([]string{ "outbound:messagingCampaign:search",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns/divisionviews")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns/divisionviews", utils.FormatPermissions([]string{ "outbound:messagingCampaign:search", "outbound:emailCampaign:search",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns/divisionviews")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -121,6 +122,10 @@ var listCmd = &cobra.Command{
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {
 			queryParams["name"] = name
+		}
+		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
+		if varType != "" {
+			queryParams["varType"] = varType
 		}
 		id := utils.GetFlag(cmd.Flags(), "[]string", "id")
 		if id != "" {

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
+	"strings"
 	"time"
 
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
@@ -19,7 +20,7 @@ func init() {
 }
 
 //processWSMessage is the function that processes a WebSocket channel.
-func processWSMessage(c *websocket.Conn, done chan struct{}) {
+func processWSMessage(c *websocket.Conn, done chan struct{}, heartbeatSuppressed bool) {
 	defer close(done)
 	for {
 		_, message, err := c.ReadMessage()
@@ -27,8 +28,15 @@ func processWSMessage(c *websocket.Conn, done chan struct{}) {
 			logger.Warn("Websocket read:", err)
 			return
 		}
+		if isWebSocketHeartbeat(string(message)) && heartbeatSuppressed {
+			continue
+		}
 		utils.Render(string(message))
 	}
+}
+
+func isWebSocketHeartbeat(message string) bool {
+	return strings.Contains(message, "WebSocket Heartbeat") && strings.Contains(message, "channel.metadata")
 }
 
 //waitForWSClose waits for an operating system interrupt to stop the websocket and cleanly close it down.
@@ -76,8 +84,9 @@ var listenChannelCmd = &cobra.Command{
 
 	Run: func(cmd *cobra.Command, args []string) {
 		profileName, _ := cmd.Root().Flags().GetString("profile")
-		config, err := config.GetConfig(profileName)
+		heartbeatSuppressed, _ := cmd.Root().Flags().GetBool("noheartbeat")
 
+		config, err := config.GetConfig(profileName)
 		if err != nil {
 			logger.Fatal(err)
 		}
@@ -93,7 +102,7 @@ var listenChannelCmd = &cobra.Command{
 
 		//Spin off the function as an independently running go func
 		go func() {
-			processWSMessage(c, done)
+			processWSMessage(c, done, heartbeatSuppressed)
 		}()
 
 		//Causes the CLI to wait for

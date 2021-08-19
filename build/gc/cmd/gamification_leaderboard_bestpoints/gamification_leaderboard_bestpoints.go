@@ -43,8 +43,8 @@ func Cmdgamification_leaderboard_bestpoints() *cobra.Command {
 
 var getCmd = &cobra.Command{
 	Use:   "get",
-	Short: "Best Points of the requesting user`s division",
-	Long:  "Best Points of the requesting user`s division",
+	Short: "Best Points of the requesting user`s current performance profile or division",
+	Long:  "Best Points of the requesting user`s current performance profile or division",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

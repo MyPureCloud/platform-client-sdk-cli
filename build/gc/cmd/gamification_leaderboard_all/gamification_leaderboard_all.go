@@ -28,7 +28,7 @@ func init() {
 
 func Cmdgamification_leaderboard_all() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "filterType", "", "Filter type for the query request. - REQUIRED Valid values: PerformanceProfile, Division")
-	utils.AddFlag(getCmd.Flags(), "string", "filterId", "", "ID for the filter type. For example, division Id - REQUIRED")
+	utils.AddFlag(getCmd.Flags(), "string", "filterId", "", "ID for the filter type. For example, division or performance profile Id - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "startWorkday", "", "Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "endWorkday", "", "End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "string", "metricId", "", "Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.")

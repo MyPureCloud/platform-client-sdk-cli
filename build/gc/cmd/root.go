@@ -4,6 +4,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/data_format"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/cobra/doc"
@@ -15,14 +16,13 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dummy_command"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/date"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fieldconfig"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/greetings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/groups"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/identityproviders"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/ipranges"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languages"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/locations"
@@ -33,12 +33,12 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/search"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/systempresences"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/timezones"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
@@ -72,6 +72,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemanagement"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/configuration"
@@ -103,7 +104,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("19.0.0")
+		fmt.Println("19.1.0")
 	},
 }
 
@@ -133,22 +134,27 @@ func init() {
 
 	rootCmd.PersistentFlags().StringVarP(&profileName, "profile", "p", "DEFAULT", "Name of the profile to use for configuring the cli")
 	rootCmd.PersistentFlags().BoolP("indicateprogress", "i", false, "Trace progress indicators to stderr")
+	rootCmd.PersistentFlags().BoolP("noheartbeat", "", false, "Filters out the heartbeat from the event stream when using the notification service")
 
 	rootCmd.PersistentFlags().StringVar(&config.Environment, "environment", "", "environment override. E.g. mypurecloud.com.au or ap-southeast-2")
 	rootCmd.PersistentFlags().StringVar(&config.ClientId, "clientid", "", "clientId override")
 	rootCmd.PersistentFlags().StringVar(&config.ClientSecret, "clientsecret", "", "clientSecret override")
 
+	if config.GetExperimentalFeature(getProfileName(os.Args), models.AlternativeFormats.String()) {
+		rootCmd.PersistentFlags().StringVar(&data_format.InputFormat, "inputformat", "JSON", "Data input format. Possible values: YAML, JSON")
+		rootCmd.PersistentFlags().StringVar(&data_format.OutputFormat, "outputformat", "JSON", "Data output format. Possible values: YAML, JSON")
+	}
+
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(date.Cmddate())
 	rootCmd.AddCommand(conversations.Cmdconversations())
-	rootCmd.AddCommand(chat.Cmdchat())
 	rootCmd.AddCommand(fieldconfig.Cmdfieldconfig())
+	rootCmd.AddCommand(chat.Cmdchat())
 	rootCmd.AddCommand(flows.Cmdflows())
 	rootCmd.AddCommand(greetings.Cmdgreetings())
 	rootCmd.AddCommand(groups.Cmdgroups())
 	rootCmd.AddCommand(identityproviders.Cmdidentityproviders())
 	rootCmd.AddCommand(integrations.Cmdintegrations())
-	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(ipranges.Cmdipranges())
 	rootCmd.AddCommand(languages.Cmdlanguages())
 	rootCmd.AddCommand(locations.Cmdlocations())
@@ -159,12 +165,12 @@ func init() {
 	rootCmd.AddCommand(search.Cmdsearch())
 	rootCmd.AddCommand(stations.Cmdstations())
 	rootCmd.AddCommand(systempresences.Cmdsystempresences())
-	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(timezones.Cmdtimezones())
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
-	rootCmd.AddCommand(scim.Cmdscim())
+	rootCmd.AddCommand(fax.Cmdfax())
+	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())
 	rootCmd.AddCommand(logging.Cmdlogging())
@@ -198,6 +204,7 @@ func init() {
 	rootCmd.AddCommand(routing.Cmdrouting())
 	rootCmd.AddCommand(recordings.Cmdrecordings())
 	rootCmd.AddCommand(responsemanagement.Cmdresponsemanagement())
+	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(speechandtextanalytics.Cmdspeechandtextanalytics())
 	rootCmd.AddCommand(telephony.Cmdtelephony())
 	rootCmd.AddCommand(configuration.Cmdconfiguration())

@@ -104,6 +104,24 @@ Logging is configured on a per-profile basis so the above commands will only con
 # Tracing progress information
 Passing the flag `-i` or `--indicateprogress` to any command will result in progress information traced to stderr and written to the application log file.  For example, to see progress information for a list operation and ignore API output, use `gc users list --autopaginate -i > /dev/null`.
 
+# Notifications
+Create a channel:
+```
+gc notifications channels create
+```
+List all channels created using the current OAuth token:
+```
+gc notifications channels list
+```
+Listen to notifications from a channel:
+```
+gc notifications channels listen [CHANNEL_ID]
+```
+Using the `--noheartbeat` flag to filter out the heartbeat from the event stream:
+```
+gc notifications channels listen [CHANNEL_ID] --nohearbeat
+```
+
 # Pagination
 As of version `3.0.0` the default behaviour will be to *not* automatically paginate any paginatable resources. To automatically paginate, you must pass the `--autopaginate` or `-a` flag. In addition, there is a new `--stream` or `-s` flag for paginatable resources. This will paginate through the results and print them one page at a time leaving the page information intact.
 

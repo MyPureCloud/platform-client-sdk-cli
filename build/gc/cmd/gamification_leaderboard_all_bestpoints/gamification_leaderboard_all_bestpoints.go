@@ -28,7 +28,7 @@ func init() {
 
 func Cmdgamification_leaderboard_all_bestpoints() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "filterType", "", "Filter type for the query request. - REQUIRED Valid values: PerformanceProfile, Division")
-	utils.AddFlag(getCmd.Flags(), "string", "filterId", "", "ID for the filter type. For example, division Id - REQUIRED")
+	utils.AddFlag(getCmd.Flags(), "string", "filterId", "", "ID for the filter type. For example, division or performance profile Id - REQUIRED")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/leaderboard/all/bestpoints", utils.FormatPermissions([]string{ "gamification:leaderboard:viewAll",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/leaderboard/all/bestpoints")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("filterType")
@@ -47,8 +47,8 @@ func Cmdgamification_leaderboard_all_bestpoints() *cobra.Command {
 
 var getCmd = &cobra.Command{
 	Use:   "get",
-	Short: "Best Points by division",
-	Long:  "Best Points by division",
+	Short: "Best Points by division or performance profile",
+	Long:  "Best Points by division or performance profile",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

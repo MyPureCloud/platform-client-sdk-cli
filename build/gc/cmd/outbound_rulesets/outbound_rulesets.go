@@ -107,8 +107,8 @@ func Cmdoutbound_rulesets() *cobra.Command {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Create a Dialer Call Analysis Response Set.",
-	Long:  "Create a Dialer Call Analysis Response Set.",
+	Short: "Create a Rule Set.",
+	Long:  "Create a Rule Set.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -142,8 +142,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [ruleSetId]",
-	Short: "Delete a Rule set.",
-	Long:  "Delete a Rule set.",
+	Short: "Delete a Rule Set.",
+	Long:  "Delete a Rule Set.",
 	Args:  utils.DetermineArgs([]string{ "ruleSetId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -279,8 +279,8 @@ var listCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [ruleSetId]",
-	Short: "Update a RuleSet.",
-	Long:  "Update a RuleSet.",
+	Short: "Update a Rule Set.",
+	Long:  "Update a Rule Set.",
 	Args:  utils.DetermineArgs([]string{ "ruleSetId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

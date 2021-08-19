@@ -11,6 +11,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_surveys"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_transcripts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_users"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_botflows"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_reporting"
 )
 
@@ -24,7 +25,8 @@ func init() {
 	analyticsCmd.AddCommand(analytics_surveys.Cmdanalytics_surveys())
 	analyticsCmd.AddCommand(analytics_transcripts.Cmdanalytics_transcripts())
 	analyticsCmd.AddCommand(analytics_users.Cmdanalytics_users())
+	analyticsCmd.AddCommand(analytics_botflows.Cmdanalytics_botflows())
 	analyticsCmd.AddCommand(analytics_reporting.Cmdanalytics_reporting())
-	analyticsCmd.Short = utils.GenerateCustomDescription(analyticsCmd.Short, analytics_bots.Description, analytics_conversations.Description, analytics_evaluations.Description, analytics_flows.Description, analytics_journeys.Description, analytics_queues.Description, analytics_surveys.Description, analytics_transcripts.Description, analytics_users.Description, analytics_reporting.Description, )
+	analyticsCmd.Short = utils.GenerateCustomDescription(analyticsCmd.Short, analytics_bots.Description, analytics_conversations.Description, analytics_evaluations.Description, analytics_flows.Description, analytics_journeys.Description, analytics_queues.Description, analytics_surveys.Description, analytics_transcripts.Description, analytics_users.Description, analytics_botflows.Description, analytics_reporting.Description, )
 	analyticsCmd.Long = analyticsCmd.Short
 }

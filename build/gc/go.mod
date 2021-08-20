@@ -10,4 +10,5 @@ require (
 	github.com/spf13/viper v1.7.1
 	github.com/tidwall/pretty v1.0.5
 	sigs.k8s.io/yaml v1.2.0 // indirect
+	github.com/hashicorp/go-version v1.3.0
 )

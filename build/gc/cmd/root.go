@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"github.com/hashicorp/go-version"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
@@ -13,6 +14,10 @@ import (
 	"flag"
 	"fmt"
 	"strings"
+	"encoding/json"
+	"io/ioutil"
+	"time"
+	"net/http"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dummy_command"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/date"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
@@ -87,9 +92,15 @@ import (
 	"os"
 )
 
+type LatestVersion struct {
+	Version string `json:"version"`
+}
+
 var (
 	profileName string
 	output string
+	externalVersionURL = "https://sdk-cdn.mypurecloud.com/external/go-cli/latest-version.json"
+	internalVersionURL = "https://sdk-cdn.mypurecloud.com/internal/go-cli/latest-version.json"
 )
 
 // rootCmd represents the base command when called without any subcommands
@@ -104,8 +115,66 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("19.1.0")
+		fmt.Println("Current version: 20.0.0")
+		checkForNewVersion()
 	},
+}
+
+func checkForNewVersion() {
+	var url string
+	if strings.Contains("https://api.mypurecloud.com", "api.mypurecloud.com") {
+		url = externalVersionURL
+	} else {
+		url = internalVersionURL
+	}
+
+	err, latestVersion := retrieveLatestVersion(url)
+	if err != nil {
+		fmt.Println("An error occurred while retrieving the latest version.")
+		return
+	}
+
+	if versionsAreEqual("20.0.0", latestVersion) {
+		fmt.Println("You're all up to date.")
+	} else {
+		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
+	}
+}
+
+func retrieveLatestVersion(url string) (error, string) {
+	client := http.Client{
+		Timeout: time.Second * 6,
+	}
+	req, err := http.NewRequest(http.MethodGet, url, nil)
+	if err != nil {
+		return err, ""
+	}
+
+	res, getErr := client.Do(req)
+	if getErr != nil {
+		return getErr, ""
+	}
+	if res.Body != nil {
+		defer res.Body.Close()
+	}
+	body, readErr := ioutil.ReadAll(res.Body)
+	if readErr != nil {
+		return readErr, ""
+	}
+
+	latestVersion := LatestVersion{}
+	jsonErr := json.Unmarshal(body, &latestVersion)
+	if jsonErr != nil {
+		return jsonErr, ""
+	}
+
+	return nil, latestVersion.Version
+}
+
+func versionsAreEqual(current string, latest string) bool {
+	v1, _ := version.NewVersion(current)
+	v2, _ := version.NewVersion(latest)
+	return v1.GreaterThanOrEqual(v2)
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
@@ -217,9 +286,9 @@ func init() {
 	rootCmd.AddCommand(learning.Cmdlearning())
 	rootCmd.AddCommand(widgets.Cmdwidgets())
 
-    if config.GetExperimentalFeature(getProfileName(os.Args), models.DummyCommand.String()) {
-        rootCmd.AddCommand(dummy_command.Cmddummy_command())
-    }
+	if config.GetExperimentalFeature(getProfileName(os.Args), models.DummyCommand.String()) {
+		rootCmd.AddCommand(dummy_command.Cmddummy_command())
+	}
 
 	if os.Getenv("GenerateGcDocs") != "" {
 		if _, err := os.Stat("/tmp/gc_docs"); os.IsNotExist(err) {

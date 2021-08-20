@@ -2,6 +2,25 @@ package cmd
 
 import "testing"
 
+func TestVersionsAreEqual(t *testing.T) {
+	var tests = []struct {
+		input    []string
+		expected bool
+	}{
+		{[]string{"17.0.0", "17.0.0"}, true},
+		{[]string{"17.2.1", "17.2.1"}, true},
+		{[]string{"1.1.0", "1.2.0"}, false},
+		{[]string{"11.1.0", "12.1.0"}, false},
+	}
+
+	for _, test := range tests {
+		got := versionsAreEqual(test.input[0], test.input[1])
+		if got != test.expected {
+			t.Errorf("TEST FAILED - (%v, %v) - Expected: %v, Got: %v", test.input[0], test.input[1], test.expected, got)
+		}
+	}
+}
+
 func TestGetProfileName(t *testing.T) {
 	var tests = []struct {
 		input    []string

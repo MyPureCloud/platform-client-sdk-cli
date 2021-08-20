@@ -117,15 +117,15 @@ func (c *configuration) String() string {
 
 func applyEnvironmentVariableOverrides() {
 	environment := os.Getenv("GENESYSCLOUD_REGION")
-	if environment != "" {
+	if environment != "" && Environment == "" {
 		Environment = environment
 	}
 	clientId := os.Getenv("GENESYSCLOUD_OAUTHCLIENT_ID")
-	if clientId != "" {
+	if clientId != "" && ClientId == "" {
 		ClientId = clientId
 	}
 	clientSecret := os.Getenv("GENESYSCLOUD_OAUTHCLIENT_SECRET")
-	if clientSecret != "" {
+	if clientSecret != "" && ClientSecret == "" {
 		ClientSecret = clientSecret
 	}
 }

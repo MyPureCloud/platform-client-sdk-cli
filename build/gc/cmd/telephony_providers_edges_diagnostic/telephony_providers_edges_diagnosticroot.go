@@ -2,17 +2,17 @@ package telephony_providers_edges_diagnostic
 
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_diagnostic_route"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_diagnostic_ping"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_diagnostic_tracepath"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_diagnostic_nslookup"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_diagnostic_route"
 )
 
 func init() {
+	telephony_providers_edges_diagnosticCmd.AddCommand(telephony_providers_edges_diagnostic_route.Cmdtelephony_providers_edges_diagnostic_route())
 	telephony_providers_edges_diagnosticCmd.AddCommand(telephony_providers_edges_diagnostic_ping.Cmdtelephony_providers_edges_diagnostic_ping())
 	telephony_providers_edges_diagnosticCmd.AddCommand(telephony_providers_edges_diagnostic_tracepath.Cmdtelephony_providers_edges_diagnostic_tracepath())
 	telephony_providers_edges_diagnosticCmd.AddCommand(telephony_providers_edges_diagnostic_nslookup.Cmdtelephony_providers_edges_diagnostic_nslookup())
-	telephony_providers_edges_diagnosticCmd.AddCommand(telephony_providers_edges_diagnostic_route.Cmdtelephony_providers_edges_diagnostic_route())
-	telephony_providers_edges_diagnosticCmd.Short = utils.GenerateCustomDescription(telephony_providers_edges_diagnosticCmd.Short, telephony_providers_edges_diagnostic_ping.Description, telephony_providers_edges_diagnostic_tracepath.Description, telephony_providers_edges_diagnostic_nslookup.Description, telephony_providers_edges_diagnostic_route.Description, )
+	telephony_providers_edges_diagnosticCmd.Short = utils.GenerateCustomDescription(telephony_providers_edges_diagnosticCmd.Short, telephony_providers_edges_diagnostic_route.Description, telephony_providers_edges_diagnostic_ping.Description, telephony_providers_edges_diagnostic_tracepath.Description, telephony_providers_edges_diagnostic_nslookup.Description, )
 	telephony_providers_edges_diagnosticCmd.Long = telephony_providers_edges_diagnosticCmd.Short
 }

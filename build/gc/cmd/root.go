@@ -47,6 +47,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/alerting"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/audits"
@@ -115,7 +116,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 20.0.0")
+		fmt.Println("Current version: 20.0.1")
 		checkForNewVersion()
 	},
 }
@@ -134,7 +135,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("20.0.0", latestVersion) {
+	if versionsAreEqual("20.0.1", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -203,7 +204,6 @@ func init() {
 
 	rootCmd.PersistentFlags().StringVarP(&profileName, "profile", "p", "DEFAULT", "Name of the profile to use for configuring the cli")
 	rootCmd.PersistentFlags().BoolP("indicateprogress", "i", false, "Trace progress indicators to stderr")
-	rootCmd.PersistentFlags().BoolP("noheartbeat", "", false, "Filters out the heartbeat from the event stream when using the notification service")
 
 	rootCmd.PersistentFlags().StringVar(&config.Environment, "environment", "", "environment override. E.g. mypurecloud.com.au or ap-southeast-2")
 	rootCmd.PersistentFlags().StringVar(&config.ClientId, "clientid", "", "clientId override")
@@ -243,6 +243,7 @@ func init() {
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())
 	rootCmd.AddCommand(logging.Cmdlogging())
+	rootCmd.AddCommand(profiles.Cmdprofiles())
 	rootCmd.AddCommand(alerting.Cmdalerting())
 	rootCmd.AddCommand(analytics.Cmdanalytics())
 	rootCmd.AddCommand(audits.Cmdaudits())

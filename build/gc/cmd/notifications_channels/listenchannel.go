@@ -16,6 +16,7 @@ import (
 )
 
 func init() {
+	notifications_channelsCmd.PersistentFlags().BoolP("noheartbeat", "", false, "Filters out the heartbeat from the event stream when using the notification service")
 	notifications_channelsCmd.AddCommand(listenChannelCmd)
 }
 
@@ -84,7 +85,7 @@ var listenChannelCmd = &cobra.Command{
 
 	Run: func(cmd *cobra.Command, args []string) {
 		profileName, _ := cmd.Root().Flags().GetString("profile")
-		heartbeatSuppressed, _ := cmd.Root().Flags().GetBool("noheartbeat")
+		heartbeatSuppressed, _ := cmd.Flags().GetBool("noheartbeat")
 
 		config, err := config.GetConfig(profileName)
 		if err != nil {

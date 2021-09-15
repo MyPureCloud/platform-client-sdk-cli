@@ -28,6 +28,7 @@ func init() {
 
 func Cmdgamification_scorecards_values_trends() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "filterType", "", "Filter type for the query request. If not set, then the request is for the requesting user. Valid values: PerformanceProfile, Division")
+	utils.AddFlag(getCmd.Flags(), "time.Time", "referenceWorkday", "", "Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user`s current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "startWorkday", "", "Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "endWorkday", "", "End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "string", "timeZone", "UTC", "Timezone for the workday. Defaults to UTC")
@@ -61,6 +62,10 @@ var getCmd = &cobra.Command{
 		filterType := utils.GetFlag(cmd.Flags(), "string", "filterType")
 		if filterType != "" {
 			queryParams["filterType"] = filterType
+		}
+		referenceWorkday := utils.GetFlag(cmd.Flags(), "time.Time", "referenceWorkday")
+		if referenceWorkday != "" {
+			queryParams["referenceWorkday"] = referenceWorkday
 		}
 		startWorkday := utils.GetFlag(cmd.Flags(), "time.Time", "startWorkday")
 		if startWorkday != "" {

@@ -123,8 +123,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list [userId]",
-	Short: "Values Trends of a user",
-	Long:  "Values Trends of a user",
+	Short: "Values trends of a user",
+	Long:  "Values trends of a user",
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

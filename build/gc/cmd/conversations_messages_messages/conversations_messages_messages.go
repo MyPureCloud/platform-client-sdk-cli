@@ -43,8 +43,8 @@ func Cmdconversations_messages_messages() *cobra.Command {
 
 var getCmd = &cobra.Command{
 	Use:   "get [conversationId] [messageId]",
-	Short: "Get message",
-	Long:  "Get message",
+	Short: "Get conversation message",
+	Long:  "Get conversation message",
 	Args:  utils.DetermineArgs([]string{ "conversationId", "messageId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

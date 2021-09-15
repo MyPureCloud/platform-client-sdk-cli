@@ -262,6 +262,10 @@ func updateConfig(c configuration, loggingEnabled *bool) error {
 		viper.Set(fmt.Sprintf("%s.logging_enabled", c.profileName), *loggingEnabled)
 	}
 
+	if viper.ConfigFileUsed() == "" {
+		return nil
+	}
+
 	return viper.WriteConfig()
 }
 

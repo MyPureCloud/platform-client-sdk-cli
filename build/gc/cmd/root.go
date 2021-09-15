@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/data_format"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/transform_data"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/cobra/doc"
@@ -21,8 +22,8 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dummy_command"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/date"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fieldconfig"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fieldconfig"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/greetings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/groups"
@@ -34,6 +35,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/mobiledevices"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presencedefinitions"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scripts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/search"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
@@ -42,7 +44,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
@@ -116,7 +117,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 20.0.1")
+		fmt.Println("Current version: 21.0.0")
 		checkForNewVersion()
 	},
 }
@@ -135,7 +136,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("20.0.1", latestVersion) {
+	if versionsAreEqual("21.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -210,15 +211,20 @@ func init() {
 	rootCmd.PersistentFlags().StringVar(&config.ClientSecret, "clientsecret", "", "clientSecret override")
 
 	if config.GetExperimentalFeature(getProfileName(os.Args), models.AlternativeFormats.String()) {
-		rootCmd.PersistentFlags().StringVar(&data_format.InputFormat, "inputformat", "JSON", "Data input format. Possible values: YAML, JSON")
-		rootCmd.PersistentFlags().StringVar(&data_format.OutputFormat, "outputformat", "JSON", "Data output format. Possible values: YAML, JSON")
+		rootCmd.PersistentFlags().StringVar(&data_format.InputFormat, "inputformat", "JSON", "Data input format. Supported formats: YAML, JSON")
+		rootCmd.PersistentFlags().StringVar(&data_format.OutputFormat, "outputformat", "JSON", "Data output format. Supported formats: YAML, JSON")
+	}
+
+	if config.GetExperimentalFeature(getProfileName(os.Args), models.TransformData.String()) {
+		rootCmd.PersistentFlags().StringVar(&transform_data.TemplateFile, "transform", "", "Provide a Go template file for transforming output data")
+		rootCmd.PersistentFlags().StringVar(&transform_data.TemplateStr, "transformstr", "", "Provide a Go template string for transforming output data")
 	}
 
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(date.Cmddate())
 	rootCmd.AddCommand(conversations.Cmdconversations())
-	rootCmd.AddCommand(fieldconfig.Cmdfieldconfig())
 	rootCmd.AddCommand(chat.Cmdchat())
+	rootCmd.AddCommand(fieldconfig.Cmdfieldconfig())
 	rootCmd.AddCommand(flows.Cmdflows())
 	rootCmd.AddCommand(greetings.Cmdgreetings())
 	rootCmd.AddCommand(groups.Cmdgroups())
@@ -230,6 +236,7 @@ func init() {
 	rootCmd.AddCommand(mobiledevices.Cmdmobiledevices())
 	rootCmd.AddCommand(orphanrecordings.Cmdorphanrecordings())
 	rootCmd.AddCommand(presencedefinitions.Cmdpresencedefinitions())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(scripts.Cmdscripts())
 	rootCmd.AddCommand(search.Cmdsearch())
 	rootCmd.AddCommand(stations.Cmdstations())
@@ -238,7 +245,6 @@ func init() {
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
-	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())

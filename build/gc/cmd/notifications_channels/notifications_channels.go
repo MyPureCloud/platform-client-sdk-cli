@@ -42,9 +42,13 @@ func Cmdnotifications_channels() *cobra.Command {
 	utils.AddFileFlagIfUpsert(headCmd.Flags(), "HEAD", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(headCmd.Flags(), "HEAD", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
+  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
   &quot;schema&quot; : {
-    &quot;type&quot; : &quot;boolean&quot;
+    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  },
+  &quot;x-inin-error-codes&quot; : {
+    &quot;bad.request&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
+    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;
   }
 }`)
 	notifications_channelsCmd.AddCommand(headCmd)

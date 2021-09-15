@@ -46,8 +46,8 @@ func Cmdgamification_scorecards_values_average() *cobra.Command {
 
 var getCmd = &cobra.Command{
 	Use:   "get",
-	Short: "Average values of the requesting user`s division",
-	Long:  "Average values of the requesting user`s division",
+	Short: "Average values of the requesting user`s division or performance profile",
+	Long:  "Average values of the requesting user`s division or performance profile",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

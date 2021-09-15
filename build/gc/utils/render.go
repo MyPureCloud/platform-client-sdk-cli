@@ -8,6 +8,7 @@ import (
 	"sigs.k8s.io/yaml"
 
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/data_format"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/transform_data"
 	"github.com/tidwall/pretty"
 )
 
@@ -18,6 +19,18 @@ func Render(data string) {
 			logger.Fatalf("Error converting JSON to YAML: %v\n", err)
 		}
 		fmt.Printf("%s", result)
+		return
+	}
+	if transform_data.TemplateFile != "" {
+		mp := transform_data.ConvertJsonToMap(data)
+		res := transform_data.ProcessTemplateFile(mp)
+		fmt.Println(res)
+		return
+	}
+	if transform_data.TemplateStr != "" {
+		mp := transform_data.ConvertJsonToMap(data)
+		res := transform_data.ProcessTemplateStr(mp)
+		fmt.Println(res)
 		return
 	}
 	result := pretty.Pretty([]byte(data))

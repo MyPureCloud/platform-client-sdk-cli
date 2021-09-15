@@ -67,9 +67,11 @@ func Cmdspeechandtextanalytics_topics() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "The key for listing the next page")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "20", "The page size for the listing")
-	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Topic state Valid values: latest, published")
+	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Topic state. Defaults to latest Valid values: latest, published")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Case insensitive partial name to filter by")
 	utils.AddFlag(listCmd.Flags(), "[]string", "ids", "", "Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort results by. Defaults to name Valid values: name")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Sort order. Defaults to asc Valid values: asc, desc")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/topics", utils.FormatPermissions([]string{ "speechAndTextAnalytics:topic:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/topics")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -242,6 +244,14 @@ var listCmd = &cobra.Command{
 		ids := utils.GetFlag(cmd.Flags(), "[]string", "ids")
 		if ids != "" {
 			queryParams["ids"] = ids
+		}
+		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
+		if sortBy != "" {
+			queryParams["sortBy"] = sortBy
+		}
+		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
+		if sortOrder != "" {
+			queryParams["sortOrder"] = sortOrder
 		}
 		urlString := path
 		if len(queryParams) > 0 {

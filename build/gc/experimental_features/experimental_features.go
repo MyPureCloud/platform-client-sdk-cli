@@ -7,7 +7,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 )
 
-var allCommands = [...]models.ExperimentalFeature{models.AlternativeFormats}
+var allCommands = [...]models.ExperimentalFeature{models.AlternativeFormats, models.TransformData}
 
 func IsValidCommand(command string) bool {
 	for _, c := range allCommands {

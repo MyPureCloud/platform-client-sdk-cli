@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,33 +30,36 @@ func init() {
 func Cmdoutbound_dnclists_phonenumbers() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/dnclists/{dncListId}/phonenumbers", utils.FormatPermissions([]string{ "outbound:dnc:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/dnclists/{dncListId}/phonenumbers")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;DNC Phone Numbers&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;type&quot; : &quot;string&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "DNC Phone Numbers",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "type" : "string"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  "description" : "The request could not be understood by the server due to malformed syntax.",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorBody"
   },
-  &quot;x-inin-error-codes&quot; : {
-    &quot;dnc.source.operation.not.supported&quot; : &quot;An attempt was made to append numbers to a DNC list that is not of type Internal&quot;,
-    &quot;dnc.phone.numbers.per.list.limit.exceeded&quot; : &quot;The DNC list has reached the limit on total records. See details&quot;,
-    &quot;bad.request&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;,
-    &quot;invalid.date&quot; : &quot;Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ&quot;,
-    &quot;dnc.records.per.organization.limit.exceeded&quot; : &quot;The organization has reached the limit on total DNC records. See details&quot;,
-    &quot;dnc.records.per.list.limit.exceeded&quot; : &quot;The DNC list has reached the limit on total records. See details&quot;,
-    &quot;invalid.value&quot; : &quot;Value [%s] is not valid for field type [%s]. Allowable values are: %s&quot;,
-    &quot;dnc.phone.numbers.per.organization.limit.exceeded&quot; : &quot;The organization has reached the limit on total DNC records. See details&quot;
+  "x-inin-error-codes" : {
+    "dnc.source.operation.not.supported" : "An attempt was made to append numbers to a DNC list that is not of type Internal",
+    "dnc.phone.numbers.per.list.limit.exceeded" : "The DNC list has reached the limit on total records. See details",
+    "bad.request" : "The request could not be understood by the server due to malformed syntax.",
+    "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable",
+    "invalid.date" : "Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ",
+    "invalid.query.param.value" : "Value [%s] is not valid for parameter [%s]. Allowable values are: %s",
+    "invalid.property" : "Value [%s] is not a valid property for object [%s]",
+    "dnc.records.per.organization.limit.exceeded" : "The organization has reached the limit on total DNC records. See details",
+    "dnc.records.per.list.limit.exceeded" : "The DNC list has reached the limit on total records. See details",
+    "constraint.validation" : "%s",
+    "invalid.value" : "Value [%s] is not valid for field type [%s]. Allowable values are: %s",
+    "dnc.phone.numbers.per.organization.limit.exceeded" : "The organization has reached the limit on total DNC records. See details"
   }
 }`)
 	outbound_dnclists_phonenumbersCmd.AddCommand(createCmd)
@@ -70,11 +74,20 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "dncListId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/dnclists/{dncListId}/phonenumbers"
 		dncListId, args := args[0], args[1:]
 		path = strings.Replace(path, "{dncListId}", fmt.Sprintf("%v", dncListId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

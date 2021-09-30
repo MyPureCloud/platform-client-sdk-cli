@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdoutbound_callabletimesets() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/callabletimesets", utils.FormatPermissions([]string{ "outbound:callableTimeSet:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/callabletimesets")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;DialerCallableTimeSet&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CallableTimeSet&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "DialerCallableTimeSet",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CallableTimeSet"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CallableTimeSet&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CallableTimeSet"
   }
 }`)
 	outbound_callabletimesetsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdoutbound_callabletimesets() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	outbound_callabletimesetsCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdoutbound_callabletimesets() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CallableTimeSet&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CallableTimeSet"
   }
 }`)
 	outbound_callabletimesetsCmd.AddCommand(getCmd)
@@ -76,28 +77,28 @@ func Cmdoutbound_callabletimesets() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	outbound_callabletimesetsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/callabletimesets/{callableTimeSetId}", utils.FormatPermissions([]string{ "outbound:callableTimeSet:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/callabletimesets/{callableTimeSetId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;DialerCallableTimeSet&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CallableTimeSet&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "DialerCallableTimeSet",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CallableTimeSet"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CallableTimeSet&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CallableTimeSet"
   }
 }`)
 	outbound_callabletimesetsCmd.AddCommand(updateCmd)
@@ -112,9 +113,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Callabletimeset{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/callabletimesets"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -147,11 +160,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "callableTimeSetId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/callabletimesets/{callableTimeSetId}"
 		callableTimeSetId, args := args[0], args[1:]
 		path = strings.Replace(path, "{callableTimeSetId}", fmt.Sprintf("%v", callableTimeSetId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -184,11 +206,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "callableTimeSetId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/callabletimesets/{callableTimeSetId}"
 		callableTimeSetId, args := args[0], args[1:]
 		path = strings.Replace(path, "{callableTimeSetId}", fmt.Sprintf("%v", callableTimeSetId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -221,9 +252,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/callabletimesets"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -284,11 +324,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "callableTimeSetId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Callabletimeset{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/callabletimesets/{callableTimeSetId}"
 		callableTimeSetId, args := args[0], args[1:]
 		path = strings.Replace(path, "{callableTimeSetId}", fmt.Sprintf("%v", callableTimeSetId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

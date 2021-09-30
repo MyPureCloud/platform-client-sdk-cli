@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -38,9 +39,9 @@ func Cmdconversations_recordings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;Success - recording is transcoding&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Recording&quot;
+  "description" : "Success - recording is transcoding",
+  "schema" : {
+    "$ref" : "#/definitions/Recording"
   }
 }`)
 	conversations_recordingsCmd.AddCommand(getCmd)
@@ -51,11 +52,11 @@ func Cmdconversations_recordings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/Recording&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/Recording"
     }
   }
 }`)
@@ -63,19 +64,19 @@ func Cmdconversations_recordings() *cobra.Command {
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recording:editRetention", "recording:screenRecording:editRetention",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;recording&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Recording&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "recording",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Recording"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Recording&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Recording"
   }
 }`)
 	conversations_recordingsCmd.AddCommand(updateCmd)
@@ -90,6 +91,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "recordingId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/{conversationId}/recordings/{recordingId}"
@@ -97,6 +106,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		recordingId, args := args[0], args[1:]
 		path = strings.Replace(path, "{recordingId}", fmt.Sprintf("%v", recordingId), -1)
+
 
 		formatId := utils.GetFlag(cmd.Flags(), "string", "formatId")
 		if formatId != "" {
@@ -157,11 +167,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/{conversationId}/recordings"
 		conversationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
+
 
 		maxWaitMs := utils.GetFlag(cmd.Flags(), "int", "maxWaitMs")
 		if maxWaitMs != "" {
@@ -202,6 +221,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "recordingId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Recording{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/{conversationId}/recordings/{recordingId}"
@@ -209,6 +239,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		recordingId, args := args[0], args[1:]
 		path = strings.Replace(path, "{recordingId}", fmt.Sprintf("%v", recordingId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

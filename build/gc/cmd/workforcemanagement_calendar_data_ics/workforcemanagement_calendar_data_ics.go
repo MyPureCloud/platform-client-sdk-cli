@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -33,9 +34,9 @@ func Cmdworkforcemanagement_calendar_data_ics() *cobra.Command {
 	getCmd.MarkFlagRequired("calendarId")
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;string&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "string"
   }
 }`)
 	workforcemanagement_calendar_data_icsCmd.AddCommand(getCmd)
@@ -50,9 +51,18 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/calendar/data/ics"
+
 
 		calendarId := utils.GetFlag(cmd.Flags(), "string", "calendarId")
 		if calendarId != "" {

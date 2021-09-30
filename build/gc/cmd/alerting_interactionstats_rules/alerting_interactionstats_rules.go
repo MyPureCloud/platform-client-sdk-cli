@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -30,19 +31,19 @@ func Cmdalerting_interactionstats_rules() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/alerting/interactionstats/rules", utils.FormatPermissions([]string{ "alerting:rule:add",  }), utils.GenerateDevCentreLink("POST", "Alerting", "/api/v2/alerting/interactionstats/rules")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;AlertingRule&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/InteractionStatsRule&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "AlertingRule",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/InteractionStatsRule"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/InteractionStatsRule&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/InteractionStatsRule"
   }
 }`)
 	alerting_interactionstats_rulesCmd.AddCommand(createCmd)
@@ -51,7 +52,7 @@ func Cmdalerting_interactionstats_rules() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Interaction stats rule deleted&quot;
+  "description" : "Interaction stats rule deleted"
 }`)
 	alerting_interactionstats_rulesCmd.AddCommand(deleteCmd)
 	
@@ -60,9 +61,9 @@ func Cmdalerting_interactionstats_rules() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/InteractionStatsRule&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/InteractionStatsRule"
   }
 }`)
 	alerting_interactionstats_rulesCmd.AddCommand(getCmd)
@@ -72,9 +73,9 @@ func Cmdalerting_interactionstats_rules() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	alerting_interactionstats_rulesCmd.AddCommand(listCmd)
@@ -82,19 +83,19 @@ func Cmdalerting_interactionstats_rules() *cobra.Command {
 	utils.AddFlag(updateCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/alerting/interactionstats/rules/{ruleId}", utils.FormatPermissions([]string{ "alerting:rule:edit",  }), utils.GenerateDevCentreLink("PUT", "Alerting", "/api/v2/alerting/interactionstats/rules/{ruleId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;AlertingRule&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/InteractionStatsRule&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "AlertingRule",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/InteractionStatsRule"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/InteractionStatsRule&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/InteractionStatsRule"
   }
 }`)
 	alerting_interactionstats_rulesCmd.AddCommand(updateCmd)
@@ -109,9 +110,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Interactionstatsrule{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/alerting/interactionstats/rules"
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -148,11 +161,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "ruleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/alerting/interactionstats/rules/{ruleId}"
 		ruleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{ruleId}", fmt.Sprintf("%v", ruleId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -185,11 +207,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "ruleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/alerting/interactionstats/rules/{ruleId}"
 		ruleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{ruleId}", fmt.Sprintf("%v", ruleId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -226,9 +257,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/alerting/interactionstats/rules"
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -265,11 +305,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "ruleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Interactionstatsrule{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/alerting/interactionstats/rules/{ruleId}"
 		ruleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{ruleId}", fmt.Sprintf("%v", ruleId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdorgauthorization_trustees_users_roledivisions() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions", utils.FormatPermissions([]string{ "authorization:orgTrusteeUser:edit",  }), utils.GenerateDevCentreLink("PUT", "Organization Authorization", "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Set of roles with corresponding divisions to apply&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/RoleDivisionGrants&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Set of roles with corresponding divisions to apply",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/RoleDivisionGrants"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserAuthorization&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserAuthorization"
   }
 }`)
 	orgauthorization_trustees_users_roledivisionsCmd.AddCommand(updateCmd)
@@ -56,6 +57,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "trusteeOrgId", "trusteeUserId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Roledivisiongrants{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions"
@@ -63,6 +75,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{trusteeOrgId}", fmt.Sprintf("%v", trusteeOrgId), -1)
 		trusteeUserId, args := args[0], args[1:]
 		path = strings.Replace(path, "{trusteeUserId}", fmt.Sprintf("%v", trusteeUserId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

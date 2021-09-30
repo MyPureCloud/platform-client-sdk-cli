@@ -1,0 +1,111 @@
+package models
+import (
+    "encoding/json"
+    "strconv"
+    "strings"
+)
+
+var (
+    ActionmapactionMarshalled = false
+)
+
+// This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
+type ActionmapactionDud struct { 
+    
+
+
+    
+
+
+    
+
+
+    
+
+}
+
+// Actionmapaction
+type Actionmapaction struct { 
+    // ActionTemplate - Action template associated with the action map.
+    ActionTemplate Actionmapactiontemplate `json:"actionTemplate"`
+
+
+    // MediaType - Media type of action.
+    MediaType string `json:"mediaType"`
+
+
+    // ArchitectFlowFields - Architect Flow Id and input contract.
+    ArchitectFlowFields Architectflowfields `json:"architectFlowFields"`
+
+
+    // WebMessagingOfferFields - Admin-configurable fields of a web messaging offer action.
+    WebMessagingOfferFields Webmessagingofferfields `json:"webMessagingOfferFields"`
+
+}
+
+// String returns a JSON representation of the model
+func (o *Actionmapaction) String() string {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    j, _ := json.Marshal(o)
+    str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
+
+    return str
+}
+
+func (u *Actionmapaction) MarshalJSON() ([]byte, error) {
+    type Alias Actionmapaction
+
+    if ActionmapactionMarshalled {
+        return []byte("{}"), nil
+    }
+    ActionmapactionMarshalled = true
+
+    return json.Marshal(&struct { 
+        ActionTemplate Actionmapactiontemplate `json:"actionTemplate"`
+        
+        MediaType string `json:"mediaType"`
+        
+        ArchitectFlowFields Architectflowfields `json:"architectFlowFields"`
+        
+        WebMessagingOfferFields Webmessagingofferfields `json:"webMessagingOfferFields"`
+        
+        *Alias
+    }{
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        Alias: (*Alias)(u),
+    })
+}
+

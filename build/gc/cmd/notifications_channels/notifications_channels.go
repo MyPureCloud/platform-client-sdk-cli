@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdnotifications_channels() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Channel&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Channel"
   }
 }`)
 	notifications_channelsCmd.AddCommand(createCmd)
@@ -42,13 +43,13 @@ func Cmdnotifications_channels() *cobra.Command {
 	utils.AddFileFlagIfUpsert(headCmd.Flags(), "HEAD", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(headCmd.Flags(), "HEAD", `{
-  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  "description" : "The request could not be understood by the server due to malformed syntax.",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorBody"
   },
-  &quot;x-inin-error-codes&quot; : {
-    &quot;bad.request&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;
+  "x-inin-error-codes" : {
+    "bad.request" : "The request could not be understood by the server due to malformed syntax.",
+    "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable"
   }
 }`)
 	notifications_channelsCmd.AddCommand(headCmd)
@@ -58,9 +59,9 @@ func Cmdnotifications_channels() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ChannelEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ChannelEntityListing"
   }
 }`)
 	notifications_channelsCmd.AddCommand(listCmd)
@@ -75,9 +76,18 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/notifications/channels"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -110,11 +120,20 @@ var headCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "channelId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/notifications/channels/{channelId}"
 		channelId, args := args[0], args[1:]
 		path = strings.Replace(path, "{channelId}", fmt.Sprintf("%v", channelId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -147,9 +166,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/notifications/channels"
+
 
 		includechannels := utils.GetFlag(cmd.Flags(), "string", "includechannels")
 		if includechannels != "" {

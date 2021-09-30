@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -27,15 +28,15 @@ func init() {
 }
 
 func Cmdusers_development_activities() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "varType", "", "Specifies the activity type. - REQUIRED Valid values: Informational, Coaching, AssessedContent, Assessment, Questionnaire")
+	utils.AddFlag(getCmd.Flags(), "string", "varType", "", "Specifies the activity type. - REQUIRED Valid values: Informational, Coaching, AssessedContent, Assessment")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/development/activities/{activityId}", utils.FormatPermissions([]string{ "learning:assignment:view", "coaching:appointment:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/development/activities/{activityId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("varType")
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DevelopmentActivity&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DevelopmentActivity"
   }
 }`)
 	users_development_activitiesCmd.AddCommand(getCmd)
@@ -48,16 +49,16 @@ func Cmdusers_development_activities() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "Desc", "Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) Valid values: Asc, Desc")
-	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the activity types. Valid values: Informational, Coaching, AssessedContent, Questionnaire, Assessment")
+	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the activity types. Valid values: Informational, Coaching, AssessedContent, Assessment")
 	utils.AddFlag(listCmd.Flags(), "[]string", "statuses", "", "Specifies the activity statuses to filter by Valid values: Planned, InProgress, Completed, InvalidSchedule")
 	utils.AddFlag(listCmd.Flags(), "[]string", "relationship", "", "Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. Valid values: Creator, Facilitator, Attendee")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/development/activities", utils.FormatPermissions([]string{ "learning:assignment:view", "coaching:appointment:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/development/activities")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	users_development_activitiesCmd.AddCommand(listCmd)
@@ -72,11 +73,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "activityId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/development/activities/{activityId}"
 		activityId, args := args[0], args[1:]
 		path = strings.Replace(path, "{activityId}", fmt.Sprintf("%v", activityId), -1)
+
 
 		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
 		if varType != "" {
@@ -113,9 +123,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/development/activities"
+
 
 		userId := utils.GetFlag(cmd.Flags(), "[]string", "userId")
 		if userId != "" {

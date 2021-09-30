@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdgroups_greetings() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/groups/{groupId}/greetings", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Greetings", "/api/v2/groups/{groupId}/greetings")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The Greeting to create&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Greeting&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The Greeting to create",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Greeting"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Greeting&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Greeting"
   }
 }`)
 	groups_greetingsCmd.AddCommand(createCmd)
@@ -52,9 +53,9 @@ func Cmdgroups_greetings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	groups_greetingsCmd.AddCommand(listCmd)
@@ -69,11 +70,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Greeting{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/groups/{groupId}/greetings"
 		groupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -106,11 +119,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/groups/{groupId}/greetings"
 		groupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

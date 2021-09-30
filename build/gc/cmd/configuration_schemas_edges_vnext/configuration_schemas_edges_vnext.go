@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -33,9 +34,9 @@ func Cmdconfiguration_schemas_edges_vnext() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getcategoryschemasCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getcategoryschemasCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	configuration_schemas_edges_vnextCmd.AddCommand(getcategoryschemasCmd)
@@ -44,9 +45,9 @@ func Cmdconfiguration_schemas_edges_vnext() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getjsonschemaCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getjsonschemaCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Organization&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Organization"
   }
 }`)
 	configuration_schemas_edges_vnextCmd.AddCommand(getjsonschemaCmd)
@@ -56,9 +57,9 @@ func Cmdconfiguration_schemas_edges_vnext() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getschemametadataCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getschemametadataCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Organization&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Organization"
   }
 }`)
 	configuration_schemas_edges_vnextCmd.AddCommand(getschemametadataCmd)
@@ -69,9 +70,9 @@ func Cmdconfiguration_schemas_edges_vnext() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listcategoryschemasCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listcategoryschemasCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	configuration_schemas_edges_vnextCmd.AddCommand(listcategoryschemasCmd)
@@ -82,9 +83,9 @@ func Cmdconfiguration_schemas_edges_vnext() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listschemacategoriesCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listschemacategoriesCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	configuration_schemas_edges_vnextCmd.AddCommand(listschemacategoriesCmd)
@@ -99,6 +100,14 @@ var getcategoryschemasCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "schemaCategory", "schemaType", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}"
@@ -106,6 +115,7 @@ var getcategoryschemasCmd = &cobra.Command{
 		path = strings.Replace(path, "{schemaCategory}", fmt.Sprintf("%v", schemaCategory), -1)
 		schemaType, args := args[0], args[1:]
 		path = strings.Replace(path, "{schemaType}", fmt.Sprintf("%v", schemaType), -1)
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -146,6 +156,14 @@ var getjsonschemaCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "schemaCategory", "schemaType", "schemaId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}"
@@ -155,6 +173,7 @@ var getjsonschemaCmd = &cobra.Command{
 		path = strings.Replace(path, "{schemaType}", fmt.Sprintf("%v", schemaType), -1)
 		schemaId, args := args[0], args[1:]
 		path = strings.Replace(path, "{schemaId}", fmt.Sprintf("%v", schemaId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -187,6 +206,14 @@ var getschemametadataCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "schemaCategory", "schemaType", "schemaId", "extensionType", "metadataId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}"
@@ -200,6 +227,7 @@ var getschemametadataCmd = &cobra.Command{
 		path = strings.Replace(path, "{extensionType}", fmt.Sprintf("%v", extensionType), -1)
 		metadataId, args := args[0], args[1:]
 		path = strings.Replace(path, "{metadataId}", fmt.Sprintf("%v", metadataId), -1)
+
 
 		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
 		if varType != "" {
@@ -236,11 +264,20 @@ var listcategoryschemasCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "schemaCategory", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}"
 		schemaCategory, args := args[0], args[1:]
 		path = strings.Replace(path, "{schemaCategory}", fmt.Sprintf("%v", schemaCategory), -1)
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -281,9 +318,18 @@ var listschemacategoriesCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/configuration/schemas/edges/vnext"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

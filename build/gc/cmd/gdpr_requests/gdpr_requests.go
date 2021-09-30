@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -30,19 +31,19 @@ func Cmdgdpr_requests() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "bool", "deleteConfirmed", "false", "Confirm delete")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/gdpr/requests", utils.FormatPermissions([]string{ "gdpr:request:add",  }), utils.GenerateDevCentreLink("POST", "General Data Protection Regulation", "/api/v2/gdpr/requests")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;GDPR request&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/GDPRRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "GDPR request",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/GDPRRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/GDPRRequest&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/GDPRRequest"
   }
 }`)
 	gdpr_requestsCmd.AddCommand(createCmd)
@@ -51,9 +52,9 @@ func Cmdgdpr_requests() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/GDPRRequest&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/GDPRRequest"
   }
 }`)
 	gdpr_requestsCmd.AddCommand(getCmd)
@@ -64,9 +65,9 @@ func Cmdgdpr_requests() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	gdpr_requestsCmd.AddCommand(listCmd)
@@ -81,9 +82,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Gdprrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gdpr/requests"
+
 
 		deleteConfirmed := utils.GetFlag(cmd.Flags(), "bool", "deleteConfirmed")
 		if deleteConfirmed != "" {
@@ -120,11 +133,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "requestId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gdpr/requests/{requestId}"
 		requestId, args := args[0], args[1:]
 		path = strings.Replace(path, "{requestId}", fmt.Sprintf("%v", requestId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -157,9 +179,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gdpr/requests"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

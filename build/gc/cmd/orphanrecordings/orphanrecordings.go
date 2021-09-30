@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdorphanrecordings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/OrphanRecording&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/OrphanRecording"
   }
 }`)
 	orphanrecordingsCmd.AddCommand(deleteCmd)
@@ -42,9 +43,9 @@ func Cmdorphanrecordings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/OrphanRecording&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/OrphanRecording"
   }
 }`)
 	orphanrecordingsCmd.AddCommand(getCmd)
@@ -61,27 +62,27 @@ func Cmdorphanrecordings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	orphanrecordingsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/orphanrecordings/{orphanId}", utils.FormatPermissions([]string{ "recording:orphan:edit",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/orphanrecordings/{orphanId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/OrphanUpdateRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/OrphanUpdateRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Recording&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Recording"
   }
 }`)
 	orphanrecordingsCmd.AddCommand(updateCmd)
@@ -96,11 +97,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "orphanId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/orphanrecordings/{orphanId}"
 		orphanId, args := args[0], args[1:]
 		path = strings.Replace(path, "{orphanId}", fmt.Sprintf("%v", orphanId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -133,11 +143,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "orphanId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/orphanrecordings/{orphanId}"
 		orphanId, args := args[0], args[1:]
 		path = strings.Replace(path, "{orphanId}", fmt.Sprintf("%v", orphanId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -170,9 +189,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/orphanrecordings"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -237,11 +265,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "orphanId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Orphanupdaterequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/orphanrecordings/{orphanId}"
 		orphanId, args := args[0], args[1:]
 		path = strings.Replace(path, "{orphanId}", fmt.Sprintf("%v", orphanId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

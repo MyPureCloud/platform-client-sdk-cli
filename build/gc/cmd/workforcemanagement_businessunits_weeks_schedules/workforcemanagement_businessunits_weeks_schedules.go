@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdworkforcemanagement_businessunits_weeks_schedules() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules", utils.FormatPermissions([]string{ "wfm:schedule:add",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BuCreateBlankScheduleRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/BuCreateBlankScheduleRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BuScheduleMetadata&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BuScheduleMetadata"
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedulesCmd.AddCommand(createCmd)
@@ -50,9 +51,9 @@ func Cmdworkforcemanagement_businessunits_weeks_schedules() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BuAsyncScheduleResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BuAsyncScheduleResponse"
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedulesCmd.AddCommand(deleteCmd)
@@ -62,9 +63,9 @@ func Cmdworkforcemanagement_businessunits_weeks_schedules() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BuScheduleMetadata&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BuScheduleMetadata"
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedulesCmd.AddCommand(getCmd)
@@ -75,9 +76,9 @@ func Cmdworkforcemanagement_businessunits_weeks_schedules() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BuScheduleListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BuScheduleListing"
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedulesCmd.AddCommand(listCmd)
@@ -92,6 +93,17 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "weekId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Bucreateblankschedulerequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules"
@@ -99,6 +111,7 @@ var createCmd = &cobra.Command{
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 		weekId, args := args[0], args[1:]
 		path = strings.Replace(path, "{weekId}", fmt.Sprintf("%v", weekId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -131,6 +144,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "weekId", "scheduleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}"
@@ -140,6 +161,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{weekId}", fmt.Sprintf("%v", weekId), -1)
 		scheduleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scheduleId}", fmt.Sprintf("%v", scheduleId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -172,6 +194,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "weekId", "scheduleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}"
@@ -181,6 +211,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{weekId}", fmt.Sprintf("%v", weekId), -1)
 		scheduleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scheduleId}", fmt.Sprintf("%v", scheduleId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -217,6 +248,14 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "weekId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules"
@@ -224,6 +263,7 @@ var listCmd = &cobra.Command{
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 		weekId, args := args[0], args[1:]
 		path = strings.Replace(path, "{weekId}", fmt.Sprintf("%v", weekId), -1)
+
 
 		includeOnlyPublished := utils.GetFlag(cmd.Flags(), "bool", "includeOnlyPublished")
 		if includeOnlyPublished != "" {

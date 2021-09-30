@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdoutbound_contactlists() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/contactlists", utils.FormatPermissions([]string{ "outbound:contactList:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/contactlists")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;ContactList&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ContactList&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "ContactList",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ContactList"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ContactList&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ContactList"
   }
 }`)
 	outbound_contactlistsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdoutbound_contactlists() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	outbound_contactlistsCmd.AddCommand(deleteCmd)
 	
@@ -60,7 +61,7 @@ func Cmdoutbound_contactlists() *cobra.Command {
 	deletecontactlistsCmd.MarkFlagRequired("id")
 	
 	utils.AddPaginateFlagsIfListingResponse(deletecontactlistsCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Contact lists accepted for delete.&quot;
+  "description" : "Contact lists accepted for delete."
 }`)
 	outbound_contactlistsCmd.AddCommand(deletecontactlistsCmd)
 	
@@ -70,9 +71,9 @@ func Cmdoutbound_contactlists() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ContactList&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ContactList"
   }
 }`)
 	outbound_contactlistsCmd.AddCommand(getCmd)
@@ -92,28 +93,28 @@ func Cmdoutbound_contactlists() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	outbound_contactlistsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/contactlists/{contactListId}", utils.FormatPermissions([]string{ "outbound:contactList:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/contactlists/{contactListId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;ContactList&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ContactList&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "ContactList",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ContactList"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ContactList&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ContactList"
   }
 }`)
 	outbound_contactlistsCmd.AddCommand(updateCmd)
@@ -128,9 +129,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Contactlist{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -163,11 +176,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "contactListId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists/{contactListId}"
 		contactListId, args := args[0], args[1:]
 		path = strings.Replace(path, "{contactListId}", fmt.Sprintf("%v", contactListId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -200,9 +222,18 @@ var deletecontactlistsCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists"
+
 
 		id := utils.GetFlag(cmd.Flags(), "[]string", "id")
 		if id != "" {
@@ -239,11 +270,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "contactListId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists/{contactListId}"
 		contactListId, args := args[0], args[1:]
 		path = strings.Replace(path, "{contactListId}", fmt.Sprintf("%v", contactListId), -1)
+
 
 		includeImportStatus := utils.GetFlag(cmd.Flags(), "bool", "includeImportStatus")
 		if includeImportStatus != "" {
@@ -284,9 +324,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists"
+
 
 		includeImportStatus := utils.GetFlag(cmd.Flags(), "bool", "includeImportStatus")
 		if includeImportStatus != "" {
@@ -363,11 +412,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "contactListId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Contactlist{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists/{contactListId}"
 		contactListId, args := args[0], args[1:]
 		path = strings.Replace(path, "{contactListId}", fmt.Sprintf("%v", contactListId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

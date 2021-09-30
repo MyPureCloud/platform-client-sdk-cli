@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdtelephony_providers_edges_softwareupdate() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/{edgeId}/softwareupdate", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/softwareupdate")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Software update request&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainEdgeSoftwareUpdateDto&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Software update request",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/DomainEdgeSoftwareUpdateDto"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainEdgeSoftwareUpdateDto&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DomainEdgeSoftwareUpdateDto"
   }
 }`)
 	telephony_providers_edges_softwareupdateCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdtelephony_providers_edges_softwareupdate() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	telephony_providers_edges_softwareupdateCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdtelephony_providers_edges_softwareupdate() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainEdgeSoftwareUpdateDto&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DomainEdgeSoftwareUpdateDto"
   }
 }`)
 	telephony_providers_edges_softwareupdateCmd.AddCommand(getCmd)
@@ -75,11 +76,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Domainedgesoftwareupdatedto{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/softwareupdate"
 		edgeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -112,11 +125,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/softwareupdate"
 		edgeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -149,11 +171,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/softwareupdate"
 		edgeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

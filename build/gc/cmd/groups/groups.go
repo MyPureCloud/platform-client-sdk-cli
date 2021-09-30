@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdgroups() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/groups", utils.FormatPermissions([]string{ "directory:group:add",  }), utils.GenerateDevCentreLink("POST", "Groups", "/api/v2/groups")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Group&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/GroupCreate&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Group",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/GroupCreate"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Group&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Group"
   }
 }`)
 	groupsCmd.AddCommand(createCmd)
@@ -50,13 +51,13 @@ func Cmdgroups() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  "description" : "The request could not be understood by the server due to malformed syntax.",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorBody"
   },
-  &quot;x-inin-error-codes&quot; : {
-    &quot;bad.request&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;
+  "x-inin-error-codes" : {
+    "bad.request" : "The request could not be understood by the server due to malformed syntax.",
+    "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable"
   }
 }`)
 	groupsCmd.AddCommand(deleteCmd)
@@ -65,9 +66,9 @@ func Cmdgroups() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Group&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Group"
   }
 }`)
 	groupsCmd.AddCommand(getCmd)
@@ -81,28 +82,28 @@ func Cmdgroups() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	groupsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/groups/{groupId}", utils.FormatPermissions([]string{ "directory:group:edit",  }), utils.GenerateDevCentreLink("PUT", "Groups", "/api/v2/groups/{groupId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Group&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/GroupUpdate&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Group",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/GroupUpdate"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Group&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Group"
   }
 }`)
 	groupsCmd.AddCommand(updateCmd)
@@ -117,9 +118,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Groupcreate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/groups"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -152,11 +165,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/groups/{groupId}"
 		groupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -189,11 +211,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/groups/{groupId}"
 		groupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -226,9 +257,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/groups"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -281,11 +321,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Groupupdate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/groups/{groupId}"
 		groupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdtelephony_providers_edges_lines() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Line&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Line"
   }
 }`)
 	telephony_providers_edges_linesCmd.AddCommand(getCmd)
@@ -42,9 +43,9 @@ func Cmdtelephony_providers_edges_lines() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getedgelineCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getedgelineCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeLine&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/EdgeLine"
   }
 }`)
 	telephony_providers_edges_linesCmd.AddCommand(getedgelineCmd)
@@ -58,9 +59,9 @@ func Cmdtelephony_providers_edges_lines() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	telephony_providers_edges_linesCmd.AddCommand(listCmd)
@@ -71,28 +72,28 @@ func Cmdtelephony_providers_edges_lines() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listedgelinesCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listedgelinesCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	telephony_providers_edges_linesCmd.AddCommand(listedgelinesCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Line&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeLine&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Line",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/EdgeLine"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeLine&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/EdgeLine"
   }
 }`)
 	telephony_providers_edges_linesCmd.AddCommand(updateCmd)
@@ -107,11 +108,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "lineId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/lines/{lineId}"
 		lineId, args := args[0], args[1:]
 		path = strings.Replace(path, "{lineId}", fmt.Sprintf("%v", lineId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -144,6 +154,14 @@ var getedgelineCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", "lineId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}"
@@ -151,6 +169,7 @@ var getedgelineCmd = &cobra.Command{
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
 		lineId, args := args[0], args[1:]
 		path = strings.Replace(path, "{lineId}", fmt.Sprintf("%v", lineId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -183,9 +202,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/lines"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -238,11 +266,20 @@ var listedgelinesCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/lines"
 		edgeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -283,6 +320,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", "lineId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Edgeline{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}"
@@ -290,6 +338,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
 		lineId, args := args[0], args[1:]
 		path = strings.Replace(path, "{lineId}", fmt.Sprintf("%v", lineId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

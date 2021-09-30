@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -30,19 +31,19 @@ func Cmdsearch_suggest() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "bool", "profile", "true", "profile")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/search/suggest", utils.FormatPermissions([]string{ "directory:user:view",  }), utils.GenerateDevCentreLink("POST", "Search", "/api/v2/search/suggest")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Search request options&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SuggestSearchRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Search request options",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/SuggestSearchRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/JsonNodeSearchResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/JsonNodeSearchResponse"
   }
 }`)
 	search_suggestCmd.AddCommand(createCmd)
@@ -55,9 +56,9 @@ func Cmdsearch_suggest() *cobra.Command {
 	listCmd.MarkFlagRequired("q64")
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	search_suggestCmd.AddCommand(listCmd)
@@ -72,9 +73,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Suggestsearchrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/search/suggest"
+
 
 		profile := utils.GetFlag(cmd.Flags(), "bool", "profile")
 		if profile != "" {
@@ -111,9 +124,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/search/suggest"
+
 
 		q64 := utils.GetFlag(cmd.Flags(), "string", "q64")
 		if q64 != "" {

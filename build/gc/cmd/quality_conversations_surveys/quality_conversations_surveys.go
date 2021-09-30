@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,11 +32,11 @@ func Cmdquality_conversations_surveys() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/Survey&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/Survey"
     }
   }
 }`)
@@ -51,11 +52,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/conversations/{conversationId}/surveys"
 		conversationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

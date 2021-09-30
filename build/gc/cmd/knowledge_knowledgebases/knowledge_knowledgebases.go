@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdknowledge_knowledgebases() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/knowledge/knowledgebases", utils.FormatPermissions([]string{ "knowledge:knowledgebase:add",  }), utils.GenerateDevCentreLink("POST", "Knowledge", "/api/v2/knowledge/knowledgebases")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeBase&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeBase"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeBase&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeBase"
   }
 }`)
 	knowledge_knowledgebasesCmd.AddCommand(createCmd)
@@ -49,9 +50,9 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeBase&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeBase"
   }
 }`)
 	knowledge_knowledgebasesCmd.AddCommand(deleteCmd)
@@ -60,9 +61,9 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeBase&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeBase"
   }
 }`)
 	knowledge_knowledgebasesCmd.AddCommand(getCmd)
@@ -78,27 +79,27 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	knowledge_knowledgebasesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}", utils.FormatPermissions([]string{ "knowledge:knowledgebase:edit",  }), utils.GenerateDevCentreLink("PATCH", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeBase&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeBase"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeBase&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeBase"
   }
 }`)
 	knowledge_knowledgebasesCmd.AddCommand(updateCmd)
@@ -113,9 +114,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Knowledgebase{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -148,11 +161,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "knowledgeBaseId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}"
 		knowledgeBaseId, args := args[0], args[1:]
 		path = strings.Replace(path, "{knowledgeBaseId}", fmt.Sprintf("%v", knowledgeBaseId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -185,11 +207,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "knowledgeBaseId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}"
 		knowledgeBaseId, args := args[0], args[1:]
 		path = strings.Replace(path, "{knowledgeBaseId}", fmt.Sprintf("%v", knowledgeBaseId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -222,9 +253,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases"
+
 
 		before := utils.GetFlag(cmd.Flags(), "string", "before")
 		if before != "" {
@@ -285,11 +325,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "knowledgeBaseId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Knowledgebase{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}"
 		knowledgeBaseId, args := args[0], args[1:]
 		path = strings.Replace(path, "{knowledgeBaseId}", fmt.Sprintf("%v", knowledgeBaseId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

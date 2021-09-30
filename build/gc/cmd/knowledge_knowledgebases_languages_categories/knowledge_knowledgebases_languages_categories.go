@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdknowledge_knowledgebases_languages_categories() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories", utils.FormatPermissions([]string{ "knowledge:category:add",  }), utils.GenerateDevCentreLink("POST", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeCategoryRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeCategoryRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeExtendedCategory&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeExtendedCategory"
   }
 }`)
 	knowledge_knowledgebases_languages_categoriesCmd.AddCommand(createCmd)
@@ -49,9 +50,9 @@ func Cmdknowledge_knowledgebases_languages_categories() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeCategory&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeCategory"
   }
 }`)
 	knowledge_knowledgebases_languages_categoriesCmd.AddCommand(deleteCmd)
@@ -60,9 +61,9 @@ func Cmdknowledge_knowledgebases_languages_categories() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeExtendedCategory&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeExtendedCategory"
   }
 }`)
 	knowledge_knowledgebases_languages_categoriesCmd.AddCommand(getCmd)
@@ -76,27 +77,27 @@ func Cmdknowledge_knowledgebases_languages_categories() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	knowledge_knowledgebases_languages_categoriesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}", utils.FormatPermissions([]string{ "knowledge:category:edit",  }), utils.GenerateDevCentreLink("PATCH", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeCategoryRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeCategoryRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeExtendedCategory&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeExtendedCategory"
   }
 }`)
 	knowledge_knowledgebases_languages_categoriesCmd.AddCommand(updateCmd)
@@ -111,6 +112,17 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "knowledgeBaseId", "languageCode", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Knowledgecategoryrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories"
@@ -118,6 +130,7 @@ var createCmd = &cobra.Command{
 		path = strings.Replace(path, "{knowledgeBaseId}", fmt.Sprintf("%v", knowledgeBaseId), -1)
 		languageCode, args := args[0], args[1:]
 		path = strings.Replace(path, "{languageCode}", fmt.Sprintf("%v", languageCode), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -150,6 +163,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "categoryId", "knowledgeBaseId", "languageCode", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}"
@@ -159,6 +180,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{knowledgeBaseId}", fmt.Sprintf("%v", knowledgeBaseId), -1)
 		languageCode, args := args[0], args[1:]
 		path = strings.Replace(path, "{languageCode}", fmt.Sprintf("%v", languageCode), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -191,6 +213,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "categoryId", "knowledgeBaseId", "languageCode", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}"
@@ -200,6 +230,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{knowledgeBaseId}", fmt.Sprintf("%v", knowledgeBaseId), -1)
 		languageCode, args := args[0], args[1:]
 		path = strings.Replace(path, "{languageCode}", fmt.Sprintf("%v", languageCode), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -232,6 +263,14 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "knowledgeBaseId", "languageCode", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories"
@@ -239,6 +278,7 @@ var listCmd = &cobra.Command{
 		path = strings.Replace(path, "{knowledgeBaseId}", fmt.Sprintf("%v", knowledgeBaseId), -1)
 		languageCode, args := args[0], args[1:]
 		path = strings.Replace(path, "{languageCode}", fmt.Sprintf("%v", languageCode), -1)
+
 
 		before := utils.GetFlag(cmd.Flags(), "string", "before")
 		if before != "" {
@@ -291,6 +331,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "categoryId", "knowledgeBaseId", "languageCode", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Knowledgecategoryrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}"
@@ -300,6 +351,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{knowledgeBaseId}", fmt.Sprintf("%v", knowledgeBaseId), -1)
 		languageCode, args := args[0], args[1:]
 		path = strings.Replace(path, "{languageCode}", fmt.Sprintf("%v", languageCode), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

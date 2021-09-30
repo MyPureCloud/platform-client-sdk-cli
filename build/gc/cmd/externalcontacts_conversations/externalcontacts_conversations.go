@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,17 +30,17 @@ func init() {
 func Cmdexternalcontacts_conversations() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/externalcontacts/conversations/{conversationId}", utils.FormatPermissions([]string{ "externalContacts:conversation:associate",  }), utils.GenerateDevCentreLink("PUT", "External Contacts", "/api/v2/externalcontacts/conversations/{conversationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;ConversationAssociation&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ConversationAssociation&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "ConversationAssociation",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ConversationAssociation"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;Accepted - Processing association&quot;
+  "description" : "Accepted - Processing association"
 }`)
 	externalcontacts_conversationsCmd.AddCommand(updateCmd)
 	
@@ -53,11 +54,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Conversationassociation{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/externalcontacts/conversations/{conversationId}"
 		conversationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdintegrations_actions_draft_publish() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/integrations/actions/{actionId}/draft/publish", utils.FormatPermissions([]string{ "integrations:action:edit",  }), utils.GenerateDevCentreLink("POST", "Integrations", "/api/v2/integrations/actions/{actionId}/draft/publish")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Input used to patch the Action.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/PublishDraftInput&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Input used to patch the Action.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/PublishDraftInput"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Action&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Action"
   }
 }`)
 	integrations_actions_draft_publishCmd.AddCommand(createCmd)
@@ -56,11 +57,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "actionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Publishdraftinput{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/integrations/actions/{actionId}/draft/publish"
 		actionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{actionId}", fmt.Sprintf("%v", actionId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

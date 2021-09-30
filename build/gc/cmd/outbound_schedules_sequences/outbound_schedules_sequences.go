@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdoutbound_schedules_sequences() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	outbound_schedules_sequencesCmd.AddCommand(deleteCmd)
 	
@@ -39,9 +40,9 @@ func Cmdoutbound_schedules_sequences() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SequenceSchedule&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SequenceSchedule"
   }
 }`)
 	outbound_schedules_sequencesCmd.AddCommand(getCmd)
@@ -50,11 +51,11 @@ func Cmdoutbound_schedules_sequences() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/SequenceSchedule&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/SequenceSchedule"
     }
   }
 }`)
@@ -62,19 +63,19 @@ func Cmdoutbound_schedules_sequences() *cobra.Command {
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/schedules/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:schedule:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/schedules/sequences/{sequenceId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;SequenceSchedule&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SequenceSchedule&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "SequenceSchedule",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/SequenceSchedule"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SequenceSchedule&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SequenceSchedule"
   }
 }`)
 	outbound_schedules_sequencesCmd.AddCommand(updateCmd)
@@ -89,11 +90,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "sequenceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/schedules/sequences/{sequenceId}"
 		sequenceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{sequenceId}", fmt.Sprintf("%v", sequenceId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -126,11 +136,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "sequenceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/schedules/sequences/{sequenceId}"
 		sequenceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{sequenceId}", fmt.Sprintf("%v", sequenceId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -163,9 +182,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/schedules/sequences"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -198,11 +226,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "sequenceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Sequenceschedule{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/schedules/sequences/{sequenceId}"
 		sequenceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{sequenceId}", fmt.Sprintf("%v", sequenceId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

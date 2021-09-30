@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdexternalcontacts_organizations_trustor() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Trustor link has been deleted&quot;
+  "description" : "Trustor link has been deleted"
 }`)
 	externalcontacts_organizations_trustorCmd.AddCommand(deleteCmd)
 	
@@ -39,9 +40,9 @@ func Cmdexternalcontacts_organizations_trustor() *cobra.Command {
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExternalOrganizationTrustorLink&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ExternalOrganizationTrustorLink"
   }
 }`)
 	externalcontacts_organizations_trustorCmd.AddCommand(updateCmd)
@@ -56,11 +57,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "externalOrganizationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor"
 		externalOrganizationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{externalOrganizationId}", fmt.Sprintf("%v", externalOrganizationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -93,6 +103,14 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "externalOrganizationId", "trustorId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}"
@@ -100,6 +118,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{externalOrganizationId}", fmt.Sprintf("%v", externalOrganizationId), -1)
 		trustorId, args := args[0], args[1:]
 		path = strings.Replace(path, "{trustorId}", fmt.Sprintf("%v", trustorId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

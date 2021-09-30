@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -35,10 +36,10 @@ func Cmdscripts_published_variables() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;object&quot;,
-    &quot;properties&quot; : { }
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "object",
+    "properties" : { }
   }
 }`)
 	scripts_published_variablesCmd.AddCommand(getCmd)
@@ -53,11 +54,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "scriptId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scripts/published/{scriptId}/variables"
 		scriptId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scriptId}", fmt.Sprintf("%v", scriptId), -1)
+
 
 		input := utils.GetFlag(cmd.Flags(), "string", "input")
 		if input != "" {

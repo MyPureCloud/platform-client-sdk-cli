@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdworkforcemanagement_businessunits() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits", utils.FormatPermissions([]string{ "wfm:businessUnit:add",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CreateBusinessUnitRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/CreateBusinessUnitRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BusinessUnit&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BusinessUnit"
   }
 }`)
 	workforcemanagement_businessunitsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdworkforcemanagement_businessunits() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The business unit was successfully deleted&quot;
+  "description" : "The business unit was successfully deleted"
 }`)
 	workforcemanagement_businessunitsCmd.AddCommand(deleteCmd)
 	
@@ -59,9 +60,9 @@ func Cmdworkforcemanagement_businessunits() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BusinessUnit&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BusinessUnit"
   }
 }`)
 	workforcemanagement_businessunitsCmd.AddCommand(getCmd)
@@ -72,28 +73,28 @@ func Cmdworkforcemanagement_businessunits() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BusinessUnitListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BusinessUnitListing"
   }
 }`)
 	workforcemanagement_businessunitsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}", utils.FormatPermissions([]string{ "wfm:businessUnit:edit",  }), utils.GenerateDevCentreLink("PATCH", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UpdateBusinessUnitRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/UpdateBusinessUnitRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BusinessUnit&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BusinessUnit"
   }
 }`)
 	workforcemanagement_businessunitsCmd.AddCommand(updateCmd)
@@ -108,9 +109,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Createbusinessunitrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -143,11 +156,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}"
 		businessUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -180,11 +202,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}"
 		businessUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -221,9 +252,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits"
+
 
 		feature := utils.GetFlag(cmd.Flags(), "string", "feature")
 		if feature != "" {
@@ -264,11 +304,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Updatebusinessunitrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}"
 		businessUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -453,6 +453,12 @@ func reAuthenticateIfNecessary(config config.Configuration, err error) error {
 	}
 
 	if e, ok := err.(models.HttpStatusError); ok && e.StatusCode == http.StatusUnauthorized {
+		// do not re-authenticate with client credentials if we have an access_token
+		if config.AccessToken() != "" {
+			logger.Warn("unauthorized. your access_token has either expired or is not valid. please authenticate")
+			err := fmt.Errorf("unauthorized. your access_token has either expired or is not valid. please authenticate")
+			return err
+		}
 		logger.Info("Received HTTP 401 error, re-authenticating")
 		_, err = restclient.ReAuthenticate(config)
 		if err != nil {

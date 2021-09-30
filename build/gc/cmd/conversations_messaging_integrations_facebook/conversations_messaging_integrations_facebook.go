@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdconversations_messaging_integrations_facebook() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/messaging/integrations/facebook", utils.FormatPermissions([]string{ "messaging:integration:add",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/messaging/integrations/facebook")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;FacebookIntegrationRequest&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FacebookIntegrationRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "FacebookIntegrationRequest",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/FacebookIntegrationRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FacebookIntegration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/FacebookIntegration"
   }
 }`)
 	conversations_messaging_integrations_facebookCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdconversations_messaging_integrations_facebook() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful&quot;
+  "description" : "Operation was successful"
 }`)
 	conversations_messaging_integrations_facebookCmd.AddCommand(deleteCmd)
 	
@@ -59,9 +60,9 @@ func Cmdconversations_messaging_integrations_facebook() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FacebookIntegration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/FacebookIntegration"
   }
 }`)
 	conversations_messaging_integrations_facebookCmd.AddCommand(getCmd)
@@ -74,28 +75,28 @@ func Cmdconversations_messaging_integrations_facebook() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	conversations_messaging_integrations_facebookCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/messaging/integrations/facebook/{integrationId}", utils.FormatPermissions([]string{ "messaging:integration:edit",  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/messaging/integrations/facebook/{integrationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;FacebookIntegrationUpdateRequest&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FacebookIntegrationUpdateRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "FacebookIntegrationUpdateRequest",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/FacebookIntegrationUpdateRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FacebookIntegration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/FacebookIntegration"
   }
 }`)
 	conversations_messaging_integrations_facebookCmd.AddCommand(updateCmd)
@@ -110,9 +111,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Facebookintegrationrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/facebook"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -145,11 +158,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/facebook/{integrationId}"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -182,11 +204,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/facebook/{integrationId}"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -223,9 +254,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/facebook"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -274,11 +314,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Facebookintegrationupdaterequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/facebook/{integrationId}"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

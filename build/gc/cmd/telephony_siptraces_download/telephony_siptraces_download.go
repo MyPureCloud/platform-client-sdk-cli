@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdtelephony_siptraces_download() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/siptraces/download", utils.FormatPermissions([]string{ "telephony:pcap:add",  }), utils.GenerateDevCentreLink("POST", "Telephony", "/api/v2/telephony/siptraces/download")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;SIPSearchPublicRequest&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SIPSearchPublicRequest&quot;
+  "in" : "body",
+  "name" : "SIPSearchPublicRequest",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/SIPSearchPublicRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SipDownloadResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SipDownloadResponse"
   }
 }`)
 	telephony_siptraces_downloadCmd.AddCommand(createCmd)
@@ -49,9 +50,9 @@ func Cmdtelephony_siptraces_download() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SignedUrlResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SignedUrlResponse"
   }
 }`)
 	telephony_siptraces_downloadCmd.AddCommand(getCmd)
@@ -66,9 +67,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Sipsearchpublicrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/siptraces/download"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -101,11 +114,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "downloadId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/siptraces/download/{downloadId}"
 		downloadId, args := args[0], args[1:]
 		path = strings.Replace(path, "{downloadId}", fmt.Sprintf("%v", downloadId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

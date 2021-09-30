@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -30,19 +31,19 @@ func Cmdworkforcemanagement_managementunits_workplans_validate() *cobra.Command 
 	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", " Valid values: messages")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate", utils.FormatPermissions([]string{ "wfm:workPlan:add", "wfm:workPlan:edit",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WorkPlanValidationRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/WorkPlanValidationRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ValidateWorkPlanResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ValidateWorkPlanResponse"
   }
 }`)
 	workforcemanagement_managementunits_workplans_validateCmd.AddCommand(createCmd)
@@ -57,6 +58,17 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", "workPlanId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Workplanvalidationrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate"
@@ -64,6 +76,7 @@ var createCmd = &cobra.Command{
 		path = strings.Replace(path, "{managementUnitId}", fmt.Sprintf("%v", managementUnitId), -1)
 		workPlanId, args := args[0], args[1:]
 		path = strings.Replace(path, "{workPlanId}", fmt.Sprintf("%v", workPlanId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {

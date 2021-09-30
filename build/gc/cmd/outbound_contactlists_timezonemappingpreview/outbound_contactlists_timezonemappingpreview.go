@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdoutbound_contactlists_timezonemappingpreview() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/TimeZoneMappingPreview&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/TimeZoneMappingPreview"
   }
 }`)
 	outbound_contactlists_timezonemappingpreviewCmd.AddCommand(getCmd)
@@ -48,11 +49,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "contactListId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview"
 		contactListId, args := args[0], args[1:]
 		path = strings.Replace(path, "{contactListId}", fmt.Sprintf("%v", contactListId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

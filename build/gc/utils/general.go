@@ -64,6 +64,7 @@ func AddFileFlagIfUpsert(flags *pflag.FlagSet, method string, jsonSchema string)
 		fallthrough
 	case http.MethodPut:
 		flags.StringP("file", "f", "", "File name containing the JSON body")
+		flags.BoolP("printrequestbody", "b", false, "Print the request body format of the API.")
 	}
 }
 

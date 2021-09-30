@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdoutbound_contactlists_clear() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Contacts will be deleted.&quot;
+  "description" : "Contacts will be deleted."
 }`)
 	outbound_contactlists_clearCmd.AddCommand(createCmd)
 	
@@ -45,11 +46,20 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "contactListId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists/{contactListId}/clear"
 		contactListId, args := args[0], args[1:]
 		path = strings.Replace(path, "{contactListId}", fmt.Sprintf("%v", contactListId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

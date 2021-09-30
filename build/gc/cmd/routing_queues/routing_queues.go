@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdrouting_queues() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/queues", utils.FormatPermissions([]string{ "routing:queue:add",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/queues")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Queue&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CreateQueueRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Queue",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CreateQueueRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Queue&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Queue"
   }
 }`)
 	routing_queuesCmd.AddCommand(createCmd)
@@ -51,7 +52,7 @@ func Cmdrouting_queues() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	routing_queuesCmd.AddCommand(deleteCmd)
 	
@@ -59,9 +60,9 @@ func Cmdrouting_queues() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Queue&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Queue"
   }
 }`)
 	routing_queuesCmd.AddCommand(getCmd)
@@ -76,28 +77,28 @@ func Cmdrouting_queues() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	routing_queuesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/queues/{queueId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Queue&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/QueueRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Queue",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/QueueRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Queue&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Queue"
   }
 }`)
 	routing_queuesCmd.AddCommand(updateCmd)
@@ -112,9 +113,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Createqueuerequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/queues"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -147,11 +160,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "queueId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/queues/{queueId}"
 		queueId, args := args[0], args[1:]
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
+
 
 		forceDelete := utils.GetFlag(cmd.Flags(), "bool", "forceDelete")
 		if forceDelete != "" {
@@ -188,11 +210,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "queueId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/queues/{queueId}"
 		queueId, args := args[0], args[1:]
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -225,9 +256,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/queues"
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -284,11 +324,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "queueId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Queuerequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/queues/{queueId}"
 		queueId, args := args[0], args[1:]
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

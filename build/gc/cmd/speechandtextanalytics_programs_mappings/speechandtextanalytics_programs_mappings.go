@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdspeechandtextanalytics_programs_mappings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ProgramMappings&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ProgramMappings"
   }
 }`)
 	speechandtextanalytics_programs_mappingsCmd.AddCommand(getCmd)
@@ -44,28 +45,28 @@ func Cmdspeechandtextanalytics_programs_mappings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	speechandtextanalytics_programs_mappingsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/speechandtextanalytics/programs/{programId}/mappings", utils.FormatPermissions([]string{ "speechAndTextAnalytics:program:edit",  }), utils.GenerateDevCentreLink("PUT", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/programs/{programId}/mappings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The program to set mappings for&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ProgramMappingsRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The program to set mappings for",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ProgramMappingsRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ProgramMappings&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ProgramMappings"
   }
 }`)
 	speechandtextanalytics_programs_mappingsCmd.AddCommand(updateCmd)
@@ -80,11 +81,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "programId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/speechandtextanalytics/programs/{programId}/mappings"
 		programId, args := args[0], args[1:]
 		path = strings.Replace(path, "{programId}", fmt.Sprintf("%v", programId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -117,9 +127,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/speechandtextanalytics/programs/mappings"
+
 
 		nextPage := utils.GetFlag(cmd.Flags(), "string", "nextPage")
 		if nextPage != "" {
@@ -160,11 +179,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "programId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Programmappingsrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/speechandtextanalytics/programs/{programId}/mappings"
 		programId, args := args[0], args[1:]
 		path = strings.Replace(path, "{programId}", fmt.Sprintf("%v", programId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

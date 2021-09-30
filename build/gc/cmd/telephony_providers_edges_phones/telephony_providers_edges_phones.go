@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdtelephony_providers_edges_phones() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/phones", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/phones")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Phone&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Phone&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Phone",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Phone"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Phone&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Phone"
   }
 }`)
 	telephony_providers_edges_phonesCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdtelephony_providers_edges_phones() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	telephony_providers_edges_phonesCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdtelephony_providers_edges_phones() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Phone&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Phone"
   }
 }`)
 	telephony_providers_edges_phonesCmd.AddCommand(getCmd)
@@ -86,28 +87,28 @@ func Cmdtelephony_providers_edges_phones() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	telephony_providers_edges_phonesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/phones/{phoneId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/phones/{phoneId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Phone&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Phone&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Phone",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Phone"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Phone&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Phone"
   }
 }`)
 	telephony_providers_edges_phonesCmd.AddCommand(updateCmd)
@@ -122,9 +123,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Phone{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/phones"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -157,11 +170,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "phoneId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/phones/{phoneId}"
 		phoneId, args := args[0], args[1:]
 		path = strings.Replace(path, "{phoneId}", fmt.Sprintf("%v", phoneId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -194,11 +216,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "phoneId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/phones/{phoneId}"
 		phoneId, args := args[0], args[1:]
 		path = strings.Replace(path, "{phoneId}", fmt.Sprintf("%v", phoneId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -231,9 +262,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/phones"
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -334,11 +374,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "phoneId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Phone{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/phones/{phoneId}"
 		phoneId, args := args[0], args[1:]
 		path = strings.Replace(path, "{phoneId}", fmt.Sprintf("%v", phoneId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

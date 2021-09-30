@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,28 +32,28 @@ func Cmdtelephony_providers_edges_edgegroups_edgetrunkbases() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeTrunkBase&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/EdgeTrunkBase"
   }
 }`)
 	telephony_providers_edges_edgegroups_edgetrunkbasesCmd.AddCommand(getCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;EdgeTrunkBase&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeTrunkBase&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "EdgeTrunkBase",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/EdgeTrunkBase"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeTrunkBase&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/EdgeTrunkBase"
   }
 }`)
 	telephony_providers_edges_edgegroups_edgetrunkbasesCmd.AddCommand(updateCmd)
@@ -67,6 +68,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgegroupId", "edgetrunkbaseId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}"
@@ -74,6 +83,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{edgegroupId}", fmt.Sprintf("%v", edgegroupId), -1)
 		edgetrunkbaseId, args := args[0], args[1:]
 		path = strings.Replace(path, "{edgetrunkbaseId}", fmt.Sprintf("%v", edgetrunkbaseId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -106,6 +116,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgegroupId", "edgetrunkbaseId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Edgetrunkbase{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}"
@@ -113,6 +134,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{edgegroupId}", fmt.Sprintf("%v", edgegroupId), -1)
 		edgetrunkbaseId, args := args[0], args[1:]
 		path = strings.Replace(path, "{edgetrunkbaseId}", fmt.Sprintf("%v", edgetrunkbaseId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

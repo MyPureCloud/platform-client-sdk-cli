@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdlocations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/locations", utils.FormatPermissions([]string{ "directory:location:add",  }), utils.GenerateDevCentreLink("POST", "Locations", "/api/v2/locations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Location&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LocationCreateDefinition&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Location",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/LocationCreateDefinition"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LocationDefinition&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LocationDefinition"
   }
 }`)
 	locationsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdlocations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The location was deleted successfully&quot;
+  "description" : "The location was deleted successfully"
 }`)
 	locationsCmd.AddCommand(deleteCmd)
 	
@@ -59,9 +60,9 @@ func Cmdlocations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LocationDefinition&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LocationDefinition"
   }
 }`)
 	locationsCmd.AddCommand(getCmd)
@@ -74,28 +75,28 @@ func Cmdlocations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	locationsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/locations/{locationId}", utils.FormatPermissions([]string{ "directory:location:edit",  }), utils.GenerateDevCentreLink("PATCH", "Locations", "/api/v2/locations/{locationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Location&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LocationUpdateDefinition&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Location",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/LocationUpdateDefinition"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LocationDefinition&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LocationDefinition"
   }
 }`)
 	locationsCmd.AddCommand(updateCmd)
@@ -110,9 +111,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Locationcreatedefinition{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/locations"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -145,11 +158,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "locationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/locations/{locationId}"
 		locationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{locationId}", fmt.Sprintf("%v", locationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -182,11 +204,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "locationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/locations/{locationId}"
 		locationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{locationId}", fmt.Sprintf("%v", locationId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -223,9 +254,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/locations"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -274,11 +314,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "locationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Locationupdatedefinition{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/locations/{locationId}"
 		locationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{locationId}", fmt.Sprintf("%v", locationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,24 +30,24 @@ func init() {
 func Cmdoutbound_messagingcampaigns_progress() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/messagingcampaigns/progress", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view", "outbound:emailCampaign:view",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/messagingcampaigns/progress")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Messaging Campaign IDs&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;type&quot; : &quot;string&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Messaging Campaign IDs",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "type" : "string"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/CampaignProgress&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/CampaignProgress"
     }
   }
 }`)
@@ -56,9 +57,9 @@ func Cmdoutbound_messagingcampaigns_progress() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CampaignProgress&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CampaignProgress"
   }
 }`)
 	outbound_messagingcampaigns_progressCmd.AddCommand(getCmd)
@@ -73,9 +74,18 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/messagingcampaigns/progress"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -108,11 +118,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "messagingCampaignId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress"
 		messagingCampaignId, args := args[0], args[1:]
 		path = strings.Replace(path, "{messagingCampaignId}", fmt.Sprintf("%v", messagingCampaignId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

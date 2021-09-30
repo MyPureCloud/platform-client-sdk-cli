@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdmobiledevices() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/mobiledevices", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Mobile Devices", "/api/v2/mobiledevices")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Device&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserDevice&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Device",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/UserDevice"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserDevice&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserDevice"
   }
 }`)
 	mobiledevicesCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdmobiledevices() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	mobiledevicesCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdmobiledevices() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserDevice&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserDevice"
   }
 }`)
 	mobiledevicesCmd.AddCommand(getCmd)
@@ -72,28 +73,28 @@ func Cmdmobiledevices() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	mobiledevicesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/mobiledevices/{deviceId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Mobile Devices", "/api/v2/mobiledevices/{deviceId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Device&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserDevice&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Device",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/UserDevice"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserDevice&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserDevice"
   }
 }`)
 	mobiledevicesCmd.AddCommand(updateCmd)
@@ -108,9 +109,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userdevice{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/mobiledevices"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -143,11 +156,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "deviceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/mobiledevices/{deviceId}"
 		deviceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{deviceId}", fmt.Sprintf("%v", deviceId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -180,11 +202,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "deviceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/mobiledevices/{deviceId}"
 		deviceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{deviceId}", fmt.Sprintf("%v", deviceId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -217,9 +248,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/mobiledevices"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -264,11 +304,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "deviceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userdevice{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/mobiledevices/{deviceId}"
 		deviceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{deviceId}", fmt.Sprintf("%v", deviceId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

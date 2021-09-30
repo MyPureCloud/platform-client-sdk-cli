@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdauthorization_roles_comparedefault() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}", utils.FormatPermissions([]string{ "authorization:role:view",  }), utils.GenerateDevCentreLink("POST", "Authorization", "/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Organization role&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainOrganizationRole&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Organization role",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/DomainOrganizationRole"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainOrgRoleDifference&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DomainOrgRoleDifference"
   }
 }`)
 	authorization_roles_comparedefaultCmd.AddCommand(createCmd)
@@ -50,9 +51,9 @@ func Cmdauthorization_roles_comparedefault() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainOrgRoleDifference&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DomainOrgRoleDifference"
   }
 }`)
 	authorization_roles_comparedefaultCmd.AddCommand(getCmd)
@@ -67,6 +68,17 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "leftRoleId", "rightRoleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Domainorganizationrole{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}"
@@ -74,6 +86,7 @@ var createCmd = &cobra.Command{
 		path = strings.Replace(path, "{leftRoleId}", fmt.Sprintf("%v", leftRoleId), -1)
 		rightRoleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{rightRoleId}", fmt.Sprintf("%v", rightRoleId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -106,6 +119,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "leftRoleId", "rightRoleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}"
@@ -113,6 +134,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{leftRoleId}", fmt.Sprintf("%v", leftRoleId), -1)
 		rightRoleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{rightRoleId}", fmt.Sprintf("%v", rightRoleId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

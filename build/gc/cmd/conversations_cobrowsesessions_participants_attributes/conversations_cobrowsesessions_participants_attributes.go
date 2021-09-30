@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,16 +30,16 @@ func init() {
 func Cmdconversations_cobrowsesessions_participants_attributes() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ParticipantAttributes&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/ParticipantAttributes"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;Accepted&quot;
+  "description" : "Accepted"
 }`)
 	conversations_cobrowsesessions_participants_attributesCmd.AddCommand(updateCmd)
 	
@@ -52,6 +53,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Participantattributes{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes"
@@ -59,6 +71,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		participantId, args := args[0], args[1:]
 		path = strings.Replace(path, "{participantId}", fmt.Sprintf("%v", participantId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

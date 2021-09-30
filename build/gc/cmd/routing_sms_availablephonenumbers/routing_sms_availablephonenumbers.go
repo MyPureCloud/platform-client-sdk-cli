@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -40,9 +41,9 @@ func Cmdrouting_sms_availablephonenumbers() *cobra.Command {
 	listCmd.MarkFlagRequired("phoneNumberType")
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SMSAvailablePhoneNumberEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SMSAvailablePhoneNumberEntityListing"
   }
 }`)
 	routing_sms_availablephonenumbersCmd.AddCommand(listCmd)
@@ -57,9 +58,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/sms/availablephonenumbers"
+
 
 		countryCode := utils.GetFlag(cmd.Flags(), "string", "countryCode")
 		if countryCode != "" {

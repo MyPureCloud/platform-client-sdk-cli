@@ -18,6 +18,7 @@ func Render(data string) {
 		if err != nil {
 			logger.Fatalf("Error converting JSON to YAML: %v\n", err)
 		}
+		fmt.Println("---")
 		fmt.Printf("%s", result)
 		return
 	}

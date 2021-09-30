@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdworkforcemanagement_managementunits_weeks_shifttrades() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades", utils.FormatPermissions([]string{ "wfm:agentShiftTradeRequest:participate",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/AddShiftTradeRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/AddShiftTradeRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ShiftTradeResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ShiftTradeResponse"
   }
 }`)
 	workforcemanagement_managementunits_weeks_shifttradesCmd.AddCommand(createCmd)
@@ -51,28 +52,28 @@ func Cmdworkforcemanagement_managementunits_weeks_shifttrades() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WeekShiftTradeListResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WeekShiftTradeListResponse"
   }
 }`)
 	workforcemanagement_managementunits_weeks_shifttradesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}", utils.FormatPermissions([]string{ "wfm:agentShiftTradeRequest:participate",  }), utils.GenerateDevCentreLink("PATCH", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/PatchShiftTradeRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/PatchShiftTradeRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ShiftTradeResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ShiftTradeResponse"
   }
 }`)
 	workforcemanagement_managementunits_weeks_shifttradesCmd.AddCommand(updateCmd)
@@ -87,6 +88,17 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", "weekDateId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Addshifttraderequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades"
@@ -94,6 +106,7 @@ var createCmd = &cobra.Command{
 		path = strings.Replace(path, "{managementUnitId}", fmt.Sprintf("%v", managementUnitId), -1)
 		weekDateId, args := args[0], args[1:]
 		path = strings.Replace(path, "{weekDateId}", fmt.Sprintf("%v", weekDateId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -126,6 +139,14 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", "weekDateId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades"
@@ -133,6 +154,7 @@ var listCmd = &cobra.Command{
 		path = strings.Replace(path, "{managementUnitId}", fmt.Sprintf("%v", managementUnitId), -1)
 		weekDateId, args := args[0], args[1:]
 		path = strings.Replace(path, "{weekDateId}", fmt.Sprintf("%v", weekDateId), -1)
+
 
 		evaluateMatches := utils.GetFlag(cmd.Flags(), "bool", "evaluateMatches")
 		if evaluateMatches != "" {
@@ -169,6 +191,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", "weekDateId", "tradeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Patchshifttraderequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}"
@@ -178,6 +211,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{weekDateId}", fmt.Sprintf("%v", weekDateId), -1)
 		tradeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{tradeId}", fmt.Sprintf("%v", tradeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

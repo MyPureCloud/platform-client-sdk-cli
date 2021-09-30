@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,22 +30,22 @@ func init() {
 func Cmdusers_routinglanguages_bulk() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/routinglanguages/bulk", utils.FormatPermissions([]string{ "routing:skill:assign", "routing:language:assign",  }), utils.GenerateDevCentreLink("PATCH", "Users", "/api/v2/users/{userId}/routinglanguages/bulk")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Language&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/UserRoutingLanguagePost&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Language",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/UserRoutingLanguagePost"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserLanguageEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserLanguageEntityListing"
   }
 }`)
 	users_routinglanguages_bulkCmd.AddCommand(updateCmd)
@@ -59,11 +60,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userroutinglanguagepost{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/routinglanguages/bulk"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

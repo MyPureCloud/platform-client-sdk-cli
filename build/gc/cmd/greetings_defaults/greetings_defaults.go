@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,28 +32,28 @@ func Cmdgreetings_defaults() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DefaultGreetingList&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DefaultGreetingList"
   }
 }`)
 	greetings_defaultsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/greetings/defaults", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Greetings", "/api/v2/greetings/defaults")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The updated defaultGreetingList&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DefaultGreetingList&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The updated defaultGreetingList",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/DefaultGreetingList"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DefaultGreetingList&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DefaultGreetingList"
   }
 }`)
 	greetings_defaultsCmd.AddCommand(updateCmd)
@@ -67,9 +68,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/greetings/defaults"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -102,9 +112,21 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Defaultgreetinglist{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/greetings/defaults"
+
 
 		urlString := path
 		if len(queryParams) > 0 {

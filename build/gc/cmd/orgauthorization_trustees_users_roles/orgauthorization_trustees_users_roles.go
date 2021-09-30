@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdorgauthorization_trustees_users_roles() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Roles deleted&quot;
+  "description" : "Roles deleted"
 }`)
 	orgauthorization_trustees_users_rolesCmd.AddCommand(deleteCmd)
 	
@@ -39,31 +40,31 @@ func Cmdorgauthorization_trustees_users_roles() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserAuthorization&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserAuthorization"
   }
 }`)
 	orgauthorization_trustees_users_rolesCmd.AddCommand(getCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles", utils.FormatPermissions([]string{ "authorization:orgTrusteeUser:edit",  }), utils.GenerateDevCentreLink("PUT", "Organization Authorization", "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;List of roles&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;type&quot; : &quot;string&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "List of roles",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "type" : "string"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserAuthorization&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserAuthorization"
   }
 }`)
 	orgauthorization_trustees_users_rolesCmd.AddCommand(updateCmd)
@@ -78,6 +79,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "trusteeOrgId", "trusteeUserId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles"
@@ -85,6 +94,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{trusteeOrgId}", fmt.Sprintf("%v", trusteeOrgId), -1)
 		trusteeUserId, args := args[0], args[1:]
 		path = strings.Replace(path, "{trusteeUserId}", fmt.Sprintf("%v", trusteeUserId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -117,6 +127,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "trusteeOrgId", "trusteeUserId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles"
@@ -124,6 +142,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{trusteeOrgId}", fmt.Sprintf("%v", trusteeOrgId), -1)
 		trusteeUserId, args := args[0], args[1:]
 		path = strings.Replace(path, "{trusteeUserId}", fmt.Sprintf("%v", trusteeUserId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -156,6 +175,14 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "trusteeOrgId", "trusteeUserId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles"
@@ -163,6 +190,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{trusteeOrgId}", fmt.Sprintf("%v", trusteeOrgId), -1)
 		trusteeUserId, args := args[0], args[1:]
 		path = strings.Replace(path, "{trusteeUserId}", fmt.Sprintf("%v", trusteeUserId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

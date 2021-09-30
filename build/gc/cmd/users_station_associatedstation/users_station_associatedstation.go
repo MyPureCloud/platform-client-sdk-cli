@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdusers_station_associatedstation() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Success&quot;
+  "description" : "Success"
 }`)
 	users_station_associatedstationCmd.AddCommand(deleteCmd)
 	
@@ -39,7 +40,7 @@ func Cmdusers_station_associatedstation() *cobra.Command {
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;Success&quot;
+  "description" : "Success"
 }`)
 	users_station_associatedstationCmd.AddCommand(updateCmd)
 	
@@ -53,11 +54,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/station/associatedstation"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -90,6 +100,14 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", "stationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/station/associatedstation/{stationId}"
@@ -97,6 +115,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
 		stationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{stationId}", fmt.Sprintf("%v", stationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

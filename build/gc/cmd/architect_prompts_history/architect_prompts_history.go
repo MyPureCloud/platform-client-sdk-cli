@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdarchitect_prompts_history() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Operation&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Operation"
   }
 }`)
 	architect_prompts_historyCmd.AddCommand(createCmd)
@@ -47,9 +48,9 @@ func Cmdarchitect_prompts_history() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	architect_prompts_historyCmd.AddCommand(listCmd)
@@ -64,11 +65,20 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "promptId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/prompts/{promptId}/history"
 		promptId, args := args[0], args[1:]
 		path = strings.Replace(path, "{promptId}", fmt.Sprintf("%v", promptId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -101,6 +111,14 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "promptId", "historyId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/prompts/{promptId}/history/{historyId}"
@@ -108,6 +126,7 @@ var listCmd = &cobra.Command{
 		path = strings.Replace(path, "{promptId}", fmt.Sprintf("%v", promptId), -1)
 		historyId, args := args[0], args[1:]
 		path = strings.Replace(path, "{historyId}", fmt.Sprintf("%v", historyId), -1)
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdworkforcemanagement_businessunits_activitycodes() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes", utils.FormatPermissions([]string{ "wfm:activityCode:add",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CreateActivityCodeRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/CreateActivityCodeRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BusinessUnitActivityCode&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BusinessUnitActivityCode"
   }
 }`)
 	workforcemanagement_businessunits_activitycodesCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdworkforcemanagement_businessunits_activitycodes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The activity code was deleted successfully&quot;
+  "description" : "The activity code was deleted successfully"
 }`)
 	workforcemanagement_businessunits_activitycodesCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdworkforcemanagement_businessunits_activitycodes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BusinessUnitActivityCode&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BusinessUnitActivityCode"
   }
 }`)
 	workforcemanagement_businessunits_activitycodesCmd.AddCommand(getCmd)
@@ -69,28 +70,28 @@ func Cmdworkforcemanagement_businessunits_activitycodes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BusinessUnitActivityCodeListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BusinessUnitActivityCodeListing"
   }
 }`)
 	workforcemanagement_businessunits_activitycodesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}", utils.FormatPermissions([]string{ "wfm:activityCode:edit",  }), utils.GenerateDevCentreLink("PATCH", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UpdateActivityCodeRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/UpdateActivityCodeRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BusinessUnitActivityCode&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BusinessUnitActivityCode"
   }
 }`)
 	workforcemanagement_businessunits_activitycodesCmd.AddCommand(updateCmd)
@@ -105,11 +106,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Createactivitycoderequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes"
 		businessUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -142,6 +155,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "activityCodeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}"
@@ -149,6 +170,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 		activityCodeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{activityCodeId}", fmt.Sprintf("%v", activityCodeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -181,6 +203,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "activityCodeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}"
@@ -188,6 +218,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 		activityCodeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{activityCodeId}", fmt.Sprintf("%v", activityCodeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -220,11 +251,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes"
 		businessUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -257,6 +297,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "activityCodeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Updateactivitycoderequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}"
@@ -264,6 +315,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 		activityCodeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{activityCodeId}", fmt.Sprintf("%v", activityCodeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

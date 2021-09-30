@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdlanguageunderstanding_domains_feedback() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/languageunderstanding/domains/{domainId}/feedback", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:add", "dialog:bot:add",  }), utils.GenerateDevCentreLink("POST", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/feedback")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The Feedback to create.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluFeedbackRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The Feedback to create.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/NluFeedbackRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluFeedbackResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/NluFeedbackResponse"
   }
 }`)
 	languageunderstanding_domains_feedbackCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdlanguageunderstanding_domains_feedback() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Feedback deleted successfully&quot;
+  "description" : "Feedback deleted successfully"
 }`)
 	languageunderstanding_domains_feedbackCmd.AddCommand(deleteCmd)
 	
@@ -59,9 +60,9 @@ func Cmdlanguageunderstanding_domains_feedback() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluFeedbackResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/NluFeedbackResponse"
   }
 }`)
 	languageunderstanding_domains_feedbackCmd.AddCommand(getCmd)
@@ -80,9 +81,9 @@ func Cmdlanguageunderstanding_domains_feedback() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	languageunderstanding_domains_feedbackCmd.AddCommand(listCmd)
@@ -97,11 +98,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Nlufeedbackrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}/feedback"
 		domainId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -134,6 +147,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", "feedbackId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}"
@@ -141,6 +162,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
 		feedbackId, args := args[0], args[1:]
 		path = strings.Replace(path, "{feedbackId}", fmt.Sprintf("%v", feedbackId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -173,6 +195,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", "feedbackId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}"
@@ -180,6 +210,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
 		feedbackId, args := args[0], args[1:]
 		path = strings.Replace(path, "{feedbackId}", fmt.Sprintf("%v", feedbackId), -1)
+
 
 		fields := utils.GetFlag(cmd.Flags(), "[]string", "fields")
 		if fields != "" {
@@ -216,11 +247,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}/feedback"
 		domainId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
+
 
 		intentName := utils.GetFlag(cmd.Flags(), "string", "intentName")
 		if intentName != "" {

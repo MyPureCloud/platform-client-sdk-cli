@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdtelephony_providers_edges_sites_numberplans() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NumberPlan&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/NumberPlan"
   }
 }`)
 	telephony_providers_edges_sites_numberplansCmd.AddCommand(getCmd)
@@ -42,11 +43,11 @@ func Cmdtelephony_providers_edges_sites_numberplans() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/NumberPlan&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/NumberPlan"
     }
   }
 }`)
@@ -54,24 +55,24 @@ func Cmdtelephony_providers_edges_sites_numberplans() *cobra.Command {
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;List of number plans&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/NumberPlan&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "List of number plans",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/NumberPlan"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/NumberPlan&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/NumberPlan"
     }
   }
 }`)
@@ -87,6 +88,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "siteId", "numberPlanId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}"
@@ -94,6 +103,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{siteId}", fmt.Sprintf("%v", siteId), -1)
 		numberPlanId, args := args[0], args[1:]
 		path = strings.Replace(path, "{numberPlanId}", fmt.Sprintf("%v", numberPlanId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -126,11 +136,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "siteId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans"
 		siteId, args := args[0], args[1:]
 		path = strings.Replace(path, "{siteId}", fmt.Sprintf("%v", siteId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -163,11 +182,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "siteId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Numberplan{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans"
 		siteId, args := args[0], args[1:]
 		path = strings.Replace(path, "{siteId}", fmt.Sprintf("%v", siteId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

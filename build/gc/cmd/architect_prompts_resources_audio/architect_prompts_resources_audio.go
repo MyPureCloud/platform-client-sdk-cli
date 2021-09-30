@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdarchitect_prompts_resources_audio() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Audio successfully deleted&quot;
+  "description" : "Audio successfully deleted"
 }`)
 	architect_prompts_resources_audioCmd.AddCommand(deleteCmd)
 	
@@ -45,6 +46,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "promptId", "languageCode", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio"
@@ -52,6 +61,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{promptId}", fmt.Sprintf("%v", promptId), -1)
 		languageCode, args := args[0], args[1:]
 		path = strings.Replace(path, "{languageCode}", fmt.Sprintf("%v", languageCode), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

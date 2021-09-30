@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdoutbound_dnclists_export() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainEntityRef&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DomainEntityRef"
   }
 }`)
 	outbound_dnclists_exportCmd.AddCommand(createCmd)
@@ -43,9 +44,9 @@ func Cmdoutbound_dnclists_export() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExportUri&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ExportUri"
   }
 }`)
 	outbound_dnclists_exportCmd.AddCommand(getCmd)
@@ -60,11 +61,20 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "dncListId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/dnclists/{dncListId}/export"
 		dncListId, args := args[0], args[1:]
 		path = strings.Replace(path, "{dncListId}", fmt.Sprintf("%v", dncListId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -97,11 +107,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "dncListId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/dnclists/{dncListId}/export"
 		dncListId, args := args[0], args[1:]
 		path = strings.Replace(path, "{dncListId}", fmt.Sprintf("%v", dncListId), -1)
+
 
 		download := utils.GetFlag(cmd.Flags(), "string", "download")
 		if download != "" {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,11 +32,11 @@ func Cmdusers_profileskills() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;type&quot; : &quot;string&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "type" : "string"
     }
   }
 }`)
@@ -43,24 +44,24 @@ func Cmdusers_profileskills() *cobra.Command {
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/profileskills", utils.FormatPermissions([]string{ "directory:userProfile:edit",  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/profileskills")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Skills&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;type&quot; : &quot;string&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Skills",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "type" : "string"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;type&quot; : &quot;string&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "type" : "string"
     }
   }
 }`)
@@ -76,11 +77,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/profileskills"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -113,11 +123,20 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/profileskills"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

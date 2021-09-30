@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdscim_users() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/scim/users", utils.FormatPermissions([]string{ "directory:user:add", "authorization:grant:add", "authorization:grant:delete", "routing:skill:assign", "routing:language:assign",  }), utils.GenerateDevCentreLink("POST", "SCIM", "/api/v2/scim/users")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The information used to create a user.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2CreateUser&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The information used to create a user.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2CreateUser"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2User&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2User"
   }
 }`)
 	scim_usersCmd.AddCommand(createCmd)
@@ -50,9 +51,9 @@ func Cmdscim_users() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Empty&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Empty"
   }
 }`)
 	scim_usersCmd.AddCommand(deleteCmd)
@@ -63,9 +64,9 @@ func Cmdscim_users() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2User&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2User"
   }
 }`)
 	scim_usersCmd.AddCommand(getCmd)
@@ -79,47 +80,47 @@ func Cmdscim_users() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	scim_usersCmd.AddCommand(listCmd)
 	
 	replaceCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", replaceCmd.UsageTemplate(), "PUT", "/api/v2/scim/users/{userId}", utils.FormatPermissions([]string{ "directory:user:edit", "directory:user:setPassword", "authorization:grant:add", "authorization:grant:delete", "routing:skill:assign", "routing:language:assign",  }), utils.GenerateDevCentreLink("PUT", "SCIM", "/api/v2/scim/users/{userId}")))
 	utils.AddFileFlagIfUpsert(replaceCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The information used to replace a user.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2User&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The information used to replace a user.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2User"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(replaceCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2User&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2User"
   }
 }`)
 	scim_usersCmd.AddCommand(replaceCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/scim/users/{userId}", utils.FormatPermissions([]string{ "directory:user:edit", "directory:user:setPassword", "authorization:grant:add", "authorization:grant:delete", "routing:skill:assign", "routing:language:assign",  }), utils.GenerateDevCentreLink("PATCH", "SCIM", "/api/v2/scim/users/{userId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The information used to modify a user.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2PatchRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The information used to modify a user.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2PatchRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2User&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2User"
   }
 }`)
 	scim_usersCmd.AddCommand(updateCmd)
@@ -134,9 +135,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Scimv2createuser{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scim/users"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -169,11 +182,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scim/users/{userId}"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -206,11 +228,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scim/users/{userId}"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		attributes := utils.GetFlag(cmd.Flags(), "[]string", "attributes")
 		if attributes != "" {
@@ -251,9 +282,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scim/users"
+
 
 		startIndex := utils.GetFlag(cmd.Flags(), "int", "startIndex")
 		if startIndex != "" {
@@ -306,11 +346,23 @@ var replaceCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Scimv2user{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scim/users/{userId}"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -343,11 +395,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Scimv2patchrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scim/users/{userId}"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

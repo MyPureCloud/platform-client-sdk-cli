@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -32,31 +33,31 @@ func Cmdauthorization_roles_default() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/OrganizationRoleEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/OrganizationRoleEntityListing"
   }
 }`)
 	authorization_roles_defaultCmd.AddCommand(createCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/default", utils.FormatPermissions([]string{ "authorization:role:edit",  }), utils.GenerateDevCentreLink("PUT", "Authorization", "/api/v2/authorization/roles/default")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Organization roles list&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/DomainOrganizationRole&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Organization roles list",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/DomainOrganizationRole"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/OrganizationRoleEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/OrganizationRoleEntityListing"
   }
 }`)
 	authorization_roles_defaultCmd.AddCommand(updateCmd)
@@ -71,9 +72,18 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/roles/default"
+
 
 		force := utils.GetFlag(cmd.Flags(), "bool", "force")
 		if force != "" {
@@ -110,9 +120,21 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Domainorganizationrole{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/roles/default"
+
 
 		urlString := path
 		if len(queryParams) > 0 {

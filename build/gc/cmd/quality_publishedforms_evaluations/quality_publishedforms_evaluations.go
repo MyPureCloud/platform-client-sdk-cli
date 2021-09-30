@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdquality_publishedforms_evaluations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/publishedforms/evaluations", utils.FormatPermissions([]string{ "quality:evaluationForm:add",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/publishedforms/evaluations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Publish request containing id of form to publish&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/PublishForm&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Publish request containing id of form to publish",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/PublishForm"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EvaluationForm&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/EvaluationForm"
   }
 }`)
 	quality_publishedforms_evaluationsCmd.AddCommand(createCmd)
@@ -50,9 +51,9 @@ func Cmdquality_publishedforms_evaluations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EvaluationForm&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/EvaluationForm"
   }
 }`)
 	quality_publishedforms_evaluationsCmd.AddCommand(getCmd)
@@ -65,9 +66,9 @@ func Cmdquality_publishedforms_evaluations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	quality_publishedforms_evaluationsCmd.AddCommand(listCmd)
@@ -82,9 +83,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Publishform{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/publishedforms/evaluations"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -117,11 +130,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "formId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/publishedforms/evaluations/{formId}"
 		formId, args := args[0], args[1:]
 		path = strings.Replace(path, "{formId}", fmt.Sprintf("%v", formId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -154,9 +176,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/publishedforms/evaluations"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

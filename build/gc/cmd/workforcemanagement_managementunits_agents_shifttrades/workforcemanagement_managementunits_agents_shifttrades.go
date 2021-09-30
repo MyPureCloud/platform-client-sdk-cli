@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdworkforcemanagement_managementunits_agents_shifttrades() *cobra.Command 
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ShiftTradeListResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ShiftTradeListResponse"
   }
 }`)
 	workforcemanagement_managementunits_agents_shifttradesCmd.AddCommand(listCmd)
@@ -48,6 +49,14 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", "agentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades"
@@ -55,6 +64,7 @@ var listCmd = &cobra.Command{
 		path = strings.Replace(path, "{managementUnitId}", fmt.Sprintf("%v", managementUnitId), -1)
 		agentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{agentId}", fmt.Sprintf("%v", agentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -32,15 +33,18 @@ func Cmdauthorization_subjects_divisions_roles() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  "description" : "The request could not be understood by the server due to malformed syntax.",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorBody"
   },
-  &quot;x-inin-error-codes&quot; : {
-    &quot;bad.request&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;,
-    &quot;invalid.date&quot; : &quot;Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ&quot;,
-    &quot;invalid.value&quot; : &quot;Value [%s] is not valid for field type [%s]. Allowable values are: %s&quot;
+  "x-inin-error-codes" : {
+    "bad.request" : "The request could not be understood by the server due to malformed syntax.",
+    "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable",
+    "invalid.date" : "Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ",
+    "invalid.query.param.value" : "Value [%s] is not valid for parameter [%s]. Allowable values are: %s",
+    "invalid.property" : "Value [%s] is not a valid property for object [%s]",
+    "constraint.validation" : "%s",
+    "invalid.value" : "Value [%s] is not valid for field type [%s]. Allowable values are: %s"
   }
 }`)
 	authorization_subjects_divisions_rolesCmd.AddCommand(createCmd)
@@ -49,13 +53,13 @@ func Cmdauthorization_subjects_divisions_roles() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  "description" : "The request could not be understood by the server due to malformed syntax.",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorBody"
   },
-  &quot;x-inin-error-codes&quot; : {
-    &quot;bad.request&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;
+  "x-inin-error-codes" : {
+    "bad.request" : "The request could not be understood by the server due to malformed syntax.",
+    "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable"
   }
 }`)
 	authorization_subjects_divisions_rolesCmd.AddCommand(deleteCmd)
@@ -70,6 +74,14 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "subjectId", "divisionId", "roleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}"
@@ -79,6 +91,7 @@ var createCmd = &cobra.Command{
 		path = strings.Replace(path, "{divisionId}", fmt.Sprintf("%v", divisionId), -1)
 		roleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{roleId}", fmt.Sprintf("%v", roleId), -1)
+
 
 		subjectType := utils.GetFlag(cmd.Flags(), "string", "subjectType")
 		if subjectType != "" {
@@ -115,6 +128,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "subjectId", "divisionId", "roleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}"
@@ -124,6 +145,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{divisionId}", fmt.Sprintf("%v", divisionId), -1)
 		roleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{roleId}", fmt.Sprintf("%v", roleId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

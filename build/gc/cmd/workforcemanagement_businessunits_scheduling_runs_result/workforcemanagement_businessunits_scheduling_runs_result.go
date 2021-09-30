@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -35,9 +36,9 @@ func Cmdworkforcemanagement_businessunits_scheduling_runs_result() *cobra.Comman
 	getCmd.MarkFlagRequired("expand")
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BuRescheduleResult&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BuRescheduleResult"
   }
 }`)
 	workforcemanagement_businessunits_scheduling_runs_resultCmd.AddCommand(getCmd)
@@ -52,6 +53,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "runId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result"
@@ -59,6 +68,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 		runId, args := args[0], args[1:]
 		path = strings.Replace(path, "{runId}", fmt.Sprintf("%v", runId), -1)
+
 
 		managementUnitIds := utils.GetFlag(cmd.Flags(), "[]string", "managementUnitIds")
 		if managementUnitIds != "" {

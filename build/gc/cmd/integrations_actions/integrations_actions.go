@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdintegrations_actions() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/integrations/actions", utils.FormatPermissions([]string{ "integrations:action:add",  }), utils.GenerateDevCentreLink("POST", "Integrations", "/api/v2/integrations/actions")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Input used to create Action.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/PostActionInput&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Input used to create Action.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/PostActionInput"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Action&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Action"
   }
 }`)
 	integrations_actionsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdintegrations_actions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Delete was successful&quot;
+  "description" : "Delete was successful"
 }`)
 	integrations_actionsCmd.AddCommand(deleteCmd)
 	
@@ -60,9 +61,9 @@ func Cmdintegrations_actions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Action&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Action"
   }
 }`)
 	integrations_actionsCmd.AddCommand(getCmd)
@@ -81,28 +82,28 @@ func Cmdintegrations_actions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	integrations_actionsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/integrations/actions/{actionId}", utils.FormatPermissions([]string{ "integrations:action:edit",  }), utils.GenerateDevCentreLink("PATCH", "Integrations", "/api/v2/integrations/actions/{actionId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Input used to patch the Action.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UpdateActionInput&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Input used to patch the Action.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/UpdateActionInput"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Action&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Action"
   }
 }`)
 	integrations_actionsCmd.AddCommand(updateCmd)
@@ -117,9 +118,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Postactioninput{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/integrations/actions"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -152,11 +165,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "actionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/integrations/actions/{actionId}"
 		actionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{actionId}", fmt.Sprintf("%v", actionId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -189,11 +211,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "actionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/integrations/actions/{actionId}"
 		actionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{actionId}", fmt.Sprintf("%v", actionId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -234,9 +265,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/integrations/actions"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -309,11 +349,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "actionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Updateactioninput{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/integrations/actions/{actionId}"
 		actionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{actionId}", fmt.Sprintf("%v", actionId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

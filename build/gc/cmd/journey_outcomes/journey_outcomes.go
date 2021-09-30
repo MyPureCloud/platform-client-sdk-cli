@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdjourney_outcomes() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/journey/outcomes", utils.FormatPermissions([]string{ "journey:outcome:add",  }), utils.GenerateDevCentreLink("POST", "Journey", "/api/v2/journey/outcomes")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Outcome&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/Outcome"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Outcome&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Outcome"
   }
 }`)
 	journey_outcomesCmd.AddCommand(createCmd)
@@ -49,7 +50,7 @@ func Cmdjourney_outcomes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Outcome deleted.&quot;
+  "description" : "Outcome deleted."
 }`)
 	journey_outcomesCmd.AddCommand(deleteCmd)
 	
@@ -57,9 +58,9 @@ func Cmdjourney_outcomes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Outcome&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Outcome"
   }
 }`)
 	journey_outcomesCmd.AddCommand(getCmd)
@@ -74,27 +75,27 @@ func Cmdjourney_outcomes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	journey_outcomesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/journey/outcomes/{outcomeId}", utils.FormatPermissions([]string{ "journey:outcome:edit",  }), utils.GenerateDevCentreLink("PATCH", "Journey", "/api/v2/journey/outcomes/{outcomeId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/PatchOutcome&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/PatchOutcome"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Outcome&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Outcome"
   }
 }`)
 	journey_outcomesCmd.AddCommand(updateCmd)
@@ -109,9 +110,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Outcome{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/outcomes"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -144,11 +157,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "outcomeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/outcomes/{outcomeId}"
 		outcomeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{outcomeId}", fmt.Sprintf("%v", outcomeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -181,11 +203,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "outcomeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/outcomes/{outcomeId}"
 		outcomeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{outcomeId}", fmt.Sprintf("%v", outcomeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -218,9 +249,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/outcomes"
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -277,11 +317,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "outcomeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Patchoutcome{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/outcomes/{outcomeId}"
 		outcomeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{outcomeId}", fmt.Sprintf("%v", outcomeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

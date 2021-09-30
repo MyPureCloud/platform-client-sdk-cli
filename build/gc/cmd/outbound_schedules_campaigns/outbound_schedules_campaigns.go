@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdoutbound_schedules_campaigns() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	outbound_schedules_campaignsCmd.AddCommand(deleteCmd)
 	
@@ -39,9 +40,9 @@ func Cmdoutbound_schedules_campaigns() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CampaignSchedule&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CampaignSchedule"
   }
 }`)
 	outbound_schedules_campaignsCmd.AddCommand(getCmd)
@@ -50,11 +51,11 @@ func Cmdoutbound_schedules_campaigns() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/CampaignSchedule&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/CampaignSchedule"
     }
   }
 }`)
@@ -62,19 +63,19 @@ func Cmdoutbound_schedules_campaigns() *cobra.Command {
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/schedules/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:schedule:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/schedules/campaigns/{campaignId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;CampaignSchedule&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CampaignSchedule&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "CampaignSchedule",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CampaignSchedule"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CampaignSchedule&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CampaignSchedule"
   }
 }`)
 	outbound_schedules_campaignsCmd.AddCommand(updateCmd)
@@ -89,11 +90,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "campaignId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/schedules/campaigns/{campaignId}"
 		campaignId, args := args[0], args[1:]
 		path = strings.Replace(path, "{campaignId}", fmt.Sprintf("%v", campaignId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -126,11 +136,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "campaignId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/schedules/campaigns/{campaignId}"
 		campaignId, args := args[0], args[1:]
 		path = strings.Replace(path, "{campaignId}", fmt.Sprintf("%v", campaignId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -163,9 +182,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/schedules/campaigns"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -198,11 +226,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "campaignId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Campaignschedule{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/schedules/campaigns/{campaignId}"
 		campaignId, args := args[0], args[1:]
 		path = strings.Replace(path, "{campaignId}", fmt.Sprintf("%v", campaignId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdtelephony_providers_edges_logs_jobs() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;EdgeLogsJobRequest&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeLogsJobRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "EdgeLogsJobRequest",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/EdgeLogsJobRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Accepted - Job is being processed.  The job ID is returned.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeLogsJobResponse&quot;
+  "description" : "Accepted - Job is being processed.  The job ID is returned.",
+  "schema" : {
+    "$ref" : "#/definitions/EdgeLogsJobResponse"
   }
 }`)
 	telephony_providers_edges_logs_jobsCmd.AddCommand(createCmd)
@@ -50,9 +51,9 @@ func Cmdtelephony_providers_edges_logs_jobs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;Edge log list has been returned in the response.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeLogsJob&quot;
+  "description" : "Edge log list has been returned in the response.",
+  "schema" : {
+    "$ref" : "#/definitions/EdgeLogsJob"
   }
 }`)
 	telephony_providers_edges_logs_jobsCmd.AddCommand(getCmd)
@@ -67,11 +68,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Edgelogsjobrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs"
 		edgeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -104,6 +117,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}"
@@ -111,6 +132,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
 		jobId, args := args[0], args[1:]
 		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

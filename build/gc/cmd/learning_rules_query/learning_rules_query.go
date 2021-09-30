@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,21 +32,21 @@ func Cmdlearning_rules_query() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "int", "pageNumber", "1", "Page number - REQUIRED")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/rules/query", utils.FormatPermissions([]string{ "learning:rule:view",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/rules/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The learning module rule to fetch users&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningAssignmentUserQuery&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The learning module rule to fetch users",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/LearningAssignmentUserQuery"
   }
 }`)
 	createCmd.MarkFlagRequired("pageSize")
 	createCmd.MarkFlagRequired("pageNumber")
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningAssignmentUserListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LearningAssignmentUserListing"
   }
 }`)
 	learning_rules_queryCmd.AddCommand(createCmd)
@@ -60,9 +61,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Learningassignmentuserquery{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/rules/query"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

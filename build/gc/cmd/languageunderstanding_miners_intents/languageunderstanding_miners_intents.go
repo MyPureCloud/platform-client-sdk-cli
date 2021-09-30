@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -32,9 +33,9 @@ func Cmdlanguageunderstanding_miners_intents() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/MinerIntent&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/MinerIntent"
   }
 }`)
 	languageunderstanding_miners_intentsCmd.AddCommand(getCmd)
@@ -44,9 +45,9 @@ func Cmdlanguageunderstanding_miners_intents() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	languageunderstanding_miners_intentsCmd.AddCommand(listCmd)
@@ -61,6 +62,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "minerId", "intentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}"
@@ -68,6 +77,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{minerId}", fmt.Sprintf("%v", minerId), -1)
 		intentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{intentId}", fmt.Sprintf("%v", intentId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -104,11 +114,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "minerId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/miners/{minerId}/intents"
 		minerId, args := args[0], args[1:]
 		path = strings.Replace(path, "{minerId}", fmt.Sprintf("%v", minerId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {

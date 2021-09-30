@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdrouting_assessments_jobs() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/assessments/jobs", utils.FormatPermissions([]string{ "routing:assessment:add",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/assessments/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CreateBenefitAssessmentJobRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/CreateBenefitAssessmentJobRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BenefitAssessmentJob&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BenefitAssessmentJob"
   }
 }`)
 	routing_assessments_jobsCmd.AddCommand(createCmd)
@@ -49,9 +50,9 @@ func Cmdrouting_assessments_jobs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;The benefit assessment job is finished.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BenefitAssessmentJob&quot;
+  "description" : "The benefit assessment job is finished.",
+  "schema" : {
+    "$ref" : "#/definitions/BenefitAssessmentJob"
   }
 }`)
 	routing_assessments_jobsCmd.AddCommand(getCmd)
@@ -61,9 +62,9 @@ func Cmdrouting_assessments_jobs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/AssessmentJobListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/AssessmentJobListing"
   }
 }`)
 	routing_assessments_jobsCmd.AddCommand(listCmd)
@@ -78,9 +79,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Createbenefitassessmentjobrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/assessments/jobs"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -113,11 +126,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/assessments/jobs/{jobId}"
 		jobId, args := args[0], args[1:]
 		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -150,9 +172,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/assessments/jobs"
+
 
 		divisionId := utils.GetFlag(cmd.Flags(), "[]string", "divisionId")
 		if divisionId != "" {

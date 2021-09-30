@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,24 +30,24 @@ func init() {
 func Cmdauthorization_roles_users_add() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/{roleId}/users/add", utils.FormatPermissions([]string{ "authorization:grant:add",  }), utils.GenerateDevCentreLink("PUT", "Authorization", "/api/v2/authorization/roles/{roleId}/users/add")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;List of user IDs&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;type&quot; : &quot;string&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "List of user IDs",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "type" : "string"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;type&quot; : &quot;string&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "type" : "string"
     }
   }
 }`)
@@ -62,11 +63,20 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "roleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/roles/{roleId}/users/add"
 		roleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{roleId}", fmt.Sprintf("%v", roleId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

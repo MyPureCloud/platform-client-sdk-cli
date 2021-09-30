@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdworkforcemanagement_businessunits_servicegoaltemplates() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates", utils.FormatPermissions([]string{ "wfm:serviceGoalTemplate:add",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CreateServiceGoalTemplate&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/CreateServiceGoalTemplate"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ServiceGoalTemplate&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ServiceGoalTemplate"
   }
 }`)
 	workforcemanagement_businessunits_servicegoaltemplatesCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdworkforcemanagement_businessunits_servicegoaltemplates() *cobra.Command 
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The service goal template was deleted successfully&quot;
+  "description" : "The service goal template was deleted successfully"
 }`)
 	workforcemanagement_businessunits_servicegoaltemplatesCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdworkforcemanagement_businessunits_servicegoaltemplates() *cobra.Command 
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ServiceGoalTemplate&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ServiceGoalTemplate"
   }
 }`)
 	workforcemanagement_businessunits_servicegoaltemplatesCmd.AddCommand(getCmd)
@@ -69,28 +70,28 @@ func Cmdworkforcemanagement_businessunits_servicegoaltemplates() *cobra.Command 
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ServiceGoalTemplateList&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ServiceGoalTemplateList"
   }
 }`)
 	workforcemanagement_businessunits_servicegoaltemplatesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}", utils.FormatPermissions([]string{ "wfm:serviceGoalTemplate:edit",  }), utils.GenerateDevCentreLink("PATCH", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UpdateServiceGoalTemplate&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/UpdateServiceGoalTemplate"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ServiceGoalTemplate&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ServiceGoalTemplate"
   }
 }`)
 	workforcemanagement_businessunits_servicegoaltemplatesCmd.AddCommand(updateCmd)
@@ -105,11 +106,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Createservicegoaltemplate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates"
 		businessUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -142,6 +155,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "serviceGoalTemplateId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}"
@@ -149,6 +170,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 		serviceGoalTemplateId, args := args[0], args[1:]
 		path = strings.Replace(path, "{serviceGoalTemplateId}", fmt.Sprintf("%v", serviceGoalTemplateId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -181,6 +203,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "serviceGoalTemplateId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}"
@@ -188,6 +218,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 		serviceGoalTemplateId, args := args[0], args[1:]
 		path = strings.Replace(path, "{serviceGoalTemplateId}", fmt.Sprintf("%v", serviceGoalTemplateId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -220,11 +251,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates"
 		businessUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -257,6 +297,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "serviceGoalTemplateId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Updateservicegoaltemplate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}"
@@ -264,6 +315,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 		serviceGoalTemplateId, args := args[0], args[1:]
 		path = strings.Replace(path, "{serviceGoalTemplateId}", fmt.Sprintf("%v", serviceGoalTemplateId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

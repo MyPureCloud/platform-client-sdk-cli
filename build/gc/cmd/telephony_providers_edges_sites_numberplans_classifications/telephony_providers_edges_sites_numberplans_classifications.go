@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -32,11 +33,12 @@ func Cmdtelephony_providers_edges_sites_numberplans_classifications() *cobra.Com
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;type&quot; : &quot;string&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "uniqueItems" : true,
+    "items" : {
+      "type" : "string"
     }
   }
 }`)
@@ -52,11 +54,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "siteId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications"
 		siteId, args := args[0], args[1:]
 		path = strings.Replace(path, "{siteId}", fmt.Sprintf("%v", siteId), -1)
+
 
 		classification := utils.GetFlag(cmd.Flags(), "string", "classification")
 		if classification != "" {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,13 +32,13 @@ func Cmdconversations_participants_codes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  "description" : "The request could not be understood by the server due to malformed syntax.",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorBody"
   },
-  &quot;x-inin-error-codes&quot; : {
-    &quot;bad.request&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;
+  "x-inin-error-codes" : {
+    "bad.request" : "The request could not be understood by the server due to malformed syntax.",
+    "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable"
   }
 }`)
 	conversations_participants_codesCmd.AddCommand(deleteCmd)
@@ -52,6 +53,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", "addCommunicationCode", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}"
@@ -61,6 +70,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{participantId}", fmt.Sprintf("%v", participantId), -1)
 		addCommunicationCode, args := args[0], args[1:]
 		path = strings.Replace(path, "{addCommunicationCode}", fmt.Sprintf("%v", addCommunicationCode), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

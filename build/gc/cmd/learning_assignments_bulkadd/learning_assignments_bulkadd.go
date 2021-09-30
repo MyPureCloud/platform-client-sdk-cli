@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,22 +30,22 @@ func init() {
 func Cmdlearning_assignments_bulkadd() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/assignments/bulkadd", utils.FormatPermissions([]string{ "learning:assignment:add",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/assignments/bulkadd")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The learning assignments to be created&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/LearningAssignmentItem&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The learning assignments to be created",
+  "required" : false,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/LearningAssignmentItem"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningAssignmentBulkAddResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LearningAssignmentBulkAddResponse"
   }
 }`)
 	learning_assignments_bulkaddCmd.AddCommand(createCmd)
@@ -59,9 +60,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Learningassignmentitem{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/assignments/bulkadd"
+
 
 		urlString := path
 		if len(queryParams) > 0 {

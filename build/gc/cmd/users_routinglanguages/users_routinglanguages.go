@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdusers_routinglanguages() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/{userId}/routinglanguages", utils.FormatPermissions([]string{ "routing:skill:assign", "routing:language:assign",  }), utils.GenerateDevCentreLink("POST", "Users", "/api/v2/users/{userId}/routinglanguages")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Language&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserRoutingLanguagePost&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Language",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/UserRoutingLanguagePost"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserRoutingLanguage&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserRoutingLanguage"
   }
 }`)
 	users_routinglanguagesCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdusers_routinglanguages() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Language removed&quot;
+  "description" : "Language removed"
 }`)
 	users_routinglanguagesCmd.AddCommand(deleteCmd)
 	
@@ -61,28 +62,28 @@ func Cmdusers_routinglanguages() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	users_routinglanguagesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/routinglanguages/{languageId}", utils.FormatPermissions([]string{ "routing:skill:assign", "routing:language:assign",  }), utils.GenerateDevCentreLink("PATCH", "Users", "/api/v2/users/{userId}/routinglanguages/{languageId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Language&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserRoutingLanguage&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Language",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/UserRoutingLanguage"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserRoutingLanguage&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserRoutingLanguage"
   }
 }`)
 	users_routinglanguagesCmd.AddCommand(updateCmd)
@@ -97,11 +98,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userroutinglanguagepost{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/routinglanguages"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -134,6 +147,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", "languageId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/routinglanguages/{languageId}"
@@ -141,6 +162,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
 		languageId, args := args[0], args[1:]
 		path = strings.Replace(path, "{languageId}", fmt.Sprintf("%v", languageId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -173,11 +195,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/routinglanguages"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -222,6 +253,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", "languageId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userroutinglanguage{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/routinglanguages/{languageId}"
@@ -229,6 +271,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
 		languageId, args := args[0], args[1:]
 		path = strings.Replace(path, "{languageId}", fmt.Sprintf("%v", languageId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

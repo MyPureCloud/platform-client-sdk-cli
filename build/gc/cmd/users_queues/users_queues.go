@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdusers_queues() *cobra.Command { 
 	joinCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", joinCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:join", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/users/{userId}/queues/{queueId}")))
 	utils.AddFileFlagIfUpsert(joinCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Queue Member&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserQueue&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Queue Member",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/UserQueue"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(joinCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserQueue&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserQueue"
   }
 }`)
 	users_queuesCmd.AddCommand(joinCmd)
@@ -49,22 +50,22 @@ func Cmdusers_queues() *cobra.Command {
 	utils.AddFlag(joinsetCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
 	joinsetCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", joinsetCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/queues", utils.FormatPermissions([]string{ "routing:queue:join", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/users/{userId}/queues")))
 	utils.AddFileFlagIfUpsert(joinsetCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;User Queues&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/UserQueue&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "User Queues",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/UserQueue"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(joinsetCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserQueueEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserQueueEntityListing"
   }
 }`)
 	users_queuesCmd.AddCommand(joinsetCmd)
@@ -77,9 +78,9 @@ func Cmdusers_queues() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	users_queuesCmd.AddCommand(listCmd)
@@ -94,6 +95,17 @@ var joinCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "queueId", "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userqueue{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/queues/{queueId}"
@@ -101,6 +113,7 @@ var joinCmd = &cobra.Command{
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -133,11 +146,23 @@ var joinsetCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userqueue{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/queues"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		divisionId := utils.GetFlag(cmd.Flags(), "[]string", "divisionId")
 		if divisionId != "" {
@@ -174,11 +199,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/queues"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

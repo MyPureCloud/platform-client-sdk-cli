@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdcoaching_appointments_annotations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/coaching/appointments/{appointmentId}/annotations", utils.FormatPermissions([]string{ "coaching:annotation:add", "coaching:privateAnnotation:add",  }), utils.GenerateDevCentreLink("POST", "Coaching", "/api/v2/coaching/appointments/{appointmentId}/annotations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The annotation to add&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CoachingAnnotationCreateRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The annotation to add",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CoachingAnnotationCreateRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Annotation created&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CoachingAnnotation&quot;
+  "description" : "Annotation created",
+  "schema" : {
+    "$ref" : "#/definitions/CoachingAnnotation"
   }
 }`)
 	coaching_appointments_annotationsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdcoaching_appointments_annotations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Annotation deleted&quot;
+  "description" : "Annotation deleted"
 }`)
 	coaching_appointments_annotationsCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdcoaching_appointments_annotations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;Annotation retrieved&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CoachingAnnotation&quot;
+  "description" : "Annotation retrieved",
+  "schema" : {
+    "$ref" : "#/definitions/CoachingAnnotation"
   }
 }`)
 	coaching_appointments_annotationsCmd.AddCommand(getCmd)
@@ -71,28 +72,28 @@ func Cmdcoaching_appointments_annotations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;Annotations retrieved&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "Annotations retrieved",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	coaching_appointments_annotationsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "coaching:annotation:edit", "coaching:privateAnnotation:edit",  }), utils.GenerateDevCentreLink("PATCH", "Coaching", "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The new version of the annotation&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CoachingAnnotation&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The new version of the annotation",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CoachingAnnotation"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CoachingAnnotation&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CoachingAnnotation"
   }
 }`)
 	coaching_appointments_annotationsCmd.AddCommand(updateCmd)
@@ -107,11 +108,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "appointmentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Coachingannotationcreaterequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/coaching/appointments/{appointmentId}/annotations"
 		appointmentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{appointmentId}", fmt.Sprintf("%v", appointmentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -144,6 +157,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "appointmentId", "annotationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}"
@@ -151,6 +172,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{appointmentId}", fmt.Sprintf("%v", appointmentId), -1)
 		annotationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{annotationId}", fmt.Sprintf("%v", annotationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -183,6 +205,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "appointmentId", "annotationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}"
@@ -190,6 +220,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{appointmentId}", fmt.Sprintf("%v", appointmentId), -1)
 		annotationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{annotationId}", fmt.Sprintf("%v", annotationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -222,11 +253,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "appointmentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/coaching/appointments/{appointmentId}/annotations"
 		appointmentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{appointmentId}", fmt.Sprintf("%v", appointmentId), -1)
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -267,6 +307,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "appointmentId", "annotationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Coachingannotation{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}"
@@ -274,6 +325,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{appointmentId}", fmt.Sprintf("%v", appointmentId), -1)
 		annotationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{annotationId}", fmt.Sprintf("%v", annotationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

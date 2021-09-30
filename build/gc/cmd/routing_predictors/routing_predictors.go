@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdrouting_predictors() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/predictors", utils.FormatPermissions([]string{ "routing:predictor:add", "routing:queue:edit",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/predictors")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CreatePredictorRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/CreatePredictorRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Predictor&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Predictor"
   }
 }`)
 	routing_predictorsCmd.AddCommand(createCmd)
@@ -49,7 +50,7 @@ func Cmdrouting_predictors() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Deleted successfully&quot;
+  "description" : "Deleted successfully"
 }`)
 	routing_predictorsCmd.AddCommand(deleteCmd)
 	
@@ -57,9 +58,9 @@ func Cmdrouting_predictors() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Predictor&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Predictor"
   }
 }`)
 	routing_predictorsCmd.AddCommand(getCmd)
@@ -73,27 +74,27 @@ func Cmdrouting_predictors() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	routing_predictorsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/predictors/{predictorId}", utils.FormatPermissions([]string{ "routing:predictor:edit", "routing:queue:edit",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/routing/predictors/{predictorId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/PatchPredictorRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/PatchPredictorRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Predictor&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Predictor"
   }
 }`)
 	routing_predictorsCmd.AddCommand(updateCmd)
@@ -108,9 +109,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Createpredictorrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/predictors"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -143,11 +156,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "predictorId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/predictors/{predictorId}"
 		predictorId, args := args[0], args[1:]
 		path = strings.Replace(path, "{predictorId}", fmt.Sprintf("%v", predictorId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -180,11 +202,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "predictorId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/predictors/{predictorId}"
 		predictorId, args := args[0], args[1:]
 		path = strings.Replace(path, "{predictorId}", fmt.Sprintf("%v", predictorId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -217,9 +248,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/predictors"
+
 
 		before := utils.GetFlag(cmd.Flags(), "string", "before")
 		if before != "" {
@@ -272,11 +312,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "predictorId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Patchpredictorrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/predictors/{predictorId}"
 		predictorId, args := args[0], args[1:]
 		path = strings.Replace(path, "{predictorId}", fmt.Sprintf("%v", predictorId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

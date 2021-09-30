@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdoutbound_campaigns_agents() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/campaigns/{campaignId}/agents/{userId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/campaigns/{campaignId}/agents/{userId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;agent&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Agent&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "agent",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Agent"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;string&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "string"
   }
 }`)
 	outbound_campaigns_agentsCmd.AddCommand(updateCmd)
@@ -56,6 +57,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "campaignId", "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Agent{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/campaigns/{campaignId}/agents/{userId}"
@@ -63,6 +75,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{campaignId}", fmt.Sprintf("%v", campaignId), -1)
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

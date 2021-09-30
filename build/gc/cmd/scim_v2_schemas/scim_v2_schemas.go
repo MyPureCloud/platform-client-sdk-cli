@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdscim_v2_schemas() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2SchemaDefinition&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2SchemaDefinition"
   }
 }`)
 	scim_v2_schemasCmd.AddCommand(getCmd)
@@ -43,9 +44,9 @@ func Cmdscim_v2_schemas() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	scim_v2_schemasCmd.AddCommand(listCmd)
@@ -60,11 +61,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "schemaId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scim/v2/schemas/{schemaId}"
 		schemaId, args := args[0], args[1:]
 		path = strings.Replace(path, "{schemaId}", fmt.Sprintf("%v", schemaId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -97,9 +107,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scim/v2/schemas"
+
 
 		filter := utils.GetFlag(cmd.Flags(), "string", "filter")
 		if filter != "" {

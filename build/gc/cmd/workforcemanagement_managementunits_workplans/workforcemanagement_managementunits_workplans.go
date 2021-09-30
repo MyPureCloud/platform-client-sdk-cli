@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -30,19 +31,19 @@ func Cmdworkforcemanagement_managementunits_workplans() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "string", "validationMode", "", "Allows to create work plan even if the validation result is invalid Valid values: Ignore")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans", utils.FormatPermissions([]string{ "wfm:workPlan:add",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CreateWorkPlan&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/CreateWorkPlan"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WorkPlan&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WorkPlan"
   }
 }`)
 	workforcemanagement_managementunits_workplansCmd.AddCommand(createCmd)
@@ -51,7 +52,7 @@ func Cmdworkforcemanagement_managementunits_workplans() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The work plan was deleted successfully&quot;
+  "description" : "The work plan was deleted successfully"
 }`)
 	workforcemanagement_managementunits_workplansCmd.AddCommand(deleteCmd)
 	
@@ -60,9 +61,9 @@ func Cmdworkforcemanagement_managementunits_workplans() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WorkPlan&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WorkPlan"
   }
 }`)
 	workforcemanagement_managementunits_workplansCmd.AddCommand(getCmd)
@@ -72,9 +73,9 @@ func Cmdworkforcemanagement_managementunits_workplans() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WorkPlanListResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WorkPlanListResponse"
   }
 }`)
 	workforcemanagement_managementunits_workplansCmd.AddCommand(listCmd)
@@ -82,19 +83,19 @@ func Cmdworkforcemanagement_managementunits_workplans() *cobra.Command {
 	utils.AddFlag(updateCmd.Flags(), "string", "validationMode", "", "Allows to update work plan even if validation result is invalid Valid values: Ignore")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}", utils.FormatPermissions([]string{ "wfm:workPlan:edit",  }), utils.GenerateDevCentreLink("PATCH", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WorkPlan&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/WorkPlan"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WorkPlan&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WorkPlan"
   }
 }`)
 	workforcemanagement_managementunits_workplansCmd.AddCommand(updateCmd)
@@ -109,11 +110,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Createworkplan{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans"
 		managementUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{managementUnitId}", fmt.Sprintf("%v", managementUnitId), -1)
+
 
 		validationMode := utils.GetFlag(cmd.Flags(), "string", "validationMode")
 		if validationMode != "" {
@@ -150,6 +163,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", "workPlanId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}"
@@ -157,6 +178,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{managementUnitId}", fmt.Sprintf("%v", managementUnitId), -1)
 		workPlanId, args := args[0], args[1:]
 		path = strings.Replace(path, "{workPlanId}", fmt.Sprintf("%v", workPlanId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -189,6 +211,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", "workPlanId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}"
@@ -196,6 +226,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{managementUnitId}", fmt.Sprintf("%v", managementUnitId), -1)
 		workPlanId, args := args[0], args[1:]
 		path = strings.Replace(path, "{workPlanId}", fmt.Sprintf("%v", workPlanId), -1)
+
 
 		includeOnly := utils.GetFlag(cmd.Flags(), "[]string", "includeOnly")
 		if includeOnly != "" {
@@ -232,11 +263,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans"
 		managementUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{managementUnitId}", fmt.Sprintf("%v", managementUnitId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -273,6 +313,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", "workPlanId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Workplan{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}"
@@ -280,6 +331,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{managementUnitId}", fmt.Sprintf("%v", managementUnitId), -1)
 		workPlanId, args := args[0], args[1:]
 		path = strings.Replace(path, "{workPlanId}", fmt.Sprintf("%v", workPlanId), -1)
+
 
 		validationMode := utils.GetFlag(cmd.Flags(), "string", "validationMode")
 		if validationMode != "" {

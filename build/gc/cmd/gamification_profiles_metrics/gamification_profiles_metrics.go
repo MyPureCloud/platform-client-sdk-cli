@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdgamification_profiles_metrics() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/gamification/profiles/{profileId}/metrics", utils.FormatPermissions([]string{ "gamification:profile:update",  }), utils.GenerateDevCentreLink("POST", "Gamification", "/api/v2/gamification/profiles/{profileId}/metrics")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Metric&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Metric&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Metric",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Metric"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Metric successfully created&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Metric&quot;
+  "description" : "Metric successfully created",
+  "schema" : {
+    "$ref" : "#/definitions/Metric"
   }
 }`)
 	gamification_profiles_metricsCmd.AddCommand(createCmd)
@@ -51,9 +52,9 @@ func Cmdgamification_profiles_metrics() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Metric&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Metric"
   }
 }`)
 	gamification_profiles_metricsCmd.AddCommand(getCmd)
@@ -64,28 +65,28 @@ func Cmdgamification_profiles_metrics() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/GetMetricResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/GetMetricResponse"
   }
 }`)
 	gamification_profiles_metricsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/gamification/profiles/{profileId}/metrics/{metricId}", utils.FormatPermissions([]string{ "gamification:profile:update",  }), utils.GenerateDevCentreLink("PUT", "Gamification", "/api/v2/gamification/profiles/{profileId}/metrics/{metricId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Metric&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Metric&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Metric",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Metric"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Metric&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Metric"
   }
 }`)
 	gamification_profiles_metricsCmd.AddCommand(updateCmd)
@@ -100,11 +101,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "profileId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Metric{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gamification/profiles/{profileId}/metrics"
 		profileId, args := args[0], args[1:]
 		path = strings.Replace(path, "{profileId}", fmt.Sprintf("%v", profileId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -137,6 +150,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "profileId", "metricId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gamification/profiles/{profileId}/metrics/{metricId}"
@@ -144,6 +165,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{profileId}", fmt.Sprintf("%v", profileId), -1)
 		metricId, args := args[0], args[1:]
 		path = strings.Replace(path, "{metricId}", fmt.Sprintf("%v", metricId), -1)
+
 
 		workday := utils.GetFlag(cmd.Flags(), "time.Time", "workday")
 		if workday != "" {
@@ -180,11 +202,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "profileId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gamification/profiles/{profileId}/metrics"
 		profileId, args := args[0], args[1:]
 		path = strings.Replace(path, "{profileId}", fmt.Sprintf("%v", profileId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -225,6 +256,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "profileId", "metricId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Metric{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gamification/profiles/{profileId}/metrics/{metricId}"
@@ -232,6 +274,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{profileId}", fmt.Sprintf("%v", profileId), -1)
 		metricId, args := args[0], args[1:]
 		path = strings.Replace(path, "{metricId}", fmt.Sprintf("%v", metricId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

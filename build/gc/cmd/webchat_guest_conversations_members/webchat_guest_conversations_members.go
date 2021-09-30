@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdwebchat_guest_conversations_members() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	webchat_guest_conversations_membersCmd.AddCommand(deleteCmd)
 	
@@ -39,9 +40,9 @@ func Cmdwebchat_guest_conversations_members() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebChatMemberInfo&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebChatMemberInfo"
   }
 }`)
 	webchat_guest_conversations_membersCmd.AddCommand(getCmd)
@@ -53,9 +54,9 @@ func Cmdwebchat_guest_conversations_members() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	webchat_guest_conversations_membersCmd.AddCommand(listCmd)
@@ -70,6 +71,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "memberId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}"
@@ -77,6 +86,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		memberId, args := args[0], args[1:]
 		path = strings.Replace(path, "{memberId}", fmt.Sprintf("%v", memberId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -109,6 +119,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "memberId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}"
@@ -116,6 +134,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		memberId, args := args[0], args[1:]
 		path = strings.Replace(path, "{memberId}", fmt.Sprintf("%v", memberId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -148,11 +167,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webchat/guest/conversations/{conversationId}/members"
 		conversationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdwebchat_guest_conversations_members_typing() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebChatTyping&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebChatTyping"
   }
 }`)
 	webchat_guest_conversations_members_typingCmd.AddCommand(createCmd)
@@ -48,6 +49,14 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "memberId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing"
@@ -55,6 +64,7 @@ var createCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		memberId, args := args[0], args[1:]
 		path = strings.Replace(path, "{memberId}", fmt.Sprintf("%v", memberId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

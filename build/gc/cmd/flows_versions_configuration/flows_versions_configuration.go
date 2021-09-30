@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -32,10 +33,10 @@ func Cmdflows_versions_configuration() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;object&quot;,
-    &quot;properties&quot; : { }
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "object",
+    "properties" : { }
   }
 }`)
 	flows_versions_configurationCmd.AddCommand(getCmd)
@@ -50,6 +51,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "flowId", "versionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/{flowId}/versions/{versionId}/configuration"
@@ -57,6 +66,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{flowId}", fmt.Sprintf("%v", flowId), -1)
 		versionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{versionId}", fmt.Sprintf("%v", versionId), -1)
+
 
 		deleted := utils.GetFlag(cmd.Flags(), "string", "deleted")
 		if deleted != "" {

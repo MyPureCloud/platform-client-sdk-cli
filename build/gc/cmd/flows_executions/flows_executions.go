@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdflows_executions() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/executions", utils.FormatPermissions([]string{ "architect:flow:launch",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/executions")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;flowLaunchRequest&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowExecutionLaunchRequest&quot;
+  "in" : "body",
+  "name" : "flowLaunchRequest",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/FlowExecutionLaunchRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowExecutionLaunchResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/FlowExecutionLaunchResponse"
   }
 }`)
 	flows_executionsCmd.AddCommand(createCmd)
@@ -49,9 +50,9 @@ func Cmdflows_executions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowRuntimeExecution&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/FlowRuntimeExecution"
   }
 }`)
 	flows_executionsCmd.AddCommand(getCmd)
@@ -66,9 +67,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Flowexecutionlaunchrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/executions"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -101,11 +114,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "flowExecutionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/executions/{flowExecutionId}"
 		flowExecutionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{flowExecutionId}", fmt.Sprintf("%v", flowExecutionId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdlanguageunderstanding_miners_drafts() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/languageunderstanding/miners/{minerId}/drafts", utils.FormatPermissions([]string{ "languageUnderstanding:draft:add",  }), utils.GenerateDevCentreLink("POST", "Language Understanding", "/api/v2/languageunderstanding/miners/{minerId}/drafts")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Details for creating draft resource&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Draft&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Details for creating draft resource",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Draft"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Draft&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Draft"
   }
 }`)
 	languageunderstanding_miners_draftsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdlanguageunderstanding_miners_drafts() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Draft deleted&quot;
+  "description" : "Draft deleted"
 }`)
 	languageunderstanding_miners_draftsCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdlanguageunderstanding_miners_drafts() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Draft&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Draft"
   }
 }`)
 	languageunderstanding_miners_draftsCmd.AddCommand(getCmd)
@@ -69,27 +70,27 @@ func Cmdlanguageunderstanding_miners_drafts() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	languageunderstanding_miners_draftsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}", utils.FormatPermissions([]string{ "languageUnderstanding:draft:edit",  }), utils.GenerateDevCentreLink("PATCH", "Language Understanding", "/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DraftRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/DraftRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Draft&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Draft"
   }
 }`)
 	languageunderstanding_miners_draftsCmd.AddCommand(updateCmd)
@@ -104,11 +105,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "minerId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Draft{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/miners/{minerId}/drafts"
 		minerId, args := args[0], args[1:]
 		path = strings.Replace(path, "{minerId}", fmt.Sprintf("%v", minerId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -141,6 +154,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "minerId", "draftId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}"
@@ -148,6 +169,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{minerId}", fmt.Sprintf("%v", minerId), -1)
 		draftId, args := args[0], args[1:]
 		path = strings.Replace(path, "{draftId}", fmt.Sprintf("%v", draftId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -180,6 +202,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "minerId", "draftId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}"
@@ -187,6 +217,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{minerId}", fmt.Sprintf("%v", minerId), -1)
 		draftId, args := args[0], args[1:]
 		path = strings.Replace(path, "{draftId}", fmt.Sprintf("%v", draftId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -219,11 +250,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "minerId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/miners/{minerId}/drafts"
 		minerId, args := args[0], args[1:]
 		path = strings.Replace(path, "{minerId}", fmt.Sprintf("%v", minerId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -256,6 +296,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "minerId", "draftId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Draftrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}"
@@ -263,6 +314,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{minerId}", fmt.Sprintf("%v", minerId), -1)
 		draftId, args := args[0], args[1:]
 		path = strings.Replace(path, "{draftId}", fmt.Sprintf("%v", draftId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

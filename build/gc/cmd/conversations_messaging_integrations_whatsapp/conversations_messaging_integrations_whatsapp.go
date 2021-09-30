@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdconversations_messaging_integrations_whatsapp() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/messaging/integrations/whatsapp", utils.FormatPermissions([]string{ "messaging:whatsappIntegration:add",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/messaging/integrations/whatsapp")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;WhatsAppIntegrationRequest&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WhatsAppIntegrationRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "WhatsAppIntegrationRequest",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/WhatsAppIntegrationRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WhatsAppIntegration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WhatsAppIntegration"
   }
 }`)
 	conversations_messaging_integrations_whatsappCmd.AddCommand(createCmd)
@@ -50,9 +51,9 @@ func Cmdconversations_messaging_integrations_whatsapp() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WhatsAppIntegration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WhatsAppIntegration"
   }
 }`)
 	conversations_messaging_integrations_whatsappCmd.AddCommand(deleteCmd)
@@ -62,9 +63,9 @@ func Cmdconversations_messaging_integrations_whatsapp() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WhatsAppIntegration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WhatsAppIntegration"
   }
 }`)
 	conversations_messaging_integrations_whatsappCmd.AddCommand(getCmd)
@@ -77,28 +78,28 @@ func Cmdconversations_messaging_integrations_whatsapp() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	conversations_messaging_integrations_whatsappCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}", utils.FormatPermissions([]string{ "messaging:integration:edit",  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;WhatsAppIntegrationUpdateRequest&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WhatsAppIntegrationUpdateRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "WhatsAppIntegrationUpdateRequest",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/WhatsAppIntegrationUpdateRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WhatsAppIntegration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WhatsAppIntegration"
   }
 }`)
 	conversations_messaging_integrations_whatsappCmd.AddCommand(updateCmd)
@@ -113,9 +114,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Whatsappintegrationrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/whatsapp"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -148,11 +161,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -185,11 +207,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -226,9 +257,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/whatsapp"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -277,11 +317,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Whatsappintegrationupdaterequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

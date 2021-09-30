@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdgamification_metricdefinitions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/MetricDefinition&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/MetricDefinition"
   }
 }`)
 	gamification_metricdefinitionsCmd.AddCommand(getCmd)
@@ -42,9 +43,9 @@ func Cmdgamification_metricdefinitions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/GetMetricDefinitionsResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/GetMetricDefinitionsResponse"
   }
 }`)
 	gamification_metricdefinitionsCmd.AddCommand(listCmd)
@@ -59,11 +60,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "metricDefinitionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gamification/metricdefinitions/{metricDefinitionId}"
 		metricDefinitionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{metricDefinitionId}", fmt.Sprintf("%v", metricDefinitionId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -96,9 +106,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gamification/metricdefinitions"
+
 
 		urlString := path
 		if len(queryParams) > 0 {

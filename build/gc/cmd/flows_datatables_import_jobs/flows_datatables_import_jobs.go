@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdflows_datatables_import_jobs() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/datatables/{datatableId}/import/jobs", utils.FormatPermissions([]string{ "architect:datatable:edit",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/datatables/{datatableId}/import/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;import job information&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DataTableImportJob&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "import job information",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/DataTableImportJob"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DataTableImportJob&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DataTableImportJob"
   }
 }`)
 	flows_datatables_import_jobsCmd.AddCommand(createCmd)
@@ -50,9 +51,9 @@ func Cmdflows_datatables_import_jobs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getstateinformationCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getstateinformationCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DataTableImportJob&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DataTableImportJob"
   }
 }`)
 	flows_datatables_import_jobsCmd.AddCommand(getstateinformationCmd)
@@ -63,9 +64,9 @@ func Cmdflows_datatables_import_jobs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	flows_datatables_import_jobsCmd.AddCommand(listCmd)
@@ -80,11 +81,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "datatableId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Datatableimportjob{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/datatables/{datatableId}/import/jobs"
 		datatableId, args := args[0], args[1:]
 		path = strings.Replace(path, "{datatableId}", fmt.Sprintf("%v", datatableId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -117,6 +130,14 @@ var getstateinformationCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "datatableId", "importJobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}"
@@ -124,6 +145,7 @@ var getstateinformationCmd = &cobra.Command{
 		path = strings.Replace(path, "{datatableId}", fmt.Sprintf("%v", datatableId), -1)
 		importJobId, args := args[0], args[1:]
 		path = strings.Replace(path, "{importJobId}", fmt.Sprintf("%v", importJobId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -156,11 +178,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "datatableId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/datatables/{datatableId}/import/jobs"
 		datatableId, args := args[0], args[1:]
 		path = strings.Replace(path, "{datatableId}", fmt.Sprintf("%v", datatableId), -1)
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {

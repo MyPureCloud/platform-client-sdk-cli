@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdwebdeployments_configurations_versions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebDeploymentConfigurationVersion&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebDeploymentConfigurationVersion"
   }
 }`)
 	webdeployments_configurations_versionsCmd.AddCommand(getCmd)
@@ -42,9 +43,9 @@ func Cmdwebdeployments_configurations_versions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebDeploymentConfigurationVersionEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebDeploymentConfigurationVersionEntityListing"
   }
 }`)
 	webdeployments_configurations_versionsCmd.AddCommand(listCmd)
@@ -59,6 +60,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "configurationId", "versionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}"
@@ -66,6 +75,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{configurationId}", fmt.Sprintf("%v", configurationId), -1)
 		versionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{versionId}", fmt.Sprintf("%v", versionId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -98,11 +108,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "configurationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webdeployments/configurations/{configurationId}/versions"
 		configurationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{configurationId}", fmt.Sprintf("%v", configurationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

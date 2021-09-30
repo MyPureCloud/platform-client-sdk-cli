@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdwebchat_settings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Deleted&quot;
+  "description" : "Deleted"
 }`)
 	webchat_settingsCmd.AddCommand(deleteCmd)
 	
@@ -39,28 +40,28 @@ func Cmdwebchat_settings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebChatSettings&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebChatSettings"
   }
 }`)
 	webchat_settingsCmd.AddCommand(getCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/webchat/settings", utils.FormatPermissions([]string{ "webchat:deployment:update",  }), utils.GenerateDevCentreLink("PUT", "WebChat", "/api/v2/webchat/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;webChatSettings&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebChatSettings&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "webChatSettings",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/WebChatSettings"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebChatSettings&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebChatSettings"
   }
 }`)
 	webchat_settingsCmd.AddCommand(updateCmd)
@@ -75,9 +76,18 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webchat/settings"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -110,9 +120,18 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webchat/settings"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -145,9 +164,21 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Webchatsettings{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webchat/settings"
+
 
 		urlString := path
 		if len(queryParams) > 0 {

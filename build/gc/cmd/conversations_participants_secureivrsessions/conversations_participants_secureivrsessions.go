@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdconversations_participants_secureivrsessions() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CreateSecureSession&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/CreateSecureSession"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SecureSession&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SecureSession"
   }
 }`)
 	conversations_participants_secureivrsessionsCmd.AddCommand(createCmd)
@@ -49,9 +50,9 @@ func Cmdconversations_participants_secureivrsessions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SecureSession&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SecureSession"
   }
 }`)
 	conversations_participants_secureivrsessionsCmd.AddCommand(getCmd)
@@ -60,9 +61,9 @@ func Cmdconversations_participants_secureivrsessions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SecureSessionEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SecureSessionEntityListing"
   }
 }`)
 	conversations_participants_secureivrsessionsCmd.AddCommand(listCmd)
@@ -77,6 +78,17 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Createsecuresession{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions"
@@ -84,6 +96,7 @@ var createCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		participantId, args := args[0], args[1:]
 		path = strings.Replace(path, "{participantId}", fmt.Sprintf("%v", participantId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -116,6 +129,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", "secureSessionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}"
@@ -125,6 +146,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{participantId}", fmt.Sprintf("%v", participantId), -1)
 		secureSessionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{secureSessionId}", fmt.Sprintf("%v", secureSessionId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -157,6 +179,14 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions"
@@ -164,6 +194,7 @@ var listCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		participantId, args := args[0], args[1:]
 		path = strings.Replace(path, "{participantId}", fmt.Sprintf("%v", participantId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

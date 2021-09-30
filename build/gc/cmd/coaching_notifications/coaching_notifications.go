@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -32,9 +33,9 @@ func Cmdcoaching_notifications() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CoachingNotification&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CoachingNotification"
   }
 }`)
 	coaching_notificationsCmd.AddCommand(getCmd)
@@ -46,28 +47,28 @@ func Cmdcoaching_notifications() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	coaching_notificationsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/coaching/notifications/{notificationId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Coaching", "/api/v2/coaching/notifications/{notificationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Change the read state of a notification&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CoachingNotification&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Change the read state of a notification",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CoachingNotification"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CoachingNotification&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CoachingNotification"
   }
 }`)
 	coaching_notificationsCmd.AddCommand(updateCmd)
@@ -82,11 +83,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "notificationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/coaching/notifications/{notificationId}"
 		notificationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{notificationId}", fmt.Sprintf("%v", notificationId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -123,9 +133,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/coaching/notifications"
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -170,11 +189,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "notificationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Coachingnotification{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/coaching/notifications/{notificationId}"
 		notificationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{notificationId}", fmt.Sprintf("%v", notificationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

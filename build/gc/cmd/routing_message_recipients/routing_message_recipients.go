@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdrouting_message_recipients() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Recipient&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Recipient"
   }
 }`)
 	routing_message_recipientsCmd.AddCommand(getCmd)
@@ -45,28 +46,28 @@ func Cmdrouting_message_recipients() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	routing_message_recipientsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/message/recipients/{recipientId}", utils.FormatPermissions([]string{ "routing:message:manage",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/message/recipients/{recipientId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Recipient&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Recipient&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Recipient",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Recipient"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Recipient&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Recipient"
   }
 }`)
 	routing_message_recipientsCmd.AddCommand(updateCmd)
@@ -81,11 +82,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "recipientId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/message/recipients/{recipientId}"
 		recipientId, args := args[0], args[1:]
 		path = strings.Replace(path, "{recipientId}", fmt.Sprintf("%v", recipientId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -118,9 +128,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/message/recipients"
+
 
 		messengerType := utils.GetFlag(cmd.Flags(), "string", "messengerType")
 		if messengerType != "" {
@@ -165,11 +184,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "recipientId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Recipient{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/message/recipients/{recipientId}"
 		recipientId, args := args[0], args[1:]
 		path = strings.Replace(path, "{recipientId}", fmt.Sprintf("%v", recipientId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

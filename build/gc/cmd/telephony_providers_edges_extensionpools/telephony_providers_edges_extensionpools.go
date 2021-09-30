@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdtelephony_providers_edges_extensionpools() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/extensionpools", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/extensionpools")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;ExtensionPool&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExtensionPool&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "ExtensionPool",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ExtensionPool"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExtensionPool&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ExtensionPool"
   }
 }`)
 	telephony_providers_edges_extensionpoolsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdtelephony_providers_edges_extensionpools() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	telephony_providers_edges_extensionpoolsCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdtelephony_providers_edges_extensionpools() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExtensionPool&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ExtensionPool"
   }
 }`)
 	telephony_providers_edges_extensionpoolsCmd.AddCommand(getCmd)
@@ -73,28 +74,28 @@ func Cmdtelephony_providers_edges_extensionpools() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	telephony_providers_edges_extensionpoolsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;ExtensionPool&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExtensionPool&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "ExtensionPool",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ExtensionPool"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExtensionPool&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ExtensionPool"
   }
 }`)
 	telephony_providers_edges_extensionpoolsCmd.AddCommand(updateCmd)
@@ -109,9 +110,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Extensionpool{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/extensionpools"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -144,11 +157,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "extensionPoolId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}"
 		extensionPoolId, args := args[0], args[1:]
 		path = strings.Replace(path, "{extensionPoolId}", fmt.Sprintf("%v", extensionPoolId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -181,11 +203,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "extensionPoolId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}"
 		extensionPoolId, args := args[0], args[1:]
 		path = strings.Replace(path, "{extensionPoolId}", fmt.Sprintf("%v", extensionPoolId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -218,9 +249,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/extensionpools"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -269,11 +309,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "extensionPoolId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Extensionpool{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}"
 		extensionPoolId, args := args[0], args[1:]
 		path = strings.Replace(path, "{extensionPoolId}", fmt.Sprintf("%v", extensionPoolId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

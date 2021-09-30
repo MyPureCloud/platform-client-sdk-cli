@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,17 +30,17 @@ func init() {
 func Cmdtelephony_providers_edges_logs_jobs_upload() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Log upload request&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeLogsJobUploadRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Log upload request",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/EdgeLogsJobUploadRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Accepted - Files are being uploaded to the job.  Watch the uploadStatus property on the job files.&quot;
+  "description" : "Accepted - Files are being uploaded to the job.  Watch the uploadStatus property on the job files."
 }`)
 	telephony_providers_edges_logs_jobs_uploadCmd.AddCommand(createCmd)
 	
@@ -53,6 +54,17 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Edgelogsjobuploadrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload"
@@ -60,6 +72,7 @@ var createCmd = &cobra.Command{
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
 		jobId, args := args[0], args[1:]
 		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

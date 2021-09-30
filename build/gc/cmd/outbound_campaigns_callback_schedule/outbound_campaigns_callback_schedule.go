@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdoutbound_campaigns_callback_schedule() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/campaigns/{campaignId}/callback/schedule", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/campaigns/{campaignId}/callback/schedule")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;ContactCallbackRequest&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ContactCallbackRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "ContactCallbackRequest",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ContactCallbackRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ContactCallbackRequest&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ContactCallbackRequest"
   }
 }`)
 	outbound_campaigns_callback_scheduleCmd.AddCommand(createCmd)
@@ -56,11 +57,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "campaignId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Contactcallbackrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/campaigns/{campaignId}/callback/schedule"
 		campaignId, args := args[0], args[1:]
 		path = strings.Replace(path, "{campaignId}", fmt.Sprintf("%v", campaignId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

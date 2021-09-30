@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -32,24 +33,24 @@ func Cmdoutbound_contactlists_contacts() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "bool", "doNotQueue", "", "Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the `priority` parameter.")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/contactlists/{contactListId}/contacts", utils.FormatPermissions([]string{ "outbound:contact:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/contactlists/{contactListId}/contacts")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Contact&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/WritableDialerContact&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Contact",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/WritableDialerContact"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/DialerContact&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/DialerContact"
     }
   }
 }`)
@@ -59,7 +60,7 @@ func Cmdoutbound_contactlists_contacts() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	outbound_contactlists_contactsCmd.AddCommand(deleteCmd)
 	
@@ -69,7 +70,7 @@ func Cmdoutbound_contactlists_contacts() *cobra.Command {
 	deletecontactsCmd.MarkFlagRequired("contactIds")
 	
 	utils.AddPaginateFlagsIfListingResponse(deletecontactsCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Contacts Deleted.&quot;
+  "description" : "Contacts Deleted."
 }`)
 	outbound_contactlists_contactsCmd.AddCommand(deletecontactsCmd)
 	
@@ -77,28 +78,28 @@ func Cmdoutbound_contactlists_contacts() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DialerContact&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DialerContact"
   }
 }`)
 	outbound_contactlists_contactsCmd.AddCommand(getCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}", utils.FormatPermissions([]string{ "outbound:contact:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Contact&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DialerContact&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Contact",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/DialerContact"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DialerContact&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DialerContact"
   }
 }`)
 	outbound_contactlists_contactsCmd.AddCommand(updateCmd)
@@ -113,11 +114,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "contactListId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Writabledialercontact{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists/{contactListId}/contacts"
 		contactListId, args := args[0], args[1:]
 		path = strings.Replace(path, "{contactListId}", fmt.Sprintf("%v", contactListId), -1)
+
 
 		priority := utils.GetFlag(cmd.Flags(), "bool", "priority")
 		if priority != "" {
@@ -162,6 +175,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "contactListId", "contactId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}"
@@ -169,6 +190,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{contactListId}", fmt.Sprintf("%v", contactListId), -1)
 		contactId, args := args[0], args[1:]
 		path = strings.Replace(path, "{contactId}", fmt.Sprintf("%v", contactId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -201,11 +223,20 @@ var deletecontactsCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "contactListId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists/{contactListId}/contacts"
 		contactListId, args := args[0], args[1:]
 		path = strings.Replace(path, "{contactListId}", fmt.Sprintf("%v", contactListId), -1)
+
 
 		contactIds := utils.GetFlag(cmd.Flags(), "[]string", "contactIds")
 		if contactIds != "" {
@@ -242,6 +273,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "contactListId", "contactId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}"
@@ -249,6 +288,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{contactListId}", fmt.Sprintf("%v", contactListId), -1)
 		contactId, args := args[0], args[1:]
 		path = strings.Replace(path, "{contactId}", fmt.Sprintf("%v", contactId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -281,6 +321,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "contactListId", "contactId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Dialercontact{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}"
@@ -288,6 +339,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{contactListId}", fmt.Sprintf("%v", contactListId), -1)
 		contactId, args := args[0], args[1:]
 		path = strings.Replace(path, "{contactId}", fmt.Sprintf("%v", contactId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

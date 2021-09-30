@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdconversations_calls_participants_monitor() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Created&quot;
+  "description" : "Created"
 }`)
 	conversations_calls_participants_monitorCmd.AddCommand(createCmd)
 	
@@ -45,6 +46,14 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor"
@@ -52,6 +61,7 @@ var createCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		participantId, args := args[0], args[1:]
 		path = strings.Replace(path, "{participantId}", fmt.Sprintf("%v", participantId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

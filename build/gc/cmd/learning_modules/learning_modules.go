@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdlearning_modules() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/modules", utils.FormatPermissions([]string{ "learning:module:add",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/modules")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The learning module to be created&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningModuleRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The learning module to be created",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/LearningModuleRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningModule&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LearningModule"
   }
 }`)
 	learning_modulesCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdlearning_modules() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The learning module was deleted successfully&quot;
+  "description" : "The learning module was deleted successfully"
 }`)
 	learning_modulesCmd.AddCommand(deleteCmd)
 	
@@ -59,15 +60,15 @@ func Cmdlearning_modules() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningModule&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LearningModule"
   }
 }`)
 	learning_modulesCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "bool", "isArchived", "false", "Archive status")
-	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the module types. Valid values: Informational, AssessedContent, Questionnaire, Assessment")
+	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the module types. Valid values: Informational, AssessedContent, Assessment")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ascending", "Sort order Valid values: ascending, descending")
@@ -79,28 +80,28 @@ func Cmdlearning_modules() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	learning_modulesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/learning/modules/{moduleId}", utils.FormatPermissions([]string{ "learning:module:edit",  }), utils.GenerateDevCentreLink("PUT", "Learning", "/api/v2/learning/modules/{moduleId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The learning module to be updated&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningModuleRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The learning module to be updated",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/LearningModuleRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningModule&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LearningModule"
   }
 }`)
 	learning_modulesCmd.AddCommand(updateCmd)
@@ -115,9 +116,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Learningmodulerequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/modules"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -150,11 +163,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "moduleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/modules/{moduleId}"
 		moduleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{moduleId}", fmt.Sprintf("%v", moduleId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -187,11 +209,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "moduleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/modules/{moduleId}"
 		moduleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{moduleId}", fmt.Sprintf("%v", moduleId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -228,9 +259,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/modules"
+
 
 		isArchived := utils.GetFlag(cmd.Flags(), "bool", "isArchived")
 		if isArchived != "" {
@@ -299,11 +339,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "moduleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Learningmodulerequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/modules/{moduleId}"
 		moduleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{moduleId}", fmt.Sprintf("%v", moduleId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

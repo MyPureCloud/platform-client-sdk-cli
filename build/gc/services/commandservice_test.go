@@ -110,6 +110,31 @@ func TestRetryWithData(t *testing.T) {
 	}
 }
 
+func TestReAuthenticationWithAccessToken(t *testing.T) {
+	restclient.OverridesApplied = mocks.OverridesApplied
+	configGetConfig = mockGetConfigWithAccessToken
+
+	c := commandService{
+		cmd: &cobra.Command{},
+	}
+
+	tc := apiClientTest{
+		targetStatusCode:   http.StatusUnauthorized,
+		expectedStatusCode: http.StatusUnauthorized,
+		expectedResponse:   "",
+	}
+	setRestClientDoMockForReAuthenticate(tc)
+
+	// the expected err from this GET request, when we have an access token in config, is the error msg below, and we do not care about the empty string returned
+	_, err := c.Get("")
+
+	expectedErr := "unauthorized. your access_token has either expired or is not valid. please authenticate"
+
+	if err.Error() != expectedErr {
+		t.Errorf("Did not get the right value, got: %s, want: %s.", err.Error(), expectedErr)
+	}
+}
+
 func TestReAuthentication(t *testing.T) {
 	restclient.OverridesApplied = mocks.OverridesApplied
 	restclient.UpdateOAuthToken = mocks.UpdateOAuthToken
@@ -237,7 +262,7 @@ func mockNewRESTClient(_ config.Configuration) *restclient.RESTClient {
 	return restclient.RestClient
 }
 
-//mockGetConfig returns a mock MockClientConfig object
+//mockGetConfig returns a mock MockClientConfig object with client credentials
 func mockGetConfig(profileName string) (config.Configuration, error) {
 	mockConfig := &mocks.MockClientConfig{}
 
@@ -267,6 +292,49 @@ func mockGetConfig(profileName string) (config.Configuration, error) {
 
 	mockConfig.OAuthTokenDataFunc = func() string {
 		return ""
+	}
+
+	mockConfig.AccessTokenFunc = func() string {
+		return ""
+	}
+
+	return mockConfig, nil
+}
+
+//mockGetConfigWithAccessToken returns a mock MockClientConfig object with an access token
+func mockGetConfigWithAccessToken(profileName string) (config.Configuration, error) {
+	mockConfig := &mocks.MockClientConfig{}
+
+	mockConfig.ProfileNameFunc = func() string {
+		return profileName
+	}
+
+	mockConfig.EnvironmentFunc = func() string {
+		return "mypurecloud.com"
+	}
+
+	mockConfig.LogFilePathFunc = func() string {
+		return ""
+	}
+
+	mockConfig.LoggingEnabledFunc = func() bool {
+		return false
+	}
+
+	mockConfig.ClientIDFunc = func() string {
+		return ""
+	}
+
+	mockConfig.ClientSecretFunc = func() string {
+		return ""
+	}
+
+	mockConfig.OAuthTokenDataFunc = func() string {
+		return ""
+	}
+
+	mockConfig.AccessTokenFunc = func() string {
+		return "XNiJQrSf2YQmJODySCxG6HaVIE2lfZfJ35Y4JDh5L9YEBJOTG3p6szRyUvWVM7pDmziPHHcq9NW7e0KxN_lb6w" // this is a "bad" token for testing purposes
 	}
 
 	return mockConfig, nil

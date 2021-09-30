@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdconversations_assign() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/assign", utils.FormatPermissions([]string{ "conversation:call:pull", "conversation:call:assign", "conversation:callback:pull", "conversation:callback:assign", "conversation:webchat:pull", "conversation:webchat:assign", "conversation:email:pull", "conversation:email:assign", "conversation:message:pull", "conversation:message:assign",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/{conversationId}/assign")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Targeted user&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ConversationUser&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Targeted user",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ConversationUser"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;The manual assignment request was accepted&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;string&quot;
+  "description" : "The manual assignment request was accepted",
+  "schema" : {
+    "type" : "string"
   }
 }`)
 	conversations_assignCmd.AddCommand(createCmd)
@@ -56,11 +57,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Conversationuser{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/{conversationId}/assign"
 		conversationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

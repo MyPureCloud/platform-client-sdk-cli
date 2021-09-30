@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,28 +32,28 @@ func Cmdintegrations_config_current() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/IntegrationConfiguration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/IntegrationConfiguration"
   }
 }`)
 	integrations_config_currentCmd.AddCommand(getCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/integrations/{integrationId}/config/current", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Integrations", "/api/v2/integrations/{integrationId}/config/current")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Integration Configuration&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/IntegrationConfiguration&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Integration Configuration",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/IntegrationConfiguration"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/IntegrationConfiguration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/IntegrationConfiguration"
   }
 }`)
 	integrations_config_currentCmd.AddCommand(updateCmd)
@@ -67,11 +68,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/integrations/{integrationId}/config/current"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -104,11 +114,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Integrationconfiguration{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/integrations/{integrationId}/config/current"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

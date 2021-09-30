@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -30,19 +31,19 @@ func Cmdworkforcemanagement_businessunits_weeks_shorttermforecasts_copy() *cobra
 	utils.AddFlag(createCmd.Flags(), "bool", "forceAsync", "", "Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy", utils.FormatPermissions([]string{ "wfm:shortTermForecast:add",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CopyBuForecastRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CopyBuForecastRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/AsyncForecastOperationResult&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/AsyncForecastOperationResult"
   }
 }`)
 	workforcemanagement_businessunits_weeks_shorttermforecasts_copyCmd.AddCommand(createCmd)
@@ -57,6 +58,17 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "weekDateId", "forecastId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Copybuforecastrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy"
@@ -66,6 +78,7 @@ var createCmd = &cobra.Command{
 		path = strings.Replace(path, "{weekDateId}", fmt.Sprintf("%v", weekDateId), -1)
 		forecastId, args := args[0], args[1:]
 		path = strings.Replace(path, "{forecastId}", fmt.Sprintf("%v", forecastId), -1)
+
 
 		forceAsync := utils.GetFlag(cmd.Flags(), "bool", "forceAsync")
 		if forceAsync != "" {

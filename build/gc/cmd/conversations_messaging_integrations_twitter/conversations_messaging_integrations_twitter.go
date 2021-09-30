@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdconversations_messaging_integrations_twitter() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/messaging/integrations/twitter", utils.FormatPermissions([]string{ "messaging:integration:add",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/messaging/integrations/twitter")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;TwitterIntegrationRequest&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/TwitterIntegrationRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "TwitterIntegrationRequest",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/TwitterIntegrationRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/TwitterIntegration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/TwitterIntegration"
   }
 }`)
 	conversations_messaging_integrations_twitterCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdconversations_messaging_integrations_twitter() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful&quot;
+  "description" : "Operation was successful"
 }`)
 	conversations_messaging_integrations_twitterCmd.AddCommand(deleteCmd)
 	
@@ -59,9 +60,9 @@ func Cmdconversations_messaging_integrations_twitter() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/TwitterIntegration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/TwitterIntegration"
   }
 }`)
 	conversations_messaging_integrations_twitterCmd.AddCommand(getCmd)
@@ -74,28 +75,28 @@ func Cmdconversations_messaging_integrations_twitter() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	conversations_messaging_integrations_twitterCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/messaging/integrations/twitter/{integrationId}", utils.FormatPermissions([]string{ "messaging:integration:edit",  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/messaging/integrations/twitter/{integrationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;TwitterIntegrationRequest&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/TwitterIntegrationRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "TwitterIntegrationRequest",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/TwitterIntegrationRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/TwitterIntegration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/TwitterIntegration"
   }
 }`)
 	conversations_messaging_integrations_twitterCmd.AddCommand(updateCmd)
@@ -110,9 +111,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Twitterintegrationrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/twitter"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -145,11 +158,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/twitter/{integrationId}"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -182,11 +204,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/twitter/{integrationId}"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -223,9 +254,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/twitter"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -274,11 +314,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Twitterintegrationrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/messaging/integrations/twitter/{integrationId}"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

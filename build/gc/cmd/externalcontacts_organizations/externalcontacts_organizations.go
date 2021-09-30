@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdexternalcontacts_organizations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/organizations", utils.FormatPermissions([]string{ "relate:externalOrganization:add", "externalContacts:externalOrganization:add",  }), utils.GenerateDevCentreLink("POST", "External Contacts", "/api/v2/externalcontacts/organizations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;ExternalOrganization&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExternalOrganization&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "ExternalOrganization",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ExternalOrganization"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExternalOrganization&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ExternalOrganization"
   }
 }`)
 	externalcontacts_organizationsCmd.AddCommand(createCmd)
@@ -50,9 +51,9 @@ func Cmdexternalcontacts_organizations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Empty&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Empty"
   }
 }`)
 	externalcontacts_organizationsCmd.AddCommand(deleteCmd)
@@ -63,9 +64,9 @@ func Cmdexternalcontacts_organizations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExternalOrganization&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ExternalOrganization"
   }
 }`)
 	externalcontacts_organizationsCmd.AddCommand(getCmd)
@@ -81,28 +82,28 @@ func Cmdexternalcontacts_organizations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(searchCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(searchCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	externalcontacts_organizationsCmd.AddCommand(searchCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/externalcontacts/organizations/{externalOrganizationId}", utils.FormatPermissions([]string{ "relate:externalOrganization:edit", "externalContacts:externalOrganization:edit",  }), utils.GenerateDevCentreLink("PUT", "External Contacts", "/api/v2/externalcontacts/organizations/{externalOrganizationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;ExternalOrganization&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExternalOrganization&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "ExternalOrganization",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ExternalOrganization"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExternalOrganization&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ExternalOrganization"
   }
 }`)
 	externalcontacts_organizationsCmd.AddCommand(updateCmd)
@@ -117,9 +118,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Externalorganization{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/externalcontacts/organizations"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -152,11 +165,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "externalOrganizationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/externalcontacts/organizations/{externalOrganizationId}"
 		externalOrganizationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{externalOrganizationId}", fmt.Sprintf("%v", externalOrganizationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -189,11 +211,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "externalOrganizationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/externalcontacts/organizations/{externalOrganizationId}"
 		externalOrganizationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{externalOrganizationId}", fmt.Sprintf("%v", externalOrganizationId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -234,9 +265,18 @@ var searchCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/externalcontacts/organizations"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -297,11 +337,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "externalOrganizationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Externalorganization{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/externalcontacts/organizations/{externalOrganizationId}"
 		externalOrganizationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{externalOrganizationId}", fmt.Sprintf("%v", externalOrganizationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

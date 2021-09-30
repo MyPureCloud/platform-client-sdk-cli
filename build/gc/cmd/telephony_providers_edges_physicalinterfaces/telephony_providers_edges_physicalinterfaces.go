@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdtelephony_providers_edges_physicalinterfaces() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainPhysicalInterface&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DomainPhysicalInterface"
   }
 }`)
 	telephony_providers_edges_physicalinterfacesCmd.AddCommand(getCmd)
@@ -44,9 +45,9 @@ func Cmdtelephony_providers_edges_physicalinterfaces() *cobra.Command {
 	listCmd.MarkFlagRequired("edgeIds")
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	telephony_providers_edges_physicalinterfacesCmd.AddCommand(listCmd)
@@ -55,9 +56,9 @@ func Cmdtelephony_providers_edges_physicalinterfaces() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listedgeinterfacesCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listedgeinterfacesCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	telephony_providers_edges_physicalinterfacesCmd.AddCommand(listedgeinterfacesCmd)
@@ -72,6 +73,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", "interfaceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId}"
@@ -79,6 +88,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
 		interfaceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{interfaceId}", fmt.Sprintf("%v", interfaceId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -111,9 +121,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/physicalinterfaces"
+
 
 		edgeIds := utils.GetFlag(cmd.Flags(), "string", "edgeIds")
 		if edgeIds != "" {
@@ -150,11 +169,20 @@ var listedgeinterfacesCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces"
 		edgeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

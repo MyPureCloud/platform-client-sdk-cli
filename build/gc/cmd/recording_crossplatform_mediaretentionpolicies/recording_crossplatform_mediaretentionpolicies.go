@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/crossplatform/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:add",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Policy&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CrossPlatformPolicyCreate&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Policy",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CrossPlatformPolicyCreate"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CrossPlatformPolicy&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CrossPlatformPolicy"
   }
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(deleteCmd)
 	
@@ -60,7 +61,7 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
 	deletepoliciesCmd.MarkFlagRequired("ids")
 	
 	utils.AddPaginateFlagsIfListingResponse(deletepoliciesCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(deletepoliciesCmd)
 	
@@ -68,9 +69,9 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CrossPlatformPolicy&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CrossPlatformPolicy"
   }
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(getCmd)
@@ -89,47 +90,47 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(listCmd)
 	
 	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:edit",  }), utils.GenerateDevCentreLink("PATCH", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Policy&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CrossPlatformPolicyUpdate&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Policy",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CrossPlatformPolicyUpdate"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(patchCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CrossPlatformPolicy&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CrossPlatformPolicy"
   }
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(patchCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:edit",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Policy&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CrossPlatformPolicy&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Policy",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CrossPlatformPolicy"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CrossPlatformPolicy&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/CrossPlatformPolicy"
   }
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(updateCmd)
@@ -144,9 +145,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Crossplatformpolicycreate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/crossplatform/mediaretentionpolicies"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -179,11 +192,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "policyId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}"
 		policyId, args := args[0], args[1:]
 		path = strings.Replace(path, "{policyId}", fmt.Sprintf("%v", policyId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -216,9 +238,18 @@ var deletepoliciesCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/crossplatform/mediaretentionpolicies"
+
 
 		ids := utils.GetFlag(cmd.Flags(), "string", "ids")
 		if ids != "" {
@@ -255,11 +286,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "policyId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}"
 		policyId, args := args[0], args[1:]
 		path = strings.Replace(path, "{policyId}", fmt.Sprintf("%v", policyId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -292,9 +332,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/crossplatform/mediaretentionpolicies"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -367,11 +416,23 @@ var patchCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "policyId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Crossplatformpolicyupdate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}"
 		policyId, args := args[0], args[1:]
 		path = strings.Replace(path, "{policyId}", fmt.Sprintf("%v", policyId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -404,11 +465,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "policyId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Crossplatformpolicy{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}"
 		policyId, args := args[0], args[1:]
 		path = strings.Replace(path, "{policyId}", fmt.Sprintf("%v", policyId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

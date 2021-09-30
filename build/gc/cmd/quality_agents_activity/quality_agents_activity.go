@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -33,8 +34,8 @@ func Cmdquality_agents_activity() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "variable name requested by expand list")
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "next page token")
 	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
-	utils.AddFlag(listCmd.Flags(), "time.Time", "startTime", "", "Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-	utils.AddFlag(listCmd.Flags(), "time.Time", "endTime", "", "End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+	utils.AddFlag(listCmd.Flags(), "time.Time", "startTime", "", "Start time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+	utils.AddFlag(listCmd.Flags(), "time.Time", "endTime", "", "End time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
 	utils.AddFlag(listCmd.Flags(), "[]string", "agentUserId", "", "user id of agent requested")
 	utils.AddFlag(listCmd.Flags(), "string", "evaluatorUserId", "", "user id of the evaluator")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "name")
@@ -43,9 +44,9 @@ func Cmdquality_agents_activity() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	quality_agents_activityCmd.AddCommand(listCmd)
@@ -60,9 +61,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/agents/activity"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

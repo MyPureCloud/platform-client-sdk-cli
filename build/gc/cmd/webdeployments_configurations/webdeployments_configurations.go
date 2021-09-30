@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdwebdeployments_configurations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/webdeployments/configurations", utils.FormatPermissions([]string{ "webDeployments:configuration:add",  }), utils.GenerateDevCentreLink("POST", "Web Deployments", "/api/v2/webdeployments/configurations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;configurationVersion&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebDeploymentConfigurationVersion&quot;
+  "in" : "body",
+  "name" : "configurationVersion",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/WebDeploymentConfigurationVersion"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebDeploymentConfigurationVersion&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebDeploymentConfigurationVersion"
   }
 }`)
 	webdeployments_configurationsCmd.AddCommand(createCmd)
@@ -49,7 +50,7 @@ func Cmdwebdeployments_configurations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The configuration versions were deleted successfully&quot;
+  "description" : "The configuration versions were deleted successfully"
 }`)
 	webdeployments_configurationsCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdwebdeployments_configurations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebDeploymentConfigurationVersionEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebDeploymentConfigurationVersionEntityListing"
   }
 }`)
 	webdeployments_configurationsCmd.AddCommand(listCmd)
@@ -75,9 +76,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Webdeploymentconfigurationversion{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webdeployments/configurations"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -110,11 +123,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "configurationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webdeployments/configurations/{configurationId}"
 		configurationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{configurationId}", fmt.Sprintf("%v", configurationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -147,9 +169,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webdeployments/configurations"
+
 
 		showOnlyPublished := utils.GetFlag(cmd.Flags(), "bool", "showOnlyPublished")
 		if showOnlyPublished != "" {

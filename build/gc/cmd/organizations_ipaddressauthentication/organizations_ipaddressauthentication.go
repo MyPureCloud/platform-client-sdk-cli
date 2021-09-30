@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,28 +32,28 @@ func Cmdorganizations_ipaddressauthentication() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/IpAddressAuthentication&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/IpAddressAuthentication"
   }
 }`)
 	organizations_ipaddressauthenticationCmd.AddCommand(getCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/organizations/ipaddressauthentication", utils.FormatPermissions([]string{ "directory:organization:admin",  }), utils.GenerateDevCentreLink("PUT", "Organization", "/api/v2/organizations/ipaddressauthentication")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;IP address Whitelist settings&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/IpAddressAuthentication&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "IP address Whitelist settings",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/IpAddressAuthentication"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/IpAddressAuthentication&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/IpAddressAuthentication"
   }
 }`)
 	organizations_ipaddressauthenticationCmd.AddCommand(updateCmd)
@@ -67,9 +68,18 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/organizations/ipaddressauthentication"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -102,9 +112,21 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Ipaddressauthentication{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/organizations/ipaddressauthentication"
+
 
 		urlString := path
 		if len(queryParams) > 0 {

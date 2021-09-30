@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,40 +32,46 @@ func Cmdtelephony_providers_edges_phones_reboot() *cobra.Command {
 	utils.AddFileFlagIfUpsert(rebootCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(rebootCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  "description" : "The request could not be understood by the server due to malformed syntax.",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorBody"
   },
-  &quot;x-inin-error-codes&quot; : {
-    &quot;bad.request&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;,
-    &quot;invalid.date&quot; : &quot;Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ&quot;,
-    &quot;invalid.value&quot; : &quot;Value [%s] is not valid for field type [%s]. Allowable values are: %s&quot;
+  "x-inin-error-codes" : {
+    "bad.request" : "The request could not be understood by the server due to malformed syntax.",
+    "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable",
+    "invalid.date" : "Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ",
+    "invalid.query.param.value" : "Value [%s] is not valid for parameter [%s]. Allowable values are: %s",
+    "invalid.property" : "Value [%s] is not a valid property for object [%s]",
+    "constraint.validation" : "%s",
+    "invalid.value" : "Value [%s] is not valid for field type [%s]. Allowable values are: %s"
   }
 }`)
 	telephony_providers_edges_phones_rebootCmd.AddCommand(rebootCmd)
 	
 	rebootphonesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", rebootphonesCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/phones/reboot", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/phones/reboot")))
 	utils.AddFileFlagIfUpsert(rebootphonesCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Phones&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/PhonesReboot&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Phones",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/PhonesReboot"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(rebootphonesCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  "description" : "The request could not be understood by the server due to malformed syntax.",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorBody"
   },
-  &quot;x-inin-error-codes&quot; : {
-    &quot;bad.request&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;,
-    &quot;invalid.date&quot; : &quot;Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ&quot;,
-    &quot;invalid.value&quot; : &quot;Value [%s] is not valid for field type [%s]. Allowable values are: %s&quot;
+  "x-inin-error-codes" : {
+    "bad.request" : "The request could not be understood by the server due to malformed syntax.",
+    "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable",
+    "invalid.date" : "Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ",
+    "invalid.query.param.value" : "Value [%s] is not valid for parameter [%s]. Allowable values are: %s",
+    "invalid.property" : "Value [%s] is not a valid property for object [%s]",
+    "constraint.validation" : "%s",
+    "invalid.value" : "Value [%s] is not valid for field type [%s]. Allowable values are: %s"
   }
 }`)
 	telephony_providers_edges_phones_rebootCmd.AddCommand(rebootphonesCmd)
@@ -79,11 +86,20 @@ var rebootCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "phoneId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/phones/{phoneId}/reboot"
 		phoneId, args := args[0], args[1:]
 		path = strings.Replace(path, "{phoneId}", fmt.Sprintf("%v", phoneId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -116,9 +132,21 @@ var rebootphonesCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Phonesreboot{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/phones/reboot"
+
 
 		urlString := path
 		if len(queryParams) > 0 {

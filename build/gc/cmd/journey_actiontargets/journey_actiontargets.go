@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdjourney_actiontargets() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ActionTarget&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ActionTarget"
   }
 }`)
 	journey_actiontargetsCmd.AddCommand(getCmd)
@@ -44,27 +45,27 @@ func Cmdjourney_actiontargets() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	journey_actiontargetsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/journey/actiontargets/{actionTargetId}", utils.FormatPermissions([]string{ "journey:actiontarget:edit",  }), utils.GenerateDevCentreLink("PATCH", "Journey", "/api/v2/journey/actiontargets/{actionTargetId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/PatchActionTarget&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/PatchActionTarget"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ActionTarget&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ActionTarget"
   }
 }`)
 	journey_actiontargetsCmd.AddCommand(updateCmd)
@@ -79,11 +80,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "actionTargetId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/actiontargets/{actionTargetId}"
 		actionTargetId, args := args[0], args[1:]
 		path = strings.Replace(path, "{actionTargetId}", fmt.Sprintf("%v", actionTargetId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -116,9 +126,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/actiontargets"
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -159,11 +178,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "actionTargetId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Patchactiontarget{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/actiontargets/{actionTargetId}"
 		actionTargetId, args := args[0], args[1:]
 		path = strings.Replace(path, "{actionTargetId}", fmt.Sprintf("%v", actionTargetId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

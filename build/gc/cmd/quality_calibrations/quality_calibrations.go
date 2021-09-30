@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -30,19 +31,19 @@ func Cmdquality_calibrations() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "string", "expand", "", "calibratorId")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/calibrations", utils.FormatPermissions([]string{ "quality:calibration:add",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/calibrations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;calibration&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CalibrationCreate&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "calibration",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CalibrationCreate"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Calibration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Calibration"
   }
 }`)
 	quality_calibrationsCmd.AddCommand(createCmd)
@@ -53,9 +54,9 @@ func Cmdquality_calibrations() *cobra.Command {
 	deleteCmd.MarkFlagRequired("calibratorId")
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Calibration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Calibration"
   }
 }`)
 	quality_calibrationsCmd.AddCommand(deleteCmd)
@@ -66,9 +67,9 @@ func Cmdquality_calibrations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Calibration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Calibration"
   }
 }`)
 	quality_calibrationsCmd.AddCommand(getCmd)
@@ -88,28 +89,28 @@ func Cmdquality_calibrations() *cobra.Command {
 	listCmd.MarkFlagRequired("calibratorId")
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	quality_calibrationsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/calibrations/{calibrationId}", utils.FormatPermissions([]string{ "quality:calibration:edit",  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/calibrations/{calibrationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Calibration&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Calibration&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Calibration",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Calibration"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Calibration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Calibration"
   }
 }`)
 	quality_calibrationsCmd.AddCommand(updateCmd)
@@ -124,9 +125,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Calibrationcreate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/calibrations"
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -163,11 +176,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "calibrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/calibrations/{calibrationId}"
 		calibrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{calibrationId}", fmt.Sprintf("%v", calibrationId), -1)
+
 
 		calibratorId := utils.GetFlag(cmd.Flags(), "string", "calibratorId")
 		if calibratorId != "" {
@@ -204,11 +226,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "calibrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/calibrations/{calibrationId}"
 		calibrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{calibrationId}", fmt.Sprintf("%v", calibrationId), -1)
+
 
 		calibratorId := utils.GetFlag(cmd.Flags(), "string", "calibratorId")
 		if calibratorId != "" {
@@ -249,9 +280,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/calibrations"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -324,11 +364,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "calibrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Calibration{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/calibrations/{calibrationId}"
 		calibrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{calibrationId}", fmt.Sprintf("%v", calibrationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

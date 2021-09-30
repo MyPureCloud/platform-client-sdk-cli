@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,22 +30,22 @@ func init() {
 func Cmdflows_versions() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/{flowId}/versions", utils.FormatPermissions([]string{ "architect:flow:edit",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/{flowId}/versions")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;object&quot;,
-    &quot;additionalProperties&quot; : {
-      &quot;type&quot; : &quot;object&quot;,
-      &quot;properties&quot; : { }
+  "in" : "body",
+  "name" : "body",
+  "required" : true,
+  "schema" : {
+    "type" : "object",
+    "additionalProperties" : {
+      "type" : "object",
+      "properties" : { }
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowVersion&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/FlowVersion"
   }
 }`)
 	flows_versionsCmd.AddCommand(createCmd)
@@ -54,9 +55,9 @@ func Cmdflows_versions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowVersion&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/FlowVersion"
   }
 }`)
 	flows_versionsCmd.AddCommand(getCmd)
@@ -68,9 +69,9 @@ func Cmdflows_versions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	flows_versionsCmd.AddCommand(listCmd)
@@ -85,11 +86,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "flowId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Interface{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/{flowId}/versions"
 		flowId, args := args[0], args[1:]
 		path = strings.Replace(path, "{flowId}", fmt.Sprintf("%v", flowId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -122,6 +135,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "flowId", "versionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/{flowId}/versions/{versionId}"
@@ -129,6 +150,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{flowId}", fmt.Sprintf("%v", flowId), -1)
 		versionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{versionId}", fmt.Sprintf("%v", versionId), -1)
+
 
 		deleted := utils.GetFlag(cmd.Flags(), "string", "deleted")
 		if deleted != "" {
@@ -165,11 +187,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "flowId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/{flowId}/versions"
 		flowId, args := args[0], args[1:]
 		path = strings.Replace(path, "{flowId}", fmt.Sprintf("%v", flowId), -1)
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {

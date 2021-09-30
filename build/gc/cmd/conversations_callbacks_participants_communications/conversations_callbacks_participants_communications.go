@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdconversations_callbacks_participants_communications() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Participant&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/MediaParticipantRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Participant",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/MediaParticipantRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Empty&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Empty"
   }
 }`)
 	conversations_callbacks_participants_communicationsCmd.AddCommand(updateCmd)
@@ -56,6 +57,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", "communicationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Mediaparticipantrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}"
@@ -65,6 +77,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{participantId}", fmt.Sprintf("%v", participantId), -1)
 		communicationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{communicationId}", fmt.Sprintf("%v", communicationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

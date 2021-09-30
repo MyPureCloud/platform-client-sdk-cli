@@ -19,14 +19,14 @@ func ConvertJsonToMap(data string) interface{} {
 		var res []map[string]interface{}
 		err := json.Unmarshal([]byte(data), &res)
 		if err != nil {
-			logger.Fatalf("Error unmarshalling %v\n", err)
+			logger.Fatalf("Error unmarshalling JSON: %v\n", err)
 		}
 		return res
 	}
 	var res map[string]interface{}
 	err := json.Unmarshal([]byte(data), &res)
 	if err != nil {
-		logger.Fatalf("Error unmarshalling %v\n", err)
+		logger.Fatalf("Error unmarshalling JSON: %v\n", err)
 	}
 	return res
 }
@@ -57,7 +57,7 @@ func process(t *template.Template, vars interface{}) string {
 // otherwise, it returns the template
 func handleParse(t *template.Template, err error) *template.Template {
 	if err != nil {
-		logger.Fatalf("Error invalid syntax in %v\n", err)
+		logger.Fatalf("Error parsing: %v\n", err)
 	}
 	return t
 }

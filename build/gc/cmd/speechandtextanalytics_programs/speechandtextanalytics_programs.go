@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdspeechandtextanalytics_programs() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/speechandtextanalytics/programs", utils.FormatPermissions([]string{ "speechAndTextAnalytics:program:add",  }), utils.GenerateDevCentreLink("POST", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/programs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The program to create&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ProgramRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The program to create",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ProgramRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Program&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Program"
   }
 }`)
 	speechandtextanalytics_programsCmd.AddCommand(createCmd)
@@ -51,7 +52,7 @@ func Cmdspeechandtextanalytics_programs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The program was deleted successfully&quot;
+  "description" : "The program was deleted successfully"
 }`)
 	speechandtextanalytics_programsCmd.AddCommand(deleteCmd)
 	
@@ -59,9 +60,9 @@ func Cmdspeechandtextanalytics_programs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Program&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Program"
   }
 }`)
 	speechandtextanalytics_programsCmd.AddCommand(getCmd)
@@ -72,28 +73,28 @@ func Cmdspeechandtextanalytics_programs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	speechandtextanalytics_programsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/speechandtextanalytics/programs/{programId}", utils.FormatPermissions([]string{ "speechAndTextAnalytics:program:edit",  }), utils.GenerateDevCentreLink("PUT", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/programs/{programId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The program to update&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ProgramRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The program to update",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ProgramRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Program&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Program"
   }
 }`)
 	speechandtextanalytics_programsCmd.AddCommand(updateCmd)
@@ -108,9 +109,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Programrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/speechandtextanalytics/programs"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -143,11 +156,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "programId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/speechandtextanalytics/programs/{programId}"
 		programId, args := args[0], args[1:]
 		path = strings.Replace(path, "{programId}", fmt.Sprintf("%v", programId), -1)
+
 
 		forceDelete := utils.GetFlag(cmd.Flags(), "bool", "forceDelete")
 		if forceDelete != "" {
@@ -184,11 +206,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "programId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/speechandtextanalytics/programs/{programId}"
 		programId, args := args[0], args[1:]
 		path = strings.Replace(path, "{programId}", fmt.Sprintf("%v", programId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -221,9 +252,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/speechandtextanalytics/programs"
+
 
 		nextPage := utils.GetFlag(cmd.Flags(), "string", "nextPage")
 		if nextPage != "" {
@@ -264,11 +304,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "programId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Programrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/speechandtextanalytics/programs/{programId}"
 		programId, args := args[0], args[1:]
 		path = strings.Replace(path, "{programId}", fmt.Sprintf("%v", programId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

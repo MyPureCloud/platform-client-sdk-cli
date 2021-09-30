@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdlanguageunderstanding_domains_versions() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/languageunderstanding/domains/{domainId}/versions", utils.FormatPermissions([]string{ "languageUnderstanding:nluDomainVersion:add", "dialog:botVersion:add",  }), utils.GenerateDevCentreLink("POST", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/versions")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The NLU Domain Version to create.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluDomainVersion&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The NLU Domain Version to create.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/NluDomainVersion"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluDomainVersion&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/NluDomainVersion"
   }
 }`)
 	languageunderstanding_domains_versionsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdlanguageunderstanding_domains_versions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Deleted the specified NLU Domain Version&quot;
+  "description" : "Deleted the specified NLU Domain Version"
 }`)
 	languageunderstanding_domains_versionsCmd.AddCommand(deleteCmd)
 	
@@ -59,9 +60,9 @@ func Cmdlanguageunderstanding_domains_versions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;Retrieved the specified NLU Domain Version&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluDomainVersion&quot;
+  "description" : "Retrieved the specified NLU Domain Version",
+  "schema" : {
+    "$ref" : "#/definitions/NluDomainVersion"
   }
 }`)
 	languageunderstanding_domains_versionsCmd.AddCommand(getCmd)
@@ -73,28 +74,28 @@ func Cmdlanguageunderstanding_domains_versions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	languageunderstanding_domains_versionsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}", utils.FormatPermissions([]string{ "languageUnderstanding:nluDomainVersion:edit", "dialog:botVersion:edit",  }), utils.GenerateDevCentreLink("PUT", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The updated NLU Domain Version.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluDomainVersion&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The updated NLU Domain Version.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/NluDomainVersion"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;Updated the specified NLU Domain Version&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluDomainVersion&quot;
+  "description" : "Updated the specified NLU Domain Version",
+  "schema" : {
+    "$ref" : "#/definitions/NluDomainVersion"
   }
 }`)
 	languageunderstanding_domains_versionsCmd.AddCommand(updateCmd)
@@ -109,11 +110,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Nludomainversion{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}/versions"
 		domainId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -146,6 +159,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", "domainVersionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}"
@@ -153,6 +174,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
 		domainVersionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainVersionId}", fmt.Sprintf("%v", domainVersionId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -185,6 +207,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", "domainVersionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}"
@@ -192,6 +222,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
 		domainVersionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainVersionId}", fmt.Sprintf("%v", domainVersionId), -1)
+
 
 		includeUtterances := utils.GetFlag(cmd.Flags(), "bool", "includeUtterances")
 		if includeUtterances != "" {
@@ -228,11 +259,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}/versions"
 		domainId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
+
 
 		includeUtterances := utils.GetFlag(cmd.Flags(), "bool", "includeUtterances")
 		if includeUtterances != "" {
@@ -277,6 +317,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", "domainVersionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Nludomainversion{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}"
@@ -284,6 +335,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
 		domainVersionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainVersionId}", fmt.Sprintf("%v", domainVersionId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

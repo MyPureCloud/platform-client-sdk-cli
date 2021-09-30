@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -33,9 +34,9 @@ func Cmdgamification_scorecards_users_points_alltime() *cobra.Command {
 	getCmd.MarkFlagRequired("endWorkday")
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/AllTimePoints&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/AllTimePoints"
   }
 }`)
 	gamification_scorecards_users_points_alltimeCmd.AddCommand(getCmd)
@@ -50,11 +51,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gamification/scorecards/users/{userId}/points/alltime"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		endWorkday := utils.GetFlag(cmd.Flags(), "time.Time", "endWorkday")
 		if endWorkday != "" {

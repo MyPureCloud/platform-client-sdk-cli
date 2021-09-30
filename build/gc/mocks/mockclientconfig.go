@@ -2,6 +2,7 @@ package mocks
 
 import (
 	"fmt"
+
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 )
@@ -12,6 +13,7 @@ type MockClientConfig struct {
 	ClientIDFunc       func() string
 	ClientSecretFunc   func() string
 	OAuthTokenDataFunc func() string
+	AccessTokenFunc    func() string
 	LogFilePathFunc    func() string
 	LoggingEnabledFunc func() bool
 }
@@ -38,6 +40,10 @@ func (m *MockClientConfig) OAuthTokenData() string {
 	return m.OAuthTokenDataFunc()
 }
 
+func (m *MockClientConfig) AccessToken() string {
+	return m.AccessTokenFunc()
+}
+
 func (m *MockClientConfig) LogFilePath() string {
 	return m.LogFilePathFunc()
 }
@@ -47,7 +53,7 @@ func (m *MockClientConfig) LoggingEnabled() bool {
 }
 
 func (m *MockClientConfig) String() string {
-	return fmt.Sprintf("\n-------------\nProfile Name: %s\nEnvironment: %s\nLogging Enabled: %v\nLog File Path: %s\nClient ID: %s\nClient Secret: %s\n--------------\n", m.ProfileName(), m.Environment(), m.LoggingEnabled(), m.LogFilePath(), m.ClientID(), m.ClientSecret())
+	return fmt.Sprintf("\n-------------\nProfile Name: %s\nEnvironment: %s\nLogging Enabled: %v\nLog File Path: %s\nClient ID: %s\nClient Secret: %s\nAccess Token: %s\n--------------\n", m.ProfileName(), m.Environment(), m.LoggingEnabled(), m.LogFilePath(), m.ClientID(), m.ClientSecret(), m.AccessToken())
 }
 
 func UpdateOAuthToken(_ config.Configuration, oauthTokenData *models.OAuthTokenData) error {

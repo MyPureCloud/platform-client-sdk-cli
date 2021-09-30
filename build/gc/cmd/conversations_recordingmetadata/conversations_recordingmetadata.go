@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,11 +32,11 @@ func Cmdconversations_recordingmetadata() *cobra.Command {
 	utils.AddFileFlagIfUpsert(conversationmetadataCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(conversationmetadataCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/RecordingMetadata&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/RecordingMetadata"
     }
   }
 }`)
@@ -45,9 +46,9 @@ func Cmdconversations_recordingmetadata() *cobra.Command {
 	utils.AddFileFlagIfUpsert(recordingmetadataCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(recordingmetadataCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/RecordingMetadata&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/RecordingMetadata"
   }
 }`)
 	conversations_recordingmetadataCmd.AddCommand(recordingmetadataCmd)
@@ -62,11 +63,20 @@ var conversationmetadataCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/{conversationId}/recordingmetadata"
 		conversationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -99,6 +109,14 @@ var recordingmetadataCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "recordingId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}"
@@ -106,6 +124,7 @@ var recordingmetadataCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		recordingId, args := args[0], args[1:]
 		path = strings.Replace(path, "{recordingId}", fmt.Sprintf("%v", recordingId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

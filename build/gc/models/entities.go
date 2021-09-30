@@ -17,9 +17,9 @@ type Entities struct {
 	StartIndex    int               `json:"startIndex"`
 	TotalResults  int               `json:"totalResults"`
 	Cursor        string            `json:"cursor"`
-	Cursors       Cursors           `json:"cursors"`
+	Cursors       Cursor           `json:"cursors"`
 }
 
-type Cursors struct {
+type Cursor struct {
 	After string `json:"after"`
 }

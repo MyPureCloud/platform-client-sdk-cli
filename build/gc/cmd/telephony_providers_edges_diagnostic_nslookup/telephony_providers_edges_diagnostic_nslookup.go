@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdtelephony_providers_edges_diagnostic_nslookup() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;request payload to get network diagnostic&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeNetworkDiagnosticRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "request payload to get network diagnostic",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/EdgeNetworkDiagnosticRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Request to get network diagnostic has been accepted&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeNetworkDiagnostic&quot;
+  "description" : "Request to get network diagnostic has been accepted",
+  "schema" : {
+    "$ref" : "#/definitions/EdgeNetworkDiagnostic"
   }
 }`)
 	telephony_providers_edges_diagnostic_nslookupCmd.AddCommand(createCmd)
@@ -50,9 +51,9 @@ func Cmdtelephony_providers_edges_diagnostic_nslookup() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;Request to get network diagnostic was successful.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EdgeNetworkDiagnosticResponse&quot;
+  "description" : "Request to get network diagnostic was successful.",
+  "schema" : {
+    "$ref" : "#/definitions/EdgeNetworkDiagnosticResponse"
   }
 }`)
 	telephony_providers_edges_diagnostic_nslookupCmd.AddCommand(getCmd)
@@ -67,11 +68,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Edgenetworkdiagnosticrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup"
 		edgeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -104,11 +117,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup"
 		edgeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdarchitect_emergencygroups() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/architect/emergencygroups", utils.FormatPermissions([]string{ "routing:emergencyGroup:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/architect/emergencygroups")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EmergencyGroup&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/EmergencyGroup"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EmergencyGroup&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/EmergencyGroup"
   }
 }`)
 	architect_emergencygroupsCmd.AddCommand(createCmd)
@@ -49,7 +50,7 @@ func Cmdarchitect_emergencygroups() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	architect_emergencygroupsCmd.AddCommand(deleteCmd)
 	
@@ -57,9 +58,9 @@ func Cmdarchitect_emergencygroups() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EmergencyGroup&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/EmergencyGroup"
   }
 }`)
 	architect_emergencygroupsCmd.AddCommand(getCmd)
@@ -73,27 +74,27 @@ func Cmdarchitect_emergencygroups() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	architect_emergencygroupsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/architect/emergencygroups/{emergencyGroupId}", utils.FormatPermissions([]string{ "routing:emergencyGroup:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/architect/emergencygroups/{emergencyGroupId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EmergencyGroup&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/EmergencyGroup"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/EmergencyGroup&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/EmergencyGroup"
   }
 }`)
 	architect_emergencygroupsCmd.AddCommand(updateCmd)
@@ -108,9 +109,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Emergencygroup{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/emergencygroups"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -143,11 +156,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "emergencyGroupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/emergencygroups/{emergencyGroupId}"
 		emergencyGroupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{emergencyGroupId}", fmt.Sprintf("%v", emergencyGroupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -180,11 +202,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "emergencyGroupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/emergencygroups/{emergencyGroupId}"
 		emergencyGroupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{emergencyGroupId}", fmt.Sprintf("%v", emergencyGroupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -217,9 +248,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/emergencygroups"
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -272,11 +312,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "emergencyGroupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Emergencygroup{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/emergencygroups/{emergencyGroupId}"
 		emergencyGroupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{emergencyGroupId}", fmt.Sprintf("%v", emergencyGroupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

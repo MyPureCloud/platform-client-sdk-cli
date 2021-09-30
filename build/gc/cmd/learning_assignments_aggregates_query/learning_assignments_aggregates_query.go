@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdlearning_assignments_aggregates_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/assignments/aggregates/query", utils.FormatPermissions([]string{ "learning:assignment:view",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/assignments/aggregates/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Aggregate Request&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningAssignmentAggregateParam&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Aggregate Request",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/LearningAssignmentAggregateParam"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Query completed successfully&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningAssignmentAggregateResponse&quot;
+  "description" : "Query completed successfully",
+  "schema" : {
+    "$ref" : "#/definitions/LearningAssignmentAggregateResponse"
   }
 }`)
 	learning_assignments_aggregates_queryCmd.AddCommand(createCmd)
@@ -56,9 +57,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Learningassignmentaggregateparam{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/assignments/aggregates/query"
+
 
 		urlString := path
 		if len(queryParams) > 0 {

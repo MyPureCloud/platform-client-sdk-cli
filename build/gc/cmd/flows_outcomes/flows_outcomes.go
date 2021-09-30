@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdflows_outcomes() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/outcomes", utils.FormatPermissions([]string{ "architect:flowOutcome:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/outcomes")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowOutcome&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/FlowOutcome"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowOutcome&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/FlowOutcome"
   }
 }`)
 	flows_outcomesCmd.AddCommand(createCmd)
@@ -49,9 +50,9 @@ func Cmdflows_outcomes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowOutcome&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/FlowOutcome"
   }
 }`)
 	flows_outcomesCmd.AddCommand(getCmd)
@@ -69,27 +70,27 @@ func Cmdflows_outcomes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	flows_outcomesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/flows/outcomes/{flowOutcomeId}", utils.FormatPermissions([]string{ "architect:flowOutcome:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/flows/outcomes/{flowOutcomeId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowOutcome&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/FlowOutcome"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Operation&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Operation"
   }
 }`)
 	flows_outcomesCmd.AddCommand(updateCmd)
@@ -104,9 +105,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Flowoutcome{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/outcomes"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -139,11 +152,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "flowOutcomeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/outcomes/{flowOutcomeId}"
 		flowOutcomeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{flowOutcomeId}", fmt.Sprintf("%v", flowOutcomeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -176,9 +198,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/outcomes"
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -247,11 +278,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "flowOutcomeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Flowoutcome{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/outcomes/{flowOutcomeId}"
 		flowOutcomeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{flowOutcomeId}", fmt.Sprintf("%v", flowOutcomeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

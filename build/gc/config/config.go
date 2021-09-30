@@ -17,6 +17,7 @@ type Configuration interface {
 	ClientID() string
 	ClientSecret() string
 	OAuthTokenData() string
+	AccessToken() string
 	LogFilePath() string
 	LoggingEnabled() bool
 	fmt.Stringer
@@ -28,6 +29,7 @@ type configuration struct {
 	clientID       string
 	clientSecret   string
 	oAuthTokenData string
+	accessToken    string
 	logFilePath    string
 	loggingEnabled bool
 }
@@ -36,6 +38,7 @@ var (
 	Environment    string
 	ClientId       string
 	ClientSecret   string
+	AccessToken    string
 	regionMappings = map[string]string{
 		"us-east-1":      "mypurecloud.com",
 		"eu-west-1":      "mypurecloud.ie",
@@ -72,6 +75,14 @@ func (c *configuration) ClientSecret() string {
 	}
 
 	return viper.GetString(fmt.Sprintf("%s.client_secret", c.profileName))
+}
+
+func (c *configuration) AccessToken() string {
+	if AccessToken != "" {
+		return AccessToken
+	}
+
+	return viper.GetString(fmt.Sprintf("%s.access_token", c.profileName))
 }
 
 //OAuthTokenData is the raw OAuth token data returned from the login API call combined with the access token expiry timestamp
@@ -112,7 +123,7 @@ func (c *configuration) LoggingEnabled() bool {
 }
 
 func (c *configuration) String() string {
-	return fmt.Sprintf(`{"profileName": "%s", "environment": "%s", "logFilePath": "%s", "loggingEnabled": "%v", "clientName": "%s", "clientSecret": "%s"}`, c.ProfileName(), c.Environment(), c.LogFilePath(), c.LoggingEnabled(), c.ClientID(), c.ClientSecret())
+	return fmt.Sprintf(`{"profileName": "%s", "environment": "%s", "logFilePath": "%s", "loggingEnabled": "%v", "clientName": "%s", "clientSecret": "%s", "accessToken": "%s"}`, c.ProfileName(), c.Environment(), c.LogFilePath(), c.LoggingEnabled(), c.ClientID(), c.ClientSecret(), c.AccessToken())
 }
 
 func applyEnvironmentVariableOverrides() {
@@ -128,6 +139,10 @@ func applyEnvironmentVariableOverrides() {
 	if clientSecret != "" && ClientSecret == "" {
 		ClientSecret = clientSecret
 	}
+	accessToken := os.Getenv("GENESYSCLOUD_ACCESS_TOKEN")
+	if accessToken != "" && AccessToken == "" {
+		AccessToken = accessToken
+	}
 }
 
 //GetConfig retrieves the config for the current profile
@@ -141,6 +156,7 @@ func GetConfig(profileName string) (Configuration, error) {
 					profileName:  profileName,
 					clientID:     ClientId,
 					clientSecret: ClientSecret,
+					accessToken:  AccessToken,
 					environment:  Environment,
 				}, nil
 			}
@@ -163,6 +179,7 @@ func GetConfig(profileName string) (Configuration, error) {
 		clientSecret:   viper.GetString(fmt.Sprintf("%s.client_secret", profileName)),
 		environment:    viper.GetString(fmt.Sprintf("%s.environment", profileName)),
 		oAuthTokenData: viper.GetString(fmt.Sprintf("%s.oauth_token_data", profileName)),
+		accessToken:    viper.GetString(fmt.Sprintf("%s.access_token", profileName)),
 		logFilePath:    viper.GetString(fmt.Sprintf("%s.log_file_path", profileName)),
 		loggingEnabled: viper.GetBool(fmt.Sprintf("%s.logging_enabled", profileName)),
 	}, nil
@@ -192,6 +209,7 @@ func ListConfigs() ([]configuration, error) {
 			clientSecret:   viper.GetString(fmt.Sprintf("%s.client_secret", profileName)),
 			environment:    viper.GetString(fmt.Sprintf("%s.environment", profileName)),
 			oAuthTokenData: viper.GetString(fmt.Sprintf("%s.oauth_token_data", profileName)),
+			accessToken:    viper.GetString(fmt.Sprintf("%s.access_token", profileName)),
 			logFilePath:    viper.GetString(fmt.Sprintf("%s.log_file_path", profileName)),
 			loggingEnabled: viper.GetBool(fmt.Sprintf("%s.logging_enabled", profileName)),
 		})
@@ -229,6 +247,32 @@ func SetExperimentalFeature(profileName string, featureName string, enabled bool
 	return viper.WriteConfig()
 }
 
+func SetInputFormat(profileName string, format string) error {
+	viper.Set(fmt.Sprintf("%s.input_format", profileName), format)
+	return viper.WriteConfig()
+}
+
+func SetOutputFormat(profileName string, format string) error {
+	viper.Set(fmt.Sprintf("%s.output_format", profileName), format)
+	return viper.WriteConfig()
+}
+
+func GetInputFormat(profileName string) (string, error) {
+	err := viper.ReadInConfig()
+	if err != nil {
+		return "", err
+	}
+	return viper.GetString(fmt.Sprintf("%s.input_format", profileName)), nil
+}
+
+func GetOutputFormat(profileName string) (string, error) {
+	err := viper.ReadInConfig()
+	if err != nil {
+		return "", err
+	}
+	return viper.GetString(fmt.Sprintf("%s.output_format", profileName)), nil
+}
+
 func GetExperimentalFeature(profileName string, featureName string) bool {
 	err := viper.ReadInConfig()
 	if err != nil {
@@ -238,8 +282,8 @@ func GetExperimentalFeature(profileName string, featureName string) bool {
 }
 
 func OverridesApplied() bool {
-	return ClientId != "" || ClientSecret != "" || Environment != "" ||
-		os.Getenv("GENESYSCLOUD_OAUTHCLIENT_ID") != "" || os.Getenv("GENESYSCLOUD_OAUTHCLIENT_SECRET") != "" || os.Getenv("GENESYSCLOUD_REGION") != ""
+	return ClientId != "" || ClientSecret != "" || Environment != "" || AccessToken != "" ||
+		os.Getenv("GENESYSCLOUD_OAUTHCLIENT_ID") != "" || os.Getenv("GENESYSCLOUD_OAUTHCLIENT_SECRET") != "" || os.Getenv("GENESYSCLOUD_REGION") != "" || os.Getenv("GENESYSCLOUD_ACCESS_TOKEN") != ""
 }
 
 func updateConfig(c configuration, loggingEnabled *bool) error {
@@ -254,6 +298,9 @@ func updateConfig(c configuration, loggingEnabled *bool) error {
 	}
 	if c.oAuthTokenData != "" {
 		viper.Set(fmt.Sprintf("%s.oauth_token_data", c.profileName), c.oAuthTokenData)
+	}
+	if c.accessToken != "" {
+		viper.Set(fmt.Sprintf("%s.access_token", c.profileName), c.accessToken)
 	}
 	if c.logFilePath != "" {
 		viper.Set(fmt.Sprintf("%s.log_file_path", c.profileName), c.logFilePath)
@@ -273,6 +320,7 @@ func writeConfig(c Configuration, data *models.OAuthTokenData, logFilePath strin
 	viper.Set(fmt.Sprintf("%s.client_credentials", c.ProfileName()), c.ClientID())
 	viper.Set(fmt.Sprintf("%s.client_secret", c.ProfileName()), c.ClientSecret())
 	viper.Set(fmt.Sprintf("%s.environment", c.ProfileName()), c.Environment())
+	viper.Set(fmt.Sprintf("%s.access_token", c.ProfileName()), c.AccessToken())
 	if data != nil {
 		viper.Set(fmt.Sprintf("%s.oauth_token_data", c.ProfileName()), data.String())
 	}

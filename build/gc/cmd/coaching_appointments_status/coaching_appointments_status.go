@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdcoaching_appointments_status() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/coaching/appointments/{appointmentId}/status", utils.FormatPermissions([]string{ "coaching:appointmentStatus:edit",  }), utils.GenerateDevCentreLink("PATCH", "Coaching", "/api/v2/coaching/appointments/{appointmentId}/status")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Updated status of the coaching appointment&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CoachingAppointmentStatusRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Updated status of the coaching appointment",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/CoachingAppointmentStatusRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;The status is posted successfully&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/CoachingAppointmentStatusResponse&quot;
+  "description" : "The status is posted successfully",
+  "schema" : {
+    "$ref" : "#/definitions/CoachingAppointmentStatusResponse"
   }
 }`)
 	coaching_appointments_statusCmd.AddCommand(updateCmd)
@@ -56,11 +57,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "appointmentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Coachingappointmentstatusrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/coaching/appointments/{appointmentId}/status"
 		appointmentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{appointmentId}", fmt.Sprintf("%v", appointmentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

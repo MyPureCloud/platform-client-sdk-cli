@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -30,19 +31,19 @@ func Cmdquality_conversations_evaluations() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "string", "expand", "", "evaluatorId")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/conversations/{conversationId}/evaluations", utils.FormatPermissions([]string{ "quality:evaluation:add",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/conversations/{conversationId}/evaluations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;evaluation&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Evaluation&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "evaluation",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Evaluation"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Evaluation&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Evaluation"
   }
 }`)
 	quality_conversations_evaluationsCmd.AddCommand(createCmd)
@@ -52,9 +53,9 @@ func Cmdquality_conversations_evaluations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Evaluation&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Evaluation"
   }
 }`)
 	quality_conversations_evaluationsCmd.AddCommand(deleteCmd)
@@ -64,9 +65,9 @@ func Cmdquality_conversations_evaluations() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Evaluation&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Evaluation"
   }
 }`)
 	quality_conversations_evaluationsCmd.AddCommand(getCmd)
@@ -74,19 +75,19 @@ func Cmdquality_conversations_evaluations() *cobra.Command {
 	utils.AddFlag(updateCmd.Flags(), "string", "expand", "", "evaluatorId")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}", utils.FormatPermissions([]string{ "quality:evaluation:edit", "quality:evaluation:editScore", "quality:evaluation:editAgentSignoff",  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;evaluation&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Evaluation&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "evaluation",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Evaluation"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Evaluation&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Evaluation"
   }
 }`)
 	quality_conversations_evaluationsCmd.AddCommand(updateCmd)
@@ -101,11 +102,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Evaluation{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/conversations/{conversationId}/evaluations"
 		conversationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -142,6 +155,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "evaluationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}"
@@ -149,6 +170,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		evaluationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{evaluationId}", fmt.Sprintf("%v", evaluationId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -185,6 +207,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "evaluationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}"
@@ -192,6 +222,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		evaluationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{evaluationId}", fmt.Sprintf("%v", evaluationId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -228,6 +259,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "evaluationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Evaluation{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}"
@@ -235,6 +277,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		evaluationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{evaluationId}", fmt.Sprintf("%v", evaluationId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {

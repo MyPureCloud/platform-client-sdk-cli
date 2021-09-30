@@ -2,18 +2,19 @@ package profiles
 
 import (
 	"fmt"
+	"strings"
+
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/mocks"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/restclient"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
-	"strings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/restclient"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
 
-func constructConfig(profileName string, environment string, clientID string, clientSecret string) config.Configuration {
+func constructConfig(profileName string, environment string, clientID string, clientSecret string, accessToken string) config.Configuration {
 	c := &mocks.MockClientConfig{}
 
 	c.ProfileNameFunc = func() string {
@@ -44,6 +45,10 @@ func constructConfig(profileName string, environment string, clientID string, cl
 		return ""
 	}
 
+	c.AccessTokenFunc = func() string {
+		return accessToken
+	}
+
 	return c
 }
 
@@ -52,6 +57,7 @@ func requestUserInput() config.Configuration {
 	var environment string
 	var clientID string
 	var clientSecret string
+	var accessToken string
 
 	fmt.Print("Profile Name [DEFAULT]: ")
 	fmt.Scanln(&name)
@@ -67,23 +73,35 @@ func requestUserInput() config.Configuration {
 		environment = "mypurecloud.com"
 	}
 
-	for true {
+	fmt.Printf("Please provide either an Access Token, Client Credentials (Client ID and Client Secret) or both\n")
+	fmt.Printf("Note: If you provide an Access Token, this will be used over Client Credentials\n")
+	for {
+		fmt.Printf("Access Token: ")
+		fmt.Scanln(&accessToken)
 		fmt.Printf("Client ID: ")
 		fmt.Scanln(&clientID)
-		if len(strings.TrimSpace(clientID)) != 0 {
-			break
-		}
-	}
-
-	for true {
 		fmt.Printf("Client Secret: ")
 		fmt.Scanln(&clientSecret)
-		if len(strings.TrimSpace(clientSecret)) != 0 {
+		// users should only be allowed to continue if they provide an access token
+		if len(strings.TrimSpace(accessToken)) != 0 && len(strings.TrimSpace(clientID)) == 0 && len(strings.TrimSpace(clientSecret)) == 0 {
+			clientID = ""
+			clientSecret = ""
 			break
+			// or if they provide client credentials
+		} else if len(strings.TrimSpace(accessToken)) == 0 && len(strings.TrimSpace(clientID)) != 0 && len(strings.TrimSpace(clientSecret)) != 0 {
+			accessToken = ""
+			break
+			// or both
+		} else if len(strings.TrimSpace(accessToken)) != 0 && len(strings.TrimSpace(clientID)) != 0 && len(strings.TrimSpace(clientSecret)) != 0 {
+			break
+			// otherwise
+		} else {
+			fmt.Printf("Please provide either an Access Token, Client Credentials (Client ID and Client Secret) or both\n")
+			fmt.Printf("Note: If you provide an Access Token, this will be used over Client Credentials\n")
 		}
 	}
 
-	return constructConfig(name, environment, clientID, clientSecret)
+	return constructConfig(name, environment, clientID, clientSecret, accessToken)
 }
 
 func overrideConfig(name string) bool {
@@ -140,7 +158,7 @@ var createProfilesCmd = &cobra.Command{
 			logger.Fatal("Exiting profile creation process")
 		}
 
-		if validateCredentials(newConfig) == false {
+		if newConfig.AccessToken() == "" && validateCredentials(newConfig) == false {
 			logger.Fatal("The credentials provided are not valid.")
 		}
 

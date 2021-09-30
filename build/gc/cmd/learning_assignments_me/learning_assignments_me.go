@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -38,16 +39,16 @@ func Cmdlearning_assignments_me() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "float32", "maxPercentageScore", "", "The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "Desc", "Specifies result set sort order; if not specified, default sort order is descending (Desc) Valid values: Asc, Desc")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Specifies which field to sort the results by, default sort is by recommendedCompletionDate Valid values: RecommendedCompletionDate, DateModified")
-	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned Valid values: Informational, AssessedContent, Questionnaire, Assessment")
+	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned Valid values: Informational, AssessedContent, Assessment")
 	utils.AddFlag(listCmd.Flags(), "[]string", "states", "", "Specifies the assignment states to filter by Valid values: Assigned, InProgress, Completed")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Specifies the expand option for returning additional information Valid values: ModuleSummary")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/learning/assignments/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Learning", "/api/v2/learning/assignments/me")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	learning_assignments_meCmd.AddCommand(listCmd)
@@ -62,9 +63,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/assignments/me"
+
 
 		moduleId := utils.GetFlag(cmd.Flags(), "string", "moduleId")
 		if moduleId != "" {

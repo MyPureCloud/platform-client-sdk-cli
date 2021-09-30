@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdauthorization_divisions() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/divisions", utils.FormatPermissions([]string{ "authorization:division:add", "authorization:grant:add",  }), utils.GenerateDevCentreLink("POST", "Authorization", "/api/v2/authorization/divisions")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Division&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/AuthzDivision&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Division",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/AuthzDivision"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/AuthzDivision&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/AuthzDivision"
   }
 }`)
 	authorization_divisionsCmd.AddCommand(createCmd)
@@ -51,7 +52,7 @@ func Cmdauthorization_divisions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Deleted&quot;
+  "description" : "Deleted"
 }`)
 	authorization_divisionsCmd.AddCommand(deleteCmd)
 	
@@ -60,9 +61,9 @@ func Cmdauthorization_divisions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/AuthzDivision&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/AuthzDivision"
   }
 }`)
 	authorization_divisionsCmd.AddCommand(getCmd)
@@ -80,28 +81,28 @@ func Cmdauthorization_divisions() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	authorization_divisionsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/divisions/{divisionId}", utils.FormatPermissions([]string{ "authorization:division:edit",  }), utils.GenerateDevCentreLink("PUT", "Authorization", "/api/v2/authorization/divisions/{divisionId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Updated division data&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/AuthzDivision&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Updated division data",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/AuthzDivision"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/AuthzDivision&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/AuthzDivision"
   }
 }`)
 	authorization_divisionsCmd.AddCommand(updateCmd)
@@ -116,9 +117,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Authzdivision{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/divisions"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -151,11 +164,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "divisionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/divisions/{divisionId}"
 		divisionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{divisionId}", fmt.Sprintf("%v", divisionId), -1)
+
 
 		force := utils.GetFlag(cmd.Flags(), "bool", "force")
 		if force != "" {
@@ -192,11 +214,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "divisionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/divisions/{divisionId}"
 		divisionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{divisionId}", fmt.Sprintf("%v", divisionId), -1)
+
 
 		objectCount := utils.GetFlag(cmd.Flags(), "bool", "objectCount")
 		if objectCount != "" {
@@ -233,9 +264,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/divisions"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -304,11 +344,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "divisionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Authzdivision{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/divisions/{divisionId}"
 		divisionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{divisionId}", fmt.Sprintf("%v", divisionId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

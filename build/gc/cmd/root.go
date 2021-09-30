@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"github.com/hashicorp/go-version"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/alternative_formats"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
@@ -35,7 +36,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/mobiledevices"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presencedefinitions"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scripts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/search"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
@@ -44,6 +44,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
@@ -117,7 +118,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 21.0.0")
+		fmt.Println("Current version: 22.0.0")
 		checkForNewVersion()
 	},
 }
@@ -136,7 +137,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("21.0.0", latestVersion) {
+	if versionsAreEqual("22.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -209,10 +210,20 @@ func init() {
 	rootCmd.PersistentFlags().StringVar(&config.Environment, "environment", "", "environment override. E.g. mypurecloud.com.au or ap-southeast-2")
 	rootCmd.PersistentFlags().StringVar(&config.ClientId, "clientid", "", "clientId override")
 	rootCmd.PersistentFlags().StringVar(&config.ClientSecret, "clientsecret", "", "clientSecret override")
+	rootCmd.PersistentFlags().StringVar(&config.AccessToken, "accesstoken", "", "accessToken override")
 
 	if config.GetExperimentalFeature(getProfileName(os.Args), models.AlternativeFormats.String()) {
-		rootCmd.PersistentFlags().StringVar(&data_format.InputFormat, "inputformat", "JSON", "Data input format. Supported formats: YAML, JSON")
-		rootCmd.PersistentFlags().StringVar(&data_format.OutputFormat, "outputformat", "JSON", "Data output format. Supported formats: YAML, JSON")
+		rootCmd.PersistentFlags().StringVar(&data_format.InputFormat, "inputformat", "", "Data input format. Supported formats: YAML, JSON")
+		rootCmd.PersistentFlags().StringVar(&data_format.OutputFormat, "outputformat", "", "Data output format. Supported formats: YAML, JSON")
+
+		if data_format.OutputFormat == "" {
+			data_format.OutputFormat, _ = config.GetOutputFormat(getProfileName(os.Args))
+		}
+		if data_format.InputFormat == "" {
+			data_format.InputFormat, _ = config.GetInputFormat(getProfileName(os.Args))
+		}
+
+		rootCmd.AddCommand(alternative_formats.Cmdalternative_formats())
 	}
 
 	if config.GetExperimentalFeature(getProfileName(os.Args), models.TransformData.String()) {
@@ -236,7 +247,6 @@ func init() {
 	rootCmd.AddCommand(mobiledevices.Cmdmobiledevices())
 	rootCmd.AddCommand(orphanrecordings.Cmdorphanrecordings())
 	rootCmd.AddCommand(presencedefinitions.Cmdpresencedefinitions())
-	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(scripts.Cmdscripts())
 	rootCmd.AddCommand(search.Cmdsearch())
 	rootCmd.AddCommand(stations.Cmdstations())
@@ -245,6 +255,7 @@ func init() {
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())

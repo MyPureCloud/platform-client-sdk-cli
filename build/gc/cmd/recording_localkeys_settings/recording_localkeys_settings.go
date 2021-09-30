@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdrecording_localkeys_settings() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/localkeys/settings", utils.FormatPermissions([]string{ "recording:encryptionKey:edit",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recording/localkeys/settings")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Local Encryption Configuration&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LocalEncryptionConfiguration&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Local Encryption Configuration",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/LocalEncryptionConfiguration"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LocalEncryptionConfiguration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LocalEncryptionConfiguration"
   }
 }`)
 	recording_localkeys_settingsCmd.AddCommand(createCmd)
@@ -50,9 +51,9 @@ func Cmdrecording_localkeys_settings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LocalEncryptionConfiguration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LocalEncryptionConfiguration"
   }
 }`)
 	recording_localkeys_settingsCmd.AddCommand(getCmd)
@@ -61,28 +62,28 @@ func Cmdrecording_localkeys_settings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LocalEncryptionConfigurationListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LocalEncryptionConfigurationListing"
   }
 }`)
 	recording_localkeys_settingsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/localkeys/settings/{settingsId}", utils.FormatPermissions([]string{ "recording:encryptionKey:edit",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/localkeys/settings/{settingsId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Local Encryption metadata&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LocalEncryptionConfiguration&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Local Encryption metadata",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/LocalEncryptionConfiguration"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LocalEncryptionConfiguration&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LocalEncryptionConfiguration"
   }
 }`)
 	recording_localkeys_settingsCmd.AddCommand(updateCmd)
@@ -97,9 +98,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Localencryptionconfiguration{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/localkeys/settings"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -132,11 +145,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "settingsId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/localkeys/settings/{settingsId}"
 		settingsId, args := args[0], args[1:]
 		path = strings.Replace(path, "{settingsId}", fmt.Sprintf("%v", settingsId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -169,9 +191,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/localkeys/settings"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -204,11 +235,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "settingsId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Localencryptionconfiguration{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/localkeys/settings/{settingsId}"
 		settingsId, args := args[0], args[1:]
 		path = strings.Replace(path, "{settingsId}", fmt.Sprintf("%v", settingsId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

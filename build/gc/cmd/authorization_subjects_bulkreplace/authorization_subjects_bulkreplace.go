@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -30,17 +31,17 @@ func Cmdauthorization_subjects_bulkreplace() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "string", "subjectType", "PC_USER", "what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/subjects/{subjectId}/bulkreplace", utils.FormatPermissions([]string{ "authorization:grant:add", "authorization:grant:delete",  }), utils.GenerateDevCentreLink("POST", "Authorization", "/api/v2/authorization/subjects/{subjectId}/bulkreplace")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Pairs of role and division IDs&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/RoleDivisionGrants&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Pairs of role and division IDs",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/RoleDivisionGrants"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Bulk Grants Replaced&quot;
+  "description" : "Bulk Grants Replaced"
 }`)
 	authorization_subjects_bulkreplaceCmd.AddCommand(createCmd)
 	
@@ -54,11 +55,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "subjectId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Roledivisiongrants{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/authorization/subjects/{subjectId}/bulkreplace"
 		subjectId, args := args[0], args[1:]
 		path = strings.Replace(path, "{subjectId}", fmt.Sprintf("%v", subjectId), -1)
+
 
 		subjectType := utils.GetFlag(cmd.Flags(), "string", "subjectType")
 		if subjectType != "" {

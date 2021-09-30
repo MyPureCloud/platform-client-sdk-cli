@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdwebchat_deployments() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/webchat/deployments", utils.FormatPermissions([]string{ "webchat:deployment:create",  }), utils.GenerateDevCentreLink("POST", "WebChat", "/api/v2/webchat/deployments")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Deployment&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebChatDeployment&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Deployment",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/WebChatDeployment"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebChatDeployment&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebChatDeployment"
   }
 }`)
 	webchat_deploymentsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdwebchat_deployments() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Deleted&quot;
+  "description" : "Deleted"
 }`)
 	webchat_deploymentsCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdwebchat_deployments() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebChatDeployment&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebChatDeployment"
   }
 }`)
 	webchat_deploymentsCmd.AddCommand(getCmd)
@@ -69,28 +70,28 @@ func Cmdwebchat_deployments() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebChatDeploymentEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebChatDeploymentEntityListing"
   }
 }`)
 	webchat_deploymentsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/webchat/deployments/{deploymentId}", utils.FormatPermissions([]string{ "webchat:deployment:update",  }), utils.GenerateDevCentreLink("PUT", "WebChat", "/api/v2/webchat/deployments/{deploymentId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Deployment&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebChatDeployment&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Deployment",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/WebChatDeployment"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebChatDeployment&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebChatDeployment"
   }
 }`)
 	webchat_deploymentsCmd.AddCommand(updateCmd)
@@ -105,9 +106,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Webchatdeployment{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webchat/deployments"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -140,11 +153,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "deploymentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webchat/deployments/{deploymentId}"
 		deploymentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{deploymentId}", fmt.Sprintf("%v", deploymentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -177,11 +199,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "deploymentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webchat/deployments/{deploymentId}"
 		deploymentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{deploymentId}", fmt.Sprintf("%v", deploymentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -214,9 +245,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webchat/deployments"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -249,11 +289,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "deploymentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Webchatdeployment{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webchat/deployments/{deploymentId}"
 		deploymentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{deploymentId}", fmt.Sprintf("%v", deploymentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

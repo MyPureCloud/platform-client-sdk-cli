@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdrouting_wrapupcodes() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/wrapupcodes", utils.FormatPermissions([]string{ "routing:wrapupCode:add",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/wrapupcodes")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;WrapupCode&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WrapupCode&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "WrapupCode",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/WrapupCode"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WrapupCode&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WrapupCode"
   }
 }`)
 	routing_wrapupcodesCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdrouting_wrapupcodes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	routing_wrapupcodesCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdrouting_wrapupcodes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WrapupCode&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WrapupCode"
   }
 }`)
 	routing_wrapupcodesCmd.AddCommand(getCmd)
@@ -74,28 +75,28 @@ func Cmdrouting_wrapupcodes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	routing_wrapupcodesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/wrapupcodes/{codeId}", utils.FormatPermissions([]string{ "routing:wrapupCode:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/wrapupcodes/{codeId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;WrapupCode&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WrapupCode&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "WrapupCode",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/WrapupCode"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WrapupCode&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WrapupCode"
   }
 }`)
 	routing_wrapupcodesCmd.AddCommand(updateCmd)
@@ -110,9 +111,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Wrapupcode{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/wrapupcodes"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -145,11 +158,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "codeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/wrapupcodes/{codeId}"
 		codeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{codeId}", fmt.Sprintf("%v", codeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -182,11 +204,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "codeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/wrapupcodes/{codeId}"
 		codeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{codeId}", fmt.Sprintf("%v", codeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -219,9 +250,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/wrapupcodes"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -274,11 +314,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "codeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Wrapupcode{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/wrapupcodes/{codeId}"
 		codeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{codeId}", fmt.Sprintf("%v", codeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

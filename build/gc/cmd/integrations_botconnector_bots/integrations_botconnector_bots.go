@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -32,9 +33,9 @@ func Cmdintegrations_botconnector_bots() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BotConnectorBot&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BotConnectorBot"
   }
 }`)
 	integrations_botconnector_botsCmd.AddCommand(getCmd)
@@ -43,25 +44,25 @@ func Cmdintegrations_botconnector_bots() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BotList&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BotList"
   }
 }`)
 	integrations_botconnector_botsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/integrations/botconnector/{integrationId}/bots", utils.FormatPermissions([]string{ "integration:botconnector:edit",  }), utils.GenerateDevCentreLink("PUT", "Integrations", "/api/v2/integrations/botconnector/{integrationId}/bots")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;botList&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BotList&quot;
+  "in" : "body",
+  "name" : "botList",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/BotList"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	integrations_botconnector_botsCmd.AddCommand(updateCmd)
 	
@@ -75,6 +76,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", "botId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/integrations/botconnector/{integrationId}/bots/{botId}"
@@ -82,6 +91,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
 		botId, args := args[0], args[1:]
 		path = strings.Replace(path, "{botId}", fmt.Sprintf("%v", botId), -1)
+
 
 		version := utils.GetFlag(cmd.Flags(), "string", "version")
 		if version != "" {
@@ -118,11 +128,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/integrations/botconnector/{integrationId}/bots"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -155,11 +174,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Botlist{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/integrations/botconnector/{integrationId}/bots"
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

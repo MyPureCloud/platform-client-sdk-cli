@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdlanguageunderstanding_domains_versions_report() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;Find quality report for NLU Domain Version.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluDomainVersionQualityReport&quot;
+  "description" : "Find quality report for NLU Domain Version.",
+  "schema" : {
+    "$ref" : "#/definitions/NluDomainVersionQualityReport"
   }
 }`)
 	languageunderstanding_domains_versions_reportCmd.AddCommand(getCmd)
@@ -48,6 +49,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", "domainVersionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report"
@@ -55,6 +64,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
 		domainVersionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainVersionId}", fmt.Sprintf("%v", domainVersionId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdorgauthorization_trustors_users() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Trust deleted&quot;
+  "description" : "Trust deleted"
 }`)
 	orgauthorization_trustors_usersCmd.AddCommand(deleteCmd)
 	
@@ -39,9 +40,9 @@ func Cmdorgauthorization_trustors_users() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/TrustUser&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/TrustUser"
   }
 }`)
 	orgauthorization_trustors_usersCmd.AddCommand(getCmd)
@@ -52,9 +53,9 @@ func Cmdorgauthorization_trustors_users() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	orgauthorization_trustors_usersCmd.AddCommand(listCmd)
@@ -63,9 +64,9 @@ func Cmdorgauthorization_trustors_users() *cobra.Command {
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/TrustUser&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/TrustUser"
   }
 }`)
 	orgauthorization_trustors_usersCmd.AddCommand(updateCmd)
@@ -80,6 +81,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "trustorOrgId", "trusteeUserId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}"
@@ -87,6 +96,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{trustorOrgId}", fmt.Sprintf("%v", trustorOrgId), -1)
 		trusteeUserId, args := args[0], args[1:]
 		path = strings.Replace(path, "{trusteeUserId}", fmt.Sprintf("%v", trusteeUserId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -119,6 +129,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "trustorOrgId", "trusteeUserId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}"
@@ -126,6 +144,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{trustorOrgId}", fmt.Sprintf("%v", trustorOrgId), -1)
 		trusteeUserId, args := args[0], args[1:]
 		path = strings.Replace(path, "{trusteeUserId}", fmt.Sprintf("%v", trusteeUserId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -158,11 +177,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "trustorOrgId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/orgauthorization/trustors/{trustorOrgId}/users"
 		trustorOrgId, args := args[0], args[1:]
 		path = strings.Replace(path, "{trustorOrgId}", fmt.Sprintf("%v", trustorOrgId), -1)
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -203,6 +231,14 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "trustorOrgId", "trusteeUserId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}"
@@ -210,6 +246,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{trustorOrgId}", fmt.Sprintf("%v", trustorOrgId), -1)
 		trusteeUserId, args := args[0], args[1:]
 		path = strings.Replace(path, "{trusteeUserId}", fmt.Sprintf("%v", trusteeUserId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

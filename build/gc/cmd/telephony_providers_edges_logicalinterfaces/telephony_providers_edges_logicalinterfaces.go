@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Logical interface&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainLogicalInterface&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Logical interface",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/DomainLogicalInterface"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainLogicalInterface&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DomainLogicalInterface"
   }
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(createCmd)
@@ -50,13 +51,13 @@ func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  "description" : "The request could not be understood by the server due to malformed syntax.",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorBody"
   },
-  &quot;x-inin-error-codes&quot; : {
-    &quot;bad.request&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;
+  "x-inin-error-codes" : {
+    "bad.request" : "The request could not be understood by the server due to malformed syntax.",
+    "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable"
   }
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(deleteCmd)
@@ -66,9 +67,9 @@ func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainLogicalInterface&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DomainLogicalInterface"
   }
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(getCmd)
@@ -78,9 +79,9 @@ func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getedgelogicalinterfacesCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getedgelogicalinterfacesCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(getedgelogicalinterfacesCmd)
@@ -92,28 +93,28 @@ func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command {
 	listCmd.MarkFlagRequired("edgeIds")
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Logical interface&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainLogicalInterface&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Logical interface",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/DomainLogicalInterface"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DomainLogicalInterface&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DomainLogicalInterface"
   }
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(updateCmd)
@@ -128,11 +129,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Domainlogicalinterface{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces"
 		edgeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -165,6 +178,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", "interfaceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}"
@@ -172,6 +193,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
 		interfaceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{interfaceId}", fmt.Sprintf("%v", interfaceId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -204,6 +226,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", "interfaceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}"
@@ -211,6 +241,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
 		interfaceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{interfaceId}", fmt.Sprintf("%v", interfaceId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -247,11 +278,20 @@ var getedgelogicalinterfacesCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces"
 		edgeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -288,9 +328,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/logicalinterfaces"
+
 
 		edgeIds := utils.GetFlag(cmd.Flags(), "string", "edgeIds")
 		if edgeIds != "" {
@@ -331,6 +380,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "edgeId", "interfaceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Domainlogicalinterface{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}"
@@ -338,6 +398,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
 		interfaceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{interfaceId}", fmt.Sprintf("%v", interfaceId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

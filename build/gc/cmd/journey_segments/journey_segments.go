@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdjourney_segments() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/journey/segments", utils.FormatPermissions([]string{ "journey:segment:add",  }), utils.GenerateDevCentreLink("POST", "Journey", "/api/v2/journey/segments")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/JourneySegment&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/JourneySegment"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/JourneySegment&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/JourneySegment"
   }
 }`)
 	journey_segmentsCmd.AddCommand(createCmd)
@@ -49,7 +50,7 @@ func Cmdjourney_segments() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Segment deleted.&quot;
+  "description" : "Segment deleted."
 }`)
 	journey_segmentsCmd.AddCommand(deleteCmd)
 	
@@ -57,9 +58,9 @@ func Cmdjourney_segments() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/JourneySegment&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/JourneySegment"
   }
 }`)
 	journey_segmentsCmd.AddCommand(getCmd)
@@ -75,27 +76,27 @@ func Cmdjourney_segments() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	journey_segmentsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/journey/segments/{segmentId}", utils.FormatPermissions([]string{ "journey:segment:edit",  }), utils.GenerateDevCentreLink("PATCH", "Journey", "/api/v2/journey/segments/{segmentId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/PatchSegment&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/PatchSegment"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/JourneySegment&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/JourneySegment"
   }
 }`)
 	journey_segmentsCmd.AddCommand(updateCmd)
@@ -110,9 +111,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Journeysegment{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/segments"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -145,11 +158,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "segmentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/segments/{segmentId}"
 		segmentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{segmentId}", fmt.Sprintf("%v", segmentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -182,11 +204,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "segmentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/segments/{segmentId}"
 		segmentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{segmentId}", fmt.Sprintf("%v", segmentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -219,9 +250,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/segments"
+
 
 		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
 		if sortBy != "" {
@@ -282,11 +322,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "segmentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Patchsegment{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/segments/{segmentId}"
 		segmentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{segmentId}", fmt.Sprintf("%v", segmentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

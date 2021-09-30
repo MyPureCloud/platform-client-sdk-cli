@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdwebdeployments_deployments() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/webdeployments/deployments", utils.FormatPermissions([]string{ "webDeployments:deployment:add",  }), utils.GenerateDevCentreLink("POST", "Web Deployments", "/api/v2/webdeployments/deployments")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;deployment&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebDeployment&quot;
+  "in" : "body",
+  "name" : "deployment",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/WebDeployment"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebDeployment&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebDeployment"
   }
 }`)
 	webdeployments_deploymentsCmd.AddCommand(createCmd)
@@ -49,7 +50,7 @@ func Cmdwebdeployments_deployments() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The deployment was deleted successfully&quot;
+  "description" : "The deployment was deleted successfully"
 }`)
 	webdeployments_deploymentsCmd.AddCommand(deleteCmd)
 	
@@ -57,9 +58,9 @@ func Cmdwebdeployments_deployments() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebDeployment&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebDeployment"
   }
 }`)
 	webdeployments_deploymentsCmd.AddCommand(getCmd)
@@ -68,27 +69,27 @@ func Cmdwebdeployments_deployments() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebDeploymentEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebDeploymentEntityListing"
   }
 }`)
 	webdeployments_deploymentsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/webdeployments/deployments/{deploymentId}", utils.FormatPermissions([]string{ "webDeployments:deployment:edit",  }), utils.GenerateDevCentreLink("PUT", "Web Deployments", "/api/v2/webdeployments/deployments/{deploymentId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;deployment&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebDeployment&quot;
+  "in" : "body",
+  "name" : "deployment",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/WebDeployment"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/WebDeployment&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/WebDeployment"
   }
 }`)
 	webdeployments_deploymentsCmd.AddCommand(updateCmd)
@@ -103,9 +104,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Webdeployment{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webdeployments/deployments"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -138,11 +151,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "deploymentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webdeployments/deployments/{deploymentId}"
 		deploymentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{deploymentId}", fmt.Sprintf("%v", deploymentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -175,11 +197,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "deploymentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webdeployments/deployments/{deploymentId}"
 		deploymentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{deploymentId}", fmt.Sprintf("%v", deploymentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -212,9 +243,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webdeployments/deployments"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -247,11 +287,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "deploymentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Webdeployment{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/webdeployments/deployments/{deploymentId}"
 		deploymentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{deploymentId}", fmt.Sprintf("%v", deploymentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

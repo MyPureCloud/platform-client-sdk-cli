@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdanalytics_conversations_details_jobs() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/conversations/details/jobs", utils.FormatPermissions([]string{ "analytics:conversationDetail:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/conversations/details/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;query&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/AsyncConversationQuery&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "query",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/AsyncConversationQuery"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Accepted - Running query asynchronously&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/AsyncQueryResponse&quot;
+  "description" : "Accepted - Running query asynchronously",
+  "schema" : {
+    "$ref" : "#/definitions/AsyncQueryResponse"
   }
 }`)
 	analytics_conversations_details_jobsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdanalytics_conversations_details_jobs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Deleted&quot;
+  "description" : "Deleted"
 }`)
 	analytics_conversations_details_jobsCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdanalytics_conversations_details_jobs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/AsyncQueryStatus&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/AsyncQueryStatus"
   }
 }`)
 	analytics_conversations_details_jobsCmd.AddCommand(getCmd)
@@ -75,9 +76,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Asyncconversationquery{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/analytics/conversations/details/jobs"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -110,11 +123,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/analytics/conversations/details/jobs/{jobId}"
 		jobId, args := args[0], args[1:]
 		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -147,11 +169,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/analytics/conversations/details/jobs/{jobId}"
 		jobId, args := args[0], args[1:]
 		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

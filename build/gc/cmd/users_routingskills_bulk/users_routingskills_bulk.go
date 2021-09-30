@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,44 +30,44 @@ func init() {
 func Cmdusers_routingskills_bulk() *cobra.Command { 
 	bulkaddCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", bulkaddCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  }), utils.GenerateDevCentreLink("PATCH", "Users", "/api/v2/users/{userId}/routingskills/bulk")))
 	utils.AddFileFlagIfUpsert(bulkaddCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Skill&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/UserRoutingSkillPost&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Skill",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/UserRoutingSkillPost"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(bulkaddCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserSkillEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserSkillEntityListing"
   }
 }`)
 	users_routingskills_bulkCmd.AddCommand(bulkaddCmd)
 	
 	bulkupdateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", bulkupdateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/routingskills/bulk")))
 	utils.AddFileFlagIfUpsert(bulkupdateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Skill&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/UserRoutingSkillPost&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Skill",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/UserRoutingSkillPost"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(bulkupdateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserSkillEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserSkillEntityListing"
   }
 }`)
 	users_routingskills_bulkCmd.AddCommand(bulkupdateCmd)
@@ -81,11 +82,23 @@ var bulkaddCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userroutingskillpost{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/routingskills/bulk"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -118,11 +131,23 @@ var bulkupdateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userroutingskillpost{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/routingskills/bulk"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdanalytics_reporting_schedules_history() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ReportRunEntry&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ReportRunEntry"
   }
 }`)
 	analytics_reporting_schedules_historyCmd.AddCommand(getCmd)
@@ -44,9 +45,9 @@ func Cmdanalytics_reporting_schedules_history() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	analytics_reporting_schedules_historyCmd.AddCommand(listCmd)
@@ -61,6 +62,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "runId", "scheduleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}"
@@ -68,6 +77,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{runId}", fmt.Sprintf("%v", runId), -1)
 		scheduleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scheduleId}", fmt.Sprintf("%v", scheduleId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -100,11 +110,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "scheduleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/analytics/reporting/schedules/{scheduleId}/history"
 		scheduleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scheduleId}", fmt.Sprintf("%v", scheduleId), -1)
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {

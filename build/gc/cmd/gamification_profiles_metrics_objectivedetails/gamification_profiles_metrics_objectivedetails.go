@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -32,9 +33,9 @@ func Cmdgamification_profiles_metrics_objectivedetails() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/GetMetricsResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/GetMetricsResponse"
   }
 }`)
 	gamification_profiles_metrics_objectivedetailsCmd.AddCommand(listCmd)
@@ -49,11 +50,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "profileId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gamification/profiles/{profileId}/metrics/objectivedetails"
 		profileId, args := args[0], args[1:]
 		path = strings.Replace(path, "{profileId}", fmt.Sprintf("%v", profileId), -1)
+
 
 		workday := utils.GetFlag(cmd.Flags(), "time.Time", "workday")
 		if workday != "" {

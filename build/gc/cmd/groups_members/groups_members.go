@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdgroups_members() *cobra.Command { 
 	addCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", addCmd.UsageTemplate(), "POST", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Groups", "/api/v2/groups/{groupId}/members")))
 	utils.AddFileFlagIfUpsert(addCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Add members&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/GroupMembersUpdate&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Add members",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/GroupMembersUpdate"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(addCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Success, group membership was updated&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Empty&quot;
+  "description" : "Success, group membership was updated",
+  "schema" : {
+    "$ref" : "#/definitions/Empty"
   }
 }`)
 	groups_membersCmd.AddCommand(addCmd)
@@ -52,9 +53,9 @@ func Cmdgroups_members() *cobra.Command {
 	deleteCmd.MarkFlagRequired("ids")
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Success, group membership was updated&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Empty&quot;
+  "description" : "Success, group membership was updated",
+  "schema" : {
+    "$ref" : "#/definitions/Empty"
   }
 }`)
 	groups_membersCmd.AddCommand(deleteCmd)
@@ -67,9 +68,9 @@ func Cmdgroups_members() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	groups_membersCmd.AddCommand(listCmd)
@@ -84,11 +85,23 @@ var addCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Groupmembersupdate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/groups/{groupId}/members"
 		groupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -121,11 +134,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/groups/{groupId}/members"
 		groupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
+
 
 		ids := utils.GetFlag(cmd.Flags(), "string", "ids")
 		if ids != "" {
@@ -162,11 +184,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/groups/{groupId}/members"
 		groupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdlanguageunderstanding_domains() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/languageunderstanding/domains", utils.FormatPermissions([]string{ "languageUnderstanding:nluDomain:add", "dialog:bot:add",  }), utils.GenerateDevCentreLink("POST", "Language Understanding", "/api/v2/languageunderstanding/domains")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The NLU Domain to create.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluDomain&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The NLU Domain to create.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/NluDomain"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluDomain&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/NluDomain"
   }
 }`)
 	languageunderstanding_domainsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdlanguageunderstanding_domains() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;&quot;
+  "description" : ""
 }`)
 	languageunderstanding_domainsCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdlanguageunderstanding_domains() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluDomain&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/NluDomain"
   }
 }`)
 	languageunderstanding_domainsCmd.AddCommand(getCmd)
@@ -71,28 +72,28 @@ func Cmdlanguageunderstanding_domains() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	languageunderstanding_domainsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/languageunderstanding/domains/{domainId}", utils.FormatPermissions([]string{ "languageUnderstanding:nluDomain:edit", "dialog:bot:edit",  }), utils.GenerateDevCentreLink("PATCH", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The updated NLU Domain.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluDomain&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The updated NLU Domain.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/NluDomain"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/NluDomain&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/NluDomain"
   }
 }`)
 	languageunderstanding_domainsCmd.AddCommand(updateCmd)
@@ -107,9 +108,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Nludomain{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -142,11 +155,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}"
 		domainId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -179,11 +201,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}"
 		domainId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -216,9 +247,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains"
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -259,11 +299,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "domainId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Nludomain{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/languageunderstanding/domains/{domainId}"
 		domainId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

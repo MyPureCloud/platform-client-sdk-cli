@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdrecording_jobs() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/jobs", utils.FormatPermissions([]string{ "recording:job:add",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recording/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;query&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/RecordingJobsQuery&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "query",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/RecordingJobsQuery"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Accepted - Running query asynchronously&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/RecordingJob&quot;
+  "description" : "Accepted - Running query asynchronously",
+  "schema" : {
+    "$ref" : "#/definitions/RecordingJob"
   }
 }`)
 	recording_jobsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdrecording_jobs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	recording_jobsCmd.AddCommand(deleteCmd)
 	
@@ -58,9 +59,9 @@ func Cmdrecording_jobs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/RecordingJob&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/RecordingJob"
   }
 }`)
 	recording_jobsCmd.AddCommand(getCmd)
@@ -75,28 +76,28 @@ func Cmdrecording_jobs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	recording_jobsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/jobs/{jobId}", utils.FormatPermissions([]string{ "recording:job:edit", "recording:recording:editRetention", "recording:screenRecording:editRetention",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;query&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ExecuteRecordingJobsQuery&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "query",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ExecuteRecordingJobsQuery"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/RecordingJob&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/RecordingJob"
   }
 }`)
 	recording_jobsCmd.AddCommand(updateCmd)
@@ -111,9 +112,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Recordingjobsquery{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/jobs"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -146,11 +159,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/jobs/{jobId}"
 		jobId, args := args[0], args[1:]
 		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -183,11 +205,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/jobs/{jobId}"
 		jobId, args := args[0], args[1:]
 		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -220,9 +251,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/jobs"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -279,11 +319,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Executerecordingjobsquery{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/recording/jobs/{jobId}"
 		jobId, args := args[0], args[1:]
 		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

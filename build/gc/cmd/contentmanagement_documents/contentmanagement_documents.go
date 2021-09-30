@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -32,19 +33,19 @@ func Cmdcontentmanagement_documents() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "bool", "override", "", "Override any lock on the source document")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/contentmanagement/documents", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Content Management", "/api/v2/contentmanagement/documents")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Document&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DocumentUpload&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Document",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/DocumentUpload"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Document&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Document"
   }
 }`)
 	contentmanagement_documentsCmd.AddCommand(createCmd)
@@ -54,7 +55,7 @@ func Cmdcontentmanagement_documents() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Accepted - Processing Delete&quot;
+  "description" : "Accepted - Processing Delete"
 }`)
 	contentmanagement_documentsCmd.AddCommand(deleteCmd)
 	
@@ -63,9 +64,9 @@ func Cmdcontentmanagement_documents() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Document&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Document"
   }
 }`)
 	contentmanagement_documentsCmd.AddCommand(getCmd)
@@ -82,9 +83,9 @@ func Cmdcontentmanagement_documents() *cobra.Command {
 	listCmd.MarkFlagRequired("workspaceId")
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	contentmanagement_documentsCmd.AddCommand(listCmd)
@@ -93,19 +94,19 @@ func Cmdcontentmanagement_documents() *cobra.Command {
 	utils.AddFlag(updateCmd.Flags(), "bool", "override", "", "Override any lock on the document")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "POST", "/api/v2/contentmanagement/documents/{documentId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Content Management", "/api/v2/contentmanagement/documents/{documentId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Document&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DocumentUpdate&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Document",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/DocumentUpdate"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Document&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Document"
   }
 }`)
 	contentmanagement_documentsCmd.AddCommand(updateCmd)
@@ -120,9 +121,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Documentupload{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/contentmanagement/documents"
+
 
 		copySource := utils.GetFlag(cmd.Flags(), "string", "copySource")
 		if copySource != "" {
@@ -167,11 +180,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "documentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/contentmanagement/documents/{documentId}"
 		documentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{documentId}", fmt.Sprintf("%v", documentId), -1)
+
 
 		override := utils.GetFlag(cmd.Flags(), "bool", "override")
 		if override != "" {
@@ -208,11 +230,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "documentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/contentmanagement/documents/{documentId}"
 		documentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{documentId}", fmt.Sprintf("%v", documentId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -249,9 +280,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/contentmanagement/documents"
+
 
 		workspaceId := utils.GetFlag(cmd.Flags(), "string", "workspaceId")
 		if workspaceId != "" {
@@ -312,11 +352,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "documentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Documentupdate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/contentmanagement/documents/{documentId}"
 		documentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{documentId}", fmt.Sprintf("%v", documentId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {

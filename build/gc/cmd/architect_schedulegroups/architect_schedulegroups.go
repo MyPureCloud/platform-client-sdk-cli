@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdarchitect_schedulegroups() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/architect/schedulegroups", utils.FormatPermissions([]string{ "routing:scheduleGroup:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/architect/schedulegroups")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScheduleGroup&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ScheduleGroup"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScheduleGroup&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ScheduleGroup"
   }
 }`)
 	architect_schedulegroupsCmd.AddCommand(createCmd)
@@ -49,7 +50,7 @@ func Cmdarchitect_schedulegroups() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	architect_schedulegroupsCmd.AddCommand(deleteCmd)
 	
@@ -57,9 +58,9 @@ func Cmdarchitect_schedulegroups() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScheduleGroup&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ScheduleGroup"
   }
 }`)
 	architect_schedulegroupsCmd.AddCommand(getCmd)
@@ -75,27 +76,27 @@ func Cmdarchitect_schedulegroups() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	architect_schedulegroupsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/architect/schedulegroups/{scheduleGroupId}", utils.FormatPermissions([]string{ "routing:scheduleGroup:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/architect/schedulegroups/{scheduleGroupId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScheduleGroup&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ScheduleGroup"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScheduleGroup&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ScheduleGroup"
   }
 }`)
 	architect_schedulegroupsCmd.AddCommand(updateCmd)
@@ -110,9 +111,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Schedulegroup{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/schedulegroups"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -145,11 +158,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "scheduleGroupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/schedulegroups/{scheduleGroupId}"
 		scheduleGroupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scheduleGroupId}", fmt.Sprintf("%v", scheduleGroupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -182,11 +204,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "scheduleGroupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/schedulegroups/{scheduleGroupId}"
 		scheduleGroupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scheduleGroupId}", fmt.Sprintf("%v", scheduleGroupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -219,9 +250,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/schedulegroups"
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -282,11 +322,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "scheduleGroupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Schedulegroup{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/schedulegroups/{scheduleGroupId}"
 		scheduleGroupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scheduleGroupId}", fmt.Sprintf("%v", scheduleGroupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -40,9 +41,9 @@ func Cmdarchitect_dependencytracking_object() *cobra.Command {
 	getCmd.MarkFlagRequired("id")
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DependencyObject&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DependencyObject"
   }
 }`)
 	architect_dependencytracking_objectCmd.AddCommand(getCmd)
@@ -57,9 +58,18 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/architect/dependencytracking/object"
+
 
 		id := utils.GetFlag(cmd.Flags(), "string", "id")
 		if id != "" {

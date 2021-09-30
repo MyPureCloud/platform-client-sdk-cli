@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdgamification_metrics() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/gamification/metrics", utils.FormatPermissions([]string{ "gamification:profile:update",  }), utils.GenerateDevCentreLink("POST", "Gamification", "/api/v2/gamification/metrics")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Metric&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Metric&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Metric",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Metric"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Metric successfully created&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Metric&quot;
+  "description" : "Metric successfully created",
+  "schema" : {
+    "$ref" : "#/definitions/Metric"
   }
 }`)
 	gamification_metricsCmd.AddCommand(createCmd)
@@ -52,9 +53,9 @@ func Cmdgamification_metrics() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Metric&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Metric"
   }
 }`)
 	gamification_metricsCmd.AddCommand(getCmd)
@@ -65,9 +66,9 @@ func Cmdgamification_metrics() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/GetMetricsResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/GetMetricsResponse"
   }
 }`)
 	gamification_metricsCmd.AddCommand(listCmd)
@@ -75,19 +76,19 @@ func Cmdgamification_metrics() *cobra.Command {
 	utils.AddFlag(updateCmd.Flags(), "string", "performanceProfileId", "", "The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/gamification/metrics/{metricId}", utils.FormatPermissions([]string{ "gamification:profile:update",  }), utils.GenerateDevCentreLink("PUT", "Gamification", "/api/v2/gamification/metrics/{metricId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Metric&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Metric&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Metric",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Metric"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Metric&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Metric"
   }
 }`)
 	gamification_metricsCmd.AddCommand(updateCmd)
@@ -102,9 +103,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Metric{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gamification/metrics"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -137,11 +150,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "metricId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gamification/metrics/{metricId}"
 		metricId, args := args[0], args[1:]
 		path = strings.Replace(path, "{metricId}", fmt.Sprintf("%v", metricId), -1)
+
 
 		workday := utils.GetFlag(cmd.Flags(), "time.Time", "workday")
 		if workday != "" {
@@ -182,9 +204,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gamification/metrics"
+
 
 		performanceProfileId := utils.GetFlag(cmd.Flags(), "string", "performanceProfileId")
 		if performanceProfileId != "" {
@@ -225,11 +256,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "metricId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Metric{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/gamification/metrics/{metricId}"
 		metricId, args := args[0], args[1:]
 		path = strings.Replace(path, "{metricId}", fmt.Sprintf("%v", metricId), -1)
+
 
 		performanceProfileId := utils.GetFlag(cmd.Flags(), "string", "performanceProfileId")
 		if performanceProfileId != "" {

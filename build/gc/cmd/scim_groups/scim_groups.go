@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -33,9 +34,9 @@ func Cmdscim_groups() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2Group&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2Group"
   }
 }`)
 	scim_groupsCmd.AddCommand(getCmd)
@@ -49,47 +50,47 @@ func Cmdscim_groups() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	scim_groupsCmd.AddCommand(listCmd)
 	
 	replaceCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", replaceCmd.UsageTemplate(), "PUT", "/api/v2/scim/groups/{groupId}", utils.FormatPermissions([]string{ "directory:group:edit",  }), utils.GenerateDevCentreLink("PUT", "SCIM", "/api/v2/scim/groups/{groupId}")))
 	utils.AddFileFlagIfUpsert(replaceCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The information used to replace a group.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2Group&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The information used to replace a group.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2Group"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(replaceCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2Group&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2Group"
   }
 }`)
 	scim_groupsCmd.AddCommand(replaceCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/scim/groups/{groupId}", utils.FormatPermissions([]string{ "directory:group:edit",  }), utils.GenerateDevCentreLink("PATCH", "SCIM", "/api/v2/scim/groups/{groupId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The information used to modify a group.&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2PatchRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The information used to modify a group.",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2PatchRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ScimV2Group&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/ScimV2Group"
   }
 }`)
 	scim_groupsCmd.AddCommand(updateCmd)
@@ -104,11 +105,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scim/groups/{groupId}"
 		groupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
+
 
 		attributes := utils.GetFlag(cmd.Flags(), "[]string", "attributes")
 		if attributes != "" {
@@ -149,9 +159,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scim/groups"
+
 
 		startIndex := utils.GetFlag(cmd.Flags(), "int", "startIndex")
 		if startIndex != "" {
@@ -204,11 +223,23 @@ var replaceCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Scimv2group{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scim/groups/{groupId}"
 		groupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -241,11 +272,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "groupId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Scimv2patchrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/scim/groups/{groupId}"
 		groupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

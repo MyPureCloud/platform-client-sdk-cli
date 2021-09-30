@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdworkforcemanagement_businessunits_weeks_shorttermforecasts_generationres
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BuForecastGenerationResult&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BuForecastGenerationResult"
   }
 }`)
 	workforcemanagement_businessunits_weeks_shorttermforecasts_generationresultsCmd.AddCommand(getCmd)
@@ -48,6 +49,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "weekDateId", "forecastId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults"
@@ -57,6 +66,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{weekDateId}", fmt.Sprintf("%v", weekDateId), -1)
 		forecastId, args := args[0], args[1:]
 		path = strings.Replace(path, "{forecastId}", fmt.Sprintf("%v", forecastId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdquality_forms_surveys() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/forms/surveys", utils.FormatPermissions([]string{ "quality:surveyForm:add",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/forms/surveys")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Survey form&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SurveyForm&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Survey form",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/SurveyForm"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SurveyForm&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SurveyForm"
   }
 }`)
 	quality_forms_surveysCmd.AddCommand(createCmd)
@@ -50,25 +51,25 @@ func Cmdquality_forms_surveys() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	quality_forms_surveysCmd.AddCommand(deleteCmd)
 	
 	disableCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", disableCmd.UsageTemplate(), "PATCH", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:disable",  }), utils.GenerateDevCentreLink("PATCH", "Quality", "/api/v2/quality/forms/surveys/{formId}")))
 	utils.AddFileFlagIfUpsert(disableCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Survey form&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SurveyForm&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Survey form",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/SurveyForm"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(disableCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SurveyForm&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SurveyForm"
   }
 }`)
 	quality_forms_surveysCmd.AddCommand(disableCmd)
@@ -77,9 +78,9 @@ func Cmdquality_forms_surveys() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SurveyForm&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SurveyForm"
   }
 }`)
 	quality_forms_surveysCmd.AddCommand(getCmd)
@@ -96,28 +97,28 @@ func Cmdquality_forms_surveys() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	quality_forms_surveysCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:edit",  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/forms/surveys/{formId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Survey form&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SurveyForm&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Survey form",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/SurveyForm"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SurveyForm&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SurveyForm"
   }
 }`)
 	quality_forms_surveysCmd.AddCommand(updateCmd)
@@ -132,9 +133,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Surveyform{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/forms/surveys"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -167,11 +180,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "formId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/forms/surveys/{formId}"
 		formId, args := args[0], args[1:]
 		path = strings.Replace(path, "{formId}", fmt.Sprintf("%v", formId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -204,11 +226,23 @@ var disableCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "formId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Surveyform{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/forms/surveys/{formId}"
 		formId, args := args[0], args[1:]
 		path = strings.Replace(path, "{formId}", fmt.Sprintf("%v", formId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -241,11 +275,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "formId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/forms/surveys/{formId}"
 		formId, args := args[0], args[1:]
 		path = strings.Replace(path, "{formId}", fmt.Sprintf("%v", formId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -278,9 +321,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/forms/surveys"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -345,11 +397,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "formId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Surveyform{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/quality/forms/surveys/{formId}"
 		formId, args := args[0], args[1:]
 		path = strings.Replace(path, "{formId}", fmt.Sprintf("%v", formId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

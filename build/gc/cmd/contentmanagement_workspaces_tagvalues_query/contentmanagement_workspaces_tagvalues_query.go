@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -30,19 +31,19 @@ func Cmdcontentmanagement_workspaces_tagvalues_query() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: acl")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Content Management", "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;query&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/TagQueryRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "query",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/TagQueryRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/TagValueEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/TagValueEntityListing"
   }
 }`)
 	contentmanagement_workspaces_tagvalues_queryCmd.AddCommand(createCmd)
@@ -57,11 +58,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "workspaceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Tagqueryrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query"
 		workspaceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{workspaceId}", fmt.Sprintf("%v", workspaceId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {

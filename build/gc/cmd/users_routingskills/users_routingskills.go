@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdusers_routingskills() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/{userId}/routingskills", utils.FormatPermissions([]string{ "routing:skill:assign",  }), utils.GenerateDevCentreLink("POST", "Users", "/api/v2/users/{userId}/routingskills")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Skill&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserRoutingSkillPost&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Skill",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/UserRoutingSkillPost"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserRoutingSkill&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserRoutingSkill"
   }
 }`)
 	users_routingskillsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdusers_routingskills() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	users_routingskillsCmd.AddCommand(deleteCmd)
 	
@@ -61,28 +62,28 @@ func Cmdusers_routingskills() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	users_routingskillsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:assign",  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/routingskills/{skillId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Skill&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserRoutingSkill&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Skill",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/UserRoutingSkill"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserRoutingSkill&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserRoutingSkill"
   }
 }`)
 	users_routingskillsCmd.AddCommand(updateCmd)
@@ -97,11 +98,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userroutingskillpost{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/routingskills"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -134,6 +147,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", "skillId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/routingskills/{skillId}"
@@ -141,6 +162,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
 		skillId, args := args[0], args[1:]
 		path = strings.Replace(path, "{skillId}", fmt.Sprintf("%v", skillId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -173,11 +195,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/routingskills"
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -222,6 +253,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", "skillId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userroutingskill{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/routingskills/{skillId}"
@@ -229,6 +271,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
 		skillId, args := args[0], args[1:]
 		path = strings.Replace(path, "{skillId}", fmt.Sprintf("%v", skillId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

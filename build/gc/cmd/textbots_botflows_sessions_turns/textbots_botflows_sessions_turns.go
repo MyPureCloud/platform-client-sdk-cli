@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdtextbots_botflows_sessions_turns() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/textbots/botflows/sessions/{sessionId}/turns", utils.FormatPermissions([]string{ "textbots:botFlowSession:execute",  }), utils.GenerateDevCentreLink("POST", "Textbots", "/api/v2/textbots/botflows/sessions/{sessionId}/turns")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;turnRequest&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/TextBotFlowTurnRequest&quot;
+  "in" : "body",
+  "name" : "turnRequest",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/TextBotFlowTurnRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/TextBotFlowTurnResponse&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/TextBotFlowTurnResponse"
   }
 }`)
 	textbots_botflows_sessions_turnsCmd.AddCommand(createCmd)
@@ -55,11 +56,23 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "sessionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Textbotflowturnrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/textbots/botflows/sessions/{sessionId}/turns"
 		sessionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{sessionId}", fmt.Sprintf("%v", sessionId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

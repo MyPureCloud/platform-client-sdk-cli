@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,28 +32,28 @@ func Cmdusers_presences() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserPresence&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserPresence"
   }
 }`)
 	users_presencesCmd.AddCommand(getCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/presences/{sourceId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Presence", "/api/v2/users/{userId}/presences/{sourceId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;User presence&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserPresence&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "User presence",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/UserPresence"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserPresence&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserPresence"
   }
 }`)
 	users_presencesCmd.AddCommand(updateCmd)
@@ -67,6 +68,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", "sourceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/presences/{sourceId}"
@@ -74,6 +83,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
 		sourceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{sourceId}", fmt.Sprintf("%v", sourceId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -106,6 +116,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "userId", "sourceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userpresence{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/{userId}/presences/{sourceId}"
@@ -113,6 +134,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
 		sourceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{sourceId}", fmt.Sprintf("%v", sourceId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

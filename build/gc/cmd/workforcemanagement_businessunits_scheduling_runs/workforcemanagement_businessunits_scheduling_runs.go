@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdworkforcemanagement_businessunits_scheduling_runs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The run was successfully canceled&quot;
+  "description" : "The run was successfully canceled"
 }`)
 	workforcemanagement_businessunits_scheduling_runsCmd.AddCommand(deleteCmd)
 	
@@ -39,9 +40,9 @@ func Cmdworkforcemanagement_businessunits_scheduling_runs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BuScheduleRun&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BuScheduleRun"
   }
 }`)
 	workforcemanagement_businessunits_scheduling_runsCmd.AddCommand(getCmd)
@@ -50,26 +51,26 @@ func Cmdworkforcemanagement_businessunits_scheduling_runs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/BuScheduleRunListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/BuScheduleRunListing"
   }
 }`)
 	workforcemanagement_businessunits_scheduling_runsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}", utils.FormatPermissions([]string{ "wfm:schedule:edit",  }), utils.GenerateDevCentreLink("PATCH", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/PatchBuScheduleRunRequest&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/PatchBuScheduleRunRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;The update was successful&quot;
+  "description" : "The update was successful"
 }`)
 	workforcemanagement_businessunits_scheduling_runsCmd.AddCommand(updateCmd)
 	
@@ -83,6 +84,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "runId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}"
@@ -90,6 +99,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 		runId, args := args[0], args[1:]
 		path = strings.Replace(path, "{runId}", fmt.Sprintf("%v", runId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -122,6 +132,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "runId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}"
@@ -129,6 +147,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 		runId, args := args[0], args[1:]
 		path = strings.Replace(path, "{runId}", fmt.Sprintf("%v", runId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -161,11 +180,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs"
 		businessUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -198,6 +226,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", "runId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Patchbuschedulerunrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}"
@@ -205,6 +244,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 		runId, args := args[0], args[1:]
 		path = strings.Replace(path, "{runId}", fmt.Sprintf("%v", runId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,18 +30,18 @@ func init() {
 func Cmdflows_milestones() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/milestones", utils.FormatPermissions([]string{ "architect:flowMilestone:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/milestones")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowMilestone&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/FlowMilestone"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowMilestone&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/FlowMilestone"
   }
 }`)
 	flows_milestonesCmd.AddCommand(createCmd)
@@ -49,9 +50,9 @@ func Cmdflows_milestones() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/Empty&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/Empty"
   }
 }`)
 	flows_milestonesCmd.AddCommand(deleteCmd)
@@ -60,9 +61,9 @@ func Cmdflows_milestones() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowMilestone&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/FlowMilestone"
   }
 }`)
 	flows_milestonesCmd.AddCommand(getCmd)
@@ -80,27 +81,27 @@ func Cmdflows_milestones() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	flows_milestonesCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/flows/milestones/{milestoneId}", utils.FormatPermissions([]string{ "architect:flowMilestone:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/flows/milestones/{milestoneId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowMilestone&quot;
+  "in" : "body",
+  "name" : "body",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/FlowMilestone"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/FlowMilestone&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/FlowMilestone"
   }
 }`)
 	flows_milestonesCmd.AddCommand(updateCmd)
@@ -115,9 +116,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Flowmilestone{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/milestones"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -150,11 +163,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "milestoneId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/milestones/{milestoneId}"
 		milestoneId, args := args[0], args[1:]
 		path = strings.Replace(path, "{milestoneId}", fmt.Sprintf("%v", milestoneId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -187,11 +209,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "milestoneId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/milestones/{milestoneId}"
 		milestoneId, args := args[0], args[1:]
 		path = strings.Replace(path, "{milestoneId}", fmt.Sprintf("%v", milestoneId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -224,9 +255,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/milestones"
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -295,11 +335,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "milestoneId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Flowmilestone{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/milestones/{milestoneId}"
 		milestoneId, args := args[0], args[1:]
 		path = strings.Replace(path, "{milestoneId}", fmt.Sprintf("%v", milestoneId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

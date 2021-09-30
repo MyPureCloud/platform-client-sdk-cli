@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdflows_datatables_export_jobs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DataTableExportJob&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DataTableExportJob"
   }
 }`)
 	flows_datatables_export_jobsCmd.AddCommand(createCmd)
@@ -42,9 +43,9 @@ func Cmdflows_datatables_export_jobs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/DataTableExportJob&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/DataTableExportJob"
   }
 }`)
 	flows_datatables_export_jobsCmd.AddCommand(getCmd)
@@ -59,11 +60,20 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "datatableId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/datatables/{datatableId}/export/jobs"
 		datatableId, args := args[0], args[1:]
 		path = strings.Replace(path, "{datatableId}", fmt.Sprintf("%v", datatableId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -96,6 +106,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "datatableId", "exportJobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}"
@@ -103,6 +121,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{datatableId}", fmt.Sprintf("%v", datatableId), -1)
 		exportJobId, args := args[0], args[1:]
 		path = strings.Replace(path, "{exportJobId}", fmt.Sprintf("%v", exportJobId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

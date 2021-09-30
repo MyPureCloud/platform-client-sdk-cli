@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,19 +30,19 @@ func init() {
 func Cmdlearning_assignments() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/assignments", utils.FormatPermissions([]string{ "learning:assignment:add",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/assignments")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The Learning Assignment to be created&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningAssignmentCreate&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The Learning Assignment to be created",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/LearningAssignmentCreate"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningAssignment&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LearningAssignment"
   }
 }`)
 	learning_assignmentsCmd.AddCommand(createCmd)
@@ -50,7 +51,7 @@ func Cmdlearning_assignments() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The learning assignment was deleted successfully&quot;
+  "description" : "The learning assignment was deleted successfully"
 }`)
 	learning_assignmentsCmd.AddCommand(deleteCmd)
 	
@@ -59,9 +60,9 @@ func Cmdlearning_assignments() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningAssignment&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LearningAssignment"
   }
 }`)
 	learning_assignmentsCmd.AddCommand(getCmd)
@@ -78,35 +79,35 @@ func Cmdlearning_assignments() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "Desc", "Specifies result set sort order; if not specified, default sort order is descending (Desc) Valid values: Asc, Desc")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Specifies which field to sort the results by, default sort is by recommendedCompletionDate Valid values: RecommendedCompletionDate, DateModified")
 	utils.AddFlag(listCmd.Flags(), "[]string", "userId", "", "Specifies the list of user IDs to be queried, up to 100 user IDs.")
-	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned Valid values: Informational, AssessedContent, Questionnaire, Assessment")
+	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned Valid values: Informational, AssessedContent, Assessment")
 	utils.AddFlag(listCmd.Flags(), "[]string", "states", "", "Specifies the assignment states to filter by Valid values: Assigned, InProgress, Completed")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Specifies the expand option for returning additional information Valid values: ModuleSummary")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/learning/assignments", utils.FormatPermissions([]string{ "learning:assignment:view",  }), utils.GenerateDevCentreLink("GET", "Learning", "/api/v2/learning/assignments")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	learning_assignmentsCmd.AddCommand(listCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/learning/assignments/{assignmentId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Learning", "/api/v2/learning/assignments/{assignmentId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;The Learning Assignment to be updated&quot;,
-  &quot;required&quot; : false,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningAssignmentUpdate&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "The Learning Assignment to be updated",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/LearningAssignmentUpdate"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/LearningAssignment&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/LearningAssignment"
   }
 }`)
 	learning_assignmentsCmd.AddCommand(updateCmd)
@@ -121,9 +122,21 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Learningassignmentcreate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/assignments"
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -156,11 +169,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "assignmentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/assignments/{assignmentId}"
 		assignmentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{assignmentId}", fmt.Sprintf("%v", assignmentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -193,11 +215,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "assignmentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/assignments/{assignmentId}"
 		assignmentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{assignmentId}", fmt.Sprintf("%v", assignmentId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -234,9 +265,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/assignments"
+
 
 		moduleId := utils.GetFlag(cmd.Flags(), "string", "moduleId")
 		if moduleId != "" {
@@ -329,11 +369,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "assignmentId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Learningassignmentupdate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/learning/assignments/{assignmentId}"
 		assignmentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{assignmentId}", fmt.Sprintf("%v", assignmentId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

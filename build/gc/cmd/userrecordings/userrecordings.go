@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmduserrecordings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Accepted - Processing Delete&quot;
+  "description" : "Accepted - Processing Delete"
 }`)
 	userrecordingsCmd.AddCommand(deleteCmd)
 	
@@ -40,9 +41,9 @@ func Cmduserrecordings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserRecording&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserRecording"
   }
 }`)
 	userrecordingsCmd.AddCommand(getCmd)
@@ -54,9 +55,9 @@ func Cmduserrecordings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	userrecordingsCmd.AddCommand(listCmd)
@@ -64,19 +65,19 @@ func Cmduserrecordings() *cobra.Command {
 	utils.AddFlag(updateCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: conversation")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/userrecordings/{recordingId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "User Recordings", "/api/v2/userrecordings/{recordingId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;UserRecording&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserRecording&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "UserRecording",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/UserRecording"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/UserRecording&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/UserRecording"
   }
 }`)
 	userrecordingsCmd.AddCommand(updateCmd)
@@ -91,11 +92,20 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "recordingId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/userrecordings/{recordingId}"
 		recordingId, args := args[0], args[1:]
 		path = strings.Replace(path, "{recordingId}", fmt.Sprintf("%v", recordingId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -128,11 +138,20 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "recordingId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/userrecordings/{recordingId}"
 		recordingId, args := args[0], args[1:]
 		path = strings.Replace(path, "{recordingId}", fmt.Sprintf("%v", recordingId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
@@ -169,9 +188,18 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/userrecordings"
+
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -216,11 +244,23 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "recordingId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Userrecording{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/userrecordings/{recordingId}"
 		recordingId, args := args[0], args[1:]
 		path = strings.Replace(path, "{recordingId}", fmt.Sprintf("%v", recordingId), -1)
+
 
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {

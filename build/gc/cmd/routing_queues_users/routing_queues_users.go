@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -29,22 +30,22 @@ func init() {
 func Cmdrouting_queues_users() *cobra.Command { 
 	activateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", activateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/routing/queues/{queueId}/users")))
 	utils.AddFileFlagIfUpsert(activateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Queue Members&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/QueueMember&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Queue Members",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/QueueMember"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(activateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/QueueMemberEntityListing&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/QueueMemberEntityListing"
   }
 }`)
 	routing_queues_usersCmd.AddCommand(activateCmd)
@@ -53,7 +54,7 @@ func Cmdrouting_queues_users() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;Operation was successful.&quot;
+  "description" : "Operation was successful."
 }`)
 	routing_queues_usersCmd.AddCommand(deleteCmd)
 	
@@ -72,9 +73,9 @@ func Cmdrouting_queues_users() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	routing_queues_usersCmd.AddCommand(listCmd)
@@ -82,46 +83,49 @@ func Cmdrouting_queues_users() *cobra.Command {
 	utils.AddFlag(moveCmd.Flags(), "bool", "delete", "false", "True to delete queue members")
 	moveCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", moveCmd.UsageTemplate(), "POST", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/queues/{queueId}/users")))
 	utils.AddFileFlagIfUpsert(moveCmd.Flags(), "POST", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Queue Members&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;type&quot; : &quot;array&quot;,
-    &quot;items&quot; : {
-      &quot;$ref&quot; : &quot;#/definitions/WritableEntity&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Queue Members",
+  "required" : true,
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/WritableEntity"
     }
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(moveCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;The request could not be understood by the server due to malformed syntax.&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/ErrorBody&quot;
+  "description" : "The request could not be understood by the server due to malformed syntax.",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorBody"
   },
-  &quot;x-inin-error-codes&quot; : {
-    &quot;bad.request&quot; : &quot;Invalid request data.  Make sure you submit a valid number of queue members.&quot;,
-    &quot;response.entity.too.large&quot; : &quot;The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable&quot;,
-    &quot;invalid.date&quot; : &quot;Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ&quot;,
-    &quot;queue.size.limit&quot; : &quot;Adding all requested members would exceed queue member limit.&quot;,
-    &quot;invalid.value&quot; : &quot;Value [%s] is not valid for field type [%s]. Allowable values are: %s&quot;
+  "x-inin-error-codes" : {
+    "bad.request" : "Invalid request data.  Make sure you submit a valid number of queue members.",
+    "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable",
+    "invalid.date" : "Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ",
+    "invalid.query.param.value" : "Value [%s] is not valid for parameter [%s]. Allowable values are: %s",
+    "invalid.property" : "Value [%s] is not a valid property for object [%s]",
+    "queue.size.limit" : "Adding all requested members would exceed queue member limit.",
+    "constraint.validation" : "%s",
+    "invalid.value" : "Value [%s] is not valid for field type [%s]. Allowable values are: %s"
   }
 }`)
 	routing_queues_usersCmd.AddCommand(moveCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/users/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/routing/queues/{queueId}/users/{memberId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  &quot;in&quot; : &quot;body&quot;,
-  &quot;name&quot; : &quot;body&quot;,
-  &quot;description&quot; : &quot;Queue Member&quot;,
-  &quot;required&quot; : true,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/QueueMember&quot;
+  "in" : "body",
+  "name" : "body",
+  "description" : "Queue Member",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/QueueMember"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  &quot;description&quot; : &quot;User update has been accepted&quot;
+  "description" : "User update has been accepted"
 }`)
 	routing_queues_usersCmd.AddCommand(updateCmd)
 	
@@ -135,11 +139,23 @@ var activateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "queueId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Queuemember{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/queues/{queueId}/users"
 		queueId, args := args[0], args[1:]
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -172,6 +188,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "queueId", "memberId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/queues/{queueId}/users/{memberId}"
@@ -179,6 +203,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
 		memberId, args := args[0], args[1:]
 		path = strings.Replace(path, "{memberId}", fmt.Sprintf("%v", memberId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -211,11 +236,20 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "queueId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/queues/{queueId}/users"
 		queueId, args := args[0], args[1:]
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
+
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -292,11 +326,23 @@ var moveCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "queueId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Writableentity{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/queues/{queueId}/users"
 		queueId, args := args[0], args[1:]
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
+
 
 		delete := utils.GetFlag(cmd.Flags(), "bool", "delete")
 		if delete != "" {
@@ -333,6 +379,17 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "queueId", "memberId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Queuemember{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/queues/{queueId}/users/{memberId}"
@@ -340,6 +397,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
 		memberId, args := args[0], args[1:]
 		path = strings.Replace(path, "{memberId}", fmt.Sprintf("%v", memberId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

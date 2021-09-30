@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdknowledge_knowledgebases_languages_trainings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeTraining&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeTraining"
   }
 }`)
 	knowledge_knowledgebases_languages_trainingsCmd.AddCommand(createCmd)
@@ -42,9 +43,9 @@ func Cmdknowledge_knowledgebases_languages_trainings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/KnowledgeTraining&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/KnowledgeTraining"
   }
 }`)
 	knowledge_knowledgebases_languages_trainingsCmd.AddCommand(getCmd)
@@ -58,9 +59,9 @@ func Cmdknowledge_knowledgebases_languages_trainings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  &quot;description&quot; : &quot;successful operation&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/SWAGGER_OVERRIDE_list&quot;
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	knowledge_knowledgebases_languages_trainingsCmd.AddCommand(listCmd)
@@ -75,6 +76,14 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "knowledgeBaseId", "languageCode", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings"
@@ -82,6 +91,7 @@ var createCmd = &cobra.Command{
 		path = strings.Replace(path, "{knowledgeBaseId}", fmt.Sprintf("%v", knowledgeBaseId), -1)
 		languageCode, args := args[0], args[1:]
 		path = strings.Replace(path, "{languageCode}", fmt.Sprintf("%v", languageCode), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -114,6 +124,14 @@ var getCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "knowledgeBaseId", "languageCode", "trainingId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}"
@@ -123,6 +141,7 @@ var getCmd = &cobra.Command{
 		path = strings.Replace(path, "{languageCode}", fmt.Sprintf("%v", languageCode), -1)
 		trainingId, args := args[0], args[1:]
 		path = strings.Replace(path, "{trainingId}", fmt.Sprintf("%v", trainingId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -155,6 +174,14 @@ var listCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "knowledgeBaseId", "languageCode", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings"
@@ -162,6 +189,7 @@ var listCmd = &cobra.Command{
 		path = strings.Replace(path, "{knowledgeBaseId}", fmt.Sprintf("%v", knowledgeBaseId), -1)
 		languageCode, args := args[0], args[1:]
 		path = strings.Replace(path, "{languageCode}", fmt.Sprintf("%v", languageCode), -1)
+
 
 		before := utils.GetFlag(cmd.Flags(), "string", "before")
 		if before != "" {

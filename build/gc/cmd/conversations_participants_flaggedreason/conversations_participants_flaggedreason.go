@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,7 +32,7 @@ func Cmdconversations_participants_flaggedreason() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  &quot;description&quot; : &quot;The flagged reason was removed successfully.&quot;
+  "description" : "The flagged reason was removed successfully."
 }`)
 	conversations_participants_flaggedreasonCmd.AddCommand(deleteCmd)
 	
@@ -39,7 +40,7 @@ func Cmdconversations_participants_flaggedreason() *cobra.Command {
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  &quot;description&quot; : &quot;The flagged reason was set successfully.&quot;
+  "description" : "The flagged reason was set successfully."
 }`)
 	conversations_participants_flaggedreasonCmd.AddCommand(updateCmd)
 	
@@ -53,6 +54,14 @@ var deleteCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason"
@@ -60,6 +69,7 @@ var deleteCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		participantId, args := args[0], args[1:]
 		path = strings.Replace(path, "{participantId}", fmt.Sprintf("%v", participantId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -92,6 +102,14 @@ var updateCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason"
@@ -99,6 +117,7 @@ var updateCmd = &cobra.Command{
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 		participantId, args := args[0], args[1:]
 		path = strings.Replace(path, "{participantId}", fmt.Sprintf("%v", participantId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

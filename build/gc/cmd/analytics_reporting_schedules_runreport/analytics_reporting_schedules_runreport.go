@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/spf13/cobra"
 	"net/url"
 	"strings"
@@ -31,9 +32,9 @@ func Cmdanalytics_reporting_schedules_runreport() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  &quot;description&quot; : &quot;Accepted - Processing Report&quot;,
-  &quot;schema&quot; : {
-    &quot;$ref&quot; : &quot;#/definitions/RunNowResponse&quot;
+  "description" : "Accepted - Processing Report",
+  "schema" : {
+    "$ref" : "#/definitions/RunNowResponse"
   }
 }`)
 	analytics_reporting_schedules_runreportCmd.AddCommand(createCmd)
@@ -48,11 +49,20 @@ var createCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{ "scheduleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/analytics/reporting/schedules/{scheduleId}/runreport"
 		scheduleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scheduleId}", fmt.Sprintf("%v", scheduleId), -1)
+
 
 		urlString := path
 		if len(queryParams) > 0 {

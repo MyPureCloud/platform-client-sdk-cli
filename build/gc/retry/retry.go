@@ -20,7 +20,7 @@ func GetRetryConfiguration() *RetryConfiguration {
 
 type RequestLogHook func(*http.Request, int)
 
-func RetryWithData(uri string, data string, httpCall func(uri string, data string) (string, error)) func(retryConfig *RetryConfiguration) (string, error) {
+func RetryWithData(uri string, data []string, httpCall func(uri string, data string) (string, error)) func(retryConfig *RetryConfiguration) (string, error) {
 	return func(retryConfig *RetryConfiguration) (string, error) {
 		if retryConfig == nil {
 			retryConfig = &RetryConfiguration{
@@ -31,10 +31,34 @@ func RetryWithData(uri string, data string, httpCall func(uri string, data strin
 		}
 		retryConfiguration = retryConfig
 
-		response, err := httpCall(uri, data)
-		retryConfiguration = nil
+		// if there is only one item in the array (req body), then just return the response object
+		if len(data) == 1 {
+			res, err := httpCall(uri, data[0])
+			return res, err
+		}
 
-		return response, err
+		// if there is more than one item in the array (req bodies), the response will be an array of response objects
+		var response string = "["
+		for i, reqBody := range data {
+			res, err := httpCall(uri, reqBody)
+			retryConfiguration = nil
+			if err != nil {
+				if i == len(data)-1 {
+					response += err.Error() + "]"
+				} else {
+					response += err.Error() + ","
+				}
+			} else {
+				if i == len(data)-1 {
+					response += res + "]"
+				} else {
+					response += res + ","
+				}
+			}
+		}
+
+		// returning response and nil error as the error objects will be concatenated onto the response (if there are any)
+		return response, nil
 	}
 }
 

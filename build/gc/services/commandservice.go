@@ -492,18 +492,18 @@ func (c *commandService) DetermineAction(httpMethod string, uri string, flags *p
 		}
 		return retry.Retry(uri, c.List)
 	case http.MethodPatch:
-		if flags.Lookup("file") == nil {
-			return retry.RetryWithData(uri, "", c.Patch)
+		if flags.Lookup("file") == nil || flags.Lookup("directory") == nil {
+			return retry.RetryWithData(uri, []string{""}, c.Patch)
 		}
 		return retry.RetryWithData(uri, utils.ResolveInputData(c.cmd), c.Patch)
 	case http.MethodPost:
-		if flags.Lookup("file") == nil {
-			return retry.RetryWithData(uri, "", c.Post)
+		if flags.Lookup("file") == nil || flags.Lookup("directory") == nil {
+			return retry.RetryWithData(uri, []string{""}, c.Post)
 		}
 		return retry.RetryWithData(uri, utils.ResolveInputData(c.cmd), c.Post)
 	case http.MethodPut:
-		if flags.Lookup("file") == nil {
-			return retry.RetryWithData(uri, "", c.Put)
+		if flags.Lookup("file") == nil || flags.Lookup("directory") == nil {
+			return retry.RetryWithData(uri, []string{""}, c.Put)
 		}
 		return retry.RetryWithData(uri, utils.ResolveInputData(c.cmd), c.Put)
 	case http.MethodDelete:

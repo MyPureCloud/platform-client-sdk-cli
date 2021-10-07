@@ -49,7 +49,7 @@ func TestRetryWithData(t *testing.T) {
 		expectedStatusCode: http.StatusTooManyRequests}
 	setRestClientDoMockForRetry(tc, 10)
 
-	retryFunc := retry.RetryWithData(tc.targetPath, "", c.Patch)
+	retryFunc := retry.RetryWithData(tc.targetPath, []string{""}, c.Patch)
 	retryConfig := &retry.RetryConfiguration{
 		RetryWaitMax: 100 * time.Second,
 		RetryMax:     maxRetriesBeforeQuitting,
@@ -75,7 +75,7 @@ func TestRetryWithData(t *testing.T) {
 	tc.expectedResponse = fmt.Sprintf(`{"numRetries":"%v"}`, expectedNumCalls)
 	setRestClientDoMockForRetry(tc, 10)
 
-	retryFunc = retry.RetryWithData(tc.targetPath, "", c.Patch)
+	retryFunc = retry.RetryWithData(tc.targetPath, []string{""}, c.Patch)
 	retryConfig.RetryWaitMax = maxRetryTimeSec
 	_, err = retryFunc(retryConfig)
 	if err != nil {
@@ -98,7 +98,7 @@ func TestRetryWithData(t *testing.T) {
 	tc.expectedResponse = fmt.Sprintf(`{"numRetries":"%v"}`, expectedNumCalls)
 	setRestClientDoMockForRetry(tc, 3)
 
-	retryFunc = retry.RetryWithData(tc.targetPath, "", c.Patch)
+	retryFunc = retry.RetryWithData(tc.targetPath, []string{""}, c.Patch)
 	retryConfig.RetryMax = maxRetriesBeforeQuitting
 	results, err := retryFunc(retryConfig)
 	if err != nil {

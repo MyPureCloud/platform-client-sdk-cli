@@ -207,9 +207,9 @@ Running any API operation command followed by '--help' will print out the follow
 
 # Experimental Features
 
-Experimental CLI features were released in version 18.0.0 of the Genesys Cloud CLI. Experimental features allow us to release ideas around the CLI early and give customers an opportunity to give feedback on the features before the work on them is finalized. Experimental features are tied to the CLI binary, so when we release an experimental feature or promote an experimental feature, you will need to download the CLI binary that matches the release or promotion of that feature.
+Experimental `CLI` features were released in version 18.0.0 of the `Genesys Cloud CLI`. Experimental features allow us to release ideas around the `CLI` early and give customers an opportunity to give feedback on the features before the work on them is finalized. Experimental features are tied to the `CLI` binary, so when we release an experimental feature or promote an experimental feature, you will need to download the `CLI` binary that matches the release or promotion of that feature.
 
-**Note:** Experimental CLI features are subject to breaking and non-breaking changes at any time.
+**Note:** Experimental `CLI` features are subject to breaking and non-breaking changes at any time.
 
 
 To see the list of experimental features, run the following command:
@@ -234,13 +234,17 @@ gc experimental disable [feature_name]
 
 ## Alternative Formats
 
-To use the Alternative Formats feature, first enable the feature with:
+The `Alternative Formats` feature allows you to specify the input and output format of the `CLI`. Alternative formats are provided to the `Genesys Cloud CLI` by passing the preferred input format to the `--inputformat` flag or by passing the preferred output format to the `--outputformat` flag.   The currently supported formats are: `YAML` and `JSON`.
+
+**Note:** The default format for the `CLI` is `JSON`.
+
+To use the `Alternative Formats` feature, first enable the feature with:
 
 ```
 gc experimental enable alternative_formats
 ```
 
-Once enabled, we can pass a supported value (e.g `YAML` or `JSON`) to the `--inputformat` flag or to the `--outputformat` flag.
+Once enabled, you can pass a supported value (e.g `YAML` or `JSON`) to the `--inputformat` flag or to the `--outputformat` flag.
 
 To input `YAML` data:
 
@@ -253,11 +257,11 @@ To output `YAML` data:
 --outputformat=yaml
 ```
 
-**Note:** The `--inputformat` and `--outputformat` flags are not case sensitive. Writing `--inputformat=yaml` is the same as writing `--inputformat=YAML`.
+**Note:** The `--inputformat` flag and the `--outputformat` flag are not case-sensitive. Writing `--inputformat=yaml` is the same as writing `--inputformat=YAML`.
 
 ### Input Format
 
-If you want to input a `YAML` file when making a request, simply include the `--inputformat=yaml` command and pass the file path to the `--file` flag.
+If you want to input a `YAML` file in the `CLI`, pass the file path to the `--file` flag and include the `--inputformat=yaml` command when making a request.
 
 **Example Request:**  
 
@@ -267,7 +271,7 @@ gc analytics conversations details query create --file=./query.yaml --inputforma
 
 ### Output Format
 
-If you want to format your response as `YAML`, simply include the `--outputformat=yaml` command.
+If you want to format your output data as `YAML`, include the `--outputformat=yaml` command when making a request.
 
 **Example Request:**  
 
@@ -275,10 +279,11 @@ If you want to format your response as `YAML`, simply include the `--outputforma
 gc users get f3dc94ca-acec-4ee4-a07e-ca7503ddbd62 --outputformat=yaml
 ```
 
-<br>
+### Setting Input and Output Formats In Config
+
 Additionally, the desired input and output formats can be pinned in the configuration file to avoid providing the above flags in every API call.
 
-To set the output format to YAML or JSON, run:
+To set the output format to `YAML` or `JSON`, run the following command:
 
 ```
 gc alternativeformats setoutput [format]
@@ -290,28 +295,35 @@ And similarly, to set the input format:
 gc alternativeformats setinput [format]
 ```
 
-The following commands can be used to check which data formats are set in the configurations:
+The following commands can be used to check which data formats are set in the configuration file.
+
+To get the input format: 
 
 ```
 gc alternativeformats getinput
 ```
 
+To get the output format:
+
 ```
 gc alternativeformats getoutput
 ```
 
-**Note:** Where no data format is specified, the default is always JSON.
+**Note:** Where no data format is specified, the `CLI` will default to `JSON`.
 
 ## Transform Data
 
-**Note:** The Transform Data feature uses `Go` templates for transforming output data. Checkout Go's template package [text/template](https://pkg.go.dev/text/template) for more info.
+The `Transform Data` feature uses `Go` templates for transforming output data. Templates are provided to the `Genesys Cloud CLI` as either a file containing the template string and passed to the `--transform` flag or as a "raw" template string and input directly in the terminal and passed to the `--transformstr` flag. If you would like to read more about `Go` templates, see Go's template package [text/template](https://pkg.go.dev/text/template) for more info.
 
-To use the Transform Data feature, first enable the feature with:
+**Note:**  You may also use [sprig template functions](http://masterminds.github.io/sprig/) with the Transform Data feature.
+
+To use the `Transform Data` feature, first enable the feature with:
 
 ```
 gc experimental enable transform_data
 ```
-Once enabled, we can pass either a `Go` template file to the `--transform` flag or a `Go` template string to the `--transformstr` flag.
+
+Once enabled, you can pass either a `Go` template file to the `--transform` flag or a "raw" template string to the `--transformstr` flag.
 
 To input a `Go` template file:
 
@@ -327,7 +339,7 @@ To input a `Go` template string:
 
 ### Template File
 
-If you want to input a `Go` template file to transform output data, simply pass the template file path to the `--transform` flag when making a request.
+If you want to input a `Go` template file in the `CLI`, pass the template file path to the `--transform` flag when making a request.
 
 **Example Request:**
 
@@ -336,7 +348,7 @@ gc users get f3dc94ca-acec-4ee4-a07e-ca7503ddbd62 --transform=./tmpl.gotmpl
 ```
 ### Template String
 
-If you want to input a `Go` template string to transform output data, simply pass your template string to the `--transformstr` flag surrounded by single quotes.
+If you want to input a `Go` template string in the `CLI`, pass the "raw" template string to the `--transformstr` flag surrounded by single quotes when making a request.
 
 **Example Request:**
 
@@ -345,9 +357,9 @@ gc users get f3dc94ca-acec-4ee4-a07e-ca7503ddbd62 --transformstr='your_go_templa
 ```
 ### Transforming Output Data To CSV Format
 
-An example `Go` template file for transforming output data to `CSV` format.
-
 **Note:** To write a `Go` template, you must know the structure of the data in advance.
+
+This is an example `Go` template file for transforming output data to `CSV` format.
 
 `tmpl.gotmpl`
 
@@ -377,7 +389,7 @@ id: {{.id}},name: {{.name}},division:
 {{- end -}}
 ```
 
-To get a list of all users and transform the output to `CSV` format by using a `Go` template, run the following command:
+So to get a list of users and transform the output to `CSV` format, run the following command:
 
 ```
 gc users list -a --transform=./tmpl.gotmpl
@@ -385,8 +397,10 @@ gc users list -a --transform=./tmpl.gotmpl
 
 ## Additional Resources
 
-1. Checkout the [Alternative Formats](https://developer.genesys.cloud/blog/2021-08-31-new-experimental-cli-feature-alternative-formats/) blog post for further reading.
-2. See Go's [template package](https://pkg.go.dev/text/template) documentation for more info on Go templates.
+1. Experimental CLI feature: Alternative Formats: [Introducing Alternative Formats - blog post](https://developer.genesys.cloud/blog/2021-08-31-new-experimental-cli-feature-alternative-formats/).
+2. Experimental CLI feature: Transform Data: [Introducing Transform Data - blog post](https://developer.genesys.cloud/blog/2021-10-01-experimental-feature-transform-data/)
+3. Go's template package documentation: [text/template](https://pkg.go.dev/text/template).
+4. The sprig library: [sprig template functions](http://masterminds.github.io/sprig/).
 
 # Examples
 
@@ -418,6 +432,24 @@ To perform a delete:
 
 ```
 gc users delete [userId]
+```
+
+To create or update multiple objects, you can pass a directory path to the `--directory` flag or to the `-d` short flag containing JSON files, where each file is a request body for either creating or updating data.
+
+For example, creating multiple user objects:
+
+`./users-directory`
+
+```
+user-1.json // each file is a request body for creating a user
+user-2.json
+user-3.json
+```
+
+To create multiple users, run the following command:
+
+```
+gc users create -d ./users-directory
 ```
 
 # Additional Tools

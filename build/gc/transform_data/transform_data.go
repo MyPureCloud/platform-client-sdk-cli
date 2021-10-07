@@ -3,9 +3,10 @@ package transform_data
 import (
 	"bytes"
 	"encoding/json"
-	"text/template"
-
+	"github.com/Masterminds/sprig"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
+	"path/filepath"
+	"text/template"
 )
 
 var (
@@ -14,16 +15,24 @@ var (
 )
 
 func ConvertJsonToMap(data string) interface{} {
-	// if the data is an array of json objects then we need to store that in an array of maps and not just a map
 	if data[0] == '[' {
-		var res []map[string]interface{}
-		err := json.Unmarshal([]byte(data), &res)
-		if err != nil {
-			logger.Fatalf("Error unmarshalling JSON: %v\n", err)
-		}
-		return res
+		return convertArrayOfObjectsToMap(data)
+	} else {
+		return convertObjectToMap(data)
 	}
+}
+
+func convertObjectToMap(data string) map[string]interface{} {
 	var res map[string]interface{}
+	err := json.Unmarshal([]byte(data), &res)
+	if err != nil {
+		logger.Fatalf("Error unmarshalling JSON: %v\n", err)
+	}
+	return res
+}
+
+func convertArrayOfObjectsToMap(data string) []map[string]interface{} {
+	var res []map[string]interface{}
 	err := json.Unmarshal([]byte(data), &res)
 	if err != nil {
 		logger.Fatalf("Error unmarshalling JSON: %v\n", err)
@@ -33,12 +42,13 @@ func ConvertJsonToMap(data string) interface{} {
 
 func ProcessTemplateFile(mp interface{}) string {
 	path := []string{TemplateFile}
-	tmpl := handleParse(template.ParseFiles(path...))
+	name := filepath.Base(path[0])
+	tmpl := handleParse(template.New(name).Funcs(sprig.TxtFuncMap()).ParseFiles(path...))
 	return process(tmpl, mp)
 }
 
 func ProcessTemplateStr(mp interface{}) string {
-	tmpl := handleParse(template.New("tmpl").Parse(TemplateStr))
+	tmpl := handleParse(template.New("tmpl").Funcs(sprig.TxtFuncMap()).Parse(TemplateStr))
 	return process(tmpl, mp)
 }
 

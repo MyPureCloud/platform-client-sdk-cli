@@ -92,7 +92,7 @@ func Cmdflows_datatables() *cobra.Command {
   "in" : "body",
   "name" : "body",
   "description" : "datatable json-schema",
-  "required" : false,
+  "required" : true,
   "schema" : {
     "$ref" : "#/definitions/DataTable"
   }

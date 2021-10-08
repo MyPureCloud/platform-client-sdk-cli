@@ -73,8 +73,10 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by Name.")
-	utils.AddFlag(listCmd.Flags(), "string", "coreLanguage", "", "Filter by core language. Valid values: en-US, de-DE")
+	utils.AddFlag(listCmd.Flags(), "string", "coreLanguage", "", "Filter by core language. Valid values: en-US, en-UK, en-AU, de-DE")
 	utils.AddFlag(listCmd.Flags(), "bool", "published", "", "Filter by published status.")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by. Valid values: Name, Date")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Sort Order. Valid values: ASC, ascending, DESC, descending")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases", utils.FormatPermissions([]string{ "knowledge:knowledgebase:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -293,6 +295,14 @@ var listCmd = &cobra.Command{
 		published := utils.GetFlag(cmd.Flags(), "bool", "published")
 		if published != "" {
 			queryParams["published"] = published
+		}
+		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
+		if sortBy != "" {
+			queryParams["sortBy"] = sortBy
+		}
+		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
+		if sortOrder != "" {
+			queryParams["sortOrder"] = sortOrder
 		}
 		urlString := path
 		if len(queryParams) > 0 {

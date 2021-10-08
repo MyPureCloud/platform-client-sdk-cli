@@ -36,6 +36,9 @@ type EdgegroupDud struct {
     
 
 
+    
+
+
     State string `json:"state"`
 
 
@@ -68,6 +71,10 @@ type Edgegroup struct {
 
     // Name - The name of the entity.
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // Description - The resource's description.
@@ -181,6 +188,10 @@ func (o *Edgegroup) String() string {
     
     
     
+    
+    
+    
+    
      o.PhoneTrunkBases = []Trunkbase{{}} 
     
     
@@ -205,6 +216,8 @@ func (u *Edgegroup) MarshalJSON() ([]byte, error) {
         
         
         Name string `json:"name"`
+        
+        Division Division `json:"division"`
         
         Description string `json:"description"`
         
@@ -236,6 +249,10 @@ func (u *Edgegroup) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

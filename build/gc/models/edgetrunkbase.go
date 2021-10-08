@@ -36,6 +36,9 @@ type EdgetrunkbaseDud struct {
     
 
 
+    
+
+
     State string `json:"state"`
 
 
@@ -65,6 +68,10 @@ type Edgetrunkbase struct {
 
     // Name - The name of the entity.
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // Description - The resource's description.
@@ -166,6 +173,10 @@ func (o *Edgetrunkbase) String() string {
     
     
     
+    
+    
+    
+    
      o.Properties = map[string]interface{}{"": Interface{}} 
     
     
@@ -195,6 +206,8 @@ func (u *Edgetrunkbase) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Division Division `json:"division"`
+        
         Description string `json:"description"`
         
         Version int `json:"version"`
@@ -223,6 +236,10 @@ func (u *Edgetrunkbase) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

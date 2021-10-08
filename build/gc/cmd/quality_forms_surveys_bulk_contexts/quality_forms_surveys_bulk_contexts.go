@@ -37,7 +37,10 @@ func Cmdquality_forms_surveys_bulk_contexts() *cobra.Command {
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
   "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/SurveyForm"
+    }
   }
 }`)
 	quality_forms_surveys_bulk_contextsCmd.AddCommand(listCmd)

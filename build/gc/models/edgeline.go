@@ -36,6 +36,9 @@ type EdgelineDud struct {
     
 
 
+    
+
+
     State string `json:"state"`
 
 
@@ -80,6 +83,10 @@ type Edgeline struct {
 
     // Name - The name of the entity.
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // Description - The resource's description.
@@ -201,6 +208,10 @@ func (o *Edgeline) String() string {
     
     
     
+    
+    
+    
+    
      o.Properties = map[string]interface{}{"": Interface{}} 
     
     
@@ -250,6 +261,8 @@ func (u *Edgeline) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Division Division `json:"division"`
+        
         Description string `json:"description"`
         
         Version int `json:"version"`
@@ -288,6 +301,10 @@ func (u *Edgeline) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

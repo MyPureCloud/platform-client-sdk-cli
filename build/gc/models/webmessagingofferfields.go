@@ -13,6 +13,9 @@ var (
 type WebmessagingofferfieldsDud struct { 
     
 
+
+    
+
 }
 
 // Webmessagingofferfields
@@ -20,10 +23,18 @@ type Webmessagingofferfields struct {
     // OfferText - Text value to be used when inviting a visitor to engage with a web messaging offer.
     OfferText string `json:"offerText"`
 
+
+    // ArchitectFlow - Flow to be invoked, overrides default flow when specified.
+    ArchitectFlow Addressableentityref `json:"architectFlow"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Webmessagingofferfields) String() string {
+    
+    
+    
+    
     
     
     
@@ -47,8 +58,14 @@ func (u *Webmessagingofferfields) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         OfferText string `json:"offerText"`
         
+        ArchitectFlow Addressableentityref `json:"architectFlow"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

@@ -26,7 +26,19 @@ type OpennormalizedmessageDud struct {
     
 
 
+    Status string `json:"status"`
+
+
+    Reasons []Reason `json:"reasons"`
+
+
+    IsFinalReceipt bool `json:"isFinalReceipt"`
+
+
     Direction string `json:"direction"`
+
+
+    
 
 }
 
@@ -53,6 +65,19 @@ type Opennormalizedmessage struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    // Metadata - Additional metadata about this message.
+    Metadata map[string]string `json:"metadata"`
+
 }
 
 // String returns a JSON representation of the model
@@ -76,6 +101,16 @@ func (o *Opennormalizedmessage) String() string {
      o.Content = []Openmessagecontent{{}} 
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     o.Metadata = map[string]string{"": ""} 
     
     
 
@@ -106,6 +141,14 @@ func (u *Opennormalizedmessage) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
+        
+        
+        
+        
+        Metadata map[string]string `json:"metadata"`
+        
         *Alias
     }{
         
@@ -132,6 +175,24 @@ func (u *Opennormalizedmessage) MarshalJSON() ([]byte, error) {
 
         
 
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        Metadata: map[string]string{"": ""},
         
 
         

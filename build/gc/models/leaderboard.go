@@ -29,6 +29,9 @@ type LeaderboardDud struct {
 
     UserRank Leaderboarditem `json:"userRank"`
 
+
+    PerformanceProfile Addressableentityref `json:"performanceProfile"`
+
 }
 
 // Leaderboard
@@ -50,10 +53,15 @@ type Leaderboard struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Leaderboard) String() string {
+    
+    
     
     
     
@@ -95,8 +103,14 @@ func (u *Leaderboard) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

@@ -379,6 +379,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -873,6 +876,10 @@ type Viewfilter struct {
 
     // AgentCallbackOwnerIds - The list of callback owners used to filter interactions
     AgentCallbackOwnerIds []string `json:"agentCallbackOwnerIds"`
+
+
+    // TranscriptTopics - The list of transcript topics requested in filter
+    TranscriptTopics []Transcripttopics `json:"transcriptTopics"`
 
 }
 
@@ -1371,6 +1378,10 @@ func (o *Viewfilter) String() string {
      o.AgentCallbackOwnerIds = []string{""} 
     
     
+    
+     o.TranscriptTopics = []Transcripttopics{{}} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1632,6 +1643,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         IsAgentOwnedCallback bool `json:"isAgentOwnedCallback"`
         
         AgentCallbackOwnerIds []string `json:"agentCallbackOwnerIds"`
+        
+        TranscriptTopics []Transcripttopics `json:"transcriptTopics"`
         
         *Alias
     }{
@@ -2303,6 +2316,12 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         AgentCallbackOwnerIds: []string{""},
+        
+
+        
+
+        
+        TranscriptTopics: []Transcripttopics{{}},
         
 
         

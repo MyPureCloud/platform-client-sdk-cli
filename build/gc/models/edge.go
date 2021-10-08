@@ -36,6 +36,9 @@ type EdgeDud struct {
     
 
 
+    
+
+
     State string `json:"state"`
 
 
@@ -143,6 +146,10 @@ type Edge struct {
 
     // Name - The name of the entity.
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // Description - The resource's description.
@@ -340,6 +347,10 @@ func (o *Edge) String() string {
     
     
     
+    
+    
+    
+    
      o.Interfaces = []Edgeinterface{{}} 
     
     
@@ -469,6 +480,8 @@ func (u *Edge) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Division Division `json:"division"`
+        
         Description string `json:"description"`
         
         Version int `json:"version"`
@@ -549,6 +562,10 @@ func (u *Edge) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

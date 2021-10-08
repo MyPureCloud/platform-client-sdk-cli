@@ -36,6 +36,9 @@ type SiteDud struct {
     
 
 
+    
+
+
     State string `json:"state"`
 
 
@@ -98,6 +101,10 @@ type Site struct {
 
     // Name - The name of the entity.
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // Description - The resource's description.
@@ -239,6 +246,10 @@ func (o *Site) String() string {
     
     
     
+    
+    
+    
+    
      o.PrimarySites = []Domainentityref{{}} 
     
     
@@ -316,6 +327,8 @@ func (u *Site) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Division Division `json:"division"`
+        
         Description string `json:"description"`
         
         Version int `json:"version"`
@@ -366,6 +379,10 @@ func (u *Site) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

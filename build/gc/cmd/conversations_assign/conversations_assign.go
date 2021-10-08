@@ -52,8 +52,8 @@ func Cmdconversations_assign() *cobra.Command {
 
 var createCmd = &cobra.Command{
 	Use:   "create [conversationId]",
-	Short: "Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.",
-	Long:  "Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.",
+	Short: "Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.",
+	Long:  "Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.",
 	Args:  utils.DetermineArgs([]string{ "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

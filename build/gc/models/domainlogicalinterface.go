@@ -36,6 +36,9 @@ type DomainlogicalinterfaceDud struct {
     
 
 
+    
+
+
     State string `json:"state"`
 
 
@@ -143,6 +146,10 @@ type Domainlogicalinterface struct {
 
     // Name - The name of the entity.
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // Description - The resource's description.
@@ -380,6 +387,10 @@ func (o *Domainlogicalinterface) String() string {
     
     
     
+    
+    
+    
+    
      o.Routes = []Domainnetworkroute{{}} 
     
     
@@ -475,6 +486,8 @@ func (u *Domainlogicalinterface) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Division Division `json:"division"`
+        
         Description string `json:"description"`
         
         Version int `json:"version"`
@@ -555,6 +568,10 @@ func (u *Domainlogicalinterface) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

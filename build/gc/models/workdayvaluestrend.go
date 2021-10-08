@@ -29,6 +29,9 @@ type WorkdayvaluestrendDud struct {
 
     Results []Workdayvaluesmetricitem `json:"results"`
 
+
+    PerformanceProfile Addressableentityref `json:"performanceProfile"`
+
 }
 
 // Workdayvaluestrend
@@ -50,10 +53,15 @@ type Workdayvaluestrend struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Workdayvaluestrend) String() string {
+    
+    
     
     
     
@@ -95,8 +103,14 @@ func (u *Workdayvaluestrend) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

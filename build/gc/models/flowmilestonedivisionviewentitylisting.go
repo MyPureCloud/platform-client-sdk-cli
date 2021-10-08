@@ -68,12 +68,12 @@ type Flowmilestonedivisionviewentitylisting struct {
     SelfUri string `json:"selfUri"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
-
     // NextUri
     NextUri string `json:"nextUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // LastUri
@@ -156,9 +156,9 @@ func (u *Flowmilestonedivisionviewentitylisting) MarshalJSON() ([]byte, error) {
         
         SelfUri string `json:"selfUri"`
         
-        PreviousUri string `json:"previousUri"`
-        
         NextUri string `json:"nextUri"`
+        
+        PreviousUri string `json:"previousUri"`
         
         LastUri string `json:"lastUri"`
         

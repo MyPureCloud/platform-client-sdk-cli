@@ -37,6 +37,9 @@ type VoicemailgrouppolicyDud struct {
 
     
 
+
+    
+
 }
 
 // Voicemailgrouppolicy
@@ -68,17 +71,25 @@ type Voicemailgrouppolicy struct {
     StopRingingAfterRotations int `json:"stopRingingAfterRotations"`
 
 
-    // OverflowGroupId -  A fallback group to contact when all of the members in this group did not answer the call.
+    // OverflowGroupId - A fallback group to contact when all of the members in this group did not answer the call.
     OverflowGroupId string `json:"overflowGroupId"`
 
 
     // GroupAlertType - Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin.
     GroupAlertType string `json:"groupAlertType"`
 
+
+    // InteractiveResponsePromptId - The prompt to use when connecting a user to a Group Ring call
+    InteractiveResponsePromptId string `json:"interactiveResponsePromptId"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Voicemailgrouppolicy) String() string {
+    
+    
+    
+    
     
     
     
@@ -148,8 +159,14 @@ func (u *Voicemailgrouppolicy) MarshalJSON() ([]byte, error) {
         
         GroupAlertType string `json:"groupAlertType"`
         
+        InteractiveResponsePromptId string `json:"interactiveResponsePromptId"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

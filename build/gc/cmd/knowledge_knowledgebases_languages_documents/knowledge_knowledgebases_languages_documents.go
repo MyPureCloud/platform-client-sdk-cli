@@ -74,6 +74,8 @@ func Cmdknowledge_knowledgebases_languages_documents() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "categories", "", "Filter by categories ids, comma separated values expected.")
 	utils.AddFlag(listCmd.Flags(), "string", "title", "", "Filter by document title.")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by. Valid values: Title, Date")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Sort Order. Valid values: ASC, ascending, DESC, descending")
 	utils.AddFlag(listCmd.Flags(), "[]string", "documentIds", "", "Comma-separated list of document identifiers to fetch by.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents", utils.FormatPermissions([]string{ "knowledge:document:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -326,6 +328,14 @@ var listCmd = &cobra.Command{
 		title := utils.GetFlag(cmd.Flags(), "string", "title")
 		if title != "" {
 			queryParams["title"] = title
+		}
+		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
+		if sortBy != "" {
+			queryParams["sortBy"] = sortBy
+		}
+		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
+		if sortOrder != "" {
+			queryParams["sortOrder"] = sortOrder
 		}
 		documentIds := utils.GetFlag(cmd.Flags(), "[]string", "documentIds")
 		if documentIds != "" {

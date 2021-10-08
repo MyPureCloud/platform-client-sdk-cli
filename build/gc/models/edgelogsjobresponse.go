@@ -36,6 +36,9 @@ type EdgelogsjobresponseDud struct {
     
 
 
+    
+
+
     State string `json:"state"`
 
 
@@ -57,6 +60,10 @@ type Edgelogsjobresponse struct {
 
     // Name - The name of the entity.
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // Description - The resource's description.
@@ -145,6 +152,10 @@ func (o *Edgelogsjobresponse) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -164,6 +175,8 @@ func (u *Edgelogsjobresponse) MarshalJSON() ([]byte, error) {
         Id string `json:"id"`
         
         Name string `json:"name"`
+        
+        Division Division `json:"division"`
         
         Description string `json:"description"`
         
@@ -187,6 +200,10 @@ func (u *Edgelogsjobresponse) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

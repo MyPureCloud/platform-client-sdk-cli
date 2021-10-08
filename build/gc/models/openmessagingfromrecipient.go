@@ -25,6 +25,12 @@ type OpenmessagingfromrecipientDud struct {
 
     
 
+
+    Image string `json:"image"`
+
+
+    
+
 }
 
 // Openmessagingfromrecipient - Information about the recipient the message is received from.
@@ -48,10 +54,23 @@ type Openmessagingfromrecipient struct {
     // LastName - Last name of the recipient.
     LastName string `json:"lastName"`
 
+
+    
+
+
+    // Email - E-mail address of the recipient.
+    Email string `json:"email"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Openmessagingfromrecipient) String() string {
+    
+    
+    
+    
+    
+    
     
     
     
@@ -99,8 +118,20 @@ func (u *Openmessagingfromrecipient) MarshalJSON() ([]byte, error) {
         
         LastName string `json:"lastName"`
         
+        
+        
+        Email string `json:"email"`
+        
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
         
 
         

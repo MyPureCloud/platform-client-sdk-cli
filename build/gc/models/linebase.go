@@ -36,6 +36,9 @@ type LinebaseDud struct {
     
 
 
+    
+
+
     State string `json:"state"`
 
 
@@ -62,6 +65,10 @@ type Linebase struct {
 
     // Name - The name of the entity.
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // Description - The resource's description.
@@ -159,6 +166,10 @@ func (o *Linebase) String() string {
     
     
     
+    
+    
+    
+    
      o.Properties = map[string]interface{}{"": Interface{}} 
     
     
@@ -183,6 +194,8 @@ func (u *Linebase) MarshalJSON() ([]byte, error) {
         
         
         Name string `json:"name"`
+        
+        Division Division `json:"division"`
         
         Description string `json:"description"`
         
@@ -210,6 +223,10 @@ func (u *Linebase) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

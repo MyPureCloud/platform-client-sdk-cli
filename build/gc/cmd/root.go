@@ -45,7 +45,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
@@ -65,6 +64,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profile"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/organizations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gamification"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge"
@@ -89,6 +89,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/voicemail"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/architect"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webdeployments"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webmessaging"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/coaching"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/widgets"
@@ -118,7 +119,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 22.0.1")
+		fmt.Println("Current version: 23.0.0")
 		checkForNewVersion()
 	},
 }
@@ -137,7 +138,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("22.0.1", latestVersion) {
+	if versionsAreEqual("23.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -256,7 +257,6 @@ func init() {
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
 	rootCmd.AddCommand(fax.Cmdfax())
-	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())
 	rootCmd.AddCommand(logging.Cmdlogging())
@@ -276,6 +276,7 @@ func init() {
 	rootCmd.AddCommand(profile.Cmdprofile())
 	rootCmd.AddCommand(organizations.Cmdorganizations())
 	rootCmd.AddCommand(gamification.Cmdgamification())
+	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(geolocations.Cmdgeolocations())
 	rootCmd.AddCommand(journey.Cmdjourney())
 	rootCmd.AddCommand(knowledge.Cmdknowledge())
@@ -300,6 +301,7 @@ func init() {
 	rootCmd.AddCommand(voicemail.Cmdvoicemail())
 	rootCmd.AddCommand(architect.Cmdarchitect())
 	rootCmd.AddCommand(webdeployments.Cmdwebdeployments())
+	rootCmd.AddCommand(webmessaging.Cmdwebmessaging())
 	rootCmd.AddCommand(coaching.Cmdcoaching())
 	rootCmd.AddCommand(learning.Cmdlearning())
 	rootCmd.AddCommand(widgets.Cmdwidgets())

@@ -33,6 +33,9 @@ type VoicemailorganizationpolicyDud struct {
     
 
 
+    
+
+
     ModifiedDate time.Time `json:"modifiedDate"`
 
 }
@@ -42,7 +45,7 @@ type Voicemailorganizationpolicy struct {
     
 
 
-    // AlertTimeoutSeconds - The organization's default number of seconds to ring a user's phone before a call is transfered to voicemail
+    // AlertTimeoutSeconds - The organization's default number of seconds to ring a user's phone before a call is transferred to voicemail
     AlertTimeoutSeconds int `json:"alertTimeoutSeconds"`
 
 
@@ -56,6 +59,10 @@ type Voicemailorganizationpolicy struct {
 
     // PinRequired - If this is true, a PIN is required when accessing a user's voicemail from a phone.
     PinRequired bool `json:"pinRequired"`
+
+
+    // InteractiveResponseRequired - Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call
+    InteractiveResponseRequired bool `json:"interactiveResponseRequired"`
 
 
     // SendEmailNotifications - Whether email notifications are sent for new voicemails in the organization. If false, new voicemail email notifications are not be sent for the organization overriding any user or group setting.
@@ -72,6 +79,10 @@ type Voicemailorganizationpolicy struct {
 
 // String returns a JSON representation of the model
 func (o *Voicemailorganizationpolicy) String() string {
+    
+    
+    
+    
     
     
     
@@ -127,6 +138,8 @@ func (u *Voicemailorganizationpolicy) MarshalJSON() ([]byte, error) {
         
         PinRequired bool `json:"pinRequired"`
         
+        InteractiveResponseRequired bool `json:"interactiveResponseRequired"`
+        
         SendEmailNotifications bool `json:"sendEmailNotifications"`
         
         DisableEmailPii bool `json:"disableEmailPii"`
@@ -135,6 +148,10 @@ func (u *Voicemailorganizationpolicy) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

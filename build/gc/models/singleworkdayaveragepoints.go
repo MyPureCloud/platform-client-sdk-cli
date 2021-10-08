@@ -20,6 +20,9 @@ type SingleworkdayaveragepointsDud struct {
 
     AveragePoints float64 `json:"averagePoints"`
 
+
+    PerformanceProfile Addressableentityref `json:"performanceProfile"`
+
 }
 
 // Singleworkdayaveragepoints
@@ -32,10 +35,15 @@ type Singleworkdayaveragepoints struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Singleworkdayaveragepoints) String() string {
+    
+    
     
     
     
@@ -65,8 +73,14 @@ func (u *Singleworkdayaveragepoints) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

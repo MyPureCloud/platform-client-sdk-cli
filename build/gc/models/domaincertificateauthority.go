@@ -36,6 +36,9 @@ type DomaincertificateauthorityDud struct {
     
 
 
+    
+
+
     State string `json:"state"`
 
 
@@ -68,6 +71,10 @@ type Domaincertificateauthority struct {
 
     // Name - The name of the entity.
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // Description - The resource's description.
@@ -177,6 +184,10 @@ func (o *Domaincertificateauthority) String() string {
     
     
     
+    
+    
+    
+    
      o.Services = []string{""} 
     
     
@@ -205,6 +216,8 @@ func (u *Domaincertificateauthority) MarshalJSON() ([]byte, error) {
         
         
         Name string `json:"name"`
+        
+        Division Division `json:"division"`
         
         Description string `json:"description"`
         
@@ -236,6 +249,10 @@ func (u *Domaincertificateauthority) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

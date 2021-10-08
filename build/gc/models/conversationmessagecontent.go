@@ -28,12 +28,19 @@ type ConversationmessagecontentDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationmessagecontent - Message content element.
 type Conversationmessagecontent struct { 
     // ContentType - Type of this content element. If contentType = \"Attachment\" only one item is allowed.
     ContentType string `json:"contentType"`
+
+
+    // Location - Location content.
+    Location Conversationcontentlocation `json:"location"`
 
 
     // Attachment - Attachment content.
@@ -53,12 +60,16 @@ type Conversationmessagecontent struct {
 
 
     // Generic - Generic Template Object
-    Generic Contentgeneric `json:"generic"`
+    Generic Conversationcontentgeneric `json:"generic"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationmessagecontent) String() string {
+    
+    
+    
+    
     
     
     
@@ -102,6 +113,8 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         ContentType string `json:"contentType"`
         
+        Location Conversationcontentlocation `json:"location"`
+        
         Attachment Conversationcontentattachment `json:"attachment"`
         
         QuickReply Conversationcontentquickreply `json:"quickReply"`
@@ -110,10 +123,14 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
         
         ButtonResponse Conversationcontentbuttonresponse `json:"buttonResponse"`
         
-        Generic Contentgeneric `json:"generic"`
+        Generic Conversationcontentgeneric `json:"generic"`
         
         *Alias
     }{
+        
+
+        
+
         
 
         

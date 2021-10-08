@@ -36,6 +36,9 @@ type ExtensionpoolDud struct {
     
 
 
+    
+
+
     State string `json:"state"`
 
 
@@ -62,6 +65,10 @@ type Extensionpool struct {
 
     // Name - The name of the entity.
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // Description - The resource's description.
@@ -164,6 +171,10 @@ func (o *Extensionpool) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -183,6 +194,8 @@ func (u *Extensionpool) MarshalJSON() ([]byte, error) {
         
         
         Name string `json:"name"`
+        
+        Division Division `json:"division"`
         
         Description string `json:"description"`
         
@@ -210,6 +223,10 @@ func (u *Extensionpool) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

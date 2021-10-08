@@ -49,6 +49,9 @@ type AvailabletopicDud struct {
 
     
 
+
+    
+
 }
 
 // Availabletopic
@@ -103,6 +106,10 @@ type Availabletopic struct {
 
     // PublicApiTemplateUriPaths
     PublicApiTemplateUriPaths []string `json:"publicApiTemplateUriPaths"`
+
+
+    // TopicParameters - Parameters in the topic name that can be substituted
+    TopicParameters []string `json:"topicParameters"`
 
 }
 
@@ -161,6 +168,10 @@ func (o *Availabletopic) String() string {
      o.PublicApiTemplateUriPaths = []string{""} 
     
     
+    
+     o.TopicParameters = []string{""} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -202,6 +213,8 @@ func (u *Availabletopic) MarshalJSON() ([]byte, error) {
         Transports []string `json:"transports"`
         
         PublicApiTemplateUriPaths []string `json:"publicApiTemplateUriPaths"`
+        
+        TopicParameters []string `json:"topicParameters"`
         
         *Alias
     }{
@@ -265,6 +278,12 @@ func (u *Availabletopic) MarshalJSON() ([]byte, error) {
 
         
         PublicApiTemplateUriPaths: []string{""},
+        
+
+        
+
+        
+        TopicParameters: []string{""},
         
 
         

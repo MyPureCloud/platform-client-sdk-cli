@@ -26,6 +26,9 @@ type SingleworkdayaveragevaluesDud struct {
 
     Results []Workdayvaluesmetricitem `json:"results"`
 
+
+    PerformanceProfile Addressableentityref `json:"performanceProfile"`
+
 }
 
 // Singleworkdayaveragevalues
@@ -44,10 +47,15 @@ type Singleworkdayaveragevalues struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Singleworkdayaveragevalues) String() string {
+    
+    
     
     
     
@@ -85,8 +93,14 @@ func (u *Singleworkdayaveragevalues) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

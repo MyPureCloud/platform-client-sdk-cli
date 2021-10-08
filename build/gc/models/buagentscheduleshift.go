@@ -12,13 +12,13 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type BuagentscheduleshiftDud struct { 
-    Id string `json:"id"`
-
-
     
 
 
-    
+    StartDate time.Time `json:"startDate"`
+
+
+    LengthMinutes int `json:"lengthMinutes"`
 
 
     
@@ -33,15 +33,14 @@ type BuagentscheduleshiftDud struct {
 
 // Buagentscheduleshift
 type Buagentscheduleshift struct { 
+    // Id - The ID of the shift
+    Id string `json:"id"`
+
+
     
 
 
-    // StartDate - The start date of this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    StartDate time.Time `json:"startDate"`
-
-
-    // LengthMinutes - The length of this shift in minutes
-    LengthMinutes int `json:"lengthMinutes"`
+    
 
 
     // Activities - The activities associated with this shift
@@ -58,8 +57,6 @@ type Buagentscheduleshift struct {
 
 // String returns a JSON representation of the model
 func (o *Buagentscheduleshift) String() string {
-    
-    
     
     
     
@@ -95,11 +92,11 @@ func (u *Buagentscheduleshift) MarshalJSON() ([]byte, error) {
     BuagentscheduleshiftMarshalled = true
 
     return json.Marshal(&struct { 
+        Id string `json:"id"`
         
         
-        StartDate time.Time `json:"startDate"`
         
-        LengthMinutes int `json:"lengthMinutes"`
+        
         
         Activities []Buagentscheduleactivity `json:"activities"`
         

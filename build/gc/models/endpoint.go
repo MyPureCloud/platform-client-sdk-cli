@@ -36,6 +36,9 @@ type EndpointDud struct {
     
 
 
+    
+
+
     State string `json:"state"`
 
 
@@ -74,6 +77,10 @@ type Endpoint struct {
 
     // Name - Name
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // Description - The resource's description.
@@ -187,6 +194,10 @@ func (o *Endpoint) String() string {
     
     
     
+    
+    
+    
+    
      o.Properties = map[string]interface{}{"": Interface{}} 
     
     
@@ -228,6 +239,8 @@ func (u *Endpoint) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Division Division `json:"division"`
+        
         Description string `json:"description"`
         
         Version int `json:"version"`
@@ -262,6 +275,10 @@ func (u *Endpoint) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

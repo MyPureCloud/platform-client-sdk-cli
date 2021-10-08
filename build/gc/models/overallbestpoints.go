@@ -16,6 +16,9 @@ type OverallbestpointsDud struct {
 
     BestPoints []Overallbestpointsitem `json:"bestPoints"`
 
+
+    PerformanceProfile Addressableentityref `json:"performanceProfile"`
+
 }
 
 // Overallbestpoints
@@ -25,10 +28,15 @@ type Overallbestpoints struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Overallbestpoints) String() string {
+    
+    
     
     
     
@@ -54,8 +62,14 @@ func (u *Overallbestpoints) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

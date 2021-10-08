@@ -36,6 +36,9 @@ type MetabaseDud struct {
     
 
 
+    
+
+
     State string `json:"state"`
 
 
@@ -59,6 +62,10 @@ type Metabase struct {
 
     // Name - The name of the entity.
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // Description
@@ -153,6 +160,10 @@ func (o *Metabase) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -172,6 +183,8 @@ func (u *Metabase) MarshalJSON() ([]byte, error) {
         
         
         Name string `json:"name"`
+        
+        Division Division `json:"division"`
         
         Description string `json:"description"`
         
@@ -197,6 +210,10 @@ func (u *Metabase) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

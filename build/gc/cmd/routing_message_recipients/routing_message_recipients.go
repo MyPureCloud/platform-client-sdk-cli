@@ -39,7 +39,7 @@ func Cmdrouting_message_recipients() *cobra.Command {
 }`)
 	routing_message_recipientsCmd.AddCommand(getCmd)
 	
-	utils.AddFlag(listCmd.Flags(), "string", "messengerType", "", "Messenger Type Valid values: sms, facebook, twitter, line, whatsapp, open")
+	utils.AddFlag(listCmd.Flags(), "string", "messengerType", "", "Messenger Type Valid values: sms, facebook, twitter, line, whatsapp, open, instagram")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/message/recipients", utils.FormatPermissions([]string{ "routing:message:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/message/recipients")))

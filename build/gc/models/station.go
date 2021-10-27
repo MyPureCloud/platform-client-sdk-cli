@@ -50,6 +50,9 @@ type StationDud struct {
     WebRtcForceTurn bool `json:"webRtcForceTurn"`
 
 
+    WebRtcCallAppearances int `json:"webRtcCallAppearances"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -106,10 +109,15 @@ type Station struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Station) String() string {
+    
+    
     
     
     
@@ -201,8 +209,14 @@ func (u *Station) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

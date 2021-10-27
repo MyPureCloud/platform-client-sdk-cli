@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdanalytics_conversations_details_jobs() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/conversations/details/jobs", utils.FormatPermissions([]string{ "analytics:conversationDetail:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/conversations/details/jobs")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/conversations/details/jobs", utils.FormatPermissions([]string{ "analytics:conversationDetail:view", "analytics:agentConversationDetail:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/conversations/details/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "in" : "body",
   "name" : "body",
@@ -47,7 +47,7 @@ func Cmdanalytics_conversations_details_jobs() *cobra.Command {
 }`)
 	analytics_conversations_details_jobsCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/analytics/conversations/details/jobs/{jobId}", utils.FormatPermissions([]string{ "analytics:conversationDetail:view",  }), utils.GenerateDevCentreLink("DELETE", "Analytics", "/api/v2/analytics/conversations/details/jobs/{jobId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/analytics/conversations/details/jobs/{jobId}", utils.FormatPermissions([]string{ "analytics:conversationDetail:view", "analytics:agentConversationDetail:view",  }), utils.GenerateDevCentreLink("DELETE", "Analytics", "/api/v2/analytics/conversations/details/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -55,7 +55,7 @@ func Cmdanalytics_conversations_details_jobs() *cobra.Command {
 }`)
 	analytics_conversations_details_jobsCmd.AddCommand(deleteCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/analytics/conversations/details/jobs/{jobId}", utils.FormatPermissions([]string{ "analytics:conversationDetail:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/conversations/details/jobs/{jobId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/analytics/conversations/details/jobs/{jobId}", utils.FormatPermissions([]string{ "analytics:conversationDetail:view", "analytics:agentConversationDetail:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/conversations/details/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

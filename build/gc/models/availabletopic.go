@@ -108,7 +108,7 @@ type Availabletopic struct {
     PublicApiTemplateUriPaths []string `json:"publicApiTemplateUriPaths"`
 
 
-    // TopicParameters - Parameters in the topic name that can be substituted
+    // TopicParameters - Parameters in the topic name that can be substituted, in the order they appear in the topic name
     TopicParameters []string `json:"topicParameters"`
 
 }

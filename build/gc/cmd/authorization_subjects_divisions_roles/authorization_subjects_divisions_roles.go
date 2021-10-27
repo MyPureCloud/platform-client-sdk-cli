@@ -38,6 +38,7 @@ func Cmdauthorization_subjects_divisions_roles() *cobra.Command {
     "$ref" : "#/definitions/ErrorBody"
   },
   "x-inin-error-codes" : {
+    "max.role.assignments.exceeded" : "Too many roles granted to a subject",
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
     "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable",
     "invalid.date" : "Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ",

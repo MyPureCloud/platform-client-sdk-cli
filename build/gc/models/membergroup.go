@@ -23,7 +23,7 @@ type MembergroupDud struct {
     
 
 
-    
+    MemberCount int `json:"memberCount"`
 
 
     SelfUri string `json:"selfUri"`
@@ -43,12 +43,11 @@ type Membergroup struct {
     Division Division `json:"division"`
 
 
-    // VarType - The type of group, e.g. TEAM, etc.
+    // VarType - The group type
     VarType string `json:"type"`
 
 
-    // MemberCount - The number of members in this group
-    MemberCount int `json:"memberCount"`
+    
 
 
     
@@ -57,8 +56,6 @@ type Membergroup struct {
 
 // String returns a JSON representation of the model
 func (o *Membergroup) String() string {
-    
-    
     
     
     
@@ -102,7 +99,7 @@ func (u *Membergroup) MarshalJSON() ([]byte, error) {
         
         VarType string `json:"type"`
         
-        MemberCount int `json:"memberCount"`
+        
         
         
         

@@ -22,6 +22,9 @@ type SchedulingtestingoptionsrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Schedulingtestingoptionsrequest
@@ -41,10 +44,18 @@ type Schedulingtestingoptionsrequest struct {
     // PopulateWarnings - Whether to populate warnings in the generated schedule
     PopulateWarnings bool `json:"populateWarnings"`
 
+
+    // PopulateDeprecatedWarnings - Whether to populate deprecated warnings in the generated schedule
+    PopulateDeprecatedWarnings bool `json:"populateDeprecatedWarnings"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Schedulingtestingoptionsrequest) String() string {
+    
+    
+    
+    
     
     
     
@@ -86,8 +97,14 @@ func (u *Schedulingtestingoptionsrequest) MarshalJSON() ([]byte, error) {
         
         PopulateWarnings bool `json:"populateWarnings"`
         
+        PopulateDeprecatedWarnings bool `json:"populateDeprecatedWarnings"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

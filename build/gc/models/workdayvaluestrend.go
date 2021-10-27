@@ -18,6 +18,9 @@ type WorkdayvaluestrendDud struct {
     DateEndWorkday time.Time `json:"dateEndWorkday"`
 
 
+    DateReferenceWorkday time.Time `json:"dateReferenceWorkday"`
+
+
     Division Division `json:"division"`
 
 
@@ -31,6 +34,9 @@ type WorkdayvaluestrendDud struct {
 
 
     PerformanceProfile Addressableentityref `json:"performanceProfile"`
+
+
+    Metric Addressableentityref `json:"metric"`
 
 }
 
@@ -56,10 +62,20 @@ type Workdayvaluestrend struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Workdayvaluestrend) String() string {
+    
+    
+    
+    
     
     
     
@@ -105,8 +121,20 @@ func (u *Workdayvaluestrend) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
+        
+        
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
         
 
         

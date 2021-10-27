@@ -117,7 +117,7 @@ type Schedule struct {
     End time.Time `json:"end"`
 
 
-    // Rrule - An iCal Recurrence Rule (RRULE) string.
+    // Rrule - An iCal Recurrence Rule (RRULE) string. It is required to be set for schedules determining when upgrades to the Edge software can be applied.
     Rrule string `json:"rrule"`
 
 

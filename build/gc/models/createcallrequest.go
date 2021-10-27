@@ -46,6 +46,9 @@ type CreatecallrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createcallrequest
@@ -96,6 +99,10 @@ type Createcallrequest struct {
 
     // UuiData - User to User Information (UUI) data managed by SIP session application.
     UuiData string `json:"uuiData"`
+
+
+    // ExternalContactId - The external contact with which to associate the call.
+    ExternalContactId string `json:"externalContactId"`
 
 }
 
@@ -150,6 +157,10 @@ func (o *Createcallrequest) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -189,6 +200,8 @@ func (u *Createcallrequest) MarshalJSON() ([]byte, error) {
         Participants []Destination `json:"participants"`
         
         UuiData string `json:"uuiData"`
+        
+        ExternalContactId string `json:"externalContactId"`
         
         *Alias
     }{
@@ -240,6 +253,10 @@ func (u *Createcallrequest) MarshalJSON() ([]byte, error) {
 
         
         Participants: []Destination{{}},
+        
+
+        
+
         
 
         

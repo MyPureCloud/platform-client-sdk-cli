@@ -382,6 +382,45 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -880,6 +919,58 @@ type Viewfilter struct {
 
     // TranscriptTopics - The list of transcript topics requested in filter
     TranscriptTopics []Transcripttopics `json:"transcriptTopics"`
+
+
+    // JourneyFrequencyCapReasons - The list of frequency cap reasons to filter offer constraints
+    JourneyFrequencyCapReasons []string `json:"journeyFrequencyCapReasons"`
+
+
+    // JourneyBlockingActionMapIds - The list of blocking action maps to filter offer constraints
+    JourneyBlockingActionMapIds []string `json:"journeyBlockingActionMapIds"`
+
+
+    // JourneyActionTargetIds - The list of action targets to filter offer constraints
+    JourneyActionTargetIds []string `json:"journeyActionTargetIds"`
+
+
+    // JourneyBlockingScheduleGroupIds - The list of blocking schedule groups to filter offer constraints
+    JourneyBlockingScheduleGroupIds []string `json:"journeyBlockingScheduleGroupIds"`
+
+
+    // JourneyBlockingEmergencyScheduleGroupIds - The list of emergency schedule groups to filter offer constraints
+    JourneyBlockingEmergencyScheduleGroupIds []string `json:"journeyBlockingEmergencyScheduleGroupIds"`
+
+
+    // JourneyUrlEqualConditions - The list of url equal conditions to filter offer constraints
+    JourneyUrlEqualConditions []string `json:"journeyUrlEqualConditions"`
+
+
+    // JourneyUrlNotEqualConditions - The list of url not equal conditions to filter offer constraints
+    JourneyUrlNotEqualConditions []string `json:"journeyUrlNotEqualConditions"`
+
+
+    // JourneyUrlStartsWithConditions - The list of url starts with conditions to filter offer constraints
+    JourneyUrlStartsWithConditions []string `json:"journeyUrlStartsWithConditions"`
+
+
+    // JourneyUrlEndsWithConditions - The list of url ends with conditions to filter offer constraints
+    JourneyUrlEndsWithConditions []string `json:"journeyUrlEndsWithConditions"`
+
+
+    // JourneyUrlContainsAnyConditions - The list of url contains any conditions to filter offer constraints
+    JourneyUrlContainsAnyConditions []string `json:"journeyUrlContainsAnyConditions"`
+
+
+    // JourneyUrlNotContainsAnyConditions - The list of url not contains any conditions to filter offer constraints
+    JourneyUrlNotContainsAnyConditions []string `json:"journeyUrlNotContainsAnyConditions"`
+
+
+    // JourneyUrlContainsAllConditions - The list of url contains all conditions to filter offer constraints
+    JourneyUrlContainsAllConditions []string `json:"journeyUrlContainsAllConditions"`
+
+
+    // JourneyUrlNotContainsAllConditions - The list of url not contains all conditions to filter offer constraints
+    JourneyUrlNotContainsAllConditions []string `json:"journeyUrlNotContainsAllConditions"`
 
 }
 
@@ -1382,6 +1473,58 @@ func (o *Viewfilter) String() string {
      o.TranscriptTopics = []Transcripttopics{{}} 
     
     
+    
+     o.JourneyFrequencyCapReasons = []string{""} 
+    
+    
+    
+     o.JourneyBlockingActionMapIds = []string{""} 
+    
+    
+    
+     o.JourneyActionTargetIds = []string{""} 
+    
+    
+    
+     o.JourneyBlockingScheduleGroupIds = []string{""} 
+    
+    
+    
+     o.JourneyBlockingEmergencyScheduleGroupIds = []string{""} 
+    
+    
+    
+     o.JourneyUrlEqualConditions = []string{""} 
+    
+    
+    
+     o.JourneyUrlNotEqualConditions = []string{""} 
+    
+    
+    
+     o.JourneyUrlStartsWithConditions = []string{""} 
+    
+    
+    
+     o.JourneyUrlEndsWithConditions = []string{""} 
+    
+    
+    
+     o.JourneyUrlContainsAnyConditions = []string{""} 
+    
+    
+    
+     o.JourneyUrlNotContainsAnyConditions = []string{""} 
+    
+    
+    
+     o.JourneyUrlContainsAllConditions = []string{""} 
+    
+    
+    
+     o.JourneyUrlNotContainsAllConditions = []string{""} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1645,6 +1788,32 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         AgentCallbackOwnerIds []string `json:"agentCallbackOwnerIds"`
         
         TranscriptTopics []Transcripttopics `json:"transcriptTopics"`
+        
+        JourneyFrequencyCapReasons []string `json:"journeyFrequencyCapReasons"`
+        
+        JourneyBlockingActionMapIds []string `json:"journeyBlockingActionMapIds"`
+        
+        JourneyActionTargetIds []string `json:"journeyActionTargetIds"`
+        
+        JourneyBlockingScheduleGroupIds []string `json:"journeyBlockingScheduleGroupIds"`
+        
+        JourneyBlockingEmergencyScheduleGroupIds []string `json:"journeyBlockingEmergencyScheduleGroupIds"`
+        
+        JourneyUrlEqualConditions []string `json:"journeyUrlEqualConditions"`
+        
+        JourneyUrlNotEqualConditions []string `json:"journeyUrlNotEqualConditions"`
+        
+        JourneyUrlStartsWithConditions []string `json:"journeyUrlStartsWithConditions"`
+        
+        JourneyUrlEndsWithConditions []string `json:"journeyUrlEndsWithConditions"`
+        
+        JourneyUrlContainsAnyConditions []string `json:"journeyUrlContainsAnyConditions"`
+        
+        JourneyUrlNotContainsAnyConditions []string `json:"journeyUrlNotContainsAnyConditions"`
+        
+        JourneyUrlContainsAllConditions []string `json:"journeyUrlContainsAllConditions"`
+        
+        JourneyUrlNotContainsAllConditions []string `json:"journeyUrlNotContainsAllConditions"`
         
         *Alias
     }{
@@ -2322,6 +2491,84 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         TranscriptTopics: []Transcripttopics{{}},
+        
+
+        
+
+        
+        JourneyFrequencyCapReasons: []string{""},
+        
+
+        
+
+        
+        JourneyBlockingActionMapIds: []string{""},
+        
+
+        
+
+        
+        JourneyActionTargetIds: []string{""},
+        
+
+        
+
+        
+        JourneyBlockingScheduleGroupIds: []string{""},
+        
+
+        
+
+        
+        JourneyBlockingEmergencyScheduleGroupIds: []string{""},
+        
+
+        
+
+        
+        JourneyUrlEqualConditions: []string{""},
+        
+
+        
+
+        
+        JourneyUrlNotEqualConditions: []string{""},
+        
+
+        
+
+        
+        JourneyUrlStartsWithConditions: []string{""},
+        
+
+        
+
+        
+        JourneyUrlEndsWithConditions: []string{""},
+        
+
+        
+
+        
+        JourneyUrlContainsAnyConditions: []string{""},
+        
+
+        
+
+        
+        JourneyUrlNotContainsAnyConditions: []string{""},
+        
+
+        
+
+        
+        JourneyUrlContainsAllConditions: []string{""},
+        
+
+        
+
+        
+        JourneyUrlNotContainsAllConditions: []string{""},
         
 
         

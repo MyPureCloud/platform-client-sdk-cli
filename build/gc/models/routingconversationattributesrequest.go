@@ -23,15 +23,15 @@ type RoutingconversationattributesrequestDud struct {
 
 // Routingconversationattributesrequest
 type Routingconversationattributesrequest struct { 
-    // Priority - Priority to be updated on in-queue conversation. Range:[-25000000, 25000000]
+    // Priority - Priority for the conversation.  Each point of priority is equivalent to one minute of time in queue.  Range:[-25000000, 25000000].  To reset, specify 0.
     Priority int `json:"priority"`
 
 
-    // SkillIds - Skills to be updated on in-queue conversation.
+    // SkillIds - Skill requirements for the conversation.  To remove all skill requirements, specify an empty list, i.e. [].
     SkillIds []string `json:"skillIds"`
 
 
-    // LanguageId - Language required on the in-queue conversation.
+    // LanguageId - Language requirement for the conversation.  To remove the language requirement, specify an empty string, i.e., \"\".
     LanguageId string `json:"languageId"`
 
 }

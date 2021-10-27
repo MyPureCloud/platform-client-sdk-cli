@@ -38,44 +38,58 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Recordingmessagingmessage
 type Recordingmessagingmessage struct { 
-    // From
+    // From - The message sender session id.
     From string `json:"from"`
 
 
-    // FromUser
+    // FromUser - The user who sent this message.
     FromUser User `json:"fromUser"`
 
 
-    // FromExternalContact
+    // FromExternalContact - The PureCloud external contact sender details.
     FromExternalContact Externalcontact `json:"fromExternalContact"`
 
 
-    // To
+    // To - The message recipient.
     To string `json:"to"`
 
 
-    // Timestamp - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    // Timestamp - The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     Timestamp time.Time `json:"timestamp"`
 
 
-    // Id
+    // Id - A globally unique identifier for this communication.
     Id string `json:"id"`
 
 
-    // MessageText
+    // MessageText - The content of this message.
     MessageText string `json:"messageText"`
 
 
-    // MessageMediaAttachments
+    // MessageMediaAttachments - List of media objects attached  with this message.
     MessageMediaAttachments []Messagemediaattachment `json:"messageMediaAttachments"`
 
 
-    // MessageStickerAttachments
+    // MessageStickerAttachments - List of message stickers attached with this message.
     MessageStickerAttachments []Messagestickerattachment `json:"messageStickerAttachments"`
+
+
+    // QuickReplies - List of quick reply options offered with this message.
+    QuickReplies []Quickreply `json:"quickReplies"`
+
+
+    // ButtonResponse - Button Response selected by user for this message.
+    ButtonResponse Buttonresponse `json:"buttonResponse"`
 
 }
 
@@ -118,6 +132,14 @@ func (o *Recordingmessagingmessage) String() string {
      o.MessageStickerAttachments = []Messagestickerattachment{{}} 
     
     
+    
+     o.QuickReplies = []Quickreply{{}} 
+    
+    
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -151,6 +173,10 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         MessageMediaAttachments []Messagemediaattachment `json:"messageMediaAttachments"`
         
         MessageStickerAttachments []Messagestickerattachment `json:"messageStickerAttachments"`
+        
+        QuickReplies []Quickreply `json:"quickReplies"`
+        
+        ButtonResponse Buttonresponse `json:"buttonResponse"`
         
         *Alias
     }{
@@ -192,6 +218,16 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
 
         
         MessageStickerAttachments: []Messagestickerattachment{{}},
+        
+
+        
+
+        
+        QuickReplies: []Quickreply{{}},
+        
+
+        
+
         
 
         

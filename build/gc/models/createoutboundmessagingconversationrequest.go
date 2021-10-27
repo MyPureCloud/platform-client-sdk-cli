@@ -25,9 +25,6 @@ type CreateoutboundmessagingconversationrequestDud struct {
 
     
 
-
-    
-
 }
 
 // Createoutboundmessagingconversationrequest
@@ -48,21 +45,13 @@ type Createoutboundmessagingconversationrequest struct {
     UseExistingConversation bool `json:"useExistingConversation"`
 
 
-    // ExternalContactId - The external contact Id of the recipient of the message.
+    // ExternalContactId - The external contact with which the message will be associated.
     ExternalContactId string `json:"externalContactId"`
-
-
-    // ExternalOrganizationId - The external organization Id of the recipient of the message.
-    ExternalOrganizationId string `json:"externalOrganizationId"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Createoutboundmessagingconversationrequest) String() string {
-    
-    
-    
-    
     
     
     
@@ -110,14 +99,8 @@ func (u *Createoutboundmessagingconversationrequest) MarshalJSON() ([]byte, erro
         
         ExternalContactId string `json:"externalContactId"`
         
-        ExternalOrganizationId string `json:"externalOrganizationId"`
-        
         *Alias
     }{
-        
-
-        
-
         
 
         

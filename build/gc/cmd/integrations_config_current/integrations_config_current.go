@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdintegrations_config_current() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/integrations/{integrationId}/config/current", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/{integrationId}/config/current")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/integrations/{integrationId}/config/current", utils.FormatPermissions([]string{ "integrations:integration:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/{integrationId}/config/current")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -39,7 +39,7 @@ func Cmdintegrations_config_current() *cobra.Command {
 }`)
 	integrations_config_currentCmd.AddCommand(getCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/integrations/{integrationId}/config/current", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Integrations", "/api/v2/integrations/{integrationId}/config/current")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/integrations/{integrationId}/config/current", utils.FormatPermissions([]string{ "integrations:integration:edit",  }), utils.GenerateDevCentreLink("PUT", "Integrations", "/api/v2/integrations/{integrationId}/config/current")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "in" : "body",
   "name" : "body",

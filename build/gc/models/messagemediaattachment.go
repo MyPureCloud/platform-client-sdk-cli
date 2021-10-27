@@ -41,11 +41,11 @@ type Messagemediaattachment struct {
     ContentLength int `json:"contentLength"`
 
 
-    // Name
+    // Name - The name of the media object.
     Name string `json:"name"`
 
 
-    // Id
+    // Id - A globally unique identifier for the media object.
     Id string `json:"id"`
 
 }

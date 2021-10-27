@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdintegrations_types() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/integrations/types/{typeId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/types/{typeId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/integrations/types/{typeId}", utils.FormatPermissions([]string{ "integrations:integration:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/types/{typeId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -45,7 +45,7 @@ func Cmdintegrations_types() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "variable name requested by expand list")
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "next page token")
 	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations/types", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/types")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations/types", utils.FormatPermissions([]string{ "integrations:integration:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/types")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

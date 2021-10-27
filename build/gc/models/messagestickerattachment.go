@@ -24,7 +24,7 @@ type Messagestickerattachment struct {
     Url string `json:"url"`
 
 
-    // Id
+    // Id - A globally unique identifier for the media object.
     Id string `json:"id"`
 
 }

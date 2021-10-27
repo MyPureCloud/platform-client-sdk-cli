@@ -2,15 +2,15 @@ package externalcontacts_bulk_relationships
 
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_bulk_relationships_remove"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_bulk_relationships_add"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_bulk_relationships_update"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_bulk_relationships_add"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_bulk_relationships_remove"
 )
 
 func init() {
-	externalcontacts_bulk_relationshipsCmd.AddCommand(externalcontacts_bulk_relationships_remove.Cmdexternalcontacts_bulk_relationships_remove())
-	externalcontacts_bulk_relationshipsCmd.AddCommand(externalcontacts_bulk_relationships_add.Cmdexternalcontacts_bulk_relationships_add())
 	externalcontacts_bulk_relationshipsCmd.AddCommand(externalcontacts_bulk_relationships_update.Cmdexternalcontacts_bulk_relationships_update())
-	externalcontacts_bulk_relationshipsCmd.Short = utils.GenerateCustomDescription(externalcontacts_bulk_relationshipsCmd.Short, externalcontacts_bulk_relationships_remove.Description, externalcontacts_bulk_relationships_add.Description, externalcontacts_bulk_relationships_update.Description, )
+	externalcontacts_bulk_relationshipsCmd.AddCommand(externalcontacts_bulk_relationships_add.Cmdexternalcontacts_bulk_relationships_add())
+	externalcontacts_bulk_relationshipsCmd.AddCommand(externalcontacts_bulk_relationships_remove.Cmdexternalcontacts_bulk_relationships_remove())
+	externalcontacts_bulk_relationshipsCmd.Short = utils.GenerateCustomDescription(externalcontacts_bulk_relationshipsCmd.Short, externalcontacts_bulk_relationships_update.Description, externalcontacts_bulk_relationships_add.Description, externalcontacts_bulk_relationships_remove.Description, )
 	externalcontacts_bulk_relationshipsCmd.Long = externalcontacts_bulk_relationshipsCmd.Short
 }

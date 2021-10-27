@@ -27,7 +27,7 @@ type Schedulegenerationresultsummary struct {
     Failed bool `json:"failed"`
 
 
-    // RunId - The run ID for the schedule generation. Reference this when requesting support
+    // RunId - The ID of the schedule generation run. Reference this when requesting support
     RunId string `json:"runId"`
 
 

@@ -55,6 +55,9 @@ type CreateemailrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createemailrequest
@@ -118,6 +121,10 @@ type Createemailrequest struct {
     // TextBody - A text body content of the email.
     TextBody string `json:"textBody"`
 
+
+    // ExternalContactId - The external contact with which the email should be associated. This field is only valid for OUTBOUND email.
+    ExternalContactId string `json:"externalContactId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -149,6 +156,10 @@ func (o *Createemailrequest) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
+    
+    
+    
     
     
     
@@ -229,6 +240,8 @@ func (u *Createemailrequest) MarshalJSON() ([]byte, error) {
         
         TextBody string `json:"textBody"`
         
+        ExternalContactId string `json:"externalContactId"`
+        
         *Alias
     }{
         
@@ -261,6 +274,10 @@ func (u *Createemailrequest) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+        
+
         
 
         

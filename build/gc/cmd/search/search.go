@@ -49,7 +49,7 @@ func Cmdsearch() *cobra.Command {
 	searchCmd.AddCommand(createCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "string", "q64", "", "q64 - REQUIRED")
-	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails")
 	utils.AddFlag(listCmd.Flags(), "bool", "profile", "true", "profile")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/search", utils.FormatPermissions([]string{ "directory:user:view",  }), utils.GenerateDevCentreLink("GET", "Search", "/api/v2/search")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)

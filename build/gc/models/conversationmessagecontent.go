@@ -31,6 +31,9 @@ type ConversationmessagecontentDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationmessagecontent - Message content element.
@@ -41,6 +44,10 @@ type Conversationmessagecontent struct {
 
     // Location - Location content.
     Location Conversationcontentlocation `json:"location"`
+
+
+    // Story - Ephemeral story content.
+    Story Conversationcontentstory `json:"story"`
 
 
     // Attachment - Attachment content.
@@ -95,6 +102,10 @@ func (o *Conversationmessagecontent) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -115,6 +126,8 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
         
         Location Conversationcontentlocation `json:"location"`
         
+        Story Conversationcontentstory `json:"story"`
+        
         Attachment Conversationcontentattachment `json:"attachment"`
         
         QuickReply Conversationcontentquickreply `json:"quickReply"`
@@ -127,6 +140,10 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

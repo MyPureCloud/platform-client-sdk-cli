@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -108,6 +109,9 @@ type UserDud struct {
 
 
     
+
+
+    DateLastLogin time.Time `json:"dateLastLogin"`
 
 
     SelfUri string `json:"selfUri"`
@@ -233,6 +237,9 @@ type User struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -290,6 +297,8 @@ func (o *User) String() string {
     
     
      o.Certifications = []string{""} 
+    
+    
     
     
     
@@ -422,6 +431,8 @@ func (u *User) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
         
@@ -488,6 +499,10 @@ func (u *User) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+        
+
         
 
         

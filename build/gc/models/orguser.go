@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -108,6 +109,9 @@ type OrguserDud struct {
 
 
     
+
+
+    DateLastLogin time.Time `json:"dateLastLogin"`
 
 
     
@@ -231,6 +235,9 @@ type Orguser struct {
     LastTokenIssued Oauthlasttokenissued `json:"lastTokenIssued"`
 
 
+    
+
+
     // Organization
     Organization Organization `json:"organization"`
 
@@ -291,6 +298,8 @@ func (o *Orguser) String() string {
     
     
      o.Certifications = []string{""} 
+    
+    
     
     
     
@@ -423,6 +432,8 @@ func (u *Orguser) MarshalJSON() ([]byte, error) {
         
         LastTokenIssued Oauthlasttokenissued `json:"lastTokenIssued"`
         
+        
+        
         Organization Organization `json:"organization"`
         
         *Alias
@@ -491,6 +502,10 @@ func (u *Orguser) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+        
+
         
 
         

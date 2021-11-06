@@ -421,6 +421,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -971,6 +974,10 @@ type Viewfilter struct {
 
     // JourneyUrlNotContainsAllConditions - The list of url not contains all conditions to filter offer constraints
     JourneyUrlNotContainsAllConditions []string `json:"journeyUrlNotContainsAllConditions"`
+
+
+    // FlowMilestoneIds - The list of flow milestones to filter exports
+    FlowMilestoneIds []string `json:"flowMilestoneIds"`
 
 }
 
@@ -1525,6 +1532,10 @@ func (o *Viewfilter) String() string {
      o.JourneyUrlNotContainsAllConditions = []string{""} 
     
     
+    
+     o.FlowMilestoneIds = []string{""} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1814,6 +1825,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         JourneyUrlContainsAllConditions []string `json:"journeyUrlContainsAllConditions"`
         
         JourneyUrlNotContainsAllConditions []string `json:"journeyUrlNotContainsAllConditions"`
+        
+        FlowMilestoneIds []string `json:"flowMilestoneIds"`
         
         *Alias
     }{
@@ -2569,6 +2582,12 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         JourneyUrlNotContainsAllConditions: []string{""},
+        
+
+        
+
+        
+        FlowMilestoneIds: []string{""},
         
 
         

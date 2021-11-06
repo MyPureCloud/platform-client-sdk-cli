@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -108,6 +109,9 @@ type UsermeDud struct {
 
 
     
+
+
+    DateLastLogin time.Time `json:"dateLastLogin"`
 
 
     Date Serverdate `json:"date"`
@@ -323,6 +327,9 @@ type Userme struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -380,6 +387,8 @@ func (o *Userme) String() string {
     
     
      o.Certifications = []string{""} 
+    
+    
     
     
     
@@ -572,6 +581,8 @@ func (u *Userme) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
         
@@ -638,6 +649,10 @@ func (u *Userme) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+        
+
         
 
         

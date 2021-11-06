@@ -39,8 +39,8 @@ func Cmdvoicemail_userpolicies() *cobra.Command {
 }`)
 	voicemail_userpoliciesCmd.AddCommand(getCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/voicemail/userpolicies/{userId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Voicemail", "/api/v2/voicemail/userpolicies/{userId}")))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
+	putCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", putCmd.UsageTemplate(), "PUT", "/api/v2/voicemail/userpolicies/{userId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Voicemail", "/api/v2/voicemail/userpolicies/{userId}")))
+	utils.AddFileFlagIfUpsert(putCmd.Flags(), "PUT", `{
   "in" : "body",
   "name" : "body",
   "description" : "The user's voicemail policy",
@@ -50,13 +50,13 @@ func Cmdvoicemail_userpolicies() *cobra.Command {
   }
 }`)
 	
-	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
+	utils.AddPaginateFlagsIfListingResponse(putCmd.Flags(), "PUT", `{
   "description" : "successful operation",
   "schema" : {
     "$ref" : "#/definitions/VoicemailUserPolicy"
   }
 }`)
-	voicemail_userpoliciesCmd.AddCommand(updateCmd)
+	voicemail_userpoliciesCmd.AddCommand(putCmd)
 	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/voicemail/userpolicies/{userId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Voicemail", "/api/v2/voicemail/userpolicies/{userId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
@@ -126,8 +126,8 @@ var getCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var updateCmd = &cobra.Command{
-	Use:   "update [userId]",
+var putCmd = &cobra.Command{
+	Use:   "put [userId]",
 	Short: "Update a user`s voicemail policy",
 	Long:  "Update a user`s voicemail policy",
 	Args:  utils.DetermineArgs([]string{ "userId", }),

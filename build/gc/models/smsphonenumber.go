@@ -69,6 +69,9 @@ type SmsphonenumberDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -148,12 +151,20 @@ type Smsphonenumber struct {
     ShortCodeBillingType string `json:"shortCodeBillingType"`
 
 
+    // ProvisioningStatus - Status of latest asynchronous provisioning action
+    ProvisioningStatus Smsprovisioningstatus `json:"provisioningStatus"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Smsphonenumber) String() string {
+    
+    
+    
+    
     
     
     
@@ -281,10 +292,16 @@ func (u *Smsphonenumber) MarshalJSON() ([]byte, error) {
         
         ShortCodeBillingType string `json:"shortCodeBillingType"`
         
+        ProvisioningStatus Smsprovisioningstatus `json:"provisioningStatus"`
+        
         
         
         *Alias
     }{
+        
+
+        
+
         
 
         

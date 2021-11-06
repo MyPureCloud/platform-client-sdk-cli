@@ -26,6 +26,9 @@ type ConversationnormalizedmessageDud struct {
     
 
 
+    
+
+
     Status string `json:"status"`
 
 
@@ -63,6 +66,10 @@ type Conversationnormalizedmessage struct {
 
     // Content - List of content elements
     Content []Conversationmessagecontent `json:"content"`
+
+
+    // Events - List of event elements.
+    Events []Conversationmessageevent `json:"events"`
 
 
     
@@ -103,6 +110,10 @@ func (o *Conversationnormalizedmessage) String() string {
     
     
      o.Content = []Conversationmessagecontent{{}} 
+    
+    
+    
+     o.Events = []Conversationmessageevent{{}} 
     
     
     
@@ -147,6 +158,8 @@ func (u *Conversationnormalizedmessage) MarshalJSON() ([]byte, error) {
         
         Content []Conversationmessagecontent `json:"content"`
         
+        Events []Conversationmessageevent `json:"events"`
+        
         
         
         
@@ -181,6 +194,12 @@ func (u *Conversationnormalizedmessage) MarshalJSON() ([]byte, error) {
 
         
         Content: []Conversationmessagecontent{{}},
+        
+
+        
+
+        
+        Events: []Conversationmessageevent{{}},
         
 
         

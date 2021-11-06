@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -108,6 +109,9 @@ type TrustuserDud struct {
 
 
     
+
+
+    DateLastLogin time.Time `json:"dateLastLogin"`
 
 
     
@@ -231,6 +235,9 @@ type Trustuser struct {
     LastTokenIssued Oauthlasttokenissued `json:"lastTokenIssued"`
 
 
+    
+
+
     // TrustUserDetails
     TrustUserDetails Trustuserdetails `json:"trustUserDetails"`
 
@@ -291,6 +298,8 @@ func (o *Trustuser) String() string {
     
     
      o.Certifications = []string{""} 
+    
+    
     
     
     
@@ -423,6 +432,8 @@ func (u *Trustuser) MarshalJSON() ([]byte, error) {
         
         LastTokenIssued Oauthlasttokenissued `json:"lastTokenIssued"`
         
+        
+        
         TrustUserDetails Trustuserdetails `json:"trustUserDetails"`
         
         *Alias
@@ -491,6 +502,10 @@ func (u *Trustuser) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+        
+
         
 
         

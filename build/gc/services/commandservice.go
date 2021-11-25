@@ -10,8 +10,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/pflag"
-
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
@@ -30,7 +28,7 @@ type CommandService interface {
 	Patch(uri string, payload string) (string, error)
 	Put(uri string, payload string) (string, error)
 	Delete(uri string) (string, error)
-	DetermineAction(httpMethod string, uri string, flags *pflag.FlagSet) func(retryConfiguration *retry.RetryConfiguration) (string, error)
+	DetermineAction(httpMethod string, uri string, cmd *cobra.Command, opId string) func(retryConfiguration *retry.RetryConfiguration) (string, error)
 }
 
 type commandService struct {
@@ -473,24 +471,39 @@ func reAuthenticateIfNecessary(config config.Configuration, err error) error {
 	return nil
 }
 
-func (c *commandService) DetermineAction(httpMethod string, uri string, flags *pflag.FlagSet) func(retryConfiguration *retry.RetryConfiguration) (string, error) {
+func (c *commandService) DetermineAction(httpMethod string, uri string, cmd *cobra.Command, opId string) func(retryConfiguration *retry.RetryConfiguration) (string, error) {
+	flags := cmd.Flags()
 	logger.InitLogger(c.cmd)
 	switch httpMethod {
 	case http.MethodGet:
-		if flags == nil {
+
+		var doAutoPagination bool
+		const listOpId = "list"
+		profileName, _ := cmd.Root().Flags().GetString("profile")
+		autoPaginationInConfig, _ := config.GetAutoPaginationEnabled(profileName)
+		if autoPaginationInConfig && opId == listOpId {
+			doAutoPagination = true
+		}
+
+		if flags == nil && !doAutoPagination {
 			return retry.Retry(uri, c.Get)
 		}
+
 		// These flags will be false if they're not available on the command (simple GETs) or if they haven't been set on a paginatable command
 		autoPaginate, _ := flags.GetBool("autopaginate")
 		stream, _ := flags.GetBool("stream")
-		if !autoPaginate && !stream {
+
+		if !autoPaginate && !stream && !doAutoPagination {
 			return retry.Retry(uri, c.Get)
 		}
-		// Stream if the user just sets stream or stream and autopaginate
+
+		// Stream if the user just sets stream or stream and autopagination
 		if stream {
 			return retry.Retry(uri, c.Stream)
 		}
+
 		return retry.Retry(uri, c.List)
+
 	case http.MethodPatch:
 		if flags.Lookup("file") == nil || flags.Lookup("directory") == nil {
 			return retry.RetryWithData(uri, []string{""}, c.Patch)

@@ -157,6 +157,10 @@ func buildMockConfig(profileName string, environment string, clientID string, cl
 		return false
 	}
 
+	mockConfig.AutoPaginationEnabledFunc = func() bool {
+		return false
+	}
+
 	mockConfig.ClientIDFunc = func() string {
 		return clientID
 	}

@@ -69,7 +69,6 @@ var getCmd = &cobra.Command{
 
 		path := "/api/v2/telephony/siptraces"
 
-
 		callId := utils.GetFlag(cmd.Flags(), "string", "callId")
 		if callId != "" {
 			queryParams["callId"] = callId
@@ -103,7 +102,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

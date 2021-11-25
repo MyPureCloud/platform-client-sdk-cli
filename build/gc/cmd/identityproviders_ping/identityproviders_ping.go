@@ -91,7 +91,6 @@ var deleteCmd = &cobra.Command{
 
 		path := "/api/v2/identityproviders/ping"
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -101,7 +100,9 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
+		const opId = "delete"
+		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -135,7 +136,6 @@ var getCmd = &cobra.Command{
 
 		path := "/api/v2/identityproviders/ping"
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -145,7 +145,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -182,7 +184,6 @@ var updateCmd = &cobra.Command{
 
 		path := "/api/v2/identityproviders/ping"
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -192,7 +193,9 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
+		const opId = "update"
+		const httpMethod = "PUT"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

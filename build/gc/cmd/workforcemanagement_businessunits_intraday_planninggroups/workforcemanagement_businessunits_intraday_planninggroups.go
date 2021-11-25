@@ -65,7 +65,6 @@ var listCmd = &cobra.Command{
 		businessUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 
-
 		date := utils.GetFlag(cmd.Flags(), "time.Time", "date")
 		if date != "" {
 			queryParams["date"] = date
@@ -79,7 +78,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

@@ -8,14 +8,15 @@ import (
 )
 
 type MockClientConfig struct {
-	ProfileNameFunc    func() string
-	EnvironmentFunc    func() string
-	ClientIDFunc       func() string
-	ClientSecretFunc   func() string
-	OAuthTokenDataFunc func() string
-	AccessTokenFunc    func() string
-	LogFilePathFunc    func() string
-	LoggingEnabledFunc func() bool
+	ProfileNameFunc           func() string
+	EnvironmentFunc           func() string
+	ClientIDFunc              func() string
+	ClientSecretFunc          func() string
+	OAuthTokenDataFunc        func() string
+	AccessTokenFunc           func() string
+	LogFilePathFunc           func() string
+	LoggingEnabledFunc        func() bool
+	AutoPaginationEnabledFunc func() bool
 }
 
 var UpdatedAccessToken string
@@ -52,8 +53,12 @@ func (m *MockClientConfig) LoggingEnabled() bool {
 	return m.LoggingEnabledFunc()
 }
 
+func (m *MockClientConfig) AutoPaginationEnabled() bool {
+	return m.AutoPaginationEnabledFunc()
+}
+
 func (m *MockClientConfig) String() string {
-	return fmt.Sprintf("\n-------------\nProfile Name: %s\nEnvironment: %s\nLogging Enabled: %v\nLog File Path: %s\nClient ID: %s\nClient Secret: %s\nAccess Token: %s\n--------------\n", m.ProfileName(), m.Environment(), m.LoggingEnabled(), m.LogFilePath(), m.ClientID(), m.ClientSecret(), m.AccessToken())
+	return fmt.Sprintf("\n-------------\nProfile Name: %s\nEnvironment: %s\nLogging Enabled: %v\nLog File Path: %s\nClient ID: %s\nClient Secret: %s\nAccess Token: %s\nAutoPagination Enabled: %v\n--------------\n", m.ProfileName(), m.Environment(), m.LoggingEnabled(), m.LogFilePath(), m.ClientID(), m.ClientSecret(), m.AccessToken(), m.AutoPaginationEnabled())
 }
 
 func UpdateOAuthToken(_ config.Configuration, oauthTokenData *models.OAuthTokenData) error {

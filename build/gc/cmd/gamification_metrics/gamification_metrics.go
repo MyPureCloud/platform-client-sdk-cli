@@ -118,7 +118,6 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/gamification/metrics"
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -128,7 +127,9 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -164,7 +165,6 @@ var getCmd = &cobra.Command{
 		metricId, args := args[0], args[1:]
 		path = strings.Replace(path, "{metricId}", fmt.Sprintf("%v", metricId), -1)
 
-
 		workday := utils.GetFlag(cmd.Flags(), "time.Time", "workday")
 		if workday != "" {
 			queryParams["workday"] = workday
@@ -182,7 +182,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -216,7 +218,6 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/gamification/metrics"
 
-
 		performanceProfileId := utils.GetFlag(cmd.Flags(), "string", "performanceProfileId")
 		if performanceProfileId != "" {
 			queryParams["performanceProfileId"] = performanceProfileId
@@ -234,7 +235,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -273,7 +276,6 @@ var updateCmd = &cobra.Command{
 		metricId, args := args[0], args[1:]
 		path = strings.Replace(path, "{metricId}", fmt.Sprintf("%v", metricId), -1)
 
-
 		performanceProfileId := utils.GetFlag(cmd.Flags(), "string", "performanceProfileId")
 		if performanceProfileId != "" {
 			queryParams["performanceProfileId"] = performanceProfileId
@@ -287,7 +289,9 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
+		const opId = "update"
+		const httpMethod = "PUT"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

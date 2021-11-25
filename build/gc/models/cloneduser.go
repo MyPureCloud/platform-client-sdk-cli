@@ -6,31 +6,44 @@ import (
 )
 
 var (
-    KnowledgecontextvaluerequestMarshalled = false
+    CloneduserMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type KnowledgecontextvaluerequestDud struct { 
-    
+type CloneduserDud struct { 
+    Id string `json:"id"`
 
 
     
+
+
+    Trustor Domainentityref `json:"trustor"`
+
+
+    SelfUri string `json:"selfUri"`
 
 }
 
-// Knowledgecontextvaluerequest
-type Knowledgecontextvaluerequest struct { 
-    // Name - Context value name.
+// Cloneduser - Represents a cloned user in a trustor organization.
+type Cloneduser struct { 
+    
+
+
+    // Name
     Name string `json:"name"`
 
 
-    // Description - Context value description.
-    Description string `json:"description"`
+    
+
+
+    
 
 }
 
 // String returns a JSON representation of the model
-func (o *Knowledgecontextvaluerequest) String() string {
+func (o *Cloneduser) String() string {
+    
+    
     
     
     
@@ -47,21 +60,33 @@ func (o *Knowledgecontextvaluerequest) String() string {
     return str
 }
 
-func (u *Knowledgecontextvaluerequest) MarshalJSON() ([]byte, error) {
-    type Alias Knowledgecontextvaluerequest
+func (u *Cloneduser) MarshalJSON() ([]byte, error) {
+    type Alias Cloneduser
 
-    if KnowledgecontextvaluerequestMarshalled {
+    if CloneduserMarshalled {
         return []byte("{}"), nil
     }
-    KnowledgecontextvaluerequestMarshalled = true
+    CloneduserMarshalled = true
 
     return json.Marshal(&struct { 
+        
+        
         Name string `json:"name"`
         
-        Description string `json:"description"`
+        
+        
+        
         
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
         
 
         

@@ -69,7 +69,7 @@ func Cmdjourney_actiontemplates() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Field(s) to sort by. Prefix with `-` for descending (e.g. sortBy=name,-createdDate).")
-	utils.AddFlag(listCmd.Flags(), "string", "mediaType", "", "Media type Valid values: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow")
+	utils.AddFlag(listCmd.Flags(), "string", "mediaType", "", "Media type Valid values: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction")
 	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Action template state. Valid values: Active, Inactive, Deleted")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queryFields", "", "ActionTemplate field(s) to query on. Requires `queryValue` to also be set.")
 	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on. Requires `queryFields` to also be set.")
@@ -127,7 +127,6 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/journey/actiontemplates"
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -137,7 +136,9 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -173,7 +174,6 @@ var deleteCmd = &cobra.Command{
 		actionTemplateId, args := args[0], args[1:]
 		path = strings.Replace(path, "{actionTemplateId}", fmt.Sprintf("%v", actionTemplateId), -1)
 
-
 		hardDelete := utils.GetFlag(cmd.Flags(), "bool", "hardDelete")
 		if hardDelete != "" {
 			queryParams["hardDelete"] = hardDelete
@@ -187,7 +187,9 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
+		const opId = "delete"
+		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -223,7 +225,6 @@ var getCmd = &cobra.Command{
 		actionTemplateId, args := args[0], args[1:]
 		path = strings.Replace(path, "{actionTemplateId}", fmt.Sprintf("%v", actionTemplateId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -233,7 +234,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -266,7 +269,6 @@ var listCmd = &cobra.Command{
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/journey/actiontemplates"
-
 
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
@@ -305,7 +307,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -344,7 +348,6 @@ var updateCmd = &cobra.Command{
 		actionTemplateId, args := args[0], args[1:]
 		path = strings.Replace(path, "{actionTemplateId}", fmt.Sprintf("%v", actionTemplateId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -354,7 +357,9 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PATCH", urlString, cmd.Flags())
+		const opId = "update"
+		const httpMethod = "PATCH"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

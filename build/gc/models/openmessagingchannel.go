@@ -32,6 +32,9 @@ type OpenmessagingchannelDud struct {
 
     
 
+
+    
+
 }
 
 // Openmessagingchannel - Channel-specific information that describes the message and the message channel/provider.
@@ -61,10 +64,18 @@ type Openmessagingchannel struct {
     // Time - Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     Time time.Time `json:"time"`
 
+
+    // Metadata - Information about the channel.
+    Metadata Channelmetadata `json:"metadata"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Openmessagingchannel) String() string {
+    
+    
+    
+    
     
     
     
@@ -120,8 +131,14 @@ func (u *Openmessagingchannel) MarshalJSON() ([]byte, error) {
         
         Time time.Time `json:"time"`
         
+        Metadata Channelmetadata `json:"metadata"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

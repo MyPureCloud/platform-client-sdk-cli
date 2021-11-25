@@ -22,6 +22,9 @@ type PatchactionDud struct {
 
     
 
+
+    
+
 }
 
 // Patchaction
@@ -41,10 +44,18 @@ type Patchaction struct {
     // WebMessagingOfferFields - Admin-configurable fields of a web messaging offer action.
     WebMessagingOfferFields Webmessagingofferfields `json:"webMessagingOfferFields"`
 
+
+    // OpenActionFields - Admin-configurable fields of an open action.
+    OpenActionFields Openactionfields `json:"openActionFields"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Patchaction) String() string {
+    
+    
+    
+    
     
     
     
@@ -86,8 +97,14 @@ func (u *Patchaction) MarshalJSON() ([]byte, error) {
         
         WebMessagingOfferFields Webmessagingofferfields `json:"webMessagingOfferFields"`
         
+        OpenActionFields Openactionfields `json:"openActionFields"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

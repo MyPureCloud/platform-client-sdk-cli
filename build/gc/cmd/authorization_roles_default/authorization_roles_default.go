@@ -84,7 +84,6 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/authorization/roles/default"
 
-
 		force := utils.GetFlag(cmd.Flags(), "bool", "force")
 		if force != "" {
 			queryParams["force"] = force
@@ -98,7 +97,9 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -135,7 +136,6 @@ var updateCmd = &cobra.Command{
 
 		path := "/api/v2/authorization/roles/default"
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -145,7 +145,9 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
+		const opId = "update"
+		const httpMethod = "PUT"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

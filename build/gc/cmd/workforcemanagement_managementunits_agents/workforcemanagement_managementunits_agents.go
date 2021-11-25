@@ -66,7 +66,6 @@ var getCmd = &cobra.Command{
 		agentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{agentId}", fmt.Sprintf("%v", agentId), -1)
 
-
 		excludeCapabilities := utils.GetFlag(cmd.Flags(), "bool", "excludeCapabilities")
 		if excludeCapabilities != "" {
 			queryParams["excludeCapabilities"] = excludeCapabilities
@@ -80,7 +79,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

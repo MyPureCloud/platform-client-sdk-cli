@@ -6,33 +6,30 @@ import (
 )
 
 var (
-    KnowledgecontextrequestMarshalled = false
+    TimeoffrequestreferenceMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type KnowledgecontextrequestDud struct { 
+type TimeoffrequestreferenceDud struct { 
     
 
 
-    
+    SelfUri string `json:"selfUri"`
 
 }
 
-// Knowledgecontextrequest
-type Knowledgecontextrequest struct { 
-    // Name - Context name.
-    Name string `json:"name"`
+// Timeoffrequestreference
+type Timeoffrequestreference struct { 
+    // Id - The id of the time off request
+    Id string `json:"id"`
 
 
-    // Description - Context description.
-    Description string `json:"description"`
+    
 
 }
 
 // String returns a JSON representation of the model
-func (o *Knowledgecontextrequest) String() string {
-    
-    
+func (o *Timeoffrequestreference) String() string {
     
     
     
@@ -47,18 +44,18 @@ func (o *Knowledgecontextrequest) String() string {
     return str
 }
 
-func (u *Knowledgecontextrequest) MarshalJSON() ([]byte, error) {
-    type Alias Knowledgecontextrequest
+func (u *Timeoffrequestreference) MarshalJSON() ([]byte, error) {
+    type Alias Timeoffrequestreference
 
-    if KnowledgecontextrequestMarshalled {
+    if TimeoffrequestreferenceMarshalled {
         return []byte("{}"), nil
     }
-    KnowledgecontextrequestMarshalled = true
+    TimeoffrequestreferenceMarshalled = true
 
     return json.Marshal(&struct { 
-        Name string `json:"name"`
+        Id string `json:"id"`
         
-        Description string `json:"description"`
+        
         
         *Alias
     }{

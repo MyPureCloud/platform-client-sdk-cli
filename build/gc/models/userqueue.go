@@ -39,6 +39,9 @@ type UserqueueDud struct {
     MemberCount int `json:"memberCount"`
 
 
+    UserMemberCount int `json:"userMemberCount"`
+
+
     JoinedMemberCount int `json:"joinedMemberCount"`
 
 
@@ -136,6 +139,9 @@ type Userqueue struct {
     
 
 
+    
+
+
     // MediaSettings - The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM
     MediaSettings map[string]Mediasetting `json:"mediaSettings"`
 
@@ -210,6 +216,8 @@ type Userqueue struct {
 
 // String returns a JSON representation of the model
 func (o *Userqueue) String() string {
+    
+    
     
     
     
@@ -351,6 +359,8 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         MediaSettings map[string]Mediasetting `json:"mediaSettings"`
         
         RoutingRules []Routingrule `json:"routingRules"`
@@ -389,6 +399,10 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

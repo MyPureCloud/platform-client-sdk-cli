@@ -58,8 +58,7 @@ func setFeature(cmd *cobra.Command, featureCommand string, enabled bool) {
 	profileName, _ := cmd.Root().Flags().GetString("profile")
 
 	if !experimental_features.IsValidCommand(featureCommand) {
-		fmt.Printf("Command '%v' does not exist. All experimental features are listed below:\n", featureCommand)
-		experimental_features.ListAllFeatures(profileName)
+		fmt.Printf("The feature '%v' either does not exist, or is no longer experimental.\n", featureCommand)
 		return
 	}
 

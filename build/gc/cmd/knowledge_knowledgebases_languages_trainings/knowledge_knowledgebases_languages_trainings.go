@@ -92,7 +92,6 @@ var createCmd = &cobra.Command{
 		languageCode, args := args[0], args[1:]
 		path = strings.Replace(path, "{languageCode}", fmt.Sprintf("%v", languageCode), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -102,7 +101,9 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -142,7 +143,6 @@ var getCmd = &cobra.Command{
 		trainingId, args := args[0], args[1:]
 		path = strings.Replace(path, "{trainingId}", fmt.Sprintf("%v", trainingId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -152,7 +152,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -190,7 +192,6 @@ var listCmd = &cobra.Command{
 		languageCode, args := args[0], args[1:]
 		path = strings.Replace(path, "{languageCode}", fmt.Sprintf("%v", languageCode), -1)
 
-
 		before := utils.GetFlag(cmd.Flags(), "string", "before")
 		if before != "" {
 			queryParams["before"] = before
@@ -220,7 +221,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

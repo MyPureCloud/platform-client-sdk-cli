@@ -93,7 +93,7 @@ var AddCmd = &cobra.Command{
 }
 
 func getGroupVersion(path string, cmd *cobra.Command) int {
-	retryFunc := CommandService.DetermineAction(getMembersOperation.Method, path, cmd.Flags())
+	retryFunc := CommandService.DetermineAction(getMembersOperation.Method, path, cmd, "")
 	retryConfig := &retry.RetryConfiguration{
 		RetryWaitMin: 5 * time.Second,
 		RetryWaitMax: 60 * time.Second,

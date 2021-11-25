@@ -33,7 +33,7 @@ type MetricDud struct {
     LinkedMetric Addressableentityref `json:"linkedMetric"`
 
 
-    DateCreated int `json:"dateCreated"`
+    DateCreated time.Time `json:"dateCreated"`
 
 
     DateUnlinked time.Time `json:"dateUnlinked"`

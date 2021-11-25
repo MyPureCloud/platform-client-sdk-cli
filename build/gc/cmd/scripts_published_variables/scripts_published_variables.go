@@ -68,7 +68,6 @@ var getCmd = &cobra.Command{
 		scriptId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scriptId}", fmt.Sprintf("%v", scriptId), -1)
 
-
 		input := utils.GetFlag(cmd.Flags(), "string", "input")
 		if input != "" {
 			queryParams["input"] = input
@@ -94,7 +93,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

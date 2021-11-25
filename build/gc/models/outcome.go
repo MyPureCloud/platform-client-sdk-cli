@@ -36,6 +36,9 @@ type OutcomeDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -79,6 +82,10 @@ type Outcome struct {
     Journey Journey `json:"journey"`
 
 
+    // AssociatedValueField - The field from the event indicating the associated value.
+    AssociatedValueField Associatedvaluefield `json:"associatedValueField"`
+
+
     
 
 
@@ -93,6 +100,10 @@ type Outcome struct {
 
 // String returns a JSON representation of the model
 func (o *Outcome) String() string {
+    
+    
+    
+    
     
     
     
@@ -166,6 +177,8 @@ func (u *Outcome) MarshalJSON() ([]byte, error) {
         
         Journey Journey `json:"journey"`
         
+        AssociatedValueField Associatedvaluefield `json:"associatedValueField"`
+        
         
         
         CreatedDate time.Time `json:"createdDate"`
@@ -174,6 +187,10 @@ func (u *Outcome) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

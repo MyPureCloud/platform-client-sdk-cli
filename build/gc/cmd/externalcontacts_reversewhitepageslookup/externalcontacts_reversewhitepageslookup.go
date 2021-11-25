@@ -64,7 +64,6 @@ var searchCmd = &cobra.Command{
 
 		path := "/api/v2/externalcontacts/reversewhitepageslookup"
 
-
 		lookupVal := utils.GetFlag(cmd.Flags(), "string", "lookupVal")
 		if lookupVal != "" {
 			queryParams["lookupVal"] = lookupVal
@@ -82,7 +81,9 @@ var searchCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "search"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

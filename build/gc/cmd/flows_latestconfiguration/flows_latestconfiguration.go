@@ -65,7 +65,6 @@ var getCmd = &cobra.Command{
 		flowId, args := args[0], args[1:]
 		path = strings.Replace(path, "{flowId}", fmt.Sprintf("%v", flowId), -1)
 
-
 		deleted := utils.GetFlag(cmd.Flags(), "bool", "deleted")
 		if deleted != "" {
 			queryParams["deleted"] = deleted
@@ -79,7 +78,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

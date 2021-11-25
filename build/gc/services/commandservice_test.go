@@ -282,6 +282,10 @@ func mockGetConfig(profileName string) (config.Configuration, error) {
 		return false
 	}
 
+	mockConfig.AutoPaginationEnabledFunc = func() bool {
+		return false
+	}
+
 	mockConfig.ClientIDFunc = func() string {
 		return utils.GenerateGuid()
 	}
@@ -318,6 +322,10 @@ func mockGetConfigWithAccessToken(profileName string) (config.Configuration, err
 	}
 
 	mockConfig.LoggingEnabledFunc = func() bool {
+		return false
+	}
+
+	mockConfig.AutoPaginationEnabledFunc = func() bool {
 		return false
 	}
 

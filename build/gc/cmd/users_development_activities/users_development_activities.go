@@ -87,7 +87,6 @@ var getCmd = &cobra.Command{
 		activityId, args := args[0], args[1:]
 		path = strings.Replace(path, "{activityId}", fmt.Sprintf("%v", activityId), -1)
 
-
 		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
 		if varType != "" {
 			queryParams["varType"] = varType
@@ -101,7 +100,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -134,7 +135,6 @@ var listCmd = &cobra.Command{
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/users/development/activities"
-
 
 		userId := utils.GetFlag(cmd.Flags(), "[]string", "userId")
 		if userId != "" {
@@ -189,7 +189,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

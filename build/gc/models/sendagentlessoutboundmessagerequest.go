@@ -25,6 +25,9 @@ type SendagentlessoutboundmessagerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Sendagentlessoutboundmessagerequest
@@ -48,10 +51,18 @@ type Sendagentlessoutboundmessagerequest struct {
     // MessagingTemplate - The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type
     MessagingTemplate Messagingtemplaterequest `json:"messagingTemplate"`
 
+
+    // UseExistingActiveConversation - Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false
+    UseExistingActiveConversation bool `json:"useExistingActiveConversation"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Sendagentlessoutboundmessagerequest) String() string {
+    
+    
+    
+    
     
     
     
@@ -99,8 +110,14 @@ func (u *Sendagentlessoutboundmessagerequest) MarshalJSON() ([]byte, error) {
         
         MessagingTemplate Messagingtemplaterequest `json:"messagingTemplate"`
         
+        UseExistingActiveConversation bool `json:"useExistingActiveConversation"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

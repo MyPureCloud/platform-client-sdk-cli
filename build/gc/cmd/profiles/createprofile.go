@@ -33,6 +33,10 @@ func constructConfig(profileName string, environment string, clientID string, cl
 		return false
 	}
 
+	c.AutoPaginationEnabledFunc = func() bool {
+		return false
+	}
+
 	c.ClientIDFunc = func() string {
 		return clientID
 	}

@@ -81,7 +81,6 @@ var getCmd = &cobra.Command{
 		pageId, args := args[0], args[1:]
 		path = strings.Replace(path, "{pageId}", fmt.Sprintf("%v", pageId), -1)
 
-
 		scriptDataVersion := utils.GetFlag(cmd.Flags(), "string", "scriptDataVersion")
 		if scriptDataVersion != "" {
 			queryParams["scriptDataVersion"] = scriptDataVersion
@@ -95,7 +94,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -131,7 +132,6 @@ var listCmd = &cobra.Command{
 		scriptId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scriptId}", fmt.Sprintf("%v", scriptId), -1)
 
-
 		scriptDataVersion := utils.GetFlag(cmd.Flags(), "string", "scriptDataVersion")
 		if scriptDataVersion != "" {
 			queryParams["scriptDataVersion"] = scriptDataVersion
@@ -145,7 +145,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

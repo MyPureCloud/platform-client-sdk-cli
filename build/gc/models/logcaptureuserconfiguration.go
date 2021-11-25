@@ -15,7 +15,7 @@ type LogcaptureuserconfigurationDud struct {
     Id string `json:"id"`
 
 
-    DateExpired time.Time `json:"dateExpired"`
+    
 
 
     SelfUri string `json:"selfUri"`
@@ -27,7 +27,8 @@ type Logcaptureuserconfiguration struct {
     
 
 
-    
+    // DateExpired - Indicates when log capture will be turned off for the user. (Must be within 24 hours). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateExpired time.Time `json:"dateExpired"`
 
 
     
@@ -36,6 +37,8 @@ type Logcaptureuserconfiguration struct {
 
 // String returns a JSON representation of the model
 func (o *Logcaptureuserconfiguration) String() string {
+    
+    
     
     
     
@@ -61,7 +64,7 @@ func (u *Logcaptureuserconfiguration) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         
         
-        
+        DateExpired time.Time `json:"dateExpired"`
         
         
         

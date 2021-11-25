@@ -83,7 +83,6 @@ var getCmd = &cobra.Command{
 		scheduleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scheduleId}", fmt.Sprintf("%v", scheduleId), -1)
 
-
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
@@ -101,7 +100,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -139,7 +140,6 @@ var listCmd = &cobra.Command{
 		weekId, args := args[0], args[1:]
 		path = strings.Replace(path, "{weekId}", fmt.Sprintf("%v", weekId), -1)
 
-
 		includeOnlyPublished := utils.GetFlag(cmd.Flags(), "bool", "includeOnlyPublished")
 		if includeOnlyPublished != "" {
 			queryParams["includeOnlyPublished"] = includeOnlyPublished
@@ -161,7 +161,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

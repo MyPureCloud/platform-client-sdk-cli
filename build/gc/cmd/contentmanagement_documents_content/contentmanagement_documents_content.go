@@ -88,7 +88,6 @@ var createCmd = &cobra.Command{
 		documentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{documentId}", fmt.Sprintf("%v", documentId), -1)
 
-
 		override := utils.GetFlag(cmd.Flags(), "bool", "override")
 		if override != "" {
 			queryParams["override"] = override
@@ -102,7 +101,9 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -138,7 +139,6 @@ var getCmd = &cobra.Command{
 		documentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{documentId}", fmt.Sprintf("%v", documentId), -1)
 
-
 		disposition := utils.GetFlag(cmd.Flags(), "string", "disposition")
 		if disposition != "" {
 			queryParams["disposition"] = disposition
@@ -156,7 +156,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

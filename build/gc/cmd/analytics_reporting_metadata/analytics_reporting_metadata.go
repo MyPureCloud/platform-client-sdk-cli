@@ -78,7 +78,6 @@ var getCmd = &cobra.Command{
 		reportId, args := args[0], args[1:]
 		path = strings.Replace(path, "{reportId}", fmt.Sprintf("%v", reportId), -1)
 
-
 		locale := utils.GetFlag(cmd.Flags(), "string", "locale")
 		if locale != "" {
 			queryParams["locale"] = locale
@@ -92,7 +91,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -126,7 +127,6 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/analytics/reporting/metadata"
 
-
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
@@ -148,7 +148,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

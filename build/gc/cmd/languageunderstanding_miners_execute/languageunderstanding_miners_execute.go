@@ -51,8 +51,8 @@ func Cmdlanguageunderstanding_miners_execute() *cobra.Command {
 
 var createCmd = &cobra.Command{
 	Use:   "create [minerId]",
-	Short: "Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.",
-	Long:  "Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.",
+	Short: "Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.",
+	Long:  "Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.",
 	Args:  utils.DetermineArgs([]string{ "minerId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -73,7 +73,6 @@ var createCmd = &cobra.Command{
 		minerId, args := args[0], args[1:]
 		path = strings.Replace(path, "{minerId}", fmt.Sprintf("%v", minerId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -83,7 +82,9 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

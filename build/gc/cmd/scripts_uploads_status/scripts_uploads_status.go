@@ -64,7 +64,6 @@ var getCmd = &cobra.Command{
 		uploadId, args := args[0], args[1:]
 		path = strings.Replace(path, "{uploadId}", fmt.Sprintf("%v", uploadId), -1)
 
-
 		longPoll := utils.GetFlag(cmd.Flags(), "bool", "longPoll")
 		if longPoll != "" {
 			queryParams["longPoll"] = longPoll
@@ -78,7 +77,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

@@ -14,9 +14,6 @@ type AssignedsegmentDud struct {
     Id string `json:"id"`
 
 
-    
-
-
     SelfUri string `json:"selfUri"`
 
 }
@@ -26,20 +23,12 @@ type Assignedsegment struct {
     
 
 
-    // Segment - The ID of the segment assigned.
-    Segment Addressableentityref `json:"segment"`
-
-
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Assignedsegment) String() string {
-    
-    
-    
-    
     
     
     
@@ -63,16 +52,10 @@ func (u *Assignedsegment) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         
         
-        Segment Addressableentityref `json:"segment"`
-        
         
         
         *Alias
     }{
-        
-
-        
-
         
 
         

@@ -47,21 +47,21 @@ func Cmdspeechandtextanalytics_sentimentfeedback() *cobra.Command {
 }`)
 	speechandtextanalytics_sentimentfeedbackCmd.AddCommand(createCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}", utils.FormatPermissions([]string{ "speechAndTextAnalytics:feedback:delete",  }), utils.GenerateDevCentreLink("DELETE", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}")))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
+	deleteallsentimentfeedbackCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteallsentimentfeedbackCmd.UsageTemplate(), "DELETE", "/api/v2/speechandtextanalytics/sentimentfeedback", utils.FormatPermissions([]string{ "speechAndTextAnalytics:feedback:delete",  }), utils.GenerateDevCentreLink("DELETE", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/sentimentfeedback")))
+	utils.AddFileFlagIfUpsert(deleteallsentimentfeedbackCmd.Flags(), "DELETE", ``)
 	
-	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+	utils.AddPaginateFlagsIfListingResponse(deleteallsentimentfeedbackCmd.Flags(), "DELETE", `{
   "description" : "No Content"
 }`)
-	speechandtextanalytics_sentimentfeedbackCmd.AddCommand(deleteCmd)
+	speechandtextanalytics_sentimentfeedbackCmd.AddCommand(deleteallsentimentfeedbackCmd)
 	
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/speechandtextanalytics/sentimentfeedback", utils.FormatPermissions([]string{ "speechAndTextAnalytics:feedback:delete",  }), utils.GenerateDevCentreLink("DELETE", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/sentimentfeedback")))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
+	deletebyidCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deletebyidCmd.UsageTemplate(), "DELETE", "/api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}", utils.FormatPermissions([]string{ "speechAndTextAnalytics:feedback:delete",  }), utils.GenerateDevCentreLink("DELETE", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}")))
+	utils.AddFileFlagIfUpsert(deletebyidCmd.Flags(), "DELETE", ``)
 	
-	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+	utils.AddPaginateFlagsIfListingResponse(deletebyidCmd.Flags(), "DELETE", `{
   "description" : "No Content"
 }`)
-	speechandtextanalytics_sentimentfeedbackCmd.AddCommand(deleteCmd)
+	speechandtextanalytics_sentimentfeedbackCmd.AddCommand(deletebyidCmd)
 	
 	utils.AddFlag(getCmd.Flags(), "string", "dialect", "", "The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/sentimentfeedback", utils.FormatPermissions([]string{ "speechAndTextAnalytics:feedback:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/sentimentfeedback")))
@@ -100,7 +100,6 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/speechandtextanalytics/sentimentfeedback"
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -110,7 +109,9 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -125,8 +126,53 @@ var createCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var deleteCmd = &cobra.Command{
-	Use:   "delete [sentimentFeedbackId]",
+var deleteallsentimentfeedbackCmd = &cobra.Command{
+	Use:   "deleteallsentimentfeedback",
+	Short: "Delete All Speech and Text Analytics SentimentFeedback",
+	Long:  "Delete All Speech and Text Analytics SentimentFeedback",
+	Args:  utils.DetermineArgs([]string{ }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/speechandtextanalytics/sentimentfeedback"
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		const opId = "deleteallsentimentfeedback"
+		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}
+var deletebyidCmd = &cobra.Command{
+	Use:   "deletebyid [sentimentFeedbackId]",
 	Short: "Delete a Speech and Text Analytics SentimentFeedback by Id",
 	Long:  "Delete a Speech and Text Analytics SentimentFeedback by Id",
 	Args:  utils.DetermineArgs([]string{ "sentimentFeedbackId", }),
@@ -146,7 +192,6 @@ var deleteCmd = &cobra.Command{
 		sentimentFeedbackId, args := args[0], args[1:]
 		path = strings.Replace(path, "{sentimentFeedbackId}", fmt.Sprintf("%v", sentimentFeedbackId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -156,51 +201,9 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
-		// TODO read from config file
-		retryConfig := &retry.RetryConfiguration{
-			RetryWaitMin: 5 * time.Second,
-			RetryWaitMax: 60 * time.Second,
-			RetryMax:     20,
-		}
-		results, err := retryFunc(retryConfig)
-		if err != nil {
-			logger.Fatal(err)
-		}
-
-		utils.Render(results)
-	},
-}
-var deleteCmd = &cobra.Command{
-	Use:   "delete",
-	Short: "Delete All Speech and Text Analytics SentimentFeedback",
-	Long:  "Delete All Speech and Text Analytics SentimentFeedback",
-	Args:  utils.DetermineArgs([]string{ }),
-
-	Run: func(cmd *cobra.Command, args []string) {
-		_ = models.Entities{}
-
-		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
-		if printReqBody {
-			
-			return
-		}
-
-		queryParams := make(map[string]string)
-
-		path := "/api/v2/speechandtextanalytics/sentimentfeedback"
-
-
-		urlString := path
-		if len(queryParams) > 0 {
-			urlString = fmt.Sprintf("%v?", path)
-			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
-			}
-			urlString = strings.TrimSuffix(urlString, "&")
-		}
-
-		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
+		const opId = "deletebyid"
+		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -234,7 +237,6 @@ var getCmd = &cobra.Command{
 
 		path := "/api/v2/speechandtextanalytics/sentimentfeedback"
 
-
 		dialect := utils.GetFlag(cmd.Flags(), "string", "dialect")
 		if dialect != "" {
 			queryParams["dialect"] = dialect
@@ -248,7 +250,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

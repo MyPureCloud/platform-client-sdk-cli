@@ -14,9 +14,6 @@ type AchievedoutcomeDud struct {
     Id string `json:"id"`
 
 
-    
-
-
     SelfUri string `json:"selfUri"`
 
 }
@@ -26,20 +23,12 @@ type Achievedoutcome struct {
     
 
 
-    // Outcome - The ID of the outcome achieved.
-    Outcome Addressableentityref `json:"outcome"`
-
-
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Achievedoutcome) String() string {
-    
-    
-    
-    
     
     
     
@@ -63,16 +52,10 @@ func (u *Achievedoutcome) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         
         
-        Outcome Addressableentityref `json:"outcome"`
-        
         
         
         *Alias
     }{
-        
-
-        
-
         
 
         

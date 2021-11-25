@@ -136,7 +136,6 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/contentmanagement/documents"
 
-
 		copySource := utils.GetFlag(cmd.Flags(), "string", "copySource")
 		if copySource != "" {
 			queryParams["copySource"] = copySource
@@ -158,7 +157,9 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -194,7 +195,6 @@ var deleteCmd = &cobra.Command{
 		documentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{documentId}", fmt.Sprintf("%v", documentId), -1)
 
-
 		override := utils.GetFlag(cmd.Flags(), "bool", "override")
 		if override != "" {
 			queryParams["override"] = override
@@ -208,7 +208,9 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
+		const opId = "delete"
+		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -244,7 +246,6 @@ var getCmd = &cobra.Command{
 		documentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{documentId}", fmt.Sprintf("%v", documentId), -1)
 
-
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
@@ -258,7 +259,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -291,7 +294,6 @@ var listCmd = &cobra.Command{
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/contentmanagement/documents"
-
 
 		workspaceId := utils.GetFlag(cmd.Flags(), "string", "workspaceId")
 		if workspaceId != "" {
@@ -330,7 +332,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -369,7 +373,6 @@ var updateCmd = &cobra.Command{
 		documentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{documentId}", fmt.Sprintf("%v", documentId), -1)
 
-
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
@@ -387,7 +390,9 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		const opId = "update"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

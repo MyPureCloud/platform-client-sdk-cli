@@ -8,17 +8,17 @@ import (
 	"strings"
 )
 
-var validTypes = [...]string{"JSON", "YAML"}
+var validFormats = [...]string{"JSON", "YAML"}
 
-func isValidDataType(dataType string) bool {
-	for _, v := range validTypes {
-		if strings.EqualFold(v, dataType) {
+func isValidDataFormat(formatName string) bool {
+	for _, v := range validFormats {
+		if strings.EqualFold(v, formatName) {
 			return true
 		}
 	}
 
-	fmt.Printf("The data format you entered is either invalid or not supported. Supported types are: ")
-	for i, v := range validTypes {
+	fmt.Printf("The data format you entered is either invalid or not supported. The supported formats are: ")
+	for i, v := range validFormats {
 		if i != 0 {
 			fmt.Print(", ")
 		}
@@ -73,13 +73,12 @@ var setOutputFormatCmd = &cobra.Command{
 	Args:  cobra.ExactArgs(1),
 
 	Run: func(cmd *cobra.Command, args []string) {
-		if isValidDataType(args[0]) {
+		if isValidDataFormat(args[0]) {
 			profileName, _ := cmd.Root().Flags().GetString("profile")
 			err := config.SetOutputFormat(profileName, args[0])
 			if err != nil {
 				logger.Fatal(err)
 			}
-			fmt.Printf("Preferred output format set to %s in configurations.\n", strings.ToUpper(args[0]))
 		}
 	},
 }
@@ -91,13 +90,12 @@ var setInputFormatCmd = &cobra.Command{
 	Args:  cobra.ExactArgs(1),
 
 	Run: func(cmd *cobra.Command, args []string) {
-		if isValidDataType(args[0]) {
+		if isValidDataFormat(args[0]) {
 			profileName, _ := cmd.Root().Flags().GetString("profile")
 			err := config.SetInputFormat(profileName, args[0])
 			if err != nil {
 				logger.Fatal(err)
 			}
-			fmt.Printf("Preferred input format set to %s in configurations.\n", strings.ToUpper(args[0]))
 		}
 	},
 }

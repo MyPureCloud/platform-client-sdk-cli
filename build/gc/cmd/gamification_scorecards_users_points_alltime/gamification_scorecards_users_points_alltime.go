@@ -65,7 +65,6 @@ var getCmd = &cobra.Command{
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
 
-
 		endWorkday := utils.GetFlag(cmd.Flags(), "time.Time", "endWorkday")
 		if endWorkday != "" {
 			queryParams["endWorkday"] = endWorkday
@@ -79,7 +78,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

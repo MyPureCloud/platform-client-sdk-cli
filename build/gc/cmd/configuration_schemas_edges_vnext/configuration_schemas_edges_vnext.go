@@ -116,7 +116,6 @@ var getcategoryschemasCmd = &cobra.Command{
 		schemaType, args := args[0], args[1:]
 		path = strings.Replace(path, "{schemaType}", fmt.Sprintf("%v", schemaType), -1)
 
-
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
 			queryParams["pageSize"] = pageSize
@@ -134,7 +133,9 @@ var getcategoryschemasCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "getcategoryschemas"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -174,7 +175,6 @@ var getjsonschemaCmd = &cobra.Command{
 		schemaId, args := args[0], args[1:]
 		path = strings.Replace(path, "{schemaId}", fmt.Sprintf("%v", schemaId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -184,7 +184,9 @@ var getjsonschemaCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "getjsonschema"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -228,7 +230,6 @@ var getschemametadataCmd = &cobra.Command{
 		metadataId, args := args[0], args[1:]
 		path = strings.Replace(path, "{metadataId}", fmt.Sprintf("%v", metadataId), -1)
 
-
 		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
 		if varType != "" {
 			queryParams["varType"] = varType
@@ -242,7 +243,9 @@ var getschemametadataCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "getschemametadata"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -278,7 +281,6 @@ var listcategoryschemasCmd = &cobra.Command{
 		schemaCategory, args := args[0], args[1:]
 		path = strings.Replace(path, "{schemaCategory}", fmt.Sprintf("%v", schemaCategory), -1)
 
-
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
 			queryParams["pageSize"] = pageSize
@@ -296,7 +298,9 @@ var listcategoryschemasCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "listcategoryschemas"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -330,7 +334,6 @@ var listschemacategoriesCmd = &cobra.Command{
 
 		path := "/api/v2/configuration/schemas/edges/vnext"
 
-
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
 			queryParams["pageSize"] = pageSize
@@ -348,7 +351,9 @@ var listschemacategoriesCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "listschemacategories"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

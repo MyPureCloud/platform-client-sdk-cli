@@ -13,12 +13,19 @@ var (
 type DraftrequestDud struct { 
     
 
+
+    
+
 }
 
 // Draftrequest
 type Draftrequest struct { 
     // Intents - Draft intent object.
     Intents []Draftintents `json:"intents"`
+
+
+    // Topic
+    Topic []Drafttopics `json:"topic"`
 
 }
 
@@ -27,6 +34,10 @@ func (o *Draftrequest) String() string {
     
     
      o.Intents = []Draftintents{{}} 
+    
+    
+    
+     o.Topic = []Drafttopics{{}} 
     
     
 
@@ -47,12 +58,20 @@ func (u *Draftrequest) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         Intents []Draftintents `json:"intents"`
         
+        Topic []Drafttopics `json:"topic"`
+        
         *Alias
     }{
         
 
         
         Intents: []Draftintents{{}},
+        
+
+        
+
+        
+        Topic: []Drafttopics{{}},
         
 
         

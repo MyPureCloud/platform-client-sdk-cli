@@ -22,6 +22,9 @@ type CoachingslotsrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Coachingslotsrequest
@@ -40,6 +43,10 @@ type Coachingslotsrequest struct {
 
     // FacilitatorIds - List of facilitators to determine coaching appointment slots
     FacilitatorIds []string `json:"facilitatorIds"`
+
+
+    // InterruptibleAppointmentIds - List of appointment ids to exclude from consideration when determining blocked slots
+    InterruptibleAppointmentIds []string `json:"interruptibleAppointmentIds"`
 
 }
 
@@ -60,6 +67,10 @@ func (o *Coachingslotsrequest) String() string {
     
     
      o.FacilitatorIds = []string{""} 
+    
+    
+    
+     o.InterruptibleAppointmentIds = []string{""} 
     
     
 
@@ -86,6 +97,8 @@ func (u *Coachingslotsrequest) MarshalJSON() ([]byte, error) {
         
         FacilitatorIds []string `json:"facilitatorIds"`
         
+        InterruptibleAppointmentIds []string `json:"interruptibleAppointmentIds"`
+        
         *Alias
     }{
         
@@ -106,6 +119,12 @@ func (u *Coachingslotsrequest) MarshalJSON() ([]byte, error) {
 
         
         FacilitatorIds: []string{""},
+        
+
+        
+
+        
+        InterruptibleAppointmentIds: []string{""},
         
 
         

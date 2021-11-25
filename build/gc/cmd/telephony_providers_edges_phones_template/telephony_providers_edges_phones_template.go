@@ -63,7 +63,6 @@ var getCmd = &cobra.Command{
 
 		path := "/api/v2/telephony/providers/edges/phones/template"
 
-
 		phoneBaseSettingsId := utils.GetFlag(cmd.Flags(), "string", "phoneBaseSettingsId")
 		if phoneBaseSettingsId != "" {
 			queryParams["phoneBaseSettingsId"] = phoneBaseSettingsId
@@ -77,7 +76,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

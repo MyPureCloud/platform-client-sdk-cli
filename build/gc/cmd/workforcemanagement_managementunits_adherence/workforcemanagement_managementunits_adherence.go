@@ -64,7 +64,6 @@ var getCmd = &cobra.Command{
 		managementUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{managementUnitId}", fmt.Sprintf("%v", managementUnitId), -1)
 
-
 		forceDownloadService := utils.GetFlag(cmd.Flags(), "bool", "forceDownloadService")
 		if forceDownloadService != "" {
 			queryParams["forceDownloadService"] = forceDownloadService
@@ -78,7 +77,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

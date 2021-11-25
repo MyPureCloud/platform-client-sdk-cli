@@ -31,7 +31,7 @@ func Cmdrouting_queues_divisionviews() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size [max value is 100]")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number [max value is 5]")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by Valid values: name, id, divisionId")
-	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Sort order Valid values: asc, desc, score")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Sort order Valid values: asc, desc")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Queue ID(s)")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
@@ -67,7 +67,6 @@ var listCmd = &cobra.Command{
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/routing/queues/divisionviews"
-
 
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -106,7 +105,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

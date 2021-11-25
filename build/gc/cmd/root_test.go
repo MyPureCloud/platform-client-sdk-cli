@@ -1,6 +1,8 @@
 package cmd
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestVersionsAreEqual(t *testing.T) {
 	var tests = []struct {

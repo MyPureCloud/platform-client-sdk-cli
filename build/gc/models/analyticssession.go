@@ -306,7 +306,7 @@ type Analyticssession struct {
     CobrowseRoomId string `json:"cobrowseRoomId"`
 
 
-    // DeliveryStatus - The email delivery status
+    // DeliveryStatus - The email or SMS delivery status
     DeliveryStatus string `json:"deliveryStatus"`
 
 

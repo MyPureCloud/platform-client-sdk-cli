@@ -23,7 +23,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dummy_command"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/date"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fieldconfig"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/greetings"
@@ -44,7 +43,8 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
@@ -63,6 +63,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profile"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/organizations"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gamification"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
@@ -119,7 +120,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 25.0.0")
+		fmt.Println("Current version: 26.0.0")
 		checkForNewVersion()
 	},
 }
@@ -138,7 +139,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("25.0.0", latestVersion) {
+	if versionsAreEqual("26.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -213,29 +214,24 @@ func init() {
 	rootCmd.PersistentFlags().StringVar(&config.ClientSecret, "clientsecret", "", "clientSecret override")
 	rootCmd.PersistentFlags().StringVar(&config.AccessToken, "accesstoken", "", "accessToken override")
 
-	if config.GetExperimentalFeature(getProfileName(os.Args), models.AlternativeFormats.String()) {
-		rootCmd.PersistentFlags().StringVar(&data_format.InputFormat, "inputformat", "", "Data input format. Supported formats: YAML, JSON")
-		rootCmd.PersistentFlags().StringVar(&data_format.OutputFormat, "outputformat", "", "Data output format. Supported formats: YAML, JSON")
+	rootCmd.PersistentFlags().StringVar(&transform_data.TemplateFile, "transform", "", "Provide a Go template file for transforming output data")
+	rootCmd.PersistentFlags().StringVar(&transform_data.TemplateStr, "transformstr", "", "Provide a Go template string for transforming output data")
 
-		if data_format.OutputFormat == "" {
-			data_format.OutputFormat, _ = config.GetOutputFormat(getProfileName(os.Args))
-		}
-		if data_format.InputFormat == "" {
-			data_format.InputFormat, _ = config.GetInputFormat(getProfileName(os.Args))
-		}
+	rootCmd.PersistentFlags().StringVar(&data_format.InputFormat, "inputformat", "", "Data input format. Supported formats: YAML, JSON")
+	rootCmd.PersistentFlags().StringVar(&data_format.OutputFormat, "outputformat", "", "Data output format. Supported formats: YAML, JSON")
 
-		rootCmd.AddCommand(alternative_formats.Cmdalternative_formats())
+	if data_format.OutputFormat == "" {
+		data_format.OutputFormat, _ = config.GetOutputFormat(getProfileName(os.Args))
+	}
+	if data_format.InputFormat == "" {
+		data_format.InputFormat, _ = config.GetInputFormat(getProfileName(os.Args))
 	}
 
-	if config.GetExperimentalFeature(getProfileName(os.Args), models.TransformData.String()) {
-		rootCmd.PersistentFlags().StringVar(&transform_data.TemplateFile, "transform", "", "Provide a Go template file for transforming output data")
-		rootCmd.PersistentFlags().StringVar(&transform_data.TemplateStr, "transformstr", "", "Provide a Go template string for transforming output data")
-	}
+	rootCmd.AddCommand(alternative_formats.Cmdalternative_formats())
 
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(date.Cmddate())
 	rootCmd.AddCommand(conversations.Cmdconversations())
-	rootCmd.AddCommand(chat.Cmdchat())
 	rootCmd.AddCommand(fieldconfig.Cmdfieldconfig())
 	rootCmd.AddCommand(flows.Cmdflows())
 	rootCmd.AddCommand(greetings.Cmdgreetings())
@@ -256,7 +252,8 @@ func init() {
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
-	rootCmd.AddCommand(fax.Cmdfax())
+	rootCmd.AddCommand(chat.Cmdchat())
+	rootCmd.AddCommand(autopagination.Cmdautopagination())
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())
 	rootCmd.AddCommand(logging.Cmdlogging())
@@ -275,6 +272,7 @@ func init() {
 	rootCmd.AddCommand(outbound.Cmdoutbound())
 	rootCmd.AddCommand(profile.Cmdprofile())
 	rootCmd.AddCommand(organizations.Cmdorganizations())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(gamification.Cmdgamification())
 	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(geolocations.Cmdgeolocations())
@@ -306,7 +304,7 @@ func init() {
 	rootCmd.AddCommand(learning.Cmdlearning())
 	rootCmd.AddCommand(widgets.Cmdwidgets())
 
-	if config.GetExperimentalFeature(getProfileName(os.Args), models.DummyCommand.String()) {
+	if config.IsExperimentalFeatureEnabled(getProfileName(os.Args), models.DummyCommand.String()) {
 		rootCmd.AddCommand(dummy_command.Cmddummy_command())
 	}
 
@@ -325,19 +323,20 @@ func init() {
 }
 
 func getProfileName(args []string) string {
-	name := ""
-	for i, s := range args {
-		if (s == "-p" || s == "--profile") && i < len(args)-1 {
-			return args[i+1]
-		}
-		if strings.HasPrefix(s, "--profile=") {
-			name = strings.Replace(s, "--profile=", "", -1)
-		} else if strings.HasPrefix(s, "-p=") {
-			name = strings.Replace(s, "-p=", "", -1)
-		}
-	}
-	if name == "" {
-		return "DEFAULT"
-	}
-	return name
+    name := ""
+    for i, s := range args {
+        if (s == "-p" || s == "--profile") && i < len(args)-1 {
+            return args[i+1]
+        }
+        if strings.HasPrefix(s, "--profile=") {
+            name = strings.Replace(s, "--profile=", "", -1)
+        } else if strings.HasPrefix(s, "-p=") {
+            name = strings.Replace(s, "-p=", "", -1)
+        }
+    }
+    if name == "" {
+        return "DEFAULT"
+    }
+    return name
 }
+

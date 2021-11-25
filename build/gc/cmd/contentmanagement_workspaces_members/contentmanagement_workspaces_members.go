@@ -114,7 +114,6 @@ var deleteCmd = &cobra.Command{
 		memberId, args := args[0], args[1:]
 		path = strings.Replace(path, "{memberId}", fmt.Sprintf("%v", memberId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -124,7 +123,9 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
+		const opId = "delete"
+		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -162,7 +163,6 @@ var getCmd = &cobra.Command{
 		memberId, args := args[0], args[1:]
 		path = strings.Replace(path, "{memberId}", fmt.Sprintf("%v", memberId), -1)
 
-
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
@@ -176,7 +176,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -212,7 +214,6 @@ var listCmd = &cobra.Command{
 		workspaceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{workspaceId}", fmt.Sprintf("%v", workspaceId), -1)
 
-
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
 			queryParams["pageSize"] = pageSize
@@ -234,7 +235,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -275,7 +278,6 @@ var updateCmd = &cobra.Command{
 		memberId, args := args[0], args[1:]
 		path = strings.Replace(path, "{memberId}", fmt.Sprintf("%v", memberId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -285,7 +287,9 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
+		const opId = "update"
+		const httpMethod = "PUT"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

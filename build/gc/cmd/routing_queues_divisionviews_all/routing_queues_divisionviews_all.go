@@ -30,8 +30,7 @@ func init() {
 func Cmdrouting_queues_divisionviews_all() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size [max value is 500]")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by Valid values: name, id, divisionId")
-	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Sort order Valid values: asc, desc, score")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Sort order Valid values: asc, desc")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/divisionviews/all", utils.FormatPermissions([]string{ "routing:queue:search",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/divisionviews/all")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -48,8 +47,8 @@ func Cmdrouting_queues_divisionviews_all() *cobra.Command {
 
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.",
-	Long:  "Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.",
+	Short: "Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.",
+	Long:  "Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -65,7 +64,6 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/routing/queues/divisionviews/all"
 
-
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
 			queryParams["pageSize"] = pageSize
@@ -73,10 +71,6 @@ var listCmd = &cobra.Command{
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
-		}
-		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
-		if sortBy != "" {
-			queryParams["sortBy"] = sortBy
 		}
 		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
 		if sortOrder != "" {
@@ -91,7 +85,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

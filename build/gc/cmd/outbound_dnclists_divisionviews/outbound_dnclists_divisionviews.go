@@ -86,7 +86,6 @@ var getCmd = &cobra.Command{
 		dncListId, args := args[0], args[1:]
 		path = strings.Replace(path, "{dncListId}", fmt.Sprintf("%v", dncListId), -1)
 
-
 		includeImportStatus := utils.GetFlag(cmd.Flags(), "bool", "includeImportStatus")
 		if includeImportStatus != "" {
 			queryParams["includeImportStatus"] = includeImportStatus
@@ -104,7 +103,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -137,7 +138,6 @@ var listCmd = &cobra.Command{
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/outbound/dnclists/divisionviews"
-
 
 		includeImportStatus := utils.GetFlag(cmd.Flags(), "bool", "includeImportStatus")
 		if includeImportStatus != "" {
@@ -188,7 +188,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

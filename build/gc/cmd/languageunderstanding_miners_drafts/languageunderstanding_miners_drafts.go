@@ -122,7 +122,6 @@ var createCmd = &cobra.Command{
 		minerId, args := args[0], args[1:]
 		path = strings.Replace(path, "{minerId}", fmt.Sprintf("%v", minerId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -132,7 +131,9 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -170,7 +171,6 @@ var deleteCmd = &cobra.Command{
 		draftId, args := args[0], args[1:]
 		path = strings.Replace(path, "{draftId}", fmt.Sprintf("%v", draftId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -180,7 +180,9 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
+		const opId = "delete"
+		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -218,7 +220,6 @@ var getCmd = &cobra.Command{
 		draftId, args := args[0], args[1:]
 		path = strings.Replace(path, "{draftId}", fmt.Sprintf("%v", draftId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -228,7 +229,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -264,7 +267,6 @@ var listCmd = &cobra.Command{
 		minerId, args := args[0], args[1:]
 		path = strings.Replace(path, "{minerId}", fmt.Sprintf("%v", minerId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -274,7 +276,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -291,8 +295,8 @@ var listCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [minerId] [draftId]",
-	Short: "Save information for the draft",
-	Long:  "Save information for the draft",
+	Short: "Save information for the draft. Either topic draft or intent draft should be sent.",
+	Long:  "Save information for the draft. Either topic draft or intent draft should be sent.",
 	Args:  utils.DetermineArgs([]string{ "minerId", "draftId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -315,7 +319,6 @@ var updateCmd = &cobra.Command{
 		draftId, args := args[0], args[1:]
 		path = strings.Replace(path, "{draftId}", fmt.Sprintf("%v", draftId), -1)
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -325,7 +328,9 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PATCH", urlString, cmd.Flags())
+		const opId = "update"
+		const httpMethod = "PATCH"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

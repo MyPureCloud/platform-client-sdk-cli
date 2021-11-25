@@ -36,6 +36,9 @@ type SendagentlessoutboundmessageresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -72,6 +75,10 @@ type Sendagentlessoutboundmessageresponse struct {
     MessagingTemplate Messagingtemplaterequest `json:"messagingTemplate"`
 
 
+    // UseExistingActiveConversation - Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false
+    UseExistingActiveConversation bool `json:"useExistingActiveConversation"`
+
+
     // Timestamp - The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     Timestamp time.Time `json:"timestamp"`
 
@@ -85,6 +92,10 @@ type Sendagentlessoutboundmessageresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Sendagentlessoutboundmessageresponse) String() string {
+    
+    
+    
+    
     
     
     
@@ -150,6 +161,8 @@ func (u *Sendagentlessoutboundmessageresponse) MarshalJSON() ([]byte, error) {
         
         MessagingTemplate Messagingtemplaterequest `json:"messagingTemplate"`
         
+        UseExistingActiveConversation bool `json:"useExistingActiveConversation"`
+        
         Timestamp time.Time `json:"timestamp"`
         
         
@@ -158,6 +171,10 @@ func (u *Sendagentlessoutboundmessageresponse) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

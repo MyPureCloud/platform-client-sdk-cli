@@ -66,7 +66,6 @@ var getCmd = &cobra.Command{
 
 		path := "/api/v2/workforcemanagement/adherence"
 
-
 		userId := utils.GetFlag(cmd.Flags(), "[]string", "userId")
 		if userId != "" {
 			queryParams["userId"] = userId
@@ -80,7 +79,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

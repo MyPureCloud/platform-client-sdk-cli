@@ -19,6 +19,9 @@ type CoachingslotsresponseDud struct {
 
     FacilitatorSchedules []Useravailabletimes `json:"facilitatorSchedules"`
 
+
+    WfmScheduleActivities []Wfmscheduleactivity `json:"wfmScheduleActivities"`
+
 }
 
 // Coachingslotsresponse
@@ -31,10 +34,15 @@ type Coachingslotsresponse struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Coachingslotsresponse) String() string {
+    
+    
     
     
     
@@ -64,8 +72,14 @@ func (u *Coachingslotsresponse) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

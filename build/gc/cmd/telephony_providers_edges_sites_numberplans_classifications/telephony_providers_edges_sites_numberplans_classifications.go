@@ -68,7 +68,6 @@ var listCmd = &cobra.Command{
 		siteId, args := args[0], args[1:]
 		path = strings.Replace(path, "{siteId}", fmt.Sprintf("%v", siteId), -1)
 
-
 		classification := utils.GetFlag(cmd.Flags(), "string", "classification")
 		if classification != "" {
 			queryParams["classification"] = classification
@@ -82,7 +81,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

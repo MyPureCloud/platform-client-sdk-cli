@@ -80,7 +80,6 @@ var createCmd = &cobra.Command{
 		scheduleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{scheduleId}", fmt.Sprintf("%v", scheduleId), -1)
 
-
 		forceAsync := utils.GetFlag(cmd.Flags(), "bool", "forceAsync")
 		if forceAsync != "" {
 			queryParams["forceAsync"] = forceAsync
@@ -98,7 +97,9 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

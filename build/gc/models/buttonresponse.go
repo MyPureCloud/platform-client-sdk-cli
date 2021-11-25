@@ -19,6 +19,9 @@ type ButtonresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Buttonresponse
@@ -34,10 +37,18 @@ type Buttonresponse struct {
     // Payload - Content of the textback payload after clicking a button
     Payload string `json:"payload"`
 
+
+    // MessageType - Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
+    MessageType string `json:"messageType"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Buttonresponse) String() string {
+    
+    
+    
+    
     
     
     
@@ -73,8 +84,14 @@ func (u *Buttonresponse) MarshalJSON() ([]byte, error) {
         
         Payload string `json:"payload"`
         
+        MessageType string `json:"messageType"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

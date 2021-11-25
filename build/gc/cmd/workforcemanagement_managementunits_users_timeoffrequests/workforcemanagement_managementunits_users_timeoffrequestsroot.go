@@ -1,0 +1,12 @@
+package workforcemanagement_managementunits_users_timeoffrequests
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_managementunits_users_timeoffrequests_timeofflimits"
+)
+
+func init() {
+	workforcemanagement_managementunits_users_timeoffrequestsCmd.AddCommand(workforcemanagement_managementunits_users_timeoffrequests_timeofflimits.Cmdworkforcemanagement_managementunits_users_timeoffrequests_timeofflimits())
+	workforcemanagement_managementunits_users_timeoffrequestsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_managementunits_users_timeoffrequestsCmd.Short, workforcemanagement_managementunits_users_timeoffrequests_timeofflimits.Description, )
+	workforcemanagement_managementunits_users_timeoffrequestsCmd.Long = workforcemanagement_managementunits_users_timeoffrequestsCmd.Short
+}

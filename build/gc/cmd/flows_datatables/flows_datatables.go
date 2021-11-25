@@ -131,7 +131,6 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/flows/datatables"
 
-
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -141,7 +140,9 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("POST", urlString, cmd.Flags())
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -177,7 +178,6 @@ var deleteCmd = &cobra.Command{
 		datatableId, args := args[0], args[1:]
 		path = strings.Replace(path, "{datatableId}", fmt.Sprintf("%v", datatableId), -1)
 
-
 		force := utils.GetFlag(cmd.Flags(), "bool", "force")
 		if force != "" {
 			queryParams["force"] = force
@@ -191,7 +191,9 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("DELETE", urlString, cmd.Flags())
+		const opId = "delete"
+		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -227,7 +229,6 @@ var getCmd = &cobra.Command{
 		datatableId, args := args[0], args[1:]
 		path = strings.Replace(path, "{datatableId}", fmt.Sprintf("%v", datatableId), -1)
 
-
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
@@ -241,7 +242,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -274,7 +277,6 @@ var listCmd = &cobra.Command{
 		queryParams := make(map[string]string)
 
 		path := "/api/v2/flows/datatables"
-
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -313,7 +315,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -352,7 +356,6 @@ var updateCmd = &cobra.Command{
 		datatableId, args := args[0], args[1:]
 		path = strings.Replace(path, "{datatableId}", fmt.Sprintf("%v", datatableId), -1)
 
-
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
@@ -366,7 +369,9 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("PUT", urlString, cmd.Flags())
+		const opId = "update"
+		const httpMethod = "PUT"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

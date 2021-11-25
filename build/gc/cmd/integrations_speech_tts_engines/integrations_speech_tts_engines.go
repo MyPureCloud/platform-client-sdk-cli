@@ -80,7 +80,6 @@ var getCmd = &cobra.Command{
 		engineId, args := args[0], args[1:]
 		path = strings.Replace(path, "{engineId}", fmt.Sprintf("%v", engineId), -1)
 
-
 		includeVoices := utils.GetFlag(cmd.Flags(), "bool", "includeVoices")
 		if includeVoices != "" {
 			queryParams["includeVoices"] = includeVoices
@@ -94,7 +93,9 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -128,7 +129,6 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/integrations/speech/tts/engines"
 
-
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
@@ -158,7 +158,9 @@ var listCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
-		retryFunc := CommandService.DetermineAction("GET", urlString, cmd.Flags())
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

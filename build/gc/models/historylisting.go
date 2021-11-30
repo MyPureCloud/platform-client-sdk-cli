@@ -143,12 +143,12 @@ type Historylisting struct {
     PageSize int `json:"pageSize"`
 
 
-    // PageNumber
-    PageNumber int `json:"pageNumber"`
-
-
     // Total
     Total int `json:"total"`
+
+
+    // PageNumber
+    PageNumber int `json:"pageNumber"`
 
 
     // PageCount
@@ -289,9 +289,9 @@ func (u *Historylisting) MarshalJSON() ([]byte, error) {
         
         PageSize int `json:"pageSize"`
         
-        PageNumber int `json:"pageNumber"`
-        
         Total int `json:"total"`
+        
+        PageNumber int `json:"pageNumber"`
         
         PageCount int `json:"pageCount"`
         

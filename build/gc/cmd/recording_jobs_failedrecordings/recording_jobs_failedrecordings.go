@@ -30,13 +30,15 @@ func init() {
 func Cmdrecording_jobs_failedrecordings() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size. Maximum is 100.")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
+	utils.AddFlag(listCmd.Flags(), "bool", "includeTotal", "", "If false, cursor will be used to locate the page instead of pageNumber.")
+	utils.AddFlag(listCmd.Flags(), "string", "cursor", "", "Indicates where to resume query results (not required for first page)")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recording/jobs/{jobId}/failedrecordings", utils.FormatPermissions([]string{ "recording:job:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/jobs/{jobId}/failedrecordings")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
   "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+    "$ref" : "#/definitions/FailedRecordingEntityListing"
   }
 }`)
 	recording_jobs_failedrecordingsCmd.AddCommand(listCmd)
@@ -72,6 +74,14 @@ var listCmd = &cobra.Command{
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
+		}
+		includeTotal := utils.GetFlag(cmd.Flags(), "bool", "includeTotal")
+		if includeTotal != "" {
+			queryParams["includeTotal"] = includeTotal
+		}
+		cursor := utils.GetFlag(cmd.Flags(), "string", "cursor")
+		if cursor != "" {
+			queryParams["cursor"] = cursor
 		}
 		urlString := path
 		if len(queryParams) > 0 {

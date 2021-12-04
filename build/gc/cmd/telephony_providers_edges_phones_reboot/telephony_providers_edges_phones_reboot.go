@@ -41,6 +41,7 @@ func Cmdtelephony_providers_edges_phones_reboot() *cobra.Command {
     "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable",
     "invalid.date" : "Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ",
     "invalid.query.param.value" : "Value [%s] is not valid for parameter [%s]. Allowable values are: %s",
+    "client.failed.request" : "The client did not produce a request with valid end of stream signaling. This can be caused by poor network connection and/or client behavior.",
     "invalid.property" : "Value [%s] is not a valid property for object [%s]",
     "constraint.validation" : "%s",
     "invalid.value" : "Value [%s] is not valid for field type [%s]. Allowable values are: %s"
@@ -69,6 +70,7 @@ func Cmdtelephony_providers_edges_phones_reboot() *cobra.Command {
     "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable",
     "invalid.date" : "Dates must be specified as ISO-8601 strings. For example: yyyy-MM-ddTHH:mm:ss.SSSZ",
     "invalid.query.param.value" : "Value [%s] is not valid for parameter [%s]. Allowable values are: %s",
+    "client.failed.request" : "The client did not produce a request with valid end of stream signaling. This can be caused by poor network connection and/or client behavior.",
     "invalid.property" : "Value [%s] is not a valid property for object [%s]",
     "constraint.validation" : "%s",
     "invalid.value" : "Value [%s] is not valid for field type [%s]. Allowable values are: %s"

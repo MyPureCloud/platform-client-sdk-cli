@@ -30,7 +30,7 @@ type PlanninggroupDud struct {
 
 }
 
-// Planninggroup - Planning Group
+// Planninggroup
 type Planninggroup struct { 
     
 

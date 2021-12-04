@@ -13,75 +13,12 @@ var (
 type RecordingjobentitylistingDud struct { 
     
 
-
-    
-
-
-    
-
-
-    
-
-
-    
-
-
-    
-
-
-    
-
-
-    
-
-
-    
-
-
-    
-
 }
 
 // Recordingjobentitylisting
 type Recordingjobentitylisting struct { 
     // Entities
     Entities []Recordingjob `json:"entities"`
-
-
-    // PageSize
-    PageSize int `json:"pageSize"`
-
-
-    // PageNumber
-    PageNumber int `json:"pageNumber"`
-
-
-    // Total
-    Total int `json:"total"`
-
-
-    // FirstUri
-    FirstUri string `json:"firstUri"`
-
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
-
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
-    // PageCount
-    PageCount int `json:"pageCount"`
 
 }
 
@@ -90,42 +27,6 @@ func (o *Recordingjobentitylisting) String() string {
     
     
      o.Entities = []Recordingjob{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -146,66 +47,12 @@ func (u *Recordingjobentitylisting) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         Entities []Recordingjob `json:"entities"`
         
-        PageSize int `json:"pageSize"`
-        
-        PageNumber int `json:"pageNumber"`
-        
-        Total int `json:"total"`
-        
-        FirstUri string `json:"firstUri"`
-        
-        SelfUri string `json:"selfUri"`
-        
-        NextUri string `json:"nextUri"`
-        
-        PreviousUri string `json:"previousUri"`
-        
-        LastUri string `json:"lastUri"`
-        
-        PageCount int `json:"pageCount"`
-        
         *Alias
     }{
         
 
         
         Entities: []Recordingjob{{}},
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
         
 
         

@@ -18,7 +18,7 @@ type SourceplanninggrouprequestDud struct {
 
 }
 
-// Sourceplanninggrouprequest - Source planning group
+// Sourceplanninggrouprequest
 type Sourceplanninggrouprequest struct { 
     // Id - The ID of the planning group
     Id string `json:"id"`

@@ -18,7 +18,7 @@ type PlanninggroupreferenceDud struct {
 
 }
 
-// Planninggroupreference - Planning Group
+// Planninggroupreference
 type Planninggroupreference struct { 
     
 

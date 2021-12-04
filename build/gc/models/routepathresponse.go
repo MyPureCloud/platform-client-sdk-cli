@@ -24,7 +24,7 @@ type RoutepathresponseDud struct {
 
 }
 
-// Routepathresponse - Route path configuration
+// Routepathresponse
 type Routepathresponse struct { 
     // Queue - The ID of the queue associated with the route path
     Queue Queuereference `json:"queue"`

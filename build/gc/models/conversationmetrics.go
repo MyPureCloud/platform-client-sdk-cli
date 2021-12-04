@@ -22,6 +22,9 @@ type ConversationmetricsDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationmetrics
@@ -41,10 +44,18 @@ type Conversationmetrics struct {
     // SentimentTrendClass - The Sentiment Trend Class
     SentimentTrendClass string `json:"sentimentTrendClass"`
 
+
+    // ParticipantMetrics - The Participant Metrics
+    ParticipantMetrics Participantmetrics `json:"participantMetrics"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationmetrics) String() string {
+    
+    
+    
+    
     
     
     
@@ -86,8 +97,14 @@ func (u *Conversationmetrics) MarshalJSON() ([]byte, error) {
         
         SentimentTrendClass string `json:"sentimentTrendClass"`
         
+        ParticipantMetrics Participantmetrics `json:"participantMetrics"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

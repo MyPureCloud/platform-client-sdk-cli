@@ -17,6 +17,21 @@ type DrafttopicsDud struct {
     
 
 
+    Miner Miner `json:"miner"`
+
+
+    ConversationCount int `json:"conversationCount"`
+
+
+    ConversationPercent float32 `json:"conversationPercent"`
+
+
+    UtteranceCount int `json:"utteranceCount"`
+
+
+    PhraseCount int `json:"phraseCount"`
+
+
     
 
 
@@ -30,8 +45,23 @@ type Drafttopics struct {
     Id string `json:"id"`
 
 
-    // Name - Name/Label for a topic.
+    // Name - Topic name.
     Name string `json:"name"`
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
 
 
     // Phrases - The phrases that are extracted for a topic.
@@ -44,6 +74,16 @@ type Drafttopics struct {
 
 // String returns a JSON representation of the model
 func (o *Drafttopics) String() string {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -79,12 +119,42 @@ func (u *Drafttopics) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         Phrases []string `json:"phrases"`
         
         
         
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
         
 
         

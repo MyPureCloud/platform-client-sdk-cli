@@ -36,6 +36,9 @@ type ComparisonperiodDud struct {
     InteractionCountOff int `json:"interactionCountOff"`
 
 
+    KpiResults []Kpiresult `json:"kpiResults"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -68,10 +71,15 @@ type Comparisonperiod struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Comparisonperiod) String() string {
+    
+    
     
     
     
@@ -125,8 +133,14 @@ func (u *Comparisonperiod) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

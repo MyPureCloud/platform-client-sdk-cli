@@ -96,6 +96,9 @@ type QueueDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -176,6 +179,10 @@ type Queue struct {
 
     // WhisperPrompt - The prompt used for whisper on the queue, if configured.
     WhisperPrompt Domainentityref `json:"whisperPrompt"`
+
+
+    // OnHoldPrompt - The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.
+    OnHoldPrompt Domainentityref `json:"onHoldPrompt"`
 
 
     // AutoAnswerOnly - Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.
@@ -310,6 +317,10 @@ func (o *Queue) String() string {
     
     
     
+    
+    
+    
+    
      o.DefaultScripts = map[string]Script{"": {}} 
     
     
@@ -378,6 +389,8 @@ func (u *Queue) MarshalJSON() ([]byte, error) {
         MessageInQueueFlow Domainentityref `json:"messageInQueueFlow"`
         
         WhisperPrompt Domainentityref `json:"whisperPrompt"`
+        
+        OnHoldPrompt Domainentityref `json:"onHoldPrompt"`
         
         AutoAnswerOnly bool `json:"autoAnswerOnly"`
         
@@ -453,6 +466,10 @@ func (u *Queue) MarshalJSON() ([]byte, error) {
 
         
         RoutingRules: []Routingrule{{}},
+        
+
+        
+
         
 
         

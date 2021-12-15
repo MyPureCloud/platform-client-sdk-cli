@@ -96,6 +96,9 @@ type UserqueueDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -176,6 +179,10 @@ type Userqueue struct {
 
     // WhisperPrompt - The prompt used for whisper on the queue, if configured.
     WhisperPrompt Domainentityref `json:"whisperPrompt"`
+
+
+    // OnHoldPrompt - The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.
+    OnHoldPrompt Domainentityref `json:"onHoldPrompt"`
 
 
     // EnableTranscription - Indicates whether voice transcription is enabled for this queue.
@@ -306,6 +313,10 @@ func (o *Userqueue) String() string {
     
     
     
+    
+    
+    
+    
      o.DefaultScripts = map[string]Script{"": {}} 
     
     
@@ -378,6 +389,8 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
         MessageInQueueFlow Domainentityref `json:"messageInQueueFlow"`
         
         WhisperPrompt Domainentityref `json:"whisperPrompt"`
+        
+        OnHoldPrompt Domainentityref `json:"onHoldPrompt"`
         
         EnableTranscription bool `json:"enableTranscription"`
         
@@ -453,6 +466,10 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
 
         
         RoutingRules: []Routingrule{{}},
+        
+
+        
+
         
 
         

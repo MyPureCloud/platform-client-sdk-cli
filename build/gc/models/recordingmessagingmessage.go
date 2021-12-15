@@ -44,6 +44,9 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Recordingmessagingmessage
@@ -90,6 +93,10 @@ type Recordingmessagingmessage struct {
 
     // ButtonResponse - Button Response selected by user for this message.
     ButtonResponse Buttonresponse `json:"buttonResponse"`
+
+
+    // Story - Ephemeral story content.
+    Story Recordingcontentstory `json:"story"`
 
 }
 
@@ -140,6 +147,10 @@ func (o *Recordingmessagingmessage) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -177,6 +188,8 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         QuickReplies []Quickreply `json:"quickReplies"`
         
         ButtonResponse Buttonresponse `json:"buttonResponse"`
+        
+        Story Recordingcontentstory `json:"story"`
         
         *Alias
     }{
@@ -224,6 +237,10 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
 
         
         QuickReplies: []Quickreply{{}},
+        
+
+        
+
         
 
         

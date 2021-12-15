@@ -25,6 +25,9 @@ type MessengersettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Messengersettings - Settings concerning messenger
@@ -45,6 +48,10 @@ type Messengersettings struct {
     FileUpload Fileuploadsettings `json:"fileUpload"`
 
 
+    // Apps - The apps embedded in the messenger
+    Apps Messengerapps `json:"apps"`
+
+
     // Position - The position settings for messenger
     Position Messengerpositionsettings `json:"position"`
 
@@ -52,6 +59,10 @@ type Messengersettings struct {
 
 // String returns a JSON representation of the model
 func (o *Messengersettings) String() string {
+    
+    
+    
+    
     
     
     
@@ -97,10 +108,16 @@ func (u *Messengersettings) MarshalJSON() ([]byte, error) {
         
         FileUpload Fileuploadsettings `json:"fileUpload"`
         
+        Apps Messengerapps `json:"apps"`
+        
         Position Messengerpositionsettings `json:"position"`
         
         *Alias
     }{
+        
+
+        
+
         
 
         

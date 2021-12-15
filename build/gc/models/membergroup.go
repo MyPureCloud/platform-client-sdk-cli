@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type MembergroupDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -32,7 +32,8 @@ type MembergroupDud struct {
 
 // Membergroup
 type Membergroup struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // Name
@@ -40,7 +41,7 @@ type Membergroup struct {
 
 
     // Division - The division to which this entity belongs.
-    Division Division `json:"division"`
+    Division Writabledivision `json:"division"`
 
 
     // VarType - The group type
@@ -56,6 +57,8 @@ type Membergroup struct {
 
 // String returns a JSON representation of the model
 func (o *Membergroup) String() string {
+    
+    
     
     
     
@@ -91,11 +94,11 @@ func (u *Membergroup) MarshalJSON() ([]byte, error) {
     MembergroupMarshalled = true
 
     return json.Marshal(&struct { 
-        
+        Id string `json:"id"`
         
         Name string `json:"name"`
         
-        Division Division `json:"division"`
+        Division Writabledivision `json:"division"`
         
         VarType string `json:"type"`
         

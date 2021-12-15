@@ -47,6 +47,12 @@ type AnalyticsconversationwithoutattributesDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Analyticsconversationwithoutattributes
@@ -71,6 +77,10 @@ type Analyticsconversationwithoutattributes struct {
     ExternalTag string `json:"externalTag"`
 
 
+    // KnowledgeBaseIds - The unique identifier(s) of the knowledge base(s) used
+    KnowledgeBaseIds []string `json:"knowledgeBaseIds"`
+
+
     // MediaStatsMinConversationMos - The lowest estimated average MOS among all the audio streams belonging to this conversation
     MediaStatsMinConversationMos float64 `json:"mediaStatsMinConversationMos"`
 
@@ -81,6 +91,10 @@ type Analyticsconversationwithoutattributes struct {
 
     // OriginatingDirection - The original direction of the conversation
     OriginatingDirection string `json:"originatingDirection"`
+
+
+    // SelfServed - Indicates whether all flow sessions were self serviced
+    SelfServed bool `json:"selfServed"`
 
 
     // Evaluations - Evaluations associated with this conversation
@@ -117,6 +131,14 @@ func (o *Analyticsconversationwithoutattributes) String() string {
     
     
      o.DivisionIds = []string{""} 
+    
+    
+    
+    
+    
+    
+    
+     o.KnowledgeBaseIds = []string{""} 
     
     
     
@@ -177,11 +199,15 @@ func (u *Analyticsconversationwithoutattributes) MarshalJSON() ([]byte, error) {
         
         ExternalTag string `json:"externalTag"`
         
+        KnowledgeBaseIds []string `json:"knowledgeBaseIds"`
+        
         MediaStatsMinConversationMos float64 `json:"mediaStatsMinConversationMos"`
         
         MediaStatsMinConversationRFactor float64 `json:"mediaStatsMinConversationRFactor"`
         
         OriginatingDirection string `json:"originatingDirection"`
+        
+        SelfServed bool `json:"selfServed"`
         
         Evaluations []Analyticsevaluation `json:"evaluations"`
         
@@ -209,6 +235,16 @@ func (u *Analyticsconversationwithoutattributes) MarshalJSON() ([]byte, error) {
 
         
         DivisionIds: []string{""},
+        
+
+        
+
+        
+
+        
+
+        
+        KnowledgeBaseIds: []string{""},
         
 
         

@@ -245,7 +245,7 @@ func (c *commandService) List(uri string) (string, error) {
 			totalResults = append(totalResults, string(val))
 		}
 		pagedURI := uri
-		for x := firstPage.PageNumber + 1; x <= firstPage.PageCount; x++ {
+		for x := firstPage.PageNumber + 1;; x++ {
 			pagedURI = updatePagingIndex(pagedURI, "pageNumber", x)
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
@@ -263,6 +263,10 @@ func (c *commandService) List(uri string) (string, error) {
 
 			for _, val := range getPageObjects(pageData) {
 				totalResults = append(totalResults, string(val))
+			}
+
+			if pageData.NextUri == "" {
+				break
 			}
 		}
 		break

@@ -424,6 +424,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -978,6 +981,10 @@ type Viewfilter struct {
 
     // FlowMilestoneIds - The list of flow milestones to filter exports
     FlowMilestoneIds []string `json:"flowMilestoneIds"`
+
+
+    // IsAssessmentPassed - Filter to indicate if Agent passed assessment or not
+    IsAssessmentPassed bool `json:"isAssessmentPassed"`
 
 }
 
@@ -1536,6 +1543,10 @@ func (o *Viewfilter) String() string {
      o.FlowMilestoneIds = []string{""} 
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1827,6 +1838,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         JourneyUrlNotContainsAllConditions []string `json:"journeyUrlNotContainsAllConditions"`
         
         FlowMilestoneIds []string `json:"flowMilestoneIds"`
+        
+        IsAssessmentPassed bool `json:"isAssessmentPassed"`
         
         *Alias
     }{
@@ -2588,6 +2601,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         FlowMilestoneIds: []string{""},
+        
+
+        
+
         
 
         

@@ -17,19 +17,12 @@ type ValidationservicerequestDud struct {
 
     
 
-
-    
-
 }
 
 // Validationservicerequest
 type Validationservicerequest struct { 
     // DateImportEnded - The last day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateImportEnded time.Time `json:"dateImportEnded"`
-
-
-    // FileUrl - File URL is deprecated, please use upload key
-    FileUrl string `json:"fileUrl"`
 
 
     // UploadKey - S3 key for the uploaded file
@@ -39,10 +32,6 @@ type Validationservicerequest struct {
 
 // String returns a JSON representation of the model
 func (o *Validationservicerequest) String() string {
-    
-    
-    
-    
     
     
     
@@ -70,16 +59,10 @@ func (u *Validationservicerequest) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         DateImportEnded time.Time `json:"dateImportEnded"`
         
-        FileUrl string `json:"fileUrl"`
-        
         UploadKey string `json:"uploadKey"`
         
         *Alias
     }{
-        
-
-        
-
         
 
         

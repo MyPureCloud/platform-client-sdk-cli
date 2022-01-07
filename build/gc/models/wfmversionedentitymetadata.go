@@ -20,6 +20,12 @@ type WfmversionedentitymetadataDud struct {
 
     DateModified time.Time `json:"dateModified"`
 
+
+    CreatedBy Userreference `json:"createdBy"`
+
+
+    DateCreated time.Time `json:"dateCreated"`
+
 }
 
 // Wfmversionedentitymetadata - Metadata to associate with a given entity
@@ -33,10 +39,20 @@ type Wfmversionedentitymetadata struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Wfmversionedentitymetadata) String() string {
+    
+    
+    
+    
     
     
     
@@ -68,8 +84,20 @@ func (u *Wfmversionedentitymetadata) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
+        
+        
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
         
 
         

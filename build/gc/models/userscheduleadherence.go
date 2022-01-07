@@ -21,6 +21,9 @@ type UserscheduleadherenceDud struct {
     User Userreference `json:"user"`
 
 
+    BusinessUnit Businessunit `json:"businessUnit"`
+
+
     ManagementUnit Managementunit `json:"managementUnit"`
 
 
@@ -129,10 +132,15 @@ type Userscheduleadherence struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Userscheduleadherence) String() string {
+    
+    
     
     
     
@@ -228,8 +236,14 @@ func (u *Userscheduleadherence) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

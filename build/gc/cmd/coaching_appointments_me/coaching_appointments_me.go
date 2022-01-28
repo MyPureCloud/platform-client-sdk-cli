@@ -37,6 +37,7 @@ func Cmdcoaching_appointments_me() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "relationships", "", "Relationships to filter by Valid values: Creator, Facilitator, Attendee")
 	utils.AddFlag(listCmd.Flags(), "string", "completionInterval", "", "Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
 	utils.AddFlag(listCmd.Flags(), "string", "overdue", "", "Overdue status to filter by Valid values: True, False, Any")
+	utils.AddFlag(listCmd.Flags(), "string", "intervalCondition", "", "Filter condition for interval Valid values: StartsIn, Overlaps")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/coaching/appointments/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Coaching", "/api/v2/coaching/appointments/me")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -105,6 +106,10 @@ var listCmd = &cobra.Command{
 		overdue := utils.GetFlag(cmd.Flags(), "string", "overdue")
 		if overdue != "" {
 			queryParams["overdue"] = overdue
+		}
+		intervalCondition := utils.GetFlag(cmd.Flags(), "string", "intervalCondition")
+		if intervalCondition != "" {
+			queryParams["intervalCondition"] = intervalCondition
 		}
 		urlString := path
 		if len(queryParams) > 0 {

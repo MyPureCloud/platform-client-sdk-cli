@@ -135,20 +135,20 @@ type Historylisting struct {
     Completed time.Time `json:"completed"`
 
 
-    // Entities
-    Entities []Historyentry `json:"entities"`
+    // PageSize
+    PageSize int `json:"pageSize"`
 
 
     // PageNumber
     PageNumber int `json:"pageNumber"`
 
 
-    // PageSize
-    PageSize int `json:"pageSize"`
-
-
     // Total
     Total int `json:"total"`
+
+
+    // Entities
+    Entities []Historyentry `json:"entities"`
 
 
     // PageCount
@@ -220,19 +220,19 @@ func (o *Historylisting) String() string {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
      o.Entities = []Historyentry{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -285,13 +285,13 @@ func (u *Historylisting) MarshalJSON() ([]byte, error) {
         
         Completed time.Time `json:"completed"`
         
-        Entities []Historyentry `json:"entities"`
+        PageSize int `json:"pageSize"`
         
         PageNumber int `json:"pageNumber"`
         
-        PageSize int `json:"pageSize"`
-        
         Total int `json:"total"`
+        
+        Entities []Historyentry `json:"entities"`
         
         PageCount int `json:"pageCount"`
         
@@ -364,19 +364,19 @@ func (u *Historylisting) MarshalJSON() ([]byte, error) {
         
 
         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
         Entities: []Historyentry{{}},
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
         
 
         

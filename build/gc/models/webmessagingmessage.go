@@ -31,6 +31,9 @@ type WebmessagingmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Webmessagingmessage - A web messaging message
@@ -53,6 +56,10 @@ type Webmessagingmessage struct {
 
     // Content - List of content elements.
     Content []Webmessagingcontent `json:"content"`
+
+
+    // Events - List of event elements.
+    Events []Webmessagingevent `json:"events"`
 
 
     // Direction - The direction of the message.  Direction is always from the perspective of the Genesys Cloud platform.  An Inbound message is one sent from a guest to the Genesys Cloud Platform.  An Outbound message is one sent from the Genesys Cloud Platform to a guest.
@@ -85,6 +92,10 @@ func (o *Webmessagingmessage) String() string {
     
     
      o.Content = []Webmessagingcontent{{}} 
+    
+    
+    
+     o.Events = []Webmessagingevent{{}} 
     
     
     
@@ -121,6 +132,8 @@ func (u *Webmessagingmessage) MarshalJSON() ([]byte, error) {
         
         Content []Webmessagingcontent `json:"content"`
         
+        Events []Webmessagingevent `json:"events"`
+        
         Direction string `json:"direction"`
         
         OriginatingEntity string `json:"originatingEntity"`
@@ -147,6 +160,12 @@ func (u *Webmessagingmessage) MarshalJSON() ([]byte, error) {
 
         
         Content: []Webmessagingcontent{{}},
+        
+
+        
+
+        
+        Events: []Webmessagingevent{{}},
         
 
         

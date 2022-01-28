@@ -69,10 +69,14 @@ func Cmdrouting_sms_phonenumbers() *cobra.Command {
 	routing_sms_phonenumbersCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "string", "phoneNumber", "", "Filter on phone number address. Allowable characters are the digits `0-9` and the wild card character `\\*`. If just digits are present, a contains search is done on the address pattern. For example, `317` could be matched anywhere in the address. An `\\*` will match multiple digits. For example, to match a specific area code within the US a pattern like `1317*` could be used.")
-	utils.AddFlag(listCmd.Flags(), "string", "phoneNumberType", "", "Filter on phone number type Valid values: local, mobile, tollfree, shortcode")
-	utils.AddFlag(listCmd.Flags(), "string", "phoneNumberStatus", "", "Filter on phone number status Valid values: active, invalid, porting")
+	utils.AddFlag(listCmd.Flags(), "[]string", "phoneNumberType", "", "Filter on phone number type Valid values: local, mobile, tollfree, shortcode")
+	utils.AddFlag(listCmd.Flags(), "[]string", "phoneNumberStatus", "", "Filter on phone number status Valid values: active, invalid, initiated, porting, pending, pending-cancellation")
+	utils.AddFlag(listCmd.Flags(), "[]string", "countryCode", "", "Filter on country code")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Optional field to sort results Valid values: phoneNumber, countryCode, country, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Sort order Valid values: ascending, descending")
+	utils.AddFlag(listCmd.Flags(), "string", "language", "en-US", "A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/sms/phonenumbers", utils.FormatPermissions([]string{ "sms:phoneNumber:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/sms/phonenumbers")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -280,13 +284,17 @@ var listCmd = &cobra.Command{
 		if phoneNumber != "" {
 			queryParams["phoneNumber"] = phoneNumber
 		}
-		phoneNumberType := utils.GetFlag(cmd.Flags(), "string", "phoneNumberType")
+		phoneNumberType := utils.GetFlag(cmd.Flags(), "[]string", "phoneNumberType")
 		if phoneNumberType != "" {
 			queryParams["phoneNumberType"] = phoneNumberType
 		}
-		phoneNumberStatus := utils.GetFlag(cmd.Flags(), "string", "phoneNumberStatus")
+		phoneNumberStatus := utils.GetFlag(cmd.Flags(), "[]string", "phoneNumberStatus")
 		if phoneNumberStatus != "" {
 			queryParams["phoneNumberStatus"] = phoneNumberStatus
+		}
+		countryCode := utils.GetFlag(cmd.Flags(), "[]string", "countryCode")
+		if countryCode != "" {
+			queryParams["countryCode"] = countryCode
 		}
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
@@ -295,6 +303,18 @@ var listCmd = &cobra.Command{
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
+		}
+		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
+		if sortBy != "" {
+			queryParams["sortBy"] = sortBy
+		}
+		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
+		if sortOrder != "" {
+			queryParams["sortOrder"] = sortOrder
+		}
+		language := utils.GetFlag(cmd.Flags(), "string", "language")
+		if language != "" {
+			queryParams["language"] = language
 		}
 		urlString := path
 		if len(queryParams) > 0 {

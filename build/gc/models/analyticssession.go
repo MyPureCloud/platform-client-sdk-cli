@@ -230,6 +230,9 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticssession
@@ -340,6 +343,10 @@ type Analyticssession struct {
 
     // EligibleAgentCounts - Number of eligible agents for each predictive routing attempt
     EligibleAgentCounts []int `json:"eligibleAgentCounts"`
+
+
+    // ExtendedDeliveryStatus - Extended email delivery status
+    ExtendedDeliveryStatus string `json:"extendedDeliveryStatus"`
 
 
     // FlowInType - Type of flow in that occurred when entering ACD.
@@ -731,6 +738,10 @@ func (o *Analyticssession) String() string {
     
     
     
+    
+    
+    
+    
      o.RemovedSkillIds = []string{""} 
     
     
@@ -891,6 +902,8 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         EdgeId string `json:"edgeId"`
         
         EligibleAgentCounts []int `json:"eligibleAgentCounts"`
+        
+        ExtendedDeliveryStatus string `json:"extendedDeliveryStatus"`
         
         FlowInType string `json:"flowInType"`
         
@@ -1100,6 +1113,10 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
         
         EligibleAgentCounts: []int{0},
+        
+
+        
+
         
 
         

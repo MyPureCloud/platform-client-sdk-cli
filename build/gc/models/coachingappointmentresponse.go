@@ -57,12 +57,30 @@ type CoachingappointmentresponseDud struct {
     IsOverdue bool `json:"isOverdue"`
 
 
+    WfmSchedule Wfmschedulereference `json:"wfmSchedule"`
+
+
+    DateCompleted time.Time `json:"dateCompleted"`
+
+
+    ExternalLinks []string `json:"externalLinks"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
 
 // Coachingappointmentresponse - Coaching appointment response
 type Coachingappointmentresponse struct { 
+    
+
+
+    
+
+
+    
+
+
     
 
 
@@ -147,6 +165,12 @@ func (o *Coachingappointmentresponse) String() string {
     
     
     
+    
+    
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -195,8 +219,26 @@ func (u *Coachingappointmentresponse) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
+        
+        
+        
+        
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
         
 
         

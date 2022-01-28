@@ -21,7 +21,7 @@ type ScoredagentDud struct {
 // Scoredagent
 type Scoredagent struct { 
     // Agent - The agent
-    Agent Addressableentityref `json:"agent"`
+    Agent Domainentityref `json:"agent"`
 
 
     // Score - Agent's score for the current conversation, from 0 - 100, higher being better
@@ -56,7 +56,7 @@ func (u *Scoredagent) MarshalJSON() ([]byte, error) {
     ScoredagentMarshalled = true
 
     return json.Marshal(&struct { 
-        Agent Addressableentityref `json:"agent"`
+        Agent Domainentityref `json:"agent"`
         
         Score int `json:"score"`
         

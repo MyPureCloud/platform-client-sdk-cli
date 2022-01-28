@@ -32,6 +32,12 @@ type UpdatecoachingappointmentrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Updatecoachingappointmentrequest - Update coaching appointment request
@@ -62,6 +68,14 @@ type Updatecoachingappointmentrequest struct {
 
     // Status - The status of the coaching appointment.
     Status string `json:"status"`
+
+
+    // WfmSchedule - The Workforce Management schedule the appointment is associated with.
+    WfmSchedule Wfmschedulereference `json:"wfmSchedule"`
+
+
+    // ExternalLinks - The list of external links related to the appointment
+    ExternalLinks []string `json:"externalLinks"`
 
 }
 
@@ -96,6 +110,14 @@ func (o *Updatecoachingappointmentrequest) String() string {
     
     
     
+    
+    
+    
+    
+    
+     o.ExternalLinks = []string{""} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -125,6 +147,10 @@ func (u *Updatecoachingappointmentrequest) MarshalJSON() ([]byte, error) {
         DocumentIds []string `json:"documentIds"`
         
         Status string `json:"status"`
+        
+        WfmSchedule Wfmschedulereference `json:"wfmSchedule"`
+        
+        ExternalLinks []string `json:"externalLinks"`
         
         *Alias
     }{
@@ -158,6 +184,16 @@ func (u *Updatecoachingappointmentrequest) MarshalJSON() ([]byte, error) {
 
         
 
+        
+
+        
+
+        
+
+        
+
+        
+        ExternalLinks: []string{""},
         
 
         

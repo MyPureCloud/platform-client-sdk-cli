@@ -28,14 +28,14 @@ func init() {
 }
 
 func Cmdconversations_recordings() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "formatId", "WEBM", "The desired media format. Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE")
-	utils.AddFlag(getCmd.Flags(), "string", "emailFormatId", "EML", "The desired media format when downloading an email recording. Valid values: EML, NONE")
-	utils.AddFlag(getCmd.Flags(), "string", "chatFormatId", "ZIP", "The desired media format when downloading a chat recording. Valid values: ZIP, NONE")
-	utils.AddFlag(getCmd.Flags(), "string", "messageFormatId", "ZIP", "The desired media format when downloading a message recording. Valid values: ZIP, NONE")
-	utils.AddFlag(getCmd.Flags(), "bool", "download", "false", "requesting a download format of the recording")
+	utils.AddFlag(getCmd.Flags(), "string", "formatId", "WEBM", "The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE")
+	utils.AddFlag(getCmd.Flags(), "string", "emailFormatId", "EML", "The desired media format when downloading an email recording. Valid values:EML,NONE Valid values: EML, NONE")
+	utils.AddFlag(getCmd.Flags(), "string", "chatFormatId", "ZIP", "The desired media format when downloading a chat recording. Valid values:ZIP,NONE  Valid values: ZIP, NONE")
+	utils.AddFlag(getCmd.Flags(), "string", "messageFormatId", "ZIP", "The desired media format when downloading a message recording. Valid values:ZIP,NONE Valid values: ZIP, NONE")
+	utils.AddFlag(getCmd.Flags(), "bool", "download", "false", "requesting a download format of the recording. Valid values:true,false")
 	utils.AddFlag(getCmd.Flags(), "string", "fileName", "", "the name of the downloaded fileName")
 	utils.AddFlag(getCmd.Flags(), "string", "locale", "", "The locale for the requested file when downloading, as an ISO 639-1 code")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -47,8 +47,8 @@ func Cmdconversations_recordings() *cobra.Command {
 	conversations_recordingsCmd.AddCommand(getCmd)
 	
 	utils.AddFlag(listCmd.Flags(), "int", "maxWaitMs", "5000", "The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.")
-	utils.AddFlag(listCmd.Flags(), "string", "formatId", "WEBM", "The desired media format Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings", utils.FormatPermissions([]string{ "recording:recording:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings")))
+	utils.AddFlag(listCmd.Flags(), "string", "formatId", "WEBM", "The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE")
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

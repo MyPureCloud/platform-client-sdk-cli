@@ -32,6 +32,12 @@ type FlowdivisionviewDud struct {
     
 
 
+    SupportedLanguages []Supportedlanguage `json:"supportedLanguages"`
+
+
+    
+
+
     
 
 
@@ -57,12 +63,19 @@ type Flowdivisionview struct {
     VarType string `json:"type"`
 
 
+    // Description - the flow description
+    Description string `json:"description"`
+
+
     // InputSchema - json schema describing the inputs for the flow
     InputSchema Jsonschemadocument `json:"inputSchema"`
 
 
     // OutputSchema - json schema describing the outputs for the flow
     OutputSchema Jsonschemadocument `json:"outputSchema"`
+
+
+    
 
 
     // PublishedVersion - published version information if there is a published version
@@ -79,6 +92,12 @@ type Flowdivisionview struct {
 
 // String returns a JSON representation of the model
 func (o *Flowdivisionview) String() string {
+    
+    
+    
+    
+    
+    
     
     
     
@@ -138,9 +157,13 @@ func (u *Flowdivisionview) MarshalJSON() ([]byte, error) {
         
         VarType string `json:"type"`
         
+        Description string `json:"description"`
+        
         InputSchema Jsonschemadocument `json:"inputSchema"`
         
         OutputSchema Jsonschemadocument `json:"outputSchema"`
+        
+        
         
         PublishedVersion Flowversion `json:"publishedVersion"`
         
@@ -150,6 +173,14 @@ func (u *Flowdivisionview) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
         
 
         

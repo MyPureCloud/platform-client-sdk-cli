@@ -13,10 +13,17 @@ var (
 type MessengerappsDud struct { 
     
 
+
+    
+
 }
 
 // Messengerapps - The apps embedded in the messenger
 type Messengerapps struct { 
+    // Conversations - The conversation settings that handles chats within the messenger
+    Conversations Conversationappsettings `json:"conversations"`
+
+
     // Knowledge - The knowledge base config for messenger
     Knowledge Knowledge `json:"knowledge"`
 
@@ -24,6 +31,10 @@ type Messengerapps struct {
 
 // String returns a JSON representation of the model
 func (o *Messengerapps) String() string {
+    
+    
+    
+    
     
     
     
@@ -45,10 +56,16 @@ func (u *Messengerapps) MarshalJSON() ([]byte, error) {
     MessengerappsMarshalled = true
 
     return json.Marshal(&struct { 
+        Conversations Conversationappsettings `json:"conversations"`
+        
         Knowledge Knowledge `json:"knowledge"`
         
         *Alias
     }{
+        
+
+        
+
         
 
         

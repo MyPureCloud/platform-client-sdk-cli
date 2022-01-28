@@ -53,6 +53,9 @@ type AnalyticsconversationDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticsconversation
@@ -63,6 +66,10 @@ type Analyticsconversation struct {
 
     // ConversationId - Unique identifier for the conversation
     ConversationId string `json:"conversationId"`
+
+
+    // ConversationInitiator - Indicates the participant purpose of the participant initiating a message conversation
+    ConversationInitiator string `json:"conversationInitiator"`
 
 
     // ConversationStart - The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -116,6 +123,10 @@ type Analyticsconversation struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticsconversation) String() string {
+    
+    
+    
+    
     
     
     
@@ -193,6 +204,8 @@ func (u *Analyticsconversation) MarshalJSON() ([]byte, error) {
         
         ConversationId string `json:"conversationId"`
         
+        ConversationInitiator string `json:"conversationInitiator"`
+        
         ConversationStart time.Time `json:"conversationStart"`
         
         DivisionIds []string `json:"divisionIds"`
@@ -219,6 +232,10 @@ func (u *Analyticsconversation) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

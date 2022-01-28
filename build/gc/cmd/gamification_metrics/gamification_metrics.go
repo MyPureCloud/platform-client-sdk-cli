@@ -35,7 +35,7 @@ func Cmdgamification_metrics() *cobra.Command {
   "description" : "Metric",
   "required" : true,
   "schema" : {
-    "$ref" : "#/definitions/Metric"
+    "$ref" : "#/definitions/CreateMetric"
   }
 }`)
 	
@@ -81,7 +81,7 @@ func Cmdgamification_metrics() *cobra.Command {
   "description" : "Metric",
   "required" : true,
   "schema" : {
-    "$ref" : "#/definitions/Metric"
+    "$ref" : "#/definitions/CreateMetric"
   }
 }`)
 	
@@ -108,7 +108,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Metric{}
+			reqModel := models.Createmetric{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -264,7 +264,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Metric{}
+			reqModel := models.Createmetric{}
 			utils.Render(reqModel.String())
 			
 			return

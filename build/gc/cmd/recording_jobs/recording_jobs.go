@@ -80,7 +80,7 @@ func Cmdrecording_jobs() *cobra.Command {
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
   "schema" : {
-    "$ref" : "#/definitions/RecordingJobEntityListing"
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
   }
 }`)
 	recording_jobsCmd.AddCommand(listCmd)

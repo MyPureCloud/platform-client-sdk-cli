@@ -26,6 +26,12 @@ type ObjectiveDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Objective
@@ -45,6 +51,14 @@ type Objective struct {
     Enabled bool `json:"enabled"`
 
 
+    // Topics - A list of topic ids for detected topic metrics
+    Topics []Addressableentityref `json:"topics"`
+
+
+    // TopicIdsFilterType - A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
+    TopicIdsFilterType string `json:"topicIdsFilterType"`
+
+
     // DateStart - start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     DateStart time.Time `json:"dateStart"`
 
@@ -61,6 +75,14 @@ func (o *Objective) String() string {
     
     
      o.Zones = []Objectivezone{{}} 
+    
+    
+    
+    
+    
+    
+    
+     o.Topics = []Addressableentityref{{}} 
     
     
     
@@ -95,6 +117,10 @@ func (u *Objective) MarshalJSON() ([]byte, error) {
         
         Enabled bool `json:"enabled"`
         
+        Topics []Addressableentityref `json:"topics"`
+        
+        TopicIdsFilterType string `json:"topicIdsFilterType"`
+        
         DateStart time.Time `json:"dateStart"`
         
         *Alias
@@ -111,6 +137,16 @@ func (u *Objective) MarshalJSON() ([]byte, error) {
 
         
         Zones: []Objectivezone{{}},
+        
+
+        
+
+        
+
+        
+
+        
+        Topics: []Addressableentityref{{}},
         
 
         

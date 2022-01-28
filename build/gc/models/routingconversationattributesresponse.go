@@ -19,6 +19,9 @@ type RoutingconversationattributesresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Routingconversationattributesresponse
@@ -33,6 +36,10 @@ type Routingconversationattributesresponse struct {
 
     // Language - Current language on in-queue conversation
     Language Language `json:"language"`
+
+
+    // ScoredAgents - Current scored agents on in-queue conversation
+    ScoredAgents []Scoredagent `json:"scoredAgents"`
 
 }
 
@@ -49,6 +56,10 @@ func (o *Routingconversationattributesresponse) String() string {
     
     
     
+    
+    
+    
+     o.ScoredAgents = []Scoredagent{{}} 
     
     
 
@@ -73,6 +84,8 @@ func (u *Routingconversationattributesresponse) MarshalJSON() ([]byte, error) {
         
         Language Language `json:"language"`
         
+        ScoredAgents []Scoredagent `json:"scoredAgents"`
+        
         *Alias
     }{
         
@@ -87,6 +100,12 @@ func (u *Routingconversationattributesresponse) MarshalJSON() ([]byte, error) {
 
         
 
+        
+
+        
+
+        
+        ScoredAgents: []Scoredagent{{}},
         
 
         

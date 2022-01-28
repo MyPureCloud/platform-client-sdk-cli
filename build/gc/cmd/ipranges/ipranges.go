@@ -44,8 +44,8 @@ func Cmdipranges() *cobra.Command {
 
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get public ip address ranges for PureCloud",
-	Long:  "Get public ip address ranges for PureCloud",
+	Short: "Get public ip address ranges for Genesys Cloud",
+	Long:  "Get public ip address ranges for Genesys Cloud",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

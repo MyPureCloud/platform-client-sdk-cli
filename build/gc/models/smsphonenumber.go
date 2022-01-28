@@ -72,6 +72,18 @@ type SmsphonenumberDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -155,12 +167,44 @@ type Smsphonenumber struct {
     ProvisioningStatus Smsprovisioningstatus `json:"provisioningStatus"`
 
 
+    // Country - Localized country name for the country code this phone number belongs too
+    Country string `json:"country"`
+
+
+    // SupportsSms - Set to true if this phone number has the capability to support SMS
+    SupportsSms bool `json:"supportsSms"`
+
+
+    // SupportsMms - Set to true if this phone number has the capability to support MMS
+    SupportsMms bool `json:"supportsMms"`
+
+
+    // SupportsVoice - Set to true if this phone number has the capability to support voice
+    SupportsVoice bool `json:"supportsVoice"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Smsphonenumber) String() string {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -294,10 +338,34 @@ func (u *Smsphonenumber) MarshalJSON() ([]byte, error) {
         
         ProvisioningStatus Smsprovisioningstatus `json:"provisioningStatus"`
         
+        Country string `json:"country"`
+        
+        SupportsSms bool `json:"supportsSms"`
+        
+        SupportsMms bool `json:"supportsMms"`
+        
+        SupportsVoice bool `json:"supportsVoice"`
+        
         
         
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
         
 
         

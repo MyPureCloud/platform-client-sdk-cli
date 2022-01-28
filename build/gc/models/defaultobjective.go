@@ -22,6 +22,12 @@ type DefaultobjectiveDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Defaultobjective
@@ -40,6 +46,14 @@ type Defaultobjective struct {
     // Enabled - A flag for whether this objective is enabled for the related metric
     Enabled bool `json:"enabled"`
 
+
+    // Topics - A list of topic ids for detected topic metrics
+    Topics []Addressableentityref `json:"topics"`
+
+
+    // TopicIdsFilterType - A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
+    TopicIdsFilterType string `json:"topicIdsFilterType"`
+
 }
 
 // String returns a JSON representation of the model
@@ -53,6 +67,14 @@ func (o *Defaultobjective) String() string {
     
     
      o.Zones = []Objectivezone{{}} 
+    
+    
+    
+    
+    
+    
+    
+     o.Topics = []Addressableentityref{{}} 
     
     
     
@@ -83,6 +105,10 @@ func (u *Defaultobjective) MarshalJSON() ([]byte, error) {
         
         Enabled bool `json:"enabled"`
         
+        Topics []Addressableentityref `json:"topics"`
+        
+        TopicIdsFilterType string `json:"topicIdsFilterType"`
+        
         *Alias
     }{
         
@@ -97,6 +123,16 @@ func (u *Defaultobjective) MarshalJSON() ([]byte, error) {
 
         
         Zones: []Objectivezone{{}},
+        
+
+        
+
+        
+
+        
+
+        
+        Topics: []Addressableentityref{{}},
         
 
         

@@ -87,7 +87,7 @@ func Cmdconversations_recordings_annotations() *cobra.Command {
 }`)
 	conversations_recordings_annotationsCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "recording:annotation:edit",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "recording:annotation:edit", "recording:recording:view", "recording:recordingSegment:view",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "in" : "body",
   "name" : "body",

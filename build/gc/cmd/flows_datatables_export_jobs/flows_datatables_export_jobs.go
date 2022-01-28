@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdflows_datatables_export_jobs() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/datatables/{datatableId}/export/jobs", utils.FormatPermissions([]string{ "architect:datatable:view",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/datatables/{datatableId}/export/jobs")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/datatables/{datatableId}/export/jobs", utils.FormatPermissions([]string{ "architect:datatable:view", "architect:datatableRow:view",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/datatables/{datatableId}/export/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -39,7 +39,7 @@ func Cmdflows_datatables_export_jobs() *cobra.Command {
 }`)
 	flows_datatables_export_jobsCmd.AddCommand(createCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}", utils.FormatPermissions([]string{ "architect:datatable:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}", utils.FormatPermissions([]string{ "architect:datatable:view", "architect:datatableRow:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

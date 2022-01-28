@@ -19,6 +19,9 @@ type RoutingconversationattributesrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Routingconversationattributesrequest
@@ -33,6 +36,10 @@ type Routingconversationattributesrequest struct {
 
     // LanguageId - Language requirement for the conversation.  To remove the language requirement, specify an empty string, i.e., \"\".
     LanguageId string `json:"languageId"`
+
+
+    // RequestScoredAgents
+    RequestScoredAgents []Requestscoredagent `json:"requestScoredAgents"`
 
 }
 
@@ -49,6 +56,10 @@ func (o *Routingconversationattributesrequest) String() string {
     
     
     
+    
+    
+    
+     o.RequestScoredAgents = []Requestscoredagent{{}} 
     
     
 
@@ -73,6 +84,8 @@ func (u *Routingconversationattributesrequest) MarshalJSON() ([]byte, error) {
         
         LanguageId string `json:"languageId"`
         
+        RequestScoredAgents []Requestscoredagent `json:"requestScoredAgents"`
+        
         *Alias
     }{
         
@@ -87,6 +100,12 @@ func (u *Routingconversationattributesrequest) MarshalJSON() ([]byte, error) {
 
         
 
+        
+
+        
+
+        
+        RequestScoredAgents: []Requestscoredagent{{}},
         
 
         

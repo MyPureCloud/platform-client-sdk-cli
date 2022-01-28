@@ -35,6 +35,12 @@ type CreatecoachingappointmentrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Createcoachingappointmentrequest - Create coaching appointment request
@@ -69,6 +75,14 @@ type Createcoachingappointmentrequest struct {
 
     // DocumentIds - IDs of documents associated with this coaching appointment.
     DocumentIds []string `json:"documentIds"`
+
+
+    // WfmSchedule - The Workforce Management schedule the appointment is associated with.
+    WfmSchedule Wfmschedulereference `json:"wfmSchedule"`
+
+
+    // ExternalLinks - The list of external links related to the appointment
+    ExternalLinks []string `json:"externalLinks"`
 
 }
 
@@ -107,6 +121,14 @@ func (o *Createcoachingappointmentrequest) String() string {
      o.DocumentIds = []string{""} 
     
     
+    
+    
+    
+    
+    
+     o.ExternalLinks = []string{""} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -138,6 +160,10 @@ func (u *Createcoachingappointmentrequest) MarshalJSON() ([]byte, error) {
         ConversationIds []string `json:"conversationIds"`
         
         DocumentIds []string `json:"documentIds"`
+        
+        WfmSchedule Wfmschedulereference `json:"wfmSchedule"`
+        
+        ExternalLinks []string `json:"externalLinks"`
         
         *Alias
     }{
@@ -177,6 +203,16 @@ func (u *Createcoachingappointmentrequest) MarshalJSON() ([]byte, error) {
 
         
         DocumentIds: []string{""},
+        
+
+        
+
+        
+
+        
+
+        
+        ExternalLinks: []string{""},
         
 
         

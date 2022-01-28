@@ -20,6 +20,12 @@ type OrphanupdaterequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Orphanupdaterequest
@@ -28,8 +34,16 @@ type Orphanupdaterequest struct {
     ArchiveDate time.Time `json:"archiveDate"`
 
 
-    // DeleteDate - The orphan recording's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    // DeleteDate - The orphan recording's delete date. Must be greater than archiveDate and exportDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DeleteDate time.Time `json:"deleteDate"`
+
+
+    // ExportDate - The orphan recording's export date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ExportDate time.Time `json:"exportDate"`
+
+
+    // IntegrationId - IntegrationId to access AWS S3 bucket for export. This field is required if exportDate is set.
+    IntegrationId string `json:"integrationId"`
 
 
     // ConversationId - A conversation Id that this orphan's recording is to be attached to. If not present, the conversationId will be deduced from the recording media.
@@ -39,6 +53,14 @@ type Orphanupdaterequest struct {
 
 // String returns a JSON representation of the model
 func (o *Orphanupdaterequest) String() string {
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -72,10 +94,22 @@ func (u *Orphanupdaterequest) MarshalJSON() ([]byte, error) {
         
         DeleteDate time.Time `json:"deleteDate"`
         
+        ExportDate time.Time `json:"exportDate"`
+        
+        IntegrationId string `json:"integrationId"`
+        
         ConversationId string `json:"conversationId"`
         
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
         
 
         

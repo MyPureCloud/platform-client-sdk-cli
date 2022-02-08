@@ -1,11 +1,19 @@
 package restclient
 
 import (
+	"errors"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/restclient/tls"
+	"log"
 	"net/http"
+
+	"os/exec"
+	"os"
+	"runtime"
+	"strconv"
 	"time"
 
 	"bytes"
@@ -22,11 +30,13 @@ import (
 )
 
 var (
-	Client             retryablehttp.Client
-	ClientDo         = Client.Do
-	RestClient         *RESTClient
-	UpdateOAuthToken = config.UpdateOAuthToken
-	OverridesApplied = config.OverridesApplied
+	Client              retryablehttp.Client
+	ClientDo            = Client.Do
+	RestClient          *RESTClient
+	UpdateOAuthToken    = config.UpdateOAuthToken
+	OverridesApplied    = config.OverridesApplied
+	openBrowserForLogin = openBrowserForLoginFunc
+	startLocalServer    = startLocalServerFunc
 )
 
 type RESTClient struct {
@@ -88,7 +98,7 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
 	//User-Agent and SDK version headers
 	request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-	request.Header.Set("purecloud-sdk", "30.0.0")
+	request.Header.Set("purecloud-sdk", "31.0.0")
 
 	if data != "" {
 		request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
@@ -176,6 +186,30 @@ func ReAuthenticate(c config.Configuration) (models.OAuthTokenData, error) {
 }
 
 func authorize(c config.Configuration) (models.OAuthTokenData, error) {
+	authChannel := make(chan models.OAuthToken)
+
+	// Using implicit grant
+	if c.RedirectURI() != "" {
+		if c.SecureLoginEnabled() {
+			// Generate a self-signed X.509 certificate for a TLS server
+			err := tls.GenerateCerts()
+			if err != nil {
+				oAuthTokenResponse := &models.OAuthTokenData{}
+				return *oAuthTokenResponse, err
+			}
+		}
+		go startLocalServer(c, authChannel)
+		openBrowserForLogin(c.RedirectURI())
+
+		oAuthToken := <-authChannel
+		if oAuthToken.Error != "" {
+			oAuthTokenResponse := &models.OAuthTokenData{}
+			return *oAuthTokenResponse, errors.New(oAuthToken.Error)
+		}
+
+		return createOAuthTokenResponse(c, oAuthToken)
+	}
+
 	loginURI, _ := url.Parse(fmt.Sprintf("https://login.%s/oauth/token", c.Environment()))
 
 	request := &retryablehttp.Request{
@@ -195,7 +229,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
 	//User-Agent and SDK version headers
 	request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-	request.Header.Set("purecloud-sdk", "30.0.0")
+	request.Header.Set("purecloud-sdk", "31.0.0")
 
 	//Setting up the form data
 	form := url.Values{}
@@ -227,20 +261,110 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 	if err != nil {
 		return *oAuthTokenResponse, err
 	}
+	return createOAuthTokenResponse(c, *oAuthToken)
+}
+
+func createOAuthTokenResponse(c config.Configuration, oAuthToken models.OAuthToken) (models.OAuthTokenData, error)  {
+	oAuthTokenResponse := &models.OAuthTokenData{}
 	oAuthTokenExpiry := time.Now().Add(utils.SecondsToNanoSeconds(oAuthToken.ExpiresIn))
+
 	oAuthTokenResponse = &models.OAuthTokenData{
-		OAuthToken:       *oAuthToken,
+		OAuthToken:       oAuthToken,
 		OAuthTokenExpiry: oAuthTokenExpiry.Format(time.RFC3339),
 	}
 
 	if !OverridesApplied() {
-		err = UpdateOAuthToken(c, oAuthTokenResponse)
+		err := UpdateOAuthToken(c, oAuthTokenResponse)
 		if err != nil {
 			return *oAuthTokenResponse, err
 		}
 	}
 
 	return *oAuthTokenResponse, nil
+}
+
+// Starts the local server at the redirect URI
+func startLocalServerFunc(c config.Configuration, authChannel chan models.OAuthToken) {
+	u, err := url.Parse(c.RedirectURI())
+	if err != nil {
+		logger.Fatalf("Error parsing redirect URL: %v", err)
+	}
+	path := u.Path
+	if path == "" {
+		path = "/"
+	}
+
+	var oAuthToken models.OAuthToken
+	implicitWebpage := models.ImplicitWebpage{}
+	// Set initial web page as one containing the javascript to perform implicit login
+	initialPage := implicitWebpage.GetImplicitWebpage(c.ClientID(), c.Environment(), c.RedirectURI())
+	activePage := initialPage
+
+	http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
+		_, err := fmt.Fprintf(w, activePage)
+		if err != nil {
+			logger.Fatalf("Error handling request: %v", err)
+		}
+
+		// If no longer displaying initial page -
+		// Give time for initialPage to refresh on the browser thereby printing the response page,
+		// Then close channel & server
+		if activePage != initialPage {
+			time.Sleep(4 * time.Second)
+			authChannel <- oAuthToken
+			close(authChannel)
+			return
+		}
+
+		if strings.Contains(r.URL.String(), "/error/") || strings.Contains(r.URL.String(), "/access_token/") {
+			oAuthToken = getImplicitResponseDataFromURL(r.URL.String())
+			activePage = implicitWebpage.GetResponsePage(oAuthToken.Error)
+		}
+	})
+
+	if c.SecureLoginEnabled() {
+		log.SetOutput(ioutil.Discard)
+		log.Fatal(http.ListenAndServeTLS(":" + u.Port(), os.TempDir() + "cert.pem", os.TempDir() + "key.pem", nil))
+	} else {
+		log.Fatal(http.ListenAndServe(":" + u.Port(), nil))
+	}
+}
+
+// parse data from url in the format '/access_token/12345/expires_in/299/token_type/bearer'
+func getImplicitResponseDataFromURL(url string) models.OAuthToken {
+	var response models.OAuthToken
+	splitURL := strings.Split(url, "/")
+	for i, v := range splitURL {
+		if v == "error" {
+			response.Error = splitURL[i+1]
+			break
+		}
+		if v == "access_token" {
+			response.AccessToken = splitURL[i+1]
+		} else if v == "expires_in" {
+			response.ExpiresIn, _ = strconv.Atoi(splitURL[i+1])
+		} else if v == "token_type" {
+			response.TokenType = splitURL[i+1]
+		}
+	}
+	return response
+}
+
+func openBrowserForLoginFunc(loginURL string) {
+	var err error
+	switch runtime.GOOS {
+	case "linux":
+		err = exec.Command("xdg-open", loginURL).Start()
+	case "windows":
+		err = exec.Command("rundll32", "url.dll,FileProtocolHandler", loginURL).Start()
+	case "darwin":
+		err = exec.Command("open", loginURL).Start()
+	default:
+		err = fmt.Errorf("unsupported platform")
+	}
+	if err != nil {
+		logger.Fatal(err)
+	}
 }
 
 //NewRESTClient is a constructor function to build an APIClient

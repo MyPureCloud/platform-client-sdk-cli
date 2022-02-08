@@ -39,6 +39,9 @@ type TwitterintegrationDud struct {
     
 
 
+    
+
+
     Recipient Domainentityref `json:"recipient"`
 
 
@@ -74,6 +77,10 @@ type Twitterintegration struct {
 
     // Name - The name of the Twitter Integration
     Name string `json:"name"`
+
+
+    // SupportedContent - Defines the SupportedContent profile configured for an integration
+    SupportedContent Supportedcontentreference `json:"supportedContent"`
 
 
     // AccessTokenKey - The Access Token Key from Twitter messenger
@@ -202,6 +209,10 @@ func (o *Twitterintegration) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -221,6 +232,8 @@ func (u *Twitterintegration) MarshalJSON() ([]byte, error) {
         
         
         Name string `json:"name"`
+        
+        SupportedContent Supportedcontentreference `json:"supportedContent"`
         
         AccessTokenKey string `json:"accessTokenKey"`
         
@@ -256,6 +269,10 @@ func (u *Twitterintegration) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

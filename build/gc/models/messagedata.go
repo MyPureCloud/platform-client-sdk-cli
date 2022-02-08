@@ -48,6 +48,12 @@ type MessagedataDud struct {
     
 
 
+    NormalizedMessage Conversationnormalizedmessage `json:"normalizedMessage"`
+
+
+    NormalizedReceipts []Conversationnormalizedmessage `json:"normalizedReceipts"`
+
+
     
 
 
@@ -105,6 +111,12 @@ type Messagedata struct {
 
     // Stickers - The sticker details associated to a message.
     Stickers []Messagesticker `json:"stickers"`
+
+
+    
+
+
+    
 
 
     // CreatedBy - User who sent this message.
@@ -178,6 +190,10 @@ func (o *Messagedata) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -217,6 +233,10 @@ func (u *Messagedata) MarshalJSON() ([]byte, error) {
         Media []Messagemedia `json:"media"`
         
         Stickers []Messagesticker `json:"stickers"`
+        
+        
+        
+        
         
         CreatedBy User `json:"createdBy"`
         
@@ -276,6 +296,14 @@ func (u *Messagedata) MarshalJSON() ([]byte, error) {
 
         
         Stickers: []Messagesticker{{}},
+        
+
+        
+
+        
+
+        
+
         
 
         

@@ -24,6 +24,12 @@ type DevelopmentactivityDud struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    PercentageScore float32 `json:"percentageScore"`
+
+
+    IsPassed bool `json:"isPassed"`
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -51,6 +57,12 @@ type DevelopmentactivityDud struct {
 
 // Developmentactivity - Development Activity object
 type Developmentactivity struct { 
+    
+
+
+    
+
+
     
 
 
@@ -129,6 +141,10 @@ func (o *Developmentactivity) String() string {
     
     
     
+    
+    
+    
+    
      o.Attendees = []Userreference{{}} 
     
     
@@ -162,6 +178,10 @@ func (u *Developmentactivity) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
+        
+        
         Name string `json:"name"`
         
         VarType string `json:"type"`
@@ -178,6 +198,14 @@ func (u *Developmentactivity) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
         
 
         

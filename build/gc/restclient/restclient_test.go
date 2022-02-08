@@ -3,6 +3,7 @@ package restclient
 import (
 	"encoding/base64"
 	"fmt"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -33,7 +34,7 @@ type apiClientTest struct {
 func TestAuthorize(t *testing.T) {
 	UpdateOAuthToken = mocks.UpdateOAuthToken
 
-	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", utils.GenerateGuid(), utils.GenerateGuid(), "")
+	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, utils.GenerateGuid(), utils.GenerateGuid(), "")
 	accessToken := "aJdvugb8k1kwnOovm2qX6LXTctJksYvdzcoXPrRDi-nL1phQhcKRN-bjcflq7CUDOmUCQv5OWuBSkPQr0peWhw"
 	setRestClientDoMockForAuthorize(t, *mockConfig, accessToken)
 
@@ -45,8 +46,8 @@ func TestAuthorize(t *testing.T) {
 		t.Errorf("OAuth Access Token incorrect, got: %s, want: %s.", oauthData.AccessToken, accessToken)
 	}
 
-	// Check that the same token is returned when the the expiry time stamp is in the future
-	mockConfig = buildMockConfig(mockConfig.ProfileName(), mockConfig.Environment(), mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
+	// Check that the same token is returned when the expiry time stamp is in the future
+	mockConfig = buildMockConfig(mockConfig.ProfileName(), mockConfig.Environment(), mockConfig.RedirectURI(), false, mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
 	oauthData, err = Authorize(mockConfig)
 	if err != nil {
 		t.Fatalf("err should be nil, got: %s", err)
@@ -55,10 +56,10 @@ func TestAuthorize(t *testing.T) {
 		t.Errorf("OAuth Access Token incorrect, got: %s, want: %s.", oauthData.AccessToken, accessToken)
 	}
 
-	// Check that a new token is retrieved when the the expiry time stamp is in the past
+	// Check that a new token is retrieved when the expiry time stamp is in the past
 	oauthData.OAuthTokenExpiry = time.Now().AddDate(0, 0, -1).Format(time.RFC3339)
 	accessToken = "aJdvugb8k1kwnOovm2qX6LXTctJksYvdzcoXPrRDi-nL1phQhcKRN-bjcflq7CUDOmUCQv5OWuBSkPQr0peWhw"
-	mockConfig = buildMockConfig(mockConfig.ProfileName(), mockConfig.Environment(), mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
+	mockConfig = buildMockConfig(mockConfig.ProfileName(), mockConfig.Environment(), mockConfig.RedirectURI(), false, mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
 	oauthData, err = Authorize(mockConfig)
 	if err != nil {
 		t.Fatalf("err should be nil, got: %s", err)
@@ -66,6 +67,47 @@ func TestAuthorize(t *testing.T) {
 	if oauthData.AccessToken != accessToken {
 		t.Errorf("OAuth Access Token incorrect, got: %s, want: %s.", oauthData.AccessToken, accessToken)
 	}
+}
+
+func TestAuthorizeWithImplicitLogin(t *testing.T) {
+	UpdateOAuthToken = mocks.UpdateOAuthToken
+
+	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "http://localhost:8080", false, utils.GenerateGuid(), utils.GenerateGuid(), "")
+	accessToken := "aJdvugb8k1kwnOovm2qX6LXTctJksYvdzcoXPrRDi-nL1phQhcKRN-bjcflq7CUDOmUCQv5OWuBSkPQr0peWhw"
+	setRestClientDoMockForAuthorize(t, *mockConfig, accessToken)
+
+	// mock private functions
+	openBrowserForLogin = func(url string) {}
+	startLocalServer = func(c config.Configuration, authChannel chan models.OAuthToken) {
+		var oAuthToken models.OAuthToken
+		oAuthToken.AccessToken = accessToken
+		authChannel <- oAuthToken
+		close(authChannel)
+	}
+
+	oauthData, err := Authorize(mockConfig)
+	if err != nil {
+		t.Fatalf("err should be nil, got: %s", err)
+	}
+	if oauthData.AccessToken != accessToken {
+		t.Errorf("OAuth Access Token incorrect, got: %s, want: %s.", oauthData.AccessToken, accessToken)
+	}
+
+	// testing with secure http enabled
+	mockConfig = buildMockConfig("DEFAULT", "mypurecloud.com", "http://localhost:8080", true, utils.GenerateGuid(), utils.GenerateGuid(), "")
+
+	oauthData, err = Authorize(mockConfig)
+	if err != nil {
+		t.Fatalf("err should be nil, got: %s", err)
+	}
+	if oauthData.AccessToken != accessToken {
+		t.Errorf("OAuth Access Token incorrect, got: %s, want: %s.", oauthData.AccessToken, accessToken)
+	}
+
+	defer func() {
+		startLocalServer = startLocalServerFunc
+		openBrowserForLogin = openBrowserForLoginFunc
+	}()
 }
 
 func TestLowLevelRestClient(t *testing.T) {
@@ -138,7 +180,7 @@ func TestHighLevelRestClient(t *testing.T) {
 	}
 }
 
-func buildMockConfig(profileName string, environment string, clientID string, clientSecret string, oauthTokenData string) *mocks.MockClientConfig {
+func buildMockConfig(profileName string, environment string, redirectURI string, secureLoginEnabled bool, clientID string, clientSecret string, oauthTokenData string) *mocks.MockClientConfig {
 	mockConfig := &mocks.MockClientConfig{}
 
 	mockConfig.ProfileNameFunc = func() string {
@@ -147,6 +189,10 @@ func buildMockConfig(profileName string, environment string, clientID string, cl
 
 	mockConfig.EnvironmentFunc = func() string {
 		return environment
+	}
+
+	mockConfig.RedirectURIFunc = func() string {
+		return redirectURI
 	}
 
 	mockConfig.LogFilePathFunc = func() string {
@@ -159,6 +205,10 @@ func buildMockConfig(profileName string, environment string, clientID string, cl
 
 	mockConfig.AutoPaginationEnabledFunc = func() bool {
 		return false
+	}
+
+	mockConfig.SecureLoginEnabledFunc = func() bool {
+		return secureLoginEnabled
 	}
 
 	mockConfig.ClientIDFunc = func() string {

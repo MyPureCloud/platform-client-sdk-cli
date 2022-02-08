@@ -23,6 +23,9 @@ type WhatsappintegrationrequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -34,6 +37,10 @@ type Whatsappintegrationrequest struct {
 
     // Name - The name of the WhatsApp Integration
     Name string `json:"name"`
+
+
+    // SupportedContent - Defines the SupportedContent profile configured for an integration
+    SupportedContent Supportedcontentreference `json:"supportedContent"`
 
 
     // PhoneNumber - The phone number associated to the whatsApp integration
@@ -50,6 +57,10 @@ type Whatsappintegrationrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Whatsappintegrationrequest) String() string {
+    
+    
+    
+    
     
     
     
@@ -87,6 +98,8 @@ func (u *Whatsappintegrationrequest) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        SupportedContent Supportedcontentreference `json:"supportedContent"`
+        
         PhoneNumber string `json:"phoneNumber"`
         
         WabaCertificate string `json:"wabaCertificate"`
@@ -95,6 +108,10 @@ func (u *Whatsappintegrationrequest) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

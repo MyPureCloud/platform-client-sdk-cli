@@ -1,0 +1,348 @@
+package conversations_messaging_supportedcontent
+
+import (
+	"fmt"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/retry"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/services"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
+	"github.com/spf13/cobra"
+	"net/url"
+	"strings"
+	"time"
+)
+
+var (
+	Description = utils.FormatUsageDescription("conversations_messaging_supportedcontent", "SWAGGER_OVERRIDE_/api/v2/conversations/messaging/supportedcontent", "SWAGGER_OVERRIDE_/api/v2/conversations/messaging/supportedcontent", "SWAGGER_OVERRIDE_/api/v2/conversations/messaging/supportedcontent", "SWAGGER_OVERRIDE_/api/v2/conversations/messaging/supportedcontent", "SWAGGER_OVERRIDE_/api/v2/conversations/messaging/supportedcontent", )
+	conversations_messaging_supportedcontentCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("conversations_messaging_supportedcontent"),
+		Short: Description,
+		Long:  Description,
+	}
+	CommandService services.CommandService
+)
+
+func init() {
+	CommandService = services.NewCommandService(conversations_messaging_supportedcontentCmd)
+}
+
+func Cmdconversations_messaging_supportedcontent() *cobra.Command { 
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/messaging/supportedcontent", utils.FormatPermissions([]string{ "messaging:supportedContent:add",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/messaging/supportedcontent")))
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "in" : "body",
+  "name" : "body",
+  "description" : "SupportedContent",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/SupportedContent"
+  }
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SupportedContent"
+  }
+}`)
+	conversations_messaging_supportedcontentCmd.AddCommand(createCmd)
+	
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/conversations/messaging/supportedcontent/{supportedContentId}", utils.FormatPermissions([]string{ "messaging:supportedContent:delete",  }), utils.GenerateDevCentreLink("DELETE", "Conversations", "/api/v2/conversations/messaging/supportedcontent/{supportedContentId}")))
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+  "description" : "Operation was successful"
+}`)
+	conversations_messaging_supportedcontentCmd.AddCommand(deleteCmd)
+	
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/messaging/supportedcontent/{supportedContentId}", utils.FormatPermissions([]string{ "messaging:supportedContent:view",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/messaging/supportedcontent/{supportedContentId}")))
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SupportedContent"
+  }
+}`)
+	conversations_messaging_supportedcontentCmd.AddCommand(getCmd)
+	
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
+	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/messaging/supportedcontent", utils.FormatPermissions([]string{ "messaging:supportedContent:view",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/messaging/supportedcontent")))
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  }
+}`)
+	conversations_messaging_supportedcontentCmd.AddCommand(listCmd)
+	
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/messaging/supportedcontent/{supportedContentId}", utils.FormatPermissions([]string{ "messaging:supportedContent:edit",  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/messaging/supportedcontent/{supportedContentId}")))
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
+  "in" : "body",
+  "name" : "body",
+  "description" : "SupportedContent",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/SupportedContent"
+  }
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/SupportedContent"
+  }
+}`)
+	conversations_messaging_supportedcontentCmd.AddCommand(updateCmd)
+	
+	return conversations_messaging_supportedcontentCmd
+}
+
+var createCmd = &cobra.Command{
+	Use:   "create",
+	Short: "Create a Supported Content profile",
+	Long:  "Create a Supported Content profile",
+	Args:  utils.DetermineArgs([]string{ }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Supportedcontent{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/conversations/messaging/supportedcontent"
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}
+var deleteCmd = &cobra.Command{
+	Use:   "delete [supportedContentId]",
+	Short: "Delete a supported content profile",
+	Long:  "Delete a supported content profile",
+	Args:  utils.DetermineArgs([]string{ "supportedContentId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/conversations/messaging/supportedcontent/{supportedContentId}"
+		supportedContentId, args := args[0], args[1:]
+		path = strings.Replace(path, "{supportedContentId}", fmt.Sprintf("%v", supportedContentId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		const opId = "delete"
+		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}
+var getCmd = &cobra.Command{
+	Use:   "get [supportedContentId]",
+	Short: "Get a supported content profile",
+	Long:  "Get a supported content profile",
+	Args:  utils.DetermineArgs([]string{ "supportedContentId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/conversations/messaging/supportedcontent/{supportedContentId}"
+		supportedContentId, args := args[0], args[1:]
+		path = strings.Replace(path, "{supportedContentId}", fmt.Sprintf("%v", supportedContentId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}
+var listCmd = &cobra.Command{
+	Use:   "list",
+	Short: "Get a list of Supported Content profiles",
+	Long:  "Get a list of Supported Content profiles",
+	Args:  utils.DetermineArgs([]string{ }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/conversations/messaging/supportedcontent"
+
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
+		if pageNumber != "" {
+			queryParams["pageNumber"] = pageNumber
+		}
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		const opId = "list"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}
+var updateCmd = &cobra.Command{
+	Use:   "update [supportedContentId]",
+	Short: "Update a supported content profile",
+	Long:  "Update a supported content profile",
+	Args:  utils.DetermineArgs([]string{ "supportedContentId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Supportedcontent{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/conversations/messaging/supportedcontent/{supportedContentId}"
+		supportedContentId, args := args[0], args[1:]
+		path = strings.Replace(path, "{supportedContentId}", fmt.Sprintf("%v", supportedContentId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		const opId = "update"
+		const httpMethod = "PATCH"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}

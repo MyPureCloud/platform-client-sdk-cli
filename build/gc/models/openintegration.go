@@ -30,6 +30,9 @@ type OpenintegrationDud struct {
     
 
 
+    
+
+
     Recipient Domainentityref `json:"recipient"`
 
 
@@ -62,6 +65,10 @@ type Openintegration struct {
 
     // Name - The name of the Open messaging integration.
     Name string `json:"name"`
+
+
+    // SupportedContent - Defines the SupportedContent profile configured for an integration
+    SupportedContent Supportedcontentreference `json:"supportedContent"`
 
 
     // OutboundNotificationWebhookUrl - The outbound notification webhook URL for the Open messaging integration.
@@ -111,6 +118,10 @@ type Openintegration struct {
 
 // String returns a JSON representation of the model
 func (o *Openintegration) String() string {
+    
+    
+    
+    
     
     
     
@@ -178,6 +189,8 @@ func (u *Openintegration) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        SupportedContent Supportedcontentreference `json:"supportedContent"`
+        
         OutboundNotificationWebhookUrl string `json:"outboundNotificationWebhookUrl"`
         
         OutboundNotificationWebhookSignatureSecretToken string `json:"outboundNotificationWebhookSignatureSecretToken"`
@@ -204,6 +217,10 @@ func (u *Openintegration) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

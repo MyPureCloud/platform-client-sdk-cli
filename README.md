@@ -24,7 +24,7 @@ If you are using the CLI in a pipeline or don't wish to set up a config file, se
 
 The "environment" value can be provided as the API base path such as `mypurecloud.com` or AWS region.
 
-To setup and configure your gc CLI run `gc profiles new` command and answer the questions.  If everything works correctly you should have a file created in your home directory called .gc/config.toml.  If for some reason you have problems with the `gc profiles new` command, you can manually create the config file by following the steps below.
+To setup and configure your gc CLI run `gc profiles new` command and answer the questions. If everything works correctly you should have a file created in your home directory called .gc/config.toml.  If for some reason you have problems with the `gc profiles new` command, you can manually create the config file by following the steps below.
 
 -  Create .gc directory in your home directory
 -  Create a config.toml file in this directory.
@@ -226,6 +226,16 @@ Running any API operation command followed by '--help' will print out the follow
 * Operation. e.g. `POST /api/v2/users`
 * Permissions (where applicable)
 * Documentation. e.g. https://developer.genesys.cloud/api/rest/v2/users/#post-api-v2-users
+
+# OAuth Implicit Grant
+
+When creating a profile with the `gc profiles new` command, you may choose between using a Client Credential Grant, or an Implicit Grant. During the Implicit Login process, the user is redirected to their browser where they can authenticate themselves by logging into their Genesys Cloud org. This method can be preferable as it provides context about the user to which the access token was distributed. Unlike the Client Credential Grant, which is a general grant.
+
+To perform an implicit login, the OAuth Client under **`Admin > Integrations > OAuth`** needs to be configured properly by setting the **Grant Types** property to "Token Implicit Grant (Browser)", and by adding the permissible redirect URIs (e.g. `http://localhost:8080`).
+
+Optionally, and for added security, you can choose to open an HTTPS connection for this procedure. In this case, a self-signed certificate is generated locally, and you will need to select **Advanced > Proceed to 127.0.0.1** in the browser window as this certificate is not recognized by an official Certificate Authority. For secure HTTP connections, be sure to prepend the Client's redirect URI with "https://" instead of "http://" in your Genesys Cloud org.
+
+For more information about the Implicit Grant login process, check out [this article](https://developer.genesys.cloud/api/rest/authorization/use-implicit-grant "Goes to developer.genesys.cloud") on our Developer Center.
 
 # Experimental Features
 

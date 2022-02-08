@@ -27,6 +27,9 @@ type LineintegrationDud struct {
     
 
 
+    
+
+
     Recipient Domainentityref `json:"recipient"`
 
 
@@ -62,6 +65,10 @@ type Lineintegration struct {
 
     // Name - The name of the LINE Integration
     Name string `json:"name"`
+
+
+    // SupportedContent - Defines the SupportedContent profile configured for an integration
+    SupportedContent Supportedcontentreference `json:"supportedContent"`
 
 
     // ChannelId - The Channel Id from LINE messenger
@@ -158,6 +165,10 @@ func (o *Lineintegration) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -177,6 +188,8 @@ func (u *Lineintegration) MarshalJSON() ([]byte, error) {
         
         
         Name string `json:"name"`
+        
+        SupportedContent Supportedcontentreference `json:"supportedContent"`
         
         ChannelId string `json:"channelId"`
         
@@ -204,6 +217,10 @@ func (u *Lineintegration) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

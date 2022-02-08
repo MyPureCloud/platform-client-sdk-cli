@@ -45,6 +45,9 @@ type WebdeploymentconfigurationversionDud struct {
     
 
 
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -96,6 +99,10 @@ type Webdeploymentconfigurationversion struct {
 
     // Messenger - The settings for messenger
     Messenger Messengersettings `json:"messenger"`
+
+
+    // Position - The settings for position
+    Position Positionsettings `json:"position"`
 
 
     // SupportCenter - The settings for support center
@@ -201,6 +208,10 @@ func (o *Webdeploymentconfigurationversion) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -230,6 +241,8 @@ func (u *Webdeploymentconfigurationversion) MarshalJSON() ([]byte, error) {
         DefaultLanguage string `json:"defaultLanguage"`
         
         Messenger Messengersettings `json:"messenger"`
+        
+        Position Positionsettings `json:"position"`
         
         SupportCenter Supportcentersettings `json:"supportCenter"`
         
@@ -277,6 +290,10 @@ func (u *Webdeploymentconfigurationversion) MarshalJSON() ([]byte, error) {
 
         
         Languages: []string{""},
+        
+
+        
+
         
 
         

@@ -35,6 +35,9 @@ type TwitterintegrationrequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -46,6 +49,10 @@ type Twitterintegrationrequest struct {
 
     // Name - The name of the Twitter Integration
     Name string `json:"name"`
+
+
+    // SupportedContent - Defines the SupportedContent profile configured for an integration
+    SupportedContent Supportedcontentreference `json:"supportedContent"`
 
 
     // AccessTokenKey - The Access Token Key from Twitter messenger
@@ -111,6 +118,10 @@ func (o *Twitterintegrationrequest) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -131,6 +142,8 @@ func (u *Twitterintegrationrequest) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        SupportedContent Supportedcontentreference `json:"supportedContent"`
+        
         AccessTokenKey string `json:"accessTokenKey"`
         
         AccessTokenSecret string `json:"accessTokenSecret"`
@@ -147,6 +160,10 @@ func (u *Twitterintegrationrequest) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

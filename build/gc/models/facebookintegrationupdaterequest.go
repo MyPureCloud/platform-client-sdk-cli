@@ -23,6 +23,9 @@ type FacebookintegrationupdaterequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -34,6 +37,10 @@ type Facebookintegrationupdaterequest struct {
 
     // Name - The name of the Facebook Integration
     Name string `json:"name"`
+
+
+    // SupportedContent - Defines the SupportedContent profile configured for an integration
+    SupportedContent Supportedcontentreference `json:"supportedContent"`
 
 
     // PageAccessToken - The long-lived Page Access Token of Facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
@@ -50,6 +57,10 @@ type Facebookintegrationupdaterequest struct {
 
 // String returns a JSON representation of the model
 func (o *Facebookintegrationupdaterequest) String() string {
+    
+    
+    
+    
     
     
     
@@ -87,6 +98,8 @@ func (u *Facebookintegrationupdaterequest) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        SupportedContent Supportedcontentreference `json:"supportedContent"`
+        
         PageAccessToken string `json:"pageAccessToken"`
         
         UserAccessToken string `json:"userAccessToken"`
@@ -95,6 +108,10 @@ func (u *Facebookintegrationupdaterequest) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

@@ -24,6 +24,9 @@ type WhatsappintegrationDud struct {
     
 
 
+    
+
+
     Recipient Domainentityref `json:"recipient"`
 
 
@@ -65,6 +68,10 @@ type Whatsappintegration struct {
 
     // Name - The name of the WhatsApp integration.
     Name string `json:"name"`
+
+
+    // SupportedContent - Defines the SupportedContent profile configured for an integration
+    SupportedContent Supportedcontentreference `json:"supportedContent"`
 
 
     // PhoneNumber - The phone number associated to the whatsApp integration.
@@ -163,6 +170,10 @@ func (o *Whatsappintegration) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -182,6 +193,8 @@ func (u *Whatsappintegration) MarshalJSON() ([]byte, error) {
         
         
         Name string `json:"name"`
+        
+        SupportedContent Supportedcontentreference `json:"supportedContent"`
         
         PhoneNumber string `json:"phoneNumber"`
         
@@ -211,6 +224,10 @@ func (u *Whatsappintegration) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

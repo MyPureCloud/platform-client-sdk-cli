@@ -427,6 +427,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -485,6 +488,10 @@ type Viewfilter struct {
 
     // UserIds - The user ids are used to filter the view
     UserIds []string `json:"userIds"`
+
+
+    // ManagementUnitIds - The management unit ids are used to filter the view
+    ManagementUnitIds []string `json:"managementUnitIds"`
 
 
     // AddressTos - The address To values are used to filter the view
@@ -1048,6 +1055,10 @@ func (o *Viewfilter) String() string {
     
     
     
+     o.ManagementUnitIds = []string{""} 
+    
+    
+    
      o.AddressTos = []string{""} 
     
     
@@ -1591,6 +1602,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
         UserIds []string `json:"userIds"`
         
+        ManagementUnitIds []string `json:"managementUnitIds"`
+        
         AddressTos []string `json:"addressTos"`
         
         AddressFroms []string `json:"addressFroms"`
@@ -1925,6 +1938,12 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         UserIds: []string{""},
+        
+
+        
+
+        
+        ManagementUnitIds: []string{""},
         
 
         

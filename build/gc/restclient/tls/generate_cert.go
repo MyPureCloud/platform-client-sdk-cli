@@ -18,12 +18,13 @@ import (
 	"encoding/pem"
 	"math/big"
 	"os"
+	"strings"
 	"time"
 )
 
 const (
 	host     = "localhost"
-	validFor = 365*24*time.Hour
+	validFor = 365 * 24 * time.Hour
 	rsaBits  = 2048
 )
 
@@ -33,8 +34,20 @@ var (
 )
 
 func GenerateCerts() error {
-	var priv interface{}
-	var err error
+	var (
+		priv           interface{}
+		err            error
+		pathToCertFile string
+		pathToKeyFile  string
+		tmpDir         = os.TempDir()
+	)
+
+	if !strings.HasSuffix(tmpDir, "/") {
+		tmpDir += "/"
+	}
+
+	pathToCertFile = tmpDir + certFileName
+	pathToKeyFile = tmpDir + keyFileName
 
 	priv, err = rsa.GenerateKey(rand.Reader, rsaBits)
 	if err != nil {
@@ -79,7 +92,7 @@ func GenerateCerts() error {
 	}
 
 	// Write cert.pem to temporary folder
-	certOut, err := os.Create(os.TempDir() + certFileName)
+	certOut, err := os.Create(pathToCertFile)
 	if err != nil {
 		return err
 	}
@@ -91,7 +104,7 @@ func GenerateCerts() error {
 	}
 
 	// Write key.pem to temporary folder
-	keyOut, err := os.OpenFile(os.TempDir() + keyFileName, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0600)
+	keyOut, err := os.OpenFile(pathToKeyFile, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0600)
 	if err != nil {
 		return err
 	}

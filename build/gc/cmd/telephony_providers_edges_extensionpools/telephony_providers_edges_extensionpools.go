@@ -68,7 +68,7 @@ func Cmdtelephony_providers_edges_extensionpools() *cobra.Command {
 	
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "startNumber", "Sort by")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "number", "", "Number")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/extensionpools", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/extensionpools")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)

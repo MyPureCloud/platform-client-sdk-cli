@@ -22,6 +22,9 @@ type UpdatebusinessunitsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Updatebusinessunitsettings
@@ -36,6 +39,10 @@ type Updatebusinessunitsettings struct {
     ShortTermForecasting Bushorttermforecastingsettings `json:"shortTermForecasting"`
 
 
+    // Scheduling - Scheduling settings
+    Scheduling Buschedulingsettings `json:"scheduling"`
+
+
     // Metadata - Version metadata for this business unit
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
@@ -43,6 +50,10 @@ type Updatebusinessunitsettings struct {
 
 // String returns a JSON representation of the model
 func (o *Updatebusinessunitsettings) String() string {
+    
+    
+    
+    
     
     
     
@@ -78,10 +89,16 @@ func (u *Updatebusinessunitsettings) MarshalJSON() ([]byte, error) {
         
         ShortTermForecasting Bushorttermforecastingsettings `json:"shortTermForecasting"`
         
+        Scheduling Buschedulingsettings `json:"scheduling"`
+        
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         
         *Alias
     }{
+        
+
+        
+
         
 
         

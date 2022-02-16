@@ -13,6 +13,9 @@ var (
 type SupportcentersettingsDud struct { 
     
 
+
+    
+
 }
 
 // Supportcentersettings - Settings concerning support center
@@ -20,10 +23,18 @@ type Supportcentersettings struct {
     // Enabled - Whether or not support center is enabled
     Enabled bool `json:"enabled"`
 
+
+    // KnowledgeBase - The knowledge base for support center
+    KnowledgeBase Addressableentityref `json:"knowledgeBase"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Supportcentersettings) String() string {
+    
+    
+    
+    
     
     
     
@@ -47,8 +58,14 @@ func (u *Supportcentersettings) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         Enabled bool `json:"enabled"`
         
+        KnowledgeBase Addressableentityref `json:"knowledgeBase"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

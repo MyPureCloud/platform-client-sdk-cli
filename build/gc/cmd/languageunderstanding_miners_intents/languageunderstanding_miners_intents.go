@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdlanguageunderstanding_miners_intents() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Option to fetch utterances")
+	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Option to fetch utterances Valid values: phrases, utterances")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}", utils.FormatPermissions([]string{ "languageUnderstanding:minerIntent:view",  }), utils.GenerateDevCentreLink("GET", "Language Understanding", "/api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -40,7 +40,7 @@ func Cmdlanguageunderstanding_miners_intents() *cobra.Command {
 }`)
 	languageunderstanding_miners_intentsCmd.AddCommand(getCmd)
 	
-	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Option to fetch utterances.")
+	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Option to fetch utterances. Valid values: phrases, utterances")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/languageunderstanding/miners/{minerId}/intents", utils.FormatPermissions([]string{ "languageUnderstanding:minerIntent:view",  }), utils.GenerateDevCentreLink("GET", "Language Understanding", "/api/v2/languageunderstanding/miners/{minerId}/intents")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

@@ -27,11 +27,11 @@ type Forecastplanninggroupdata struct {
     PlanningGroupId string `json:"planningGroupId"`
 
 
-    // OfferedPerInterval - Forecast offered counts per interval for this week of the forecast
+    // OfferedPerInterval - Forecast offered counts per 15 minute interval for this week of the forecast
     OfferedPerInterval []float64 `json:"offeredPerInterval"`
 
 
-    // AverageHandleTimeSecondsPerInterval - Forecast average handle time per interval in seconds
+    // AverageHandleTimeSecondsPerInterval - Forecast average handle time per 15 minute interval in seconds
     AverageHandleTimeSecondsPerInterval []float64 `json:"averageHandleTimeSecondsPerInterval"`
 
 }

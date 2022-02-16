@@ -69,6 +69,9 @@ type UsermeDud struct {
     Presence Userpresence `json:"presence"`
 
 
+    IntegrationPresence Userpresence `json:"integrationPresence"`
+
+
     ConversationSummary Userconversationsummary `json:"conversationSummary"`
 
 
@@ -228,6 +231,9 @@ type Userme struct {
 
     // EmployerInfo
     EmployerInfo Employerinfo `json:"employerInfo"`
+
+
+    
 
 
     
@@ -467,6 +473,8 @@ func (o *Userme) String() string {
     
     
     
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -516,6 +524,8 @@ func (u *Userme) MarshalJSON() ([]byte, error) {
         Biography Biography `json:"biography"`
         
         EmployerInfo Employerinfo `json:"employerInfo"`
+        
+        
         
         
         
@@ -649,6 +659,10 @@ func (u *Userme) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+        
+
         
 
         

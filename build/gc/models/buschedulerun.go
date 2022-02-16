@@ -60,6 +60,9 @@ type BuschedulerunDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -119,6 +122,10 @@ type Buschedulerun struct {
 
     // MessageCount - The number of schedule generation messages for this schedule generation run
     MessageCount int `json:"messageCount"`
+
+
+    // MessageSeverityCounts - The list of schedule generation message counts by severity for this schedule generation run
+    MessageSeverityCounts []Schedulermessageseveritycount `json:"messageSeverityCounts"`
 
 
     // ReschedulingOptions - Rescheduling options for this run.  Null unless intradayRescheduling is true
@@ -191,6 +198,10 @@ func (o *Buschedulerun) String() string {
     
     
     
+     o.MessageSeverityCounts = []Schedulermessageseveritycount{{}} 
+    
+    
+    
     
     
     
@@ -243,6 +254,8 @@ func (u *Buschedulerun) MarshalJSON() ([]byte, error) {
         SchedulingCompletedTime time.Time `json:"schedulingCompletedTime"`
         
         MessageCount int `json:"messageCount"`
+        
+        MessageSeverityCounts []Schedulermessageseveritycount `json:"messageSeverityCounts"`
         
         ReschedulingOptions Reschedulingoptionsrunresponse `json:"reschedulingOptions"`
         
@@ -306,6 +319,12 @@ func (u *Buschedulerun) MarshalJSON() ([]byte, error) {
 
         
 
+        
+
+        
+
+        
+        MessageSeverityCounts: []Schedulermessageseveritycount{{}},
         
 
         

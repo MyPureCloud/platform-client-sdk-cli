@@ -19,6 +19,9 @@ type SchedulegenerationresultsummaryDud struct {
 
     
 
+
+    
+
 }
 
 // Schedulegenerationresultsummary
@@ -33,6 +36,10 @@ type Schedulegenerationresultsummary struct {
 
     // MessageCount - The number of schedule generation messages for this schedule generation run
     MessageCount int `json:"messageCount"`
+
+
+    // MessageSeverityCounts - The list of schedule generation message counts by severity for this schedule generation run
+    MessageSeverityCounts []Schedulermessageseveritycount `json:"messageSeverityCounts"`
 
 }
 
@@ -49,6 +56,10 @@ func (o *Schedulegenerationresultsummary) String() string {
     
     
     
+    
+    
+    
+     o.MessageSeverityCounts = []Schedulermessageseveritycount{{}} 
     
     
 
@@ -73,6 +84,8 @@ func (u *Schedulegenerationresultsummary) MarshalJSON() ([]byte, error) {
         
         MessageCount int `json:"messageCount"`
         
+        MessageSeverityCounts []Schedulermessageseveritycount `json:"messageSeverityCounts"`
+        
         *Alias
     }{
         
@@ -85,6 +98,12 @@ func (u *Schedulegenerationresultsummary) MarshalJSON() ([]byte, error) {
 
         
 
+        
+
+        
+
+        
+        MessageSeverityCounts: []Schedulermessageseveritycount{{}},
         
 
         

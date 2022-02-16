@@ -28,6 +28,9 @@ type MessagemediapolicyconditionsDud struct {
 
     
 
+
+    
+
 }
 
 // Messagemediapolicyconditions
@@ -55,6 +58,10 @@ type Messagemediapolicyconditions struct {
     // TimeAllowed
     TimeAllowed Timeallowed `json:"timeAllowed"`
 
+
+    // CustomerParticipation
+    CustomerParticipation string `json:"customerParticipation"`
+
 }
 
 // String returns a JSON representation of the model
@@ -78,6 +85,10 @@ func (o *Messagemediapolicyconditions) String() string {
     
     
      o.Languages = []Language{{}} 
+    
+    
+    
+    
     
     
     
@@ -112,6 +123,8 @@ func (u *Messagemediapolicyconditions) MarshalJSON() ([]byte, error) {
         
         TimeAllowed Timeallowed `json:"timeAllowed"`
         
+        CustomerParticipation string `json:"customerParticipation"`
+        
         *Alias
     }{
         
@@ -142,6 +155,10 @@ func (u *Messagemediapolicyconditions) MarshalJSON() ([]byte, error) {
 
         
         Languages: []Language{{}},
+        
+
+        
+
         
 
         

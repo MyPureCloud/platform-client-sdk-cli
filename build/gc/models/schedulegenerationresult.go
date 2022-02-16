@@ -22,6 +22,9 @@ type SchedulegenerationresultDud struct {
 
     
 
+
+    
+
 }
 
 // Schedulegenerationresult
@@ -40,6 +43,10 @@ type Schedulegenerationresult struct {
 
     // Messages - User facing messages related to the schedule generation run
     Messages []Schedulegenerationmessage `json:"messages"`
+
+
+    // MessageSeverities - The list of messages by severity in this schedule generation run
+    MessageSeverities []Schedulermessagetypeseverity `json:"messageSeverities"`
 
 }
 
@@ -60,6 +67,10 @@ func (o *Schedulegenerationresult) String() string {
     
     
      o.Messages = []Schedulegenerationmessage{{}} 
+    
+    
+    
+     o.MessageSeverities = []Schedulermessagetypeseverity{{}} 
     
     
 
@@ -86,6 +97,8 @@ func (u *Schedulegenerationresult) MarshalJSON() ([]byte, error) {
         
         Messages []Schedulegenerationmessage `json:"messages"`
         
+        MessageSeverities []Schedulermessagetypeseverity `json:"messageSeverities"`
+        
         *Alias
     }{
         
@@ -104,6 +117,12 @@ func (u *Schedulegenerationresult) MarshalJSON() ([]byte, error) {
 
         
         Messages: []Schedulegenerationmessage{{}},
+        
+
+        
+
+        
+        MessageSeverities: []Schedulermessagetypeseverity{{}},
         
 
         

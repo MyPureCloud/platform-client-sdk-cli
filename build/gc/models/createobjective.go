@@ -32,6 +32,12 @@ type CreateobjectiveDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Createobjective
@@ -53,6 +59,14 @@ type Createobjective struct {
 
     // TopicIds - A list of topic ids for detected topic metrics
     TopicIds []string `json:"topicIds"`
+
+
+    // MediaTypes - A list of media types for the metric
+    MediaTypes []string `json:"mediaTypes"`
+
+
+    // QueueIds - A list of queue ids for the metric
+    QueueIds []string `json:"queueIds"`
 
 
     // TopicIdsFilterType - A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
@@ -83,6 +97,14 @@ func (o *Createobjective) String() string {
     
     
      o.TopicIds = []string{""} 
+    
+    
+    
+     o.MediaTypes = []string{""} 
+    
+    
+    
+     o.QueueIds = []string{""} 
     
     
     
@@ -119,6 +141,10 @@ func (u *Createobjective) MarshalJSON() ([]byte, error) {
         
         TopicIds []string `json:"topicIds"`
         
+        MediaTypes []string `json:"mediaTypes"`
+        
+        QueueIds []string `json:"queueIds"`
+        
         TopicIdsFilterType string `json:"topicIdsFilterType"`
         
         DateStart time.Time `json:"dateStart"`
@@ -147,6 +173,18 @@ func (u *Createobjective) MarshalJSON() ([]byte, error) {
 
         
         TopicIds: []string{""},
+        
+
+        
+
+        
+        MediaTypes: []string{""},
+        
+
+        
+
+        
+        QueueIds: []string{""},
         
 
         

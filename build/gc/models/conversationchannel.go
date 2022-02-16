@@ -16,6 +16,9 @@ type ConversationchannelDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationchannel
@@ -24,13 +27,21 @@ type Conversationchannel struct {
     VarType string `json:"type"`
 
 
-    // Platform - The platform used to deliver media for the conversation for a given channel (e.g. Twitter, Messenger, PureCloud Edge).
+    // MessageType - Message type for messaging conversations.
+    MessageType string `json:"messageType"`
+
+
+    // Platform - The source provider for the conversation (e.g. Edge, PureCloud Messaging, PureCloud Email).
     Platform string `json:"platform"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationchannel) String() string {
+    
+    
+    
+    
     
     
     
@@ -58,10 +69,16 @@ func (u *Conversationchannel) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         VarType string `json:"type"`
         
+        MessageType string `json:"messageType"`
+        
         Platform string `json:"platform"`
         
         *Alias
     }{
+        
+
+        
+
         
 
         

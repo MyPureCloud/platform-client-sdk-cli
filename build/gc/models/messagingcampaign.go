@@ -57,6 +57,9 @@ type MessagingcampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -110,6 +113,10 @@ type Messagingcampaign struct {
 
     // MessagesPerMinute - How many messages this messaging campaign will send per minute.
     MessagesPerMinute int `json:"messagesPerMinute"`
+
+
+    // ContactListFilters - The contact list filter to check before sending a message for this messaging campaign.
+    ContactListFilters []Domainentityref `json:"contactListFilters"`
 
 
     // Errors - A list of current error conditions associated with this messaging campaign.
@@ -174,6 +181,10 @@ func (o *Messagingcampaign) String() string {
     
     
     
+     o.ContactListFilters = []Domainentityref{{}} 
+    
+    
+    
      o.Errors = []Resterrordetail{{}} 
     
     
@@ -224,6 +235,8 @@ func (u *Messagingcampaign) MarshalJSON() ([]byte, error) {
         ContactSorts []Contactsort `json:"contactSorts"`
         
         MessagesPerMinute int `json:"messagesPerMinute"`
+        
+        ContactListFilters []Domainentityref `json:"contactListFilters"`
         
         Errors []Resterrordetail `json:"errors"`
         
@@ -287,6 +300,12 @@ func (u *Messagingcampaign) MarshalJSON() ([]byte, error) {
 
         
 
+        
+
+        
+
+        
+        ContactListFilters: []Domainentityref{{}},
         
 
         

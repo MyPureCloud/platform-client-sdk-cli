@@ -32,6 +32,12 @@ type ObjectiveDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Objective
@@ -49,6 +55,14 @@ type Objective struct {
 
     // Enabled - A flag for whether this objective is enabled for the related metric
     Enabled bool `json:"enabled"`
+
+
+    // MediaTypes - A list of media types for the metric
+    MediaTypes []string `json:"mediaTypes"`
+
+
+    // Queues - A list of queues for the metric
+    Queues []Addressableentityref `json:"queues"`
 
 
     // Topics - A list of topic ids for detected topic metrics
@@ -79,6 +93,14 @@ func (o *Objective) String() string {
     
     
     
+    
+    
+    
+     o.MediaTypes = []string{""} 
+    
+    
+    
+     o.Queues = []Addressableentityref{{}} 
     
     
     
@@ -117,6 +139,10 @@ func (u *Objective) MarshalJSON() ([]byte, error) {
         
         Enabled bool `json:"enabled"`
         
+        MediaTypes []string `json:"mediaTypes"`
+        
+        Queues []Addressableentityref `json:"queues"`
+        
         Topics []Addressableentityref `json:"topics"`
         
         TopicIdsFilterType string `json:"topicIdsFilterType"`
@@ -141,6 +167,18 @@ func (u *Objective) MarshalJSON() ([]byte, error) {
 
         
 
+        
+
+        
+
+        
+        MediaTypes: []string{""},
+        
+
+        
+
+        
+        Queues: []Addressableentityref{{}},
         
 
         

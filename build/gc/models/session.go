@@ -111,6 +111,12 @@ type SessionDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -260,6 +266,14 @@ type Session struct {
 
     // ConversationSubject - The subject for the conversation, for example an email subject.
     ConversationSubject string `json:"conversationSubject"`
+
+
+    // LastUserDisconnectType - Disconnect reason for the last user connected to the conversation.
+    LastUserDisconnectType string `json:"lastUserDisconnectType"`
+
+
+    // LastAcdOutcome - Last ACD outcome for the conversation.
+    LastAcdOutcome string `json:"lastAcdOutcome"`
 
 
     // Authenticated - Indicates whether or not the session is authenticated.
@@ -447,6 +461,14 @@ func (o *Session) String() string {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -526,6 +548,10 @@ func (u *Session) MarshalJSON() ([]byte, error) {
         OriginatingDirection string `json:"originatingDirection"`
         
         ConversationSubject string `json:"conversationSubject"`
+        
+        LastUserDisconnectType string `json:"lastUserDisconnectType"`
+        
+        LastAcdOutcome string `json:"lastAcdOutcome"`
         
         Authenticated bool `json:"authenticated"`
         
@@ -675,6 +701,14 @@ func (u *Session) MarshalJSON() ([]byte, error) {
 
         
         ConversationChannels: []Conversationchannel{{}},
+        
+
+        
+
+        
+
+        
+
         
 
         

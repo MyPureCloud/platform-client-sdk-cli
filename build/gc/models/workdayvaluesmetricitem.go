@@ -11,6 +11,9 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type WorkdayvaluesmetricitemDud struct { 
+    Metric Addressableentityref `json:"metric"`
+
+
     MetricDefinition Domainentityref `json:"metricDefinition"`
 
 
@@ -37,10 +40,15 @@ type Workdayvaluesmetricitem struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Workdayvaluesmetricitem) String() string {
+    
+    
     
     
     
@@ -74,8 +82,14 @@ func (u *Workdayvaluesmetricitem) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

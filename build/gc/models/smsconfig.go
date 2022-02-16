@@ -19,6 +19,9 @@ type SmsconfigDud struct {
 
     
 
+
+    
+
 }
 
 // Smsconfig
@@ -34,10 +37,18 @@ type Smsconfig struct {
     // SenderSmsPhoneNumber - A reference to the SMS Phone Number that will be used as the sender of a message.
     SenderSmsPhoneNumber Smsphonenumberref `json:"senderSmsPhoneNumber"`
 
+
+    // ContentTemplate - The content template used to formulate the message to send to the contact.
+    ContentTemplate Domainentityref `json:"contentTemplate"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Smsconfig) String() string {
+    
+    
+    
+    
     
     
     
@@ -73,8 +84,14 @@ func (u *Smsconfig) MarshalJSON() ([]byte, error) {
         
         SenderSmsPhoneNumber Smsphonenumberref `json:"senderSmsPhoneNumber"`
         
+        ContentTemplate Domainentityref `json:"contentTemplate"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

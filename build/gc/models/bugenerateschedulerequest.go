@@ -19,6 +19,9 @@ type BugenerateschedulerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Bugenerateschedulerequest
@@ -34,10 +37,18 @@ type Bugenerateschedulerequest struct {
     // WeekCount - The number of weeks in the schedule. One extra day is added at the end
     WeekCount int `json:"weekCount"`
 
+
+    // Options - Additional scheduling options
+    Options Schedulingoptionsrequest `json:"options"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Bugenerateschedulerequest) String() string {
+    
+    
+    
+    
     
     
     
@@ -73,8 +84,14 @@ func (u *Bugenerateschedulerequest) MarshalJSON() ([]byte, error) {
         
         WeekCount int `json:"weekCount"`
         
+        Options Schedulingoptionsrequest `json:"options"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

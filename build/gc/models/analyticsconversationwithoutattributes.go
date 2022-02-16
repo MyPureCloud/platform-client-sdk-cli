@@ -56,6 +56,9 @@ type AnalyticsconversationwithoutattributesDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticsconversationwithoutattributes
@@ -74,6 +77,10 @@ type Analyticsconversationwithoutattributes struct {
 
     // ConversationStart - The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     ConversationStart time.Time `json:"conversationStart"`
+
+
+    // CustomerParticipation - Indicates a messaging conversation in which the customer participated by sending at least one message
+    CustomerParticipation bool `json:"customerParticipation"`
 
 
     // DivisionIds - Identifier(s) of division(s) associated with a conversation
@@ -123,6 +130,10 @@ type Analyticsconversationwithoutattributes struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticsconversationwithoutattributes) String() string {
+    
+    
+    
+    
     
     
     
@@ -208,6 +219,8 @@ func (u *Analyticsconversationwithoutattributes) MarshalJSON() ([]byte, error) {
         
         ConversationStart time.Time `json:"conversationStart"`
         
+        CustomerParticipation bool `json:"customerParticipation"`
+        
         DivisionIds []string `json:"divisionIds"`
         
         ExternalTag string `json:"externalTag"`
@@ -232,6 +245,10 @@ func (u *Analyticsconversationwithoutattributes) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

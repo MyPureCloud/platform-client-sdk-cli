@@ -17,6 +17,9 @@ type UserexpandsDud struct {
     Presence Userpresence `json:"presence"`
 
 
+    IntegrationPresence Userpresence `json:"integrationPresence"`
+
+
     ConversationSummary Userconversationsummary `json:"conversationSummary"`
 
 
@@ -55,10 +58,15 @@ type Userexpands struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Userexpands) String() string {
+    
+    
     
     
     
@@ -104,8 +112,14 @@ func (u *Userexpands) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

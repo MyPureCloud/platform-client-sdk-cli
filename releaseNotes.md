@@ -1,8 +1,8 @@
 Platform API version: 5413
 
 
-1. Implemented OAuth Implicit Grant (Browser) login for the CLI.
-2. Changes to the flow of the command "gc profiles new" 
+1. Implemented OAuth Implicit Grant (Browser) login for the CLI
+2. Changes to the flow of "gc profiles new" command. 
 
 # Major Changes (0 changes)
 

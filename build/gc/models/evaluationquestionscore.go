@@ -28,6 +28,9 @@ type EvaluationquestionscoreDud struct {
 
     
 
+
+    
+
 }
 
 // Evaluationquestionscore
@@ -48,6 +51,10 @@ type Evaluationquestionscore struct {
     MarkedNA bool `json:"markedNA"`
 
 
+    // AssistedAnswerId - AnswerId found with evaluation assistance conditions
+    AssistedAnswerId string `json:"assistedAnswerId"`
+
+
     // FailedKillQuestion - Applicable only on fatal questions. Indicates that the answer selected was not the highest score available for the question
     FailedKillQuestion bool `json:"failedKillQuestion"`
 
@@ -59,6 +66,10 @@ type Evaluationquestionscore struct {
 
 // String returns a JSON representation of the model
 func (o *Evaluationquestionscore) String() string {
+    
+    
+    
+    
     
     
     
@@ -108,12 +119,18 @@ func (u *Evaluationquestionscore) MarshalJSON() ([]byte, error) {
         
         MarkedNA bool `json:"markedNA"`
         
+        AssistedAnswerId string `json:"assistedAnswerId"`
+        
         FailedKillQuestion bool `json:"failedKillQuestion"`
         
         Comments string `json:"comments"`
         
         *Alias
     }{
+        
+
+        
+
         
 
         

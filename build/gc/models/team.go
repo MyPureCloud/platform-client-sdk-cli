@@ -24,6 +24,9 @@ type TeamDud struct {
     
 
 
+    DateCreated time.Time `json:"dateCreated"`
+
+
     DateModified time.Time `json:"dateModified"`
 
 
@@ -59,10 +62,15 @@ type Team struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Team) String() string {
+    
+    
     
     
     
@@ -114,8 +122,14 @@ func (u *Team) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

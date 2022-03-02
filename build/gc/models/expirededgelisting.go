@@ -18,7 +18,7 @@ type ExpirededgelistingDud struct {
 // Expirededgelisting
 type Expirededgelisting struct { 
     // Entities
-    Entities []Edgeidnamepair `json:"entities"`
+    Entities []Domainentityref `json:"entities"`
 
 }
 
@@ -26,7 +26,7 @@ type Expirededgelisting struct {
 func (o *Expirededgelisting) String() string {
     
     
-     o.Entities = []Edgeidnamepair{{}} 
+     o.Entities = []Domainentityref{{}} 
     
     
 
@@ -45,14 +45,14 @@ func (u *Expirededgelisting) MarshalJSON() ([]byte, error) {
     ExpirededgelistingMarshalled = true
 
     return json.Marshal(&struct { 
-        Entities []Edgeidnamepair `json:"entities"`
+        Entities []Domainentityref `json:"entities"`
         
         *Alias
     }{
         
 
         
-        Entities: []Edgeidnamepair{{}},
+        Entities: []Domainentityref{{}},
         
 
         

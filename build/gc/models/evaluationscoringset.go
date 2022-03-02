@@ -31,6 +31,9 @@ type EvaluationscoringsetDud struct {
 
     
 
+
+    
+
 }
 
 // Evaluationscoringset
@@ -61,6 +64,10 @@ type Evaluationscoringset struct {
 
     // AgentComments - Comments from the agent while reviewing evaluation results
     AgentComments string `json:"agentComments"`
+
+
+    // TranscriptTopics - List of topics found within the conversation's transcripts
+    TranscriptTopics []Transcripttopic `json:"transcriptTopics"`
 
 }
 
@@ -95,6 +102,10 @@ func (o *Evaluationscoringset) String() string {
     
     
     
+    
+     o.TranscriptTopics = []Transcripttopic{{}} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -124,6 +135,8 @@ func (u *Evaluationscoringset) MarshalJSON() ([]byte, error) {
         Comments string `json:"comments"`
         
         AgentComments string `json:"agentComments"`
+        
+        TranscriptTopics []Transcripttopic `json:"transcriptTopics"`
         
         *Alias
     }{
@@ -155,6 +168,12 @@ func (u *Evaluationscoringset) MarshalJSON() ([]byte, error) {
 
         
 
+        
+
+        
+
+        
+        TranscriptTopics: []Transcripttopic{{}},
         
 
         

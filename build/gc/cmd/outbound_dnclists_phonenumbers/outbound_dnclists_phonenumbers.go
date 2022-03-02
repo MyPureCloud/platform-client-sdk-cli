@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdoutbound_dnclists_phonenumbers() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "string", "expirationDateTime", "", "Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/dnclists/{dncListId}/phonenumbers", utils.FormatPermissions([]string{ "outbound:dnc:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/dnclists/{dncListId}/phonenumbers")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "in" : "body",
@@ -89,6 +90,10 @@ var createCmd = &cobra.Command{
 		dncListId, args := args[0], args[1:]
 		path = strings.Replace(path, "{dncListId}", fmt.Sprintf("%v", dncListId), -1)
 
+		expirationDateTime := utils.GetFlag(cmd.Flags(), "string", "expirationDateTime")
+		if expirationDateTime != "" {
+			queryParams["expirationDateTime"] = expirationDateTime
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

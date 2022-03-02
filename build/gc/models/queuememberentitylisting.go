@@ -31,15 +31,6 @@ type QueuememberentitylistingDud struct {
 
     
 
-
-    
-
-
-    
-
-
-    
-
 }
 
 // Queuememberentitylisting
@@ -48,16 +39,12 @@ type Queuememberentitylisting struct {
     Entities []Queuemember `json:"entities"`
 
 
-    // PageSize
-    PageSize int `json:"pageSize"`
-
-
     // PageNumber
     PageNumber int `json:"pageNumber"`
 
 
-    // Total
-    Total int `json:"total"`
+    // PageSize
+    PageSize int `json:"pageSize"`
 
 
     // FirstUri
@@ -75,14 +62,6 @@ type Queuememberentitylisting struct {
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
-
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
-    // PageCount
-    PageCount int `json:"pageCount"`
-
 }
 
 // String returns a JSON representation of the model
@@ -90,18 +69,6 @@ func (o *Queuememberentitylisting) String() string {
     
     
      o.Entities = []Queuemember{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -146,11 +113,9 @@ func (u *Queuememberentitylisting) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         Entities []Queuemember `json:"entities"`
         
-        PageSize int `json:"pageSize"`
-        
         PageNumber int `json:"pageNumber"`
         
-        Total int `json:"total"`
+        PageSize int `json:"pageSize"`
         
         FirstUri string `json:"firstUri"`
         
@@ -160,28 +125,12 @@ func (u *Queuememberentitylisting) MarshalJSON() ([]byte, error) {
         
         PreviousUri string `json:"previousUri"`
         
-        LastUri string `json:"lastUri"`
-        
-        PageCount int `json:"pageCount"`
-        
         *Alias
     }{
         
 
         
         Entities: []Queuemember{{}},
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
         
 
         

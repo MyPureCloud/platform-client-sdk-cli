@@ -89,11 +89,11 @@ type Webdeploymentconfigurationversion struct {
     Description string `json:"description"`
 
 
-    // Languages - A list of languages supported on the configuration
+    // Languages - A list of languages supported on the configuration required if the messenger is enabled
     Languages []string `json:"languages"`
 
 
-    // DefaultLanguage - The default language to use for the configuration
+    // DefaultLanguage - The default language to use for the configuration required if the messenger is enabled
     DefaultLanguage string `json:"defaultLanguage"`
 
 

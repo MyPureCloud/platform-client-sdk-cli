@@ -13,12 +13,19 @@ var (
 type AutomatictimezonemappingsettingsDud struct { 
     
 
+
+    
+
 }
 
 // Automatictimezonemappingsettings
 type Automatictimezonemappingsettings struct { 
     // CallableWindows - The time intervals to use for automatic time zone mapping.
     CallableWindows []Callablewindow `json:"callableWindows"`
+
+
+    // SupportedCountries - The countries that are supported for automatic time zone mapping.
+    SupportedCountries []string `json:"supportedCountries"`
 
 }
 
@@ -27,6 +34,10 @@ func (o *Automatictimezonemappingsettings) String() string {
     
     
      o.CallableWindows = []Callablewindow{{}} 
+    
+    
+    
+     o.SupportedCountries = []string{""} 
     
     
 
@@ -47,12 +58,20 @@ func (u *Automatictimezonemappingsettings) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         CallableWindows []Callablewindow `json:"callableWindows"`
         
+        SupportedCountries []string `json:"supportedCountries"`
+        
         *Alias
     }{
         
 
         
         CallableWindows: []Callablewindow{{}},
+        
+
+        
+
+        
+        SupportedCountries: []string{""},
         
 
         

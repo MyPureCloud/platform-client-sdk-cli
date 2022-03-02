@@ -26,6 +26,9 @@ type DnclistdivisionviewDud struct {
     Size int `json:"size"`
 
 
+    DncSourceType string `json:"dncSourceType"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -51,10 +54,15 @@ type Dnclistdivisionview struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Dnclistdivisionview) String() string {
+    
+    
     
     
     
@@ -100,8 +108,14 @@ func (u *Dnclistdivisionview) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

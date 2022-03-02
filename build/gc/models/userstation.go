@@ -32,6 +32,9 @@ type UserstationDud struct {
 
     
 
+
+    WebRtcCallAppearances int `json:"webRtcCallAppearances"`
+
 }
 
 // Userstation
@@ -61,6 +64,9 @@ type Userstation struct {
 
     // ProviderInfo - Provider-specific info for this station, e.g. { \"edgeGroupId\": \"ffe7b15c-a9cc-4f4c-88f5-781327819a49\" }
     ProviderInfo map[string]string `json:"providerInfo"`
+
+
+    
 
 }
 
@@ -93,6 +99,8 @@ func (o *Userstation) String() string {
      o.ProviderInfo = map[string]string{"": ""} 
     
     
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -122,6 +130,8 @@ func (u *Userstation) MarshalJSON() ([]byte, error) {
         DefaultUser User `json:"defaultUser"`
         
         ProviderInfo map[string]string `json:"providerInfo"`
+        
+        
         
         *Alias
     }{
@@ -153,6 +163,10 @@ func (u *Userstation) MarshalJSON() ([]byte, error) {
 
         
         ProviderInfo: map[string]string{"": ""},
+        
+
+        
+
         
 
         

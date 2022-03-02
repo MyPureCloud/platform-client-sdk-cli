@@ -35,6 +35,7 @@ func Cmdorphanrecordings_media() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "bool", "download", "false", "requesting a download format of the recording")
 	utils.AddFlag(getCmd.Flags(), "string", "fileName", "", "the name of the downloaded fileName")
 	utils.AddFlag(getCmd.Flags(), "string", "locale", "", "The locale for the requested file when downloading, as an ISO 639-1 code")
+	utils.AddFlag(getCmd.Flags(), "[]string", "mediaFormats", "", "All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/orphanrecordings/{orphanId}/media", utils.FormatPermissions([]string{ "recording:orphan:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/orphanrecordings/{orphanId}/media")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -97,6 +98,10 @@ var getCmd = &cobra.Command{
 		locale := utils.GetFlag(cmd.Flags(), "string", "locale")
 		if locale != "" {
 			queryParams["locale"] = locale
+		}
+		mediaFormats := utils.GetFlag(cmd.Flags(), "[]string", "mediaFormats")
+		if mediaFormats != "" {
+			queryParams["mediaFormats"] = mediaFormats
 		}
 		urlString := path
 		if len(queryParams) > 0 {

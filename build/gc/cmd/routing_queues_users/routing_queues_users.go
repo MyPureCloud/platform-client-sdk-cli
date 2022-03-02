@@ -45,7 +45,7 @@ func Cmdrouting_queues_users() *cobra.Command {
 	utils.AddPaginateFlagsIfListingResponse(activateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
   "schema" : {
-    "$ref" : "#/definitions/QueueMemberEntityListing"
+    "$ref" : "#/definitions/QueueMemberEntityListingV1"
   }
 }`)
 	routing_queues_usersCmd.AddCommand(activateCmd)

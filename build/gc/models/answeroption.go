@@ -19,6 +19,9 @@ type AnsweroptionDud struct {
 
     
 
+
+    
+
 }
 
 // Answeroption
@@ -33,6 +36,10 @@ type Answeroption struct {
 
     // Value
     Value int `json:"value"`
+
+
+    // AssistanceConditions
+    AssistanceConditions []Assistancecondition `json:"assistanceConditions"`
 
 }
 
@@ -49,6 +56,10 @@ func (o *Answeroption) String() string {
     
     
     
+    
+    
+    
+     o.AssistanceConditions = []Assistancecondition{{}} 
     
     
 
@@ -73,6 +84,8 @@ func (u *Answeroption) MarshalJSON() ([]byte, error) {
         
         Value int `json:"value"`
         
+        AssistanceConditions []Assistancecondition `json:"assistanceConditions"`
+        
         *Alias
     }{
         
@@ -85,6 +98,12 @@ func (u *Answeroption) MarshalJSON() ([]byte, error) {
 
         
 
+        
+
+        
+
+        
+        AssistanceConditions: []Assistancecondition{{}},
         
 
         

@@ -31,6 +31,9 @@ type SurveyquestionscoreDud struct {
 
     
 
+
+    
+
 }
 
 // Surveyquestionscore
@@ -51,6 +54,10 @@ type Surveyquestionscore struct {
     MarkedNA bool `json:"markedNA"`
 
 
+    // AssistedAnswerId - AnswerId found with evaluation assistance conditions
+    AssistedAnswerId string `json:"assistedAnswerId"`
+
+
     // NpsScore
     NpsScore int `json:"npsScore"`
 
@@ -66,6 +73,10 @@ type Surveyquestionscore struct {
 
 // String returns a JSON representation of the model
 func (o *Surveyquestionscore) String() string {
+    
+    
+    
+    
     
     
     
@@ -119,6 +130,8 @@ func (u *Surveyquestionscore) MarshalJSON() ([]byte, error) {
         
         MarkedNA bool `json:"markedNA"`
         
+        AssistedAnswerId string `json:"assistedAnswerId"`
+        
         NpsScore int `json:"npsScore"`
         
         NpsTextAnswer string `json:"npsTextAnswer"`
@@ -127,6 +140,10 @@ func (u *Surveyquestionscore) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

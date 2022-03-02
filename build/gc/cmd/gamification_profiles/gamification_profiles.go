@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdgamification_profiles() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "copyMetrics", "true", "Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile.")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/gamification/profiles", utils.FormatPermissions([]string{ "gamification:profile:update",  }), utils.GenerateDevCentreLink("POST", "Gamification", "/api/v2/gamification/profiles")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "in" : "body",
@@ -113,6 +114,10 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/gamification/profiles"
 
+		copyMetrics := utils.GetFlag(cmd.Flags(), "bool", "copyMetrics")
+		if copyMetrics != "" {
+			queryParams["copyMetrics"] = copyMetrics
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

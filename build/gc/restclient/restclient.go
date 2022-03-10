@@ -98,7 +98,7 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
 	//User-Agent and SDK version headers
 	request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-	request.Header.Set("purecloud-sdk", "32.0.0")
+	request.Header.Set("purecloud-sdk", "32.0.1")
 
 	if data != "" {
 		request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
@@ -124,17 +124,18 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 			}
 		}
 	}
-	
+
 	//Executing the request
 	resp, err := ClientDo(request)
 	if err != nil {
 		return "", err
 	}
+	timestampMS := time.Now().UnixNano() / int64(time.Millisecond)
 	defer resp.Body.Close()
 
 	correlationId := resp.Header["Inin-Correlation-Id"]
 	if correlationId != nil {
-		logger.Info("API response Correlation ID:", correlationId[0])
+		logger.Infof("API response Correlation ID: %v, method: %v, URI: %v, timestamp(ms): %d", correlationId[0], method, uri, timestampMS)
 	}
 
 	response, err := ioutil.ReadAll(resp.Body)
@@ -229,7 +230,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
 	//User-Agent and SDK version headers
 	request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-	request.Header.Set("purecloud-sdk", "32.0.0")
+	request.Header.Set("purecloud-sdk", "32.0.1")
 
 	//Setting up the form data
 	form := url.Values{}

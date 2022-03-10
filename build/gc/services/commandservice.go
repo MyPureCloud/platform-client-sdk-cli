@@ -135,7 +135,7 @@ func (c *commandService) Stream(uri string) (string, error) {
 		break
 	case entityPagination:
 		pagedURI := uri
-		for x := firstPage.PageNumber + 1;; x++ {
+		for x := 2;; x++ {
 			pagedURI = updatePagingIndex(pagedURI, "pageNumber", x)
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
@@ -145,17 +145,17 @@ func (c *commandService) Stream(uri string) (string, error) {
 				return "", err
 			}
 
-			utils.Render(data)
-
 			pageData := &models.Entities{}
 			err = json.Unmarshal([]byte(data), pageData)
 			if err != nil {
 				return "", err
 			}
 
-			if pageData.NextUri == "" {
+			if len(pageData.Entities) == 0 {
 				break
 			}
+
+			utils.Render(data)
 		}
 		break
 	case indexPagination:
@@ -255,7 +255,7 @@ func (c *commandService) List(uri string) (string, error) {
 			totalResults = append(totalResults, string(val))
 		}
 		pagedURI := uri
-		for x := firstPage.PageNumber + 1;; x++ {
+		for x := 2;; x++ {
 			pagedURI = updatePagingIndex(pagedURI, "pageNumber", x)
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
@@ -275,7 +275,7 @@ func (c *commandService) List(uri string) (string, error) {
 				totalResults = append(totalResults, string(val))
 			}
 
-			if pageData.NextUri == "" {
+			if len(pageData.Entities) == 0 {
 				break
 			}
 		}

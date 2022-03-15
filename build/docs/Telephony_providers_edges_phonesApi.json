@@ -1,0 +1,125 @@
+{
+    "POST /api/v2/telephony/providers/edges/phones": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Phone"
+            }
+        ],
+        "return": "Phone"
+    },
+    "DELETE /api/v2/telephony/providers/edges/phones/{phoneId}": {
+        "functionName": "delete",
+        "signature": "delete(phoneId)",
+        "parameters": [
+            {
+                "name": "phoneId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/telephony/providers/edges/phones/{phoneId}": {
+        "functionName": "get",
+        "signature": "get(phoneId)",
+        "parameters": [
+            {
+                "name": "phoneId",
+                "type": "string"
+            }
+        ],
+        "return": "Phone"
+    },
+    "GET /api/v2/telephony/providers/edges/phones": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, name, statusOperationalStatus, secondaryStatusOperationalStatus, expand, fields)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "siteId",
+                "type": "string"
+            },
+            {
+                "name": "webRtcUserId",
+                "type": "string"
+            },
+            {
+                "name": "phoneBaseSettingsId",
+                "type": "string"
+            },
+            {
+                "name": "linesLoggedInUserId",
+                "type": "string"
+            },
+            {
+                "name": "linesDefaultForUserId",
+                "type": "string"
+            },
+            {
+                "name": "phoneHardwareId",
+                "type": "string"
+            },
+            {
+                "name": "linesId",
+                "type": "string"
+            },
+            {
+                "name": "linesName",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "statusOperationalStatus",
+                "type": "string"
+            },
+            {
+                "name": "secondaryStatusOperationalStatus",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "fields",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/phones/{phoneId}": {
+        "functionName": "update",
+        "signature": "update(phoneId, body)",
+        "parameters": [
+            {
+                "name": "phoneId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Phone"
+            }
+        ],
+        "return": "Phone"
+    }
+    
+}

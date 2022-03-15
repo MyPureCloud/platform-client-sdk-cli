@@ -1,0 +1,29 @@
+{
+    "GET /api/v2/users/{userId}/outofoffice": {
+        "functionName": "get",
+        "signature": "get(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            }
+        ],
+        "return": "Outofoffice"
+    },
+    "PUT /api/v2/users/{userId}/outofoffice": {
+        "functionName": "update",
+        "signature": "update(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Outofoffice"
+            }
+        ],
+        "return": "Outofoffice"
+    }
+    
+}

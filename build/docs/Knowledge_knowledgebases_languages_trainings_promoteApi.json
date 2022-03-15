@@ -1,0 +1,22 @@
+{
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote": {
+        "functionName": "create",
+        "signature": "create(knowledgeBaseId, languageCode, trainingId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            },
+            {
+                "name": "trainingId",
+                "type": "string"
+            }
+        ],
+        "return": "Knowledgetraining"
+    }
+    
+}

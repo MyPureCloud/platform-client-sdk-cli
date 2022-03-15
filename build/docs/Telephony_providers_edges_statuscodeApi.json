@@ -1,0 +1,18 @@
+{
+    "POST /api/v2/telephony/providers/edges/{edgeId}/statuscode": {
+        "functionName": "create",
+        "signature": "create(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Edgeservicestaterequest"
+            }
+        ],
+        "return": "string"
+    }
+    
+}

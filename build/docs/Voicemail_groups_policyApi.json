@@ -1,0 +1,29 @@
+{
+    "GET /api/v2/voicemail/groups/{groupId}/policy": {
+        "functionName": "get",
+        "signature": "get(groupId)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            }
+        ],
+        "return": "Voicemailgrouppolicy"
+    },
+    "PATCH /api/v2/voicemail/groups/{groupId}/policy": {
+        "functionName": "update",
+        "signature": "update(groupId, body)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Voicemailgrouppolicy"
+            }
+        ],
+        "return": "Voicemailgrouppolicy"
+    }
+    
+}

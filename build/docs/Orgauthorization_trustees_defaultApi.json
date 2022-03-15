@@ -1,0 +1,24 @@
+{
+    "POST /api/v2/orgauthorization/trustees/default": {
+        "functionName": "create",
+        "signature": "create(assignDefaultRole, autoExpire)",
+        "parameters": [
+            {
+                "name": "assignDefaultRole",
+                "type": "bool"
+            },
+            {
+                "name": "autoExpire",
+                "type": "bool"
+            }
+        ],
+        "return": "Trustee"
+    },
+    "GET /api/v2/orgauthorization/trustees/default": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Trustee"
+    }
+    
+}

@@ -1,0 +1,26 @@
+{
+    "DELETE /api/v2/identityproviders/salesforce": {
+        "functionName": "delete",
+        "signature": "delete()",
+        
+        "return": "Empty"
+    },
+    "GET /api/v2/identityproviders/salesforce": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Salesforce"
+    },
+    "PUT /api/v2/identityproviders/salesforce": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Salesforce"
+            }
+        ],
+        "return": "Oauthprovider"
+    }
+    
+}

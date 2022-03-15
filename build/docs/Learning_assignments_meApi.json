@@ -1,0 +1,66 @@
+{
+    "GET /api/v2/learning/assignments/me": {
+        "functionName": "list",
+        "signature": "list(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, types, states, expand)",
+        "parameters": [
+            {
+                "name": "moduleId",
+                "type": "string"
+            },
+            {
+                "name": "interval",
+                "type": "string"
+            },
+            {
+                "name": "completionInterval",
+                "type": "string"
+            },
+            {
+                "name": "overdue",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pass",
+                "type": "string"
+            },
+            {
+                "name": "minPercentageScore",
+                "type": "float32"
+            },
+            {
+                "name": "maxPercentageScore",
+                "type": "float32"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "types",
+                "type": "[]string"
+            },
+            {
+                "name": "states",
+                "type": "[]string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

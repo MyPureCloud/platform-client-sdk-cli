@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/gamification/leaderboard": {
+        "functionName": "get",
+        "signature": "get(startWorkday, endWorkday, metricId)",
+        "parameters": [
+            {
+                "name": "startWorkday",
+                "type": "time.Time"
+            },
+            {
+                "name": "endWorkday",
+                "type": "time.Time"
+            },
+            {
+                "name": "metricId",
+                "type": "string"
+            }
+        ],
+        "return": "Leaderboard"
+    }
+    
+}

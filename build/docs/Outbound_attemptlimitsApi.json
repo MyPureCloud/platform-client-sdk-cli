@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/outbound/attemptlimits": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Attemptlimits"
+            }
+        ],
+        "return": "Attemptlimits"
+    },
+    "DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId}": {
+        "functionName": "delete",
+        "signature": "delete(attemptLimitsId)",
+        "parameters": [
+            {
+                "name": "attemptLimitsId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/attemptlimits/{attemptLimitsId}": {
+        "functionName": "get",
+        "signature": "get(attemptLimitsId)",
+        "parameters": [
+            {
+                "name": "attemptLimitsId",
+                "type": "string"
+            }
+        ],
+        "return": "Attemptlimits"
+    },
+    "GET /api/v2/outbound/attemptlimits": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "bool"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/outbound/attemptlimits/{attemptLimitsId}": {
+        "functionName": "update",
+        "signature": "update(attemptLimitsId, body)",
+        "parameters": [
+            {
+                "name": "attemptLimitsId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Attemptlimits"
+            }
+        ],
+        "return": "Attemptlimits"
+    }
+    
+}

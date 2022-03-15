@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/flows/{flowId}/versions/{versionId}/configuration": {
+        "functionName": "get",
+        "signature": "get(flowId, versionId, deleted)",
+        "parameters": [
+            {
+                "name": "flowId",
+                "type": "string"
+            },
+            {
+                "name": "versionId",
+                "type": "string"
+            },
+            {
+                "name": "deleted",
+                "type": "string"
+            }
+        ],
+        "return": "interface{}"
+    }
+    
+}

@@ -1,0 +1,30 @@
+{
+    "GET /api/v2/users/{userId}/favorites": {
+        "functionName": "list",
+        "signature": "list(userId, pageSize, pageNumber, sortOrder, expand)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

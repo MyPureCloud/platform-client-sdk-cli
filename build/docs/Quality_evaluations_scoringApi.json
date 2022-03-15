@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/quality/evaluations/scoring": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Evaluationformandscoringset"
+            }
+        ],
+        "return": "Evaluationscoringset"
+    }
+    
+}

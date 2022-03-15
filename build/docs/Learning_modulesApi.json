@@ -1,0 +1,97 @@
+{
+    "POST /api/v2/learning/modules": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Learningmodulerequest"
+            }
+        ],
+        "return": "Learningmodule"
+    },
+    "DELETE /api/v2/learning/modules/{moduleId}": {
+        "functionName": "delete",
+        "signature": "delete(moduleId)",
+        "parameters": [
+            {
+                "name": "moduleId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/learning/modules/{moduleId}": {
+        "functionName": "get",
+        "signature": "get(moduleId, expand)",
+        "parameters": [
+            {
+                "name": "moduleId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Learningmodule"
+    },
+    "GET /api/v2/learning/modules": {
+        "functionName": "list",
+        "signature": "list(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished)",
+        "parameters": [
+            {
+                "name": "isArchived",
+                "type": "bool"
+            },
+            {
+                "name": "types",
+                "type": "[]string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "searchTerm",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "isPublished",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/learning/modules/{moduleId}": {
+        "functionName": "update",
+        "signature": "update(moduleId, body)",
+        "parameters": [
+            {
+                "name": "moduleId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Learningmodulerequest"
+            }
+        ],
+        "return": "Learningmodule"
+    }
+    
+}

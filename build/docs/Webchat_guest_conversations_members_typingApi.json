@@ -1,0 +1,18 @@
+{
+    "POST /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing": {
+        "functionName": "create",
+        "signature": "create(conversationId, memberId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "memberId",
+                "type": "string"
+            }
+        ],
+        "return": "Webchattyping"
+    }
+    
+}

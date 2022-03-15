@@ -1,0 +1,20 @@
+{
+    "GET /api/v2/gamification/metricdefinitions/{metricDefinitionId}": {
+        "functionName": "get",
+        "signature": "get(metricDefinitionId)",
+        "parameters": [
+            {
+                "name": "metricDefinitionId",
+                "type": "string"
+            }
+        ],
+        "return": "Metricdefinition"
+    },
+    "GET /api/v2/gamification/metricdefinitions": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Getmetricdefinitionsresponse"
+    }
+    
+}

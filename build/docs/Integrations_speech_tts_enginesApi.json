@@ -1,0 +1,45 @@
+{
+    "GET /api/v2/integrations/speech/tts/engines/{engineId}": {
+        "functionName": "get",
+        "signature": "get(engineId, includeVoices)",
+        "parameters": [
+            {
+                "name": "engineId",
+                "type": "string"
+            },
+            {
+                "name": "includeVoices",
+                "type": "bool"
+            }
+        ],
+        "return": "Ttsengineentity"
+    },
+    "GET /api/v2/integrations/speech/tts/engines": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, includeVoices, name, language)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "includeVoices",
+                "type": "bool"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "language",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

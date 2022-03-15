@@ -1,0 +1,13 @@
+{
+    "POST /api/v2/outbound/conversations/{conversationId}/dnc": {
+        "functionName": "create",
+        "signature": "create(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            }
+        ]
+    }
+    
+}

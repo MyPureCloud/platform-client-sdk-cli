@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/telephony/providers/edges/trunkswithrecording": {
+        "functionName": "get",
+        "signature": "get(trunkType)",
+        "parameters": [
+            {
+                "name": "trunkType",
+                "type": "string"
+            }
+        ],
+        "return": "Trunkrecordingenabledcount"
+    }
+    
+}

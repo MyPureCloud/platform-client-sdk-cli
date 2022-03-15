@@ -1,0 +1,22 @@
+{
+    "POST /api/v2/learning/rules/query": {
+        "functionName": "create",
+        "signature": "create(pageSize, pageNumber, body)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "body",
+                "type": "Learningassignmentuserquery"
+            }
+        ],
+        "return": "Learningassignmentuserlisting"
+    }
+    
+}

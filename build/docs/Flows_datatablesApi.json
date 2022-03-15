@@ -1,0 +1,97 @@
+{
+    "POST /api/v2/flows/datatables": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Datatable"
+            }
+        ],
+        "return": "Datatable"
+    },
+    "DELETE /api/v2/flows/datatables/{datatableId}": {
+        "functionName": "delete",
+        "signature": "delete(datatableId, force)",
+        "parameters": [
+            {
+                "name": "datatableId",
+                "type": "string"
+            },
+            {
+                "name": "force",
+                "type": "bool"
+            }
+        ]
+    },
+    "GET /api/v2/flows/datatables/{datatableId}": {
+        "functionName": "get",
+        "signature": "get(datatableId, expand)",
+        "parameters": [
+            {
+                "name": "datatableId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Datatable"
+    },
+    "GET /api/v2/flows/datatables": {
+        "functionName": "list",
+        "signature": "list(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name)",
+        "parameters": [
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/flows/datatables/{datatableId}": {
+        "functionName": "update",
+        "signature": "update(datatableId, body, expand)",
+        "parameters": [
+            {
+                "name": "datatableId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Datatable"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Datatable"
+    }
+    
+}

@@ -1,0 +1,97 @@
+{
+    "POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues": {
+        "functionName": "create",
+        "signature": "create(workspaceId, body)",
+        "parameters": [
+            {
+                "name": "workspaceId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Tagvalue"
+            }
+        ],
+        "return": "Tagvalue"
+    },
+    "DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}": {
+        "functionName": "delete",
+        "signature": "delete(workspaceId, tagId)",
+        "parameters": [
+            {
+                "name": "workspaceId",
+                "type": "string"
+            },
+            {
+                "name": "tagId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}": {
+        "functionName": "get",
+        "signature": "get(workspaceId, tagId, expand)",
+        "parameters": [
+            {
+                "name": "workspaceId",
+                "type": "string"
+            },
+            {
+                "name": "tagId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Tagvalue"
+    },
+    "GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues": {
+        "functionName": "list",
+        "signature": "list(workspaceId, value, pageSize, pageNumber, expand)",
+        "parameters": [
+            {
+                "name": "workspaceId",
+                "type": "string"
+            },
+            {
+                "name": "value",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}": {
+        "functionName": "update",
+        "signature": "update(workspaceId, tagId, body)",
+        "parameters": [
+            {
+                "name": "workspaceId",
+                "type": "string"
+            },
+            {
+                "name": "tagId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Tagvalue"
+            }
+        ],
+        "return": "Tagvalue"
+    }
+    
+}

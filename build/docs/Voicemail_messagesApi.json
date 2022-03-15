@@ -1,0 +1,89 @@
+{
+    "POST /api/v2/voicemail/messages": {
+        "functionName": "copy",
+        "signature": "copy(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Copyvoicemailmessage"
+            }
+        ],
+        "return": "Voicemailmessage"
+    },
+    "DELETE /api/v2/voicemail/messages/{messageId}": {
+        "functionName": "delete",
+        "signature": "delete(messageId)",
+        "parameters": [
+            {
+                "name": "messageId",
+                "type": "string"
+            }
+        ]
+    },
+    "DELETE /api/v2/voicemail/messages": {
+        "functionName": "deleteall",
+        "signature": "deleteall()"
+        
+    },
+    "GET /api/v2/voicemail/messages/{messageId}": {
+        "functionName": "get",
+        "signature": "get(messageId, expand)",
+        "parameters": [
+            {
+                "name": "messageId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Voicemailmessage"
+    },
+    "GET /api/v2/voicemail/messages": {
+        "functionName": "list",
+        "signature": "list(ids, expand)",
+        "parameters": [
+            {
+                "name": "ids",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/voicemail/messages/{messageId}": {
+        "functionName": "patch",
+        "signature": "patch(messageId, body)",
+        "parameters": [
+            {
+                "name": "messageId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Voicemailmessage"
+            }
+        ],
+        "return": "Voicemailmessage"
+    },
+    "PUT /api/v2/voicemail/messages/{messageId}": {
+        "functionName": "put",
+        "signature": "put(messageId, body)",
+        "parameters": [
+            {
+                "name": "messageId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Voicemailmessage"
+            }
+        ],
+        "return": "Voicemailmessage"
+    }
+    
+}

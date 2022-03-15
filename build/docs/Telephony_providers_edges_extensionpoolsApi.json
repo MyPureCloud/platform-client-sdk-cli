@@ -1,0 +1,73 @@
+{
+    "POST /api/v2/telephony/providers/edges/extensionpools": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Extensionpool"
+            }
+        ],
+        "return": "Extensionpool"
+    },
+    "DELETE /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}": {
+        "functionName": "delete",
+        "signature": "delete(extensionPoolId)",
+        "parameters": [
+            {
+                "name": "extensionPoolId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}": {
+        "functionName": "get",
+        "signature": "get(extensionPoolId)",
+        "parameters": [
+            {
+                "name": "extensionPoolId",
+                "type": "string"
+            }
+        ],
+        "return": "Extensionpool"
+    },
+    "GET /api/v2/telephony/providers/edges/extensionpools": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, number)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "number",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}": {
+        "functionName": "update",
+        "signature": "update(extensionPoolId, body)",
+        "parameters": [
+            {
+                "name": "extensionPoolId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Extensionpool"
+            }
+        ],
+        "return": "Extensionpool"
+    }
+    
+}

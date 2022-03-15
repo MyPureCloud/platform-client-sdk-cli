@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/quality/forms/surveys/bulk/contexts": {
+        "functionName": "list",
+        "signature": "list(contextId, published)",
+        "parameters": [
+            {
+                "name": "contextId",
+                "type": "[]string"
+            },
+            {
+                "name": "published",
+                "type": "bool"
+            }
+        ],
+        "return": "[]Surveyform"
+    }
+    
+}

@@ -1,0 +1,22 @@
+{
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday": {
+        "functionName": "create",
+        "signature": "create(businessUnitId, forceAsync, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "forceAsync",
+                "type": "bool"
+            },
+            {
+                "name": "body",
+                "type": "Intradayplanninggrouprequest"
+            }
+        ],
+        "return": "Asyncintradayresponse"
+    }
+    
+}

@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/telephony/providers/edges/sites": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Site"
+            }
+        ],
+        "return": "Site"
+    },
+    "DELETE /api/v2/telephony/providers/edges/sites/{siteId}": {
+        "functionName": "delete",
+        "signature": "delete(siteId)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/telephony/providers/edges/sites/{siteId}": {
+        "functionName": "get",
+        "signature": "get(siteId)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "string"
+            }
+        ],
+        "return": "Site"
+    },
+    "GET /api/v2/telephony/providers/edges/sites": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "locationId",
+                "type": "string"
+            },
+            {
+                "name": "managed",
+                "type": "bool"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/sites/{siteId}": {
+        "functionName": "update",
+        "signature": "update(siteId, body)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Site"
+            }
+        ],
+        "return": "Site"
+    }
+    
+}

@@ -1,0 +1,18 @@
+{
+    "POST /api/v2/authorization/divisions/{divisionId}/restore": {
+        "functionName": "create",
+        "signature": "create(divisionId, body)",
+        "parameters": [
+            {
+                "name": "divisionId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Authzdivision"
+            }
+        ],
+        "return": "Authzdivision"
+    }
+    
+}

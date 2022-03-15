@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/textbots/bots/execute": {
+        "functionName": "create",
+        "signature": "create(postTextRequest)",
+        "parameters": [
+            {
+                "name": "postTextRequest",
+                "type": "Posttextrequest"
+            }
+        ],
+        "return": "Posttextresponse"
+    }
+    
+}

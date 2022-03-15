@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/outbound/callanalysisresponsesets": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Responseset"
+            }
+        ],
+        "return": "Responseset"
+    },
+    "DELETE /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}": {
+        "functionName": "delete",
+        "signature": "delete(callAnalysisSetId)",
+        "parameters": [
+            {
+                "name": "callAnalysisSetId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}": {
+        "functionName": "get",
+        "signature": "get(callAnalysisSetId)",
+        "parameters": [
+            {
+                "name": "callAnalysisSetId",
+                "type": "string"
+            }
+        ],
+        "return": "Responseset"
+    },
+    "GET /api/v2/outbound/callanalysisresponsesets": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "bool"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}": {
+        "functionName": "update",
+        "signature": "update(callAnalysisSetId, body)",
+        "parameters": [
+            {
+                "name": "callAnalysisSetId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Responseset"
+            }
+        ],
+        "return": "Responseset"
+    }
+    
+}

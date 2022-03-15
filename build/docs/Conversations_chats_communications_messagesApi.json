@@ -1,0 +1,22 @@
+{
+    "POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages": {
+        "functionName": "create",
+        "signature": "create(conversationId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "communicationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Createwebchatmessagerequest"
+            }
+        ],
+        "return": "Webchatmessage"
+    }
+    
+}

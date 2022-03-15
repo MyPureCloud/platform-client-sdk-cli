@@ -1,0 +1,51 @@
+{
+    "POST /api/v2/workforcemanagement/timeoffrequests": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createagenttimeoffrequest"
+            }
+        ],
+        "return": "Timeoffrequestresponse"
+    },
+    "GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}": {
+        "functionName": "get",
+        "signature": "get(timeOffRequestId)",
+        "parameters": [
+            {
+                "name": "timeOffRequestId",
+                "type": "string"
+            }
+        ],
+        "return": "Timeoffrequestresponse"
+    },
+    "GET /api/v2/workforcemanagement/timeoffrequests": {
+        "functionName": "list",
+        "signature": "list(recentlyReviewed)",
+        "parameters": [
+            {
+                "name": "recentlyReviewed",
+                "type": "bool"
+            }
+        ],
+        "return": "Timeoffrequestlist"
+    },
+    "PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}": {
+        "functionName": "update",
+        "signature": "update(timeOffRequestId, body)",
+        "parameters": [
+            {
+                "name": "timeOffRequestId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Agenttimeoffrequestpatch"
+            }
+        ],
+        "return": "Timeoffrequestresponse"
+    }
+    
+}

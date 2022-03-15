@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/languages/translations/users/{userId}": {
+        "functionName": "get",
+        "signature": "get(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            }
+        ],
+        "return": "map[string]interface{}"
+    }
+    
+}

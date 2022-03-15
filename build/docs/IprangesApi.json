@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/ipranges": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Ipaddressrangelisting"
+    }
+    
+}

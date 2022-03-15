@@ -1,0 +1,46 @@
+{
+    "POST /api/v2/conversations/callbacks": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createcallbackcommand"
+            }
+        ],
+        "return": "Createcallbackresponse"
+    },
+    "GET /api/v2/conversations/callbacks/{conversationId}": {
+        "functionName": "get",
+        "signature": "get(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            }
+        ],
+        "return": "Callbackconversation"
+    },
+    "GET /api/v2/conversations/callbacks": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/conversations/callbacks/{conversationId}": {
+        "functionName": "update",
+        "signature": "update(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Conversation"
+            }
+        ],
+        "return": "Conversation"
+    }
+    
+}

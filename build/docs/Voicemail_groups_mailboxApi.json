@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/voicemail/groups/{groupId}/mailbox": {
+        "functionName": "get",
+        "signature": "get(groupId)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            }
+        ],
+        "return": "Voicemailmailboxinfo"
+    }
+    
+}

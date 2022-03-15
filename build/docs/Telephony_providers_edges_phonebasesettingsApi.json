@@ -1,0 +1,81 @@
+{
+    "POST /api/v2/telephony/providers/edges/phonebasesettings": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Phonebase"
+            }
+        ],
+        "return": "Phonebase"
+    },
+    "DELETE /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}": {
+        "functionName": "delete",
+        "signature": "delete(phoneBaseId)",
+        "parameters": [
+            {
+                "name": "phoneBaseId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}": {
+        "functionName": "get",
+        "signature": "get(phoneBaseId)",
+        "parameters": [
+            {
+                "name": "phoneBaseId",
+                "type": "string"
+            }
+        ],
+        "return": "Phonebase"
+    },
+    "GET /api/v2/telephony/providers/edges/phonebasesettings": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, sortOrder, expand, name)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}": {
+        "functionName": "update",
+        "signature": "update(phoneBaseId, body)",
+        "parameters": [
+            {
+                "name": "phoneBaseId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Phonebase"
+            }
+        ],
+        "return": "Phonebase"
+    }
+    
+}

@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/users/{userId}/superiors": {
+        "functionName": "list",
+        "signature": "list(userId, expand)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "[]User"
+    }
+    
+}

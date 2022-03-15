@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/outbound/campaignrules": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Campaignrule"
+            }
+        ],
+        "return": "Campaignrule"
+    },
+    "DELETE /api/v2/outbound/campaignrules/{campaignRuleId}": {
+        "functionName": "delete",
+        "signature": "delete(campaignRuleId)",
+        "parameters": [
+            {
+                "name": "campaignRuleId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/campaignrules/{campaignRuleId}": {
+        "functionName": "get",
+        "signature": "get(campaignRuleId)",
+        "parameters": [
+            {
+                "name": "campaignRuleId",
+                "type": "string"
+            }
+        ],
+        "return": "Campaignrule"
+    },
+    "GET /api/v2/outbound/campaignrules": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "bool"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/outbound/campaignrules/{campaignRuleId}": {
+        "functionName": "update",
+        "signature": "update(campaignRuleId, body)",
+        "parameters": [
+            {
+                "name": "campaignRuleId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Campaignrule"
+            }
+        ],
+        "return": "Campaignrule"
+    }
+    
+}

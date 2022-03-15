@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/authorization/divisions/home": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Authzdivision"
+    }
+    
+}

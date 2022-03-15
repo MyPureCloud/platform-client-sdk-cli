@@ -1,0 +1,53 @@
+{
+    "GET /api/v2/flows/datatables/divisionviews/{datatableId}": {
+        "functionName": "get",
+        "signature": "get(datatableId, expand)",
+        "parameters": [
+            {
+                "name": "datatableId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Datatable"
+    },
+    "GET /api/v2/flows/datatables/divisionviews": {
+        "functionName": "list",
+        "signature": "list(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name)",
+        "parameters": [
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

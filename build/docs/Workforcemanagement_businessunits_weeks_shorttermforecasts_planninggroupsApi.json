@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups": {
+        "functionName": "list",
+        "signature": "list(businessUnitId, weekDateId, forecastId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekDateId",
+                "type": "time.Time"
+            },
+            {
+                "name": "forecastId",
+                "type": "string"
+            }
+        ],
+        "return": "Forecastplanninggroupsresponse"
+    }
+    
+}

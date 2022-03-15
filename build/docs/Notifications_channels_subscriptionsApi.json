@@ -1,0 +1,54 @@
+{
+    "DELETE /api/v2/notifications/channels/{channelId}/subscriptions": {
+        "functionName": "delete",
+        "signature": "delete(channelId)",
+        "parameters": [
+            {
+                "name": "channelId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/notifications/channels/{channelId}/subscriptions": {
+        "functionName": "list",
+        "signature": "list(channelId)",
+        "parameters": [
+            {
+                "name": "channelId",
+                "type": "string"
+            }
+        ],
+        "return": "Channeltopicentitylisting"
+    },
+    "POST /api/v2/notifications/channels/{channelId}/subscriptions": {
+        "functionName": "subscribe",
+        "signature": "subscribe(channelId, body)",
+        "parameters": [
+            {
+                "name": "channelId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]Channeltopic"
+            }
+        ],
+        "return": "Channeltopicentitylisting"
+    },
+    "PUT /api/v2/notifications/channels/{channelId}/subscriptions": {
+        "functionName": "update",
+        "signature": "update(channelId, body)",
+        "parameters": [
+            {
+                "name": "channelId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]Channeltopic"
+            }
+        ],
+        "return": "Channeltopicentitylisting"
+    }
+    
+}

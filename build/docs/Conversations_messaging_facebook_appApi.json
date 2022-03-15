@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/conversations/messaging/facebook/app": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Facebookappcredentials"
+    }
+    
+}

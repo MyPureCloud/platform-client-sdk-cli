@@ -1,0 +1,37 @@
+{
+    "GET /api/v2/users/{userId}/presences/{sourceId}": {
+        "functionName": "get",
+        "signature": "get(userId, sourceId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "sourceId",
+                "type": "string"
+            }
+        ],
+        "return": "Userpresence"
+    },
+    "PATCH /api/v2/users/{userId}/presences/{sourceId}": {
+        "functionName": "update",
+        "signature": "update(userId, sourceId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "sourceId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Userpresence"
+            }
+        ],
+        "return": "Userpresence"
+    }
+    
+}

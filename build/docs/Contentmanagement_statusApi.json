@@ -1,0 +1,39 @@
+{
+    "DELETE /api/v2/contentmanagement/status/{statusId}": {
+        "functionName": "delete",
+        "signature": "delete(statusId)",
+        "parameters": [
+            {
+                "name": "statusId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/contentmanagement/status/{statusId}": {
+        "functionName": "get",
+        "signature": "get(statusId)",
+        "parameters": [
+            {
+                "name": "statusId",
+                "type": "string"
+            }
+        ],
+        "return": "Commandstatus"
+    },
+    "GET /api/v2/contentmanagement/status": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

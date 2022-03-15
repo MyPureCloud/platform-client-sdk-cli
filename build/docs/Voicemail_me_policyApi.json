@@ -1,0 +1,20 @@
+{
+    "GET /api/v2/voicemail/me/policy": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Voicemailuserpolicy"
+    },
+    "PATCH /api/v2/voicemail/me/policy": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Voicemailuserpolicy"
+            }
+        ],
+        "return": "Voicemailuserpolicy"
+    }
+    
+}

@@ -37,6 +37,27 @@ type ConditionDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Condition
@@ -75,6 +96,34 @@ type Condition struct {
 
     // PropertyType - The type of the property associated with this Condition. Required for a contactPropertyCondition.
     PropertyType string `json:"propertyType"`
+
+
+    // DataAction - The Data Action to use for this condition. Required for a dataActionCondition.
+    DataAction Domainentityref `json:"dataAction"`
+
+
+    // DataNotFoundResolution - The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.
+    DataNotFoundResolution bool `json:"dataNotFoundResolution"`
+
+
+    // ContactIdField - The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.
+    ContactIdField string `json:"contactIdField"`
+
+
+    // CallAnalysisResultField - The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.
+    CallAnalysisResultField string `json:"callAnalysisResultField"`
+
+
+    // AgentWrapupField - The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.
+    AgentWrapupField string `json:"agentWrapupField"`
+
+
+    // ContactColumnToDataActionFieldMappings - A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.
+    ContactColumnToDataActionFieldMappings []Contactcolumntodataactionfieldmapping `json:"contactColumnToDataActionFieldMappings"`
+
+
+    // Predicates - A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.
+    Predicates []Dataactionconditionpredicate `json:"predicates"`
 
 }
 
@@ -117,6 +166,34 @@ func (o *Condition) String() string {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     o.ContactColumnToDataActionFieldMappings = []Contactcolumntodataactionfieldmapping{{}} 
+    
+    
+    
+     o.Predicates = []Dataactionconditionpredicate{{}} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -150,6 +227,20 @@ func (u *Condition) MarshalJSON() ([]byte, error) {
         Property string `json:"property"`
         
         PropertyType string `json:"propertyType"`
+        
+        DataAction Domainentityref `json:"dataAction"`
+        
+        DataNotFoundResolution bool `json:"dataNotFoundResolution"`
+        
+        ContactIdField string `json:"contactIdField"`
+        
+        CallAnalysisResultField string `json:"callAnalysisResultField"`
+        
+        AgentWrapupField string `json:"agentWrapupField"`
+        
+        ContactColumnToDataActionFieldMappings []Contactcolumntodataactionfieldmapping `json:"contactColumnToDataActionFieldMappings"`
+        
+        Predicates []Dataactionconditionpredicate `json:"predicates"`
         
         *Alias
     }{
@@ -189,6 +280,38 @@ func (u *Condition) MarshalJSON() ([]byte, error) {
 
         
 
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        ContactColumnToDataActionFieldMappings: []Contactcolumntodataactionfieldmapping{{}},
+        
+
+        
+
+        
+        Predicates: []Dataactionconditionpredicate{{}},
         
 
         

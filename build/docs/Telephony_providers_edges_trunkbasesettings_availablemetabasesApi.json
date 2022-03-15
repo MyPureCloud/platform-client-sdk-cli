@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases": {
+        "functionName": "list",
+        "signature": "list(varType, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "varType",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

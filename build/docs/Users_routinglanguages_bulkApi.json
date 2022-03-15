@@ -1,0 +1,18 @@
+{
+    "PATCH /api/v2/users/{userId}/routinglanguages/bulk": {
+        "functionName": "update",
+        "signature": "update(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]Userroutinglanguagepost"
+            }
+        ],
+        "return": "Userlanguageentitylisting"
+    }
+    
+}

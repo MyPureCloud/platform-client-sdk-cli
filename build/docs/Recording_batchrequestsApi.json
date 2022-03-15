@@ -1,0 +1,25 @@
+{
+    "POST /api/v2/recording/batchrequests": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Batchdownloadjobsubmission"
+            }
+        ],
+        "return": "Batchdownloadjobsubmissionresult"
+    },
+    "GET /api/v2/recording/batchrequests/{jobId}": {
+        "functionName": "get",
+        "signature": "get(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "string"
+            }
+        ],
+        "return": "Batchdownloadjobstatusresult"
+    }
+    
+}

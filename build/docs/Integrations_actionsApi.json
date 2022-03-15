@@ -1,0 +1,105 @@
+{
+    "POST /api/v2/integrations/actions": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Postactioninput"
+            }
+        ],
+        "return": "Action"
+    },
+    "DELETE /api/v2/integrations/actions/{actionId}": {
+        "functionName": "delete",
+        "signature": "delete(actionId)",
+        "parameters": [
+            {
+                "name": "actionId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/integrations/actions/{actionId}": {
+        "functionName": "get",
+        "signature": "get(actionId, expand, includeConfig)",
+        "parameters": [
+            {
+                "name": "actionId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "includeConfig",
+                "type": "bool"
+            }
+        ],
+        "return": "Action"
+    },
+    "GET /api/v2/integrations/actions": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, secure, includeAuthActions)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "category",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "secure",
+                "type": "string"
+            },
+            {
+                "name": "includeAuthActions",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/integrations/actions/{actionId}": {
+        "functionName": "update",
+        "signature": "update(actionId, body)",
+        "parameters": [
+            {
+                "name": "actionId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Updateactioninput"
+            }
+        ],
+        "return": "Action"
+    }
+    
+}

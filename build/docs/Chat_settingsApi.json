@@ -1,0 +1,31 @@
+{
+    "GET /api/v2/chat/settings": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Chatsettings"
+    },
+    "PATCH /api/v2/chat/settings": {
+        "functionName": "patch",
+        "signature": "patch(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Chatsettings"
+            }
+        ],
+        "return": "Chatsettings"
+    },
+    "PUT /api/v2/chat/settings": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Chatsettings"
+            }
+        ],
+        "return": "Chatsettings"
+    }
+    
+}

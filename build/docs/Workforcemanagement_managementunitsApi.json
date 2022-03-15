@@ -1,0 +1,81 @@
+{
+    "POST /api/v2/workforcemanagement/managementunits": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createmanagementunitapirequest"
+            }
+        ],
+        "return": "Managementunit"
+    },
+    "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}": {
+        "functionName": "delete",
+        "signature": "delete(managementUnitId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}": {
+        "functionName": "get",
+        "signature": "get(managementUnitId, expand)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Managementunit"
+    },
+    "GET /api/v2/workforcemanagement/managementunits": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, expand, feature, divisionId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "feature",
+                "type": "string"
+            },
+            {
+                "name": "divisionId",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}": {
+        "functionName": "update",
+        "signature": "update(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Updatemanagementunitrequest"
+            }
+        ],
+        "return": "Managementunit"
+    }
+    
+}

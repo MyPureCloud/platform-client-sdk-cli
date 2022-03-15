@@ -1,0 +1,29 @@
+{
+    "GET /api/v2/users/{userId}/greetings/defaults": {
+        "functionName": "list",
+        "signature": "list(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            }
+        ],
+        "return": "Defaultgreetinglist"
+    },
+    "PUT /api/v2/users/{userId}/greetings/defaults": {
+        "functionName": "update",
+        "signature": "update(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Defaultgreetinglist"
+            }
+        ],
+        "return": "Defaultgreetinglist"
+    }
+    
+}

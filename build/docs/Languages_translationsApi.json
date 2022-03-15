@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/languages/translations": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Availabletranslations"
+    }
+    
+}

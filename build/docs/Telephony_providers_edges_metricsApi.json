@@ -1,0 +1,25 @@
+{
+    "GET /api/v2/telephony/providers/edges/{edgeId}/metrics": {
+        "functionName": "get",
+        "signature": "get(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            }
+        ],
+        "return": "Edgemetrics"
+    },
+    "GET /api/v2/telephony/providers/edges/metrics": {
+        "functionName": "list",
+        "signature": "list(edgeIds)",
+        "parameters": [
+            {
+                "name": "edgeIds",
+                "type": "string"
+            }
+        ],
+        "return": "[]Edgemetrics"
+    }
+    
+}

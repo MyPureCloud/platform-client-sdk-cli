@@ -1,0 +1,68 @@
+{
+    "GET /api/v2/telephony/providers/edges/dids/{didId}": {
+        "functionName": "get",
+        "signature": "get(didId)",
+        "parameters": [
+            {
+                "name": "didId",
+                "type": "string"
+            }
+        ],
+        "return": "Did"
+    },
+    "GET /api/v2/telephony/providers/edges/dids": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId, id)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "phoneNumber",
+                "type": "string"
+            },
+            {
+                "name": "ownerId",
+                "type": "string"
+            },
+            {
+                "name": "didPoolId",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/dids/{didId}": {
+        "functionName": "update",
+        "signature": "update(didId, body)",
+        "parameters": [
+            {
+                "name": "didId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Did"
+            }
+        ],
+        "return": "Did"
+    }
+    
+}

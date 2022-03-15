@@ -1,0 +1,89 @@
+{
+    "POST /api/v2/outbound/contactlistfilters": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Contactlistfilter"
+            }
+        ],
+        "return": "Contactlistfilter"
+    },
+    "DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId}": {
+        "functionName": "delete",
+        "signature": "delete(contactListFilterId)",
+        "parameters": [
+            {
+                "name": "contactListFilterId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/contactlistfilters/{contactListFilterId}": {
+        "functionName": "get",
+        "signature": "get(contactListFilterId)",
+        "parameters": [
+            {
+                "name": "contactListFilterId",
+                "type": "string"
+            }
+        ],
+        "return": "Contactlistfilter"
+    },
+    "GET /api/v2/outbound/contactlistfilters": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "bool"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "contactListId",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/outbound/contactlistfilters/{contactListFilterId}": {
+        "functionName": "update",
+        "signature": "update(contactListFilterId, body)",
+        "parameters": [
+            {
+                "name": "contactListFilterId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Contactlistfilter"
+            }
+        ],
+        "return": "Contactlistfilter"
+    }
+    
+}

@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/telephony/providers/edges/availablelanguages": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Availablelanguagelist"
+    }
+    
+}

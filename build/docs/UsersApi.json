@@ -1,0 +1,102 @@
+{
+    "POST /api/v2/users": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createuser"
+            }
+        ],
+        "return": "User"
+    },
+    "DELETE /api/v2/users/{userId}": {
+        "functionName": "delete",
+        "signature": "delete(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            }
+        ],
+        "return": "Empty"
+    },
+    "GET /api/v2/users/{userId}": {
+        "functionName": "get",
+        "signature": "get(userId, expand, integrationPresenceSource, state)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "integrationPresenceSource",
+                "type": "string"
+            },
+            {
+                "name": "state",
+                "type": "string"
+            }
+        ],
+        "return": "User"
+    },
+    "GET /api/v2/users": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, state)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "jabberId",
+                "type": "[]string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "integrationPresenceSource",
+                "type": "string"
+            },
+            {
+                "name": "state",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/users/{userId}": {
+        "functionName": "update",
+        "signature": "update(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Updateuser"
+            }
+        ],
+        "return": "User"
+    }
+    
+}

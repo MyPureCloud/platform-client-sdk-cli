@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/analytics/conversations/details/jobs/availability": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Dataavailabilityresponse"
+    }
+    
+}

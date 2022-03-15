@@ -1,0 +1,55 @@
+{
+    "POST /api/v2/externalcontacts/relationships": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Relationship"
+            }
+        ],
+        "return": "Relationship"
+    },
+    "DELETE /api/v2/externalcontacts/relationships/{relationshipId}": {
+        "functionName": "delete",
+        "signature": "delete(relationshipId)",
+        "parameters": [
+            {
+                "name": "relationshipId",
+                "type": "string"
+            }
+        ],
+        "return": "Empty"
+    },
+    "GET /api/v2/externalcontacts/relationships/{relationshipId}": {
+        "functionName": "get",
+        "signature": "get(relationshipId, expand)",
+        "parameters": [
+            {
+                "name": "relationshipId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Relationship"
+    },
+    "PUT /api/v2/externalcontacts/relationships/{relationshipId}": {
+        "functionName": "update",
+        "signature": "update(relationshipId, body)",
+        "parameters": [
+            {
+                "name": "relationshipId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Relationship"
+            }
+        ],
+        "return": "Relationship"
+    }
+    
+}

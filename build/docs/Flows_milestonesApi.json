@@ -1,0 +1,94 @@
+{
+    "POST /api/v2/flows/milestones": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Flowmilestone"
+            }
+        ],
+        "return": "Flowmilestone"
+    },
+    "DELETE /api/v2/flows/milestones/{milestoneId}": {
+        "functionName": "delete",
+        "signature": "delete(milestoneId)",
+        "parameters": [
+            {
+                "name": "milestoneId",
+                "type": "string"
+            }
+        ],
+        "return": "Empty"
+    },
+    "GET /api/v2/flows/milestones/{milestoneId}": {
+        "functionName": "get",
+        "signature": "get(milestoneId)",
+        "parameters": [
+            {
+                "name": "milestoneId",
+                "type": "string"
+            }
+        ],
+        "return": "Flowmilestone"
+    },
+    "GET /api/v2/flows/milestones": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "description",
+                "type": "string"
+            },
+            {
+                "name": "nameOrDescription",
+                "type": "string"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/flows/milestones/{milestoneId}": {
+        "functionName": "update",
+        "signature": "update(milestoneId, body)",
+        "parameters": [
+            {
+                "name": "milestoneId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Flowmilestone"
+            }
+        ],
+        "return": "Flowmilestone"
+    }
+    
+}

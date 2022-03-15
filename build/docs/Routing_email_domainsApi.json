@@ -1,0 +1,56 @@
+{
+    "POST /api/v2/routing/email/domains": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Inbounddomain"
+            }
+        ],
+        "return": "Inbounddomain"
+    },
+    "DELETE /api/v2/routing/email/domains/{domainId}": {
+        "functionName": "delete",
+        "signature": "delete(domainId)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/routing/email/domains/{domainId}": {
+        "functionName": "get",
+        "signature": "get(domainId)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            }
+        ],
+        "return": "Inbounddomain"
+    },
+    "GET /api/v2/routing/email/domains": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/routing/email/domains/{domainId}": {
+        "functionName": "update",
+        "signature": "update(domainId, body)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Inbounddomainpatchrequest"
+            }
+        ],
+        "return": "Inbounddomain"
+    }
+    
+}

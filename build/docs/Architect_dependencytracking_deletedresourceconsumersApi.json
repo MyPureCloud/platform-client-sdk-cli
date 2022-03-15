@@ -1,0 +1,38 @@
+{
+    "GET /api/v2/architect/dependencytracking/deletedresourceconsumers": {
+        "functionName": "list",
+        "signature": "list(name, objectType, flowFilter, consumedResources, consumedResourceType, pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "objectType",
+                "type": "[]string"
+            },
+            {
+                "name": "flowFilter",
+                "type": "string"
+            },
+            {
+                "name": "consumedResources",
+                "type": "bool"
+            },
+            {
+                "name": "consumedResourceType",
+                "type": "[]string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

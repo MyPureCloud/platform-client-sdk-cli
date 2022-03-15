@@ -1,0 +1,22 @@
+{
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy": {
+        "functionName": "create",
+        "signature": "create(managementUnitId, workPlanId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "workPlanId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Copyworkplan"
+            }
+        ],
+        "return": "Workplan"
+    }
+    
+}

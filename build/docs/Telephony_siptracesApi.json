@@ -1,0 +1,34 @@
+{
+    "GET /api/v2/telephony/siptraces": {
+        "functionName": "get",
+        "signature": "get(dateStart, dateEnd, callId, toUser, fromUser, conversationId)",
+        "parameters": [
+            {
+                "name": "dateStart",
+                "type": "time.Time"
+            },
+            {
+                "name": "dateEnd",
+                "type": "time.Time"
+            },
+            {
+                "name": "callId",
+                "type": "string"
+            },
+            {
+                "name": "toUser",
+                "type": "string"
+            },
+            {
+                "name": "fromUser",
+                "type": "string"
+            },
+            {
+                "name": "conversationId",
+                "type": "string"
+            }
+        ],
+        "return": "Sipsearchresult"
+    }
+    
+}

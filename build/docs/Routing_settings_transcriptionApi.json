@@ -1,0 +1,20 @@
+{
+    "GET /api/v2/routing/settings/transcription": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Transcriptionsettings"
+    },
+    "PUT /api/v2/routing/settings/transcription": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Transcriptionsettings"
+            }
+        ],
+        "return": "Transcriptionsettings"
+    }
+    
+}

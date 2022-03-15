@@ -1,0 +1,18 @@
+{
+    "PATCH /api/v2/organizations/features/{featureName}": {
+        "functionName": "update",
+        "signature": "update(featureName, enabled)",
+        "parameters": [
+            {
+                "name": "featureName",
+                "type": "string"
+            },
+            {
+                "name": "enabled",
+                "type": "Featurestate"
+            }
+        ],
+        "return": "Organizationfeatures"
+    }
+    
+}

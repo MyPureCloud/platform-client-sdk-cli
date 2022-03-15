@@ -1,0 +1,48 @@
+{
+    "POST /api/v2/quality/publishedforms/evaluations": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Publishform"
+            }
+        ],
+        "return": "Evaluationform"
+    },
+    "GET /api/v2/quality/publishedforms/evaluations/{formId}": {
+        "functionName": "get",
+        "signature": "get(formId)",
+        "parameters": [
+            {
+                "name": "formId",
+                "type": "string"
+            }
+        ],
+        "return": "Evaluationform"
+    },
+    "GET /api/v2/quality/publishedforms/evaluations": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, name, onlyLatestPerContext)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "onlyLatestPerContext",
+                "type": "bool"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

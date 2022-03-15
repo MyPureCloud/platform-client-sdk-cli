@@ -1,0 +1,61 @@
+{
+    "POST /api/v2/integrations/actions/drafts": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Postactioninput"
+            }
+        ],
+        "return": "Action"
+    },
+    "GET /api/v2/integrations/actions/drafts": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, secure, includeAuthActions)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "category",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "secure",
+                "type": "string"
+            },
+            {
+                "name": "includeAuthActions",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

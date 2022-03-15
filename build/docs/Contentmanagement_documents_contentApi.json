@@ -1,0 +1,41 @@
+{
+    "POST /api/v2/contentmanagement/documents/{documentId}/content": {
+        "functionName": "create",
+        "signature": "create(documentId, body, override)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Replacerequest"
+            },
+            {
+                "name": "override",
+                "type": "bool"
+            }
+        ],
+        "return": "Replaceresponse"
+    },
+    "GET /api/v2/contentmanagement/documents/{documentId}/content": {
+        "functionName": "get",
+        "signature": "get(documentId, disposition, contentType)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "string"
+            },
+            {
+                "name": "disposition",
+                "type": "string"
+            },
+            {
+                "name": "contentType",
+                "type": "string"
+            }
+        ],
+        "return": "Downloadresponse"
+    }
+    
+}

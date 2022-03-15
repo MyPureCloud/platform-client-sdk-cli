@@ -1,0 +1,65 @@
+{
+    "GET /api/v2/outbound/contactlists/divisionviews/{contactListId}": {
+        "functionName": "get",
+        "signature": "get(contactListId, includeImportStatus, includeSize)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "string"
+            },
+            {
+                "name": "includeImportStatus",
+                "type": "bool"
+            },
+            {
+                "name": "includeSize",
+                "type": "bool"
+            }
+        ],
+        "return": "Contactlistdivisionview"
+    },
+    "GET /api/v2/outbound/contactlists/divisionviews": {
+        "functionName": "list",
+        "signature": "list(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "includeImportStatus",
+                "type": "bool"
+            },
+            {
+                "name": "includeSize",
+                "type": "bool"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

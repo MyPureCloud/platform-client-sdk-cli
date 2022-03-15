@@ -1,0 +1,93 @@
+{
+    "POST /api/v2/flows/datatables/{datatableId}/rows": {
+        "functionName": "create",
+        "signature": "create(datatableId, dataTableRow)",
+        "parameters": [
+            {
+                "name": "datatableId",
+                "type": "string"
+            },
+            {
+                "name": "dataTableRow",
+                "type": "interface{}"
+            }
+        ],
+        "return": "map[string]interface{}"
+    },
+    "DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}": {
+        "functionName": "delete",
+        "signature": "delete(datatableId, rowId)",
+        "parameters": [
+            {
+                "name": "datatableId",
+                "type": "string"
+            },
+            {
+                "name": "rowId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/flows/datatables/{datatableId}/rows/{rowId}": {
+        "functionName": "get",
+        "signature": "get(datatableId, rowId, showbrief)",
+        "parameters": [
+            {
+                "name": "datatableId",
+                "type": "string"
+            },
+            {
+                "name": "rowId",
+                "type": "string"
+            },
+            {
+                "name": "showbrief",
+                "type": "bool"
+            }
+        ],
+        "return": "map[string]interface{}"
+    },
+    "GET /api/v2/flows/datatables/{datatableId}/rows": {
+        "functionName": "list",
+        "signature": "list(datatableId, pageNumber, pageSize, showbrief)",
+        "parameters": [
+            {
+                "name": "datatableId",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "showbrief",
+                "type": "bool"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}": {
+        "functionName": "update",
+        "signature": "update(datatableId, rowId, body)",
+        "parameters": [
+            {
+                "name": "datatableId",
+                "type": "string"
+            },
+            {
+                "name": "rowId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "interface{}"
+            }
+        ],
+        "return": "map[string]interface{}"
+    }
+    
+}

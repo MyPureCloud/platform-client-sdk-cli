@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits": {
+        "functionName": "list",
+        "signature": "list(businessUnitId, feature, divisionId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "feature",
+                "type": "string"
+            },
+            {
+                "name": "divisionId",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

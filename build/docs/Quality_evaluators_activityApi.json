@@ -1,0 +1,54 @@
+{
+    "GET /api/v2/quality/evaluators/activity": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            },
+            {
+                "name": "startTime",
+                "type": "time.Time"
+            },
+            {
+                "name": "endTime",
+                "type": "time.Time"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "permission",
+                "type": "[]string"
+            },
+            {
+                "name": "group",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

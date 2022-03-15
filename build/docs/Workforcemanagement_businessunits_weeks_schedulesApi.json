@@ -1,0 +1,87 @@
+{
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules": {
+        "functionName": "create",
+        "signature": "create(businessUnitId, weekId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekId",
+                "type": "time.Time"
+            },
+            {
+                "name": "body",
+                "type": "Bucreateblankschedulerequest"
+            }
+        ],
+        "return": "Buschedulemetadata"
+    },
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}": {
+        "functionName": "delete",
+        "signature": "delete(businessUnitId, weekId, scheduleId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekId",
+                "type": "time.Time"
+            },
+            {
+                "name": "scheduleId",
+                "type": "string"
+            }
+        ],
+        "return": "Buasyncscheduleresponse"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}": {
+        "functionName": "get",
+        "signature": "get(businessUnitId, weekId, scheduleId, expand)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekId",
+                "type": "time.Time"
+            },
+            {
+                "name": "scheduleId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Buschedulemetadata"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules": {
+        "functionName": "list",
+        "signature": "list(businessUnitId, weekId, includeOnlyPublished, expand)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekId",
+                "type": "string"
+            },
+            {
+                "name": "includeOnlyPublished",
+                "type": "bool"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Buschedulelisting"
+    }
+    
+}

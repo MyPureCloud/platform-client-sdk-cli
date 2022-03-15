@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/outbound/sequences": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Campaignsequence"
+            }
+        ],
+        "return": "Campaignsequence"
+    },
+    "DELETE /api/v2/outbound/sequences/{sequenceId}": {
+        "functionName": "delete",
+        "signature": "delete(sequenceId)",
+        "parameters": [
+            {
+                "name": "sequenceId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/sequences/{sequenceId}": {
+        "functionName": "get",
+        "signature": "get(sequenceId)",
+        "parameters": [
+            {
+                "name": "sequenceId",
+                "type": "string"
+            }
+        ],
+        "return": "Campaignsequence"
+    },
+    "GET /api/v2/outbound/sequences": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "bool"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/outbound/sequences/{sequenceId}": {
+        "functionName": "update",
+        "signature": "update(sequenceId, body)",
+        "parameters": [
+            {
+                "name": "sequenceId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Campaignsequence"
+            }
+        ],
+        "return": "Campaignsequence"
+    }
+    
+}

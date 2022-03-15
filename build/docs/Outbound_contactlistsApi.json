@@ -1,0 +1,119 @@
+{
+    "POST /api/v2/outbound/contactlists": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Contactlist"
+            }
+        ],
+        "return": "Contactlist"
+    },
+    "DELETE /api/v2/outbound/contactlists/{contactListId}": {
+        "functionName": "delete",
+        "signature": "delete(contactListId)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "string"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/contactlists": {
+        "functionName": "deletecontactlists",
+        "signature": "deletecontactlists(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "[]string"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/contactlists/{contactListId}": {
+        "functionName": "get",
+        "signature": "get(contactListId, includeImportStatus, includeSize)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "string"
+            },
+            {
+                "name": "includeImportStatus",
+                "type": "bool"
+            },
+            {
+                "name": "includeSize",
+                "type": "bool"
+            }
+        ],
+        "return": "Contactlist"
+    },
+    "GET /api/v2/outbound/contactlists": {
+        "functionName": "list",
+        "signature": "list(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "includeImportStatus",
+                "type": "bool"
+            },
+            {
+                "name": "includeSize",
+                "type": "bool"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "bool"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/outbound/contactlists/{contactListId}": {
+        "functionName": "update",
+        "signature": "update(contactListId, body)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Contactlist"
+            }
+        ],
+        "return": "Contactlist"
+    }
+    
+}

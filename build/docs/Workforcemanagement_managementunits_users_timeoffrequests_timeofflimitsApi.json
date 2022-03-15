@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits": {
+        "functionName": "get",
+        "signature": "get(managementUnitId, userId, timeOffRequestId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "timeOffRequestId",
+                "type": "string"
+            }
+        ],
+        "return": "Querytimeofflimitvaluesresponse"
+    }
+    
+}

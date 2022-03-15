@@ -1,0 +1,13 @@
+{
+    "POST /api/v2/outbound/contactlists/{contactListId}/clear": {
+        "functionName": "create",
+        "signature": "create(contactListId)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "string"
+            }
+        ]
+    }
+    
+}

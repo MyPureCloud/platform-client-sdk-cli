@@ -1,0 +1,77 @@
+{
+    "POST /api/v2/architect/ivrs": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Ivr"
+            }
+        ],
+        "return": "Ivr"
+    },
+    "DELETE /api/v2/architect/ivrs/{ivrId}": {
+        "functionName": "delete",
+        "signature": "delete(ivrId)",
+        "parameters": [
+            {
+                "name": "ivrId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/architect/ivrs/{ivrId}": {
+        "functionName": "get",
+        "signature": "get(ivrId)",
+        "parameters": [
+            {
+                "name": "ivrId",
+                "type": "string"
+            }
+        ],
+        "return": "Ivr"
+    },
+    "GET /api/v2/architect/ivrs": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/architect/ivrs/{ivrId}": {
+        "functionName": "update",
+        "signature": "update(ivrId, body)",
+        "parameters": [
+            {
+                "name": "ivrId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Ivr"
+            }
+        ],
+        "return": "Ivr"
+    }
+    
+}

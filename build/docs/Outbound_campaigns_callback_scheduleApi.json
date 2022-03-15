@@ -1,0 +1,18 @@
+{
+    "POST /api/v2/outbound/campaigns/{campaignId}/callback/schedule": {
+        "functionName": "create",
+        "signature": "create(campaignId, body)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Contactcallbackrequest"
+            }
+        ],
+        "return": "Contactcallbackrequest"
+    }
+    
+}

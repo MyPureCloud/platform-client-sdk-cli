@@ -1,0 +1,38 @@
+{
+    "GET /api/v2/authorization/roles/{roleId}/subjectgrants": {
+        "functionName": "list",
+        "signature": "list(roleId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
+        "parameters": [
+            {
+                "name": "roleId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

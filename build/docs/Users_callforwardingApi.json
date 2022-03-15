@@ -1,0 +1,44 @@
+{
+    "GET /api/v2/users/{userId}/callforwarding": {
+        "functionName": "get",
+        "signature": "get(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            }
+        ],
+        "return": "Callforwarding"
+    },
+    "PATCH /api/v2/users/{userId}/callforwarding": {
+        "functionName": "patch",
+        "signature": "patch(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Callforwarding"
+            }
+        ],
+        "return": "Callforwarding"
+    },
+    "PUT /api/v2/users/{userId}/callforwarding": {
+        "functionName": "update",
+        "signature": "update(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Callforwarding"
+            }
+        ],
+        "return": "Callforwarding"
+    }
+    
+}

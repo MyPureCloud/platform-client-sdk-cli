@@ -1,0 +1,56 @@
+{
+    "POST /api/v2/oauth/clients": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Oauthclientrequest"
+            }
+        ],
+        "return": "Oauthclient"
+    },
+    "DELETE /api/v2/oauth/clients/{clientId}": {
+        "functionName": "delete",
+        "signature": "delete(clientId)",
+        "parameters": [
+            {
+                "name": "clientId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/oauth/clients/{clientId}": {
+        "functionName": "get",
+        "signature": "get(clientId)",
+        "parameters": [
+            {
+                "name": "clientId",
+                "type": "string"
+            }
+        ],
+        "return": "Oauthclient"
+    },
+    "GET /api/v2/oauth/clients": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/oauth/clients/{clientId}": {
+        "functionName": "update",
+        "signature": "update(clientId, body)",
+        "parameters": [
+            {
+                "name": "clientId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Oauthclientrequest"
+            }
+        ],
+        "return": "Oauthclient"
+    }
+    
+}

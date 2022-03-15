@@ -1,0 +1,46 @@
+{
+    "POST /api/v2/conversations/emails": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createemailrequest"
+            }
+        ],
+        "return": "Emailconversation"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}": {
+        "functionName": "get",
+        "signature": "get(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            }
+        ],
+        "return": "Emailconversation"
+    },
+    "GET /api/v2/conversations/emails": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/conversations/emails/{conversationId}": {
+        "functionName": "update",
+        "signature": "update(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Conversation"
+            }
+        ],
+        "return": "Conversation"
+    }
+    
+}

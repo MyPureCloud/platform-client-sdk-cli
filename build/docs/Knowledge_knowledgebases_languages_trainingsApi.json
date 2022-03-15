@@ -1,0 +1,72 @@
+{
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings": {
+        "functionName": "create",
+        "signature": "create(knowledgeBaseId, languageCode)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            }
+        ],
+        "return": "Knowledgetraining"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}": {
+        "functionName": "get",
+        "signature": "get(knowledgeBaseId, languageCode, trainingId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            },
+            {
+                "name": "trainingId",
+                "type": "string"
+            }
+        ],
+        "return": "Knowledgetraining"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings": {
+        "functionName": "list",
+        "signature": "list(knowledgeBaseId, languageCode, before, after, limit, pageSize, knowledgeDocumentsState)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            },
+            {
+                "name": "before",
+                "type": "string"
+            },
+            {
+                "name": "after",
+                "type": "string"
+            },
+            {
+                "name": "limit",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "string"
+            },
+            {
+                "name": "knowledgeDocumentsState",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

@@ -1,0 +1,29 @@
+{
+    "POST /api/v2/groups/search": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Groupsearchrequest"
+            }
+        ],
+        "return": "Groupssearchresponse"
+    },
+    "GET /api/v2/groups/search": {
+        "functionName": "list",
+        "signature": "list(q64, expand)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

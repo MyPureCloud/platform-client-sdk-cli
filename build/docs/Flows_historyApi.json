@@ -1,0 +1,49 @@
+{
+    "POST /api/v2/flows/{flowId}/history": {
+        "functionName": "create",
+        "signature": "create(flowId)",
+        "parameters": [
+            {
+                "name": "flowId",
+                "type": "string"
+            }
+        ],
+        "return": "Operation"
+    },
+    "GET /api/v2/flows/{flowId}/history/{historyId}": {
+        "functionName": "list",
+        "signature": "list(flowId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)",
+        "parameters": [
+            {
+                "name": "flowId",
+                "type": "string"
+            },
+            {
+                "name": "historyId",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "action",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

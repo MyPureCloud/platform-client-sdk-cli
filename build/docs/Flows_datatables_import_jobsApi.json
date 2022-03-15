@@ -1,0 +1,52 @@
+{
+    "POST /api/v2/flows/datatables/{datatableId}/import/jobs": {
+        "functionName": "create",
+        "signature": "create(datatableId, body)",
+        "parameters": [
+            {
+                "name": "datatableId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Datatableimportjob"
+            }
+        ],
+        "return": "Datatableimportjob"
+    },
+    "GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}": {
+        "functionName": "getstateinformation",
+        "signature": "getstateinformation(datatableId, importJobId)",
+        "parameters": [
+            {
+                "name": "datatableId",
+                "type": "string"
+            },
+            {
+                "name": "importJobId",
+                "type": "string"
+            }
+        ],
+        "return": "Datatableimportjob"
+    },
+    "GET /api/v2/flows/datatables/{datatableId}/import/jobs": {
+        "functionName": "list",
+        "signature": "list(datatableId, pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "datatableId",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

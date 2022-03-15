@@ -1,0 +1,59 @@
+{
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}": {
+        "functionName": "delete",
+        "signature": "delete(businessUnitId, weekDateId, forecastId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekDateId",
+                "type": "time.Time"
+            },
+            {
+                "name": "forecastId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}": {
+        "functionName": "get",
+        "signature": "get(businessUnitId, weekDateId, forecastId, expand)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekDateId",
+                "type": "time.Time"
+            },
+            {
+                "name": "forecastId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Bushorttermforecast"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts": {
+        "functionName": "list",
+        "signature": "list(businessUnitId, weekDateId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekDateId",
+                "type": "string"
+            }
+        ],
+        "return": "Bushorttermforecastlisting"
+    }
+    
+}

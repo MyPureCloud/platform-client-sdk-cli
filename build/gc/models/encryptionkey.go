@@ -30,6 +30,9 @@ type EncryptionkeyDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -59,12 +62,20 @@ type Encryptionkey struct {
     LocalEncryptionConfiguration Localencryptionconfiguration `json:"localEncryptionConfiguration"`
 
 
+    // KeyConfigurationType - Key type used in this configuration
+    KeyConfigurationType string `json:"keyConfigurationType"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Encryptionkey) String() string {
+    
+    
+    
+    
     
     
     
@@ -118,10 +129,16 @@ func (u *Encryptionkey) MarshalJSON() ([]byte, error) {
         
         LocalEncryptionConfiguration Localencryptionconfiguration `json:"localEncryptionConfiguration"`
         
+        KeyConfigurationType string `json:"keyConfigurationType"`
+        
         
         
         *Alias
     }{
+        
+
+        
+
         
 
         

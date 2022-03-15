@@ -1,0 +1,65 @@
+{
+    "POST /api/v2/greetings": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Greeting"
+            }
+        ],
+        "return": "Greeting"
+    },
+    "DELETE /api/v2/greetings/{greetingId}": {
+        "functionName": "delete",
+        "signature": "delete(greetingId)",
+        "parameters": [
+            {
+                "name": "greetingId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/greetings/{greetingId}": {
+        "functionName": "get",
+        "signature": "get(greetingId)",
+        "parameters": [
+            {
+                "name": "greetingId",
+                "type": "string"
+            }
+        ],
+        "return": "Greeting"
+    },
+    "GET /api/v2/greetings": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/greetings/{greetingId}": {
+        "functionName": "update",
+        "signature": "update(greetingId, body)",
+        "parameters": [
+            {
+                "name": "greetingId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Greeting"
+            }
+        ],
+        "return": "Greeting"
+    }
+    
+}

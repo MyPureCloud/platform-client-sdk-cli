@@ -1,0 +1,13 @@
+{
+    "POST /api/v2/recordings/screensessions/acknowledge": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Acknowledgescreenrecordingrequest"
+            }
+        ]
+    }
+    
+}

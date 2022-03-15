@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/workforcemanagement/businessunits/divisionviews": {
+        "functionName": "list",
+        "signature": "list(divisionId)",
+        "parameters": [
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            }
+        ],
+        "return": "Businessunitlisting"
+    }
+    
+}

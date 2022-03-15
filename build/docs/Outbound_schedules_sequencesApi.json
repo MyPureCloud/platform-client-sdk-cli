@@ -1,0 +1,45 @@
+{
+    "DELETE /api/v2/outbound/schedules/sequences/{sequenceId}": {
+        "functionName": "delete",
+        "signature": "delete(sequenceId)",
+        "parameters": [
+            {
+                "name": "sequenceId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/schedules/sequences/{sequenceId}": {
+        "functionName": "get",
+        "signature": "get(sequenceId)",
+        "parameters": [
+            {
+                "name": "sequenceId",
+                "type": "string"
+            }
+        ],
+        "return": "Sequenceschedule"
+    },
+    "GET /api/v2/outbound/schedules/sequences": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "[]Sequenceschedule"
+    },
+    "PUT /api/v2/outbound/schedules/sequences/{sequenceId}": {
+        "functionName": "update",
+        "signature": "update(sequenceId, body)",
+        "parameters": [
+            {
+                "name": "sequenceId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Sequenceschedule"
+            }
+        ],
+        "return": "Sequenceschedule"
+    }
+    
+}

@@ -1,0 +1,97 @@
+{
+    "POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations": {
+        "functionName": "create",
+        "signature": "create(conversationId, recordingId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "recordingId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Annotation"
+            }
+        ],
+        "return": "Annotation"
+    },
+    "DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}": {
+        "functionName": "delete",
+        "signature": "delete(conversationId, recordingId, annotationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "recordingId",
+                "type": "string"
+            },
+            {
+                "name": "annotationId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}": {
+        "functionName": "get",
+        "signature": "get(conversationId, recordingId, annotationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "recordingId",
+                "type": "string"
+            },
+            {
+                "name": "annotationId",
+                "type": "string"
+            }
+        ],
+        "return": "Annotation"
+    },
+    "GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations": {
+        "functionName": "list",
+        "signature": "list(conversationId, recordingId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "recordingId",
+                "type": "string"
+            }
+        ],
+        "return": "[]Annotation"
+    },
+    "PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}": {
+        "functionName": "update",
+        "signature": "update(conversationId, recordingId, annotationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "recordingId",
+                "type": "string"
+            },
+            {
+                "name": "annotationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Annotation"
+            }
+        ],
+        "return": "Annotation"
+    }
+    
+}

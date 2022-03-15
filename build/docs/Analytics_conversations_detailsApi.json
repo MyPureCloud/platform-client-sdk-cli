@@ -1,0 +1,25 @@
+{
+    "GET /api/v2/analytics/conversations/{conversationId}/details": {
+        "functionName": "get",
+        "signature": "get(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            }
+        ],
+        "return": "Analyticsconversationwithoutattributes"
+    },
+    "GET /api/v2/analytics/conversations/details": {
+        "functionName": "list",
+        "signature": "list(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "[]string"
+            }
+        ],
+        "return": "Analyticsconversationwithoutattributesmultigetresponse"
+    }
+    
+}

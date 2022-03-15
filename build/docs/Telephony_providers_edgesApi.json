@@ -1,0 +1,89 @@
+{
+    "POST /api/v2/telephony/providers/edges": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Edge"
+            }
+        ],
+        "return": "Edge"
+    },
+    "DELETE /api/v2/telephony/providers/edges/{edgeId}": {
+        "functionName": "delete",
+        "signature": "delete(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}": {
+        "functionName": "get",
+        "signature": "get(edgeId, expand)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Edge"
+    },
+    "GET /api/v2/telephony/providers/edges": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "siteId",
+                "type": "string"
+            },
+            {
+                "name": "edgeGroupId",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "managed",
+                "type": "bool"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/{edgeId}": {
+        "functionName": "update",
+        "signature": "update(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Edge"
+            }
+        ],
+        "return": "Edge"
+    }
+    
+}

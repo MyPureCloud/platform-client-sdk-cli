@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/conversations/calls/maximumconferenceparties": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Maxparticipants"
+    }
+    
+}

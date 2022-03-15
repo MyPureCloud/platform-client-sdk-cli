@@ -1,0 +1,20 @@
+{
+    "GET /api/v2/geolocations/settings": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Geolocationsettings"
+    },
+    "PATCH /api/v2/geolocations/settings": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Geolocationsettings"
+            }
+        ],
+        "return": "Geolocationsettings"
+    }
+    
+}

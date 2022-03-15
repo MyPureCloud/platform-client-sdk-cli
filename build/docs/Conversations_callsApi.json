@@ -1,0 +1,61 @@
+{
+    "POST /api/v2/conversations/calls": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createcallrequest"
+            }
+        ],
+        "return": "Createcallresponse"
+    },
+    "GET /api/v2/conversations/calls/{conversationId}": {
+        "functionName": "get",
+        "signature": "get(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            }
+        ],
+        "return": "Callconversation"
+    },
+    "GET /api/v2/conversations/calls": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}": {
+        "functionName": "placecallbackcall",
+        "signature": "placecallbackcall(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Callcommand"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/calls/{conversationId}": {
+        "functionName": "update",
+        "signature": "update(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Conversation"
+            }
+        ],
+        "return": "Conversation"
+    }
+    
+}

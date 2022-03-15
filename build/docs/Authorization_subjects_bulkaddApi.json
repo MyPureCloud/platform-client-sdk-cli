@@ -1,0 +1,21 @@
+{
+    "POST /api/v2/authorization/subjects/{subjectId}/bulkadd": {
+        "functionName": "create",
+        "signature": "create(subjectId, body, subjectType)",
+        "parameters": [
+            {
+                "name": "subjectId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Roledivisiongrants"
+            },
+            {
+                "name": "subjectType",
+                "type": "string"
+            }
+        ]
+    }
+    
+}

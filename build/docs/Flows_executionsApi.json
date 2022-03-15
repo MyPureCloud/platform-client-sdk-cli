@@ -1,0 +1,25 @@
+{
+    "POST /api/v2/flows/executions": {
+        "functionName": "create",
+        "signature": "create(flowLaunchRequest)",
+        "parameters": [
+            {
+                "name": "flowLaunchRequest",
+                "type": "Flowexecutionlaunchrequest"
+            }
+        ],
+        "return": "Flowexecutionlaunchresponse"
+    },
+    "GET /api/v2/flows/executions/{flowExecutionId}": {
+        "functionName": "get",
+        "signature": "get(flowExecutionId)",
+        "parameters": [
+            {
+                "name": "flowExecutionId",
+                "type": "string"
+            }
+        ],
+        "return": "Flowruntimeexecution"
+    }
+    
+}

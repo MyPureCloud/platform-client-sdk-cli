@@ -1,0 +1,84 @@
+{
+    "GET /api/v2/telephony/providers/edges/trunks/{trunkId}": {
+        "functionName": "get",
+        "signature": "get(trunkId)",
+        "parameters": [
+            {
+                "name": "trunkId",
+                "type": "string"
+            }
+        ],
+        "return": "Trunk"
+    },
+    "GET /api/v2/telephony/providers/edges/trunks": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortBy, sortOrder, edgeId, trunkBaseId, trunkType)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "trunkBaseId",
+                "type": "string"
+            },
+            {
+                "name": "trunkType",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/trunks": {
+        "functionName": "listedgetrunks",
+        "signature": "listedgetrunks(edgeId, pageNumber, pageSize, sortBy, sortOrder, trunkBaseId, trunkType)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "trunkBaseId",
+                "type": "string"
+            },
+            {
+                "name": "trunkType",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

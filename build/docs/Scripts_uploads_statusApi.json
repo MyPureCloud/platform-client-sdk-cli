@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/scripts/uploads/{uploadId}/status": {
+        "functionName": "get",
+        "signature": "get(uploadId, longPoll)",
+        "parameters": [
+            {
+                "name": "uploadId",
+                "type": "string"
+            },
+            {
+                "name": "longPoll",
+                "type": "bool"
+            }
+        ],
+        "return": "Importscriptstatusresponse"
+    }
+    
+}

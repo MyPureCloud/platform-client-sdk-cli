@@ -1,0 +1,20 @@
+{
+    "GET /api/v2/greetings/defaults": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Defaultgreetinglist"
+    },
+    "PUT /api/v2/greetings/defaults": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Defaultgreetinglist"
+            }
+        ],
+        "return": "Defaultgreetinglist"
+    }
+    
+}

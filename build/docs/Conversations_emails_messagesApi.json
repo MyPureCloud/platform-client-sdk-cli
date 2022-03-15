@@ -1,0 +1,44 @@
+{
+    "POST /api/v2/conversations/emails/{conversationId}/messages": {
+        "functionName": "create",
+        "signature": "create(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Emailmessage"
+            }
+        ],
+        "return": "Emailmessage"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/messages/{messageId}": {
+        "functionName": "get",
+        "signature": "get(conversationId, messageId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "messageId",
+                "type": "string"
+            }
+        ],
+        "return": "Emailmessage"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/messages": {
+        "functionName": "list",
+        "signature": "list(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

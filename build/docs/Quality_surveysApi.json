@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/quality/surveys/{surveyId}": {
+        "functionName": "get",
+        "signature": "get(surveyId)",
+        "parameters": [
+            {
+                "name": "surveyId",
+                "type": "string"
+            }
+        ],
+        "return": "Survey"
+    }
+    
+}

@@ -1,0 +1,67 @@
+{
+    "POST /api/v2/gamification/metrics": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createmetric"
+            }
+        ],
+        "return": "Metric"
+    },
+    "GET /api/v2/gamification/metrics/{metricId}": {
+        "functionName": "get",
+        "signature": "get(metricId, workday, performanceProfileId)",
+        "parameters": [
+            {
+                "name": "metricId",
+                "type": "string"
+            },
+            {
+                "name": "workday",
+                "type": "time.Time"
+            },
+            {
+                "name": "performanceProfileId",
+                "type": "string"
+            }
+        ],
+        "return": "Metric"
+    },
+    "GET /api/v2/gamification/metrics": {
+        "functionName": "list",
+        "signature": "list(performanceProfileId, workday)",
+        "parameters": [
+            {
+                "name": "performanceProfileId",
+                "type": "string"
+            },
+            {
+                "name": "workday",
+                "type": "time.Time"
+            }
+        ],
+        "return": "Getmetricsresponse"
+    },
+    "PUT /api/v2/gamification/metrics/{metricId}": {
+        "functionName": "update",
+        "signature": "update(metricId, body, performanceProfileId)",
+        "parameters": [
+            {
+                "name": "metricId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Createmetric"
+            },
+            {
+                "name": "performanceProfileId",
+                "type": "string"
+            }
+        ],
+        "return": "Metric"
+    }
+    
+}

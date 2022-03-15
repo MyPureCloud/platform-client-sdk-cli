@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails": {
+        "functionName": "list",
+        "signature": "list(profileId, workday)",
+        "parameters": [
+            {
+                "name": "profileId",
+                "type": "string"
+            },
+            {
+                "name": "workday",
+                "type": "time.Time"
+            }
+        ],
+        "return": "Getmetricsresponse"
+    }
+    
+}

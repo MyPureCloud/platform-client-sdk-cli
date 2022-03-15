@@ -1,0 +1,121 @@
+{
+    "POST /api/v2/learning/assignments": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Learningassignmentcreate"
+            }
+        ],
+        "return": "Learningassignment"
+    },
+    "DELETE /api/v2/learning/assignments/{assignmentId}": {
+        "functionName": "delete",
+        "signature": "delete(assignmentId)",
+        "parameters": [
+            {
+                "name": "assignmentId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/learning/assignments/{assignmentId}": {
+        "functionName": "get",
+        "signature": "get(assignmentId, expand)",
+        "parameters": [
+            {
+                "name": "assignmentId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Learningassignment"
+    },
+    "GET /api/v2/learning/assignments": {
+        "functionName": "list",
+        "signature": "list(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand)",
+        "parameters": [
+            {
+                "name": "moduleId",
+                "type": "string"
+            },
+            {
+                "name": "interval",
+                "type": "string"
+            },
+            {
+                "name": "completionInterval",
+                "type": "string"
+            },
+            {
+                "name": "overdue",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pass",
+                "type": "string"
+            },
+            {
+                "name": "minPercentageScore",
+                "type": "float32"
+            },
+            {
+                "name": "maxPercentageScore",
+                "type": "float32"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "userId",
+                "type": "[]string"
+            },
+            {
+                "name": "types",
+                "type": "[]string"
+            },
+            {
+                "name": "states",
+                "type": "[]string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/learning/assignments/{assignmentId}": {
+        "functionName": "update",
+        "signature": "update(assignmentId, body)",
+        "parameters": [
+            {
+                "name": "assignmentId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Learningassignmentupdate"
+            }
+        ],
+        "return": "Learningassignment"
+    }
+    
+}

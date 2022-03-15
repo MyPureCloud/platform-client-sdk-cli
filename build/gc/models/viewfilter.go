@@ -430,6 +430,15 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -992,6 +1001,18 @@ type Viewfilter struct {
 
     // IsAssessmentPassed - Filter to indicate if Agent passed assessment or not
     IsAssessmentPassed bool `json:"isAssessmentPassed"`
+
+
+    // ConversationInitiator - Indicates the Brand (Bot/User/Agent) or End User who initiated the first message in the conversation
+    ConversationInitiator string `json:"conversationInitiator"`
+
+
+    // HasCustomerParticipated - Indicates if the customer has participated in an initiated conversation
+    HasCustomerParticipated bool `json:"hasCustomerParticipated"`
+
+
+    // IsAcdInteraction - Filter to indicate if interaction was ACD or non-ACD
+    IsAcdInteraction bool `json:"isAcdInteraction"`
 
 }
 
@@ -1558,6 +1579,18 @@ func (o *Viewfilter) String() string {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1853,6 +1886,12 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         FlowMilestoneIds []string `json:"flowMilestoneIds"`
         
         IsAssessmentPassed bool `json:"isAssessmentPassed"`
+        
+        ConversationInitiator string `json:"conversationInitiator"`
+        
+        HasCustomerParticipated bool `json:"hasCustomerParticipated"`
+        
+        IsAcdInteraction bool `json:"isAcdInteraction"`
         
         *Alias
     }{
@@ -2620,6 +2659,18 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         FlowMilestoneIds: []string{""},
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
         
 
         

@@ -1,0 +1,37 @@
+{
+    "POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media": {
+        "functionName": "create",
+        "signature": "create(conversationId, communicationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "communicationId",
+                "type": "string"
+            }
+        ],
+        "return": "Messagemediadata"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}": {
+        "functionName": "get",
+        "signature": "get(conversationId, communicationId, mediaId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "communicationId",
+                "type": "string"
+            },
+            {
+                "name": "mediaId",
+                "type": "string"
+            }
+        ],
+        "return": "Messagemediadata"
+    }
+    
+}

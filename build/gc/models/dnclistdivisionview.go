@@ -29,6 +29,9 @@ type DnclistdivisionviewDud struct {
     DncSourceType string `json:"dncSourceType"`
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -55,12 +58,20 @@ type Dnclistdivisionview struct {
     
 
 
+    // ContactMethod - The contact method. Required if dncSourceType is rds.
+    ContactMethod string `json:"contactMethod"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Dnclistdivisionview) String() string {
+    
+    
+    
+    
     
     
     
@@ -108,10 +119,16 @@ func (u *Dnclistdivisionview) MarshalJSON() ([]byte, error) {
         
         
         
+        ContactMethod string `json:"contactMethod"`
+        
         
         
         *Alias
     }{
+        
+
+        
+
         
 
         

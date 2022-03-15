@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/workforcemanagement/historicaldata/importstatus": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Historicalimportstatuslisting"
+    }
+    
+}

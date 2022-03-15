@@ -1,0 +1,34 @@
+{
+    "GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents": {
+        "functionName": "list",
+        "signature": "list(workspaceId, expand, pageSize, pageNumber, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "workspaceId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

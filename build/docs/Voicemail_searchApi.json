@@ -1,0 +1,29 @@
+{
+    "POST /api/v2/voicemail/search": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Voicemailsearchrequest"
+            }
+        ],
+        "return": "Voicemailssearchresponse"
+    },
+    "GET /api/v2/voicemail/search": {
+        "functionName": "list",
+        "signature": "list(q64, expand)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

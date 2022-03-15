@@ -1,0 +1,49 @@
+{
+    "GET /api/v2/outbound/campaigns/divisionviews/{campaignId}": {
+        "functionName": "get",
+        "signature": "get(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "string"
+            }
+        ],
+        "return": "Campaigndivisionview"
+    },
+    "GET /api/v2/outbound/campaigns/divisionviews": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

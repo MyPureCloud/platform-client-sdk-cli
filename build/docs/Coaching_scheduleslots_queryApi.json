@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/coaching/scheduleslots/query": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Coachingslotsrequest"
+            }
+        ],
+        "return": "Coachingslotsresponse"
+    }
+    
+}

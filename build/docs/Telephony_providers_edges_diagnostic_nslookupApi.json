@@ -1,0 +1,29 @@
+{
+    "POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup": {
+        "functionName": "create",
+        "signature": "create(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Edgenetworkdiagnosticrequest"
+            }
+        ],
+        "return": "Edgenetworkdiagnostic"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup": {
+        "functionName": "get",
+        "signature": "get(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            }
+        ],
+        "return": "Edgenetworkdiagnosticresponse"
+    }
+    
+}

@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/authorization/subjects/rolecounts": {
+        "functionName": "get",
+        "signature": "get(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "[]string"
+            }
+        ],
+        "return": "map[string]interface{}"
+    }
+    
+}

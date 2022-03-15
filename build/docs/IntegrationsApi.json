@@ -1,0 +1,130 @@
+{
+    "POST /api/v2/integrations": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createintegrationrequest"
+            }
+        ],
+        "return": "Integration"
+    },
+    "DELETE /api/v2/integrations/{integrationId}": {
+        "functionName": "delete",
+        "signature": "delete(integrationId)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "string"
+            }
+        ],
+        "return": "Integration"
+    },
+    "GET /api/v2/integrations/{integrationId}": {
+        "functionName": "get",
+        "signature": "get(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            }
+        ],
+        "return": "Integration"
+    },
+    "GET /api/v2/integrations": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/integrations/{integrationId}": {
+        "functionName": "update",
+        "signature": "update(integrationId, body, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Integration"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            }
+        ],
+        "return": "Integration"
+    }
+    
+}

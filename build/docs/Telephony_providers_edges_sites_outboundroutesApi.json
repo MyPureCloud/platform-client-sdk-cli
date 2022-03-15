@@ -1,0 +1,97 @@
+{
+    "POST /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes": {
+        "functionName": "create",
+        "signature": "create(siteId, body)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Outboundroutebase"
+            }
+        ],
+        "return": "Outboundroutebase"
+    },
+    "DELETE /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}": {
+        "functionName": "delete",
+        "signature": "delete(siteId, outboundRouteId)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "string"
+            },
+            {
+                "name": "outboundRouteId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}": {
+        "functionName": "get",
+        "signature": "get(siteId, outboundRouteId)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "string"
+            },
+            {
+                "name": "outboundRouteId",
+                "type": "string"
+            }
+        ],
+        "return": "Outboundroutebase"
+    },
+    "GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes": {
+        "functionName": "list",
+        "signature": "list(siteId, pageSize, pageNumber, name, externalTrunkBasesIds, sortBy)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "externalTrunkBasesIds",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}": {
+        "functionName": "update",
+        "signature": "update(siteId, outboundRouteId, body)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "string"
+            },
+            {
+                "name": "outboundRouteId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Outboundroutebase"
+            }
+        ],
+        "return": "Outboundroutebase"
+    }
+    
+}

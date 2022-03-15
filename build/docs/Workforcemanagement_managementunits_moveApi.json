@@ -1,0 +1,18 @@
+{
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move": {
+        "functionName": "create",
+        "signature": "create(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Movemanagementunitrequest"
+            }
+        ],
+        "return": "Movemanagementunitresponse"
+    }
+    
+}

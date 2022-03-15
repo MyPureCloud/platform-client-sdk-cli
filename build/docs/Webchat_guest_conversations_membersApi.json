@@ -1,0 +1,55 @@
+{
+    "DELETE /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}": {
+        "functionName": "delete",
+        "signature": "delete(conversationId, memberId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "memberId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}": {
+        "functionName": "get",
+        "signature": "get(conversationId, memberId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "memberId",
+                "type": "string"
+            }
+        ],
+        "return": "Webchatmemberinfo"
+    },
+    "GET /api/v2/webchat/guest/conversations/{conversationId}/members": {
+        "functionName": "list",
+        "signature": "list(conversationId, pageSize, pageNumber, excludeDisconnectedMembers)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "excludeDisconnectedMembers",
+                "type": "bool"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

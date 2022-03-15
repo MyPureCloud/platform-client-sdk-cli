@@ -1,0 +1,18 @@
+{
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery": {
+        "functionName": "create",
+        "signature": "create(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Wfmhistoricaladherencequery"
+            }
+        ],
+        "return": "Wfmhistoricaladherenceresponse"
+    }
+    
+}

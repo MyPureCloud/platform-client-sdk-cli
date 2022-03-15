@@ -1,0 +1,29 @@
+{
+    "GET /api/v2/users/{userId}/routingstatus": {
+        "functionName": "get",
+        "signature": "get(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            }
+        ],
+        "return": "Routingstatus"
+    },
+    "PUT /api/v2/users/{userId}/routingstatus": {
+        "functionName": "update",
+        "signature": "update(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Routingstatus"
+            }
+        ],
+        "return": "Routingstatus"
+    }
+    
+}

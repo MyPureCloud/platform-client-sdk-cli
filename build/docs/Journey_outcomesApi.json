@@ -1,0 +1,81 @@
+{
+    "POST /api/v2/journey/outcomes": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Outcome"
+            }
+        ],
+        "return": "Outcome"
+    },
+    "DELETE /api/v2/journey/outcomes/{outcomeId}": {
+        "functionName": "delete",
+        "signature": "delete(outcomeId)",
+        "parameters": [
+            {
+                "name": "outcomeId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/journey/outcomes/{outcomeId}": {
+        "functionName": "get",
+        "signature": "get(outcomeId)",
+        "parameters": [
+            {
+                "name": "outcomeId",
+                "type": "string"
+            }
+        ],
+        "return": "Outcome"
+    },
+    "GET /api/v2/journey/outcomes": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "outcomeIds",
+                "type": "[]string"
+            },
+            {
+                "name": "queryFields",
+                "type": "[]string"
+            },
+            {
+                "name": "queryValue",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/journey/outcomes/{outcomeId}": {
+        "functionName": "update",
+        "signature": "update(outcomeId, body)",
+        "parameters": [
+            {
+                "name": "outcomeId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Patchoutcome"
+            }
+        ],
+        "return": "Outcome"
+    }
+    
+}

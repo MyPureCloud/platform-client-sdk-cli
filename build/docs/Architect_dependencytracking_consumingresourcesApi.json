@@ -1,0 +1,38 @@
+{
+    "GET /api/v2/architect/dependencytracking/consumingresources": {
+        "functionName": "list",
+        "signature": "list(id, objectType, resourceType, version, pageNumber, pageSize, flowFilter)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "string"
+            },
+            {
+                "name": "objectType",
+                "type": "string"
+            },
+            {
+                "name": "resourceType",
+                "type": "[]string"
+            },
+            {
+                "name": "version",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "flowFilter",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

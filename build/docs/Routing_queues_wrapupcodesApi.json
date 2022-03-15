@@ -1,0 +1,51 @@
+{
+    "POST /api/v2/routing/queues/{queueId}/wrapupcodes": {
+        "functionName": "create",
+        "signature": "create(queueId, body)",
+        "parameters": [
+            {
+                "name": "queueId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]Wrapupcodereference"
+            }
+        ],
+        "return": "[]Wrapupcode"
+    },
+    "DELETE /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}": {
+        "functionName": "delete",
+        "signature": "delete(queueId, codeId)",
+        "parameters": [
+            {
+                "name": "queueId",
+                "type": "string"
+            },
+            {
+                "name": "codeId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/routing/queues/{queueId}/wrapupcodes": {
+        "functionName": "list",
+        "signature": "list(queueId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "queueId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

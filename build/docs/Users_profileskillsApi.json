@@ -1,0 +1,29 @@
+{
+    "GET /api/v2/users/{userId}/profileskills": {
+        "functionName": "list",
+        "signature": "list(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            }
+        ],
+        "return": "[]string"
+    },
+    "PUT /api/v2/users/{userId}/profileskills": {
+        "functionName": "update",
+        "signature": "update(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]string"
+            }
+        ],
+        "return": "[]string"
+    }
+    
+}

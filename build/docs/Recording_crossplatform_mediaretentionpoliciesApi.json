@@ -1,0 +1,122 @@
+{
+    "POST /api/v2/recording/crossplatform/mediaretentionpolicies": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Crossplatformpolicycreate"
+            }
+        ],
+        "return": "Crossplatformpolicy"
+    },
+    "DELETE /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}": {
+        "functionName": "delete",
+        "signature": "delete(policyId)",
+        "parameters": [
+            {
+                "name": "policyId",
+                "type": "string"
+            }
+        ]
+    },
+    "DELETE /api/v2/recording/crossplatform/mediaretentionpolicies": {
+        "functionName": "deletepolicies",
+        "signature": "deletepolicies(ids)",
+        "parameters": [
+            {
+                "name": "ids",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}": {
+        "functionName": "get",
+        "signature": "get(policyId)",
+        "parameters": [
+            {
+                "name": "policyId",
+                "type": "string"
+            }
+        ],
+        "return": "Crossplatformpolicy"
+    },
+    "GET /api/v2/recording/crossplatform/mediaretentionpolicies": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "enabled",
+                "type": "bool"
+            },
+            {
+                "name": "summary",
+                "type": "bool"
+            },
+            {
+                "name": "hasErrors",
+                "type": "bool"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}": {
+        "functionName": "patch",
+        "signature": "patch(policyId, body)",
+        "parameters": [
+            {
+                "name": "policyId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Crossplatformpolicyupdate"
+            }
+        ],
+        "return": "Crossplatformpolicy"
+    },
+    "PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}": {
+        "functionName": "update",
+        "signature": "update(policyId, body)",
+        "parameters": [
+            {
+                "name": "policyId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Crossplatformpolicy"
+            }
+        ],
+        "return": "Crossplatformpolicy"
+    }
+    
+}

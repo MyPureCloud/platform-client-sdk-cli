@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/externalcontacts/scan/organizations": {
+        "functionName": "list",
+        "signature": "list(limit, cursor)",
+        "parameters": [
+            {
+                "name": "limit",
+                "type": "int"
+            },
+            {
+                "name": "cursor",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

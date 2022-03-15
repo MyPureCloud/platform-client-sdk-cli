@@ -1,0 +1,29 @@
+{
+    "GET /api/v2/conversations/emails/{conversationId}/messages/draft": {
+        "functionName": "get",
+        "signature": "get(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            }
+        ],
+        "return": "Emailmessage"
+    },
+    "PUT /api/v2/conversations/emails/{conversationId}/messages/draft": {
+        "functionName": "update",
+        "signature": "update(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Emailmessage"
+            }
+        ],
+        "return": "Emailmessage"
+    }
+    
+}

@@ -1,0 +1,37 @@
+{
+    "GET /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}": {
+        "functionName": "get",
+        "signature": "get(minerId, intentId, expand)",
+        "parameters": [
+            {
+                "name": "minerId",
+                "type": "string"
+            },
+            {
+                "name": "intentId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Minerintent"
+    },
+    "GET /api/v2/languageunderstanding/miners/{minerId}/intents": {
+        "functionName": "list",
+        "signature": "list(minerId, expand)",
+        "parameters": [
+            {
+                "name": "minerId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

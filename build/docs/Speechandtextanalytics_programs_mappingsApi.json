@@ -1,0 +1,44 @@
+{
+    "GET /api/v2/speechandtextanalytics/programs/{programId}/mappings": {
+        "functionName": "get",
+        "signature": "get(programId)",
+        "parameters": [
+            {
+                "name": "programId",
+                "type": "string"
+            }
+        ],
+        "return": "Programmappings"
+    },
+    "GET /api/v2/speechandtextanalytics/programs/mappings": {
+        "functionName": "list",
+        "signature": "list(nextPage, pageSize)",
+        "parameters": [
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/speechandtextanalytics/programs/{programId}/mappings": {
+        "functionName": "update",
+        "signature": "update(programId, body)",
+        "parameters": [
+            {
+                "name": "programId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Programmappingsrequest"
+            }
+        ],
+        "return": "Programmappings"
+    }
+    
+}

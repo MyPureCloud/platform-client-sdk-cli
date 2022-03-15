@@ -1,0 +1,77 @@
+{
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes": {
+        "functionName": "create",
+        "signature": "create(businessUnitId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Createactivitycoderequest"
+            }
+        ],
+        "return": "Businessunitactivitycode"
+    },
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}": {
+        "functionName": "delete",
+        "signature": "delete(businessUnitId, activityCodeId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "activityCodeId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}": {
+        "functionName": "get",
+        "signature": "get(businessUnitId, activityCodeId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "activityCodeId",
+                "type": "string"
+            }
+        ],
+        "return": "Businessunitactivitycode"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes": {
+        "functionName": "list",
+        "signature": "list(businessUnitId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            }
+        ],
+        "return": "Businessunitactivitycodelisting"
+    },
+    "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}": {
+        "functionName": "update",
+        "signature": "update(businessUnitId, activityCodeId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "activityCodeId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Updateactivitycoderequest"
+            }
+        ],
+        "return": "Businessunitactivitycode"
+    }
+    
+}

@@ -1,0 +1,102 @@
+{
+    "POST /api/v2/coaching/appointments": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createcoachingappointmentrequest"
+            }
+        ],
+        "return": "Coachingappointmentresponse"
+    },
+    "DELETE /api/v2/coaching/appointments/{appointmentId}": {
+        "functionName": "delete",
+        "signature": "delete(appointmentId)",
+        "parameters": [
+            {
+                "name": "appointmentId",
+                "type": "string"
+            }
+        ],
+        "return": "Coachingappointmentreference"
+    },
+    "GET /api/v2/coaching/appointments/{appointmentId}": {
+        "functionName": "get",
+        "signature": "get(appointmentId)",
+        "parameters": [
+            {
+                "name": "appointmentId",
+                "type": "string"
+            }
+        ],
+        "return": "Coachingappointmentresponse"
+    },
+    "GET /api/v2/coaching/appointments": {
+        "functionName": "list",
+        "signature": "list(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)",
+        "parameters": [
+            {
+                "name": "userIds",
+                "type": "[]string"
+            },
+            {
+                "name": "interval",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "statuses",
+                "type": "[]string"
+            },
+            {
+                "name": "facilitatorIds",
+                "type": "[]string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "relationships",
+                "type": "[]string"
+            },
+            {
+                "name": "completionInterval",
+                "type": "string"
+            },
+            {
+                "name": "overdue",
+                "type": "string"
+            },
+            {
+                "name": "intervalCondition",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/coaching/appointments/{appointmentId}": {
+        "functionName": "update",
+        "signature": "update(appointmentId, body)",
+        "parameters": [
+            {
+                "name": "appointmentId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Updatecoachingappointmentrequest"
+            }
+        ],
+        "return": "Coachingappointmentresponse"
+    }
+    
+}

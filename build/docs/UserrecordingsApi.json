@@ -1,0 +1,66 @@
+{
+    "DELETE /api/v2/userrecordings/{recordingId}": {
+        "functionName": "delete",
+        "signature": "delete(recordingId)",
+        "parameters": [
+            {
+                "name": "recordingId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/userrecordings/{recordingId}": {
+        "functionName": "get",
+        "signature": "get(recordingId, expand)",
+        "parameters": [
+            {
+                "name": "recordingId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Userrecording"
+    },
+    "GET /api/v2/userrecordings": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, expand)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/userrecordings/{recordingId}": {
+        "functionName": "update",
+        "signature": "update(recordingId, body, expand)",
+        "parameters": [
+            {
+                "name": "recordingId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Userrecording"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Userrecording"
+    }
+    
+}

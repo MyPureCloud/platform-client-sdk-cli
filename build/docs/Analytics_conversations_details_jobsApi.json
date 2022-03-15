@@ -1,0 +1,35 @@
+{
+    "POST /api/v2/analytics/conversations/details/jobs": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Asyncconversationquery"
+            }
+        ],
+        "return": "Asyncqueryresponse"
+    },
+    "DELETE /api/v2/analytics/conversations/details/jobs/{jobId}": {
+        "functionName": "delete",
+        "signature": "delete(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/analytics/conversations/details/jobs/{jobId}": {
+        "functionName": "get",
+        "signature": "get(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "string"
+            }
+        ],
+        "return": "Asyncquerystatus"
+    }
+    
+}

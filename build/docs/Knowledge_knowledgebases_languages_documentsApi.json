@@ -1,0 +1,153 @@
+{
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents": {
+        "functionName": "create",
+        "signature": "create(knowledgeBaseId, languageCode, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Knowledgedocumentrequest"
+            }
+        ],
+        "return": "Knowledgedocument"
+    },
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}": {
+        "functionName": "delete",
+        "signature": "delete(documentId, knowledgeBaseId, languageCode)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "string"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            }
+        ],
+        "return": "Knowledgedocument"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}": {
+        "functionName": "get",
+        "signature": "get(documentId, knowledgeBaseId, languageCode)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "string"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            }
+        ],
+        "return": "Knowledgedocument"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents": {
+        "functionName": "list",
+        "signature": "list(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            },
+            {
+                "name": "before",
+                "type": "string"
+            },
+            {
+                "name": "after",
+                "type": "string"
+            },
+            {
+                "name": "limit",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "string"
+            },
+            {
+                "name": "categories",
+                "type": "string"
+            },
+            {
+                "name": "title",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "documentIds",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}": {
+        "functionName": "update",
+        "signature": "update(documentId, knowledgeBaseId, languageCode, body)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "string"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Knowledgedocumentrequest"
+            }
+        ],
+        "return": "Knowledgedocument"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents": {
+        "functionName": "updatecollection",
+        "signature": "updatecollection(knowledgeBaseId, languageCode, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]Knowledgedocumentbulkrequest"
+            }
+        ],
+        "return": "Documentlisting"
+    }
+    
+}

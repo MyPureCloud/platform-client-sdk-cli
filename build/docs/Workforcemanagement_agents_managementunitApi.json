@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/workforcemanagement/agents/{agentId}/managementunit": {
+        "functionName": "get",
+        "signature": "get(agentId)",
+        "parameters": [
+            {
+                "name": "agentId",
+                "type": "string"
+            }
+        ],
+        "return": "Agentmanagementunitreference"
+    }
+    
+}

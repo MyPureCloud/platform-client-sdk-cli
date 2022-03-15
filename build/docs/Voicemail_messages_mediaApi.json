@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/voicemail/messages/{messageId}/media": {
+        "functionName": "get",
+        "signature": "get(messageId, formatId)",
+        "parameters": [
+            {
+                "name": "messageId",
+                "type": "string"
+            },
+            {
+                "name": "formatId",
+                "type": "string"
+            }
+        ],
+        "return": "Voicemailmediainfo"
+    }
+    
+}

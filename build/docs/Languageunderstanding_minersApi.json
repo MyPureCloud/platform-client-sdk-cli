@@ -1,0 +1,41 @@
+{
+    "POST /api/v2/languageunderstanding/miners": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Miner"
+            }
+        ],
+        "return": "Miner"
+    },
+    "DELETE /api/v2/languageunderstanding/miners/{minerId}": {
+        "functionName": "delete",
+        "signature": "delete(minerId)",
+        "parameters": [
+            {
+                "name": "minerId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/languageunderstanding/miners/{minerId}": {
+        "functionName": "get",
+        "signature": "get(minerId)",
+        "parameters": [
+            {
+                "name": "minerId",
+                "type": "string"
+            }
+        ],
+        "return": "Miner"
+    },
+    "GET /api/v2/languageunderstanding/miners": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    }
+    
+}

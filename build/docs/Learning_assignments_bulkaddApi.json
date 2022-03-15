@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/learning/assignments/bulkadd": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "[]Learningassignmentitem"
+            }
+        ],
+        "return": "Learningassignmentbulkaddresponse"
+    }
+    
+}

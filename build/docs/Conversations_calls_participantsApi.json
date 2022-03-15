@@ -1,0 +1,36 @@
+{
+    "POST /api/v2/conversations/calls/{conversationId}/participants": {
+        "functionName": "create",
+        "signature": "create(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Conversation"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}": {
+        "functionName": "update",
+        "signature": "update(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "participantId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Mediaparticipantrequest"
+            }
+        ]
+    }
+    
+}

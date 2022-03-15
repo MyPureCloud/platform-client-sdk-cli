@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/quality/forms/surveys/bulk": {
+        "functionName": "list",
+        "signature": "list(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

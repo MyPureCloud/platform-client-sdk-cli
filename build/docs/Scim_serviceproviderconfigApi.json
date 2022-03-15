@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/scim/serviceproviderconfig": {
+        "functionName": "get",
+        "signature": "get(ifNoneMatch)",
+        "parameters": [
+            {
+                "name": "ifNoneMatch",
+                "type": "string"
+            }
+        ],
+        "return": "Scimserviceproviderconfig"
+    }
+    
+}

@@ -1,0 +1,20 @@
+{
+    "GET /api/v2/conversations/messaging/threadingtimeline": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Conversationthreadingwindow"
+    },
+    "PUT /api/v2/conversations/messaging/threadingtimeline": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Conversationthreadingwindow"
+            }
+        ],
+        "return": "Conversationthreadingwindow"
+    }
+    
+}

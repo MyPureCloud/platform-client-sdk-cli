@@ -1,0 +1,19 @@
+{
+    "DELETE /api/v2/tokens/me": {
+        "functionName": "delete",
+        "signature": "delete()"
+        
+    },
+    "GET /api/v2/tokens/me": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Tokeninfo"
+    },
+    "HEAD /api/v2/tokens/me": {
+        "functionName": "head",
+        "signature": "head()"
+        
+    }
+    
+}

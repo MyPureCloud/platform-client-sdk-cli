@@ -1,0 +1,22 @@
+{
+    "POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query": {
+        "functionName": "create",
+        "signature": "create(workspaceId, body, expand)",
+        "parameters": [
+            {
+                "name": "workspaceId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Tagqueryrequest"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Tagvalueentitylisting"
+    }
+    
+}

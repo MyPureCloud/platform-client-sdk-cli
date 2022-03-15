@@ -1,0 +1,13 @@
+{
+    "POST /api/v2/telephony/providers/edges/sites/{siteId}/rebalance": {
+        "functionName": "create",
+        "signature": "create(siteId)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "string"
+            }
+        ]
+    }
+    
+}

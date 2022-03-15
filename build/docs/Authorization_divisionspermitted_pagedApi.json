@@ -1,0 +1,26 @@
+{
+    "GET /api/v2/authorization/divisionspermitted/paged/{subjectId}": {
+        "functionName": "list",
+        "signature": "list(subjectId, permission, pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "subjectId",
+                "type": "string"
+            },
+            {
+                "name": "permission",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/certificate/details": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Certificate"
+            }
+        ],
+        "return": "Parsedcertificate"
+    }
+    
+}

@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/architect/schedulegroups": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Schedulegroup"
+            }
+        ],
+        "return": "Schedulegroup"
+    },
+    "DELETE /api/v2/architect/schedulegroups/{scheduleGroupId}": {
+        "functionName": "delete",
+        "signature": "delete(scheduleGroupId)",
+        "parameters": [
+            {
+                "name": "scheduleGroupId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/architect/schedulegroups/{scheduleGroupId}": {
+        "functionName": "get",
+        "signature": "get(scheduleGroupId)",
+        "parameters": [
+            {
+                "name": "scheduleGroupId",
+                "type": "string"
+            }
+        ],
+        "return": "Schedulegroup"
+    },
+    "GET /api/v2/architect/schedulegroups": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds, divisionId)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "scheduleIds",
+                "type": "string"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/architect/schedulegroups/{scheduleGroupId}": {
+        "functionName": "update",
+        "signature": "update(scheduleGroupId, body)",
+        "parameters": [
+            {
+                "name": "scheduleGroupId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Schedulegroup"
+            }
+        ],
+        "return": "Schedulegroup"
+    }
+    
+}

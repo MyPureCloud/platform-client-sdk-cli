@@ -1,0 +1,60 @@
+{
+    "POST /api/v2/groups/{groupId}/members": {
+        "functionName": "add",
+        "signature": "add(groupId, body)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Groupmembersupdate"
+            }
+        ],
+        "return": "Empty"
+    },
+    "DELETE /api/v2/groups/{groupId}/members": {
+        "functionName": "delete",
+        "signature": "delete(groupId, ids)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            },
+            {
+                "name": "ids",
+                "type": "string"
+            }
+        ],
+        "return": "Empty"
+    },
+    "GET /api/v2/groups/{groupId}/members": {
+        "functionName": "list",
+        "signature": "list(groupId, pageSize, pageNumber, sortOrder, expand)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

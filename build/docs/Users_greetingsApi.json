@@ -1,0 +1,37 @@
+{
+    "POST /api/v2/users/{userId}/greetings": {
+        "functionName": "create",
+        "signature": "create(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Greeting"
+            }
+        ],
+        "return": "Greeting"
+    },
+    "GET /api/v2/users/{userId}/greetings": {
+        "functionName": "list",
+        "signature": "list(userId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

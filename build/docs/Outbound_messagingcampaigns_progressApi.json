@@ -1,0 +1,25 @@
+{
+    "POST /api/v2/outbound/messagingcampaigns/progress": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "[]string"
+            }
+        ],
+        "return": "[]Campaignprogress"
+    },
+    "GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress": {
+        "functionName": "get",
+        "signature": "get(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "string"
+            }
+        ],
+        "return": "Campaignprogress"
+    }
+    
+}

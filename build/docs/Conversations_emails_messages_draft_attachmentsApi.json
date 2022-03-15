@@ -1,0 +1,17 @@
+{
+    "DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}": {
+        "functionName": "delete",
+        "signature": "delete(conversationId, attachmentId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "attachmentId",
+                "type": "string"
+            }
+        ]
+    }
+    
+}

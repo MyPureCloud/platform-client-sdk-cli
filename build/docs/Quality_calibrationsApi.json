@@ -1,0 +1,114 @@
+{
+    "POST /api/v2/quality/calibrations": {
+        "functionName": "create",
+        "signature": "create(body, expand)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Calibrationcreate"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Calibration"
+    },
+    "DELETE /api/v2/quality/calibrations/{calibrationId}": {
+        "functionName": "delete",
+        "signature": "delete(calibrationId, calibratorId)",
+        "parameters": [
+            {
+                "name": "calibrationId",
+                "type": "string"
+            },
+            {
+                "name": "calibratorId",
+                "type": "string"
+            }
+        ],
+        "return": "Calibration"
+    },
+    "GET /api/v2/quality/calibrations/{calibrationId}": {
+        "functionName": "get",
+        "signature": "get(calibrationId, calibratorId, conversationId)",
+        "parameters": [
+            {
+                "name": "calibrationId",
+                "type": "string"
+            },
+            {
+                "name": "calibratorId",
+                "type": "string"
+            },
+            {
+                "name": "conversationId",
+                "type": "string"
+            }
+        ],
+        "return": "Calibration"
+    },
+    "GET /api/v2/quality/calibrations": {
+        "functionName": "list",
+        "signature": "list(calibratorId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, startTime, endTime)",
+        "parameters": [
+            {
+                "name": "calibratorId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            },
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "startTime",
+                "type": "time.Time"
+            },
+            {
+                "name": "endTime",
+                "type": "time.Time"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/quality/calibrations/{calibrationId}": {
+        "functionName": "update",
+        "signature": "update(calibrationId, body)",
+        "parameters": [
+            {
+                "name": "calibrationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Calibration"
+            }
+        ],
+        "return": "Calibration"
+    }
+    
+}

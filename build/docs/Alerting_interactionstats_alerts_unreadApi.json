@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/alerting/interactionstats/alerts/unread": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Unreadmetric"
+    }
+    
+}

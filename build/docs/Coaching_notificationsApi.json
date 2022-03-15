@@ -1,0 +1,52 @@
+{
+    "GET /api/v2/coaching/notifications/{notificationId}": {
+        "functionName": "get",
+        "signature": "get(notificationId, expand)",
+        "parameters": [
+            {
+                "name": "notificationId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Coachingnotification"
+    },
+    "GET /api/v2/coaching/notifications": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, expand)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/coaching/notifications/{notificationId}": {
+        "functionName": "update",
+        "signature": "update(notificationId, body)",
+        "parameters": [
+            {
+                "name": "notificationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Coachingnotification"
+            }
+        ],
+        "return": "Coachingnotification"
+    }
+    
+}

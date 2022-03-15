@@ -1,0 +1,20 @@
+{
+    "GET /api/v2/voicemail/policy": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Voicemailorganizationpolicy"
+    },
+    "PUT /api/v2/voicemail/policy": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Voicemailorganizationpolicy"
+            }
+        ],
+        "return": "Voicemailorganizationpolicy"
+    }
+    
+}

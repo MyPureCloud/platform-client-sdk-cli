@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/outbound/callabletimesets": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Callabletimeset"
+            }
+        ],
+        "return": "Callabletimeset"
+    },
+    "DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId}": {
+        "functionName": "delete",
+        "signature": "delete(callableTimeSetId)",
+        "parameters": [
+            {
+                "name": "callableTimeSetId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/callabletimesets/{callableTimeSetId}": {
+        "functionName": "get",
+        "signature": "get(callableTimeSetId)",
+        "parameters": [
+            {
+                "name": "callableTimeSetId",
+                "type": "string"
+            }
+        ],
+        "return": "Callabletimeset"
+    },
+    "GET /api/v2/outbound/callabletimesets": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "bool"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/outbound/callabletimesets/{callableTimeSetId}": {
+        "functionName": "update",
+        "signature": "update(callableTimeSetId, body)",
+        "parameters": [
+            {
+                "name": "callableTimeSetId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Callabletimeset"
+            }
+        ],
+        "return": "Callabletimeset"
+    }
+    
+}

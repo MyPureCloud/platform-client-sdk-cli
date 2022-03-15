@@ -41,9 +41,9 @@ func Cmdgamification_profiles() *cobra.Command {
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "successful operation",
+  "description" : "Performance Profile successfully created",
   "schema" : {
-    "$ref" : "#/definitions/GetProfilesResponse"
+    "$ref" : "#/definitions/PerformanceProfile"
   }
 }`)
 	gamification_profilesCmd.AddCommand(createCmd)

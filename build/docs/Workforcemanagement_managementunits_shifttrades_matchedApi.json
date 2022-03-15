@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched": {
+        "functionName": "get",
+        "signature": "get(managementUnitId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            }
+        ],
+        "return": "Shifttradematchessummaryresponse"
+    }
+    
+}

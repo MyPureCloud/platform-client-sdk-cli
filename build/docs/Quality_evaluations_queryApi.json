@@ -1,0 +1,82 @@
+{
+    "GET /api/v2/quality/evaluations/query": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            },
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "agentUserId",
+                "type": "string"
+            },
+            {
+                "name": "evaluatorUserId",
+                "type": "string"
+            },
+            {
+                "name": "queueId",
+                "type": "string"
+            },
+            {
+                "name": "startTime",
+                "type": "string"
+            },
+            {
+                "name": "endTime",
+                "type": "string"
+            },
+            {
+                "name": "evaluationState",
+                "type": "[]string"
+            },
+            {
+                "name": "isReleased",
+                "type": "bool"
+            },
+            {
+                "name": "agentHasRead",
+                "type": "bool"
+            },
+            {
+                "name": "expandAnswerTotalScores",
+                "type": "bool"
+            },
+            {
+                "name": "maximum",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

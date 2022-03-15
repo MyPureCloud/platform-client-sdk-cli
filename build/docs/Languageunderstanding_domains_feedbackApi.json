@@ -1,0 +1,102 @@
+{
+    "POST /api/v2/languageunderstanding/domains/{domainId}/feedback": {
+        "functionName": "create",
+        "signature": "create(domainId, body)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Nlufeedbackrequest"
+            }
+        ],
+        "return": "Nlufeedbackresponse"
+    },
+    "DELETE /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}": {
+        "functionName": "delete",
+        "signature": "delete(domainId, feedbackId)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            },
+            {
+                "name": "feedbackId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}": {
+        "functionName": "get",
+        "signature": "get(domainId, feedbackId, fields)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            },
+            {
+                "name": "feedbackId",
+                "type": "string"
+            },
+            {
+                "name": "fields",
+                "type": "[]string"
+            }
+        ],
+        "return": "Nlufeedbackresponse"
+    },
+    "GET /api/v2/languageunderstanding/domains/{domainId}/feedback": {
+        "functionName": "list",
+        "signature": "list(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            },
+            {
+                "name": "intentName",
+                "type": "string"
+            },
+            {
+                "name": "assessment",
+                "type": "string"
+            },
+            {
+                "name": "dateStart",
+                "type": "time.Time"
+            },
+            {
+                "name": "dateEnd",
+                "type": "time.Time"
+            },
+            {
+                "name": "includeDeleted",
+                "type": "bool"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "enableCursorPagination",
+                "type": "bool"
+            },
+            {
+                "name": "after",
+                "type": "string"
+            },
+            {
+                "name": "fields",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

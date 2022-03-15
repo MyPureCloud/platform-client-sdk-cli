@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/fieldconfig": {
+        "functionName": "get",
+        "signature": "get(varType)",
+        "parameters": [
+            {
+                "name": "varType",
+                "type": "string"
+            }
+        ],
+        "return": "Fieldconfig"
+    }
+    
+}

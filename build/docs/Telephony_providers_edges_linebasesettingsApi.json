@@ -1,0 +1,41 @@
+{
+    "GET /api/v2/telephony/providers/edges/linebasesettings/{lineBaseId}": {
+        "functionName": "get",
+        "signature": "get(lineBaseId)",
+        "parameters": [
+            {
+                "name": "lineBaseId",
+                "type": "string"
+            }
+        ],
+        "return": "Linebase"
+    },
+    "GET /api/v2/telephony/providers/edges/linebasesettings": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortBy, sortOrder, expand)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/audits/query/realtime/servicemapping": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Auditqueryservicemapping"
+    }
+    
+}

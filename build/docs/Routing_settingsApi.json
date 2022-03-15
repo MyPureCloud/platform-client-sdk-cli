@@ -1,0 +1,25 @@
+{
+    "DELETE /api/v2/routing/settings": {
+        "functionName": "delete",
+        "signature": "delete()"
+        
+    },
+    "GET /api/v2/routing/settings": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Routingsettings"
+    },
+    "PUT /api/v2/routing/settings": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Routingsettings"
+            }
+        ],
+        "return": "Routingsettings"
+    }
+    
+}

@@ -1,0 +1,93 @@
+{
+    "POST /api/v2/languageunderstanding/domains/{domainId}/versions": {
+        "functionName": "create",
+        "signature": "create(domainId, body)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Nludomainversion"
+            }
+        ],
+        "return": "Nludomainversion"
+    },
+    "DELETE /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}": {
+        "functionName": "delete",
+        "signature": "delete(domainId, domainVersionId)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            },
+            {
+                "name": "domainVersionId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}": {
+        "functionName": "get",
+        "signature": "get(domainId, domainVersionId, includeUtterances)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            },
+            {
+                "name": "domainVersionId",
+                "type": "string"
+            },
+            {
+                "name": "includeUtterances",
+                "type": "bool"
+            }
+        ],
+        "return": "Nludomainversion"
+    },
+    "GET /api/v2/languageunderstanding/domains/{domainId}/versions": {
+        "functionName": "list",
+        "signature": "list(domainId, includeUtterances, pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            },
+            {
+                "name": "includeUtterances",
+                "type": "bool"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}": {
+        "functionName": "update",
+        "signature": "update(domainId, domainVersionId, body)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            },
+            {
+                "name": "domainVersionId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Nludomainversion"
+            }
+        ],
+        "return": "Nludomainversion"
+    }
+    
+}

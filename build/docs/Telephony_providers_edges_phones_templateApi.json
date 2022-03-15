@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/telephony/providers/edges/phones/template": {
+        "functionName": "get",
+        "signature": "get(phoneBaseSettingsId)",
+        "parameters": [
+            {
+                "name": "phoneBaseSettingsId",
+                "type": "string"
+            }
+        ],
+        "return": "Phone"
+    }
+    
+}

@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/authorization/divisions/{divisionId}/grants": {
+        "functionName": "list",
+        "signature": "list(divisionId, pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "divisionId",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

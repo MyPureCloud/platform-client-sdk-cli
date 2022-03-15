@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/speechandtextanalytics/topics": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Topicrequest"
+            }
+        ],
+        "return": "Topic"
+    },
+    "DELETE /api/v2/speechandtextanalytics/topics/{topicId}": {
+        "functionName": "delete",
+        "signature": "delete(topicId)",
+        "parameters": [
+            {
+                "name": "topicId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/speechandtextanalytics/topics/{topicId}": {
+        "functionName": "get",
+        "signature": "get(topicId)",
+        "parameters": [
+            {
+                "name": "topicId",
+                "type": "string"
+            }
+        ],
+        "return": "Topic"
+    },
+    "GET /api/v2/speechandtextanalytics/topics": {
+        "functionName": "list",
+        "signature": "list(nextPage, pageSize, state, name, ids, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "state",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "ids",
+                "type": "[]string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/speechandtextanalytics/topics/{topicId}": {
+        "functionName": "update",
+        "signature": "update(topicId, body)",
+        "parameters": [
+            {
+                "name": "topicId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Topicrequest"
+            }
+        ],
+        "return": "Topic"
+    }
+    
+}

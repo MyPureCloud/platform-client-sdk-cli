@@ -1,0 +1,22 @@
+{
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate": {
+        "functionName": "create",
+        "signature": "create(businessUnitId, weekId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekId",
+                "type": "time.Time"
+            },
+            {
+                "name": "body",
+                "type": "Bugenerateschedulerequest"
+            }
+        ],
+        "return": "Buasyncschedulerunresponse"
+    }
+    
+}

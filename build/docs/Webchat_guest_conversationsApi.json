@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/webchat/guest/conversations": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createwebchatconversationrequest"
+            }
+        ],
+        "return": "Createwebchatconversationresponse"
+    }
+    
+}

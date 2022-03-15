@@ -1,0 +1,89 @@
+{
+    "POST /api/v2/recording/jobs": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Recordingjobsquery"
+            }
+        ],
+        "return": "Recordingjob"
+    },
+    "DELETE /api/v2/recording/jobs/{jobId}": {
+        "functionName": "delete",
+        "signature": "delete(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/recording/jobs/{jobId}": {
+        "functionName": "get",
+        "signature": "get(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "string"
+            }
+        ],
+        "return": "Recordingjob"
+    },
+    "GET /api/v2/recording/jobs": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType, includeTotal, cursor)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "state",
+                "type": "string"
+            },
+            {
+                "name": "showOnlyMyJobs",
+                "type": "bool"
+            },
+            {
+                "name": "jobType",
+                "type": "string"
+            },
+            {
+                "name": "includeTotal",
+                "type": "bool"
+            },
+            {
+                "name": "cursor",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/recording/jobs/{jobId}": {
+        "functionName": "update",
+        "signature": "update(jobId, body)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Executerecordingjobsquery"
+            }
+        ],
+        "return": "Recordingjob"
+    }
+    
+}

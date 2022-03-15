@@ -1,0 +1,56 @@
+{
+    "POST /api/v2/telephony/providers/edges/certificateauthorities": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Domaincertificateauthority"
+            }
+        ],
+        "return": "Domaincertificateauthority"
+    },
+    "DELETE /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}": {
+        "functionName": "delete",
+        "signature": "delete(certificateId)",
+        "parameters": [
+            {
+                "name": "certificateId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}": {
+        "functionName": "get",
+        "signature": "get(certificateId)",
+        "parameters": [
+            {
+                "name": "certificateId",
+                "type": "string"
+            }
+        ],
+        "return": "Domaincertificateauthority"
+    },
+    "GET /api/v2/telephony/providers/edges/certificateauthorities": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}": {
+        "functionName": "update",
+        "signature": "update(certificateId, body)",
+        "parameters": [
+            {
+                "name": "certificateId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Domaincertificateauthority"
+            }
+        ],
+        "return": "Domaincertificateauthority"
+    }
+    
+}

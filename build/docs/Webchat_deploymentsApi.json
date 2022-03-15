@@ -1,0 +1,56 @@
+{
+    "POST /api/v2/webchat/deployments": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Webchatdeployment"
+            }
+        ],
+        "return": "Webchatdeployment"
+    },
+    "DELETE /api/v2/webchat/deployments/{deploymentId}": {
+        "functionName": "delete",
+        "signature": "delete(deploymentId)",
+        "parameters": [
+            {
+                "name": "deploymentId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/webchat/deployments/{deploymentId}": {
+        "functionName": "get",
+        "signature": "get(deploymentId)",
+        "parameters": [
+            {
+                "name": "deploymentId",
+                "type": "string"
+            }
+        ],
+        "return": "Webchatdeployment"
+    },
+    "GET /api/v2/webchat/deployments": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Webchatdeploymententitylisting"
+    },
+    "PUT /api/v2/webchat/deployments/{deploymentId}": {
+        "functionName": "update",
+        "signature": "update(deploymentId, body)",
+        "parameters": [
+            {
+                "name": "deploymentId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Webchatdeployment"
+            }
+        ],
+        "return": "Webchatdeployment"
+    }
+    
+}

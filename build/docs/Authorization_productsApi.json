@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/authorization/products": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    }
+    
+}

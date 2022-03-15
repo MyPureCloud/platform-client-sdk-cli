@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/routing/email/setup": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Emailsetup"
+    }
+    
+}

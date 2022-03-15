@@ -1,0 +1,69 @@
+{
+    "POST /api/v2/speechandtextanalytics/programs": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Programrequest"
+            }
+        ],
+        "return": "Program"
+    },
+    "DELETE /api/v2/speechandtextanalytics/programs/{programId}": {
+        "functionName": "delete",
+        "signature": "delete(programId, forceDelete)",
+        "parameters": [
+            {
+                "name": "programId",
+                "type": "string"
+            },
+            {
+                "name": "forceDelete",
+                "type": "bool"
+            }
+        ]
+    },
+    "GET /api/v2/speechandtextanalytics/programs/{programId}": {
+        "functionName": "get",
+        "signature": "get(programId)",
+        "parameters": [
+            {
+                "name": "programId",
+                "type": "string"
+            }
+        ],
+        "return": "Program"
+    },
+    "GET /api/v2/speechandtextanalytics/programs": {
+        "functionName": "list",
+        "signature": "list(nextPage, pageSize)",
+        "parameters": [
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/speechandtextanalytics/programs/{programId}": {
+        "functionName": "update",
+        "signature": "update(programId, body)",
+        "parameters": [
+            {
+                "name": "programId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Programrequest"
+            }
+        ],
+        "return": "Program"
+    }
+    
+}

@@ -1,0 +1,38 @@
+{
+    "GET /api/v2/profiles/users": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, id, jid, sortOrder, expand, integrationPresenceSource)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "jid",
+                "type": "[]string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "integrationPresenceSource",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

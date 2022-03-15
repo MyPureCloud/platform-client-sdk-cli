@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/integrations/botconnector/{integrationId}/bots/summaries": {
+        "functionName": "list",
+        "signature": "list(integrationId, pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

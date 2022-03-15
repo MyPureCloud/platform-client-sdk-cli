@@ -1,0 +1,58 @@
+{
+    "POST /api/v2/routing/skills": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Routingskill"
+            }
+        ],
+        "return": "Routingskill"
+    },
+    "DELETE /api/v2/routing/skills/{skillId}": {
+        "functionName": "delete",
+        "signature": "delete(skillId)",
+        "parameters": [
+            {
+                "name": "skillId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/routing/skills/{skillId}": {
+        "functionName": "get",
+        "signature": "get(skillId)",
+        "parameters": [
+            {
+                "name": "skillId",
+                "type": "string"
+            }
+        ],
+        "return": "Routingskill"
+    },
+    "GET /api/v2/routing/skills": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, name, id)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

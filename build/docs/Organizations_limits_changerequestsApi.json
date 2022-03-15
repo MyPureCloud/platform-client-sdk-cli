@@ -1,0 +1,41 @@
+{
+    "GET /api/v2/organizations/limits/changerequests/{requestId}": {
+        "functionName": "get",
+        "signature": "get(requestId)",
+        "parameters": [
+            {
+                "name": "requestId",
+                "type": "string"
+            }
+        ],
+        "return": "Limitchangerequestdetails"
+    },
+    "GET /api/v2/organizations/limits/changerequests": {
+        "functionName": "list",
+        "signature": "list(after, before, status, pageSize, expand)",
+        "parameters": [
+            {
+                "name": "after",
+                "type": "int"
+            },
+            {
+                "name": "before",
+                "type": "int"
+            },
+            {
+                "name": "status",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

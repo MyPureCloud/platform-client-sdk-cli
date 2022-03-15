@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults": {
+        "functionName": "get",
+        "signature": "get(businessUnitId, weekId, scheduleId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekId",
+                "type": "time.Time"
+            },
+            {
+                "name": "scheduleId",
+                "type": "string"
+            }
+        ],
+        "return": "Schedulegenerationresult"
+    }
+    
+}

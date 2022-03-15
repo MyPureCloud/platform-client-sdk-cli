@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/telephony/providers/edges/{edgeId}/softwareversions": {
+        "functionName": "list",
+        "signature": "list(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

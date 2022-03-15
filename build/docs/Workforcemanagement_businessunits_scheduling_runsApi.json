@@ -1,0 +1,61 @@
+{
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}": {
+        "functionName": "delete",
+        "signature": "delete(businessUnitId, runId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "runId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}": {
+        "functionName": "get",
+        "signature": "get(businessUnitId, runId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "runId",
+                "type": "string"
+            }
+        ],
+        "return": "Buschedulerun"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs": {
+        "functionName": "list",
+        "signature": "list(businessUnitId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            }
+        ],
+        "return": "Buschedulerunlisting"
+    },
+    "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}": {
+        "functionName": "update",
+        "signature": "update(businessUnitId, runId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "runId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Patchbuschedulerunrequest"
+            }
+        ]
+    }
+    
+}

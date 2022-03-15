@@ -1,0 +1,91 @@
+{
+    "GET /api/v2/scim/groups/{groupId}": {
+        "functionName": "get",
+        "signature": "get(groupId, attributes, excludedAttributes, ifNoneMatch)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            },
+            {
+                "name": "attributes",
+                "type": "[]string"
+            },
+            {
+                "name": "excludedAttributes",
+                "type": "[]string"
+            },
+            {
+                "name": "ifNoneMatch",
+                "type": "string"
+            }
+        ],
+        "return": "Scimv2group"
+    },
+    "GET /api/v2/scim/groups": {
+        "functionName": "list",
+        "signature": "list(startIndex, count, attributes, excludedAttributes, filter)",
+        "parameters": [
+            {
+                "name": "startIndex",
+                "type": "int"
+            },
+            {
+                "name": "count",
+                "type": "int"
+            },
+            {
+                "name": "attributes",
+                "type": "[]string"
+            },
+            {
+                "name": "excludedAttributes",
+                "type": "[]string"
+            },
+            {
+                "name": "filter",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/scim/groups/{groupId}": {
+        "functionName": "replace",
+        "signature": "replace(groupId, body, ifMatch)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Scimv2group"
+            },
+            {
+                "name": "ifMatch",
+                "type": "string"
+            }
+        ],
+        "return": "Scimv2group"
+    },
+    "PATCH /api/v2/scim/groups/{groupId}": {
+        "functionName": "update",
+        "signature": "update(groupId, body, ifMatch)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Scimv2patchrequest"
+            },
+            {
+                "name": "ifMatch",
+                "type": "string"
+            }
+        ],
+        "return": "Scimv2group"
+    }
+    
+}

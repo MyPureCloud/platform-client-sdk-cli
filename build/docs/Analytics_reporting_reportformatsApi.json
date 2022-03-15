@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/analytics/reporting/reportformats": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "[]string"
+    }
+    
+}

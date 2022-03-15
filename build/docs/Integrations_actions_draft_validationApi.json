@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/integrations/actions/{actionId}/draft/validation": {
+        "functionName": "get",
+        "signature": "get(actionId)",
+        "parameters": [
+            {
+                "name": "actionId",
+                "type": "string"
+            }
+        ],
+        "return": "Draftvalidationresult"
+    }
+    
+}

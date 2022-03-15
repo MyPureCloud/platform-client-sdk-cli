@@ -1,0 +1,77 @@
+{
+    "POST /api/v2/presencedefinitions": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Organizationpresence"
+            }
+        ],
+        "return": "Organizationpresence"
+    },
+    "DELETE /api/v2/presencedefinitions/{presenceId}": {
+        "functionName": "delete",
+        "signature": "delete(presenceId)",
+        "parameters": [
+            {
+                "name": "presenceId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/presencedefinitions/{presenceId}": {
+        "functionName": "get",
+        "signature": "get(presenceId, localeCode)",
+        "parameters": [
+            {
+                "name": "presenceId",
+                "type": "string"
+            },
+            {
+                "name": "localeCode",
+                "type": "string"
+            }
+        ],
+        "return": "Organizationpresence"
+    },
+    "GET /api/v2/presencedefinitions": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, deleted, localeCode)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "deleted",
+                "type": "string"
+            },
+            {
+                "name": "localeCode",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/presencedefinitions/{presenceId}": {
+        "functionName": "update",
+        "signature": "update(presenceId, body)",
+        "parameters": [
+            {
+                "name": "presenceId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Organizationpresence"
+            }
+        ],
+        "return": "Organizationpresence"
+    }
+    
+}

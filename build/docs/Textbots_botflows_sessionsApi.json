@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/textbots/botflows/sessions": {
+        "functionName": "create",
+        "signature": "create(launchRequest)",
+        "parameters": [
+            {
+                "name": "launchRequest",
+                "type": "Textbotflowlaunchrequest"
+            }
+        ],
+        "return": "Textbotflowlaunchresponse"
+    }
+    
+}

@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/integrations/actions/{actionId}/templates/{fileName}": {
+        "functionName": "get",
+        "signature": "get(actionId, fileName)",
+        "parameters": [
+            {
+                "name": "actionId",
+                "type": "string"
+            },
+            {
+                "name": "fileName",
+                "type": "string"
+            }
+        ],
+        "return": "string"
+    }
+    
+}

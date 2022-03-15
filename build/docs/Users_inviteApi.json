@@ -1,0 +1,17 @@
+{
+    "POST /api/v2/users/{userId}/invite": {
+        "functionName": "create",
+        "signature": "create(userId, force)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "force",
+                "type": "bool"
+            }
+        ]
+    }
+    
+}

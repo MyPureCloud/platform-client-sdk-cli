@@ -1,0 +1,18 @@
+{
+    "POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk": {
+        "functionName": "create",
+        "signature": "create(contactListId, body)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]string"
+            }
+        ],
+        "return": "[]Dialercontact"
+    }
+    
+}

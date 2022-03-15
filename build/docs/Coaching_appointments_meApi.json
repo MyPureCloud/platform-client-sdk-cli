@@ -1,0 +1,50 @@
+{
+    "GET /api/v2/coaching/appointments/me": {
+        "functionName": "list",
+        "signature": "list(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)",
+        "parameters": [
+            {
+                "name": "interval",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "statuses",
+                "type": "[]string"
+            },
+            {
+                "name": "facilitatorIds",
+                "type": "[]string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "relationships",
+                "type": "[]string"
+            },
+            {
+                "name": "completionInterval",
+                "type": "string"
+            },
+            {
+                "name": "overdue",
+                "type": "string"
+            },
+            {
+                "name": "intervalCondition",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

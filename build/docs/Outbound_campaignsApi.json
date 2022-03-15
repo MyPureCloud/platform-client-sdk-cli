@@ -1,0 +1,110 @@
+{
+    "POST /api/v2/outbound/campaigns": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Campaign"
+            }
+        ],
+        "return": "Campaign"
+    },
+    "DELETE /api/v2/outbound/campaigns/{campaignId}": {
+        "functionName": "delete",
+        "signature": "delete(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "string"
+            }
+        ],
+        "return": "Campaign"
+    },
+    "GET /api/v2/outbound/campaigns/{campaignId}": {
+        "functionName": "get",
+        "signature": "get(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "string"
+            }
+        ],
+        "return": "Campaign"
+    },
+    "GET /api/v2/outbound/campaigns": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, filterType, name, id, contactListId, dncListIds, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "contactListId",
+                "type": "string"
+            },
+            {
+                "name": "dncListIds",
+                "type": "string"
+            },
+            {
+                "name": "distributionQueueId",
+                "type": "string"
+            },
+            {
+                "name": "edgeGroupId",
+                "type": "string"
+            },
+            {
+                "name": "callAnalysisResponseSetId",
+                "type": "string"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/outbound/campaigns/{campaignId}": {
+        "functionName": "update",
+        "signature": "update(campaignId, body)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Campaign"
+            }
+        ],
+        "return": "Campaign"
+    }
+    
+}

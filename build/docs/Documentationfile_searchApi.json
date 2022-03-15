@@ -1,0 +1,25 @@
+{
+    "POST /api/v2/documentation/search": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Documentationsearchrequest"
+            }
+        ],
+        "return": "Documentationsearchresponse"
+    },
+    "GET /api/v2/documentation/search": {
+        "functionName": "list",
+        "signature": "list(q64)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

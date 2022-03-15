@@ -1,0 +1,17 @@
+{
+    "PUT /api/v2/externalcontacts/conversations/{conversationId}": {
+        "functionName": "update",
+        "signature": "update(body, conversationId)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Conversationassociation"
+            },
+            {
+                "name": "conversationId",
+                "type": "string"
+            }
+        ]
+    }
+    
+}

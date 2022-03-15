@@ -1,0 +1,47 @@
+{
+    "GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}": {
+        "functionName": "get",
+        "signature": "get(integrationId, botId, version)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "string"
+            },
+            {
+                "name": "botId",
+                "type": "string"
+            },
+            {
+                "name": "version",
+                "type": "string"
+            }
+        ],
+        "return": "Botconnectorbot"
+    },
+    "GET /api/v2/integrations/botconnector/{integrationId}/bots": {
+        "functionName": "list",
+        "signature": "list(integrationId)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "string"
+            }
+        ],
+        "return": "Botlist"
+    },
+    "PUT /api/v2/integrations/botconnector/{integrationId}/bots": {
+        "functionName": "update",
+        "signature": "update(integrationId, botList)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "string"
+            },
+            {
+                "name": "botList",
+                "type": "Botlist"
+            }
+        ]
+    }
+    
+}

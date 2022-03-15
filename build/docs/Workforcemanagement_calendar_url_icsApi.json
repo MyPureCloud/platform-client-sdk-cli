@@ -1,0 +1,25 @@
+{
+    "POST /api/v2/workforcemanagement/calendar/url/ics": {
+        "functionName": "create",
+        "signature": "create(language)",
+        "parameters": [
+            {
+                "name": "language",
+                "type": "string"
+            }
+        ],
+        "return": "Calendarurlresponse"
+    },
+    "DELETE /api/v2/workforcemanagement/calendar/url/ics": {
+        "functionName": "delete",
+        "signature": "delete()"
+        
+    },
+    "GET /api/v2/workforcemanagement/calendar/url/ics": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Calendarurlresponse"
+    }
+    
+}

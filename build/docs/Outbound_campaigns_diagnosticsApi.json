@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/outbound/campaigns/{campaignId}/diagnostics": {
+        "functionName": "get",
+        "signature": "get(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "string"
+            }
+        ],
+        "return": "Campaigndiagnostics"
+    }
+    
+}

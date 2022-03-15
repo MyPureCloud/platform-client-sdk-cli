@@ -1,0 +1,30 @@
+{
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy": {
+        "functionName": "create",
+        "signature": "create(businessUnitId, weekDateId, forecastId, body, forceAsync)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekDateId",
+                "type": "time.Time"
+            },
+            {
+                "name": "forecastId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Copybuforecastrequest"
+            },
+            {
+                "name": "forceAsync",
+                "type": "bool"
+            }
+        ],
+        "return": "Asyncforecastoperationresult"
+    }
+    
+}

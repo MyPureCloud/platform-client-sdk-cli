@@ -1,0 +1,127 @@
+{
+    "PATCH /api/v2/routing/queues/{queueId}/members": {
+        "functionName": "activate",
+        "signature": "activate(queueId, body)",
+        "parameters": [
+            {
+                "name": "queueId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]Queuemember"
+            }
+        ],
+        "return": "Queuememberentitylisting"
+    },
+    "DELETE /api/v2/routing/queues/{queueId}/members/{memberId}": {
+        "functionName": "delete",
+        "signature": "delete(queueId, memberId)",
+        "parameters": [
+            {
+                "name": "queueId",
+                "type": "string"
+            },
+            {
+                "name": "memberId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/routing/queues/{queueId}/members": {
+        "functionName": "list",
+        "signature": "list(queueId, pageNumber, pageSize, sortOrder, expand, name, profileSkills, skills, languages, routingStatus, presence, memberBy, joined)",
+        "parameters": [
+            {
+                "name": "queueId",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "profileSkills",
+                "type": "[]string"
+            },
+            {
+                "name": "skills",
+                "type": "[]string"
+            },
+            {
+                "name": "languages",
+                "type": "[]string"
+            },
+            {
+                "name": "routingStatus",
+                "type": "[]string"
+            },
+            {
+                "name": "presence",
+                "type": "[]string"
+            },
+            {
+                "name": "memberBy",
+                "type": "string"
+            },
+            {
+                "name": "joined",
+                "type": "bool"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "POST /api/v2/routing/queues/{queueId}/members": {
+        "functionName": "move",
+        "signature": "move(queueId, body, delete)",
+        "parameters": [
+            {
+                "name": "queueId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]Writableentity"
+            },
+            {
+                "name": "delete",
+                "type": "bool"
+            }
+        ]
+    },
+    "PATCH /api/v2/routing/queues/{queueId}/members/{memberId}": {
+        "functionName": "update",
+        "signature": "update(queueId, memberId, body)",
+        "parameters": [
+            {
+                "name": "queueId",
+                "type": "string"
+            },
+            {
+                "name": "memberId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Queuemember"
+            }
+        ]
+    }
+    
+}

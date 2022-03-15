@@ -1,0 +1,32 @@
+{
+    "GET /api/v2/recordings/screensessions": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/recordings/screensessions/{recordingSessionId}": {
+        "functionName": "update",
+        "signature": "update(recordingSessionId, body)",
+        "parameters": [
+            {
+                "name": "recordingSessionId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Screenrecordingsessionrequest"
+            }
+        ]
+    }
+    
+}

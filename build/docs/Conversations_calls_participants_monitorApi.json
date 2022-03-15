@@ -1,0 +1,17 @@
+{
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor": {
+        "functionName": "create",
+        "signature": "create(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "participantId",
+                "type": "string"
+            }
+        ]
+    }
+    
+}

@@ -1,0 +1,49 @@
+{
+    "GET /api/v2/outbound/events/{eventId}": {
+        "functionName": "get",
+        "signature": "get(eventId)",
+        "parameters": [
+            {
+                "name": "eventId",
+                "type": "string"
+            }
+        ],
+        "return": "Eventlog"
+    },
+    "GET /api/v2/outbound/events": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, filterType, category, level, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "category",
+                "type": "string"
+            },
+            {
+                "name": "level",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

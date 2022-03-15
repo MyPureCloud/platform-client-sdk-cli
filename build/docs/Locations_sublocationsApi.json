@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/locations/{locationId}/sublocations": {
+        "functionName": "list",
+        "signature": "list(locationId)",
+        "parameters": [
+            {
+                "name": "locationId",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

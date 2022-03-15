@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/integrations/speech/lex/bot/alias/{aliasId}": {
+        "functionName": "get",
+        "signature": "get(aliasId)",
+        "parameters": [
+            {
+                "name": "aliasId",
+                "type": "string"
+            }
+        ],
+        "return": "Lexbotalias"
+    }
+    
+}

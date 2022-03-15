@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/gamification/scorecards/attendance": {
+        "functionName": "get",
+        "signature": "get(startWorkday, endWorkday)",
+        "parameters": [
+            {
+                "name": "startWorkday",
+                "type": "time.Time"
+            },
+            {
+                "name": "endWorkday",
+                "type": "time.Time"
+            }
+        ],
+        "return": "Attendancestatuslisting"
+    }
+    
+}

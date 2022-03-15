@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "functionName": "list",
+        "signature": "list(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "participantId",
+                "type": "string"
+            }
+        ],
+        "return": "[]Wrapupcode"
+    }
+    
+}

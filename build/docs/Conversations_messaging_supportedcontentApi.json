@@ -1,0 +1,65 @@
+{
+    "POST /api/v2/conversations/messaging/supportedcontent": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Supportedcontent"
+            }
+        ],
+        "return": "Supportedcontent"
+    },
+    "DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId}": {
+        "functionName": "delete",
+        "signature": "delete(supportedContentId)",
+        "parameters": [
+            {
+                "name": "supportedContentId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId}": {
+        "functionName": "get",
+        "signature": "get(supportedContentId)",
+        "parameters": [
+            {
+                "name": "supportedContentId",
+                "type": "string"
+            }
+        ],
+        "return": "Supportedcontent"
+    },
+    "GET /api/v2/conversations/messaging/supportedcontent": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId}": {
+        "functionName": "update",
+        "signature": "update(supportedContentId, body)",
+        "parameters": [
+            {
+                "name": "supportedContentId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Supportedcontent"
+            }
+        ],
+        "return": "Supportedcontent"
+    }
+    
+}

@@ -1,0 +1,94 @@
+{
+    "POST /api/v2/knowledge/knowledgebases": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Knowledgebase"
+            }
+        ],
+        "return": "Knowledgebase"
+    },
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}": {
+        "functionName": "delete",
+        "signature": "delete(knowledgeBaseId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            }
+        ],
+        "return": "Knowledgebase"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}": {
+        "functionName": "get",
+        "signature": "get(knowledgeBaseId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            }
+        ],
+        "return": "Knowledgebase"
+    },
+    "GET /api/v2/knowledge/knowledgebases": {
+        "functionName": "list",
+        "signature": "list(before, after, limit, pageSize, name, coreLanguage, published, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "before",
+                "type": "string"
+            },
+            {
+                "name": "after",
+                "type": "string"
+            },
+            {
+                "name": "limit",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "coreLanguage",
+                "type": "string"
+            },
+            {
+                "name": "published",
+                "type": "bool"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}": {
+        "functionName": "update",
+        "signature": "update(knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Knowledgebase"
+            }
+        ],
+        "return": "Knowledgebase"
+    }
+    
+}

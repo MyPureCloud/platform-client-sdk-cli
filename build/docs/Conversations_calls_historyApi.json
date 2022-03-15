@@ -1,0 +1,26 @@
+{
+    "GET /api/v2/conversations/calls/history": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, interval, expand)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "interval",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

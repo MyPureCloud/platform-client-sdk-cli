@@ -1,0 +1,18 @@
+{
+    "POST /api/v2/scripts/{scriptId}/export": {
+        "functionName": "create",
+        "signature": "create(scriptId, body)",
+        "parameters": [
+            {
+                "name": "scriptId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Exportscriptrequest"
+            }
+        ],
+        "return": "Exportscriptresponse"
+    }
+    
+}

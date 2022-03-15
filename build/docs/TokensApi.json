@@ -1,0 +1,13 @@
+{
+    "DELETE /api/v2/tokens/{userId}": {
+        "functionName": "delete",
+        "signature": "delete(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            }
+        ]
+    }
+    
+}

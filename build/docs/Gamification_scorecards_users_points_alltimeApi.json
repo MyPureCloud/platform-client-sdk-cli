@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/gamification/scorecards/users/{userId}/points/alltime": {
+        "functionName": "get",
+        "signature": "get(userId, endWorkday)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "endWorkday",
+                "type": "time.Time"
+            }
+        ],
+        "return": "Alltimepoints"
+    }
+    
+}

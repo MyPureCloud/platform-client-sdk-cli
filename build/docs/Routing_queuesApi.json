@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/routing/queues": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createqueuerequest"
+            }
+        ],
+        "return": "Queue"
+    },
+    "DELETE /api/v2/routing/queues/{queueId}": {
+        "functionName": "delete",
+        "signature": "delete(queueId, forceDelete)",
+        "parameters": [
+            {
+                "name": "queueId",
+                "type": "string"
+            },
+            {
+                "name": "forceDelete",
+                "type": "bool"
+            }
+        ]
+    },
+    "GET /api/v2/routing/queues/{queueId}": {
+        "functionName": "get",
+        "signature": "get(queueId)",
+        "parameters": [
+            {
+                "name": "queueId",
+                "type": "string"
+            }
+        ],
+        "return": "Queue"
+    },
+    "GET /api/v2/routing/queues": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortOrder, name, id, divisionId)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/routing/queues/{queueId}": {
+        "functionName": "update",
+        "signature": "update(queueId, body)",
+        "parameters": [
+            {
+                "name": "queueId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Queuerequest"
+            }
+        ],
+        "return": "Queue"
+    }
+    
+}

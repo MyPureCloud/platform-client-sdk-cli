@@ -1,0 +1,69 @@
+{
+    "POST /api/v2/workforcemanagement/businessunits": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createbusinessunitrequest"
+            }
+        ],
+        "return": "Businessunit"
+    },
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}": {
+        "functionName": "delete",
+        "signature": "delete(businessUnitId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}": {
+        "functionName": "get",
+        "signature": "get(businessUnitId, expand)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Businessunit"
+    },
+    "GET /api/v2/workforcemanagement/businessunits": {
+        "functionName": "list",
+        "signature": "list(feature, divisionId)",
+        "parameters": [
+            {
+                "name": "feature",
+                "type": "string"
+            },
+            {
+                "name": "divisionId",
+                "type": "string"
+            }
+        ],
+        "return": "Businessunitlisting"
+    },
+    "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}": {
+        "functionName": "update",
+        "signature": "update(businessUnitId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Updatebusinessunitrequest"
+            }
+        ],
+        "return": "Businessunit"
+    }
+    
+}

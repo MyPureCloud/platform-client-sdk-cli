@@ -1,0 +1,26 @@
+{
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata": {
+        "functionName": "get",
+        "signature": "get(businessUnitId, weekDateId, forecastId, forceDownloadService)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekDateId",
+                "type": "time.Time"
+            },
+            {
+                "name": "forecastId",
+                "type": "string"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "bool"
+            }
+        ],
+        "return": "Longtermforecastresultresponse"
+    }
+    
+}

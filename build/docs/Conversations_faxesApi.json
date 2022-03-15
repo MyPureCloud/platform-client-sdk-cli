@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/conversations/faxes": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Faxsendrequest"
+            }
+        ],
+        "return": "Faxsendresponse"
+    }
+    
+}

@@ -1,0 +1,92 @@
+{
+    "GET /api/v2/conversations/{conversationId}/recordings/{recordingId}": {
+        "functionName": "get",
+        "signature": "get(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "recordingId",
+                "type": "string"
+            },
+            {
+                "name": "formatId",
+                "type": "string"
+            },
+            {
+                "name": "emailFormatId",
+                "type": "string"
+            },
+            {
+                "name": "chatFormatId",
+                "type": "string"
+            },
+            {
+                "name": "messageFormatId",
+                "type": "string"
+            },
+            {
+                "name": "download",
+                "type": "bool"
+            },
+            {
+                "name": "fileName",
+                "type": "string"
+            },
+            {
+                "name": "locale",
+                "type": "string"
+            },
+            {
+                "name": "mediaFormats",
+                "type": "[]string"
+            }
+        ],
+        "return": "Recording"
+    },
+    "GET /api/v2/conversations/{conversationId}/recordings": {
+        "functionName": "list",
+        "signature": "list(conversationId, maxWaitMs, formatId, mediaFormats)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "maxWaitMs",
+                "type": "int"
+            },
+            {
+                "name": "formatId",
+                "type": "string"
+            },
+            {
+                "name": "mediaFormats",
+                "type": "[]string"
+            }
+        ],
+        "return": "[]Recording"
+    },
+    "PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}": {
+        "functionName": "update",
+        "signature": "update(conversationId, recordingId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "recordingId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Recording"
+            }
+        ],
+        "return": "Recording"
+    }
+    
+}

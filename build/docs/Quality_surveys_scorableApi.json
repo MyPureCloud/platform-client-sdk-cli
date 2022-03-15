@@ -1,0 +1,29 @@
+{
+    "GET /api/v2/quality/surveys/scorable": {
+        "functionName": "get",
+        "signature": "get(customerSurveyUrl)",
+        "parameters": [
+            {
+                "name": "customerSurveyUrl",
+                "type": "string"
+            }
+        ],
+        "return": "Scorablesurvey"
+    },
+    "PUT /api/v2/quality/surveys/scorable": {
+        "functionName": "update",
+        "signature": "update(body, customerSurveyUrl)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Scorablesurvey"
+            },
+            {
+                "name": "customerSurveyUrl",
+                "type": "string"
+            }
+        ],
+        "return": "Scorablesurvey"
+    }
+    
+}

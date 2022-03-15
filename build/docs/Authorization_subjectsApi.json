@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/authorization/subjects/{subjectId}": {
+        "functionName": "get",
+        "signature": "get(subjectId)",
+        "parameters": [
+            {
+                "name": "subjectId",
+                "type": "string"
+            }
+        ],
+        "return": "Authzsubject"
+    }
+    
+}

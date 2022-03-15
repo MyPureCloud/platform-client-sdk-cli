@@ -1,0 +1,74 @@
+{
+    "POST /api/v2/users/{userId}/routinglanguages": {
+        "functionName": "create",
+        "signature": "create(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Userroutinglanguagepost"
+            }
+        ],
+        "return": "Userroutinglanguage"
+    },
+    "DELETE /api/v2/users/{userId}/routinglanguages/{languageId}": {
+        "functionName": "delete",
+        "signature": "delete(userId, languageId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "languageId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/users/{userId}/routinglanguages": {
+        "functionName": "list",
+        "signature": "list(userId, pageSize, pageNumber, sortOrder)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/users/{userId}/routinglanguages/{languageId}": {
+        "functionName": "update",
+        "signature": "update(userId, languageId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "languageId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Userroutinglanguage"
+            }
+        ],
+        "return": "Userroutinglanguage"
+    }
+    
+}

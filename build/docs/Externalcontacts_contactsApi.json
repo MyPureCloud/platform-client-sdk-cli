@@ -1,0 +1,82 @@
+{
+    "POST /api/v2/externalcontacts/contacts": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Externalcontact"
+            }
+        ],
+        "return": "Externalcontact"
+    },
+    "DELETE /api/v2/externalcontacts/contacts/{contactId}": {
+        "functionName": "delete",
+        "signature": "delete(contactId)",
+        "parameters": [
+            {
+                "name": "contactId",
+                "type": "string"
+            }
+        ],
+        "return": "Empty"
+    },
+    "GET /api/v2/externalcontacts/contacts/{contactId}": {
+        "functionName": "get",
+        "signature": "get(contactId, expand)",
+        "parameters": [
+            {
+                "name": "contactId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Externalcontact"
+    },
+    "GET /api/v2/externalcontacts/contacts": {
+        "functionName": "search",
+        "signature": "search(pageSize, pageNumber, q, sortOrder, expand)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "q",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/externalcontacts/contacts/{contactId}": {
+        "functionName": "update",
+        "signature": "update(contactId, body)",
+        "parameters": [
+            {
+                "name": "contactId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Externalcontact"
+            }
+        ],
+        "return": "Externalcontact"
+    }
+    
+}

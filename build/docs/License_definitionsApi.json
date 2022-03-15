@@ -1,0 +1,20 @@
+{
+    "GET /api/v2/license/definitions/{licenseId}": {
+        "functionName": "get",
+        "signature": "get(licenseId)",
+        "parameters": [
+            {
+                "name": "licenseId",
+                "type": "string"
+            }
+        ],
+        "return": "Licensedefinition"
+    },
+    "GET /api/v2/license/definitions": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "[]Licensedefinition"
+    }
+    
+}

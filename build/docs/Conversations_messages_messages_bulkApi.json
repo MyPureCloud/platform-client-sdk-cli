@@ -1,0 +1,18 @@
+{
+    "POST /api/v2/conversations/messages/{conversationId}/messages/bulk": {
+        "functionName": "create",
+        "signature": "create(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]string"
+            }
+        ],
+        "return": "Textmessagelisting"
+    }
+    
+}

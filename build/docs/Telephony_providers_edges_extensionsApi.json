@@ -1,0 +1,56 @@
+{
+    "GET /api/v2/telephony/providers/edges/extensions/{extensionId}": {
+        "functionName": "get",
+        "signature": "get(extensionId)",
+        "parameters": [
+            {
+                "name": "extensionId",
+                "type": "string"
+            }
+        ],
+        "return": "Extension"
+    },
+    "GET /api/v2/telephony/providers/edges/extensions": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, sortOrder, number)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "number",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/extensions/{extensionId}": {
+        "functionName": "update",
+        "signature": "update(extensionId, body)",
+        "parameters": [
+            {
+                "name": "extensionId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Extension"
+            }
+        ],
+        "return": "Extension"
+    }
+    
+}

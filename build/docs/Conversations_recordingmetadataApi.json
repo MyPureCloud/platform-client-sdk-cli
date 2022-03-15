@@ -1,0 +1,29 @@
+{
+    "GET /api/v2/conversations/{conversationId}/recordingmetadata": {
+        "functionName": "conversationmetadata",
+        "signature": "conversationmetadata(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            }
+        ],
+        "return": "[]Recordingmetadata"
+    },
+    "GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}": {
+        "functionName": "recordingmetadata",
+        "signature": "recordingmetadata(conversationId, recordingId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "recordingId",
+                "type": "string"
+            }
+        ],
+        "return": "Recordingmetadata"
+    }
+    
+}

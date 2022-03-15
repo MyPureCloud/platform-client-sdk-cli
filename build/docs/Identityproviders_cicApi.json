@@ -1,0 +1,26 @@
+{
+    "DELETE /api/v2/identityproviders/cic": {
+        "functionName": "delete",
+        "signature": "delete()",
+        
+        "return": "Empty"
+    },
+    "GET /api/v2/identityproviders/cic": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Customerinteractioncenter"
+    },
+    "PUT /api/v2/identityproviders/cic": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Customerinteractioncenter"
+            }
+        ],
+        "return": "Oauthprovider"
+    }
+    
+}

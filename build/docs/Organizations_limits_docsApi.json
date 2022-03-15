@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/organizations/limits/docs": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Urlresponse"
+    }
+    
+}

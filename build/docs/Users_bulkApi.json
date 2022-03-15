@@ -1,0 +1,14 @@
+{
+    "PATCH /api/v2/users/bulk": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "[]Patchuser"
+            }
+        ],
+        "return": "Userentitylisting"
+    }
+    
+}

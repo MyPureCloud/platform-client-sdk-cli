@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/workforcemanagement/notifications/update": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Updatenotificationsrequest"
+            }
+        ],
+        "return": "Updatenotificationsresponse"
+    }
+    
+}

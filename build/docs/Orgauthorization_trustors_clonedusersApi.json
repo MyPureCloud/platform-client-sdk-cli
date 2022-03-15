@@ -1,0 +1,58 @@
+{
+    "DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}": {
+        "functionName": "delete",
+        "signature": "delete(trustorOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "string"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}": {
+        "functionName": "get",
+        "signature": "get(trustorOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "string"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "string"
+            }
+        ],
+        "return": "Cloneduser"
+    },
+    "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers": {
+        "functionName": "list",
+        "signature": "list(trustorOrgId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "string"
+            }
+        ],
+        "return": "Cloneduserentitylisting"
+    },
+    "PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}": {
+        "functionName": "update",
+        "signature": "update(trustorOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "string"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "string"
+            }
+        ],
+        "return": "Cloneduser"
+    }
+    
+}

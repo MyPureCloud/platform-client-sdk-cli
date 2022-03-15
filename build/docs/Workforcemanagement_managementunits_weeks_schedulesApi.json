@@ -1,0 +1,57 @@
+{
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}": {
+        "functionName": "get",
+        "signature": "get(managementUnitId, weekId, scheduleId, expand, forceDownloadService)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekId",
+                "type": "string"
+            },
+            {
+                "name": "scheduleId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "bool"
+            }
+        ],
+        "return": "Weekscheduleresponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules": {
+        "functionName": "list",
+        "signature": "list(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekId",
+                "type": "string"
+            },
+            {
+                "name": "includeOnlyPublished",
+                "type": "bool"
+            },
+            {
+                "name": "earliestWeekDate",
+                "type": "string"
+            },
+            {
+                "name": "latestWeekDate",
+                "type": "string"
+            }
+        ],
+        "return": "Weekschedulelistresponse"
+    }
+    
+}

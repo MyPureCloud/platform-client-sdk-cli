@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/telephony/providers/edges/trunkbasesettings/template": {
+        "functionName": "get",
+        "signature": "get(trunkMetabaseId)",
+        "parameters": [
+            {
+                "name": "trunkMetabaseId",
+                "type": "string"
+            }
+        ],
+        "return": "Trunkbase"
+    }
+    
+}

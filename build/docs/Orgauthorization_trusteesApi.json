@@ -1,0 +1,65 @@
+{
+    "POST /api/v2/orgauthorization/trustees": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Trustcreate"
+            }
+        ],
+        "return": "Trustee"
+    },
+    "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}": {
+        "functionName": "delete",
+        "signature": "delete(trusteeOrgId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}": {
+        "functionName": "get",
+        "signature": "get(trusteeOrgId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "string"
+            }
+        ],
+        "return": "Trustee"
+    },
+    "GET /api/v2/orgauthorization/trustees": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}": {
+        "functionName": "update",
+        "signature": "update(trusteeOrgId, body)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Trustupdate"
+            }
+        ],
+        "return": "Trustee"
+    }
+    
+}

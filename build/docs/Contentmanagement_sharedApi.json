@@ -1,0 +1,30 @@
+{
+    "GET /api/v2/contentmanagement/shared/{sharedId}": {
+        "functionName": "get",
+        "signature": "get(sharedId, redirect, disposition, contentType, expand)",
+        "parameters": [
+            {
+                "name": "sharedId",
+                "type": "string"
+            },
+            {
+                "name": "redirect",
+                "type": "bool"
+            },
+            {
+                "name": "disposition",
+                "type": "string"
+            },
+            {
+                "name": "contentType",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Sharedresponse"
+    }
+    
+}

@@ -1,0 +1,26 @@
+{
+    "PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata": {
+        "functionName": "update",
+        "signature": "update(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "participantId",
+                "type": "string"
+            },
+            {
+                "name": "communicationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Setuuidatarequest"
+            }
+        ],
+        "return": "Empty"
+    }
+    
+}

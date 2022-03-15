@@ -1,0 +1,45 @@
+{
+    "GET /api/v2/conversations/chats/{conversationId}/messages/{messageId}": {
+        "functionName": "get",
+        "signature": "get(conversationId, messageId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "messageId",
+                "type": "string"
+            }
+        ],
+        "return": "Webchatmessage"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}/messages": {
+        "functionName": "list",
+        "signature": "list(conversationId, after, before, sortOrder, maxResults)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "after",
+                "type": "string"
+            },
+            {
+                "name": "before",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "maxResults",
+                "type": "int"
+            }
+        ],
+        "return": "Webchatmessageentitylist"
+    }
+    
+}

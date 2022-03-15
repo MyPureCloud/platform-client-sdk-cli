@@ -1,0 +1,50 @@
+{
+    "GET /api/v2/users/development/activities/me": {
+        "functionName": "list",
+        "signature": "list(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship)",
+        "parameters": [
+            {
+                "name": "moduleId",
+                "type": "string"
+            },
+            {
+                "name": "interval",
+                "type": "string"
+            },
+            {
+                "name": "completionInterval",
+                "type": "string"
+            },
+            {
+                "name": "overdue",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "types",
+                "type": "[]string"
+            },
+            {
+                "name": "statuses",
+                "type": "[]string"
+            },
+            {
+                "name": "relationship",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

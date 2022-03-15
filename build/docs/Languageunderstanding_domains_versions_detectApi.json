@@ -1,0 +1,22 @@
+{
+    "POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect": {
+        "functionName": "create",
+        "signature": "create(domainId, domainVersionId, body)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            },
+            {
+                "name": "domainVersionId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Nludetectionrequest"
+            }
+        ],
+        "return": "Nludetectionresponse"
+    }
+    
+}

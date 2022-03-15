@@ -1,0 +1,83 @@
+{
+    "POST /api/v2/flows/outcomes": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Flowoutcome"
+            }
+        ],
+        "return": "Flowoutcome"
+    },
+    "GET /api/v2/flows/outcomes/{flowOutcomeId}": {
+        "functionName": "get",
+        "signature": "get(flowOutcomeId)",
+        "parameters": [
+            {
+                "name": "flowOutcomeId",
+                "type": "string"
+            }
+        ],
+        "return": "Flowoutcome"
+    },
+    "GET /api/v2/flows/outcomes": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "description",
+                "type": "string"
+            },
+            {
+                "name": "nameOrDescription",
+                "type": "string"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/flows/outcomes/{flowOutcomeId}": {
+        "functionName": "update",
+        "signature": "update(flowOutcomeId, body)",
+        "parameters": [
+            {
+                "name": "flowOutcomeId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Flowoutcome"
+            }
+        ],
+        "return": "Operation"
+    }
+    
+}

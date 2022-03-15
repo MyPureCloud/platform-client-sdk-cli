@@ -1,0 +1,93 @@
+{
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans": {
+        "functionName": "create",
+        "signature": "create(managementUnitId, body, validationMode)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Createworkplan"
+            },
+            {
+                "name": "validationMode",
+                "type": "string"
+            }
+        ],
+        "return": "Workplan"
+    },
+    "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}": {
+        "functionName": "delete",
+        "signature": "delete(managementUnitId, workPlanId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "workPlanId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}": {
+        "functionName": "get",
+        "signature": "get(managementUnitId, workPlanId, includeOnly)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "workPlanId",
+                "type": "string"
+            },
+            {
+                "name": "includeOnly",
+                "type": "[]string"
+            }
+        ],
+        "return": "Workplan"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans": {
+        "functionName": "list",
+        "signature": "list(managementUnitId, expand)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Workplanlistresponse"
+    },
+    "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}": {
+        "functionName": "update",
+        "signature": "update(managementUnitId, workPlanId, body, validationMode)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "workPlanId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Workplan"
+            },
+            {
+                "name": "validationMode",
+                "type": "string"
+            }
+        ],
+        "return": "Workplan"
+    }
+    
+}

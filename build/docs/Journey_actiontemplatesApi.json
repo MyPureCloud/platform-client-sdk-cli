@@ -1,0 +1,89 @@
+{
+    "POST /api/v2/journey/actiontemplates": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Actiontemplate"
+            }
+        ],
+        "return": "Actiontemplate"
+    },
+    "DELETE /api/v2/journey/actiontemplates/{actionTemplateId}": {
+        "functionName": "delete",
+        "signature": "delete(actionTemplateId, hardDelete)",
+        "parameters": [
+            {
+                "name": "actionTemplateId",
+                "type": "string"
+            },
+            {
+                "name": "hardDelete",
+                "type": "bool"
+            }
+        ]
+    },
+    "GET /api/v2/journey/actiontemplates/{actionTemplateId}": {
+        "functionName": "get",
+        "signature": "get(actionTemplateId)",
+        "parameters": [
+            {
+                "name": "actionTemplateId",
+                "type": "string"
+            }
+        ],
+        "return": "Actiontemplate"
+    },
+    "GET /api/v2/journey/actiontemplates": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortBy, mediaType, state, queryFields, queryValue)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "mediaType",
+                "type": "string"
+            },
+            {
+                "name": "state",
+                "type": "string"
+            },
+            {
+                "name": "queryFields",
+                "type": "[]string"
+            },
+            {
+                "name": "queryValue",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/journey/actiontemplates/{actionTemplateId}": {
+        "functionName": "update",
+        "signature": "update(actionTemplateId, body)",
+        "parameters": [
+            {
+                "name": "actionTemplateId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Patchactiontemplate"
+            }
+        ],
+        "return": "Actiontemplate"
+    }
+    
+}

@@ -1,0 +1,48 @@
+{
+    "POST /api/v2/quality/publishedforms/surveys": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Publishform"
+            }
+        ],
+        "return": "Surveyform"
+    },
+    "GET /api/v2/quality/publishedforms/surveys/{formId}": {
+        "functionName": "get",
+        "signature": "get(formId)",
+        "parameters": [
+            {
+                "name": "formId",
+                "type": "string"
+            }
+        ],
+        "return": "Surveyform"
+    },
+    "GET /api/v2/quality/publishedforms/surveys": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, name, onlyLatestEnabledPerContext)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "onlyLatestEnabledPerContext",
+                "type": "bool"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

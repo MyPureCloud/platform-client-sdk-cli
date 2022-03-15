@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/date": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Serverdate"
+    }
+    
+}

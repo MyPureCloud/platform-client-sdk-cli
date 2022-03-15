@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups": {
+        "functionName": "list",
+        "signature": "list(businessUnitId, date)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "date",
+                "type": "time.Time"
+            }
+        ],
+        "return": "Wfmintradayplanninggrouplisting"
+    }
+    
+}

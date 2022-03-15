@@ -1,0 +1,77 @@
+{
+    "POST /api/v2/routing/wrapupcodes": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Wrapupcode"
+            }
+        ],
+        "return": "Wrapupcode"
+    },
+    "DELETE /api/v2/routing/wrapupcodes/{codeId}": {
+        "functionName": "delete",
+        "signature": "delete(codeId)",
+        "parameters": [
+            {
+                "name": "codeId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/routing/wrapupcodes/{codeId}": {
+        "functionName": "get",
+        "signature": "get(codeId)",
+        "parameters": [
+            {
+                "name": "codeId",
+                "type": "string"
+            }
+        ],
+        "return": "Wrapupcode"
+    },
+    "GET /api/v2/routing/wrapupcodes": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, sortOrder, name)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/routing/wrapupcodes/{codeId}": {
+        "functionName": "update",
+        "signature": "update(codeId, body)",
+        "parameters": [
+            {
+                "name": "codeId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Wrapupcode"
+            }
+        ],
+        "return": "Wrapupcode"
+    }
+    
+}

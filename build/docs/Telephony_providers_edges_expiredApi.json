@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/telephony/providers/edges/expired": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Expirededgelisting"
+    }
+    
+}

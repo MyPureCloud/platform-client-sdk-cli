@@ -1,0 +1,77 @@
+{
+    "POST /api/v2/architect/emergencygroups": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Emergencygroup"
+            }
+        ],
+        "return": "Emergencygroup"
+    },
+    "DELETE /api/v2/architect/emergencygroups/{emergencyGroupId}": {
+        "functionName": "delete",
+        "signature": "delete(emergencyGroupId)",
+        "parameters": [
+            {
+                "name": "emergencyGroupId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/architect/emergencygroups/{emergencyGroupId}": {
+        "functionName": "get",
+        "signature": "get(emergencyGroupId)",
+        "parameters": [
+            {
+                "name": "emergencyGroupId",
+                "type": "string"
+            }
+        ],
+        "return": "Emergencygroup"
+    },
+    "GET /api/v2/architect/emergencygroups": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/architect/emergencygroups/{emergencyGroupId}": {
+        "functionName": "update",
+        "signature": "update(emergencyGroupId, body)",
+        "parameters": [
+            {
+                "name": "emergencyGroupId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Emergencygroup"
+            }
+        ],
+        "return": "Emergencygroup"
+    }
+    
+}

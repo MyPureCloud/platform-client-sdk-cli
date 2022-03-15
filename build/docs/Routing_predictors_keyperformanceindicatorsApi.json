@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/routing/predictors/keyperformanceindicators": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "[]Keyperformanceindicator"
+    }
+    
+}

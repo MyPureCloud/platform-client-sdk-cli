@@ -1,0 +1,62 @@
+{
+    "POST /api/v2/contentmanagement/shares": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createsharerequest"
+            }
+        ],
+        "return": "Createshareresponse"
+    },
+    "DELETE /api/v2/contentmanagement/shares/{shareId}": {
+        "functionName": "delete",
+        "signature": "delete(shareId)",
+        "parameters": [
+            {
+                "name": "shareId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/contentmanagement/shares/{shareId}": {
+        "functionName": "get",
+        "signature": "get(shareId, expand)",
+        "parameters": [
+            {
+                "name": "shareId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Share"
+    },
+    "GET /api/v2/contentmanagement/shares": {
+        "functionName": "list",
+        "signature": "list(entityId, expand, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "entityId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

@@ -1,0 +1,30 @@
+{
+    "GET /api/v2/recording/jobs/{jobId}/failedrecordings": {
+        "functionName": "list",
+        "signature": "list(jobId, pageSize, pageNumber, includeTotal, cursor)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "includeTotal",
+                "type": "bool"
+            },
+            {
+                "name": "cursor",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

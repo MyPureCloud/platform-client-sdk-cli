@@ -1,0 +1,35 @@
+{
+    "POST /api/v2/outbound/campaigns/progress": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "[]string"
+            }
+        ],
+        "return": "[]Campaignprogress"
+    },
+    "DELETE /api/v2/outbound/campaigns/{campaignId}/progress": {
+        "functionName": "delete",
+        "signature": "delete(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/campaigns/{campaignId}/progress": {
+        "functionName": "get",
+        "signature": "get(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "string"
+            }
+        ],
+        "return": "Campaignprogress"
+    }
+    
+}

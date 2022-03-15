@@ -146,6 +146,9 @@ type ParticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Participant
@@ -328,6 +331,10 @@ type Participant struct {
 
     // EndAcwTime - The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     EndAcwTime time.Time `json:"endAcwTime"`
+
+
+    // BargedParticipantId - If this participant barged in a participant's call, then this will be the id of the targeted participant.
+    BargedParticipantId string `json:"bargedParticipantId"`
 
 }
 
@@ -514,6 +521,10 @@ func (o *Participant) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -619,6 +630,8 @@ func (u *Participant) MarshalJSON() ([]byte, error) {
         StartAcwTime time.Time `json:"startAcwTime"`
         
         EndAcwTime time.Time `json:"endAcwTime"`
+        
+        BargedParticipantId string `json:"bargedParticipantId"`
         
         *Alias
     }{
@@ -806,6 +819,10 @@ func (u *Participant) MarshalJSON() ([]byte, error) {
 
         
         Evaluations: []Evaluation{{}},
+        
+
+        
+
         
 
         

@@ -1,0 +1,38 @@
+{
+    "GET /api/v2/contentmanagement/documents/{documentId}/audits": {
+        "functionName": "list",
+        "signature": "list(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "transactionFilter",
+                "type": "string"
+            },
+            {
+                "name": "level",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

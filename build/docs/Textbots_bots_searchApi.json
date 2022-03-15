@@ -1,0 +1,26 @@
+{
+    "GET /api/v2/textbots/bots/search": {
+        "functionName": "get",
+        "signature": "get(botType, botName, botId, pageSize)",
+        "parameters": [
+            {
+                "name": "botType",
+                "type": "[]string"
+            },
+            {
+                "name": "botName",
+                "type": "string"
+            },
+            {
+                "name": "botId",
+                "type": "[]string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Botsearchresponseentitylisting"
+    }
+    
+}

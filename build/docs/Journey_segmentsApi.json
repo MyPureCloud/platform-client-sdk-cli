@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/journey/segments": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Journeysegment"
+            }
+        ],
+        "return": "Journeysegment"
+    },
+    "DELETE /api/v2/journey/segments/{segmentId}": {
+        "functionName": "delete",
+        "signature": "delete(segmentId)",
+        "parameters": [
+            {
+                "name": "segmentId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/journey/segments/{segmentId}": {
+        "functionName": "get",
+        "signature": "get(segmentId)",
+        "parameters": [
+            {
+                "name": "segmentId",
+                "type": "string"
+            }
+        ],
+        "return": "Journeysegment"
+    },
+    "GET /api/v2/journey/segments": {
+        "functionName": "list",
+        "signature": "list(sortBy, pageSize, pageNumber, isActive, segmentIds, queryFields, queryValue)",
+        "parameters": [
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "isActive",
+                "type": "bool"
+            },
+            {
+                "name": "segmentIds",
+                "type": "[]string"
+            },
+            {
+                "name": "queryFields",
+                "type": "[]string"
+            },
+            {
+                "name": "queryValue",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/journey/segments/{segmentId}": {
+        "functionName": "update",
+        "signature": "update(segmentId, body)",
+        "parameters": [
+            {
+                "name": "segmentId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Patchsegment"
+            }
+        ],
+        "return": "Journeysegment"
+    }
+    
+}

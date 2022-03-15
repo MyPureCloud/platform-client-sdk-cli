@@ -1,0 +1,69 @@
+{
+    "POST /api/v2/mobiledevices": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Userdevice"
+            }
+        ],
+        "return": "Userdevice"
+    },
+    "DELETE /api/v2/mobiledevices/{deviceId}": {
+        "functionName": "delete",
+        "signature": "delete(deviceId)",
+        "parameters": [
+            {
+                "name": "deviceId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/mobiledevices/{deviceId}": {
+        "functionName": "get",
+        "signature": "get(deviceId)",
+        "parameters": [
+            {
+                "name": "deviceId",
+                "type": "string"
+            }
+        ],
+        "return": "Userdevice"
+    },
+    "GET /api/v2/mobiledevices": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/mobiledevices/{deviceId}": {
+        "functionName": "update",
+        "signature": "update(deviceId, body)",
+        "parameters": [
+            {
+                "name": "deviceId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Userdevice"
+            }
+        ],
+        "return": "Userdevice"
+    }
+    
+}

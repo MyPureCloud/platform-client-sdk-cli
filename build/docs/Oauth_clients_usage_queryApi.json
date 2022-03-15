@@ -1,0 +1,18 @@
+{
+    "POST /api/v2/oauth/clients/{clientId}/usage/query": {
+        "functionName": "create",
+        "signature": "create(clientId, body)",
+        "parameters": [
+            {
+                "name": "clientId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Apiusagequery"
+            }
+        ],
+        "return": "Usageexecutionresult"
+    }
+    
+}

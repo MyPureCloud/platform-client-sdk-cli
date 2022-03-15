@@ -1,0 +1,31 @@
+{
+    "DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason": {
+        "functionName": "delete",
+        "signature": "delete(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "participantId",
+                "type": "string"
+            }
+        ]
+    },
+    "PUT /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason": {
+        "functionName": "update",
+        "signature": "update(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "participantId",
+                "type": "string"
+            }
+        ]
+    }
+    
+}

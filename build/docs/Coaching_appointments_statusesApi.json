@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/coaching/appointments/{appointmentId}/statuses": {
+        "functionName": "list",
+        "signature": "list(appointmentId, pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "appointmentId",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

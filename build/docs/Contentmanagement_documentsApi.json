@@ -1,0 +1,113 @@
+{
+    "POST /api/v2/contentmanagement/documents": {
+        "functionName": "create",
+        "signature": "create(body, copySource, moveSource, override)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Documentupload"
+            },
+            {
+                "name": "copySource",
+                "type": "string"
+            },
+            {
+                "name": "moveSource",
+                "type": "string"
+            },
+            {
+                "name": "override",
+                "type": "bool"
+            }
+        ],
+        "return": "Document"
+    },
+    "DELETE /api/v2/contentmanagement/documents/{documentId}": {
+        "functionName": "delete",
+        "signature": "delete(documentId, override)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "string"
+            },
+            {
+                "name": "override",
+                "type": "bool"
+            }
+        ]
+    },
+    "GET /api/v2/contentmanagement/documents/{documentId}": {
+        "functionName": "get",
+        "signature": "get(documentId, expand)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Document"
+    },
+    "GET /api/v2/contentmanagement/documents": {
+        "functionName": "list",
+        "signature": "list(workspaceId, name, expand, pageSize, pageNumber, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "workspaceId",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "POST /api/v2/contentmanagement/documents/{documentId}": {
+        "functionName": "update",
+        "signature": "update(documentId, body, expand, override)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Documentupdate"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "override",
+                "type": "bool"
+            }
+        ],
+        "return": "Document"
+    }
+    
+}

@@ -1,0 +1,77 @@
+{
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups": {
+        "functionName": "create",
+        "signature": "create(businessUnitId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Createplanninggrouprequest"
+            }
+        ],
+        "return": "Planninggroup"
+    },
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}": {
+        "functionName": "delete",
+        "signature": "delete(businessUnitId, planningGroupId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "planningGroupId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}": {
+        "functionName": "get",
+        "signature": "get(businessUnitId, planningGroupId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "planningGroupId",
+                "type": "string"
+            }
+        ],
+        "return": "Planninggroup"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups": {
+        "functionName": "list",
+        "signature": "list(businessUnitId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            }
+        ],
+        "return": "Planninggrouplist"
+    },
+    "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}": {
+        "functionName": "update",
+        "signature": "update(businessUnitId, planningGroupId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "planningGroupId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Updateplanninggrouprequest"
+            }
+        ],
+        "return": "Planninggroup"
+    }
+    
+}

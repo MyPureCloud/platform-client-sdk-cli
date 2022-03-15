@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/responsemanagement/responses": {
+        "functionName": "create",
+        "signature": "create(body, expand)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Response"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Response"
+    },
+    "DELETE /api/v2/responsemanagement/responses/{responseId}": {
+        "functionName": "delete",
+        "signature": "delete(responseId)",
+        "parameters": [
+            {
+                "name": "responseId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/responsemanagement/responses/{responseId}": {
+        "functionName": "get",
+        "signature": "get(responseId, expand)",
+        "parameters": [
+            {
+                "name": "responseId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Response"
+    },
+    "GET /api/v2/responsemanagement/responses": {
+        "functionName": "list",
+        "signature": "list(libraryId, pageNumber, pageSize, expand)",
+        "parameters": [
+            {
+                "name": "libraryId",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/responsemanagement/responses/{responseId}": {
+        "functionName": "update",
+        "signature": "update(responseId, body, expand)",
+        "parameters": [
+            {
+                "name": "responseId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Response"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Response"
+    }
+    
+}

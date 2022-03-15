@@ -1,0 +1,69 @@
+{
+    "GET /api/v2/outbound/dnclists/divisionviews/{dncListId}": {
+        "functionName": "get",
+        "signature": "get(dncListId, includeImportStatus, includeSize)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "string"
+            },
+            {
+                "name": "includeImportStatus",
+                "type": "bool"
+            },
+            {
+                "name": "includeSize",
+                "type": "bool"
+            }
+        ],
+        "return": "Dnclistdivisionview"
+    },
+    "GET /api/v2/outbound/dnclists/divisionviews": {
+        "functionName": "list",
+        "signature": "list(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, id, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "includeImportStatus",
+                "type": "bool"
+            },
+            {
+                "name": "includeSize",
+                "type": "bool"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "dncSourceType",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

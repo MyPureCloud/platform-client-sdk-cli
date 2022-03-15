@@ -1,0 +1,37 @@
+{
+    "POST /api/v2/groups/{groupId}/greetings": {
+        "functionName": "create",
+        "signature": "create(groupId, body)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Greeting"
+            }
+        ],
+        "return": "Greeting"
+    },
+    "GET /api/v2/groups/{groupId}/greetings": {
+        "functionName": "list",
+        "signature": "list(groupId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

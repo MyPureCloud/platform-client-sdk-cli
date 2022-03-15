@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/analytics/users/aggregates/query": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Useraggregationquery"
+            }
+        ],
+        "return": "Useraggregatequeryresponse"
+    }
+    
+}

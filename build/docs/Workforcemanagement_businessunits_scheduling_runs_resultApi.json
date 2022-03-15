@@ -1,0 +1,26 @@
+{
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result": {
+        "functionName": "get",
+        "signature": "get(businessUnitId, runId, managementUnitIds, expand)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "runId",
+                "type": "string"
+            },
+            {
+                "name": "managementUnitIds",
+                "type": "[]string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Burescheduleresult"
+    }
+    
+}

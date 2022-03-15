@@ -1,0 +1,69 @@
+{
+    "POST /api/v2/responsemanagement/libraries": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Library"
+            }
+        ],
+        "return": "Library"
+    },
+    "DELETE /api/v2/responsemanagement/libraries/{libraryId}": {
+        "functionName": "delete",
+        "signature": "delete(libraryId)",
+        "parameters": [
+            {
+                "name": "libraryId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/responsemanagement/libraries/{libraryId}": {
+        "functionName": "get",
+        "signature": "get(libraryId)",
+        "parameters": [
+            {
+                "name": "libraryId",
+                "type": "string"
+            }
+        ],
+        "return": "Library"
+    },
+    "GET /api/v2/responsemanagement/libraries": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, messagingTemplateFilter)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "messagingTemplateFilter",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/responsemanagement/libraries/{libraryId}": {
+        "functionName": "update",
+        "signature": "update(libraryId, body)",
+        "parameters": [
+            {
+                "name": "libraryId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Library"
+            }
+        ],
+        "return": "Library"
+    }
+    
+}

@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/users/{userId}/trustors": {
+        "functionName": "list",
+        "signature": "list(userId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

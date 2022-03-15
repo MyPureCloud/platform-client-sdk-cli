@@ -1,0 +1,44 @@
+{
+    "POST /api/v2/gdpr/requests": {
+        "functionName": "create",
+        "signature": "create(body, deleteConfirmed)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Gdprrequest"
+            },
+            {
+                "name": "deleteConfirmed",
+                "type": "bool"
+            }
+        ],
+        "return": "Gdprrequest"
+    },
+    "GET /api/v2/gdpr/requests/{requestId}": {
+        "functionName": "get",
+        "signature": "get(requestId)",
+        "parameters": [
+            {
+                "name": "requestId",
+                "type": "string"
+            }
+        ],
+        "return": "Gdprrequest"
+    },
+    "GET /api/v2/gdpr/requests": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

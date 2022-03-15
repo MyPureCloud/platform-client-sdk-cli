@@ -1,0 +1,58 @@
+{
+    "POST /api/v2/integrations/actions/{actionId}/draft": {
+        "functionName": "create",
+        "signature": "create(actionId)",
+        "parameters": [
+            {
+                "name": "actionId",
+                "type": "string"
+            }
+        ],
+        "return": "Action"
+    },
+    "DELETE /api/v2/integrations/actions/{actionId}/draft": {
+        "functionName": "delete",
+        "signature": "delete(actionId)",
+        "parameters": [
+            {
+                "name": "actionId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/integrations/actions/{actionId}/draft": {
+        "functionName": "get",
+        "signature": "get(actionId, expand, includeConfig)",
+        "parameters": [
+            {
+                "name": "actionId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "includeConfig",
+                "type": "bool"
+            }
+        ],
+        "return": "Action"
+    },
+    "PATCH /api/v2/integrations/actions/{actionId}/draft": {
+        "functionName": "update",
+        "signature": "update(actionId, body)",
+        "parameters": [
+            {
+                "name": "actionId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Updatedraftinput"
+            }
+        ],
+        "return": "Action"
+    }
+    
+}

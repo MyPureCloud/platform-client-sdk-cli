@@ -1,0 +1,77 @@
+{
+    "POST /api/v2/locations": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Locationcreatedefinition"
+            }
+        ],
+        "return": "Locationdefinition"
+    },
+    "DELETE /api/v2/locations/{locationId}": {
+        "functionName": "delete",
+        "signature": "delete(locationId)",
+        "parameters": [
+            {
+                "name": "locationId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/locations/{locationId}": {
+        "functionName": "get",
+        "signature": "get(locationId, expand)",
+        "parameters": [
+            {
+                "name": "locationId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Locationdefinition"
+    },
+    "GET /api/v2/locations": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, id, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/locations/{locationId}": {
+        "functionName": "update",
+        "signature": "update(locationId, body)",
+        "parameters": [
+            {
+                "name": "locationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Locationupdatedefinition"
+            }
+        ],
+        "return": "Locationdefinition"
+    }
+    
+}

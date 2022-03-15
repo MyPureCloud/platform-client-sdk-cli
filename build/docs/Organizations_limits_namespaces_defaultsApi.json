@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults": {
+        "functionName": "list",
+        "signature": "list(namespaceName)",
+        "parameters": [
+            {
+                "name": "namespaceName",
+                "type": "string"
+            }
+        ],
+        "return": "Limitsentitylisting"
+    }
+    
+}

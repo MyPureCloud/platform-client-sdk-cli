@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/externalcontacts/reversewhitepageslookup": {
+        "functionName": "search",
+        "signature": "search(lookupVal, expand)",
+        "parameters": [
+            {
+                "name": "lookupVal",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Reversewhitepageslookupresult"
+    }
+    
+}

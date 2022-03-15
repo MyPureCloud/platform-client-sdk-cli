@@ -1,0 +1,25 @@
+{
+    "POST /api/v2/license/toggles/{featureName}": {
+        "functionName": "create",
+        "signature": "create(featureName)",
+        "parameters": [
+            {
+                "name": "featureName",
+                "type": "string"
+            }
+        ],
+        "return": "Licenseorgtoggle"
+    },
+    "GET /api/v2/license/toggles/{featureName}": {
+        "functionName": "get",
+        "signature": "get(featureName)",
+        "parameters": [
+            {
+                "name": "featureName",
+                "type": "string"
+            }
+        ],
+        "return": "Licenseorgtoggle"
+    }
+    
+}

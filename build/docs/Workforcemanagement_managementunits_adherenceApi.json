@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence": {
+        "functionName": "get",
+        "signature": "get(managementUnitId, forceDownloadService)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "bool"
+            }
+        ],
+        "return": "Userscheduleadherencelisting"
+    }
+    
+}

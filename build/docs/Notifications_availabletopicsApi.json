@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/notifications/availabletopics": {
+        "functionName": "list",
+        "signature": "list(expand, includePreview)",
+        "parameters": [
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "includePreview",
+                "type": "bool"
+            }
+        ],
+        "return": "Availabletopicentitylisting"
+    }
+    
+}

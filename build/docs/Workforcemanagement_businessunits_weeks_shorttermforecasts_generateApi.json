@@ -1,0 +1,26 @@
+{
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate": {
+        "functionName": "create",
+        "signature": "create(businessUnitId, weekDateId, body, forceAsync)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekDateId",
+                "type": "time.Time"
+            },
+            {
+                "name": "body",
+                "type": "Generatebuforecastrequest"
+            },
+            {
+                "name": "forceAsync",
+                "type": "bool"
+            }
+        ],
+        "return": "Asyncforecastoperationresult"
+    }
+    
+}

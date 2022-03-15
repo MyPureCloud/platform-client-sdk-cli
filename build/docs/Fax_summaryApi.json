@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/fax/summary": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Faxsummary"
+    }
+    
+}

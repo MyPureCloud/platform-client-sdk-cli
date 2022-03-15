@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/gamification/profiles/users/{userId}": {
+        "functionName": "get",
+        "signature": "get(userId, workday)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "workday",
+                "type": "time.Time"
+            }
+        ],
+        "return": "Performanceprofile"
+    }
+    
+}

@@ -1,0 +1,54 @@
+{
+    "DELETE /api/v2/fax/documents/{documentId}": {
+        "functionName": "delete",
+        "signature": "delete(documentId)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/fax/documents/{documentId}": {
+        "functionName": "get",
+        "signature": "get(documentId)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "string"
+            }
+        ],
+        "return": "Faxdocument"
+    },
+    "GET /api/v2/fax/documents": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/fax/documents/{documentId}": {
+        "functionName": "update",
+        "signature": "update(documentId, body)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Faxdocument"
+            }
+        ],
+        "return": "Faxdocument"
+    }
+    
+}

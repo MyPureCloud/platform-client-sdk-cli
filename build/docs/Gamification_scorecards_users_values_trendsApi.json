@@ -1,0 +1,53 @@
+{
+    "GET /api/v2/gamification/scorecards/users/values/trends": {
+        "functionName": "get",
+        "signature": "get(filterType, filterId, startWorkday, endWorkday, timeZone)",
+        "parameters": [
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "filterId",
+                "type": "string"
+            },
+            {
+                "name": "startWorkday",
+                "type": "time.Time"
+            },
+            {
+                "name": "endWorkday",
+                "type": "time.Time"
+            },
+            {
+                "name": "timeZone",
+                "type": "string"
+            }
+        ],
+        "return": "Workdayvaluestrend"
+    },
+    "GET /api/v2/gamification/scorecards/users/{userId}/values/trends": {
+        "functionName": "list",
+        "signature": "list(userId, startWorkday, endWorkday, timeZone)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "startWorkday",
+                "type": "time.Time"
+            },
+            {
+                "name": "endWorkday",
+                "type": "time.Time"
+            },
+            {
+                "name": "timeZone",
+                "type": "string"
+            }
+        ],
+        "return": "Workdayvaluestrend"
+    }
+    
+}

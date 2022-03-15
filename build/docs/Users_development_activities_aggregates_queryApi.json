@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/users/development/activities/aggregates/query": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Developmentactivityaggregateparam"
+            }
+        ],
+        "return": "Developmentactivityaggregateresponse"
+    }
+    
+}

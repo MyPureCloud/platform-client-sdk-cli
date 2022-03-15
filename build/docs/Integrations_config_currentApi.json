@@ -1,0 +1,29 @@
+{
+    "GET /api/v2/integrations/{integrationId}/config/current": {
+        "functionName": "get",
+        "signature": "get(integrationId)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "string"
+            }
+        ],
+        "return": "Integrationconfiguration"
+    },
+    "PUT /api/v2/integrations/{integrationId}/config/current": {
+        "functionName": "update",
+        "signature": "update(integrationId, body)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Integrationconfiguration"
+            }
+        ],
+        "return": "Integrationconfiguration"
+    }
+    
+}

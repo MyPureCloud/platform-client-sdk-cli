@@ -1,0 +1,78 @@
+{
+    "DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}": {
+        "functionName": "delete",
+        "signature": "delete(workspaceId, memberId)",
+        "parameters": [
+            {
+                "name": "workspaceId",
+                "type": "string"
+            },
+            {
+                "name": "memberId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}": {
+        "functionName": "get",
+        "signature": "get(workspaceId, memberId, expand)",
+        "parameters": [
+            {
+                "name": "workspaceId",
+                "type": "string"
+            },
+            {
+                "name": "memberId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Workspacemember"
+    },
+    "GET /api/v2/contentmanagement/workspaces/{workspaceId}/members": {
+        "functionName": "list",
+        "signature": "list(workspaceId, pageSize, pageNumber, expand)",
+        "parameters": [
+            {
+                "name": "workspaceId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}": {
+        "functionName": "update",
+        "signature": "update(workspaceId, memberId, body)",
+        "parameters": [
+            {
+                "name": "workspaceId",
+                "type": "string"
+            },
+            {
+                "name": "memberId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Workspacemember"
+            }
+        ],
+        "return": "Workspacemember"
+    }
+    
+}

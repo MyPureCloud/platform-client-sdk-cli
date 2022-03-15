@@ -1,0 +1,37 @@
+{
+    "GET /api/v2/users/{userId}/geolocations/{clientId}": {
+        "functionName": "get",
+        "signature": "get(userId, clientId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "clientId",
+                "type": "string"
+            }
+        ],
+        "return": "Geolocation"
+    },
+    "PATCH /api/v2/users/{userId}/geolocations/{clientId}": {
+        "functionName": "update",
+        "signature": "update(userId, clientId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "clientId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Geolocation"
+            }
+        ],
+        "return": "Geolocation"
+    }
+    
+}

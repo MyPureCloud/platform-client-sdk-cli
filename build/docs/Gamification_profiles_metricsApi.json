@@ -1,0 +1,75 @@
+{
+    "POST /api/v2/gamification/profiles/{profileId}/metrics": {
+        "functionName": "create",
+        "signature": "create(profileId, body)",
+        "parameters": [
+            {
+                "name": "profileId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Createmetric"
+            }
+        ],
+        "return": "Metric"
+    },
+    "GET /api/v2/gamification/profiles/{profileId}/metrics/{metricId}": {
+        "functionName": "get",
+        "signature": "get(profileId, metricId, workday)",
+        "parameters": [
+            {
+                "name": "profileId",
+                "type": "string"
+            },
+            {
+                "name": "metricId",
+                "type": "string"
+            },
+            {
+                "name": "workday",
+                "type": "time.Time"
+            }
+        ],
+        "return": "Metric"
+    },
+    "GET /api/v2/gamification/profiles/{profileId}/metrics": {
+        "functionName": "list",
+        "signature": "list(profileId, expand, workday)",
+        "parameters": [
+            {
+                "name": "profileId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "workday",
+                "type": "time.Time"
+            }
+        ],
+        "return": "Getmetricresponse"
+    },
+    "PUT /api/v2/gamification/profiles/{profileId}/metrics/{metricId}": {
+        "functionName": "update",
+        "signature": "update(profileId, metricId, body)",
+        "parameters": [
+            {
+                "name": "profileId",
+                "type": "string"
+            },
+            {
+                "name": "metricId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Createmetric"
+            }
+        ],
+        "return": "Metric"
+    }
+    
+}

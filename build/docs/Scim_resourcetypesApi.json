@@ -1,0 +1,20 @@
+{
+    "GET /api/v2/scim/resourcetypes/{resourceType}": {
+        "functionName": "get",
+        "signature": "get(resourceType)",
+        "parameters": [
+            {
+                "name": "resourceType",
+                "type": "string"
+            }
+        ],
+        "return": "Scimconfigresourcetype"
+    },
+    "GET /api/v2/scim/resourcetypes": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    }
+    
+}

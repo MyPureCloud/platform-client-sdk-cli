@@ -1,0 +1,48 @@
+{
+    "GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}": {
+        "functionName": "get",
+        "signature": "get(conversationId, mediaRequestId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "mediaRequestId",
+                "type": "string"
+            }
+        ],
+        "return": "Webchatguestmediarequest"
+    },
+    "GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests": {
+        "functionName": "list",
+        "signature": "list(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            }
+        ],
+        "return": "Webchatguestmediarequestentitylist"
+    },
+    "PATCH /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}": {
+        "functionName": "update",
+        "signature": "update(conversationId, mediaRequestId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "mediaRequestId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Webchatguestmediarequest"
+            }
+        ],
+        "return": "Webchatguestmediarequest"
+    }
+    
+}

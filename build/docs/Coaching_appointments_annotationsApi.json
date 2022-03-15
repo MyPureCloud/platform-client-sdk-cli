@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/coaching/appointments/{appointmentId}/annotations": {
+        "functionName": "create",
+        "signature": "create(appointmentId, body)",
+        "parameters": [
+            {
+                "name": "appointmentId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Coachingannotationcreaterequest"
+            }
+        ],
+        "return": "Coachingannotation"
+    },
+    "DELETE /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}": {
+        "functionName": "delete",
+        "signature": "delete(appointmentId, annotationId)",
+        "parameters": [
+            {
+                "name": "appointmentId",
+                "type": "string"
+            },
+            {
+                "name": "annotationId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}": {
+        "functionName": "get",
+        "signature": "get(appointmentId, annotationId)",
+        "parameters": [
+            {
+                "name": "appointmentId",
+                "type": "string"
+            },
+            {
+                "name": "annotationId",
+                "type": "string"
+            }
+        ],
+        "return": "Coachingannotation"
+    },
+    "GET /api/v2/coaching/appointments/{appointmentId}/annotations": {
+        "functionName": "list",
+        "signature": "list(appointmentId, pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "appointmentId",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}": {
+        "functionName": "update",
+        "signature": "update(appointmentId, annotationId, body)",
+        "parameters": [
+            {
+                "name": "appointmentId",
+                "type": "string"
+            },
+            {
+                "name": "annotationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Coachingannotation"
+            }
+        ],
+        "return": "Coachingannotation"
+    }
+    
+}

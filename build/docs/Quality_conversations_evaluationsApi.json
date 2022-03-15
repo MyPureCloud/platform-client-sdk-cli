@@ -1,0 +1,83 @@
+{
+    "POST /api/v2/quality/conversations/{conversationId}/evaluations": {
+        "functionName": "create",
+        "signature": "create(conversationId, body, expand)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Evaluation"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Evaluation"
+    },
+    "DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}": {
+        "functionName": "delete",
+        "signature": "delete(conversationId, evaluationId, expand)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "evaluationId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Evaluation"
+    },
+    "GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}": {
+        "functionName": "get",
+        "signature": "get(conversationId, evaluationId, expand)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "evaluationId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Evaluation"
+    },
+    "PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}": {
+        "functionName": "update",
+        "signature": "update(conversationId, evaluationId, body, expand)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "evaluationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Evaluation"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Evaluation"
+    }
+    
+}

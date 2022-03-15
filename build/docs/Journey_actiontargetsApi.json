@@ -1,0 +1,44 @@
+{
+    "GET /api/v2/journey/actiontargets/{actionTargetId}": {
+        "functionName": "get",
+        "signature": "get(actionTargetId)",
+        "parameters": [
+            {
+                "name": "actionTargetId",
+                "type": "string"
+            }
+        ],
+        "return": "Actiontarget"
+    },
+    "GET /api/v2/journey/actiontargets": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/journey/actiontargets/{actionTargetId}": {
+        "functionName": "update",
+        "signature": "update(actionTargetId, body)",
+        "parameters": [
+            {
+                "name": "actionTargetId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Patchactiontarget"
+            }
+        ],
+        "return": "Actiontarget"
+    }
+    
+}

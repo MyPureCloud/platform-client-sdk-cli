@@ -1,0 +1,100 @@
+{
+    "POST /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces": {
+        "functionName": "create",
+        "signature": "create(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Domainlogicalinterface"
+            }
+        ],
+        "return": "Domainlogicalinterface"
+    },
+    "DELETE /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}": {
+        "functionName": "delete",
+        "signature": "delete(edgeId, interfaceId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "interfaceId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}": {
+        "functionName": "get",
+        "signature": "get(edgeId, interfaceId, expand)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "interfaceId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Domainlogicalinterface"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces": {
+        "functionName": "getedgelogicalinterfaces",
+        "signature": "getedgelogicalinterfaces(edgeId, expand)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "GET /api/v2/telephony/providers/edges/logicalinterfaces": {
+        "functionName": "list",
+        "signature": "list(edgeIds, expand)",
+        "parameters": [
+            {
+                "name": "edgeIds",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}": {
+        "functionName": "update",
+        "signature": "update(edgeId, interfaceId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "interfaceId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Domainlogicalinterface"
+            }
+        ],
+        "return": "Domainlogicalinterface"
+    }
+    
+}

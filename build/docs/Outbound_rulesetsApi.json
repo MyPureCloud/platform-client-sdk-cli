@@ -1,0 +1,85 @@
+{
+    "POST /api/v2/outbound/rulesets": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Ruleset"
+            }
+        ],
+        "return": "Ruleset"
+    },
+    "DELETE /api/v2/outbound/rulesets/{ruleSetId}": {
+        "functionName": "delete",
+        "signature": "delete(ruleSetId)",
+        "parameters": [
+            {
+                "name": "ruleSetId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/rulesets/{ruleSetId}": {
+        "functionName": "get",
+        "signature": "get(ruleSetId)",
+        "parameters": [
+            {
+                "name": "ruleSetId",
+                "type": "string"
+            }
+        ],
+        "return": "Ruleset"
+    },
+    "GET /api/v2/outbound/rulesets": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "bool"
+            },
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/outbound/rulesets/{ruleSetId}": {
+        "functionName": "update",
+        "signature": "update(ruleSetId, body)",
+        "parameters": [
+            {
+                "name": "ruleSetId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Ruleset"
+            }
+        ],
+        "return": "Ruleset"
+    }
+    
+}

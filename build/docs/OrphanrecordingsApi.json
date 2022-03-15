@@ -1,0 +1,79 @@
+{
+    "DELETE /api/v2/orphanrecordings/{orphanId}": {
+        "functionName": "delete",
+        "signature": "delete(orphanId)",
+        "parameters": [
+            {
+                "name": "orphanId",
+                "type": "string"
+            }
+        ],
+        "return": "Orphanrecording"
+    },
+    "GET /api/v2/orphanrecordings/{orphanId}": {
+        "functionName": "get",
+        "signature": "get(orphanId)",
+        "parameters": [
+            {
+                "name": "orphanId",
+                "type": "string"
+            }
+        ],
+        "return": "Orphanrecording"
+    },
+    "GET /api/v2/orphanrecordings": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            },
+            {
+                "name": "hasConversation",
+                "type": "bool"
+            },
+            {
+                "name": "media",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/orphanrecordings/{orphanId}": {
+        "functionName": "update",
+        "signature": "update(orphanId, body)",
+        "parameters": [
+            {
+                "name": "orphanId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Orphanupdaterequest"
+            }
+        ],
+        "return": "Recording"
+    }
+    
+}

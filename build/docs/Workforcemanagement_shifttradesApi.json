@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/workforcemanagement/shifttrades": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Shifttradelistresponse"
+    }
+    
+}

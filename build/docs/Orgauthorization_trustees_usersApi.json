@@ -1,0 +1,66 @@
+{
+    "POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/users": {
+        "functionName": "create",
+        "signature": "create(trusteeOrgId, body)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Trustmembercreate"
+            }
+        ],
+        "return": "Trustuser"
+    },
+    "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}": {
+        "functionName": "delete",
+        "signature": "delete(trusteeOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "string"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}": {
+        "functionName": "get",
+        "signature": "get(trusteeOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "string"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "string"
+            }
+        ],
+        "return": "Trustuser"
+    },
+    "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users": {
+        "functionName": "list",
+        "signature": "list(trusteeOrgId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

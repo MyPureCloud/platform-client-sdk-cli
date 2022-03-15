@@ -1,0 +1,18 @@
+{
+    "POST /api/v2/coaching/appointments/{appointmentId}/conversations": {
+        "functionName": "create",
+        "signature": "create(appointmentId, body)",
+        "parameters": [
+            {
+                "name": "appointmentId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Addconversationrequest"
+            }
+        ],
+        "return": "Addconversationresponse"
+    }
+    
+}

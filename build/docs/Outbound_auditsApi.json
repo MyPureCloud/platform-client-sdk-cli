@@ -1,0 +1,34 @@
+{
+    "POST /api/v2/outbound/audits": {
+        "functionName": "create",
+        "signature": "create(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Dialerauditrequest"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "facetsOnly",
+                "type": "bool"
+            }
+        ],
+        "return": "Auditsearchresult"
+    }
+    
+}

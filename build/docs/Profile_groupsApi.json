@@ -1,0 +1,26 @@
+{
+    "GET /api/v2/profiles/groups": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, id, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

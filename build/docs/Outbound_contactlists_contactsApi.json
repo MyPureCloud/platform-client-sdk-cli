@@ -1,0 +1,92 @@
+{
+    "POST /api/v2/outbound/contactlists/{contactListId}/contacts": {
+        "functionName": "create",
+        "signature": "create(contactListId, body, priority, clearSystemData, doNotQueue)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]Writabledialercontact"
+            },
+            {
+                "name": "priority",
+                "type": "bool"
+            },
+            {
+                "name": "clearSystemData",
+                "type": "bool"
+            },
+            {
+                "name": "doNotQueue",
+                "type": "bool"
+            }
+        ],
+        "return": "[]Dialercontact"
+    },
+    "DELETE /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}": {
+        "functionName": "delete",
+        "signature": "delete(contactListId, contactId)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "string"
+            },
+            {
+                "name": "contactId",
+                "type": "string"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/contactlists/{contactListId}/contacts": {
+        "functionName": "deletecontacts",
+        "signature": "deletecontacts(contactListId, contactIds)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "string"
+            },
+            {
+                "name": "contactIds",
+                "type": "[]string"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}": {
+        "functionName": "get",
+        "signature": "get(contactListId, contactId)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "string"
+            },
+            {
+                "name": "contactId",
+                "type": "string"
+            }
+        ],
+        "return": "Dialercontact"
+    },
+    "PUT /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}": {
+        "functionName": "update",
+        "signature": "update(contactListId, contactId, body)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "string"
+            },
+            {
+                "name": "contactId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Dialercontact"
+            }
+        ],
+        "return": "Dialercontact"
+    }
+    
+}

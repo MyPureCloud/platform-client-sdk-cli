@@ -1,0 +1,51 @@
+{
+    "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles": {
+        "functionName": "delete",
+        "signature": "delete(trusteeOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "string"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles": {
+        "functionName": "get",
+        "signature": "get(trusteeOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "string"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "string"
+            }
+        ],
+        "return": "Userauthorization"
+    },
+    "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles": {
+        "functionName": "update",
+        "signature": "update(trusteeOrgId, trusteeUserId, body)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "string"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]string"
+            }
+        ],
+        "return": "Userauthorization"
+    }
+    
+}

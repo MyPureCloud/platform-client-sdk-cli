@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/quality/evaluations/aggregates/query/me": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Evaluationaggregationqueryme"
+            }
+        ],
+        "return": "Evaluationaggregatequeryresponse"
+    }
+    
+}

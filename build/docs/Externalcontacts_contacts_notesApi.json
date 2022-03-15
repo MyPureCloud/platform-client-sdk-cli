@@ -1,0 +1,98 @@
+{
+    "POST /api/v2/externalcontacts/contacts/{contactId}/notes": {
+        "functionName": "create",
+        "signature": "create(contactId, body)",
+        "parameters": [
+            {
+                "name": "contactId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Note"
+            }
+        ],
+        "return": "Note"
+    },
+    "DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}": {
+        "functionName": "delete",
+        "signature": "delete(contactId, noteId)",
+        "parameters": [
+            {
+                "name": "contactId",
+                "type": "string"
+            },
+            {
+                "name": "noteId",
+                "type": "string"
+            }
+        ],
+        "return": "Empty"
+    },
+    "GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}": {
+        "functionName": "get",
+        "signature": "get(contactId, noteId, expand)",
+        "parameters": [
+            {
+                "name": "contactId",
+                "type": "string"
+            },
+            {
+                "name": "noteId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Note"
+    },
+    "GET /api/v2/externalcontacts/contacts/{contactId}/notes": {
+        "functionName": "list",
+        "signature": "list(contactId, pageSize, pageNumber, sortOrder, expand)",
+        "parameters": [
+            {
+                "name": "contactId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}": {
+        "functionName": "update",
+        "signature": "update(contactId, noteId, body)",
+        "parameters": [
+            {
+                "name": "contactId",
+                "type": "string"
+            },
+            {
+                "name": "noteId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Note"
+            }
+        ],
+        "return": "Note"
+    }
+    
+}

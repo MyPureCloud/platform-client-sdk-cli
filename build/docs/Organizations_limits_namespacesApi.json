@@ -1,0 +1,29 @@
+{
+    "GET /api/v2/organizations/limits/namespaces/{namespaceName}": {
+        "functionName": "get",
+        "signature": "get(namespaceName)",
+        "parameters": [
+            {
+                "name": "namespaceName",
+                "type": "string"
+            }
+        ],
+        "return": "Limitsentitylisting"
+    },
+    "GET /api/v2/organizations/limits/namespaces": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Pagednamespacelisting"
+    }
+    
+}

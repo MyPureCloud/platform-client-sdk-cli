@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/alerting/alerts/active": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Activealertcount"
+    }
+    
+}

@@ -1,0 +1,110 @@
+{
+    "GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}": {
+        "functionName": "getcategoryschemas",
+        "signature": "getcategoryschemas(schemaCategory, schemaType, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "schemaCategory",
+                "type": "string"
+            },
+            {
+                "name": "schemaType",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}": {
+        "functionName": "getjsonschema",
+        "signature": "getjsonschema(schemaCategory, schemaType, schemaId)",
+        "parameters": [
+            {
+                "name": "schemaCategory",
+                "type": "string"
+            },
+            {
+                "name": "schemaType",
+                "type": "string"
+            },
+            {
+                "name": "schemaId",
+                "type": "string"
+            }
+        ],
+        "return": "Organization"
+    },
+    "GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}": {
+        "functionName": "getschemametadata",
+        "signature": "getschemametadata(schemaCategory, schemaType, schemaId, extensionType, metadataId, varType)",
+        "parameters": [
+            {
+                "name": "schemaCategory",
+                "type": "string"
+            },
+            {
+                "name": "schemaType",
+                "type": "string"
+            },
+            {
+                "name": "schemaId",
+                "type": "string"
+            },
+            {
+                "name": "extensionType",
+                "type": "string"
+            },
+            {
+                "name": "metadataId",
+                "type": "string"
+            },
+            {
+                "name": "varType",
+                "type": "string"
+            }
+        ],
+        "return": "Organization"
+    },
+    "GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}": {
+        "functionName": "listcategoryschemas",
+        "signature": "listcategoryschemas(schemaCategory, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "schemaCategory",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "GET /api/v2/configuration/schemas/edges/vnext": {
+        "functionName": "listschemacategories",
+        "signature": "listschemacategories(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

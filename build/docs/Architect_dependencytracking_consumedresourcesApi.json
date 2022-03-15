@@ -1,0 +1,34 @@
+{
+    "GET /api/v2/architect/dependencytracking/consumedresources": {
+        "functionName": "list",
+        "signature": "list(id, version, objectType, resourceType, pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "string"
+            },
+            {
+                "name": "version",
+                "type": "string"
+            },
+            {
+                "name": "objectType",
+                "type": "string"
+            },
+            {
+                "name": "resourceType",
+                "type": "[]string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

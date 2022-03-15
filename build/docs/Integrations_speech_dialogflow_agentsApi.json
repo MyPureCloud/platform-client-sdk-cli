@@ -1,0 +1,33 @@
+{
+    "GET /api/v2/integrations/speech/dialogflow/agents/{agentId}": {
+        "functionName": "get",
+        "signature": "get(agentId)",
+        "parameters": [
+            {
+                "name": "agentId",
+                "type": "string"
+            }
+        ],
+        "return": "Dialogflowagent"
+    },
+    "GET /api/v2/integrations/speech/dialogflow/agents": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, name)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

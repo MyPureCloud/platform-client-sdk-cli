@@ -1,0 +1,77 @@
+{
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates": {
+        "functionName": "create",
+        "signature": "create(businessUnitId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Createservicegoaltemplate"
+            }
+        ],
+        "return": "Servicegoaltemplate"
+    },
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}": {
+        "functionName": "delete",
+        "signature": "delete(businessUnitId, serviceGoalTemplateId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "serviceGoalTemplateId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}": {
+        "functionName": "get",
+        "signature": "get(businessUnitId, serviceGoalTemplateId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "serviceGoalTemplateId",
+                "type": "string"
+            }
+        ],
+        "return": "Servicegoaltemplate"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates": {
+        "functionName": "list",
+        "signature": "list(businessUnitId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            }
+        ],
+        "return": "Servicegoaltemplatelist"
+    },
+    "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}": {
+        "functionName": "update",
+        "signature": "update(businessUnitId, serviceGoalTemplateId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "serviceGoalTemplateId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Updateservicegoaltemplate"
+            }
+        ],
+        "return": "Servicegoaltemplate"
+    }
+    
+}

@@ -1,0 +1,20 @@
+{
+    "GET /api/v2/contentmanagement/securityprofiles/{securityProfileId}": {
+        "functionName": "get",
+        "signature": "get(securityProfileId)",
+        "parameters": [
+            {
+                "name": "securityProfileId",
+                "type": "string"
+            }
+        ],
+        "return": "Securityprofile"
+    },
+    "GET /api/v2/contentmanagement/securityprofiles": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    }
+    
+}

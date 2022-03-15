@@ -1,0 +1,62 @@
+{
+    "POST /api/v2/routing/languages": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Language"
+            }
+        ],
+        "return": "Language"
+    },
+    "DELETE /api/v2/routing/languages/{languageId}": {
+        "functionName": "delete",
+        "signature": "delete(languageId)",
+        "parameters": [
+            {
+                "name": "languageId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/routing/languages/{languageId}": {
+        "functionName": "get",
+        "signature": "get(languageId)",
+        "parameters": [
+            {
+                "name": "languageId",
+                "type": "string"
+            }
+        ],
+        "return": "Language"
+    },
+    "GET /api/v2/routing/languages": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortOrder, name, id)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

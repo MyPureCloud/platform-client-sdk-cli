@@ -1,0 +1,100 @@
+{
+    "DELETE /api/v2/architect/prompts": {
+        "functionName": "batchdelete",
+        "signature": "batchdelete(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "[]string"
+            }
+        ],
+        "return": "Operation"
+    },
+    "POST /api/v2/architect/prompts": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Prompt"
+            }
+        ],
+        "return": "Prompt"
+    },
+    "DELETE /api/v2/architect/prompts/{promptId}": {
+        "functionName": "delete",
+        "signature": "delete(promptId, allResources)",
+        "parameters": [
+            {
+                "name": "promptId",
+                "type": "string"
+            },
+            {
+                "name": "allResources",
+                "type": "bool"
+            }
+        ]
+    },
+    "GET /api/v2/architect/prompts/{promptId}": {
+        "functionName": "get",
+        "signature": "get(promptId)",
+        "parameters": [
+            {
+                "name": "promptId",
+                "type": "string"
+            }
+        ],
+        "return": "Prompt"
+    },
+    "GET /api/v2/architect/prompts": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "name",
+                "type": "[]string"
+            },
+            {
+                "name": "description",
+                "type": "string"
+            },
+            {
+                "name": "nameOrDescription",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/architect/prompts/{promptId}": {
+        "functionName": "update",
+        "signature": "update(promptId, body)",
+        "parameters": [
+            {
+                "name": "promptId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Prompt"
+            }
+        ],
+        "return": "Prompt"
+    }
+    
+}

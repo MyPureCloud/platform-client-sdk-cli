@@ -1,0 +1,68 @@
+{
+    "PATCH /api/v2/users/{userId}/queues/{queueId}": {
+        "functionName": "join",
+        "signature": "join(queueId, userId, body)",
+        "parameters": [
+            {
+                "name": "queueId",
+                "type": "string"
+            },
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Userqueue"
+            }
+        ],
+        "return": "Userqueue"
+    },
+    "PATCH /api/v2/users/{userId}/queues": {
+        "functionName": "joinset",
+        "signature": "joinset(userId, body, divisionId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]Userqueue"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            }
+        ],
+        "return": "Userqueueentitylisting"
+    },
+    "GET /api/v2/users/{userId}/queues": {
+        "functionName": "list",
+        "signature": "list(userId, pageSize, pageNumber, joined, divisionId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "joined",
+                "type": "bool"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

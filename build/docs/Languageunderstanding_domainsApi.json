@@ -1,0 +1,65 @@
+{
+    "POST /api/v2/languageunderstanding/domains": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Nludomain"
+            }
+        ],
+        "return": "Nludomain"
+    },
+    "DELETE /api/v2/languageunderstanding/domains/{domainId}": {
+        "functionName": "delete",
+        "signature": "delete(domainId)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/languageunderstanding/domains/{domainId}": {
+        "functionName": "get",
+        "signature": "get(domainId)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            }
+        ],
+        "return": "Nludomain"
+    },
+    "GET /api/v2/languageunderstanding/domains": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/languageunderstanding/domains/{domainId}": {
+        "functionName": "update",
+        "signature": "update(domainId, body)",
+        "parameters": [
+            {
+                "name": "domainId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Nludomain"
+            }
+        ],
+        "return": "Nludomain"
+    }
+    
+}

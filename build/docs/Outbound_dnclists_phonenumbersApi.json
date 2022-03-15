@@ -1,0 +1,21 @@
+{
+    "POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers": {
+        "functionName": "create",
+        "signature": "create(dncListId, body, expirationDateTime)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]string"
+            },
+            {
+                "name": "expirationDateTime",
+                "type": "string"
+            }
+        ]
+    }
+    
+}

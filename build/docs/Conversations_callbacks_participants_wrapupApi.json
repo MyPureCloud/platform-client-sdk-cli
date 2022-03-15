@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup": {
+        "functionName": "get",
+        "signature": "get(conversationId, participantId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "participantId",
+                "type": "string"
+            },
+            {
+                "name": "provisional",
+                "type": "bool"
+            }
+        ],
+        "return": "Assignedwrapupcode"
+    }
+    
+}

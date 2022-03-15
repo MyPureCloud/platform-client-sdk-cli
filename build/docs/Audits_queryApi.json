@@ -1,0 +1,25 @@
+{
+    "POST /api/v2/audits/query": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Auditqueryrequest"
+            }
+        ],
+        "return": "Auditqueryexecutionstatusresponse"
+    },
+    "GET /api/v2/audits/query/{transactionId}": {
+        "functionName": "get",
+        "signature": "get(transactionId)",
+        "parameters": [
+            {
+                "name": "transactionId",
+                "type": "string"
+            }
+        ],
+        "return": "Auditqueryexecutionstatusresponse"
+    }
+    
+}

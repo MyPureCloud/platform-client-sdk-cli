@@ -1,0 +1,62 @@
+{
+    "POST /api/v2/routing/assessments": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createbenefitassessmentrequest"
+            }
+        ],
+        "return": "Benefitassessment"
+    },
+    "DELETE /api/v2/routing/assessments/{assessmentId}": {
+        "functionName": "delete",
+        "signature": "delete(assessmentId)",
+        "parameters": [
+            {
+                "name": "assessmentId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/routing/assessments/{assessmentId}": {
+        "functionName": "get",
+        "signature": "get(assessmentId)",
+        "parameters": [
+            {
+                "name": "assessmentId",
+                "type": "string"
+            }
+        ],
+        "return": "Benefitassessment"
+    },
+    "GET /api/v2/routing/assessments": {
+        "functionName": "list",
+        "signature": "list(before, after, limit, pageSize, queueId)",
+        "parameters": [
+            {
+                "name": "before",
+                "type": "string"
+            },
+            {
+                "name": "after",
+                "type": "string"
+            },
+            {
+                "name": "limit",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "string"
+            },
+            {
+                "name": "queueId",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

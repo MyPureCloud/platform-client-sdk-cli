@@ -1,0 +1,89 @@
+{
+    "POST /api/v2/journey/actionmaps": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Actionmap"
+            }
+        ],
+        "return": "Actionmap"
+    },
+    "DELETE /api/v2/journey/actionmaps/{actionMapId}": {
+        "functionName": "delete",
+        "signature": "delete(actionMapId)",
+        "parameters": [
+            {
+                "name": "actionMapId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/journey/actionmaps/{actionMapId}": {
+        "functionName": "get",
+        "signature": "get(actionMapId)",
+        "parameters": [
+            {
+                "name": "actionMapId",
+                "type": "string"
+            }
+        ],
+        "return": "Actionmap"
+    },
+    "GET /api/v2/journey/actionmaps": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds, queryFields, queryValue)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "filterField",
+                "type": "string"
+            },
+            {
+                "name": "filterValue",
+                "type": "string"
+            },
+            {
+                "name": "actionMapIds",
+                "type": "[]string"
+            },
+            {
+                "name": "queryFields",
+                "type": "[]string"
+            },
+            {
+                "name": "queryValue",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/journey/actionmaps/{actionMapId}": {
+        "functionName": "update",
+        "signature": "update(actionMapId, body)",
+        "parameters": [
+            {
+                "name": "actionMapId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Patchactionmap"
+            }
+        ],
+        "return": "Actionmap"
+    }
+    
+}

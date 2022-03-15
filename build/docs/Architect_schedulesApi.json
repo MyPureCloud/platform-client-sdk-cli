@@ -1,0 +1,81 @@
+{
+    "POST /api/v2/architect/schedules": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Schedule"
+            }
+        ],
+        "return": "Schedule"
+    },
+    "DELETE /api/v2/architect/schedules/{scheduleId}": {
+        "functionName": "delete",
+        "signature": "delete(scheduleId)",
+        "parameters": [
+            {
+                "name": "scheduleId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/architect/schedules/{scheduleId}": {
+        "functionName": "get",
+        "signature": "get(scheduleId)",
+        "parameters": [
+            {
+                "name": "scheduleId",
+                "type": "string"
+            }
+        ],
+        "return": "Schedule"
+    },
+    "GET /api/v2/architect/schedules": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name, divisionId)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/architect/schedules/{scheduleId}": {
+        "functionName": "update",
+        "signature": "update(scheduleId, body)",
+        "parameters": [
+            {
+                "name": "scheduleId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Schedule"
+            }
+        ],
+        "return": "Schedule"
+    }
+    
+}

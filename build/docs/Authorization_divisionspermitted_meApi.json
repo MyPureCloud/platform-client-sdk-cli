@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/authorization/divisionspermitted/me": {
+        "functionName": "get",
+        "signature": "get(permission, name)",
+        "parameters": [
+            {
+                "name": "permission",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            }
+        ],
+        "return": "[]Authzdivision"
+    }
+    
+}

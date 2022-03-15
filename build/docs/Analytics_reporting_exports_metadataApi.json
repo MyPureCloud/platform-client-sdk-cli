@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/analytics/reporting/exports/metadata": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    }
+    
+}

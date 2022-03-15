@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/systempresences": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "[]Systempresence"
+    }
+    
+}

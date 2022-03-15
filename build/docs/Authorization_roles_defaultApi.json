@@ -1,0 +1,25 @@
+{
+    "POST /api/v2/authorization/roles/default": {
+        "functionName": "create",
+        "signature": "create(force)",
+        "parameters": [
+            {
+                "name": "force",
+                "type": "bool"
+            }
+        ],
+        "return": "Organizationroleentitylisting"
+    },
+    "PUT /api/v2/authorization/roles/default": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "[]Domainorganizationrole"
+            }
+        ],
+        "return": "Organizationroleentitylisting"
+    }
+    
+}

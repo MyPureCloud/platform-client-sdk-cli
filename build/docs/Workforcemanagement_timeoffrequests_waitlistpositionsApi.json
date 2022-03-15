@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions": {
+        "functionName": "list",
+        "signature": "list(timeOffRequestId)",
+        "parameters": [
+            {
+                "name": "timeOffRequestId",
+                "type": "string"
+            }
+        ],
+        "return": "Waitlistpositionlisting"
+    }
+    
+}

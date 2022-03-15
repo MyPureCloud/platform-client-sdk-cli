@@ -1,0 +1,27 @@
+{
+    "DELETE /api/v2/users/{userId}/station/defaultstation": {
+        "functionName": "delete",
+        "signature": "delete(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            }
+        ]
+    },
+    "PUT /api/v2/users/{userId}/station/defaultstation/{stationId}": {
+        "functionName": "update",
+        "signature": "update(userId, stationId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "stationId",
+                "type": "string"
+            }
+        ]
+    }
+    
+}

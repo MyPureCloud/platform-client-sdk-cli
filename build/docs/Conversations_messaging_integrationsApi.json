@@ -1,0 +1,26 @@
+{
+    "GET /api/v2/conversations/messaging/integrations": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, expand, supportedContentId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "supportedContentId",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

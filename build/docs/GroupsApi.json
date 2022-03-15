@@ -1,0 +1,77 @@
+{
+    "POST /api/v2/groups": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Groupcreate"
+            }
+        ],
+        "return": "Group"
+    },
+    "DELETE /api/v2/groups/{groupId}": {
+        "functionName": "delete",
+        "signature": "delete(groupId)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/groups/{groupId}": {
+        "functionName": "get",
+        "signature": "get(groupId)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            }
+        ],
+        "return": "Group"
+    },
+    "GET /api/v2/groups": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, id, jabberId, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "jabberId",
+                "type": "[]string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/groups/{groupId}": {
+        "functionName": "update",
+        "signature": "update(groupId, body)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Groupupdate"
+            }
+        ],
+        "return": "Group"
+    }
+    
+}

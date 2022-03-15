@@ -1,0 +1,44 @@
+{
+    "GET /api/v2/voicemail/userpolicies/{userId}": {
+        "functionName": "get",
+        "signature": "get(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            }
+        ],
+        "return": "Voicemailuserpolicy"
+    },
+    "PUT /api/v2/voicemail/userpolicies/{userId}": {
+        "functionName": "put",
+        "signature": "put(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Voicemailuserpolicy"
+            }
+        ],
+        "return": "Voicemailuserpolicy"
+    },
+    "PATCH /api/v2/voicemail/userpolicies/{userId}": {
+        "functionName": "update",
+        "signature": "update(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Voicemailuserpolicy"
+            }
+        ],
+        "return": "Voicemailuserpolicy"
+    }
+    
+}

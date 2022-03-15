@@ -1,0 +1,20 @@
+{
+    "GET /api/v2/oauth/authorizations/{clientId}": {
+        "functionName": "get",
+        "signature": "get(clientId)",
+        "parameters": [
+            {
+                "name": "clientId",
+                "type": "string"
+            }
+        ],
+        "return": "Oauthauthorization"
+    },
+    "GET /api/v2/oauth/authorizations": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Oauthauthorizationlisting"
+    }
+    
+}

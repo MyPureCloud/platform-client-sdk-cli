@@ -1,0 +1,18 @@
+{
+    "POST /api/v2/integrations/actions/{actionId}/draft/publish": {
+        "functionName": "create",
+        "signature": "create(actionId, body)",
+        "parameters": [
+            {
+                "name": "actionId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Publishdraftinput"
+            }
+        ],
+        "return": "Action"
+    }
+    
+}

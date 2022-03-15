@@ -1,0 +1,57 @@
+{
+    "GET /api/v2/scripts/{scriptId}": {
+        "functionName": "get",
+        "signature": "get(scriptId)",
+        "parameters": [
+            {
+                "name": "scriptId",
+                "type": "string"
+            }
+        ],
+        "return": "Script"
+    },
+    "GET /api/v2/scripts": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "feature",
+                "type": "string"
+            },
+            {
+                "name": "flowId",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "scriptDataVersion",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

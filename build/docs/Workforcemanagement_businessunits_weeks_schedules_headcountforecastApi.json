@@ -1,0 +1,26 @@
+{
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast": {
+        "functionName": "get",
+        "signature": "get(businessUnitId, weekId, scheduleId, forceDownload)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekId",
+                "type": "time.Time"
+            },
+            {
+                "name": "scheduleId",
+                "type": "string"
+            },
+            {
+                "name": "forceDownload",
+                "type": "bool"
+            }
+        ],
+        "return": "Buheadcountforecastresponse"
+    }
+    
+}

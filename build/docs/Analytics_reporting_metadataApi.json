@@ -1,0 +1,37 @@
+{
+    "GET /api/v2/analytics/reporting/{reportId}/metadata": {
+        "functionName": "get",
+        "signature": "get(reportId, locale)",
+        "parameters": [
+            {
+                "name": "reportId",
+                "type": "string"
+            },
+            {
+                "name": "locale",
+                "type": "string"
+            }
+        ],
+        "return": "Reportmetadata"
+    },
+    "GET /api/v2/analytics/reporting/metadata": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize, locale)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "locale",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

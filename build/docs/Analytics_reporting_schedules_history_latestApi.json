@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest": {
+        "functionName": "get",
+        "signature": "get(scheduleId)",
+        "parameters": [
+            {
+                "name": "scheduleId",
+                "type": "string"
+            }
+        ],
+        "return": "Reportrunentry"
+    }
+    
+}

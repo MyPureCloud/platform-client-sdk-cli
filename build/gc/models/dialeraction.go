@@ -22,6 +22,21 @@ type DialeractionDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Dialeraction
@@ -40,6 +55,26 @@ type Dialeraction struct {
 
     // Properties - A map of key-value pairs pertinent to the DialerAction. Different types of DialerActions require different properties. MODIFY_CONTACT_ATTRIBUTE with an updateOption of SET takes a contact column as the key and accepts any value. SCHEDULE_CALLBACK takes a key 'callbackOffset' that specifies how far in the future the callback should be scheduled, in minutes. SET_CALLER_ID takes two keys: 'callerAddress', which should be the caller id phone number, and 'callerName'. For either key, you can also specify a column on the contact to get the value from. To do this, specify 'contact.Column', where 'Column' is the name of the contact column from which to get the value. SET_SKILLS takes a key 'skills' with an array of skill ids wrapped into a string (Example: {'skills': '['skillIdHere']'} ).
     Properties map[string]string `json:"properties"`
+
+
+    // DataAction - The Data Action to use for this action. Required for a dataActionBehavior.
+    DataAction Domainentityref `json:"dataAction"`
+
+
+    // ContactColumnToDataActionFieldMappings - A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionBehavior.
+    ContactColumnToDataActionFieldMappings []Contactcolumntodataactionfieldmapping `json:"contactColumnToDataActionFieldMappings"`
+
+
+    // ContactIdField - The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionBehavior.
+    ContactIdField string `json:"contactIdField"`
+
+
+    // CallAnalysisResultField - The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionBehavior.
+    CallAnalysisResultField string `json:"callAnalysisResultField"`
+
+
+    // AgentWrapupField - The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionBehavior.
+    AgentWrapupField string `json:"agentWrapupField"`
 
 }
 
@@ -60,6 +95,26 @@ func (o *Dialeraction) String() string {
     
     
      o.Properties = map[string]string{"": ""} 
+    
+    
+    
+    
+    
+    
+    
+     o.ContactColumnToDataActionFieldMappings = []Contactcolumntodataactionfieldmapping{{}} 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 
@@ -86,6 +141,16 @@ func (u *Dialeraction) MarshalJSON() ([]byte, error) {
         
         Properties map[string]string `json:"properties"`
         
+        DataAction Domainentityref `json:"dataAction"`
+        
+        ContactColumnToDataActionFieldMappings []Contactcolumntodataactionfieldmapping `json:"contactColumnToDataActionFieldMappings"`
+        
+        ContactIdField string `json:"contactIdField"`
+        
+        CallAnalysisResultField string `json:"callAnalysisResultField"`
+        
+        AgentWrapupField string `json:"agentWrapupField"`
+        
         *Alias
     }{
         
@@ -104,6 +169,28 @@ func (u *Dialeraction) MarshalJSON() ([]byte, error) {
 
         
         Properties: map[string]string{"": ""},
+        
+
+        
+
+        
+
+        
+
+        
+        ContactColumnToDataActionFieldMappings: []Contactcolumntodataactionfieldmapping{{}},
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
         
 
         

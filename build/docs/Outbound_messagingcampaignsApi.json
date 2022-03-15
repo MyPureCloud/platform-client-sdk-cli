@@ -1,0 +1,98 @@
+{
+    "POST /api/v2/outbound/messagingcampaigns": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Messagingcampaign"
+            }
+        ],
+        "return": "Messagingcampaign"
+    },
+    "DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}": {
+        "functionName": "delete",
+        "signature": "delete(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "string"
+            }
+        ],
+        "return": "Messagingcampaign"
+    },
+    "GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}": {
+        "functionName": "get",
+        "signature": "get(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "string"
+            }
+        ],
+        "return": "Messagingcampaign"
+    },
+    "GET /api/v2/outbound/messagingcampaigns": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, varType, senderSmsPhoneNumber, id)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "contactListId",
+                "type": "string"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            },
+            {
+                "name": "varType",
+                "type": "string"
+            },
+            {
+                "name": "senderSmsPhoneNumber",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/outbound/messagingcampaigns/{messagingCampaignId}": {
+        "functionName": "update",
+        "signature": "update(messagingCampaignId, body)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Messagingcampaign"
+            }
+        ],
+        "return": "Messagingcampaign"
+    }
+    
+}

@@ -50,7 +50,7 @@ type Openintegrationrequest struct {
     OutboundNotificationWebhookUrl string `json:"outboundNotificationWebhookUrl"`
 
 
-    // OutboundNotificationWebhookSignatureSecretToken - The outbound notification webhook signature secret token.
+    // OutboundNotificationWebhookSignatureSecretToken - The outbound notification webhook signature secret token. This token must be longer than 15 characters.
     OutboundNotificationWebhookSignatureSecretToken string `json:"outboundNotificationWebhookSignatureSecretToken"`
 
 

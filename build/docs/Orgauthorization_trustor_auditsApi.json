@@ -1,0 +1,30 @@
+{
+    "POST /api/v2/orgauthorization/trustor/audits": {
+        "functionName": "create",
+        "signature": "create(body, pageSize, pageNumber, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Trustorauditqueryrequest"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Auditqueryresponse"
+    }
+    
+}

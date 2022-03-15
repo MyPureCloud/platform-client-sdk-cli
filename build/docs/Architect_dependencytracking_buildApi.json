@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/architect/dependencytracking/build": {
+        "functionName": "create",
+        "signature": "create()"
+        
+    },
+    "GET /api/v2/architect/dependencytracking/build": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Dependencystatus"
+    }
+    
+}

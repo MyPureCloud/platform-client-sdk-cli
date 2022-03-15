@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/analytics/users/details/jobs/{jobId}/results": {
+        "functionName": "list",
+        "signature": "list(jobId, cursor, pageSize)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "string"
+            },
+            {
+                "name": "cursor",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

@@ -1,0 +1,34 @@
+{
+    "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts": {
+        "functionName": "search",
+        "signature": "search(externalOrganizationId, pageSize, pageNumber, q, sortOrder, expand)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "q",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

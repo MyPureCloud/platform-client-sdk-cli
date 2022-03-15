@@ -1,0 +1,65 @@
+{
+    "POST /api/v2/analytics/reporting/schedules": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Reportschedule"
+            }
+        ],
+        "return": "Reportschedule"
+    },
+    "DELETE /api/v2/analytics/reporting/schedules/{scheduleId}": {
+        "functionName": "delete",
+        "signature": "delete(scheduleId)",
+        "parameters": [
+            {
+                "name": "scheduleId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/analytics/reporting/schedules/{scheduleId}": {
+        "functionName": "get",
+        "signature": "get(scheduleId)",
+        "parameters": [
+            {
+                "name": "scheduleId",
+                "type": "string"
+            }
+        ],
+        "return": "Reportschedule"
+    },
+    "GET /api/v2/analytics/reporting/schedules": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/analytics/reporting/schedules/{scheduleId}": {
+        "functionName": "update",
+        "signature": "update(scheduleId, body)",
+        "parameters": [
+            {
+                "name": "scheduleId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Reportschedule"
+            }
+        ],
+        "return": "Reportschedule"
+    }
+    
+}

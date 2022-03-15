@@ -1,0 +1,66 @@
+{
+    "DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}": {
+        "functionName": "delete",
+        "signature": "delete(trustorOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "string"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}": {
+        "functionName": "get",
+        "signature": "get(trustorOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "string"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "string"
+            }
+        ],
+        "return": "Trustuser"
+    },
+    "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users": {
+        "functionName": "list",
+        "signature": "list(trustorOrgId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}": {
+        "functionName": "update",
+        "signature": "update(trustorOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "string"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "string"
+            }
+        ],
+        "return": "Trustuser"
+    }
+    
+}

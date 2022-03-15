@@ -1,0 +1,25 @@
+{
+    "POST /api/v2/speechandtextanalytics/programs/general/jobs": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Generalprogramjobrequest"
+            }
+        ],
+        "return": "Generalprogramjob"
+    },
+    "GET /api/v2/speechandtextanalytics/programs/general/jobs/{jobId}": {
+        "functionName": "get",
+        "signature": "get(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "string"
+            }
+        ],
+        "return": "Generalprogramjob"
+    }
+    
+}

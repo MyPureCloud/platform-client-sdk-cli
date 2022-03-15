@@ -1,0 +1,15 @@
+{
+    "POST /api/v2/workforcemanagement/historicaldata/deletejob": {
+        "functionName": "create",
+        "signature": "create()",
+        
+        "return": "Historicalimportdeletejobresponse"
+    },
+    "GET /api/v2/workforcemanagement/historicaldata/deletejob": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Historicalimportdeletejobresponse"
+    }
+    
+}

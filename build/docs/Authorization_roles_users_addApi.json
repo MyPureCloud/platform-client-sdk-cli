@@ -1,0 +1,18 @@
+{
+    "PUT /api/v2/authorization/roles/{roleId}/users/add": {
+        "functionName": "update",
+        "signature": "update(roleId, body)",
+        "parameters": [
+            {
+                "name": "roleId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]string"
+            }
+        ],
+        "return": "[]string"
+    }
+    
+}

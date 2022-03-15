@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/dataextensions/limits": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Schemaquantitylimits"
+    }
+    
+}

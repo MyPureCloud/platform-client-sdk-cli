@@ -1,0 +1,37 @@
+{
+    "POST /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}": {
+        "functionName": "create",
+        "signature": "create(leftRoleId, rightRoleId, body)",
+        "parameters": [
+            {
+                "name": "leftRoleId",
+                "type": "string"
+            },
+            {
+                "name": "rightRoleId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Domainorganizationrole"
+            }
+        ],
+        "return": "Domainorgroledifference"
+    },
+    "GET /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}": {
+        "functionName": "get",
+        "signature": "get(leftRoleId, rightRoleId)",
+        "parameters": [
+            {
+                "name": "leftRoleId",
+                "type": "string"
+            },
+            {
+                "name": "rightRoleId",
+                "type": "string"
+            }
+        ],
+        "return": "Domainorgroledifference"
+    }
+    
+}

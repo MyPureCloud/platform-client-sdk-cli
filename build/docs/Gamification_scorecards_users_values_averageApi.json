@@ -1,0 +1,26 @@
+{
+    "GET /api/v2/gamification/scorecards/users/values/average": {
+        "functionName": "get",
+        "signature": "get(filterType, filterId, workday, timeZone)",
+        "parameters": [
+            {
+                "name": "filterType",
+                "type": "string"
+            },
+            {
+                "name": "filterId",
+                "type": "string"
+            },
+            {
+                "name": "workday",
+                "type": "time.Time"
+            },
+            {
+                "name": "timeZone",
+                "type": "string"
+            }
+        ],
+        "return": "Singleworkdayaveragevalues"
+    }
+    
+}

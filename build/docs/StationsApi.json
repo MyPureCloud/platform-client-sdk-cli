@@ -1,0 +1,53 @@
+{
+    "GET /api/v2/stations/{stationId}": {
+        "functionName": "get",
+        "signature": "get(stationId)",
+        "parameters": [
+            {
+                "name": "stationId",
+                "type": "string"
+            }
+        ],
+        "return": "Station"
+    },
+    "GET /api/v2/stations": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, name, userSelectable, webRtcUserId, id, lineAppearanceId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "userSelectable",
+                "type": "string"
+            },
+            {
+                "name": "webRtcUserId",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "string"
+            },
+            {
+                "name": "lineAppearanceId",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

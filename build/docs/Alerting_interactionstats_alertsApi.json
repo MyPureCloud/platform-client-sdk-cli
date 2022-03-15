@@ -1,0 +1,58 @@
+{
+    "DELETE /api/v2/alerting/interactionstats/alerts/{alertId}": {
+        "functionName": "delete",
+        "signature": "delete(alertId)",
+        "parameters": [
+            {
+                "name": "alertId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/alerting/interactionstats/alerts/{alertId}": {
+        "functionName": "get",
+        "signature": "get(alertId, expand)",
+        "parameters": [
+            {
+                "name": "alertId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Interactionstatsalert"
+    },
+    "GET /api/v2/alerting/interactionstats/alerts": {
+        "functionName": "list",
+        "signature": "list(expand)",
+        "parameters": [
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/alerting/interactionstats/alerts/{alertId}": {
+        "functionName": "update",
+        "signature": "update(alertId, body, expand)",
+        "parameters": [
+            {
+                "name": "alertId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Unreadstatus"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Unreadstatus"
+    }
+    
+}

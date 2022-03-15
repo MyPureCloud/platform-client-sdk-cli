@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/routing/queues/divisionviews/all": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

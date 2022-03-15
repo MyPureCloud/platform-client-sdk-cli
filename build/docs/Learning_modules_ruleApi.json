@@ -1,0 +1,29 @@
+{
+    "GET /api/v2/learning/modules/{moduleId}/rule": {
+        "functionName": "get",
+        "signature": "get(moduleId)",
+        "parameters": [
+            {
+                "name": "moduleId",
+                "type": "string"
+            }
+        ],
+        "return": "Learningmodulerule"
+    },
+    "PUT /api/v2/learning/modules/{moduleId}/rule": {
+        "functionName": "update",
+        "signature": "update(moduleId, body)",
+        "parameters": [
+            {
+                "name": "moduleId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Learningmodulerule"
+            }
+        ],
+        "return": "Learningmodulerule"
+    }
+    
+}

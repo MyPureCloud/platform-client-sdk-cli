@@ -1,0 +1,117 @@
+{
+    "POST /api/v2/scim/v2/users": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Scimv2createuser"
+            }
+        ],
+        "return": "Scimv2user"
+    },
+    "DELETE /api/v2/scim/v2/users/{userId}": {
+        "functionName": "delete",
+        "signature": "delete(userId, ifMatch)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "ifMatch",
+                "type": "string"
+            }
+        ],
+        "return": "Empty"
+    },
+    "GET /api/v2/scim/v2/users/{userId}": {
+        "functionName": "get",
+        "signature": "get(userId, attributes, excludedAttributes, ifNoneMatch)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "attributes",
+                "type": "[]string"
+            },
+            {
+                "name": "excludedAttributes",
+                "type": "[]string"
+            },
+            {
+                "name": "ifNoneMatch",
+                "type": "string"
+            }
+        ],
+        "return": "Scimv2user"
+    },
+    "GET /api/v2/scim/v2/users": {
+        "functionName": "list",
+        "signature": "list(startIndex, count, attributes, excludedAttributes, filter)",
+        "parameters": [
+            {
+                "name": "startIndex",
+                "type": "int"
+            },
+            {
+                "name": "count",
+                "type": "int"
+            },
+            {
+                "name": "attributes",
+                "type": "[]string"
+            },
+            {
+                "name": "excludedAttributes",
+                "type": "[]string"
+            },
+            {
+                "name": "filter",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/scim/v2/users/{userId}": {
+        "functionName": "modify",
+        "signature": "modify(userId, body, ifMatch)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Scimv2patchrequest"
+            },
+            {
+                "name": "ifMatch",
+                "type": "string"
+            }
+        ],
+        "return": "Scimv2user"
+    },
+    "PUT /api/v2/scim/v2/users/{userId}": {
+        "functionName": "replace",
+        "signature": "replace(userId, body, ifMatch)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Scimv2user"
+            },
+            {
+                "name": "ifMatch",
+                "type": "string"
+            }
+        ],
+        "return": "Scimv2user"
+    }
+    
+}

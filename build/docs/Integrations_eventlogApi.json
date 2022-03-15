@@ -1,0 +1,41 @@
+{
+    "GET /api/v2/integrations/eventlog/{eventId}": {
+        "functionName": "get",
+        "signature": "get(eventId)",
+        "parameters": [
+            {
+                "name": "eventId",
+                "type": "string"
+            }
+        ],
+        "return": "Integrationevent"
+    },
+    "GET /api/v2/integrations/eventlog": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, sortOrder, entityId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "entityId",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

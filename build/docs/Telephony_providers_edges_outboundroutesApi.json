@@ -1,0 +1,81 @@
+{
+    "POST /api/v2/telephony/providers/edges/outboundroutes": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Outboundroute"
+            }
+        ],
+        "return": "Outboundroute"
+    },
+    "DELETE /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}": {
+        "functionName": "delete",
+        "signature": "delete(outboundRouteId)",
+        "parameters": [
+            {
+                "name": "outboundRouteId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}": {
+        "functionName": "get",
+        "signature": "get(outboundRouteId)",
+        "parameters": [
+            {
+                "name": "outboundRouteId",
+                "type": "string"
+            }
+        ],
+        "return": "Outboundroute"
+    },
+    "GET /api/v2/telephony/providers/edges/outboundroutes": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, name, siteId, externalTrunkBasesIds, sortBy)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "siteId",
+                "type": "string"
+            },
+            {
+                "name": "externalTrunkBasesIds",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}": {
+        "functionName": "update",
+        "signature": "update(outboundRouteId, body)",
+        "parameters": [
+            {
+                "name": "outboundRouteId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Outboundroute"
+            }
+        ],
+        "return": "Outboundroute"
+    }
+    
+}

@@ -1,0 +1,22 @@
+{
+    "POST /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages": {
+        "functionName": "create",
+        "signature": "create(conversationId, memberId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "memberId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Createwebchatmessagerequest"
+            }
+        ],
+        "return": "Webchatmessage"
+    }
+    
+}

@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/workforcemanagement/notifications": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Notificationsresponse"
+    }
+    
+}

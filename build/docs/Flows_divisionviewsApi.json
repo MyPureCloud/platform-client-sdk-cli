@@ -1,0 +1,58 @@
+{
+    "GET /api/v2/flows/divisionviews": {
+        "functionName": "list",
+        "signature": "list(varType, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId, includeSchemas)",
+        "parameters": [
+            {
+                "name": "varType",
+                "type": "[]string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "[]string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "publishVersionId",
+                "type": "string"
+            },
+            {
+                "name": "publishedAfter",
+                "type": "string"
+            },
+            {
+                "name": "publishedBefore",
+                "type": "string"
+            },
+            {
+                "name": "divisionId",
+                "type": "[]string"
+            },
+            {
+                "name": "includeSchemas",
+                "type": "bool"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

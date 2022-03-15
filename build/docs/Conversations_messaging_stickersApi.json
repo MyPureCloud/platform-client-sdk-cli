@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/conversations/messaging/stickers/{messengerType}": {
+        "functionName": "list",
+        "signature": "list(messengerType, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "messengerType",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

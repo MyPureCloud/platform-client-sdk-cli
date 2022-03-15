@@ -1,0 +1,77 @@
+{
+    "POST /api/v2/routing/predictors": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createpredictorrequest"
+            }
+        ],
+        "return": "Predictor"
+    },
+    "DELETE /api/v2/routing/predictors/{predictorId}": {
+        "functionName": "delete",
+        "signature": "delete(predictorId)",
+        "parameters": [
+            {
+                "name": "predictorId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/routing/predictors/{predictorId}": {
+        "functionName": "get",
+        "signature": "get(predictorId)",
+        "parameters": [
+            {
+                "name": "predictorId",
+                "type": "string"
+            }
+        ],
+        "return": "Predictor"
+    },
+    "GET /api/v2/routing/predictors": {
+        "functionName": "list",
+        "signature": "list(before, after, limit, pageSize, queueId)",
+        "parameters": [
+            {
+                "name": "before",
+                "type": "string"
+            },
+            {
+                "name": "after",
+                "type": "string"
+            },
+            {
+                "name": "limit",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "string"
+            },
+            {
+                "name": "queueId",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/routing/predictors/{predictorId}": {
+        "functionName": "update",
+        "signature": "update(predictorId, body)",
+        "parameters": [
+            {
+                "name": "predictorId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Patchpredictorrequest"
+            }
+        ],
+        "return": "Predictor"
+    }
+    
+}

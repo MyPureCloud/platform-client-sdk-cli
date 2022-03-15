@@ -1,0 +1,45 @@
+{
+    "GET /api/v2/integrations/types/{typeId}": {
+        "functionName": "get",
+        "signature": "get(typeId)",
+        "parameters": [
+            {
+                "name": "typeId",
+                "type": "string"
+            }
+        ],
+        "return": "Integrationtype"
+    },
+    "GET /api/v2/integrations/types": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

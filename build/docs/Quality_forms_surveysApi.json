@@ -1,0 +1,104 @@
+{
+    "POST /api/v2/quality/forms/surveys": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Surveyform"
+            }
+        ],
+        "return": "Surveyform"
+    },
+    "DELETE /api/v2/quality/forms/surveys/{formId}": {
+        "functionName": "delete",
+        "signature": "delete(formId)",
+        "parameters": [
+            {
+                "name": "formId",
+                "type": "string"
+            }
+        ]
+    },
+    "PATCH /api/v2/quality/forms/surveys/{formId}": {
+        "functionName": "disable",
+        "signature": "disable(formId, body)",
+        "parameters": [
+            {
+                "name": "formId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Surveyform"
+            }
+        ],
+        "return": "Surveyform"
+    },
+    "GET /api/v2/quality/forms/surveys/{formId}": {
+        "functionName": "get",
+        "signature": "get(formId)",
+        "parameters": [
+            {
+                "name": "formId",
+                "type": "string"
+            }
+        ],
+        "return": "Surveyform"
+    },
+    "GET /api/v2/quality/forms/surveys": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "nextPage",
+                "type": "string"
+            },
+            {
+                "name": "previousPage",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/quality/forms/surveys/{formId}": {
+        "functionName": "update",
+        "signature": "update(formId, body)",
+        "parameters": [
+            {
+                "name": "formId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Surveyform"
+            }
+        ],
+        "return": "Surveyform"
+    }
+    
+}

@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/conversations/messages/{messageId}/details": {
+        "functionName": "get",
+        "signature": "get(messageId)",
+        "parameters": [
+            {
+                "name": "messageId",
+                "type": "string"
+            }
+        ],
+        "return": "Messagedata"
+    }
+    
+}

@@ -1,0 +1,14 @@
+{
+    "GET /api/v2/gamification/scorecards/points/alltime": {
+        "functionName": "get",
+        "signature": "get(endWorkday)",
+        "parameters": [
+            {
+                "name": "endWorkday",
+                "type": "time.Time"
+            }
+        ],
+        "return": "Alltimepoints"
+    }
+    
+}

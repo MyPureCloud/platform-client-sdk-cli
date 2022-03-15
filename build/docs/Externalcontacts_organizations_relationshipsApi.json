@@ -1,0 +1,30 @@
+{
+    "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships": {
+        "functionName": "list",
+        "signature": "list(externalOrganizationId, pageSize, pageNumber, expand, sortOrder)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

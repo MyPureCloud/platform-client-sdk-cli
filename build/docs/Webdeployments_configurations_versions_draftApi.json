@@ -1,0 +1,29 @@
+{
+    "GET /api/v2/webdeployments/configurations/{configurationId}/versions/draft": {
+        "functionName": "get",
+        "signature": "get(configurationId)",
+        "parameters": [
+            {
+                "name": "configurationId",
+                "type": "string"
+            }
+        ],
+        "return": "Webdeploymentconfigurationversion"
+    },
+    "PUT /api/v2/webdeployments/configurations/{configurationId}/versions/draft": {
+        "functionName": "update",
+        "signature": "update(configurationId, configurationVersion)",
+        "parameters": [
+            {
+                "name": "configurationId",
+                "type": "string"
+            },
+            {
+                "name": "configurationVersion",
+                "type": "Webdeploymentconfigurationversion"
+            }
+        ],
+        "return": "Webdeploymentconfigurationversion"
+    }
+    
+}

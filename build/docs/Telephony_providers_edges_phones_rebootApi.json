@@ -1,0 +1,23 @@
+{
+    "POST /api/v2/telephony/providers/edges/phones/{phoneId}/reboot": {
+        "functionName": "reboot",
+        "signature": "reboot(phoneId)",
+        "parameters": [
+            {
+                "name": "phoneId",
+                "type": "string"
+            }
+        ]
+    },
+    "POST /api/v2/telephony/providers/edges/phones/reboot": {
+        "functionName": "rebootphones",
+        "signature": "rebootphones(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Phonesreboot"
+            }
+        ]
+    }
+    
+}

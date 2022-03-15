@@ -1,0 +1,29 @@
+{
+    "POST /api/v2/analytics/reporting/exports": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Reportingexportjobrequest"
+            }
+        ],
+        "return": "Reportingexportjobresponse"
+    },
+    "GET /api/v2/analytics/reporting/exports": {
+        "functionName": "list",
+        "signature": "list(pageNumber, pageSize)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

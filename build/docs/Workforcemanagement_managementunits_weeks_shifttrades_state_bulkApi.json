@@ -1,0 +1,26 @@
+{
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk": {
+        "functionName": "create",
+        "signature": "create(managementUnitId, weekDateId, body, forceAsync)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekDateId",
+                "type": "time.Time"
+            },
+            {
+                "name": "body",
+                "type": "Bulkshifttradestateupdaterequest"
+            },
+            {
+                "name": "forceAsync",
+                "type": "bool"
+            }
+        ],
+        "return": "Bulkupdateshifttradestateresponse"
+    }
+    
+}

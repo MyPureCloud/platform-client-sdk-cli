@@ -1,0 +1,82 @@
+{
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports": {
+        "functionName": "create",
+        "signature": "create(knowledgeBaseId, languageCode, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Knowledgeimport"
+            }
+        ],
+        "return": "Knowledgeimport"
+    },
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}": {
+        "functionName": "delete",
+        "signature": "delete(knowledgeBaseId, languageCode, importId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            },
+            {
+                "name": "importId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}": {
+        "functionName": "get",
+        "signature": "get(knowledgeBaseId, languageCode, importId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            },
+            {
+                "name": "importId",
+                "type": "string"
+            }
+        ],
+        "return": "Knowledgeimport"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}": {
+        "functionName": "update",
+        "signature": "update(knowledgeBaseId, languageCode, importId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "string"
+            },
+            {
+                "name": "languageCode",
+                "type": "string"
+            },
+            {
+                "name": "importId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Importstatusrequest"
+            }
+        ],
+        "return": "Knowledgeimport"
+    }
+    
+}

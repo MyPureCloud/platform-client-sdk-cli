@@ -1,0 +1,18 @@
+{
+    "PATCH /api/v2/routing/conversations/{conversationId}": {
+        "functionName": "update",
+        "signature": "update(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Routingconversationattributesrequest"
+            }
+        ],
+        "return": "Routingconversationattributesresponse"
+    }
+    
+}

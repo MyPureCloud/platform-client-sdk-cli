@@ -1,0 +1,25 @@
+{
+    "GET /api/v2/scim/schemas/{schemaId}": {
+        "functionName": "get",
+        "signature": "get(schemaId)",
+        "parameters": [
+            {
+                "name": "schemaId",
+                "type": "string"
+            }
+        ],
+        "return": "Scimv2schemadefinition"
+    },
+    "GET /api/v2/scim/schemas": {
+        "functionName": "list",
+        "signature": "list(filter)",
+        "parameters": [
+            {
+                "name": "filter",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

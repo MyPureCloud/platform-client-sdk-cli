@@ -1,0 +1,56 @@
+{
+    "POST /api/v2/webdeployments/deployments": {
+        "functionName": "create",
+        "signature": "create(deployment)",
+        "parameters": [
+            {
+                "name": "deployment",
+                "type": "Webdeployment"
+            }
+        ],
+        "return": "Webdeployment"
+    },
+    "DELETE /api/v2/webdeployments/deployments/{deploymentId}": {
+        "functionName": "delete",
+        "signature": "delete(deploymentId)",
+        "parameters": [
+            {
+                "name": "deploymentId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/webdeployments/deployments/{deploymentId}": {
+        "functionName": "get",
+        "signature": "get(deploymentId)",
+        "parameters": [
+            {
+                "name": "deploymentId",
+                "type": "string"
+            }
+        ],
+        "return": "Webdeployment"
+    },
+    "GET /api/v2/webdeployments/deployments": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Webdeploymententitylisting"
+    },
+    "PUT /api/v2/webdeployments/deployments/{deploymentId}": {
+        "functionName": "update",
+        "signature": "update(deploymentId, deployment)",
+        "parameters": [
+            {
+                "name": "deploymentId",
+                "type": "string"
+            },
+            {
+                "name": "deployment",
+                "type": "Webdeployment"
+            }
+        ],
+        "return": "Webdeployment"
+    }
+    
+}

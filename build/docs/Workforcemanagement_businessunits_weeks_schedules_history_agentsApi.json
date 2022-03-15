@@ -1,0 +1,26 @@
+{
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId}": {
+        "functionName": "get",
+        "signature": "get(businessUnitId, weekId, scheduleId, agentId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string"
+            },
+            {
+                "name": "weekId",
+                "type": "time.Time"
+            },
+            {
+                "name": "scheduleId",
+                "type": "string"
+            },
+            {
+                "name": "agentId",
+                "type": "string"
+            }
+        ],
+        "return": "Buagentschedulehistoryresponse"
+    }
+    
+}

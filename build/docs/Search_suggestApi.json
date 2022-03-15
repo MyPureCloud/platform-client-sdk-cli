@@ -1,0 +1,37 @@
+{
+    "POST /api/v2/search/suggest": {
+        "functionName": "create",
+        "signature": "create(body, profile)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Suggestsearchrequest"
+            },
+            {
+                "name": "profile",
+                "type": "bool"
+            }
+        ],
+        "return": "Jsonnodesearchresponse"
+    },
+    "GET /api/v2/search/suggest": {
+        "functionName": "list",
+        "signature": "list(q64, expand, profile)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "profile",
+                "type": "bool"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

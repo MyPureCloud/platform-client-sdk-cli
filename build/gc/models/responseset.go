@@ -30,6 +30,9 @@ type ResponsesetDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -57,6 +60,10 @@ type Responseset struct {
     Responses map[string]Reaction `json:"responses"`
 
 
+    // BeepDetectionEnabled - Whether to enable answering machine beep detection
+    BeepDetectionEnabled bool `json:"beepDetectionEnabled"`
+
+
     
 
 }
@@ -80,6 +87,10 @@ func (o *Responseset) String() string {
     
     
      o.Responses = map[string]Reaction{"": {}} 
+    
+    
+    
+    
     
     
     
@@ -112,6 +123,8 @@ func (u *Responseset) MarshalJSON() ([]byte, error) {
         
         Responses map[string]Reaction `json:"responses"`
         
+        BeepDetectionEnabled bool `json:"beepDetectionEnabled"`
+        
         
         
         *Alias
@@ -140,6 +153,10 @@ func (u *Responseset) MarshalJSON() ([]byte, error) {
 
         
         Responses: map[string]Reaction{"": {}},
+        
+
+        
+
         
 
         

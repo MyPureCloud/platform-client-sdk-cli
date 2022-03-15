@@ -1,0 +1,56 @@
+{
+    "POST /api/v2/widgets/deployments": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Widgetdeployment"
+            }
+        ],
+        "return": "Widgetdeployment"
+    },
+    "DELETE /api/v2/widgets/deployments/{deploymentId}": {
+        "functionName": "delete",
+        "signature": "delete(deploymentId)",
+        "parameters": [
+            {
+                "name": "deploymentId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/widgets/deployments/{deploymentId}": {
+        "functionName": "get",
+        "signature": "get(deploymentId)",
+        "parameters": [
+            {
+                "name": "deploymentId",
+                "type": "string"
+            }
+        ],
+        "return": "Widgetdeployment"
+    },
+    "GET /api/v2/widgets/deployments": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Widgetdeploymententitylisting"
+    },
+    "PUT /api/v2/widgets/deployments/{deploymentId}": {
+        "functionName": "update",
+        "signature": "update(deploymentId, body)",
+        "parameters": [
+            {
+                "name": "deploymentId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Widgetdeployment"
+            }
+        ],
+        "return": "Widgetdeployment"
+    }
+    
+}

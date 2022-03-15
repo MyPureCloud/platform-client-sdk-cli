@@ -1,0 +1,35 @@
+{
+    "POST /api/v2/webdeployments/configurations": {
+        "functionName": "create",
+        "signature": "create(configurationVersion)",
+        "parameters": [
+            {
+                "name": "configurationVersion",
+                "type": "Webdeploymentconfigurationversion"
+            }
+        ],
+        "return": "Webdeploymentconfigurationversion"
+    },
+    "DELETE /api/v2/webdeployments/configurations/{configurationId}": {
+        "functionName": "delete",
+        "signature": "delete(configurationId)",
+        "parameters": [
+            {
+                "name": "configurationId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/webdeployments/configurations": {
+        "functionName": "list",
+        "signature": "list(showOnlyPublished)",
+        "parameters": [
+            {
+                "name": "showOnlyPublished",
+                "type": "bool"
+            }
+        ],
+        "return": "Webdeploymentconfigurationversionentitylisting"
+    }
+    
+}

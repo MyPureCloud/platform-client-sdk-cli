@@ -1,0 +1,58 @@
+{
+    "POST /api/v2/languages": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Language"
+            }
+        ],
+        "return": "Language"
+    },
+    "DELETE /api/v2/languages/{languageId}": {
+        "functionName": "delete",
+        "signature": "delete(languageId)",
+        "parameters": [
+            {
+                "name": "languageId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/languages/{languageId}": {
+        "functionName": "get",
+        "signature": "get(languageId)",
+        "parameters": [
+            {
+                "name": "languageId",
+                "type": "string"
+            }
+        ],
+        "return": "Language"
+    },
+    "GET /api/v2/languages": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, sortOrder, name)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

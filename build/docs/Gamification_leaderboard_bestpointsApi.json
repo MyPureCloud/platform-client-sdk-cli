@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/gamification/leaderboard/bestpoints": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Overallbestpoints"
+    }
+    
+}

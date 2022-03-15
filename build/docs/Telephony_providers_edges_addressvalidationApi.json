@@ -1,0 +1,14 @@
+{
+    "POST /api/v2/telephony/providers/edges/addressvalidation": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Validateaddressrequest"
+            }
+        ],
+        "return": "Validateaddressresponse"
+    }
+    
+}

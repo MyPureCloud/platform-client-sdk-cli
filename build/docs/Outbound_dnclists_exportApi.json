@@ -1,0 +1,29 @@
+{
+    "POST /api/v2/outbound/dnclists/{dncListId}/export": {
+        "functionName": "create",
+        "signature": "create(dncListId)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "string"
+            }
+        ],
+        "return": "Domainentityref"
+    },
+    "GET /api/v2/outbound/dnclists/{dncListId}/export": {
+        "functionName": "get",
+        "signature": "get(dncListId, download)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "string"
+            },
+            {
+                "name": "download",
+                "type": "string"
+            }
+        ],
+        "return": "Exporturi"
+    }
+    
+}

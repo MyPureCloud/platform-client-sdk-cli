@@ -1,0 +1,24 @@
+{
+    "POST /api/v2/recording/recordingkeys": {
+        "functionName": "create",
+        "signature": "create()",
+        
+        "return": "Encryptionkey"
+    },
+    "GET /api/v2/recording/recordingkeys": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

@@ -1,0 +1,94 @@
+{
+    "GET /api/v2/telephony/providers/edges/lines/{lineId}": {
+        "functionName": "get",
+        "signature": "get(lineId)",
+        "parameters": [
+            {
+                "name": "lineId",
+                "type": "string"
+            }
+        ],
+        "return": "Line"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}": {
+        "functionName": "getedgeline",
+        "signature": "getedgeline(edgeId, lineId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "lineId",
+                "type": "string"
+            }
+        ],
+        "return": "Edgeline"
+    },
+    "GET /api/v2/telephony/providers/edges/lines": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, name, sortBy, expand)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/lines": {
+        "functionName": "listedgelines",
+        "signature": "listedgelines(edgeId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}": {
+        "functionName": "update",
+        "signature": "update(edgeId, lineId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "string"
+            },
+            {
+                "name": "lineId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Edgeline"
+            }
+        ],
+        "return": "Edgeline"
+    }
+    
+}

@@ -1,0 +1,33 @@
+{
+    "PATCH /api/v2/users/{userId}/routingskills/bulk": {
+        "functionName": "bulkadd",
+        "signature": "bulkadd(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]Userroutingskillpost"
+            }
+        ],
+        "return": "Userskillentitylisting"
+    },
+    "PUT /api/v2/users/{userId}/routingskills/bulk": {
+        "functionName": "bulkupdate",
+        "signature": "bulkupdate(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "[]Userroutingskillpost"
+            }
+        ],
+        "return": "Userskillentitylisting"
+    }
+    
+}

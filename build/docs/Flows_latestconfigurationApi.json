@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/flows/{flowId}/latestconfiguration": {
+        "functionName": "get",
+        "signature": "get(flowId, deleted)",
+        "parameters": [
+            {
+                "name": "flowId",
+                "type": "string"
+            },
+            {
+                "name": "deleted",
+                "type": "bool"
+            }
+        ],
+        "return": "interface{}"
+    }
+    
+}

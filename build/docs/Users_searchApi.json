@@ -1,0 +1,33 @@
+{
+    "POST /api/v2/users/search": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Usersearchrequest"
+            }
+        ],
+        "return": "Userssearchresponse"
+    },
+    "GET /api/v2/users/search": {
+        "functionName": "list",
+        "signature": "list(q64, expand, integrationPresenceSource)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "integrationPresenceSource",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

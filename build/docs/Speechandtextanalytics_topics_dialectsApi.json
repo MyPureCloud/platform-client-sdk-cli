@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/speechandtextanalytics/topics/dialects": {
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Entitylisting"
+    }
+    
+}

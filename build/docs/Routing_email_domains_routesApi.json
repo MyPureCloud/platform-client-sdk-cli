@@ -1,0 +1,89 @@
+{
+    "POST /api/v2/routing/email/domains/{domainName}/routes": {
+        "functionName": "create",
+        "signature": "create(domainName, body)",
+        "parameters": [
+            {
+                "name": "domainName",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Inboundroute"
+            }
+        ],
+        "return": "Inboundroute"
+    },
+    "DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId}": {
+        "functionName": "delete",
+        "signature": "delete(domainName, routeId)",
+        "parameters": [
+            {
+                "name": "domainName",
+                "type": "string"
+            },
+            {
+                "name": "routeId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}": {
+        "functionName": "get",
+        "signature": "get(domainName, routeId)",
+        "parameters": [
+            {
+                "name": "domainName",
+                "type": "string"
+            },
+            {
+                "name": "routeId",
+                "type": "string"
+            }
+        ],
+        "return": "Inboundroute"
+    },
+    "GET /api/v2/routing/email/domains/{domainName}/routes": {
+        "functionName": "list",
+        "signature": "list(domainName, pageSize, pageNumber, pattern)",
+        "parameters": [
+            {
+                "name": "domainName",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pattern",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}": {
+        "functionName": "update",
+        "signature": "update(domainName, routeId, body)",
+        "parameters": [
+            {
+                "name": "domainName",
+                "type": "string"
+            },
+            {
+                "name": "routeId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Inboundroute"
+            }
+        ],
+        "return": "Inboundroute"
+    }
+    
+}

@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/integrations/types/{typeId}/configschemas/{configType}": {
+        "functionName": "get",
+        "signature": "get(typeId, configType)",
+        "parameters": [
+            {
+                "name": "typeId",
+                "type": "string"
+            },
+            {
+                "name": "configType",
+                "type": "string"
+            }
+        ],
+        "return": "Jsonschemadocument"
+    }
+    
+}

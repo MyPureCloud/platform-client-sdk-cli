@@ -1,0 +1,105 @@
+{
+    "POST /api/v2/routing/sms/phonenumbers": {
+        "functionName": "create",
+        "signature": "create(body, async)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Smsphonenumberprovision"
+            },
+            {
+                "name": "async",
+                "type": "bool"
+            }
+        ],
+        "return": "Smsphonenumber"
+    },
+    "DELETE /api/v2/routing/sms/phonenumbers/{addressId}": {
+        "functionName": "delete",
+        "signature": "delete(addressId, async)",
+        "parameters": [
+            {
+                "name": "addressId",
+                "type": "string"
+            },
+            {
+                "name": "async",
+                "type": "bool"
+            }
+        ]
+    },
+    "GET /api/v2/routing/sms/phonenumbers/{addressId}": {
+        "functionName": "get",
+        "signature": "get(addressId)",
+        "parameters": [
+            {
+                "name": "addressId",
+                "type": "string"
+            }
+        ],
+        "return": "Smsphonenumber"
+    },
+    "GET /api/v2/routing/sms/phonenumbers": {
+        "functionName": "list",
+        "signature": "list(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language)",
+        "parameters": [
+            {
+                "name": "phoneNumber",
+                "type": "string"
+            },
+            {
+                "name": "phoneNumberType",
+                "type": "[]string"
+            },
+            {
+                "name": "phoneNumberStatus",
+                "type": "[]string"
+            },
+            {
+                "name": "countryCode",
+                "type": "[]string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "language",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/routing/sms/phonenumbers/{addressId}": {
+        "functionName": "update",
+        "signature": "update(addressId, body, async)",
+        "parameters": [
+            {
+                "name": "addressId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Smsphonenumber"
+            },
+            {
+                "name": "async",
+                "type": "bool"
+            }
+        ],
+        "return": "Smsphonenumber"
+    }
+    
+}

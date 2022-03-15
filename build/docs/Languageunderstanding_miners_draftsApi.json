@@ -1,0 +1,77 @@
+{
+    "POST /api/v2/languageunderstanding/miners/{minerId}/drafts": {
+        "functionName": "create",
+        "signature": "create(minerId, body)",
+        "parameters": [
+            {
+                "name": "minerId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Draft"
+            }
+        ],
+        "return": "Draft"
+    },
+    "DELETE /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}": {
+        "functionName": "delete",
+        "signature": "delete(minerId, draftId)",
+        "parameters": [
+            {
+                "name": "minerId",
+                "type": "string"
+            },
+            {
+                "name": "draftId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}": {
+        "functionName": "get",
+        "signature": "get(minerId, draftId)",
+        "parameters": [
+            {
+                "name": "minerId",
+                "type": "string"
+            },
+            {
+                "name": "draftId",
+                "type": "string"
+            }
+        ],
+        "return": "Draft"
+    },
+    "GET /api/v2/languageunderstanding/miners/{minerId}/drafts": {
+        "functionName": "list",
+        "signature": "list(minerId)",
+        "parameters": [
+            {
+                "name": "minerId",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}": {
+        "functionName": "update",
+        "signature": "update(minerId, draftId, body)",
+        "parameters": [
+            {
+                "name": "minerId",
+                "type": "string"
+            },
+            {
+                "name": "draftId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Draftrequest"
+            }
+        ],
+        "return": "Draft"
+    }
+    
+}

@@ -1,0 +1,94 @@
+{
+    "POST /api/v2/externalcontacts/organizations": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Externalorganization"
+            }
+        ],
+        "return": "Externalorganization"
+    },
+    "DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}": {
+        "functionName": "delete",
+        "signature": "delete(externalOrganizationId)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string"
+            }
+        ],
+        "return": "Empty"
+    },
+    "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}": {
+        "functionName": "get",
+        "signature": "get(externalOrganizationId, expand, includeTrustors)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "includeTrustors",
+                "type": "bool"
+            }
+        ],
+        "return": "Externalorganization"
+    },
+    "GET /api/v2/externalcontacts/organizations": {
+        "functionName": "search",
+        "signature": "search(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "q",
+                "type": "string"
+            },
+            {
+                "name": "trustorId",
+                "type": "[]string"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            },
+            {
+                "name": "includeTrustors",
+                "type": "bool"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}": {
+        "functionName": "update",
+        "signature": "update(externalOrganizationId, body)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Externalorganization"
+            }
+        ],
+        "return": "Externalorganization"
+    }
+    
+}

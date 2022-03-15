@@ -1,0 +1,18 @@
+{
+    "GET /api/v2/gdpr/subjects": {
+        "functionName": "list",
+        "signature": "list(searchType, searchValue)",
+        "parameters": [
+            {
+                "name": "searchType",
+                "type": "string"
+            },
+            {
+                "name": "searchValue",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

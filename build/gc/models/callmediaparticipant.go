@@ -149,6 +149,12 @@ type CallmediaparticipantDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Callmediaparticipant
@@ -329,12 +335,20 @@ type Callmediaparticipant struct {
     CoachedParticipantId string `json:"coachedParticipantId"`
 
 
+    // BargedParticipantId - If this participant barged in a participant's call, then this will be the id of the targeted participant.
+    BargedParticipantId string `json:"bargedParticipantId"`
+
+
     // ConsultParticipantId - The ID of the consult transfer target participant when performing a consult transfer.
     ConsultParticipantId string `json:"consultParticipantId"`
 
 
     // UuiData - User-to-User information which maps to a SIP header field defined in RFC7433. UUI data is used in the Public Switched Telephone Network (PSTN) for use cases described in RFC6567.
     UuiData string `json:"uuiData"`
+
+
+    // BargedTime - The timestamp when this participant was connected to the barge conference in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    BargedTime time.Time `json:"bargedTime"`
 
 }
 
@@ -411,6 +425,14 @@ func (o *Callmediaparticipant) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -629,9 +651,13 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
         
         CoachedParticipantId string `json:"coachedParticipantId"`
         
+        BargedParticipantId string `json:"bargedParticipantId"`
+        
         ConsultParticipantId string `json:"consultParticipantId"`
         
         UuiData string `json:"uuiData"`
+        
+        BargedTime time.Time `json:"bargedTime"`
         
         *Alias
     }{
@@ -707,6 +733,14 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+        
+
+        
+
+        
+
         
 
         

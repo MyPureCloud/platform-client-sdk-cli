@@ -1,0 +1,31 @@
+{
+    "GET /api/v2/speechandtextanalytics/settings": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Speechtextanalyticssettingsresponse"
+    },
+    "PATCH /api/v2/speechandtextanalytics/settings": {
+        "functionName": "patch",
+        "signature": "patch(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Speechtextanalyticssettingsrequest"
+            }
+        ],
+        "return": "Speechtextanalyticssettingsresponse"
+    },
+    "PUT /api/v2/speechandtextanalytics/settings": {
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Speechtextanalyticssettingsrequest"
+            }
+        ],
+        "return": "Speechtextanalyticssettingsresponse"
+    }
+    
+}

@@ -1,0 +1,37 @@
+{
+    "GET /api/v2/scripts/published/{scriptId}/pages/{pageId}": {
+        "functionName": "get",
+        "signature": "get(scriptId, pageId, scriptDataVersion)",
+        "parameters": [
+            {
+                "name": "scriptId",
+                "type": "string"
+            },
+            {
+                "name": "pageId",
+                "type": "string"
+            },
+            {
+                "name": "scriptDataVersion",
+                "type": "string"
+            }
+        ],
+        "return": "Page"
+    },
+    "GET /api/v2/scripts/published/{scriptId}/pages": {
+        "functionName": "list",
+        "signature": "list(scriptId, scriptDataVersion)",
+        "parameters": [
+            {
+                "name": "scriptId",
+                "type": "string"
+            },
+            {
+                "name": "scriptDataVersion",
+                "type": "string"
+            }
+        ],
+        "return": "[]Page"
+    }
+    
+}

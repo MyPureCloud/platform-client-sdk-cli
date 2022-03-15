@@ -1,0 +1,9 @@
+{
+    "GET /api/v2/voicemail/me/mailbox": {
+        "functionName": "get",
+        "signature": "get()",
+        
+        "return": "Voicemailmailboxinfo"
+    }
+    
+}

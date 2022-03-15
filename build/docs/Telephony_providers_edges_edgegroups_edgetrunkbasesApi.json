@@ -1,0 +1,37 @@
+{
+    "GET /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}": {
+        "functionName": "get",
+        "signature": "get(edgegroupId, edgetrunkbaseId)",
+        "parameters": [
+            {
+                "name": "edgegroupId",
+                "type": "string"
+            },
+            {
+                "name": "edgetrunkbaseId",
+                "type": "string"
+            }
+        ],
+        "return": "Edgetrunkbase"
+    },
+    "PUT /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}": {
+        "functionName": "update",
+        "signature": "update(edgegroupId, edgetrunkbaseId, body)",
+        "parameters": [
+            {
+                "name": "edgegroupId",
+                "type": "string"
+            },
+            {
+                "name": "edgetrunkbaseId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Edgetrunkbase"
+            }
+        ],
+        "return": "Edgetrunkbase"
+    }
+    
+}

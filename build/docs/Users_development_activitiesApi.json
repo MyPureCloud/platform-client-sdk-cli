@@ -1,0 +1,69 @@
+{
+    "GET /api/v2/users/development/activities/{activityId}": {
+        "functionName": "get",
+        "signature": "get(activityId, varType)",
+        "parameters": [
+            {
+                "name": "activityId",
+                "type": "string"
+            },
+            {
+                "name": "varType",
+                "type": "string"
+            }
+        ],
+        "return": "Developmentactivity"
+    },
+    "GET /api/v2/users/development/activities": {
+        "functionName": "list",
+        "signature": "list(userId, moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "[]string"
+            },
+            {
+                "name": "moduleId",
+                "type": "string"
+            },
+            {
+                "name": "interval",
+                "type": "string"
+            },
+            {
+                "name": "completionInterval",
+                "type": "string"
+            },
+            {
+                "name": "overdue",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "types",
+                "type": "[]string"
+            },
+            {
+                "name": "statuses",
+                "type": "[]string"
+            },
+            {
+                "name": "relationship",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

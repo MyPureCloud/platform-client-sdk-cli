@@ -1,0 +1,64 @@
+{
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}": {
+        "functionName": "get",
+        "signature": "get(managementUnitId, userId, timeOffRequestId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "timeOffRequestId",
+                "type": "string"
+            }
+        ],
+        "return": "Timeoffrequestresponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests": {
+        "functionName": "list",
+        "signature": "list(managementUnitId, userId, recentlyReviewed)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "recentlyReviewed",
+                "type": "bool"
+            }
+        ],
+        "return": "Timeoffrequestlist"
+    },
+    "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}": {
+        "functionName": "update",
+        "signature": "update(managementUnitId, userId, timeOffRequestId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "string"
+            },
+            {
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "name": "timeOffRequestId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Admintimeoffrequestpatch"
+            }
+        ],
+        "return": "Timeoffrequestresponse"
+    }
+    
+}

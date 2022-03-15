@@ -48,6 +48,9 @@ type DnclistDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -80,6 +83,10 @@ type Dnclist struct {
     
 
 
+    // ContactMethod - The contact method. Required if dncSourceType is rds.
+    ContactMethod string `json:"contactMethod"`
+
+
     // LoginId - A dnc.com loginId. Required if the dncSourceType is dnc.com.
     LoginId string `json:"loginId"`
 
@@ -102,6 +109,10 @@ type Dnclist struct {
 
 // String returns a JSON representation of the model
 func (o *Dnclist) String() string {
+    
+    
+    
+    
     
     
     
@@ -173,6 +184,8 @@ func (u *Dnclist) MarshalJSON() ([]byte, error) {
         
         
         
+        ContactMethod string `json:"contactMethod"`
+        
         LoginId string `json:"loginId"`
         
         DncCodes []string `json:"dncCodes"`
@@ -185,6 +198,10 @@ func (u *Dnclist) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

@@ -1,0 +1,77 @@
+{
+    "POST /api/v2/conversations/messaging/integrations/facebook": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Facebookintegrationrequest"
+            }
+        ],
+        "return": "Facebookintegration"
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
+        "functionName": "delete",
+        "signature": "delete(integrationId)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
+        "functionName": "get",
+        "signature": "get(integrationId, expand)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            }
+        ],
+        "return": "Facebookintegration"
+    },
+    "GET /api/v2/conversations/messaging/integrations/facebook": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, expand, supportedContentId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "expand",
+                "type": "string"
+            },
+            {
+                "name": "supportedContentId",
+                "type": "string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PATCH /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
+        "functionName": "update",
+        "signature": "update(integrationId, body)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Facebookintegrationupdaterequest"
+            }
+        ],
+        "return": "Facebookintegration"
+    }
+    
+}

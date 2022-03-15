@@ -1,0 +1,81 @@
+{
+    "POST /api/v2/telephony/providers/edges/edgegroups": {
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Edgegroup"
+            }
+        ],
+        "return": "Edgegroup"
+    },
+    "DELETE /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}": {
+        "functionName": "delete",
+        "signature": "delete(edgeGroupId)",
+        "parameters": [
+            {
+                "name": "edgeGroupId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}": {
+        "functionName": "get",
+        "signature": "get(edgeGroupId, expand)",
+        "parameters": [
+            {
+                "name": "edgeGroupId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Edgegroup"
+    },
+    "GET /api/v2/telephony/providers/edges/edgegroups": {
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, name, sortBy, managed)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "managed",
+                "type": "bool"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}": {
+        "functionName": "update",
+        "signature": "update(edgeGroupId, body)",
+        "parameters": [
+            {
+                "name": "edgeGroupId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Edgegroup"
+            }
+        ],
+        "return": "Edgegroup"
+    }
+    
+}

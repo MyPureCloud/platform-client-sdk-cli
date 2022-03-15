@@ -1,0 +1,22 @@
+{
+    "GET /api/v2/authorization/roles/{roleId}/users": {
+        "functionName": "list",
+        "signature": "list(roleId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "roleId",
+                "type": "string"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

@@ -1,0 +1,49 @@
+{
+    "POST /api/v2/architect/prompts/{promptId}/history": {
+        "functionName": "create",
+        "signature": "create(promptId)",
+        "parameters": [
+            {
+                "name": "promptId",
+                "type": "string"
+            }
+        ],
+        "return": "Operation"
+    },
+    "GET /api/v2/architect/prompts/{promptId}/history/{historyId}": {
+        "functionName": "list",
+        "signature": "list(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)",
+        "parameters": [
+            {
+                "name": "promptId",
+                "type": "string"
+            },
+            {
+                "name": "historyId",
+                "type": "string"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int"
+            },
+            {
+                "name": "pageSize",
+                "type": "int"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string"
+            },
+            {
+                "name": "sortBy",
+                "type": "string"
+            },
+            {
+                "name": "action",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

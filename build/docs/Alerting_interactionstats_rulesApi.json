@@ -1,0 +1,73 @@
+{
+    "POST /api/v2/alerting/interactionstats/rules": {
+        "functionName": "create",
+        "signature": "create(body, expand)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Interactionstatsrule"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Interactionstatsrule"
+    },
+    "DELETE /api/v2/alerting/interactionstats/rules/{ruleId}": {
+        "functionName": "delete",
+        "signature": "delete(ruleId)",
+        "parameters": [
+            {
+                "name": "ruleId",
+                "type": "string"
+            }
+        ]
+    },
+    "GET /api/v2/alerting/interactionstats/rules/{ruleId}": {
+        "functionName": "get",
+        "signature": "get(ruleId, expand)",
+        "parameters": [
+            {
+                "name": "ruleId",
+                "type": "string"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Interactionstatsrule"
+    },
+    "GET /api/v2/alerting/interactionstats/rules": {
+        "functionName": "list",
+        "signature": "list(expand)",
+        "parameters": [
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/alerting/interactionstats/rules/{ruleId}": {
+        "functionName": "update",
+        "signature": "update(ruleId, body, expand)",
+        "parameters": [
+            {
+                "name": "ruleId",
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "type": "Interactionstatsrule"
+            },
+            {
+                "name": "expand",
+                "type": "[]string"
+            }
+        ],
+        "return": "Interactionstatsrule"
+    }
+    
+}

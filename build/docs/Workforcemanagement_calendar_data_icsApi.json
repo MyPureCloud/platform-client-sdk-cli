@@ -1,11 +1,13 @@
 {
     "GET /api/v2/workforcemanagement/calendar/data/ics": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(calendarId)",
         "parameters": [
             {
                 "name": "calendarId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "string"

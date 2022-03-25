@@ -1,49 +1,59 @@
 {
     "GET /api/v2/coaching/notifications/{notificationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(notificationId, expand)",
         "parameters": [
             {
                 "name": "notificationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Coachingnotification"
     },
     "GET /api/v2/coaching/notifications": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, expand)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/coaching/notifications/{notificationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(notificationId, body)",
         "parameters": [
             {
                 "name": "notificationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Coachingnotification"
+                "type": "Coachingnotification",
+                "required": "true"
             }
         ],
         "return": "Coachingnotification"

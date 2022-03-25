@@ -1,42 +1,50 @@
 {
     "DELETE /api/v2/outbound/schedules/campaigns/{campaignId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(campaignId)",
         "parameters": [
             {
                 "name": "campaignId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/outbound/schedules/campaigns/{campaignId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(campaignId)",
         "parameters": [
             {
                 "name": "campaignId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Campaignschedule"
     },
     "GET /api/v2/outbound/schedules/campaigns": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         
         "return": "[]Campaignschedule"
     },
     "PUT /api/v2/outbound/schedules/campaigns/{campaignId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(campaignId, body)",
         "parameters": [
             {
                 "name": "campaignId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Campaignschedule"
+                "type": "Campaignschedule",
+                "required": "true"
             }
         ],
         "return": "Campaignschedule"

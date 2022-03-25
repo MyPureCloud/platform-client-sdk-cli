@@ -1,82 +1,99 @@
 {
     "POST /api/v2/outbound/sequences": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Campaignsequence"
+                "type": "Campaignsequence",
+                "required": "true"
             }
         ],
         "return": "Campaignsequence"
     },
     "DELETE /api/v2/outbound/sequences/{sequenceId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(sequenceId)",
         "parameters": [
             {
                 "name": "sequenceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/outbound/sequences/{sequenceId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(sequenceId)",
         "parameters": [
             {
                 "name": "sequenceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Campaignsequence"
     },
     "GET /api/v2/outbound/sequences": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "allowEmptyResult",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "filterType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/sequences/{sequenceId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(sequenceId, body)",
         "parameters": [
             {
                 "name": "sequenceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Campaignsequence"
+                "type": "Campaignsequence",
+                "required": "true"
             }
         ],
         "return": "Campaignsequence"

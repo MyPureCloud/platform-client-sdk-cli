@@ -1,99 +1,120 @@
 {
     "POST /api/v2/users": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createuser"
+                "type": "Createuser",
+                "required": "true"
             }
         ],
         "return": "User"
     },
     "DELETE /api/v2/users/{userId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(userId)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Empty"
     },
     "GET /api/v2/users/{userId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(userId, expand, integrationPresenceSource, state)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "integrationPresenceSource",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "state",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "User"
     },
     "GET /api/v2/users": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, state)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "jabberId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "integrationPresenceSource",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "state",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/users/{userId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Updateuser"
+                "type": "Updateuser",
+                "required": "true"
             }
         ],
         "return": "User"

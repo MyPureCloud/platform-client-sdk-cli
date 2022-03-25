@@ -1,5 +1,6 @@
 {
     "GET /api/v2/audits/query/realtime/servicemapping": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         

@@ -1,43 +1,51 @@
 {
     "POST /api/v2/conversations/callbacks": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createcallbackcommand"
+                "type": "Createcallbackcommand",
+                "required": "true"
             }
         ],
         "return": "Createcallbackresponse"
     },
     "GET /api/v2/conversations/callbacks/{conversationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Callbackconversation"
     },
     "GET /api/v2/conversations/callbacks": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/conversations/callbacks/{conversationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(conversationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Conversation"
+                "type": "Conversation",
+                "required": "true"
             }
         ],
         "return": "Conversation"

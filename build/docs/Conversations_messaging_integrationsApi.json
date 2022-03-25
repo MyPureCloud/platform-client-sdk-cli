@@ -1,23 +1,28 @@
 {
     "GET /api/v2/conversations/messaging/integrations": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand, supportedContentId)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "supportedContentId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

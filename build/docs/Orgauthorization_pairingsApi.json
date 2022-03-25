@@ -1,22 +1,26 @@
 {
     "POST /api/v2/orgauthorization/pairings": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Trustrequestcreate"
+                "type": "Trustrequestcreate",
+                "required": "true"
             }
         ],
         "return": "Trustrequest"
     },
     "GET /api/v2/orgauthorization/pairings/{pairingId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(pairingId)",
         "parameters": [
             {
                 "name": "pairingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Trustrequest"

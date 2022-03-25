@@ -1,47 +1,56 @@
 {
     "POST /api/v2/routing/sms/addresses": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Smsaddressprovision"
+                "type": "Smsaddressprovision",
+                "required": "true"
             }
         ],
         "return": "Smsaddress"
     },
     "DELETE /api/v2/routing/sms/addresses/{addressId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(addressId)",
         "parameters": [
             {
                 "name": "addressId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/routing/sms/addresses/{addressId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(addressId)",
         "parameters": [
             {
                 "name": "addressId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Smsaddress"
     },
     "GET /api/v2/routing/sms/addresses": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

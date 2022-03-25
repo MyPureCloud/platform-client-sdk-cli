@@ -1,78 +1,94 @@
 {
     "POST /api/v2/journey/outcomes": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Outcome"
+                "type": "Outcome",
+                "required": "false"
             }
         ],
         "return": "Outcome"
     },
     "DELETE /api/v2/journey/outcomes/{outcomeId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(outcomeId)",
         "parameters": [
             {
                 "name": "outcomeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/journey/outcomes/{outcomeId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(outcomeId)",
         "parameters": [
             {
                 "name": "outcomeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Outcome"
     },
     "GET /api/v2/journey/outcomes": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "outcomeIds",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "queryFields",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "queryValue",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/journey/outcomes/{outcomeId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(outcomeId, body)",
         "parameters": [
             {
                 "name": "outcomeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Patchoutcome"
+                "type": "Patchoutcome",
+                "required": "false"
             }
         ],
         "return": "Outcome"

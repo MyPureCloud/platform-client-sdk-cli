@@ -1,94 +1,114 @@
 {
     "POST /api/v2/learning/modules": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Learningmodulerequest"
+                "type": "Learningmodulerequest",
+                "required": "true"
             }
         ],
         "return": "Learningmodule"
     },
     "DELETE /api/v2/learning/modules/{moduleId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(moduleId)",
         "parameters": [
             {
                 "name": "moduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/learning/modules/{moduleId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(moduleId, expand)",
         "parameters": [
             {
                 "name": "moduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Learningmodule"
     },
     "GET /api/v2/learning/modules": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished)",
         "parameters": [
             {
                 "name": "isArchived",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "types",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "searchTerm",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "isPublished",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/learning/modules/{moduleId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(moduleId, body)",
         "parameters": [
             {
                 "name": "moduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Learningmodulerequest"
+                "type": "Learningmodulerequest",
+                "required": "true"
             }
         ],
         "return": "Learningmodule"

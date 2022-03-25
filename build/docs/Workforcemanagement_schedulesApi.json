@@ -1,11 +1,13 @@
 {
     "POST /api/v2/workforcemanagement/schedules": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Currentuserschedulerequestbody"
+                "type": "Currentuserschedulerequestbody",
+                "required": "false"
             }
         ],
         "return": "Userschedulecontainer"

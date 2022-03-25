@@ -1,11 +1,13 @@
 {
     "GET /api/v2/journey/sessions/{sessionId}/outcomescores": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(sessionId)",
         "parameters": [
             {
                 "name": "sessionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Outcomescoresresult"

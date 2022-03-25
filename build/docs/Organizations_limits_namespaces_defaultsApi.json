@@ -1,11 +1,13 @@
 {
     "GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(namespaceName)",
         "parameters": [
             {
                 "name": "namespaceName",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Limitsentitylisting"

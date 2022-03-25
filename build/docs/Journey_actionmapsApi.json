@@ -1,86 +1,104 @@
 {
     "POST /api/v2/journey/actionmaps": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Actionmap"
+                "type": "Actionmap",
+                "required": "false"
             }
         ],
         "return": "Actionmap"
     },
     "DELETE /api/v2/journey/actionmaps/{actionMapId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(actionMapId)",
         "parameters": [
             {
                 "name": "actionMapId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/journey/actionmaps/{actionMapId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(actionMapId)",
         "parameters": [
             {
                 "name": "actionMapId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Actionmap"
     },
     "GET /api/v2/journey/actionmaps": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds, queryFields, queryValue)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "filterField",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "filterValue",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "actionMapIds",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "queryFields",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "queryValue",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/journey/actionmaps/{actionMapId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(actionMapId, body)",
         "parameters": [
             {
                 "name": "actionMapId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Patchactionmap"
+                "type": "Patchactionmap",
+                "required": "false"
             }
         ],
         "return": "Actionmap"

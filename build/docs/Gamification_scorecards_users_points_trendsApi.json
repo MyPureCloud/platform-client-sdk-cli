@@ -1,23 +1,28 @@
 {
     "GET /api/v2/gamification/scorecards/users/{userId}/points/trends": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(userId, startWorkday, endWorkday, dayOfWeek)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "startWorkday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "endWorkday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "dayOfWeek",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Workdaypointstrend"

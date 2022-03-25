@@ -1,127 +1,155 @@
 {
     "POST /api/v2/integrations": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createintegrationrequest"
+                "type": "Createintegrationrequest",
+                "required": "false"
             }
         ],
         "return": "Integration"
     },
     "DELETE /api/v2/integrations/{integrationId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(integrationId)",
         "parameters": [
             {
                 "name": "integrationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Integration"
     },
     "GET /api/v2/integrations/{integrationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
         "parameters": [
             {
                 "name": "integrationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "nextPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "previousPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Integration"
     },
     "GET /api/v2/integrations": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "nextPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "previousPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/integrations/{integrationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(integrationId, body, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
         "parameters": [
             {
                 "name": "integrationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Integration"
+                "type": "Integration",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "nextPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "previousPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Integration"

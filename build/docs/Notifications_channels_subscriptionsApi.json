@@ -1,51 +1,61 @@
 {
     "DELETE /api/v2/notifications/channels/{channelId}/subscriptions": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(channelId)",
         "parameters": [
             {
                 "name": "channelId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/notifications/channels/{channelId}/subscriptions": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(channelId)",
         "parameters": [
             {
                 "name": "channelId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Channeltopicentitylisting"
     },
     "POST /api/v2/notifications/channels/{channelId}/subscriptions": {
+        "operationId": "subscribe",
         "functionName": "subscribe",
         "signature": "subscribe(channelId, body)",
         "parameters": [
             {
                 "name": "channelId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "[]Channeltopic"
+                "type": "[]Channeltopic",
+                "required": "true"
             }
         ],
         "return": "Channeltopicentitylisting"
     },
     "PUT /api/v2/notifications/channels/{channelId}/subscriptions": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(channelId, body)",
         "parameters": [
             {
                 "name": "channelId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "[]Channeltopic"
+                "type": "[]Channeltopic",
+                "required": "true"
             }
         ],
         "return": "Channeltopicentitylisting"

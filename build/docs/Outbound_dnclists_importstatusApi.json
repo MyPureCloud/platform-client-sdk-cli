@@ -1,11 +1,13 @@
 {
     "GET /api/v2/outbound/dnclists/{dncListId}/importstatus": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(dncListId)",
         "parameters": [
             {
                 "name": "dncListId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Importstatus"

@@ -1,15 +1,18 @@
 {
     "GET /api/v2/users/{userId}/adjacents": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(userId, expand)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Adjacents"

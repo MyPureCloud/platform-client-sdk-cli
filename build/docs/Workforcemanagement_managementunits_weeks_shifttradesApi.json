@@ -1,61 +1,74 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(managementUnitId, weekDateId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekDateId",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Addshifttraderequest"
+                "type": "Addshifttraderequest",
+                "required": "true"
             }
         ],
         "return": "Shifttraderesponse"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(managementUnitId, weekDateId, evaluateMatches)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekDateId",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "evaluateMatches",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Weekshifttradelistresponse"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(managementUnitId, weekDateId, body, tradeId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekDateId",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Patchshifttraderequest"
+                "type": "Patchshifttraderequest",
+                "required": "true"
             },
             {
                 "name": "tradeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Shifttraderesponse"

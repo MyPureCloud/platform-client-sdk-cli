@@ -1,90 +1,109 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(managementUnitId, body, validationMode)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Createworkplan"
+                "type": "Createworkplan",
+                "required": "false"
             },
             {
                 "name": "validationMode",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Workplan"
     },
     "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(managementUnitId, workPlanId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "workPlanId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(managementUnitId, workPlanId, includeOnly)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "workPlanId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "includeOnly",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Workplan"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(managementUnitId, expand)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Workplanlistresponse"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(managementUnitId, workPlanId, body, validationMode)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "workPlanId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Workplan"
+                "type": "Workplan",
+                "required": "false"
             },
             {
                 "name": "validationMode",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Workplan"

@@ -1,0 +1,1 @@
+gc listedgetrunks(edgeId, pageNumber, pageSize, sortBy, sortOrder, trunkBaseId, trunkType)

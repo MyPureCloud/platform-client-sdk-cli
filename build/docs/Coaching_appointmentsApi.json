@@ -1,99 +1,120 @@
 {
     "POST /api/v2/coaching/appointments": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createcoachingappointmentrequest"
+                "type": "Createcoachingappointmentrequest",
+                "required": "true"
             }
         ],
         "return": "Coachingappointmentresponse"
     },
     "DELETE /api/v2/coaching/appointments/{appointmentId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(appointmentId)",
         "parameters": [
             {
                 "name": "appointmentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Coachingappointmentreference"
     },
     "GET /api/v2/coaching/appointments/{appointmentId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(appointmentId)",
         "parameters": [
             {
                 "name": "appointmentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Coachingappointmentresponse"
     },
     "GET /api/v2/coaching/appointments": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)",
         "parameters": [
             {
                 "name": "userIds",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "true"
             },
             {
                 "name": "interval",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "statuses",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "facilitatorIds",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "relationships",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "completionInterval",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "overdue",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "intervalCondition",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/coaching/appointments/{appointmentId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(appointmentId, body)",
         "parameters": [
             {
                 "name": "appointmentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Updatecoachingappointmentrequest"
+                "type": "Updatecoachingappointmentrequest",
+                "required": "true"
             }
         ],
         "return": "Coachingappointmentresponse"

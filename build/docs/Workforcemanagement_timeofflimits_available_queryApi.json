@@ -1,11 +1,13 @@
 {
     "POST /api/v2/workforcemanagement/timeofflimits/available/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Availabletimeoffrequest"
+                "type": "Availabletimeoffrequest",
+                "required": "false"
             }
         ],
         "return": "Availabletimeoffresponse"

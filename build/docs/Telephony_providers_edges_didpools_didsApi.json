@@ -1,31 +1,38 @@
 {
     "GET /api/v2/telephony/providers/edges/didpools/dids": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(varType, id, numberMatch, pageSize, pageNumber, sortOrder)",
         "parameters": [
             {
                 "name": "varType",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "numberMatch",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

@@ -1,75 +1,91 @@
 {
     "DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(workspaceId, memberId)",
         "parameters": [
             {
                 "name": "workspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "memberId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(workspaceId, memberId, expand)",
         "parameters": [
             {
                 "name": "workspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "memberId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Workspacemember"
     },
     "GET /api/v2/contentmanagement/workspaces/{workspaceId}/members": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(workspaceId, pageSize, pageNumber, expand)",
         "parameters": [
             {
                 "name": "workspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(workspaceId, memberId, body)",
         "parameters": [
             {
                 "name": "workspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "memberId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Workspacemember"
+                "type": "Workspacemember",
+                "required": "true"
             }
         ],
         "return": "Workspacemember"

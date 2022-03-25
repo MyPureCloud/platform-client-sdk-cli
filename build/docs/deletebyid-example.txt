@@ -1,0 +1,1 @@
+gc deletebyid(sentimentFeedbackId)

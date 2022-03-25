@@ -1,26 +1,31 @@
 {
     "GET /api/v2/learning/modules/{moduleId}/rule": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(moduleId)",
         "parameters": [
             {
                 "name": "moduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Learningmodulerule"
     },
     "PUT /api/v2/learning/modules/{moduleId}/rule": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(moduleId, body)",
         "parameters": [
             {
                 "name": "moduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Learningmodulerule"
+                "type": "Learningmodulerule",
+                "required": "true"
             }
         ],
         "return": "Learningmodulerule"

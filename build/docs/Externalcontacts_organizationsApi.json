@@ -1,91 +1,110 @@
 {
     "POST /api/v2/externalcontacts/organizations": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Externalorganization"
+                "type": "Externalorganization",
+                "required": "true"
             }
         ],
         "return": "Externalorganization"
     },
     "DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(externalOrganizationId)",
         "parameters": [
             {
                 "name": "externalOrganizationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Empty"
     },
     "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(externalOrganizationId, expand, includeTrustors)",
         "parameters": [
             {
                 "name": "externalOrganizationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "includeTrustors",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Externalorganization"
     },
     "GET /api/v2/externalcontacts/organizations": {
+        "operationId": "search",
         "functionName": "search",
         "signature": "search(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "q",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "trustorId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "includeTrustors",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(externalOrganizationId, body)",
         "parameters": [
             {
                 "name": "externalOrganizationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Externalorganization"
+                "type": "Externalorganization",
+                "required": "true"
             }
         ],
         "return": "Externalorganization"

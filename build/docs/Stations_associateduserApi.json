@@ -1,11 +1,13 @@
 {
     "DELETE /api/v2/stations/{stationId}/associateduser": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(stationId)",
         "parameters": [
             {
                 "name": "stationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     }

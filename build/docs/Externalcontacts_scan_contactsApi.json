@@ -1,15 +1,18 @@
 {
     "GET /api/v2/externalcontacts/scan/contacts": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(limit, cursor)",
         "parameters": [
             {
                 "name": "limit",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "cursor",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

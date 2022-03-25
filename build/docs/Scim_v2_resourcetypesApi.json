@@ -1,16 +1,19 @@
 {
     "GET /api/v2/scim/v2/resourcetypes/{resourceType}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(resourceType)",
         "parameters": [
             {
                 "name": "resourceType",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Scimconfigresourcetype"
     },
     "GET /api/v2/scim/v2/resourcetypes": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         

@@ -1,34 +1,41 @@
 {
     "POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(conversationId, communicationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "communicationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Messagemediadata"
     },
     "GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId, communicationId, mediaId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "communicationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "mediaId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Messagemediadata"

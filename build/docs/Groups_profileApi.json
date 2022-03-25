@@ -1,15 +1,18 @@
 {
     "GET /api/v2/groups/{groupId}/profile": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(groupId, fields)",
         "parameters": [
             {
                 "name": "groupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "fields",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Groupprofile"

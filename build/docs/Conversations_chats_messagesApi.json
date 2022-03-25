@@ -1,42 +1,51 @@
 {
     "GET /api/v2/conversations/chats/{conversationId}/messages/{messageId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId, messageId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "messageId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Webchatmessage"
     },
     "GET /api/v2/conversations/chats/{conversationId}/messages": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(conversationId, after, before, sortOrder, maxResults)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "after",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "before",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "maxResults",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Webchatmessageentitylist"

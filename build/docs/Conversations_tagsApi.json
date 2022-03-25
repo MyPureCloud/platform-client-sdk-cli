@@ -1,15 +1,18 @@
 {
     "PUT /api/v2/conversations/{conversationId}/tags": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(conversationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Conversationtagsupdate"
+                "type": "Conversationtagsupdate",
+                "required": "true"
             }
         ],
         "return": "string"

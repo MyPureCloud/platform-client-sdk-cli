@@ -1,99 +1,121 @@
 {
     "POST /api/v2/languageunderstanding/domains/{domainId}/feedback": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(domainId, body)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Nlufeedbackrequest"
+                "type": "Nlufeedbackrequest",
+                "required": "true"
             }
         ],
         "return": "Nlufeedbackresponse"
     },
     "DELETE /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(domainId, feedbackId)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "feedbackId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(domainId, feedbackId, fields)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "feedbackId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "fields",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Nlufeedbackresponse"
     },
     "GET /api/v2/languageunderstanding/domains/{domainId}/feedback": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "intentName",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "assessment",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "dateStart",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "false"
             },
             {
                 "name": "dateEnd",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "false"
             },
             {
                 "name": "includeDeleted",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "enableCursorPagination",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "after",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "fields",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

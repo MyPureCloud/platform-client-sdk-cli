@@ -1,26 +1,31 @@
 {
     "POST /api/v2/gamification/profiles/{performanceProfileId}/members": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(performanceProfileId, body)",
         "parameters": [
             {
                 "name": "performanceProfileId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Assignusers"
+                "type": "Assignusers",
+                "required": "true"
             }
         ],
         "return": "Assignment"
     },
     "GET /api/v2/gamification/profiles/{performanceProfileId}/members": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(performanceProfileId)",
         "parameters": [
             {
                 "name": "performanceProfileId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Memberlisting"

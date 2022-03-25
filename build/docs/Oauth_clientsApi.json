@@ -1,53 +1,63 @@
 {
     "POST /api/v2/oauth/clients": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Oauthclientrequest"
+                "type": "Oauthclientrequest",
+                "required": "true"
             }
         ],
         "return": "Oauthclient"
     },
     "DELETE /api/v2/oauth/clients/{clientId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(clientId)",
         "parameters": [
             {
                 "name": "clientId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/oauth/clients/{clientId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(clientId)",
         "parameters": [
             {
                 "name": "clientId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Oauthclient"
     },
     "GET /api/v2/oauth/clients": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/oauth/clients/{clientId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(clientId, body)",
         "parameters": [
             {
                 "name": "clientId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Oauthclientrequest"
+                "type": "Oauthclientrequest",
+                "required": "true"
             }
         ],
         "return": "Oauthclient"

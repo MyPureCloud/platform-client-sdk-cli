@@ -1,53 +1,64 @@
 {
     "POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(conversationId, participantId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "participantId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Createsecuresession"
+                "type": "Createsecuresession",
+                "required": "false"
             }
         ],
         "return": "Securesession"
     },
     "GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId, participantId, secureSessionId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "participantId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "secureSessionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Securesession"
     },
     "GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(conversationId, participantId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "participantId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Securesessionentitylisting"

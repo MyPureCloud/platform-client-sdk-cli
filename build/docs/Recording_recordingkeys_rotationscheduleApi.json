@@ -1,17 +1,20 @@
 {
     "GET /api/v2/recording/recordingkeys/rotationschedule": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Keyrotationschedule"
     },
     "PUT /api/v2/recording/recordingkeys/rotationschedule": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Keyrotationschedule"
+                "type": "Keyrotationschedule",
+                "required": "true"
             }
         ],
         "return": "Keyrotationschedule"

@@ -1,11 +1,13 @@
 {
     "POST /api/v2/externalcontacts/bulk/relationships/update": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Bulkrelationshipsrequest"
+                "type": "Bulkrelationshipsrequest",
+                "required": "true"
             }
         ],
         "return": "Bulkrelationshipsresponse"

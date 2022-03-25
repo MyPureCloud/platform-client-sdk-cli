@@ -1,46 +1,56 @@
 {
     "GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(messagingCampaignId)",
         "parameters": [
             {
                 "name": "messagingCampaignId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Messagingcampaigndivisionview"
     },
     "GET /api/v2/outbound/messagingcampaigns/divisionviews": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortOrder, name, varType, id, senderSmsPhoneNumber)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "varType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "senderSmsPhoneNumber",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

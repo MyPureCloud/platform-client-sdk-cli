@@ -1,79 +1,98 @@
 {
     "GET /api/v2/quality/evaluations/query": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "nextPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "previousPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "agentUserId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "evaluatorUserId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "startTime",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "endTime",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "evaluationState",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "isReleased",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "agentHasRead",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "expandAnswerTotalScores",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "maximum",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

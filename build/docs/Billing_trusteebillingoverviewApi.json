@@ -1,15 +1,18 @@
 {
     "GET /api/v2/billing/trusteebillingoverview/{trustorOrgId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(trustorOrgId, billingPeriodIndex)",
         "parameters": [
             {
                 "name": "trustorOrgId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "billingPeriodIndex",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Trusteebillingoverview"

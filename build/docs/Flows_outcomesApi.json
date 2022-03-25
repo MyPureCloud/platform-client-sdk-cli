@@ -1,80 +1,97 @@
 {
     "POST /api/v2/flows/outcomes": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Flowoutcome"
+                "type": "Flowoutcome",
+                "required": "false"
             }
         ],
         "return": "Flowoutcome"
     },
     "GET /api/v2/flows/outcomes/{flowOutcomeId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(flowOutcomeId)",
         "parameters": [
             {
                 "name": "flowOutcomeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Flowoutcome"
     },
     "GET /api/v2/flows/outcomes": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "description",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "nameOrDescription",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "divisionId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/flows/outcomes/{flowOutcomeId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(flowOutcomeId, body)",
         "parameters": [
             {
                 "name": "flowOutcomeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Flowoutcome"
+                "type": "Flowoutcome",
+                "required": "false"
             }
         ],
         "return": "Operation"

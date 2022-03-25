@@ -1,15 +1,18 @@
 {
     "GET /api/v2/users/me": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(expand, integrationPresenceSource)",
         "parameters": [
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "integrationPresenceSource",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Userme"

@@ -1,74 +1,89 @@
 {
     "POST /api/v2/presencedefinitions": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Organizationpresence"
+                "type": "Organizationpresence",
+                "required": "true"
             }
         ],
         "return": "Organizationpresence"
     },
     "DELETE /api/v2/presencedefinitions/{presenceId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(presenceId)",
         "parameters": [
             {
                 "name": "presenceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/presencedefinitions/{presenceId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(presenceId, localeCode)",
         "parameters": [
             {
                 "name": "presenceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "localeCode",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Organizationpresence"
     },
     "GET /api/v2/presencedefinitions": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, deleted, localeCode)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "deleted",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "localeCode",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/presencedefinitions/{presenceId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(presenceId, body)",
         "parameters": [
             {
                 "name": "presenceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Organizationpresence"
+                "type": "Organizationpresence",
+                "required": "true"
             }
         ],
         "return": "Organizationpresence"

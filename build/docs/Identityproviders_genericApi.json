@@ -1,23 +1,27 @@
 {
     "DELETE /api/v2/identityproviders/generic": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete()",
         
         "return": "Empty"
     },
     "GET /api/v2/identityproviders/generic": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Genericsaml"
     },
     "PUT /api/v2/identityproviders/generic": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Genericsaml"
+                "type": "Genericsaml",
+                "required": "true"
             }
         ],
         "return": "Oauthprovider"

@@ -1,82 +1,99 @@
 {
     "POST /api/v2/telephony/providers/edges/sites": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Site"
+                "type": "Site",
+                "required": "true"
             }
         ],
         "return": "Site"
     },
     "DELETE /api/v2/telephony/providers/edges/sites/{siteId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(siteId)",
         "parameters": [
             {
                 "name": "siteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/telephony/providers/edges/sites/{siteId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(siteId)",
         "parameters": [
             {
                 "name": "siteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Site"
     },
     "GET /api/v2/telephony/providers/edges/sites": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "locationId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "managed",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/sites/{siteId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(siteId, body)",
         "parameters": [
             {
                 "name": "siteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Site"
+                "type": "Site",
+                "required": "true"
             }
         ],
         "return": "Site"

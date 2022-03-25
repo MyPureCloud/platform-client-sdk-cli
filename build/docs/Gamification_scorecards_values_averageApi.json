@@ -1,15 +1,18 @@
 {
     "GET /api/v2/gamification/scorecards/values/average": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(workday, timeZone)",
         "parameters": [
             {
                 "name": "workday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "timeZone",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Singleworkdayaveragevalues"

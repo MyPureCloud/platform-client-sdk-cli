@@ -1,23 +1,28 @@
 {
     "GET /api/v2/quality/conversations/audits/query/{transactionId}/results": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(transactionId, cursor, pageSize, expand)",
         "parameters": [
             {
                 "name": "transactionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "cursor",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

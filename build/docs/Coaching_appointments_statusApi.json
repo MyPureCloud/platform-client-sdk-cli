@@ -1,15 +1,18 @@
 {
     "PATCH /api/v2/coaching/appointments/{appointmentId}/status": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(appointmentId, body)",
         "parameters": [
             {
                 "name": "appointmentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Coachingappointmentstatusrequest"
+                "type": "Coachingappointmentstatusrequest",
+                "required": "true"
             }
         ],
         "return": "Coachingappointmentstatusresponse"

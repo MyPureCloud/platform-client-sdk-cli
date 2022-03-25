@@ -1,17 +1,20 @@
 {
     "GET /api/v2/outbound/wrapupcodemappings": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Wrapupcodemapping"
     },
     "PUT /api/v2/outbound/wrapupcodemappings": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Wrapupcodemapping"
+                "type": "Wrapupcodemapping",
+                "required": "true"
             }
         ],
         "return": "Wrapupcodemapping"

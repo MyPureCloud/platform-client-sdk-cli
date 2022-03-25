@@ -1,11 +1,13 @@
 {
     "GET /api/v2/fax/documents/{documentId}/content": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(documentId)",
         "parameters": [
             {
                 "name": "documentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Downloadresponse"

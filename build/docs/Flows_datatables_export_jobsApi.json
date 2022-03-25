@@ -1,26 +1,31 @@
 {
     "POST /api/v2/flows/datatables/{datatableId}/export/jobs": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(datatableId)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Datatableexportjob"
     },
     "GET /api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(datatableId, exportJobId)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "exportJobId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Datatableexportjob"

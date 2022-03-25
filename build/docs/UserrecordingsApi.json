@@ -1,63 +1,76 @@
 {
     "DELETE /api/v2/userrecordings/{recordingId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(recordingId)",
         "parameters": [
             {
                 "name": "recordingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/userrecordings/{recordingId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(recordingId, expand)",
         "parameters": [
             {
                 "name": "recordingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Userrecording"
     },
     "GET /api/v2/userrecordings": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/userrecordings/{recordingId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(recordingId, body, expand)",
         "parameters": [
             {
                 "name": "recordingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Userrecording"
+                "type": "Userrecording",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Userrecording"

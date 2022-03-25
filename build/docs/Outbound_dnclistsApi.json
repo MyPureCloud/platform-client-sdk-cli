@@ -1,106 +1,129 @@
 {
     "POST /api/v2/outbound/dnclists": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Dnclistcreate"
+                "type": "Dnclistcreate",
+                "required": "true"
             }
         ],
         "return": "Dnclist"
     },
     "DELETE /api/v2/outbound/dnclists/{dncListId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(dncListId)",
         "parameters": [
             {
                 "name": "dncListId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/outbound/dnclists/{dncListId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(dncListId, includeImportStatus, includeSize)",
         "parameters": [
             {
                 "name": "dncListId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "includeImportStatus",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "includeSize",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Dnclist"
     },
     "GET /api/v2/outbound/dnclists": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, dncSourceType, divisionId, sortBy, sortOrder)",
         "parameters": [
             {
                 "name": "includeImportStatus",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "includeSize",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "allowEmptyResult",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "filterType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "dncSourceType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "divisionId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/dnclists/{dncListId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(dncListId, body)",
         "parameters": [
             {
                 "name": "dncListId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Dnclist"
+                "type": "Dnclist",
+                "required": "true"
             }
         ],
         "return": "Dnclist"

@@ -1,5 +1,6 @@
 {
     "GET /api/v2/systempresences": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         

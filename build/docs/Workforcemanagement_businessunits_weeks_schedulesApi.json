@@ -1,84 +1,102 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(businessUnitId, weekId, body)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekId",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Bucreateblankschedulerequest"
+                "type": "Bucreateblankschedulerequest",
+                "required": "true"
             }
         ],
         "return": "Buschedulemetadata"
     },
     "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(businessUnitId, weekId, scheduleId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekId",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Buasyncscheduleresponse"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(businessUnitId, weekId, scheduleId, expand)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekId",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Buschedulemetadata"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(businessUnitId, weekId, includeOnlyPublished, expand)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "includeOnlyPublished",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Buschedulelisting"

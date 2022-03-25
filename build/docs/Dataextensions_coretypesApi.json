@@ -1,16 +1,19 @@
 {
     "GET /api/v2/dataextensions/coretypes/{coretypeName}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(coretypeName)",
         "parameters": [
             {
                 "name": "coretypeName",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Coretype"
     },
     "GET /api/v2/dataextensions/coretypes": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         

@@ -1,82 +1,99 @@
 {
     "POST /api/v2/outbound/callabletimesets": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Callabletimeset"
+                "type": "Callabletimeset",
+                "required": "true"
             }
         ],
         "return": "Callabletimeset"
     },
     "DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(callableTimeSetId)",
         "parameters": [
             {
                 "name": "callableTimeSetId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/outbound/callabletimesets/{callableTimeSetId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(callableTimeSetId)",
         "parameters": [
             {
                 "name": "callableTimeSetId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Callabletimeset"
     },
     "GET /api/v2/outbound/callabletimesets": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "allowEmptyResult",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "filterType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/callabletimesets/{callableTimeSetId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(callableTimeSetId, body)",
         "parameters": [
             {
                 "name": "callableTimeSetId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Callabletimeset"
+                "type": "Callabletimeset",
+                "required": "true"
             }
         ],
         "return": "Callabletimeset"

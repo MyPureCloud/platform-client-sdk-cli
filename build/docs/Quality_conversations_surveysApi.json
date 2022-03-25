@@ -1,11 +1,13 @@
 {
     "GET /api/v2/quality/conversations/{conversationId}/surveys": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(conversationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "[]Survey"

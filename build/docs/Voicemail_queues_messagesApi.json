@@ -1,19 +1,23 @@
 {
     "GET /api/v2/voicemail/queues/{queueId}/messages": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(queueId, pageSize, pageNumber)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

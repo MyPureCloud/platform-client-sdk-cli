@@ -1,64 +1,77 @@
 {
     "POST /api/v2/gamification/metrics": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createmetric"
+                "type": "Createmetric",
+                "required": "true"
             }
         ],
         "return": "Metric"
     },
     "GET /api/v2/gamification/metrics/{metricId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(metricId, workday, performanceProfileId)",
         "parameters": [
             {
                 "name": "metricId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "workday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "false"
             },
             {
                 "name": "performanceProfileId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Metric"
     },
     "GET /api/v2/gamification/metrics": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(performanceProfileId, workday)",
         "parameters": [
             {
                 "name": "performanceProfileId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "workday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "false"
             }
         ],
         "return": "Getmetricsresponse"
     },
     "PUT /api/v2/gamification/metrics/{metricId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(metricId, body, performanceProfileId)",
         "parameters": [
             {
                 "name": "metricId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Createmetric"
+                "type": "Createmetric",
+                "required": "true"
             },
             {
                 "name": "performanceProfileId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Metric"

@@ -1,27 +1,33 @@
 {
     "GET /api/v2/gamification/scorecards/values/trends": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(startWorkday, endWorkday, filterType, referenceWorkday, timeZone)",
         "parameters": [
             {
                 "name": "startWorkday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "endWorkday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "filterType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "referenceWorkday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "false"
             },
             {
                 "name": "timeZone",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Workdayvaluestrend"

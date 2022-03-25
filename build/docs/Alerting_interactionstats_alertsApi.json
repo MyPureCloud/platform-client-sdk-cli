@@ -1,55 +1,66 @@
 {
     "DELETE /api/v2/alerting/interactionstats/alerts/{alertId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(alertId)",
         "parameters": [
             {
                 "name": "alertId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/alerting/interactionstats/alerts/{alertId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(alertId, expand)",
         "parameters": [
             {
                 "name": "alertId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Interactionstatsalert"
     },
     "GET /api/v2/alerting/interactionstats/alerts": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(expand)",
         "parameters": [
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/alerting/interactionstats/alerts/{alertId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(alertId, body, expand)",
         "parameters": [
             {
                 "name": "alertId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Unreadstatus"
+                "type": "Unreadstatus",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Unreadstatus"

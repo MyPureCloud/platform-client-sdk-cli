@@ -1,36 +1,43 @@
 {
     "DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(trustorOrgId)",
         "parameters": [
             {
                 "name": "trustorOrgId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/orgauthorization/trustors/{trustorOrgId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(trustorOrgId)",
         "parameters": [
             {
                 "name": "trustorOrgId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Trustor"
     },
     "GET /api/v2/orgauthorization/trustors": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

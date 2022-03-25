@@ -1,86 +1,104 @@
 {
     "POST /api/v2/routing/email/domains/{domainName}/routes": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(domainName, body)",
         "parameters": [
             {
                 "name": "domainName",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Inboundroute"
+                "type": "Inboundroute",
+                "required": "true"
             }
         ],
         "return": "Inboundroute"
     },
     "DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(domainName, routeId)",
         "parameters": [
             {
                 "name": "domainName",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "routeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(domainName, routeId)",
         "parameters": [
             {
                 "name": "domainName",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "routeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Inboundroute"
     },
     "GET /api/v2/routing/email/domains/{domainName}/routes": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(domainName, pageSize, pageNumber, pattern)",
         "parameters": [
             {
                 "name": "domainName",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pattern",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(domainName, routeId, body)",
         "parameters": [
             {
                 "name": "domainName",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "routeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Inboundroute"
+                "type": "Inboundroute",
+                "required": "true"
             }
         ],
         "return": "Inboundroute"

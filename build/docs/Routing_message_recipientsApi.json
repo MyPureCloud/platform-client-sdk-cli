@@ -1,45 +1,54 @@
 {
     "GET /api/v2/routing/message/recipients/{recipientId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(recipientId)",
         "parameters": [
             {
                 "name": "recipientId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Recipient"
     },
     "GET /api/v2/routing/message/recipients": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(messengerType, pageSize, pageNumber)",
         "parameters": [
             {
                 "name": "messengerType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/routing/message/recipients/{recipientId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(recipientId, body)",
         "parameters": [
             {
                 "name": "recipientId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Recipient"
+                "type": "Recipient",
+                "required": "true"
             }
         ],
         "return": "Recipient"

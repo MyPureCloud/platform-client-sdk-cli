@@ -1,45 +1,54 @@
 {
     "GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId, mediaRequestId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "mediaRequestId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Webchatguestmediarequest"
     },
     "GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(conversationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Webchatguestmediarequestentitylist"
     },
     "PATCH /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(conversationId, mediaRequestId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "mediaRequestId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Webchatguestmediarequest"
+                "type": "Webchatguestmediarequest",
+                "required": "true"
             }
         ],
         "return": "Webchatguestmediarequest"

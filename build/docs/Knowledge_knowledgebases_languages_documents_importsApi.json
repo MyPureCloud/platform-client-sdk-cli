@@ -1,79 +1,96 @@
 {
     "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(knowledgeBaseId, languageCode, body)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Knowledgeimport"
+                "type": "Knowledgeimport",
+                "required": "true"
             }
         ],
         "return": "Knowledgeimport"
     },
     "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(knowledgeBaseId, languageCode, importId)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "importId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(knowledgeBaseId, languageCode, importId)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "importId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Knowledgeimport"
     },
     "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(knowledgeBaseId, languageCode, importId, body)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "importId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Importstatusrequest"
+                "type": "Importstatusrequest",
+                "required": "true"
             }
         ],
         "return": "Knowledgeimport"

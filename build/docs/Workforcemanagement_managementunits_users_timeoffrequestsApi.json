@@ -1,61 +1,74 @@
 {
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(managementUnitId, userId, timeOffRequestId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "timeOffRequestId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Timeoffrequestresponse"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(managementUnitId, userId, recentlyReviewed)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "recentlyReviewed",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Timeoffrequestlist"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(managementUnitId, userId, timeOffRequestId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "timeOffRequestId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Admintimeoffrequestpatch"
+                "type": "Admintimeoffrequestpatch",
+                "required": "false"
             }
         ],
         "return": "Timeoffrequestresponse"

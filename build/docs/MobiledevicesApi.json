@@ -1,66 +1,79 @@
 {
     "POST /api/v2/mobiledevices": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Userdevice"
+                "type": "Userdevice",
+                "required": "true"
             }
         ],
         "return": "Userdevice"
     },
     "DELETE /api/v2/mobiledevices/{deviceId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(deviceId)",
         "parameters": [
             {
                 "name": "deviceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/mobiledevices/{deviceId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(deviceId)",
         "parameters": [
             {
                 "name": "deviceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Userdevice"
     },
     "GET /api/v2/mobiledevices": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortOrder)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/mobiledevices/{deviceId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(deviceId, body)",
         "parameters": [
             {
                 "name": "deviceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Userdevice"
+                "type": "Userdevice",
+                "required": "false"
             }
         ],
         "return": "Userdevice"

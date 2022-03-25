@@ -1,115 +1,140 @@
 {
     "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(knowledgeBaseId, languageCode, body)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Knowledgecategoryrequest"
+                "type": "Knowledgecategoryrequest",
+                "required": "true"
             }
         ],
         "return": "Knowledgeextendedcategory"
     },
     "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(categoryId, knowledgeBaseId, languageCode)",
         "parameters": [
             {
                 "name": "categoryId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Knowledgecategory"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(categoryId, knowledgeBaseId, languageCode)",
         "parameters": [
             {
                 "name": "categoryId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Knowledgeextendedcategory"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(knowledgeBaseId, languageCode, before, after, limit, pageSize, name)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "before",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "after",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "limit",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(categoryId, knowledgeBaseId, languageCode, body)",
         "parameters": [
             {
                 "name": "categoryId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Knowledgecategoryrequest"
+                "type": "Knowledgecategoryrequest",
+                "required": "true"
             }
         ],
         "return": "Knowledgeextendedcategory"

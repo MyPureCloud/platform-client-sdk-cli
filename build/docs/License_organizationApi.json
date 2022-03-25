@@ -1,11 +1,13 @@
 {
     "POST /api/v2/license/organization": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Licensebatchassignmentrequest"
+                "type": "Licensebatchassignmentrequest",
+                "required": "false"
             }
         ],
         "return": "[]Licenseupdatestatus"

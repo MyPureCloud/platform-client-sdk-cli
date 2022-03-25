@@ -1,66 +1,79 @@
 {
     "POST /api/v2/responsemanagement/libraries": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Library"
+                "type": "Library",
+                "required": "true"
             }
         ],
         "return": "Library"
     },
     "DELETE /api/v2/responsemanagement/libraries/{libraryId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(libraryId)",
         "parameters": [
             {
                 "name": "libraryId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/responsemanagement/libraries/{libraryId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(libraryId)",
         "parameters": [
             {
                 "name": "libraryId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Library"
     },
     "GET /api/v2/responsemanagement/libraries": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, messagingTemplateFilter)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "messagingTemplateFilter",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/responsemanagement/libraries/{libraryId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(libraryId, body)",
         "parameters": [
             {
                 "name": "libraryId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Library"
+                "type": "Library",
+                "required": "true"
             }
         ],
         "return": "Library"

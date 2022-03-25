@@ -1,74 +1,89 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(businessUnitId, body)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Createplanninggrouprequest"
+                "type": "Createplanninggrouprequest",
+                "required": "false"
             }
         ],
         "return": "Planninggroup"
     },
     "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(businessUnitId, planningGroupId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "planningGroupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(businessUnitId, planningGroupId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "planningGroupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Planninggroup"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(businessUnitId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Planninggrouplist"
     },
     "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(businessUnitId, planningGroupId, body)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "planningGroupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Updateplanninggrouprequest"
+                "type": "Updateplanninggrouprequest",
+                "required": "false"
             }
         ],
         "return": "Planninggroup"

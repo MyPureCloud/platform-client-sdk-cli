@@ -1,35 +1,43 @@
 {
     "GET /api/v2/integrations/userapps": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, appHost)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "nextPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "previousPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "appHost",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

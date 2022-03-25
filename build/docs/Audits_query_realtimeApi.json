@@ -1,15 +1,18 @@
 {
     "POST /api/v2/audits/query/realtime": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body, expand)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Auditrealtimequeryrequest"
+                "type": "Auditrealtimequeryrequest",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Auditrealtimequeryresultsresponse"

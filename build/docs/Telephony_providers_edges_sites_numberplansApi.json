@@ -1,41 +1,49 @@
 {
     "GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(siteId, numberPlanId)",
         "parameters": [
             {
                 "name": "siteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "numberPlanId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Numberplan"
     },
     "GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(siteId)",
         "parameters": [
             {
                 "name": "siteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "[]Numberplan"
     },
     "PUT /api/v2/telephony/providers/edges/sites/{siteId}/numberplans": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(siteId, body)",
         "parameters": [
             {
                 "name": "siteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "[]Numberplan"
+                "type": "[]Numberplan",
+                "required": "true"
             }
         ],
         "return": "[]Numberplan"

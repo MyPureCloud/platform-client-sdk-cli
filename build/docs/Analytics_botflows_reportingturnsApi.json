@@ -1,27 +1,33 @@
 {
     "GET /api/v2/analytics/botflows/{botFlowId}/reportingturns": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(botFlowId, after, pageSize, actionId, sessionId)",
         "parameters": [
             {
                 "name": "botFlowId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "after",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "actionId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sessionId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

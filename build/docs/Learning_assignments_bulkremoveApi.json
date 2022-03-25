@@ -1,11 +1,13 @@
 {
     "POST /api/v2/learning/assignments/bulkremove": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Learningassignmentbulkremoveresponse"

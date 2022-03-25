@@ -1,62 +1,74 @@
 {
     "POST /api/v2/analytics/reporting/schedules": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Reportschedule"
+                "type": "Reportschedule",
+                "required": "true"
             }
         ],
         "return": "Reportschedule"
     },
     "DELETE /api/v2/analytics/reporting/schedules/{scheduleId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(scheduleId)",
         "parameters": [
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/analytics/reporting/schedules/{scheduleId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(scheduleId)",
         "parameters": [
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Reportschedule"
     },
     "GET /api/v2/analytics/reporting/schedules": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/analytics/reporting/schedules/{scheduleId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(scheduleId, body)",
         "parameters": [
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Reportschedule"
+                "type": "Reportschedule",
+                "required": "true"
             }
         ],
         "return": "Reportschedule"

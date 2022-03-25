@@ -1,11 +1,13 @@
 {
     "GET /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(campaignId)",
         "parameters": [
             {
                 "name": "campaignId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Agentownedmappingpreviewlisting"

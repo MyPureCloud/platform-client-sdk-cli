@@ -1,66 +1,81 @@
 {
     "GET /api/v2/users/development/activities/{activityId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(activityId, varType)",
         "parameters": [
             {
                 "name": "activityId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "varType",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Developmentactivity"
     },
     "GET /api/v2/users/development/activities": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(userId, moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "moduleId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "interval",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "completionInterval",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "overdue",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "types",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "statuses",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "relationship",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

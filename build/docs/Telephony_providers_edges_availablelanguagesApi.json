@@ -1,5 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/availablelanguages": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         

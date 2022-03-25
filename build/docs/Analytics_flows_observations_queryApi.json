@@ -1,11 +1,13 @@
 {
     "POST /api/v2/analytics/flows/observations/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Flowobservationquery"
+                "type": "Flowobservationquery",
+                "required": "true"
             }
         ],
         "return": "Flowobservationqueryresponse"

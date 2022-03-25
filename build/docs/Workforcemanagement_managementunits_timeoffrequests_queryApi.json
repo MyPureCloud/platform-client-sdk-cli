@@ -1,15 +1,18 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(managementUnitId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Timeoffrequestquerybody"
+                "type": "Timeoffrequestquerybody",
+                "required": "false"
             }
         ],
         "return": "Timeoffrequestlisting"

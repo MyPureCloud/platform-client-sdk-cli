@@ -1,11 +1,13 @@
 {
     "POST /api/v2/conversations/{conversationId}/disconnect": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(conversationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "string"

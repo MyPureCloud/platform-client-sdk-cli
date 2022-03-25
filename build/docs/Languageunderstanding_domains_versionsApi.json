@@ -1,90 +1,109 @@
 {
     "POST /api/v2/languageunderstanding/domains/{domainId}/versions": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(domainId, body)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Nludomainversion"
+                "type": "Nludomainversion",
+                "required": "true"
             }
         ],
         "return": "Nludomainversion"
     },
     "DELETE /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(domainId, domainVersionId)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "domainVersionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(domainId, domainVersionId, includeUtterances)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "domainVersionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "includeUtterances",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Nludomainversion"
     },
     "GET /api/v2/languageunderstanding/domains/{domainId}/versions": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(domainId, includeUtterances, pageNumber, pageSize)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "includeUtterances",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(domainId, domainVersionId, body)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "domainVersionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Nludomainversion"
+                "type": "Nludomainversion",
+                "required": "true"
             }
         ],
         "return": "Nludomainversion"

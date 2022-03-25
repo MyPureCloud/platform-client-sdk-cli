@@ -1,35 +1,43 @@
 {
     "GET /api/v2/architect/dependencytracking/deletedresourceconsumers": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(name, objectType, flowFilter, consumedResources, consumedResourceType, pageNumber, pageSize)",
         "parameters": [
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "objectType",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "flowFilter",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "consumedResources",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "consumedResourceType",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

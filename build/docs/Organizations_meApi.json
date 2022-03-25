@@ -1,17 +1,20 @@
 {
     "GET /api/v2/organizations/me": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Organization"
     },
     "PUT /api/v2/organizations/me": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Organization"
+                "type": "Organization",
+                "required": "false"
             }
         ],
         "return": "Organization"

@@ -1,89 +1,109 @@
 {
     "GET /api/v2/conversations/{conversationId}/recordings/{recordingId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "recordingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "formatId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "emailFormatId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "chatFormatId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "messageFormatId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "download",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "fileName",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "locale",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "mediaFormats",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Recording"
     },
     "GET /api/v2/conversations/{conversationId}/recordings": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(conversationId, maxWaitMs, formatId, mediaFormats)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "maxWaitMs",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "formatId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "mediaFormats",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "[]Recording"
     },
     "PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(conversationId, recordingId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "recordingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Recording"
+                "type": "Recording",
+                "required": "true"
             }
         ],
         "return": "Recording"

@@ -1,15 +1,18 @@
 {
     "GET /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId, communicationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "communicationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Transcripturl"

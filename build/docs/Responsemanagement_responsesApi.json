@@ -1,82 +1,99 @@
 {
     "POST /api/v2/responsemanagement/responses": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body, expand)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Response"
+                "type": "Response",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Response"
     },
     "DELETE /api/v2/responsemanagement/responses/{responseId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(responseId)",
         "parameters": [
             {
                 "name": "responseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/responsemanagement/responses/{responseId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(responseId, expand)",
         "parameters": [
             {
                 "name": "responseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Response"
     },
     "GET /api/v2/responsemanagement/responses": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(libraryId, pageNumber, pageSize, expand)",
         "parameters": [
             {
                 "name": "libraryId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/responsemanagement/responses/{responseId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(responseId, body, expand)",
         "parameters": [
             {
                 "name": "responseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Response"
+                "type": "Response",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Response"

@@ -1,23 +1,27 @@
 {
     "DELETE /api/v2/identityproviders/adfs": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete()",
         
         "return": "Empty"
     },
     "GET /api/v2/identityproviders/adfs": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Adfs"
     },
     "PUT /api/v2/identityproviders/adfs": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Adfs"
+                "type": "Adfs",
+                "required": "true"
             }
         ],
         "return": "Oauthprovider"

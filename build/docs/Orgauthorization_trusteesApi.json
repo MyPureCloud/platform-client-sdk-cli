@@ -1,62 +1,74 @@
 {
     "POST /api/v2/orgauthorization/trustees": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Trustcreate"
+                "type": "Trustcreate",
+                "required": "true"
             }
         ],
         "return": "Trustee"
     },
     "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(trusteeOrgId)",
         "parameters": [
             {
                 "name": "trusteeOrgId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(trusteeOrgId)",
         "parameters": [
             {
                 "name": "trusteeOrgId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Trustee"
     },
     "GET /api/v2/orgauthorization/trustees": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(trusteeOrgId, body)",
         "parameters": [
             {
                 "name": "trusteeOrgId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Trustupdate"
+                "type": "Trustupdate",
+                "required": "true"
             }
         ],
         "return": "Trustee"

@@ -1,15 +1,18 @@
 {
     "POST /api/v2/languageunderstanding/miners/{minerId}/uploads": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(minerId, body)",
         "parameters": [
             {
                 "name": "minerId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Empty"
+                "type": "Empty",
+                "required": "true"
             }
         ],
         "return": "Uploadurlresponse"

@@ -1,23 +1,28 @@
 {
     "GET /api/v2/authorization/permissions": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, queryType, query)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "queryType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "query",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

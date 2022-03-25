@@ -1,58 +1,69 @@
 {
     "POST /api/v2/conversations/calls": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createcallrequest"
+                "type": "Createcallrequest",
+                "required": "true"
             }
         ],
         "return": "Createcallresponse"
     },
     "GET /api/v2/conversations/calls/{conversationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Callconversation"
     },
     "GET /api/v2/conversations/calls": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "POST /api/v2/conversations/calls/{conversationId}": {
+        "operationId": "placecallbackcall",
         "functionName": "placecallbackcall",
         "signature": "placecallbackcall(conversationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Callcommand"
+                "type": "Callcommand",
+                "required": "true"
             }
         ],
         "return": "Conversation"
     },
     "PATCH /api/v2/conversations/calls/{conversationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(conversationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Conversation"
+                "type": "Conversation",
+                "required": "true"
             }
         ],
         "return": "Conversation"

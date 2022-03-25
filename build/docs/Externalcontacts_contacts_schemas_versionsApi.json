@@ -1,26 +1,31 @@
 {
     "GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(schemaId, versionId)",
         "parameters": [
             {
                 "name": "schemaId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "versionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Dataschema"
     },
     "GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(schemaId)",
         "parameters": [
             {
                 "name": "schemaId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Dataschema"

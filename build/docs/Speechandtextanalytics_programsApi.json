@@ -1,66 +1,79 @@
 {
     "POST /api/v2/speechandtextanalytics/programs": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Programrequest"
+                "type": "Programrequest",
+                "required": "true"
             }
         ],
         "return": "Program"
     },
     "DELETE /api/v2/speechandtextanalytics/programs/{programId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(programId, forceDelete)",
         "parameters": [
             {
                 "name": "programId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "forceDelete",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ]
     },
     "GET /api/v2/speechandtextanalytics/programs/{programId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(programId)",
         "parameters": [
             {
                 "name": "programId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Program"
     },
     "GET /api/v2/speechandtextanalytics/programs": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(nextPage, pageSize)",
         "parameters": [
             {
                 "name": "nextPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/speechandtextanalytics/programs/{programId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(programId, body)",
         "parameters": [
             {
                 "name": "programId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Programrequest"
+                "type": "Programrequest",
+                "required": "true"
             }
         ],
         "return": "Program"

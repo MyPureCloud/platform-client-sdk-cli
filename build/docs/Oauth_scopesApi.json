@@ -1,26 +1,31 @@
 {
     "GET /api/v2/oauth/scopes/{scopeId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(scopeId, acceptLanguage)",
         "parameters": [
             {
                 "name": "scopeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "acceptLanguage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Oauthscope"
     },
     "GET /api/v2/oauth/scopes": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(acceptLanguage)",
         "parameters": [
             {
                 "name": "acceptLanguage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Oauthscopelisting"

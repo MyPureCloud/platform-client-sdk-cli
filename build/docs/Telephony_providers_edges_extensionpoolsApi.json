@@ -1,70 +1,84 @@
 {
     "POST /api/v2/telephony/providers/edges/extensionpools": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Extensionpool"
+                "type": "Extensionpool",
+                "required": "true"
             }
         ],
         "return": "Extensionpool"
     },
     "DELETE /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(extensionPoolId)",
         "parameters": [
             {
                 "name": "extensionPoolId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(extensionPoolId)",
         "parameters": [
             {
                 "name": "extensionPoolId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Extensionpool"
     },
     "GET /api/v2/telephony/providers/edges/extensionpools": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, number)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "number",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(extensionPoolId, body)",
         "parameters": [
             {
                 "name": "extensionPoolId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Extensionpool"
+                "type": "Extensionpool",
+                "required": "true"
             }
         ],
         "return": "Extensionpool"

@@ -1,94 +1,114 @@
 {
     "POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(workspaceId, body)",
         "parameters": [
             {
                 "name": "workspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Tagvalue"
+                "type": "Tagvalue",
+                "required": "true"
             }
         ],
         "return": "Tagvalue"
     },
     "DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(workspaceId, tagId)",
         "parameters": [
             {
                 "name": "workspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "tagId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(workspaceId, tagId, expand)",
         "parameters": [
             {
                 "name": "workspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "tagId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Tagvalue"
     },
     "GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(workspaceId, value, pageSize, pageNumber, expand)",
         "parameters": [
             {
                 "name": "workspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "value",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(workspaceId, tagId, body)",
         "parameters": [
             {
                 "name": "workspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "tagId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Tagvalue"
+                "type": "Tagvalue",
+                "required": "true"
             }
         ],
         "return": "Tagvalue"

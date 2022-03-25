@@ -1,15 +1,18 @@
 {
     "GET /api/v2/gdpr/subjects": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(searchType, searchValue)",
         "parameters": [
             {
                 "name": "searchType",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "searchValue",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Swaggeroverridelist"

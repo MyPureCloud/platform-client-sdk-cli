@@ -1,72 +1,87 @@
 {
     "POST /api/v2/gamification/profiles/{profileId}/metrics": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(profileId, body)",
         "parameters": [
             {
                 "name": "profileId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Createmetric"
+                "type": "Createmetric",
+                "required": "true"
             }
         ],
         "return": "Metric"
     },
     "GET /api/v2/gamification/profiles/{profileId}/metrics/{metricId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(profileId, metricId, workday)",
         "parameters": [
             {
                 "name": "profileId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "metricId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "workday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "false"
             }
         ],
         "return": "Metric"
     },
     "GET /api/v2/gamification/profiles/{profileId}/metrics": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(profileId, expand, workday)",
         "parameters": [
             {
                 "name": "profileId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "workday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "false"
             }
         ],
         "return": "Getmetricresponse"
     },
     "PUT /api/v2/gamification/profiles/{profileId}/metrics/{metricId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(profileId, metricId, body)",
         "parameters": [
             {
                 "name": "profileId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "metricId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Createmetric"
+                "type": "Createmetric",
+                "required": "true"
             }
         ],
         "return": "Metric"

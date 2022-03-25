@@ -1,35 +1,43 @@
 {
     "GET /api/v2/contentmanagement/documents/{documentId}/audits": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder)",
         "parameters": [
             {
                 "name": "documentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "transactionFilter",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "level",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

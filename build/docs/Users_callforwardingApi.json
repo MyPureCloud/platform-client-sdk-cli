@@ -1,41 +1,49 @@
 {
     "GET /api/v2/users/{userId}/callforwarding": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Callforwarding"
     },
     "PATCH /api/v2/users/{userId}/callforwarding": {
+        "operationId": "patch",
         "functionName": "patch",
         "signature": "patch(userId, body)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Callforwarding"
+                "type": "Callforwarding",
+                "required": "true"
             }
         ],
         "return": "Callforwarding"
     },
     "PUT /api/v2/users/{userId}/callforwarding": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Callforwarding"
+                "type": "Callforwarding",
+                "required": "true"
             }
         ],
         "return": "Callforwarding"

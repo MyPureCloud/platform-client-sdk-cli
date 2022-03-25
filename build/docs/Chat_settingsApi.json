@@ -1,28 +1,33 @@
 {
     "GET /api/v2/chat/settings": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Chatsettings"
     },
     "PATCH /api/v2/chat/settings": {
+        "operationId": "patch",
         "functionName": "patch",
         "signature": "patch(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Chatsettings"
+                "type": "Chatsettings",
+                "required": "true"
             }
         ],
         "return": "Chatsettings"
     },
     "PUT /api/v2/chat/settings": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Chatsettings"
+                "type": "Chatsettings",
+                "required": "true"
             }
         ],
         "return": "Chatsettings"

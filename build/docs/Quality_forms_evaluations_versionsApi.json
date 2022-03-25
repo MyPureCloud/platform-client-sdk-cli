@@ -1,23 +1,28 @@
 {
     "GET /api/v2/quality/forms/evaluations/{formId}/versions": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(formId, pageSize, pageNumber, sortOrder)",
         "parameters": [
             {
                 "name": "formId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

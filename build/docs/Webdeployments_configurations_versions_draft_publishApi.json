@@ -1,11 +1,13 @@
 {
     "POST /api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(configurationId)",
         "parameters": [
             {
                 "name": "configurationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Webdeploymentconfigurationversion"

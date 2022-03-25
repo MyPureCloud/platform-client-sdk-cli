@@ -1,17 +1,20 @@
 {
     "GET /api/v2/outbound/settings": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Outboundsettings"
     },
     "PATCH /api/v2/outbound/settings": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Outboundsettings"
+                "type": "Outboundsettings",
+                "required": "true"
             }
         ]
     }

@@ -1,5 +1,6 @@
 {
     "GET /api/v2/languages/translations": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         

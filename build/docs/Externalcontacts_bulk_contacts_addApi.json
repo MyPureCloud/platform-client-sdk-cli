@@ -1,11 +1,13 @@
 {
     "POST /api/v2/externalcontacts/bulk/contacts/add": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Bulkcontactsrequest"
+                "type": "Bulkcontactsrequest",
+                "required": "true"
             }
         ],
         "return": "Bulkcontactsresponse"

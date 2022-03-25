@@ -1,31 +1,38 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(businessUnitId, weekId, scheduleId, body, forceAsync, forceDownloadService)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekId",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Buqueryagentschedulesrequest"
+                "type": "Buqueryagentschedulesrequest",
+                "required": "true"
             },
             {
                 "name": "forceAsync",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "forceDownloadService",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Buasyncagentschedulesqueryresponse"

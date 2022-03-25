@@ -1,70 +1,84 @@
 {
     "POST /api/v2/alerting/interactionstats/rules": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body, expand)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Interactionstatsrule"
+                "type": "Interactionstatsrule",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Interactionstatsrule"
     },
     "DELETE /api/v2/alerting/interactionstats/rules/{ruleId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(ruleId)",
         "parameters": [
             {
                 "name": "ruleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/alerting/interactionstats/rules/{ruleId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(ruleId, expand)",
         "parameters": [
             {
                 "name": "ruleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Interactionstatsrule"
     },
     "GET /api/v2/alerting/interactionstats/rules": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(expand)",
         "parameters": [
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/alerting/interactionstats/rules/{ruleId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(ruleId, body, expand)",
         "parameters": [
             {
                 "name": "ruleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Interactionstatsrule"
+                "type": "Interactionstatsrule",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Interactionstatsrule"

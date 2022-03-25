@@ -1,15 +1,18 @@
 {
     "GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(actionId, fileName)",
         "parameters": [
             {
                 "name": "actionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "fileName",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Jsonschemadocument"

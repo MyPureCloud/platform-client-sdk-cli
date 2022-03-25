@@ -1,88 +1,107 @@
 {
     "GET /api/v2/scim/v2/groups/{groupId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(groupId, attributes, excludedAttributes, ifNoneMatch)",
         "parameters": [
             {
                 "name": "groupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "attributes",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "excludedAttributes",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "ifNoneMatch",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Scimv2group"
     },
     "GET /api/v2/scim/v2/groups": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(filter, startIndex, count, attributes, excludedAttributes)",
         "parameters": [
             {
                 "name": "filter",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "startIndex",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "count",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "attributes",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "excludedAttributes",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/scim/v2/groups/{groupId}": {
+        "operationId": "modify",
         "functionName": "modify",
         "signature": "modify(groupId, body, ifMatch)",
         "parameters": [
             {
                 "name": "groupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Scimv2patchrequest"
+                "type": "Scimv2patchrequest",
+                "required": "true"
             },
             {
                 "name": "ifMatch",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Scimv2group"
     },
     "PUT /api/v2/scim/v2/groups/{groupId}": {
+        "operationId": "replace",
         "functionName": "replace",
         "signature": "replace(groupId, body, ifMatch)",
         "parameters": [
             {
                 "name": "groupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Scimv2group"
+                "type": "Scimv2group",
+                "required": "true"
             },
             {
                 "name": "ifMatch",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Scimv2group"

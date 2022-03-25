@@ -1,26 +1,31 @@
 {
     "GET /api/v2/users/{userId}/presences/purecloud": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Userpresence"
     },
     "PATCH /api/v2/users/{userId}/presences/purecloud": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Userpresence"
+                "type": "Userpresence",
+                "required": "true"
             }
         ],
         "return": "Userpresence"

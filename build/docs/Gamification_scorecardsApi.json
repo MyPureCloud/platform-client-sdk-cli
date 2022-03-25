@@ -1,15 +1,18 @@
 {
     "GET /api/v2/gamification/scorecards": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(workday, expand)",
         "parameters": [
             {
                 "name": "workday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Workdaymetriclisting"

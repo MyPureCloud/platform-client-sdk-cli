@@ -1,0 +1,1 @@
+gc subscribe(channelId, body)

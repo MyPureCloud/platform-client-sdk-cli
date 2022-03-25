@@ -1,55 +1,68 @@
 {
     "GET /api/v2/flows/divisionviews": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(varType, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId, includeSchemas)",
         "parameters": [
             {
                 "name": "varType",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "publishVersionId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "publishedAfter",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "publishedBefore",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "divisionId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "includeSchemas",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

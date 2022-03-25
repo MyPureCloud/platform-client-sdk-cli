@@ -1,19 +1,23 @@
 {
     "POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(conversationId, communicationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "communicationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Additionalmessage"
+                "type": "Additionalmessage",
+                "required": "true"
             }
         ],
         "return": "Messagedata"

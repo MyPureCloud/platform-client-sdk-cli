@@ -1,22 +1,26 @@
 {
     "GET /api/v2/conversations/{conversationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Conversation"
     },
     "GET /api/v2/conversations": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(communicationType)",
         "parameters": [
             {
                 "name": "communicationType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

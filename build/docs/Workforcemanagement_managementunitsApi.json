@@ -1,78 +1,94 @@
 {
     "POST /api/v2/workforcemanagement/managementunits": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createmanagementunitapirequest"
+                "type": "Createmanagementunitapirequest",
+                "required": "false"
             }
         ],
         "return": "Managementunit"
     },
     "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(managementUnitId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(managementUnitId, expand)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Managementunit"
     },
     "GET /api/v2/workforcemanagement/managementunits": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand, feature, divisionId)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "feature",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "divisionId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(managementUnitId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Updatemanagementunitrequest"
+                "type": "Updatemanagementunitrequest",
+                "required": "false"
             }
         ],
         "return": "Managementunit"

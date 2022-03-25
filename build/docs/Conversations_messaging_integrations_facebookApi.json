@@ -1,74 +1,89 @@
 {
     "POST /api/v2/conversations/messaging/integrations/facebook": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Facebookintegrationrequest"
+                "type": "Facebookintegrationrequest",
+                "required": "true"
             }
         ],
         "return": "Facebookintegration"
     },
     "DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(integrationId)",
         "parameters": [
             {
                 "name": "integrationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(integrationId, expand)",
         "parameters": [
             {
                 "name": "integrationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Facebookintegration"
     },
     "GET /api/v2/conversations/messaging/integrations/facebook": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand, supportedContentId)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "supportedContentId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(integrationId, body)",
         "parameters": [
             {
                 "name": "integrationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Facebookintegrationupdaterequest"
+                "type": "Facebookintegrationupdaterequest",
+                "required": "true"
             }
         ],
         "return": "Facebookintegration"

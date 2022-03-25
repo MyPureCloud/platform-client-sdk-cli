@@ -1,79 +1,95 @@
 {
     "POST /api/v2/externalcontacts/contacts": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Externalcontact"
+                "type": "Externalcontact",
+                "required": "true"
             }
         ],
         "return": "Externalcontact"
     },
     "DELETE /api/v2/externalcontacts/contacts/{contactId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(contactId)",
         "parameters": [
             {
                 "name": "contactId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Empty"
     },
     "GET /api/v2/externalcontacts/contacts/{contactId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(contactId, expand)",
         "parameters": [
             {
                 "name": "contactId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Externalcontact"
     },
     "GET /api/v2/externalcontacts/contacts": {
+        "operationId": "search",
         "functionName": "search",
         "signature": "search(pageSize, pageNumber, q, sortOrder, expand)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "q",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/externalcontacts/contacts/{contactId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(contactId, body)",
         "parameters": [
             {
                 "name": "contactId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Externalcontact"
+                "type": "Externalcontact",
+                "required": "true"
             }
         ],
         "return": "Externalcontact"

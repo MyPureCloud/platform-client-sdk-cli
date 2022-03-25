@@ -1,11 +1,13 @@
 {
     "POST /api/v2/workforcemanagement/agentschedules/mine": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Bugetcurrentagentschedulerequest"
+                "type": "Bugetcurrentagentschedulerequest",
+                "required": "false"
             }
         ],
         "return": "Bucurrentagentschedulesearchresponse"

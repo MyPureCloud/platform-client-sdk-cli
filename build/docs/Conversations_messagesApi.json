@@ -1,43 +1,51 @@
 {
     "POST /api/v2/conversations/messages": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createoutboundmessagingconversationrequest"
+                "type": "Createoutboundmessagingconversationrequest",
+                "required": "true"
             }
         ],
         "return": "Messageconversation"
     },
     "GET /api/v2/conversations/messages/{conversationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Messageconversation"
     },
     "GET /api/v2/conversations/messages": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/conversations/messages/{conversationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(conversationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Conversation"
+                "type": "Conversation",
+                "required": "true"
             }
         ],
         "return": "Conversation"

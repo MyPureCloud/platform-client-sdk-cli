@@ -1,59 +1,71 @@
 {
     "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(businessUnitId, runId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "runId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(businessUnitId, runId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "runId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Buschedulerun"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(businessUnitId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Buschedulerunlisting"
     },
     "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(businessUnitId, runId, body)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "runId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Patchbuschedulerunrequest"
+                "type": "Patchbuschedulerunrequest",
+                "required": "false"
             }
         ]
     }

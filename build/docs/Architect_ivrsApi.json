@@ -1,74 +1,89 @@
 {
     "POST /api/v2/architect/ivrs": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Ivr"
+                "type": "Ivr",
+                "required": "true"
             }
         ],
         "return": "Ivr"
     },
     "DELETE /api/v2/architect/ivrs/{ivrId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(ivrId)",
         "parameters": [
             {
                 "name": "ivrId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/architect/ivrs/{ivrId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(ivrId)",
         "parameters": [
             {
                 "name": "ivrId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Ivr"
     },
     "GET /api/v2/architect/ivrs": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/architect/ivrs/{ivrId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(ivrId, body)",
         "parameters": [
             {
                 "name": "ivrId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Ivr"
+                "type": "Ivr",
+                "required": "true"
             }
         ],
         "return": "Ivr"

@@ -1,48 +1,58 @@
 {
     "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(trusteeOrgId, trusteeUserId)",
         "parameters": [
             {
                 "name": "trusteeOrgId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "trusteeUserId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(trusteeOrgId, trusteeUserId)",
         "parameters": [
             {
                 "name": "trusteeOrgId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "trusteeUserId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Userauthorization"
     },
     "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(trusteeOrgId, trusteeUserId, body)",
         "parameters": [
             {
                 "name": "trusteeOrgId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "trusteeUserId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "true"
             }
         ],
         "return": "Userauthorization"

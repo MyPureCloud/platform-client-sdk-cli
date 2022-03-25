@@ -1,15 +1,18 @@
 {
     "POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(domainId, domainVersionId)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "domainVersionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Nludomainversiontrainingresponse"

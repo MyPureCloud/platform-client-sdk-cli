@@ -1,11 +1,13 @@
 {
     "POST /api/v2/learning/assessments/scoring": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Learningassessmentscoringrequest"
+                "type": "Learningassessmentscoringrequest",
+                "required": "true"
             }
         ],
         "return": "Assessmentscoringset"

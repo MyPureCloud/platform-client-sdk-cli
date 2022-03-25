@@ -1,74 +1,89 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(businessUnitId, body)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Createservicegoaltemplate"
+                "type": "Createservicegoaltemplate",
+                "required": "false"
             }
         ],
         "return": "Servicegoaltemplate"
     },
     "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(businessUnitId, serviceGoalTemplateId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "serviceGoalTemplateId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(businessUnitId, serviceGoalTemplateId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "serviceGoalTemplateId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Servicegoaltemplate"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(businessUnitId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Servicegoaltemplatelist"
     },
     "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(businessUnitId, serviceGoalTemplateId, body)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "serviceGoalTemplateId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Updateservicegoaltemplate"
+                "type": "Updateservicegoaltemplate",
+                "required": "false"
             }
         ],
         "return": "Servicegoaltemplate"

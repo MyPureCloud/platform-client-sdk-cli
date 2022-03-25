@@ -1,23 +1,27 @@
 {
     "DELETE /api/v2/identityproviders/pureengage": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete()",
         
         "return": "Empty"
     },
     "GET /api/v2/identityproviders/pureengage": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Pureengage"
     },
     "PUT /api/v2/identityproviders/pureengage": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Pureengage"
+                "type": "Pureengage",
+                "required": "true"
             }
         ],
         "return": "Oauthprovider"

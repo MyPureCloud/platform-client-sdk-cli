@@ -1,19 +1,23 @@
 {
     "POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(edgeId, jobId, body)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "jobId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Edgelogsjobuploadrequest"
+                "type": "Edgelogsjobuploadrequest",
+                "required": "true"
             }
         ]
     }

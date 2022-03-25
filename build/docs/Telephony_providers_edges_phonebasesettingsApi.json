@@ -1,78 +1,94 @@
 {
     "POST /api/v2/telephony/providers/edges/phonebasesettings": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Phonebase"
+                "type": "Phonebase",
+                "required": "true"
             }
         ],
         "return": "Phonebase"
     },
     "DELETE /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(phoneBaseId)",
         "parameters": [
             {
                 "name": "phoneBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(phoneBaseId)",
         "parameters": [
             {
                 "name": "phoneBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Phonebase"
     },
     "GET /api/v2/telephony/providers/edges/phonebasesettings": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, sortOrder, expand, name)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(phoneBaseId, body)",
         "parameters": [
             {
                 "name": "phoneBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Phonebase"
+                "type": "Phonebase",
+                "required": "true"
             }
         ],
         "return": "Phonebase"

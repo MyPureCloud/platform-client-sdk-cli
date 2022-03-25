@@ -1,37 +1,44 @@
 {
     "POST /api/v2/languageunderstanding/miners": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Miner"
+                "type": "Miner",
+                "required": "true"
             }
         ],
         "return": "Miner"
     },
     "DELETE /api/v2/languageunderstanding/miners/{minerId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(minerId)",
         "parameters": [
             {
                 "name": "minerId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/languageunderstanding/miners/{minerId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(minerId)",
         "parameters": [
             {
                 "name": "minerId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Miner"
     },
     "GET /api/v2/languageunderstanding/miners": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         

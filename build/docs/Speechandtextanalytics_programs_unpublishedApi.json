@@ -1,15 +1,18 @@
 {
     "GET /api/v2/speechandtextanalytics/programs/unpublished": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(nextPage, pageSize)",
         "parameters": [
             {
                 "name": "nextPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

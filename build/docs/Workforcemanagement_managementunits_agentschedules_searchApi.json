@@ -1,23 +1,28 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(managementUnitId, body, forceAsync, forceDownloadService)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Busearchagentschedulesrequest"
+                "type": "Busearchagentschedulesrequest",
+                "required": "false"
             },
             {
                 "name": "forceAsync",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "forceDownloadService",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Buasyncagentschedulessearchresponse"

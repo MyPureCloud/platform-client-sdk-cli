@@ -1,27 +1,33 @@
 {
     "GET /api/v2/contentmanagement/shared/{sharedId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(sharedId, redirect, disposition, contentType, expand)",
         "parameters": [
             {
                 "name": "sharedId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "redirect",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "disposition",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "contentType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Sharedresponse"

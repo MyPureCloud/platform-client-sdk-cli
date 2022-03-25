@@ -1,25 +1,30 @@
 {
     "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(trusteeOrgId, trusteeUserId)",
         "parameters": [
             {
                 "name": "trusteeOrgId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "trusteeUserId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(trusteeOrgId)",
         "parameters": [
             {
                 "name": "trusteeOrgId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Cloneduserentitylisting"

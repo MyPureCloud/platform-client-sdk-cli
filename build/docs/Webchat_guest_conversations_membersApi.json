@@ -1,52 +1,63 @@
 {
     "DELETE /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(conversationId, memberId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "memberId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId, memberId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "memberId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Webchatmemberinfo"
     },
     "GET /api/v2/webchat/guest/conversations/{conversationId}/members": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(conversationId, pageSize, pageNumber, excludeDisconnectedMembers)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "excludeDisconnectedMembers",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

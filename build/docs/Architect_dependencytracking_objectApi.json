@@ -1,39 +1,48 @@
 {
     "GET /api/v2/architect/dependencytracking/object": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType, consumedResourceRequest)",
         "parameters": [
             {
                 "name": "id",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "version",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "objectType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "consumedResources",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "consumingResources",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "consumedResourceType",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "consumingResourceType",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "consumedResourceRequest",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Dependencyobject"

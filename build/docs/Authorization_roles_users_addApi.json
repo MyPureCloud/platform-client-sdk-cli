@@ -1,15 +1,18 @@
 {
     "PUT /api/v2/authorization/roles/{roleId}/users/add": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(roleId, body)",
         "parameters": [
             {
                 "name": "roleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "true"
             }
         ],
         "return": "[]string"

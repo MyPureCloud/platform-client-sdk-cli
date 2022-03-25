@@ -1,26 +1,31 @@
 {
     "GET /api/v2/architect/dependencytracking/types/{typeId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(typeId)",
         "parameters": [
             {
                 "name": "typeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Dependencytype"
     },
     "GET /api/v2/architect/dependencytracking/types": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

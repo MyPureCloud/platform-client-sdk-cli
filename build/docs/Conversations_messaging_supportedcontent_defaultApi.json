@@ -1,17 +1,20 @@
 {
     "GET /api/v2/conversations/messaging/supportedcontent/default": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Supportedcontent"
     },
     "PUT /api/v2/conversations/messaging/supportedcontent/default": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Supportedcontentreference"
+                "type": "Supportedcontentreference",
+                "required": "true"
             }
         ],
         "return": "Supportedcontent"

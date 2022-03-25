@@ -1,74 +1,89 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(managementUnitId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Createtimeofflimitrequest"
+                "type": "Createtimeofflimitrequest",
+                "required": "false"
             }
         ],
         "return": "Timeofflimit"
     },
     "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(managementUnitId, timeOffLimitId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "timeOffLimitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(managementUnitId, timeOffLimitId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "timeOffLimitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Timeofflimit"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(managementUnitId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Timeofflimitlisting"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(managementUnitId, timeOffLimitId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "timeOffLimitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Updatetimeofflimitrequest"
+                "type": "Updatetimeofflimitrequest",
+                "required": "false"
             }
         ],
         "return": "Timeofflimit"

@@ -1,11 +1,13 @@
 {
     "POST /api/v2/responsemanagement/responses/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Responsequeryrequest"
+                "type": "Responsequeryrequest",
+                "required": "true"
             }
         ],
         "return": "Responsequeryresults"

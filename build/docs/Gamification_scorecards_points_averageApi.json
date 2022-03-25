@@ -1,11 +1,13 @@
 {
     "GET /api/v2/gamification/scorecards/points/average": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(workday)",
         "parameters": [
             {
                 "name": "workday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             }
         ],
         "return": "Singleworkdayaveragepoints"

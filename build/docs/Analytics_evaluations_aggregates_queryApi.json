@@ -1,11 +1,13 @@
 {
     "POST /api/v2/analytics/evaluations/aggregates/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Evaluationaggregationquery"
+                "type": "Evaluationaggregationquery",
+                "required": "true"
             }
         ],
         "return": "Evaluationaggregatequeryresponse"

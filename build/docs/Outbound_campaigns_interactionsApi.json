@@ -1,11 +1,13 @@
 {
     "GET /api/v2/outbound/campaigns/{campaignId}/interactions": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(campaignId)",
         "parameters": [
             {
                 "name": "campaignId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Campaigninteractions"

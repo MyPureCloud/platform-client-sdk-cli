@@ -1,90 +1,109 @@
 {
     "POST /api/v2/flows/datatables/{datatableId}/rows": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(datatableId, dataTableRow)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "dataTableRow",
-                "type": "interface{}"
+                "type": "interface{}",
+                "required": "true"
             }
         ],
         "return": "map[string]interface{}"
     },
     "DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(datatableId, rowId)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "rowId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/flows/datatables/{datatableId}/rows/{rowId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(datatableId, rowId, showbrief)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "rowId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "showbrief",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "map[string]interface{}"
     },
     "GET /api/v2/flows/datatables/{datatableId}/rows": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(datatableId, pageNumber, pageSize, showbrief)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "showbrief",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(datatableId, rowId, body)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "rowId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "interface{}"
+                "type": "interface{}",
+                "required": "false"
             }
         ],
         "return": "map[string]interface{}"

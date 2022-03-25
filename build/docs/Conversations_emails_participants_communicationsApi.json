@@ -1,23 +1,28 @@
 {
     "PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(conversationId, participantId, communicationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "participantId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "communicationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Mediaparticipantrequest"
+                "type": "Mediaparticipantrequest",
+                "required": "true"
             }
         ],
         "return": "Empty"

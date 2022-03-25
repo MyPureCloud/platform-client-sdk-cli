@@ -1,33 +1,39 @@
 {
     "POST /api/v2/routing/assessments/jobs": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createbenefitassessmentjobrequest"
+                "type": "Createbenefitassessmentjobrequest",
+                "required": "false"
             }
         ],
         "return": "Benefitassessmentjob"
     },
     "GET /api/v2/routing/assessments/jobs/{jobId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(jobId)",
         "parameters": [
             {
                 "name": "jobId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Benefitassessmentjob"
     },
     "GET /api/v2/routing/assessments/jobs": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(divisionId)",
         "parameters": [
             {
                 "name": "divisionId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Assessmentjoblisting"

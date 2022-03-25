@@ -1,16 +1,19 @@
 {
     "GET /api/v2/gamification/templates/{templateId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(templateId)",
         "parameters": [
             {
                 "name": "templateId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Objectivetemplate"
     },
     "GET /api/v2/gamification/templates": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         

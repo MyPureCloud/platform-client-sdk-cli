@@ -1,80 +1,97 @@
 {
     "POST /api/v2/quality/conversations/{conversationId}/evaluations": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(conversationId, body, expand)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Evaluation"
+                "type": "Evaluation",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Evaluation"
     },
     "DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(conversationId, evaluationId, expand)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "evaluationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Evaluation"
     },
     "GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId, evaluationId, expand)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "evaluationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Evaluation"
     },
     "PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(conversationId, evaluationId, body, expand)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "evaluationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Evaluation"
+                "type": "Evaluation",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Evaluation"

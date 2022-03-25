@@ -1,91 +1,110 @@
 {
     "POST /api/v2/knowledge/knowledgebases": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Knowledgebase"
+                "type": "Knowledgebase",
+                "required": "true"
             }
         ],
         "return": "Knowledgebase"
     },
     "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(knowledgeBaseId)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Knowledgebase"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(knowledgeBaseId)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Knowledgebase"
     },
     "GET /api/v2/knowledge/knowledgebases": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(before, after, limit, pageSize, name, coreLanguage, published, sortBy, sortOrder)",
         "parameters": [
             {
                 "name": "before",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "after",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "limit",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "coreLanguage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "published",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(knowledgeBaseId, body)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Knowledgebase"
+                "type": "Knowledgebase",
+                "required": "true"
             }
         ],
         "return": "Knowledgebase"

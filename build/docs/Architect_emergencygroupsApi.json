@@ -1,74 +1,89 @@
 {
     "POST /api/v2/architect/emergencygroups": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Emergencygroup"
+                "type": "Emergencygroup",
+                "required": "true"
             }
         ],
         "return": "Emergencygroup"
     },
     "DELETE /api/v2/architect/emergencygroups/{emergencyGroupId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(emergencyGroupId)",
         "parameters": [
             {
                 "name": "emergencyGroupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/architect/emergencygroups/{emergencyGroupId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(emergencyGroupId)",
         "parameters": [
             {
                 "name": "emergencyGroupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Emergencygroup"
     },
     "GET /api/v2/architect/emergencygroups": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/architect/emergencygroups/{emergencyGroupId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(emergencyGroupId, body)",
         "parameters": [
             {
                 "name": "emergencyGroupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Emergencygroup"
+                "type": "Emergencygroup",
+                "required": "true"
             }
         ],
         "return": "Emergencygroup"

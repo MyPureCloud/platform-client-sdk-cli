@@ -1,11 +1,13 @@
 {
     "GET /api/v2/languages/translations/organization": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(language)",
         "parameters": [
             {
                 "name": "language",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "map[string]interface{}"

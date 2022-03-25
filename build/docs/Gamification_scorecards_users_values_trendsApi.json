@@ -1,50 +1,61 @@
 {
     "GET /api/v2/gamification/scorecards/users/values/trends": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(filterType, filterId, startWorkday, endWorkday, timeZone)",
         "parameters": [
             {
                 "name": "filterType",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "filterId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "startWorkday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "endWorkday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "timeZone",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Workdayvaluestrend"
     },
     "GET /api/v2/gamification/scorecards/users/{userId}/values/trends": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(userId, startWorkday, endWorkday, timeZone)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "startWorkday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "endWorkday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "timeZone",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Workdayvaluestrend"

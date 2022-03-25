@@ -1,55 +1,66 @@
 {
     "POST /api/v2/routing/skills": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Routingskill"
+                "type": "Routingskill",
+                "required": "true"
             }
         ],
         "return": "Routingskill"
     },
     "DELETE /api/v2/routing/skills/{skillId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(skillId)",
         "parameters": [
             {
                 "name": "skillId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/routing/skills/{skillId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(skillId)",
         "parameters": [
             {
                 "name": "skillId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Routingskill"
     },
     "GET /api/v2/routing/skills": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, name, id)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

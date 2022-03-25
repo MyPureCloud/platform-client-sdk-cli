@@ -1,76 +1,92 @@
 {
     "DELETE /api/v2/orphanrecordings/{orphanId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(orphanId)",
         "parameters": [
             {
                 "name": "orphanId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Orphanrecording"
     },
     "GET /api/v2/orphanrecordings/{orphanId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(orphanId)",
         "parameters": [
             {
                 "name": "orphanId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Orphanrecording"
     },
     "GET /api/v2/orphanrecordings": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "nextPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "previousPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "hasConversation",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "media",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/orphanrecordings/{orphanId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(orphanId, body)",
         "parameters": [
             {
                 "name": "orphanId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Orphanupdaterequest"
+                "type": "Orphanupdaterequest",
+                "required": "false"
             }
         ],
         "return": "Recording"

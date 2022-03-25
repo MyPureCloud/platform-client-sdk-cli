@@ -1,47 +1,58 @@
 {
     "GET /api/v2/users/development/activities/me": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship)",
         "parameters": [
             {
                 "name": "moduleId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "interval",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "completionInterval",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "overdue",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "types",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "statuses",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "relationship",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

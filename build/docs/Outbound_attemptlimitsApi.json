@@ -1,82 +1,99 @@
 {
     "POST /api/v2/outbound/attemptlimits": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Attemptlimits"
+                "type": "Attemptlimits",
+                "required": "true"
             }
         ],
         "return": "Attemptlimits"
     },
     "DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(attemptLimitsId)",
         "parameters": [
             {
                 "name": "attemptLimitsId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/outbound/attemptlimits/{attemptLimitsId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(attemptLimitsId)",
         "parameters": [
             {
                 "name": "attemptLimitsId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Attemptlimits"
     },
     "GET /api/v2/outbound/attemptlimits": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "allowEmptyResult",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "filterType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/attemptlimits/{attemptLimitsId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(attemptLimitsId, body)",
         "parameters": [
             {
                 "name": "attemptLimitsId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Attemptlimits"
+                "type": "Attemptlimits",
+                "required": "true"
             }
         ],
         "return": "Attemptlimits"

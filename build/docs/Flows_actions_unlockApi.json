@@ -1,11 +1,13 @@
 {
     "POST /api/v2/flows/actions/unlock": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(flow)",
         "parameters": [
             {
                 "name": "flow",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Flow"

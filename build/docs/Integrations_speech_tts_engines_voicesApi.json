@@ -1,34 +1,41 @@
 {
     "GET /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(engineId, voiceId)",
         "parameters": [
             {
                 "name": "engineId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "voiceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Ttsvoiceentity"
     },
     "GET /api/v2/integrations/speech/tts/engines/{engineId}/voices": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(engineId, pageNumber, pageSize)",
         "parameters": [
             {
                 "name": "engineId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

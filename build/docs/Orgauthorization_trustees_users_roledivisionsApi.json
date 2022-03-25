@@ -1,19 +1,23 @@
 {
     "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(trusteeOrgId, trusteeUserId, body)",
         "parameters": [
             {
                 "name": "trusteeOrgId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "trusteeUserId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Roledivisiongrants"
+                "type": "Roledivisiongrants",
+                "required": "true"
             }
         ],
         "return": "Userauthorization"

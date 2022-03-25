@@ -1,15 +1,18 @@
 {
     "POST /api/v2/oauth/clients/{clientId}/usage/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(clientId, body)",
         "parameters": [
             {
                 "name": "clientId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Apiusagequery"
+                "type": "Apiusagequery",
+                "required": "true"
             }
         ],
         "return": "Usageexecutionresult"

@@ -1,82 +1,99 @@
 {
     "POST /api/v2/architect/schedulegroups": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Schedulegroup"
+                "type": "Schedulegroup",
+                "required": "true"
             }
         ],
         "return": "Schedulegroup"
     },
     "DELETE /api/v2/architect/schedulegroups/{scheduleGroupId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(scheduleGroupId)",
         "parameters": [
             {
                 "name": "scheduleGroupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/architect/schedulegroups/{scheduleGroupId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(scheduleGroupId)",
         "parameters": [
             {
                 "name": "scheduleGroupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Schedulegroup"
     },
     "GET /api/v2/architect/schedulegroups": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds, divisionId)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "scheduleIds",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "divisionId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/architect/schedulegroups/{scheduleGroupId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(scheduleGroupId, body)",
         "parameters": [
             {
                 "name": "scheduleGroupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Schedulegroup"
+                "type": "Schedulegroup",
+                "required": "true"
             }
         ],
         "return": "Schedulegroup"

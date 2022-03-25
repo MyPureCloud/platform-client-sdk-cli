@@ -1,48 +1,58 @@
 {
     "POST /api/v2/routing/queues/{queueId}/wrapupcodes": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(queueId, body)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "[]Wrapupcodereference"
+                "type": "[]Wrapupcodereference",
+                "required": "true"
             }
         ],
         "return": "[]Wrapupcode"
     },
     "DELETE /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(queueId, codeId)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "codeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/routing/queues/{queueId}/wrapupcodes": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(queueId, pageSize, pageNumber)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

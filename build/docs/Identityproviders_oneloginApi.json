@@ -1,23 +1,27 @@
 {
     "DELETE /api/v2/identityproviders/onelogin": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete()",
         
         "return": "Empty"
     },
     "GET /api/v2/identityproviders/onelogin": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Onelogin"
     },
     "PUT /api/v2/identityproviders/onelogin": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Onelogin"
+                "type": "Onelogin",
+                "required": "true"
             }
         ],
         "return": "Oauthprovider"

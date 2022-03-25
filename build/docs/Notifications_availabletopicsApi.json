@@ -1,15 +1,18 @@
 {
     "GET /api/v2/notifications/availabletopics": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(expand, includePreview)",
         "parameters": [
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "includePreview",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Availabletopicentitylisting"

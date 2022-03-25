@@ -1,15 +1,18 @@
 {
     "POST /api/v2/routing/email/domains/{domainId}/testconnection": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(domainId, body)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Testmessage"
+                "type": "Testmessage",
+                "required": "false"
             }
         ],
         "return": "Testmessage"

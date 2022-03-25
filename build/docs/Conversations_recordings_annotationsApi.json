@@ -1,94 +1,114 @@
 {
     "POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(conversationId, recordingId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "recordingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Annotation"
+                "type": "Annotation",
+                "required": "true"
             }
         ],
         "return": "Annotation"
     },
     "DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(conversationId, recordingId, annotationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "recordingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "annotationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId, recordingId, annotationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "recordingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "annotationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Annotation"
     },
     "GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(conversationId, recordingId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "recordingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "[]Annotation"
     },
     "PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(conversationId, recordingId, annotationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "recordingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "annotationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Annotation"
+                "type": "Annotation",
+                "required": "true"
             }
         ],
         "return": "Annotation"

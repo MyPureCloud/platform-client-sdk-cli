@@ -1,11 +1,13 @@
 {
     "GET /api/v2/telephony/providers/edges/phonebasesettings/template": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(phoneMetabaseId)",
         "parameters": [
             {
                 "name": "phoneMetabaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Phonebase"

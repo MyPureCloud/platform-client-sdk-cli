@@ -1,26 +1,31 @@
 {
     "POST /api/v2/analytics/reporting/exports": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Reportingexportjobrequest"
+                "type": "Reportingexportjobrequest",
+                "required": "true"
             }
         ],
         "return": "Reportingexportjobresponse"
     },
     "GET /api/v2/analytics/reporting/exports": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

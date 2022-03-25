@@ -1,5 +1,6 @@
 {
     "GET /api/v2/contentmanagement/usage": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         

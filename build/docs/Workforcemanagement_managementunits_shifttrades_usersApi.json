@@ -1,11 +1,13 @@
 {
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(managementUnitId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Wfmuserentitylisting"

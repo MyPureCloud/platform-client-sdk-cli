@@ -1,11 +1,13 @@
 {
     "GET /api/v2/groups/{groupId}/individuals": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(groupId)",
         "parameters": [
             {
                 "name": "groupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Swaggeroverridelist"

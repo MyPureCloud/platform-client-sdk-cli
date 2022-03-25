@@ -1,94 +1,114 @@
 {
     "POST /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(siteId, body)",
         "parameters": [
             {
                 "name": "siteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Outboundroutebase"
+                "type": "Outboundroutebase",
+                "required": "true"
             }
         ],
         "return": "Outboundroutebase"
     },
     "DELETE /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(siteId, outboundRouteId)",
         "parameters": [
             {
                 "name": "siteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "outboundRouteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(siteId, outboundRouteId)",
         "parameters": [
             {
                 "name": "siteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "outboundRouteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Outboundroutebase"
     },
     "GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(siteId, pageSize, pageNumber, name, externalTrunkBasesIds, sortBy)",
         "parameters": [
             {
                 "name": "siteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "externalTrunkBasesIds",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(siteId, outboundRouteId, body)",
         "parameters": [
             {
                 "name": "siteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "outboundRouteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Outboundroutebase"
+                "type": "Outboundroutebase",
+                "required": "true"
             }
         ],
         "return": "Outboundroutebase"

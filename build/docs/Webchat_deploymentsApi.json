@@ -1,53 +1,63 @@
 {
     "POST /api/v2/webchat/deployments": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Webchatdeployment"
+                "type": "Webchatdeployment",
+                "required": "true"
             }
         ],
         "return": "Webchatdeployment"
     },
     "DELETE /api/v2/webchat/deployments/{deploymentId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(deploymentId)",
         "parameters": [
             {
                 "name": "deploymentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/webchat/deployments/{deploymentId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(deploymentId)",
         "parameters": [
             {
                 "name": "deploymentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Webchatdeployment"
     },
     "GET /api/v2/webchat/deployments": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Webchatdeploymententitylisting"
     },
     "PUT /api/v2/webchat/deployments/{deploymentId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(deploymentId, body)",
         "parameters": [
             {
                 "name": "deploymentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Webchatdeployment"
+                "type": "Webchatdeployment",
+                "required": "true"
             }
         ],
         "return": "Webchatdeployment"

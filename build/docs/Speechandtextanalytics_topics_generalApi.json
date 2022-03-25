@@ -1,11 +1,13 @@
 {
     "GET /api/v2/speechandtextanalytics/topics/general": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(dialect)",
         "parameters": [
             {
                 "name": "dialect",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Generaltopicsentitylisting"

@@ -1,86 +1,104 @@
 {
     "POST /api/v2/recording/jobs": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Recordingjobsquery"
+                "type": "Recordingjobsquery",
+                "required": "true"
             }
         ],
         "return": "Recordingjob"
     },
     "DELETE /api/v2/recording/jobs/{jobId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(jobId)",
         "parameters": [
             {
                 "name": "jobId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/recording/jobs/{jobId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(jobId)",
         "parameters": [
             {
                 "name": "jobId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Recordingjob"
     },
     "GET /api/v2/recording/jobs": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType, includeTotal, cursor)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "state",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "showOnlyMyJobs",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "jobType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "includeTotal",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "cursor",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/recording/jobs/{jobId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(jobId, body)",
         "parameters": [
             {
                 "name": "jobId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Executerecordingjobsquery"
+                "type": "Executerecordingjobsquery",
+                "required": "true"
             }
         ],
         "return": "Recordingjob"

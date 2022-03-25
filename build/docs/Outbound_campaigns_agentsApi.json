@@ -1,19 +1,23 @@
 {
     "PUT /api/v2/outbound/campaigns/{campaignId}/agents/{userId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(campaignId, userId, body)",
         "parameters": [
             {
                 "name": "campaignId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Agent"
+                "type": "Agent",
+                "required": "true"
             }
         ],
         "return": "string"

@@ -1,5 +1,6 @@
 {
     "GET /api/v2/fax/summary": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         

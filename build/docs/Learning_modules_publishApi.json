@@ -1,11 +1,13 @@
 {
     "POST /api/v2/learning/modules/{moduleId}/publish": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(moduleId)",
         "parameters": [
             {
                 "name": "moduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Learningmodulepublishresponse"

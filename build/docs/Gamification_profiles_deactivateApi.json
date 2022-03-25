@@ -1,11 +1,13 @@
 {
     "POST /api/v2/gamification/profiles/{performanceProfileId}/deactivate": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(performanceProfileId)",
         "parameters": [
             {
                 "name": "performanceProfileId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Performanceprofile"

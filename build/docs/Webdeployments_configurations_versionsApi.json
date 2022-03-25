@@ -1,26 +1,31 @@
 {
     "GET /api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(configurationId, versionId)",
         "parameters": [
             {
                 "name": "configurationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "versionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Webdeploymentconfigurationversion"
     },
     "GET /api/v2/webdeployments/configurations/{configurationId}/versions": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(configurationId)",
         "parameters": [
             {
                 "name": "configurationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Webdeploymentconfigurationversionentitylisting"

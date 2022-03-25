@@ -1,15 +1,18 @@
 {
     "GET /api/v2/routing/queues/{queueId}/estimatedwaittime": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(queueId, conversationId)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Estimatedwaittimepredictions"

@@ -1,46 +1,56 @@
 {
     "POST /api/v2/architect/systemprompts/{promptId}/history": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(promptId)",
         "parameters": [
             {
                 "name": "promptId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Operation"
     },
     "GET /api/v2/architect/systemprompts/{promptId}/history/{historyId}": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)",
         "parameters": [
             {
                 "name": "promptId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "historyId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "action",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

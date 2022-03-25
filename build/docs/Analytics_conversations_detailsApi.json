@@ -1,22 +1,26 @@
 {
     "GET /api/v2/analytics/conversations/{conversationId}/details": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Analyticsconversationwithoutattributes"
     },
     "GET /api/v2/analytics/conversations/details": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(id)",
         "parameters": [
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Analyticsconversationwithoutattributesmultigetresponse"

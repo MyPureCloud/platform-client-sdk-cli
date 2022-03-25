@@ -1,16 +1,19 @@
 {
     "GET /api/v2/contentmanagement/securityprofiles/{securityProfileId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(securityProfileId)",
         "parameters": [
             {
                 "name": "securityProfileId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Securityprofile"
     },
     "GET /api/v2/contentmanagement/securityprofiles": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         

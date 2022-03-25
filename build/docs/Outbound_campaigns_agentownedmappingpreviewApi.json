@@ -1,11 +1,13 @@
 {
     "POST /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(campaignId)",
         "parameters": [
             {
                 "name": "campaignId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Empty"

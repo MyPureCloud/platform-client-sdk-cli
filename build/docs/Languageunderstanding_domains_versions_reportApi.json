@@ -1,15 +1,18 @@
 {
     "GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(domainId, domainVersionId)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "domainVersionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Nludomainversionqualityreport"

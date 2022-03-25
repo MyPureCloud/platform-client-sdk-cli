@@ -1,74 +1,89 @@
 {
     "POST /api/v2/locations": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Locationcreatedefinition"
+                "type": "Locationcreatedefinition",
+                "required": "true"
             }
         ],
         "return": "Locationdefinition"
     },
     "DELETE /api/v2/locations/{locationId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(locationId)",
         "parameters": [
             {
                 "name": "locationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/locations/{locationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(locationId, expand)",
         "parameters": [
             {
                 "name": "locationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Locationdefinition"
     },
     "GET /api/v2/locations": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, id, sortOrder)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/locations/{locationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(locationId, body)",
         "parameters": [
             {
                 "name": "locationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Locationupdatedefinition"
+                "type": "Locationupdatedefinition",
+                "required": "true"
             }
         ],
         "return": "Locationdefinition"

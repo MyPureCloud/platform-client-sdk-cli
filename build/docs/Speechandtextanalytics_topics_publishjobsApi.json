@@ -1,22 +1,26 @@
 {
     "POST /api/v2/speechandtextanalytics/topics/publishjobs": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Topicjobrequest"
+                "type": "Topicjobrequest",
+                "required": "true"
             }
         ],
         "return": "Topicjob"
     },
     "GET /api/v2/speechandtextanalytics/topics/publishjobs/{jobId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(jobId)",
         "parameters": [
             {
                 "name": "jobId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Topicjob"

@@ -1,5 +1,6 @@
 {
     "GET /api/v2/authorization/subjects/me": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         

@@ -1,11 +1,13 @@
 {
     "POST /api/v2/telephony/providers/edges/addressvalidation": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Validateaddressrequest"
+                "type": "Validateaddressrequest",
+                "required": "true"
             }
         ],
         "return": "Validateaddressresponse"

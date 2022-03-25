@@ -1,22 +1,26 @@
 {
     "POST /api/v2/authorization/roles/default": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(force)",
         "parameters": [
             {
                 "name": "force",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Organizationroleentitylisting"
     },
     "PUT /api/v2/authorization/roles/default": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "[]Domainorganizationrole"
+                "type": "[]Domainorganizationrole",
+                "required": "true"
             }
         ],
         "return": "Organizationroleentitylisting"

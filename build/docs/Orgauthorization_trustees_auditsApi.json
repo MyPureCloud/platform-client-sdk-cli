@@ -1,27 +1,33 @@
 {
     "POST /api/v2/orgauthorization/trustees/audits": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body, pageSize, pageNumber, sortBy, sortOrder)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Trusteeauditqueryrequest"
+                "type": "Trusteeauditqueryrequest",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Auditqueryresponse"

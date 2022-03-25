@@ -1,69 +1,84 @@
 {
     "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(knowledgeBaseId, languageCode)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Knowledgetraining"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(knowledgeBaseId, languageCode, trainingId)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "trainingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Knowledgetraining"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(knowledgeBaseId, languageCode, before, after, limit, pageSize, knowledgeDocumentsState)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "before",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "after",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "limit",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "knowledgeDocumentsState",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

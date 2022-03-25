@@ -1,27 +1,33 @@
 {
     "GET /api/v2/scripts/published/{scriptId}/variables": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(scriptId, input, output, varType, scriptDataVersion)",
         "parameters": [
             {
                 "name": "scriptId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "input",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "output",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "varType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "scriptDataVersion",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "interface{}"

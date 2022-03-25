@@ -1,62 +1,74 @@
 {
     "POST /api/v2/greetings": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Greeting"
+                "type": "Greeting",
+                "required": "true"
             }
         ],
         "return": "Greeting"
     },
     "DELETE /api/v2/greetings/{greetingId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(greetingId)",
         "parameters": [
             {
                 "name": "greetingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/greetings/{greetingId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(greetingId)",
         "parameters": [
             {
                 "name": "greetingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Greeting"
     },
     "GET /api/v2/greetings": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/greetings/{greetingId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(greetingId, body)",
         "parameters": [
             {
                 "name": "greetingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Greeting"
+                "type": "Greeting",
+                "required": "true"
             }
         ],
         "return": "Greeting"

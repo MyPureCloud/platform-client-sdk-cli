@@ -1,95 +1,115 @@
 {
     "POST /api/v2/externalcontacts/contacts/{contactId}/notes": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(contactId, body)",
         "parameters": [
             {
                 "name": "contactId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Note"
+                "type": "Note",
+                "required": "true"
             }
         ],
         "return": "Note"
     },
     "DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(contactId, noteId)",
         "parameters": [
             {
                 "name": "contactId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "noteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Empty"
     },
     "GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(contactId, noteId, expand)",
         "parameters": [
             {
                 "name": "contactId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "noteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Note"
     },
     "GET /api/v2/externalcontacts/contacts/{contactId}/notes": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(contactId, pageSize, pageNumber, sortOrder, expand)",
         "parameters": [
             {
                 "name": "contactId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(contactId, noteId, body)",
         "parameters": [
             {
                 "name": "contactId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "noteId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Note"
+                "type": "Note",
+                "required": "true"
             }
         ],
         "return": "Note"

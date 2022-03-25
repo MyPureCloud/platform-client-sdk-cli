@@ -1,34 +1,41 @@
 {
     "POST /api/v2/groups/{groupId}/greetings": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(groupId, body)",
         "parameters": [
             {
                 "name": "groupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Greeting"
+                "type": "Greeting",
+                "required": "true"
             }
         ],
         "return": "Greeting"
     },
     "GET /api/v2/groups/{groupId}/greetings": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(groupId, pageSize, pageNumber)",
         "parameters": [
             {
                 "name": "groupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

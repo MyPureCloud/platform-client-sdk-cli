@@ -1,19 +1,23 @@
 {
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(managementUnitId, agentId, excludeCapabilities)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "agentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "excludeCapabilities",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Wfmagent"

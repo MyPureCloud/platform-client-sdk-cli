@@ -1,11 +1,13 @@
 {
     "POST /api/v2/textbots/bots/execute": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(postTextRequest)",
         "parameters": [
             {
                 "name": "postTextRequest",
-                "type": "Posttextrequest"
+                "type": "Posttextrequest",
+                "required": "true"
             }
         ],
         "return": "Posttextresponse"

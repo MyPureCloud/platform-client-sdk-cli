@@ -1,53 +1,64 @@
 {
     "GET /api/v2/telephony/providers/edges/extensions/{extensionId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(extensionId)",
         "parameters": [
             {
                 "name": "extensionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Extension"
     },
     "GET /api/v2/telephony/providers/edges/extensions": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, sortOrder, number)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "number",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/extensions/{extensionId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(extensionId, body)",
         "parameters": [
             {
                 "name": "extensionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Extension"
+                "type": "Extension",
+                "required": "true"
             }
         ],
         "return": "Extension"

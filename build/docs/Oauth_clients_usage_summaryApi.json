@@ -1,15 +1,18 @@
 {
     "GET /api/v2/oauth/clients/{clientId}/usage/summary": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(clientId, days)",
         "parameters": [
             {
                 "name": "clientId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "days",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Usageexecutionresult"

@@ -1,19 +1,23 @@
 {
     "GET /api/v2/integrations/speech/lex/bots": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, name)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

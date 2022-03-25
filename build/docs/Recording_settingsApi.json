@@ -1,22 +1,26 @@
 {
     "GET /api/v2/recording/settings": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(createDefault)",
         "parameters": [
             {
                 "name": "createDefault",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Recordingsettings"
     },
     "PUT /api/v2/recording/settings": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Recordingsettings"
+                "type": "Recordingsettings",
+                "required": "true"
             }
         ],
         "return": "Recordingsettings"

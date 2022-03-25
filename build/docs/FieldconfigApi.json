@@ -1,11 +1,13 @@
 {
     "GET /api/v2/fieldconfig": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(varType)",
         "parameters": [
             {
                 "name": "varType",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Fieldconfig"

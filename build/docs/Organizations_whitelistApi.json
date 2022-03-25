@@ -1,17 +1,20 @@
 {
     "GET /api/v2/organizations/whitelist": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Orgwhitelistsettings"
     },
     "PUT /api/v2/organizations/whitelist": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Orgwhitelistsettings"
+                "type": "Orgwhitelistsettings",
+                "required": "true"
             }
         ],
         "return": "Orgwhitelistsettings"

@@ -1,135 +1,164 @@
 {
     "POST /api/v2/authorization/roles/{roleId}": {
+        "operationId": "bulkgrant",
         "functionName": "bulkgrant",
         "signature": "bulkgrant(roleId, body, subjectType)",
         "parameters": [
             {
                 "name": "roleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Subjectdivisions"
+                "type": "Subjectdivisions",
+                "required": "true"
             },
             {
                 "name": "subjectType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ]
     },
     "POST /api/v2/authorization/roles": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Domainorganizationrolecreate"
+                "type": "Domainorganizationrolecreate",
+                "required": "true"
             }
         ],
         "return": "Domainorganizationrole"
     },
     "DELETE /api/v2/authorization/roles/{roleId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(roleId)",
         "parameters": [
             {
                 "name": "roleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/authorization/roles/{roleId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(roleId, expand)",
         "parameters": [
             {
                 "name": "roleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Domainorganizationrole"
     },
     "GET /api/v2/authorization/roles": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "nextPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "previousPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "permission",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "defaultRoleId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "userCount",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/authorization/roles/{roleId}": {
+        "operationId": "patch",
         "functionName": "patch",
         "signature": "patch(roleId, body)",
         "parameters": [
             {
                 "name": "roleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Domainorganizationrole"
+                "type": "Domainorganizationrole",
+                "required": "true"
             }
         ],
         "return": "Domainorganizationrole"
     },
     "PUT /api/v2/authorization/roles/{roleId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(roleId, body)",
         "parameters": [
             {
                 "name": "roleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Domainorganizationroleupdate"
+                "type": "Domainorganizationroleupdate",
+                "required": "true"
             }
         ],
         "return": "Domainorganizationrole"

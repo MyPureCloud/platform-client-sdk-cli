@@ -1,15 +1,18 @@
 {
     "POST /api/v2/textbots/botflows/sessions/{sessionId}/turns": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(sessionId, turnRequest)",
         "parameters": [
             {
                 "name": "sessionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "turnRequest",
-                "type": "Textbotflowturnrequest"
+                "type": "Textbotflowturnrequest",
+                "required": "true"
             }
         ],
         "return": "Textbotflowturnresponse"

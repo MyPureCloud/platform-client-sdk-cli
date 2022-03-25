@@ -1,74 +1,89 @@
 {
     "POST /api/v2/languageunderstanding/miners/{minerId}/drafts": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(minerId, body)",
         "parameters": [
             {
                 "name": "minerId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Draft"
+                "type": "Draft",
+                "required": "true"
             }
         ],
         "return": "Draft"
     },
     "DELETE /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(minerId, draftId)",
         "parameters": [
             {
                 "name": "minerId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "draftId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(minerId, draftId)",
         "parameters": [
             {
                 "name": "minerId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "draftId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Draft"
     },
     "GET /api/v2/languageunderstanding/miners/{minerId}/drafts": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(minerId)",
         "parameters": [
             {
                 "name": "minerId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(minerId, draftId, body)",
         "parameters": [
             {
                 "name": "minerId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "draftId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Draftrequest"
+                "type": "Draftrequest",
+                "required": "false"
             }
         ],
         "return": "Draft"

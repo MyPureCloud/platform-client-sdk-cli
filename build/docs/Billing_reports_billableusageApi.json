@@ -1,15 +1,18 @@
 {
     "GET /api/v2/billing/reports/billableusage": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(startDate, endDate)",
         "parameters": [
             {
                 "name": "startDate",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "endDate",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             }
         ],
         "return": "Billingusagereport"

@@ -1,97 +1,117 @@
 {
     "POST /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(edgeId, body)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Domainlogicalinterface"
+                "type": "Domainlogicalinterface",
+                "required": "true"
             }
         ],
         "return": "Domainlogicalinterface"
     },
     "DELETE /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(edgeId, interfaceId)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "interfaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(edgeId, interfaceId, expand)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "interfaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Domainlogicalinterface"
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces": {
+        "operationId": "getedgelogicalinterfaces",
         "functionName": "getedgelogicalinterfaces",
         "signature": "getedgelogicalinterfaces(edgeId, expand)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "GET /api/v2/telephony/providers/edges/logicalinterfaces": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(edgeIds, expand)",
         "parameters": [
             {
                 "name": "edgeIds",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(edgeId, interfaceId, body)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "interfaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Domainlogicalinterface"
+                "type": "Domainlogicalinterface",
+                "required": "true"
             }
         ],
         "return": "Domainlogicalinterface"

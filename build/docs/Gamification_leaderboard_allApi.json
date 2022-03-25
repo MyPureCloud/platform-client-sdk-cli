@@ -1,27 +1,33 @@
 {
     "GET /api/v2/gamification/leaderboard/all": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(filterType, filterId, startWorkday, endWorkday, metricId)",
         "parameters": [
             {
                 "name": "filterType",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "filterId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "startWorkday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "endWorkday",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "metricId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Leaderboard"

@@ -1,11 +1,13 @@
 {
     "POST /api/v2/workforcemanagement/adherence/historical": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Wfmhistoricaladherencequeryforusers"
+                "type": "Wfmhistoricaladherencequeryforusers",
+                "required": "false"
             }
         ],
         "return": "Wfmhistoricaladherenceresponse"

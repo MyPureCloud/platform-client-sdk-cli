@@ -1,62 +1,76 @@
 {
     "GET /api/v2/outbound/contactlists/divisionviews/{contactListId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(contactListId, includeImportStatus, includeSize)",
         "parameters": [
             {
                 "name": "contactListId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "includeImportStatus",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "includeSize",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Contactlistdivisionview"
     },
     "GET /api/v2/outbound/contactlists/divisionviews": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)",
         "parameters": [
             {
                 "name": "includeImportStatus",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "includeSize",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "filterType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

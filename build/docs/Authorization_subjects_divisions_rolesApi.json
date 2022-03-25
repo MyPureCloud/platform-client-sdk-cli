@@ -1,41 +1,50 @@
 {
     "POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(subjectId, divisionId, roleId, subjectType)",
         "parameters": [
             {
                 "name": "subjectId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "divisionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "roleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "subjectType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ]
     },
     "DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(subjectId, divisionId, roleId)",
         "parameters": [
             {
                 "name": "subjectId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "divisionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "roleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     }

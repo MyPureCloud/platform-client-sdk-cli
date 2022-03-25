@@ -1,118 +1,144 @@
 {
     "POST /api/v2/learning/assignments": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Learningassignmentcreate"
+                "type": "Learningassignmentcreate",
+                "required": "false"
             }
         ],
         "return": "Learningassignment"
     },
     "DELETE /api/v2/learning/assignments/{assignmentId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(assignmentId)",
         "parameters": [
             {
                 "name": "assignmentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/learning/assignments/{assignmentId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(assignmentId, expand)",
         "parameters": [
             {
                 "name": "assignmentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Learningassignment"
     },
     "GET /api/v2/learning/assignments": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand)",
         "parameters": [
             {
                 "name": "moduleId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "interval",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "completionInterval",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "overdue",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pass",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "minPercentageScore",
-                "type": "float32"
+                "type": "float32",
+                "required": "false"
             },
             {
                 "name": "maxPercentageScore",
-                "type": "float32"
+                "type": "float32",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "userId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "types",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "states",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/learning/assignments/{assignmentId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(assignmentId, body)",
         "parameters": [
             {
                 "name": "assignmentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Learningassignmentupdate"
+                "type": "Learningassignmentupdate",
+                "required": "false"
             }
         ],
         "return": "Learningassignment"

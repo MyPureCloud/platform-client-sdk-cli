@@ -1,59 +1,71 @@
 {
     "POST /api/v2/routing/assessments": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createbenefitassessmentrequest"
+                "type": "Createbenefitassessmentrequest",
+                "required": "false"
             }
         ],
         "return": "Benefitassessment"
     },
     "DELETE /api/v2/routing/assessments/{assessmentId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(assessmentId)",
         "parameters": [
             {
                 "name": "assessmentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/routing/assessments/{assessmentId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(assessmentId)",
         "parameters": [
             {
                 "name": "assessmentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Benefitassessment"
     },
     "GET /api/v2/routing/assessments": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(before, after, limit, pageSize, queueId)",
         "parameters": [
             {
                 "name": "before",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "after",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "limit",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "queueId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

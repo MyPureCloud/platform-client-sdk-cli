@@ -1,15 +1,18 @@
 {
     "GET /api/v2/greetings/{greetingId}/media": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(greetingId, formatId)",
         "parameters": [
             {
                 "name": "greetingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "formatId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Greetingmediainfo"

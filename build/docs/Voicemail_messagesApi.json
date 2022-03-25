@@ -1,86 +1,103 @@
 {
     "POST /api/v2/voicemail/messages": {
+        "operationId": "copy",
         "functionName": "copy",
         "signature": "copy(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Copyvoicemailmessage"
+                "type": "Copyvoicemailmessage",
+                "required": "false"
             }
         ],
         "return": "Voicemailmessage"
     },
     "DELETE /api/v2/voicemail/messages/{messageId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(messageId)",
         "parameters": [
             {
                 "name": "messageId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "DELETE /api/v2/voicemail/messages": {
+        "operationId": "deleteall",
         "functionName": "deleteall",
         "signature": "deleteall()"
         
     },
     "GET /api/v2/voicemail/messages/{messageId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(messageId, expand)",
         "parameters": [
             {
                 "name": "messageId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Voicemailmessage"
     },
     "GET /api/v2/voicemail/messages": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(ids, expand)",
         "parameters": [
             {
                 "name": "ids",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/voicemail/messages/{messageId}": {
+        "operationId": "patch",
         "functionName": "patch",
         "signature": "patch(messageId, body)",
         "parameters": [
             {
                 "name": "messageId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Voicemailmessage"
+                "type": "Voicemailmessage",
+                "required": "true"
             }
         ],
         "return": "Voicemailmessage"
     },
     "PUT /api/v2/voicemail/messages/{messageId}": {
+        "operationId": "put",
         "functionName": "put",
         "signature": "put(messageId, body)",
         "parameters": [
             {
                 "name": "messageId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Voicemailmessage"
+                "type": "Voicemailmessage",
+                "required": "true"
             }
         ],
         "return": "Voicemailmessage"

@@ -1,15 +1,18 @@
 {
     "POST /api/v2/scripts/{scriptId}/export": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(scriptId, body)",
         "parameters": [
             {
                 "name": "scriptId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Exportscriptrequest"
+                "type": "Exportscriptrequest",
+                "required": "false"
             }
         ],
         "return": "Exportscriptresponse"

@@ -1,15 +1,18 @@
 {
     "PATCH /api/v2/routing/email/domains/{domainId}/validate": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(domainId, body)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Inbounddomainpatchrequest"
+                "type": "Inbounddomainpatchrequest",
+                "required": "true"
             }
         ],
         "return": "Inbounddomain"

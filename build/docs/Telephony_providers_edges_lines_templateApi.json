@@ -1,11 +1,13 @@
 {
     "GET /api/v2/telephony/providers/edges/lines/template": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(lineBaseSettingsId)",
         "parameters": [
             {
                 "name": "lineBaseSettingsId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Line"

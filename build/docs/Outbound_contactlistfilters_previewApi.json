@@ -1,11 +1,13 @@
 {
     "POST /api/v2/outbound/contactlistfilters/preview": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Contactlistfilter"
+                "type": "Contactlistfilter",
+                "required": "true"
             }
         ],
         "return": "Filterpreviewresponse"

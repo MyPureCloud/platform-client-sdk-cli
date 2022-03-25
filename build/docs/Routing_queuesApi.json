@@ -1,82 +1,99 @@
 {
     "POST /api/v2/routing/queues": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createqueuerequest"
+                "type": "Createqueuerequest",
+                "required": "true"
             }
         ],
         "return": "Queue"
     },
     "DELETE /api/v2/routing/queues/{queueId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(queueId, forceDelete)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "forceDelete",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ]
     },
     "GET /api/v2/routing/queues/{queueId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(queueId)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Queue"
     },
     "GET /api/v2/routing/queues": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortOrder, name, id, divisionId)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "divisionId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/routing/queues/{queueId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(queueId, body)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Queuerequest"
+                "type": "Queuerequest",
+                "required": "true"
             }
         ],
         "return": "Queue"

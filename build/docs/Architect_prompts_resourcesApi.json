@@ -1,82 +1,99 @@
 {
     "POST /api/v2/architect/prompts/{promptId}/resources": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(promptId, body)",
         "parameters": [
             {
                 "name": "promptId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Promptassetcreate"
+                "type": "Promptassetcreate",
+                "required": "true"
             }
         ],
         "return": "Promptasset"
     },
     "DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(promptId, languageCode)",
         "parameters": [
             {
                 "name": "promptId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/architect/prompts/{promptId}/resources/{languageCode}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(promptId, languageCode)",
         "parameters": [
             {
                 "name": "promptId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Promptasset"
     },
     "GET /api/v2/architect/prompts/{promptId}/resources": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(promptId, pageNumber, pageSize)",
         "parameters": [
             {
                 "name": "promptId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(promptId, languageCode, body)",
         "parameters": [
             {
                 "name": "promptId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Promptasset"
+                "type": "Promptasset",
+                "required": "true"
             }
         ],
         "return": "Promptasset"

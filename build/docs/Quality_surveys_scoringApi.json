@@ -1,11 +1,13 @@
 {
     "POST /api/v2/quality/surveys/scoring": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Surveyformandscoringset"
+                "type": "Surveyformandscoringset",
+                "required": "true"
             }
         ],
         "return": "Surveyscoringset"

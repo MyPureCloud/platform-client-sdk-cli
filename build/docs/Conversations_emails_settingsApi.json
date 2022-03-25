@@ -1,11 +1,13 @@
 {
     "GET /api/v2/conversations/emails/{conversationId}/settings": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Emailssettings"

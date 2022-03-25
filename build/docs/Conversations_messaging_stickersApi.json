@@ -1,19 +1,23 @@
 {
     "GET /api/v2/conversations/messaging/stickers/{messengerType}": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(messengerType, pageSize, pageNumber)",
         "parameters": [
             {
                 "name": "messengerType",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

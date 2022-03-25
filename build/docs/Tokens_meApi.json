@@ -1,16 +1,19 @@
 {
     "DELETE /api/v2/tokens/me": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete()"
         
     },
     "GET /api/v2/tokens/me": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Tokeninfo"
     },
     "HEAD /api/v2/tokens/me": {
+        "operationId": "head",
         "functionName": "head",
         "signature": "head()"
         

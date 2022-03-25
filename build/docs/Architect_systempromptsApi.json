@@ -1,46 +1,56 @@
 {
     "GET /api/v2/architect/systemprompts/{promptId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(promptId)",
         "parameters": [
             {
                 "name": "promptId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Systemprompt"
     },
     "GET /api/v2/architect/systemprompts": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "description",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "nameOrDescription",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

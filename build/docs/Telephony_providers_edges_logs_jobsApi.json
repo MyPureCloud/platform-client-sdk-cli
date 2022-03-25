@@ -1,30 +1,36 @@
 {
     "POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(edgeId, body)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Edgelogsjobrequest"
+                "type": "Edgelogsjobrequest",
+                "required": "true"
             }
         ],
         "return": "Edgelogsjobresponse"
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(edgeId, jobId)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "jobId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Edgelogsjob"

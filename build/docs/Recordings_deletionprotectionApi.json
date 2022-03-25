@@ -1,26 +1,31 @@
 {
     "POST /api/v2/recordings/deletionprotection": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Conversationdeletionprotectionquery"
+                "type": "Conversationdeletionprotectionquery",
+                "required": "true"
             }
         ],
         "return": "[]Addressableentityref"
     },
     "PUT /api/v2/recordings/deletionprotection": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(protect, body)",
         "parameters": [
             {
                 "name": "protect",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "body",
-                "type": "Conversationdeletionprotectionquery"
+                "type": "Conversationdeletionprotectionquery",
+                "required": "false"
             }
         ]
     }

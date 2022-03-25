@@ -1,55 +1,66 @@
 {
     "POST /api/v2/integrations/actions/{actionId}/draft": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(actionId)",
         "parameters": [
             {
                 "name": "actionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Action"
     },
     "DELETE /api/v2/integrations/actions/{actionId}/draft": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(actionId)",
         "parameters": [
             {
                 "name": "actionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/integrations/actions/{actionId}/draft": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(actionId, expand, includeConfig)",
         "parameters": [
             {
                 "name": "actionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "includeConfig",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Action"
     },
     "PATCH /api/v2/integrations/actions/{actionId}/draft": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(actionId, body)",
         "parameters": [
             {
                 "name": "actionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Updatedraftinput"
+                "type": "Updatedraftinput",
+                "required": "true"
             }
         ],
         "return": "Action"

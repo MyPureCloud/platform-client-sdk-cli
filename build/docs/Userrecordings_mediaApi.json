@@ -1,15 +1,18 @@
 {
     "GET /api/v2/userrecordings/{recordingId}/media": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(recordingId, formatId)",
         "parameters": [
             {
                 "name": "recordingId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "formatId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Downloadresponse"

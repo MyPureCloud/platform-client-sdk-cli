@@ -1,11 +1,13 @@
 {
     "POST /api/v2/recordings/screensessions/metadata": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Screenrecordingmetadatarequest"
+                "type": "Screenrecordingmetadatarequest",
+                "required": "true"
             }
         ]
     }

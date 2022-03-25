@@ -1,22 +1,26 @@
 {
     "GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(trunkId)",
         "parameters": [
             {
                 "name": "trunkId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Trunkmetrics"
     },
     "GET /api/v2/telephony/providers/edges/trunks/metrics": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(trunkIds)",
         "parameters": [
             {
                 "name": "trunkIds",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "[]Trunkmetrics"

@@ -1,22 +1,26 @@
 {
     "DELETE /api/v2/routing/utilization": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete()"
         
     },
     "GET /api/v2/routing/utilization": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Utilization"
     },
     "PUT /api/v2/routing/utilization": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Utilization"
+                "type": "Utilization",
+                "required": "true"
             }
         ],
         "return": "Utilization"

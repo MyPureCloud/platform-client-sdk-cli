@@ -1,15 +1,18 @@
 {
     "GET /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(queueId, mediaType)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "mediaType",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Estimatedwaittimepredictions"

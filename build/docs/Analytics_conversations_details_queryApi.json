@@ -1,11 +1,13 @@
 {
     "POST /api/v2/analytics/conversations/details/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Conversationquery"
+                "type": "Conversationquery",
+                "required": "true"
             }
         ],
         "return": "Analyticsconversationqueryresponse"

@@ -1,11 +1,13 @@
 {
     "POST /api/v2/conversations/messages/agentless": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Sendagentlessoutboundmessagerequest"
+                "type": "Sendagentlessoutboundmessagerequest",
+                "required": "true"
             }
         ],
         "return": "Sendagentlessoutboundmessageresponse"

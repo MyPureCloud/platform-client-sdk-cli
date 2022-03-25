@@ -1,26 +1,31 @@
 {
     "GET /api/v2/users/{userId}/state": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Userstate"
     },
     "PUT /api/v2/users/{userId}/state": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Userstate"
+                "type": "Userstate",
+                "required": "true"
             }
         ],
         "return": "Userstate"

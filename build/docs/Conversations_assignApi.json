@@ -1,15 +1,18 @@
 {
     "POST /api/v2/conversations/{conversationId}/assign": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(conversationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Conversationuser"
+                "type": "Conversationuser",
+                "required": "true"
             }
         ],
         "return": "string"

@@ -1,78 +1,94 @@
 {
     "POST /api/v2/contentmanagement/workspaces": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Workspacecreate"
+                "type": "Workspacecreate",
+                "required": "true"
             }
         ],
         "return": "Workspace"
     },
     "DELETE /api/v2/contentmanagement/workspaces/{workspaceId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(workspaceId, moveChildrenToWorkspaceId)",
         "parameters": [
             {
                 "name": "workspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "moveChildrenToWorkspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ]
     },
     "GET /api/v2/contentmanagement/workspaces/{workspaceId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(workspaceId, expand)",
         "parameters": [
             {
                 "name": "workspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Workspace"
     },
     "GET /api/v2/contentmanagement/workspaces": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, access, expand)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "access",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/contentmanagement/workspaces/{workspaceId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(workspaceId, body)",
         "parameters": [
             {
                 "name": "workspaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Workspace"
+                "type": "Workspace",
+                "required": "true"
             }
         ],
         "return": "Workspace"

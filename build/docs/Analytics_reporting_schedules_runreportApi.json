@@ -1,11 +1,13 @@
 {
     "POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(scheduleId)",
         "parameters": [
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Runnowresponse"

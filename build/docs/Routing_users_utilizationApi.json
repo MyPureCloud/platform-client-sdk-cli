@@ -1,36 +1,43 @@
 {
     "DELETE /api/v2/routing/users/{userId}/utilization": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(userId)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/routing/users/{userId}/utilization": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Agentmaxutilization"
     },
     "PUT /api/v2/routing/users/{userId}/utilization": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Utilization"
+                "type": "Utilization",
+                "required": "true"
             }
         ],
         "return": "Agentmaxutilization"

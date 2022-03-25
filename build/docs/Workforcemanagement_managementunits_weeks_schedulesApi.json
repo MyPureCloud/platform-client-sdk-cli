@@ -1,54 +1,66 @@
 {
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(managementUnitId, weekId, scheduleId, expand, forceDownloadService)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "forceDownloadService",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Weekscheduleresponse"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "includeOnlyPublished",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "earliestWeekDate",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "latestWeekDate",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Weekschedulelistresponse"

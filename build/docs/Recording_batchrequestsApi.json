@@ -1,22 +1,26 @@
 {
     "POST /api/v2/recording/batchrequests": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Batchdownloadjobsubmission"
+                "type": "Batchdownloadjobsubmission",
+                "required": "true"
             }
         ],
         "return": "Batchdownloadjobsubmissionresult"
     },
     "GET /api/v2/recording/batchrequests/{jobId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(jobId)",
         "parameters": [
             {
                 "name": "jobId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Batchdownloadjobstatusresult"

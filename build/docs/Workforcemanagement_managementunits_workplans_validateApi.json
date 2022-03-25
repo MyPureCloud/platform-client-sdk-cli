@@ -1,23 +1,28 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(managementUnitId, workPlanId, body, expand)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "workPlanId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Workplanvalidationrequest"
+                "type": "Workplanvalidationrequest",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Validateworkplanresponse"

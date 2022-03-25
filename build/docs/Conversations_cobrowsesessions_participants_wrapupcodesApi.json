@@ -1,15 +1,18 @@
 {
     "GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(conversationId, participantId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "participantId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "[]Wrapupcode"

@@ -1,37 +1,44 @@
 {
     "GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(edgeId, interfaceId)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "interfaceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Domainphysicalinterface"
     },
     "GET /api/v2/telephony/providers/edges/physicalinterfaces": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(edgeIds)",
         "parameters": [
             {
                 "name": "edgeIds",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces": {
+        "operationId": "listedgeinterfaces",
         "functionName": "listedgeinterfaces",
         "signature": "listedgeinterfaces(edgeId)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Swaggeroverridelist"

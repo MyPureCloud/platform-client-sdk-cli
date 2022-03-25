@@ -1,71 +1,86 @@
 {
     "POST /api/v2/users/{userId}/routinglanguages": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(userId, body)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Userroutinglanguagepost"
+                "type": "Userroutinglanguagepost",
+                "required": "true"
             }
         ],
         "return": "Userroutinglanguage"
     },
     "DELETE /api/v2/users/{userId}/routinglanguages/{languageId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(userId, languageId)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/users/{userId}/routinglanguages": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(userId, pageSize, pageNumber, sortOrder)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/users/{userId}/routinglanguages/{languageId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(userId, languageId, body)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Userroutinglanguage"
+                "type": "Userroutinglanguage",
+                "required": "true"
             }
         ],
         "return": "Userroutinglanguage"

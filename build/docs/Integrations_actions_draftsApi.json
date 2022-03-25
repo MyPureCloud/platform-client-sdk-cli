@@ -1,58 +1,71 @@
 {
     "POST /api/v2/integrations/actions/drafts": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Postactioninput"
+                "type": "Postactioninput",
+                "required": "true"
             }
         ],
         "return": "Action"
     },
     "GET /api/v2/integrations/actions/drafts": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, secure, includeAuthActions)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "nextPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "previousPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "category",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "secure",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "includeAuthActions",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

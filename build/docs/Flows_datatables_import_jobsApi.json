@@ -1,49 +1,59 @@
 {
     "POST /api/v2/flows/datatables/{datatableId}/import/jobs": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(datatableId, body)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Datatableimportjob"
+                "type": "Datatableimportjob",
+                "required": "true"
             }
         ],
         "return": "Datatableimportjob"
     },
     "GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}": {
+        "operationId": "getstateinformation",
         "functionName": "getstateinformation",
         "signature": "getstateinformation(datatableId, importJobId)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "importJobId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Datatableimportjob"
     },
     "GET /api/v2/flows/datatables/{datatableId}/import/jobs": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(datatableId, pageNumber, pageSize)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

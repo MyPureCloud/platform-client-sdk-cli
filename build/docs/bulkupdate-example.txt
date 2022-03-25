@@ -1,0 +1,1 @@
+gc bulkupdate(userId, body)

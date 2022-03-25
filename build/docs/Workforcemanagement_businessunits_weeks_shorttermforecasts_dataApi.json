@@ -1,27 +1,33 @@
 {
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(businessUnitId, weekDateId, forecastId, weekNumber, forceDownloadService)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekDateId",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "forecastId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "forceDownloadService",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Buforecastresultresponse"

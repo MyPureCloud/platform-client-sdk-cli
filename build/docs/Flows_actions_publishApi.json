@@ -1,15 +1,18 @@
 {
     "POST /api/v2/flows/actions/publish": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(flow, version)",
         "parameters": [
             {
                 "name": "flow",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "version",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Operation"

@@ -1,47 +1,56 @@
 {
     "POST /api/v2/gamification/profiles": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body, copyMetrics)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createperformanceprofile"
+                "type": "Createperformanceprofile",
+                "required": "true"
             },
             {
                 "name": "copyMetrics",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Performanceprofile"
     },
     "GET /api/v2/gamification/profiles/{performanceProfileId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(performanceProfileId)",
         "parameters": [
             {
                 "name": "performanceProfileId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Performanceprofile"
     },
     "GET /api/v2/gamification/profiles": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Getprofilesresponse"
     },
     "PUT /api/v2/gamification/profiles/{performanceProfileId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(performanceProfileId, body)",
         "parameters": [
             {
                 "name": "performanceProfileId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Performanceprofile"
+                "type": "Performanceprofile",
+                "required": "false"
             }
         ],
         "return": "Performanceprofile"

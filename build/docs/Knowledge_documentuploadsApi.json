@@ -1,11 +1,13 @@
 {
     "POST /api/v2/knowledge/documentuploads": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Uploadurlrequest"
+                "type": "Uploadurlrequest",
+                "required": "true"
             }
         ],
         "return": "Uploadurlresponse"

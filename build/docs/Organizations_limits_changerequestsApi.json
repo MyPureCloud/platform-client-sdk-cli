@@ -1,38 +1,46 @@
 {
     "GET /api/v2/organizations/limits/changerequests/{requestId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(requestId)",
         "parameters": [
             {
                 "name": "requestId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Limitchangerequestdetails"
     },
     "GET /api/v2/organizations/limits/changerequests": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(after, before, status, pageSize, expand)",
         "parameters": [
             {
                 "name": "after",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "before",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "status",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

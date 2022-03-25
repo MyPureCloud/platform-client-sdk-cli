@@ -1,11 +1,13 @@
 {
     "GET /api/v2/integrations/actions/{actionId}/draft/validation": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(actionId)",
         "parameters": [
             {
                 "name": "actionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Draftvalidationresult"

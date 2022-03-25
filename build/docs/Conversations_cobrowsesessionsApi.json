@@ -1,32 +1,38 @@
 {
     "GET /api/v2/conversations/cobrowsesessions/{conversationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Cobrowseconversation"
     },
     "GET /api/v2/conversations/cobrowsesessions": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/conversations/cobrowsesessions/{conversationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(conversationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Conversation"
+                "type": "Conversation",
+                "required": "true"
             }
         ],
         "return": "Conversation"

@@ -1,71 +1,86 @@
 {
     "POST /api/v2/users/{userId}/routingskills": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(userId, body)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Userroutingskillpost"
+                "type": "Userroutingskillpost",
+                "required": "true"
             }
         ],
         "return": "Userroutingskill"
     },
     "DELETE /api/v2/users/{userId}/routingskills/{skillId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(userId, skillId)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "skillId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/users/{userId}/routingskills": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(userId, pageSize, pageNumber, sortOrder)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/users/{userId}/routingskills/{skillId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(userId, skillId, body)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "skillId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Userroutingskill"
+                "type": "Userroutingskill",
+                "required": "true"
             }
         ],
         "return": "Userroutingskill"

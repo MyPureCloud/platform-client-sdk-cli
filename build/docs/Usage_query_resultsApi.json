@@ -1,11 +1,13 @@
 {
     "GET /api/v2/usage/query/{executionId}/results": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(executionId)",
         "parameters": [
             {
                 "name": "executionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Apiusagequeryresult"

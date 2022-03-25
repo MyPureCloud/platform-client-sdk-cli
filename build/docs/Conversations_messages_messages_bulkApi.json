@@ -1,15 +1,18 @@
 {
     "POST /api/v2/conversations/messages/{conversationId}/messages/bulk": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(conversationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Textmessagelisting"

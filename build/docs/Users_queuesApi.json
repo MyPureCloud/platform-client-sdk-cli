@@ -1,65 +1,79 @@
 {
     "PATCH /api/v2/users/{userId}/queues/{queueId}": {
+        "operationId": "join",
         "functionName": "join",
         "signature": "join(queueId, userId, body)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Userqueue"
+                "type": "Userqueue",
+                "required": "true"
             }
         ],
         "return": "Userqueue"
     },
     "PATCH /api/v2/users/{userId}/queues": {
+        "operationId": "joinset",
         "functionName": "joinset",
         "signature": "joinset(userId, body, divisionId)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "[]Userqueue"
+                "type": "[]Userqueue",
+                "required": "true"
             },
             {
                 "name": "divisionId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Userqueueentitylisting"
     },
     "GET /api/v2/users/{userId}/queues": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(userId, pageSize, pageNumber, joined, divisionId)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "joined",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "divisionId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

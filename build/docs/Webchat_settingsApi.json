@@ -1,22 +1,26 @@
 {
     "DELETE /api/v2/webchat/settings": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete()"
         
     },
     "GET /api/v2/webchat/settings": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Webchatsettings"
     },
     "PUT /api/v2/webchat/settings": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Webchatsettings"
+                "type": "Webchatsettings",
+                "required": "true"
             }
         ],
         "return": "Webchatsettings"

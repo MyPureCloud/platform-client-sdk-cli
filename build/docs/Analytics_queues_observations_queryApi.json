@@ -1,11 +1,13 @@
 {
     "POST /api/v2/analytics/queues/observations/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Queueobservationquery"
+                "type": "Queueobservationquery",
+                "required": "true"
             }
         ],
         "return": "Queueobservationqueryresponse"

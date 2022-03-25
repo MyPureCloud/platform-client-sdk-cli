@@ -1,38 +1,46 @@
 {
     "POST /api/v2/contentmanagement/documents/{documentId}/content": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(documentId, body, override)",
         "parameters": [
             {
                 "name": "documentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Replacerequest"
+                "type": "Replacerequest",
+                "required": "true"
             },
             {
                 "name": "override",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Replaceresponse"
     },
     "GET /api/v2/contentmanagement/documents/{documentId}/content": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(documentId, disposition, contentType)",
         "parameters": [
             {
                 "name": "documentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "disposition",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "contentType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Downloadresponse"

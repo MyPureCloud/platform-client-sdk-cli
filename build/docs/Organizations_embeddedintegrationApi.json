@@ -1,17 +1,20 @@
 {
     "GET /api/v2/organizations/embeddedintegration": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Embeddedintegration"
     },
     "PUT /api/v2/organizations/embeddedintegration": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Embeddedintegration"
+                "type": "Embeddedintegration",
+                "required": "true"
             }
         ],
         "return": "Embeddedintegration"

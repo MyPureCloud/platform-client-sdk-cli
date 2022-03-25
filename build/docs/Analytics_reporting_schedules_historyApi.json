@@ -1,34 +1,41 @@
 {
     "GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(runId, scheduleId)",
         "parameters": [
             {
                 "name": "runId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Reportrunentry"
     },
     "GET /api/v2/analytics/reporting/schedules/{scheduleId}/history": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(scheduleId, pageNumber, pageSize)",
         "parameters": [
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

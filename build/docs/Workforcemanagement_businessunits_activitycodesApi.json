@@ -1,74 +1,89 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(businessUnitId, body)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Createactivitycoderequest"
+                "type": "Createactivitycoderequest",
+                "required": "false"
             }
         ],
         "return": "Businessunitactivitycode"
     },
     "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(businessUnitId, activityCodeId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "activityCodeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(businessUnitId, activityCodeId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "activityCodeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Businessunitactivitycode"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(businessUnitId)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Businessunitactivitycodelisting"
     },
     "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(businessUnitId, activityCodeId, body)",
         "parameters": [
             {
                 "name": "businessUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "activityCodeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Updateactivitycoderequest"
+                "type": "Updateactivitycoderequest",
+                "required": "false"
             }
         ],
         "return": "Businessunitactivitycode"

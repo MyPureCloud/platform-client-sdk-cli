@@ -1,52 +1,62 @@
 {
     "POST /api/v2/externalcontacts/relationships": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Relationship"
+                "type": "Relationship",
+                "required": "true"
             }
         ],
         "return": "Relationship"
     },
     "DELETE /api/v2/externalcontacts/relationships/{relationshipId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(relationshipId)",
         "parameters": [
             {
                 "name": "relationshipId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Empty"
     },
     "GET /api/v2/externalcontacts/relationships/{relationshipId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(relationshipId, expand)",
         "parameters": [
             {
                 "name": "relationshipId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Relationship"
     },
     "PUT /api/v2/externalcontacts/relationships/{relationshipId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(relationshipId, body)",
         "parameters": [
             {
                 "name": "relationshipId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Relationship"
+                "type": "Relationship",
+                "required": "true"
             }
         ],
         "return": "Relationship"

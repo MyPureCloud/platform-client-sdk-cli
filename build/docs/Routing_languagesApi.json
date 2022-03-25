@@ -1,59 +1,71 @@
 {
     "POST /api/v2/routing/languages": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Language"
+                "type": "Language",
+                "required": "true"
             }
         ],
         "return": "Language"
     },
     "DELETE /api/v2/routing/languages/{languageId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(languageId)",
         "parameters": [
             {
                 "name": "languageId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/routing/languages/{languageId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(languageId)",
         "parameters": [
             {
                 "name": "languageId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Language"
     },
     "GET /api/v2/routing/languages": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortOrder, name, id)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

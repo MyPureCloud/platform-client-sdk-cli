@@ -1,11 +1,13 @@
 {
     "POST /api/v2/quality/evaluations/scoring": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Evaluationformandscoringset"
+                "type": "Evaluationformandscoringset",
+                "required": "true"
             }
         ],
         "return": "Evaluationscoringset"

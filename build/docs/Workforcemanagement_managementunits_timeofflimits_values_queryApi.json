@@ -1,15 +1,18 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(managementUnitId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Querytimeofflimitvaluesrequest"
+                "type": "Querytimeofflimitvaluesrequest",
+                "required": "false"
             }
         ],
         "return": "Querytimeofflimitvaluesresponse"

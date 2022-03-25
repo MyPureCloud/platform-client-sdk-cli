@@ -1,35 +1,43 @@
 {
     "GET /api/v2/routing/sms/availablephonenumbers": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(countryCode, phoneNumberType, region, city, areaCode, pattern, addressRequirement)",
         "parameters": [
             {
                 "name": "countryCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "phoneNumberType",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "region",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "city",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "areaCode",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pattern",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "addressRequirement",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Smsavailablephonenumberentitylisting"

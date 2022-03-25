@@ -1,19 +1,23 @@
 {
     "POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(divisionId, objectType, body)",
         "parameters": [
             {
                 "name": "divisionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "objectType",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "true"
             }
         ]
     }

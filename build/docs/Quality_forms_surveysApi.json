@@ -1,101 +1,122 @@
 {
     "POST /api/v2/quality/forms/surveys": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Surveyform"
+                "type": "Surveyform",
+                "required": "true"
             }
         ],
         "return": "Surveyform"
     },
     "DELETE /api/v2/quality/forms/surveys/{formId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(formId)",
         "parameters": [
             {
                 "name": "formId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "PATCH /api/v2/quality/forms/surveys/{formId}": {
+        "operationId": "disable",
         "functionName": "disable",
         "signature": "disable(formId, body)",
         "parameters": [
             {
                 "name": "formId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Surveyform"
+                "type": "Surveyform",
+                "required": "true"
             }
         ],
         "return": "Surveyform"
     },
     "GET /api/v2/quality/forms/surveys/{formId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(formId)",
         "parameters": [
             {
                 "name": "formId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Surveyform"
     },
     "GET /api/v2/quality/forms/surveys": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "nextPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "previousPage",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/quality/forms/surveys/{formId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(formId, body)",
         "parameters": [
             {
                 "name": "formId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Surveyform"
+                "type": "Surveyform",
+                "required": "true"
             }
         ],
         "return": "Surveyform"

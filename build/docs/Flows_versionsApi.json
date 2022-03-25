@@ -1,57 +1,69 @@
 {
     "POST /api/v2/flows/{flowId}/versions": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(flowId, body)",
         "parameters": [
             {
                 "name": "flowId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "interface{}"
+                "type": "interface{}",
+                "required": "true"
             }
         ],
         "return": "Flowversion"
     },
     "GET /api/v2/flows/{flowId}/versions/{versionId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(flowId, versionId, deleted)",
         "parameters": [
             {
                 "name": "flowId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "versionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "deleted",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Flowversion"
     },
     "GET /api/v2/flows/{flowId}/versions": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(flowId, pageNumber, pageSize, deleted)",
         "parameters": [
             {
                 "name": "flowId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "deleted",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

@@ -1,15 +1,18 @@
 {
     "POST /api/v2/telephony/providers/edges/{edgeId}/reboot": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(edgeId, body)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Edgerebootparameters"
+                "type": "Edgerebootparameters",
+                "required": "false"
             }
         ],
         "return": "string"

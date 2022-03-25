@@ -1,34 +1,41 @@
 {
     "GET /api/v2/users/{userId}/presences/{sourceId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(userId, sourceId)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "sourceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Userpresence"
     },
     "PATCH /api/v2/users/{userId}/presences/{sourceId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(userId, sourceId, body)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "sourceId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Userpresence"
+                "type": "Userpresence",
+                "required": "true"
             }
         ],
         "return": "Userpresence"

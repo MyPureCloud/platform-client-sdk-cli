@@ -1,15 +1,18 @@
 {
     "POST /api/v2/integrations/actions/{actionId}/test": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(actionId, body)",
         "parameters": [
             {
                 "name": "actionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "interface{}"
+                "type": "interface{}",
+                "required": "true"
             }
         ],
         "return": "Testexecutionresult"

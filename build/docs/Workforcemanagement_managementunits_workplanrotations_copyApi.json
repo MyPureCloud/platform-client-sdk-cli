@@ -1,19 +1,23 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(managementUnitId, workPlanRotationId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "workPlanRotationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Copyworkplanrotationrequest"
+                "type": "Copyworkplanrotationrequest",
+                "required": "false"
             }
         ],
         "return": "Workplanrotationresponse"

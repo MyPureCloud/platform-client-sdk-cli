@@ -1,11 +1,13 @@
 {
     "GET /api/v2/gamification/scorecards/users/{userId}/bestpoints": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [
             {
                 "name": "userId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Userbestpoints"

@@ -1,15 +1,18 @@
 {
     "POST /api/v2/conversations/emails/{conversationId}/inboundmessages": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(conversationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Inboundmessagerequest"
+                "type": "Inboundmessagerequest",
+                "required": "true"
             }
         ],
         "return": "Emailconversation"

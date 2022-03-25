@@ -1,19 +1,23 @@
 {
     "POST /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(sourceProfileId, sourceMetricId, body)",
         "parameters": [
             {
                 "name": "sourceProfileId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "sourceMetricId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Targetperformanceprofile"
+                "type": "Targetperformanceprofile",
+                "required": "true"
             }
         ],
         "return": "Metric"

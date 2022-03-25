@@ -1,11 +1,13 @@
 {
     "POST /api/v2/analytics/conversations/transcripts/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Transcriptconversationdetailsearchrequest"
+                "type": "Transcriptconversationdetailsearchrequest",
+                "required": "true"
             }
         ],
         "return": "Analyticsconversationwithoutattributesmultigetresponse"

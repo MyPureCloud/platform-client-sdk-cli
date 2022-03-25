@@ -1,22 +1,26 @@
 {
     "POST /api/v2/quality/conversations/audits/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Qmauditqueryrequest"
+                "type": "Qmauditqueryrequest",
+                "required": "true"
             }
         ],
         "return": "Qualityauditqueryexecutionstatusresponse"
     },
     "GET /api/v2/quality/conversations/audits/query/{transactionId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(transactionId)",
         "parameters": [
             {
                 "name": "transactionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Qualityauditqueryexecutionstatusresponse"

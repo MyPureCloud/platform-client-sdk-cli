@@ -1,94 +1,114 @@
 {
     "POST /api/v2/telephony/providers/edges/trunkbasesettings": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Trunkbase"
+                "type": "Trunkbase",
+                "required": "true"
             }
         ],
         "return": "Trunkbase"
     },
     "DELETE /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(trunkBaseSettingsId)",
         "parameters": [
             {
                 "name": "trunkBaseSettingsId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(trunkBaseSettingsId, ignoreHidden)",
         "parameters": [
             {
                 "name": "trunkBaseSettingsId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "ignoreHidden",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Trunkbase"
     },
     "GET /api/v2/telephony/providers/edges/trunkbasesettings": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, recordingEnabled, ignoreHidden, managed, expand, name)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "recordingEnabled",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "ignoreHidden",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "managed",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(trunkBaseSettingsId, body)",
         "parameters": [
             {
                 "name": "trunkBaseSettingsId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Trunkbase"
+                "type": "Trunkbase",
+                "required": "true"
             }
         ],
         "return": "Trunkbase"

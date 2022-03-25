@@ -1,15 +1,18 @@
 {
     "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(knowledgeBaseId, body)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Knowledgesearchrequest"
+                "type": "Knowledgesearchrequest",
+                "required": "false"
             }
         ],
         "return": "Knowledgesearchresponse"

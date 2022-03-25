@@ -1,46 +1,56 @@
 {
     "POST /api/v2/contentmanagement/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body, expand)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Queryrequest"
+                "type": "Queryrequest",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Queryresults"
     },
     "GET /api/v2/contentmanagement/query": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(queryPhrase, pageSize, pageNumber, sortBy, sortOrder, expand)",
         "parameters": [
             {
                 "name": "queryPhrase",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Queryresults"

@@ -1,11 +1,13 @@
 {
     "POST /api/v2/analytics/surveys/aggregates/query": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Surveyaggregationquery"
+                "type": "Surveyaggregationquery",
+                "required": "true"
             }
         ],
         "return": "Surveyaggregatequeryresponse"

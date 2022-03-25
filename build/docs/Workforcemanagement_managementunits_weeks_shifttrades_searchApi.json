@@ -1,19 +1,23 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(managementUnitId, weekDateId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "weekDateId",
-                "type": "time.Time"
+                "type": "time.Time",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Searchshifttradesrequest"
+                "type": "Searchshifttradesrequest",
+                "required": "true"
             }
         ],
         "return": "Searchshifttradesresponse"

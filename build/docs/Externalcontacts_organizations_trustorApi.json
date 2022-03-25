@@ -1,25 +1,30 @@
 {
     "DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(externalOrganizationId)",
         "parameters": [
             {
                 "name": "externalOrganizationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(externalOrganizationId, trustorId)",
         "parameters": [
             {
                 "name": "externalOrganizationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "trustorId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Externalorganizationtrustorlink"

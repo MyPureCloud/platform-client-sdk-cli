@@ -1,15 +1,18 @@
 {
     "POST /api/v2/analytics/conversations/{conversationId}/details/properties": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(conversationId, body)",
         "parameters": [
             {
                 "name": "conversationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Propertyindexrequest"
+                "type": "Propertyindexrequest",
+                "required": "true"
             }
         ],
         "return": "Propertyindexrequest"

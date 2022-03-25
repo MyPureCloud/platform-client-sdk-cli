@@ -1,54 +1,66 @@
 {
     "GET /api/v2/scripts/{scriptId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(scriptId)",
         "parameters": [
             {
                 "name": "scriptId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Script"
     },
     "GET /api/v2/scripts": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "feature",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "flowId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "scriptDataVersion",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

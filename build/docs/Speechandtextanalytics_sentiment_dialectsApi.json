@@ -1,5 +1,6 @@
 {
     "GET /api/v2/speechandtextanalytics/sentiment/dialects": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         

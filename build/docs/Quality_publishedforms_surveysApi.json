@@ -1,45 +1,54 @@
 {
     "POST /api/v2/quality/publishedforms/surveys": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Publishform"
+                "type": "Publishform",
+                "required": "true"
             }
         ],
         "return": "Surveyform"
     },
     "GET /api/v2/quality/publishedforms/surveys/{formId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(formId)",
         "parameters": [
             {
                 "name": "formId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Surveyform"
     },
     "GET /api/v2/quality/publishedforms/surveys": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, name, onlyLatestEnabledPerContext)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "onlyLatestEnabledPerContext",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

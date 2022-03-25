@@ -1,121 +1,148 @@
 {
     "PATCH /api/v2/routing/queues/{queueId}/users": {
+        "operationId": "activate",
         "functionName": "activate",
         "signature": "activate(queueId, body)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "[]Queuemember"
+                "type": "[]Queuemember",
+                "required": "true"
             }
         ],
         "return": "Queuememberentitylistingv1"
     },
     "DELETE /api/v2/routing/queues/{queueId}/users/{memberId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(queueId, memberId)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "memberId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/routing/queues/{queueId}/users": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "joined",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "profileSkills",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "skills",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "languages",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "routingStatus",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "presence",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "POST /api/v2/routing/queues/{queueId}/users": {
+        "operationId": "move",
         "functionName": "move",
         "signature": "move(queueId, body, delete)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "[]Writableentity"
+                "type": "[]Writableentity",
+                "required": "true"
             },
             {
                 "name": "delete",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ]
     },
     "PATCH /api/v2/routing/queues/{queueId}/users/{memberId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(queueId, memberId, body)",
         "parameters": [
             {
                 "name": "queueId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "memberId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Queuemember"
+                "type": "Queuemember",
+                "required": "true"
             }
         ]
     }

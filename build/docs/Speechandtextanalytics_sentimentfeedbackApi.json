@@ -1,37 +1,44 @@
 {
     "POST /api/v2/speechandtextanalytics/sentimentfeedback": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Sentimentfeedback"
+                "type": "Sentimentfeedback",
+                "required": "true"
             }
         ],
         "return": "Sentimentfeedback"
     },
     "DELETE /api/v2/speechandtextanalytics/sentimentfeedback": {
+        "operationId": "deleteallsentimentfeedback",
         "functionName": "deleteallsentimentfeedback",
         "signature": "deleteallsentimentfeedback()"
         
     },
     "DELETE /api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}": {
+        "operationId": "deletebyid",
         "functionName": "deletebyid",
         "signature": "deletebyid(sentimentFeedbackId)",
         "parameters": [
             {
                 "name": "sentimentFeedbackId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/speechandtextanalytics/sentimentfeedback": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(dialect)",
         "parameters": [
             {
                 "name": "dialect",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Sentimentfeedbackentitylisting"

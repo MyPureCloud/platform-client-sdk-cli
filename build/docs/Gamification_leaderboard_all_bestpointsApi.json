@@ -1,15 +1,18 @@
 {
     "GET /api/v2/gamification/leaderboard/all/bestpoints": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(filterType, filterId)",
         "parameters": [
             {
                 "name": "filterType",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "filterId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Overallbestpoints"

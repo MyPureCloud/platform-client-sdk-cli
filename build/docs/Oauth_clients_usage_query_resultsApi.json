@@ -1,15 +1,18 @@
 {
     "GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(executionId, clientId)",
         "parameters": [
             {
                 "name": "executionId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "clientId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Apiusagequeryresult"

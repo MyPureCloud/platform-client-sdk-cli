@@ -1,27 +1,33 @@
 {
     "GET /api/v2/integrations/speech/lex/bot/{botId}/aliases": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(botId, pageNumber, pageSize, status, name)",
         "parameters": [
             {
                 "name": "botId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "status",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

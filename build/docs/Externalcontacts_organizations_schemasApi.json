@@ -1,43 +1,51 @@
 {
     "POST /api/v2/externalcontacts/organizations/schemas": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Dataschema"
+                "type": "Dataschema",
+                "required": "true"
             }
         ],
         "return": "Dataschema"
     },
     "GET /api/v2/externalcontacts/organizations/schemas/{schemaId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(schemaId)",
         "parameters": [
             {
                 "name": "schemaId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Dataschema"
     },
     "GET /api/v2/externalcontacts/organizations/schemas": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Dataschemalisting"
     },
     "PUT /api/v2/externalcontacts/organizations/schemas/{schemaId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(schemaId, body)",
         "parameters": [
             {
                 "name": "schemaId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Dataschema"
+                "type": "Dataschema",
+                "required": "true"
             }
         ],
         "return": "Dataschema"

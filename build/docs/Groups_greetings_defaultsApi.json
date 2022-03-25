@@ -1,26 +1,31 @@
 {
     "GET /api/v2/groups/{groupId}/greetings/defaults": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(groupId)",
         "parameters": [
             {
                 "name": "groupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Defaultgreetinglist"
     },
     "PUT /api/v2/groups/{groupId}/greetings/defaults": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(groupId, body)",
         "parameters": [
             {
                 "name": "groupId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Defaultgreetinglist"
+                "type": "Defaultgreetinglist",
+                "required": "true"
             }
         ],
         "return": "Defaultgreetinglist"

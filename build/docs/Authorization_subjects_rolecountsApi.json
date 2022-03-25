@@ -1,11 +1,13 @@
 {
     "GET /api/v2/authorization/subjects/rolecounts": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(id)",
         "parameters": [
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "map[string]interface{}"

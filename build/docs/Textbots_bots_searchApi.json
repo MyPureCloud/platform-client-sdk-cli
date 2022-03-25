@@ -1,23 +1,28 @@
 {
     "GET /api/v2/textbots/bots/search": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(botType, botName, botId, pageSize)",
         "parameters": [
             {
                 "name": "botType",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "botName",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "botId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Botsearchresponseentitylisting"

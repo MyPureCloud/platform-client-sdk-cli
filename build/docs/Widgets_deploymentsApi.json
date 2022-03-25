@@ -1,53 +1,63 @@
 {
     "POST /api/v2/widgets/deployments": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Widgetdeployment"
+                "type": "Widgetdeployment",
+                "required": "true"
             }
         ],
         "return": "Widgetdeployment"
     },
     "DELETE /api/v2/widgets/deployments/{deploymentId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(deploymentId)",
         "parameters": [
             {
                 "name": "deploymentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/widgets/deployments/{deploymentId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(deploymentId)",
         "parameters": [
             {
                 "name": "deploymentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Widgetdeployment"
     },
     "GET /api/v2/widgets/deployments": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Widgetdeploymententitylisting"
     },
     "PUT /api/v2/widgets/deployments/{deploymentId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(deploymentId, body)",
         "parameters": [
             {
                 "name": "deploymentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Widgetdeployment"
+                "type": "Widgetdeployment",
+                "required": "true"
             }
         ],
         "return": "Widgetdeployment"

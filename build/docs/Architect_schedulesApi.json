@@ -1,78 +1,94 @@
 {
     "POST /api/v2/architect/schedules": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Schedule"
+                "type": "Schedule",
+                "required": "true"
             }
         ],
         "return": "Schedule"
     },
     "DELETE /api/v2/architect/schedules/{scheduleId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(scheduleId)",
         "parameters": [
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/architect/schedules/{scheduleId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(scheduleId)",
         "parameters": [
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Schedule"
     },
     "GET /api/v2/architect/schedules": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name, divisionId)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "divisionId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/architect/schedules/{scheduleId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(scheduleId, body)",
         "parameters": [
             {
                 "name": "scheduleId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Schedule"
+                "type": "Schedule",
+                "required": "true"
             }
         ],
         "return": "Schedule"

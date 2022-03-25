@@ -1,150 +1,183 @@
 {
     "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(knowledgeBaseId, languageCode, body)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Knowledgedocumentrequest"
+                "type": "Knowledgedocumentrequest",
+                "required": "true"
             }
         ],
         "return": "Knowledgedocument"
     },
     "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(documentId, knowledgeBaseId, languageCode)",
         "parameters": [
             {
                 "name": "documentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Knowledgedocument"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(documentId, knowledgeBaseId, languageCode)",
         "parameters": [
             {
                 "name": "documentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Knowledgedocument"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "before",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "after",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "limit",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "categories",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "title",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "documentIds",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(documentId, knowledgeBaseId, languageCode, body)",
         "parameters": [
             {
                 "name": "documentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Knowledgedocumentrequest"
+                "type": "Knowledgedocumentrequest",
+                "required": "true"
             }
         ],
         "return": "Knowledgedocument"
     },
     "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents": {
+        "operationId": "updatecollection",
         "functionName": "updatecollection",
         "signature": "updatecollection(knowledgeBaseId, languageCode, body)",
         "parameters": [
             {
                 "name": "knowledgeBaseId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "languageCode",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "[]Knowledgedocumentbulkrequest"
+                "type": "[]Knowledgedocumentbulkrequest",
+                "required": "true"
             }
         ],
         "return": "Documentlisting"

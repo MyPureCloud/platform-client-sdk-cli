@@ -1,23 +1,28 @@
 {
     "GET /api/v2/routing/queues/me": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, joined, sortOrder)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "joined",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

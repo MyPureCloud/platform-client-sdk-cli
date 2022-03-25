@@ -1,15 +1,18 @@
 {
     "POST /api/v2/languageunderstanding/miners/{minerId}/execute": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(minerId, body)",
         "parameters": [
             {
                 "name": "minerId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Minerexecuterequest"
+                "type": "Minerexecuterequest",
+                "required": "false"
             }
         ],
         "return": "Miner"

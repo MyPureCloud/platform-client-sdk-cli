@@ -1,38 +1,46 @@
 {
     "GET /api/v2/integrations/eventlog/{eventId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(eventId)",
         "parameters": [
             {
                 "name": "eventId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Integrationevent"
     },
     "GET /api/v2/integrations/eventlog": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, sortOrder, entityId)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "entityId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

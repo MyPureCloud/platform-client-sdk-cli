@@ -1,26 +1,31 @@
 {
     "POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(edgeId, body)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Edgenetworkdiagnosticrequest"
+                "type": "Edgenetworkdiagnosticrequest",
+                "required": "true"
             }
         ],
         "return": "Edgenetworkdiagnostic"
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(edgeId)",
         "parameters": [
             {
                 "name": "edgeId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Edgenetworkdiagnosticresponse"

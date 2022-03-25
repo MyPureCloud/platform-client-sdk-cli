@@ -1,53 +1,63 @@
 {
     "POST /api/v2/telephony/providers/edges/certificateauthorities": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Domaincertificateauthority"
+                "type": "Domaincertificateauthority",
+                "required": "true"
             }
         ],
         "return": "Domaincertificateauthority"
     },
     "DELETE /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(certificateId)",
         "parameters": [
             {
                 "name": "certificateId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(certificateId)",
         "parameters": [
             {
                 "name": "certificateId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Domaincertificateauthority"
     },
     "GET /api/v2/telephony/providers/edges/certificateauthorities": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(certificateId, body)",
         "parameters": [
             {
                 "name": "certificateId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Domaincertificateauthority"
+                "type": "Domaincertificateauthority",
+                "required": "true"
             }
         ],
         "return": "Domaincertificateauthority"

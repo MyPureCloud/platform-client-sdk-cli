@@ -1,78 +1,94 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(managementUnitId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Addworkplanrotationrequest"
+                "type": "Addworkplanrotationrequest",
+                "required": "false"
             }
         ],
         "return": "Workplanrotationresponse"
     },
     "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(managementUnitId, workPlanRotationId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "workPlanRotationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(managementUnitId, workPlanRotationId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "workPlanRotationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Workplanrotationresponse"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(managementUnitId, expand)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Workplanrotationlistresponse"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(managementUnitId, workPlanRotationId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "workPlanRotationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Updateworkplanrotationrequest"
+                "type": "Updateworkplanrotationrequest",
+                "required": "false"
             }
         ],
         "return": "Workplanrotationresponse"

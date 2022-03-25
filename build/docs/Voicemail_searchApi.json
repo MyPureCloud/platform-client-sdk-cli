@@ -1,26 +1,31 @@
 {
     "POST /api/v2/voicemail/search": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Voicemailsearchrequest"
+                "type": "Voicemailsearchrequest",
+                "required": "true"
             }
         ],
         "return": "Voicemailssearchresponse"
     },
     "GET /api/v2/voicemail/search": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(q64, expand)",
         "parameters": [
             {
                 "name": "q64",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

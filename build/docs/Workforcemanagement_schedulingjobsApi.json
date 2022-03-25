@@ -1,11 +1,13 @@
 {
     "GET /api/v2/workforcemanagement/schedulingjobs/{jobId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(jobId)",
         "parameters": [
             {
                 "name": "jobId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Schedulingstatusresponse"

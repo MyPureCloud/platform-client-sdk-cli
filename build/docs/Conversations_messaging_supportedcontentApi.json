@@ -1,62 +1,74 @@
 {
     "POST /api/v2/conversations/messaging/supportedcontent": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Supportedcontent"
+                "type": "Supportedcontent",
+                "required": "true"
             }
         ],
         "return": "Supportedcontent"
     },
     "DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(supportedContentId)",
         "parameters": [
             {
                 "name": "supportedContentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(supportedContentId)",
         "parameters": [
             {
                 "name": "supportedContentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Supportedcontent"
     },
     "GET /api/v2/conversations/messaging/supportedcontent": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(supportedContentId, body)",
         "parameters": [
             {
                 "name": "supportedContentId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Supportedcontent"
+                "type": "Supportedcontent",
+                "required": "true"
             }
         ],
         "return": "Supportedcontent"

@@ -1,11 +1,13 @@
 {
     "POST /api/v2/externalcontacts/bulk/notes/add": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Bulknotesrequest"
+                "type": "Bulknotesrequest",
+                "required": "true"
             }
         ],
         "return": "Bulknotesresponse"

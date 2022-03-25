@@ -1,0 +1,1 @@
+gc deletecontacts(contactListId, contactIds)

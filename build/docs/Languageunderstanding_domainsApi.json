@@ -1,62 +1,74 @@
 {
     "POST /api/v2/languageunderstanding/domains": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Nludomain"
+                "type": "Nludomain",
+                "required": "true"
             }
         ],
         "return": "Nludomain"
     },
     "DELETE /api/v2/languageunderstanding/domains/{domainId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(domainId)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/languageunderstanding/domains/{domainId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(domainId)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Nludomain"
     },
     "GET /api/v2/languageunderstanding/domains": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize)",
         "parameters": [
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/languageunderstanding/domains/{domainId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(domainId, body)",
         "parameters": [
             {
                 "name": "domainId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Nludomain"
+                "type": "Nludomain",
+                "required": "true"
             }
         ],
         "return": "Nludomain"

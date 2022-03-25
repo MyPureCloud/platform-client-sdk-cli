@@ -1,74 +1,89 @@
 {
     "POST /api/v2/routing/predictors": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Createpredictorrequest"
+                "type": "Createpredictorrequest",
+                "required": "false"
             }
         ],
         "return": "Predictor"
     },
     "DELETE /api/v2/routing/predictors/{predictorId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(predictorId)",
         "parameters": [
             {
                 "name": "predictorId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/routing/predictors/{predictorId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(predictorId)",
         "parameters": [
             {
                 "name": "predictorId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Predictor"
     },
     "GET /api/v2/routing/predictors": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(before, after, limit, pageSize, queueId)",
         "parameters": [
             {
                 "name": "before",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "after",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "limit",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "queueId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/routing/predictors/{predictorId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(predictorId, body)",
         "parameters": [
             {
                 "name": "predictorId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Patchpredictorrequest"
+                "type": "Patchpredictorrequest",
+                "required": "false"
             }
         ],
         "return": "Predictor"

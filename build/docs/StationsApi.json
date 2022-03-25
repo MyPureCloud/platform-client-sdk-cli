@@ -1,50 +1,61 @@
 {
     "GET /api/v2/stations/{stationId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(stationId)",
         "parameters": [
             {
                 "name": "stationId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Station"
     },
     "GET /api/v2/stations": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, name, userSelectable, webRtcUserId, id, lineAppearanceId)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "userSelectable",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "webRtcUserId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "id",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "lineAppearanceId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"

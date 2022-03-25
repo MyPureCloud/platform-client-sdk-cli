@@ -1,65 +1,79 @@
 {
     "GET /api/v2/telephony/providers/edges/dids/{didId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(didId)",
         "parameters": [
             {
                 "name": "didId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Did"
     },
     "GET /api/v2/telephony/providers/edges/dids": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId, id)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "phoneNumber",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "ownerId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "didPoolId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "id",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/dids/{didId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(didId, body)",
         "parameters": [
             {
                 "name": "didId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Did"
+                "type": "Did",
+                "required": "true"
             }
         ],
         "return": "Did"

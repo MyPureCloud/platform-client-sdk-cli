@@ -1,74 +1,89 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(managementUnitId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Createtimeoffplanrequest"
+                "type": "Createtimeoffplanrequest",
+                "required": "false"
             }
         ],
         "return": "Timeoffplan"
     },
     "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(managementUnitId, timeOffPlanId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "timeOffPlanId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(managementUnitId, timeOffPlanId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "timeOffPlanId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Timeoffplan"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(managementUnitId)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Timeoffplanlisting"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(managementUnitId, timeOffPlanId, body)",
         "parameters": [
             {
                 "name": "managementUnitId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "timeOffPlanId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Updatetimeoffplanrequest"
+                "type": "Updatetimeoffplanrequest",
+                "required": "false"
             }
         ],
         "return": "Timeoffplan"

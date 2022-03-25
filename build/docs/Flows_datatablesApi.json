@@ -1,94 +1,114 @@
 {
     "POST /api/v2/flows/datatables": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Datatable"
+                "type": "Datatable",
+                "required": "true"
             }
         ],
         "return": "Datatable"
     },
     "DELETE /api/v2/flows/datatables/{datatableId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(datatableId, force)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "force",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             }
         ]
     },
     "GET /api/v2/flows/datatables/{datatableId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(datatableId, expand)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Datatable"
     },
     "GET /api/v2/flows/datatables": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name)",
         "parameters": [
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "divisionId",
-                "type": "[]string"
+                "type": "[]string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/flows/datatables/{datatableId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(datatableId, body, expand)",
         "parameters": [
             {
                 "name": "datatableId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Datatable"
+                "type": "Datatable",
+                "required": "true"
             },
             {
                 "name": "expand",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Datatable"

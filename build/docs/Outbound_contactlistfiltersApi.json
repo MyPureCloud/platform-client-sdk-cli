@@ -1,86 +1,104 @@
 {
     "POST /api/v2/outbound/contactlistfilters": {
+        "operationId": "create",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
             {
                 "name": "body",
-                "type": "Contactlistfilter"
+                "type": "Contactlistfilter",
+                "required": "true"
             }
         ],
         "return": "Contactlistfilter"
     },
     "DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId}": {
+        "operationId": "delete",
         "functionName": "delete",
         "signature": "delete(contactListFilterId)",
         "parameters": [
             {
                 "name": "contactListFilterId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ]
     },
     "GET /api/v2/outbound/contactlistfilters/{contactListFilterId}": {
+        "operationId": "get",
         "functionName": "get",
         "signature": "get(contactListFilterId)",
         "parameters": [
             {
                 "name": "contactListFilterId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             }
         ],
         "return": "Contactlistfilter"
     },
     "GET /api/v2/outbound/contactlistfilters": {
+        "operationId": "list",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListId)",
         "parameters": [
             {
                 "name": "pageSize",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "pageNumber",
-                "type": "int"
+                "type": "int",
+                "required": "false"
             },
             {
                 "name": "allowEmptyResult",
-                "type": "bool"
+                "type": "bool",
+                "required": "false"
             },
             {
                 "name": "filterType",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "name",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortBy",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "sortOrder",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             },
             {
                 "name": "contactListId",
-                "type": "string"
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/contactlistfilters/{contactListFilterId}": {
+        "operationId": "update",
         "functionName": "update",
         "signature": "update(contactListFilterId, body)",
         "parameters": [
             {
                 "name": "contactListFilterId",
-                "type": "string"
+                "type": "string",
+                "required": "true"
             },
             {
                 "name": "body",
-                "type": "Contactlistfilter"
+                "type": "Contactlistfilter",
+                "required": "true"
             }
         ],
         "return": "Contactlistfilter"

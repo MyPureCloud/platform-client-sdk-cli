@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult": {
-        "operationId": "create",
+        "operationId": "postconversationscallparticipantconsult",
         "functionName": "create",
         "signature": "create(conversationId, participantId, body)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Consulttransferresponse"
     },
     "DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult": {
-        "operationId": "delete",
+        "operationId": "deleteconversationscallparticipantconsult",
         "functionName": "delete",
         "signature": "delete(conversationId, participantId)",
         "parameters": [
@@ -40,7 +40,7 @@
         ]
     },
     "PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult": {
-        "operationId": "update",
+        "operationId": "patchconversationscallparticipantconsult",
         "functionName": "update",
         "signature": "update(conversationId, participantId, body)",
         "parameters": [

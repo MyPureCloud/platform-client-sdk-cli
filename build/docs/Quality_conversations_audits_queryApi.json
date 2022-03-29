@@ -1,6 +1,6 @@
 {
     "POST /api/v2/quality/conversations/audits/query": {
-        "operationId": "create",
+        "operationId": "postqualityconversationsauditsquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Qualityauditqueryexecutionstatusresponse"
     },
     "GET /api/v2/quality/conversations/audits/query/{transactionId}": {
-        "operationId": "get",
+        "operationId": "getqualityconversationsauditsquerytransactionid",
         "functionName": "get",
         "signature": "get(transactionId)",
         "parameters": [

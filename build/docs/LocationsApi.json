@@ -1,6 +1,6 @@
 {
     "POST /api/v2/locations": {
-        "operationId": "create",
+        "operationId": "postlocations",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Locationdefinition"
     },
     "DELETE /api/v2/locations/{locationId}": {
-        "operationId": "delete",
+        "operationId": "deletelocation",
         "functionName": "delete",
         "signature": "delete(locationId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/locations/{locationId}": {
-        "operationId": "get",
+        "operationId": "getlocation",
         "functionName": "get",
         "signature": "get(locationId, expand)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Locationdefinition"
     },
     "GET /api/v2/locations": {
-        "operationId": "list",
+        "operationId": "getlocations",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, id, sortOrder)",
         "parameters": [
@@ -71,7 +71,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/locations/{locationId}": {
-        "operationId": "update",
+        "operationId": "patchlocation",
         "functionName": "update",
         "signature": "update(locationId, body)",
         "parameters": [

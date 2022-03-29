@@ -1,6 +1,6 @@
 {
     "POST /api/v2/coaching/appointments": {
-        "operationId": "create",
+        "operationId": "postcoachingappointments",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Coachingappointmentresponse"
     },
     "DELETE /api/v2/coaching/appointments/{appointmentId}": {
-        "operationId": "delete",
+        "operationId": "deletecoachingappointment",
         "functionName": "delete",
         "signature": "delete(appointmentId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Coachingappointmentreference"
     },
     "GET /api/v2/coaching/appointments/{appointmentId}": {
-        "operationId": "get",
+        "operationId": "getcoachingappointment",
         "functionName": "get",
         "signature": "get(appointmentId)",
         "parameters": [
@@ -39,7 +39,7 @@
         "return": "Coachingappointmentresponse"
     },
     "GET /api/v2/coaching/appointments": {
-        "operationId": "list",
+        "operationId": "getcoachingappointments",
         "functionName": "list",
         "signature": "list(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)",
         "parameters": [
@@ -102,7 +102,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/coaching/appointments/{appointmentId}": {
-        "operationId": "update",
+        "operationId": "patchcoachingappointment",
         "functionName": "update",
         "signature": "update(appointmentId, body)",
         "parameters": [

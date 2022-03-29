@@ -1,13 +1,13 @@
 {
     "GET /api/v2/organizations/ipaddressauthentication": {
-        "operationId": "get",
+        "operationId": "getorganizationsipaddressauthentication",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Ipaddressauthentication"
     },
     "PUT /api/v2/organizations/ipaddressauthentication": {
-        "operationId": "update",
+        "operationId": "putorganizationsipaddressauthentication",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

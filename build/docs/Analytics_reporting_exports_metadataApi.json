@@ -1,6 +1,6 @@
 {
     "GET /api/v2/analytics/reporting/exports/metadata": {
-        "operationId": "list",
+        "operationId": "getanalyticsreportingexportsmetadata",
         "functionName": "list",
         "signature": "list()",
         

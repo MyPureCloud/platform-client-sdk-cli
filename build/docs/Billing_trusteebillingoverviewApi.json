@@ -1,6 +1,6 @@
 {
     "GET /api/v2/billing/trusteebillingoverview/{trustorOrgId}": {
-        "operationId": "get",
+        "operationId": "getbillingtrusteebillingoverviewtrustororgid",
         "functionName": "get",
         "signature": "get(trustorOrgId, billingPeriodIndex)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup": {
-        "operationId": "get",
+        "operationId": "getconversationschatparticipantwrapup",
         "functionName": "get",
         "signature": "get(conversationId, participantId, provisional)",
         "parameters": [

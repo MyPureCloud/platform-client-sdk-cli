@@ -1,6 +1,6 @@
 {
     "GET /api/v2/textbots/bots/search": {
-        "operationId": "get",
+        "operationId": "gettextbotsbotssearch",
         "functionName": "get",
         "signature": "get(botType, botName, botId, pageSize)",
         "parameters": [

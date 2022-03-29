@@ -1,6 +1,6 @@
 {
     "GET /api/v2/authorization/divisionspermitted/paged/me": {
-        "operationId": "list",
+        "operationId": "getauthorizationdivisionspermittedpagedme",
         "functionName": "list",
         "signature": "list(permission, pageNumber, pageSize)",
         "parameters": [

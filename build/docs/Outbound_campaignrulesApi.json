@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/campaignrules": {
-        "operationId": "create",
+        "operationId": "postoutboundcampaignrules",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Campaignrule"
     },
     "DELETE /api/v2/outbound/campaignrules/{campaignRuleId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutboundcampaignrule",
         "functionName": "delete",
         "signature": "delete(campaignRuleId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/outbound/campaignrules/{campaignRuleId}": {
-        "operationId": "get",
+        "operationId": "getoutboundcampaignrule",
         "functionName": "get",
         "signature": "get(campaignRuleId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Campaignrule"
     },
     "GET /api/v2/outbound/campaignrules": {
-        "operationId": "list",
+        "operationId": "getoutboundcampaignrules",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/campaignrules/{campaignRuleId}": {
-        "operationId": "update",
+        "operationId": "putoutboundcampaignrule",
         "functionName": "update",
         "signature": "update(campaignRuleId, body)",
         "parameters": [

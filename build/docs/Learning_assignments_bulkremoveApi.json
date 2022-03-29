@@ -1,6 +1,6 @@
 {
     "POST /api/v2/learning/assignments/bulkremove": {
-        "operationId": "create",
+        "operationId": "postlearningassignmentsbulkremove",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

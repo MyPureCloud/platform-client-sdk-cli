@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/businessunits": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementbusinessunits",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Businessunit"
     },
     "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}": {
-        "operationId": "delete",
+        "operationId": "deleteworkforcemanagementbusinessunit",
         "functionName": "delete",
         "signature": "delete(businessUnitId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementbusinessunit",
         "functionName": "get",
         "signature": "get(businessUnitId, expand)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Businessunit"
     },
     "GET /api/v2/workforcemanagement/businessunits": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementbusinessunits",
         "functionName": "list",
         "signature": "list(feature, divisionId)",
         "parameters": [
@@ -61,7 +61,7 @@
         "return": "Businessunitlisting"
     },
     "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}": {
-        "operationId": "update",
+        "operationId": "patchworkforcemanagementbusinessunit",
         "functionName": "update",
         "signature": "update(businessUnitId, body)",
         "parameters": [

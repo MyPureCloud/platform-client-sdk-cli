@@ -1,6 +1,6 @@
 {
     "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions": {
-        "operationId": "update",
+        "operationId": "putorgauthorizationtrusteeuserroledivisions",
         "functionName": "update",
         "signature": "update(trusteeOrgId, trusteeUserId, body)",
         "parameters": [

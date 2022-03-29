@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/didpools/dids": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgesdidpoolsdids",
         "functionName": "list",
         "signature": "list(varType, id, numberMatch, pageSize, pageNumber, sortOrder)",
         "parameters": [

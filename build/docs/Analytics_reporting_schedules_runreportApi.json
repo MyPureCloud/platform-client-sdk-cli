@@ -1,6 +1,6 @@
 {
     "POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport": {
-        "operationId": "create",
+        "operationId": "postanalyticsreportingschedulerunreport",
         "functionName": "create",
         "signature": "create(scheduleId)",
         "parameters": [

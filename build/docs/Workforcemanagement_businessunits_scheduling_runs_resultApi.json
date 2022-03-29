@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementbusinessunitschedulingrunresult",
         "functionName": "get",
         "signature": "get(businessUnitId, runId, managementUnitIds, expand)",
         "parameters": [

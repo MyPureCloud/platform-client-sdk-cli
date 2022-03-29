@@ -1,6 +1,6 @@
 {
     "POST /api/v2/integrations/actions/{actionId}/test": {
-        "operationId": "create",
+        "operationId": "postintegrationsactiontest",
         "functionName": "create",
         "signature": "create(actionId, body)",
         "parameters": [

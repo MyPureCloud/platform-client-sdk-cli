@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}": {
-        "operationId": "delete",
+        "operationId": "deleteworkforcemanagementbusinessunitweekshorttermforecast",
         "functionName": "delete",
         "signature": "delete(businessUnitId, weekDateId, forecastId)",
         "parameters": [
@@ -22,7 +22,7 @@
         ]
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementbusinessunitweekshorttermforecast",
         "functionName": "get",
         "signature": "get(businessUnitId, weekDateId, forecastId, expand)",
         "parameters": [
@@ -50,7 +50,7 @@
         "return": "Bushorttermforecast"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementbusinessunitweekshorttermforecasts",
         "functionName": "list",
         "signature": "list(businessUnitId, weekDateId)",
         "parameters": [

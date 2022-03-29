@@ -1,6 +1,6 @@
 {
     "POST /api/v2/routing/assessments/jobs": {
-        "operationId": "create",
+        "operationId": "postroutingassessmentsjobs",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Benefitassessmentjob"
     },
     "GET /api/v2/routing/assessments/jobs/{jobId}": {
-        "operationId": "get",
+        "operationId": "getroutingassessmentsjob",
         "functionName": "get",
         "signature": "get(jobId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Benefitassessmentjob"
     },
     "GET /api/v2/routing/assessments/jobs": {
-        "operationId": "list",
+        "operationId": "getroutingassessmentsjobs",
         "functionName": "list",
         "signature": "list(divisionId)",
         "parameters": [

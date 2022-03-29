@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunitweekshifttrades",
         "functionName": "create",
         "signature": "create(managementUnitId, weekDateId, body)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Shifttraderesponse"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementmanagementunitweekshifttrades",
         "functionName": "list",
         "signature": "list(managementUnitId, weekDateId, evaluateMatches)",
         "parameters": [
@@ -46,7 +46,7 @@
         "return": "Weekshifttradelistresponse"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}": {
-        "operationId": "update",
+        "operationId": "patchworkforcemanagementmanagementunitweekshifttrade",
         "functionName": "update",
         "signature": "update(managementUnitId, weekDateId, body, tradeId)",
         "parameters": [

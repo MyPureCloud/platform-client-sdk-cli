@@ -1,6 +1,6 @@
 {
     "POST /api/v2/routing/sms/addresses": {
-        "operationId": "create",
+        "operationId": "postroutingsmsaddresses",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Smsaddress"
     },
     "DELETE /api/v2/routing/sms/addresses/{addressId}": {
-        "operationId": "delete",
+        "operationId": "deleteroutingsmsaddress",
         "functionName": "delete",
         "signature": "delete(addressId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/routing/sms/addresses/{addressId}": {
-        "operationId": "get",
+        "operationId": "getroutingsmsaddress",
         "functionName": "get",
         "signature": "get(addressId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Smsaddress"
     },
     "GET /api/v2/routing/sms/addresses": {
-        "operationId": "list",
+        "operationId": "getroutingsmsaddresses",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [

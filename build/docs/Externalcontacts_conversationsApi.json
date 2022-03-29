@@ -1,6 +1,6 @@
 {
     "PUT /api/v2/externalcontacts/conversations/{conversationId}": {
-        "operationId": "update",
+        "operationId": "putexternalcontactsconversation",
         "functionName": "update",
         "signature": "update(body, conversationId)",
         "parameters": [

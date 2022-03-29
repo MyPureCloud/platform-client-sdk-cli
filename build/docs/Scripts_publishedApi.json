@@ -1,6 +1,6 @@
 {
     "GET /api/v2/scripts/published/{scriptId}": {
-        "operationId": "get",
+        "operationId": "getscriptspublishedscriptid",
         "functionName": "get",
         "signature": "get(scriptId, scriptDataVersion)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Script"
     },
     "GET /api/v2/scripts/published": {
-        "operationId": "list",
+        "operationId": "getscriptspublished",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion)",
         "parameters": [

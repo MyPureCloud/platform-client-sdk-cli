@@ -1,6 +1,6 @@
 {
     "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search": {
-        "operationId": "create",
+        "operationId": "postknowledgeknowledgebasesearch",
         "functionName": "create",
         "signature": "create(knowledgeBaseId, body)",
         "parameters": [

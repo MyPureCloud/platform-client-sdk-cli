@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/messaging/integrations/facebook": {
-        "operationId": "create",
+        "operationId": "postconversationsmessagingintegrationsfacebook",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Facebookintegration"
     },
     "DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
-        "operationId": "delete",
+        "operationId": "deleteconversationsmessagingintegrationsfacebookintegrationid",
         "functionName": "delete",
         "signature": "delete(integrationId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
-        "operationId": "get",
+        "operationId": "getconversationsmessagingintegrationsfacebookintegrationid",
         "functionName": "get",
         "signature": "get(integrationId, expand)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Facebookintegration"
     },
     "GET /api/v2/conversations/messaging/integrations/facebook": {
-        "operationId": "list",
+        "operationId": "getconversationsmessagingintegrationsfacebook",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand, supportedContentId)",
         "parameters": [
@@ -71,7 +71,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
-        "operationId": "update",
+        "operationId": "patchconversationsmessagingintegrationsfacebookintegrationid",
         "functionName": "update",
         "signature": "update(integrationId, body)",
         "parameters": [

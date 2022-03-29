@@ -1,6 +1,6 @@
 {
     "GET /api/v2/organizations/limits/changerequests/{requestId}": {
-        "operationId": "get",
+        "operationId": "getorganizationslimitschangerequest",
         "functionName": "get",
         "signature": "get(requestId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Limitchangerequestdetails"
     },
     "GET /api/v2/organizations/limits/changerequests": {
-        "operationId": "list",
+        "operationId": "getorganizationslimitschangerequests",
         "functionName": "list",
         "signature": "list(after, before, status, pageSize, expand)",
         "parameters": [

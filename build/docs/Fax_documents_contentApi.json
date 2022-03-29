@@ -1,6 +1,6 @@
 {
     "GET /api/v2/fax/documents/{documentId}/content": {
-        "operationId": "get",
+        "operationId": "getfaxdocumentcontent",
         "functionName": "get",
         "signature": "get(documentId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId}": {
-        "operationId": "get",
+        "operationId": "getwebchatguestconversationmessage",
         "functionName": "get",
         "signature": "get(conversationId, messageId)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Webchatmessage"
     },
     "GET /api/v2/webchat/guest/conversations/{conversationId}/messages": {
-        "operationId": "list",
+        "operationId": "getwebchatguestconversationmessages",
         "functionName": "list",
         "signature": "list(conversationId, after, before, sortOrder, maxResults)",
         "parameters": [

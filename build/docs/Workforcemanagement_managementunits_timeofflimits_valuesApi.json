@@ -1,6 +1,6 @@
 {
     "PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values": {
-        "operationId": "update",
+        "operationId": "putworkforcemanagementmanagementunittimeofflimitvalues",
         "functionName": "update",
         "signature": "update(managementUnitId, timeOffLimitId, body)",
         "parameters": [

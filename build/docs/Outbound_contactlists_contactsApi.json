@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/contactlists/{contactListId}/contacts": {
-        "operationId": "create",
+        "operationId": "postoutboundcontactlistcontacts",
         "functionName": "create",
         "signature": "create(contactListId, body, priority, clearSystemData, doNotQueue)",
         "parameters": [
@@ -33,7 +33,7 @@
         "return": "[]Dialercontact"
     },
     "DELETE /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutboundcontactlistcontact",
         "functionName": "delete",
         "signature": "delete(contactListId, contactId)",
         "parameters": [
@@ -50,7 +50,7 @@
         ]
     },
     "DELETE /api/v2/outbound/contactlists/{contactListId}/contacts": {
-        "operationId": "deletecontacts",
+        "operationId": "deleteoutboundcontactlistcontacts",
         "functionName": "deletecontacts",
         "signature": "deletecontacts(contactListId, contactIds)",
         "parameters": [
@@ -67,7 +67,7 @@
         ]
     },
     "GET /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}": {
-        "operationId": "get",
+        "operationId": "getoutboundcontactlistcontact",
         "functionName": "get",
         "signature": "get(contactListId, contactId)",
         "parameters": [
@@ -85,7 +85,7 @@
         "return": "Dialercontact"
     },
     "PUT /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}": {
-        "operationId": "update",
+        "operationId": "putoutboundcontactlistcontact",
         "functionName": "update",
         "signature": "update(contactListId, contactId, body)",
         "parameters": [

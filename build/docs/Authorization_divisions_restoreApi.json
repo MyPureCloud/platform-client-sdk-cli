@@ -1,6 +1,6 @@
 {
     "POST /api/v2/authorization/divisions/{divisionId}/restore": {
-        "operationId": "create",
+        "operationId": "postauthorizationdivisionrestore",
         "functionName": "create",
         "signature": "create(divisionId, body)",
         "parameters": [

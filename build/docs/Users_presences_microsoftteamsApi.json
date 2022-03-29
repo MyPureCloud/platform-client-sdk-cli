@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/presences/microsoftteams": {
-        "operationId": "get",
+        "operationId": "getuserpresencesmicrosoftteams",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [

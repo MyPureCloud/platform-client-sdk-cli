@@ -1,6 +1,6 @@
 {
     "GET /api/v2/conversations/emails/{conversationId}/messages/draft": {
-        "operationId": "get",
+        "operationId": "getconversationsemailmessagesdraft",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Emailmessage"
     },
     "PUT /api/v2/conversations/emails/{conversationId}/messages/draft": {
-        "operationId": "update",
+        "operationId": "putconversationsemailmessagesdraft",
         "functionName": "update",
         "signature": "update(conversationId, body)",
         "parameters": [

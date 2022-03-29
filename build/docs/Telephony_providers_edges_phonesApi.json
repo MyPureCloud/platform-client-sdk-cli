@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/phones": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgesphones",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Phone"
     },
     "DELETE /api/v2/telephony/providers/edges/phones/{phoneId}": {
-        "operationId": "delete",
+        "operationId": "deletetelephonyprovidersedgesphone",
         "functionName": "delete",
         "signature": "delete(phoneId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/telephony/providers/edges/phones/{phoneId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgesphone",
         "functionName": "get",
         "signature": "get(phoneId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Phone"
     },
     "GET /api/v2/telephony/providers/edges/phones": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgesphones",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, name, statusOperationalStatus, secondaryStatusOperationalStatus, expand, fields)",
         "parameters": [
@@ -131,7 +131,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/phones/{phoneId}": {
-        "operationId": "update",
+        "operationId": "puttelephonyprovidersedgesphone",
         "functionName": "update",
         "signature": "update(phoneId, body)",
         "parameters": [

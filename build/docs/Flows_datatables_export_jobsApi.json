@@ -1,6 +1,6 @@
 {
     "POST /api/v2/flows/datatables/{datatableId}/export/jobs": {
-        "operationId": "create",
+        "operationId": "postflowsdatatableexportjobs",
         "functionName": "create",
         "signature": "create(datatableId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Datatableexportjob"
     },
     "GET /api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}": {
-        "operationId": "get",
+        "operationId": "getflowsdatatableexportjob",
         "functionName": "get",
         "signature": "get(datatableId, exportJobId)",
         "parameters": [

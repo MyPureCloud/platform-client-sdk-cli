@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/linebasesettings/{lineBaseId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgeslinebasesetting",
         "functionName": "get",
         "signature": "get(lineBaseId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Linebase"
     },
     "GET /api/v2/telephony/providers/edges/linebasesettings": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgeslinebasesettings",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, expand)",
         "parameters": [

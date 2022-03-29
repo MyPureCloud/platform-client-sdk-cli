@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/timeofflimits/available/query": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementtimeofflimitsavailablequery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

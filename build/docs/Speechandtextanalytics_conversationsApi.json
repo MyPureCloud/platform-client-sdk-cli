@@ -1,6 +1,6 @@
 {
     "GET /api/v2/speechandtextanalytics/conversations/{conversationId}": {
-        "operationId": "get",
+        "operationId": "getspeechandtextanalyticsconversation",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}": {
-        "operationId": "delete",
+        "operationId": "deleteorgauthorizationtrusteecloneduser",
         "functionName": "delete",
         "signature": "delete(trusteeOrgId, trusteeUserId)",
         "parameters": [
@@ -17,7 +17,7 @@
         ]
     },
     "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers": {
-        "operationId": "list",
+        "operationId": "getorgauthorizationtrusteeclonedusers",
         "functionName": "list",
         "signature": "list(trusteeOrgId)",
         "parameters": [

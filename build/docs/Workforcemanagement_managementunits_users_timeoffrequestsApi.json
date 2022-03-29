@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementmanagementunitusertimeoffrequest",
         "functionName": "get",
         "signature": "get(managementUnitId, userId, timeOffRequestId)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Timeoffrequestresponse"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementmanagementunitusertimeoffrequests",
         "functionName": "list",
         "signature": "list(managementUnitId, userId, recentlyReviewed)",
         "parameters": [
@@ -46,7 +46,7 @@
         "return": "Timeoffrequestlist"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}": {
-        "operationId": "update",
+        "operationId": "patchworkforcemanagementmanagementunitusertimeoffrequest",
         "functionName": "update",
         "signature": "update(managementUnitId, userId, timeOffRequestId, body)",
         "parameters": [

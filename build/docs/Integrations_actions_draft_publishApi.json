@@ -1,6 +1,6 @@
 {
     "POST /api/v2/integrations/actions/{actionId}/draft/publish": {
-        "operationId": "create",
+        "operationId": "postintegrationsactiondraftpublish",
         "functionName": "create",
         "signature": "create(actionId, body)",
         "parameters": [

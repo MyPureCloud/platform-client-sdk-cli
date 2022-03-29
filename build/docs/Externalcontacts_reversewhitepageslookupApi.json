@@ -1,6 +1,6 @@
 {
     "GET /api/v2/externalcontacts/reversewhitepageslookup": {
-        "operationId": "search",
+        "operationId": "getexternalcontactsreversewhitepageslookup",
         "functionName": "search",
         "signature": "search(lookupVal, expand)",
         "parameters": [

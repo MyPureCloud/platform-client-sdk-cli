@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/callabletimesets": {
-        "operationId": "create",
+        "operationId": "postoutboundcallabletimesets",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Callabletimeset"
     },
     "DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutboundcallabletimeset",
         "functionName": "delete",
         "signature": "delete(callableTimeSetId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/outbound/callabletimesets/{callableTimeSetId}": {
-        "operationId": "get",
+        "operationId": "getoutboundcallabletimeset",
         "functionName": "get",
         "signature": "get(callableTimeSetId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Callabletimeset"
     },
     "GET /api/v2/outbound/callabletimesets": {
-        "operationId": "list",
+        "operationId": "getoutboundcallabletimesets",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/callabletimesets/{callableTimeSetId}": {
-        "operationId": "update",
+        "operationId": "putoutboundcallabletimeset",
         "functionName": "update",
         "signature": "update(callableTimeSetId, body)",
         "parameters": [

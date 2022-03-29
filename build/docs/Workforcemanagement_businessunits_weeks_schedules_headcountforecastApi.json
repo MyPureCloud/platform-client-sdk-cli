@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementbusinessunitweekscheduleheadcountforecast",
         "functionName": "get",
         "signature": "get(businessUnitId, weekId, scheduleId, forceDownload)",
         "parameters": [

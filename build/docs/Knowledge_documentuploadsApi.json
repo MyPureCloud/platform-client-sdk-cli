@@ -1,6 +1,6 @@
 {
     "POST /api/v2/knowledge/documentuploads": {
-        "operationId": "create",
+        "operationId": "postknowledgedocumentuploads",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/journey/segments": {
-        "operationId": "create",
+        "operationId": "postjourneysegments",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Journeysegment"
     },
     "DELETE /api/v2/journey/segments/{segmentId}": {
-        "operationId": "delete",
+        "operationId": "deletejourneysegment",
         "functionName": "delete",
         "signature": "delete(segmentId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/journey/segments/{segmentId}": {
-        "operationId": "get",
+        "operationId": "getjourneysegment",
         "functionName": "get",
         "signature": "get(segmentId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Journeysegment"
     },
     "GET /api/v2/journey/segments": {
-        "operationId": "list",
+        "operationId": "getjourneysegments",
         "functionName": "list",
         "signature": "list(sortBy, pageSize, pageNumber, isActive, segmentIds, queryFields, queryValue)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/journey/segments/{segmentId}": {
-        "operationId": "update",
+        "operationId": "patchjourneysegment",
         "functionName": "update",
         "signature": "update(segmentId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/groups/search": {
-        "operationId": "create",
+        "operationId": "postgroupssearch",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Groupssearchresponse"
     },
     "GET /api/v2/groups/search": {
-        "operationId": "list",
+        "operationId": "getgroupssearch",
         "functionName": "list",
         "signature": "list(q64, expand)",
         "parameters": [

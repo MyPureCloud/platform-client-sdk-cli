@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/trunkbasesettings": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgestrunkbasesettings",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Trunkbase"
     },
     "DELETE /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}": {
-        "operationId": "delete",
+        "operationId": "deletetelephonyprovidersedgestrunkbasesetting",
         "functionName": "delete",
         "signature": "delete(trunkBaseSettingsId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgestrunkbasesetting",
         "functionName": "get",
         "signature": "get(trunkBaseSettingsId, ignoreHidden)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Trunkbase"
     },
     "GET /api/v2/telephony/providers/edges/trunkbasesettings": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgestrunkbasesettings",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, recordingEnabled, ignoreHidden, managed, expand, name)",
         "parameters": [
@@ -96,7 +96,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}": {
-        "operationId": "update",
+        "operationId": "puttelephonyprovidersedgestrunkbasesetting",
         "functionName": "update",
         "signature": "update(trunkBaseSettingsId, body)",
         "parameters": [

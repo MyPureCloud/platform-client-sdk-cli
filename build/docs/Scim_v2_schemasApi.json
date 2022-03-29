@@ -1,6 +1,6 @@
 {
     "GET /api/v2/scim/v2/schemas/{schemaId}": {
-        "operationId": "get",
+        "operationId": "getscimv2schema",
         "functionName": "get",
         "signature": "get(schemaId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Scimv2schemadefinition"
     },
     "GET /api/v2/scim/v2/schemas": {
-        "operationId": "list",
+        "operationId": "getscimv2schemas",
         "functionName": "list",
         "signature": "list(filter)",
         "parameters": [

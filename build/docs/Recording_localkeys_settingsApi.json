@@ -1,6 +1,6 @@
 {
     "POST /api/v2/recording/localkeys/settings": {
-        "operationId": "create",
+        "operationId": "postrecordinglocalkeyssettings",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Localencryptionconfiguration"
     },
     "GET /api/v2/recording/localkeys/settings/{settingsId}": {
-        "operationId": "get",
+        "operationId": "getrecordinglocalkeyssetting",
         "functionName": "get",
         "signature": "get(settingsId)",
         "parameters": [
@@ -26,14 +26,14 @@
         "return": "Localencryptionconfiguration"
     },
     "GET /api/v2/recording/localkeys/settings": {
-        "operationId": "list",
+        "operationId": "getrecordinglocalkeyssettings",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Localencryptionconfigurationlisting"
     },
     "PUT /api/v2/recording/localkeys/settings/{settingsId}": {
-        "operationId": "update",
+        "operationId": "putrecordinglocalkeyssetting",
         "functionName": "update",
         "signature": "update(settingsId, body)",
         "parameters": [

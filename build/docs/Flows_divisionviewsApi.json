@@ -1,6 +1,6 @@
 {
     "GET /api/v2/flows/divisionviews": {
-        "operationId": "list",
+        "operationId": "getflowsdivisionviews",
         "functionName": "list",
         "signature": "list(varType, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId, includeSchemas)",
         "parameters": [

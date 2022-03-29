@@ -1,6 +1,6 @@
 {
     "POST /api/v2/responsemanagement/responses/query": {
-        "operationId": "create",
+        "operationId": "postresponsemanagementresponsesquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/analytics/conversations/details/jobs/availability": {
-        "operationId": "get",
+        "operationId": "getanalyticsconversationsdetailsjobsavailability",
         "functionName": "get",
         "signature": "get()",
         

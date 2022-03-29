@@ -1,6 +1,6 @@
 {
     "GET /api/v2/quality/surveys/{surveyId}": {
-        "operationId": "get",
+        "operationId": "getqualitysurvey",
         "functionName": "get",
         "signature": "get(surveyId)",
         "parameters": [

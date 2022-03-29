@@ -1,6 +1,6 @@
 {
     "GET /api/v2/conversations/messaging/facebook/app": {
-        "operationId": "get",
+        "operationId": "getconversationsmessagingfacebookapp",
         "functionName": "get",
         "signature": "get()",
         

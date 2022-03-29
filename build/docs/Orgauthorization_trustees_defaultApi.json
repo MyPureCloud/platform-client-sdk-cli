@@ -1,6 +1,6 @@
 {
     "POST /api/v2/orgauthorization/trustees/default": {
-        "operationId": "create",
+        "operationId": "postorgauthorizationtrusteesdefault",
         "functionName": "create",
         "signature": "create(assignDefaultRole, autoExpire)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Trustee"
     },
     "GET /api/v2/orgauthorization/trustees/default": {
-        "operationId": "get",
+        "operationId": "getorgauthorizationtrusteesdefault",
         "functionName": "get",
         "signature": "get()",
         

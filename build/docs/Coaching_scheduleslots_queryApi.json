@@ -1,6 +1,6 @@
 {
     "POST /api/v2/coaching/scheduleslots/query": {
-        "operationId": "create",
+        "operationId": "postcoachingscheduleslotsquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

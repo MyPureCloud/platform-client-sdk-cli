@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/types/{typeId}/configschemas/{configType}": {
-        "operationId": "get",
+        "operationId": "getintegrationstypeconfigschema",
         "functionName": "get",
         "signature": "get(typeId, configType)",
         "parameters": [

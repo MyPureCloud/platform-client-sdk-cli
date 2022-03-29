@@ -1,6 +1,6 @@
 {
     "GET /api/v2/authorization/subjects/rolecounts": {
-        "operationId": "get",
+        "operationId": "getauthorizationsubjectsrolecounts",
         "functionName": "get",
         "signature": "get(id)",
         "parameters": [

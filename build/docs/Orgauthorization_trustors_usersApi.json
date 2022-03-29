@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}": {
-        "operationId": "delete",
+        "operationId": "deleteorgauthorizationtrustoruser",
         "functionName": "delete",
         "signature": "delete(trustorOrgId, trusteeUserId)",
         "parameters": [
@@ -17,7 +17,7 @@
         ]
     },
     "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}": {
-        "operationId": "get",
+        "operationId": "getorgauthorizationtrustoruser",
         "functionName": "get",
         "signature": "get(trustorOrgId, trusteeUserId)",
         "parameters": [
@@ -35,7 +35,7 @@
         "return": "Trustuser"
     },
     "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users": {
-        "operationId": "list",
+        "operationId": "getorgauthorizationtrustorusers",
         "functionName": "list",
         "signature": "list(trustorOrgId, pageSize, pageNumber)",
         "parameters": [
@@ -58,7 +58,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}": {
-        "operationId": "update",
+        "operationId": "putorgauthorizationtrustoruser",
         "functionName": "update",
         "signature": "update(trustorOrgId, trusteeUserId)",
         "parameters": [

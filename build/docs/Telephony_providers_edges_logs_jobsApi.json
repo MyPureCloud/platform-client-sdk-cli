@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgelogsjobs",
         "functionName": "create",
         "signature": "create(edgeId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Edgelogsjobresponse"
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgelogsjob",
         "functionName": "get",
         "signature": "get(edgeId, jobId)",
         "parameters": [

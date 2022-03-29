@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/directreports": {
-        "operationId": "list",
+        "operationId": "getuserdirectreports",
         "functionName": "list",
         "signature": "list(userId, expand)",
         "parameters": [

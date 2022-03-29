@@ -1,6 +1,6 @@
 {
     "POST /api/v2/flows/actions/revert": {
-        "operationId": "create",
+        "operationId": "postflowsactionsrevert",
         "functionName": "create",
         "signature": "create(flow)",
         "parameters": [

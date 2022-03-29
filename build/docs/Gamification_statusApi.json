@@ -1,13 +1,13 @@
 {
     "GET /api/v2/gamification/status": {
-        "operationId": "get",
+        "operationId": "getgamificationstatus",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Gamificationstatus"
     },
     "PUT /api/v2/gamification/status": {
-        "operationId": "update",
+        "operationId": "putgamificationstatus",
         "functionName": "update",
         "signature": "update(status)",
         "parameters": [

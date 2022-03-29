@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/orphanrecordings/{orphanId}": {
-        "operationId": "delete",
+        "operationId": "deleteorphanrecording",
         "functionName": "delete",
         "signature": "delete(orphanId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Orphanrecording"
     },
     "GET /api/v2/orphanrecordings/{orphanId}": {
-        "operationId": "get",
+        "operationId": "getorphanrecording",
         "functionName": "get",
         "signature": "get(orphanId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Orphanrecording"
     },
     "GET /api/v2/orphanrecordings": {
-        "operationId": "list",
+        "operationId": "getorphanrecordings",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media)",
         "parameters": [
@@ -74,7 +74,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/orphanrecordings/{orphanId}": {
-        "operationId": "update",
+        "operationId": "putorphanrecording",
         "functionName": "update",
         "signature": "update(orphanId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/clientapps/unifiedcommunications": {
-        "operationId": "list",
+        "operationId": "getintegrationsclientappsunifiedcommunications",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
         "parameters": [

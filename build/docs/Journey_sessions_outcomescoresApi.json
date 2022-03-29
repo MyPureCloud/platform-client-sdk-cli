@@ -1,6 +1,6 @@
 {
     "GET /api/v2/journey/sessions/{sessionId}/outcomescores": {
-        "operationId": "get",
+        "operationId": "getjourneysessionoutcomescores",
         "functionName": "get",
         "signature": "get(sessionId)",
         "parameters": [

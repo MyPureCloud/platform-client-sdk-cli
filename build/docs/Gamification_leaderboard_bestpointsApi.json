@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gamification/leaderboard/bestpoints": {
-        "operationId": "get",
+        "operationId": "getgamificationleaderboardbestpoints",
         "functionName": "get",
         "signature": "get()",
         

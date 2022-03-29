@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/speech/lex/bot/alias/{aliasId}": {
-        "operationId": "get",
+        "operationId": "getintegrationsspeechlexbotalias",
         "functionName": "get",
         "signature": "get(aliasId)",
         "parameters": [

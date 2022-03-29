@@ -1,6 +1,6 @@
 {
     "POST /api/v2/textbots/bots/execute": {
-        "operationId": "create",
+        "operationId": "posttextbotsbotsexecute",
         "functionName": "create",
         "signature": "create(postTextRequest)",
         "parameters": [

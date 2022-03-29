@@ -1,6 +1,6 @@
 {
     "GET /api/v2/analytics/reporting/reportformats": {
-        "operationId": "list",
+        "operationId": "getanalyticsreportingreportformats",
         "functionName": "list",
         "signature": "list()",
         

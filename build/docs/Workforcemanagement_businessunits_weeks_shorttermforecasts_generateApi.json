@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastsgenerate",
         "functionName": "create",
         "signature": "create(businessUnitId, weekDateId, body, forceAsync)",
         "parameters": [

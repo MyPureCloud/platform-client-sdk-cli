@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/callbacks": {
-        "operationId": "create",
+        "operationId": "postconversationscallbacks",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Createcallbackresponse"
     },
     "GET /api/v2/conversations/callbacks/{conversationId}": {
-        "operationId": "get",
+        "operationId": "getconversationscallback",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
@@ -26,14 +26,14 @@
         "return": "Callbackconversation"
     },
     "GET /api/v2/conversations/callbacks": {
-        "operationId": "list",
+        "operationId": "getconversationscallbacks",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/conversations/callbacks/{conversationId}": {
-        "operationId": "update",
+        "operationId": "patchconversationscallback",
         "functionName": "update",
         "signature": "update(conversationId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/me": {
-        "operationId": "get",
+        "operationId": "getusersme",
         "functionName": "get",
         "signature": "get(expand, integrationPresenceSource)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/webdeployments/configurations/{configurationId}/versions/draft": {
-        "operationId": "get",
+        "operationId": "getwebdeploymentsconfigurationversionsdraft",
         "functionName": "get",
         "signature": "get(configurationId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Webdeploymentconfigurationversion"
     },
     "PUT /api/v2/webdeployments/configurations/{configurationId}/versions/draft": {
-        "operationId": "update",
+        "operationId": "putwebdeploymentsconfigurationversionsdraft",
         "functionName": "update",
         "signature": "update(configurationId, configurationVersion)",
         "parameters": [

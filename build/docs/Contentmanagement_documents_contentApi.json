@@ -1,6 +1,6 @@
 {
     "POST /api/v2/contentmanagement/documents/{documentId}/content": {
-        "operationId": "create",
+        "operationId": "postcontentmanagementdocumentcontent",
         "functionName": "create",
         "signature": "create(documentId, body, override)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Replaceresponse"
     },
     "GET /api/v2/contentmanagement/documents/{documentId}/content": {
-        "operationId": "get",
+        "operationId": "getcontentmanagementdocumentcontent",
         "functionName": "get",
         "signature": "get(documentId, disposition, contentType)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/greetings": {
-        "operationId": "create",
+        "operationId": "postgreetings",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Greeting"
     },
     "DELETE /api/v2/greetings/{greetingId}": {
-        "operationId": "delete",
+        "operationId": "deletegreeting",
         "functionName": "delete",
         "signature": "delete(greetingId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/greetings/{greetingId}": {
-        "operationId": "get",
+        "operationId": "getgreeting",
         "functionName": "get",
         "signature": "get(greetingId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Greeting"
     },
     "GET /api/v2/greetings": {
-        "operationId": "list",
+        "operationId": "getgreetings",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [
@@ -56,7 +56,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/greetings/{greetingId}": {
-        "operationId": "update",
+        "operationId": "putgreeting",
         "functionName": "update",
         "signature": "update(greetingId, body)",
         "parameters": [

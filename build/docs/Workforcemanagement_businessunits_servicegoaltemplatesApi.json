@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementbusinessunitservicegoaltemplates",
         "functionName": "create",
         "signature": "create(businessUnitId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Servicegoaltemplate"
     },
     "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}": {
-        "operationId": "delete",
+        "operationId": "deleteworkforcemanagementbusinessunitservicegoaltemplate",
         "functionName": "delete",
         "signature": "delete(businessUnitId, serviceGoalTemplateId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementbusinessunitservicegoaltemplate",
         "functionName": "get",
         "signature": "get(businessUnitId, serviceGoalTemplateId)",
         "parameters": [
@@ -53,7 +53,7 @@
         "return": "Servicegoaltemplate"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementbusinessunitservicegoaltemplates",
         "functionName": "list",
         "signature": "list(businessUnitId)",
         "parameters": [
@@ -66,7 +66,7 @@
         "return": "Servicegoaltemplatelist"
     },
     "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}": {
-        "operationId": "update",
+        "operationId": "patchworkforcemanagementbusinessunitservicegoaltemplate",
         "functionName": "update",
         "signature": "update(businessUnitId, serviceGoalTemplateId, body)",
         "parameters": [

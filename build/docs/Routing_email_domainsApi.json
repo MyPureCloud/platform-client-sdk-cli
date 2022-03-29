@@ -1,6 +1,6 @@
 {
     "POST /api/v2/routing/email/domains": {
-        "operationId": "create",
+        "operationId": "postroutingemaildomains",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Inbounddomain"
     },
     "DELETE /api/v2/routing/email/domains/{domainId}": {
-        "operationId": "delete",
+        "operationId": "deleteroutingemaildomain",
         "functionName": "delete",
         "signature": "delete(domainId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/routing/email/domains/{domainId}": {
-        "operationId": "get",
+        "operationId": "getroutingemaildomain",
         "functionName": "get",
         "signature": "get(domainId)",
         "parameters": [
@@ -38,14 +38,14 @@
         "return": "Inbounddomain"
     },
     "GET /api/v2/routing/email/domains": {
-        "operationId": "list",
+        "operationId": "getroutingemaildomains",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/routing/email/domains/{domainId}": {
-        "operationId": "update",
+        "operationId": "patchroutingemaildomain",
         "functionName": "update",
         "signature": "update(domainId, body)",
         "parameters": [

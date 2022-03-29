@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementbusinessunitweekschedules",
         "functionName": "create",
         "signature": "create(businessUnitId, weekId, body)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Buschedulemetadata"
     },
     "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}": {
-        "operationId": "delete",
+        "operationId": "deleteworkforcemanagementbusinessunitweekschedule",
         "functionName": "delete",
         "signature": "delete(businessUnitId, weekId, scheduleId)",
         "parameters": [
@@ -46,7 +46,7 @@
         "return": "Buasyncscheduleresponse"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementbusinessunitweekschedule",
         "functionName": "get",
         "signature": "get(businessUnitId, weekId, scheduleId, expand)",
         "parameters": [
@@ -74,7 +74,7 @@
         "return": "Buschedulemetadata"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementbusinessunitweekschedules",
         "functionName": "list",
         "signature": "list(businessUnitId, weekId, includeOnlyPublished, expand)",
         "parameters": [

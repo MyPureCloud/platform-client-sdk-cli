@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/actions/categories": {
-        "operationId": "list",
+        "operationId": "getintegrationsactionscategories",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, secure)",
         "parameters": [

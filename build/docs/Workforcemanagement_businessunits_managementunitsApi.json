@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementbusinessunitmanagementunits",
         "functionName": "list",
         "signature": "list(businessUnitId, feature, divisionId)",
         "parameters": [

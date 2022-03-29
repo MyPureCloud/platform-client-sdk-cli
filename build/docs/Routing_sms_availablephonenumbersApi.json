@@ -1,6 +1,6 @@
 {
     "GET /api/v2/routing/sms/availablephonenumbers": {
-        "operationId": "list",
+        "operationId": "getroutingsmsavailablephonenumbers",
         "functionName": "list",
         "signature": "list(countryCode, phoneNumberType, region, city, areaCode, pattern, addressRequirement)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/quality/forms/{formId}/versions": {
-        "operationId": "list",
+        "operationId": "getqualityformversions",
         "functionName": "list",
         "signature": "list(formId, pageSize, pageNumber)",
         "parameters": [

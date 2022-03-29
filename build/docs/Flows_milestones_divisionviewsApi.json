@@ -1,6 +1,6 @@
 {
     "GET /api/v2/flows/milestones/divisionviews": {
-        "operationId": "list",
+        "operationId": "getflowsmilestonesdivisionviews",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)",
         "parameters": [

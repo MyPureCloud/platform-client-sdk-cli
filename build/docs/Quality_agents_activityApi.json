@@ -1,6 +1,6 @@
 {
     "GET /api/v2/quality/agents/activity": {
-        "operationId": "list",
+        "operationId": "getqualityagentsactivity",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group)",
         "parameters": [

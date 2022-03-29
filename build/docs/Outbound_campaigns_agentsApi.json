@@ -1,6 +1,6 @@
 {
     "PUT /api/v2/outbound/campaigns/{campaignId}/agents/{userId}": {
-        "operationId": "update",
+        "operationId": "putoutboundcampaignagent",
         "functionName": "update",
         "signature": "update(campaignId, userId, body)",
         "parameters": [

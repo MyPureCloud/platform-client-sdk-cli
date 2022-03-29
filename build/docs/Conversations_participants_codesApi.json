@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}": {
-        "operationId": "delete",
+        "operationId": "deleteconversationparticipantcode",
         "functionName": "delete",
         "signature": "delete(conversationId, participantId, addCommunicationCode)",
         "parameters": [

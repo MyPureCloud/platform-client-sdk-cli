@@ -1,6 +1,6 @@
 {
     "POST /api/v2/textbots/botflows/sessions/{sessionId}/turns": {
-        "operationId": "create",
+        "operationId": "posttextbotsbotflowssessionturns",
         "functionName": "create",
         "signature": "create(sessionId, turnRequest)",
         "parameters": [

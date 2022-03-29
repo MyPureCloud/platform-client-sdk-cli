@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gamification/scorecards/users/values/trends": {
-        "operationId": "get",
+        "operationId": "getgamificationscorecardsusersvaluestrends",
         "functionName": "get",
         "signature": "get(filterType, filterId, startWorkday, endWorkday, timeZone)",
         "parameters": [
@@ -33,7 +33,7 @@
         "return": "Workdayvaluestrend"
     },
     "GET /api/v2/gamification/scorecards/users/{userId}/values/trends": {
-        "operationId": "list",
+        "operationId": "getgamificationscorecardsuservaluestrends",
         "functionName": "list",
         "signature": "list(userId, startWorkday, endWorkday, timeZone)",
         "parameters": [

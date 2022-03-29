@@ -1,6 +1,6 @@
 {
     "POST /api/v2/users/development/activities/aggregates/query": {
-        "operationId": "create",
+        "operationId": "postusersdevelopmentactivitiesaggregatesquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

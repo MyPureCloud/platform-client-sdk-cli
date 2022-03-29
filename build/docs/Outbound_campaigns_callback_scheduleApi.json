@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/campaigns/{campaignId}/callback/schedule": {
-        "operationId": "create",
+        "operationId": "postoutboundcampaigncallbackschedule",
         "functionName": "create",
         "signature": "create(campaignId, body)",
         "parameters": [

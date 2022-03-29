@@ -1,6 +1,6 @@
 {
     "GET /api/v2/conversations/cobrowsesessions/{conversationId}": {
-        "operationId": "get",
+        "operationId": "getconversationscobrowsesession",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
@@ -13,14 +13,14 @@
         "return": "Cobrowseconversation"
     },
     "GET /api/v2/conversations/cobrowsesessions": {
-        "operationId": "list",
+        "operationId": "getconversationscobrowsesessions",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/conversations/cobrowsesessions/{conversationId}": {
-        "operationId": "update",
+        "operationId": "patchconversationscobrowsesession",
         "functionName": "update",
         "signature": "update(conversationId, body)",
         "parameters": [

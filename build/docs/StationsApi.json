@@ -1,6 +1,6 @@
 {
     "GET /api/v2/stations/{stationId}": {
-        "operationId": "get",
+        "operationId": "getstation",
         "functionName": "get",
         "signature": "get(stationId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Station"
     },
     "GET /api/v2/stations": {
-        "operationId": "list",
+        "operationId": "getstations",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, name, userSelectable, webRtcUserId, id, lineAppearanceId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/businessunits/divisionviews": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementbusinessunitsdivisionviews",
         "functionName": "list",
         "signature": "list(divisionId)",
         "parameters": [

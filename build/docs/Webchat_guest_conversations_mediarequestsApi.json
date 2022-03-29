@@ -1,6 +1,6 @@
 {
     "GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}": {
-        "operationId": "get",
+        "operationId": "getwebchatguestconversationmediarequest",
         "functionName": "get",
         "signature": "get(conversationId, mediaRequestId)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Webchatguestmediarequest"
     },
     "GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests": {
-        "operationId": "list",
+        "operationId": "getwebchatguestconversationmediarequests",
         "functionName": "list",
         "signature": "list(conversationId)",
         "parameters": [
@@ -31,7 +31,7 @@
         "return": "Webchatguestmediarequestentitylist"
     },
     "PATCH /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}": {
-        "operationId": "update",
+        "operationId": "patchwebchatguestconversationmediarequest",
         "functionName": "update",
         "signature": "update(conversationId, mediaRequestId, body)",
         "parameters": [

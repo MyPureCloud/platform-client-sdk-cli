@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/calendar/data/ics": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementcalendardataics",
         "functionName": "get",
         "signature": "get(calendarId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/coaching/appointments/aggregates/query": {
-        "operationId": "create",
+        "operationId": "postcoachingappointmentsaggregatesquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/analytics/users/details/jobs/{jobId}/results": {
-        "operationId": "list",
+        "operationId": "getanalyticsusersdetailsjobresults",
         "functionName": "list",
         "signature": "list(jobId, cursor, pageSize)",
         "parameters": [

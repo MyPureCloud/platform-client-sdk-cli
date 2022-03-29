@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy": {
-        "operationId": "create",
+        "operationId": "postconversationsemailmessagesdraftattachmentscopy",
         "functionName": "create",
         "signature": "create(conversationId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/adjacents": {
-        "operationId": "get",
+        "operationId": "getuseradjacents",
         "functionName": "get",
         "signature": "get(userId, expand)",
         "parameters": [

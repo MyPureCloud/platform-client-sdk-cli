@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/calls/{conversationId}/participants": {
-        "operationId": "create",
+        "operationId": "postconversationscallparticipants",
         "functionName": "create",
         "signature": "create(conversationId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Conversation"
     },
     "PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}": {
-        "operationId": "update",
+        "operationId": "patchconversationscallparticipant",
         "functionName": "update",
         "signature": "update(conversationId, participantId, body)",
         "parameters": [

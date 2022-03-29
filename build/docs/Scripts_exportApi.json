@@ -1,6 +1,6 @@
 {
     "POST /api/v2/scripts/{scriptId}/export": {
-        "operationId": "create",
+        "operationId": "postscriptexport",
         "functionName": "create",
         "signature": "create(scriptId, body)",
         "parameters": [

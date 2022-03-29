@@ -1,6 +1,6 @@
 {
     "PUT /api/v2/authorization/roles/{roleId}/users/remove": {
-        "operationId": "update",
+        "operationId": "putauthorizationroleusersremove",
         "functionName": "update",
         "signature": "update(roleId, body)",
         "parameters": [

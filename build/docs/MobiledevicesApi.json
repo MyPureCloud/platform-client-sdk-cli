@@ -1,6 +1,6 @@
 {
     "POST /api/v2/mobiledevices": {
-        "operationId": "create",
+        "operationId": "postmobiledevices",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Userdevice"
     },
     "DELETE /api/v2/mobiledevices/{deviceId}": {
-        "operationId": "delete",
+        "operationId": "deletemobiledevice",
         "functionName": "delete",
         "signature": "delete(deviceId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/mobiledevices/{deviceId}": {
-        "operationId": "get",
+        "operationId": "getmobiledevice",
         "functionName": "get",
         "signature": "get(deviceId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Userdevice"
     },
     "GET /api/v2/mobiledevices": {
-        "operationId": "list",
+        "operationId": "getmobiledevices",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortOrder)",
         "parameters": [
@@ -61,7 +61,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/mobiledevices/{deviceId}": {
-        "operationId": "update",
+        "operationId": "putmobiledevice",
         "functionName": "update",
         "signature": "update(deviceId, body)",
         "parameters": [

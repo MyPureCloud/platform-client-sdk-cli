@@ -1,6 +1,6 @@
 {
     "GET /api/v2/contentmanagement/shared/{sharedId}": {
-        "operationId": "get",
+        "operationId": "getcontentmanagementsharedsharedid",
         "functionName": "get",
         "signature": "get(sharedId, redirect, disposition, contentType, expand)",
         "parameters": [

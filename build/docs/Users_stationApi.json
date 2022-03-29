@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/station": {
-        "operationId": "get",
+        "operationId": "getuserstation",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [

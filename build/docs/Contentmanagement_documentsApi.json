@@ -1,6 +1,6 @@
 {
     "POST /api/v2/contentmanagement/documents": {
-        "operationId": "create",
+        "operationId": "postcontentmanagementdocuments",
         "functionName": "create",
         "signature": "create(body, copySource, moveSource, override)",
         "parameters": [
@@ -28,7 +28,7 @@
         "return": "Document"
     },
     "DELETE /api/v2/contentmanagement/documents/{documentId}": {
-        "operationId": "delete",
+        "operationId": "deletecontentmanagementdocument",
         "functionName": "delete",
         "signature": "delete(documentId, override)",
         "parameters": [
@@ -45,7 +45,7 @@
         ]
     },
     "GET /api/v2/contentmanagement/documents/{documentId}": {
-        "operationId": "get",
+        "operationId": "getcontentmanagementdocument",
         "functionName": "get",
         "signature": "get(documentId, expand)",
         "parameters": [
@@ -63,7 +63,7 @@
         "return": "Document"
     },
     "GET /api/v2/contentmanagement/documents": {
-        "operationId": "list",
+        "operationId": "getcontentmanagementdocuments",
         "functionName": "list",
         "signature": "list(workspaceId, name, expand, pageSize, pageNumber, sortBy, sortOrder)",
         "parameters": [
@@ -106,7 +106,7 @@
         "return": "Swaggeroverridelist"
     },
     "POST /api/v2/contentmanagement/documents/{documentId}": {
-        "operationId": "update",
+        "operationId": "postcontentmanagementdocument",
         "functionName": "update",
         "signature": "update(documentId, body, expand, override)",
         "parameters": [

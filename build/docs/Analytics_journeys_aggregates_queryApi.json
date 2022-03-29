@@ -1,6 +1,6 @@
 {
     "POST /api/v2/analytics/journeys/aggregates/query": {
-        "operationId": "create",
+        "operationId": "postanalyticsjourneysaggregatesquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

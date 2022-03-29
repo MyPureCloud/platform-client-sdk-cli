@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/messaging/integrations/whatsapp": {
-        "operationId": "create",
+        "operationId": "postconversationsmessagingintegrationswhatsapp",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Whatsappintegration"
     },
     "DELETE /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}": {
-        "operationId": "delete",
+        "operationId": "deleteconversationsmessagingintegrationswhatsappintegrationid",
         "functionName": "delete",
         "signature": "delete(integrationId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Whatsappintegration"
     },
     "GET /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}": {
-        "operationId": "get",
+        "operationId": "getconversationsmessagingintegrationswhatsappintegrationid",
         "functionName": "get",
         "signature": "get(integrationId, expand)",
         "parameters": [
@@ -44,7 +44,7 @@
         "return": "Whatsappintegration"
     },
     "GET /api/v2/conversations/messaging/integrations/whatsapp": {
-        "operationId": "list",
+        "operationId": "getconversationsmessagingintegrationswhatsapp",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand, supportedContentId)",
         "parameters": [
@@ -72,7 +72,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}": {
-        "operationId": "update",
+        "operationId": "patchconversationsmessagingintegrationswhatsappintegrationid",
         "functionName": "update",
         "signature": "update(integrationId, body)",
         "parameters": [

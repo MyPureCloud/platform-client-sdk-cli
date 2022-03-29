@@ -1,6 +1,6 @@
 {
     "GET /api/v2/timezones": {
-        "operationId": "list",
+        "operationId": "gettimezones",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [

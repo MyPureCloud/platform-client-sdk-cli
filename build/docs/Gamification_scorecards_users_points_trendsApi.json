@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gamification/scorecards/users/{userId}/points/trends": {
-        "operationId": "get",
+        "operationId": "getgamificationscorecardsuserpointstrends",
         "functionName": "get",
         "signature": "get(userId, startWorkday, endWorkday, dayOfWeek)",
         "parameters": [

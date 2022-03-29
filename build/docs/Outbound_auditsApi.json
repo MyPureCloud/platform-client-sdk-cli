@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/audits": {
-        "operationId": "create",
+        "operationId": "postoutboundaudits",
         "functionName": "create",
         "signature": "create(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly)",
         "parameters": [

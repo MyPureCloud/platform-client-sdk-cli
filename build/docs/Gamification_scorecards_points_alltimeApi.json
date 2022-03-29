@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gamification/scorecards/points/alltime": {
-        "operationId": "get",
+        "operationId": "getgamificationscorecardspointsalltime",
         "functionName": "get",
         "signature": "get(endWorkday)",
         "parameters": [

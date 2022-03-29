@@ -1,6 +1,6 @@
 {
     "POST /api/v2/externalcontacts/relationships": {
-        "operationId": "create",
+        "operationId": "postexternalcontactsrelationships",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Relationship"
     },
     "DELETE /api/v2/externalcontacts/relationships/{relationshipId}": {
-        "operationId": "delete",
+        "operationId": "deleteexternalcontactsrelationship",
         "functionName": "delete",
         "signature": "delete(relationshipId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Empty"
     },
     "GET /api/v2/externalcontacts/relationships/{relationshipId}": {
-        "operationId": "get",
+        "operationId": "getexternalcontactsrelationship",
         "functionName": "get",
         "signature": "get(relationshipId, expand)",
         "parameters": [
@@ -44,7 +44,7 @@
         "return": "Relationship"
     },
     "PUT /api/v2/externalcontacts/relationships/{relationshipId}": {
-        "operationId": "update",
+        "operationId": "putexternalcontactsrelationship",
         "functionName": "update",
         "signature": "update(relationshipId, body)",
         "parameters": [

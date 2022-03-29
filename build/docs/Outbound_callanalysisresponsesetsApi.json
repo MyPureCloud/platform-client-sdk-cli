@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/callanalysisresponsesets": {
-        "operationId": "create",
+        "operationId": "postoutboundcallanalysisresponsesets",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Responseset"
     },
     "DELETE /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutboundcallanalysisresponseset",
         "functionName": "delete",
         "signature": "delete(callAnalysisSetId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}": {
-        "operationId": "get",
+        "operationId": "getoutboundcallanalysisresponseset",
         "functionName": "get",
         "signature": "get(callAnalysisSetId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Responseset"
     },
     "GET /api/v2/outbound/callanalysisresponsesets": {
-        "operationId": "list",
+        "operationId": "getoutboundcallanalysisresponsesets",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}": {
-        "operationId": "update",
+        "operationId": "putoutboundcallanalysisresponseset",
         "functionName": "update",
         "signature": "update(callAnalysisSetId, body)",
         "parameters": [

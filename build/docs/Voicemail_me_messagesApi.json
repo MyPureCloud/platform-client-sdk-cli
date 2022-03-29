@@ -1,6 +1,6 @@
 {
     "GET /api/v2/voicemail/me/messages": {
-        "operationId": "list",
+        "operationId": "getvoicemailmemessages",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [

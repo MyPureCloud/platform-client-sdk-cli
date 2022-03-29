@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}": {
-        "operationId": "delete",
+        "operationId": "deletecontentmanagementworkspacemember",
         "functionName": "delete",
         "signature": "delete(workspaceId, memberId)",
         "parameters": [
@@ -17,7 +17,7 @@
         ]
     },
     "GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}": {
-        "operationId": "get",
+        "operationId": "getcontentmanagementworkspacemember",
         "functionName": "get",
         "signature": "get(workspaceId, memberId, expand)",
         "parameters": [
@@ -40,7 +40,7 @@
         "return": "Workspacemember"
     },
     "GET /api/v2/contentmanagement/workspaces/{workspaceId}/members": {
-        "operationId": "list",
+        "operationId": "getcontentmanagementworkspacemembers",
         "functionName": "list",
         "signature": "list(workspaceId, pageSize, pageNumber, expand)",
         "parameters": [
@@ -68,7 +68,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}": {
-        "operationId": "update",
+        "operationId": "putcontentmanagementworkspacemember",
         "functionName": "update",
         "signature": "update(workspaceId, memberId, body)",
         "parameters": [

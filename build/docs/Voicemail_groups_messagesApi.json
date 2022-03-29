@@ -1,6 +1,6 @@
 {
     "GET /api/v2/voicemail/groups/{groupId}/messages": {
-        "operationId": "list",
+        "operationId": "getvoicemailgroupmessages",
         "functionName": "list",
         "signature": "list(groupId, pageSize, pageNumber)",
         "parameters": [

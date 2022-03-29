@@ -1,6 +1,6 @@
 {
     "POST /api/v2/gamification/profiles/{performanceProfileId}/members": {
-        "operationId": "create",
+        "operationId": "postgamificationprofilemembers",
         "functionName": "create",
         "signature": "create(performanceProfileId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Assignment"
     },
     "GET /api/v2/gamification/profiles/{performanceProfileId}/members": {
-        "operationId": "list",
+        "operationId": "getgamificationprofilemembers",
         "functionName": "list",
         "signature": "list(performanceProfileId)",
         "parameters": [

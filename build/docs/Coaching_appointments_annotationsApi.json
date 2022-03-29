@@ -1,6 +1,6 @@
 {
     "POST /api/v2/coaching/appointments/{appointmentId}/annotations": {
-        "operationId": "create",
+        "operationId": "postcoachingappointmentannotations",
         "functionName": "create",
         "signature": "create(appointmentId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Coachingannotation"
     },
     "DELETE /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}": {
-        "operationId": "delete",
+        "operationId": "deletecoachingappointmentannotation",
         "functionName": "delete",
         "signature": "delete(appointmentId, annotationId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}": {
-        "operationId": "get",
+        "operationId": "getcoachingappointmentannotation",
         "functionName": "get",
         "signature": "get(appointmentId, annotationId)",
         "parameters": [
@@ -53,7 +53,7 @@
         "return": "Coachingannotation"
     },
     "GET /api/v2/coaching/appointments/{appointmentId}/annotations": {
-        "operationId": "list",
+        "operationId": "getcoachingappointmentannotations",
         "functionName": "list",
         "signature": "list(appointmentId, pageNumber, pageSize)",
         "parameters": [
@@ -76,7 +76,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}": {
-        "operationId": "update",
+        "operationId": "patchcoachingappointmentannotation",
         "functionName": "update",
         "signature": "update(appointmentId, annotationId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgelogsjobupload",
         "functionName": "create",
         "signature": "create(edgeId, jobId, body)",
         "parameters": [

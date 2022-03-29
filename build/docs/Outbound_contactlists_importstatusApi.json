@@ -1,6 +1,6 @@
 {
     "GET /api/v2/outbound/contactlists/{contactListId}/importstatus": {
-        "operationId": "get",
+        "operationId": "getoutboundcontactlistimportstatus",
         "functionName": "get",
         "signature": "get(contactListId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/contentmanagement/status/{statusId}": {
-        "operationId": "delete",
+        "operationId": "deletecontentmanagementstatusstatusid",
         "functionName": "delete",
         "signature": "delete(statusId)",
         "parameters": [
@@ -12,7 +12,7 @@
         ]
     },
     "GET /api/v2/contentmanagement/status/{statusId}": {
-        "operationId": "get",
+        "operationId": "getcontentmanagementstatusstatusid",
         "functionName": "get",
         "signature": "get(statusId)",
         "parameters": [
@@ -25,7 +25,7 @@
         "return": "Commandstatus"
     },
     "GET /api/v2/contentmanagement/status": {
-        "operationId": "list",
+        "operationId": "getcontentmanagementstatus",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [

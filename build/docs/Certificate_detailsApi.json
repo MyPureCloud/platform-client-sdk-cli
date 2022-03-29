@@ -1,6 +1,6 @@
 {
     "POST /api/v2/certificate/details": {
-        "operationId": "create",
+        "operationId": "postcertificatedetails",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gamification/profiles/users/me": {
-        "operationId": "get",
+        "operationId": "getgamificationprofilesusersme",
         "functionName": "get",
         "signature": "get(workday)",
         "parameters": [

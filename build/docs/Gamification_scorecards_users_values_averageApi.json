@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gamification/scorecards/users/values/average": {
-        "operationId": "get",
+        "operationId": "getgamificationscorecardsusersvaluesaverage",
         "functionName": "get",
         "signature": "get(filterType, filterId, workday, timeZone)",
         "parameters": [

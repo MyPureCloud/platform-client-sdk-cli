@@ -1,6 +1,6 @@
 {
     "PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata": {
-        "operationId": "update",
+        "operationId": "putconversationscallparticipantcommunicationuuidata",
         "functionName": "update",
         "signature": "update(conversationId, participantId, communicationId, body)",
         "parameters": [

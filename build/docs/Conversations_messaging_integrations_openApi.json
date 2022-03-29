@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/messaging/integrations/open": {
-        "operationId": "create",
+        "operationId": "postconversationsmessagingintegrationsopen",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Openintegration"
     },
     "DELETE /api/v2/conversations/messaging/integrations/open/{integrationId}": {
-        "operationId": "delete",
+        "operationId": "deleteconversationsmessagingintegrationsopenintegrationid",
         "functionName": "delete",
         "signature": "delete(integrationId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/conversations/messaging/integrations/open/{integrationId}": {
-        "operationId": "get",
+        "operationId": "getconversationsmessagingintegrationsopenintegrationid",
         "functionName": "get",
         "signature": "get(integrationId, expand)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Openintegration"
     },
     "GET /api/v2/conversations/messaging/integrations/open": {
-        "operationId": "list",
+        "operationId": "getconversationsmessagingintegrationsopen",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand, supportedContentId)",
         "parameters": [
@@ -71,7 +71,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/conversations/messaging/integrations/open/{integrationId}": {
-        "operationId": "update",
+        "operationId": "patchconversationsmessagingintegrationsopenintegrationid",
         "functionName": "update",
         "signature": "update(integrationId, body)",
         "parameters": [

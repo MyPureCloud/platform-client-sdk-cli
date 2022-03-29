@@ -1,6 +1,6 @@
 {
     "POST /api/v2/routing/email/domains/{domainName}/routes": {
-        "operationId": "create",
+        "operationId": "postroutingemaildomainroutes",
         "functionName": "create",
         "signature": "create(domainName, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Inboundroute"
     },
     "DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId}": {
-        "operationId": "delete",
+        "operationId": "deleteroutingemaildomainroute",
         "functionName": "delete",
         "signature": "delete(domainName, routeId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}": {
-        "operationId": "get",
+        "operationId": "getroutingemaildomainroute",
         "functionName": "get",
         "signature": "get(domainName, routeId)",
         "parameters": [
@@ -53,7 +53,7 @@
         "return": "Inboundroute"
     },
     "GET /api/v2/routing/email/domains/{domainName}/routes": {
-        "operationId": "list",
+        "operationId": "getroutingemaildomainroutes",
         "functionName": "list",
         "signature": "list(domainName, pageSize, pageNumber, pattern)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}": {
-        "operationId": "update",
+        "operationId": "putroutingemaildomainroute",
         "functionName": "update",
         "signature": "update(domainName, routeId, body)",
         "parameters": [

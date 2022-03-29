@@ -1,6 +1,6 @@
 {
     "GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults": {
-        "operationId": "list",
+        "operationId": "getorganizationslimitsnamespacedefaults",
         "functionName": "list",
         "signature": "list(namespaceName)",
         "parameters": [

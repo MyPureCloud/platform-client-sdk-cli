@@ -1,6 +1,6 @@
 {
     "GET /api/v2/quality/conversations/audits/query/{transactionId}/results": {
-        "operationId": "list",
+        "operationId": "getqualityconversationsauditsquerytransactionidresults",
         "functionName": "list",
         "signature": "list(transactionId, cursor, pageSize, expand)",
         "parameters": [

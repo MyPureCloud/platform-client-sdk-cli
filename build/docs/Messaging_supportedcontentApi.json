@@ -1,6 +1,6 @@
 {
     "POST /api/v2/messaging/supportedcontent": {
-        "operationId": "create",
+        "operationId": "postmessagingsupportedcontent",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Supportedcontent"
     },
     "DELETE /api/v2/messaging/supportedcontent/{supportedContentId}": {
-        "operationId": "delete",
+        "operationId": "deletemessagingsupportedcontentsupportedcontentid",
         "functionName": "delete",
         "signature": "delete(supportedContentId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/messaging/supportedcontent/{supportedContentId}": {
-        "operationId": "get",
+        "operationId": "getmessagingsupportedcontentsupportedcontentid",
         "functionName": "get",
         "signature": "get(supportedContentId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Supportedcontent"
     },
     "GET /api/v2/messaging/supportedcontent": {
-        "operationId": "list",
+        "operationId": "getmessagingsupportedcontent",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [
@@ -56,7 +56,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/messaging/supportedcontent/{supportedContentId}": {
-        "operationId": "update",
+        "operationId": "patchmessagingsupportedcontentsupportedcontentid",
         "functionName": "update",
         "signature": "update(supportedContentId, body)",
         "parameters": [

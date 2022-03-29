@@ -1,6 +1,6 @@
 {
     "GET /api/v2/userrecordings/{recordingId}/media": {
-        "operationId": "get",
+        "operationId": "getuserrecordingmedia",
         "functionName": "get",
         "signature": "get(recordingId, formatId)",
         "parameters": [

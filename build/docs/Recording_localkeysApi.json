@@ -1,6 +1,6 @@
 {
     "POST /api/v2/recording/localkeys": {
-        "operationId": "create",
+        "operationId": "postrecordinglocalkeys",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

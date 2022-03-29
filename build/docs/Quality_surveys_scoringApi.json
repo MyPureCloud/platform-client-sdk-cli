@@ -1,6 +1,6 @@
 {
     "POST /api/v2/quality/surveys/scoring": {
-        "operationId": "create",
+        "operationId": "postqualitysurveysscoring",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

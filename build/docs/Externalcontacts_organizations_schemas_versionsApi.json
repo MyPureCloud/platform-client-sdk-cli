@@ -1,6 +1,6 @@
 {
     "GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}": {
-        "operationId": "get",
+        "operationId": "getexternalcontactsorganizationsschemaversion",
         "functionName": "get",
         "signature": "get(schemaId, versionId)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Dataschema"
     },
     "GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions": {
-        "operationId": "list",
+        "operationId": "getexternalcontactsorganizationsschemaversions",
         "functionName": "list",
         "signature": "list(schemaId)",
         "parameters": [

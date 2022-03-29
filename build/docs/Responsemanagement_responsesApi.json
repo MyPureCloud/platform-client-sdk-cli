@@ -1,6 +1,6 @@
 {
     "POST /api/v2/responsemanagement/responses": {
-        "operationId": "create",
+        "operationId": "postresponsemanagementresponses",
         "functionName": "create",
         "signature": "create(body, expand)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Response"
     },
     "DELETE /api/v2/responsemanagement/responses/{responseId}": {
-        "operationId": "delete",
+        "operationId": "deleteresponsemanagementresponse",
         "functionName": "delete",
         "signature": "delete(responseId)",
         "parameters": [
@@ -30,7 +30,7 @@
         ]
     },
     "GET /api/v2/responsemanagement/responses/{responseId}": {
-        "operationId": "get",
+        "operationId": "getresponsemanagementresponse",
         "functionName": "get",
         "signature": "get(responseId, expand)",
         "parameters": [
@@ -48,7 +48,7 @@
         "return": "Response"
     },
     "GET /api/v2/responsemanagement/responses": {
-        "operationId": "list",
+        "operationId": "getresponsemanagementresponses",
         "functionName": "list",
         "signature": "list(libraryId, pageNumber, pageSize, expand)",
         "parameters": [
@@ -76,7 +76,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/responsemanagement/responses/{responseId}": {
-        "operationId": "update",
+        "operationId": "putresponsemanagementresponse",
         "functionName": "update",
         "signature": "update(responseId, body, expand)",
         "parameters": [

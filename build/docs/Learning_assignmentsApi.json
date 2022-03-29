@@ -1,6 +1,6 @@
 {
     "POST /api/v2/learning/assignments": {
-        "operationId": "create",
+        "operationId": "postlearningassignments",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Learningassignment"
     },
     "DELETE /api/v2/learning/assignments/{assignmentId}": {
-        "operationId": "delete",
+        "operationId": "deletelearningassignment",
         "functionName": "delete",
         "signature": "delete(assignmentId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/learning/assignments/{assignmentId}": {
-        "operationId": "get",
+        "operationId": "getlearningassignment",
         "functionName": "get",
         "signature": "get(assignmentId, expand)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Learningassignment"
     },
     "GET /api/v2/learning/assignments": {
-        "operationId": "list",
+        "operationId": "getlearningassignments",
         "functionName": "list",
         "signature": "list(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand)",
         "parameters": [
@@ -126,7 +126,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/learning/assignments/{assignmentId}": {
-        "operationId": "update",
+        "operationId": "patchlearningassignment",
         "functionName": "update",
         "signature": "update(assignmentId, body)",
         "parameters": [

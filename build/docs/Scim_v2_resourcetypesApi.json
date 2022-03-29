@@ -1,6 +1,6 @@
 {
     "GET /api/v2/scim/v2/resourcetypes/{resourceType}": {
-        "operationId": "get",
+        "operationId": "getscimv2resourcetype",
         "functionName": "get",
         "signature": "get(resourceType)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Scimconfigresourcetype"
     },
     "GET /api/v2/scim/v2/resourcetypes": {
-        "operationId": "list",
+        "operationId": "getscimv2resourcetypes",
         "functionName": "list",
         "signature": "list()",
         

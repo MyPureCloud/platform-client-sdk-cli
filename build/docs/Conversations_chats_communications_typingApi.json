@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing": {
-        "operationId": "create",
+        "operationId": "postconversationschatcommunicationtyping",
         "functionName": "create",
         "signature": "create(conversationId, communicationId)",
         "parameters": [

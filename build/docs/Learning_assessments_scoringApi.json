@@ -1,6 +1,6 @@
 {
     "POST /api/v2/learning/assessments/scoring": {
-        "operationId": "create",
+        "operationId": "postlearningassessmentsscoring",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

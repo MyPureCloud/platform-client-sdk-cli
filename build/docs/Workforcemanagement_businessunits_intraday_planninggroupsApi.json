@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementbusinessunitintradayplanninggroups",
         "functionName": "list",
         "signature": "list(businessUnitId, date)",
         "parameters": [

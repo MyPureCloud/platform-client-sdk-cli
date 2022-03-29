@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/calendar/url/ics": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementcalendarurlics",
         "functionName": "create",
         "signature": "create(language)",
         "parameters": [
@@ -13,13 +13,13 @@
         "return": "Calendarurlresponse"
     },
     "DELETE /api/v2/workforcemanagement/calendar/url/ics": {
-        "operationId": "delete",
+        "operationId": "deleteworkforcemanagementcalendarurlics",
         "functionName": "delete",
         "signature": "delete()"
         
     },
     "GET /api/v2/workforcemanagement/calendar/url/ics": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementcalendarurlics",
         "functionName": "get",
         "signature": "get()",
         

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/eventlog/{eventId}": {
-        "operationId": "get",
+        "operationId": "getintegrationseventlogeventid",
         "functionName": "get",
         "signature": "get(eventId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Integrationevent"
     },
     "GET /api/v2/integrations/eventlog": {
-        "operationId": "list",
+        "operationId": "getintegrationseventlog",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, sortOrder, entityId)",
         "parameters": [

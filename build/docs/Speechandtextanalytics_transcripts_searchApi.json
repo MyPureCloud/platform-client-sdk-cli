@@ -1,6 +1,6 @@
 {
     "POST /api/v2/speechandtextanalytics/transcripts/search": {
-        "operationId": "create",
+        "operationId": "postspeechandtextanalyticstranscriptssearch",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

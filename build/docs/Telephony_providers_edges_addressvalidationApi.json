@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/addressvalidation": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgesaddressvalidation",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

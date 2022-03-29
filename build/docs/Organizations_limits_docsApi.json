@@ -1,6 +1,6 @@
 {
     "GET /api/v2/organizations/limits/docs": {
-        "operationId": "get",
+        "operationId": "getorganizationslimitsdocs",
         "functionName": "get",
         "signature": "get()",
         

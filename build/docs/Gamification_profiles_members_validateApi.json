@@ -1,6 +1,6 @@
 {
     "POST /api/v2/gamification/profiles/{performanceProfileId}/members/validate": {
-        "operationId": "create",
+        "operationId": "postgamificationprofilemembersvalidate",
         "functionName": "create",
         "signature": "create(performanceProfileId, body)",
         "parameters": [

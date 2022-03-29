@@ -1,6 +1,6 @@
 {
     "POST /api/v2/groups/{groupId}/greetings": {
-        "operationId": "create",
+        "operationId": "postgroupgreetings",
         "functionName": "create",
         "signature": "create(groupId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Greeting"
     },
     "GET /api/v2/groups/{groupId}/greetings": {
-        "operationId": "list",
+        "operationId": "getgroupgreetings",
         "functionName": "list",
         "signature": "list(groupId, pageSize, pageNumber)",
         "parameters": [

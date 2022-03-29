@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/alerting/interactionstats/alerts/{alertId}": {
-        "operationId": "delete",
+        "operationId": "deletealertinginteractionstatsalert",
         "functionName": "delete",
         "signature": "delete(alertId)",
         "parameters": [
@@ -12,7 +12,7 @@
         ]
     },
     "GET /api/v2/alerting/interactionstats/alerts/{alertId}": {
-        "operationId": "get",
+        "operationId": "getalertinginteractionstatsalert",
         "functionName": "get",
         "signature": "get(alertId, expand)",
         "parameters": [
@@ -30,7 +30,7 @@
         "return": "Interactionstatsalert"
     },
     "GET /api/v2/alerting/interactionstats/alerts": {
-        "operationId": "list",
+        "operationId": "getalertinginteractionstatsalerts",
         "functionName": "list",
         "signature": "list(expand)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/alerting/interactionstats/alerts/{alertId}": {
-        "operationId": "update",
+        "operationId": "putalertinginteractionstatsalert",
         "functionName": "update",
         "signature": "update(alertId, body, expand)",
         "parameters": [

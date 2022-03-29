@@ -1,6 +1,6 @@
 {
     "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings": {
-        "operationId": "create",
+        "operationId": "postknowledgeknowledgebaselanguagetrainings",
         "functionName": "create",
         "signature": "create(knowledgeBaseId, languageCode)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Knowledgetraining"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}": {
-        "operationId": "get",
+        "operationId": "getknowledgeknowledgebaselanguagetraining",
         "functionName": "get",
         "signature": "get(knowledgeBaseId, languageCode, trainingId)",
         "parameters": [
@@ -41,7 +41,7 @@
         "return": "Knowledgetraining"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings": {
-        "operationId": "list",
+        "operationId": "getknowledgeknowledgebaselanguagetrainings",
         "functionName": "list",
         "signature": "list(knowledgeBaseId, languageCode, before, after, limit, pageSize, knowledgeDocumentsState)",
         "parameters": [

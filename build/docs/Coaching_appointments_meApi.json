@@ -1,6 +1,6 @@
 {
     "GET /api/v2/coaching/appointments/me": {
-        "operationId": "list",
+        "operationId": "getcoachingappointmentsme",
         "functionName": "list",
         "signature": "list(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)",
         "parameters": [

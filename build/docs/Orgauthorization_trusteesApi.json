@@ -1,6 +1,6 @@
 {
     "POST /api/v2/orgauthorization/trustees": {
-        "operationId": "create",
+        "operationId": "postorgauthorizationtrustees",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Trustee"
     },
     "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}": {
-        "operationId": "delete",
+        "operationId": "deleteorgauthorizationtrustee",
         "functionName": "delete",
         "signature": "delete(trusteeOrgId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}": {
-        "operationId": "get",
+        "operationId": "getorgauthorizationtrustee",
         "functionName": "get",
         "signature": "get(trusteeOrgId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Trustee"
     },
     "GET /api/v2/orgauthorization/trustees": {
-        "operationId": "list",
+        "operationId": "getorgauthorizationtrustees",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [
@@ -56,7 +56,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}": {
-        "operationId": "update",
+        "operationId": "putorgauthorizationtrustee",
         "functionName": "update",
         "signature": "update(trusteeOrgId, body)",
         "parameters": [

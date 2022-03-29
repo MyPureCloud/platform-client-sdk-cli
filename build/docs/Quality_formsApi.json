@@ -1,6 +1,6 @@
 {
     "POST /api/v2/quality/forms": {
-        "operationId": "create",
+        "operationId": "postqualityforms",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Evaluationform"
     },
     "DELETE /api/v2/quality/forms/{formId}": {
-        "operationId": "delete",
+        "operationId": "deletequalityform",
         "functionName": "delete",
         "signature": "delete(formId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/quality/forms/{formId}": {
-        "operationId": "get",
+        "operationId": "getqualityform",
         "functionName": "get",
         "signature": "get(formId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Evaluationform"
     },
     "GET /api/v2/quality/forms": {
-        "operationId": "list",
+        "operationId": "getqualityforms",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)",
         "parameters": [
@@ -86,7 +86,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/quality/forms/{formId}": {
-        "operationId": "update",
+        "operationId": "putqualityform",
         "functionName": "update",
         "signature": "update(formId, body)",
         "parameters": [

@@ -1,13 +1,13 @@
 {
     "GET /api/v2/voicemail/me/policy": {
-        "operationId": "get",
+        "operationId": "getvoicemailmepolicy",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Voicemailuserpolicy"
     },
     "PATCH /api/v2/voicemail/me/policy": {
-        "operationId": "update",
+        "operationId": "patchvoicemailmepolicy",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

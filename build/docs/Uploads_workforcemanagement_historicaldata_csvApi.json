@@ -1,6 +1,6 @@
 {
     "POST /api/v2/uploads/workforcemanagement/historicaldata/csv": {
-        "operationId": "create",
+        "operationId": "postuploadsworkforcemanagementhistoricaldatacsv",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/fax/documents/{documentId}": {
-        "operationId": "delete",
+        "operationId": "deletefaxdocument",
         "functionName": "delete",
         "signature": "delete(documentId)",
         "parameters": [
@@ -12,7 +12,7 @@
         ]
     },
     "GET /api/v2/fax/documents/{documentId}": {
-        "operationId": "get",
+        "operationId": "getfaxdocument",
         "functionName": "get",
         "signature": "get(documentId)",
         "parameters": [
@@ -25,7 +25,7 @@
         "return": "Faxdocument"
     },
     "GET /api/v2/fax/documents": {
-        "operationId": "list",
+        "operationId": "getfaxdocuments",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/fax/documents/{documentId}": {
-        "operationId": "update",
+        "operationId": "putfaxdocument",
         "functionName": "update",
         "signature": "update(documentId, body)",
         "parameters": [

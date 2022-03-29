@@ -1,6 +1,6 @@
 {
     "GET /api/v2/analytics/botflows/{botFlowId}/reportingturns": {
-        "operationId": "list",
+        "operationId": "getanalyticsbotflowreportingturns",
         "functionName": "list",
         "signature": "list(botFlowId, after, pageSize, actionId, sessionId)",
         "parameters": [

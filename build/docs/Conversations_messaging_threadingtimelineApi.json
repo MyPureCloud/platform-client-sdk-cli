@@ -1,13 +1,13 @@
 {
     "GET /api/v2/conversations/messaging/threadingtimeline": {
-        "operationId": "get",
+        "operationId": "getconversationsmessagingthreadingtimeline",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Conversationthreadingwindow"
     },
     "PUT /api/v2/conversations/messaging/threadingtimeline": {
-        "operationId": "update",
+        "operationId": "putconversationsmessagingthreadingtimeline",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

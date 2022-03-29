@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/timeoffrequests": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementtimeoffrequests",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Timeoffrequestresponse"
     },
     "GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementtimeoffrequest",
         "functionName": "get",
         "signature": "get(timeOffRequestId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Timeoffrequestresponse"
     },
     "GET /api/v2/workforcemanagement/timeoffrequests": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementtimeoffrequests",
         "functionName": "list",
         "signature": "list(recentlyReviewed)",
         "parameters": [
@@ -39,7 +39,7 @@
         "return": "Timeoffrequestlist"
     },
     "PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}": {
-        "operationId": "update",
+        "operationId": "patchworkforcemanagementtimeoffrequest",
         "functionName": "update",
         "signature": "update(timeOffRequestId, body)",
         "parameters": [

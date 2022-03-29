@@ -1,6 +1,6 @@
 {
     "POST /api/v2/gamification/profiles": {
-        "operationId": "create",
+        "operationId": "postgamificationprofiles",
         "functionName": "create",
         "signature": "create(body, copyMetrics)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Performanceprofile"
     },
     "GET /api/v2/gamification/profiles/{performanceProfileId}": {
-        "operationId": "get",
+        "operationId": "getgamificationprofile",
         "functionName": "get",
         "signature": "get(performanceProfileId)",
         "parameters": [
@@ -31,14 +31,14 @@
         "return": "Performanceprofile"
     },
     "GET /api/v2/gamification/profiles": {
-        "operationId": "list",
+        "operationId": "getgamificationprofiles",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Getprofilesresponse"
     },
     "PUT /api/v2/gamification/profiles/{performanceProfileId}": {
-        "operationId": "update",
+        "operationId": "putgamificationprofile",
         "functionName": "update",
         "signature": "update(performanceProfileId, body)",
         "parameters": [

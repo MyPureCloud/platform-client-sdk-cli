@@ -1,6 +1,6 @@
 {
     "GET /api/v2/groups/{groupId}/individuals": {
-        "operationId": "list",
+        "operationId": "getgroupindividuals",
         "functionName": "list",
         "signature": "list(groupId)",
         "parameters": [

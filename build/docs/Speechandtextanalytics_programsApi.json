@@ -1,6 +1,6 @@
 {
     "POST /api/v2/speechandtextanalytics/programs": {
-        "operationId": "create",
+        "operationId": "postspeechandtextanalyticsprograms",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Program"
     },
     "DELETE /api/v2/speechandtextanalytics/programs/{programId}": {
-        "operationId": "delete",
+        "operationId": "deletespeechandtextanalyticsprogram",
         "functionName": "delete",
         "signature": "delete(programId, forceDelete)",
         "parameters": [
@@ -30,7 +30,7 @@
         ]
     },
     "GET /api/v2/speechandtextanalytics/programs/{programId}": {
-        "operationId": "get",
+        "operationId": "getspeechandtextanalyticsprogram",
         "functionName": "get",
         "signature": "get(programId)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Program"
     },
     "GET /api/v2/speechandtextanalytics/programs": {
-        "operationId": "list",
+        "operationId": "getspeechandtextanalyticsprograms",
         "functionName": "list",
         "signature": "list(nextPage, pageSize)",
         "parameters": [
@@ -61,7 +61,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/speechandtextanalytics/programs/{programId}": {
-        "operationId": "update",
+        "operationId": "putspeechandtextanalyticsprogram",
         "functionName": "update",
         "signature": "update(programId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementbusinessunitplanninggroups",
         "functionName": "create",
         "signature": "create(businessUnitId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Planninggroup"
     },
     "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}": {
-        "operationId": "delete",
+        "operationId": "deleteworkforcemanagementbusinessunitplanninggroup",
         "functionName": "delete",
         "signature": "delete(businessUnitId, planningGroupId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementbusinessunitplanninggroup",
         "functionName": "get",
         "signature": "get(businessUnitId, planningGroupId)",
         "parameters": [
@@ -53,7 +53,7 @@
         "return": "Planninggroup"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementbusinessunitplanninggroups",
         "functionName": "list",
         "signature": "list(businessUnitId)",
         "parameters": [
@@ -66,7 +66,7 @@
         "return": "Planninggrouplist"
     },
     "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}": {
-        "operationId": "update",
+        "operationId": "patchworkforcemanagementbusinessunitplanninggroup",
         "functionName": "update",
         "signature": "update(businessUnitId, planningGroupId, body)",
         "parameters": [

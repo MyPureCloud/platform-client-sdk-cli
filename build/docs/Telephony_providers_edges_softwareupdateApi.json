@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/{edgeId}/softwareupdate": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgesoftwareupdate",
         "functionName": "create",
         "signature": "create(edgeId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Domainedgesoftwareupdatedto"
     },
     "DELETE /api/v2/telephony/providers/edges/{edgeId}/softwareupdate": {
-        "operationId": "delete",
+        "operationId": "deletetelephonyprovidersedgesoftwareupdate",
         "functionName": "delete",
         "signature": "delete(edgeId)",
         "parameters": [
@@ -30,7 +30,7 @@
         ]
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/softwareupdate": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgesoftwareupdate",
         "functionName": "get",
         "signature": "get(edgeId)",
         "parameters": [

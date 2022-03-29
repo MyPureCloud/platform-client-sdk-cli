@@ -1,6 +1,6 @@
 {
     "PATCH /api/v2/users/{userId}/routingskills/bulk": {
-        "operationId": "bulkadd",
+        "operationId": "patchuserroutingskillsbulk",
         "functionName": "bulkadd",
         "signature": "bulkadd(userId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Userskillentitylisting"
     },
     "PUT /api/v2/users/{userId}/routingskills/bulk": {
-        "operationId": "bulkupdate",
+        "operationId": "putuserroutingskillsbulk",
         "functionName": "bulkupdate",
         "signature": "bulkupdate(userId, body)",
         "parameters": [

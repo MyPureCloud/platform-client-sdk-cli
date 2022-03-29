@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/{edgeId}/setuppackage": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgesetuppackage",
         "functionName": "get",
         "signature": "get(edgeId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/license/infer": {
-        "operationId": "create",
+        "operationId": "postlicenseinfer",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

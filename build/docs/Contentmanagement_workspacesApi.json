@@ -1,6 +1,6 @@
 {
     "POST /api/v2/contentmanagement/workspaces": {
-        "operationId": "create",
+        "operationId": "postcontentmanagementworkspaces",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Workspace"
     },
     "DELETE /api/v2/contentmanagement/workspaces/{workspaceId}": {
-        "operationId": "delete",
+        "operationId": "deletecontentmanagementworkspace",
         "functionName": "delete",
         "signature": "delete(workspaceId, moveChildrenToWorkspaceId)",
         "parameters": [
@@ -30,7 +30,7 @@
         ]
     },
     "GET /api/v2/contentmanagement/workspaces/{workspaceId}": {
-        "operationId": "get",
+        "operationId": "getcontentmanagementworkspace",
         "functionName": "get",
         "signature": "get(workspaceId, expand)",
         "parameters": [
@@ -48,7 +48,7 @@
         "return": "Workspace"
     },
     "GET /api/v2/contentmanagement/workspaces": {
-        "operationId": "list",
+        "operationId": "getcontentmanagementworkspaces",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, access, expand)",
         "parameters": [
@@ -76,7 +76,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/contentmanagement/workspaces/{workspaceId}": {
-        "operationId": "update",
+        "operationId": "putcontentmanagementworkspace",
         "functionName": "update",
         "signature": "update(workspaceId, body)",
         "parameters": [

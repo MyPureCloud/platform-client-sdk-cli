@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/siptraces/download": {
-        "operationId": "create",
+        "operationId": "posttelephonysiptracesdownload",
         "functionName": "create",
         "signature": "create(sIPSearchPublicRequest)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Sipdownloadresponse"
     },
     "GET /api/v2/telephony/siptraces/download/{downloadId}": {
-        "operationId": "get",
+        "operationId": "gettelephonysiptracesdownloaddownloadid",
         "functionName": "get",
         "signature": "get(downloadId)",
         "parameters": [

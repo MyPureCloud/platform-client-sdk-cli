@@ -1,6 +1,6 @@
 {
     "GET /api/v2/flows/datatables/divisionviews/{datatableId}": {
-        "operationId": "get",
+        "operationId": "getflowsdatatablesdivisionview",
         "functionName": "get",
         "signature": "get(datatableId, expand)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Datatable"
     },
     "GET /api/v2/flows/datatables/divisionviews": {
-        "operationId": "list",
+        "operationId": "getflowsdatatablesdivisionviews",
         "functionName": "list",
         "signature": "list(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/outbound/schedules/sequences/{sequenceId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutboundschedulessequence",
         "functionName": "delete",
         "signature": "delete(sequenceId)",
         "parameters": [
@@ -12,7 +12,7 @@
         ]
     },
     "GET /api/v2/outbound/schedules/sequences/{sequenceId}": {
-        "operationId": "get",
+        "operationId": "getoutboundschedulessequence",
         "functionName": "get",
         "signature": "get(sequenceId)",
         "parameters": [
@@ -25,14 +25,14 @@
         "return": "Sequenceschedule"
     },
     "GET /api/v2/outbound/schedules/sequences": {
-        "operationId": "list",
+        "operationId": "getoutboundschedulessequences",
         "functionName": "list",
         "signature": "list()",
         
         "return": "[]Sequenceschedule"
     },
     "PUT /api/v2/outbound/schedules/sequences/{sequenceId}": {
-        "operationId": "update",
+        "operationId": "putoutboundschedulessequence",
         "functionName": "update",
         "signature": "update(sequenceId, body)",
         "parameters": [

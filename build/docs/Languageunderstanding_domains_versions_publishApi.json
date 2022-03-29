@@ -1,6 +1,6 @@
 {
     "POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish": {
-        "operationId": "create",
+        "operationId": "postlanguageunderstandingdomainversionpublish",
         "functionName": "create",
         "signature": "create(domainId, domainVersionId)",
         "parameters": [

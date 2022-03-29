@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor": {
-        "operationId": "delete",
+        "operationId": "deleteexternalcontactsorganizationtrustor",
         "functionName": "delete",
         "signature": "delete(externalOrganizationId)",
         "parameters": [
@@ -12,7 +12,7 @@
         ]
     },
     "PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}": {
-        "operationId": "update",
+        "operationId": "putexternalcontactsorganizationtrustortrustorid",
         "functionName": "update",
         "signature": "update(externalOrganizationId, trustorId)",
         "parameters": [

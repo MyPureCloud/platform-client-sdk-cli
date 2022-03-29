@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/adherence": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementadherence",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/orgauthorization/trustees/audits": {
-        "operationId": "create",
+        "operationId": "postorgauthorizationtrusteesaudits",
         "functionName": "create",
         "signature": "create(body, pageSize, pageNumber, sortBy, sortOrder)",
         "parameters": [

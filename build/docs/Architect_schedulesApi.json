@@ -1,6 +1,6 @@
 {
     "POST /api/v2/architect/schedules": {
-        "operationId": "create",
+        "operationId": "postarchitectschedules",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Schedule"
     },
     "DELETE /api/v2/architect/schedules/{scheduleId}": {
-        "operationId": "delete",
+        "operationId": "deletearchitectschedule",
         "functionName": "delete",
         "signature": "delete(scheduleId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/architect/schedules/{scheduleId}": {
-        "operationId": "get",
+        "operationId": "getarchitectschedule",
         "functionName": "get",
         "signature": "get(scheduleId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Schedule"
     },
     "GET /api/v2/architect/schedules": {
-        "operationId": "list",
+        "operationId": "getarchitectschedules",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name, divisionId)",
         "parameters": [
@@ -76,7 +76,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/architect/schedules/{scheduleId}": {
-        "operationId": "update",
+        "operationId": "putarchitectschedule",
         "functionName": "update",
         "signature": "update(scheduleId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/routing/assessments": {
-        "operationId": "create",
+        "operationId": "postroutingassessments",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Benefitassessment"
     },
     "DELETE /api/v2/routing/assessments/{assessmentId}": {
-        "operationId": "delete",
+        "operationId": "deleteroutingassessment",
         "functionName": "delete",
         "signature": "delete(assessmentId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/routing/assessments/{assessmentId}": {
-        "operationId": "get",
+        "operationId": "getroutingassessment",
         "functionName": "get",
         "signature": "get(assessmentId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Benefitassessment"
     },
     "GET /api/v2/routing/assessments": {
-        "operationId": "list",
+        "operationId": "getroutingassessments",
         "functionName": "list",
         "signature": "list(before, after, limit, pageSize, queueId)",
         "parameters": [

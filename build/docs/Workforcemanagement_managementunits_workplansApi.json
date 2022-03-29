@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunitworkplans",
         "functionName": "create",
         "signature": "create(managementUnitId, body, validationMode)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Workplan"
     },
     "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}": {
-        "operationId": "delete",
+        "operationId": "deleteworkforcemanagementmanagementunitworkplan",
         "functionName": "delete",
         "signature": "delete(managementUnitId, workPlanId)",
         "parameters": [
@@ -40,7 +40,7 @@
         ]
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementmanagementunitworkplan",
         "functionName": "get",
         "signature": "get(managementUnitId, workPlanId, includeOnly)",
         "parameters": [
@@ -63,7 +63,7 @@
         "return": "Workplan"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementmanagementunitworkplans",
         "functionName": "list",
         "signature": "list(managementUnitId, expand)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Workplanlistresponse"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}": {
-        "operationId": "update",
+        "operationId": "patchworkforcemanagementmanagementunitworkplan",
         "functionName": "update",
         "signature": "update(managementUnitId, workPlanId, body, validationMode)",
         "parameters": [

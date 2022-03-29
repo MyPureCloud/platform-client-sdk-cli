@@ -1,6 +1,6 @@
 {
     "GET /api/v2/groups/{groupId}/greetings/defaults": {
-        "operationId": "list",
+        "operationId": "getgroupgreetingsdefaults",
         "functionName": "list",
         "signature": "list(groupId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Defaultgreetinglist"
     },
     "PUT /api/v2/groups/{groupId}/greetings/defaults": {
-        "operationId": "update",
+        "operationId": "putgroupgreetingsdefaults",
         "functionName": "update",
         "signature": "update(groupId, body)",
         "parameters": [

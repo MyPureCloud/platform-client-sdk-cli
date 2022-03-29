@@ -1,6 +1,6 @@
 {
     "POST /api/v2/languageunderstanding/domains": {
-        "operationId": "create",
+        "operationId": "postlanguageunderstandingdomains",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Nludomain"
     },
     "DELETE /api/v2/languageunderstanding/domains/{domainId}": {
-        "operationId": "delete",
+        "operationId": "deletelanguageunderstandingdomain",
         "functionName": "delete",
         "signature": "delete(domainId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/languageunderstanding/domains/{domainId}": {
-        "operationId": "get",
+        "operationId": "getlanguageunderstandingdomain",
         "functionName": "get",
         "signature": "get(domainId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Nludomain"
     },
     "GET /api/v2/languageunderstanding/domains": {
-        "operationId": "list",
+        "operationId": "getlanguageunderstandingdomains",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize)",
         "parameters": [
@@ -56,7 +56,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/languageunderstanding/domains/{domainId}": {
-        "operationId": "update",
+        "operationId": "patchlanguageunderstandingdomain",
         "functionName": "update",
         "signature": "update(domainId, body)",
         "parameters": [

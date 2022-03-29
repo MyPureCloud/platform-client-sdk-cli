@@ -1,6 +1,6 @@
 {
     "GET /api/v2/outbound/contactlists/divisionviews/{contactListId}": {
-        "operationId": "get",
+        "operationId": "getoutboundcontactlistsdivisionview",
         "functionName": "get",
         "signature": "get(contactListId, includeImportStatus, includeSize)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Contactlistdivisionview"
     },
     "GET /api/v2/outbound/contactlists/divisionviews": {
-        "operationId": "list",
+        "operationId": "getoutboundcontactlistsdivisionviews",
         "functionName": "list",
         "signature": "list(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)",
         "parameters": [

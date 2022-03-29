@@ -1,6 +1,6 @@
 {
     "GET /api/v2/scripts/uploads/{uploadId}/status": {
-        "operationId": "get",
+        "operationId": "getscriptsuploadstatus",
         "functionName": "get",
         "signature": "get(uploadId, longPoll)",
         "parameters": [

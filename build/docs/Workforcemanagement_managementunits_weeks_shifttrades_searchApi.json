@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunitweekshifttradessearch",
         "functionName": "create",
         "signature": "create(managementUnitId, weekDateId, body)",
         "parameters": [

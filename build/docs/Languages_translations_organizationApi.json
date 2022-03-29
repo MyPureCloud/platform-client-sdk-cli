@@ -1,6 +1,6 @@
 {
     "GET /api/v2/languages/translations/organization": {
-        "operationId": "get",
+        "operationId": "getlanguagestranslationsorganization",
         "functionName": "get",
         "signature": "get(language)",
         "parameters": [

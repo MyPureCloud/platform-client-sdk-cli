@@ -1,6 +1,6 @@
 {
     "GET /api/v2/date": {
-        "operationId": "get",
+        "operationId": "getdate",
         "functionName": "get",
         "signature": "get()",
         

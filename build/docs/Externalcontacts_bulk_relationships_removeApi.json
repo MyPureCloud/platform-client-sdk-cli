@@ -1,6 +1,6 @@
 {
     "POST /api/v2/externalcontacts/bulk/relationships/remove": {
-        "operationId": "create",
+        "operationId": "postexternalcontactsbulkrelationshipsremove",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

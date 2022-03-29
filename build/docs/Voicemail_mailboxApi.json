@@ -1,6 +1,6 @@
 {
     "GET /api/v2/voicemail/mailbox": {
-        "operationId": "get",
+        "operationId": "getvoicemailmailbox",
         "functionName": "get",
         "signature": "get()",
         

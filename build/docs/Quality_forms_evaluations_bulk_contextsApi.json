@@ -1,6 +1,6 @@
 {
     "GET /api/v2/quality/forms/evaluations/bulk/contexts": {
-        "operationId": "list",
+        "operationId": "getqualityformsevaluationsbulkcontexts",
         "functionName": "list",
         "signature": "list(contextId)",
         "parameters": [

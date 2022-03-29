@@ -1,6 +1,6 @@
 {
     "POST /api/v2/routing/queues/{queueId}/wrapupcodes": {
-        "operationId": "create",
+        "operationId": "postroutingqueuewrapupcodes",
         "functionName": "create",
         "signature": "create(queueId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "[]Wrapupcode"
     },
     "DELETE /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}": {
-        "operationId": "delete",
+        "operationId": "deleteroutingqueuewrapupcode",
         "functionName": "delete",
         "signature": "delete(queueId, codeId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/routing/queues/{queueId}/wrapupcodes": {
-        "operationId": "list",
+        "operationId": "getroutingqueuewrapupcodes",
         "functionName": "list",
         "signature": "list(queueId, pageSize, pageNumber)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/contentmanagement/shares": {
-        "operationId": "create",
+        "operationId": "postcontentmanagementshares",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Createshareresponse"
     },
     "DELETE /api/v2/contentmanagement/shares/{shareId}": {
-        "operationId": "delete",
+        "operationId": "deletecontentmanagementshare",
         "functionName": "delete",
         "signature": "delete(shareId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/contentmanagement/shares/{shareId}": {
-        "operationId": "get",
+        "operationId": "getcontentmanagementshare",
         "functionName": "get",
         "signature": "get(shareId, expand)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Share"
     },
     "GET /api/v2/contentmanagement/shares": {
-        "operationId": "list",
+        "operationId": "getcontentmanagementshares",
         "functionName": "list",
         "signature": "list(entityId, expand, pageSize, pageNumber)",
         "parameters": [

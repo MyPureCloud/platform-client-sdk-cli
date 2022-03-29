@@ -1,6 +1,6 @@
 {
     "GET /api/v2/organizations/limits/namespaces/{namespaceName}": {
-        "operationId": "get",
+        "operationId": "getorganizationslimitsnamespace",
         "functionName": "get",
         "signature": "get(namespaceName)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Limitsentitylisting"
     },
     "GET /api/v2/organizations/limits/namespaces": {
-        "operationId": "list",
+        "operationId": "getorganizationslimitsnamespaces",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [

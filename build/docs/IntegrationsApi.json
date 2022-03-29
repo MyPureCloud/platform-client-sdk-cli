@@ -1,6 +1,6 @@
 {
     "POST /api/v2/integrations": {
-        "operationId": "create",
+        "operationId": "postintegrations",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Integration"
     },
     "DELETE /api/v2/integrations/{integrationId}": {
-        "operationId": "delete",
+        "operationId": "deleteintegration",
         "functionName": "delete",
         "signature": "delete(integrationId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Integration"
     },
     "GET /api/v2/integrations/{integrationId}": {
-        "operationId": "get",
+        "operationId": "getintegration",
         "functionName": "get",
         "signature": "get(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
         "parameters": [
@@ -69,7 +69,7 @@
         "return": "Integration"
     },
     "GET /api/v2/integrations": {
-        "operationId": "list",
+        "operationId": "getintegrations",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
         "parameters": [
@@ -107,7 +107,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/integrations/{integrationId}": {
-        "operationId": "update",
+        "operationId": "patchintegration",
         "functionName": "update",
         "signature": "update(integrationId, body, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
         "parameters": [

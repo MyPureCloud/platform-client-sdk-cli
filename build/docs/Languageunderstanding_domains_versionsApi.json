@@ -1,6 +1,6 @@
 {
     "POST /api/v2/languageunderstanding/domains/{domainId}/versions": {
-        "operationId": "create",
+        "operationId": "postlanguageunderstandingdomainversions",
         "functionName": "create",
         "signature": "create(domainId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Nludomainversion"
     },
     "DELETE /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}": {
-        "operationId": "delete",
+        "operationId": "deletelanguageunderstandingdomainversion",
         "functionName": "delete",
         "signature": "delete(domainId, domainVersionId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}": {
-        "operationId": "get",
+        "operationId": "getlanguageunderstandingdomainversion",
         "functionName": "get",
         "signature": "get(domainId, domainVersionId, includeUtterances)",
         "parameters": [
@@ -58,7 +58,7 @@
         "return": "Nludomainversion"
     },
     "GET /api/v2/languageunderstanding/domains/{domainId}/versions": {
-        "operationId": "list",
+        "operationId": "getlanguageunderstandingdomainversions",
         "functionName": "list",
         "signature": "list(domainId, includeUtterances, pageNumber, pageSize)",
         "parameters": [
@@ -86,7 +86,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}": {
-        "operationId": "update",
+        "operationId": "putlanguageunderstandingdomainversion",
         "functionName": "update",
         "signature": "update(domainId, domainVersionId, body)",
         "parameters": [

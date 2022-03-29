@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/trunkswithrecording": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgestrunkswithrecording",
         "functionName": "get",
         "signature": "get(trunkType)",
         "parameters": [

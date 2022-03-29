@@ -1,6 +1,6 @@
 {
     "GET /api/v2/voicemail/userpolicies/{userId}": {
-        "operationId": "get",
+        "operationId": "getvoicemailuserpolicy",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Voicemailuserpolicy"
     },
     "PUT /api/v2/voicemail/userpolicies/{userId}": {
-        "operationId": "put",
+        "operationId": "putvoicemailuserpolicy",
         "functionName": "put",
         "signature": "put(userId, body)",
         "parameters": [
@@ -31,7 +31,7 @@
         "return": "Voicemailuserpolicy"
     },
     "PATCH /api/v2/voicemail/userpolicies/{userId}": {
-        "operationId": "update",
+        "operationId": "patchvoicemailuserpolicy",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [

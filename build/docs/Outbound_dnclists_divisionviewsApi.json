@@ -1,6 +1,6 @@
 {
     "GET /api/v2/outbound/dnclists/divisionviews/{dncListId}": {
-        "operationId": "get",
+        "operationId": "getoutbounddnclistsdivisionview",
         "functionName": "get",
         "signature": "get(dncListId, includeImportStatus, includeSize)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Dnclistdivisionview"
     },
     "GET /api/v2/outbound/dnclists/divisionviews": {
-        "operationId": "list",
+        "operationId": "getoutbounddnclistsdivisionviews",
         "functionName": "list",
         "signature": "list(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, id, sortBy, sortOrder)",
         "parameters": [

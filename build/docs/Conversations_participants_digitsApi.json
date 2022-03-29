@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits": {
-        "operationId": "create",
+        "operationId": "postconversationparticipantdigits",
         "functionName": "create",
         "signature": "create(conversationId, participantId, body)",
         "parameters": [

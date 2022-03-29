@@ -1,6 +1,6 @@
 {
     "POST /api/v2/authorization/divisions": {
-        "operationId": "create",
+        "operationId": "postauthorizationdivisions",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Authzdivision"
     },
     "DELETE /api/v2/authorization/divisions/{divisionId}": {
-        "operationId": "delete",
+        "operationId": "deleteauthorizationdivision",
         "functionName": "delete",
         "signature": "delete(divisionId, force)",
         "parameters": [
@@ -30,7 +30,7 @@
         ]
     },
     "GET /api/v2/authorization/divisions/{divisionId}": {
-        "operationId": "get",
+        "operationId": "getauthorizationdivision",
         "functionName": "get",
         "signature": "get(divisionId, objectCount)",
         "parameters": [
@@ -48,7 +48,7 @@
         "return": "Authzdivision"
     },
     "GET /api/v2/authorization/divisions": {
-        "operationId": "list",
+        "operationId": "getauthorizationdivisions",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, id, name)",
         "parameters": [
@@ -101,7 +101,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/authorization/divisions/{divisionId}": {
-        "operationId": "update",
+        "operationId": "putauthorizationdivision",
         "functionName": "update",
         "signature": "update(divisionId, body)",
         "parameters": [

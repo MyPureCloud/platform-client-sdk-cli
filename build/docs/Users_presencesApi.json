@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/presences/{sourceId}": {
-        "operationId": "get",
+        "operationId": "getuserpresence",
         "functionName": "get",
         "signature": "get(userId, sourceId)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Userpresence"
     },
     "PATCH /api/v2/users/{userId}/presences/{sourceId}": {
-        "operationId": "update",
+        "operationId": "patchuserpresence",
         "functionName": "update",
         "signature": "update(userId, sourceId, body)",
         "parameters": [

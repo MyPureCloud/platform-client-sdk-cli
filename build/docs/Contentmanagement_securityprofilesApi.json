@@ -1,6 +1,6 @@
 {
     "GET /api/v2/contentmanagement/securityprofiles/{securityProfileId}": {
-        "operationId": "get",
+        "operationId": "getcontentmanagementsecurityprofile",
         "functionName": "get",
         "signature": "get(securityProfileId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Securityprofile"
     },
     "GET /api/v2/contentmanagement/securityprofiles": {
-        "operationId": "list",
+        "operationId": "getcontentmanagementsecurityprofiles",
         "functionName": "list",
         "signature": "list()",
         

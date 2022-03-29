@@ -1,6 +1,6 @@
 {
     "GET /api/v2/speechandtextanalytics/topics/general": {
-        "operationId": "get",
+        "operationId": "getspeechandtextanalyticstopicsgeneral",
         "functionName": "get",
         "signature": "get(dialect)",
         "parameters": [

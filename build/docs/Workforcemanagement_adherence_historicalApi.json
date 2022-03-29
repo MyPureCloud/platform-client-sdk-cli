@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/adherence/historical": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementadherencehistorical",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

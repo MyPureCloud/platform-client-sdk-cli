@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations": {
-        "operationId": "create",
+        "operationId": "postconversationrecordingannotations",
         "functionName": "create",
         "signature": "create(conversationId, recordingId, body)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Annotation"
     },
     "DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}": {
-        "operationId": "delete",
+        "operationId": "deleteconversationrecordingannotation",
         "functionName": "delete",
         "signature": "delete(conversationId, recordingId, annotationId)",
         "parameters": [
@@ -45,7 +45,7 @@
         ]
     },
     "GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}": {
-        "operationId": "get",
+        "operationId": "getconversationrecordingannotation",
         "functionName": "get",
         "signature": "get(conversationId, recordingId, annotationId)",
         "parameters": [
@@ -68,7 +68,7 @@
         "return": "Annotation"
     },
     "GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations": {
-        "operationId": "list",
+        "operationId": "getconversationrecordingannotations",
         "functionName": "list",
         "signature": "list(conversationId, recordingId)",
         "parameters": [
@@ -86,7 +86,7 @@
         "return": "[]Annotation"
     },
     "PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}": {
-        "operationId": "update",
+        "operationId": "putconversationrecordingannotation",
         "functionName": "update",
         "signature": "update(conversationId, recordingId, annotationId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/billing/reports/billableusage": {
-        "operationId": "get",
+        "operationId": "getbillingreportsbillableusage",
         "functionName": "get",
         "signature": "get(startDate, endDate)",
         "parameters": [

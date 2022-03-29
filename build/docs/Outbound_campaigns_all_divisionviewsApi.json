@@ -1,6 +1,6 @@
 {
     "GET /api/v2/outbound/campaigns/all/divisionviews": {
-        "operationId": "list",
+        "operationId": "getoutboundcampaignsalldivisionviews",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder)",
         "parameters": [

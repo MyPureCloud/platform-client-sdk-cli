@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/emails/{conversationId}/inboundmessages": {
-        "operationId": "create",
+        "operationId": "postconversationsemailinboundmessages",
         "functionName": "create",
         "signature": "create(conversationId, body)",
         "parameters": [

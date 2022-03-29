@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/speech/lex/bots": {
-        "operationId": "list",
+        "operationId": "getintegrationsspeechlexbots",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, name)",
         "parameters": [

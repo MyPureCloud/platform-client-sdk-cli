@@ -1,6 +1,6 @@
 {
     "POST /api/v2/users/{userId}/routinglanguages": {
-        "operationId": "create",
+        "operationId": "postuserroutinglanguages",
         "functionName": "create",
         "signature": "create(userId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Userroutinglanguage"
     },
     "DELETE /api/v2/users/{userId}/routinglanguages/{languageId}": {
-        "operationId": "delete",
+        "operationId": "deleteuserroutinglanguage",
         "functionName": "delete",
         "signature": "delete(userId, languageId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/users/{userId}/routinglanguages": {
-        "operationId": "list",
+        "operationId": "getuserroutinglanguages",
         "functionName": "list",
         "signature": "list(userId, pageSize, pageNumber, sortOrder)",
         "parameters": [
@@ -63,7 +63,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/users/{userId}/routinglanguages/{languageId}": {
-        "operationId": "update",
+        "operationId": "patchuserroutinglanguage",
         "functionName": "update",
         "signature": "update(userId, languageId, body)",
         "parameters": [

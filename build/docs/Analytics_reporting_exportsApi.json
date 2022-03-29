@@ -1,6 +1,6 @@
 {
     "POST /api/v2/analytics/reporting/exports": {
-        "operationId": "create",
+        "operationId": "postanalyticsreportingexports",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Reportingexportjobresponse"
     },
     "GET /api/v2/analytics/reporting/exports": {
-        "operationId": "list",
+        "operationId": "getanalyticsreportingexports",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize)",
         "parameters": [

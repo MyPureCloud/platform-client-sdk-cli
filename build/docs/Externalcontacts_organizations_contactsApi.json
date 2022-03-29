@@ -1,6 +1,6 @@
 {
     "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts": {
-        "operationId": "search",
+        "operationId": "getexternalcontactsorganizationcontacts",
         "functionName": "search",
         "signature": "search(externalOrganizationId, pageSize, pageNumber, q, sortOrder, expand)",
         "parameters": [

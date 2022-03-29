@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/messages/inbound/open": {
-        "operationId": "create",
+        "operationId": "postconversationsmessagesinboundopen",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

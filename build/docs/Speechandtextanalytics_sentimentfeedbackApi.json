@@ -1,6 +1,6 @@
 {
     "POST /api/v2/speechandtextanalytics/sentimentfeedback": {
-        "operationId": "create",
+        "operationId": "postspeechandtextanalyticssentimentfeedback",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,13 +13,13 @@
         "return": "Sentimentfeedback"
     },
     "DELETE /api/v2/speechandtextanalytics/sentimentfeedback": {
-        "operationId": "deleteallsentimentfeedback",
+        "operationId": "deletespeechandtextanalyticssentimentfeedback",
         "functionName": "deleteallsentimentfeedback",
         "signature": "deleteallsentimentfeedback()"
         
     },
     "DELETE /api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}": {
-        "operationId": "deletebyid",
+        "operationId": "deletespeechandtextanalyticssentimentfeedbacksentimentfeedbackid",
         "functionName": "deletebyid",
         "signature": "deletebyid(sentimentFeedbackId)",
         "parameters": [
@@ -31,7 +31,7 @@
         ]
     },
     "GET /api/v2/speechandtextanalytics/sentimentfeedback": {
-        "operationId": "get",
+        "operationId": "getspeechandtextanalyticssentimentfeedback",
         "functionName": "get",
         "signature": "get(dialect)",
         "parameters": [

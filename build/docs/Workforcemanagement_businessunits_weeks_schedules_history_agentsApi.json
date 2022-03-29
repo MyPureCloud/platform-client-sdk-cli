@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementbusinessunitweekschedulehistoryagent",
         "functionName": "get",
         "signature": "get(businessUnitId, weekId, scheduleId, agentId)",
         "parameters": [

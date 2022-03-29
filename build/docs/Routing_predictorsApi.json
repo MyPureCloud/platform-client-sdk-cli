@@ -1,6 +1,6 @@
 {
     "POST /api/v2/routing/predictors": {
-        "operationId": "create",
+        "operationId": "postroutingpredictors",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Predictor"
     },
     "DELETE /api/v2/routing/predictors/{predictorId}": {
-        "operationId": "delete",
+        "operationId": "deleteroutingpredictor",
         "functionName": "delete",
         "signature": "delete(predictorId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/routing/predictors/{predictorId}": {
-        "operationId": "get",
+        "operationId": "getroutingpredictor",
         "functionName": "get",
         "signature": "get(predictorId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Predictor"
     },
     "GET /api/v2/routing/predictors": {
-        "operationId": "list",
+        "operationId": "getroutingpredictors",
         "functionName": "list",
         "signature": "list(before, after, limit, pageSize, queueId)",
         "parameters": [
@@ -71,7 +71,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/routing/predictors/{predictorId}": {
-        "operationId": "update",
+        "operationId": "patchroutingpredictor",
         "functionName": "update",
         "signature": "update(predictorId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/userrecordings/summary": {
-        "operationId": "get",
+        "operationId": "getuserrecordingssummary",
         "functionName": "get",
         "signature": "get()",
         

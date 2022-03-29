@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/extensions/{extensionId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgesextension",
         "functionName": "get",
         "signature": "get(extensionId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Extension"
     },
     "GET /api/v2/telephony/providers/edges/extensions": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgesextensions",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, sortOrder, number)",
         "parameters": [
@@ -46,7 +46,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/extensions/{extensionId}": {
-        "operationId": "update",
+        "operationId": "puttelephonyprovidersedgesextension",
         "functionName": "update",
         "signature": "update(extensionId, body)",
         "parameters": [

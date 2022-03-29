@@ -1,6 +1,6 @@
 {
     "PATCH /api/v2/organizations/features/{featureName}": {
-        "operationId": "update",
+        "operationId": "patchorganizationsfeature",
         "functionName": "update",
         "signature": "update(featureName, enabled)",
         "parameters": [

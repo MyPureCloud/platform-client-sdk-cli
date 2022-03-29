@@ -1,6 +1,6 @@
 {
     "POST /api/v2/documentation/gkn/search": {
-        "operationId": "create",
+        "operationId": "postdocumentationgknsearch",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Gkndocumentationsearchresponse"
     },
     "GET /api/v2/documentation/gkn/search": {
-        "operationId": "list",
+        "operationId": "getdocumentationgknsearch",
         "functionName": "list",
         "signature": "list(q64)",
         "parameters": [

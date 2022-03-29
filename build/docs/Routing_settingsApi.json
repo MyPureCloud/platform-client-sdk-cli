@@ -1,19 +1,19 @@
 {
     "DELETE /api/v2/routing/settings": {
-        "operationId": "delete",
+        "operationId": "deleteroutingsettings",
         "functionName": "delete",
         "signature": "delete()"
         
     },
     "GET /api/v2/routing/settings": {
-        "operationId": "get",
+        "operationId": "getroutingsettings",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Routingsettings"
     },
     "PUT /api/v2/routing/settings": {
-        "operationId": "update",
+        "operationId": "putroutingsettings",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

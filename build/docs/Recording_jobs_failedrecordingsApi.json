@@ -1,6 +1,6 @@
 {
     "GET /api/v2/recording/jobs/{jobId}/failedrecordings": {
-        "operationId": "list",
+        "operationId": "getrecordingjobfailedrecordings",
         "functionName": "list",
         "signature": "list(jobId, pageSize, pageNumber, includeTotal, cursor)",
         "parameters": [

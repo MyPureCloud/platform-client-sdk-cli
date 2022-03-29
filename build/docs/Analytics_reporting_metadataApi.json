@@ -1,6 +1,6 @@
 {
     "GET /api/v2/analytics/reporting/{reportId}/metadata": {
-        "operationId": "get",
+        "operationId": "getanalyticsreportingreportidmetadata",
         "functionName": "get",
         "signature": "get(reportId, locale)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Reportmetadata"
     },
     "GET /api/v2/analytics/reporting/metadata": {
-        "operationId": "list",
+        "operationId": "getanalyticsreportingmetadata",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, locale)",
         "parameters": [

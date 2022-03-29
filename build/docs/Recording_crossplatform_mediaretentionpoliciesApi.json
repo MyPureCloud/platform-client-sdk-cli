@@ -1,6 +1,6 @@
 {
     "POST /api/v2/recording/crossplatform/mediaretentionpolicies": {
-        "operationId": "create",
+        "operationId": "postrecordingcrossplatformmediaretentionpolicies",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Crossplatformpolicy"
     },
     "DELETE /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}": {
-        "operationId": "delete",
+        "operationId": "deleterecordingcrossplatformmediaretentionpolicy",
         "functionName": "delete",
         "signature": "delete(policyId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "DELETE /api/v2/recording/crossplatform/mediaretentionpolicies": {
-        "operationId": "deletepolicies",
+        "operationId": "deleterecordingcrossplatformmediaretentionpolicies",
         "functionName": "deletepolicies",
         "signature": "deletepolicies(ids)",
         "parameters": [
@@ -37,7 +37,7 @@
         ]
     },
     "GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}": {
-        "operationId": "get",
+        "operationId": "getrecordingcrossplatformmediaretentionpolicy",
         "functionName": "get",
         "signature": "get(policyId)",
         "parameters": [
@@ -50,7 +50,7 @@
         "return": "Crossplatformpolicy"
     },
     "GET /api/v2/recording/crossplatform/mediaretentionpolicies": {
-        "operationId": "list",
+        "operationId": "getrecordingcrossplatformmediaretentionpolicies",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors)",
         "parameters": [
@@ -108,7 +108,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}": {
-        "operationId": "patch",
+        "operationId": "patchrecordingcrossplatformmediaretentionpolicy",
         "functionName": "patch",
         "signature": "patch(policyId, body)",
         "parameters": [
@@ -126,7 +126,7 @@
         "return": "Crossplatformpolicy"
     },
     "PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}": {
-        "operationId": "update",
+        "operationId": "putrecordingcrossplatformmediaretentionpolicy",
         "functionName": "update",
         "signature": "update(policyId, body)",
         "parameters": [

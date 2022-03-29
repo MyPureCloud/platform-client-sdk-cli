@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/tokens/{userId}": {
-        "operationId": "delete",
+        "operationId": "deletetoken",
         "functionName": "delete",
         "signature": "delete(userId)",
         "parameters": [

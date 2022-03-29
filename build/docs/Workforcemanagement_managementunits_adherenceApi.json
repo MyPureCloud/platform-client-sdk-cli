@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementmanagementunitadherence",
         "functionName": "get",
         "signature": "get(managementUnitId, forceDownloadService)",
         "parameters": [

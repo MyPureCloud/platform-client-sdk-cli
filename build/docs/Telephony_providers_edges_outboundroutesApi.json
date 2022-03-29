@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/outboundroutes": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgesoutboundroutes",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Outboundroute"
     },
     "DELETE /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}": {
-        "operationId": "delete",
+        "operationId": "deletetelephonyprovidersedgesoutboundroute",
         "functionName": "delete",
         "signature": "delete(outboundRouteId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgesoutboundroute",
         "functionName": "get",
         "signature": "get(outboundRouteId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Outboundroute"
     },
     "GET /api/v2/telephony/providers/edges/outboundroutes": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgesoutboundroutes",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, name, siteId, externalTrunkBasesIds, sortBy)",
         "parameters": [
@@ -76,7 +76,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}": {
-        "operationId": "update",
+        "operationId": "puttelephonyprovidersedgesoutboundroute",
         "functionName": "update",
         "signature": "update(outboundRouteId, body)",
         "parameters": [

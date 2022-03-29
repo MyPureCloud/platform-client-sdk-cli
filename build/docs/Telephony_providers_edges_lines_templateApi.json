@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/lines/template": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgeslinestemplate",
         "functionName": "get",
         "signature": "get(lineBaseSettingsId)",
         "parameters": [

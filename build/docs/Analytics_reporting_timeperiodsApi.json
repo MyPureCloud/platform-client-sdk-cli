@@ -1,6 +1,6 @@
 {
     "GET /api/v2/analytics/reporting/timeperiods": {
-        "operationId": "list",
+        "operationId": "getanalyticsreportingtimeperiods",
         "functionName": "list",
         "signature": "list()",
         

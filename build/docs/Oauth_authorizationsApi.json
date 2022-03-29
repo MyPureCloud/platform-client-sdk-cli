@@ -1,6 +1,6 @@
 {
     "GET /api/v2/oauth/authorizations/{clientId}": {
-        "operationId": "get",
+        "operationId": "getoauthauthorization",
         "functionName": "get",
         "signature": "get(clientId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Oauthauthorization"
     },
     "GET /api/v2/oauth/authorizations": {
-        "operationId": "list",
+        "operationId": "getoauthauthorizations",
         "functionName": "list",
         "signature": "list()",
         

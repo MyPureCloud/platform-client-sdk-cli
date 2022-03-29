@@ -1,6 +1,6 @@
 {
     "GET /api/v2/voicemail/groups/{groupId}/policy": {
-        "operationId": "get",
+        "operationId": "getvoicemailgrouppolicy",
         "functionName": "get",
         "signature": "get(groupId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Voicemailgrouppolicy"
     },
     "PATCH /api/v2/voicemail/groups/{groupId}/policy": {
-        "operationId": "update",
+        "operationId": "patchvoicemailgrouppolicy",
         "functionName": "update",
         "signature": "update(groupId, body)",
         "parameters": [

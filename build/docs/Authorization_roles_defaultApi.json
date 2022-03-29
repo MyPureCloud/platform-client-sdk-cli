@@ -1,6 +1,6 @@
 {
     "POST /api/v2/authorization/roles/default": {
-        "operationId": "create",
+        "operationId": "postauthorizationrolesdefault",
         "functionName": "create",
         "signature": "create(force)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Organizationroleentitylisting"
     },
     "PUT /api/v2/authorization/roles/default": {
-        "operationId": "update",
+        "operationId": "putauthorizationrolesdefault",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

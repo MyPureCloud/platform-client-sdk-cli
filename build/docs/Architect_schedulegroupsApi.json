@@ -1,6 +1,6 @@
 {
     "POST /api/v2/architect/schedulegroups": {
-        "operationId": "create",
+        "operationId": "postarchitectschedulegroups",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Schedulegroup"
     },
     "DELETE /api/v2/architect/schedulegroups/{scheduleGroupId}": {
-        "operationId": "delete",
+        "operationId": "deletearchitectschedulegroup",
         "functionName": "delete",
         "signature": "delete(scheduleGroupId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/architect/schedulegroups/{scheduleGroupId}": {
-        "operationId": "get",
+        "operationId": "getarchitectschedulegroup",
         "functionName": "get",
         "signature": "get(scheduleGroupId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Schedulegroup"
     },
     "GET /api/v2/architect/schedulegroups": {
-        "operationId": "list",
+        "operationId": "getarchitectschedulegroups",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds, divisionId)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/architect/schedulegroups/{scheduleGroupId}": {
-        "operationId": "update",
+        "operationId": "putarchitectschedulegroup",
         "functionName": "update",
         "signature": "update(scheduleGroupId, body)",
         "parameters": [

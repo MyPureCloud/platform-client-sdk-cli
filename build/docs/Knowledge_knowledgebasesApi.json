@@ -1,6 +1,6 @@
 {
     "POST /api/v2/knowledge/knowledgebases": {
-        "operationId": "create",
+        "operationId": "postknowledgeknowledgebases",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Knowledgebase"
     },
     "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}": {
-        "operationId": "delete",
+        "operationId": "deleteknowledgeknowledgebase",
         "functionName": "delete",
         "signature": "delete(knowledgeBaseId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Knowledgebase"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}": {
-        "operationId": "get",
+        "operationId": "getknowledgeknowledgebase",
         "functionName": "get",
         "signature": "get(knowledgeBaseId)",
         "parameters": [
@@ -39,7 +39,7 @@
         "return": "Knowledgebase"
     },
     "GET /api/v2/knowledge/knowledgebases": {
-        "operationId": "list",
+        "operationId": "getknowledgeknowledgebases",
         "functionName": "list",
         "signature": "list(before, after, limit, pageSize, name, coreLanguage, published, sortBy, sortOrder)",
         "parameters": [
@@ -92,7 +92,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}": {
-        "operationId": "update",
+        "operationId": "patchknowledgeknowledgebase",
         "functionName": "update",
         "signature": "update(knowledgeBaseId, body)",
         "parameters": [

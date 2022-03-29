@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/contactlists/{contactListId}/export": {
-        "operationId": "create",
+        "operationId": "postoutboundcontactlistexport",
         "functionName": "create",
         "signature": "create(contactListId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Domainentityref"
     },
     "GET /api/v2/outbound/contactlists/{contactListId}/export": {
-        "operationId": "get",
+        "operationId": "getoutboundcontactlistexport",
         "functionName": "get",
         "signature": "get(contactListId, download)",
         "parameters": [

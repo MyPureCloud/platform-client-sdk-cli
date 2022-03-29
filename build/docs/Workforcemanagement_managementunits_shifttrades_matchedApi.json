@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementmanagementunitshifttradesmatched",
         "functionName": "get",
         "signature": "get(managementUnitId)",
         "parameters": [

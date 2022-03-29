@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}": {
-        "operationId": "delete",
+        "operationId": "deleteorgauthorizationtrustorcloneduser",
         "functionName": "delete",
         "signature": "delete(trustorOrgId, trusteeUserId)",
         "parameters": [
@@ -17,7 +17,7 @@
         ]
     },
     "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}": {
-        "operationId": "get",
+        "operationId": "getorgauthorizationtrustorcloneduser",
         "functionName": "get",
         "signature": "get(trustorOrgId, trusteeUserId)",
         "parameters": [
@@ -35,7 +35,7 @@
         "return": "Cloneduser"
     },
     "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers": {
-        "operationId": "list",
+        "operationId": "getorgauthorizationtrustorclonedusers",
         "functionName": "list",
         "signature": "list(trustorOrgId)",
         "parameters": [
@@ -48,7 +48,7 @@
         "return": "Cloneduserentitylisting"
     },
     "PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}": {
-        "operationId": "update",
+        "operationId": "putorgauthorizationtrustorcloneduser",
         "functionName": "update",
         "signature": "update(trustorOrgId, trusteeUserId)",
         "parameters": [

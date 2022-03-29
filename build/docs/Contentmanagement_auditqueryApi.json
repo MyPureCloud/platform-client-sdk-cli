@@ -1,6 +1,6 @@
 {
     "POST /api/v2/contentmanagement/auditquery": {
-        "operationId": "create",
+        "operationId": "postcontentmanagementauditquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

@@ -1,13 +1,13 @@
 {
     "GET /api/v2/analytics/reporting/settings": {
-        "operationId": "get",
+        "operationId": "getanalyticsreportingsettings",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Analyticsreportingsettings"
     },
     "PATCH /api/v2/analytics/reporting/settings": {
-        "operationId": "update",
+        "operationId": "patchanalyticsreportingsettings",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

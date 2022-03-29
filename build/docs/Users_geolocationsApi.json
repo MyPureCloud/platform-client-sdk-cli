@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/geolocations/{clientId}": {
-        "operationId": "get",
+        "operationId": "getusergeolocation",
         "functionName": "get",
         "signature": "get(userId, clientId)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Geolocation"
     },
     "PATCH /api/v2/users/{userId}/geolocations/{clientId}": {
-        "operationId": "update",
+        "operationId": "patchusergeolocation",
         "functionName": "update",
         "signature": "update(userId, clientId, body)",
         "parameters": [

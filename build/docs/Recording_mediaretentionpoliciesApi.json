@@ -1,6 +1,6 @@
 {
     "POST /api/v2/recording/mediaretentionpolicies": {
-        "operationId": "create",
+        "operationId": "postrecordingmediaretentionpolicies",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Policy"
     },
     "DELETE /api/v2/recording/mediaretentionpolicies/{policyId}": {
-        "operationId": "delete",
+        "operationId": "deleterecordingmediaretentionpolicy",
         "functionName": "delete",
         "signature": "delete(policyId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "DELETE /api/v2/recording/mediaretentionpolicies": {
-        "operationId": "deletepolicies",
+        "operationId": "deleterecordingmediaretentionpolicies",
         "functionName": "deletepolicies",
         "signature": "deletepolicies(ids)",
         "parameters": [
@@ -37,7 +37,7 @@
         ]
     },
     "GET /api/v2/recording/mediaretentionpolicies/{policyId}": {
-        "operationId": "get",
+        "operationId": "getrecordingmediaretentionpolicy",
         "functionName": "get",
         "signature": "get(policyId)",
         "parameters": [
@@ -50,7 +50,7 @@
         "return": "Policy"
     },
     "GET /api/v2/recording/mediaretentionpolicies": {
-        "operationId": "list",
+        "operationId": "getrecordingmediaretentionpolicies",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors)",
         "parameters": [
@@ -108,7 +108,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/recording/mediaretentionpolicies/{policyId}": {
-        "operationId": "patch",
+        "operationId": "patchrecordingmediaretentionpolicy",
         "functionName": "patch",
         "signature": "patch(policyId, body)",
         "parameters": [
@@ -126,7 +126,7 @@
         "return": "Policy"
     },
     "PUT /api/v2/recording/mediaretentionpolicies/{policyId}": {
-        "operationId": "update",
+        "operationId": "putrecordingmediaretentionpolicy",
         "functionName": "update",
         "signature": "update(policyId, body)",
         "parameters": [

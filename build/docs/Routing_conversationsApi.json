@@ -1,6 +1,6 @@
 {
     "PATCH /api/v2/routing/conversations/{conversationId}": {
-        "operationId": "update",
+        "operationId": "patchroutingconversation",
         "functionName": "update",
         "signature": "update(conversationId, body)",
         "parameters": [

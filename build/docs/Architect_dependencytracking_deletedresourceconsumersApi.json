@@ -1,6 +1,6 @@
 {
     "GET /api/v2/architect/dependencytracking/deletedresourceconsumers": {
-        "operationId": "list",
+        "operationId": "getarchitectdependencytrackingdeletedresourceconsumers",
         "functionName": "list",
         "signature": "list(name, objectType, flowFilter, consumedResources, consumedResourceType, pageNumber, pageSize)",
         "parameters": [

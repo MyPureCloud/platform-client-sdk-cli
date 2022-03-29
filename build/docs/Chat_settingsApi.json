@@ -1,13 +1,13 @@
 {
     "GET /api/v2/chat/settings": {
-        "operationId": "get",
+        "operationId": "getchatsettings",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Chatsettings"
     },
     "PATCH /api/v2/chat/settings": {
-        "operationId": "patch",
+        "operationId": "patchchatsettings",
         "functionName": "patch",
         "signature": "patch(body)",
         "parameters": [
@@ -20,7 +20,7 @@
         "return": "Chatsettings"
     },
     "PUT /api/v2/chat/settings": {
-        "operationId": "update",
+        "operationId": "putchatsettings",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

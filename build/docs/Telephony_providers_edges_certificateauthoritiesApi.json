@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/certificateauthorities": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgescertificateauthorities",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Domaincertificateauthority"
     },
     "DELETE /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}": {
-        "operationId": "delete",
+        "operationId": "deletetelephonyprovidersedgescertificateauthority",
         "functionName": "delete",
         "signature": "delete(certificateId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgescertificateauthority",
         "functionName": "get",
         "signature": "get(certificateId)",
         "parameters": [
@@ -38,14 +38,14 @@
         "return": "Domaincertificateauthority"
     },
     "GET /api/v2/telephony/providers/edges/certificateauthorities": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgescertificateauthorities",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}": {
-        "operationId": "update",
+        "operationId": "puttelephonyprovidersedgescertificateauthority",
         "functionName": "update",
         "signature": "update(certificateId, body)",
         "parameters": [

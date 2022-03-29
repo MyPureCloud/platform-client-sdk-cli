@@ -1,6 +1,6 @@
 {
     "GET /api/v2/contentmanagement/documents/{documentId}/audits": {
-        "operationId": "list",
+        "operationId": "getcontentmanagementdocumentaudits",
         "functionName": "list",
         "signature": "list(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder)",
         "parameters": [

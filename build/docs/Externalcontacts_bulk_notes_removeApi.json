@@ -1,6 +1,6 @@
 {
     "POST /api/v2/externalcontacts/bulk/notes/remove": {
-        "operationId": "create",
+        "operationId": "postexternalcontactsbulknotesremove",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

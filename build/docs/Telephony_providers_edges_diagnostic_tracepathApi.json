@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgediagnostictracepath",
         "functionName": "create",
         "signature": "create(edgeId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Edgenetworkdiagnostic"
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgediagnostictracepath",
         "functionName": "get",
         "signature": "get(edgeId)",
         "parameters": [

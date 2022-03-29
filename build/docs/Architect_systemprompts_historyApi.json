@@ -1,6 +1,6 @@
 {
     "POST /api/v2/architect/systemprompts/{promptId}/history": {
-        "operationId": "create",
+        "operationId": "postarchitectsystemprompthistory",
         "functionName": "create",
         "signature": "create(promptId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Operation"
     },
     "GET /api/v2/architect/systemprompts/{promptId}/history/{historyId}": {
-        "operationId": "list",
+        "operationId": "getarchitectsystemprompthistoryhistoryid",
         "functionName": "list",
         "signature": "list(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)",
         "parameters": [

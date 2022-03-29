@@ -1,6 +1,6 @@
 {
     "POST /api/v2/flows/actions/unlock": {
-        "operationId": "create",
+        "operationId": "postflowsactionsunlock",
         "functionName": "create",
         "signature": "create(flow)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/scripts/{scriptId}/pages/{pageId}": {
-        "operationId": "get",
+        "operationId": "getscriptpage",
         "functionName": "get",
         "signature": "get(scriptId, pageId, scriptDataVersion)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Page"
     },
     "GET /api/v2/scripts/{scriptId}/pages": {
-        "operationId": "list",
+        "operationId": "getscriptpages",
         "functionName": "list",
         "signature": "list(scriptId, scriptDataVersion)",
         "parameters": [

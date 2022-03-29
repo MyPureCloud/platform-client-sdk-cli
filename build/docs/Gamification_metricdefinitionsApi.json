@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gamification/metricdefinitions/{metricDefinitionId}": {
-        "operationId": "get",
+        "operationId": "getgamificationmetricdefinition",
         "functionName": "get",
         "signature": "get(metricDefinitionId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Metricdefinition"
     },
     "GET /api/v2/gamification/metricdefinitions": {
-        "operationId": "list",
+        "operationId": "getgamificationmetricdefinitions",
         "functionName": "list",
         "signature": "list()",
         

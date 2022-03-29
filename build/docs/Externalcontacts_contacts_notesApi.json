@@ -1,6 +1,6 @@
 {
     "POST /api/v2/externalcontacts/contacts/{contactId}/notes": {
-        "operationId": "create",
+        "operationId": "postexternalcontactscontactnotes",
         "functionName": "create",
         "signature": "create(contactId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Note"
     },
     "DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}": {
-        "operationId": "delete",
+        "operationId": "deleteexternalcontactscontactnote",
         "functionName": "delete",
         "signature": "delete(contactId, noteId)",
         "parameters": [
@@ -36,7 +36,7 @@
         "return": "Empty"
     },
     "GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}": {
-        "operationId": "get",
+        "operationId": "getexternalcontactscontactnote",
         "functionName": "get",
         "signature": "get(contactId, noteId, expand)",
         "parameters": [
@@ -59,7 +59,7 @@
         "return": "Note"
     },
     "GET /api/v2/externalcontacts/contacts/{contactId}/notes": {
-        "operationId": "list",
+        "operationId": "getexternalcontactscontactnotes",
         "functionName": "list",
         "signature": "list(contactId, pageSize, pageNumber, sortOrder, expand)",
         "parameters": [
@@ -92,7 +92,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}": {
-        "operationId": "update",
+        "operationId": "putexternalcontactscontactnote",
         "functionName": "update",
         "signature": "update(contactId, noteId, body)",
         "parameters": [

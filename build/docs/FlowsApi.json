@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/flows": {
-        "operationId": "batchdelete",
+        "operationId": "deleteflows",
         "functionName": "batchdelete",
         "signature": "batchdelete(id)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Operation"
     },
     "POST /api/v2/flows": {
-        "operationId": "create",
+        "operationId": "postflows",
         "functionName": "create",
         "signature": "create(body, language)",
         "parameters": [
@@ -31,7 +31,7 @@
         "return": "Flow"
     },
     "DELETE /api/v2/flows/{flowId}": {
-        "operationId": "delete",
+        "operationId": "deleteflow",
         "functionName": "delete",
         "signature": "delete(flowId)",
         "parameters": [
@@ -43,7 +43,7 @@
         ]
     },
     "GET /api/v2/flows/{flowId}": {
-        "operationId": "get",
+        "operationId": "getflow",
         "functionName": "get",
         "signature": "get(flowId, deleted)",
         "parameters": [
@@ -61,7 +61,7 @@
         "return": "Flow"
     },
     "GET /api/v2/flows": {
-        "operationId": "list",
+        "operationId": "getflows",
         "functionName": "list",
         "signature": "list(varType, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, lockedByClientId, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId)",
         "parameters": [
@@ -164,7 +164,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/flows/{flowId}": {
-        "operationId": "update",
+        "operationId": "putflow",
         "functionName": "update",
         "signature": "update(flowId, body)",
         "parameters": [

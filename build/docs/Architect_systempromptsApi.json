@@ -1,6 +1,6 @@
 {
     "GET /api/v2/architect/systemprompts/{promptId}": {
-        "operationId": "get",
+        "operationId": "getarchitectsystemprompt",
         "functionName": "get",
         "signature": "get(promptId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Systemprompt"
     },
     "GET /api/v2/architect/systemprompts": {
-        "operationId": "list",
+        "operationId": "getarchitectsystemprompts",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription)",
         "parameters": [

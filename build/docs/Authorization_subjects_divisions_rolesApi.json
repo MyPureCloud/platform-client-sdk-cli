@@ -1,6 +1,6 @@
 {
     "POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}": {
-        "operationId": "create",
+        "operationId": "postauthorizationsubjectdivisionrole",
         "functionName": "create",
         "signature": "create(subjectId, divisionId, roleId, subjectType)",
         "parameters": [
@@ -27,7 +27,7 @@
         ]
     },
     "DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}": {
-        "operationId": "delete",
+        "operationId": "deleteauthorizationsubjectdivisionrole",
         "functionName": "delete",
         "signature": "delete(subjectId, divisionId, roleId)",
         "parameters": [

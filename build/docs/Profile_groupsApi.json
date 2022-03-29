@@ -1,6 +1,6 @@
 {
     "GET /api/v2/profiles/groups": {
-        "operationId": "list",
+        "operationId": "getprofilesgroups",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, id, sortOrder)",
         "parameters": [

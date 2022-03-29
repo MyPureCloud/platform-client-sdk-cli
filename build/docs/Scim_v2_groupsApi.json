@@ -1,6 +1,6 @@
 {
     "GET /api/v2/scim/v2/groups/{groupId}": {
-        "operationId": "get",
+        "operationId": "getscimv2group",
         "functionName": "get",
         "signature": "get(groupId, attributes, excludedAttributes, ifNoneMatch)",
         "parameters": [
@@ -28,7 +28,7 @@
         "return": "Scimv2group"
     },
     "GET /api/v2/scim/v2/groups": {
-        "operationId": "list",
+        "operationId": "getscimv2groups",
         "functionName": "list",
         "signature": "list(filter, startIndex, count, attributes, excludedAttributes)",
         "parameters": [
@@ -61,7 +61,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/scim/v2/groups/{groupId}": {
-        "operationId": "modify",
+        "operationId": "patchscimv2group",
         "functionName": "modify",
         "signature": "modify(groupId, body, ifMatch)",
         "parameters": [
@@ -84,7 +84,7 @@
         "return": "Scimv2group"
     },
     "PUT /api/v2/scim/v2/groups/{groupId}": {
-        "operationId": "replace",
+        "operationId": "putscimv2group",
         "functionName": "replace",
         "signature": "replace(groupId, body, ifMatch)",
         "parameters": [

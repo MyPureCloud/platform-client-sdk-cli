@@ -1,6 +1,6 @@
 {
     "POST /api/v2/webdeployments/configurations": {
-        "operationId": "create",
+        "operationId": "postwebdeploymentsconfigurations",
         "functionName": "create",
         "signature": "create(configurationVersion)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Webdeploymentconfigurationversion"
     },
     "DELETE /api/v2/webdeployments/configurations/{configurationId}": {
-        "operationId": "delete",
+        "operationId": "deletewebdeploymentsconfiguration",
         "functionName": "delete",
         "signature": "delete(configurationId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/webdeployments/configurations": {
-        "operationId": "list",
+        "operationId": "getwebdeploymentsconfigurations",
         "functionName": "list",
         "signature": "list(showOnlyPublished)",
         "parameters": [

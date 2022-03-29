@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementbusinessunitweekscheduleagentschedulesquery",
         "functionName": "create",
         "signature": "create(businessUnitId, weekId, scheduleId, body, forceAsync, forceDownloadService)",
         "parameters": [

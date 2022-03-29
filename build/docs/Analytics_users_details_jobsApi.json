@@ -1,6 +1,6 @@
 {
     "POST /api/v2/analytics/users/details/jobs": {
-        "operationId": "create",
+        "operationId": "postanalyticsusersdetailsjobs",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Asyncqueryresponse"
     },
     "DELETE /api/v2/analytics/users/details/jobs/{jobId}": {
-        "operationId": "delete",
+        "operationId": "deleteanalyticsusersdetailsjob",
         "functionName": "delete",
         "signature": "delete(jobId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/analytics/users/details/jobs/{jobId}": {
-        "operationId": "get",
+        "operationId": "getanalyticsusersdetailsjob",
         "functionName": "get",
         "signature": "get(jobId)",
         "parameters": [

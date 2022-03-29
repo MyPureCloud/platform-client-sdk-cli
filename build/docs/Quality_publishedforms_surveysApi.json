@@ -1,6 +1,6 @@
 {
     "POST /api/v2/quality/publishedforms/surveys": {
-        "operationId": "create",
+        "operationId": "postqualitypublishedformssurveys",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Surveyform"
     },
     "GET /api/v2/quality/publishedforms/surveys/{formId}": {
-        "operationId": "get",
+        "operationId": "getqualitypublishedformssurvey",
         "functionName": "get",
         "signature": "get(formId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Surveyform"
     },
     "GET /api/v2/quality/publishedforms/surveys": {
-        "operationId": "list",
+        "operationId": "getqualitypublishedformssurveys",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, name, onlyLatestEnabledPerContext)",
         "parameters": [

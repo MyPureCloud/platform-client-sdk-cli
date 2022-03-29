@@ -1,6 +1,6 @@
 {
     "GET /api/v2/conversations/{conversationId}/recordingmetadata": {
-        "operationId": "conversationmetadata",
+        "operationId": "getconversationrecordingmetadata",
         "functionName": "conversationmetadata",
         "signature": "conversationmetadata(conversationId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "[]Recordingmetadata"
     },
     "GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}": {
-        "operationId": "recordingmetadata",
+        "operationId": "getconversationrecordingmetadatarecordingid",
         "functionName": "recordingmetadata",
         "signature": "recordingmetadata(conversationId, recordingId)",
         "parameters": [

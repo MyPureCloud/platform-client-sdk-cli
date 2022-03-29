@@ -1,6 +1,6 @@
 {
     "POST /api/v2/contentmanagement/query": {
-        "operationId": "create",
+        "operationId": "postcontentmanagementquery",
         "functionName": "create",
         "signature": "create(body, expand)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Queryresults"
     },
     "GET /api/v2/contentmanagement/query": {
-        "operationId": "get",
+        "operationId": "getcontentmanagementquery",
         "functionName": "get",
         "signature": "get(queryPhrase, pageSize, pageNumber, sortBy, sortOrder, expand)",
         "parameters": [

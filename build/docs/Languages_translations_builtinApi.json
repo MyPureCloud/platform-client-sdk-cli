@@ -1,6 +1,6 @@
 {
     "GET /api/v2/languages/translations/builtin": {
-        "operationId": "get",
+        "operationId": "getlanguagestranslationsbuiltin",
         "functionName": "get",
         "signature": "get(language)",
         "parameters": [

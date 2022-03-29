@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason": {
-        "operationId": "delete",
+        "operationId": "deleteconversationparticipantflaggedreason",
         "functionName": "delete",
         "signature": "delete(conversationId, participantId)",
         "parameters": [
@@ -17,7 +17,7 @@
         ]
     },
     "PUT /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason": {
-        "operationId": "update",
+        "operationId": "putconversationparticipantflaggedreason",
         "functionName": "update",
         "signature": "update(conversationId, participantId)",
         "parameters": [

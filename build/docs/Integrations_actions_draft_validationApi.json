@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/actions/{actionId}/draft/validation": {
-        "operationId": "get",
+        "operationId": "getintegrationsactiondraftvalidation",
         "functionName": "get",
         "signature": "get(actionId)",
         "parameters": [

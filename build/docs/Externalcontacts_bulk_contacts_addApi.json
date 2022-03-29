@@ -1,6 +1,6 @@
 {
     "POST /api/v2/externalcontacts/bulk/contacts/add": {
-        "operationId": "create",
+        "operationId": "postexternalcontactsbulkcontactsadd",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

@@ -1,20 +1,20 @@
 {
     "DELETE /api/v2/identityproviders/ping": {
-        "operationId": "delete",
+        "operationId": "deleteidentityprovidersping",
         "functionName": "delete",
         "signature": "delete()",
         
         "return": "Empty"
     },
     "GET /api/v2/identityproviders/ping": {
-        "operationId": "get",
+        "operationId": "getidentityprovidersping",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Pingidentity"
     },
     "PUT /api/v2/identityproviders/ping": {
-        "operationId": "update",
+        "operationId": "putidentityprovidersping",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/audits/query": {
-        "operationId": "create",
+        "operationId": "postauditsquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Auditqueryexecutionstatusresponse"
     },
     "GET /api/v2/audits/query/{transactionId}": {
-        "operationId": "get",
+        "operationId": "getauditsquerytransactionid",
         "functionName": "get",
         "signature": "get(transactionId)",
         "parameters": [

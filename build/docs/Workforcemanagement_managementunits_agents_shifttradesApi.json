@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementmanagementunitagentshifttrades",
         "functionName": "list",
         "signature": "list(managementUnitId, agentId)",
         "parameters": [

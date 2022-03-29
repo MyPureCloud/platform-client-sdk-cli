@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementmanagementunitagent",
         "functionName": "get",
         "signature": "get(managementUnitId, agentId, excludeCapabilities)",
         "parameters": [

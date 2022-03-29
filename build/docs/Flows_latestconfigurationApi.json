@@ -1,6 +1,6 @@
 {
     "GET /api/v2/flows/{flowId}/latestconfiguration": {
-        "operationId": "get",
+        "operationId": "getflowlatestconfiguration",
         "functionName": "get",
         "signature": "get(flowId, deleted)",
         "parameters": [

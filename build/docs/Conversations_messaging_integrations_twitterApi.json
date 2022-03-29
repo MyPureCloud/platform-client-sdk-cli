@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/messaging/integrations/twitter": {
-        "operationId": "create",
+        "operationId": "postconversationsmessagingintegrationstwitter",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Twitterintegration"
     },
     "DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}": {
-        "operationId": "delete",
+        "operationId": "deleteconversationsmessagingintegrationstwitterintegrationid",
         "functionName": "delete",
         "signature": "delete(integrationId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}": {
-        "operationId": "get",
+        "operationId": "getconversationsmessagingintegrationstwitterintegrationid",
         "functionName": "get",
         "signature": "get(integrationId, expand)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Twitterintegration"
     },
     "GET /api/v2/conversations/messaging/integrations/twitter": {
-        "operationId": "list",
+        "operationId": "getconversationsmessagingintegrationstwitter",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand, supportedContentId)",
         "parameters": [
@@ -71,7 +71,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId}": {
-        "operationId": "update",
+        "operationId": "patchconversationsmessagingintegrationstwitterintegrationid",
         "functionName": "update",
         "signature": "update(integrationId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/conversations/messaging/stickers/{messengerType}": {
-        "operationId": "list",
+        "operationId": "getconversationsmessagingsticker",
         "functionName": "list",
         "signature": "list(messengerType, pageSize, pageNumber)",
         "parameters": [

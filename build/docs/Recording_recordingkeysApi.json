@@ -1,13 +1,13 @@
 {
     "POST /api/v2/recording/recordingkeys": {
-        "operationId": "create",
+        "operationId": "postrecordingrecordingkeys",
         "functionName": "create",
         "signature": "create()",
         
         "return": "Encryptionkey"
     },
     "GET /api/v2/recording/recordingkeys": {
-        "operationId": "list",
+        "operationId": "getrecordingrecordingkeys",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [

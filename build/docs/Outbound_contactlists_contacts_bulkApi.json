@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk": {
-        "operationId": "create",
+        "operationId": "postoutboundcontactlistcontactsbulk",
         "functionName": "create",
         "signature": "create(contactListId, body)",
         "parameters": [

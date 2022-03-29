@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementbusinessunitintraday",
         "functionName": "create",
         "signature": "create(businessUnitId, forceAsync, body)",
         "parameters": [

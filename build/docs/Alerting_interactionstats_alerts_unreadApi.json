@@ -1,6 +1,6 @@
 {
     "GET /api/v2/alerting/interactionstats/alerts/unread": {
-        "operationId": "get",
+        "operationId": "getalertinginteractionstatsalertsunread",
         "functionName": "get",
         "signature": "get()",
         

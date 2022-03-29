@@ -1,6 +1,6 @@
 {
     "GET /api/v2/orphanrecordings/{orphanId}/media": {
-        "operationId": "get",
+        "operationId": "getorphanrecordingmedia",
         "functionName": "get",
         "signature": "get(orphanId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats)",
         "parameters": [

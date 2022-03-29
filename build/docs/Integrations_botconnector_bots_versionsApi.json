@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions": {
-        "operationId": "list",
+        "operationId": "getintegrationsbotconnectorintegrationidbotversions",
         "functionName": "list",
         "signature": "list(integrationId, botId, pageNumber, pageSize)",
         "parameters": [

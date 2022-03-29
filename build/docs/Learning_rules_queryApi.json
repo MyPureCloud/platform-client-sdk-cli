@@ -1,6 +1,6 @@
 {
     "POST /api/v2/learning/rules/query": {
-        "operationId": "create",
+        "operationId": "postlearningrulesquery",
         "functionName": "create",
         "signature": "create(pageSize, pageNumber, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results": {
-        "operationId": "list",
+        "operationId": "getoutboundcampaignagentownedmappingpreviewresults",
         "functionName": "list",
         "signature": "list(campaignId)",
         "parameters": [

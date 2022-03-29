@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/historicaldata/validate": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementhistoricaldatavalidate",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

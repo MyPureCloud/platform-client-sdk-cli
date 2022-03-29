@@ -1,6 +1,6 @@
 {
     "POST /api/v2/architect/ivrs": {
-        "operationId": "create",
+        "operationId": "postarchitectivrs",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Ivr"
     },
     "DELETE /api/v2/architect/ivrs/{ivrId}": {
-        "operationId": "delete",
+        "operationId": "deletearchitectivr",
         "functionName": "delete",
         "signature": "delete(ivrId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/architect/ivrs/{ivrId}": {
-        "operationId": "get",
+        "operationId": "getarchitectivr",
         "functionName": "get",
         "signature": "get(ivrId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Ivr"
     },
     "GET /api/v2/architect/ivrs": {
-        "operationId": "list",
+        "operationId": "getarchitectivrs",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name)",
         "parameters": [
@@ -71,7 +71,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/architect/ivrs/{ivrId}": {
-        "operationId": "update",
+        "operationId": "putarchitectivr",
         "functionName": "update",
         "signature": "update(ivrId, body)",
         "parameters": [

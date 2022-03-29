@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgestrunkmetrics",
         "functionName": "get",
         "signature": "get(trunkId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Trunkmetrics"
     },
     "GET /api/v2/telephony/providers/edges/trunks/metrics": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgestrunksmetrics",
         "functionName": "list",
         "signature": "list(trunkIds)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/routing/email/setup": {
-        "operationId": "get",
+        "operationId": "getroutingemailsetup",
         "functionName": "get",
         "signature": "get()",
         

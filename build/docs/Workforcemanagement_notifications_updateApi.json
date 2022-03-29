@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/notifications/update": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementnotificationsupdate",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

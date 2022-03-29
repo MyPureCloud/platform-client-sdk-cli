@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunittimeoffplans",
         "functionName": "create",
         "signature": "create(managementUnitId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Timeoffplan"
     },
     "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}": {
-        "operationId": "delete",
+        "operationId": "deleteworkforcemanagementmanagementunittimeoffplan",
         "functionName": "delete",
         "signature": "delete(managementUnitId, timeOffPlanId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementmanagementunittimeoffplan",
         "functionName": "get",
         "signature": "get(managementUnitId, timeOffPlanId)",
         "parameters": [
@@ -53,7 +53,7 @@
         "return": "Timeoffplan"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementmanagementunittimeoffplans",
         "functionName": "list",
         "signature": "list(managementUnitId)",
         "parameters": [
@@ -66,7 +66,7 @@
         "return": "Timeoffplanlisting"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}": {
-        "operationId": "update",
+        "operationId": "patchworkforcemanagementmanagementunittimeoffplan",
         "functionName": "update",
         "signature": "update(managementUnitId, timeOffPlanId, body)",
         "parameters": [

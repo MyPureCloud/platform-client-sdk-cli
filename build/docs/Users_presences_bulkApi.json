@@ -1,6 +1,6 @@
 {
     "PUT /api/v2/users/presences/bulk": {
-        "operationId": "update",
+        "operationId": "putuserspresencesbulk",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

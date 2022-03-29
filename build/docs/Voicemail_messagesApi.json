@@ -1,6 +1,6 @@
 {
     "POST /api/v2/voicemail/messages": {
-        "operationId": "copy",
+        "operationId": "postvoicemailmessages",
         "functionName": "copy",
         "signature": "copy(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Voicemailmessage"
     },
     "DELETE /api/v2/voicemail/messages/{messageId}": {
-        "operationId": "delete",
+        "operationId": "deletevoicemailmessage",
         "functionName": "delete",
         "signature": "delete(messageId)",
         "parameters": [
@@ -25,13 +25,13 @@
         ]
     },
     "DELETE /api/v2/voicemail/messages": {
-        "operationId": "deleteall",
+        "operationId": "deletevoicemailmessages",
         "functionName": "deleteall",
         "signature": "deleteall()"
         
     },
     "GET /api/v2/voicemail/messages/{messageId}": {
-        "operationId": "get",
+        "operationId": "getvoicemailmessage",
         "functionName": "get",
         "signature": "get(messageId, expand)",
         "parameters": [
@@ -49,7 +49,7 @@
         "return": "Voicemailmessage"
     },
     "GET /api/v2/voicemail/messages": {
-        "operationId": "list",
+        "operationId": "getvoicemailmessages",
         "functionName": "list",
         "signature": "list(ids, expand)",
         "parameters": [
@@ -67,7 +67,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/voicemail/messages/{messageId}": {
-        "operationId": "patch",
+        "operationId": "patchvoicemailmessage",
         "functionName": "patch",
         "signature": "patch(messageId, body)",
         "parameters": [
@@ -85,7 +85,7 @@
         "return": "Voicemailmessage"
     },
     "PUT /api/v2/voicemail/messages/{messageId}": {
-        "operationId": "put",
+        "operationId": "putvoicemailmessage",
         "functionName": "put",
         "signature": "put(messageId, body)",
         "parameters": [

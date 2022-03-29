@@ -1,6 +1,6 @@
 {
     "POST /api/v2/uploads/recordings": {
-        "operationId": "create",
+        "operationId": "postuploadsrecordings",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

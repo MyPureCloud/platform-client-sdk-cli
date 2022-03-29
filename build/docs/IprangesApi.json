@@ -1,6 +1,6 @@
 {
     "GET /api/v2/ipranges": {
-        "operationId": "list",
+        "operationId": "getipranges",
         "functionName": "list",
         "signature": "list()",
         

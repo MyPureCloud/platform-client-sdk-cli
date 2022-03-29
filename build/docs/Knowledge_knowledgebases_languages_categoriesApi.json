@@ -1,6 +1,6 @@
 {
     "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories": {
-        "operationId": "create",
+        "operationId": "postknowledgeknowledgebaselanguagecategories",
         "functionName": "create",
         "signature": "create(knowledgeBaseId, languageCode, body)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Knowledgeextendedcategory"
     },
     "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}": {
-        "operationId": "delete",
+        "operationId": "deleteknowledgeknowledgebaselanguagecategory",
         "functionName": "delete",
         "signature": "delete(categoryId, knowledgeBaseId, languageCode)",
         "parameters": [
@@ -46,7 +46,7 @@
         "return": "Knowledgecategory"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}": {
-        "operationId": "get",
+        "operationId": "getknowledgeknowledgebaselanguagecategory",
         "functionName": "get",
         "signature": "get(categoryId, knowledgeBaseId, languageCode)",
         "parameters": [
@@ -69,7 +69,7 @@
         "return": "Knowledgeextendedcategory"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories": {
-        "operationId": "list",
+        "operationId": "getknowledgeknowledgebaselanguagecategories",
         "functionName": "list",
         "signature": "list(knowledgeBaseId, languageCode, before, after, limit, pageSize, name)",
         "parameters": [
@@ -112,7 +112,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}": {
-        "operationId": "update",
+        "operationId": "patchknowledgeknowledgebaselanguagecategory",
         "functionName": "update",
         "signature": "update(categoryId, knowledgeBaseId, languageCode, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunitworkplanrotations",
         "functionName": "create",
         "signature": "create(managementUnitId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Workplanrotationresponse"
     },
     "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}": {
-        "operationId": "delete",
+        "operationId": "deleteworkforcemanagementmanagementunitworkplanrotation",
         "functionName": "delete",
         "signature": "delete(managementUnitId, workPlanRotationId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementmanagementunitworkplanrotation",
         "functionName": "get",
         "signature": "get(managementUnitId, workPlanRotationId)",
         "parameters": [
@@ -53,7 +53,7 @@
         "return": "Workplanrotationresponse"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementmanagementunitworkplanrotations",
         "functionName": "list",
         "signature": "list(managementUnitId, expand)",
         "parameters": [
@@ -71,7 +71,7 @@
         "return": "Workplanrotationlistresponse"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}": {
-        "operationId": "update",
+        "operationId": "patchworkforcemanagementmanagementunitworkplanrotation",
         "functionName": "update",
         "signature": "update(managementUnitId, workPlanRotationId, body)",
         "parameters": [

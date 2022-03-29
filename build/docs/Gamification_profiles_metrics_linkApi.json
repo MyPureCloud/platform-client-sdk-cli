@@ -1,6 +1,6 @@
 {
     "POST /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link": {
-        "operationId": "create",
+        "operationId": "postgamificationprofilemetriclink",
         "functionName": "create",
         "signature": "create(sourceProfileId, sourceMetricId, body)",
         "parameters": [

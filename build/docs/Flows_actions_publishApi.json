@@ -1,6 +1,6 @@
 {
     "POST /api/v2/flows/actions/publish": {
-        "operationId": "create",
+        "operationId": "postflowsactionspublish",
         "functionName": "create",
         "signature": "create(flow, version)",
         "parameters": [

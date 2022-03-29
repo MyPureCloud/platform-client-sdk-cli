@@ -1,6 +1,6 @@
 {
     "GET /api/v2/externalcontacts/scan/contacts": {
-        "operationId": "list",
+        "operationId": "getexternalcontactsscancontacts",
         "functionName": "list",
         "signature": "list(limit, cursor)",
         "parameters": [

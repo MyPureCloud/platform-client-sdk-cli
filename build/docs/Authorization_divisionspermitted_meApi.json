@@ -1,6 +1,6 @@
 {
     "GET /api/v2/authorization/divisionspermitted/me": {
-        "operationId": "get",
+        "operationId": "getauthorizationdivisionspermittedme",
         "functionName": "get",
         "signature": "get(permission, name)",
         "parameters": [

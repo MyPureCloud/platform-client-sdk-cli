@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunitworkplanvalidate",
         "functionName": "create",
         "signature": "create(managementUnitId, workPlanId, body, expand)",
         "parameters": [

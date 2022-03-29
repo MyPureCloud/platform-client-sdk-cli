@@ -1,6 +1,6 @@
 {
     "POST /api/v2/languageunderstanding/miners/{minerId}/drafts": {
-        "operationId": "create",
+        "operationId": "postlanguageunderstandingminerdrafts",
         "functionName": "create",
         "signature": "create(minerId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Draft"
     },
     "DELETE /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}": {
-        "operationId": "delete",
+        "operationId": "deletelanguageunderstandingminerdraft",
         "functionName": "delete",
         "signature": "delete(minerId, draftId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}": {
-        "operationId": "get",
+        "operationId": "getlanguageunderstandingminerdraft",
         "functionName": "get",
         "signature": "get(minerId, draftId)",
         "parameters": [
@@ -53,7 +53,7 @@
         "return": "Draft"
     },
     "GET /api/v2/languageunderstanding/miners/{minerId}/drafts": {
-        "operationId": "list",
+        "operationId": "getlanguageunderstandingminerdrafts",
         "functionName": "list",
         "signature": "list(minerId)",
         "parameters": [
@@ -66,7 +66,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}": {
-        "operationId": "update",
+        "operationId": "patchlanguageunderstandingminerdraft",
         "functionName": "update",
         "signature": "update(minerId, draftId, body)",
         "parameters": [

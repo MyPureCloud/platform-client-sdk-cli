@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/speech/dialogflow/agents/{agentId}": {
-        "operationId": "get",
+        "operationId": "getintegrationsspeechdialogflowagent",
         "functionName": "get",
         "signature": "get(agentId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Dialogflowagent"
     },
     "GET /api/v2/integrations/speech/dialogflow/agents": {
-        "operationId": "list",
+        "operationId": "getintegrationsspeechdialogflowagents",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, name)",
         "parameters": [

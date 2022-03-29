@@ -1,6 +1,6 @@
 {
     "PATCH /api/v2/users/{userId}/queues/{queueId}": {
-        "operationId": "join",
+        "operationId": "patchuserqueue",
         "functionName": "join",
         "signature": "join(queueId, userId, body)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Userqueue"
     },
     "PATCH /api/v2/users/{userId}/queues": {
-        "operationId": "joinset",
+        "operationId": "patchuserqueues",
         "functionName": "joinset",
         "signature": "joinset(userId, body, divisionId)",
         "parameters": [
@@ -46,7 +46,7 @@
         "return": "Userqueueentitylisting"
     },
     "GET /api/v2/users/{userId}/queues": {
-        "operationId": "list",
+        "operationId": "getuserqueues",
         "functionName": "list",
         "signature": "list(userId, pageSize, pageNumber, joined, divisionId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/faxes": {
-        "operationId": "create",
+        "operationId": "postconversationsfaxes",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

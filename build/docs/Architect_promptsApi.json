@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/architect/prompts": {
-        "operationId": "batchdelete",
+        "operationId": "deletearchitectprompts",
         "functionName": "batchdelete",
         "signature": "batchdelete(id)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Operation"
     },
     "POST /api/v2/architect/prompts": {
-        "operationId": "create",
+        "operationId": "postarchitectprompts",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Prompt"
     },
     "DELETE /api/v2/architect/prompts/{promptId}": {
-        "operationId": "delete",
+        "operationId": "deletearchitectprompt",
         "functionName": "delete",
         "signature": "delete(promptId, allResources)",
         "parameters": [
@@ -43,7 +43,7 @@
         ]
     },
     "GET /api/v2/architect/prompts/{promptId}": {
-        "operationId": "get",
+        "operationId": "getarchitectprompt",
         "functionName": "get",
         "signature": "get(promptId)",
         "parameters": [
@@ -56,7 +56,7 @@
         "return": "Prompt"
     },
     "GET /api/v2/architect/prompts": {
-        "operationId": "list",
+        "operationId": "getarchitectprompts",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder)",
         "parameters": [
@@ -99,7 +99,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/architect/prompts/{promptId}": {
-        "operationId": "update",
+        "operationId": "putarchitectprompt",
         "functionName": "update",
         "signature": "update(promptId, body)",
         "parameters": [

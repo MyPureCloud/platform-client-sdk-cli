@@ -1,6 +1,6 @@
 {
     "POST /api/v2/responsemanagement/libraries": {
-        "operationId": "create",
+        "operationId": "postresponsemanagementlibraries",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Library"
     },
     "DELETE /api/v2/responsemanagement/libraries/{libraryId}": {
-        "operationId": "delete",
+        "operationId": "deleteresponsemanagementlibrary",
         "functionName": "delete",
         "signature": "delete(libraryId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/responsemanagement/libraries/{libraryId}": {
-        "operationId": "get",
+        "operationId": "getresponsemanagementlibrary",
         "functionName": "get",
         "signature": "get(libraryId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Library"
     },
     "GET /api/v2/responsemanagement/libraries": {
-        "operationId": "list",
+        "operationId": "getresponsemanagementlibraries",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, messagingTemplateFilter)",
         "parameters": [
@@ -61,7 +61,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/responsemanagement/libraries/{libraryId}": {
-        "operationId": "update",
+        "operationId": "putresponsemanagementlibrary",
         "functionName": "update",
         "signature": "update(libraryId, body)",
         "parameters": [

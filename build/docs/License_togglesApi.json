@@ -1,6 +1,6 @@
 {
     "POST /api/v2/license/toggles/{featureName}": {
-        "operationId": "create",
+        "operationId": "postlicensetoggle",
         "functionName": "create",
         "signature": "create(featureName)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Licenseorgtoggle"
     },
     "GET /api/v2/license/toggles/{featureName}": {
-        "operationId": "get",
+        "operationId": "getlicensetoggle",
         "functionName": "get",
         "signature": "get(featureName)",
         "parameters": [

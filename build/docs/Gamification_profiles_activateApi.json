@@ -1,6 +1,6 @@
 {
     "POST /api/v2/gamification/profiles/{performanceProfileId}/activate": {
-        "operationId": "create",
+        "operationId": "postgamificationprofileactivate",
         "functionName": "create",
         "signature": "create(performanceProfileId)",
         "parameters": [

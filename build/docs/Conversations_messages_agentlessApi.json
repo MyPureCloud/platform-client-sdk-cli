@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/messages/agentless": {
-        "operationId": "create",
+        "operationId": "postconversationsmessagesagentless",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

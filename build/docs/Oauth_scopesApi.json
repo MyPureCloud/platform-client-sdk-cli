@@ -1,6 +1,6 @@
 {
     "GET /api/v2/oauth/scopes/{scopeId}": {
-        "operationId": "get",
+        "operationId": "getoauthscope",
         "functionName": "get",
         "signature": "get(scopeId, acceptLanguage)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Oauthscope"
     },
     "GET /api/v2/oauth/scopes": {
-        "operationId": "list",
+        "operationId": "getoauthscopes",
         "functionName": "list",
         "signature": "list(acceptLanguage)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/routing/wrapupcodes": {
-        "operationId": "create",
+        "operationId": "postroutingwrapupcodes",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Wrapupcode"
     },
     "DELETE /api/v2/routing/wrapupcodes/{codeId}": {
-        "operationId": "delete",
+        "operationId": "deleteroutingwrapupcode",
         "functionName": "delete",
         "signature": "delete(codeId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/routing/wrapupcodes/{codeId}": {
-        "operationId": "get",
+        "operationId": "getroutingwrapupcode",
         "functionName": "get",
         "signature": "get(codeId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Wrapupcode"
     },
     "GET /api/v2/routing/wrapupcodes": {
-        "operationId": "list",
+        "operationId": "getroutingwrapupcodes",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, sortOrder, name)",
         "parameters": [
@@ -71,7 +71,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/routing/wrapupcodes/{codeId}": {
-        "operationId": "update",
+        "operationId": "putroutingwrapupcode",
         "functionName": "update",
         "signature": "update(codeId, body)",
         "parameters": [

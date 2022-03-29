@@ -1,6 +1,6 @@
 {
     "GET /api/v2/architect/dependencytracking/object": {
-        "operationId": "get",
+        "operationId": "getarchitectdependencytrackingobject",
         "functionName": "get",
         "signature": "get(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType, consumedResourceRequest)",
         "parameters": [

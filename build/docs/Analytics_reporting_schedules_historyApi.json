@@ -1,6 +1,6 @@
 {
     "GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}": {
-        "operationId": "get",
+        "operationId": "getanalyticsreportingschedulehistoryrunid",
         "functionName": "get",
         "signature": "get(runId, scheduleId)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Reportrunentry"
     },
     "GET /api/v2/analytics/reporting/schedules/{scheduleId}/history": {
-        "operationId": "list",
+        "operationId": "getanalyticsreportingschedulehistory",
         "functionName": "list",
         "signature": "list(scheduleId, pageNumber, pageSize)",
         "parameters": [

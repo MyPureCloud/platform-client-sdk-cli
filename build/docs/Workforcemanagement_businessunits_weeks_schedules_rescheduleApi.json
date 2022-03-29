@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementbusinessunitweekschedulereschedule",
         "functionName": "create",
         "signature": "create(businessUnitId, weekId, scheduleId, body)",
         "parameters": [

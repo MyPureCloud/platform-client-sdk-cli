@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunits",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Managementunit"
     },
     "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}": {
-        "operationId": "delete",
+        "operationId": "deleteworkforcemanagementmanagementunit",
         "functionName": "delete",
         "signature": "delete(managementUnitId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementmanagementunit",
         "functionName": "get",
         "signature": "get(managementUnitId, expand)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Managementunit"
     },
     "GET /api/v2/workforcemanagement/managementunits": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementmanagementunits",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand, feature, divisionId)",
         "parameters": [
@@ -76,7 +76,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}": {
-        "operationId": "update",
+        "operationId": "patchworkforcemanagementmanagementunit",
         "functionName": "update",
         "signature": "update(managementUnitId, body)",
         "parameters": [

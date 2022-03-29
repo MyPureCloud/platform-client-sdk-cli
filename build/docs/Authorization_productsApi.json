@@ -1,6 +1,6 @@
 {
     "GET /api/v2/authorization/products": {
-        "operationId": "list",
+        "operationId": "getauthorizationproducts",
         "functionName": "list",
         "signature": "list()",
         

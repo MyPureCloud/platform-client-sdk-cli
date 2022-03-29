@@ -1,6 +1,6 @@
 {
     "POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues": {
-        "operationId": "create",
+        "operationId": "postcontentmanagementworkspacetagvalues",
         "functionName": "create",
         "signature": "create(workspaceId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Tagvalue"
     },
     "DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}": {
-        "operationId": "delete",
+        "operationId": "deletecontentmanagementworkspacetagvalue",
         "functionName": "delete",
         "signature": "delete(workspaceId, tagId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}": {
-        "operationId": "get",
+        "operationId": "getcontentmanagementworkspacetagvalue",
         "functionName": "get",
         "signature": "get(workspaceId, tagId, expand)",
         "parameters": [
@@ -58,7 +58,7 @@
         "return": "Tagvalue"
     },
     "GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues": {
-        "operationId": "list",
+        "operationId": "getcontentmanagementworkspacetagvalues",
         "functionName": "list",
         "signature": "list(workspaceId, value, pageSize, pageNumber, expand)",
         "parameters": [
@@ -91,7 +91,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}": {
-        "operationId": "update",
+        "operationId": "putcontentmanagementworkspacetagvalue",
         "functionName": "update",
         "signature": "update(workspaceId, tagId, body)",
         "parameters": [

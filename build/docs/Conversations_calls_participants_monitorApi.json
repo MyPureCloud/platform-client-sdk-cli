@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor": {
-        "operationId": "create",
+        "operationId": "postconversationscallparticipantmonitor",
         "functionName": "create",
         "signature": "create(conversationId, participantId)",
         "parameters": [

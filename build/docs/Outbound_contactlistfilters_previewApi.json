@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/contactlistfilters/preview": {
-        "operationId": "create",
+        "operationId": "postoutboundcontactlistfilterspreview",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

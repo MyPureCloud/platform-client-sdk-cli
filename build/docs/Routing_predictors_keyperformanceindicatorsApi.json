@@ -1,6 +1,6 @@
 {
     "GET /api/v2/routing/predictors/keyperformanceindicators": {
-        "operationId": "list",
+        "operationId": "getroutingpredictorskeyperformanceindicators",
         "functionName": "list",
         "signature": "list()",
         

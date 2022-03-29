@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/types/{typeId}": {
-        "operationId": "get",
+        "operationId": "getintegrationstype",
         "functionName": "get",
         "signature": "get(typeId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Integrationtype"
     },
     "GET /api/v2/integrations/types": {
-        "operationId": "list",
+        "operationId": "getintegrationstypes",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
         "parameters": [

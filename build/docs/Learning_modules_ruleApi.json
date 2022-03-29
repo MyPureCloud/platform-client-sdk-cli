@@ -1,6 +1,6 @@
 {
     "GET /api/v2/learning/modules/{moduleId}/rule": {
-        "operationId": "get",
+        "operationId": "getlearningmodulerule",
         "functionName": "get",
         "signature": "get(moduleId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Learningmodulerule"
     },
     "PUT /api/v2/learning/modules/{moduleId}/rule": {
-        "operationId": "update",
+        "operationId": "putlearningmodulerule",
         "functionName": "update",
         "signature": "update(moduleId, body)",
         "parameters": [

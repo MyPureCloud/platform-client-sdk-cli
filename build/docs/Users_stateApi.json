@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/state": {
-        "operationId": "get",
+        "operationId": "getuserstate",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Userstate"
     },
     "PUT /api/v2/users/{userId}/state": {
-        "operationId": "update",
+        "operationId": "putuserstate",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [

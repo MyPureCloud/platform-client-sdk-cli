@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/sites": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgessites",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Site"
     },
     "DELETE /api/v2/telephony/providers/edges/sites/{siteId}": {
-        "operationId": "delete",
+        "operationId": "deletetelephonyprovidersedgessite",
         "functionName": "delete",
         "signature": "delete(siteId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/telephony/providers/edges/sites/{siteId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgessite",
         "functionName": "get",
         "signature": "get(siteId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Site"
     },
     "GET /api/v2/telephony/providers/edges/sites": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgessites",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/sites/{siteId}": {
-        "operationId": "update",
+        "operationId": "puttelephonyprovidersedgessite",
         "functionName": "update",
         "signature": "update(siteId, body)",
         "parameters": [

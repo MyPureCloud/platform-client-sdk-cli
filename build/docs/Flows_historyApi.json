@@ -1,6 +1,6 @@
 {
     "POST /api/v2/flows/{flowId}/history": {
-        "operationId": "create",
+        "operationId": "postflowhistory",
         "functionName": "create",
         "signature": "create(flowId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Operation"
     },
     "GET /api/v2/flows/{flowId}/history/{historyId}": {
-        "operationId": "list",
+        "operationId": "getflowhistoryhistoryid",
         "functionName": "list",
         "signature": "list(flowId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)",
         "parameters": [

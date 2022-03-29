@@ -1,6 +1,6 @@
 {
     "POST /api/v2/flows/actions/checkin": {
-        "operationId": "create",
+        "operationId": "postflowsactionscheckin",
         "functionName": "create",
         "signature": "create(flow)",
         "parameters": [

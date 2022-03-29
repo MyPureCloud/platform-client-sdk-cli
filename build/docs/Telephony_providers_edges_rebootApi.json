@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/{edgeId}/reboot": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgereboot",
         "functionName": "create",
         "signature": "create(edgeId, body)",
         "parameters": [

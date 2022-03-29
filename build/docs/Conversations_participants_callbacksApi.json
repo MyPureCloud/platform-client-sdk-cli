@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks": {
-        "operationId": "create",
+        "operationId": "postconversationparticipantcallbacks",
         "functionName": "create",
         "signature": "create(conversationId, participantId, body)",
         "parameters": [

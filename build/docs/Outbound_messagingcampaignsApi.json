@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/messagingcampaigns": {
-        "operationId": "create",
+        "operationId": "postoutboundmessagingcampaigns",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Messagingcampaign"
     },
     "DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutboundmessagingcampaign",
         "functionName": "delete",
         "signature": "delete(messagingCampaignId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Messagingcampaign"
     },
     "GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}": {
-        "operationId": "get",
+        "operationId": "getoutboundmessagingcampaign",
         "functionName": "get",
         "signature": "get(messagingCampaignId)",
         "parameters": [
@@ -39,7 +39,7 @@
         "return": "Messagingcampaign"
     },
     "GET /api/v2/outbound/messagingcampaigns": {
-        "operationId": "list",
+        "operationId": "getoutboundmessagingcampaigns",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, varType, senderSmsPhoneNumber, id)",
         "parameters": [
@@ -97,7 +97,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/messagingcampaigns/{messagingCampaignId}": {
-        "operationId": "update",
+        "operationId": "putoutboundmessagingcampaign",
         "functionName": "update",
         "signature": "update(messagingCampaignId, body)",
         "parameters": [

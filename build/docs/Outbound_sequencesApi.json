@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/sequences": {
-        "operationId": "create",
+        "operationId": "postoutboundsequences",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Campaignsequence"
     },
     "DELETE /api/v2/outbound/sequences/{sequenceId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutboundsequence",
         "functionName": "delete",
         "signature": "delete(sequenceId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/outbound/sequences/{sequenceId}": {
-        "operationId": "get",
+        "operationId": "getoutboundsequence",
         "functionName": "get",
         "signature": "get(sequenceId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Campaignsequence"
     },
     "GET /api/v2/outbound/sequences": {
-        "operationId": "list",
+        "operationId": "getoutboundsequences",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/sequences/{sequenceId}": {
-        "operationId": "update",
+        "operationId": "putoutboundsequence",
         "functionName": "update",
         "signature": "update(sequenceId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/authorization/roles/{roleId}/subjectgrants": {
-        "operationId": "list",
+        "operationId": "getauthorizationrolesubjectgrants",
         "functionName": "list",
         "signature": "list(roleId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
         "parameters": [

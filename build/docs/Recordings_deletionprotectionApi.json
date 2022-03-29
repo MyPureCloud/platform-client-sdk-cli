@@ -1,6 +1,6 @@
 {
     "POST /api/v2/recordings/deletionprotection": {
-        "operationId": "create",
+        "operationId": "postrecordingsdeletionprotection",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "[]Addressableentityref"
     },
     "PUT /api/v2/recordings/deletionprotection": {
-        "operationId": "update",
+        "operationId": "putrecordingsdeletionprotection",
         "functionName": "update",
         "signature": "update(protect, body)",
         "parameters": [

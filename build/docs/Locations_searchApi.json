@@ -1,6 +1,6 @@
 {
     "POST /api/v2/locations/search": {
-        "operationId": "create",
+        "operationId": "postlocationssearch",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Locationssearchresponse"
     },
     "GET /api/v2/locations/search": {
-        "operationId": "list",
+        "operationId": "getlocationssearch",
         "functionName": "list",
         "signature": "list(q64, expand)",
         "parameters": [

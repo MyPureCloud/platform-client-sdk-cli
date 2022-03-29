@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gamification/scorecards/users/{userId}": {
-        "operationId": "get",
+        "operationId": "getgamificationscorecardsuser",
         "functionName": "get",
         "signature": "get(userId, workday, expand)",
         "parameters": [

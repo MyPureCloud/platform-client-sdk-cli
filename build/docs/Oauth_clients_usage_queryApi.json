@@ -1,6 +1,6 @@
 {
     "POST /api/v2/oauth/clients/{clientId}/usage/query": {
-        "operationId": "create",
+        "operationId": "postoauthclientusagequery",
         "functionName": "create",
         "signature": "create(clientId, body)",
         "parameters": [

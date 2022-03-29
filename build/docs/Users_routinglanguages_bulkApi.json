@@ -1,6 +1,6 @@
 {
     "PATCH /api/v2/users/{userId}/routinglanguages/bulk": {
-        "operationId": "update",
+        "operationId": "patchuserroutinglanguagesbulk",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [

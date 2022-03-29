@@ -1,6 +1,6 @@
 {
     "GET /api/v2/conversations/calls/maximumconferenceparties": {
-        "operationId": "get",
+        "operationId": "getconversationscallsmaximumconferenceparties",
         "functionName": "get",
         "signature": "get()",
         

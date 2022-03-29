@@ -1,13 +1,13 @@
 {
     "POST /api/v2/notifications/channels": {
-        "operationId": "create",
+        "operationId": "postnotificationschannels",
         "functionName": "create",
         "signature": "create()",
         
         "return": "Channel"
     },
     "HEAD /api/v2/notifications/channels/{channelId}": {
-        "operationId": "head",
+        "operationId": "headnotificationschannel",
         "functionName": "head",
         "signature": "head(channelId)",
         "parameters": [
@@ -19,7 +19,7 @@
         ]
     },
     "GET /api/v2/notifications/channels": {
-        "operationId": "list",
+        "operationId": "getnotificationschannels",
         "functionName": "list",
         "signature": "list(includechannels)",
         "parameters": [

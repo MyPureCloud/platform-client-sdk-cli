@@ -1,6 +1,6 @@
 {
     "POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query": {
-        "operationId": "create",
+        "operationId": "postcontentmanagementworkspacetagvaluesquery",
         "functionName": "create",
         "signature": "create(workspaceId, body, expand)",
         "parameters": [

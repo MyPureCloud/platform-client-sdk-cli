@@ -1,6 +1,6 @@
 {
     "GET /api/v2/learning/modules/{moduleId}/versions/{versionId}": {
-        "operationId": "get",
+        "operationId": "getlearningmoduleversion",
         "functionName": "get",
         "signature": "get(moduleId, versionId, expand)",
         "parameters": [

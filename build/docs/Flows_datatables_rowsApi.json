@@ -1,6 +1,6 @@
 {
     "POST /api/v2/flows/datatables/{datatableId}/rows": {
-        "operationId": "create",
+        "operationId": "postflowsdatatablerows",
         "functionName": "create",
         "signature": "create(datatableId, dataTableRow)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "map[string]interface{}"
     },
     "DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}": {
-        "operationId": "delete",
+        "operationId": "deleteflowsdatatablerow",
         "functionName": "delete",
         "signature": "delete(datatableId, rowId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/flows/datatables/{datatableId}/rows/{rowId}": {
-        "operationId": "get",
+        "operationId": "getflowsdatatablerow",
         "functionName": "get",
         "signature": "get(datatableId, rowId, showbrief)",
         "parameters": [
@@ -58,7 +58,7 @@
         "return": "map[string]interface{}"
     },
     "GET /api/v2/flows/datatables/{datatableId}/rows": {
-        "operationId": "list",
+        "operationId": "getflowsdatatablerows",
         "functionName": "list",
         "signature": "list(datatableId, pageNumber, pageSize, showbrief)",
         "parameters": [
@@ -86,7 +86,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}": {
-        "operationId": "update",
+        "operationId": "putflowsdatatablerow",
         "functionName": "update",
         "signature": "update(datatableId, rowId, body)",
         "parameters": [

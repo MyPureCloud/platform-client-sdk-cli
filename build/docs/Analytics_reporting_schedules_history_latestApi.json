@@ -1,6 +1,6 @@
 {
     "GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest": {
-        "operationId": "get",
+        "operationId": "getanalyticsreportingschedulehistorylatest",
         "functionName": "get",
         "signature": "get(scheduleId)",
         "parameters": [

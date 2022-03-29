@@ -1,13 +1,13 @@
 {
     "GET /api/v2/geolocations/settings": {
-        "operationId": "get",
+        "operationId": "getgeolocationssettings",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Geolocationsettings"
     },
     "PATCH /api/v2/geolocations/settings": {
-        "operationId": "update",
+        "operationId": "patchgeolocationssettings",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

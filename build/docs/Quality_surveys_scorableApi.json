@@ -1,6 +1,6 @@
 {
     "GET /api/v2/quality/surveys/scorable": {
-        "operationId": "get",
+        "operationId": "getqualitysurveysscorable",
         "functionName": "get",
         "signature": "get(customerSurveyUrl)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Scorablesurvey"
     },
     "PUT /api/v2/quality/surveys/scorable": {
-        "operationId": "update",
+        "operationId": "putqualitysurveysscorable",
         "functionName": "update",
         "signature": "update(body, customerSurveyUrl)",
         "parameters": [

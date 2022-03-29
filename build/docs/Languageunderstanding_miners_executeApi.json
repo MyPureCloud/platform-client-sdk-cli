@@ -1,6 +1,6 @@
 {
     "POST /api/v2/languageunderstanding/miners/{minerId}/execute": {
-        "operationId": "create",
+        "operationId": "postlanguageunderstandingminerexecute",
         "functionName": "create",
         "signature": "create(minerId, body)",
         "parameters": [

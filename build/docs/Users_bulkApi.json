@@ -1,6 +1,6 @@
 {
     "PATCH /api/v2/users/bulk": {
-        "operationId": "update",
+        "operationId": "patchusersbulk",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

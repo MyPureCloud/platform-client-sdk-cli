@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementadhocmodelingjob",
         "functionName": "get",
         "signature": "get(jobId)",
         "parameters": [

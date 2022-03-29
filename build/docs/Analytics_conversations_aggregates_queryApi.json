@@ -1,6 +1,6 @@
 {
     "POST /api/v2/analytics/conversations/aggregates/query": {
-        "operationId": "create",
+        "operationId": "postanalyticsconversationsaggregatesquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

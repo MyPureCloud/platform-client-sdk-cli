@@ -1,6 +1,6 @@
 {
     "GET /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview": {
-        "operationId": "get",
+        "operationId": "getoutboundcontactlisttimezonemappingpreview",
         "functionName": "get",
         "signature": "get(contactListId)",
         "parameters": [

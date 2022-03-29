@@ -1,6 +1,6 @@
 {
     "GET /api/v2/coaching/notifications/{notificationId}": {
-        "operationId": "get",
+        "operationId": "getcoachingnotification",
         "functionName": "get",
         "signature": "get(notificationId, expand)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Coachingnotification"
     },
     "GET /api/v2/coaching/notifications": {
-        "operationId": "list",
+        "operationId": "getcoachingnotifications",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, expand)",
         "parameters": [
@@ -41,7 +41,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/coaching/notifications/{notificationId}": {
-        "operationId": "update",
+        "operationId": "patchcoachingnotification",
         "functionName": "update",
         "signature": "update(notificationId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgessitenumberplansclassifications",
         "functionName": "list",
         "signature": "list(siteId, classification)",
         "parameters": [

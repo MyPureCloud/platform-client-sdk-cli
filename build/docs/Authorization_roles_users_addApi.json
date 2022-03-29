@@ -1,6 +1,6 @@
 {
     "PUT /api/v2/authorization/roles/{roleId}/users/add": {
-        "operationId": "update",
+        "operationId": "putauthorizationroleusersadd",
         "functionName": "update",
         "signature": "update(roleId, body)",
         "parameters": [

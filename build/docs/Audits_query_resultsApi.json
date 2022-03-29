@@ -1,6 +1,6 @@
 {
     "GET /api/v2/audits/query/{transactionId}/results": {
-        "operationId": "list",
+        "operationId": "getauditsquerytransactionidresults",
         "functionName": "list",
         "signature": "list(transactionId, cursor, pageSize, expand)",
         "parameters": [

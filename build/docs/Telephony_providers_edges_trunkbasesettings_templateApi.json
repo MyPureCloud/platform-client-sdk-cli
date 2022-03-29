@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/trunkbasesettings/template": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgestrunkbasesettingstemplate",
         "functionName": "get",
         "signature": "get(trunkMetabaseId)",
         "parameters": [

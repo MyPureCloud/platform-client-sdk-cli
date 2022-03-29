@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/users/{userId}/station/associatedstation": {
-        "operationId": "delete",
+        "operationId": "deleteuserstationassociatedstation",
         "functionName": "delete",
         "signature": "delete(userId)",
         "parameters": [
@@ -12,7 +12,7 @@
         ]
     },
     "PUT /api/v2/users/{userId}/station/associatedstation/{stationId}": {
-        "operationId": "update",
+        "operationId": "putuserstationassociatedstationstationid",
         "functionName": "update",
         "signature": "update(userId, stationId)",
         "parameters": [

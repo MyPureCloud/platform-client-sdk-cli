@@ -1,6 +1,6 @@
 {
     "POST /api/v2/analytics/conversations/{conversationId}/details/properties": {
-        "operationId": "create",
+        "operationId": "postanalyticsconversationdetailsproperties",
         "functionName": "create",
         "signature": "create(conversationId, body)",
         "parameters": [

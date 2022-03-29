@@ -1,6 +1,6 @@
 {
     "GET /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}": {
-        "operationId": "get",
+        "operationId": "getlanguageunderstandingminerintent",
         "functionName": "get",
         "signature": "get(minerId, intentId, expand)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Minerintent"
     },
     "GET /api/v2/languageunderstanding/miners/{minerId}/intents": {
-        "operationId": "list",
+        "operationId": "getlanguageunderstandingminerintents",
         "functionName": "list",
         "signature": "list(minerId, expand)",
         "parameters": [

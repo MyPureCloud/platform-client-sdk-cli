@@ -1,6 +1,6 @@
 {
     "POST /api/v2/flows/outcomes": {
-        "operationId": "create",
+        "operationId": "postflowsoutcomes",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Flowoutcome"
     },
     "GET /api/v2/flows/outcomes/{flowOutcomeId}": {
-        "operationId": "get",
+        "operationId": "getflowsoutcome",
         "functionName": "get",
         "signature": "get(flowOutcomeId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Flowoutcome"
     },
     "GET /api/v2/flows/outcomes": {
-        "operationId": "list",
+        "operationId": "getflowsoutcomes",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)",
         "parameters": [
@@ -79,7 +79,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/flows/outcomes/{flowOutcomeId}": {
-        "operationId": "update",
+        "operationId": "putflowsoutcome",
         "functionName": "update",
         "signature": "update(flowOutcomeId, body)",
         "parameters": [

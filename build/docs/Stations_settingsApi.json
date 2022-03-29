@@ -1,13 +1,13 @@
 {
     "GET /api/v2/stations/settings": {
-        "operationId": "get",
+        "operationId": "getstationssettings",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Stationsettings"
     },
     "PATCH /api/v2/stations/settings": {
-        "operationId": "update",
+        "operationId": "patchstationssettings",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

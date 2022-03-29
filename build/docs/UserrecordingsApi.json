@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/userrecordings/{recordingId}": {
-        "operationId": "delete",
+        "operationId": "deleteuserrecording",
         "functionName": "delete",
         "signature": "delete(recordingId)",
         "parameters": [
@@ -12,7 +12,7 @@
         ]
     },
     "GET /api/v2/userrecordings/{recordingId}": {
-        "operationId": "get",
+        "operationId": "getuserrecording",
         "functionName": "get",
         "signature": "get(recordingId, expand)",
         "parameters": [
@@ -30,7 +30,7 @@
         "return": "Userrecording"
     },
     "GET /api/v2/userrecordings": {
-        "operationId": "list",
+        "operationId": "getuserrecordings",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand)",
         "parameters": [
@@ -53,7 +53,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/userrecordings/{recordingId}": {
-        "operationId": "update",
+        "operationId": "putuserrecording",
         "functionName": "update",
         "signature": "update(recordingId, body, expand)",
         "parameters": [

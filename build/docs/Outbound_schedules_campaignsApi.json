@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/outbound/schedules/campaigns/{campaignId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutboundschedulescampaign",
         "functionName": "delete",
         "signature": "delete(campaignId)",
         "parameters": [
@@ -12,7 +12,7 @@
         ]
     },
     "GET /api/v2/outbound/schedules/campaigns/{campaignId}": {
-        "operationId": "get",
+        "operationId": "getoutboundschedulescampaign",
         "functionName": "get",
         "signature": "get(campaignId)",
         "parameters": [
@@ -25,14 +25,14 @@
         "return": "Campaignschedule"
     },
     "GET /api/v2/outbound/schedules/campaigns": {
-        "operationId": "list",
+        "operationId": "getoutboundschedulescampaigns",
         "functionName": "list",
         "signature": "list()",
         
         "return": "[]Campaignschedule"
     },
     "PUT /api/v2/outbound/schedules/campaigns/{campaignId}": {
-        "operationId": "update",
+        "operationId": "putoutboundschedulescampaign",
         "functionName": "update",
         "signature": "update(campaignId, body)",
         "parameters": [

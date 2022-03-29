@@ -1,13 +1,13 @@
 {
     "GET /api/v2/routing/settings/transcription": {
-        "operationId": "get",
+        "operationId": "getroutingsettingstranscription",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Transcriptionsettings"
     },
     "PUT /api/v2/routing/settings/transcription": {
-        "operationId": "update",
+        "operationId": "putroutingsettingstranscription",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

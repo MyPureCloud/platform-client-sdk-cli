@@ -1,6 +1,6 @@
 {
     "POST /api/v2/authorization/subjects/{subjectId}/bulkadd": {
-        "operationId": "create",
+        "operationId": "postauthorizationsubjectbulkadd",
         "functionName": "create",
         "signature": "create(subjectId, body, subjectType)",
         "parameters": [

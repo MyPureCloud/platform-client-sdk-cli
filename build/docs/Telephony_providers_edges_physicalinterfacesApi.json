@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgephysicalinterface",
         "functionName": "get",
         "signature": "get(edgeId, interfaceId)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Domainphysicalinterface"
     },
     "GET /api/v2/telephony/providers/edges/physicalinterfaces": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgesphysicalinterfaces",
         "functionName": "list",
         "signature": "list(edgeIds)",
         "parameters": [
@@ -31,7 +31,7 @@
         "return": "Swaggeroverridelist"
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces": {
-        "operationId": "listedgeinterfaces",
+        "operationId": "gettelephonyprovidersedgephysicalinterfaces",
         "functionName": "listedgeinterfaces",
         "signature": "listedgeinterfaces(edgeId)",
         "parameters": [

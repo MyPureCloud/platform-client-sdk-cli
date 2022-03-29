@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementmanagementunitweekschedule",
         "functionName": "get",
         "signature": "get(managementUnitId, weekId, scheduleId, expand, forceDownloadService)",
         "parameters": [
@@ -33,7 +33,7 @@
         "return": "Weekscheduleresponse"
     },
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementmanagementunitweekschedules",
         "functionName": "list",
         "signature": "list(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate)",
         "parameters": [

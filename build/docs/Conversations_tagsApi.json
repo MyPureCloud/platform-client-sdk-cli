@@ -1,6 +1,6 @@
 {
     "PUT /api/v2/conversations/{conversationId}/tags": {
-        "operationId": "update",
+        "operationId": "putconversationtags",
         "functionName": "update",
         "signature": "update(conversationId, body)",
         "parameters": [

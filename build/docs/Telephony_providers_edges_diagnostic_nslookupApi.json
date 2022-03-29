@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgediagnosticnslookup",
         "functionName": "create",
         "signature": "create(edgeId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Edgenetworkdiagnostic"
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgediagnosticnslookup",
         "functionName": "get",
         "signature": "get(edgeId)",
         "parameters": [

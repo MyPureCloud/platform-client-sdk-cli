@@ -1,6 +1,6 @@
 {
     "GET /api/v2/flows/outcomes/divisionviews": {
-        "operationId": "list",
+        "operationId": "getflowsoutcomesdivisionviews",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/languages": {
-        "operationId": "create",
+        "operationId": "postlanguages",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Language"
     },
     "DELETE /api/v2/languages/{languageId}": {
-        "operationId": "delete",
+        "operationId": "deletelanguage",
         "functionName": "delete",
         "signature": "delete(languageId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/languages/{languageId}": {
-        "operationId": "get",
+        "operationId": "getlanguage",
         "functionName": "get",
         "signature": "get(languageId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Language"
     },
     "GET /api/v2/languages": {
-        "operationId": "list",
+        "operationId": "getlanguages",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortOrder, name)",
         "parameters": [

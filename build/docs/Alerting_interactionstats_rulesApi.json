@@ -1,6 +1,6 @@
 {
     "POST /api/v2/alerting/interactionstats/rules": {
-        "operationId": "create",
+        "operationId": "postalertinginteractionstatsrules",
         "functionName": "create",
         "signature": "create(body, expand)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Interactionstatsrule"
     },
     "DELETE /api/v2/alerting/interactionstats/rules/{ruleId}": {
-        "operationId": "delete",
+        "operationId": "deletealertinginteractionstatsrule",
         "functionName": "delete",
         "signature": "delete(ruleId)",
         "parameters": [
@@ -30,7 +30,7 @@
         ]
     },
     "GET /api/v2/alerting/interactionstats/rules/{ruleId}": {
-        "operationId": "get",
+        "operationId": "getalertinginteractionstatsrule",
         "functionName": "get",
         "signature": "get(ruleId, expand)",
         "parameters": [
@@ -48,7 +48,7 @@
         "return": "Interactionstatsrule"
     },
     "GET /api/v2/alerting/interactionstats/rules": {
-        "operationId": "list",
+        "operationId": "getalertinginteractionstatsrules",
         "functionName": "list",
         "signature": "list(expand)",
         "parameters": [
@@ -61,7 +61,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/alerting/interactionstats/rules/{ruleId}": {
-        "operationId": "update",
+        "operationId": "putalertinginteractionstatsrule",
         "functionName": "update",
         "signature": "update(ruleId, body, expand)",
         "parameters": [

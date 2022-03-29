@@ -1,6 +1,6 @@
 {
     "GET /api/v2/speechandtextanalytics/programs/unpublished": {
-        "operationId": "list",
+        "operationId": "getspeechandtextanalyticsprogramsunpublished",
         "functionName": "list",
         "signature": "list(nextPage, pageSize)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/quality/calibrations": {
-        "operationId": "create",
+        "operationId": "postqualitycalibrations",
         "functionName": "create",
         "signature": "create(body, expand)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Calibration"
     },
     "DELETE /api/v2/quality/calibrations/{calibrationId}": {
-        "operationId": "delete",
+        "operationId": "deletequalitycalibration",
         "functionName": "delete",
         "signature": "delete(calibrationId, calibratorId)",
         "parameters": [
@@ -36,7 +36,7 @@
         "return": "Calibration"
     },
     "GET /api/v2/quality/calibrations/{calibrationId}": {
-        "operationId": "get",
+        "operationId": "getqualitycalibration",
         "functionName": "get",
         "signature": "get(calibrationId, calibratorId, conversationId)",
         "parameters": [
@@ -59,7 +59,7 @@
         "return": "Calibration"
     },
     "GET /api/v2/quality/calibrations": {
-        "operationId": "list",
+        "operationId": "getqualitycalibrations",
         "functionName": "list",
         "signature": "list(calibratorId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, startTime, endTime)",
         "parameters": [
@@ -117,7 +117,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/quality/calibrations/{calibrationId}": {
-        "operationId": "update",
+        "operationId": "putqualitycalibration",
         "functionName": "update",
         "signature": "update(calibrationId, body)",
         "parameters": [

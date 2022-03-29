@@ -1,6 +1,6 @@
 {
     "POST /api/v2/search/suggest": {
-        "operationId": "create",
+        "operationId": "postsearchsuggest",
         "functionName": "create",
         "signature": "create(body, profile)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Jsonnodesearchresponse"
     },
     "GET /api/v2/search/suggest": {
-        "operationId": "list",
+        "operationId": "getsearchsuggest",
         "functionName": "list",
         "signature": "list(q64, expand, profile)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace": {
-        "operationId": "create",
+        "operationId": "postconversationscallbackparticipantreplace",
         "functionName": "create",
         "signature": "create(conversationId, participantId, body)",
         "parameters": [

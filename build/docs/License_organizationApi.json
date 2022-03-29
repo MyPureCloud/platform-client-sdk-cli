@@ -1,6 +1,6 @@
 {
     "POST /api/v2/license/organization": {
-        "operationId": "create",
+        "operationId": "postlicenseorganization",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

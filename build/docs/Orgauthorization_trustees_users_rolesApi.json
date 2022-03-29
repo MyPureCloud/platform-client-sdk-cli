@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles": {
-        "operationId": "delete",
+        "operationId": "deleteorgauthorizationtrusteeuserroles",
         "functionName": "delete",
         "signature": "delete(trusteeOrgId, trusteeUserId)",
         "parameters": [
@@ -17,7 +17,7 @@
         ]
     },
     "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles": {
-        "operationId": "get",
+        "operationId": "getorgauthorizationtrusteeuserroles",
         "functionName": "get",
         "signature": "get(trusteeOrgId, trusteeUserId)",
         "parameters": [
@@ -35,7 +35,7 @@
         "return": "Userauthorization"
     },
     "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles": {
-        "operationId": "update",
+        "operationId": "putorgauthorizationtrusteeuserroles",
         "functionName": "update",
         "signature": "update(trusteeOrgId, trusteeUserId, body)",
         "parameters": [

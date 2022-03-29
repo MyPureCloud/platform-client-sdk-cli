@@ -1,6 +1,6 @@
 {
     "GET /api/v2/conversations/{conversationId}": {
-        "operationId": "get",
+        "operationId": "getconversation",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Conversation"
     },
     "GET /api/v2/conversations": {
-        "operationId": "list",
+        "operationId": "getconversations",
         "functionName": "list",
         "signature": "list(communicationType)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gdpr/subjects": {
-        "operationId": "list",
+        "operationId": "getgdprsubjects",
         "functionName": "list",
         "signature": "list(searchType, searchValue)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents": {
-        "operationId": "create",
+        "operationId": "postknowledgeknowledgebaselanguagedocuments",
         "functionName": "create",
         "signature": "create(knowledgeBaseId, languageCode, body)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Knowledgedocument"
     },
     "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}": {
-        "operationId": "delete",
+        "operationId": "deleteknowledgeknowledgebaselanguagedocument",
         "functionName": "delete",
         "signature": "delete(documentId, knowledgeBaseId, languageCode)",
         "parameters": [
@@ -46,7 +46,7 @@
         "return": "Knowledgedocument"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}": {
-        "operationId": "get",
+        "operationId": "getknowledgeknowledgebaselanguagedocument",
         "functionName": "get",
         "signature": "get(documentId, knowledgeBaseId, languageCode)",
         "parameters": [
@@ -69,7 +69,7 @@
         "return": "Knowledgedocument"
     },
     "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents": {
-        "operationId": "list",
+        "operationId": "getknowledgeknowledgebaselanguagedocuments",
         "functionName": "list",
         "signature": "list(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds)",
         "parameters": [
@@ -132,7 +132,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}": {
-        "operationId": "update",
+        "operationId": "patchknowledgeknowledgebaselanguagedocument",
         "functionName": "update",
         "signature": "update(documentId, knowledgeBaseId, languageCode, body)",
         "parameters": [
@@ -160,7 +160,7 @@
         "return": "Knowledgedocument"
     },
     "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents": {
-        "operationId": "updatecollection",
+        "operationId": "patchknowledgeknowledgebaselanguagedocuments",
         "functionName": "updatecollection",
         "signature": "updatecollection(knowledgeBaseId, languageCode, body)",
         "parameters": [

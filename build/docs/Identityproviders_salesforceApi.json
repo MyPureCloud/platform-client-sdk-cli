@@ -1,20 +1,20 @@
 {
     "DELETE /api/v2/identityproviders/salesforce": {
-        "operationId": "delete",
+        "operationId": "deleteidentityproviderssalesforce",
         "functionName": "delete",
         "signature": "delete()",
         
         "return": "Empty"
     },
     "GET /api/v2/identityproviders/salesforce": {
-        "operationId": "get",
+        "operationId": "getidentityproviderssalesforce",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Salesforce"
     },
     "PUT /api/v2/identityproviders/salesforce": {
-        "operationId": "update",
+        "operationId": "putidentityproviderssalesforce",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/profileskills": {
-        "operationId": "list",
+        "operationId": "getuserprofileskills",
         "functionName": "list",
         "signature": "list(userId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "[]string"
     },
     "PUT /api/v2/users/{userId}/profileskills": {
-        "operationId": "update",
+        "operationId": "putuserprofileskills",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [

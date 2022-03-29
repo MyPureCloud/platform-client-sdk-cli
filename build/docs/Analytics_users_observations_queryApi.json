@@ -1,6 +1,6 @@
 {
     "POST /api/v2/analytics/users/observations/query": {
-        "operationId": "create",
+        "operationId": "postanalyticsusersobservationsquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

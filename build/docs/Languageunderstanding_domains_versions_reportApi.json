@@ -1,6 +1,6 @@
 {
     "GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report": {
-        "operationId": "get",
+        "operationId": "getlanguageunderstandingdomainversionreport",
         "functionName": "get",
         "signature": "get(domainId, domainVersionId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunithistoricaladherencequery",
         "functionName": "create",
         "signature": "create(managementUnitId, body)",
         "parameters": [

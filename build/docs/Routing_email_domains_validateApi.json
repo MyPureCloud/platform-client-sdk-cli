@@ -1,6 +1,6 @@
 {
     "PATCH /api/v2/routing/email/domains/{domainId}/validate": {
-        "operationId": "update",
+        "operationId": "patchroutingemaildomainvalidate",
         "functionName": "update",
         "signature": "update(domainId, body)",
         "parameters": [

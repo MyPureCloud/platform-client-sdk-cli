@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunittimeoffrequestswaitlistpositionsquery",
         "functionName": "create",
         "signature": "create(managementUnitId, body)",
         "parameters": [

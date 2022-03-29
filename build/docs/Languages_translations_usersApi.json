@@ -1,6 +1,6 @@
 {
     "GET /api/v2/languages/translations/users/{userId}": {
-        "operationId": "get",
+        "operationId": "getlanguagestranslationsuser",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [

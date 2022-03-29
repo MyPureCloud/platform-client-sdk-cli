@@ -1,6 +1,6 @@
 {
     "GET /api/v2/quality/forms/surveys/bulk": {
-        "operationId": "list",
+        "operationId": "getqualityformssurveysbulk",
         "functionName": "list",
         "signature": "list(id)",
         "parameters": [

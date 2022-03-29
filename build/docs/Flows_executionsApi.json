@@ -1,6 +1,6 @@
 {
     "POST /api/v2/flows/executions": {
-        "operationId": "create",
+        "operationId": "postflowsexecutions",
         "functionName": "create",
         "signature": "create(flowLaunchRequest)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Flowexecutionlaunchresponse"
     },
     "GET /api/v2/flows/executions/{flowExecutionId}": {
-        "operationId": "get",
+        "operationId": "getflowsexecution",
         "functionName": "get",
         "signature": "get(flowExecutionId)",
         "parameters": [

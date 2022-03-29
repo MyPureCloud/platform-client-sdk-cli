@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/speech/lex/bot/{botId}/aliases": {
-        "operationId": "list",
+        "operationId": "getintegrationsspeechlexbotbotidaliases",
         "functionName": "list",
         "signature": "list(botId, pageNumber, pageSize, status, name)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/voicemail/groups/{groupId}/mailbox": {
-        "operationId": "get",
+        "operationId": "getvoicemailgroupmailbox",
         "functionName": "get",
         "signature": "get(groupId)",
         "parameters": [

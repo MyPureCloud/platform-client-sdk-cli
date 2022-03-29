@@ -1,6 +1,6 @@
 {
     "POST /api/v2/flows/milestones": {
-        "operationId": "create",
+        "operationId": "postflowsmilestones",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Flowmilestone"
     },
     "DELETE /api/v2/flows/milestones/{milestoneId}": {
-        "operationId": "delete",
+        "operationId": "deleteflowsmilestone",
         "functionName": "delete",
         "signature": "delete(milestoneId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Empty"
     },
     "GET /api/v2/flows/milestones/{milestoneId}": {
-        "operationId": "get",
+        "operationId": "getflowsmilestone",
         "functionName": "get",
         "signature": "get(milestoneId)",
         "parameters": [
@@ -39,7 +39,7 @@
         "return": "Flowmilestone"
     },
     "GET /api/v2/flows/milestones": {
-        "operationId": "list",
+        "operationId": "getflowsmilestones",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)",
         "parameters": [
@@ -92,7 +92,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/flows/milestones/{milestoneId}": {
-        "operationId": "update",
+        "operationId": "putflowsmilestone",
         "functionName": "update",
         "signature": "update(milestoneId, body)",
         "parameters": [

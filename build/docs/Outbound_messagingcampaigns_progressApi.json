@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/messagingcampaigns/progress": {
-        "operationId": "create",
+        "operationId": "postoutboundmessagingcampaignsprogress",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "[]Campaignprogress"
     },
     "GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress": {
-        "operationId": "get",
+        "operationId": "getoutboundmessagingcampaignprogress",
         "functionName": "get",
         "signature": "get(messagingCampaignId)",
         "parameters": [

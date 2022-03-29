@@ -1,6 +1,6 @@
 {
     "POST /api/v2/scim/users": {
-        "operationId": "create",
+        "operationId": "postscimusers",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Scimv2user"
     },
     "DELETE /api/v2/scim/users/{userId}": {
-        "operationId": "delete",
+        "operationId": "deletescimuser",
         "functionName": "delete",
         "signature": "delete(userId, ifMatch)",
         "parameters": [
@@ -31,7 +31,7 @@
         "return": "Empty"
     },
     "GET /api/v2/scim/users/{userId}": {
-        "operationId": "get",
+        "operationId": "getscimuser",
         "functionName": "get",
         "signature": "get(userId, attributes, excludedAttributes, ifNoneMatch)",
         "parameters": [
@@ -59,7 +59,7 @@
         "return": "Scimv2user"
     },
     "GET /api/v2/scim/users": {
-        "operationId": "list",
+        "operationId": "getscimusers",
         "functionName": "list",
         "signature": "list(startIndex, count, attributes, excludedAttributes, filter)",
         "parameters": [
@@ -92,7 +92,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/scim/users/{userId}": {
-        "operationId": "replace",
+        "operationId": "putscimuser",
         "functionName": "replace",
         "signature": "replace(userId, body, ifMatch)",
         "parameters": [
@@ -115,7 +115,7 @@
         "return": "Scimv2user"
     },
     "PATCH /api/v2/scim/users/{userId}": {
-        "operationId": "update",
+        "operationId": "patchscimuser",
         "functionName": "update",
         "signature": "update(userId, body, ifMatch)",
         "parameters": [

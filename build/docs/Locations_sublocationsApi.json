@@ -1,6 +1,6 @@
 {
     "GET /api/v2/locations/{locationId}/sublocations": {
-        "operationId": "list",
+        "operationId": "getlocationsublocations",
         "functionName": "list",
         "signature": "list(locationId)",
         "parameters": [

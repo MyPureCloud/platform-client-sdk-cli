@@ -1,6 +1,6 @@
 {
     "POST /api/v2/analytics/surveys/aggregates/query": {
-        "operationId": "create",
+        "operationId": "postanalyticssurveysaggregatesquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

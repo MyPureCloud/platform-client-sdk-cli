@@ -1,13 +1,13 @@
 {
     "GET /api/v2/speechandtextanalytics/settings": {
-        "operationId": "get",
+        "operationId": "getspeechandtextanalyticssettings",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Speechtextanalyticssettingsresponse"
     },
     "PATCH /api/v2/speechandtextanalytics/settings": {
-        "operationId": "patch",
+        "operationId": "patchspeechandtextanalyticssettings",
         "functionName": "patch",
         "signature": "patch(body)",
         "parameters": [
@@ -20,7 +20,7 @@
         "return": "Speechtextanalyticssettingsresponse"
     },
     "PUT /api/v2/speechandtextanalytics/settings": {
-        "operationId": "update",
+        "operationId": "putspeechandtextanalyticssettings",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

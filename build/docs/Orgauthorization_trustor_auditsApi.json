@@ -1,6 +1,6 @@
 {
     "POST /api/v2/orgauthorization/trustor/audits": {
-        "operationId": "create",
+        "operationId": "postorgauthorizationtrustoraudits",
         "functionName": "create",
         "signature": "create(body, pageSize, pageNumber, sortBy, sortOrder)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/groups": {
-        "operationId": "create",
+        "operationId": "postgroups",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Group"
     },
     "DELETE /api/v2/groups/{groupId}": {
-        "operationId": "delete",
+        "operationId": "deletegroup",
         "functionName": "delete",
         "signature": "delete(groupId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/groups/{groupId}": {
-        "operationId": "get",
+        "operationId": "getgroup",
         "functionName": "get",
         "signature": "get(groupId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Group"
     },
     "GET /api/v2/groups": {
-        "operationId": "list",
+        "operationId": "getgroups",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, id, jabberId, sortOrder)",
         "parameters": [
@@ -71,7 +71,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/groups/{groupId}": {
-        "operationId": "update",
+        "operationId": "putgroup",
         "functionName": "update",
         "signature": "update(groupId, body)",
         "parameters": [

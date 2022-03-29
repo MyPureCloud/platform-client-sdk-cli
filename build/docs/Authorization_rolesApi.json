@@ -1,6 +1,6 @@
 {
     "POST /api/v2/authorization/roles/{roleId}": {
-        "operationId": "bulkgrant",
+        "operationId": "postauthorizationrole",
         "functionName": "bulkgrant",
         "signature": "bulkgrant(roleId, body, subjectType)",
         "parameters": [
@@ -22,7 +22,7 @@
         ]
     },
     "POST /api/v2/authorization/roles": {
-        "operationId": "create",
+        "operationId": "postauthorizationroles",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -35,7 +35,7 @@
         "return": "Domainorganizationrole"
     },
     "DELETE /api/v2/authorization/roles/{roleId}": {
-        "operationId": "delete",
+        "operationId": "deleteauthorizationrole",
         "functionName": "delete",
         "signature": "delete(roleId)",
         "parameters": [
@@ -47,7 +47,7 @@
         ]
     },
     "GET /api/v2/authorization/roles/{roleId}": {
-        "operationId": "get",
+        "operationId": "getauthorizationrole",
         "functionName": "get",
         "signature": "get(roleId, expand)",
         "parameters": [
@@ -65,7 +65,7 @@
         "return": "Domainorganizationrole"
     },
     "GET /api/v2/authorization/roles": {
-        "operationId": "list",
+        "operationId": "getauthorizationroles",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id)",
         "parameters": [
@@ -128,7 +128,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/authorization/roles/{roleId}": {
-        "operationId": "patch",
+        "operationId": "patchauthorizationrole",
         "functionName": "patch",
         "signature": "patch(roleId, body)",
         "parameters": [
@@ -146,7 +146,7 @@
         "return": "Domainorganizationrole"
     },
     "PUT /api/v2/authorization/roles/{roleId}": {
-        "operationId": "update",
+        "operationId": "putauthorizationrole",
         "functionName": "update",
         "signature": "update(roleId, body)",
         "parameters": [

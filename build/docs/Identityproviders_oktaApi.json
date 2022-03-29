@@ -1,20 +1,20 @@
 {
     "DELETE /api/v2/identityproviders/okta": {
-        "operationId": "delete",
+        "operationId": "deleteidentityprovidersokta",
         "functionName": "delete",
         "signature": "delete()",
         
         "return": "Empty"
     },
     "GET /api/v2/identityproviders/okta": {
-        "operationId": "get",
+        "operationId": "getidentityprovidersokta",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Okta"
     },
     "PUT /api/v2/identityproviders/okta": {
-        "operationId": "update",
+        "operationId": "putidentityprovidersokta",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

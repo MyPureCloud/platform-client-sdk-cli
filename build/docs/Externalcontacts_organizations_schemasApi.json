@@ -1,6 +1,6 @@
 {
     "POST /api/v2/externalcontacts/organizations/schemas": {
-        "operationId": "create",
+        "operationId": "postexternalcontactsorganizationsschemas",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Dataschema"
     },
     "GET /api/v2/externalcontacts/organizations/schemas/{schemaId}": {
-        "operationId": "get",
+        "operationId": "getexternalcontactsorganizationsschema",
         "functionName": "get",
         "signature": "get(schemaId)",
         "parameters": [
@@ -26,14 +26,14 @@
         "return": "Dataschema"
     },
     "GET /api/v2/externalcontacts/organizations/schemas": {
-        "operationId": "list",
+        "operationId": "getexternalcontactsorganizationsschemas",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Dataschemalisting"
     },
     "PUT /api/v2/externalcontacts/organizations/schemas/{schemaId}": {
-        "operationId": "update",
+        "operationId": "putexternalcontactsorganizationsschema",
         "functionName": "update",
         "signature": "update(schemaId, body)",
         "parameters": [

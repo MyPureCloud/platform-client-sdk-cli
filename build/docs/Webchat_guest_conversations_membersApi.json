@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}": {
-        "operationId": "delete",
+        "operationId": "deletewebchatguestconversationmember",
         "functionName": "delete",
         "signature": "delete(conversationId, memberId)",
         "parameters": [
@@ -17,7 +17,7 @@
         ]
     },
     "GET /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}": {
-        "operationId": "get",
+        "operationId": "getwebchatguestconversationmember",
         "functionName": "get",
         "signature": "get(conversationId, memberId)",
         "parameters": [
@@ -35,7 +35,7 @@
         "return": "Webchatmemberinfo"
     },
     "GET /api/v2/webchat/guest/conversations/{conversationId}/members": {
-        "operationId": "list",
+        "operationId": "getwebchatguestconversationmembers",
         "functionName": "list",
         "signature": "list(conversationId, pageSize, pageNumber, excludeDisconnectedMembers)",
         "parameters": [

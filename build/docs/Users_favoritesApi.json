@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/favorites": {
-        "operationId": "list",
+        "operationId": "getuserfavorites",
         "functionName": "list",
         "signature": "list(userId, pageSize, pageNumber, sortOrder, expand)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}": {
-        "operationId": "get",
+        "operationId": "getintegrationsbotconnectorintegrationidbot",
         "functionName": "get",
         "signature": "get(integrationId, botId, version)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Botconnectorbot"
     },
     "GET /api/v2/integrations/botconnector/{integrationId}/bots": {
-        "operationId": "list",
+        "operationId": "getintegrationsbotconnectorintegrationidbots",
         "functionName": "list",
         "signature": "list(integrationId)",
         "parameters": [
@@ -36,7 +36,7 @@
         "return": "Botlist"
     },
     "PUT /api/v2/integrations/botconnector/{integrationId}/bots": {
-        "operationId": "update",
+        "operationId": "putintegrationsbotconnectorintegrationidbots",
         "functionName": "update",
         "signature": "update(integrationId, botList)",
         "parameters": [

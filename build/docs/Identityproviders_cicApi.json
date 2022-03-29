@@ -1,20 +1,20 @@
 {
     "DELETE /api/v2/identityproviders/cic": {
-        "operationId": "delete",
+        "operationId": "deleteidentityproviderscic",
         "functionName": "delete",
         "signature": "delete()",
         
         "return": "Empty"
     },
     "GET /api/v2/identityproviders/cic": {
-        "operationId": "get",
+        "operationId": "getidentityproviderscic",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Customerinteractioncenter"
     },
     "PUT /api/v2/identityproviders/cic": {
-        "operationId": "update",
+        "operationId": "putidentityproviderscic",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes": {
-        "operationId": "create",
+        "operationId": "postexternalcontactsorganizationnotes",
         "functionName": "create",
         "signature": "create(externalOrganizationId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Note"
     },
     "DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}": {
-        "operationId": "delete",
+        "operationId": "deleteexternalcontactsorganizationnote",
         "functionName": "delete",
         "signature": "delete(externalOrganizationId, noteId)",
         "parameters": [
@@ -36,7 +36,7 @@
         "return": "Empty"
     },
     "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}": {
-        "operationId": "get",
+        "operationId": "getexternalcontactsorganizationnote",
         "functionName": "get",
         "signature": "get(externalOrganizationId, noteId, expand)",
         "parameters": [
@@ -59,7 +59,7 @@
         "return": "Note"
     },
     "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes": {
-        "operationId": "list",
+        "operationId": "getexternalcontactsorganizationnotes",
         "functionName": "list",
         "signature": "list(externalOrganizationId, pageSize, pageNumber, sortOrder, expand)",
         "parameters": [
@@ -92,7 +92,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}": {
-        "operationId": "update",
+        "operationId": "putexternalcontactsorganizationnote",
         "functionName": "update",
         "signature": "update(externalOrganizationId, noteId, body)",
         "parameters": [

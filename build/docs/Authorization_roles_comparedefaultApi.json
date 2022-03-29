@@ -1,6 +1,6 @@
 {
     "POST /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}": {
-        "operationId": "create",
+        "operationId": "postauthorizationrolecomparedefaultrightroleid",
         "functionName": "create",
         "signature": "create(leftRoleId, rightRoleId, body)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Domainorgroledifference"
     },
     "GET /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}": {
-        "operationId": "get",
+        "operationId": "getauthorizationrolecomparedefaultrightroleid",
         "functionName": "get",
         "signature": "get(leftRoleId, rightRoleId)",
         "parameters": [

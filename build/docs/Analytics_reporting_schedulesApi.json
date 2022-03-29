@@ -1,6 +1,6 @@
 {
     "POST /api/v2/analytics/reporting/schedules": {
-        "operationId": "create",
+        "operationId": "postanalyticsreportingschedules",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Reportschedule"
     },
     "DELETE /api/v2/analytics/reporting/schedules/{scheduleId}": {
-        "operationId": "delete",
+        "operationId": "deleteanalyticsreportingschedule",
         "functionName": "delete",
         "signature": "delete(scheduleId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/analytics/reporting/schedules/{scheduleId}": {
-        "operationId": "get",
+        "operationId": "getanalyticsreportingschedule",
         "functionName": "get",
         "signature": "get(scheduleId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Reportschedule"
     },
     "GET /api/v2/analytics/reporting/schedules": {
-        "operationId": "list",
+        "operationId": "getanalyticsreportingschedules",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize)",
         "parameters": [
@@ -56,7 +56,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/analytics/reporting/schedules/{scheduleId}": {
-        "operationId": "update",
+        "operationId": "putanalyticsreportingschedule",
         "functionName": "update",
         "signature": "update(scheduleId, body)",
         "parameters": [

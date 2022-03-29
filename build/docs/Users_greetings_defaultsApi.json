@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/greetings/defaults": {
-        "operationId": "list",
+        "operationId": "getusergreetingsdefaults",
         "functionName": "list",
         "signature": "list(userId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Defaultgreetinglist"
     },
     "PUT /api/v2/users/{userId}/greetings/defaults": {
-        "operationId": "update",
+        "operationId": "putusergreetingsdefaults",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [

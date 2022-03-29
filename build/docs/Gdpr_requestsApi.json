@@ -1,6 +1,6 @@
 {
     "POST /api/v2/gdpr/requests": {
-        "operationId": "create",
+        "operationId": "postgdprrequests",
         "functionName": "create",
         "signature": "create(body, deleteConfirmed)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Gdprrequest"
     },
     "GET /api/v2/gdpr/requests/{requestId}": {
-        "operationId": "get",
+        "operationId": "getgdprrequest",
         "functionName": "get",
         "signature": "get(requestId)",
         "parameters": [
@@ -31,7 +31,7 @@
         "return": "Gdprrequest"
     },
     "GET /api/v2/gdpr/requests": {
-        "operationId": "list",
+        "operationId": "getgdprrequests",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [

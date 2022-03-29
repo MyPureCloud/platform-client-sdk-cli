@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/historicaldata/importstatus": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementhistoricaldataimportstatus",
         "functionName": "list",
         "signature": "list()",
         

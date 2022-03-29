@@ -1,6 +1,6 @@
 {
     "GET /api/v2/routing/queues/{queueId}/estimatedwaittime": {
-        "operationId": "get",
+        "operationId": "getroutingqueueestimatedwaittime",
         "functionName": "get",
         "signature": "get(queueId, conversationId)",
         "parameters": [

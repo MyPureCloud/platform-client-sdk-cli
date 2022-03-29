@@ -1,6 +1,6 @@
 {
     "POST /api/v2/webdeployments/deployments": {
-        "operationId": "create",
+        "operationId": "postwebdeploymentsdeployments",
         "functionName": "create",
         "signature": "create(deployment)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Webdeployment"
     },
     "DELETE /api/v2/webdeployments/deployments/{deploymentId}": {
-        "operationId": "delete",
+        "operationId": "deletewebdeploymentsdeployment",
         "functionName": "delete",
         "signature": "delete(deploymentId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/webdeployments/deployments/{deploymentId}": {
-        "operationId": "get",
+        "operationId": "getwebdeploymentsdeployment",
         "functionName": "get",
         "signature": "get(deploymentId)",
         "parameters": [
@@ -38,14 +38,14 @@
         "return": "Webdeployment"
     },
     "GET /api/v2/webdeployments/deployments": {
-        "operationId": "list",
+        "operationId": "getwebdeploymentsdeployments",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Webdeploymententitylisting"
     },
     "PUT /api/v2/webdeployments/deployments/{deploymentId}": {
-        "operationId": "update",
+        "operationId": "putwebdeploymentsdeployment",
         "functionName": "update",
         "signature": "update(deploymentId, deployment)",
         "parameters": [

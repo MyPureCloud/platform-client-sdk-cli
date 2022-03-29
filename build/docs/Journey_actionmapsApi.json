@@ -1,6 +1,6 @@
 {
     "POST /api/v2/journey/actionmaps": {
-        "operationId": "create",
+        "operationId": "postjourneyactionmaps",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Actionmap"
     },
     "DELETE /api/v2/journey/actionmaps/{actionMapId}": {
-        "operationId": "delete",
+        "operationId": "deletejourneyactionmap",
         "functionName": "delete",
         "signature": "delete(actionMapId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/journey/actionmaps/{actionMapId}": {
-        "operationId": "get",
+        "operationId": "getjourneyactionmap",
         "functionName": "get",
         "signature": "get(actionMapId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Actionmap"
     },
     "GET /api/v2/journey/actionmaps": {
-        "operationId": "list",
+        "operationId": "getjourneyactionmaps",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds, queryFields, queryValue)",
         "parameters": [
@@ -86,7 +86,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/journey/actionmaps/{actionMapId}": {
-        "operationId": "update",
+        "operationId": "patchjourneyactionmap",
         "functionName": "update",
         "signature": "update(actionMapId, body)",
         "parameters": [

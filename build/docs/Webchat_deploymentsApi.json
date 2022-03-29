@@ -1,6 +1,6 @@
 {
     "POST /api/v2/webchat/deployments": {
-        "operationId": "create",
+        "operationId": "postwebchatdeployments",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Webchatdeployment"
     },
     "DELETE /api/v2/webchat/deployments/{deploymentId}": {
-        "operationId": "delete",
+        "operationId": "deletewebchatdeployment",
         "functionName": "delete",
         "signature": "delete(deploymentId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/webchat/deployments/{deploymentId}": {
-        "operationId": "get",
+        "operationId": "getwebchatdeployment",
         "functionName": "get",
         "signature": "get(deploymentId)",
         "parameters": [
@@ -38,14 +38,14 @@
         "return": "Webchatdeployment"
     },
     "GET /api/v2/webchat/deployments": {
-        "operationId": "list",
+        "operationId": "getwebchatdeployments",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Webchatdeploymententitylisting"
     },
     "PUT /api/v2/webchat/deployments/{deploymentId}": {
-        "operationId": "update",
+        "operationId": "putwebchatdeployment",
         "functionName": "update",
         "signature": "update(deploymentId, body)",
         "parameters": [

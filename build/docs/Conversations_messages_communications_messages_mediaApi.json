@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media": {
-        "operationId": "create",
+        "operationId": "postconversationsmessagecommunicationmessagesmedia",
         "functionName": "create",
         "signature": "create(conversationId, communicationId)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Messagemediadata"
     },
     "GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}": {
-        "operationId": "get",
+        "operationId": "getconversationsmessagecommunicationmessagesmediamediaid",
         "functionName": "get",
         "signature": "get(conversationId, communicationId, mediaId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/integrations/actions/{actionId}/draft": {
-        "operationId": "create",
+        "operationId": "postintegrationsactiondraft",
         "functionName": "create",
         "signature": "create(actionId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Action"
     },
     "DELETE /api/v2/integrations/actions/{actionId}/draft": {
-        "operationId": "delete",
+        "operationId": "deleteintegrationsactiondraft",
         "functionName": "delete",
         "signature": "delete(actionId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/integrations/actions/{actionId}/draft": {
-        "operationId": "get",
+        "operationId": "getintegrationsactiondraft",
         "functionName": "get",
         "signature": "get(actionId, expand, includeConfig)",
         "parameters": [
@@ -48,7 +48,7 @@
         "return": "Action"
     },
     "PATCH /api/v2/integrations/actions/{actionId}/draft": {
-        "operationId": "update",
+        "operationId": "patchintegrationsactiondraft",
         "functionName": "update",
         "signature": "update(actionId, body)",
         "parameters": [

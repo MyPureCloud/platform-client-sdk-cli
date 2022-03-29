@@ -1,6 +1,6 @@
 {
     "GET /api/v2/conversations/calls/history": {
-        "operationId": "list",
+        "operationId": "getconversationscallshistory",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, interval, expand)",
         "parameters": [

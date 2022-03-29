@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gamification/scorecards/users/points/average": {
-        "operationId": "get",
+        "operationId": "getgamificationscorecardsuserspointsaverage",
         "functionName": "get",
         "signature": "get(filterType, filterId, workday)",
         "parameters": [

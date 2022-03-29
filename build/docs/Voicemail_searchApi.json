@@ -1,6 +1,6 @@
 {
     "POST /api/v2/voicemail/search": {
-        "operationId": "create",
+        "operationId": "postvoicemailsearch",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Voicemailssearchresponse"
     },
     "GET /api/v2/voicemail/search": {
-        "operationId": "list",
+        "operationId": "getvoicemailsearch",
         "functionName": "list",
         "signature": "list(q64, expand)",
         "parameters": [

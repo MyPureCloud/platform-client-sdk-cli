@@ -1,6 +1,6 @@
 {
     "GET /api/v2/identityproviders": {
-        "operationId": "list",
+        "operationId": "getidentityproviders",
         "functionName": "list",
         "signature": "list()",
         

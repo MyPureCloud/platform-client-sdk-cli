@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}": {
-        "operationId": "delete",
+        "operationId": "deleteworkforcemanagementbusinessunitschedulingrun",
         "functionName": "delete",
         "signature": "delete(businessUnitId, runId)",
         "parameters": [
@@ -17,7 +17,7 @@
         ]
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementbusinessunitschedulingrun",
         "functionName": "get",
         "signature": "get(businessUnitId, runId)",
         "parameters": [
@@ -35,7 +35,7 @@
         "return": "Buschedulerun"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementbusinessunitschedulingruns",
         "functionName": "list",
         "signature": "list(businessUnitId)",
         "parameters": [
@@ -48,7 +48,7 @@
         "return": "Buschedulerunlisting"
     },
     "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}": {
-        "operationId": "update",
+        "operationId": "patchworkforcemanagementbusinessunitschedulingrun",
         "functionName": "update",
         "signature": "update(businessUnitId, runId, body)",
         "parameters": [

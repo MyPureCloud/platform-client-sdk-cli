@@ -1,6 +1,6 @@
 {
     "POST /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces": {
-        "operationId": "create",
+        "operationId": "posttelephonyprovidersedgelogicalinterfaces",
         "functionName": "create",
         "signature": "create(edgeId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Domainlogicalinterface"
     },
     "DELETE /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}": {
-        "operationId": "delete",
+        "operationId": "deletetelephonyprovidersedgelogicalinterface",
         "functionName": "delete",
         "signature": "delete(edgeId, interfaceId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgelogicalinterface",
         "functionName": "get",
         "signature": "get(edgeId, interfaceId, expand)",
         "parameters": [
@@ -58,7 +58,7 @@
         "return": "Domainlogicalinterface"
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces": {
-        "operationId": "getedgelogicalinterfaces",
+        "operationId": "gettelephonyprovidersedgelogicalinterfaces",
         "functionName": "getedgelogicalinterfaces",
         "signature": "getedgelogicalinterfaces(edgeId, expand)",
         "parameters": [
@@ -76,7 +76,7 @@
         "return": "Swaggeroverridelist"
     },
     "GET /api/v2/telephony/providers/edges/logicalinterfaces": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgeslogicalinterfaces",
         "functionName": "list",
         "signature": "list(edgeIds, expand)",
         "parameters": [
@@ -94,7 +94,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}": {
-        "operationId": "update",
+        "operationId": "puttelephonyprovidersedgelogicalinterface",
         "functionName": "update",
         "signature": "update(edgeId, interfaceId, body)",
         "parameters": [

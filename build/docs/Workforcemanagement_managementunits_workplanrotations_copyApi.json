@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunitworkplanrotationcopy",
         "functionName": "create",
         "signature": "create(managementUnitId, workPlanRotationId, body)",
         "parameters": [

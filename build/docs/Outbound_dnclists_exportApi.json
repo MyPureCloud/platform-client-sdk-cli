@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/dnclists/{dncListId}/export": {
-        "operationId": "create",
+        "operationId": "postoutbounddnclistexport",
         "functionName": "create",
         "signature": "create(dncListId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Domainentityref"
     },
     "GET /api/v2/outbound/dnclists/{dncListId}/export": {
-        "operationId": "get",
+        "operationId": "getoutbounddnclistexport",
         "functionName": "get",
         "signature": "get(dncListId, download)",
         "parameters": [

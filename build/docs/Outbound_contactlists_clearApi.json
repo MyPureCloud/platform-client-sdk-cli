@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/contactlists/{contactListId}/clear": {
-        "operationId": "create",
+        "operationId": "postoutboundcontactlistclear",
         "functionName": "create",
         "signature": "create(contactListId)",
         "parameters": [

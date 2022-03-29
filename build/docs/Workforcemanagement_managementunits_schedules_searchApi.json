@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunitschedulessearch",
         "functionName": "create",
         "signature": "create(managementUnitId, body)",
         "parameters": [

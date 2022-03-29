@@ -1,12 +1,12 @@
 {
     "POST /api/v2/architect/dependencytracking/build": {
-        "operationId": "create",
+        "operationId": "postarchitectdependencytrackingbuild",
         "functionName": "create",
         "signature": "create()"
         
     },
     "GET /api/v2/architect/dependencytracking/build": {
-        "operationId": "get",
+        "operationId": "getarchitectdependencytrackingbuild",
         "functionName": "get",
         "signature": "get()",
         

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/siptraces": {
-        "operationId": "get",
+        "operationId": "gettelephonysiptraces",
         "functionName": "get",
         "signature": "get(dateStart, dateEnd, callId, toUser, fromUser, conversationId)",
         "parameters": [

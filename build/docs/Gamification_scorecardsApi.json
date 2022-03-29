@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gamification/scorecards": {
-        "operationId": "list",
+        "operationId": "getgamificationscorecards",
         "functionName": "list",
         "signature": "list(workday, expand)",
         "parameters": [

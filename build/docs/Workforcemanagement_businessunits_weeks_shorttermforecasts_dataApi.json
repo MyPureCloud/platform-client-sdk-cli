@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementbusinessunitweekshorttermforecastdata",
         "functionName": "get",
         "signature": "get(businessUnitId, weekDateId, forecastId, weekNumber, forceDownloadService)",
         "parameters": [

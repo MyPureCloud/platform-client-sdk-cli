@@ -1,6 +1,6 @@
 {
     "POST /api/v2/gamification/metrics": {
-        "operationId": "create",
+        "operationId": "postgamificationmetrics",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Metric"
     },
     "GET /api/v2/gamification/metrics/{metricId}": {
-        "operationId": "get",
+        "operationId": "getgamificationmetric",
         "functionName": "get",
         "signature": "get(metricId, workday, performanceProfileId)",
         "parameters": [
@@ -36,7 +36,7 @@
         "return": "Metric"
     },
     "GET /api/v2/gamification/metrics": {
-        "operationId": "list",
+        "operationId": "getgamificationmetrics",
         "functionName": "list",
         "signature": "list(performanceProfileId, workday)",
         "parameters": [
@@ -54,7 +54,7 @@
         "return": "Getmetricsresponse"
     },
     "PUT /api/v2/gamification/metrics/{metricId}": {
-        "operationId": "update",
+        "operationId": "putgamificationmetric",
         "functionName": "update",
         "signature": "update(metricId, body, performanceProfileId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunittimeoffrequestsquery",
         "functionName": "create",
         "signature": "create(managementUnitId, body)",
         "parameters": [

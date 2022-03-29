@@ -1,6 +1,6 @@
 {
     "POST /api/v2/presencedefinitions": {
-        "operationId": "create",
+        "operationId": "postpresencedefinitions",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Organizationpresence"
     },
     "DELETE /api/v2/presencedefinitions/{presenceId}": {
-        "operationId": "delete",
+        "operationId": "deletepresencedefinition",
         "functionName": "delete",
         "signature": "delete(presenceId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/presencedefinitions/{presenceId}": {
-        "operationId": "get",
+        "operationId": "getpresencedefinition",
         "functionName": "get",
         "signature": "get(presenceId, localeCode)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Organizationpresence"
     },
     "GET /api/v2/presencedefinitions": {
-        "operationId": "list",
+        "operationId": "getpresencedefinitions",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, deleted, localeCode)",
         "parameters": [
@@ -71,7 +71,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/presencedefinitions/{presenceId}": {
-        "operationId": "update",
+        "operationId": "putpresencedefinition",
         "functionName": "update",
         "signature": "update(presenceId, body)",
         "parameters": [

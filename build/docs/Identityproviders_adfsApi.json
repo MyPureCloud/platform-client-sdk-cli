@@ -1,20 +1,20 @@
 {
     "DELETE /api/v2/identityproviders/adfs": {
-        "operationId": "delete",
+        "operationId": "deleteidentityprovidersadfs",
         "functionName": "delete",
         "signature": "delete()",
         
         "return": "Empty"
     },
     "GET /api/v2/identityproviders/adfs": {
-        "operationId": "get",
+        "operationId": "getidentityprovidersadfs",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Adfs"
     },
     "PUT /api/v2/identityproviders/adfs": {
-        "operationId": "update",
+        "operationId": "putidentityprovidersadfs",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

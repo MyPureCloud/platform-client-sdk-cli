@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace": {
-        "operationId": "create",
+        "operationId": "postconversationsemailparticipantreplace",
         "functionName": "create",
         "signature": "create(conversationId, participantId, body)",
         "parameters": [

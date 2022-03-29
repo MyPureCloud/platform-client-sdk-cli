@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/dnclists": {
-        "operationId": "create",
+        "operationId": "postoutbounddnclists",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Dnclist"
     },
     "DELETE /api/v2/outbound/dnclists/{dncListId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutbounddnclist",
         "functionName": "delete",
         "signature": "delete(dncListId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/outbound/dnclists/{dncListId}": {
-        "operationId": "get",
+        "operationId": "getoutbounddnclist",
         "functionName": "get",
         "signature": "get(dncListId, includeImportStatus, includeSize)",
         "parameters": [
@@ -48,7 +48,7 @@
         "return": "Dnclist"
     },
     "GET /api/v2/outbound/dnclists": {
-        "operationId": "list",
+        "operationId": "getoutbounddnclists",
         "functionName": "list",
         "signature": "list(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, dncSourceType, divisionId, sortBy, sortOrder)",
         "parameters": [
@@ -111,7 +111,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/dnclists/{dncListId}": {
-        "operationId": "update",
+        "operationId": "putoutbounddnclist",
         "functionName": "update",
         "signature": "update(dncListId, body)",
         "parameters": [

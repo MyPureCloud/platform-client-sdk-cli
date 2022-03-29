@@ -1,6 +1,6 @@
 {
     "POST /api/v2/quality/publishedforms/evaluations": {
-        "operationId": "create",
+        "operationId": "postqualitypublishedformsevaluations",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Evaluationform"
     },
     "GET /api/v2/quality/publishedforms/evaluations/{formId}": {
-        "operationId": "get",
+        "operationId": "getqualitypublishedformsevaluation",
         "functionName": "get",
         "signature": "get(formId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Evaluationform"
     },
     "GET /api/v2/quality/publishedforms/evaluations": {
-        "operationId": "list",
+        "operationId": "getqualitypublishedformsevaluations",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, name, onlyLatestPerContext)",
         "parameters": [

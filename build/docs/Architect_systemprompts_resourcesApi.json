@@ -1,6 +1,6 @@
 {
     "POST /api/v2/architect/systemprompts/{promptId}/resources": {
-        "operationId": "create",
+        "operationId": "postarchitectsystempromptresources",
         "functionName": "create",
         "signature": "create(promptId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Systempromptasset"
     },
     "DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}": {
-        "operationId": "delete",
+        "operationId": "deletearchitectsystempromptresource",
         "functionName": "delete",
         "signature": "delete(promptId, languageCode)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}": {
-        "operationId": "get",
+        "operationId": "getarchitectsystempromptresource",
         "functionName": "get",
         "signature": "get(promptId, languageCode)",
         "parameters": [
@@ -53,7 +53,7 @@
         "return": "Systempromptasset"
     },
     "GET /api/v2/architect/systemprompts/{promptId}/resources": {
-        "operationId": "list",
+        "operationId": "getarchitectsystempromptresources",
         "functionName": "list",
         "signature": "list(promptId, pageNumber, pageSize, sortBy, sortOrder)",
         "parameters": [
@@ -86,7 +86,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}": {
-        "operationId": "update",
+        "operationId": "putarchitectsystempromptresource",
         "functionName": "update",
         "signature": "update(promptId, languageCode, body)",
         "parameters": [

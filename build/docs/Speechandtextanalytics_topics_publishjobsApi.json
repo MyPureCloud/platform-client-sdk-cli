@@ -1,6 +1,6 @@
 {
     "POST /api/v2/speechandtextanalytics/topics/publishjobs": {
-        "operationId": "create",
+        "operationId": "postspeechandtextanalyticstopicspublishjobs",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Topicjob"
     },
     "GET /api/v2/speechandtextanalytics/topics/publishjobs/{jobId}": {
-        "operationId": "get",
+        "operationId": "getspeechandtextanalyticstopicspublishjob",
         "functionName": "get",
         "signature": "get(jobId)",
         "parameters": [

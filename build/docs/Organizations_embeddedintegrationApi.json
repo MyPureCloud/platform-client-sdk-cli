@@ -1,13 +1,13 @@
 {
     "GET /api/v2/organizations/embeddedintegration": {
-        "operationId": "get",
+        "operationId": "getorganizationsembeddedintegration",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Embeddedintegration"
     },
     "PUT /api/v2/organizations/embeddedintegration": {
-        "operationId": "update",
+        "operationId": "putorganizationsembeddedintegration",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

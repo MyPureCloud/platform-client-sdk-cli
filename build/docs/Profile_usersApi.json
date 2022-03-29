@@ -1,6 +1,6 @@
 {
     "GET /api/v2/profiles/users": {
-        "operationId": "list",
+        "operationId": "getprofilesusers",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, id, jid, sortOrder, expand, integrationPresenceSource)",
         "parameters": [

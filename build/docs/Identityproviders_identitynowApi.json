@@ -1,20 +1,20 @@
 {
     "DELETE /api/v2/identityproviders/identitynow": {
-        "operationId": "delete",
+        "operationId": "deleteidentityprovidersidentitynow",
         "functionName": "delete",
         "signature": "delete()",
         
         "return": "Empty"
     },
     "GET /api/v2/identityproviders/identitynow": {
-        "operationId": "get",
+        "operationId": "getidentityprovidersidentitynow",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Identitynow"
     },
     "PUT /api/v2/identityproviders/identitynow": {
-        "operationId": "update",
+        "operationId": "putidentityprovidersidentitynow",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

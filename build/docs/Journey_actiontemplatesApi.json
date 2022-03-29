@@ -1,6 +1,6 @@
 {
     "POST /api/v2/journey/actiontemplates": {
-        "operationId": "create",
+        "operationId": "postjourneyactiontemplates",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Actiontemplate"
     },
     "DELETE /api/v2/journey/actiontemplates/{actionTemplateId}": {
-        "operationId": "delete",
+        "operationId": "deletejourneyactiontemplate",
         "functionName": "delete",
         "signature": "delete(actionTemplateId, hardDelete)",
         "parameters": [
@@ -30,7 +30,7 @@
         ]
     },
     "GET /api/v2/journey/actiontemplates/{actionTemplateId}": {
-        "operationId": "get",
+        "operationId": "getjourneyactiontemplate",
         "functionName": "get",
         "signature": "get(actionTemplateId)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Actiontemplate"
     },
     "GET /api/v2/journey/actiontemplates": {
-        "operationId": "list",
+        "operationId": "getjourneyactiontemplates",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, mediaType, state, queryFields, queryValue)",
         "parameters": [
@@ -86,7 +86,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/journey/actiontemplates/{actionTemplateId}": {
-        "operationId": "update",
+        "operationId": "patchjourneyactiontemplate",
         "functionName": "update",
         "signature": "update(actionTemplateId, body)",
         "parameters": [

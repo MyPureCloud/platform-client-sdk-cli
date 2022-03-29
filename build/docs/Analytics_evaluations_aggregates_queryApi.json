@@ -1,6 +1,6 @@
 {
     "POST /api/v2/analytics/evaluations/aggregates/query": {
-        "operationId": "create",
+        "operationId": "postanalyticsevaluationsaggregatesquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

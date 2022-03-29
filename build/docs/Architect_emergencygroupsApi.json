@@ -1,6 +1,6 @@
 {
     "POST /api/v2/architect/emergencygroups": {
-        "operationId": "create",
+        "operationId": "postarchitectemergencygroups",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Emergencygroup"
     },
     "DELETE /api/v2/architect/emergencygroups/{emergencyGroupId}": {
-        "operationId": "delete",
+        "operationId": "deletearchitectemergencygroup",
         "functionName": "delete",
         "signature": "delete(emergencyGroupId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/architect/emergencygroups/{emergencyGroupId}": {
-        "operationId": "get",
+        "operationId": "getarchitectemergencygroup",
         "functionName": "get",
         "signature": "get(emergencyGroupId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Emergencygroup"
     },
     "GET /api/v2/architect/emergencygroups": {
-        "operationId": "list",
+        "operationId": "getarchitectemergencygroups",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, name)",
         "parameters": [
@@ -71,7 +71,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/architect/emergencygroups/{emergencyGroupId}": {
-        "operationId": "update",
+        "operationId": "putarchitectemergencygroup",
         "functionName": "update",
         "signature": "update(emergencyGroupId, body)",
         "parameters": [

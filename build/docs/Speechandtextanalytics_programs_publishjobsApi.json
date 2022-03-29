@@ -1,6 +1,6 @@
 {
     "POST /api/v2/speechandtextanalytics/programs/publishjobs": {
-        "operationId": "create",
+        "operationId": "postspeechandtextanalyticsprogramspublishjobs",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Programjob"
     },
     "GET /api/v2/speechandtextanalytics/programs/publishjobs/{jobId}": {
-        "operationId": "get",
+        "operationId": "getspeechandtextanalyticsprogramspublishjob",
         "functionName": "get",
         "signature": "get(jobId)",
         "parameters": [

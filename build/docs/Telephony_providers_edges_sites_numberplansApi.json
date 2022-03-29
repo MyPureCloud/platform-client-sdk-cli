@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgessitenumberplan",
         "functionName": "get",
         "signature": "get(siteId, numberPlanId)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Numberplan"
     },
     "GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgessitenumberplans",
         "functionName": "list",
         "signature": "list(siteId)",
         "parameters": [
@@ -31,7 +31,7 @@
         "return": "[]Numberplan"
     },
     "PUT /api/v2/telephony/providers/edges/sites/{siteId}/numberplans": {
-        "operationId": "update",
+        "operationId": "puttelephonyprovidersedgessitenumberplans",
         "functionName": "update",
         "signature": "update(siteId, body)",
         "parameters": [

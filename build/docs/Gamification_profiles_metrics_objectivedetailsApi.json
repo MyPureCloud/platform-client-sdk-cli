@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails": {
-        "operationId": "list",
+        "operationId": "getgamificationprofilemetricsobjectivedetails",
         "functionName": "list",
         "signature": "list(profileId, workday)",
         "parameters": [

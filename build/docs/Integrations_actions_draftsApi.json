@@ -1,6 +1,6 @@
 {
     "POST /api/v2/integrations/actions/drafts": {
-        "operationId": "create",
+        "operationId": "postintegrationsactionsdrafts",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Action"
     },
     "GET /api/v2/integrations/actions/drafts": {
-        "operationId": "list",
+        "operationId": "getintegrationsactionsdrafts",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, secure, includeAuthActions)",
         "parameters": [

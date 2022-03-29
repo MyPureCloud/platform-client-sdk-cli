@@ -1,6 +1,6 @@
 {
     "GET /api/v2/quality/evaluators/activity": {
-        "operationId": "list",
+        "operationId": "getqualityevaluatorsactivity",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group)",
         "parameters": [

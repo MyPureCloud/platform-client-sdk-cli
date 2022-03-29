@@ -1,6 +1,6 @@
 {
     "POST /api/v2/users": {
-        "operationId": "create",
+        "operationId": "postusers",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "User"
     },
     "DELETE /api/v2/users/{userId}": {
-        "operationId": "delete",
+        "operationId": "deleteuser",
         "functionName": "delete",
         "signature": "delete(userId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Empty"
     },
     "GET /api/v2/users/{userId}": {
-        "operationId": "get",
+        "operationId": "getuser",
         "functionName": "get",
         "signature": "get(userId, expand, integrationPresenceSource, state)",
         "parameters": [
@@ -54,7 +54,7 @@
         "return": "User"
     },
     "GET /api/v2/users": {
-        "operationId": "list",
+        "operationId": "getusers",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, state)",
         "parameters": [
@@ -102,7 +102,7 @@
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/users/{userId}": {
-        "operationId": "update",
+        "operationId": "patchuser",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace": {
-        "operationId": "create",
+        "operationId": "postconversationscobrowsesessionparticipantreplace",
         "functionName": "create",
         "signature": "create(conversationId, participantId, body)",
         "parameters": [

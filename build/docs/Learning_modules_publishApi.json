@@ -1,6 +1,6 @@
 {
     "POST /api/v2/learning/modules/{moduleId}/publish": {
-        "operationId": "create",
+        "operationId": "postlearningmodulepublish",
         "functionName": "create",
         "signature": "create(moduleId)",
         "parameters": [

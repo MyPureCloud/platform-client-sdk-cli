@@ -1,6 +1,6 @@
 {
     "POST /api/v2/learning/modules": {
-        "operationId": "create",
+        "operationId": "postlearningmodules",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Learningmodule"
     },
     "DELETE /api/v2/learning/modules/{moduleId}": {
-        "operationId": "delete",
+        "operationId": "deletelearningmodule",
         "functionName": "delete",
         "signature": "delete(moduleId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/learning/modules/{moduleId}": {
-        "operationId": "get",
+        "operationId": "getlearningmodule",
         "functionName": "get",
         "signature": "get(moduleId, expand)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Learningmodule"
     },
     "GET /api/v2/learning/modules": {
-        "operationId": "list",
+        "operationId": "getlearningmodules",
         "functionName": "list",
         "signature": "list(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished)",
         "parameters": [
@@ -96,7 +96,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/learning/modules/{moduleId}": {
-        "operationId": "update",
+        "operationId": "putlearningmodule",
         "functionName": "update",
         "signature": "update(moduleId, body)",
         "parameters": [

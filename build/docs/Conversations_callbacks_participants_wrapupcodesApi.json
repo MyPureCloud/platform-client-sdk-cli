@@ -1,6 +1,6 @@
 {
     "GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes": {
-        "operationId": "list",
+        "operationId": "getconversationscallbackparticipantwrapupcodes",
         "functionName": "list",
         "signature": "list(conversationId, participantId)",
         "parameters": [

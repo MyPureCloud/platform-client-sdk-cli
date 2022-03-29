@@ -1,6 +1,6 @@
 {
     "POST /api/v2/learning/assignments/aggregates/query": {
-        "operationId": "create",
+        "operationId": "postlearningassignmentsaggregatesquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

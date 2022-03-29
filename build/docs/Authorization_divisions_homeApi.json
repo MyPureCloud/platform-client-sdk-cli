@@ -1,6 +1,6 @@
 {
     "GET /api/v2/authorization/divisions/home": {
-        "operationId": "get",
+        "operationId": "getauthorizationdivisionshome",
         "functionName": "get",
         "signature": "get()",
         

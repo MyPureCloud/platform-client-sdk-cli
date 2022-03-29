@@ -1,6 +1,6 @@
 {
     "GET /api/v2/scim/serviceproviderconfig": {
-        "operationId": "get",
+        "operationId": "getscimserviceproviderconfig",
         "functionName": "get",
         "signature": "get(ifNoneMatch)",
         "parameters": [

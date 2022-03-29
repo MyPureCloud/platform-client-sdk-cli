@@ -1,6 +1,6 @@
 {
     "POST /api/v2/speechandtextanalytics/topics": {
-        "operationId": "create",
+        "operationId": "postspeechandtextanalyticstopics",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Topic"
     },
     "DELETE /api/v2/speechandtextanalytics/topics/{topicId}": {
-        "operationId": "delete",
+        "operationId": "deletespeechandtextanalyticstopic",
         "functionName": "delete",
         "signature": "delete(topicId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/speechandtextanalytics/topics/{topicId}": {
-        "operationId": "get",
+        "operationId": "getspeechandtextanalyticstopic",
         "functionName": "get",
         "signature": "get(topicId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Topic"
     },
     "GET /api/v2/speechandtextanalytics/topics": {
-        "operationId": "list",
+        "operationId": "getspeechandtextanalyticstopics",
         "functionName": "list",
         "signature": "list(nextPage, pageSize, state, name, ids, sortBy, sortOrder)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/speechandtextanalytics/topics/{topicId}": {
-        "operationId": "update",
+        "operationId": "putspeechandtextanalyticstopic",
         "functionName": "update",
         "signature": "update(topicId, body)",
         "parameters": [

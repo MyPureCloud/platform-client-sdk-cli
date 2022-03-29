@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/attemptlimits": {
-        "operationId": "create",
+        "operationId": "postoutboundattemptlimits",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Attemptlimits"
     },
     "DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutboundattemptlimit",
         "functionName": "delete",
         "signature": "delete(attemptLimitsId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/outbound/attemptlimits/{attemptLimitsId}": {
-        "operationId": "get",
+        "operationId": "getoutboundattemptlimit",
         "functionName": "get",
         "signature": "get(attemptLimitsId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Attemptlimits"
     },
     "GET /api/v2/outbound/attemptlimits": {
-        "operationId": "list",
+        "operationId": "getoutboundattemptlimits",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/attemptlimits/{attemptLimitsId}": {
-        "operationId": "update",
+        "operationId": "putoutboundattemptlimit",
         "functionName": "update",
         "signature": "update(attemptLimitsId, body)",
         "parameters": [

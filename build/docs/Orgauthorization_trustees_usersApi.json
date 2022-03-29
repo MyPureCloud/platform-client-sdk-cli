@@ -1,6 +1,6 @@
 {
     "POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/users": {
-        "operationId": "create",
+        "operationId": "postorgauthorizationtrusteeusers",
         "functionName": "create",
         "signature": "create(trusteeOrgId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Trustuser"
     },
     "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}": {
-        "operationId": "delete",
+        "operationId": "deleteorgauthorizationtrusteeuser",
         "functionName": "delete",
         "signature": "delete(trusteeOrgId, trusteeUserId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}": {
-        "operationId": "get",
+        "operationId": "getorgauthorizationtrusteeuser",
         "functionName": "get",
         "signature": "get(trusteeOrgId, trusteeUserId)",
         "parameters": [
@@ -53,7 +53,7 @@
         "return": "Trustuser"
     },
     "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users": {
-        "operationId": "list",
+        "operationId": "getorgauthorizationtrusteeusers",
         "functionName": "list",
         "signature": "list(trusteeOrgId, pageSize, pageNumber)",
         "parameters": [

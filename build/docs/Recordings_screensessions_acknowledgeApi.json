@@ -1,6 +1,6 @@
 {
     "POST /api/v2/recordings/screensessions/acknowledge": {
-        "operationId": "create",
+        "operationId": "postrecordingsscreensessionsacknowledge",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/authorization/permissions": {
-        "operationId": "list",
+        "operationId": "getauthorizationpermissions",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, queryType, query)",
         "parameters": [

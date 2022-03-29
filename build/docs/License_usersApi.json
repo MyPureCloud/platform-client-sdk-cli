@@ -1,6 +1,6 @@
 {
     "POST /api/v2/license/users": {
-        "operationId": "create",
+        "operationId": "postlicenseusers",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "map[string]interface{}"
     },
     "GET /api/v2/license/users/{userId}": {
-        "operationId": "get",
+        "operationId": "getlicenseuser",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Licenseuser"
     },
     "GET /api/v2/license/users": {
-        "operationId": "list",
+        "operationId": "getlicenseusers",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [

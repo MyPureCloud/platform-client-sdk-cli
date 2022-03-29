@@ -1,20 +1,20 @@
 {
     "DELETE /api/v2/identityproviders/purecloud": {
-        "operationId": "delete",
+        "operationId": "deleteidentityproviderspurecloud",
         "functionName": "delete",
         "signature": "delete()",
         
         "return": "Empty"
     },
     "GET /api/v2/identityproviders/purecloud": {
-        "operationId": "get",
+        "operationId": "getidentityproviderspurecloud",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Purecloud"
     },
     "PUT /api/v2/identityproviders/purecloud": {
-        "operationId": "update",
+        "operationId": "putidentityproviderspurecloud",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

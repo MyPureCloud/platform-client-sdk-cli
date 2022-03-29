@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio": {
-        "operationId": "delete",
+        "operationId": "deletearchitectpromptresourceaudio",
         "functionName": "delete",
         "signature": "delete(promptId, languageCode)",
         "parameters": [

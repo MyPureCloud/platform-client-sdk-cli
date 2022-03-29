@@ -1,6 +1,6 @@
 {
     "GET /api/v2/speechandtextanalytics/programs/{programId}/mappings": {
-        "operationId": "get",
+        "operationId": "getspeechandtextanalyticsprogrammappings",
         "functionName": "get",
         "signature": "get(programId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Programmappings"
     },
     "GET /api/v2/speechandtextanalytics/programs/mappings": {
-        "operationId": "list",
+        "operationId": "getspeechandtextanalyticsprogramsmappings",
         "functionName": "list",
         "signature": "list(nextPage, pageSize)",
         "parameters": [
@@ -31,7 +31,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/speechandtextanalytics/programs/{programId}/mappings": {
-        "operationId": "update",
+        "operationId": "putspeechandtextanalyticsprogrammappings",
         "functionName": "update",
         "signature": "update(programId, body)",
         "parameters": [

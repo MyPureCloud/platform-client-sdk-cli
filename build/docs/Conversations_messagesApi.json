@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/messages": {
-        "operationId": "create",
+        "operationId": "postconversationsmessages",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Messageconversation"
     },
     "GET /api/v2/conversations/messages/{conversationId}": {
-        "operationId": "get",
+        "operationId": "getconversationsmessage",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
@@ -26,14 +26,14 @@
         "return": "Messageconversation"
     },
     "GET /api/v2/conversations/messages": {
-        "operationId": "list",
+        "operationId": "getconversationsmessages",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/conversations/messages/{conversationId}": {
-        "operationId": "update",
+        "operationId": "patchconversationsmessage",
         "functionName": "update",
         "signature": "update(conversationId, body)",
         "parameters": [

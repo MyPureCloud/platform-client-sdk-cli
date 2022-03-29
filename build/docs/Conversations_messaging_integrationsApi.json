@@ -1,6 +1,6 @@
 {
     "GET /api/v2/conversations/messaging/integrations": {
-        "operationId": "list",
+        "operationId": "getconversationsmessagingintegrations",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand, supportedContentId)",
         "parameters": [

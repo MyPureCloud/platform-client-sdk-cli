@@ -1,6 +1,6 @@
 {
     "GET /api/v2/scripts/{scriptId}": {
-        "operationId": "get",
+        "operationId": "getscript",
         "functionName": "get",
         "signature": "get(scriptId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Script"
     },
     "GET /api/v2/scripts": {
-        "operationId": "list",
+        "operationId": "getscripts",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion)",
         "parameters": [

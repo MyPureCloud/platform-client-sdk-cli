@@ -1,6 +1,6 @@
 {
     "GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}": {
-        "operationId": "getcategoryschemas",
+        "operationId": "getconfigurationschemasedgesvnextschemacategoryschematype",
         "functionName": "getcategoryschemas",
         "signature": "getcategoryschemas(schemaCategory, schemaType, pageSize, pageNumber)",
         "parameters": [
@@ -28,7 +28,7 @@
         "return": "Swaggeroverridelist"
     },
     "GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}": {
-        "operationId": "getjsonschema",
+        "operationId": "getconfigurationschemasedgesvnextschemacategoryschematypeschemaid",
         "functionName": "getjsonschema",
         "signature": "getjsonschema(schemaCategory, schemaType, schemaId)",
         "parameters": [
@@ -51,7 +51,7 @@
         "return": "Organization"
     },
     "GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}": {
-        "operationId": "getschemametadata",
+        "operationId": "getconfigurationschemasedgesvnextschemacategoryschematypeschemaidextensiontypemetadataid",
         "functionName": "getschemametadata",
         "signature": "getschemametadata(schemaCategory, schemaType, schemaId, extensionType, metadataId, varType)",
         "parameters": [
@@ -89,7 +89,7 @@
         "return": "Organization"
     },
     "GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}": {
-        "operationId": "listcategoryschemas",
+        "operationId": "getconfigurationschemasedgesvnextschemacategory",
         "functionName": "listcategoryschemas",
         "signature": "listcategoryschemas(schemaCategory, pageSize, pageNumber)",
         "parameters": [
@@ -112,7 +112,7 @@
         "return": "Swaggeroverridelist"
     },
     "GET /api/v2/configuration/schemas/edges/vnext": {
-        "operationId": "listschemacategories",
+        "operationId": "getconfigurationschemasedgesvnext",
         "functionName": "listschemacategories",
         "signature": "listschemacategories(pageSize, pageNumber)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/notifications": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementnotifications",
         "functionName": "list",
         "signature": "list()",
         

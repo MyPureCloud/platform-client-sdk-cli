@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementbusinessunitactivitycodes",
         "functionName": "create",
         "signature": "create(businessUnitId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Businessunitactivitycode"
     },
     "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}": {
-        "operationId": "delete",
+        "operationId": "deleteworkforcemanagementbusinessunitactivitycode",
         "functionName": "delete",
         "signature": "delete(businessUnitId, activityCodeId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementbusinessunitactivitycode",
         "functionName": "get",
         "signature": "get(businessUnitId, activityCodeId)",
         "parameters": [
@@ -53,7 +53,7 @@
         "return": "Businessunitactivitycode"
     },
     "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes": {
-        "operationId": "list",
+        "operationId": "getworkforcemanagementbusinessunitactivitycodes",
         "functionName": "list",
         "signature": "list(businessUnitId)",
         "parameters": [
@@ -66,7 +66,7 @@
         "return": "Businessunitactivitycodelisting"
     },
     "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}": {
-        "operationId": "update",
+        "operationId": "patchworkforcemanagementbusinessunitactivitycode",
         "functionName": "update",
         "signature": "update(businessUnitId, activityCodeId, body)",
         "parameters": [

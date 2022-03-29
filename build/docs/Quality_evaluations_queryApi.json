@@ -1,6 +1,6 @@
 {
     "GET /api/v2/quality/evaluations/query": {
-        "operationId": "list",
+        "operationId": "getqualityevaluationsquery",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)",
         "parameters": [

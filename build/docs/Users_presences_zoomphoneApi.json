@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/presences/zoomphone": {
-        "operationId": "get",
+        "operationId": "getuserpresenceszoomphone",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [

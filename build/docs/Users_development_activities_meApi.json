@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/development/activities/me": {
-        "operationId": "list",
+        "operationId": "getusersdevelopmentactivitiesme",
         "functionName": "list",
         "signature": "list(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship)",
         "parameters": [

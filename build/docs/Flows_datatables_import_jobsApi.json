@@ -1,6 +1,6 @@
 {
     "POST /api/v2/flows/datatables/{datatableId}/import/jobs": {
-        "operationId": "create",
+        "operationId": "postflowsdatatableimportjobs",
         "functionName": "create",
         "signature": "create(datatableId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Datatableimportjob"
     },
     "GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}": {
-        "operationId": "getstateinformation",
+        "operationId": "getflowsdatatableimportjob",
         "functionName": "getstateinformation",
         "signature": "getstateinformation(datatableId, importJobId)",
         "parameters": [
@@ -36,7 +36,7 @@
         "return": "Datatableimportjob"
     },
     "GET /api/v2/flows/datatables/{datatableId}/import/jobs": {
-        "operationId": "list",
+        "operationId": "getflowsdatatableimportjobs",
         "functionName": "list",
         "signature": "list(datatableId, pageNumber, pageSize)",
         "parameters": [

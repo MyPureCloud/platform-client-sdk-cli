@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/schedules": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementschedules",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

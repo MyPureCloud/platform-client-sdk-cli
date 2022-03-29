@@ -1,13 +1,13 @@
 {
     "GET /api/v2/routing/settings/contactcenter": {
-        "operationId": "get",
+        "operationId": "getroutingsettingscontactcenter",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Contactcentersettings"
     },
     "PATCH /api/v2/routing/settings/contactcenter": {
-        "operationId": "update",
+        "operationId": "patchroutingsettingscontactcenter",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

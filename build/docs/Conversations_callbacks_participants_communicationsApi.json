@@ -1,6 +1,6 @@
 {
     "PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}": {
-        "operationId": "update",
+        "operationId": "patchconversationscallbackparticipantcommunication",
         "functionName": "update",
         "signature": "update(conversationId, participantId, communicationId, body)",
         "parameters": [

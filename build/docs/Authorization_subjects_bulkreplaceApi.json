@@ -1,6 +1,6 @@
 {
     "POST /api/v2/authorization/subjects/{subjectId}/bulkreplace": {
-        "operationId": "create",
+        "operationId": "postauthorizationsubjectbulkreplace",
         "functionName": "create",
         "signature": "create(subjectId, body, subjectType)",
         "parameters": [

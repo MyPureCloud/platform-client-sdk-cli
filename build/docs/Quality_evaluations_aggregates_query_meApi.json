@@ -1,6 +1,6 @@
 {
     "POST /api/v2/quality/evaluations/aggregates/query/me": {
-        "operationId": "create",
+        "operationId": "postqualityevaluationsaggregatesqueryme",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

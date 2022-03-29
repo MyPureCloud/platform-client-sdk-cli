@@ -1,6 +1,6 @@
 {
     "PATCH /api/v2/routing/queues/{queueId}/members": {
-        "operationId": "activate",
+        "operationId": "patchroutingqueuemembers",
         "functionName": "activate",
         "signature": "activate(queueId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Queuememberentitylisting"
     },
     "DELETE /api/v2/routing/queues/{queueId}/members/{memberId}": {
-        "operationId": "delete",
+        "operationId": "deleteroutingqueuemember",
         "functionName": "delete",
         "signature": "delete(queueId, memberId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/routing/queues/{queueId}/members": {
-        "operationId": "list",
+        "operationId": "getroutingqueuemembers",
         "functionName": "list",
         "signature": "list(queueId, pageNumber, pageSize, sortOrder, expand, name, profileSkills, skills, languages, routingStatus, presence, memberBy, joined)",
         "parameters": [
@@ -108,7 +108,7 @@
         "return": "Swaggeroverridelist"
     },
     "POST /api/v2/routing/queues/{queueId}/members": {
-        "operationId": "move",
+        "operationId": "postroutingqueuemembers",
         "functionName": "move",
         "signature": "move(queueId, body, delete)",
         "parameters": [
@@ -130,7 +130,7 @@
         ]
     },
     "PATCH /api/v2/routing/queues/{queueId}/members/{memberId}": {
-        "operationId": "update",
+        "operationId": "patchroutingqueuemember",
         "functionName": "update",
         "signature": "update(queueId, memberId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgestrunkbasesettingsavailablemetabases",
         "functionName": "list",
         "signature": "list(varType, pageSize, pageNumber)",
         "parameters": [

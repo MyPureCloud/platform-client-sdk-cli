@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/speech/tts/engines/{engineId}": {
-        "operationId": "get",
+        "operationId": "getintegrationsspeechttsengine",
         "functionName": "get",
         "signature": "get(engineId, includeVoices)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Ttsengineentity"
     },
     "GET /api/v2/integrations/speech/tts/engines": {
-        "operationId": "list",
+        "operationId": "getintegrationsspeechttsengines",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, includeVoices, name, language)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/routing/message/recipients/{recipientId}": {
-        "operationId": "get",
+        "operationId": "getroutingmessagerecipient",
         "functionName": "get",
         "signature": "get(recipientId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Recipient"
     },
     "GET /api/v2/routing/message/recipients": {
-        "operationId": "list",
+        "operationId": "getroutingmessagerecipients",
         "functionName": "list",
         "signature": "list(messengerType, pageSize, pageNumber)",
         "parameters": [
@@ -36,7 +36,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/routing/message/recipients/{recipientId}": {
-        "operationId": "update",
+        "operationId": "putroutingmessagerecipient",
         "functionName": "update",
         "signature": "update(recipientId, body)",
         "parameters": [

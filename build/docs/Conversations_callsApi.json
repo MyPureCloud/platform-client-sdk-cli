@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/calls": {
-        "operationId": "create",
+        "operationId": "postconversationscalls",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Createcallresponse"
     },
     "GET /api/v2/conversations/calls/{conversationId}": {
-        "operationId": "get",
+        "operationId": "getconversationscall",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
@@ -26,14 +26,14 @@
         "return": "Callconversation"
     },
     "GET /api/v2/conversations/calls": {
-        "operationId": "list",
+        "operationId": "getconversationscalls",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "POST /api/v2/conversations/calls/{conversationId}": {
-        "operationId": "placecallbackcall",
+        "operationId": "postconversationscall",
         "functionName": "placecallbackcall",
         "signature": "placecallbackcall(conversationId, body)",
         "parameters": [
@@ -51,7 +51,7 @@
         "return": "Conversation"
     },
     "PATCH /api/v2/conversations/calls/{conversationId}": {
-        "operationId": "update",
+        "operationId": "patchconversationscall",
         "functionName": "update",
         "signature": "update(conversationId, body)",
         "parameters": [

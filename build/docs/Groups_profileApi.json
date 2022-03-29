@@ -1,6 +1,6 @@
 {
     "GET /api/v2/groups/{groupId}/profile": {
-        "operationId": "get",
+        "operationId": "getgroupprofile",
         "functionName": "get",
         "signature": "get(groupId, fields)",
         "parameters": [

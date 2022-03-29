@@ -1,6 +1,6 @@
 {
     "GET /api/v2/architect/dependencytracking/types/{typeId}": {
-        "operationId": "get",
+        "operationId": "getarchitectdependencytrackingtype",
         "functionName": "get",
         "signature": "get(typeId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Dependencytype"
     },
     "GET /api/v2/architect/dependencytracking/types": {
-        "operationId": "list",
+        "operationId": "getarchitectdependencytrackingtypes",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize)",
         "parameters": [

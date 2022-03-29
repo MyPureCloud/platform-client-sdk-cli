@@ -1,6 +1,6 @@
 {
     "POST /api/v2/routing/email/domains/{domainId}/testconnection": {
-        "operationId": "create",
+        "operationId": "postroutingemaildomaintestconnection",
         "functionName": "create",
         "signature": "create(domainId, body)",
         "parameters": [

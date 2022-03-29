@@ -1,6 +1,6 @@
 {
     "GET /api/v2/scripts/published/{scriptId}/variables": {
-        "operationId": "get",
+        "operationId": "getscriptspublishedscriptidvariables",
         "functionName": "get",
         "signature": "get(scriptId, input, output, varType, scriptDataVersion)",
         "parameters": [

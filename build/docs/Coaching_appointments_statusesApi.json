@@ -1,6 +1,6 @@
 {
     "GET /api/v2/coaching/appointments/{appointmentId}/statuses": {
-        "operationId": "list",
+        "operationId": "getcoachingappointmentstatuses",
         "functionName": "list",
         "signature": "list(appointmentId, pageNumber, pageSize)",
         "parameters": [

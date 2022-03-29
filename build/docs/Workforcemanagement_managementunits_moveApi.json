@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunitmove",
         "functionName": "create",
         "signature": "create(managementUnitId, body)",
         "parameters": [

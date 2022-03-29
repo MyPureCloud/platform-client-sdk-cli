@@ -1,6 +1,6 @@
 {
     "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk": {
-        "operationId": "create",
+        "operationId": "postworkforcemanagementmanagementunitweekshifttradesstatebulk",
         "functionName": "create",
         "signature": "create(managementUnitId, weekDateId, body, forceAsync)",
         "parameters": [

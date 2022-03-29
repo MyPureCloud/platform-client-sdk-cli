@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/actions/{actionId}/draft/templates/{fileName}": {
-        "operationId": "get",
+        "operationId": "getintegrationsactiondrafttemplate",
         "functionName": "get",
         "signature": "get(actionId, fileName)",
         "parameters": [

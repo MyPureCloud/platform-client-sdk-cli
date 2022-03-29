@@ -1,6 +1,6 @@
 {
     "GET /api/v2/gamification/leaderboard/all": {
-        "operationId": "get",
+        "operationId": "getgamificationleaderboardall",
         "functionName": "get",
         "signature": "get(filterType, filterId, startWorkday, endWorkday, metricId)",
         "parameters": [

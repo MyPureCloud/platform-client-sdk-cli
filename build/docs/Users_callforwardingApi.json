@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/callforwarding": {
-        "operationId": "get",
+        "operationId": "getusercallforwarding",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Callforwarding"
     },
     "PATCH /api/v2/users/{userId}/callforwarding": {
-        "operationId": "patch",
+        "operationId": "patchusercallforwarding",
         "functionName": "patch",
         "signature": "patch(userId, body)",
         "parameters": [
@@ -31,7 +31,7 @@
         "return": "Callforwarding"
     },
     "PUT /api/v2/users/{userId}/callforwarding": {
-        "operationId": "update",
+        "operationId": "putusercallforwarding",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [

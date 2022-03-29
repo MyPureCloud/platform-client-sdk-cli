@@ -1,6 +1,6 @@
 {
     "GET /api/v2/outbound/campaigns/divisionviews/{campaignId}": {
-        "operationId": "get",
+        "operationId": "getoutboundcampaignsdivisionview",
         "functionName": "get",
         "signature": "get(campaignId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Campaigndivisionview"
     },
     "GET /api/v2/outbound/campaigns/divisionviews": {
-        "operationId": "list",
+        "operationId": "getoutboundcampaignsdivisionviews",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)",
         "parameters": [

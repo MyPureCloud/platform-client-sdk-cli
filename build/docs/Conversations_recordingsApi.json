@@ -1,6 +1,6 @@
 {
     "GET /api/v2/conversations/{conversationId}/recordings/{recordingId}": {
-        "operationId": "get",
+        "operationId": "getconversationrecording",
         "functionName": "get",
         "signature": "get(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats)",
         "parameters": [
@@ -58,7 +58,7 @@
         "return": "Recording"
     },
     "GET /api/v2/conversations/{conversationId}/recordings": {
-        "operationId": "list",
+        "operationId": "getconversationrecordings",
         "functionName": "list",
         "signature": "list(conversationId, maxWaitMs, formatId, mediaFormats)",
         "parameters": [
@@ -86,7 +86,7 @@
         "return": "[]Recording"
     },
     "PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}": {
-        "operationId": "update",
+        "operationId": "putconversationrecording",
         "functionName": "update",
         "signature": "update(conversationId, recordingId, body)",
         "parameters": [

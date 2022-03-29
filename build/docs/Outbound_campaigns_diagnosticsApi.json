@@ -1,6 +1,6 @@
 {
     "GET /api/v2/outbound/campaigns/{campaignId}/diagnostics": {
-        "operationId": "get",
+        "operationId": "getoutboundcampaigndiagnostics",
         "functionName": "get",
         "signature": "get(campaignId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/usage/query/{executionId}/results": {
-        "operationId": "get",
+        "operationId": "getusagequeryexecutionidresults",
         "functionName": "get",
         "signature": "get(executionId)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/notifications/channels/{channelId}/subscriptions": {
-        "operationId": "delete",
+        "operationId": "deletenotificationschannelsubscriptions",
         "functionName": "delete",
         "signature": "delete(channelId)",
         "parameters": [
@@ -12,7 +12,7 @@
         ]
     },
     "GET /api/v2/notifications/channels/{channelId}/subscriptions": {
-        "operationId": "list",
+        "operationId": "getnotificationschannelsubscriptions",
         "functionName": "list",
         "signature": "list(channelId)",
         "parameters": [
@@ -25,7 +25,7 @@
         "return": "Channeltopicentitylisting"
     },
     "POST /api/v2/notifications/channels/{channelId}/subscriptions": {
-        "operationId": "subscribe",
+        "operationId": "postnotificationschannelsubscriptions",
         "functionName": "subscribe",
         "signature": "subscribe(channelId, body)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Channeltopicentitylisting"
     },
     "PUT /api/v2/notifications/channels/{channelId}/subscriptions": {
-        "operationId": "update",
+        "operationId": "putnotificationschannelsubscriptions",
         "functionName": "update",
         "signature": "update(channelId, body)",
         "parameters": [

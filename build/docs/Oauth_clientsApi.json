@@ -1,6 +1,6 @@
 {
     "POST /api/v2/oauth/clients": {
-        "operationId": "create",
+        "operationId": "postoauthclients",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Oauthclient"
     },
     "DELETE /api/v2/oauth/clients/{clientId}": {
-        "operationId": "delete",
+        "operationId": "deleteoauthclient",
         "functionName": "delete",
         "signature": "delete(clientId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/oauth/clients/{clientId}": {
-        "operationId": "get",
+        "operationId": "getoauthclient",
         "functionName": "get",
         "signature": "get(clientId)",
         "parameters": [
@@ -38,14 +38,14 @@
         "return": "Oauthclient"
     },
     "GET /api/v2/oauth/clients": {
-        "operationId": "list",
+        "operationId": "getoauthclients",
         "functionName": "list",
         "signature": "list()",
         
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/oauth/clients/{clientId}": {
-        "operationId": "update",
+        "operationId": "putoauthclient",
         "functionName": "update",
         "signature": "update(clientId, body)",
         "parameters": [

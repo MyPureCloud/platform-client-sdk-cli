@@ -1,6 +1,6 @@
 {
     "POST /api/v2/users/{userId}/routingskills": {
-        "operationId": "create",
+        "operationId": "postuserroutingskills",
         "functionName": "create",
         "signature": "create(userId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Userroutingskill"
     },
     "DELETE /api/v2/users/{userId}/routingskills/{skillId}": {
-        "operationId": "delete",
+        "operationId": "deleteuserroutingskill",
         "functionName": "delete",
         "signature": "delete(userId, skillId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/users/{userId}/routingskills": {
-        "operationId": "list",
+        "operationId": "getuserroutingskills",
         "functionName": "list",
         "signature": "list(userId, pageSize, pageNumber, sortOrder)",
         "parameters": [
@@ -63,7 +63,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/users/{userId}/routingskills/{skillId}": {
-        "operationId": "update",
+        "operationId": "putuserroutingskill",
         "functionName": "update",
         "signature": "update(userId, skillId, body)",
         "parameters": [

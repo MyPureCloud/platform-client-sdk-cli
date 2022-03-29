@@ -1,6 +1,6 @@
 {
     "POST /api/v2/analytics/flows/aggregates/query": {
-        "operationId": "create",
+        "operationId": "postanalyticsflowsaggregatesquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

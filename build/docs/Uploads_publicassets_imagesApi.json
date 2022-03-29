@@ -1,6 +1,6 @@
 {
     "POST /api/v2/uploads/publicassets/images": {
-        "operationId": "create",
+        "operationId": "postuploadspublicassetsimages",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

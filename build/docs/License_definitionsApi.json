@@ -1,6 +1,6 @@
 {
     "GET /api/v2/license/definitions/{licenseId}": {
-        "operationId": "get",
+        "operationId": "getlicensedefinition",
         "functionName": "get",
         "signature": "get(licenseId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Licensedefinition"
     },
     "GET /api/v2/license/definitions": {
-        "operationId": "list",
+        "operationId": "getlicensedefinitions",
         "functionName": "list",
         "signature": "list()",
         

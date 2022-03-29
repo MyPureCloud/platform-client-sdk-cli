@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/trunks/{trunkId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgestrunk",
         "functionName": "get",
         "signature": "get(trunkId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Trunk"
     },
     "GET /api/v2/telephony/providers/edges/trunks": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgestrunks",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortBy, sortOrder, edgeId, trunkBaseId, trunkType)",
         "parameters": [
@@ -56,7 +56,7 @@
         "return": "Swaggeroverridelist"
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/trunks": {
-        "operationId": "listedgetrunks",
+        "operationId": "gettelephonyprovidersedgetrunks",
         "functionName": "listedgetrunks",
         "signature": "listedgetrunks(edgeId, pageNumber, pageSize, sortBy, sortOrder, trunkBaseId, trunkType)",
         "parameters": [

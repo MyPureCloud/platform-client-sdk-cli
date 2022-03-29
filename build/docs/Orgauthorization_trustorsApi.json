@@ -1,6 +1,6 @@
 {
     "DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}": {
-        "operationId": "delete",
+        "operationId": "deleteorgauthorizationtrustor",
         "functionName": "delete",
         "signature": "delete(trustorOrgId)",
         "parameters": [
@@ -12,7 +12,7 @@
         ]
     },
     "GET /api/v2/orgauthorization/trustors/{trustorOrgId}": {
-        "operationId": "get",
+        "operationId": "getorgauthorizationtrustor",
         "functionName": "get",
         "signature": "get(trustorOrgId)",
         "parameters": [
@@ -25,7 +25,7 @@
         "return": "Trustor"
     },
     "GET /api/v2/orgauthorization/trustors": {
-        "operationId": "list",
+        "operationId": "getorgauthorizationtrustors",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber)",
         "parameters": [

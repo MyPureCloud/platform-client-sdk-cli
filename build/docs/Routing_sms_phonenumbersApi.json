@@ -1,6 +1,6 @@
 {
     "POST /api/v2/routing/sms/phonenumbers": {
-        "operationId": "create",
+        "operationId": "postroutingsmsphonenumbers",
         "functionName": "create",
         "signature": "create(body, async)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Smsphonenumber"
     },
     "DELETE /api/v2/routing/sms/phonenumbers/{addressId}": {
-        "operationId": "delete",
+        "operationId": "deleteroutingsmsphonenumber",
         "functionName": "delete",
         "signature": "delete(addressId, async)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/routing/sms/phonenumbers/{addressId}": {
-        "operationId": "get",
+        "operationId": "getroutingsmsphonenumber",
         "functionName": "get",
         "signature": "get(addressId)",
         "parameters": [
@@ -48,7 +48,7 @@
         "return": "Smsphonenumber"
     },
     "GET /api/v2/routing/sms/phonenumbers": {
-        "operationId": "list",
+        "operationId": "getroutingsmsphonenumbers",
         "functionName": "list",
         "signature": "list(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language)",
         "parameters": [
@@ -101,7 +101,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/routing/sms/phonenumbers/{addressId}": {
-        "operationId": "update",
+        "operationId": "putroutingsmsphonenumber",
         "functionName": "update",
         "signature": "update(addressId, body, async)",
         "parameters": [

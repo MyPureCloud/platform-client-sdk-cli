@@ -1,6 +1,6 @@
 {
     "POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}": {
-        "operationId": "create",
+        "operationId": "postauthorizationdivisionobject",
         "functionName": "create",
         "signature": "create(divisionId, objectType, body)",
         "parameters": [

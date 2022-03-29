@@ -1,6 +1,6 @@
 {
     "POST /api/v2/users/{userId}/greetings": {
-        "operationId": "create",
+        "operationId": "postusergreetings",
         "functionName": "create",
         "signature": "create(userId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Greeting"
     },
     "GET /api/v2/users/{userId}/greetings": {
-        "operationId": "list",
+        "operationId": "getusergreetings",
         "functionName": "list",
         "signature": "list(userId, pageSize, pageNumber)",
         "parameters": [

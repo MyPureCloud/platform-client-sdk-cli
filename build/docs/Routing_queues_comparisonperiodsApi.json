@@ -1,6 +1,6 @@
 {
     "GET /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}": {
-        "operationId": "get",
+        "operationId": "getroutingqueuecomparisonperiod",
         "functionName": "get",
         "signature": "get(queueId, comparisonPeriodId)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Comparisonperiod"
     },
     "GET /api/v2/routing/queues/{queueId}/comparisonperiods": {
-        "operationId": "list",
+        "operationId": "getroutingqueuecomparisonperiods",
         "functionName": "list",
         "signature": "list(queueId)",
         "parameters": [

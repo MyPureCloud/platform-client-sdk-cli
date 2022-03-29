@@ -1,6 +1,6 @@
 {
     "GET /api/v2/learning/assignments/me": {
-        "operationId": "list",
+        "operationId": "getlearningassignmentsme",
         "functionName": "list",
         "signature": "list(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, types, states, expand)",
         "parameters": [

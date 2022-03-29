@@ -1,6 +1,6 @@
 {
     "GET /api/v2/integrations/{integrationId}/config/current": {
-        "operationId": "get",
+        "operationId": "getintegrationconfigcurrent",
         "functionName": "get",
         "signature": "get(integrationId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Integrationconfiguration"
     },
     "PUT /api/v2/integrations/{integrationId}/config/current": {
-        "operationId": "update",
+        "operationId": "putintegrationconfigcurrent",
         "functionName": "update",
         "signature": "update(integrationId, body)",
         "parameters": [

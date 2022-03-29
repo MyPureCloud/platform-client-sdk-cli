@@ -1,6 +1,6 @@
 {
     "GET /api/v2/oauth/clients/{clientId}/usage/summary": {
-        "operationId": "get",
+        "operationId": "getoauthclientusagesummary",
         "functionName": "get",
         "signature": "get(clientId, days)",
         "parameters": [

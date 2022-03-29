@@ -1,6 +1,6 @@
 {
     "GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents": {
-        "operationId": "list",
+        "operationId": "getcontentmanagementworkspacedocuments",
         "functionName": "list",
         "signature": "list(workspaceId, expand, pageSize, pageNumber, sortBy, sortOrder)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "PATCH /api/v2/coaching/appointments/{appointmentId}/status": {
-        "operationId": "update",
+        "operationId": "patchcoachingappointmentstatus",
         "functionName": "update",
         "signature": "update(appointmentId, body)",
         "parameters": [

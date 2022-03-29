@@ -1,6 +1,6 @@
 {
     "POST /api/v2/routing/queues": {
-        "operationId": "create",
+        "operationId": "postroutingqueues",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Queue"
     },
     "DELETE /api/v2/routing/queues/{queueId}": {
-        "operationId": "delete",
+        "operationId": "deleteroutingqueue",
         "functionName": "delete",
         "signature": "delete(queueId, forceDelete)",
         "parameters": [
@@ -30,7 +30,7 @@
         ]
     },
     "GET /api/v2/routing/queues/{queueId}": {
-        "operationId": "get",
+        "operationId": "getroutingqueue",
         "functionName": "get",
         "signature": "get(queueId)",
         "parameters": [
@@ -43,7 +43,7 @@
         "return": "Queue"
     },
     "GET /api/v2/routing/queues": {
-        "operationId": "list",
+        "operationId": "getroutingqueues",
         "functionName": "list",
         "signature": "list(pageNumber, pageSize, sortOrder, name, id, divisionId)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/routing/queues/{queueId}": {
-        "operationId": "update",
+        "operationId": "putroutingqueue",
         "functionName": "update",
         "signature": "update(queueId, body)",
         "parameters": [

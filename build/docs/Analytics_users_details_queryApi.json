@@ -1,6 +1,6 @@
 {
     "POST /api/v2/analytics/users/details/query": {
-        "operationId": "create",
+        "operationId": "postanalyticsusersdetailsquery",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

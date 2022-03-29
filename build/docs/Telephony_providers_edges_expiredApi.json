@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/expired": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgesexpired",
         "functionName": "get",
         "signature": "get()",
         

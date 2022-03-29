@@ -1,6 +1,6 @@
 {
     "POST /api/v2/flows/{flowId}/versions": {
-        "operationId": "create",
+        "operationId": "postflowversions",
         "functionName": "create",
         "signature": "create(flowId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Flowversion"
     },
     "GET /api/v2/flows/{flowId}/versions/{versionId}": {
-        "operationId": "get",
+        "operationId": "getflowversion",
         "functionName": "get",
         "signature": "get(flowId, versionId, deleted)",
         "parameters": [
@@ -41,7 +41,7 @@
         "return": "Flowversion"
     },
     "GET /api/v2/flows/{flowId}/versions": {
-        "operationId": "list",
+        "operationId": "getflowversions",
         "functionName": "list",
         "signature": "list(flowId, pageNumber, pageSize, deleted)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/rulesets": {
-        "operationId": "create",
+        "operationId": "postoutboundrulesets",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Ruleset"
     },
     "DELETE /api/v2/outbound/rulesets/{ruleSetId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutboundruleset",
         "functionName": "delete",
         "signature": "delete(ruleSetId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/outbound/rulesets/{ruleSetId}": {
-        "operationId": "get",
+        "operationId": "getoutboundruleset",
         "functionName": "get",
         "signature": "get(ruleSetId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Ruleset"
     },
     "GET /api/v2/outbound/rulesets": {
-        "operationId": "list",
+        "operationId": "getoutboundrulesets",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
         "parameters": [
@@ -81,7 +81,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/rulesets/{ruleSetId}": {
-        "operationId": "update",
+        "operationId": "putoutboundruleset",
         "functionName": "update",
         "signature": "update(ruleSetId, body)",
         "parameters": [

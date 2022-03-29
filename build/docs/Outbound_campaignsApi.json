@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/campaigns": {
-        "operationId": "create",
+        "operationId": "postoutboundcampaigns",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Campaign"
     },
     "DELETE /api/v2/outbound/campaigns/{campaignId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutboundcampaign",
         "functionName": "delete",
         "signature": "delete(campaignId)",
         "parameters": [
@@ -26,7 +26,7 @@
         "return": "Campaign"
     },
     "GET /api/v2/outbound/campaigns/{campaignId}": {
-        "operationId": "get",
+        "operationId": "getoutboundcampaign",
         "functionName": "get",
         "signature": "get(campaignId)",
         "parameters": [
@@ -39,7 +39,7 @@
         "return": "Campaign"
     },
     "GET /api/v2/outbound/campaigns": {
-        "operationId": "list",
+        "operationId": "getoutboundcampaigns",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, filterType, name, id, contactListId, dncListIds, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder)",
         "parameters": [
@@ -112,7 +112,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/campaigns/{campaignId}": {
-        "operationId": "update",
+        "operationId": "putoutboundcampaign",
         "functionName": "update",
         "signature": "update(campaignId, body)",
         "parameters": [

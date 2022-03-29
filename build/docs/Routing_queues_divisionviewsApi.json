@@ -1,6 +1,6 @@
 {
     "GET /api/v2/routing/queues/divisionviews": {
-        "operationId": "list",
+        "operationId": "getroutingqueuesdivisionviews",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId)",
         "parameters": [

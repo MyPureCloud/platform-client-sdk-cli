@@ -1,20 +1,20 @@
 {
     "DELETE /api/v2/identityproviders/pureengage": {
-        "operationId": "delete",
+        "operationId": "deleteidentityproviderspureengage",
         "functionName": "delete",
         "signature": "delete()",
         
         "return": "Empty"
     },
     "GET /api/v2/identityproviders/pureengage": {
-        "operationId": "get",
+        "operationId": "getidentityproviderspureengage",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Pureengage"
     },
     "PUT /api/v2/identityproviders/pureengage": {
-        "operationId": "update",
+        "operationId": "putidentityproviderspureengage",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "POST /api/v2/conversations/emails/{conversationId}/messages": {
-        "operationId": "create",
+        "operationId": "postconversationsemailmessages",
         "functionName": "create",
         "signature": "create(conversationId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Emailmessage"
     },
     "GET /api/v2/conversations/emails/{conversationId}/messages/{messageId}": {
-        "operationId": "get",
+        "operationId": "getconversationsemailmessage",
         "functionName": "get",
         "signature": "get(conversationId, messageId)",
         "parameters": [
@@ -36,7 +36,7 @@
         "return": "Emailmessage"
     },
     "GET /api/v2/conversations/emails/{conversationId}/messages": {
-        "operationId": "list",
+        "operationId": "getconversationsemailmessages",
         "functionName": "list",
         "signature": "list(conversationId)",
         "parameters": [

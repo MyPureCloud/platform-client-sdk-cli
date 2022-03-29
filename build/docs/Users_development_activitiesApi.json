@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/development/activities/{activityId}": {
-        "operationId": "get",
+        "operationId": "getusersdevelopmentactivity",
         "functionName": "get",
         "signature": "get(activityId, varType)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Developmentactivity"
     },
     "GET /api/v2/users/development/activities": {
-        "operationId": "list",
+        "operationId": "getusersdevelopmentactivities",
         "functionName": "list",
         "signature": "list(userId, moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship)",
         "parameters": [

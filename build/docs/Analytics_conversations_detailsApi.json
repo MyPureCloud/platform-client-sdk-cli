@@ -1,6 +1,6 @@
 {
     "GET /api/v2/analytics/conversations/{conversationId}/details": {
-        "operationId": "get",
+        "operationId": "getanalyticsconversationdetails",
         "functionName": "get",
         "signature": "get(conversationId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Analyticsconversationwithoutattributes"
     },
     "GET /api/v2/analytics/conversations/details": {
-        "operationId": "list",
+        "operationId": "getanalyticsconversationsdetails",
         "functionName": "list",
         "signature": "list(id)",
         "parameters": [

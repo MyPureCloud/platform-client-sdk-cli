@@ -1,6 +1,6 @@
 {
     "GET /api/v2/greetings/{greetingId}/media": {
-        "operationId": "get",
+        "operationId": "getgreetingmedia",
         "functionName": "get",
         "signature": "get(greetingId, formatId)",
         "parameters": [

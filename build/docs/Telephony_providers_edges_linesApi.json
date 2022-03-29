@@ -1,6 +1,6 @@
 {
     "GET /api/v2/telephony/providers/edges/lines/{lineId}": {
-        "operationId": "get",
+        "operationId": "gettelephonyprovidersedgesline",
         "functionName": "get",
         "signature": "get(lineId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Line"
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}": {
-        "operationId": "getedgeline",
+        "operationId": "gettelephonyprovidersedgeline",
         "functionName": "getedgeline",
         "signature": "getedgeline(edgeId, lineId)",
         "parameters": [
@@ -31,7 +31,7 @@
         "return": "Edgeline"
     },
     "GET /api/v2/telephony/providers/edges/lines": {
-        "operationId": "list",
+        "operationId": "gettelephonyprovidersedgeslines",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, name, sortBy, expand)",
         "parameters": [
@@ -64,7 +64,7 @@
         "return": "Swaggeroverridelist"
     },
     "GET /api/v2/telephony/providers/edges/{edgeId}/lines": {
-        "operationId": "listedgelines",
+        "operationId": "gettelephonyprovidersedgelines",
         "functionName": "listedgelines",
         "signature": "listedgelines(edgeId, pageSize, pageNumber)",
         "parameters": [
@@ -87,7 +87,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}": {
-        "operationId": "update",
+        "operationId": "puttelephonyprovidersedgeline",
         "functionName": "update",
         "signature": "update(edgeId, lineId, body)",
         "parameters": [

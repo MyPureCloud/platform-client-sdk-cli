@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementmanagementunitactivitycodes",
         "functionName": "get",
         "signature": "get(managementUnitId)",
         "parameters": [

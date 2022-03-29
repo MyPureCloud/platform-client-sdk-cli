@@ -1,6 +1,6 @@
 {
     "POST /api/v2/authorization/subjects/{subjectId}/bulkremove": {
-        "operationId": "create",
+        "operationId": "postauthorizationsubjectbulkremove",
         "functionName": "create",
         "signature": "create(subjectId, body)",
         "parameters": [

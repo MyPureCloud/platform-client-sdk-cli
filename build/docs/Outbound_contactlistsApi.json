@@ -1,6 +1,6 @@
 {
     "POST /api/v2/outbound/contactlists": {
-        "operationId": "create",
+        "operationId": "postoutboundcontactlists",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Contactlist"
     },
     "DELETE /api/v2/outbound/contactlists/{contactListId}": {
-        "operationId": "delete",
+        "operationId": "deleteoutboundcontactlist",
         "functionName": "delete",
         "signature": "delete(contactListId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "DELETE /api/v2/outbound/contactlists": {
-        "operationId": "deletecontactlists",
+        "operationId": "deleteoutboundcontactlists",
         "functionName": "deletecontactlists",
         "signature": "deletecontactlists(id)",
         "parameters": [
@@ -37,7 +37,7 @@
         ]
     },
     "GET /api/v2/outbound/contactlists/{contactListId}": {
-        "operationId": "get",
+        "operationId": "getoutboundcontactlist",
         "functionName": "get",
         "signature": "get(contactListId, includeImportStatus, includeSize)",
         "parameters": [
@@ -60,7 +60,7 @@
         "return": "Contactlist"
     },
     "GET /api/v2/outbound/contactlists": {
-        "operationId": "list",
+        "operationId": "getoutboundcontactlists",
         "functionName": "list",
         "signature": "list(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder)",
         "parameters": [
@@ -123,7 +123,7 @@
         "return": "Swaggeroverridelist"
     },
     "PUT /api/v2/outbound/contactlists/{contactListId}": {
-        "operationId": "update",
+        "operationId": "putoutboundcontactlist",
         "functionName": "update",
         "signature": "update(contactListId, body)",
         "parameters": [

@@ -1,6 +1,6 @@
 {
     "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits": {
-        "operationId": "get",
+        "operationId": "getworkforcemanagementmanagementunitusertimeoffrequesttimeofflimits",
         "functionName": "get",
         "signature": "get(managementUnitId, userId, timeOffRequestId)",
         "parameters": [

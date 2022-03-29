@@ -1,6 +1,6 @@
 {
     "POST /api/v2/routing/languages": {
-        "operationId": "create",
+        "operationId": "postroutinglanguages",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Language"
     },
     "DELETE /api/v2/routing/languages/{languageId}": {
-        "operationId": "delete",
+        "operationId": "deleteroutinglanguage",
         "functionName": "delete",
         "signature": "delete(languageId)",
         "parameters": [
@@ -25,7 +25,7 @@
         ]
     },
     "GET /api/v2/routing/languages/{languageId}": {
-        "operationId": "get",
+        "operationId": "getroutinglanguage",
         "functionName": "get",
         "signature": "get(languageId)",
         "parameters": [
@@ -38,7 +38,7 @@
         "return": "Language"
     },
     "GET /api/v2/routing/languages": {
-        "operationId": "list",
+        "operationId": "getroutinglanguages",
         "functionName": "list",
         "signature": "list(pageSize, pageNumber, sortOrder, name, id)",
         "parameters": [

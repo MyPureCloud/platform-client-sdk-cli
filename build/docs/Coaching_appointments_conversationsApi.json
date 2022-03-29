@@ -1,6 +1,6 @@
 {
     "POST /api/v2/coaching/appointments/{appointmentId}/conversations": {
-        "operationId": "create",
+        "operationId": "postcoachingappointmentconversations",
         "functionName": "create",
         "signature": "create(appointmentId, body)",
         "parameters": [

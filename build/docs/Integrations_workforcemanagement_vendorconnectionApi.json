@@ -1,6 +1,6 @@
 {
     "POST /api/v2/integrations/workforcemanagement/vendorconnection": {
-        "operationId": "create",
+        "operationId": "postintegrationsworkforcemanagementvendorconnection",
         "functionName": "create",
         "signature": "create(body)",
         "parameters": [

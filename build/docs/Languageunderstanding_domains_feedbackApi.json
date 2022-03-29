@@ -1,6 +1,6 @@
 {
     "POST /api/v2/languageunderstanding/domains/{domainId}/feedback": {
-        "operationId": "create",
+        "operationId": "postlanguageunderstandingdomainfeedback",
         "functionName": "create",
         "signature": "create(domainId, body)",
         "parameters": [
@@ -18,7 +18,7 @@
         "return": "Nlufeedbackresponse"
     },
     "DELETE /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}": {
-        "operationId": "delete",
+        "operationId": "deletelanguageunderstandingdomainfeedbackfeedbackid",
         "functionName": "delete",
         "signature": "delete(domainId, feedbackId)",
         "parameters": [
@@ -35,7 +35,7 @@
         ]
     },
     "GET /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}": {
-        "operationId": "get",
+        "operationId": "getlanguageunderstandingdomainfeedbackfeedbackid",
         "functionName": "get",
         "signature": "get(domainId, feedbackId, fields)",
         "parameters": [
@@ -58,7 +58,7 @@
         "return": "Nlufeedbackresponse"
     },
     "GET /api/v2/languageunderstanding/domains/{domainId}/feedback": {
-        "operationId": "list",
+        "operationId": "getlanguageunderstandingdomainfeedback",
         "functionName": "list",
         "signature": "list(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields)",
         "parameters": [

@@ -1,13 +1,13 @@
 {
     "GET /api/v2/integrations/speech/tts/settings": {
-        "operationId": "get",
+        "operationId": "getintegrationsspeechttssettings",
         "functionName": "get",
         "signature": "get()",
         
         "return": "Ttssettings"
     },
     "PUT /api/v2/integrations/speech/tts/settings": {
-        "operationId": "update",
+        "operationId": "putintegrationsspeechttssettings",
         "functionName": "update",
         "signature": "update(body)",
         "parameters": [

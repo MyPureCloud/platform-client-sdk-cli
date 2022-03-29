@@ -1,6 +1,6 @@
 {
     "POST /api/v2/quality/conversations/{conversationId}/evaluations": {
-        "operationId": "create",
+        "operationId": "postqualityconversationevaluations",
         "functionName": "create",
         "signature": "create(conversationId, body, expand)",
         "parameters": [
@@ -23,7 +23,7 @@
         "return": "Evaluation"
     },
     "DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}": {
-        "operationId": "delete",
+        "operationId": "deletequalityconversationevaluation",
         "functionName": "delete",
         "signature": "delete(conversationId, evaluationId, expand)",
         "parameters": [
@@ -46,7 +46,7 @@
         "return": "Evaluation"
     },
     "GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}": {
-        "operationId": "get",
+        "operationId": "getqualityconversationevaluation",
         "functionName": "get",
         "signature": "get(conversationId, evaluationId, expand)",
         "parameters": [
@@ -69,7 +69,7 @@
         "return": "Evaluation"
     },
     "PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}": {
-        "operationId": "update",
+        "operationId": "putqualityconversationevaluation",
         "functionName": "update",
         "signature": "update(conversationId, evaluationId, body, expand)",
         "parameters": [

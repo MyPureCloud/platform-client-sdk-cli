@@ -1,6 +1,6 @@
 {
     "GET /api/v2/users/{userId}/routingstatus": {
-        "operationId": "get",
+        "operationId": "getuserroutingstatus",
         "functionName": "get",
         "signature": "get(userId)",
         "parameters": [
@@ -13,7 +13,7 @@
         "return": "Routingstatus"
     },
     "PUT /api/v2/users/{userId}/routingstatus": {
-        "operationId": "update",
+        "operationId": "putuserroutingstatus",
         "functionName": "update",
         "signature": "update(userId, body)",
         "parameters": [

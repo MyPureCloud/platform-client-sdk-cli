@@ -1,6 +1,6 @@
 {
     "GET /api/v2/notifications/availabletopics": {
-        "operationId": "list",
+        "operationId": "getnotificationsavailabletopics",
         "functionName": "list",
         "signature": "list(expand, includePreview)",
         "parameters": [

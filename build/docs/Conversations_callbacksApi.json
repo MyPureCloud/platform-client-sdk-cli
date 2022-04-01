@@ -32,6 +32,19 @@
         
         "return": "Swaggeroverridelist"
     },
+    "PATCH /api/v2/conversations/callbacks": {
+        "operationId": "patchconversationscallbacks",
+        "functionName": "update",
+        "signature": "update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Patchcallbackrequest",
+                "required": "true"
+            }
+        ],
+        "return": "Patchcallbackresponse"
+    },
     "PATCH /api/v2/conversations/callbacks/{conversationId}": {
         "operationId": "patchconversationscallback",
         "functionName": "update",

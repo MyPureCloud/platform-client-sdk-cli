@@ -102,8 +102,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "List clients that are authorized by the resource owner",
-	Long:  "List clients that are authorized by the resource owner",
+	Short: "List clients that have been authorized, requested, or revoked by the resource owner",
+	Long:  "List clients that have been authorized, requested, or revoked by the resource owner",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

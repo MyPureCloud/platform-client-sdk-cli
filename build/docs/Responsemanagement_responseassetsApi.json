@@ -1,0 +1,46 @@
+{
+    "DELETE /api/v2/responsemanagement/responseassets/{responseAssetId}": {
+        "operationId": "deleteresponsemanagementresponseasset",
+        "functionName": "delete",
+        "signature": "delete(responseAssetId)",
+        "parameters": [
+            {
+                "name": "responseAssetId",
+                "type": "string",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/responsemanagement/responseassets/{responseAssetId}": {
+        "operationId": "getresponsemanagementresponseasset",
+        "functionName": "get",
+        "signature": "get(responseAssetId)",
+        "parameters": [
+            {
+                "name": "responseAssetId",
+                "type": "string",
+                "required": "true"
+            }
+        ],
+        "return": "Responseasset"
+    },
+    "PUT /api/v2/responsemanagement/responseassets/{responseAssetId}": {
+        "operationId": "putresponsemanagementresponseasset",
+        "functionName": "update",
+        "signature": "update(responseAssetId, body)",
+        "parameters": [
+            {
+                "name": "responseAssetId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Responseassetrequest",
+                "required": "true"
+            }
+        ],
+        "return": "Responseasset"
+    }
+    
+}

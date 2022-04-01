@@ -1,0 +1,21 @@
+{
+    "POST /api/v2/responsemanagement/responseassets/search": {
+        "operationId": "postresponsemanagementresponseassetssearch",
+        "functionName": "create",
+        "signature": "create(body, expand)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Responseassetsearchrequest",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[]string",
+                "required": "false"
+            }
+        ],
+        "return": "Responseassetsearchresults"
+    }
+    
+}

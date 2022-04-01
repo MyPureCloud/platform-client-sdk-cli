@@ -16,6 +16,9 @@ type WebmessagingeventDud struct {
 
     
 
+
+    
+
 }
 
 // Webmessagingevent - Message event element.  Examples include: system messages, typing indicators, cobrowse offerings.
@@ -27,10 +30,18 @@ type Webmessagingevent struct {
     // CoBrowse - Cobrowse event.
     CoBrowse Webmessagingeventcobrowse `json:"coBrowse"`
 
+
+    // Presence - Presence event.
+    Presence Webmessagingeventpresence `json:"presence"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Webmessagingevent) String() string {
+    
+    
+    
+    
     
     
     
@@ -60,8 +71,14 @@ func (u *Webmessagingevent) MarshalJSON() ([]byte, error) {
         
         CoBrowse Webmessagingeventcobrowse `json:"coBrowse"`
         
+        Presence Webmessagingeventpresence `json:"presence"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

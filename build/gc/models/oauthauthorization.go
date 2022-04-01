@@ -36,6 +36,12 @@ type OauthauthorizationDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -48,6 +54,10 @@ type Oauthauthorization struct {
 
     // Scope
     Scope []string `json:"scope"`
+
+
+    // Roles
+    Roles []string `json:"roles"`
 
 
     // ResourceOwner
@@ -74,6 +84,10 @@ type Oauthauthorization struct {
     Pending bool `json:"pending"`
 
 
+    // State
+    State string `json:"state"`
+
+
     
 
 }
@@ -87,6 +101,14 @@ func (o *Oauthauthorization) String() string {
     
     
      o.Scope = []string{""} 
+    
+    
+    
+     o.Roles = []string{""} 
+    
+    
+    
+    
     
     
     
@@ -135,6 +157,8 @@ func (u *Oauthauthorization) MarshalJSON() ([]byte, error) {
         
         Scope []string `json:"scope"`
         
+        Roles []string `json:"roles"`
+        
         ResourceOwner Domainentityref `json:"resourceOwner"`
         
         DateCreated time.Time `json:"dateCreated"`
@@ -146,6 +170,8 @@ func (u *Oauthauthorization) MarshalJSON() ([]byte, error) {
         ModifiedBy Domainentityref `json:"modifiedBy"`
         
         Pending bool `json:"pending"`
+        
+        State string `json:"state"`
         
         
         
@@ -159,6 +185,16 @@ func (u *Oauthauthorization) MarshalJSON() ([]byte, error) {
 
         
         Scope: []string{""},
+        
+
+        
+
+        
+        Roles: []string{""},
+        
+
+        
+
         
 
         

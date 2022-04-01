@@ -1003,8 +1003,8 @@ type Viewfilter struct {
     IsAssessmentPassed bool `json:"isAssessmentPassed"`
 
 
-    // ConversationInitiator - Indicates the Brand (Bot/User/Agent) or End User who initiated the first message in the conversation
-    ConversationInitiator string `json:"conversationInitiator"`
+    // ConversationInitiators - The list to filter based on Brands (Bot/User/Agent) or End User who initiated the first message in the conversation
+    ConversationInitiators []string `json:"conversationInitiators"`
 
 
     // HasCustomerParticipated - Indicates if the customer has participated in an initiated conversation
@@ -1580,7 +1580,7 @@ func (o *Viewfilter) String() string {
     
     
     
-    
+     o.ConversationInitiators = []string{""} 
     
     
     
@@ -1887,7 +1887,7 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
         IsAssessmentPassed bool `json:"isAssessmentPassed"`
         
-        ConversationInitiator string `json:"conversationInitiator"`
+        ConversationInitiators []string `json:"conversationInitiators"`
         
         HasCustomerParticipated bool `json:"hasCustomerParticipated"`
         
@@ -2667,6 +2667,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
 
+        
+        ConversationInitiators: []string{""},
         
 
         

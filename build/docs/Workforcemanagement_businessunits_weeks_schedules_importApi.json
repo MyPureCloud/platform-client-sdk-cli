@@ -1,0 +1,26 @@
+{
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import": {
+        "operationId": "postworkforcemanagementbusinessunitweekschedulesimport",
+        "functionName": "create",
+        "signature": "create(businessUnitId, weekId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "time.Time",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Wfmprocessuploadrequest",
+                "required": "true"
+            }
+        ],
+        "return": "Scheduleuploadprocessingresponse"
+    }
+    
+}

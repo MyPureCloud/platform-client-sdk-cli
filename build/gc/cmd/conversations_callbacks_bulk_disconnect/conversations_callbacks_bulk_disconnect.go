@@ -1,4 +1,4 @@
-package uploads_workforcemanagement_historicaldata_json
+package conversations_callbacks_bulk_disconnect
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("uploads_workforcemanagement_historicaldata_json", "SWAGGER_OVERRIDE_/api/v2/uploads/workforcemanagement/historicaldata/json", )
-	uploads_workforcemanagement_historicaldata_jsonCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("uploads_workforcemanagement_historicaldata_json"),
+	Description = utils.FormatUsageDescription("conversations_callbacks_bulk_disconnect", "SWAGGER_OVERRIDE_/api/v2/conversations/callbacks/bulk/disconnect", )
+	conversations_callbacks_bulk_disconnectCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("conversations_callbacks_bulk_disconnect"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,36 +24,33 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(uploads_workforcemanagement_historicaldata_jsonCmd)
+	CommandService = services.NewCommandService(conversations_callbacks_bulk_disconnectCmd)
 }
 
-func Cmduploads_workforcemanagement_historicaldata_json() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/uploads/workforcemanagement/historicaldata/json", utils.FormatPermissions([]string{ "wfm:historicalData:upload",  }), utils.GenerateDevCentreLink("POST", "Uploads", "/api/v2/uploads/workforcemanagement/historicaldata/json")))
+func Cmdconversations_callbacks_bulk_disconnect() *cobra.Command { 
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/callbacks/bulk/disconnect", utils.FormatPermissions([]string{ "conversation:communication:disconnect",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/callbacks/bulk/disconnect")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "in" : "body",
   "name" : "body",
-  "description" : "query",
+  "description" : "BulkCallbackDisconnectRequest",
   "required" : true,
   "schema" : {
-    "$ref" : "#/definitions/UploadUrlRequest"
+    "$ref" : "#/definitions/BulkCallbackDisconnectRequest"
   }
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Presigned url successfully created.",
-  "schema" : {
-    "$ref" : "#/definitions/UploadUrlResponse"
-  }
+  "description" : "Accepted"
 }`)
-	uploads_workforcemanagement_historicaldata_jsonCmd.AddCommand(createCmd)
+	conversations_callbacks_bulk_disconnectCmd.AddCommand(createCmd)
 	
-	return uploads_workforcemanagement_historicaldata_jsonCmd
+	return conversations_callbacks_bulk_disconnectCmd
 }
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Creates presigned url for uploading WFM historical data file. Requires data in json format.",
-	Long:  "Creates presigned url for uploading WFM historical data file. Requires data in json format.",
+	Short: "Disconnect multiple scheduled callbacks",
+	Long:  "Disconnect multiple scheduled callbacks",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -62,7 +59,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Uploadurlrequest{}
+			reqModel := models.Bulkcallbackdisconnectrequest{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -70,7 +67,7 @@ var createCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/uploads/workforcemanagement/historicaldata/json"
+		path := "/api/v2/conversations/callbacks/bulk/disconnect"
 
 		urlString := path
 		if len(queryParams) > 0 {

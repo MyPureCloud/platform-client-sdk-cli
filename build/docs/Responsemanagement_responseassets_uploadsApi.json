@@ -1,0 +1,16 @@
+{
+    "POST /api/v2/responsemanagement/responseassets/uploads": {
+        "operationId": "postresponsemanagementresponseassetsuploads",
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Createresponseassetrequest",
+                "required": "true"
+            }
+        ],
+        "return": "Createresponseassetresponse"
+    }
+    
+}

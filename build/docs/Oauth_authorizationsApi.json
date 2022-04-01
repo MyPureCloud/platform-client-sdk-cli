@@ -2,12 +2,17 @@
     "GET /api/v2/oauth/authorizations/{clientId}": {
         "operationId": "getoauthauthorization",
         "functionName": "get",
-        "signature": "get(clientId)",
+        "signature": "get(clientId, acceptLanguage)",
         "parameters": [
             {
                 "name": "clientId",
                 "type": "string",
                 "required": "true"
+            },
+            {
+                "name": "acceptLanguage",
+                "type": "string",
+                "required": "false"
             }
         ],
         "return": "Oauthauthorization"
@@ -15,8 +20,14 @@
     "GET /api/v2/oauth/authorizations": {
         "operationId": "getoauthauthorizations",
         "functionName": "list",
-        "signature": "list()",
-        
+        "signature": "list(acceptLanguage)",
+        "parameters": [
+            {
+                "name": "acceptLanguage",
+                "type": "string",
+                "required": "false"
+            }
+        ],
         "return": "Oauthauthorizationlisting"
     }
     

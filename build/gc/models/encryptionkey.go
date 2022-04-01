@@ -33,6 +33,9 @@ type EncryptionkeyDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -66,12 +69,20 @@ type Encryptionkey struct {
     KeyConfigurationType string `json:"keyConfigurationType"`
 
 
+    // KmsKeyArn - ARN of internal key to be wrapped by AWS KMS Symmetric key
+    KmsKeyArn string `json:"kmsKeyArn"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Encryptionkey) String() string {
+    
+    
+    
+    
     
     
     
@@ -131,10 +142,16 @@ func (u *Encryptionkey) MarshalJSON() ([]byte, error) {
         
         KeyConfigurationType string `json:"keyConfigurationType"`
         
+        KmsKeyArn string `json:"kmsKeyArn"`
+        
         
         
         *Alias
     }{
+        
+
+        
+
         
 
         

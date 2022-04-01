@@ -31,6 +31,9 @@ type ConversationmessagingfromrecipientDud struct {
 
     Email string `json:"email"`
 
+
+    AdditionalIds []Conversationrecipientadditionalidentifier `json:"additionalIds"`
+
 }
 
 // Conversationmessagingfromrecipient - Information about the recipient the message is received from.
@@ -59,10 +62,15 @@ type Conversationmessagingfromrecipient struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationmessagingfromrecipient) String() string {
+    
+    
     
     
     
@@ -116,8 +124,14 @@ func (u *Conversationmessagingfromrecipient) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

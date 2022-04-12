@@ -34,6 +34,12 @@ type ConversationmessagecontentDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Conversationmessagecontent - Message content element.
@@ -69,10 +75,26 @@ type Conversationmessagecontent struct {
     // Generic - Generic Template Object
     Generic Conversationcontentgeneric `json:"generic"`
 
+
+    // Card - Card (Generic Template) Object
+    Card Conversationcontentcard `json:"card"`
+
+
+    // Carousel - Carousel (Multiple Generic Template) Object
+    Carousel Conversationcontentcarousel `json:"carousel"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationmessagecontent) String() string {
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -138,8 +160,20 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
         
         Generic Conversationcontentgeneric `json:"generic"`
         
+        Card Conversationcontentcard `json:"card"`
+        
+        Carousel Conversationcontentcarousel `json:"carousel"`
+        
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
         
 
         

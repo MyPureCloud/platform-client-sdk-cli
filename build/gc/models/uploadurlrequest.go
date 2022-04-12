@@ -30,7 +30,7 @@ type Uploadurlrequest struct {
     FileName string `json:"fileName"`
 
 
-    // ContentMd5 - Content MD-5 of the file to upload
+    // ContentMd5 - Content MD5 of the file to upload
     ContentMd5 string `json:"contentMd5"`
 
 

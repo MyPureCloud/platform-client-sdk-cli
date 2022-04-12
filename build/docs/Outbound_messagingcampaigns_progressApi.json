@@ -12,6 +12,18 @@
         ],
         "return": "[]Campaignprogress"
     },
+    "DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress": {
+        "operationId": "deleteoutboundmessagingcampaignprogress",
+        "functionName": "delete",
+        "signature": "delete(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "string",
+                "required": "true"
+            }
+        ]
+    },
     "GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress": {
         "operationId": "getoutboundmessagingcampaignprogress",
         "functionName": "get",

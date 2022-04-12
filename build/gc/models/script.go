@@ -51,6 +51,9 @@ type ScriptDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -62,6 +65,10 @@ type Script struct {
 
     // Name
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Division `json:"division"`
 
 
     // VersionId
@@ -150,6 +157,10 @@ func (o *Script) String() string {
     
     
     
+    
+    
+    
+    
      o.Features = Interface{} 
     
     
@@ -187,6 +198,8 @@ func (u *Script) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Division Division `json:"division"`
+        
         VersionId string `json:"versionId"`
         
         CreatedDate time.Time `json:"createdDate"`
@@ -213,6 +226,10 @@ func (u *Script) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

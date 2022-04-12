@@ -19,6 +19,9 @@ type ConversationappsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationappsettings - Conversation settings that handles chats within the messenger
@@ -31,13 +34,21 @@ type Conversationappsettings struct {
     ShowUserTypingIndicator bool `json:"showUserTypingIndicator"`
 
 
-    // AutoStartType - The auto start type for the messenger conversation
+    // AutoStartType - Deprecated. The auto start type for the messenger conversation
     AutoStartType string `json:"autoStartType"`
+
+
+    // AutoStart - The auto start for the messenger conversation
+    AutoStart Autostart `json:"autoStart"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationappsettings) String() string {
+    
+    
+    
+    
     
     
     
@@ -73,8 +84,14 @@ func (u *Conversationappsettings) MarshalJSON() ([]byte, error) {
         
         AutoStartType string `json:"autoStartType"`
         
+        AutoStart Autostart `json:"autoStart"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

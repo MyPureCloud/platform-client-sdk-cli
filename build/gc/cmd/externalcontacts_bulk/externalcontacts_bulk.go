@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("externalcontacts_bulk", "SWAGGER_OVERRIDE_/api/v2/externalcontacts/bulk")
+	Description = utils.FormatUsageDescription("externalcontacts_bulk", "SWAGGER_OVERRIDE_/api/v2/externalcontacts/bulk/contacts")
 	externalcontacts_bulkCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("externalcontacts_bulk"),
 		Short: Description,

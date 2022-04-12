@@ -109,6 +109,9 @@ func (c *commandService) Stream(uri string) (string, error) {
 		return "", err
 	}
 
+	pageDataMap := make(map[string]bool, 0)
+	pageDataMap[data] = true
+
 	switch determinePaginationStyle(firstPage) {
 	case cursorPagination:
 		cursor := getCursor(firstPage)
@@ -128,6 +131,11 @@ func (c *commandService) Stream(uri string) (string, error) {
 				return "", err
 			}
 
+			if pageDataMap[data] {
+				break
+			}
+			pageDataMap[data] = true
+
 			utils.Render(data)
 			cursor = getCursor(pageData)
 			pagedURI = updateCursorPagingURI(pagedURI, cursor)
@@ -135,7 +143,7 @@ func (c *commandService) Stream(uri string) (string, error) {
 		break
 	case entityPagination:
 		pagedURI := uri
-		for x := 2;; x++ {
+		for x := 2; ; x++ {
 			pagedURI = updatePagingIndex(pagedURI, "pageNumber", x)
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
@@ -154,6 +162,11 @@ func (c *commandService) Stream(uri string) (string, error) {
 			if len(pageData.Entities) == 0 {
 				break
 			}
+
+			if pageDataMap[data] {
+				break
+			}
+			pageDataMap[data] = true
 
 			utils.Render(data)
 		}
@@ -176,6 +189,11 @@ func (c *commandService) Stream(uri string) (string, error) {
 			if err != nil {
 				return "", err
 			}
+
+			if pageDataMap[data] {
+				break
+			}
+			pageDataMap[data] = true
 
 			if len(getPageObjects(pageData)) > 0 {
 				utils.Render(data)
@@ -217,14 +235,17 @@ func (c *commandService) List(uri string) (string, error) {
 
 	//Allocate the total results based on the page count
 	totalResults := make([]string, 0)
+	for _, val := range getPageObjects(firstPage) {
+		totalResults = append(totalResults, string(val))
+	}
+
+	//This map is necessary to avoid some APIs where the query string isn't working
+	pageDataMap := make(map[string]bool, 0)
+	pageDataMap[data] = true
 
 	//Looks up the rest of the pages
 	switch determinePaginationStyle(firstPage) {
 	case cursorPagination:
-		//Appends the individual records from page objects into the array
-		for _, val := range getPageObjects(firstPage) {
-			totalResults = append(totalResults, string(val))
-		}
 		cursor := getCursor(firstPage)
 		pagedURI := updateCursorPagingURI(uri, cursor)
 		for ok := true; ok; ok = cursor != "" {
@@ -242,6 +263,10 @@ func (c *commandService) List(uri string) (string, error) {
 				return "", err
 			}
 
+			if pageDataMap[data] {
+				break
+			}
+			pageDataMap[data] = true
 			for _, val := range getPageObjects(pageData) {
 				totalResults = append(totalResults, string(val))
 			}
@@ -250,12 +275,8 @@ func (c *commandService) List(uri string) (string, error) {
 		}
 		break
 	case entityPagination:
-		//Appends the individual records from page objects into the array
-		for _, val := range getPageObjects(firstPage) {
-			totalResults = append(totalResults, string(val))
-		}
 		pagedURI := uri
-		for x := 2;; x++ {
+		for x := 2; ; x++ {
 			pagedURI = updatePagingIndex(pagedURI, "pageNumber", x)
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
@@ -271,20 +292,20 @@ func (c *commandService) List(uri string) (string, error) {
 				return "", err
 			}
 
-			for _, val := range getPageObjects(pageData) {
-				totalResults = append(totalResults, string(val))
-			}
-
 			if len(pageData.Entities) == 0 {
 				break
+			}
+
+			if pageDataMap[data] {
+				break
+			}
+			pageDataMap[data] = true
+			for _, val := range getPageObjects(pageData) {
+				totalResults = append(totalResults, string(val))
 			}
 		}
 		break
 	case indexPagination:
-		//Appends the individual records from page objects into the array
-		for _, val := range getPageObjects(firstPage) {
-			totalResults = append(totalResults, string(val))
-		}
 		pagedURI := uri
 		pageData := firstPage
 		for ok := true; ok; ok = len(getPageObjects(pageData)) > 0 {
@@ -303,6 +324,10 @@ func (c *commandService) List(uri string) (string, error) {
 				return "", err
 			}
 
+			if pageDataMap[data] {
+				break
+			}
+			pageDataMap[data] = true
 			for _, val := range getPageObjects(pageData) {
 				totalResults = append(totalResults, string(val))
 			}

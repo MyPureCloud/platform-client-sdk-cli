@@ -30,6 +30,9 @@ type WfmusernotificationDud struct {
     TimeOffRequest Timeoffrequestnotification `json:"timeOffRequest"`
 
 
+    AdherenceExplanation Adherenceexplanationnotification `json:"adherenceExplanation"`
+
+
     
 
 
@@ -62,6 +65,9 @@ type Wfmusernotification struct {
     
 
 
+    
+
+
     // MarkedAsRead - Whether this notification has been marked \"read\"
     MarkedAsRead bool `json:"markedAsRead"`
 
@@ -75,6 +81,8 @@ type Wfmusernotification struct {
 
 // String returns a JSON representation of the model
 func (o *Wfmusernotification) String() string {
+    
+    
     
     
     
@@ -128,6 +136,8 @@ func (u *Wfmusernotification) MarshalJSON() ([]byte, error) {
         
         
         
+        
+        
         MarkedAsRead bool `json:"markedAsRead"`
         
         
@@ -136,6 +146,10 @@ func (u *Wfmusernotification) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

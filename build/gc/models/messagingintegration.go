@@ -21,6 +21,9 @@ type MessagingintegrationDud struct {
     
 
 
+    
+
+
     Status string `json:"status"`
 
 
@@ -59,6 +62,10 @@ type Messagingintegration struct {
 
     // SupportedContent - Defines the SupportedContent profile configured for an integration
     SupportedContent Supportedcontentreference `json:"supportedContent"`
+
+
+    // MessagingSetting
+    MessagingSetting Messagingsettingreference `json:"messagingSetting"`
 
 
     
@@ -118,6 +125,10 @@ func (o *Messagingintegration) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -140,6 +151,8 @@ func (u *Messagingintegration) MarshalJSON() ([]byte, error) {
         
         SupportedContent Supportedcontentreference `json:"supportedContent"`
         
+        MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+        
         
         
         
@@ -160,6 +173,10 @@ func (u *Messagingintegration) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

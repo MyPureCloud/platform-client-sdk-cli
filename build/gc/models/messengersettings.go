@@ -25,6 +25,9 @@ type MessengersettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Messengersettings - Settings concerning messenger
@@ -48,10 +51,18 @@ type Messengersettings struct {
     // Apps - The apps embedded in the messenger
     Apps Messengerapps `json:"apps"`
 
+
+    // HomeScreen - The homescreen settings for messenger
+    HomeScreen Messengerhomescreen `json:"homeScreen"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Messengersettings) String() string {
+    
+    
+    
+    
     
     
     
@@ -99,8 +110,14 @@ func (u *Messengersettings) MarshalJSON() ([]byte, error) {
         
         Apps Messengerapps `json:"apps"`
         
+        HomeScreen Messengerhomescreen `json:"homeScreen"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

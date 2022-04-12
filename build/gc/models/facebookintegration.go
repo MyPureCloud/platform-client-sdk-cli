@@ -27,6 +27,9 @@ type FacebookintegrationDud struct {
     
 
 
+    
+
+
     PageName string `json:"pageName"`
 
 
@@ -75,6 +78,10 @@ type Facebookintegration struct {
 
     // SupportedContent - Defines the SupportedContent profile configured for an integration
     SupportedContent Supportedcontentreference `json:"supportedContent"`
+
+
+    // MessagingSetting
+    MessagingSetting Messagingsettingreference `json:"messagingSetting"`
 
 
     // AppId - The App Id from Facebook messenger
@@ -185,6 +192,10 @@ func (o *Facebookintegration) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -206,6 +217,8 @@ func (u *Facebookintegration) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         SupportedContent Supportedcontentreference `json:"supportedContent"`
+        
+        MessagingSetting Messagingsettingreference `json:"messagingSetting"`
         
         AppId string `json:"appId"`
         
@@ -237,6 +250,10 @@ func (u *Facebookintegration) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

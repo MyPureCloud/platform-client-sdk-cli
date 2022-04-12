@@ -50,6 +50,9 @@ type AuditlogmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Auditlogmessage
@@ -98,6 +101,10 @@ type Auditlogmessage struct {
     EntityType string `json:"entityType"`
 
 
+    // Status - Status of the event being audited
+    Status string `json:"status"`
+
+
     // PropertyChanges - List of properties that were changed and changes made to those properties.
     PropertyChanges []Propertychange `json:"propertyChanges"`
 
@@ -128,6 +135,10 @@ func (o *Auditlogmessage) String() string {
     
     
      o.RemoteIp = []string{""} 
+    
+    
+    
+    
     
     
     
@@ -200,6 +211,8 @@ func (u *Auditlogmessage) MarshalJSON() ([]byte, error) {
         
         EntityType string `json:"entityType"`
         
+        Status string `json:"status"`
+        
         PropertyChanges []Propertychange `json:"propertyChanges"`
         
         Context map[string]string `json:"context"`
@@ -226,6 +239,10 @@ func (u *Auditlogmessage) MarshalJSON() ([]byte, error) {
 
         
         RemoteIp: []string{""},
+        
+
+        
+
         
 
         

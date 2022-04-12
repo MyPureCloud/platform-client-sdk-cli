@@ -15,7 +15,7 @@
     "GET /api/v2/scripts": {
         "operationId": "getscripts",
         "functionName": "list",
-        "signature": "list(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion)",
+        "signature": "list(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds)",
         "parameters": [
             {
                 "name": "pageSize",
@@ -59,6 +59,11 @@
             },
             {
                 "name": "scriptDataVersion",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "divisionIds",
                 "type": "string",
                 "required": "false"
             }

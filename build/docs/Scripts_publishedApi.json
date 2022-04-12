@@ -20,7 +20,7 @@
     "GET /api/v2/scripts/published": {
         "operationId": "getscriptspublished",
         "functionName": "list",
-        "signature": "list(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion)",
+        "signature": "list(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion, divisionIds)",
         "parameters": [
             {
                 "name": "pageSize",
@@ -54,6 +54,11 @@
             },
             {
                 "name": "scriptDataVersion",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "divisionIds",
                 "type": "string",
                 "required": "false"
             }

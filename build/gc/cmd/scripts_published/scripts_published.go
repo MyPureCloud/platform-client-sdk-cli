@@ -47,6 +47,7 @@ func Cmdscripts_published() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "feature", "", "Feature filter")
 	utils.AddFlag(listCmd.Flags(), "string", "flowId", "", "Secure flow id filter")
 	utils.AddFlag(listCmd.Flags(), "string", "scriptDataVersion", "", "Advanced usage - controls the data version of the script")
+	utils.AddFlag(listCmd.Flags(), "string", "divisionIds", "", "Filters scripts to requested divisionIds")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/scripts/published", utils.FormatPermissions([]string{ "scripter:publishedScript:view",  }), utils.GenerateDevCentreLink("GET", "Scripts", "/api/v2/scripts/published")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -158,6 +159,10 @@ var listCmd = &cobra.Command{
 		scriptDataVersion := utils.GetFlag(cmd.Flags(), "string", "scriptDataVersion")
 		if scriptDataVersion != "" {
 			queryParams["scriptDataVersion"] = scriptDataVersion
+		}
+		divisionIds := utils.GetFlag(cmd.Flags(), "string", "divisionIds")
+		if divisionIds != "" {
+			queryParams["divisionIds"] = divisionIds
 		}
 		urlString := path
 		if len(queryParams) > 0 {

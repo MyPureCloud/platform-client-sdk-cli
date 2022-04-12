@@ -102,6 +102,9 @@ type RecordingDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -225,6 +228,10 @@ type Recording struct {
 
     // OriginalRecordingStartTime - The start time of the full recording, before any segment access restrictions are applied. Null when there is no playable media. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     OriginalRecordingStartTime time.Time `json:"originalRecordingStartTime"`
+
+
+    // CreationTime - The creation time of the recording. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    CreationTime time.Time `json:"creationTime"`
 
 
     
@@ -354,6 +361,10 @@ func (o *Recording) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -429,6 +440,8 @@ func (u *Recording) MarshalJSON() ([]byte, error) {
         RecordingErrorStatus string `json:"recordingErrorStatus"`
         
         OriginalRecordingStartTime time.Time `json:"originalRecordingStartTime"`
+        
+        CreationTime time.Time `json:"creationTime"`
         
         
         
@@ -552,6 +565,10 @@ func (u *Recording) MarshalJSON() ([]byte, error) {
 
         
         Users: []User{{}},
+        
+
+        
+
         
 
         

@@ -16,6 +16,21 @@ type SupportcentersettingsDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Supportcentersettings - Settings concerning support center
@@ -27,6 +42,26 @@ type Supportcentersettings struct {
     // KnowledgeBase - The knowledge base for support center
     KnowledgeBase Addressableentityref `json:"knowledgeBase"`
 
+
+    // CustomMessages - Customizable display texts for support center
+    CustomMessages []Supportcentercustommessage `json:"customMessages"`
+
+
+    // RouterType - Router type for support center
+    RouterType string `json:"routerType"`
+
+
+    // Screens - Available screens for the support center with its modules
+    Screens []Supportcenterscreen `json:"screens"`
+
+
+    // EnabledCategories - Enabled article categories for support center
+    EnabledCategories []Addressableentityref `json:"enabledCategories"`
+
+
+    // StyleSetting - Style attributes for support center
+    StyleSetting Supportcenterstylesetting `json:"styleSetting"`
+
 }
 
 // String returns a JSON representation of the model
@@ -34,6 +69,26 @@ func (o *Supportcentersettings) String() string {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+     o.CustomMessages = []Supportcentercustommessage{{}} 
+    
+    
+    
+    
+    
+    
+    
+     o.Screens = []Supportcenterscreen{{}} 
+    
+    
+    
+     o.EnabledCategories = []Addressableentityref{{}} 
     
     
     
@@ -60,10 +115,46 @@ func (u *Supportcentersettings) MarshalJSON() ([]byte, error) {
         
         KnowledgeBase Addressableentityref `json:"knowledgeBase"`
         
+        CustomMessages []Supportcentercustommessage `json:"customMessages"`
+        
+        RouterType string `json:"routerType"`
+        
+        Screens []Supportcenterscreen `json:"screens"`
+        
+        EnabledCategories []Addressableentityref `json:"enabledCategories"`
+        
+        StyleSetting Supportcenterstylesetting `json:"styleSetting"`
+        
         *Alias
     }{
         
 
+        
+
+        
+
+        
+
+        
+
+        
+        CustomMessages: []Supportcentercustommessage{{}},
+        
+
+        
+
+        
+
+        
+
+        
+        Screens: []Supportcenterscreen{{}},
+        
+
+        
+
+        
+        EnabledCategories: []Addressableentityref{{}},
         
 
         

@@ -29,6 +29,9 @@ type WhatsappintegrationupdaterequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -43,6 +46,10 @@ type Whatsappintegrationupdaterequest struct {
 
     // SupportedContent - Defines the SupportedContent profile configured for an integration
     SupportedContent Supportedcontentreference `json:"supportedContent"`
+
+
+    // MessagingSetting
+    MessagingSetting Messagingsettingreference `json:"messagingSetting"`
 
 
     // Action - The action used to activate and then confirm a WhatsApp Integration.
@@ -63,6 +70,10 @@ type Whatsappintegrationupdaterequest struct {
 
 // String returns a JSON representation of the model
 func (o *Whatsappintegrationupdaterequest) String() string {
+    
+    
+    
+    
     
     
     
@@ -108,6 +119,8 @@ func (u *Whatsappintegrationupdaterequest) MarshalJSON() ([]byte, error) {
         
         SupportedContent Supportedcontentreference `json:"supportedContent"`
         
+        MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+        
         Action string `json:"action"`
         
         AuthenticationMethod string `json:"authenticationMethod"`
@@ -118,6 +131,10 @@ func (u *Whatsappintegrationupdaterequest) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

@@ -149,11 +149,11 @@ type Queue struct {
     MediaSettings map[string]Mediasetting `json:"mediaSettings"`
 
 
-    // RoutingRules - The routing rules for the queue, used for routing to known or preferred agents.
+    // RoutingRules - The routing rules for the queue, used for Preferred Agent Routing.
     RoutingRules []Routingrule `json:"routingRules"`
 
 
-    // Bullseye - The bulls-eye settings for the queue.
+    // Bullseye - The bullseye settings for the queue.
     Bullseye Bullseye `json:"bullseye"`
 
 

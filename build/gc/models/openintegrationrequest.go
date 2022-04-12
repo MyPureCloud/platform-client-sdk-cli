@@ -29,6 +29,9 @@ type OpenintegrationrequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -44,6 +47,10 @@ type Openintegrationrequest struct {
 
     // SupportedContent - Defines the SupportedContent profile configured for an integration
     SupportedContent Supportedcontentreference `json:"supportedContent"`
+
+
+    // MessagingSetting
+    MessagingSetting Messagingsettingreference `json:"messagingSetting"`
 
 
     // OutboundNotificationWebhookUrl - The outbound notification webhook URL for the Open messaging integration.
@@ -64,6 +71,10 @@ type Openintegrationrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Openintegrationrequest) String() string {
+    
+    
+    
+    
     
     
     
@@ -111,6 +122,8 @@ func (u *Openintegrationrequest) MarshalJSON() ([]byte, error) {
         
         SupportedContent Supportedcontentreference `json:"supportedContent"`
         
+        MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+        
         OutboundNotificationWebhookUrl string `json:"outboundNotificationWebhookUrl"`
         
         OutboundNotificationWebhookSignatureSecretToken string `json:"outboundNotificationWebhookSignatureSecretToken"`
@@ -121,6 +134,10 @@ func (u *Openintegrationrequest) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

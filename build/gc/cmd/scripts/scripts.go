@@ -48,6 +48,7 @@ func Cmdscripts() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "SortBy Valid values: modifiedDate, createdDate")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "SortOrder Valid values: ascending, descending")
 	utils.AddFlag(listCmd.Flags(), "string", "scriptDataVersion", "", "Advanced usage - controls the data version of the script")
+	utils.AddFlag(listCmd.Flags(), "string", "divisionIds", "", "Filters scripts to requested divisionIds")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/scripts", utils.FormatPermissions([]string{ "scripter:script:view",  }), utils.GenerateDevCentreLink("GET", "Scripts", "/api/v2/scripts")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -163,6 +164,10 @@ var listCmd = &cobra.Command{
 		scriptDataVersion := utils.GetFlag(cmd.Flags(), "string", "scriptDataVersion")
 		if scriptDataVersion != "" {
 			queryParams["scriptDataVersion"] = scriptDataVersion
+		}
+		divisionIds := utils.GetFlag(cmd.Flags(), "string", "divisionIds")
+		if divisionIds != "" {
+			queryParams["divisionIds"] = divisionIds
 		}
 		urlString := path
 		if len(queryParams) > 0 {

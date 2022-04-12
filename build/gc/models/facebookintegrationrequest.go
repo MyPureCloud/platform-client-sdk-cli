@@ -35,6 +35,9 @@ type FacebookintegrationrequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -50,6 +53,10 @@ type Facebookintegrationrequest struct {
 
     // SupportedContent - Defines the SupportedContent profile configured for an integration
     SupportedContent Supportedcontentreference `json:"supportedContent"`
+
+
+    // MessagingSetting
+    MessagingSetting Messagingsettingreference `json:"messagingSetting"`
 
 
     // PageAccessToken - The long-lived Page Access Token of Facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When a pageAccessToken is provided, pageId and userAccessToken are not required.
@@ -111,6 +118,10 @@ func (o *Facebookintegrationrequest) String() string {
     
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -133,6 +144,8 @@ func (u *Facebookintegrationrequest) MarshalJSON() ([]byte, error) {
         
         SupportedContent Supportedcontentreference `json:"supportedContent"`
         
+        MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+        
         PageAccessToken string `json:"pageAccessToken"`
         
         UserAccessToken string `json:"userAccessToken"`
@@ -147,6 +160,10 @@ func (u *Facebookintegrationrequest) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

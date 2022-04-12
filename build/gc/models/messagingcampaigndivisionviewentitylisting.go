@@ -60,6 +60,10 @@ type Messagingcampaigndivisionviewentitylisting struct {
     Total int `json:"total"`
 
 
+    // LastUri
+    LastUri string `json:"lastUri"`
+
+
     // FirstUri
     FirstUri string `json:"firstUri"`
 
@@ -74,10 +78,6 @@ type Messagingcampaigndivisionviewentitylisting struct {
 
     // PreviousUri
     PreviousUri string `json:"previousUri"`
-
-
-    // LastUri
-    LastUri string `json:"lastUri"`
 
 
     // PageCount
@@ -152,6 +152,8 @@ func (u *Messagingcampaigndivisionviewentitylisting) MarshalJSON() ([]byte, erro
         
         Total int `json:"total"`
         
+        LastUri string `json:"lastUri"`
+        
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
@@ -159,8 +161,6 @@ func (u *Messagingcampaigndivisionviewentitylisting) MarshalJSON() ([]byte, erro
         NextUri string `json:"nextUri"`
         
         PreviousUri string `json:"previousUri"`
-        
-        LastUri string `json:"lastUri"`
         
         PageCount int `json:"pageCount"`
         

@@ -13,6 +13,9 @@ var (
 type ConversationeventtypingDud struct { 
     
 
+
+    Duration int `json:"duration"`
+
 }
 
 // Conversationeventtyping - A Typing event.
@@ -20,10 +23,15 @@ type Conversationeventtyping struct {
     // VarType - Describes the type of Typing event.
     VarType string `json:"type"`
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationeventtyping) String() string {
+    
+    
     
     
     
@@ -47,8 +55,14 @@ func (u *Conversationeventtyping) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         VarType string `json:"type"`
         
+        
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

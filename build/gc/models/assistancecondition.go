@@ -11,19 +11,21 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type AssistanceconditionDud struct { 
-    Operator string `json:"operator"`
+    
 
 
-    TopicIds []string `json:"topicIds"`
+    
 
 }
 
 // Assistancecondition
 type Assistancecondition struct { 
-    
+    // Operator - The operator for the assistance condition. The operator defines whether the listed topicIds should EXIST or NOTEXIST for the condition to be evaluated as true.
+    Operator string `json:"operator"`
 
 
-    
+    // TopicIds - List of topicIds within the assistance condition which would be combined together using logical OR operator. Eg ( topicId_1 || topicId_2 ) .
+    TopicIds []string `json:"topicIds"`
 
 }
 
@@ -32,6 +34,10 @@ func (o *Assistancecondition) String() string {
     
     
     
+    
+    
+    
+     o.TopicIds = []string{""} 
     
     
 
@@ -50,9 +56,9 @@ func (u *Assistancecondition) MarshalJSON() ([]byte, error) {
     AssistanceconditionMarshalled = true
 
     return json.Marshal(&struct { 
+        Operator string `json:"operator"`
         
-        
-        
+        TopicIds []string `json:"topicIds"`
         
         *Alias
     }{
@@ -62,6 +68,8 @@ func (u *Assistancecondition) MarshalJSON() ([]byte, error) {
 
         
 
+        
+        TopicIds: []string{""},
         
 
         

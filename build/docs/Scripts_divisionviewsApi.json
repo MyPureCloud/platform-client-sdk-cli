@@ -1,0 +1,61 @@
+{
+    "GET /api/v2/scripts/divisionviews": {
+        "operationId": "getscriptsdivisionviews",
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "feature",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "flowId",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "scriptDataVersion",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "divisionIds",
+                "type": "string",
+                "required": "false"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    }
+    
+}

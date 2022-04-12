@@ -52,7 +52,7 @@
     "GET /api/v2/recording/crossplatform/mediaretentionpolicies": {
         "operationId": "getrecordingcrossplatformmediaretentionpolicies",
         "functionName": "list",
-        "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors)",
+        "signature": "list(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors, deleteDaysThreshold)",
         "parameters": [
             {
                 "name": "pageSize",
@@ -102,6 +102,11 @@
             {
                 "name": "hasErrors",
                 "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "deleteDaysThreshold",
+                "type": "int",
                 "required": "false"
             }
         ],

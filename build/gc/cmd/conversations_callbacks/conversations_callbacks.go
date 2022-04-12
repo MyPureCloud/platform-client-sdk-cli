@@ -69,25 +69,6 @@ func Cmdconversations_callbacks() *cobra.Command {
 }`)
 	conversations_callbacksCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/callbacks", utils.FormatPermissions([]string{ "conversation:callback:edit",  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/callbacks")))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
-  "description" : "PatchCallbackRequest",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/PatchCallbackRequest"
-  }
-}`)
-	
-	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/PatchCallbackResponse"
-  }
-}`)
-	conversations_callbacksCmd.AddCommand(updateCmd)
-	
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/callbacks/{conversationId}", utils.FormatPermissions([]string{ "conversation:communication:disconnect",  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/callbacks/{conversationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "in" : "body",
@@ -106,6 +87,25 @@ func Cmdconversations_callbacks() *cobra.Command {
   }
 }`)
 	conversations_callbacksCmd.AddCommand(updateCmd)
+	
+	updatescheduledcallbackCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updatescheduledcallbackCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/callbacks", utils.FormatPermissions([]string{ "conversation:callback:edit",  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/callbacks")))
+	utils.AddFileFlagIfUpsert(updatescheduledcallbackCmd.Flags(), "PATCH", `{
+  "in" : "body",
+  "name" : "body",
+  "description" : "PatchCallbackRequest",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/PatchCallbackRequest"
+  }
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(updatescheduledcallbackCmd.Flags(), "PATCH", `{
+  "description" : "successful operation",
+  "schema" : {
+    "$ref" : "#/definitions/PatchCallbackResponse"
+  }
+}`)
+	conversations_callbacksCmd.AddCommand(updatescheduledcallbackCmd)
 	
 	return conversations_callbacksCmd
 }
@@ -251,54 +251,6 @@ var listCmd = &cobra.Command{
 	},
 }
 var updateCmd = &cobra.Command{
-	Use:   "update",
-	Short: "Update a scheduled callback",
-	Long:  "Update a scheduled callback",
-	Args:  utils.DetermineArgs([]string{ }),
-
-	Run: func(cmd *cobra.Command, args []string) {
-		_ = models.Entities{}
-
-		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
-		if printReqBody {
-			
-			reqModel := models.Patchcallbackrequest{}
-			utils.Render(reqModel.String())
-			
-			return
-		}
-
-		queryParams := make(map[string]string)
-
-		path := "/api/v2/conversations/callbacks"
-
-		urlString := path
-		if len(queryParams) > 0 {
-			urlString = fmt.Sprintf("%v?", path)
-			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
-			}
-			urlString = strings.TrimSuffix(urlString, "&")
-		}
-
-		const opId = "update"
-		const httpMethod = "PATCH"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
-		// TODO read from config file
-		retryConfig := &retry.RetryConfiguration{
-			RetryWaitMin: 5 * time.Second,
-			RetryWaitMax: 60 * time.Second,
-			RetryMax:     20,
-		}
-		results, err := retryFunc(retryConfig)
-		if err != nil {
-			logger.Fatal(err)
-		}
-
-		utils.Render(results)
-	},
-}
-var updateCmd = &cobra.Command{
 	Use:   "update [conversationId]",
 	Short: "Update a conversation by disconnecting all of the participants",
 	Long:  "Update a conversation by disconnecting all of the participants",
@@ -332,6 +284,54 @@ var updateCmd = &cobra.Command{
 		}
 
 		const opId = "update"
+		const httpMethod = "PATCH"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}
+var updatescheduledcallbackCmd = &cobra.Command{
+	Use:   "updatescheduledcallback",
+	Short: "Update a scheduled callback",
+	Long:  "Update a scheduled callback",
+	Args:  utils.DetermineArgs([]string{ }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Patchcallbackrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/conversations/callbacks"
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		const opId = "updatescheduledcallback"
 		const httpMethod = "PATCH"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file

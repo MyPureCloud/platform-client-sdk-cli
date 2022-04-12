@@ -29,7 +29,7 @@ func init() {
 
 func Cmdscripts_uploads_status() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "bool", "longPoll", "false", "Enable longPolling endpoint")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/scripts/uploads/{uploadId}/status", utils.FormatPermissions([]string{ "scripter:script:view",  }), utils.GenerateDevCentreLink("GET", "Scripts", "/api/v2/scripts/uploads/{uploadId}/status")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/scripts/uploads/{uploadId}/status", utils.FormatPermissions([]string{ "scripter:script:search",  }), utils.GenerateDevCentreLink("GET", "Scripts", "/api/v2/scripts/uploads/{uploadId}/status")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

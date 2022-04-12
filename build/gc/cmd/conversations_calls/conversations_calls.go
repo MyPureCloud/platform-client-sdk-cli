@@ -302,8 +302,8 @@ var placecallbackcallCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [conversationId]",
-	Short: "Update a conversation by setting it`s recording state, merging in other conversations to create a conference, or disconnecting all of the participants",
-	Long:  "Update a conversation by setting it`s recording state, merging in other conversations to create a conference, or disconnecting all of the participants",
+	Short: "Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants",
+	Long:  "Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants",
 	Args:  utils.DetermineArgs([]string{ "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

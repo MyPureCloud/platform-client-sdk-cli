@@ -86,6 +86,7 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "enabled", "", "checks to see if policy is enabled - use enabled = true or enabled = false")
 	utils.AddFlag(listCmd.Flags(), "bool", "summary", "false", "provides a less verbose response of policy lists.")
 	utils.AddFlag(listCmd.Flags(), "bool", "hasErrors", "", "provides a way to fetch all policies with errors or policies that do not have errors")
+	utils.AddFlag(listCmd.Flags(), "int", "deleteDaysThreshold", "", "provides a way to fetch all policies with any actions having deleteDays exceeding the provided value")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recording/crossplatform/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -387,6 +388,10 @@ var listCmd = &cobra.Command{
 		hasErrors := utils.GetFlag(cmd.Flags(), "bool", "hasErrors")
 		if hasErrors != "" {
 			queryParams["hasErrors"] = hasErrors
+		}
+		deleteDaysThreshold := utils.GetFlag(cmd.Flags(), "int", "deleteDaysThreshold")
+		if deleteDaysThreshold != "" {
+			queryParams["deleteDaysThreshold"] = deleteDaysThreshold
 		}
 		urlString := path
 		if len(queryParams) > 0 {

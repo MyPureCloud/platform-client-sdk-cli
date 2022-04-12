@@ -20,7 +20,7 @@ type AnsweroptionDud struct {
     
 
 
-    AssistanceConditions []Assistancecondition `json:"assistanceConditions"`
+    
 
 }
 
@@ -38,7 +38,8 @@ type Answeroption struct {
     Value int `json:"value"`
 
 
-    
+    // AssistanceConditions - List of assistance conditions which are combined together with a logical AND operator. Eg ( assistanceCondtion1 && assistanceCondition2 ) wherein assistanceCondition could be ( EXISTS topic1 || topic2 || ... ) or (NOTEXISTS topic3 || topic4 || ...).
+    AssistanceConditions []Assistancecondition `json:"assistanceConditions"`
 
 }
 
@@ -57,6 +58,8 @@ func (o *Answeroption) String() string {
     
     
     
+    
+     o.AssistanceConditions = []Assistancecondition{{}} 
     
     
 
@@ -81,7 +84,7 @@ func (u *Answeroption) MarshalJSON() ([]byte, error) {
         
         Value int `json:"value"`
         
-        
+        AssistanceConditions []Assistancecondition `json:"assistanceConditions"`
         
         *Alias
     }{
@@ -99,6 +102,8 @@ func (u *Answeroption) MarshalJSON() ([]byte, error) {
 
         
 
+        
+        AssistanceConditions: []Assistancecondition{{}},
         
 
         

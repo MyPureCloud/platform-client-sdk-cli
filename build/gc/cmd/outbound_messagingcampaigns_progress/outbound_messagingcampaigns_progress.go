@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("outbound_messagingcampaigns_progress", "SWAGGER_OVERRIDE_/api/v2/outbound/messagingcampaigns/progress", "SWAGGER_OVERRIDE_/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", )
+	Description = utils.FormatUsageDescription("outbound_messagingcampaigns_progress", "SWAGGER_OVERRIDE_/api/v2/outbound/messagingcampaigns/progress", "SWAGGER_OVERRIDE_/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", "SWAGGER_OVERRIDE_/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", )
 	outbound_messagingcampaigns_progressCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("outbound_messagingcampaigns_progress"),
 		Short: Description,
@@ -52,6 +52,14 @@ func Cmdoutbound_messagingcampaigns_progress() *cobra.Command {
   }
 }`)
 	outbound_messagingcampaigns_progressCmd.AddCommand(createCmd)
+	
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", utils.FormatPermissions([]string{ "outbound:messagingCampaign:edit", "outbound:emailCampaign:edit",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress")))
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+  "description" : "Accepted - the messaging campaign will be recycled momentarily"
+}`)
+	outbound_messagingcampaigns_progressCmd.AddCommand(deleteCmd)
 	
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view", "outbound:emailCampaign:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -97,6 +105,53 @@ var createCmd = &cobra.Command{
 
 		const opId = "create"
 		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		utils.Render(results)
+	},
+}
+var deleteCmd = &cobra.Command{
+	Use:   "delete [messagingCampaignId]",
+	Short: "Reset messaging campaign progress and recycle the messaging campaign",
+	Long:  "Reset messaging campaign progress and recycle the messaging campaign",
+	Args:  utils.DetermineArgs([]string{ "messagingCampaignId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress"
+		messagingCampaignId, args := args[0], args[1:]
+		path = strings.Replace(path, "{messagingCampaignId}", fmt.Sprintf("%v", messagingCampaignId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		const opId = "delete"
+		const httpMethod = "DELETE"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

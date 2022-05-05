@@ -74,9 +74,10 @@ func Cmdintegrations_actions() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Root level field name to sort on.")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Direction to sort `sortBy` field. Valid values: ASC, DESC")
-	utils.AddFlag(listCmd.Flags(), "string", "category", "", "Filter by category name")
-	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by action name. Provide full or just the first part of name.")
-	utils.AddFlag(listCmd.Flags(), "string", "secure", "", "Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. Valid values: true, false")
+	utils.AddFlag(listCmd.Flags(), "string", "category", "", "Filter by category name.")
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by partial or complete action name.")
+	utils.AddFlag(listCmd.Flags(), "string", "ids", "", "Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.")
+	utils.AddFlag(listCmd.Flags(), "string", "secure", "", "Filter based on `secure` configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. Valid values: true, false")
 	utils.AddFlag(listCmd.Flags(), "string", "includeAuthActions", "false", "Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. Valid values: true, false")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations/actions", utils.FormatPermissions([]string{ "integrations:action:view", "bridge:actions:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/actions")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -311,6 +312,10 @@ var listCmd = &cobra.Command{
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {
 			queryParams["name"] = name
+		}
+		ids := utils.GetFlag(cmd.Flags(), "string", "ids")
+		if ids != "" {
+			queryParams["ids"] = ids
 		}
 		secure := utils.GetFlag(cmd.Flags(), "string", "secure")
 		if secure != "" {

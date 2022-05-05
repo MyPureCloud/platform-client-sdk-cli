@@ -43,11 +43,20 @@ type MessagecontentDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
-// Messagecontent - Message content element.
+// Messagecontent - Message content element. If contentType = \"Attachment\" only one item is allowed.
 type Messagecontent struct { 
-    // ContentType - Type of this content element. If contentType = \"Attachment\" only one item is allowed.
+    // ContentType - Type of this content element.
     ContentType string `json:"contentType"`
 
 
@@ -67,11 +76,11 @@ type Messagecontent struct {
     ButtonResponse Contentbuttonresponse `json:"buttonResponse"`
 
 
-    // Generic - Generic content.
+    // Generic - Generic content (Deprecated).
     Generic Contentgeneric `json:"generic"`
 
 
-    // List - List content.
+    // List - List content (Deprecated).
     List Contentlist `json:"list"`
 
 
@@ -89,6 +98,18 @@ type Messagecontent struct {
 
     // Postback - Structured message postback (Deprecated).
     Postback Contentpostback `json:"postback"`
+
+
+    // Story - Ephemeral story content.
+    Story Contentstory `json:"story"`
+
+
+    // Card - Card content
+    Card Contentcard `json:"card"`
+
+
+    // Carousel - Carousel content
+    Carousel Contentcarousel `json:"carousel"`
 
 }
 
@@ -139,6 +160,18 @@ func (o *Messagecontent) String() string {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -176,6 +209,12 @@ func (u *Messagecontent) MarshalJSON() ([]byte, error) {
         Mention Messagingrecipient `json:"mention"`
         
         Postback Contentpostback `json:"postback"`
+        
+        Story Contentstory `json:"story"`
+        
+        Card Contentcard `json:"card"`
+        
+        Carousel Contentcarousel `json:"carousel"`
         
         *Alias
     }{
@@ -215,6 +254,18 @@ func (u *Messagecontent) MarshalJSON() ([]byte, error) {
 
         
         Reactions: []Contentreaction{{}},
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
         
 
         

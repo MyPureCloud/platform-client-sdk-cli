@@ -32,6 +32,9 @@ type MessagedetailsDud struct {
 
     
 
+
+    
+
 }
 
 // Messagedetails
@@ -62,6 +65,10 @@ type Messagedetails struct {
 
     // Stickers - One or more stickers associated with this message, if any
     Stickers []Messagesticker `json:"stickers"`
+
+
+    // ErrorInfo - Provider specific error information for a communication.
+    ErrorInfo Errorbody `json:"errorInfo"`
 
 }
 
@@ -96,6 +103,10 @@ func (o *Messagedetails) String() string {
      o.Stickers = []Messagesticker{{}} 
     
     
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -125,6 +136,8 @@ func (u *Messagedetails) MarshalJSON() ([]byte, error) {
         Media []Messagemedia `json:"media"`
         
         Stickers []Messagesticker `json:"stickers"`
+        
+        ErrorInfo Errorbody `json:"errorInfo"`
         
         *Alias
     }{
@@ -158,6 +171,10 @@ func (u *Messagedetails) MarshalJSON() ([]byte, error) {
 
         
         Stickers: []Messagesticker{{}},
+        
+
+        
+
         
 
         

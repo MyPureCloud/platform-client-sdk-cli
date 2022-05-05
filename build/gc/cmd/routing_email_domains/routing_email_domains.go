@@ -66,6 +66,7 @@ func Cmdrouting_email_domains() *cobra.Command {
 }`)
 	routing_email_domainsCmd.AddCommand(getCmd)
 	
+	utils.AddFlag(listCmd.Flags(), "bool", "excludeStatus", "false", "Exclude MX record data")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/email/domains", utils.FormatPermissions([]string{ "routing:email:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/email/domains")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -260,6 +261,10 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/routing/email/domains"
 
+		excludeStatus := utils.GetFlag(cmd.Flags(), "bool", "excludeStatus")
+		if excludeStatus != "" {
+			queryParams["excludeStatus"] = excludeStatus
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

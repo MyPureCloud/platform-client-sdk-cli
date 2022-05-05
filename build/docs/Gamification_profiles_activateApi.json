@@ -1,11 +1,11 @@
 {
-    "POST /api/v2/gamification/profiles/{performanceProfileId}/activate": {
+    "POST /api/v2/gamification/profiles/{profileId}/activate": {
         "operationId": "postgamificationprofileactivate",
         "functionName": "create",
-        "signature": "create(performanceProfileId)",
+        "signature": "create(profileId)",
         "parameters": [
             {
-                "name": "performanceProfileId",
+                "name": "profileId",
                 "type": "string",
                 "required": "true"
             }

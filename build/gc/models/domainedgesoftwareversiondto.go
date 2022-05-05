@@ -58,12 +58,12 @@ type Domainedgesoftwareversiondto struct {
     EdgeUri string `json:"edgeUri"`
 
 
-    // Current
-    Current bool `json:"current"`
-
-
     // LatestRelease
     LatestRelease bool `json:"latestRelease"`
+
+
+    // Current
+    Current bool `json:"current"`
 
 
     
@@ -127,9 +127,9 @@ func (u *Domainedgesoftwareversiondto) MarshalJSON() ([]byte, error) {
         
         EdgeUri string `json:"edgeUri"`
         
-        Current bool `json:"current"`
-        
         LatestRelease bool `json:"latestRelease"`
+        
+        Current bool `json:"current"`
         
         
         

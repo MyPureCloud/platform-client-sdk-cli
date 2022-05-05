@@ -33,6 +33,12 @@ type AdherenceexplanationnotificationDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -44,6 +50,14 @@ type Adherenceexplanationnotification struct {
 
     // Agent - The agent for whom the adherence explanation applies
     Agent Userreference `json:"agent"`
+
+
+    // ManagementUnit - The management unit to which the agent belonged at the time the adherence explanation was submitted
+    ManagementUnit Managementunitreference `json:"managementUnit"`
+
+
+    // BusinessUnit - The business unit to which the agent belonged at the time the adherence explanation was submitted
+    BusinessUnit Businessunitreference `json:"businessUnit"`
 
 
     // StartDate - The start date of the adherence explanation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -101,6 +115,14 @@ func (o *Adherenceexplanationnotification) String() string {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -121,6 +143,10 @@ func (u *Adherenceexplanationnotification) MarshalJSON() ([]byte, error) {
         
         Agent Userreference `json:"agent"`
         
+        ManagementUnit Managementunitreference `json:"managementUnit"`
+        
+        BusinessUnit Businessunitreference `json:"businessUnit"`
+        
         StartDate time.Time `json:"startDate"`
         
         LengthMinutes int `json:"lengthMinutes"`
@@ -135,6 +161,14 @@ func (u *Adherenceexplanationnotification) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
         
 
         

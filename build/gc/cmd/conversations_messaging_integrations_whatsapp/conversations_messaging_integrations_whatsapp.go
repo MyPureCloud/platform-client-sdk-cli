@@ -316,8 +316,8 @@ var listCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [integrationId]",
-	Short: "Update or activate a WhatsApp messaging integration.",
-	Long:  "Update or activate a WhatsApp messaging integration.",
+	Short: "Update or activate a WhatsApp messaging integration",
+	Long:  "Update or activate a WhatsApp messaging integration",
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

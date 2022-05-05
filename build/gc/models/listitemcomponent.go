@@ -59,7 +59,7 @@ type Listitemcomponent struct {
     Description string `json:"description"`
 
 
-    // Actions - The list item actions.
+    // Actions - The list item actions (Deprecated).
     Actions Contentactions `json:"actions"`
 
 }

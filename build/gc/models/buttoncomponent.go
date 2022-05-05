@@ -24,7 +24,7 @@ type Buttoncomponent struct {
     Title string `json:"title"`
 
 
-    // Actions - The button actions.
+    // Actions - The button actions (Deprecated).
     Actions Contentactions `json:"actions"`
 
 }

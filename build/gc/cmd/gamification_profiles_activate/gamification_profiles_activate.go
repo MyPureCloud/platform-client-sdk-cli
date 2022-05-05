@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("gamification_profiles_activate", "SWAGGER_OVERRIDE_/api/v2/gamification/profiles/{performanceProfileId}/activate", )
+	Description = utils.FormatUsageDescription("gamification_profiles_activate", "SWAGGER_OVERRIDE_/api/v2/gamification/profiles/{profileId}/activate", )
 	gamification_profiles_activateCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("gamification_profiles_activate"),
 		Short: Description,
@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdgamification_profiles_activate() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/gamification/profiles/{performanceProfileId}/activate", utils.FormatPermissions([]string{ "gamification:profile:update",  }), utils.GenerateDevCentreLink("POST", "Gamification", "/api/v2/gamification/profiles/{performanceProfileId}/activate")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/gamification/profiles/{profileId}/activate", utils.FormatPermissions([]string{ "gamification:profile:update",  }), utils.GenerateDevCentreLink("POST", "Gamification", "/api/v2/gamification/profiles/{profileId}/activate")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -43,10 +43,10 @@ func Cmdgamification_profiles_activate() *cobra.Command {
 }
 
 var createCmd = &cobra.Command{
-	Use:   "create [performanceProfileId]",
+	Use:   "create [profileId]",
 	Short: "Activate a performance profile",
 	Long:  "Activate a performance profile",
-	Args:  utils.DetermineArgs([]string{ "performanceProfileId", }),
+	Args:  utils.DetermineArgs([]string{ "profileId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -59,9 +59,9 @@ var createCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/gamification/profiles/{performanceProfileId}/activate"
-		performanceProfileId, args := args[0], args[1:]
-		path = strings.Replace(path, "{performanceProfileId}", fmt.Sprintf("%v", performanceProfileId), -1)
+		path := "/api/v2/gamification/profiles/{profileId}/activate"
+		profileId, args := args[0], args[1:]
+		path = strings.Replace(path, "{profileId}", fmt.Sprintf("%v", profileId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -98,7 +98,7 @@ type Evaluation struct {
 
 
     // Conversation
-    Conversation Conversation `json:"conversation"`
+    Conversation Conversationreference `json:"conversation"`
 
 
     // EvaluationForm - Evaluation form used for evaluation.
@@ -308,7 +308,7 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
-        Conversation Conversation `json:"conversation"`
+        Conversation Conversationreference `json:"conversation"`
         
         EvaluationForm Evaluationform `json:"evaluationForm"`
         

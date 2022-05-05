@@ -40,8 +40,14 @@
     "GET /api/v2/routing/email/domains": {
         "operationId": "getroutingemaildomains",
         "functionName": "list",
-        "signature": "list()",
-        
+        "signature": "list(excludeStatus)",
+        "parameters": [
+            {
+                "name": "excludeStatus",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
         "return": "Swaggeroverridelist"
     },
     "PATCH /api/v2/routing/email/domains/{domainId}": {

@@ -14,7 +14,10 @@ type WhatsappintegrationupdaterequestDud struct {
     Id string `json:"id"`
 
 
-    Name string `json:"name"`
+    
+
+
+    
 
 
     
@@ -41,7 +44,8 @@ type Whatsappintegrationupdaterequest struct {
     
 
 
-    
+    // Name - WhatsApp Integration name
+    Name string `json:"name"`
 
 
     // SupportedContent - Defines the SupportedContent profile configured for an integration
@@ -64,12 +68,22 @@ type Whatsappintegrationupdaterequest struct {
     ConfirmationCode string `json:"confirmationCode"`
 
 
+    // PhoneNumber - Phone number to associate with the WhatsApp integration
+    PhoneNumber string `json:"phoneNumber"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Whatsappintegrationupdaterequest) String() string {
+    
+    
+    
+    
+    
+    
     
     
     
@@ -115,7 +129,7 @@ func (u *Whatsappintegrationupdaterequest) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct { 
         
         
-        
+        Name string `json:"name"`
         
         SupportedContent Supportedcontentreference `json:"supportedContent"`
         
@@ -127,10 +141,16 @@ func (u *Whatsappintegrationupdaterequest) MarshalJSON() ([]byte, error) {
         
         ConfirmationCode string `json:"confirmationCode"`
         
+        PhoneNumber string `json:"phoneNumber"`
+        
         
         
         *Alias
     }{
+        
+
+        
+
         
 
         

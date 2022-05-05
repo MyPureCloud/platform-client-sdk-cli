@@ -1,0 +1,54 @@
+{
+    "POST /api/v2/recording/keyconfigurations": {
+        "operationId": "postrecordingkeyconfigurations",
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Recordingencryptionconfiguration",
+                "required": "true"
+            }
+        ],
+        "return": "Recordingencryptionconfiguration"
+    },
+    "GET /api/v2/recording/keyconfigurations/{keyConfigurationId}": {
+        "operationId": "getrecordingkeyconfiguration",
+        "functionName": "get",
+        "signature": "get(keyConfigurationId)",
+        "parameters": [
+            {
+                "name": "keyConfigurationId",
+                "type": "string",
+                "required": "true"
+            }
+        ],
+        "return": "Recordingencryptionconfiguration"
+    },
+    "GET /api/v2/recording/keyconfigurations": {
+        "operationId": "getrecordingkeyconfigurations",
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Recordingencryptionconfigurationlisting"
+    },
+    "PUT /api/v2/recording/keyconfigurations/{keyConfigurationId}": {
+        "operationId": "putrecordingkeyconfiguration",
+        "functionName": "update",
+        "signature": "update(keyConfigurationId, body)",
+        "parameters": [
+            {
+                "name": "keyConfigurationId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Recordingencryptionconfiguration",
+                "required": "true"
+            }
+        ],
+        "return": "Recordingencryptionconfiguration"
+    }
+    
+}

@@ -40,20 +40,20 @@ type Conversationcontentcard struct {
     Description string `json:"description"`
 
 
-    // DefaultAction - Default action to be taken.
-    DefaultAction Conversationcardaction `json:"defaultAction"`
-
-
-    // Actions - A List of action objects.
-    Actions []Conversationcardaction `json:"actions"`
-
-
-    // Image
+    // Image - URL of an image.
     Image string `json:"image"`
 
 
-    // Video
+    // Video - URL of a video.
     Video string `json:"video"`
+
+
+    // DefaultAction - The default button action.
+    DefaultAction Conversationcontentcardaction `json:"defaultAction"`
+
+
+    // Actions - An array of action objects.
+    Actions []Conversationcontentcardaction `json:"actions"`
 
 }
 
@@ -73,7 +73,6 @@ func (o *Conversationcontentcard) String() string {
     
     
     
-     o.Actions = []Conversationcardaction{{}} 
     
     
     
@@ -82,6 +81,7 @@ func (o *Conversationcontentcard) String() string {
     
     
     
+     o.Actions = []Conversationcontentcardaction{{}} 
     
     
 
@@ -104,13 +104,13 @@ func (u *Conversationcontentcard) MarshalJSON() ([]byte, error) {
         
         Description string `json:"description"`
         
-        DefaultAction Conversationcardaction `json:"defaultAction"`
-        
-        Actions []Conversationcardaction `json:"actions"`
-        
         Image string `json:"image"`
         
         Video string `json:"video"`
+        
+        DefaultAction Conversationcontentcardaction `json:"defaultAction"`
+        
+        Actions []Conversationcontentcardaction `json:"actions"`
         
         *Alias
     }{
@@ -129,8 +129,6 @@ func (u *Conversationcontentcard) MarshalJSON() ([]byte, error) {
         
 
         
-        Actions: []Conversationcardaction{{}},
-        
 
         
 
@@ -138,6 +136,8 @@ func (u *Conversationcontentcard) MarshalJSON() ([]byte, error) {
 
         
 
+        
+        Actions: []Conversationcontentcardaction{{}},
         
 
         

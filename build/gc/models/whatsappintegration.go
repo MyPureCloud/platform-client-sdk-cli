@@ -27,6 +27,9 @@ type WhatsappintegrationDud struct {
     
 
 
+    AvailablePhoneNumbers Whatsappavailablephonenumberdetailslisting `json:"availablePhoneNumbers"`
+
+
     
 
 
@@ -81,8 +84,11 @@ type Whatsappintegration struct {
     MessagingSetting Messagingsettingreference `json:"messagingSetting"`
 
 
-    // PhoneNumber - The phone number associated to the whatsApp integration.
+    // PhoneNumber - The phone number associated to the WhatsApp integration.
     PhoneNumber string `json:"phoneNumber"`
+
+
+    
 
 
     // Status - The status of the WhatsApp Integration
@@ -185,6 +191,8 @@ func (o *Whatsappintegration) String() string {
     
     
     
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -210,6 +218,8 @@ func (u *Whatsappintegration) MarshalJSON() ([]byte, error) {
         MessagingSetting Messagingsettingreference `json:"messagingSetting"`
         
         PhoneNumber string `json:"phoneNumber"`
+        
+        
         
         Status string `json:"status"`
         
@@ -237,6 +247,10 @@ func (u *Whatsappintegration) MarshalJSON() ([]byte, error) {
         
         *Alias
     }{
+        
+
+        
+
         
 
         

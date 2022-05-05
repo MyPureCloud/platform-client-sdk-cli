@@ -15,7 +15,7 @@
     "GET /api/v2/integrations/actions/drafts": {
         "operationId": "getintegrationsactionsdrafts",
         "functionName": "list",
-        "signature": "list(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, secure, includeAuthActions)",
+        "signature": "list(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions)",
         "parameters": [
             {
                 "name": "pageSize",
@@ -54,6 +54,11 @@
             },
             {
                 "name": "name",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "ids",
                 "type": "string",
                 "required": "false"
             },

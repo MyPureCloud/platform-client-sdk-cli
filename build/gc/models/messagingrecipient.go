@@ -31,6 +31,9 @@ type MessagingrecipientDud struct {
 
     Email string `json:"email"`
 
+
+    
+
 }
 
 // Messagingrecipient - Information about the recipient the message is sent to or received from.
@@ -57,6 +60,10 @@ type Messagingrecipient struct {
 
     
 
+
+    // AdditionalIds - List of recipient additional identifiers
+    AdditionalIds []Recipientadditionalidentifier `json:"additionalIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -78,6 +85,10 @@ func (o *Messagingrecipient) String() string {
     
     
     
+    
+    
+    
+     o.AdditionalIds = []Recipientadditionalidentifier{{}} 
     
     
 
@@ -110,6 +121,8 @@ func (u *Messagingrecipient) MarshalJSON() ([]byte, error) {
         
         
         
+        AdditionalIds []Recipientadditionalidentifier `json:"additionalIds"`
+        
         *Alias
     }{
         
@@ -138,6 +151,12 @@ func (u *Messagingrecipient) MarshalJSON() ([]byte, error) {
 
         
 
+        
+
+        
+
+        
+        AdditionalIds: []Recipientadditionalidentifier{{}},
         
 
         

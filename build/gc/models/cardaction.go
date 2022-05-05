@@ -45,8 +45,8 @@ type Cardaction struct {
     Url string `json:"url"`
 
 
-    // Selected
-    Selected bool `json:"selected"`
+    // IsSelected - Indicates if the card option is selected by end customer.
+    IsSelected bool `json:"isSelected"`
 
 }
 
@@ -97,7 +97,7 @@ func (u *Cardaction) MarshalJSON() ([]byte, error) {
         
         Url string `json:"url"`
         
-        Selected bool `json:"selected"`
+        IsSelected bool `json:"isSelected"`
         
         *Alias
     }{

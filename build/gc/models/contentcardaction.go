@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    ConversationcardactionMarshalled = false
+    ContentcardactionMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ConversationcardactionDud struct { 
+type ContentcardactionDud struct { 
     
 
 
@@ -24,8 +24,8 @@ type ConversationcardactionDud struct {
 
 }
 
-// Conversationcardaction - CardAction Object
-type Conversationcardaction struct { 
+// Contentcardaction - A card action that a user can take.
+type Contentcardaction struct { 
     // VarType - Describes the type of action.
     VarType string `json:"type"`
 
@@ -34,7 +34,7 @@ type Conversationcardaction struct {
     Text string `json:"text"`
 
 
-    // Payload - Text to be returned as the payload from a ButtonResponse when a button is clicked.
+    // Payload - Text to be returned as the payload from a ButtonResponse when a button is clicked. The payload and text are a combination which will have to be unique across each card and carousel in order to determine which button was clicked in that card or carousel.
     Payload string `json:"payload"`
 
 
@@ -44,7 +44,7 @@ type Conversationcardaction struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Conversationcardaction) String() string {
+func (o *Contentcardaction) String() string {
     
     
     
@@ -69,13 +69,13 @@ func (o *Conversationcardaction) String() string {
     return str
 }
 
-func (u *Conversationcardaction) MarshalJSON() ([]byte, error) {
-    type Alias Conversationcardaction
+func (u *Contentcardaction) MarshalJSON() ([]byte, error) {
+    type Alias Contentcardaction
 
-    if ConversationcardactionMarshalled {
+    if ContentcardactionMarshalled {
         return []byte("{}"), nil
     }
-    ConversationcardactionMarshalled = true
+    ContentcardactionMarshalled = true
 
     return json.Marshal(&struct { 
         VarType string `json:"type"`

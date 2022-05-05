@@ -39,11 +39,11 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/search"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/systempresences"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/timezones"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
@@ -68,7 +68,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languageunderstanding"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/license"
@@ -83,6 +82,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemanagement"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/configuration"
@@ -121,7 +121,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 35.0.0")
+		fmt.Println("Current version: 36.0.0")
 		checkForNewVersion()
 	},
 }
@@ -140,7 +140,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("35.0.0", latestVersion) {
+	if versionsAreEqual("36.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -249,11 +249,11 @@ func init() {
 	rootCmd.AddCommand(search.Cmdsearch())
 	rootCmd.AddCommand(stations.Cmdstations())
 	rootCmd.AddCommand(systempresences.Cmdsystempresences())
-	rootCmd.AddCommand(chat.Cmdchat())
 	rootCmd.AddCommand(timezones.Cmdtimezones())
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
+	rootCmd.AddCommand(chat.Cmdchat())
 	rootCmd.AddCommand(autopagination.Cmdautopagination())
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())
@@ -278,7 +278,6 @@ func init() {
 	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(geolocations.Cmdgeolocations())
 	rootCmd.AddCommand(journey.Cmdjourney())
-	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(knowledge.Cmdknowledge())
 	rootCmd.AddCommand(languageunderstanding.Cmdlanguageunderstanding())
 	rootCmd.AddCommand(license.Cmdlicense())
@@ -293,6 +292,7 @@ func init() {
 	rootCmd.AddCommand(routing.Cmdrouting())
 	rootCmd.AddCommand(recordings.Cmdrecordings())
 	rootCmd.AddCommand(responsemanagement.Cmdresponsemanagement())
+	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(speechandtextanalytics.Cmdspeechandtextanalytics())
 	rootCmd.AddCommand(telephony.Cmdtelephony())
 	rootCmd.AddCommand(configuration.Cmdconfiguration())

@@ -109,8 +109,8 @@ func Cmdrecording_jobs() *cobra.Command {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Create a recording bulk job",
-	Long:  "Create a recording bulk job",
+	Short: "Create a recording bulk job.",
+	Long:  "Create a recording bulk job.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

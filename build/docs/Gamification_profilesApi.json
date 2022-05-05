@@ -17,13 +17,13 @@
         ],
         "return": "Performanceprofile"
     },
-    "GET /api/v2/gamification/profiles/{performanceProfileId}": {
+    "GET /api/v2/gamification/profiles/{profileId}": {
         "operationId": "getgamificationprofile",
         "functionName": "get",
-        "signature": "get(performanceProfileId)",
+        "signature": "get(profileId)",
         "parameters": [
             {
-                "name": "performanceProfileId",
+                "name": "profileId",
                 "type": "string",
                 "required": "true"
             }
@@ -37,13 +37,13 @@
         
         "return": "Getprofilesresponse"
     },
-    "PUT /api/v2/gamification/profiles/{performanceProfileId}": {
+    "PUT /api/v2/gamification/profiles/{profileId}": {
         "operationId": "putgamificationprofile",
         "functionName": "update",
-        "signature": "update(performanceProfileId, body)",
+        "signature": "update(profileId, body)",
         "parameters": [
             {
-                "name": "performanceProfileId",
+                "name": "profileId",
                 "type": "string",
                 "required": "true"
             },

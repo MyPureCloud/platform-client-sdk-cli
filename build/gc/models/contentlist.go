@@ -55,7 +55,7 @@ type Contentlist struct {
     SubmitLabel string `json:"submitLabel"`
 
 
-    // Actions - The list actions.
+    // Actions - The list actions (Deprecated).
     Actions Contentactions `json:"actions"`
 
 

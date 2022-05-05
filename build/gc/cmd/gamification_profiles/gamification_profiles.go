@@ -48,7 +48,7 @@ func Cmdgamification_profiles() *cobra.Command {
 }`)
 	gamification_profilesCmd.AddCommand(createCmd)
 	
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/profiles/{performanceProfileId}", utils.FormatPermissions([]string{ "gamification:profile:view", "gamification:leaderboard:viewAll", "gamification:scorecard:viewAll",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/profiles/{performanceProfileId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/profiles/{profileId}", utils.FormatPermissions([]string{ "gamification:profile:view", "gamification:leaderboard:viewAll", "gamification:scorecard:viewAll",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/profiles/{profileId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -70,7 +70,7 @@ func Cmdgamification_profiles() *cobra.Command {
 }`)
 	gamification_profilesCmd.AddCommand(listCmd)
 	
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/gamification/profiles/{performanceProfileId}", utils.FormatPermissions([]string{ "gamification:profile:update",  }), utils.GenerateDevCentreLink("PUT", "Gamification", "/api/v2/gamification/profiles/{performanceProfileId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/gamification/profiles/{profileId}", utils.FormatPermissions([]string{ "gamification:profile:update",  }), utils.GenerateDevCentreLink("PUT", "Gamification", "/api/v2/gamification/profiles/{profileId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "in" : "body",
   "name" : "body",
@@ -145,10 +145,10 @@ var createCmd = &cobra.Command{
 	},
 }
 var getCmd = &cobra.Command{
-	Use:   "get [performanceProfileId]",
+	Use:   "get [profileId]",
 	Short: "Performance profile by id",
 	Long:  "Performance profile by id",
-	Args:  utils.DetermineArgs([]string{ "performanceProfileId", }),
+	Args:  utils.DetermineArgs([]string{ "profileId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -161,9 +161,9 @@ var getCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/gamification/profiles/{performanceProfileId}"
-		performanceProfileId, args := args[0], args[1:]
-		path = strings.Replace(path, "{performanceProfileId}", fmt.Sprintf("%v", performanceProfileId), -1)
+		path := "/api/v2/gamification/profiles/{profileId}"
+		profileId, args := args[0], args[1:]
+		path = strings.Replace(path, "{profileId}", fmt.Sprintf("%v", profileId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -237,10 +237,10 @@ var listCmd = &cobra.Command{
 	},
 }
 var updateCmd = &cobra.Command{
-	Use:   "update [performanceProfileId]",
+	Use:   "update [profileId]",
 	Short: "Updates a performance profile",
 	Long:  "Updates a performance profile",
-	Args:  utils.DetermineArgs([]string{ "performanceProfileId", }),
+	Args:  utils.DetermineArgs([]string{ "profileId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -256,9 +256,9 @@ var updateCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/gamification/profiles/{performanceProfileId}"
-		performanceProfileId, args := args[0], args[1:]
-		path = strings.Replace(path, "{performanceProfileId}", fmt.Sprintf("%v", performanceProfileId), -1)
+		path := "/api/v2/gamification/profiles/{profileId}"
+		profileId, args := args[0], args[1:]
+		path = strings.Replace(path, "{profileId}", fmt.Sprintf("%v", profileId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {

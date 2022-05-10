@@ -55,7 +55,7 @@ func Cmdlearning_modules() *cobra.Command {
 }`)
 	learning_modulesCmd.AddCommand(deleteCmd)
 	
-	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Fields to expand in response(case insensitive) Valid values: assessmentForm")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Fields to expand in response(case insensitive) Valid values: assessmentForm, coverArt")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/learning/modules/{moduleId}", utils.FormatPermissions([]string{ "learning:module:view",  }), utils.GenerateDevCentreLink("GET", "Learning", "/api/v2/learning/modules/{moduleId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	

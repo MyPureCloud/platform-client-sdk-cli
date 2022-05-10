@@ -1,0 +1,53 @@
+{
+    "DELETE /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}": {
+        "operationId": "deleteoutboundschedulesmessagingcampaign",
+        "functionName": "delete",
+        "signature": "delete(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "string",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}": {
+        "operationId": "getoutboundschedulesmessagingcampaign",
+        "functionName": "get",
+        "signature": "get(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "string",
+                "required": "true"
+            }
+        ],
+        "return": "Messagingcampaignschedule"
+    },
+    "GET /api/v2/outbound/schedules/messagingcampaigns": {
+        "operationId": "getoutboundschedulesmessagingcampaigns",
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}": {
+        "operationId": "putoutboundschedulesmessagingcampaign",
+        "functionName": "update",
+        "signature": "update(messagingCampaignId, body)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Messagingcampaignschedule",
+                "required": "true"
+            }
+        ],
+        "return": "Messagingcampaignschedule"
+    }
+    
+}

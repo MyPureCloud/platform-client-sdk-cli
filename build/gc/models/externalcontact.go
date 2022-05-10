@@ -90,6 +90,18 @@ type ExternalcontactDud struct {
     ExternalDataSources []Externaldatasource `json:"externalDataSources"`
 
 
+    VarType string `json:"type"`
+
+
+    CanonicalContact Contactaddressableentityref `json:"canonicalContact"`
+
+
+    MergeSet []Contactaddressableentityref `json:"mergeSet"`
+
+
+    MergeOperation Mergeoperation `json:"mergeOperation"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -194,6 +206,18 @@ type Externalcontact struct {
 
     // CustomFields - Custom fields defined in the schema referenced by schemaId and schemaVersion.
     CustomFields map[string]interface{} `json:"customFields"`
+
+
+    
+
+
+    
+
+
+    
+
+
+    
 
 
     
@@ -310,6 +334,14 @@ func (o *Externalcontact) String() string {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -375,6 +407,14 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
         Schema Dataschema `json:"schema"`
         
         CustomFields map[string]interface{} `json:"customFields"`
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -482,6 +522,22 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
 
         
         CustomFields: map[string]interface{}{"": Interface{}},
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
         
 
         

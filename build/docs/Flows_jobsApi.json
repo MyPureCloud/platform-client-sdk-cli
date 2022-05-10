@@ -1,0 +1,28 @@
+{
+    "POST /api/v2/flows/jobs": {
+        "operationId": "postflowsjobs",
+        "functionName": "create",
+        "signature": "create()",
+        
+        "return": "Registerarchitectjobresponse"
+    },
+    "GET /api/v2/flows/jobs/{jobId}": {
+        "operationId": "getflowsjob",
+        "functionName": "get",
+        "signature": "get(jobId, expand)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[]string",
+                "required": "false"
+            }
+        ],
+        "return": "Architectjobstateresponse"
+    }
+    
+}

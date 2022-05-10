@@ -28,6 +28,9 @@ type LearningmodulerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Learningmodulerequest - Learning module request
@@ -55,6 +58,10 @@ type Learningmodulerequest struct {
     // AssessmentForm - The assessment form for learning module
     AssessmentForm Assessmentform `json:"assessmentForm"`
 
+
+    // CoverArt - The cover art for the learning module
+    CoverArt Learningmodulecoverartrequest `json:"coverArt"`
+
 }
 
 // String returns a JSON representation of the model
@@ -74,6 +81,10 @@ func (o *Learningmodulerequest) String() string {
     
     
      o.InformSteps = []Learningmoduleinformsteprequest{{}} 
+    
+    
+    
+    
     
     
     
@@ -112,6 +123,8 @@ func (u *Learningmodulerequest) MarshalJSON() ([]byte, error) {
         
         AssessmentForm Assessmentform `json:"assessmentForm"`
         
+        CoverArt Learningmodulecoverartrequest `json:"coverArt"`
+        
         *Alias
     }{
         
@@ -130,6 +143,10 @@ func (u *Learningmodulerequest) MarshalJSON() ([]byte, error) {
 
         
         InformSteps: []Learningmoduleinformsteprequest{{}},
+        
+
+        
+
         
 
         

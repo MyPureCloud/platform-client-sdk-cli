@@ -25,6 +25,12 @@ type WebmessagingcontentDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Webmessagingcontent - Message content element.
@@ -46,10 +52,26 @@ type Webmessagingcontent struct {
     // Generic - Generic content.
     Generic Webmessaginggeneric `json:"generic"`
 
+
+    // Card - Card content
+    Card Contentcard `json:"card"`
+
+
+    // Carousel - Carousel content
+    Carousel Contentcarousel `json:"carousel"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Webmessagingcontent) String() string {
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -93,8 +115,20 @@ func (u *Webmessagingcontent) MarshalJSON() ([]byte, error) {
         
         Generic Webmessaginggeneric `json:"generic"`
         
+        Card Contentcard `json:"card"`
+        
+        Carousel Contentcarousel `json:"carousel"`
+        
         *Alias
     }{
+        
+
+        
+
+        
+
+        
+
         
 
         

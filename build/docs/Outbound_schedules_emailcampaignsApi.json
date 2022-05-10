@@ -1,0 +1,53 @@
+{
+    "DELETE /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}": {
+        "operationId": "deleteoutboundschedulesemailcampaign",
+        "functionName": "delete",
+        "signature": "delete(emailCampaignId)",
+        "parameters": [
+            {
+                "name": "emailCampaignId",
+                "type": "string",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}": {
+        "operationId": "getoutboundschedulesemailcampaign",
+        "functionName": "get",
+        "signature": "get(emailCampaignId)",
+        "parameters": [
+            {
+                "name": "emailCampaignId",
+                "type": "string",
+                "required": "true"
+            }
+        ],
+        "return": "Emailcampaignschedule"
+    },
+    "GET /api/v2/outbound/schedules/emailcampaigns": {
+        "operationId": "getoutboundschedulesemailcampaigns",
+        "functionName": "list",
+        "signature": "list()",
+        
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}": {
+        "operationId": "putoutboundschedulesemailcampaign",
+        "functionName": "update",
+        "signature": "update(emailCampaignId, body)",
+        "parameters": [
+            {
+                "name": "emailCampaignId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Emailcampaignschedule",
+                "required": "true"
+            }
+        ],
+        "return": "Emailcampaignschedule"
+    }
+    
+}

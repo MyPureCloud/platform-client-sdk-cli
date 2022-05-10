@@ -20,6 +20,9 @@ type GamificationstatusDud struct {
 
     
 
+
+    
+
 }
 
 // Gamificationstatus
@@ -35,10 +38,18 @@ type Gamificationstatus struct {
     // AutomaticUserAssignment - Automatic assignment of users to the default profile
     AutomaticUserAssignment bool `json:"automaticUserAssignment"`
 
+
+    // DateStartPersonalBest - Personal best aggregation starting date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+    DateStartPersonalBest time.Time `json:"dateStartPersonalBest"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Gamificationstatus) String() string {
+    
+    
+    
+    
     
     
     
@@ -74,8 +85,14 @@ func (u *Gamificationstatus) MarshalJSON() ([]byte, error) {
         
         AutomaticUserAssignment bool `json:"automaticUserAssignment"`
         
+        DateStartPersonalBest time.Time `json:"dateStartPersonalBest"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

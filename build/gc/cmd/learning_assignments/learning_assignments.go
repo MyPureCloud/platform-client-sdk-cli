@@ -55,7 +55,7 @@ func Cmdlearning_assignments() *cobra.Command {
 }`)
 	learning_assignmentsCmd.AddCommand(deleteCmd)
 	
-	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Fields to expand in response Valid values: module, assessment, assessmentForm")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Fields to expand in response Valid values: module, assessment, assessmentForm, module.coverArt")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/learning/assignments/{assignmentId}", utils.FormatPermissions([]string{ "learning:assignment:view",  }), utils.GenerateDevCentreLink("GET", "Learning", "/api/v2/learning/assignments/{assignmentId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	

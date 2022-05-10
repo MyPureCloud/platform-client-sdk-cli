@@ -22,6 +22,9 @@ type ConversationappsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationappsettings - Conversation settings that handles chats within the messenger
@@ -41,10 +44,18 @@ type Conversationappsettings struct {
     // AutoStart - The auto start for the messenger conversation
     AutoStart Autostart `json:"autoStart"`
 
+
+    // Markdown - The markdown for the messenger app
+    Markdown Markdown `json:"markdown"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationappsettings) String() string {
+    
+    
+    
+    
     
     
     
@@ -86,8 +97,14 @@ func (u *Conversationappsettings) MarshalJSON() ([]byte, error) {
         
         AutoStart Autostart `json:"autoStart"`
         
+        Markdown Markdown `json:"markdown"`
+        
         *Alias
     }{
+        
+
+        
+
         
 
         

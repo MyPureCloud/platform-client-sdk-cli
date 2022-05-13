@@ -80,32 +80,7 @@ func (o *Facetentry) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Terms = []Facetterm{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -121,7 +96,8 @@ func (u *Facetentry) MarshalJSON() ([]byte, error) {
     }
     FacetentryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Attribute Termattribute `json:"attribute"`
         
         Statistics Facetstatistics `json:"statistics"`
@@ -137,44 +113,34 @@ func (u *Facetentry) MarshalJSON() ([]byte, error) {
         TermType string `json:"termType"`
         
         Terms []Facetterm `json:"terms"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Terms: []Facetterm{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

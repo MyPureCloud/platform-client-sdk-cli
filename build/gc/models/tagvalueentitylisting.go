@@ -87,38 +87,7 @@ type Tagvalueentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Tagvalueentitylisting) String() string {
-    
-    
      o.Entities = []Tagvalue{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Tagvalueentitylisting) MarshalJSON() ([]byte, error) {
     }
     TagvalueentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Tagvalue `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Tagvalueentitylisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Tagvalue{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

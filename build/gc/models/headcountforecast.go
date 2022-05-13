@@ -31,15 +31,8 @@ type Headcountforecast struct {
 
 // String returns a JSON representation of the model
 func (o *Headcountforecast) String() string {
-    
-    
      o.Required = []Headcountinterval{{}} 
-    
-    
-    
      o.RequiredWithoutShrinkage = []Headcountinterval{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Headcountforecast) MarshalJSON() ([]byte, error) {
     }
     HeadcountforecastMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Required []Headcountinterval `json:"required"`
         
         RequiredWithoutShrinkage []Headcountinterval `json:"requiredWithoutShrinkage"`
-        
         *Alias
     }{
-        
 
         
         Required: []Headcountinterval{{}},
         
 
-        
 
         
         RequiredWithoutShrinkage: []Headcountinterval{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

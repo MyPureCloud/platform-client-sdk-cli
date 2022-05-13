@@ -101,38 +101,6 @@ func (o *Twitterintegrationrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -148,8 +116,7 @@ func (u *Twitterintegrationrequest) MarshalJSON() ([]byte, error) {
     }
     TwitterintegrationrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -168,56 +135,41 @@ func (u *Twitterintegrationrequest) MarshalJSON() ([]byte, error) {
         Tier string `json:"tier"`
         
         EnvName string `json:"envName"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

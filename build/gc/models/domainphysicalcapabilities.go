@@ -33,13 +33,6 @@ type Domainphysicalcapabilities struct {
 func (o *Domainphysicalcapabilities) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Domainphysicalcapabilities) MarshalJSON() ([]byte, error) {
     }
     DomainphysicalcapabilitiesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Vlan bool `json:"vlan"`
         
         Team bool `json:"team"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

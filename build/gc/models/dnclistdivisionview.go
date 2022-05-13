@@ -71,26 +71,6 @@ func (o *Dnclistdivisionview) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -106,58 +86,39 @@ func (u *Dnclistdivisionview) MarshalJSON() ([]byte, error) {
     }
     DnclistdivisionviewMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         Division Division `json:"division"`
         
-        
-        
-        
-        
-        
-        
         ContactMethod string `json:"contactMethod"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

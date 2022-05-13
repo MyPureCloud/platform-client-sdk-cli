@@ -24,11 +24,7 @@ type Channelentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Channelentitylisting) String() string {
-    
-    
      o.Entities = []Channel{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Channelentitylisting) MarshalJSON() ([]byte, error) {
     }
     ChannelentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Channel `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Channel `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Channel{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

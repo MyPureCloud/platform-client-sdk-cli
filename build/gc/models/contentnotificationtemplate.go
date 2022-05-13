@@ -57,22 +57,6 @@ func (o *Contentnotificationtemplate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Contentnotificationtemplate) MarshalJSON() ([]byte, error) {
     }
     ContentnotificationtemplateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Language string `json:"language"`
@@ -98,30 +83,23 @@ func (u *Contentnotificationtemplate) MarshalJSON() ([]byte, error) {
         Body Notificationtemplatebody `json:"body"`
         
         Footer Notificationtemplatefooter `json:"footer"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

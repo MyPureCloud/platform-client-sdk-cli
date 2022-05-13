@@ -94,38 +94,7 @@ func (o *Evaluationquestion) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AnswerOptions = []Answeroption{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -143,7 +112,8 @@ func (u *Evaluationquestion) MarshalJSON() ([]byte, error) {
     }
     EvaluationquestionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Text string `json:"text"`
@@ -163,52 +133,40 @@ func (u *Evaluationquestion) MarshalJSON() ([]byte, error) {
         IsKill bool `json:"isKill"`
         
         IsCritical bool `json:"isCritical"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AnswerOptions: []Answeroption{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

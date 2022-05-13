@@ -30,46 +30,60 @@ func init() {
 func Cmdworkforcemanagement_businessunits_weeks_schedules() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules", utils.FormatPermissions([]string{ "wfm:schedule:add",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/BuCreateBlankScheduleRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuCreateBlankScheduleRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuScheduleMetadata"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuScheduleMetadata"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedulesCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}", utils.FormatPermissions([]string{ "wfm:schedule:delete",  }), utils.GenerateDevCentreLink("DELETE", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuAsyncScheduleResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuAsyncScheduleResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedulesCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "expand Valid values: managementUnits.agents")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}", utils.FormatPermissions([]string{ "wfm:schedule:view", "wfm:publishedSchedule:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuScheduleMetadata"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuScheduleMetadata"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedulesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "bool", "includeOnlyPublished", "", "includeOnlyPublished")
 	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "expand Valid values: forecast.description")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules", utils.FormatPermissions([]string{ "wfm:schedule:view", "wfm:publishedSchedule:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules")))
@@ -77,12 +91,15 @@ func Cmdworkforcemanagement_businessunits_weeks_schedules() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuScheduleListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuScheduleListing"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedulesCmd.AddCommand(listCmd)
-	
 	return workforcemanagement_businessunits_weeks_schedulesCmd
 }
 

@@ -87,38 +87,7 @@ type Lineintegrationentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Lineintegrationentitylisting) String() string {
-    
-    
      o.Entities = []Lineintegration{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Lineintegrationentitylisting) MarshalJSON() ([]byte, error) {
     }
     LineintegrationentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Lineintegration `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Lineintegrationentitylisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Lineintegration{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

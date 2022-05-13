@@ -49,19 +49,6 @@ func (o *Crossplatformmediapolicies) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Crossplatformmediapolicies) MarshalJSON() ([]byte, error) {
     }
     CrossplatformmediapoliciesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         CallPolicy Crossplatformcallmediapolicy `json:"callPolicy"`
         
         ChatPolicy Crossplatformchatmediapolicy `json:"chatPolicy"`
@@ -85,26 +73,20 @@ func (u *Crossplatformmediapolicies) MarshalJSON() ([]byte, error) {
         EmailPolicy Crossplatformemailmediapolicy `json:"emailPolicy"`
         
         MessagePolicy Crossplatformmessagemediapolicy `json:"messagePolicy"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

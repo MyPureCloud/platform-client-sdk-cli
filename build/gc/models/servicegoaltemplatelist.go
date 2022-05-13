@@ -24,11 +24,7 @@ type Servicegoaltemplatelist struct {
 
 // String returns a JSON representation of the model
 func (o *Servicegoaltemplatelist) String() string {
-    
-    
      o.Entities = []Servicegoaltemplate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Servicegoaltemplatelist) MarshalJSON() ([]byte, error) {
     }
     ServicegoaltemplatelistMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Servicegoaltemplate `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Servicegoaltemplate `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Servicegoaltemplate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

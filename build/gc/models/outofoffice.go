@@ -78,29 +78,6 @@ func (o *Outofoffice) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -116,8 +93,7 @@ func (u *Outofoffice) MarshalJSON() ([]byte, error) {
     }
     OutofofficeMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -130,44 +106,32 @@ func (u *Outofoffice) MarshalJSON() ([]byte, error) {
         Active bool `json:"active"`
         
         Indefinite bool `json:"indefinite"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

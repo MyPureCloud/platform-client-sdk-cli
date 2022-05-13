@@ -35,35 +35,47 @@ func Cmdconfiguration_schemas_edges_vnext() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getcategoryschemasCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	configuration_schemas_edges_vnextCmd.AddCommand(getcategoryschemasCmd)
-	
+
 	getjsonschemaCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getjsonschemaCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}")))
 	utils.AddFileFlagIfUpsert(getjsonschemaCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getjsonschemaCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Organization"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Organization"
+      }
+    }
   }
 }`)
 	configuration_schemas_edges_vnextCmd.AddCommand(getjsonschemaCmd)
-	
+
 	utils.AddFlag(getschemametadataCmd.Flags(), "string", "varType", "", "Type")
 	getschemametadataCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getschemametadataCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}")))
 	utils.AddFileFlagIfUpsert(getschemametadataCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getschemametadataCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Organization"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Organization"
+      }
+    }
   }
 }`)
 	configuration_schemas_edges_vnextCmd.AddCommand(getschemametadataCmd)
-	
+
 	utils.AddFlag(listcategoryschemasCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listcategoryschemasCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	listcategoryschemasCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listcategoryschemasCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/configuration/schemas/edges/vnext/{schemaCategory}")))
@@ -71,12 +83,16 @@ func Cmdconfiguration_schemas_edges_vnext() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listcategoryschemasCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	configuration_schemas_edges_vnextCmd.AddCommand(listcategoryschemasCmd)
-	
+
 	utils.AddFlag(listschemacategoriesCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listschemacategoriesCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	listschemacategoriesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listschemacategoriesCmd.UsageTemplate(), "GET", "/api/v2/configuration/schemas/edges/vnext", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/configuration/schemas/edges/vnext")))
@@ -84,12 +100,15 @@ func Cmdconfiguration_schemas_edges_vnext() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listschemacategoriesCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	configuration_schemas_edges_vnextCmd.AddCommand(listschemacategoriesCmd)
-	
 	return configuration_schemas_edges_vnextCmd
 }
 

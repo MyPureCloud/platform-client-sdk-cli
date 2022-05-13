@@ -57,22 +57,6 @@ func (o *Surveyassignment) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Surveyassignment) MarshalJSON() ([]byte, error) {
     }
     SurveyassignmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SurveyForm Publishedsurveyformreference `json:"surveyForm"`
         
         Flow Domainentityref `json:"flow"`
@@ -98,30 +83,23 @@ func (u *Surveyassignment) MarshalJSON() ([]byte, error) {
         SendingUser string `json:"sendingUser"`
         
         SendingDomain string `json:"sendingDomain"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,12 +33,16 @@ func Cmdtelephony_providers_edges_physicalinterfaces() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DomainPhysicalInterface"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainPhysicalInterface"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_physicalinterfacesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "edgeIds", "", "Comma separated list of Edge Id`s - REQUIRED")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/physicalinterfaces", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/physicalinterfaces")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -46,23 +50,30 @@ func Cmdtelephony_providers_edges_physicalinterfaces() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_physicalinterfacesCmd.AddCommand(listCmd)
-	
+
 	listedgeinterfacesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listedgeinterfacesCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces")))
 	utils.AddFileFlagIfUpsert(listedgeinterfacesCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listedgeinterfacesCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_physicalinterfacesCmd.AddCommand(listedgeinterfacesCmd)
-	
 	return telephony_providers_edges_physicalinterfacesCmd
 }
 

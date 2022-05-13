@@ -87,38 +87,7 @@ type Didentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Didentitylisting) String() string {
-    
-    
      o.Entities = []Did{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Didentitylisting) MarshalJSON() ([]byte, error) {
     }
     DidentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Did `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Didentitylisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Did{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

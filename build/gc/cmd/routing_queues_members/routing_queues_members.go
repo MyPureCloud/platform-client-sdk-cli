@@ -30,34 +30,41 @@ func init() {
 func Cmdrouting_queues_members() *cobra.Command { 
 	activateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", activateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/members", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/routing/queues/{queueId}/members")))
 	utils.AddFileFlagIfUpsert(activateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Queue Members",
-  "required" : true,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/QueueMember"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/QueueMember"
+        }
+      }
     }
-  }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(activateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/QueueMemberEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QueueMemberEntityListing"
+      }
+    }
   }
 }`)
 	routing_queues_membersCmd.AddCommand(activateCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/queues/{queueId}/members/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/queues/{queueId}/members/{memberId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Deleted."
+  "description" : "Deleted.",
+  "content" : { }
 }`)
 	routing_queues_membersCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Max value is 100")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Note: results are sorted by name. Valid values: asc, desc")
@@ -69,37 +76,47 @@ func Cmdrouting_queues_members() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "routingStatus", "", "Filter by routing status")
 	utils.AddFlag(listCmd.Flags(), "[]string", "presence", "", "Filter by presence")
 	utils.AddFlag(listCmd.Flags(), "string", "memberBy", "", "Filter by member type Valid values: user, group")
-	utils.AddFlag(listCmd.Flags(), "bool", "joined", "", "Filter by joined status")
+	utils.AddFlag(listCmd.Flags(), "bool", "joined", "", "Filter by joined status Valid values: true, false")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/members", utils.FormatPermissions([]string{ "routing:queue:view", "routing:queue:edit", "routing:queue:readonly", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/{queueId}/members")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	routing_queues_membersCmd.AddCommand(listCmd)
-	
+
 	utils.AddFlag(moveCmd.Flags(), "bool", "delete", "false", "True to delete queue members")
 	moveCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", moveCmd.UsageTemplate(), "POST", "/api/v2/routing/queues/{queueId}/members", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/queues/{queueId}/members")))
 	utils.AddFileFlagIfUpsert(moveCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Queue Members",
-  "required" : true,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/WritableEntity"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/WritableEntity"
+        }
+      }
     }
-  }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(moveCmd.Flags(), "POST", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "Invalid request data.  Make sure you submit a valid number of queue members.",
@@ -114,23 +131,25 @@ func Cmdrouting_queues_members() *cobra.Command {
   }
 }`)
 	routing_queues_membersCmd.AddCommand(moveCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/members/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/routing/queues/{queueId}/members/{memberId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Queue Member",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/QueueMember"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QueueMember"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  "description" : "User update has been accepted"
+  "description" : "User update has been accepted",
+  "content" : { }
 }`)
 	routing_queues_membersCmd.AddCommand(updateCmd)
-	
 	return routing_queues_membersCmd
 }
 

@@ -87,38 +87,7 @@ type Languageentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Languageentitylisting) String() string {
-    
-    
      o.Entities = []Language{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Languageentitylisting) MarshalJSON() ([]byte, error) {
     }
     LanguageentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Language `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Languageentitylisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Language{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

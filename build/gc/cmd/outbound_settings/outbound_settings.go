@@ -33,28 +33,34 @@ func Cmdoutbound_settings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OutboundSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OutboundSettings"
+      }
+    }
   }
 }`)
 	outbound_settingsCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/outbound/settings", utils.FormatPermissions([]string{ "outbound:settings:edit",  }), utils.GenerateDevCentreLink("PATCH", "Outbound", "/api/v2/outbound/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "outboundSettings",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/OutboundSettings"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OutboundSettings"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  "description" : "Accepted - Processing Update"
+  "description" : "Accepted - Processing Update",
+  "content" : { }
 }`)
 	outbound_settingsCmd.AddCommand(updateCmd)
-	
 	return outbound_settingsCmd
 }
 

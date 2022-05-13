@@ -33,31 +33,40 @@ func Cmdgeolocations_settings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/GeolocationSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GeolocationSettings"
+      }
+    }
   }
 }`)
 	geolocations_settingsCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/geolocations/settings", utils.FormatPermissions([]string{ "geolocation:settings:edit",  }), utils.GenerateDevCentreLink("PATCH", "Geolocation", "/api/v2/geolocations/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Geolocation settings",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/GeolocationSettings"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GeolocationSettings"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/GeolocationSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GeolocationSettings"
+      }
+    }
   }
 }`)
 	geolocations_settingsCmd.AddCommand(updateCmd)
-	
 	return geolocations_settingsCmd
 }
 

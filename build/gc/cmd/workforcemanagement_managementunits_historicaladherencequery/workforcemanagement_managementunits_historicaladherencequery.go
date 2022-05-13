@@ -30,23 +30,28 @@ func init() {
 func Cmdworkforcemanagement_managementunits_historicaladherencequery() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery", utils.FormatPermissions([]string{ "wfm:historicalAdherence:view",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/WfmHistoricalAdherenceQuery"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WfmHistoricalAdherenceQuery"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Processing request",
-  "schema" : {
-    "$ref" : "#/definitions/WfmHistoricalAdherenceResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WfmHistoricalAdherenceResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_managementunits_historicaladherencequeryCmd.AddCommand(createCmd)
-	
 	return workforcemanagement_managementunits_historicaladherencequeryCmd
 }
 

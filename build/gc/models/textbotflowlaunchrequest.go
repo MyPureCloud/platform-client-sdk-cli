@@ -57,22 +57,6 @@ func (o *Textbotflowlaunchrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Textbotflowlaunchrequest) MarshalJSON() ([]byte, error) {
     }
     TextbotflowlaunchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Flow Textbotflow `json:"flow"`
         
         ExternalSessionId string `json:"externalSessionId"`
@@ -98,30 +83,23 @@ func (u *Textbotflowlaunchrequest) MarshalJSON() ([]byte, error) {
         InputData Textbotinputoutputdata `json:"inputData"`
         
         Channel Textbotchannel `json:"channel"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

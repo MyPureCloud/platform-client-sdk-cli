@@ -56,23 +56,7 @@ func (o *Analyticsqueryaggregation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Ranges = []Aggregationrange{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Analyticsqueryaggregation) MarshalJSON() ([]byte, error) {
     }
     AnalyticsqueryaggregationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Dimension string `json:"dimension"`
@@ -98,32 +83,25 @@ func (u *Analyticsqueryaggregation) MarshalJSON() ([]byte, error) {
         Size int `json:"size"`
         
         Ranges []Aggregationrange `json:"ranges"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Ranges: []Aggregationrange{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

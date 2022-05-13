@@ -33,13 +33,6 @@ type Edgeversionreport struct {
 func (o *Edgeversionreport) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Edgeversionreport) MarshalJSON() ([]byte, error) {
     }
     EdgeversionreportMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         OldestVersion Edgeversioninformation `json:"oldestVersion"`
         
         NewestVersion Edgeversioninformation `json:"newestVersion"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

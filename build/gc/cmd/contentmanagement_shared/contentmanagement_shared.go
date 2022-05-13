@@ -37,12 +37,15 @@ func Cmdcontentmanagement_shared() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "Download location is returned in header, if redirect is set to false and disposition is not set to none. If disposition is none, location header will not be populated, DownloadUri and ViewUri will be populated.",
-  "schema" : {
-    "$ref" : "#/definitions/SharedResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SharedResponse"
+      }
+    }
   }
 }`)
 	contentmanagement_sharedCmd.AddCommand(getCmd)
-	
 	return contentmanagement_sharedCmd
 }
 

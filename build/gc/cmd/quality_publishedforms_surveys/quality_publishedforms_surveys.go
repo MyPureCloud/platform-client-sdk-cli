@@ -30,34 +30,44 @@ func init() {
 func Cmdquality_publishedforms_surveys() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/publishedforms/surveys", utils.FormatPermissions([]string{ "quality:surveyForm:add",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/publishedforms/surveys")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Survey form",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/PublishForm"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PublishForm"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SurveyForm"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SurveyForm"
+      }
+    }
   }
 }`)
 	quality_publishedforms_surveysCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/publishedforms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/publishedforms/surveys/{formId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SurveyForm"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SurveyForm"
+      }
+    }
   }
 }`)
 	quality_publishedforms_surveysCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
@@ -67,12 +77,15 @@ func Cmdquality_publishedforms_surveys() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	quality_publishedforms_surveysCmd.AddCommand(listCmd)
-	
 	return quality_publishedforms_surveysCmd
 }
 

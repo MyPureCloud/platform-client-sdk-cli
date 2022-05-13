@@ -25,10 +25,6 @@ type Consulttransferresponse struct {
 // String returns a JSON representation of the model
 func (o *Consulttransferresponse) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Consulttransferresponse) MarshalJSON() ([]byte, error) {
     }
     ConsulttransferresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        DestinationParticipantId string `json:"destinationParticipantId"`
+    return json.Marshal(&struct {
         
+        DestinationParticipantId string `json:"destinationParticipantId"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

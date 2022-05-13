@@ -49,19 +49,6 @@ func (o *Patchtextstyleproperties) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Patchtextstyleproperties) MarshalJSON() ([]byte, error) {
     }
     PatchtextstylepropertiesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Color string `json:"color"`
         
         Font string `json:"font"`
@@ -85,26 +73,20 @@ func (u *Patchtextstyleproperties) MarshalJSON() ([]byte, error) {
         FontSize string `json:"fontSize"`
         
         TextAlign string `json:"textAlign"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

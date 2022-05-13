@@ -49,19 +49,6 @@ func (o *Mediapolicies) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Mediapolicies) MarshalJSON() ([]byte, error) {
     }
     MediapoliciesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         CallPolicy Callmediapolicy `json:"callPolicy"`
         
         ChatPolicy Chatmediapolicy `json:"chatPolicy"`
@@ -85,26 +73,20 @@ func (u *Mediapolicies) MarshalJSON() ([]byte, error) {
         EmailPolicy Emailmediapolicy `json:"emailPolicy"`
         
         MessagePolicy Messagemediapolicy `json:"messagePolicy"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

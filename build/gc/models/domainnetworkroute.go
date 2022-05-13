@@ -57,22 +57,6 @@ func (o *Domainnetworkroute) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Domainnetworkroute) MarshalJSON() ([]byte, error) {
     }
     DomainnetworkrouteMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Prefix string `json:"prefix"`
         
         Nexthop string `json:"nexthop"`
@@ -98,30 +83,23 @@ func (u *Domainnetworkroute) MarshalJSON() ([]byte, error) {
         Metric int `json:"metric"`
         
         Family int `json:"family"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

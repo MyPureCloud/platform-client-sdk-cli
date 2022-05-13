@@ -34,13 +34,6 @@ type Outcomeachievement struct {
 func (o *Outcomeachievement) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -56,22 +49,19 @@ func (u *Outcomeachievement) MarshalJSON() ([]byte, error) {
     }
     OutcomeachievementMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Outcome Achievedoutcome `json:"outcome"`
         
         AchievedDate time.Time `json:"achievedDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

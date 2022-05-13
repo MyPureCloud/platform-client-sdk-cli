@@ -33,12 +33,16 @@ func Cmdtelephony_providers_edges_linebasesettings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LineBase"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LineBase"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_linebasesettingsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Value by which to sort")
@@ -49,12 +53,15 @@ func Cmdtelephony_providers_edges_linebasesettings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_linebasesettingsCmd.AddCommand(listCmd)
-	
 	return telephony_providers_edges_linebasesettingsCmd
 }
 

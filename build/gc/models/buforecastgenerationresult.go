@@ -24,11 +24,7 @@ type Buforecastgenerationresult struct {
 
 // String returns a JSON representation of the model
 func (o *Buforecastgenerationresult) String() string {
-    
-    
      o.PlanningGroupResults = []Buforecastgenerationplanninggroupresult{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Buforecastgenerationresult) MarshalJSON() ([]byte, error) {
     }
     BuforecastgenerationresultMarshalled = true
 
-    return json.Marshal(&struct { 
-        PlanningGroupResults []Buforecastgenerationplanninggroupresult `json:"planningGroupResults"`
+    return json.Marshal(&struct {
         
+        PlanningGroupResults []Buforecastgenerationplanninggroupresult `json:"planningGroupResults"`
         *Alias
     }{
-        
 
         
         PlanningGroupResults: []Buforecastgenerationplanninggroupresult{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

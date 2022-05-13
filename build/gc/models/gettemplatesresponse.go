@@ -39,17 +39,7 @@ type Gettemplatesresponse struct {
 // String returns a JSON representation of the model
 func (o *Gettemplatesresponse) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Objectivetemplate{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Gettemplatesresponse) MarshalJSON() ([]byte, error) {
     }
     GettemplatesresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Objectivetemplate `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Objectivetemplate{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

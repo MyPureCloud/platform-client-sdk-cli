@@ -65,28 +65,8 @@ type Callconversation struct {
 // String returns a JSON representation of the model
 func (o *Callconversation) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Participants = []Callmediaparticipant{{}} 
-    
-    
-    
      o.OtherMediaUris = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -104,8 +84,7 @@ func (u *Callconversation) MarshalJSON() ([]byte, error) {
     }
     CallconversationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -116,44 +95,33 @@ func (u *Callconversation) MarshalJSON() ([]byte, error) {
         RecordingState string `json:"recordingState"`
         
         MaxParticipants int `json:"maxParticipants"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Participants: []Callmediaparticipant{{}},
         
 
-        
 
         
         OtherMediaUris: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

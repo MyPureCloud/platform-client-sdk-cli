@@ -31,15 +31,8 @@ type Programmappingsrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Programmappingsrequest) String() string {
-    
-    
      o.QueueIds = []string{""} 
-    
-    
-    
      o.FlowIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Programmappingsrequest) MarshalJSON() ([]byte, error) {
     }
     ProgrammappingsrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QueueIds []string `json:"queueIds"`
         
         FlowIds []string `json:"flowIds"`
-        
         *Alias
     }{
-        
 
         
         QueueIds: []string{""},
         
 
-        
 
         
         FlowIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -168,65 +168,7 @@ func (o *Numberplan) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Numbers = []Number{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -245,8 +187,7 @@ func (u *Numberplan) MarshalJSON() ([]byte, error) {
     }
     NumberplanMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -263,8 +204,6 @@ func (u *Numberplan) MarshalJSON() ([]byte, error) {
         ModifiedBy string `json:"modifiedBy"`
         
         CreatedBy string `json:"createdBy"`
-        
-        
         
         ModifiedByApp string `json:"modifiedByApp"`
         
@@ -283,94 +222,70 @@ func (u *Numberplan) MarshalJSON() ([]byte, error) {
         Classification string `json:"classification"`
         
         MatchType string `json:"matchType"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Numbers: []Number{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

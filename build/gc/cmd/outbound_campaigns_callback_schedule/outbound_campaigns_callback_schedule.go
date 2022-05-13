@@ -30,23 +30,28 @@ func init() {
 func Cmdoutbound_campaigns_callback_schedule() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/campaigns/{campaignId}/callback/schedule", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/campaigns/{campaignId}/callback/schedule")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "ContactCallbackRequest",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ContactCallbackRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContactCallbackRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ContactCallbackRequest"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContactCallbackRequest"
+      }
+    }
   }
 }`)
 	outbound_campaigns_callback_scheduleCmd.AddCommand(createCmd)
-	
 	return outbound_campaigns_callback_scheduleCmd
 }
 

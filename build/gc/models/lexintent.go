@@ -47,20 +47,7 @@ type Lexintent struct {
 func (o *Lexintent) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Slots = map[string]Lexslot{"": {}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Lexintent) MarshalJSON() ([]byte, error) {
     }
     LexintentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Description string `json:"description"`
@@ -85,28 +73,22 @@ func (u *Lexintent) MarshalJSON() ([]byte, error) {
         Slots map[string]Lexslot `json:"slots"`
         
         Version string `json:"version"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Slots: map[string]Lexslot{"": {}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

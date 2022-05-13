@@ -47,20 +47,7 @@ type Flowexecutionlaunchrequest struct {
 func (o *Flowexecutionlaunchrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.InputData = map[string]interface{}{"": Interface{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Flowexecutionlaunchrequest) MarshalJSON() ([]byte, error) {
     }
     FlowexecutionlaunchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FlowId string `json:"flowId"`
         
         FlowVersion string `json:"flowVersion"`
@@ -85,28 +73,22 @@ func (u *Flowexecutionlaunchrequest) MarshalJSON() ([]byte, error) {
         InputData map[string]interface{} `json:"inputData"`
         
         Name string `json:"name"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         InputData: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

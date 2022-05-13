@@ -33,13 +33,6 @@ type Supportcentermodulesetting struct {
 func (o *Supportcentermodulesetting) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Supportcentermodulesetting) MarshalJSON() ([]byte, error) {
     }
     SupportcentermodulesettingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Enabled bool `json:"enabled"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -24,11 +24,7 @@ type Utilization struct {
 
 // String returns a JSON representation of the model
 func (o *Utilization) String() string {
-    
-    
      o.Utilization = map[string]Mediautilization{"": {}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Utilization) MarshalJSON() ([]byte, error) {
     }
     UtilizationMarshalled = true
 
-    return json.Marshal(&struct { 
-        Utilization map[string]Mediautilization `json:"utilization"`
+    return json.Marshal(&struct {
         
+        Utilization map[string]Mediautilization `json:"utilization"`
         *Alias
     }{
-        
 
         
         Utilization: map[string]Mediautilization{"": {}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

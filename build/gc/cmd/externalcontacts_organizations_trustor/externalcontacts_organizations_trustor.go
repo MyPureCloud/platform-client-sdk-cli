@@ -32,21 +32,25 @@ func Cmdexternalcontacts_organizations_trustor() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Trustor link has been deleted"
+  "description" : "Trustor link has been deleted",
+  "content" : { }
 }`)
 	externalcontacts_organizations_trustorCmd.AddCommand(deleteCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}", utils.FormatPermissions([]string{ "externalContacts:externalOrganization:edit",  }), utils.GenerateDevCentreLink("PUT", "External Contacts", "/api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ExternalOrganizationTrustorLink"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ExternalOrganizationTrustorLink"
+      }
+    }
   }
 }`)
 	externalcontacts_organizations_trustorCmd.AddCommand(updateCmd)
-	
 	return externalcontacts_organizations_trustorCmd
 }
 

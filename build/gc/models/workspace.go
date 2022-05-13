@@ -108,42 +108,7 @@ func (o *Workspace) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Acl = []string{""} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -160,8 +125,7 @@ func (u *Workspace) MarshalJSON() ([]byte, error) {
     }
     WorkspaceMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -182,62 +146,46 @@ func (u *Workspace) MarshalJSON() ([]byte, error) {
         Acl []string `json:"acl"`
         
         Description string `json:"description"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Acl: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

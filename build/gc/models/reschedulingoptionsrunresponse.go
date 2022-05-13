@@ -91,40 +91,9 @@ func (o *Reschedulingoptionsrunresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ManagementUnits = []Reschedulingmanagementunitresponse{{}} 
     
-    
-    
-    
-    
-    
-    
      o.ActivityCodeIds = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -144,7 +113,8 @@ func (u *Reschedulingoptionsrunresponse) MarshalJSON() ([]byte, error) {
     }
     ReschedulingoptionsrunresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ExistingSchedule Buschedulereference `json:"existingSchedule"`
         
         StartDate time.Time `json:"startDate"`
@@ -164,54 +134,42 @@ func (u *Reschedulingoptionsrunresponse) MarshalJSON() ([]byte, error) {
         DoNotChangeShiftStartTimes bool `json:"doNotChangeShiftStartTimes"`
         
         DoNotChangeManuallyEditedShifts bool `json:"doNotChangeManuallyEditedShifts"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ManagementUnits: []Reschedulingmanagementunitresponse{{}},
         
 
-        
 
         
 
-        
 
         
         ActivityCodeIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

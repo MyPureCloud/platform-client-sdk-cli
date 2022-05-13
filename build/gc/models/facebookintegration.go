@@ -148,54 +148,6 @@ func (o *Facebookintegration) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -211,8 +163,7 @@ func (u *Facebookintegration) MarshalJSON() ([]byte, error) {
     }
     FacebookintegrationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -224,13 +175,7 @@ func (u *Facebookintegration) MarshalJSON() ([]byte, error) {
         
         PageId string `json:"pageId"`
         
-        
-        
-        
-        
         Status string `json:"status"`
-        
-        
         
         DateCreated time.Time `json:"dateCreated"`
         
@@ -241,88 +186,62 @@ func (u *Facebookintegration) MarshalJSON() ([]byte, error) {
         ModifiedBy Domainentityref `json:"modifiedBy"`
         
         Version int `json:"version"`
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

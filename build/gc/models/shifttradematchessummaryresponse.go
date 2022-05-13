@@ -24,11 +24,7 @@ type Shifttradematchessummaryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Shifttradematchessummaryresponse) String() string {
-    
-    
      o.Entities = []Weekshifttradematchessummaryresponse{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Shifttradematchessummaryresponse) MarshalJSON() ([]byte, error) {
     }
     ShifttradematchessummaryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Weekshifttradematchessummaryresponse `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Weekshifttradematchessummaryresponse `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Weekshifttradematchessummaryresponse{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

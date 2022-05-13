@@ -48,20 +48,7 @@ func (o *Routepathresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Skills = []Routingskillreference{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Routepathresponse) MarshalJSON() ([]byte, error) {
     }
     RoutepathresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Queue Queuereference `json:"queue"`
         
         MediaType string `json:"mediaType"`
@@ -85,28 +73,22 @@ func (u *Routepathresponse) MarshalJSON() ([]byte, error) {
         Language Languagereference `json:"language"`
         
         Skills []Routingskillreference `json:"skills"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Skills: []Routingskillreference{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

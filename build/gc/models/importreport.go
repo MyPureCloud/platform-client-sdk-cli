@@ -45,20 +45,7 @@ type Importreport struct {
 
 // String returns a JSON representation of the model
 func (o *Importreport) String() string {
-    
-    
      o.Errors = []Importerror{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Importreport) MarshalJSON() ([]byte, error) {
     }
     ImportreportMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Errors []Importerror `json:"errors"`
         
         Validated Resultcounters `json:"validated"`
@@ -85,28 +73,22 @@ func (u *Importreport) MarshalJSON() ([]byte, error) {
         Imported Resultcounters `json:"imported"`
         
         TotalDocuments int `json:"totalDocuments"`
-        
         *Alias
     }{
-        
 
         
         Errors: []Importerror{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

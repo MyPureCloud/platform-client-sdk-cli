@@ -60,27 +60,8 @@ type Createtimeoffplanrequest struct {
 // String returns a JSON representation of the model
 func (o *Createtimeoffplanrequest) String() string {
     
-    
-    
-    
-    
-    
      o.ActivityCodeIds = []string{""} 
-    
-    
-    
      o.TimeOffLimitIds = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -99,7 +80,8 @@ func (u *Createtimeoffplanrequest) MarshalJSON() ([]byte, error) {
     }
     CreatetimeoffplanrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         ActivityCodeIds []string `json:"activityCodeIds"`
@@ -111,38 +93,30 @@ func (u *Createtimeoffplanrequest) MarshalJSON() ([]byte, error) {
         DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
         
         Active bool `json:"active"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         ActivityCodeIds: []string{""},
         
 
-        
 
         
         TimeOffLimitIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

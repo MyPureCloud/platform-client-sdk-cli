@@ -36,12 +36,15 @@ func Cmdgamification_scorecards() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WorkdayMetricListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WorkdayMetricListing"
+      }
+    }
   }
 }`)
 	gamification_scorecardsCmd.AddCommand(listCmd)
-	
 	return gamification_scorecardsCmd
 }
 

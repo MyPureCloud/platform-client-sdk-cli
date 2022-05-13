@@ -33,23 +33,30 @@ func Cmdexternalcontacts_organizations_schemas_versions() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DataSchema"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataSchema"
+      }
+    }
   }
 }`)
 	externalcontacts_organizations_schemas_versionsCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/organizations/schemas/{schemaId}/versions", utils.FormatPermissions([]string{ "externalContacts:customFields:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/organizations/schemas/{schemaId}/versions")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DataSchema"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataSchema"
+      }
+    }
   }
 }`)
 	externalcontacts_organizations_schemas_versionsCmd.AddCommand(listCmd)
-	
 	return externalcontacts_organizations_schemas_versionsCmd
 }
 

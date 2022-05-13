@@ -30,72 +30,92 @@ func init() {
 func Cmdworkforcemanagement_businessunits_planninggroups() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups", utils.FormatPermissions([]string{ "wfm:planningGroup:add",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/CreatePlanningGroupRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreatePlanningGroupRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/PlanningGroup"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PlanningGroup"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_planninggroupsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}", utils.FormatPermissions([]string{ "wfm:planningGroup:delete",  }), utils.GenerateDevCentreLink("DELETE", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "The planning group was deleted successfully"
+  "description" : "The planning group was deleted successfully",
+  "content" : { }
 }`)
 	workforcemanagement_businessunits_planninggroupsCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}", utils.FormatPermissions([]string{ "wfm:planningGroup:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/PlanningGroup"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PlanningGroup"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_planninggroupsCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups", utils.FormatPermissions([]string{ "wfm:planningGroup:view", "wfm:shortTermForecast:view", "wfm:intraday:view", "wfm:agent:view", "wfm:schedule:view", "wfm:publishedSchedule:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/PlanningGroupList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PlanningGroupList"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_planninggroupsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}", utils.FormatPermissions([]string{ "wfm:planningGroup:edit",  }), utils.GenerateDevCentreLink("PATCH", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/UpdatePlanningGroupRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UpdatePlanningGroupRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/PlanningGroup"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PlanningGroup"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_planninggroupsCmd.AddCommand(updateCmd)
-	
 	return workforcemanagement_businessunits_planninggroupsCmd
 }
 

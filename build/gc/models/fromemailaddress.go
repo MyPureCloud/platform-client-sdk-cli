@@ -41,16 +41,6 @@ func (o *Fromemailaddress) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Fromemailaddress) MarshalJSON() ([]byte, error) {
     }
     FromemailaddressMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Domain Domainentityref `json:"domain"`
         
         FriendlyName string `json:"friendlyName"`
         
         LocalPart string `json:"localPart"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

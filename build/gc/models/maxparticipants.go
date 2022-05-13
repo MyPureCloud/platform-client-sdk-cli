@@ -25,10 +25,6 @@ type Maxparticipants struct {
 // String returns a JSON representation of the model
 func (o *Maxparticipants) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Maxparticipants) MarshalJSON() ([]byte, error) {
     }
     MaxparticipantsMarshalled = true
 
-    return json.Marshal(&struct { 
-        MaxParticipants int `json:"maxParticipants"`
+    return json.Marshal(&struct {
         
+        MaxParticipants int `json:"maxParticipants"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

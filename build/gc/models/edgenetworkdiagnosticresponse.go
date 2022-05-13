@@ -33,13 +33,6 @@ type Edgenetworkdiagnosticresponse struct {
 func (o *Edgenetworkdiagnosticresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Edgenetworkdiagnosticresponse) MarshalJSON() ([]byte, error) {
     }
     EdgenetworkdiagnosticresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         CommandCorrelationId string `json:"commandCorrelationId"`
         
         Diagnostics string `json:"diagnostics"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

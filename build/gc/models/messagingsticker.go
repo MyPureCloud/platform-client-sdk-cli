@@ -93,35 +93,6 @@ func (o *Messagingsticker) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -137,8 +108,7 @@ func (u *Messagingsticker) MarshalJSON() ([]byte, error) {
     }
     MessagingstickerMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -155,52 +125,38 @@ func (u *Messagingsticker) MarshalJSON() ([]byte, error) {
         ProviderVersion int `json:"providerVersion"`
         
         UriLocation string `json:"uriLocation"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -38,19 +38,9 @@ type Adjacents struct {
 
 // String returns a JSON representation of the model
 func (o *Adjacents) String() string {
-    
-    
      o.Superiors = []User{{}} 
-    
-    
-    
      o.Siblings = []User{{}} 
-    
-    
-    
      o.DirectReports = []User{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,34 +56,30 @@ func (u *Adjacents) MarshalJSON() ([]byte, error) {
     }
     AdjacentsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Superiors []User `json:"superiors"`
         
         Siblings []User `json:"siblings"`
         
         DirectReports []User `json:"directReports"`
-        
         *Alias
     }{
-        
 
         
         Superiors: []User{{}},
         
 
-        
 
         
         Siblings: []User{{}},
         
 
-        
 
         
         DirectReports: []User{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

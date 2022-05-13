@@ -145,56 +145,7 @@ func (o *Trunkbase) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Properties = map[string]interface{}{"": Interface{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -212,8 +163,7 @@ func (u *Trunkbase) MarshalJSON() ([]byte, error) {
     }
     TrunkbaseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -231,8 +181,6 @@ func (u *Trunkbase) MarshalJSON() ([]byte, error) {
         
         CreatedBy string `json:"createdBy"`
         
-        
-        
         ModifiedByApp string `json:"modifiedByApp"`
         
         CreatedByApp string `json:"createdByApp"`
@@ -244,82 +192,61 @@ func (u *Trunkbase) MarshalJSON() ([]byte, error) {
         TrunkType string `json:"trunkType"`
         
         Managed bool `json:"managed"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Properties: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

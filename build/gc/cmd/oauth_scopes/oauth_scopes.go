@@ -33,23 +33,30 @@ func Cmdoauth_scopes() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OAuthScope"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OAuthScope"
+      }
+    }
   }
 }`)
 	oauth_scopesCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/oauth/scopes", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "OAuth", "/api/v2/oauth/scopes")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OAuthScopeListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OAuthScopeListing"
+      }
+    }
   }
 }`)
 	oauth_scopesCmd.AddCommand(listCmd)
-	
 	return oauth_scopesCmd
 }
 

@@ -33,12 +33,16 @@ func Cmdtelephony_providers_edges_extensions() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Extension"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Extension"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_extensionsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "number", "Sort by")
@@ -49,31 +53,40 @@ func Cmdtelephony_providers_edges_extensions() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_extensionsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/extensions/{extensionId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/extensions/{extensionId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Extension",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Extension"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Extension"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Extension"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Extension"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_extensionsCmd.AddCommand(updateCmd)
-	
 	return telephony_providers_edges_extensionsCmd
 }
 

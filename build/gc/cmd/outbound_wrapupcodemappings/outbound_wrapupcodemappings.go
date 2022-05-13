@@ -33,31 +33,40 @@ func Cmdoutbound_wrapupcodemappings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WrapUpCodeMapping"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WrapUpCodeMapping"
+      }
+    }
   }
 }`)
 	outbound_wrapupcodemappingsCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/wrapupcodemappings", utils.FormatPermissions([]string{ "outbound:wrapUpCodeMapping:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/wrapupcodemappings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "wrapUpCodeMapping",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/WrapUpCodeMapping"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WrapUpCodeMapping"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WrapUpCodeMapping"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WrapUpCodeMapping"
+      }
+    }
   }
 }`)
 	outbound_wrapupcodemappingsCmd.AddCommand(updateCmd)
-	
 	return outbound_wrapupcodemappingsCmd
 }
 

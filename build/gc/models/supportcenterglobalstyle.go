@@ -65,25 +65,6 @@ func (o *Supportcenterglobalstyle) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Supportcenterglobalstyle) MarshalJSON() ([]byte, error) {
     }
     SupportcenterglobalstyleMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         BackgroundColor string `json:"backgroundColor"`
         
         PrimaryColor string `json:"primaryColor"`
@@ -111,34 +93,26 @@ func (u *Supportcenterglobalstyle) MarshalJSON() ([]byte, error) {
         TextColor string `json:"textColor"`
         
         FontFamily string `json:"fontFamily"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

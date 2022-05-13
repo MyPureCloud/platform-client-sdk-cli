@@ -55,24 +55,8 @@ func (o *Resourceconditionnode) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Operands = []Resourceconditionvalue{{}} 
-    
-    
-    
      o.Terms = []Resourceconditionnode{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Resourceconditionnode) MarshalJSON() ([]byte, error) {
     }
     ResourceconditionnodeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VariableName string `json:"variableName"`
         
         Conjunction string `json:"conjunction"`
@@ -98,34 +83,27 @@ func (u *Resourceconditionnode) MarshalJSON() ([]byte, error) {
         Operands []Resourceconditionvalue `json:"operands"`
         
         Terms []Resourceconditionnode `json:"terms"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Operands: []Resourceconditionvalue{{}},
         
 
-        
 
         
         Terms: []Resourceconditionnode{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

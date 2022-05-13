@@ -57,22 +57,6 @@ func (o *Dataactionconditionpredicate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Dataactionconditionpredicate) MarshalJSON() ([]byte, error) {
     }
     DataactionconditionpredicateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         OutputField string `json:"outputField"`
         
         OutputOperator string `json:"outputOperator"`
@@ -98,30 +83,23 @@ func (u *Dataactionconditionpredicate) MarshalJSON() ([]byte, error) {
         Inverted bool `json:"inverted"`
         
         OutputFieldMissingResolution bool `json:"outputFieldMissingResolution"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

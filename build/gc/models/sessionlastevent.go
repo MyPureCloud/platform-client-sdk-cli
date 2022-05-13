@@ -40,15 +40,6 @@ type Sessionlastevent struct {
 func (o *Sessionlastevent) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -64,28 +55,22 @@ func (u *Sessionlastevent) MarshalJSON() ([]byte, error) {
     }
     SessionlasteventMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         EventName string `json:"eventName"`
         
         CreatedDate time.Time `json:"createdDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

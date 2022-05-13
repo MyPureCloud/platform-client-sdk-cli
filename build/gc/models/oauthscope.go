@@ -37,14 +37,6 @@ type Oauthscope struct {
 // String returns a JSON representation of the model
 func (o *Oauthscope) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -60,28 +52,20 @@ func (u *Oauthscope) MarshalJSON() ([]byte, error) {
     }
     OauthscopeMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Description string `json:"description"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -34,13 +34,6 @@ type Exporturi struct {
 func (o *Exporturi) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -56,22 +49,19 @@ func (u *Exporturi) MarshalJSON() ([]byte, error) {
     }
     ExporturiMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Uri string `json:"uri"`
         
         ExportTimestamp time.Time `json:"exportTimestamp"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

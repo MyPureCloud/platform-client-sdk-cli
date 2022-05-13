@@ -83,33 +83,7 @@ func (o *Workplanrotationresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Agents = []Workplanrotationagentresponse{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -126,8 +100,7 @@ func (u *Workplanrotationresponse) MarshalJSON() ([]byte, error) {
     }
     WorkplanrotationresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -142,50 +115,37 @@ func (u *Workplanrotationresponse) MarshalJSON() ([]byte, error) {
         Agents []Workplanrotationagentresponse `json:"agents"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Agents: []Workplanrotationagentresponse{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

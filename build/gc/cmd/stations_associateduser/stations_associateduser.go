@@ -32,10 +32,10 @@ func Cmdstations_associateduser() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	stations_associateduserCmd.AddCommand(deleteCmd)
-	
 	return stations_associateduserCmd
 }
 

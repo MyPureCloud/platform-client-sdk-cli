@@ -24,11 +24,7 @@ type Listwrappersecondarypresence struct {
 
 // String returns a JSON representation of the model
 func (o *Listwrappersecondarypresence) String() string {
-    
-    
      o.Values = []Secondarypresence{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Listwrappersecondarypresence) MarshalJSON() ([]byte, error) {
     }
     ListwrappersecondarypresenceMarshalled = true
 
-    return json.Marshal(&struct { 
-        Values []Secondarypresence `json:"values"`
+    return json.Marshal(&struct {
         
+        Values []Secondarypresence `json:"values"`
         *Alias
     }{
-        
 
         
         Values: []Secondarypresence{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

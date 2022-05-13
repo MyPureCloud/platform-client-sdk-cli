@@ -55,24 +55,8 @@ type Trustcreate struct {
 func (o *Trustcreate) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Users = []Trustmembercreate{{}} 
-    
-    
-    
      o.Groups = []Trustmembercreate{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -89,7 +73,8 @@ func (u *Trustcreate) MarshalJSON() ([]byte, error) {
     }
     TrustcreateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PairingId string `json:"pairingId"`
         
         Enabled bool `json:"enabled"`
@@ -99,34 +84,27 @@ func (u *Trustcreate) MarshalJSON() ([]byte, error) {
         Groups []Trustmembercreate `json:"groups"`
         
         DateExpired time.Time `json:"dateExpired"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Users: []Trustmembercreate{{}},
         
 
-        
 
         
         Groups: []Trustmembercreate{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

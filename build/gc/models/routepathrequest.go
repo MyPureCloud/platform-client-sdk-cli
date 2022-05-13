@@ -55,23 +55,7 @@ func (o *Routepathrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.SkillIds = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -88,7 +72,8 @@ func (u *Routepathrequest) MarshalJSON() ([]byte, error) {
     }
     RoutepathrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QueueId string `json:"queueId"`
         
         MediaType string `json:"mediaType"`
@@ -98,32 +83,25 @@ func (u *Routepathrequest) MarshalJSON() ([]byte, error) {
         SkillIds []string `json:"skillIds"`
         
         SourcePlanningGroup Sourceplanninggrouprequest `json:"sourcePlanningGroup"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SkillIds: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

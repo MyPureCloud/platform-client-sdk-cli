@@ -24,11 +24,7 @@ type Callroute struct {
 
 // String returns a JSON representation of the model
 func (o *Callroute) String() string {
-    
-    
      o.Targets = []Calltarget{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Callroute) MarshalJSON() ([]byte, error) {
     }
     CallrouteMarshalled = true
 
-    return json.Marshal(&struct { 
-        Targets []Calltarget `json:"targets"`
+    return json.Marshal(&struct {
         
+        Targets []Calltarget `json:"targets"`
         *Alias
     }{
-        
 
         
         Targets: []Calltarget{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

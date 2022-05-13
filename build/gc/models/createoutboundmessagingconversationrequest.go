@@ -57,22 +57,6 @@ func (o *Createoutboundmessagingconversationrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Createoutboundmessagingconversationrequest) MarshalJSON() ([]byte, erro
     }
     CreateoutboundmessagingconversationrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QueueId string `json:"queueId"`
         
         ToAddress string `json:"toAddress"`
@@ -98,30 +83,23 @@ func (u *Createoutboundmessagingconversationrequest) MarshalJSON() ([]byte, erro
         UseExistingConversation bool `json:"useExistingConversation"`
         
         ExternalContactId string `json:"externalContactId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

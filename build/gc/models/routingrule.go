@@ -41,16 +41,6 @@ func (o *Routingrule) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Routingrule) MarshalJSON() ([]byte, error) {
     }
     RoutingruleMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Operator string `json:"operator"`
         
         Threshold int `json:"threshold"`
         
         WaitSeconds float64 `json:"waitSeconds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

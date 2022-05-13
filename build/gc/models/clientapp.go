@@ -73,26 +73,6 @@ type Clientapp struct {
 // String returns a JSON representation of the model
 func (o *Clientapp) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -108,64 +88,38 @@ func (u *Clientapp) MarshalJSON() ([]byte, error) {
     }
     ClientappMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         
         IntendedState string `json:"intendedState"`
-        
-        
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

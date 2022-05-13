@@ -25,10 +25,6 @@ type Notificationtemplatefooter struct {
 // String returns a JSON representation of the model
 func (o *Notificationtemplatefooter) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Notificationtemplatefooter) MarshalJSON() ([]byte, error) {
     }
     NotificationtemplatefooterMarshalled = true
 
-    return json.Marshal(&struct { 
-        Text string `json:"text"`
+    return json.Marshal(&struct {
         
+        Text string `json:"text"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

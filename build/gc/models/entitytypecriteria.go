@@ -53,23 +53,7 @@ type Entitytypecriteria struct {
 // String returns a JSON representation of the model
 func (o *Entitytypecriteria) String() string {
     
-    
-    
-    
-    
-    
      o.Values = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -88,7 +72,8 @@ func (u *Entitytypecriteria) MarshalJSON() ([]byte, error) {
     }
     EntitytypecriteriaMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Key string `json:"key"`
         
         Values []string `json:"values"`
@@ -98,32 +83,25 @@ func (u *Entitytypecriteria) MarshalJSON() ([]byte, error) {
         Operator string `json:"operator"`
         
         EntityType string `json:"entityType"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Values: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

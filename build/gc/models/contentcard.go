@@ -64,26 +64,7 @@ func (o *Contentcard) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Actions = []Contentcardaction{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Contentcard) MarshalJSON() ([]byte, error) {
     }
     ContentcardMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Title string `json:"title"`
         
         Description string `json:"description"`
@@ -111,36 +93,28 @@ func (u *Contentcard) MarshalJSON() ([]byte, error) {
         DefaultAction Contentcardaction `json:"defaultAction"`
         
         Actions []Contentcardaction `json:"actions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Actions: []Contentcardaction{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

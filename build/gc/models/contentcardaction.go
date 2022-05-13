@@ -49,19 +49,6 @@ func (o *Contentcardaction) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Contentcardaction) MarshalJSON() ([]byte, error) {
     }
     ContentcardactionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Text string `json:"text"`
@@ -85,26 +73,20 @@ func (u *Contentcardaction) MarshalJSON() ([]byte, error) {
         Payload string `json:"payload"`
         
         Url string `json:"url"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

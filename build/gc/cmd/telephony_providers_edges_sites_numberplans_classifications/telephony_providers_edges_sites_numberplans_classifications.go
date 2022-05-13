@@ -34,16 +34,19 @@ func Cmdtelephony_providers_edges_sites_numberplans_classifications() *cobra.Com
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "uniqueItems" : true,
-    "items" : {
-      "type" : "string"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "uniqueItems" : true,
+        "type" : "array",
+        "items" : {
+          "type" : "string"
+        }
+      }
     }
   }
 }`)
 	telephony_providers_edges_sites_numberplans_classificationsCmd.AddCommand(listCmd)
-	
 	return telephony_providers_edges_sites_numberplans_classificationsCmd
 }
 

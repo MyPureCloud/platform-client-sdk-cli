@@ -39,17 +39,7 @@ type Localencryptionconfigurationlisting struct {
 // String returns a JSON representation of the model
 func (o *Localencryptionconfigurationlisting) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Localencryptionconfiguration{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Localencryptionconfigurationlisting) MarshalJSON() ([]byte, error) {
     }
     LocalencryptionconfigurationlistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Localencryptionconfiguration `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Localencryptionconfiguration{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

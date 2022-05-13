@@ -39,18 +39,8 @@ type Userdetailqueryfilter struct {
 // String returns a JSON representation of the model
 func (o *Userdetailqueryfilter) String() string {
     
-    
-    
-    
-    
-    
      o.Clauses = []Userdetailqueryclause{{}} 
-    
-    
-    
      o.Predicates = []Userdetailquerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Userdetailqueryfilter) MarshalJSON() ([]byte, error) {
     }
     UserdetailqueryfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Clauses []Userdetailqueryclause `json:"clauses"`
         
         Predicates []Userdetailquerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Clauses: []Userdetailqueryclause{{}},
         
 
-        
 
         
         Predicates: []Userdetailquerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

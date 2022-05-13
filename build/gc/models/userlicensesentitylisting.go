@@ -52,23 +52,7 @@ type Userlicensesentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Userlicensesentitylisting) String() string {
-    
-    
      o.Entities = []Userlicenses{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -88,7 +72,8 @@ func (u *Userlicensesentitylisting) MarshalJSON() ([]byte, error) {
     }
     UserlicensesentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Userlicenses `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -98,32 +83,25 @@ func (u *Userlicensesentitylisting) MarshalJSON() ([]byte, error) {
         Total int `json:"total"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Userlicenses{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

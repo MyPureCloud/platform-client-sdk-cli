@@ -33,12 +33,15 @@ func Cmdworkforcemanagement_schedulingjobs() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SchedulingStatusResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SchedulingStatusResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_schedulingjobsCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_schedulingjobsCmd
 }
 

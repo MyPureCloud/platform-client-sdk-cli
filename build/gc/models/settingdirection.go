@@ -33,13 +33,6 @@ type Settingdirection struct {
 func (o *Settingdirection) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Settingdirection) MarshalJSON() ([]byte, error) {
     }
     SettingdirectionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Inbound string `json:"inbound"`
         
         Outbound string `json:"outbound"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

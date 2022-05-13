@@ -46,21 +46,8 @@ type Coachingappointmentaggregaterequest struct {
 // String returns a JSON representation of the model
 func (o *Coachingappointmentaggregaterequest) String() string {
     
-    
-    
-    
-    
-    
      o.Metrics = []string{""} 
-    
-    
-    
      o.GroupBy = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Coachingappointmentaggregaterequest) MarshalJSON() ([]byte, error) {
     }
     CoachingappointmentaggregaterequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         Metrics []string `json:"metrics"`
@@ -85,30 +73,24 @@ func (u *Coachingappointmentaggregaterequest) MarshalJSON() ([]byte, error) {
         GroupBy []string `json:"groupBy"`
         
         Filter Queryrequestfilter `json:"filter"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Metrics: []string{""},
         
 
-        
 
         
         GroupBy: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

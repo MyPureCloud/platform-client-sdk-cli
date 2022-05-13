@@ -30,23 +30,28 @@ func init() {
 func Cmdrouting_email_domains_validate() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/email/domains/{domainId}/validate", utils.FormatPermissions([]string{ "routing:email:manage",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/routing/email/domains/{domainId}/validate")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Domain settings",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/InboundDomainPatchRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/InboundDomainPatchRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/InboundDomain"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/InboundDomain"
+      }
+    }
   }
 }`)
 	routing_email_domains_validateCmd.AddCommand(updateCmd)
-	
 	return routing_email_domains_validateCmd
 }
 

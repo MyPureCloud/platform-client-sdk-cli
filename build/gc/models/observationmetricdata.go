@@ -56,23 +56,7 @@ func (o *Observationmetricdata) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Observations = []Observationvalue{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Observationmetricdata) MarshalJSON() ([]byte, error) {
     }
     ObservationmetricdataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Metric string `json:"metric"`
         
         Qualifier string `json:"qualifier"`
@@ -98,32 +83,25 @@ func (u *Observationmetricdata) MarshalJSON() ([]byte, error) {
         Truncated bool `json:"truncated"`
         
         Observations []Observationvalue `json:"observations"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Observations: []Observationvalue{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,20 +30,22 @@ func init() {
 func Cmdconversations_participants_digits() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/participants/{participantId}/digits", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/{conversationId}/participants/{participantId}/digits")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Digits",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/Digits"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Digits"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Accepted"
+  "description" : "Accepted",
+  "content" : { }
 }`)
 	conversations_participants_digitsCmd.AddCommand(createCmd)
-	
 	return conversations_participants_digitsCmd
 }
 

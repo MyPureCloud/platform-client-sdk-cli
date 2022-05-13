@@ -24,11 +24,7 @@ type Availabletimeoffresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Availabletimeoffresponse) String() string {
-    
-    
      o.Values = []Availabletimeoffrange{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Availabletimeoffresponse) MarshalJSON() ([]byte, error) {
     }
     AvailabletimeoffresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Values []Availabletimeoffrange `json:"values"`
+    return json.Marshal(&struct {
         
+        Values []Availabletimeoffrange `json:"values"`
         *Alias
     }{
-        
 
         
         Values: []Availabletimeoffrange{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

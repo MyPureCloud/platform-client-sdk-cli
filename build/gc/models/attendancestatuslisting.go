@@ -24,11 +24,7 @@ type Attendancestatuslisting struct {
 
 // String returns a JSON representation of the model
 func (o *Attendancestatuslisting) String() string {
-    
-    
      o.Entities = []Attendancestatus{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Attendancestatuslisting) MarshalJSON() ([]byte, error) {
     }
     AttendancestatuslistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Attendancestatus `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Attendancestatus `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Attendancestatus{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

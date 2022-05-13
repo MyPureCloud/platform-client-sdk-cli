@@ -33,13 +33,6 @@ type Mediasummary struct {
 func (o *Mediasummary) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Mediasummary) MarshalJSON() ([]byte, error) {
     }
     MediasummaryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ContactCenter Mediasummarydetail `json:"contactCenter"`
         
         Enterprise Mediasummarydetail `json:"enterprise"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

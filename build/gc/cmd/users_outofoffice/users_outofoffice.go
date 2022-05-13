@@ -33,31 +33,40 @@ func Cmdusers_outofoffice() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OutOfOffice"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OutOfOffice"
+      }
+    }
   }
 }`)
 	users_outofofficeCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/outofoffice", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/outofoffice")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The updated OutOffOffice",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/OutOfOffice"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OutOfOffice"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OutOfOffice"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OutOfOffice"
+      }
+    }
   }
 }`)
 	users_outofofficeCmd.AddCommand(updateCmd)
-	
 	return users_outofofficeCmd
 }
 

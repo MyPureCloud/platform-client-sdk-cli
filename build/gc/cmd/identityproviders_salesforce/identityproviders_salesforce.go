@@ -33,42 +33,55 @@ func Cmdidentityproviders_salesforce() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Empty"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Empty"
+      }
+    }
   }
 }`)
 	identityproviders_salesforceCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/identityproviders/salesforce", utils.FormatPermissions([]string{ "sso:provider:view",  }), utils.GenerateDevCentreLink("GET", "Identity Provider", "/api/v2/identityproviders/salesforce")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Salesforce"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Salesforce"
+      }
+    }
   }
 }`)
 	identityproviders_salesforceCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/identityproviders/salesforce", utils.FormatPermissions([]string{ "sso:provider:add", "sso:provider:edit",  }), utils.GenerateDevCentreLink("PUT", "Identity Provider", "/api/v2/identityproviders/salesforce")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Provider",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Salesforce"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Salesforce"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OAuthProvider"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OAuthProvider"
+      }
+    }
   }
 }`)
 	identityproviders_salesforceCmd.AddCommand(updateCmd)
-	
 	return identityproviders_salesforceCmd
 }
 

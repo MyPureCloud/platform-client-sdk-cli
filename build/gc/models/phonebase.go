@@ -145,57 +145,8 @@ func (o *Phonebase) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Lines = []Linebase{{}} 
-    
-    
-    
      o.Properties = map[string]interface{}{"": Interface{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -212,8 +163,7 @@ func (u *Phonebase) MarshalJSON() ([]byte, error) {
     }
     PhonebaseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -231,8 +181,6 @@ func (u *Phonebase) MarshalJSON() ([]byte, error) {
         
         CreatedBy string `json:"createdBy"`
         
-        
-        
         ModifiedByApp string `json:"modifiedByApp"`
         
         CreatedByApp string `json:"createdByApp"`
@@ -244,84 +192,63 @@ func (u *Phonebase) MarshalJSON() ([]byte, error) {
         Properties map[string]interface{} `json:"properties"`
         
         Capabilities Phonecapabilities `json:"capabilities"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Lines: []Linebase{{}},
         
 
-        
 
         
         Properties: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

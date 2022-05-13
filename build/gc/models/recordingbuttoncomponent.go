@@ -41,16 +41,6 @@ func (o *Recordingbuttoncomponent) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Recordingbuttoncomponent) MarshalJSON() ([]byte, error) {
     }
     RecordingbuttoncomponentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Title string `json:"title"`
         
         Actions Recordingcontentactions `json:"actions"`
         
         IsSelected bool `json:"isSelected"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

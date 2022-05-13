@@ -33,13 +33,6 @@ type Smsphonenumberref struct {
 func (o *Smsphonenumberref) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Smsphonenumberref) MarshalJSON() ([]byte, error) {
     }
     SmsphonenumberrefMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PhoneNumber string `json:"phoneNumber"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

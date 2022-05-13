@@ -33,12 +33,15 @@ func Cmdipranges() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/IpAddressRangeListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/IpAddressRangeListing"
+      }
+    }
   }
 }`)
 	iprangesCmd.AddCommand(listCmd)
-	
 	return iprangesCmd
 }
 

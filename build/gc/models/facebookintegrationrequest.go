@@ -93,35 +93,6 @@ func (o *Facebookintegrationrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -137,8 +108,7 @@ func (u *Facebookintegrationrequest) MarshalJSON() ([]byte, error) {
     }
     FacebookintegrationrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -155,52 +125,38 @@ func (u *Facebookintegrationrequest) MarshalJSON() ([]byte, error) {
         AppId string `json:"appId"`
         
         AppSecret string `json:"appSecret"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

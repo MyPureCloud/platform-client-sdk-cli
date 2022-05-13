@@ -33,12 +33,15 @@ func Cmdtelephony_providers_edges_edgeversionreport() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EdgeVersionReport"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EdgeVersionReport"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_edgeversionreportCmd.AddCommand(getCmd)
-	
 	return telephony_providers_edges_edgeversionreportCmd
 }
 

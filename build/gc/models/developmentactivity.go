@@ -114,43 +114,7 @@ func (o *Developmentactivity) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Attendees = []Userreference{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -167,20 +131,7 @@ func (u *Developmentactivity) MarshalJSON() ([]byte, error) {
     }
     DevelopmentactivityMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -195,68 +146,52 @@ func (u *Developmentactivity) MarshalJSON() ([]byte, error) {
         Attendees []Userreference `json:"attendees"`
         
         IsOverdue bool `json:"isOverdue"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Attendees: []Userreference{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

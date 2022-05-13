@@ -33,13 +33,6 @@ type Workspacesummary struct {
 func (o *Workspacesummary) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Workspacesummary) MarshalJSON() ([]byte, error) {
     }
     WorkspacesummaryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TotalDocumentCount int `json:"totalDocumentCount"`
         
         TotalDocumentByteCount int `json:"totalDocumentByteCount"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

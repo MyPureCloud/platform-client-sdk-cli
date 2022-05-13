@@ -50,19 +50,6 @@ func (o *Trunkmetricsregisters) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,7 +65,8 @@ func (u *Trunkmetricsregisters) MarshalJSON() ([]byte, error) {
     }
     TrunkmetricsregistersMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ProxyAddress string `json:"proxyAddress"`
         
         RegisterState bool `json:"registerState"`
@@ -86,26 +74,20 @@ func (u *Trunkmetricsregisters) MarshalJSON() ([]byte, error) {
         RegisterStateTime time.Time `json:"registerStateTime"`
         
         ErrorInfo Trunkerrorinfo `json:"errorInfo"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

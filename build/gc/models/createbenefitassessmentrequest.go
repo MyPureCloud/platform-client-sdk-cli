@@ -24,11 +24,7 @@ type Createbenefitassessmentrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Createbenefitassessmentrequest) String() string {
-    
-    
      o.QueueIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Createbenefitassessmentrequest) MarshalJSON() ([]byte, error) {
     }
     CreatebenefitassessmentrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        QueueIds []string `json:"queueIds"`
+    return json.Marshal(&struct {
         
+        QueueIds []string `json:"queueIds"`
         *Alias
     }{
-        
 
         
         QueueIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

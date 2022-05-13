@@ -79,31 +79,7 @@ type Sequenceschedule struct {
 func (o *Sequenceschedule) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Intervals = []Scheduleinterval{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -121,14 +97,9 @@ func (u *Sequenceschedule) MarshalJSON() ([]byte, error) {
     }
     SequencescheduleMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
@@ -137,50 +108,37 @@ func (u *Sequenceschedule) MarshalJSON() ([]byte, error) {
         TimeZone string `json:"timeZone"`
         
         Sequence Domainentityref `json:"sequence"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Intervals: []Scheduleinterval{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

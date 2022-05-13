@@ -57,22 +57,6 @@ func (o *Learningmodulereassignsummary) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Learningmodulereassignsummary) MarshalJSON() ([]byte, error) {
     }
     LearningmodulereassignsummaryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TotalReassigned int `json:"totalReassigned"`
         
         CompletedCount int `json:"completedCount"`
@@ -98,30 +83,23 @@ func (u *Learningmodulereassignsummary) MarshalJSON() ([]byte, error) {
         AssignedCount int `json:"assignedCount"`
         
         NotCompletedCount int `json:"notCompletedCount"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

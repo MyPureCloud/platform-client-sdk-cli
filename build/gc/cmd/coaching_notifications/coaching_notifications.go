@@ -34,12 +34,16 @@ func Cmdcoaching_notifications() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CoachingNotification"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingNotification"
+      }
+    }
   }
 }`)
 	coaching_notificationsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Indicates a field in the response which should be expanded. Valid values: appointment")
@@ -48,31 +52,40 @@ func Cmdcoaching_notifications() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	coaching_notificationsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/coaching/notifications/{notificationId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Coaching", "/api/v2/coaching/notifications/{notificationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Change the read state of a notification",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CoachingNotification"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingNotification"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CoachingNotification"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingNotification"
+      }
+    }
   }
 }`)
 	coaching_notificationsCmd.AddCommand(updateCmd)
-	
 	return coaching_notificationsCmd
 }
 

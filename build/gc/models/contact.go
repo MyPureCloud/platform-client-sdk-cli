@@ -71,27 +71,6 @@ func (o *Contact) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -107,10 +86,9 @@ func (u *Contact) MarshalJSON() ([]byte, error) {
     }
     ContactMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Address string `json:"address"`
-        
-        
         
         MediaType string `json:"mediaType"`
         
@@ -121,38 +99,29 @@ func (u *Contact) MarshalJSON() ([]byte, error) {
         CountryCode string `json:"countryCode"`
         
         Integration string `json:"integration"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

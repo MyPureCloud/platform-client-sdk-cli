@@ -49,19 +49,6 @@ func (o *Webmessagingbuttonresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Webmessagingbuttonresponse) MarshalJSON() ([]byte, error) {
     }
     WebmessagingbuttonresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         VarType string `json:"type"`
@@ -85,26 +73,20 @@ func (u *Webmessagingbuttonresponse) MarshalJSON() ([]byte, error) {
         Text string `json:"text"`
         
         Payload string `json:"payload"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

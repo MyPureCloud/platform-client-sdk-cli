@@ -33,13 +33,6 @@ type Pinconfiguration struct {
 func (o *Pinconfiguration) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Pinconfiguration) MarshalJSON() ([]byte, error) {
     }
     PinconfigurationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MinimumLength int `json:"minimumLength"`
         
         MaximumLength int `json:"maximumLength"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

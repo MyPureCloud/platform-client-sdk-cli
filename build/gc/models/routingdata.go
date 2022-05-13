@@ -69,32 +69,10 @@ func (o *Routingdata) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.SkillIds = []string{""} 
-    
-    
-    
      o.PreferredAgentIds = []string{""} 
-    
-    
-    
      o.ScoredAgents = []Scoredagent{{}} 
-    
-    
-    
      o.RoutingFlags = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Routingdata) MarshalJSON() ([]byte, error) {
     }
     RoutingdataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QueueId string `json:"queueId"`
         
         LanguageId string `json:"languageId"`
@@ -124,46 +103,37 @@ func (u *Routingdata) MarshalJSON() ([]byte, error) {
         ScoredAgents []Scoredagent `json:"scoredAgents"`
         
         RoutingFlags []string `json:"routingFlags"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SkillIds: []string{""},
         
 
-        
 
         
         PreferredAgentIds: []string{""},
         
 
-        
 
         
         ScoredAgents: []Scoredagent{{}},
         
 
-        
 
         
         RoutingFlags: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

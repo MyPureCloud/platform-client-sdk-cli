@@ -93,36 +93,7 @@ func (o *Buschedulemetadata) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ManagementUnits = []Bumanagementunitschedulesummary{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -138,8 +109,7 @@ func (u *Buschedulemetadata) MarshalJSON() ([]byte, error) {
     }
     BuschedulemetadataMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         WeekDate time.Time `json:"weekDate"`
         
@@ -156,54 +126,40 @@ func (u *Buschedulemetadata) MarshalJSON() ([]byte, error) {
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         
         ManagementUnits []Bumanagementunitschedulesummary `json:"managementUnits"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ManagementUnits: []Bumanagementunitschedulesummary{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

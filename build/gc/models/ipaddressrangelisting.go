@@ -24,11 +24,7 @@ type Ipaddressrangelisting struct {
 
 // String returns a JSON representation of the model
 func (o *Ipaddressrangelisting) String() string {
-    
-    
      o.Entities = []Ipaddressrange{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Ipaddressrangelisting) MarshalJSON() ([]byte, error) {
     }
     IpaddressrangelistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Ipaddressrange `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Ipaddressrange `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Ipaddressrange{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

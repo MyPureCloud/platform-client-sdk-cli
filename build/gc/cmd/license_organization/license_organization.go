@@ -30,26 +30,31 @@ func init() {
 func Cmdlicense_organization() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/license/organization", utils.FormatPermissions([]string{ "authorization:grant:add",  }), utils.GenerateDevCentreLink("POST", "License", "/api/v2/license/organization")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The license assignments to update.",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/LicenseBatchAssignmentRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LicenseBatchAssignmentRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/LicenseUpdateStatus"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/LicenseUpdateStatus"
+        }
+      }
     }
   }
 }`)
 	license_organizationCmd.AddCommand(createCmd)
-	
 	return license_organizationCmd
 }
 

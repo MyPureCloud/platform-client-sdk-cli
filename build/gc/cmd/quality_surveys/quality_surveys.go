@@ -33,12 +33,15 @@ func Cmdquality_surveys() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Survey"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Survey"
+      }
+    }
   }
 }`)
 	quality_surveysCmd.AddCommand(getCmd)
-	
 	return quality_surveysCmd
 }
 

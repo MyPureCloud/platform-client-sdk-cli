@@ -42,17 +42,7 @@ type Userauthorization struct {
 
 // String returns a JSON representation of the model
 func (o *Userauthorization) String() string {
-    
-    
      o.Roles = []Domainrole{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -68,36 +58,25 @@ func (u *Userauthorization) MarshalJSON() ([]byte, error) {
     }
     UserauthorizationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Roles []Domainrole `json:"roles"`
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
         Roles: []Domainrole{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -58,22 +58,6 @@ func (o *Segment) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,7 +73,8 @@ func (u *Segment) MarshalJSON() ([]byte, error) {
     }
     SegmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         StartTime time.Time `json:"startTime"`
         
         EndTime time.Time `json:"endTime"`
@@ -99,30 +84,23 @@ func (u *Segment) MarshalJSON() ([]byte, error) {
         HowEnded string `json:"howEnded"`
         
         DisconnectType string `json:"disconnectType"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

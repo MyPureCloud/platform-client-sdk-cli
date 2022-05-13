@@ -60,29 +60,10 @@ type Buagentschedulequeryresponse struct {
 // String returns a JSON representation of the model
 func (o *Buagentschedulequeryresponse) String() string {
     
-    
-    
-    
-    
-    
      o.Shifts = []Buagentscheduleshift{{}} 
-    
-    
-    
      o.FullDayTimeOffMarkers = []Bufulldaytimeoffmarker{{}} 
     
-    
-    
-    
-    
-    
-    
      o.WorkPlansPerWeek = []Workplanreference{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -99,7 +80,8 @@ func (u *Buagentschedulequeryresponse) MarshalJSON() ([]byte, error) {
     }
     BuagentschedulequeryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         User Userreference `json:"user"`
         
         Shifts []Buagentscheduleshift `json:"shifts"`
@@ -111,40 +93,32 @@ func (u *Buagentschedulequeryresponse) MarshalJSON() ([]byte, error) {
         WorkPlansPerWeek []Workplanreference `json:"workPlansPerWeek"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Shifts: []Buagentscheduleshift{{}},
         
 
-        
 
         
         FullDayTimeOffMarkers: []Bufulldaytimeoffmarker{{}},
         
 
-        
 
         
 
-        
 
         
         WorkPlansPerWeek: []Workplanreference{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

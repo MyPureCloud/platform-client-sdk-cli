@@ -56,23 +56,7 @@ func (o *Surveyquestiongroupscore) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.QuestionScores = []Surveyquestionscore{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Surveyquestiongroupscore) MarshalJSON() ([]byte, error) {
     }
     SurveyquestiongroupscoreMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QuestionGroupId string `json:"questionGroupId"`
         
         TotalScore float32 `json:"totalScore"`
@@ -98,32 +83,25 @@ func (u *Surveyquestiongroupscore) MarshalJSON() ([]byte, error) {
         MarkedNA bool `json:"markedNA"`
         
         QuestionScores []Surveyquestionscore `json:"questionScores"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         QuestionScores: []Surveyquestionscore{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

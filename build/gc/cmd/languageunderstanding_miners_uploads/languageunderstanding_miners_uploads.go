@@ -30,23 +30,28 @@ func init() {
 func Cmdlanguageunderstanding_miners_uploads() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/languageunderstanding/miners/{minerId}/uploads", utils.FormatPermissions([]string{ "languageUnderstanding:miner:upload",  }), utils.GenerateDevCentreLink("POST", "Uploads", "/api/v2/languageunderstanding/miners/{minerId}/uploads")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Empty"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Empty"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Presigned URL successfully created.",
-  "schema" : {
-    "$ref" : "#/definitions/UploadUrlResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UploadUrlResponse"
+      }
+    }
   }
 }`)
 	languageunderstanding_miners_uploadsCmd.AddCommand(createCmd)
-	
 	return languageunderstanding_miners_uploadsCmd
 }
 
@@ -62,7 +67,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Empty{}
+			reqModel := models.Interface{}
 			utils.Render(reqModel.String())
 			
 			return

@@ -24,11 +24,7 @@ type Entitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Entitylisting) String() string {
-    
-    
      o.Entities = []interface{}{} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Entitylisting) MarshalJSON() ([]byte, error) {
     }
     EntitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []interface{} `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []interface{} `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []interface{}{},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -52,21 +52,7 @@ type Domainpermissioncollection struct {
 func (o *Domainpermissioncollection) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.PermissionMap = map[string][]Domainpermission{"": {}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -82,42 +68,32 @@ func (u *Domainpermissioncollection) MarshalJSON() ([]byte, error) {
     }
     DomainpermissioncollectionMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         Domain string `json:"domain"`
         
         PermissionMap map[string][]Domainpermission `json:"permissionMap"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         PermissionMap: map[string][]Domainpermission{"": {}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

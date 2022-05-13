@@ -57,22 +57,6 @@ func (o *Address) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Address) MarshalJSON() ([]byte, error) {
     }
     AddressMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         NameRaw string `json:"nameRaw"`
@@ -98,30 +83,23 @@ func (u *Address) MarshalJSON() ([]byte, error) {
         AddressRaw string `json:"addressRaw"`
         
         AddressDisplayable string `json:"addressDisplayable"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

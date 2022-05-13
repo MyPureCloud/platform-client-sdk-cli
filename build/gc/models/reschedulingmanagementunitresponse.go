@@ -33,13 +33,6 @@ type Reschedulingmanagementunitresponse struct {
 func (o *Reschedulingmanagementunitresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Reschedulingmanagementunitresponse) MarshalJSON() ([]byte, error) {
     }
     ReschedulingmanagementunitresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ManagementUnit Managementunitreference `json:"managementUnit"`
         
         Applied bool `json:"applied"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

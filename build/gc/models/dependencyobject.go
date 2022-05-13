@@ -93,38 +93,8 @@ func (o *Dependencyobject) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ConsumedResources = []Dependency{{}} 
-    
-    
-    
      o.ConsumingResources = []Dependency{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -140,7 +110,8 @@ func (u *Dependencyobject) MarshalJSON() ([]byte, error) {
     }
     DependencyobjectMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -158,56 +129,42 @@ func (u *Dependencyobject) MarshalJSON() ([]byte, error) {
         ConsumedResources []Dependency `json:"consumedResources"`
         
         ConsumingResources []Dependency `json:"consumingResources"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ConsumedResources: []Dependency{{}},
         
 
-        
 
         
         ConsumingResources: []Dependency{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

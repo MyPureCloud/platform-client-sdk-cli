@@ -76,30 +76,7 @@ func (o *Openintegrationupdaterequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.WebhookHeaders = map[string]string{"": ""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -115,8 +92,7 @@ func (u *Openintegrationupdaterequest) MarshalJSON() ([]byte, error) {
     }
     OpenintegrationupdaterequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -129,46 +105,34 @@ func (u *Openintegrationupdaterequest) MarshalJSON() ([]byte, error) {
         OutboundNotificationWebhookSignatureSecretToken string `json:"outboundNotificationWebhookSignatureSecretToken"`
         
         WebhookHeaders map[string]string `json:"webhookHeaders"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         WebhookHeaders: map[string]string{"": ""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

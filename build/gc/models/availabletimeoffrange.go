@@ -63,27 +63,8 @@ func (o *Availabletimeoffrange) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AvailableMinutesPerInterval = []int{0} 
-    
-    
-    
      o.WaitlistedRequestsPerInterval = []int{0} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -100,7 +81,8 @@ func (u *Availabletimeoffrange) MarshalJSON() ([]byte, error) {
     }
     AvailabletimeoffrangeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TimeOffLimit Timeofflimitreference `json:"timeOffLimit"`
         
         StartDate time.Time `json:"startDate"`
@@ -112,38 +94,30 @@ func (u *Availabletimeoffrange) MarshalJSON() ([]byte, error) {
         WaitlistedRequestsPerInterval []int `json:"waitlistedRequestsPerInterval"`
         
         WaitlistEnabled bool `json:"waitlistEnabled"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AvailableMinutesPerInterval: []int{0},
         
 
-        
 
         
         WaitlistedRequestsPerInterval: []int{0},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

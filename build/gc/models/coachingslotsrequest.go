@@ -54,25 +54,9 @@ type Coachingslotsrequest struct {
 func (o *Coachingslotsrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.AttendeeIds = []string{""} 
-    
-    
-    
      o.FacilitatorIds = []string{""} 
-    
-    
-    
      o.InterruptibleAppointmentIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Coachingslotsrequest) MarshalJSON() ([]byte, error) {
     }
     CoachingslotsrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         LengthInMinutes int `json:"lengthInMinutes"`
@@ -98,36 +83,29 @@ func (u *Coachingslotsrequest) MarshalJSON() ([]byte, error) {
         FacilitatorIds []string `json:"facilitatorIds"`
         
         InterruptibleAppointmentIds []string `json:"interruptibleAppointmentIds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         AttendeeIds: []string{""},
         
 
-        
 
         
         FacilitatorIds: []string{""},
         
 
-        
 
         
         InterruptibleAppointmentIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

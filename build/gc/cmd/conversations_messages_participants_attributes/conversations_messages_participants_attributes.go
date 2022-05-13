@@ -30,19 +30,21 @@ func init() {
 func Cmdconversations_messages_participants_attributes() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/ParticipantAttributes"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ParticipantAttributes"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  "description" : "Accepted"
+  "description" : "Accepted",
+  "content" : { }
 }`)
 	conversations_messages_participants_attributesCmd.AddCommand(updateCmd)
-	
 	return conversations_messages_participants_attributesCmd
 }
 

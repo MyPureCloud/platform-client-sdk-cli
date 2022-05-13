@@ -33,12 +33,15 @@ func Cmdoutbound_contactlists_importstatus() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ImportStatus"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ImportStatus"
+      }
+    }
   }
 }`)
 	outbound_contactlists_importstatusCmd.AddCommand(getCmd)
-	
 	return outbound_contactlists_importstatusCmd
 }
 

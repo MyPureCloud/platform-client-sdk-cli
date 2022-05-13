@@ -30,42 +30,53 @@ func init() {
 func Cmdrouting_wrapupcodes() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/wrapupcodes", utils.FormatPermissions([]string{ "routing:wrapupCode:add",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/wrapupcodes")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "WrapupCode",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/WrapupCode"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WrapupCode"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WrapupCode"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WrapupCode"
+      }
+    }
   }
 }`)
 	routing_wrapupcodesCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/wrapupcodes/{codeId}", utils.FormatPermissions([]string{ "routing:wrapupCode:delete",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/wrapupcodes/{codeId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	routing_wrapupcodesCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/wrapupcodes/{codeId}", utils.FormatPermissions([]string{ "routing:wrapupCode:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/wrapupcodes/{codeId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WrapupCode"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WrapupCode"
+      }
+    }
   }
 }`)
 	routing_wrapupcodesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by Valid values: name, id")
@@ -76,31 +87,40 @@ func Cmdrouting_wrapupcodes() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	routing_wrapupcodesCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/wrapupcodes/{codeId}", utils.FormatPermissions([]string{ "routing:wrapupCode:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/wrapupcodes/{codeId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "WrapupCode",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/WrapupCode"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WrapupCode"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WrapupCode"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WrapupCode"
+      }
+    }
   }
 }`)
 	routing_wrapupcodesCmd.AddCommand(updateCmd)
-	
 	return routing_wrapupcodesCmd
 }
 

@@ -69,29 +69,7 @@ func (o *Learningmodulerequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.InformSteps = []Learningmoduleinformsteprequest{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -110,7 +88,8 @@ func (u *Learningmodulerequest) MarshalJSON() ([]byte, error) {
     }
     LearningmodulerequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Description string `json:"description"`
@@ -124,40 +103,31 @@ func (u *Learningmodulerequest) MarshalJSON() ([]byte, error) {
         AssessmentForm Assessmentform `json:"assessmentForm"`
         
         CoverArt Learningmodulecoverartrequest `json:"coverArt"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         InformSteps: []Learningmoduleinformsteprequest{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

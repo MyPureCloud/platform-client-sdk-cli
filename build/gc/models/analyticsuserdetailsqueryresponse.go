@@ -38,18 +38,8 @@ type Analyticsuserdetailsqueryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticsuserdetailsqueryresponse) String() string {
-    
-    
      o.UserDetails = []Analyticsuserdetail{{}} 
-    
-    
-    
      o.Aggregations = []Aggregationresult{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,32 +56,28 @@ func (u *Analyticsuserdetailsqueryresponse) MarshalJSON() ([]byte, error) {
     }
     AnalyticsuserdetailsqueryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UserDetails []Analyticsuserdetail `json:"userDetails"`
         
         Aggregations []Aggregationresult `json:"aggregations"`
         
         TotalHits int `json:"totalHits"`
-        
         *Alias
     }{
-        
 
         
         UserDetails: []Analyticsuserdetail{{}},
         
 
-        
 
         
         Aggregations: []Aggregationresult{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

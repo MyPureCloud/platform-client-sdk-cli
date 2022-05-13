@@ -76,36 +76,11 @@ func (o *Topicrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ProgramIds = []string{""} 
-    
-    
-    
      o.Tags = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Phrases = []Phrase{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -121,7 +96,8 @@ func (u *Topicrequest) MarshalJSON() ([]byte, error) {
     }
     TopicrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Description string `json:"description"`
@@ -137,48 +113,38 @@ func (u *Topicrequest) MarshalJSON() ([]byte, error) {
         Participants string `json:"participants"`
         
         Phrases []Phrase `json:"phrases"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ProgramIds: []string{""},
         
 
-        
 
         
         Tags: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Phrases: []Phrase{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

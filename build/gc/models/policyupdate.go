@@ -25,10 +25,6 @@ type Policyupdate struct {
 // String returns a JSON representation of the model
 func (o *Policyupdate) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Policyupdate) MarshalJSON() ([]byte, error) {
     }
     PolicyupdateMarshalled = true
 
-    return json.Marshal(&struct { 
-        Enabled bool `json:"enabled"`
+    return json.Marshal(&struct {
         
+        Enabled bool `json:"enabled"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

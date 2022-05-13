@@ -25,10 +25,6 @@ type Messengerhomescreen struct {
 // String returns a JSON representation of the model
 func (o *Messengerhomescreen) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Messengerhomescreen) MarshalJSON() ([]byte, error) {
     }
     MessengerhomescreenMarshalled = true
 
-    return json.Marshal(&struct { 
-        Enabled bool `json:"enabled"`
+    return json.Marshal(&struct {
         
+        Enabled bool `json:"enabled"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

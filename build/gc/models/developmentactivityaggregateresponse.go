@@ -24,11 +24,7 @@ type Developmentactivityaggregateresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Developmentactivityaggregateresponse) String() string {
-    
-    
      o.Results = []Developmentactivityaggregatequeryresponsegroupeddata{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Developmentactivityaggregateresponse) MarshalJSON() ([]byte, error) {
     }
     DevelopmentactivityaggregateresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Results []Developmentactivityaggregatequeryresponsegroupeddata `json:"results"`
+    return json.Marshal(&struct {
         
+        Results []Developmentactivityaggregatequeryresponsegroupeddata `json:"results"`
         *Alias
     }{
-        
 
         
         Results: []Developmentactivityaggregatequeryresponsegroupeddata{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

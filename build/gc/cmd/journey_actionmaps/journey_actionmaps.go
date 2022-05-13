@@ -30,41 +30,52 @@ func init() {
 func Cmdjourney_actionmaps() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/journey/actionmaps", utils.FormatPermissions([]string{ "journey:actionmap:add",  }), utils.GenerateDevCentreLink("POST", "Journey", "/api/v2/journey/actionmaps")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/ActionMap"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ActionMap"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ActionMap"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ActionMap"
+      }
+    }
   }
 }`)
 	journey_actionmapsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/journey/actionmaps/{actionMapId}", utils.FormatPermissions([]string{ "journey:actionmap:delete",  }), utils.GenerateDevCentreLink("DELETE", "Journey", "/api/v2/journey/actionmaps/{actionMapId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Action map deleted."
+  "description" : "Action map deleted.",
+  "content" : { }
 }`)
 	journey_actionmapsCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/journey/actionmaps/{actionMapId}", utils.FormatPermissions([]string{ "journey:actionmap:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/actionmaps/{actionMapId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ActionMap"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ActionMap"
+      }
+    }
   }
 }`)
 	journey_actionmapsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Field(s) to sort by. Prefix with `-` for descending (e.g. sortBy=displayName,-createdDate).")
@@ -78,30 +89,39 @@ func Cmdjourney_actionmaps() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	journey_actionmapsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/journey/actionmaps/{actionMapId}", utils.FormatPermissions([]string{ "journey:actionmap:edit",  }), utils.GenerateDevCentreLink("PATCH", "Journey", "/api/v2/journey/actionmaps/{actionMapId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/PatchActionMap"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PatchActionMap"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ActionMap"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ActionMap"
+      }
+    }
   }
 }`)
 	journey_actionmapsCmd.AddCommand(updateCmd)
-	
 	return journey_actionmapsCmd
 }
 

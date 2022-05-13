@@ -33,12 +33,15 @@ func Cmdoutbound_campaigns_interactions() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CampaignInteractions"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CampaignInteractions"
+      }
+    }
   }
 }`)
 	outbound_campaigns_interactionsCmd.AddCommand(getCmd)
-	
 	return outbound_campaigns_interactionsCmd
 }
 

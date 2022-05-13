@@ -51,22 +51,8 @@ type Messageconversation struct {
 // String returns a JSON representation of the model
 func (o *Messageconversation) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Participants = []Messagemediaparticipant{{}} 
-    
-    
-    
      o.OtherMediaUris = []string{""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -82,44 +68,34 @@ func (u *Messageconversation) MarshalJSON() ([]byte, error) {
     }
     MessageconversationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         Participants []Messagemediaparticipant `json:"participants"`
         
         OtherMediaUris []string `json:"otherMediaUris"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Participants: []Messagemediaparticipant{{}},
         
 
-        
 
         
         OtherMediaUris: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

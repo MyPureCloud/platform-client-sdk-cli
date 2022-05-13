@@ -33,23 +33,30 @@ func Cmdoauth_authorizations() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OAuthAuthorization"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OAuthAuthorization"
+      }
+    }
   }
 }`)
 	oauth_authorizationsCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/oauth/authorizations", utils.FormatPermissions([]string{ "oauth:client:authorize",  }), utils.GenerateDevCentreLink("GET", "OAuth", "/api/v2/oauth/authorizations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OAuthAuthorizationListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OAuthAuthorizationListing"
+      }
+    }
   }
 }`)
 	oauth_authorizationsCmd.AddCommand(listCmd)
-	
 	return oauth_authorizationsCmd
 }
 

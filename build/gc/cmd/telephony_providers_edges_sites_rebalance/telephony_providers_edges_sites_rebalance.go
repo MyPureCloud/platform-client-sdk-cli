@@ -32,10 +32,10 @@ func Cmdtelephony_providers_edges_sites_rebalance() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Accepted - Processing the Rebalance"
+  "description" : "Accepted - Processing the Rebalance",
+  "content" : { }
 }`)
 	telephony_providers_edges_sites_rebalanceCmd.AddCommand(createCmd)
-	
 	return telephony_providers_edges_sites_rebalanceCmd
 }
 

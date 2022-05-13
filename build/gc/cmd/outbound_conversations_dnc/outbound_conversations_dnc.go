@@ -33,8 +33,12 @@ func Cmdoutbound_conversations_dnc() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
@@ -48,7 +52,6 @@ func Cmdoutbound_conversations_dnc() *cobra.Command {
   }
 }`)
 	outbound_conversations_dncCmd.AddCommand(createCmd)
-	
 	return outbound_conversations_dncCmd
 }
 

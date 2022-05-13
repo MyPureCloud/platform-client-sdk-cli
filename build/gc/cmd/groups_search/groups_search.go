@@ -30,23 +30,29 @@ func init() {
 func Cmdgroups_search() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/groups/search", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Groups", "/api/v2/groups/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Search request options",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/GroupSearchRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GroupSearchRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/GroupsSearchResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GroupsSearchResponse"
+      }
+    }
   }
 }`)
 	groups_searchCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "q64", "", "q64 - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "expand")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/groups/search", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Groups", "/api/v2/groups/search")))
@@ -55,12 +61,15 @@ func Cmdgroups_search() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	groups_searchCmd.AddCommand(listCmd)
-	
 	return groups_searchCmd
 }
 

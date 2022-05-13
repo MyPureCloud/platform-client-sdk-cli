@@ -30,42 +30,52 @@ func init() {
 func Cmdwebdeployments_configurations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/webdeployments/configurations", utils.FormatPermissions([]string{ "webDeployments:configuration:add",  }), utils.GenerateDevCentreLink("POST", "Web Deployments", "/api/v2/webdeployments/configurations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "configurationVersion",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/WebDeploymentConfigurationVersion"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebDeploymentConfigurationVersion"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebDeploymentConfigurationVersion"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebDeploymentConfigurationVersion"
+      }
+    }
   }
 }`)
 	webdeployments_configurationsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/webdeployments/configurations/{configurationId}", utils.FormatPermissions([]string{ "webDeployments:configuration:delete",  }), utils.GenerateDevCentreLink("DELETE", "Web Deployments", "/api/v2/webdeployments/configurations/{configurationId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "The configuration versions were deleted successfully"
+  "description" : "The configuration versions were deleted successfully",
+  "content" : { }
 }`)
 	webdeployments_configurationsCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "bool", "showOnlyPublished", "false", "Get only configuration drafts with published versions")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/webdeployments/configurations", utils.FormatPermissions([]string{ "webDeployments:configuration:view",  }), utils.GenerateDevCentreLink("GET", "Web Deployments", "/api/v2/webdeployments/configurations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebDeploymentConfigurationVersionEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebDeploymentConfigurationVersionEntityListing"
+      }
+    }
   }
 }`)
 	webdeployments_configurationsCmd.AddCommand(listCmd)
-	
 	return webdeployments_configurationsCmd
 }
 

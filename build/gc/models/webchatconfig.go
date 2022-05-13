@@ -25,10 +25,6 @@ type Webchatconfig struct {
 // String returns a JSON representation of the model
 func (o *Webchatconfig) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Webchatconfig) MarshalJSON() ([]byte, error) {
     }
     WebchatconfigMarshalled = true
 
-    return json.Marshal(&struct { 
-        WebChatSkin string `json:"webChatSkin"`
+    return json.Marshal(&struct {
         
+        WebChatSkin string `json:"webChatSkin"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

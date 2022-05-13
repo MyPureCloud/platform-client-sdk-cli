@@ -35,15 +35,18 @@ func Cmdquality_forms_evaluations_bulk_contexts() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/EvaluationForm"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/EvaluationForm"
+        }
+      }
     }
   }
 }`)
 	quality_forms_evaluations_bulk_contextsCmd.AddCommand(listCmd)
-	
 	return quality_forms_evaluations_bulk_contextsCmd
 }
 

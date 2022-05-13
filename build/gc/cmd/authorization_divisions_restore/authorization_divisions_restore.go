@@ -30,23 +30,28 @@ func init() {
 func Cmdauthorization_divisions_restore() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/divisions/{divisionId}/restore", utils.FormatPermissions([]string{ "authorization:division:add",  }), utils.GenerateDevCentreLink("POST", "Authorization", "/api/v2/authorization/divisions/{divisionId}/restore")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Recreated division data",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/AuthzDivision"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AuthzDivision"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AuthzDivision"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AuthzDivision"
+      }
+    }
   }
 }`)
 	authorization_divisions_restoreCmd.AddCommand(createCmd)
-	
 	return authorization_divisions_restoreCmd
 }
 

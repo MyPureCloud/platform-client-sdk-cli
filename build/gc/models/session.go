@@ -314,68 +314,10 @@ func (o *Session) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.OutcomeAchievements = []Outcomeachievement{{}} 
-    
-    
-    
      o.SegmentAssignments = []Sessionsegmentassignment{{}} 
-    
-    
-    
      o.Attributes = map[string]Customeventattribute{"": {}} 
-    
-    
-    
      o.AttributeLists = map[string]Customeventattributelist{"": {}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -394,72 +336,7 @@ func (o *Session) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ConversationChannels = []Conversationchannel{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -484,8 +361,7 @@ func (u *Session) MarshalJSON() ([]byte, error) {
     }
     SessionMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         CustomerId string `json:"customerId"`
         
@@ -555,203 +431,153 @@ func (u *Session) MarshalJSON() ([]byte, error) {
         
         Authenticated bool `json:"authenticated"`
         
-        
-        
         CreatedDate time.Time `json:"createdDate"`
         
         EndedDate time.Time `json:"endedDate"`
         
-        
-        
         AwayDate time.Time `json:"awayDate"`
         
         IdleDate time.Time `json:"idleDate"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         OutcomeAchievements: []Outcomeachievement{{}},
         
 
-        
 
         
         SegmentAssignments: []Sessionsegmentassignment{{}},
         
 
-        
 
         
         Attributes: map[string]Customeventattribute{"": {}},
         
 
-        
 
         
         AttributeLists: map[string]Customeventattributelist{"": {}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SearchTerms: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ConversationChannels: []Conversationchannel{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

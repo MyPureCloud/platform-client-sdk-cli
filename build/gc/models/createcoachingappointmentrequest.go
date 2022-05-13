@@ -93,42 +93,11 @@ func (o *Createcoachingappointmentrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AttendeeIds = []string{""} 
-    
-    
-    
      o.ConversationIds = []string{""} 
-    
-    
-    
      o.DocumentIds = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.ExternalLinks = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -144,7 +113,8 @@ func (u *Createcoachingappointmentrequest) MarshalJSON() ([]byte, error) {
     }
     CreatecoachingappointmentrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Description string `json:"description"`
@@ -164,58 +134,46 @@ func (u *Createcoachingappointmentrequest) MarshalJSON() ([]byte, error) {
         WfmSchedule Wfmschedulereference `json:"wfmSchedule"`
         
         ExternalLinks []string `json:"externalLinks"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AttendeeIds: []string{""},
         
 
-        
 
         
         ConversationIds: []string{""},
         
 
-        
 
         
         DocumentIds: []string{""},
         
 
-        
 
         
 
-        
 
         
         ExternalLinks: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

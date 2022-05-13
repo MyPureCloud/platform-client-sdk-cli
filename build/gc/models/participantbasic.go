@@ -370,156 +370,17 @@ func (o *Participantbasic) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Attributes = map[string]string{"": ""} 
-    
-    
-    
      o.Calls = []Callbasic{{}} 
-    
-    
-    
      o.Callbacks = []Callbackbasic{{}} 
-    
-    
-    
      o.Chats = []Conversationchat{{}} 
-    
-    
-    
      o.Cobrowsesessions = []Cobrowsesession{{}} 
-    
-    
-    
      o.Emails = []Email{{}} 
-    
-    
-    
      o.Messages = []Message{{}} 
-    
-    
-    
      o.Screenshares = []Screenshare{{}} 
-    
-    
-    
      o.SocialExpressions = []Socialexpression{{}} 
-    
-    
-    
      o.Videos = []Video{{}} 
-    
-    
-    
      o.Evaluations = []Evaluation{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -540,7 +401,8 @@ func (u *Participantbasic) MarshalJSON() ([]byte, error) {
     }
     ParticipantbasicMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         StartTime time.Time `json:"startTime"`
@@ -632,216 +494,168 @@ func (u *Participantbasic) MarshalJSON() ([]byte, error) {
         EndAcwTime time.Time `json:"endAcwTime"`
         
         BargedParticipantId string `json:"bargedParticipantId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Attributes: map[string]string{"": ""},
         
 
-        
 
         
         Calls: []Callbasic{{}},
         
 
-        
 
         
         Callbacks: []Callbackbasic{{}},
         
 
-        
 
         
         Chats: []Conversationchat{{}},
         
 
-        
 
         
         Cobrowsesessions: []Cobrowsesession{{}},
         
 
-        
 
         
         Emails: []Email{{}},
         
 
-        
 
         
         Messages: []Message{{}},
         
 
-        
 
         
         Screenshares: []Screenshare{{}},
         
 
-        
 
         
         SocialExpressions: []Socialexpression{{}},
         
 
-        
 
         
         Videos: []Video{{}},
         
 
-        
 
         
         Evaluations: []Evaluation{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

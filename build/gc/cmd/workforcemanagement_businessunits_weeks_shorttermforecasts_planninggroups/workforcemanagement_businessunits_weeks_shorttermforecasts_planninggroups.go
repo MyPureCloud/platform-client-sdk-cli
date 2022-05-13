@@ -33,12 +33,15 @@ func Cmdworkforcemanagement_businessunits_weeks_shorttermforecasts_planninggroup
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ForecastPlanningGroupsResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ForecastPlanningGroupsResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_shorttermforecasts_planninggroupsCmd.AddCommand(listCmd)
-	
 	return workforcemanagement_businessunits_weeks_shorttermforecasts_planninggroupsCmd
 }
 

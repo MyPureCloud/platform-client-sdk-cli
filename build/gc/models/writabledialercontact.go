@@ -60,27 +60,9 @@ type Writabledialercontact struct {
 func (o *Writabledialercontact) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Data = map[string]interface{}{"": Interface{}} 
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.PhoneNumberStatus = map[string]Phonenumberstatus{"": {}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -96,50 +78,41 @@ func (u *Writabledialercontact) MarshalJSON() ([]byte, error) {
     }
     WritabledialercontactMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         ContactListId string `json:"contactListId"`
         
         Data map[string]interface{} `json:"data"`
         
-        
-        
         Callable bool `json:"callable"`
         
         PhoneNumberStatus map[string]Phonenumberstatus `json:"phoneNumberStatus"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Data: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         PhoneNumberStatus: map[string]Phonenumberstatus{"": {}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,23 +30,28 @@ func init() {
 func Cmdlanguageunderstanding_domains_versions_detect() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect", utils.FormatPermissions([]string{ "languageUnderstanding:nluDomainVersion:view", "dialog:botVersion:view",  }), utils.GenerateDevCentreLink("POST", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The input data to perform detection on.",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/NluDetectionRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NluDetectionRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Requested NLU detection for the given input using the specified NLU domain version",
-  "schema" : {
-    "$ref" : "#/definitions/NluDetectionResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NluDetectionResponse"
+      }
+    }
   }
 }`)
 	languageunderstanding_domains_versions_detectCmd.AddCommand(createCmd)
-	
 	return languageunderstanding_domains_versions_detectCmd
 }
 

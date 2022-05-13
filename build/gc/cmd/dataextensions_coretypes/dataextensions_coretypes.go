@@ -33,23 +33,30 @@ func Cmddataextensions_coretypes() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Coretype"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Coretype"
+      }
+    }
   }
 }`)
 	dataextensions_coretypesCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/dataextensions/coretypes", utils.FormatPermissions([]string{ "externalContacts:customFields:view",  }), utils.GenerateDevCentreLink("GET", "Data Extensions", "/api/v2/dataextensions/coretypes")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CoretypeListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoretypeListing"
+      }
+    }
   }
 }`)
 	dataextensions_coretypesCmd.AddCommand(listCmd)
-	
 	return dataextensions_coretypesCmd
 }
 

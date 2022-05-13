@@ -41,16 +41,6 @@ func (o *Timeslot) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Timeslot) MarshalJSON() ([]byte, error) {
     }
     TimeslotMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         StartTime string `json:"startTime"`
         
         StopTime string `json:"stopTime"`
         
         Day int `json:"day"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

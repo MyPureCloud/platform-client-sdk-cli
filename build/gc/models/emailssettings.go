@@ -25,10 +25,6 @@ type Emailssettings struct {
 // String returns a JSON representation of the model
 func (o *Emailssettings) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Emailssettings) MarshalJSON() ([]byte, error) {
     }
     EmailssettingsMarshalled = true
 
-    return json.Marshal(&struct { 
-        SendingSizeLimit int `json:"sendingSizeLimit"`
+    return json.Marshal(&struct {
         
+        SendingSizeLimit int `json:"sendingSizeLimit"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

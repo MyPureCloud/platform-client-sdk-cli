@@ -73,38 +73,13 @@ type Policyconditions struct {
 
 // String returns a JSON representation of the model
 func (o *Policyconditions) String() string {
-    
-    
      o.ForUsers = []User{{}} 
-    
-    
-    
      o.Directions = []string{""} 
-    
-    
-    
      o.DateRanges = []string{""} 
-    
-    
-    
      o.MediaTypes = []string{""} 
-    
-    
-    
      o.ForQueues = []Queue{{}} 
     
-    
-    
-    
-    
-    
-    
      o.WrapupCodes = []Wrapupcode{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -121,7 +96,8 @@ func (u *Policyconditions) MarshalJSON() ([]byte, error) {
     }
     PolicyconditionsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ForUsers []User `json:"forUsers"`
         
         Directions []string `json:"directions"`
@@ -137,54 +113,44 @@ func (u *Policyconditions) MarshalJSON() ([]byte, error) {
         WrapupCodes []Wrapupcode `json:"wrapupCodes"`
         
         TimeAllowed Timeallowed `json:"timeAllowed"`
-        
         *Alias
     }{
-        
 
         
         ForUsers: []User{{}},
         
 
-        
 
         
         Directions: []string{""},
         
 
-        
 
         
         DateRanges: []string{""},
         
 
-        
 
         
         MediaTypes: []string{""},
         
 
-        
 
         
         ForQueues: []Queue{{}},
         
 
-        
 
         
 
-        
 
         
         WrapupCodes: []Wrapupcode{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

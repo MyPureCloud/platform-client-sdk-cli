@@ -25,10 +25,6 @@ type Unreadmetric struct {
 // String returns a JSON representation of the model
 func (o *Unreadmetric) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Unreadmetric) MarshalJSON() ([]byte, error) {
     }
     UnreadmetricMarshalled = true
 
-    return json.Marshal(&struct { 
-        Count int `json:"count"`
+    return json.Marshal(&struct {
         
+        Count int `json:"count"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

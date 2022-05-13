@@ -33,13 +33,6 @@ type Emailcolumn struct {
 func (o *Emailcolumn) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Emailcolumn) MarshalJSON() ([]byte, error) {
     }
     EmailcolumnMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ColumnName string `json:"columnName"`
         
         VarType string `json:"type"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

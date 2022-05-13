@@ -79,33 +79,7 @@ type Faxsendrequest struct {
 // String returns a JSON representation of the model
 func (o *Faxsendrequest) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Addresses = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -126,8 +100,7 @@ func (u *Faxsendrequest) MarshalJSON() ([]byte, error) {
     }
     FaxsendrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -142,50 +115,37 @@ func (u *Faxsendrequest) MarshalJSON() ([]byte, error) {
         CoverSheet Coversheet `json:"coverSheet"`
         
         TimeZoneOffsetMinutes int `json:"timeZoneOffsetMinutes"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Addresses: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

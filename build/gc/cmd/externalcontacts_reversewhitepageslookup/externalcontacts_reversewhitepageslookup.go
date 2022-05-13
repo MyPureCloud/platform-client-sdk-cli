@@ -36,12 +36,15 @@ func Cmdexternalcontacts_reversewhitepageslookup() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(searchCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ReverseWhitepagesLookupResult"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ReverseWhitepagesLookupResult"
+      }
+    }
   }
 }`)
 	externalcontacts_reversewhitepageslookupCmd.AddCommand(searchCmd)
-	
 	return externalcontacts_reversewhitepageslookupCmd
 }
 

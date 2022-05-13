@@ -33,13 +33,6 @@ type Buttoncomponent struct {
 func (o *Buttoncomponent) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Buttoncomponent) MarshalJSON() ([]byte, error) {
     }
     ButtoncomponentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Title string `json:"title"`
         
         Actions Contentactions `json:"actions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

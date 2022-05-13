@@ -31,14 +31,7 @@ type Wfmintradayplanninggrouplisting struct {
 
 // String returns a JSON representation of the model
 func (o *Wfmintradayplanninggrouplisting) String() string {
-    
-    
      o.Entities = []Forecastplanninggroupresponse{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Wfmintradayplanninggrouplisting) MarshalJSON() ([]byte, error) {
     }
     WfmintradayplanninggrouplistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Forecastplanninggroupresponse `json:"entities"`
         
         NoDataReason string `json:"noDataReason"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Forecastplanninggroupresponse{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

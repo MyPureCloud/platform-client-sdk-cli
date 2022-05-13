@@ -33,12 +33,16 @@ func Cmdintegrations_types() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/IntegrationType"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/IntegrationType"
+      }
+    }
   }
 }`)
 	integrations_typesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
@@ -50,12 +54,15 @@ func Cmdintegrations_types() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	integrations_typesCmd.AddCommand(listCmd)
-	
 	return integrations_typesCmd
 }
 

@@ -145,63 +145,10 @@ func (o *Patchactionmap) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.TriggerWithSegments = []string{""} 
-    
-    
-    
      o.TriggerWithEventConditions = []Eventcondition{{}} 
-    
-    
-    
      o.TriggerWithOutcomeProbabilityConditions = []Outcomeprobabilitycondition{{}} 
-    
-    
-    
      o.PageUrlConditions = []Urlcondition{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -226,8 +173,7 @@ func (u *Patchactionmap) MarshalJSON() ([]byte, error) {
     }
     PatchactionmapMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Version int `json:"version"`
         
@@ -253,8 +199,6 @@ func (u *Patchactionmap) MarshalJSON() ([]byte, error) {
         
         IgnoreFrequencyCap bool `json:"ignoreFrequencyCap"`
         
-        
-        
         CreatedDate time.Time `json:"createdDate"`
         
         ModifiedDate time.Time `json:"modifiedDate"`
@@ -262,90 +206,70 @@ func (u *Patchactionmap) MarshalJSON() ([]byte, error) {
         StartDate time.Time `json:"startDate"`
         
         EndDate time.Time `json:"endDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         TriggerWithSegments: []string{""},
         
 
-        
 
         
         TriggerWithEventConditions: []Eventcondition{{}},
         
 
-        
 
         
         TriggerWithOutcomeProbabilityConditions: []Outcomeprobabilitycondition{{}},
         
 
-        
 
         
         PageUrlConditions: []Urlcondition{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -214,62 +214,11 @@ func (o *Site) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.PrimarySites = []Domainentityref{{}} 
-    
-    
-    
      o.SecondarySites = []Domainentityref{{}} 
-    
-    
-    
      o.PrimaryEdges = []Edge{{}} 
-    
-    
-    
      o.SecondaryEdges = []Edge{{}} 
-    
-    
-    
      o.Addresses = []Contact{{}} 
-    
-    
-    
      o.Edges = []Edge{{}} 
     
     
@@ -278,35 +227,7 @@ func (o *Site) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.SiteConnections = []Siteconnection{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -322,8 +243,7 @@ func (u *Site) MarshalJSON() ([]byte, error) {
     }
     SiteMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -340,8 +260,6 @@ func (u *Site) MarshalJSON() ([]byte, error) {
         ModifiedBy string `json:"modifiedBy"`
         
         CreatedBy string `json:"createdBy"`
-        
-        
         
         ModifiedByApp string `json:"modifiedByApp"`
         
@@ -374,134 +292,103 @@ func (u *Site) MarshalJSON() ([]byte, error) {
         CoreSite bool `json:"coreSite"`
         
         SiteConnections []Siteconnection `json:"siteConnections"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         PrimarySites: []Domainentityref{{}},
         
 
-        
 
         
         SecondarySites: []Domainentityref{{}},
         
 
-        
 
         
         PrimaryEdges: []Edge{{}},
         
 
-        
 
         
         SecondaryEdges: []Edge{{}},
         
 
-        
 
         
         Addresses: []Contact{{}},
         
 
-        
 
         
         Edges: []Edge{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SiteConnections: []Siteconnection{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -45,20 +45,7 @@ type Cursornotelisting struct {
 
 // String returns a JSON representation of the model
 func (o *Cursornotelisting) String() string {
-    
-    
      o.Entities = []Note{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Cursornotelisting) MarshalJSON() ([]byte, error) {
     }
     CursornotelistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Note `json:"entities"`
         
         NextUri string `json:"nextUri"`
@@ -85,28 +73,22 @@ func (u *Cursornotelisting) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         PreviousUri string `json:"previousUri"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Note{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -70,27 +70,7 @@ type Messagingrecipient struct {
 func (o *Messagingrecipient) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AdditionalIds = []Recipientadditionalidentifier{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -106,60 +86,41 @@ func (u *Messagingrecipient) MarshalJSON() ([]byte, error) {
     }
     MessagingrecipientMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Id string `json:"id"`
         
         IdType string `json:"idType"`
         
-        
-        
-        
-        
-        
-        
-        
-        
         AdditionalIds []Recipientadditionalidentifier `json:"additionalIds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AdditionalIds: []Recipientadditionalidentifier{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

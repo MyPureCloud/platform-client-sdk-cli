@@ -32,14 +32,7 @@ type Journeyaggregatequeryclause struct {
 // String returns a JSON representation of the model
 func (o *Journeyaggregatequeryclause) String() string {
     
-    
-    
-    
-    
-    
      o.Predicates = []Journeyaggregatequerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Journeyaggregatequeryclause) MarshalJSON() ([]byte, error) {
     }
     JourneyaggregatequeryclauseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Predicates []Journeyaggregatequerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Predicates: []Journeyaggregatequerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

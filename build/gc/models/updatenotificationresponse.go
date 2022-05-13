@@ -33,13 +33,6 @@ type Updatenotificationresponse struct {
 func (o *Updatenotificationresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Updatenotificationresponse) MarshalJSON() ([]byte, error) {
     }
     UpdatenotificationresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MutableGroupId string `json:"mutableGroupId"`
         
         Id string `json:"id"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

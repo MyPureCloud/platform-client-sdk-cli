@@ -32,43 +32,55 @@ func Cmdorgauthorization_trustors_clonedusers() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Trust deleted"
+  "description" : "Trust deleted",
+  "content" : { }
 }`)
 	orgauthorization_trustors_clonedusersCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}", utils.FormatPermissions([]string{ "authorization:orgTrusteeUser:view",  }), utils.GenerateDevCentreLink("GET", "Organization Authorization", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ClonedUser"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ClonedUser"
+      }
+    }
   }
 }`)
 	orgauthorization_trustors_clonedusersCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers", utils.FormatPermissions([]string{ "authorization:orgTrusteeUser:view",  }), utils.GenerateDevCentreLink("GET", "Organization Authorization", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ClonedUserEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ClonedUserEntityListing"
+      }
+    }
   }
 }`)
 	orgauthorization_trustors_clonedusersCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}", utils.FormatPermissions([]string{ "authorization:orgTrusteeUser:add",  }), utils.GenerateDevCentreLink("PUT", "Organization Authorization", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ClonedUser"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ClonedUser"
+      }
+    }
   }
 }`)
 	orgauthorization_trustors_clonedusersCmd.AddCommand(updateCmd)
-	
 	return orgauthorization_trustors_clonedusersCmd
 }
 

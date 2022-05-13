@@ -179,71 +179,8 @@ func (o *Flow) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.InputSchema = Interface{} 
-    
-    
-    
      o.OutputSchema = Interface{} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -263,7 +200,8 @@ func (u *Flow) MarshalJSON() ([]byte, error) {
     }
     FlowMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -299,110 +237,78 @@ func (u *Flow) MarshalJSON() ([]byte, error) {
         PublishedBy User `json:"publishedBy"`
         
         CurrentOperation Operation `json:"currentOperation"`
-        
-        
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         InputSchema: Interface{},
         
 
-        
 
         
         OutputSchema: Interface{},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

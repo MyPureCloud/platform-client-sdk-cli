@@ -40,17 +40,7 @@ type Responsequeryrequest struct {
 func (o *Responsequeryrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Filters = []Responsefilter{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Responsequeryrequest) MarshalJSON() ([]byte, error) {
     }
     ResponsequeryrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QueryPhrase string `json:"queryPhrase"`
         
         PageSize int `json:"pageSize"`
         
         Filters []Responsefilter `json:"filters"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Filters: []Responsefilter{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

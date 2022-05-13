@@ -30,34 +30,43 @@ func init() {
 func Cmdrecording_batchrequests() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/batchrequests", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recording/batchrequests")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Job submission criteria",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/BatchDownloadJobSubmission"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BatchDownloadJobSubmission"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BatchDownloadJobSubmissionResult"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BatchDownloadJobSubmissionResult"
+      }
+    }
   }
 }`)
 	recording_batchrequestsCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/recording/batchrequests/{jobId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/batchrequests/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BatchDownloadJobStatusResult"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BatchDownloadJobStatusResult"
+      }
+    }
   }
 }`)
 	recording_batchrequestsCmd.AddCommand(getCmd)
-	
 	return recording_batchrequestsCmd
 }
 

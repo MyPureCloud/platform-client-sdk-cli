@@ -34,12 +34,15 @@ func Cmdgamification_profiles_users_me() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/PerformanceProfile"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PerformanceProfile"
+      }
+    }
   }
 }`)
 	gamification_profiles_users_meCmd.AddCommand(getCmd)
-	
 	return gamification_profiles_users_meCmd
 }
 

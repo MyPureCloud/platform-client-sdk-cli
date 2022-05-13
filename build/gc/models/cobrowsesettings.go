@@ -40,17 +40,7 @@ type Cobrowsesettings struct {
 func (o *Cobrowsesettings) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.MaskSelectors = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Cobrowsesettings) MarshalJSON() ([]byte, error) {
     }
     CobrowsesettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Enabled bool `json:"enabled"`
         
         AllowAgentControl bool `json:"allowAgentControl"`
         
         MaskSelectors []string `json:"maskSelectors"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         MaskSelectors: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

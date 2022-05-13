@@ -25,10 +25,6 @@ type Agent struct {
 // String returns a JSON representation of the model
 func (o *Agent) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Agent) MarshalJSON() ([]byte, error) {
     }
     AgentMarshalled = true
 
-    return json.Marshal(&struct { 
-        Stage string `json:"stage"`
+    return json.Marshal(&struct {
         
+        Stage string `json:"stage"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

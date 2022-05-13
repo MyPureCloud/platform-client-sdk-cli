@@ -41,16 +41,6 @@ func (o *Actioninput) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Actioninput) MarshalJSON() ([]byte, error) {
     }
     ActioninputMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         InputSchema Jsonschemadocument `json:"inputSchema"`
         
         InputSchemaFlattened Jsonschemadocument `json:"inputSchemaFlattened"`
         
         InputSchemaUri string `json:"inputSchemaUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -61,27 +61,8 @@ type Auditrealtimequeryrequest struct {
 func (o *Auditrealtimequeryrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Filters = []Auditqueryfilter{{}} 
-    
-    
-    
      o.Sort = []Auditquerysort{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -99,7 +80,8 @@ func (u *Auditrealtimequeryrequest) MarshalJSON() ([]byte, error) {
     }
     AuditrealtimequeryrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         ServiceName string `json:"serviceName"`
@@ -111,38 +93,30 @@ func (u *Auditrealtimequeryrequest) MarshalJSON() ([]byte, error) {
         PageNumber int `json:"pageNumber"`
         
         PageSize int `json:"pageSize"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Filters: []Auditqueryfilter{{}},
         
 
-        
 
         
         Sort: []Auditquerysort{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

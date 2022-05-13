@@ -65,25 +65,6 @@ func (o *Postactioninput) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Postactioninput) MarshalJSON() ([]byte, error) {
     }
     PostactioninputMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Category string `json:"category"`
         
         Name string `json:"name"`
@@ -111,34 +93,26 @@ func (u *Postactioninput) MarshalJSON() ([]byte, error) {
         Contract Actioncontractinput `json:"contract"`
         
         Secure bool `json:"secure"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -55,23 +55,7 @@ func (o *Generictemplate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Components = []Recordingbuttoncomponent{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -88,7 +72,8 @@ func (u *Generictemplate) MarshalJSON() ([]byte, error) {
     }
     GenerictemplateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Title string `json:"title"`
         
         Description string `json:"description"`
@@ -98,32 +83,25 @@ func (u *Generictemplate) MarshalJSON() ([]byte, error) {
         Components []Recordingbuttoncomponent `json:"components"`
         
         Actions Recordingcontentactions `json:"actions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Components: []Recordingbuttoncomponent{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

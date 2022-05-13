@@ -31,22 +31,28 @@ func Cmdoutbound_dnclists_phonenumbers() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "string", "expirationDateTime", "", "Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/dnclists/{dncListId}/phonenumbers", utils.FormatPermissions([]string{ "outbound:dnc:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/dnclists/{dncListId}/phonenumbers")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "DNC Phone Numbers",
-  "required" : true,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "type" : "string"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "type" : "string"
+        }
+      }
     }
-  }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "dnc.source.operation.not.supported" : "An attempt was made to append numbers to a DNC list that is not of type Internal",
@@ -65,7 +71,6 @@ func Cmdoutbound_dnclists_phonenumbers() *cobra.Command {
   }
 }`)
 	outbound_dnclists_phonenumbersCmd.AddCommand(createCmd)
-	
 	return outbound_dnclists_phonenumbersCmd
 }
 
@@ -80,6 +85,9 @@ var createCmd = &cobra.Command{
 
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
+			
+			reqModel := models.String{}
+			utils.Render(reqModel.String())
 			
 			return
 		}

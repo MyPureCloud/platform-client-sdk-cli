@@ -41,16 +41,6 @@ func (o *Validateworkplanresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Validateworkplanresponse) MarshalJSON() ([]byte, error) {
     }
     ValidateworkplanresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         WorkPlan Workplanreference `json:"workPlan"`
         
         Valid bool `json:"valid"`
         
         Messages Validateworkplanmessages `json:"messages"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

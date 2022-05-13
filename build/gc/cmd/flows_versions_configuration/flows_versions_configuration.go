@@ -34,13 +34,15 @@ func Cmdflows_versions_configuration() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "object",
-    "properties" : { }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "object"
+      }
+    }
   }
 }`)
 	flows_versions_configurationCmd.AddCommand(getCmd)
-	
 	return flows_versions_configurationCmd
 }
 

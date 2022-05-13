@@ -31,14 +31,7 @@ type Subscriberresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Subscriberresponse) String() string {
-    
-    
      o.MessageReturned = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Subscriberresponse) MarshalJSON() ([]byte, error) {
     }
     SubscriberresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MessageReturned []string `json:"messageReturned"`
         
         Status string `json:"status"`
-        
         *Alias
     }{
-        
 
         
         MessageReturned: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

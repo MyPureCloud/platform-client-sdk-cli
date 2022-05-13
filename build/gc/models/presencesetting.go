@@ -25,10 +25,6 @@ type Presencesetting struct {
 // String returns a JSON representation of the model
 func (o *Presencesetting) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Presencesetting) MarshalJSON() ([]byte, error) {
     }
     PresencesettingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Join Settingdirection `json:"join"`
+    return json.Marshal(&struct {
         
+        Join Settingdirection `json:"join"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

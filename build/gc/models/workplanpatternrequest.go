@@ -24,11 +24,7 @@ type Workplanpatternrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Workplanpatternrequest) String() string {
-    
-    
      o.WorkPlanIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Workplanpatternrequest) MarshalJSON() ([]byte, error) {
     }
     WorkplanpatternrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        WorkPlanIds []string `json:"workPlanIds"`
+    return json.Marshal(&struct {
         
+        WorkPlanIds []string `json:"workPlanIds"`
         *Alias
     }{
-        
 
         
         WorkPlanIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

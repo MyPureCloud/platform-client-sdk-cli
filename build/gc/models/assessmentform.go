@@ -63,24 +63,7 @@ type Assessmentform struct {
 // String returns a JSON representation of the model
 func (o *Assessmentform) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.QuestionGroups = []Assessmentformquestiongroup{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -96,54 +79,36 @@ func (u *Assessmentform) MarshalJSON() ([]byte, error) {
     }
     AssessmentformMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         
         PassPercent int `json:"passPercent"`
         
         QuestionGroups []Assessmentformquestiongroup `json:"questionGroups"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         QuestionGroups: []Assessmentformquestiongroup{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

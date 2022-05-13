@@ -41,16 +41,6 @@ func (o *Transcriptionsettings) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Transcriptionsettings) MarshalJSON() ([]byte, error) {
     }
     TranscriptionsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Transcription string `json:"transcription"`
         
         TranscriptionConfidenceThreshold int `json:"transcriptionConfidenceThreshold"`
         
         ContentSearchEnabled bool `json:"contentSearchEnabled"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

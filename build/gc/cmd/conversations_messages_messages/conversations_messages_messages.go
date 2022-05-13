@@ -33,12 +33,15 @@ func Cmdconversations_messages_messages() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/MessageData"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/MessageData"
+      }
+    }
   }
 }`)
 	conversations_messages_messagesCmd.AddCommand(getCmd)
-	
 	return conversations_messages_messagesCmd
 }
 

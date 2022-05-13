@@ -138,53 +138,7 @@ func (o *Edgetrunkbase) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Properties = map[string]interface{}{"": Interface{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -201,8 +155,7 @@ func (u *Edgetrunkbase) MarshalJSON() ([]byte, error) {
     }
     EdgetrunkbaseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -220,8 +173,6 @@ func (u *Edgetrunkbase) MarshalJSON() ([]byte, error) {
         
         CreatedBy string `json:"createdBy"`
         
-        
-        
         ModifiedByApp string `json:"modifiedByApp"`
         
         CreatedByApp string `json:"createdByApp"`
@@ -231,78 +182,58 @@ func (u *Edgetrunkbase) MarshalJSON() ([]byte, error) {
         Properties map[string]interface{} `json:"properties"`
         
         TrunkType string `json:"trunkType"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Properties: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

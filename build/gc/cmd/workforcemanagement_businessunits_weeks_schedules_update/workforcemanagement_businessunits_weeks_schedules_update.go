@@ -30,23 +30,28 @@ func init() {
 func Cmdworkforcemanagement_businessunits_weeks_schedules_update() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update", utils.FormatPermissions([]string{ "wfm:schedule:edit",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ProcessScheduleUpdateUploadRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ProcessScheduleUpdateUploadRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuAsyncScheduleResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuAsyncScheduleResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedules_updateCmd.AddCommand(createCmd)
-	
 	return workforcemanagement_businessunits_weeks_schedules_updateCmd
 }
 

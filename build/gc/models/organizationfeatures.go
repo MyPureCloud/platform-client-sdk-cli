@@ -121,46 +121,6 @@ func (o *Organizationfeatures) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -176,7 +136,8 @@ func (u *Organizationfeatures) MarshalJSON() ([]byte, error) {
     }
     OrganizationfeaturesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         RealtimeCIC bool `json:"realtimeCIC"`
         
         Purecloud bool `json:"purecloud"`
@@ -202,62 +163,47 @@ func (u *Organizationfeatures) MarshalJSON() ([]byte, error) {
         UnifiedCommunications bool `json:"unifiedCommunications"`
         
         Custserv bool `json:"custserv"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -81,38 +81,11 @@ type Createobjective struct {
 // String returns a JSON representation of the model
 func (o *Createobjective) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Zones = []Objectivezone{{}} 
     
-    
-    
-    
-    
-    
-    
      o.TopicIds = []string{""} 
-    
-    
-    
      o.MediaTypes = []string{""} 
-    
-    
-    
      o.QueueIds = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -130,8 +103,7 @@ func (u *Createobjective) MarshalJSON() ([]byte, error) {
     }
     CreateobjectiveMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         TemplateId string `json:"templateId"`
         
@@ -148,54 +120,43 @@ func (u *Createobjective) MarshalJSON() ([]byte, error) {
         TopicIdsFilterType string `json:"topicIdsFilterType"`
         
         DateStart time.Time `json:"dateStart"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Zones: []Objectivezone{{}},
         
 
-        
 
         
 
-        
 
         
         TopicIds: []string{""},
         
 
-        
 
         
         MediaTypes: []string{""},
         
 
-        
 
         
         QueueIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

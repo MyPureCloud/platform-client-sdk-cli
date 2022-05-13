@@ -31,23 +31,29 @@ func Cmdcontentmanagement_query() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "string", "expand", "", "Expand some document fields Valid values: acl, workspace")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/contentmanagement/query", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Content Management", "/api/v2/contentmanagement/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Allows for a filtered query returning facet information",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/QueryRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QueryRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/QueryResults"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QueryResults"
+      }
+    }
   }
 }`)
 	contentmanagement_queryCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(getCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(getCmd.Flags(), "string", "sortBy", "name", "name or dateCreated")
@@ -60,12 +66,15 @@ func Cmdcontentmanagement_query() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/QueryResults"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QueryResults"
+      }
+    }
   }
 }`)
 	contentmanagement_queryCmd.AddCommand(getCmd)
-	
 	return contentmanagement_queryCmd
 }
 

@@ -34,12 +34,15 @@ func Cmdspeechandtextanalytics_topics_general() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/GeneralTopicsEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GeneralTopicsEntityListing"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_topics_generalCmd.AddCommand(getCmd)
-	
 	return speechandtextanalytics_topics_generalCmd
 }
 

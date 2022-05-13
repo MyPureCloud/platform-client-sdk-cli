@@ -30,23 +30,28 @@ func init() {
 func Cmdconversations_messages_inbound_open() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/messages/inbound/open", utils.FormatPermissions([]string{ "conversation:message:receive",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/messages/inbound/open")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "NormalizedMessage",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/OpenNormalizedMessage"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OpenNormalizedMessage"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OpenNormalizedMessage"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OpenNormalizedMessage"
+      }
+    }
   }
 }`)
 	conversations_messages_inbound_openCmd.AddCommand(createCmd)
-	
 	return conversations_messages_inbound_openCmd
 }
 

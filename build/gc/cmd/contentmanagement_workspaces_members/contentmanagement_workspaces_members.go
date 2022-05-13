@@ -33,8 +33,12 @@ func Cmdcontentmanagement_workspaces_members() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
@@ -42,19 +46,23 @@ func Cmdcontentmanagement_workspaces_members() *cobra.Command {
   }
 }`)
 	contentmanagement_workspaces_membersCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: member")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Content Management", "/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WorkspaceMember"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WorkspaceMember"
+      }
+    }
   }
 }`)
 	contentmanagement_workspaces_membersCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: member")
@@ -63,31 +71,40 @@ func Cmdcontentmanagement_workspaces_members() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	contentmanagement_workspaces_membersCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Content Management", "/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Workspace Member",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/WorkspaceMember"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WorkspaceMember"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WorkspaceMember"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WorkspaceMember"
+      }
+    }
   }
 }`)
 	contentmanagement_workspaces_membersCmd.AddCommand(updateCmd)
-	
 	return contentmanagement_workspaces_membersCmd
 }
 

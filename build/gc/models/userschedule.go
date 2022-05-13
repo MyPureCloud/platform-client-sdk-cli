@@ -51,23 +51,8 @@ type Userschedule struct {
 
 // String returns a JSON representation of the model
 func (o *Userschedule) String() string {
-    
-    
      o.Shifts = []Userscheduleshift{{}} 
-    
-    
-    
      o.FullDayTimeOffMarkers = []Userschedulefulldaytimeoffmarker{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -85,7 +70,8 @@ func (u *Userschedule) MarshalJSON() ([]byte, error) {
     }
     UserscheduleMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Shifts []Userscheduleshift `json:"shifts"`
         
         FullDayTimeOffMarkers []Userschedulefulldaytimeoffmarker `json:"fullDayTimeOffMarkers"`
@@ -93,36 +79,27 @@ func (u *Userschedule) MarshalJSON() ([]byte, error) {
         Delete bool `json:"delete"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
-        
-        
         *Alias
     }{
-        
 
         
         Shifts: []Userscheduleshift{{}},
         
 
-        
 
         
         FullDayTimeOffMarkers: []Userschedulefulldaytimeoffmarker{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -40,12 +40,15 @@ func Cmdgamification_scorecards_values_trends() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WorkdayValuesTrend"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WorkdayValuesTrend"
+      }
+    }
   }
 }`)
 	gamification_scorecards_values_trendsCmd.AddCommand(getCmd)
-	
 	return gamification_scorecards_values_trendsCmd
 }
 

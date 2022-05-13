@@ -123,48 +123,7 @@ func (o *Agentactivity) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AgentEvaluatorActivityList = []Agentevaluatoractivity{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -181,8 +140,7 @@ func (u *Agentactivity) MarshalJSON() ([]byte, error) {
     }
     AgentactivityMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -207,70 +165,52 @@ func (u *Agentactivity) MarshalJSON() ([]byte, error) {
         AgentEvaluatorActivityList []Agentevaluatoractivity `json:"agentEvaluatorActivityList"`
         
         NumEvaluationsWithoutViewPermission int `json:"numEvaluationsWithoutViewPermission"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AgentEvaluatorActivityList: []Agentevaluatoractivity{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

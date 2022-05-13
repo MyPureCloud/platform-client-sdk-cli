@@ -25,10 +25,6 @@ type Textbotmodeconstraints struct {
 // String returns a JSON representation of the model
 func (o *Textbotmodeconstraints) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Textbotmodeconstraints) MarshalJSON() ([]byte, error) {
     }
     TextbotmodeconstraintsMarshalled = true
 
-    return json.Marshal(&struct { 
-        Text Textbottextmodeconstraints `json:"text"`
+    return json.Marshal(&struct {
         
+        Text Textbottextmodeconstraints `json:"text"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

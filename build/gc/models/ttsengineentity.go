@@ -72,32 +72,9 @@ type Ttsengineentity struct {
 // String returns a JSON representation of the model
 func (o *Ttsengineentity) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Languages = []string{""} 
-    
-    
-    
      o.OutputFormats = []string{""} 
-    
-    
-    
      o.Voices = []Ttsvoiceentity{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -115,8 +92,7 @@ func (u *Ttsengineentity) MarshalJSON() ([]byte, error) {
     }
     TtsengineentityMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -129,50 +105,38 @@ func (u *Ttsengineentity) MarshalJSON() ([]byte, error) {
         IsDefault bool `json:"isDefault"`
         
         IsSecure bool `json:"isSecure"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Languages: []string{""},
         
 
-        
 
         
         OutputFormats: []string{""},
         
 
-        
 
         
         Voices: []Ttsvoiceentity{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

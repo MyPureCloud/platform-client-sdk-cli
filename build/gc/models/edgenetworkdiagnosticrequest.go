@@ -25,10 +25,6 @@ type Edgenetworkdiagnosticrequest struct {
 // String returns a JSON representation of the model
 func (o *Edgenetworkdiagnosticrequest) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Edgenetworkdiagnosticrequest) MarshalJSON() ([]byte, error) {
     }
     EdgenetworkdiagnosticrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        Host string `json:"host"`
+    return json.Marshal(&struct {
         
+        Host string `json:"host"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

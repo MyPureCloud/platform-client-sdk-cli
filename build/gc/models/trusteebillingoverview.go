@@ -138,63 +138,13 @@ func (o *Trusteebillingoverview) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.EnabledProducts = []string{""} 
     
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Usages = []Subscriptionoverviewusage{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -215,8 +165,7 @@ func (u *Trusteebillingoverview) MarshalJSON() ([]byte, error) {
     }
     TrusteebillingoverviewMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -247,84 +196,63 @@ func (u *Trusteebillingoverview) MarshalJSON() ([]byte, error) {
         MinimumMonthlyAmount string `json:"minimumMonthlyAmount"`
         
         InRampPeriod bool `json:"inRampPeriod"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         EnabledProducts: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Usages: []Subscriptionoverviewusage{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

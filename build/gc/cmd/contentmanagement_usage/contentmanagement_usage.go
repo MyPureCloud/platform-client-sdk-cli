@@ -33,12 +33,15 @@ func Cmdcontentmanagement_usage() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Usage"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Usage"
+      }
+    }
   }
 }`)
 	contentmanagement_usageCmd.AddCommand(getCmd)
-	
 	return contentmanagement_usageCmd
 }
 

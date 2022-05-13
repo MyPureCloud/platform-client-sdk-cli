@@ -32,14 +32,7 @@ type Queryresponsedata struct {
 // String returns a JSON representation of the model
 func (o *Queryresponsedata) String() string {
     
-    
-    
-    
-    
-    
      o.Metrics = []Queryresponsemetric{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Queryresponsedata) MarshalJSON() ([]byte, error) {
     }
     QueryresponsedataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         Metrics []Queryresponsemetric `json:"metrics"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Metrics: []Queryresponsemetric{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

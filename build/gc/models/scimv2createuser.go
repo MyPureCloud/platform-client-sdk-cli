@@ -112,50 +112,11 @@ func (o *Scimv2createuser) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.PhoneNumbers = []Scimphonenumber{{}} 
-    
-    
-    
      o.Emails = []Scimemail{{}} 
     
-    
-    
-    
-    
-    
-    
      o.Groups = []Scimv2groupreference{{}} 
-    
-    
-    
      o.Roles = []Scimuserrole{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -173,8 +134,7 @@ func (u *Scimv2createuser) MarshalJSON() ([]byte, error) {
     }
     Scimv2createuserMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Active bool `json:"active"`
         
@@ -199,70 +159,55 @@ func (u *Scimv2createuser) MarshalJSON() ([]byte, error) {
         UrnIetfParamsScimSchemasExtensionEnterprise20User Scimv2enterpriseuser `json:"urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"`
         
         UrnIetfParamsScimSchemasExtensionGenesysPurecloud20User Scimuserextensions `json:"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         PhoneNumbers: []Scimphonenumber{{}},
         
 
-        
 
         
         Emails: []Scimemail{{}},
         
 
-        
 
         
 
-        
 
         
         Groups: []Scimv2groupreference{{}},
         
 
-        
 
         
         Roles: []Scimuserrole{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

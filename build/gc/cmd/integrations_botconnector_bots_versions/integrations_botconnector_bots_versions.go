@@ -35,12 +35,15 @@ func Cmdintegrations_botconnector_bots_versions() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	integrations_botconnector_bots_versionsCmd.AddCommand(listCmd)
-	
 	return integrations_botconnector_bots_versionsCmd
 }
 

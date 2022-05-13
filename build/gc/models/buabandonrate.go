@@ -33,13 +33,6 @@ type Buabandonrate struct {
 func (o *Buabandonrate) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Buabandonrate) MarshalJSON() ([]byte, error) {
     }
     BuabandonrateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Include bool `json:"include"`
         
         Percent int `json:"percent"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

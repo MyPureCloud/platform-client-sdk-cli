@@ -117,34 +117,8 @@ type Availabletopic struct {
 func (o *Availabletopic) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.PermissionDetails = []Permissiondetails{{}} 
-    
-    
-    
      o.RequiresPermissions = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -152,26 +126,9 @@ func (o *Availabletopic) String() string {
      o.Schema = map[string]interface{}{"": Interface{}} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Transports = []string{""} 
-    
-    
-    
      o.PublicApiTemplateUriPaths = []string{""} 
-    
-    
-    
      o.TopicParameters = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -187,7 +144,8 @@ func (u *Availabletopic) MarshalJSON() ([]byte, error) {
     }
     AvailabletopicMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Description string `json:"description"`
         
         Id string `json:"id"`
@@ -215,78 +173,62 @@ func (u *Availabletopic) MarshalJSON() ([]byte, error) {
         PublicApiTemplateUriPaths []string `json:"publicApiTemplateUriPaths"`
         
         TopicParameters []string `json:"topicParameters"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         PermissionDetails: []Permissiondetails{{}},
         
 
-        
 
         
         RequiresPermissions: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Schema: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Transports: []string{""},
         
 
-        
 
         
         PublicApiTemplateUriPaths: []string{""},
         
 
-        
 
         
         TopicParameters: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

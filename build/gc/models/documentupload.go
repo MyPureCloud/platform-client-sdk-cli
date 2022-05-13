@@ -47,21 +47,8 @@ type Documentupload struct {
 func (o *Documentupload) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Tags = []string{""} 
-    
-    
-    
      o.TagIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Documentupload) MarshalJSON() ([]byte, error) {
     }
     DocumentuploadMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Workspace Domainentityref `json:"workspace"`
@@ -85,30 +73,24 @@ func (u *Documentupload) MarshalJSON() ([]byte, error) {
         Tags []string `json:"tags"`
         
         TagIds []string `json:"tagIds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Tags: []string{""},
         
 
-        
 
         
         TagIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

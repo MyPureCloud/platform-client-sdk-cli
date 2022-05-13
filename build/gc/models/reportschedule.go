@@ -148,57 +148,7 @@ func (o *Reportschedule) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Parameters = map[string]interface{}{"": Interface{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -215,8 +165,7 @@ func (u *Reportschedule) MarshalJSON() ([]byte, error) {
     }
     ReportscheduleMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -247,82 +196,61 @@ func (u *Reportschedule) MarshalJSON() ([]byte, error) {
         Parameters map[string]interface{} `json:"parameters"`
         
         LastRun Reportrunentry `json:"lastRun"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Parameters: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

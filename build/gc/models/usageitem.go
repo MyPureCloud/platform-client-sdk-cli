@@ -41,16 +41,6 @@ func (o *Usageitem) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Usageitem) MarshalJSON() ([]byte, error) {
     }
     UsageitemMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         TotalDocumentByteCount int `json:"totalDocumentByteCount"`
         
         TotalDocumentCount int `json:"totalDocumentCount"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

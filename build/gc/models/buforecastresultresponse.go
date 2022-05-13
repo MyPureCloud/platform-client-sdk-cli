@@ -33,13 +33,6 @@ type Buforecastresultresponse struct {
 func (o *Buforecastresultresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Buforecastresultresponse) MarshalJSON() ([]byte, error) {
     }
     BuforecastresultresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Result Buforecastresult `json:"result"`
         
         DownloadUrl string `json:"downloadUrl"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

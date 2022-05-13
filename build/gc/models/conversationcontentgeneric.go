@@ -64,26 +64,7 @@ func (o *Conversationcontentgeneric) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Components = []Conversationbuttoncomponent{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Conversationcontentgeneric) MarshalJSON() ([]byte, error) {
     }
     ConversationcontentgenericMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Title string `json:"title"`
         
         Description string `json:"description"`
@@ -111,36 +93,28 @@ func (u *Conversationcontentgeneric) MarshalJSON() ([]byte, error) {
         Actions Conversationcontentactions `json:"actions"`
         
         Components []Conversationbuttoncomponent `json:"components"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Components: []Conversationbuttoncomponent{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

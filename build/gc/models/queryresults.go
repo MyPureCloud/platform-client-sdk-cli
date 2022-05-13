@@ -33,13 +33,6 @@ type Queryresults struct {
 func (o *Queryresults) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Queryresults) MarshalJSON() ([]byte, error) {
     }
     QueryresultsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Results Domainentitylistingqueryresult `json:"results"`
         
         FacetInfo Queryfacetinfo `json:"facetInfo"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

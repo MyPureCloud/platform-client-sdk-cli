@@ -57,22 +57,6 @@ func (o *Actionproperties) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Actionproperties) MarshalJSON() ([]byte, error) {
     }
     ActionpropertiesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         WebchatPrompt string `json:"webchatPrompt"`
         
         WebchatTitleText string `json:"webchatTitleText"`
@@ -98,30 +83,23 @@ func (u *Actionproperties) MarshalJSON() ([]byte, error) {
         WebchatDeclineText string `json:"webchatDeclineText"`
         
         WebchatSurvey Actionsurvey `json:"webchatSurvey"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,41 +30,52 @@ func init() {
 func Cmdarchitect_emergencygroups() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/architect/emergencygroups", utils.FormatPermissions([]string{ "routing:emergencyGroup:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/architect/emergencygroups")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/EmergencyGroup"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EmergencyGroup"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EmergencyGroup"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EmergencyGroup"
+      }
+    }
   }
 }`)
 	architect_emergencygroupsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/architect/emergencygroups/{emergencyGroupId}", utils.FormatPermissions([]string{ "routing:emergencyGroup:delete",  }), utils.GenerateDevCentreLink("DELETE", "Architect", "/api/v2/architect/emergencygroups/{emergencyGroupId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	architect_emergencygroupsCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/emergencygroups/{emergencyGroupId}", utils.FormatPermissions([]string{ "routing:emergencyGroup:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/emergencygroups/{emergencyGroupId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EmergencyGroup"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EmergencyGroup"
+      }
+    }
   }
 }`)
 	architect_emergencygroupsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by")
@@ -75,30 +86,39 @@ func Cmdarchitect_emergencygroups() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	architect_emergencygroupsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/architect/emergencygroups/{emergencyGroupId}", utils.FormatPermissions([]string{ "routing:emergencyGroup:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/architect/emergencygroups/{emergencyGroupId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/EmergencyGroup"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EmergencyGroup"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EmergencyGroup"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EmergencyGroup"
+      }
+    }
   }
 }`)
 	architect_emergencygroupsCmd.AddCommand(updateCmd)
-	
 	return architect_emergencygroupsCmd
 }
 

@@ -37,12 +37,15 @@ func Cmdgamification_scorecards_users_attendance() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AttendanceStatusListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AttendanceStatusListing"
+      }
+    }
   }
 }`)
 	gamification_scorecards_users_attendanceCmd.AddCommand(getCmd)
-	
 	return gamification_scorecards_users_attendanceCmd
 }
 

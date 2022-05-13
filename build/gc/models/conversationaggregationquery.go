@@ -83,39 +83,11 @@ func (o *Conversationaggregationquery) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.GroupBy = []string{""} 
-    
-    
-    
-    
-    
-    
     
      o.Metrics = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.Views = []Conversationaggregationview{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -132,7 +104,8 @@ func (u *Conversationaggregationquery) MarshalJSON() ([]byte, error) {
     }
     ConversationaggregationqueryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         Granularity string `json:"granularity"`
@@ -150,52 +123,41 @@ func (u *Conversationaggregationquery) MarshalJSON() ([]byte, error) {
         Views []Conversationaggregationview `json:"views"`
         
         AlternateTimeDimension string `json:"alternateTimeDimension"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         GroupBy: []string{""},
         
 
-        
 
         
 
-        
 
         
         Metrics: []string{""},
         
 
-        
 
         
 
-        
 
         
         Views: []Conversationaggregationview{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

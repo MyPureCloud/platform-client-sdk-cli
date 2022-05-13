@@ -100,39 +100,7 @@ func (o *Geolocation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Locations = []Locationdefinition{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -148,8 +116,7 @@ func (u *Geolocation) MarshalJSON() ([]byte, error) {
     }
     GeolocationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -168,58 +135,43 @@ func (u *Geolocation) MarshalJSON() ([]byte, error) {
         City string `json:"city"`
         
         Locations []Locationdefinition `json:"locations"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Locations: []Locationdefinition{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,12 +33,15 @@ func Cmdlanguageunderstanding_domains_versions_report() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "Find quality report for NLU Domain Version.",
-  "schema" : {
-    "$ref" : "#/definitions/NluDomainVersionQualityReport"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NluDomainVersionQualityReport"
+      }
+    }
   }
 }`)
 	languageunderstanding_domains_versions_reportCmd.AddCommand(getCmd)
-	
 	return languageunderstanding_domains_versions_reportCmd
 }
 

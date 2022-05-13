@@ -25,10 +25,6 @@ type Addconversationrequest struct {
 // String returns a JSON representation of the model
 func (o *Addconversationrequest) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Addconversationrequest) MarshalJSON() ([]byte, error) {
     }
     AddconversationrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        ConversationId string `json:"conversationId"`
+    return json.Marshal(&struct {
         
+        ConversationId string `json:"conversationId"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

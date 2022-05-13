@@ -48,20 +48,7 @@ func (o *Messageinfo) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.MessageParams = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Messageinfo) MarshalJSON() ([]byte, error) {
     }
     MessageinfoMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         LocalizableMessageCode string `json:"localizableMessageCode"`
         
         Message string `json:"message"`
@@ -85,28 +73,22 @@ func (u *Messageinfo) MarshalJSON() ([]byte, error) {
         MessageWithParams string `json:"messageWithParams"`
         
         MessageParams map[string]string `json:"messageParams"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MessageParams: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

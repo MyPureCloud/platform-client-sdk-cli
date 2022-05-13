@@ -48,20 +48,7 @@ func (o *Auditqueryexecutionresultsresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Entities = []Auditlogmessage{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Auditqueryexecutionresultsresponse) MarshalJSON() ([]byte, error) {
     }
     AuditqueryexecutionresultsresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         PageSize int `json:"pageSize"`
@@ -85,28 +73,22 @@ func (u *Auditqueryexecutionresultsresponse) MarshalJSON() ([]byte, error) {
         Cursor string `json:"cursor"`
         
         Entities []Auditlogmessage `json:"entities"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Entities: []Auditlogmessage{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

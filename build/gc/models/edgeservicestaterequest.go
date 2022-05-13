@@ -33,13 +33,6 @@ type Edgeservicestaterequest struct {
 func (o *Edgeservicestaterequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Edgeservicestaterequest) MarshalJSON() ([]byte, error) {
     }
     EdgeservicestaterequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         InService bool `json:"inService"`
         
         CallDrainingWaitTimeSeconds int `json:"callDrainingWaitTimeSeconds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -25,10 +25,6 @@ type Copyworkplan struct {
 // String returns a JSON representation of the model
 func (o *Copyworkplan) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Copyworkplan) MarshalJSON() ([]byte, error) {
     }
     CopyworkplanMarshalled = true
 
-    return json.Marshal(&struct { 
-        Name string `json:"name"`
+    return json.Marshal(&struct {
         
+        Name string `json:"name"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

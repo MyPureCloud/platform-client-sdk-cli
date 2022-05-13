@@ -58,22 +58,6 @@ func (o *Analyticsflowoutcome) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,7 +73,8 @@ func (u *Analyticsflowoutcome) MarshalJSON() ([]byte, error) {
     }
     AnalyticsflowoutcomeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FlowOutcome string `json:"flowOutcome"`
         
         FlowOutcomeEndTimestamp time.Time `json:"flowOutcomeEndTimestamp"`
@@ -99,30 +84,23 @@ func (u *Analyticsflowoutcome) MarshalJSON() ([]byte, error) {
         FlowOutcomeStartTimestamp time.Time `json:"flowOutcomeStartTimestamp"`
         
         FlowOutcomeValue string `json:"flowOutcomeValue"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

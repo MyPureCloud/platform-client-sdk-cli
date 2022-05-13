@@ -50,19 +50,6 @@ func (o *Lockinfo) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,7 +65,8 @@ func (u *Lockinfo) MarshalJSON() ([]byte, error) {
     }
     LockinfoMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         LockedBy Domainentityref `json:"lockedBy"`
         
         DateCreated time.Time `json:"dateCreated"`
@@ -86,26 +74,20 @@ func (u *Lockinfo) MarshalJSON() ([]byte, error) {
         DateExpires time.Time `json:"dateExpires"`
         
         Action string `json:"action"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

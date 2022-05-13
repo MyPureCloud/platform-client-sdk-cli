@@ -30,23 +30,28 @@ func init() {
 func Cmdrouting_email_domains_testconnection() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/email/domains/{domainId}/testconnection", utils.FormatPermissions([]string{ "routing:email:manage",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/email/domains/{domainId}/testconnection")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "TestMessage",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/TestMessage"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TestMessage"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TestMessage"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TestMessage"
+      }
+    }
   }
 }`)
 	routing_email_domains_testconnectionCmd.AddCommand(createCmd)
-	
 	return routing_email_domains_testconnectionCmd
 }
 

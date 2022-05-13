@@ -60,24 +60,7 @@ func (o *Architectjobstateresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Messages = []Architectjobmessage{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -93,8 +76,7 @@ func (u *Architectjobstateresponse) MarshalJSON() ([]byte, error) {
     }
     ArchitectjobstateresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Flow Addressableentityref `json:"flow"`
         
@@ -103,38 +85,28 @@ func (u *Architectjobstateresponse) MarshalJSON() ([]byte, error) {
         Command string `json:"command"`
         
         Messages []Architectjobmessage `json:"messages"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Messages: []Architectjobmessage{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

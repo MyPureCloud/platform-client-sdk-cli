@@ -30,23 +30,28 @@ func init() {
 func Cmdexternalcontacts_bulk_notes_remove() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/bulk/notes/remove", utils.FormatPermissions([]string{ "externalContacts:contact:delete", "externalContacts:externalOrganization:delete",  }), utils.GenerateDevCentreLink("POST", "External Contacts", "/api/v2/externalcontacts/bulk/notes/remove")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Note ids",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/BulkIdsRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BulkIdsRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BulkDeleteResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BulkDeleteResponse"
+      }
+    }
   }
 }`)
 	externalcontacts_bulk_notes_removeCmd.AddCommand(createCmd)
-	
 	return externalcontacts_bulk_notes_removeCmd
 }
 

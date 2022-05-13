@@ -51,21 +51,7 @@ type Subjectdivisiongrants struct {
 // String returns a JSON representation of the model
 func (o *Subjectdivisiongrants) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Divisions = []Division{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -82,42 +68,32 @@ func (u *Subjectdivisiongrants) MarshalJSON() ([]byte, error) {
     }
     SubjectdivisiongrantsMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         Divisions []Division `json:"divisions"`
         
         VarType string `json:"type"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Divisions: []Division{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

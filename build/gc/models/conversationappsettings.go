@@ -57,22 +57,6 @@ func (o *Conversationappsettings) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Conversationappsettings) MarshalJSON() ([]byte, error) {
     }
     ConversationappsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ShowAgentTypingIndicator bool `json:"showAgentTypingIndicator"`
         
         ShowUserTypingIndicator bool `json:"showUserTypingIndicator"`
@@ -98,30 +83,23 @@ func (u *Conversationappsettings) MarshalJSON() ([]byte, error) {
         AutoStart Autostart `json:"autoStart"`
         
         Markdown Markdown `json:"markdown"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -31,15 +31,8 @@ type Mediatypeaccess struct {
 
 // String returns a JSON representation of the model
 func (o *Mediatypeaccess) String() string {
-    
-    
      o.Inbound = []Mediatype{{}} 
-    
-    
-    
      o.Outbound = []Mediatype{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Mediatypeaccess) MarshalJSON() ([]byte, error) {
     }
     MediatypeaccessMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Inbound []Mediatype `json:"inbound"`
         
         Outbound []Mediatype `json:"outbound"`
-        
         *Alias
     }{
-        
 
         
         Inbound: []Mediatype{{}},
         
 
-        
 
         
         Outbound: []Mediatype{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

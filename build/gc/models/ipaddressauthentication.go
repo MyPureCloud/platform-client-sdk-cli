@@ -24,11 +24,7 @@ type Ipaddressauthentication struct {
 
 // String returns a JSON representation of the model
 func (o *Ipaddressauthentication) String() string {
-    
-    
      o.NetworkWhitelist = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Ipaddressauthentication) MarshalJSON() ([]byte, error) {
     }
     IpaddressauthenticationMarshalled = true
 
-    return json.Marshal(&struct { 
-        NetworkWhitelist []string `json:"networkWhitelist"`
+    return json.Marshal(&struct {
         
+        NetworkWhitelist []string `json:"networkWhitelist"`
         *Alias
     }{
-        
 
         
         NetworkWhitelist: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

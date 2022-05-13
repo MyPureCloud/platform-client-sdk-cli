@@ -34,13 +34,6 @@ type Bucopyschedulerequest struct {
 func (o *Bucopyschedulerequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -56,22 +49,19 @@ func (u *Bucopyschedulerequest) MarshalJSON() ([]byte, error) {
     }
     BucopyschedulerequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Description string `json:"description"`
         
         WeekDate time.Time `json:"weekDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

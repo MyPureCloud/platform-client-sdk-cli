@@ -43,12 +43,15 @@ func Cmdcoaching_appointments_me() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "Get my coaching appointments successful",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	coaching_appointments_meCmd.AddCommand(listCmd)
-	
 	return coaching_appointments_meCmd
 }
 

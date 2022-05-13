@@ -77,33 +77,8 @@ func (o *Webmessagingmessage) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Content = []Webmessagingcontent{{}} 
-    
-    
-    
      o.Events = []Webmessagingevent{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -121,7 +96,8 @@ func (u *Webmessagingmessage) MarshalJSON() ([]byte, error) {
     }
     WebmessagingmessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Channel Webmessagingchannel `json:"channel"`
@@ -137,46 +113,36 @@ func (u *Webmessagingmessage) MarshalJSON() ([]byte, error) {
         Direction string `json:"direction"`
         
         OriginatingEntity string `json:"originatingEntity"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Content: []Webmessagingcontent{{}},
         
 
-        
 
         
         Events: []Webmessagingevent{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

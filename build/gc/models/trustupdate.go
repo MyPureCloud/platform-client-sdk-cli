@@ -34,13 +34,6 @@ type Trustupdate struct {
 func (o *Trustupdate) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -56,22 +49,19 @@ func (u *Trustupdate) MarshalJSON() ([]byte, error) {
     }
     TrustupdateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Enabled bool `json:"enabled"`
         
         DateExpired time.Time `json:"dateExpired"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

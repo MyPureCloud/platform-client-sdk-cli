@@ -52,23 +52,7 @@ type Journeypattern struct {
 
 // String returns a JSON representation of the model
 func (o *Journeypattern) String() string {
-    
-    
      o.Criteria = []Criteria{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -88,7 +72,8 @@ func (u *Journeypattern) MarshalJSON() ([]byte, error) {
     }
     JourneypatternMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Criteria []Criteria `json:"criteria"`
         
         Count int `json:"count"`
@@ -98,32 +83,25 @@ func (u *Journeypattern) MarshalJSON() ([]byte, error) {
         SessionType string `json:"sessionType"`
         
         EventName string `json:"eventName"`
-        
         *Alias
     }{
-        
 
         
         Criteria: []Criteria{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

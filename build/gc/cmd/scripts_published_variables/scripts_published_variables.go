@@ -37,13 +37,15 @@ func Cmdscripts_published_variables() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "object",
-    "properties" : { }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "object"
+      }
+    }
   }
 }`)
 	scripts_published_variablesCmd.AddCommand(getCmd)
-	
 	return scripts_published_variablesCmd
 }
 

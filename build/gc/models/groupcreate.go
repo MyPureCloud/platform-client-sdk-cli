@@ -113,48 +113,11 @@ func (o *Groupcreate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Images = []Userimage{{}} 
-    
-    
-    
      o.Addresses = []Groupcontact{{}} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.OwnerIds = []string{""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -170,20 +133,11 @@ func (u *Groupcreate) MarshalJSON() ([]byte, error) {
     }
     GroupcreateMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         Description string `json:"description"`
-        
-        
-        
-        
-        
-        
-        
-        
         
         VarType string `json:"type"`
         
@@ -196,74 +150,56 @@ func (u *Groupcreate) MarshalJSON() ([]byte, error) {
         Visibility string `json:"visibility"`
         
         OwnerIds []string `json:"ownerIds"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Images: []Userimage{{}},
         
 
-        
 
         
         Addresses: []Groupcontact{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         OwnerIds: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,31 +30,38 @@ func init() {
 func Cmdoutbound_dnclists() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/dnclists", utils.FormatPermissions([]string{ "outbound:dncList:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/dnclists")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "DncList",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DncListCreate"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DncListCreate"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DncList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DncList"
+      }
+    }
   }
 }`)
 	outbound_dnclistsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/dnclists/{dncListId}", utils.FormatPermissions([]string{ "outbound:dncList:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/dnclists/{dncListId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	outbound_dnclistsCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "bool", "includeImportStatus", "false", "Import status")
 	utils.AddFlag(getCmd.Flags(), "bool", "includeSize", "false", "Include size")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/dnclists/{dncListId}", utils.FormatPermissions([]string{ "outbound:dncList:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/dnclists/{dncListId}")))
@@ -62,12 +69,16 @@ func Cmdoutbound_dnclists() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DncList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DncList"
+      }
+    }
   }
 }`)
 	outbound_dnclistsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "bool", "includeImportStatus", "false", "Import status")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeSize", "false", "Include size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size. The max that will be returned is 100.")
@@ -84,31 +95,40 @@ func Cmdoutbound_dnclists() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	outbound_dnclistsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/dnclists/{dncListId}", utils.FormatPermissions([]string{ "outbound:dncList:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/dnclists/{dncListId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "DncList",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DncList"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DncList"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DncList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DncList"
+      }
+    }
   }
 }`)
 	outbound_dnclistsCmd.AddCommand(updateCmd)
-	
 	return outbound_dnclistsCmd
 }
 

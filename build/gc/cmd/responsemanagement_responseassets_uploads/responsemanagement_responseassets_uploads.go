@@ -30,23 +30,28 @@ func init() {
 func Cmdresponsemanagement_responseassets_uploads() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/responsemanagement/responseassets/uploads", utils.FormatPermissions([]string{ "responseAssets:asset:add",  }), utils.GenerateDevCentreLink("POST", "Response Management", "/api/v2/responsemanagement/responseassets/uploads")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CreateResponseAssetRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreateResponseAssetRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CreateResponseAssetResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreateResponseAssetResponse"
+      }
+    }
   }
 }`)
 	responsemanagement_responseassets_uploadsCmd.AddCommand(createCmd)
-	
 	return responsemanagement_responseassets_uploadsCmd
 }
 

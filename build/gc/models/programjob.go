@@ -66,27 +66,7 @@ type Programjob struct {
 // String returns a JSON representation of the model
 func (o *Programjob) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Programs = []Baseprogramentity{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -105,8 +85,7 @@ func (u *Programjob) MarshalJSON() ([]byte, error) {
     }
     ProgramjobMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         State string `json:"state"`
         
@@ -117,42 +96,31 @@ func (u *Programjob) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         
         DateModified time.Time `json:"dateModified"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Programs: []Baseprogramentity{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

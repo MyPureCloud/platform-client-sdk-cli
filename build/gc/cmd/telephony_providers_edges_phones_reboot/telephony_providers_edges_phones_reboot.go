@@ -33,8 +33,12 @@ func Cmdtelephony_providers_edges_phones_reboot() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(rebootCmd.Flags(), "POST", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
@@ -48,22 +52,28 @@ func Cmdtelephony_providers_edges_phones_reboot() *cobra.Command {
   }
 }`)
 	telephony_providers_edges_phones_rebootCmd.AddCommand(rebootCmd)
-	
+
 	rebootphonesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", rebootphonesCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/phones/reboot", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/phones/reboot")))
 	utils.AddFileFlagIfUpsert(rebootphonesCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Phones",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/PhonesReboot"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PhonesReboot"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(rebootphonesCmd.Flags(), "POST", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
@@ -77,7 +87,6 @@ func Cmdtelephony_providers_edges_phones_reboot() *cobra.Command {
   }
 }`)
 	telephony_providers_edges_phones_rebootCmd.AddCommand(rebootphonesCmd)
-	
 	return telephony_providers_edges_phones_rebootCmd
 }
 

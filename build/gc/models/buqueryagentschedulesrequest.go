@@ -32,14 +32,7 @@ type Buqueryagentschedulesrequest struct {
 // String returns a JSON representation of the model
 func (o *Buqueryagentschedulesrequest) String() string {
     
-    
-    
-    
-    
-    
      o.UserIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Buqueryagentschedulesrequest) MarshalJSON() ([]byte, error) {
     }
     BuqueryagentschedulesrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ManagementUnitId string `json:"managementUnitId"`
         
         UserIds []string `json:"userIds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         UserIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

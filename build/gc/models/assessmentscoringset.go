@@ -68,27 +68,7 @@ type Assessmentscoringset struct {
 
 // String returns a JSON representation of the model
 func (o *Assessmentscoringset) String() string {
-    
-    
-    
-    
-    
-    
-    
-    
      o.QuestionGroupScores = []Assessmentquestiongroupscore{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -106,60 +86,41 @@ func (u *Assessmentscoringset) MarshalJSON() ([]byte, error) {
     }
     AssessmentscoringsetMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         
         QuestionGroupScores []Assessmentquestiongroupscore `json:"questionGroupScores"`
-        
-        
         
         Comments string `json:"comments"`
         
         AgentComments string `json:"agentComments"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         QuestionGroupScores: []Assessmentquestiongroupscore{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

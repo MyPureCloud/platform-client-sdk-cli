@@ -33,13 +33,6 @@ type Associatedvaluefield struct {
 func (o *Associatedvaluefield) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Associatedvaluefield) MarshalJSON() ([]byte, error) {
     }
     AssociatedvaluefieldMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DataType string `json:"dataType"`
         
         Name string `json:"name"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

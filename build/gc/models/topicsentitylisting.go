@@ -59,26 +59,7 @@ type Topicsentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Topicsentitylisting) String() string {
-    
-    
      o.Entities = []Listedtopic{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -99,7 +80,8 @@ func (u *Topicsentitylisting) MarshalJSON() ([]byte, error) {
     }
     TopicsentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Listedtopic `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -111,36 +93,28 @@ func (u *Topicsentitylisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Listedtopic{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

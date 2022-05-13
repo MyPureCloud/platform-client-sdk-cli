@@ -73,28 +73,6 @@ func (o *Locationaddress) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Locationaddress) MarshalJSON() ([]byte, error) {
     }
     LocationaddressMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         City string `json:"city"`
         
         Country string `json:"country"`
@@ -124,38 +103,29 @@ func (u *Locationaddress) MarshalJSON() ([]byte, error) {
         Street2 string `json:"street2"`
         
         Zipcode string `json:"zipcode"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -55,23 +55,7 @@ func (o *Wfmhistoricaladherenceresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.DownloadUrls = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -88,7 +72,8 @@ func (u *Wfmhistoricaladherenceresponse) MarshalJSON() ([]byte, error) {
     }
     WfmhistoricaladherenceresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         DownloadUrl string `json:"downloadUrl"`
@@ -98,32 +83,25 @@ func (u *Wfmhistoricaladherenceresponse) MarshalJSON() ([]byte, error) {
         DownloadUrls []string `json:"downloadUrls"`
         
         QueryState string `json:"queryState"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         DownloadUrls: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

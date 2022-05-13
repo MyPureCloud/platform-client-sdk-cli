@@ -31,15 +31,8 @@ type Learningassignmentbulkaddresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Learningassignmentbulkaddresponse) String() string {
-    
-    
      o.Entities = []Learningassignment{{}} 
-    
-    
-    
      o.DisallowedEntities = []Disallowedentitylearningassignmentitem{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Learningassignmentbulkaddresponse) MarshalJSON() ([]byte, error) {
     }
     LearningassignmentbulkaddresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Learningassignment `json:"entities"`
         
         DisallowedEntities []Disallowedentitylearningassignmentitem `json:"disallowedEntities"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Learningassignment{{}},
         
 
-        
 
         
         DisallowedEntities: []Disallowedentitylearningassignmentitem{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

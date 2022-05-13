@@ -35,12 +35,15 @@ func Cmdworkforcemanagement_businessunits_managementunits() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_managementunitsCmd.AddCommand(listCmd)
-	
 	return workforcemanagement_businessunits_managementunitsCmd
 }
 

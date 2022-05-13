@@ -41,16 +41,6 @@ func (o *Scimphonenumber) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Scimphonenumber) MarshalJSON() ([]byte, error) {
     }
     ScimphonenumberMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Value string `json:"value"`
         
         VarType string `json:"type"`
         
         Primary bool `json:"primary"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -49,19 +49,6 @@ func (o *Domainnetworkcommandresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Domainnetworkcommandresponse) MarshalJSON() ([]byte, error) {
     }
     DomainnetworkcommandresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         CorrelationId string `json:"correlationId"`
         
         CommandName string `json:"commandName"`
@@ -85,26 +73,20 @@ func (u *Domainnetworkcommandresponse) MarshalJSON() ([]byte, error) {
         Acknowledged bool `json:"acknowledged"`
         
         ErrorInfo *Errordetails `json:"errorInfo"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

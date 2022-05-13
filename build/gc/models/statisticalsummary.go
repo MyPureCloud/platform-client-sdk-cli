@@ -105,40 +105,6 @@ func (o *Statisticalsummary) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -154,7 +120,8 @@ func (u *Statisticalsummary) MarshalJSON() ([]byte, error) {
     }
     StatisticalsummaryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Max float32 `json:"max"`
         
         Min float32 `json:"min"`
@@ -176,54 +143,41 @@ func (u *Statisticalsummary) MarshalJSON() ([]byte, error) {
         Denominator float32 `json:"denominator"`
         
         Target float32 `json:"target"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

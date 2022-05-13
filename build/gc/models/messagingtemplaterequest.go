@@ -32,14 +32,7 @@ type Messagingtemplaterequest struct {
 // String returns a JSON representation of the model
 func (o *Messagingtemplaterequest) String() string {
     
-    
-    
-    
-    
-    
      o.Parameters = []Templateparameter{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Messagingtemplaterequest) MarshalJSON() ([]byte, error) {
     }
     MessagingtemplaterequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ResponseId string `json:"responseId"`
         
         Parameters []Templateparameter `json:"parameters"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Parameters: []Templateparameter{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

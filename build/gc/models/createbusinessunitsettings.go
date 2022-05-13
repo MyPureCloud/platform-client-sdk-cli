@@ -49,19 +49,6 @@ func (o *Createbusinessunitsettings) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Createbusinessunitsettings) MarshalJSON() ([]byte, error) {
     }
     CreatebusinessunitsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         StartDayOfWeek string `json:"startDayOfWeek"`
         
         TimeZone string `json:"timeZone"`
@@ -85,26 +73,20 @@ func (u *Createbusinessunitsettings) MarshalJSON() ([]byte, error) {
         ShortTermForecasting Bushorttermforecastingsettings `json:"shortTermForecasting"`
         
         Scheduling Buschedulingsettings `json:"scheduling"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

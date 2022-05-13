@@ -30,43 +30,54 @@ func init() {
 func Cmdlanguageunderstanding_domains_versions() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/languageunderstanding/domains/{domainId}/versions", utils.FormatPermissions([]string{ "languageUnderstanding:nluDomainVersion:add", "dialog:botVersion:add",  }), utils.GenerateDevCentreLink("POST", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/versions")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The NLU Domain Version to create.",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/NluDomainVersion"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NluDomainVersion"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/NluDomainVersion"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NluDomainVersion"
+      }
+    }
   }
 }`)
 	languageunderstanding_domains_versionsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}", utils.FormatPermissions([]string{ "languageUnderstanding:nluDomainVersion:delete", "dialog:botVersion:delete",  }), utils.GenerateDevCentreLink("DELETE", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Deleted the specified NLU Domain Version"
+  "description" : "Deleted the specified NLU Domain Version",
+  "content" : { }
 }`)
 	languageunderstanding_domains_versionsCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "bool", "includeUtterances", "", "Whether utterances for intent definition should be included when marshalling response.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}", utils.FormatPermissions([]string{ "languageUnderstanding:nluDomainVersion:view", "dialog:botVersion:view",  }), utils.GenerateDevCentreLink("GET", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "Retrieved the specified NLU Domain Version",
-  "schema" : {
-    "$ref" : "#/definitions/NluDomainVersion"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NluDomainVersion"
+      }
+    }
   }
 }`)
 	languageunderstanding_domains_versionsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "bool", "includeUtterances", "", "Whether utterances for intent definition should be included when marshalling response.")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
@@ -75,31 +86,40 @@ func Cmdlanguageunderstanding_domains_versions() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	languageunderstanding_domains_versionsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}", utils.FormatPermissions([]string{ "languageUnderstanding:nluDomainVersion:edit", "dialog:botVersion:edit",  }), utils.GenerateDevCentreLink("PUT", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The updated NLU Domain Version.",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/NluDomainVersion"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NluDomainVersion"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "Updated the specified NLU Domain Version",
-  "schema" : {
-    "$ref" : "#/definitions/NluDomainVersion"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NluDomainVersion"
+      }
+    }
   }
 }`)
 	languageunderstanding_domains_versionsCmd.AddCommand(updateCmd)
-	
 	return languageunderstanding_domains_versionsCmd
 }
 

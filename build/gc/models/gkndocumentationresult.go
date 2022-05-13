@@ -49,19 +49,6 @@ func (o *Gkndocumentationresult) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Gkndocumentationresult) MarshalJSON() ([]byte, error) {
     }
     GkndocumentationresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Content string `json:"content"`
         
         Link string `json:"link"`
@@ -85,26 +73,20 @@ func (u *Gkndocumentationresult) MarshalJSON() ([]byte, error) {
         Title string `json:"title"`
         
         VarType string `json:"_type"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

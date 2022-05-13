@@ -24,11 +24,7 @@ type Roledivisiongrants struct {
 
 // String returns a JSON representation of the model
 func (o *Roledivisiongrants) String() string {
-    
-    
      o.Grants = []Roledivisionpair{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Roledivisiongrants) MarshalJSON() ([]byte, error) {
     }
     RoledivisiongrantsMarshalled = true
 
-    return json.Marshal(&struct { 
-        Grants []Roledivisionpair `json:"grants"`
+    return json.Marshal(&struct {
         
+        Grants []Roledivisionpair `json:"grants"`
         *Alias
     }{
-        
 
         
         Grants: []Roledivisionpair{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

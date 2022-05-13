@@ -101,38 +101,7 @@ func (o *Surveyform) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.QuestionGroups = []Surveyquestiongroup{{}} 
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -148,18 +117,11 @@ func (u *Surveyform) MarshalJSON() ([]byte, error) {
     }
     SurveyformMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
-        
-        
-        
-        
         Disabled bool `json:"disabled"`
-        
-        
         
         Language string `json:"language"`
         
@@ -168,64 +130,46 @@ func (u *Surveyform) MarshalJSON() ([]byte, error) {
         Footer string `json:"footer"`
         
         QuestionGroups []Surveyquestiongroup `json:"questionGroups"`
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         QuestionGroups: []Surveyquestiongroup{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

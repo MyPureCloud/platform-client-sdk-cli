@@ -32,28 +32,37 @@ func Cmdtokens_me() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	tokens_meCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/tokens/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Tokens", "/api/v2/tokens/me")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TokenInfo"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TokenInfo"
+      }
+    }
   }
 }`)
 	tokens_meCmd.AddCommand(getCmd)
-	
+
 	headCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", headCmd.UsageTemplate(), "HEAD", "/api/v2/tokens/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("HEAD", "Tokens", "/api/v2/tokens/me")))
 	utils.AddFileFlagIfUpsert(headCmd.Flags(), "HEAD", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(headCmd.Flags(), "HEAD", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
@@ -61,7 +70,6 @@ func Cmdtokens_me() *cobra.Command {
   }
 }`)
 	tokens_meCmd.AddCommand(headCmd)
-	
 	return tokens_meCmd
 }
 

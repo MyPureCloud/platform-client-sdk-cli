@@ -55,21 +55,6 @@ func (o *Botsearchresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -85,7 +70,8 @@ func (u *Botsearchresponse) MarshalJSON() ([]byte, error) {
     }
     BotsearchresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -93,32 +79,23 @@ func (u *Botsearchresponse) MarshalJSON() ([]byte, error) {
         BotType string `json:"botType"`
         
         Description string `json:"description"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

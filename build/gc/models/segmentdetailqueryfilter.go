@@ -39,18 +39,8 @@ type Segmentdetailqueryfilter struct {
 // String returns a JSON representation of the model
 func (o *Segmentdetailqueryfilter) String() string {
     
-    
-    
-    
-    
-    
      o.Clauses = []Segmentdetailqueryclause{{}} 
-    
-    
-    
      o.Predicates = []Segmentdetailquerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Segmentdetailqueryfilter) MarshalJSON() ([]byte, error) {
     }
     SegmentdetailqueryfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Clauses []Segmentdetailqueryclause `json:"clauses"`
         
         Predicates []Segmentdetailquerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Clauses: []Segmentdetailqueryclause{{}},
         
 
-        
 
         
         Predicates: []Segmentdetailquerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,12 +33,15 @@ func Cmdworkforcemanagement_businessunits_weeks_shorttermforecasts_generationres
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuForecastGenerationResult"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuForecastGenerationResult"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_shorttermforecasts_generationresultsCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_businessunits_weeks_shorttermforecasts_generationresultsCmd
 }
 

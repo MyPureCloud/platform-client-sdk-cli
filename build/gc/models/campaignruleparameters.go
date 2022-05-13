@@ -49,19 +49,6 @@ func (o *Campaignruleparameters) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Campaignruleparameters) MarshalJSON() ([]byte, error) {
     }
     CampaignruleparametersMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Operator string `json:"operator"`
         
         Value string `json:"value"`
@@ -85,26 +73,20 @@ func (u *Campaignruleparameters) MarshalJSON() ([]byte, error) {
         Priority string `json:"priority"`
         
         DialingMode string `json:"dialingMode"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

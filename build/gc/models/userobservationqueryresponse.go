@@ -24,11 +24,7 @@ type Userobservationqueryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Userobservationqueryresponse) String() string {
-    
-    
      o.Results = []Userobservationdatacontainer{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Userobservationqueryresponse) MarshalJSON() ([]byte, error) {
     }
     UserobservationqueryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Results []Userobservationdatacontainer `json:"results"`
+    return json.Marshal(&struct {
         
+        Results []Userobservationdatacontainer `json:"results"`
         *Alias
     }{
-        
 
         
         Results: []Userobservationdatacontainer{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -39,18 +39,8 @@ type Flowobservationqueryfilter struct {
 // String returns a JSON representation of the model
 func (o *Flowobservationqueryfilter) String() string {
     
-    
-    
-    
-    
-    
      o.Clauses = []Flowobservationqueryclause{{}} 
-    
-    
-    
      o.Predicates = []Flowobservationquerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Flowobservationqueryfilter) MarshalJSON() ([]byte, error) {
     }
     FlowobservationqueryfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Clauses []Flowobservationqueryclause `json:"clauses"`
         
         Predicates []Flowobservationquerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Clauses: []Flowobservationqueryclause{{}},
         
 
-        
 
         
         Predicates: []Flowobservationquerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

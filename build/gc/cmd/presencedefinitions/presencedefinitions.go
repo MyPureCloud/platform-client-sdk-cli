@@ -30,30 +30,40 @@ func init() {
 func Cmdpresencedefinitions() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/presencedefinitions", utils.FormatPermissions([]string{ "presence:presenceDefinition:add",  }), utils.GenerateDevCentreLink("POST", "Presence", "/api/v2/presencedefinitions")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The Presence Definition to create",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/OrganizationPresence"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrganizationPresence"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OrganizationPresence"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrganizationPresence"
+      }
+    }
   }
 }`)
 	presencedefinitionsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/presencedefinitions/{presenceId}", utils.FormatPermissions([]string{ "presence:presenceDefinition:delete",  }), utils.GenerateDevCentreLink("DELETE", "Presence", "/api/v2/presencedefinitions/{presenceId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
@@ -61,19 +71,23 @@ func Cmdpresencedefinitions() *cobra.Command {
   }
 }`)
 	presencedefinitionsCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "string", "localeCode", "", "The locale code to fetch for the presence definition. Use ALL to fetch everything.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/presencedefinitions/{presenceId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Presence", "/api/v2/presencedefinitions/{presenceId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OrganizationPresence"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrganizationPresence"
+      }
+    }
   }
 }`)
 	presencedefinitionsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "deleted", "false", "Deleted query can be TRUE, FALSE or ALL")
@@ -83,31 +97,40 @@ func Cmdpresencedefinitions() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	presencedefinitionsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/presencedefinitions/{presenceId}", utils.FormatPermissions([]string{ "presence:presenceDefinition:edit",  }), utils.GenerateDevCentreLink("PUT", "Presence", "/api/v2/presencedefinitions/{presenceId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The OrganizationPresence to update",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/OrganizationPresence"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrganizationPresence"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OrganizationPresence"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrganizationPresence"
+      }
+    }
   }
 }`)
 	presencedefinitionsCmd.AddCommand(updateCmd)
-	
 	return presencedefinitionsCmd
 }
 

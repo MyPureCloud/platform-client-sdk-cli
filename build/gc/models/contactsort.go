@@ -41,16 +41,6 @@ func (o *Contactsort) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Contactsort) MarshalJSON() ([]byte, error) {
     }
     ContactsortMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FieldName string `json:"fieldName"`
         
         Direction string `json:"direction"`
         
         Numeric bool `json:"numeric"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,23 +30,29 @@ func init() {
 func Cmdlocations_search() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/locations/search", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Locations", "/api/v2/locations/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Search request options",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/LocationSearchRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LocationSearchRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LocationsSearchResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LocationsSearchResponse"
+      }
+    }
   }
 }`)
 	locations_searchCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "q64", "", "q64 - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Provides more details about a specified resource Valid values: images, addressVerificationDetails")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/locations/search", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Locations", "/api/v2/locations/search")))
@@ -55,12 +61,15 @@ func Cmdlocations_search() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	locations_searchCmd.AddCommand(listCmd)
-	
 	return locations_searchCmd
 }
 

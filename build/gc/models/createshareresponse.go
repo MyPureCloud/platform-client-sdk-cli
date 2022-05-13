@@ -99,40 +99,8 @@ func (o *Createshareresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Succeeded = []Share{{}} 
-    
-    
-    
      o.Failed = []Share{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -148,8 +116,7 @@ func (u *Createshareresponse) MarshalJSON() ([]byte, error) {
     }
     CreateshareresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -168,60 +135,45 @@ func (u *Createshareresponse) MarshalJSON() ([]byte, error) {
         Succeeded []Share `json:"succeeded"`
         
         Failed []Share `json:"failed"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Succeeded: []Share{{}},
         
 
-        
 
         
         Failed: []Share{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

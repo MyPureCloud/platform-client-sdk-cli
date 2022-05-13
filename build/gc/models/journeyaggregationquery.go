@@ -83,39 +83,11 @@ func (o *Journeyaggregationquery) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.GroupBy = []string{""} 
-    
-    
-    
-    
-    
-    
     
      o.Metrics = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.Views = []Journeyaggregationview{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -132,7 +104,8 @@ func (u *Journeyaggregationquery) MarshalJSON() ([]byte, error) {
     }
     JourneyaggregationqueryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         Granularity string `json:"granularity"`
@@ -150,52 +123,41 @@ func (u *Journeyaggregationquery) MarshalJSON() ([]byte, error) {
         Views []Journeyaggregationview `json:"views"`
         
         AlternateTimeDimension string `json:"alternateTimeDimension"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         GroupBy: []string{""},
         
 
-        
 
         
 
-        
 
         
         Metrics: []string{""},
         
 
-        
 
         
 
-        
 
         
         Views: []Journeyaggregationview{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

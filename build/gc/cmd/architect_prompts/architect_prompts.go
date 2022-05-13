@@ -35,38 +35,52 @@ func Cmdarchitect_prompts() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(batchdeleteCmd.Flags(), "DELETE", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Operation"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Operation"
+      }
+    }
   }
 }`)
 	architect_promptsCmd.AddCommand(batchdeleteCmd)
-	
+
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/architect/prompts", utils.FormatPermissions([]string{ "architect:userPrompt:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/architect/prompts")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Prompt"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Prompt"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Prompt"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Prompt"
+      }
+    }
   }
 }`)
 	architect_promptsCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(deleteCmd.Flags(), "bool", "allResources", "", "Whether or not to delete all the prompt resources")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/architect/prompts/{promptId}", utils.FormatPermissions([]string{ "architect:userPrompt:delete",  }), utils.GenerateDevCentreLink("DELETE", "Architect", "/api/v2/architect/prompts/{promptId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
@@ -74,18 +88,22 @@ func Cmdarchitect_prompts() *cobra.Command {
   }
 }`)
 	architect_promptsCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/prompts/{promptId}", utils.FormatPermissions([]string{ "architect:userPrompt:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/prompts/{promptId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Prompt"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Prompt"
+      }
+    }
   }
 }`)
 	architect_promptsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "[]string", "name", "", "Name")
@@ -98,30 +116,39 @@ func Cmdarchitect_prompts() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	architect_promptsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/architect/prompts/{promptId}", utils.FormatPermissions([]string{ "architect:userPrompt:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/architect/prompts/{promptId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Prompt"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Prompt"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Prompt"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Prompt"
+      }
+    }
   }
 }`)
 	architect_promptsCmd.AddCommand(updateCmd)
-	
 	return architect_promptsCmd
 }
 

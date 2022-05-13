@@ -87,38 +87,7 @@ type Subjectdivisiongrantsentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Subjectdivisiongrantsentitylisting) String() string {
-    
-    
      o.Entities = []Subjectdivisiongrants{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Subjectdivisiongrantsentitylisting) MarshalJSON() ([]byte, error) {
     }
     SubjectdivisiongrantsentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Subjectdivisiongrants `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Subjectdivisiongrantsentitylisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Subjectdivisiongrants{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

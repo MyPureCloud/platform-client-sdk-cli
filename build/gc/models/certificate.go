@@ -25,10 +25,6 @@ type Certificate struct {
 // String returns a JSON representation of the model
 func (o *Certificate) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Certificate) MarshalJSON() ([]byte, error) {
     }
     CertificateMarshalled = true
 
-    return json.Marshal(&struct { 
-        Certificate string `json:"certificate"`
+    return json.Marshal(&struct {
         
+        Certificate string `json:"certificate"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -25,10 +25,6 @@ type Contextintent struct {
 // String returns a JSON representation of the model
 func (o *Contextintent) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Contextintent) MarshalJSON() ([]byte, error) {
     }
     ContextintentMarshalled = true
 
-    return json.Marshal(&struct { 
-        Name string `json:"name"`
+    return json.Marshal(&struct {
         
+        Name string `json:"name"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

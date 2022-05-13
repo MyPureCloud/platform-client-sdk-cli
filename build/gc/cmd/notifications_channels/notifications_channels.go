@@ -33,19 +33,27 @@ func Cmdnotifications_channels() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Channel"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Channel"
+      }
+    }
   }
 }`)
 	notifications_channelsCmd.AddCommand(createCmd)
-	
+
 	headCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", headCmd.UsageTemplate(), "HEAD", "/api/v2/notifications/channels/{channelId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("HEAD", "Notifications", "/api/v2/notifications/channels/{channelId}")))
 	utils.AddFileFlagIfUpsert(headCmd.Flags(), "HEAD", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(headCmd.Flags(), "HEAD", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
@@ -53,19 +61,22 @@ func Cmdnotifications_channels() *cobra.Command {
   }
 }`)
 	notifications_channelsCmd.AddCommand(headCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "includechannels", "token", "Show user`s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. Valid values: token, oauthclient")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/notifications/channels", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Notifications", "/api/v2/notifications/channels")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ChannelEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ChannelEntityListing"
+      }
+    }
   }
 }`)
 	notifications_channelsCmd.AddCommand(listCmd)
-	
 	return notifications_channelsCmd
 }
 

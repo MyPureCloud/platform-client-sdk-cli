@@ -31,14 +31,7 @@ type Shiftstartvariance struct {
 
 // String returns a JSON representation of the model
 func (o *Shiftstartvariance) String() string {
-    
-    
      o.ApplicableDays = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Shiftstartvariance) MarshalJSON() ([]byte, error) {
     }
     ShiftstartvarianceMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ApplicableDays []string `json:"applicableDays"`
         
         MaxShiftStartVarianceMinutes int `json:"maxShiftStartVarianceMinutes"`
-        
         *Alias
     }{
-        
 
         
         ApplicableDays: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

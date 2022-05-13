@@ -50,19 +50,6 @@ func (o *Analyticsuserpresencerecord) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,7 +65,8 @@ func (u *Analyticsuserpresencerecord) MarshalJSON() ([]byte, error) {
     }
     AnalyticsuserpresencerecordMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         StartTime time.Time `json:"startTime"`
         
         EndTime time.Time `json:"endTime"`
@@ -86,26 +74,20 @@ func (u *Analyticsuserpresencerecord) MarshalJSON() ([]byte, error) {
         SystemPresence string `json:"systemPresence"`
         
         OrganizationPresenceId string `json:"organizationPresenceId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -123,50 +123,7 @@ func (o *Messagecontent) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Reactions = []Contentreaction{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -187,7 +144,8 @@ func (u *Messagecontent) MarshalJSON() ([]byte, error) {
     }
     MessagecontentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ContentType string `json:"contentType"`
         
         Location Contentlocation `json:"location"`
@@ -215,68 +173,52 @@ func (u *Messagecontent) MarshalJSON() ([]byte, error) {
         Card Contentcard `json:"card"`
         
         Carousel Contentcarousel `json:"carousel"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Reactions: []Contentreaction{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

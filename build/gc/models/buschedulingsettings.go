@@ -24,11 +24,7 @@ type Buschedulingsettings struct {
 
 // String returns a JSON representation of the model
 func (o *Buschedulingsettings) String() string {
-    
-    
      o.MessageSeverities = []Schedulermessagetypeseverity{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Buschedulingsettings) MarshalJSON() ([]byte, error) {
     }
     BuschedulingsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
-        MessageSeverities []Schedulermessagetypeseverity `json:"messageSeverities"`
+    return json.Marshal(&struct {
         
+        MessageSeverities []Schedulermessagetypeseverity `json:"messageSeverities"`
         *Alias
     }{
-        
 
         
         MessageSeverities: []Schedulermessagetypeseverity{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -87,38 +87,7 @@ type Webchatmemberinfoentitylist struct {
 
 // String returns a JSON representation of the model
 func (o *Webchatmemberinfoentitylist) String() string {
-    
-    
      o.Entities = []Webchatmemberinfo{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Webchatmemberinfoentitylist) MarshalJSON() ([]byte, error) {
     }
     WebchatmemberinfoentitylistMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Webchatmemberinfo `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Webchatmemberinfoentitylist) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Webchatmemberinfo{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

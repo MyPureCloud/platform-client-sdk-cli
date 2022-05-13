@@ -30,46 +30,58 @@ func init() {
 func Cmdusers_queues() *cobra.Command { 
 	joinCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", joinCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:join", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/users/{userId}/queues/{queueId}")))
 	utils.AddFileFlagIfUpsert(joinCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Queue Member",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/UserQueue"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserQueue"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(joinCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserQueue"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserQueue"
+      }
+    }
   }
 }`)
 	users_queuesCmd.AddCommand(joinCmd)
-	
+
 	utils.AddFlag(joinsetCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
 	joinsetCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", joinsetCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/queues", utils.FormatPermissions([]string{ "routing:queue:join", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/users/{userId}/queues")))
 	utils.AddFileFlagIfUpsert(joinsetCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "User Queues",
-  "required" : true,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/UserQueue"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/UserQueue"
+        }
+      }
     }
-  }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(joinsetCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserQueueEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserQueueEntityListing"
+      }
+    }
   }
 }`)
 	users_queuesCmd.AddCommand(joinsetCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "bool", "joined", "true", "Is joined to the queue")
@@ -79,12 +91,15 @@ func Cmdusers_queues() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	users_queuesCmd.AddCommand(listCmd)
-	
 	return users_queuesCmd
 }
 

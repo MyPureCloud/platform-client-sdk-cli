@@ -88,35 +88,7 @@ func (o *Analyticsparticipantwithoutattributes) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Sessions = []Analyticssession{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -132,7 +104,8 @@ func (u *Analyticsparticipantwithoutattributes) MarshalJSON() ([]byte, error) {
     }
     AnalyticsparticipantwithoutattributesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ExternalContactId string `json:"externalContactId"`
         
         ExternalOrganizationId string `json:"externalOrganizationId"`
@@ -150,48 +123,37 @@ func (u *Analyticsparticipantwithoutattributes) MarshalJSON() ([]byte, error) {
         UserId string `json:"userId"`
         
         Sessions []Analyticssession `json:"sessions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Sessions: []Analyticssession{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

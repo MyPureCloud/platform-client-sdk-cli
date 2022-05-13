@@ -118,44 +118,6 @@ func (o *Edgelogsjobresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -171,7 +133,8 @@ func (u *Edgelogsjobresponse) MarshalJSON() ([]byte, error) {
     }
     EdgelogsjobresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -190,69 +153,50 @@ func (u *Edgelogsjobresponse) MarshalJSON() ([]byte, error) {
         
         CreatedBy string `json:"createdBy"`
         
-        
-        
         ModifiedByApp string `json:"modifiedByApp"`
         
         CreatedByApp string `json:"createdByApp"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

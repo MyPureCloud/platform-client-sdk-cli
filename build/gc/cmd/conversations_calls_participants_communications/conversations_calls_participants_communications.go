@@ -30,23 +30,28 @@ func init() {
 func Cmdconversations_calls_participants_communications() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Participant",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/MediaParticipantRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/MediaParticipantRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Empty"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Empty"
+      }
+    }
   }
 }`)
 	conversations_calls_participants_communicationsCmd.AddCommand(updateCmd)
-	
 	return conversations_calls_participants_communicationsCmd
 }
 

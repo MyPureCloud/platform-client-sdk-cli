@@ -33,13 +33,6 @@ type Queryrequestpredicate struct {
 func (o *Queryrequestpredicate) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Queryrequestpredicate) MarshalJSON() ([]byte, error) {
     }
     QueryrequestpredicateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Dimension string `json:"dimension"`
         
         Value string `json:"value"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

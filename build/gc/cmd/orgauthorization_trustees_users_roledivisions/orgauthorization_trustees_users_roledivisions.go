@@ -30,23 +30,28 @@ func init() {
 func Cmdorgauthorization_trustees_users_roledivisions() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions", utils.FormatPermissions([]string{ "authorization:orgTrusteeUser:edit",  }), utils.GenerateDevCentreLink("PUT", "Organization Authorization", "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Set of roles with corresponding divisions to apply",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/RoleDivisionGrants"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RoleDivisionGrants"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserAuthorization"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserAuthorization"
+      }
+    }
   }
 }`)
 	orgauthorization_trustees_users_roledivisionsCmd.AddCommand(updateCmd)
-	
 	return orgauthorization_trustees_users_roledivisionsCmd
 }
 

@@ -41,12 +41,15 @@ func Cmdtelephony_siptraces() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SipSearchResult"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SipSearchResult"
+      }
+    }
   }
 }`)
 	telephony_siptracesCmd.AddCommand(getCmd)
-	
 	return telephony_siptracesCmd
 }
 

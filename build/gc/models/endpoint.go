@@ -159,66 +159,11 @@ func (o *Endpoint) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Properties = map[string]interface{}{"": Interface{}} 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Dids = []string{""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -234,8 +179,7 @@ func (u *Endpoint) MarshalJSON() ([]byte, error) {
     }
     EndpointMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -253,8 +197,6 @@ func (u *Endpoint) MarshalJSON() ([]byte, error) {
         
         CreatedBy string `json:"createdBy"`
         
-        
-        
         ModifiedByApp string `json:"modifiedByApp"`
         
         CreatedByApp string `json:"createdByApp"`
@@ -270,92 +212,69 @@ func (u *Endpoint) MarshalJSON() ([]byte, error) {
         Site Domainentityref `json:"site"`
         
         Dids []string `json:"dids"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Properties: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Dids: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

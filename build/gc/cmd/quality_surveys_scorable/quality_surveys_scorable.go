@@ -35,33 +35,42 @@ func Cmdquality_surveys_scorable() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ScorableSurvey"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScorableSurvey"
+      }
+    }
   }
 }`)
 	quality_surveys_scorableCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(updateCmd.Flags(), "string", "customerSurveyUrl", "", "customerSurveyUrl - REQUIRED")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/surveys/scorable", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/surveys/scorable")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "survey",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ScorableSurvey"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScorableSurvey"
+      }
+    }
+  },
+  "required" : true
 }`)
 	updateCmd.MarkFlagRequired("customerSurveyUrl")
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ScorableSurvey"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScorableSurvey"
+      }
+    }
   }
 }`)
 	quality_surveys_scorableCmd.AddCommand(updateCmd)
-	
 	return quality_surveys_scorableCmd
 }
 

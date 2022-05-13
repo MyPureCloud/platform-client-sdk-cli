@@ -80,31 +80,7 @@ func (o *Contactlistfilter) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Clauses = []Contactlistfilterclause{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -121,14 +97,9 @@ func (u *Contactlistfilter) MarshalJSON() ([]byte, error) {
     }
     ContactlistfilterMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
@@ -137,50 +108,37 @@ func (u *Contactlistfilter) MarshalJSON() ([]byte, error) {
         Clauses []Contactlistfilterclause `json:"clauses"`
         
         FilterType string `json:"filterType"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Clauses: []Contactlistfilterclause{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

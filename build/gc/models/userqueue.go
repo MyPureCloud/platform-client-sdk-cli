@@ -230,41 +230,7 @@ func (o *Userqueue) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.MediaSettings = map[string]Mediasetting{"": {}} 
-    
-    
-    
      o.RoutingRules = []Routingrule{{}} 
     
     
@@ -278,59 +244,7 @@ func (o *Userqueue) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.DefaultScripts = map[string]Script{"": {}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -349,8 +263,7 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
     }
     UserqueueMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -365,12 +278,6 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
         ModifiedBy string `json:"modifiedBy"`
         
         CreatedBy string `json:"createdBy"`
-        
-        
-        
-        
-        
-        
         
         MediaSettings map[string]Mediasetting `json:"mediaSettings"`
         
@@ -407,138 +314,104 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
         OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
         
         Joined bool `json:"joined"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MediaSettings: map[string]Mediasetting{"": {}},
         
 
-        
 
         
         RoutingRules: []Routingrule{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         DefaultScripts: map[string]Script{"": {}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

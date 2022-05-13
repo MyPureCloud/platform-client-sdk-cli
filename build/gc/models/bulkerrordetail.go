@@ -41,16 +41,6 @@ func (o *Bulkerrordetail) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Bulkerrordetail) MarshalJSON() ([]byte, error) {
     }
     BulkerrordetailMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FieldName string `json:"fieldName"`
         
         Value string `json:"value"`
         
         Message string `json:"message"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

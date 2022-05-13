@@ -33,13 +33,6 @@ type Coachingannotationcreaterequest struct {
 func (o *Coachingannotationcreaterequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Coachingannotationcreaterequest) MarshalJSON() ([]byte, error) {
     }
     CoachingannotationcreaterequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Text string `json:"text"`
         
         AccessType string `json:"accessType"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

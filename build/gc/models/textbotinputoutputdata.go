@@ -24,11 +24,7 @@ type Textbotinputoutputdata struct {
 
 // String returns a JSON representation of the model
 func (o *Textbotinputoutputdata) String() string {
-    
-    
      o.Variables = map[string]interface{}{"": Interface{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Textbotinputoutputdata) MarshalJSON() ([]byte, error) {
     }
     TextbotinputoutputdataMarshalled = true
 
-    return json.Marshal(&struct { 
-        Variables map[string]interface{} `json:"variables"`
+    return json.Marshal(&struct {
         
+        Variables map[string]interface{} `json:"variables"`
         *Alias
     }{
-        
 
         
         Variables: map[string]interface{}{"": Interface{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

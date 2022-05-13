@@ -87,38 +87,7 @@ type Reportingexportmetadatajoblisting struct {
 
 // String returns a JSON representation of the model
 func (o *Reportingexportmetadatajoblisting) String() string {
-    
-    
      o.Entities = []Reportingexportmetadatajobresponse{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Reportingexportmetadatajoblisting) MarshalJSON() ([]byte, error) {
     }
     ReportingexportmetadatajoblistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Reportingexportmetadatajobresponse `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Reportingexportmetadatajoblisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Reportingexportmetadatajobresponse{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

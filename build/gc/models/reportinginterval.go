@@ -33,13 +33,6 @@ type Reportinginterval struct {
 func (o *Reportinginterval) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Reportinginterval) MarshalJSON() ([]byte, error) {
     }
     ReportingintervalMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         IntervalType string `json:"intervalType"`
         
         IntervalValue int `json:"intervalValue"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

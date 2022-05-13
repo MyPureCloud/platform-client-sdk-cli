@@ -83,37 +83,9 @@ type Bureschedulerequest struct {
 func (o *Bureschedulerequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.AgentIds = []string{""} 
-    
-    
-    
      o.ActivityCodeIds = []string{""} 
-    
-    
-    
      o.ManagementUnitIds = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -133,7 +105,8 @@ func (u *Bureschedulerequest) MarshalJSON() ([]byte, error) {
     }
     BureschedulerequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         StartDate time.Time `json:"startDate"`
         
         EndDate time.Time `json:"endDate"`
@@ -151,52 +124,41 @@ func (u *Bureschedulerequest) MarshalJSON() ([]byte, error) {
         DoNotChangeShiftStartTimes bool `json:"doNotChangeShiftStartTimes"`
         
         DoNotChangeManuallyEditedShifts bool `json:"doNotChangeManuallyEditedShifts"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         AgentIds: []string{""},
         
 
-        
 
         
         ActivityCodeIds: []string{""},
         
 
-        
 
         
         ManagementUnitIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

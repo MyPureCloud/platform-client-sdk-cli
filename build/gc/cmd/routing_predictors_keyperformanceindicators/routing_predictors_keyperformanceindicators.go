@@ -33,15 +33,18 @@ func Cmdrouting_predictors_keyperformanceindicators() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/KeyPerformanceIndicator"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/KeyPerformanceIndicator"
+        }
+      }
     }
   }
 }`)
 	routing_predictors_keyperformanceindicatorsCmd.AddCommand(listCmd)
-	
 	return routing_predictors_keyperformanceindicatorsCmd
 }
 

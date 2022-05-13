@@ -33,13 +33,6 @@ type Queryresponsemetric struct {
 func (o *Queryresponsemetric) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Queryresponsemetric) MarshalJSON() ([]byte, error) {
     }
     QueryresponsemetricMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Metric string `json:"metric"`
         
         Stats Queryresponsestats `json:"stats"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

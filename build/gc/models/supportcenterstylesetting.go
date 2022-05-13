@@ -33,13 +33,6 @@ type Supportcenterstylesetting struct {
 func (o *Supportcenterstylesetting) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Supportcenterstylesetting) MarshalJSON() ([]byte, error) {
     }
     SupportcenterstylesettingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         HeroStyle Supportcenterherostyle `json:"heroStyle"`
         
         GlobalStyle Supportcenterglobalstyle `json:"globalStyle"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

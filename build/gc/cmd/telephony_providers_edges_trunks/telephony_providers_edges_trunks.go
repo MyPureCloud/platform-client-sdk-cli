@@ -33,12 +33,16 @@ func Cmdtelephony_providers_edges_trunks() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Trunk"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Trunk"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_trunksCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Value by which to sort")
@@ -51,12 +55,16 @@ func Cmdtelephony_providers_edges_trunks() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_trunksCmd.AddCommand(listCmd)
-	
+
 	utils.AddFlag(listedgetrunksCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listedgetrunksCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listedgetrunksCmd.Flags(), "string", "sortBy", "name", "Value by which to sort")
@@ -68,12 +76,15 @@ func Cmdtelephony_providers_edges_trunks() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listedgetrunksCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_trunksCmd.AddCommand(listedgetrunksCmd)
-	
 	return telephony_providers_edges_trunksCmd
 }
 

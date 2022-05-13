@@ -66,33 +66,11 @@ type Messagemediapolicyconditions struct {
 
 // String returns a JSON representation of the model
 func (o *Messagemediapolicyconditions) String() string {
-    
-    
      o.ForUsers = []User{{}} 
-    
-    
-    
      o.DateRanges = []string{""} 
-    
-    
-    
      o.ForQueues = []Queue{{}} 
-    
-    
-    
      o.WrapupCodes = []Wrapupcode{{}} 
-    
-    
-    
      o.Languages = []Language{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -110,7 +88,8 @@ func (u *Messagemediapolicyconditions) MarshalJSON() ([]byte, error) {
     }
     MessagemediapolicyconditionsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ForUsers []User `json:"forUsers"`
         
         DateRanges []string `json:"dateRanges"`
@@ -124,48 +103,39 @@ func (u *Messagemediapolicyconditions) MarshalJSON() ([]byte, error) {
         TimeAllowed Timeallowed `json:"timeAllowed"`
         
         CustomerParticipation string `json:"customerParticipation"`
-        
         *Alias
     }{
-        
 
         
         ForUsers: []User{{}},
         
 
-        
 
         
         DateRanges: []string{""},
         
 
-        
 
         
         ForQueues: []Queue{{}},
         
 
-        
 
         
         WrapupCodes: []Wrapupcode{{}},
         
 
-        
 
         
         Languages: []Language{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

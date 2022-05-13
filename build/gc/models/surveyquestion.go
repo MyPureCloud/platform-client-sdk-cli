@@ -86,35 +86,7 @@ func (o *Surveyquestion) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AnswerOptions = []Answeroption{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -132,7 +104,8 @@ func (u *Surveyquestion) MarshalJSON() ([]byte, error) {
     }
     SurveyquestionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Text string `json:"text"`
@@ -150,48 +123,37 @@ func (u *Surveyquestion) MarshalJSON() ([]byte, error) {
         MaxResponseCharacters int `json:"maxResponseCharacters"`
         
         ExplanationPrompt string `json:"explanationPrompt"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AnswerOptions: []Answeroption{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -91,43 +91,12 @@ func (o *Searchrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Sort = []Searchsort{{}} 
-    
-    
-    
      o.ReturnFields = []string{""} 
-    
-    
-    
      o.Expand = []string{""} 
-    
-    
-    
      o.Types = []string{""} 
-    
-    
-    
      o.Query = []Searchcriteria{{}} 
-    
-    
-    
      o.Aggregations = []Searchaggregation{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,7 +112,8 @@ func (u *Searchrequest) MarshalJSON() ([]byte, error) {
     }
     SearchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SortOrder string `json:"sortOrder"`
         
         SortBy string `json:"sortBy"`
@@ -163,62 +133,50 @@ func (u *Searchrequest) MarshalJSON() ([]byte, error) {
         Query []Searchcriteria `json:"query"`
         
         Aggregations []Searchaggregation `json:"aggregations"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Sort: []Searchsort{{}},
         
 
-        
 
         
         ReturnFields: []string{""},
         
 
-        
 
         
         Expand: []string{""},
         
 
-        
 
         
         Types: []string{""},
         
 
-        
 
         
         Query: []Searchcriteria{{}},
         
 
-        
 
         
         Aggregations: []Searchaggregation{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

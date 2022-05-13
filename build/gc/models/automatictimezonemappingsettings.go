@@ -31,15 +31,8 @@ type Automatictimezonemappingsettings struct {
 
 // String returns a JSON representation of the model
 func (o *Automatictimezonemappingsettings) String() string {
-    
-    
      o.CallableWindows = []Callablewindow{{}} 
-    
-    
-    
      o.SupportedCountries = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Automatictimezonemappingsettings) MarshalJSON() ([]byte, error) {
     }
     AutomatictimezonemappingsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         CallableWindows []Callablewindow `json:"callableWindows"`
         
         SupportedCountries []string `json:"supportedCountries"`
-        
         *Alias
     }{
-        
 
         
         CallableWindows: []Callablewindow{{}},
         
 
-        
 
         
         SupportedCountries: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

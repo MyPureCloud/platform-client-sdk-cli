@@ -25,10 +25,6 @@ type Importstatusrequest struct {
 // String returns a JSON representation of the model
 func (o *Importstatusrequest) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Importstatusrequest) MarshalJSON() ([]byte, error) {
     }
     ImportstatusrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        Status string `json:"status"`
+    return json.Marshal(&struct {
         
+        Status string `json:"status"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

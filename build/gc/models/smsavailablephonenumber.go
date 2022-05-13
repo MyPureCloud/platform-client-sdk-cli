@@ -90,36 +90,7 @@ func (o *Smsavailablephonenumber) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Capabilities = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -137,8 +108,7 @@ func (u *Smsavailablephonenumber) MarshalJSON() ([]byte, error) {
     }
     SmsavailablephonenumberMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -155,54 +125,40 @@ func (u *Smsavailablephonenumber) MarshalJSON() ([]byte, error) {
         PhoneNumberType string `json:"phoneNumberType"`
         
         AddressRequirement string `json:"addressRequirement"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Capabilities: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

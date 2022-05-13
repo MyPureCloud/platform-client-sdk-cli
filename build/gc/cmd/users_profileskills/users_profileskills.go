@@ -33,40 +33,49 @@ func Cmdusers_profileskills() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "type" : "string"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "type" : "string"
+        }
+      }
     }
   }
 }`)
 	users_profileskillsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/profileskills", utils.FormatPermissions([]string{ "directory:userProfile:edit",  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/profileskills")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Skills",
-  "required" : true,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "type" : "string"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "type" : "string"
+        }
+      }
     }
-  }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "type" : "string"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "type" : "string"
+        }
+      }
     }
   }
 }`)
 	users_profileskillsCmd.AddCommand(updateCmd)
-	
 	return users_profileskillsCmd
 }
 
@@ -128,6 +137,9 @@ var updateCmd = &cobra.Command{
 
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
+			
+			reqModel := models.String{}
+			utils.Render(reqModel.String())
 			
 			return
 		}

@@ -35,12 +35,15 @@ func Cmdusers_profile() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserProfile"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserProfile"
+      }
+    }
   }
 }`)
 	users_profileCmd.AddCommand(getCmd)
-	
 	return users_profileCmd
 }
 

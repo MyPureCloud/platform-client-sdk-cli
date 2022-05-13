@@ -24,11 +24,7 @@ type Parsedcertificate struct {
 
 // String returns a JSON representation of the model
 func (o *Parsedcertificate) String() string {
-    
-    
      o.CertificateDetails = []Certificatedetails{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Parsedcertificate) MarshalJSON() ([]byte, error) {
     }
     ParsedcertificateMarshalled = true
 
-    return json.Marshal(&struct { 
-        CertificateDetails []Certificatedetails `json:"certificateDetails"`
+    return json.Marshal(&struct {
         
+        CertificateDetails []Certificatedetails `json:"certificateDetails"`
         *Alias
     }{
-        
 
         
         CertificateDetails: []Certificatedetails{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

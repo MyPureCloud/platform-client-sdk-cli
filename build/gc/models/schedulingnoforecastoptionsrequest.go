@@ -33,13 +33,6 @@ type Schedulingnoforecastoptionsrequest struct {
 func (o *Schedulingnoforecastoptionsrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Schedulingnoforecastoptionsrequest) MarshalJSON() ([]byte, error) {
     }
     SchedulingnoforecastoptionsrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ShiftLength string `json:"shiftLength"`
         
         ShiftStart string `json:"shiftStart"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

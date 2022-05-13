@@ -32,54 +32,68 @@ func Cmdalerting_interactionstats_alerts() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Interaction stats alert deleted"
+  "description" : "Interaction stats alert deleted",
+  "content" : { }
 }`)
 	alerting_interactionstats_alertsCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/alerting/interactionstats/alerts/{alertId}", utils.FormatPermissions([]string{ "alerting:alert:view",  }), utils.GenerateDevCentreLink("GET", "Alerting", "/api/v2/alerting/interactionstats/alerts/{alertId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/InteractionStatsAlert"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/InteractionStatsAlert"
+      }
+    }
   }
 }`)
 	alerting_interactionstats_alertsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/alerting/interactionstats/alerts", utils.FormatPermissions([]string{ "alerting:alert:view",  }), utils.GenerateDevCentreLink("GET", "Alerting", "/api/v2/alerting/interactionstats/alerts")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	alerting_interactionstats_alertsCmd.AddCommand(listCmd)
-	
+
 	utils.AddFlag(updateCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/alerting/interactionstats/alerts/{alertId}", utils.FormatPermissions([]string{ "alerting:alert:edit",  }), utils.GenerateDevCentreLink("PUT", "Alerting", "/api/v2/alerting/interactionstats/alerts/{alertId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "InteractionStatsAlert",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/UnreadStatus"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UnreadStatus"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UnreadStatus"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UnreadStatus"
+      }
+    }
   }
 }`)
 	alerting_interactionstats_alertsCmd.AddCommand(updateCmd)
-	
 	return alerting_interactionstats_alertsCmd
 }
 

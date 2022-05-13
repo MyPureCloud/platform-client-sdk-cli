@@ -39,17 +39,7 @@ type Nlufeedbackrequest struct {
 // String returns a JSON representation of the model
 func (o *Nlufeedbackrequest) String() string {
     
-    
-    
-    
-    
-    
      o.Intents = []Intentfeedback{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Nlufeedbackrequest) MarshalJSON() ([]byte, error) {
     }
     NlufeedbackrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Text string `json:"text"`
         
         Intents []Intentfeedback `json:"intents"`
         
         VersionId string `json:"versionId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Intents: []Intentfeedback{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

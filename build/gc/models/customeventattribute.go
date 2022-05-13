@@ -33,13 +33,6 @@ type Customeventattribute struct {
 func (o *Customeventattribute) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Customeventattribute) MarshalJSON() ([]byte, error) {
     }
     CustomeventattributeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DataType string `json:"dataType"`
         
         Value string `json:"value"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

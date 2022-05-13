@@ -78,35 +78,10 @@ func (o *Buintradayresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Categories = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.IntradayDataGroupings = []Buintradaydatagroup{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -122,7 +97,8 @@ func (u *Buintradayresponse) MarshalJSON() ([]byte, error) {
     }
     BuintradayresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         StartDate time.Time `json:"startDate"`
         
         EndDate time.Time `json:"endDate"`
@@ -138,46 +114,36 @@ func (u *Buintradayresponse) MarshalJSON() ([]byte, error) {
         Schedule Buschedulereference `json:"schedule"`
         
         IntradayDataGroupings []Buintradaydatagroup `json:"intradayDataGroupings"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Categories: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         IntradayDataGroupings: []Buintradaydatagroup{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

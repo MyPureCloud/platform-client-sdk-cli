@@ -30,23 +30,28 @@ func init() {
 func Cmdanalytics_conversations_details_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/conversations/details/query", utils.FormatPermissions([]string{ "analytics:conversationDetail:view", "analytics:agentConversationDetail:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/conversations/details/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ConversationQuery"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ConversationQuery"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AnalyticsConversationQueryResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AnalyticsConversationQueryResponse"
+      }
+    }
   }
 }`)
 	analytics_conversations_details_queryCmd.AddCommand(createCmd)
-	
 	return analytics_conversations_details_queryCmd
 }
 

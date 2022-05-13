@@ -35,12 +35,15 @@ func Cmdnotifications_availabletopics() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AvailableTopicEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AvailableTopicEntityListing"
+      }
+    }
   }
 }`)
 	notifications_availabletopicsCmd.AddCommand(listCmd)
-	
 	return notifications_availabletopicsCmd
 }
 

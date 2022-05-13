@@ -31,14 +31,7 @@ type Agentmaxutilization struct {
 
 // String returns a JSON representation of the model
 func (o *Agentmaxutilization) String() string {
-    
-    
      o.Utilization = map[string]Mediautilization{"": {}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Agentmaxutilization) MarshalJSON() ([]byte, error) {
     }
     AgentmaxutilizationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Utilization map[string]Mediautilization `json:"utilization"`
         
         Level string `json:"level"`
-        
         *Alias
     }{
-        
 
         
         Utilization: map[string]Mediautilization{"": {}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

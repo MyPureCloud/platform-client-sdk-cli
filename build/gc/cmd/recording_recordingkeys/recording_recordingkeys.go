@@ -33,12 +33,16 @@ func Cmdrecording_recordingkeys() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EncryptionKey"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EncryptionKey"
+      }
+    }
   }
 }`)
 	recording_recordingkeysCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recording/recordingkeys", utils.FormatPermissions([]string{ "recording:encryptionKey:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/recordingkeys")))
@@ -46,12 +50,15 @@ func Cmdrecording_recordingkeys() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	recording_recordingkeysCmd.AddCommand(listCmd)
-	
 	return recording_recordingkeysCmd
 }
 

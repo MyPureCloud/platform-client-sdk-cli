@@ -33,13 +33,6 @@ type Buheadcountforecastresponse struct {
 func (o *Buheadcountforecastresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Buheadcountforecastresponse) MarshalJSON() ([]byte, error) {
     }
     BuheadcountforecastresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Result Buheadcountforecast `json:"result"`
         
         DownloadUrl string `json:"downloadUrl"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

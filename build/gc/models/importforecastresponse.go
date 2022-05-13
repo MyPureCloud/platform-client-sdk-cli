@@ -41,16 +41,6 @@ func (o *Importforecastresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Importforecastresponse) MarshalJSON() ([]byte, error) {
     }
     ImportforecastresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Status string `json:"status"`
         
         OperationId string `json:"operationId"`
         
         Result Bushorttermforecast `json:"result"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

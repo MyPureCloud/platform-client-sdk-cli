@@ -30,20 +30,22 @@ func init() {
 func Cmdrecordings_screensessions_acknowledge() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recordings/screensessions/acknowledge", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recordings/screensessions/acknowledge")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "AcknowledgeScreenRecordingRequest",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/AcknowledgeScreenRecordingRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AcknowledgeScreenRecordingRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Recording acknowledged"
+  "description" : "Recording acknowledged",
+  "content" : { }
 }`)
 	recordings_screensessions_acknowledgeCmd.AddCommand(createCmd)
-	
 	return recordings_screensessions_acknowledgeCmd
 }
 

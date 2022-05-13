@@ -101,39 +101,7 @@ func (o *Knowledgedocument) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Categories = []Knowledgecategory{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -151,8 +119,7 @@ func (u *Knowledgedocument) MarshalJSON() ([]byte, error) {
     }
     KnowledgedocumentMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -162,73 +129,51 @@ func (u *Knowledgedocument) MarshalJSON() ([]byte, error) {
         
         Faq Documentfaq `json:"faq"`
         
-        
-        
-        
-        
         Categories []Knowledgecategory `json:"categories"`
-        
-        
         
         ExternalUrl string `json:"externalUrl"`
         
         Article Documentarticle `json:"article"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Categories: []Knowledgecategory{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

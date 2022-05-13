@@ -30,22 +30,27 @@ func init() {
 func Cmdscripts_export() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/scripts/{scriptId}/export", utils.FormatPermissions([]string{ "scripter:script:view",  }), utils.GenerateDevCentreLink("POST", "Scripts", "/api/v2/scripts/{scriptId}/export")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/ExportScriptRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ExportScriptRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ExportScriptResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ExportScriptResponse"
+      }
+    }
   }
 }`)
 	scripts_exportCmd.AddCommand(createCmd)
-	
 	return scripts_exportCmd
 }
 

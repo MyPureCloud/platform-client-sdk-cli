@@ -49,19 +49,6 @@ func (o *Learningmodulesummary) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Learningmodulesummary) MarshalJSON() ([]byte, error) {
     }
     LearningmodulesummaryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         AssignedCount int `json:"assignedCount"`
         
         CompletedCount int `json:"completedCount"`
@@ -85,26 +73,20 @@ func (u *Learningmodulesummary) MarshalJSON() ([]byte, error) {
         PassedCount int `json:"passedCount"`
         
         CompletedSum float32 `json:"completedSum"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

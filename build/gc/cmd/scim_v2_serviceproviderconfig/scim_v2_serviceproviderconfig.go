@@ -33,12 +33,20 @@ func Cmdscim_v2_serviceproviderconfig() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ScimServiceProviderConfig"
+  "content" : {
+    "application/scim+json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScimServiceProviderConfig"
+      }
+    },
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScimServiceProviderConfig"
+      }
+    }
   }
 }`)
 	scim_v2_serviceproviderconfigCmd.AddCommand(getCmd)
-	
 	return scim_v2_serviceproviderconfigCmd
 }
 

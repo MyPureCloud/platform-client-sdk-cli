@@ -120,47 +120,7 @@ func (o *Shifttradesettings) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ActivityCategoryRules = []Shifttradeactivityrule{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -176,7 +136,8 @@ func (u *Shifttradesettings) MarshalJSON() ([]byte, error) {
     }
     ShifttradesettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Enabled bool `json:"enabled"`
         
         AutoReview bool `json:"autoReview"`
@@ -202,64 +163,49 @@ func (u *Shifttradesettings) MarshalJSON() ([]byte, error) {
         RequiresMatchingPlanningGroups bool `json:"requiresMatchingPlanningGroups"`
         
         ActivityCategoryRules []Shifttradeactivityrule `json:"activityCategoryRules"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ActivityCategoryRules: []Shifttradeactivityrule{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

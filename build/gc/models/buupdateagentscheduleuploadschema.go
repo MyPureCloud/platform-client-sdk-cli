@@ -69,30 +69,8 @@ func (o *Buupdateagentscheduleuploadschema) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Shifts = []Buagentscheduleshift{{}} 
-    
-    
-    
      o.FullDayTimeOffMarkers = []Bufulldaytimeoffmarker{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -110,7 +88,8 @@ func (u *Buupdateagentscheduleuploadschema) MarshalJSON() ([]byte, error) {
     }
     BuupdateagentscheduleuploadschemaMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UserId string `json:"userId"`
         
         WorkPlanId Valuewrapperstring `json:"workPlanId"`
@@ -124,42 +103,33 @@ func (u *Buupdateagentscheduleuploadschema) MarshalJSON() ([]byte, error) {
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         
         Delete bool `json:"delete"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Shifts: []Buagentscheduleshift{{}},
         
 
-        
 
         
         FullDayTimeOffMarkers: []Bufulldaytimeoffmarker{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

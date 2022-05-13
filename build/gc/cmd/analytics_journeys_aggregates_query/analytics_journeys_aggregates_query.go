@@ -30,23 +30,28 @@ func init() {
 func Cmdanalytics_journeys_aggregates_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/journeys/aggregates/query", utils.FormatPermissions([]string{ "analytics:journeyAggregate:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/journeys/aggregates/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/JourneyAggregationQuery"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/JourneyAggregationQuery"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/JourneyAggregateQueryResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/JourneyAggregateQueryResponse"
+      }
+    }
   }
 }`)
 	analytics_journeys_aggregates_queryCmd.AddCommand(createCmd)
-	
 	return analytics_journeys_aggregates_queryCmd
 }
 

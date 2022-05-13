@@ -34,12 +34,15 @@ func Cmdworkforcemanagement_businessunits_divisionviews() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BusinessUnitListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BusinessUnitListing"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_divisionviewsCmd.AddCommand(listCmd)
-	
 	return workforcemanagement_businessunits_divisionviewsCmd
 }
 

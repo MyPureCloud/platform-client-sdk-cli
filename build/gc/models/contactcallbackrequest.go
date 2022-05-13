@@ -57,22 +57,6 @@ func (o *Contactcallbackrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Contactcallbackrequest) MarshalJSON() ([]byte, error) {
     }
     ContactcallbackrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         CampaignId string `json:"campaignId"`
         
         ContactListId string `json:"contactListId"`
@@ -98,30 +83,23 @@ func (u *Contactcallbackrequest) MarshalJSON() ([]byte, error) {
         PhoneColumn string `json:"phoneColumn"`
         
         Schedule string `json:"schedule"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

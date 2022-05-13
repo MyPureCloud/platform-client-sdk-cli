@@ -46,21 +46,8 @@ type Buagentschedulehistorychange struct {
 // String returns a JSON representation of the model
 func (o *Buagentschedulehistorychange) String() string {
     
-    
-    
-    
-    
-    
      o.Shifts = []Buagentscheduleshift{{}} 
-    
-    
-    
      o.FullDayTimeOffMarkers = []Bufulldaytimeoffmarker{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Buagentschedulehistorychange) MarshalJSON() ([]byte, error) {
     }
     BuagentschedulehistorychangeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Metadata Buagentschedulehistorychangemetadata `json:"metadata"`
         
         Shifts []Buagentscheduleshift `json:"shifts"`
@@ -85,30 +73,24 @@ func (u *Buagentschedulehistorychange) MarshalJSON() ([]byte, error) {
         FullDayTimeOffMarkers []Bufulldaytimeoffmarker `json:"fullDayTimeOffMarkers"`
         
         Deletes Buagentschedulehistorydeletedchange `json:"deletes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Shifts: []Buagentscheduleshift{{}},
         
 
-        
 
         
         FullDayTimeOffMarkers: []Bufulldaytimeoffmarker{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

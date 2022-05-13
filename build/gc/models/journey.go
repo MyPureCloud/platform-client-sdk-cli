@@ -24,11 +24,7 @@ type Journey struct {
 
 // String returns a JSON representation of the model
 func (o *Journey) String() string {
-    
-    
      o.Patterns = []Journeypattern{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Journey) MarshalJSON() ([]byte, error) {
     }
     JourneyMarshalled = true
 
-    return json.Marshal(&struct { 
-        Patterns []Journeypattern `json:"patterns"`
+    return json.Marshal(&struct {
         
+        Patterns []Journeypattern `json:"patterns"`
         *Alias
     }{
-        
 
         
         Patterns: []Journeypattern{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

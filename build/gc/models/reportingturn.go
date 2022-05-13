@@ -81,34 +81,7 @@ type Reportingturn struct {
 // String returns a JSON representation of the model
 func (o *Reportingturn) String() string {
     
-    
-    
-    
-    
-    
      o.BotPrompts = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -130,7 +103,8 @@ func (u *Reportingturn) MarshalJSON() ([]byte, error) {
     }
     ReportingturnMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UserInput string `json:"userInput"`
         
         BotPrompts []string `json:"botPrompts"`
@@ -146,50 +120,37 @@ func (u *Reportingturn) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         
         AskActionResult string `json:"askActionResult"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         BotPrompts: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

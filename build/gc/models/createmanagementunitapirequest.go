@@ -65,25 +65,6 @@ func (o *Createmanagementunitapirequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Createmanagementunitapirequest) MarshalJSON() ([]byte, error) {
     }
     CreatemanagementunitapirequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         TimeZone string `json:"timeZone"`
@@ -111,34 +93,26 @@ func (u *Createmanagementunitapirequest) MarshalJSON() ([]byte, error) {
         DivisionId string `json:"divisionId"`
         
         BusinessUnitId string `json:"businessUnitId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

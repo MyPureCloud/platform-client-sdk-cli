@@ -45,20 +45,7 @@ type Minerlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Minerlisting) String() string {
-    
-    
      o.Entities = []Miner{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Minerlisting) MarshalJSON() ([]byte, error) {
     }
     MinerlistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Miner `json:"entities"`
         
         NextUri string `json:"nextUri"`
@@ -85,28 +73,22 @@ func (u *Minerlisting) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         PreviousUri string `json:"previousUri"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Miner{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

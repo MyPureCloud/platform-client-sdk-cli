@@ -89,35 +89,7 @@ type Predictor struct {
 
 // String returns a JSON representation of the model
 func (o *Predictor) String() string {
-    
-    
-    
-    
      o.Queues = []Addressableentityref{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -137,8 +109,7 @@ func (u *Predictor) MarshalJSON() ([]byte, error) {
     }
     PredictorMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Queues []Addressableentityref `json:"queues"`
         
@@ -148,67 +119,44 @@ func (u *Predictor) MarshalJSON() ([]byte, error) {
         
         Schedule Predictorschedule `json:"schedule"`
         
-        
-        
-        
-        
-        
-        
         WorkloadBalancingConfig Predictorworkloadbalancing `json:"workloadBalancingConfig"`
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Queues: []Addressableentityref{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

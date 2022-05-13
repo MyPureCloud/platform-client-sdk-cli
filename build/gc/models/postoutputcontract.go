@@ -25,10 +25,6 @@ type Postoutputcontract struct {
 // String returns a JSON representation of the model
 func (o *Postoutputcontract) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Postoutputcontract) MarshalJSON() ([]byte, error) {
     }
     PostoutputcontractMarshalled = true
 
-    return json.Marshal(&struct { 
-        SuccessSchema Jsonschemadocument `json:"successSchema"`
+    return json.Marshal(&struct {
         
+        SuccessSchema Jsonschemadocument `json:"successSchema"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

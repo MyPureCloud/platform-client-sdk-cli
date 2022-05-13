@@ -40,17 +40,7 @@ type Reportingturnintent struct {
 func (o *Reportingturnintent) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Slots = []Reportingturnintentslot{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Reportingturnintent) MarshalJSON() ([]byte, error) {
     }
     ReportingturnintentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Confidence float64 `json:"confidence"`
         
         Slots []Reportingturnintentslot `json:"slots"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Slots: []Reportingturnintentslot{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

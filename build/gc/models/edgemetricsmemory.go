@@ -41,16 +41,6 @@ func (o *Edgemetricsmemory) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Edgemetricsmemory) MarshalJSON() ([]byte, error) {
     }
     EdgemetricsmemoryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         AvailableBytes float64 `json:"availableBytes"`
         
         VarType string `json:"type"`
         
         TotalBytes float64 `json:"totalBytes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

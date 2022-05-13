@@ -33,13 +33,6 @@ type Licenseorgtoggle struct {
 func (o *Licenseorgtoggle) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Licenseorgtoggle) MarshalJSON() ([]byte, error) {
     }
     LicenseorgtoggleMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FeatureName string `json:"featureName"`
         
         Enabled bool `json:"enabled"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

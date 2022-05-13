@@ -30,42 +30,53 @@ func init() {
 func Cmdcoaching_appointments_annotations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/coaching/appointments/{appointmentId}/annotations", utils.FormatPermissions([]string{ "coaching:annotation:add", "coaching:privateAnnotation:add",  }), utils.GenerateDevCentreLink("POST", "Coaching", "/api/v2/coaching/appointments/{appointmentId}/annotations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The annotation to add",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAnnotationCreateRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAnnotationCreateRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Annotation created",
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAnnotation"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAnnotation"
+      }
+    }
   }
 }`)
 	coaching_appointments_annotationsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "coaching:annotation:delete", "coaching:privateAnnotation:delete",  }), utils.GenerateDevCentreLink("DELETE", "Coaching", "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Annotation deleted"
+  "description" : "Annotation deleted",
+  "content" : { }
 }`)
 	coaching_appointments_annotationsCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "coaching:annotation:view", "coaching:privateAnnotation:view",  }), utils.GenerateDevCentreLink("GET", "Coaching", "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "Annotation retrieved",
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAnnotation"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAnnotation"
+      }
+    }
   }
 }`)
 	coaching_appointments_annotationsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/coaching/appointments/{appointmentId}/annotations", utils.FormatPermissions([]string{ "coaching:annotation:view", "coaching:privateAnnotation:view",  }), utils.GenerateDevCentreLink("GET", "Coaching", "/api/v2/coaching/appointments/{appointmentId}/annotations")))
@@ -73,31 +84,40 @@ func Cmdcoaching_appointments_annotations() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "Annotations retrieved",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	coaching_appointments_annotationsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "coaching:annotation:edit", "coaching:privateAnnotation:edit",  }), utils.GenerateDevCentreLink("PATCH", "Coaching", "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The new version of the annotation",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAnnotation"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAnnotation"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAnnotation"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAnnotation"
+      }
+    }
   }
 }`)
 	coaching_appointments_annotationsCmd.AddCommand(updateCmd)
-	
 	return coaching_appointments_annotationsCmd
 }
 

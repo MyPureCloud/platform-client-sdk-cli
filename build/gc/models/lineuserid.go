@@ -25,10 +25,6 @@ type Lineuserid struct {
 // String returns a JSON representation of the model
 func (o *Lineuserid) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Lineuserid) MarshalJSON() ([]byte, error) {
     }
     LineuseridMarshalled = true
 
-    return json.Marshal(&struct { 
-        UserId string `json:"userId"`
+    return json.Marshal(&struct {
         
+        UserId string `json:"userId"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

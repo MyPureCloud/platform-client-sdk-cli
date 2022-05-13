@@ -29,11 +29,6 @@ type Userbestpoints struct {
 
 // String returns a JSON representation of the model
 func (o *Userbestpoints) String() string {
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -49,22 +44,15 @@ func (u *Userbestpoints) MarshalJSON() ([]byte, error) {
     }
     UserbestpointsMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
+    return json.Marshal(&struct {
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

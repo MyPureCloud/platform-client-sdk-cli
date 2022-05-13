@@ -35,12 +35,15 @@ func Cmdworkforcemanagement_businessunits_weeks_shorttermforecasts_data() *cobra
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuForecastResultResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuForecastResultResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_shorttermforecasts_dataCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_businessunits_weeks_shorttermforecasts_dataCmd
 }
 

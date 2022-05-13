@@ -32,18 +32,19 @@ func Cmdconversations_participants_flaggedreason() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "The flagged reason was removed successfully."
+  "description" : "The flagged reason was removed successfully.",
+  "content" : { }
 }`)
 	conversations_participants_flaggedreasonCmd.AddCommand(deleteCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Conversations", "/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  "description" : "The flagged reason was set successfully."
+  "description" : "The flagged reason was set successfully.",
+  "content" : { }
 }`)
 	conversations_participants_flaggedreasonCmd.AddCommand(updateCmd)
-	
 	return conversations_participants_flaggedreasonCmd
 }
 

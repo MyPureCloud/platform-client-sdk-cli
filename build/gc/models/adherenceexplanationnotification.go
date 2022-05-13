@@ -94,35 +94,6 @@ func (o *Adherenceexplanationnotification) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -138,8 +109,7 @@ func (u *Adherenceexplanationnotification) MarshalJSON() ([]byte, error) {
     }
     AdherenceexplanationnotificationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Agent Userreference `json:"agent"`
         
@@ -156,52 +126,38 @@ func (u *Adherenceexplanationnotification) MarshalJSON() ([]byte, error) {
         VarType string `json:"type"`
         
         Notes string `json:"notes"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

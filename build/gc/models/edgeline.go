@@ -173,68 +173,7 @@ func (o *Edgeline) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Properties = map[string]interface{}{"": Interface{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -256,8 +195,7 @@ func (u *Edgeline) MarshalJSON() ([]byte, error) {
     }
     EdgelineMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -274,8 +212,6 @@ func (u *Edgeline) MarshalJSON() ([]byte, error) {
         ModifiedBy string `json:"modifiedBy"`
         
         CreatedBy string `json:"createdBy"`
-        
-        
         
         ModifiedByApp string `json:"modifiedByApp"`
         
@@ -296,98 +232,73 @@ func (u *Edgeline) MarshalJSON() ([]byte, error) {
         IpAddress string `json:"ipAddress"`
         
         LogicalInterfaceId string `json:"logicalInterfaceId"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Properties: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

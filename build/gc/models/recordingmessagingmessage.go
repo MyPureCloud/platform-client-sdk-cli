@@ -109,46 +109,9 @@ func (o *Recordingmessagingmessage) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.MessageMediaAttachments = []Messagemediaattachment{{}} 
-    
-    
-    
      o.MessageStickerAttachments = []Messagestickerattachment{{}} 
-    
-    
-    
      o.QuickReplies = []Quickreply{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -166,7 +129,8 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
     }
     RecordingmessagingmessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         From string `json:"from"`
         
         FromUser User `json:"fromUser"`
@@ -190,64 +154,50 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         ButtonResponse Buttonresponse `json:"buttonResponse"`
         
         Story Recordingcontentstory `json:"story"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MessageMediaAttachments: []Messagemediaattachment{{}},
         
 
-        
 
         
         MessageStickerAttachments: []Messagestickerattachment{{}},
         
 
-        
 
         
         QuickReplies: []Quickreply{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

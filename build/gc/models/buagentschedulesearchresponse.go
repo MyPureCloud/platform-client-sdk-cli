@@ -39,18 +39,8 @@ type Buagentschedulesearchresponse struct {
 // String returns a JSON representation of the model
 func (o *Buagentschedulesearchresponse) String() string {
     
-    
-    
-    
-    
-    
      o.Shifts = []Buagentscheduleshift{{}} 
-    
-    
-    
      o.FullDayTimeOffMarkers = []Bufulldaytimeoffmarker{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Buagentschedulesearchresponse) MarshalJSON() ([]byte, error) {
     }
     BuagentschedulesearchresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         User Userreference `json:"user"`
         
         Shifts []Buagentscheduleshift `json:"shifts"`
         
         FullDayTimeOffMarkers []Bufulldaytimeoffmarker `json:"fullDayTimeOffMarkers"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Shifts: []Buagentscheduleshift{{}},
         
 
-        
 
         
         FullDayTimeOffMarkers: []Bufulldaytimeoffmarker{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

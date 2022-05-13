@@ -32,21 +32,26 @@ func Cmdwebchat_guest_conversations_members() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	webchat_guest_conversations_membersCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "WebChat", "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatMemberInfo"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatMemberInfo"
+      }
+    }
   }
 }`)
 	webchat_guest_conversations_membersCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The number of entries to return per page, or omitted for the default.")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number to return, or omitted for the first page.")
 	utils.AddFlag(listCmd.Flags(), "bool", "excludeDisconnectedMembers", "false", "If true, the results will not contain members who have a DISCONNECTED state.")
@@ -55,12 +60,15 @@ func Cmdwebchat_guest_conversations_members() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	webchat_guest_conversations_membersCmd.AddCommand(listCmd)
-	
 	return webchat_guest_conversations_membersCmd
 }
 

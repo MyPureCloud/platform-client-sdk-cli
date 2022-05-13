@@ -47,21 +47,8 @@ type Auditchange struct {
 func (o *Auditchange) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.OldValues = []string{""} 
-    
-    
-    
      o.NewValues = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Auditchange) MarshalJSON() ([]byte, error) {
     }
     AuditchangeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Property string `json:"property"`
         
         Entity Auditentityreference `json:"entity"`
@@ -85,30 +73,24 @@ func (u *Auditchange) MarshalJSON() ([]byte, error) {
         OldValues []string `json:"oldValues"`
         
         NewValues []string `json:"newValues"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         OldValues: []string{""},
         
 
-        
 
         
         NewValues: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

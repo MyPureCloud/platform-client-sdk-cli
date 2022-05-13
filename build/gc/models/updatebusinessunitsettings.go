@@ -53,20 +53,6 @@ func (o *Updatebusinessunitsettings) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -82,40 +68,30 @@ func (u *Updatebusinessunitsettings) MarshalJSON() ([]byte, error) {
     }
     UpdatebusinessunitsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
+    return json.Marshal(&struct {
         
         ShortTermForecasting Bushorttermforecastingsettings `json:"shortTermForecasting"`
         
         Scheduling Buschedulingsettings `json:"scheduling"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

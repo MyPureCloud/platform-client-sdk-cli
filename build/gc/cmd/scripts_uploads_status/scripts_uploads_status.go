@@ -34,12 +34,15 @@ func Cmdscripts_uploads_status() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ImportScriptStatusResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ImportScriptStatusResponse"
+      }
+    }
   }
 }`)
 	scripts_uploads_statusCmd.AddCommand(getCmd)
-	
 	return scripts_uploads_statusCmd
 }
 

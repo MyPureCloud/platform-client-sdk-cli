@@ -109,42 +109,7 @@ func (o *Responseasset) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Responses = []Domainentityref{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -160,8 +125,7 @@ func (u *Responseasset) MarshalJSON() ([]byte, error) {
     }
     ResponseassetMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -182,62 +146,46 @@ func (u *Responseasset) MarshalJSON() ([]byte, error) {
         ModifiedBy Domainentityref `json:"modifiedBy"`
         
         Responses []Domainentityref `json:"responses"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Responses: []Domainentityref{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

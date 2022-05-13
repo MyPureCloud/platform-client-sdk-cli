@@ -1,0 +1,34 @@
+{
+    "GET /api/v2/quality/surveys/scorable": {
+        "operationId": "getqualitysurveysscorable",
+        "functionName": "get",
+        "signature": "get(customerSurveyUrl)",
+        "parameters": [
+            {
+                "name": "customerSurveyUrl",
+                "type": "string",
+                "required": "true"
+            }
+        ],
+        "return": "Scorablesurvey"
+    },
+    "PUT /api/v2/quality/surveys/scorable": {
+        "operationId": "putqualitysurveysscorable",
+        "functionName": "update",
+        "signature": "update(customerSurveyUrl, body)",
+        "parameters": [
+            {
+                "name": "customerSurveyUrl",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Scorablesurvey",
+                "required": "true"
+            }
+        ],
+        "return": "Scorablesurvey"
+    }
+    
+}

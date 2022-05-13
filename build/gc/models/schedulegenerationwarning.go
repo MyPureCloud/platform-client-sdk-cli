@@ -76,35 +76,10 @@ func (o *Schedulegenerationwarning) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.UnableToScheduleRequiredDays = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.NoNeedDays = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -121,7 +96,8 @@ func (u *Schedulegenerationwarning) MarshalJSON() ([]byte, error) {
     }
     SchedulegenerationwarningMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UserId string `json:"userId"`
         
         UserNotLicensed bool `json:"userNotLicensed"`
@@ -137,46 +113,36 @@ func (u *Schedulegenerationwarning) MarshalJSON() ([]byte, error) {
         NoNeedDays []string `json:"noNeedDays"`
         
         ShiftsTooCloseTogether bool `json:"shiftsTooCloseTogether"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         UnableToScheduleRequiredDays: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         NoNeedDays: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

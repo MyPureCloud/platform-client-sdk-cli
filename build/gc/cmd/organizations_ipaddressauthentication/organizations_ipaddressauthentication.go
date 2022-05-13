@@ -33,31 +33,40 @@ func Cmdorganizations_ipaddressauthentication() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/IpAddressAuthentication"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/IpAddressAuthentication"
+      }
+    }
   }
 }`)
 	organizations_ipaddressauthenticationCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/organizations/ipaddressauthentication", utils.FormatPermissions([]string{ "directory:organization:admin",  }), utils.GenerateDevCentreLink("PUT", "Organization", "/api/v2/organizations/ipaddressauthentication")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "IP address Whitelist settings",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/IpAddressAuthentication"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/IpAddressAuthentication"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/IpAddressAuthentication"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/IpAddressAuthentication"
+      }
+    }
   }
 }`)
 	organizations_ipaddressauthenticationCmd.AddCommand(updateCmd)
-	
 	return organizations_ipaddressauthenticationCmd
 }
 

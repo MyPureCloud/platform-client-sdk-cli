@@ -31,23 +31,28 @@ func Cmdworkforcemanagement_businessunits_intraday() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "bool", "forceAsync", "", "Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday", utils.FormatPermissions([]string{ "wfm:intraday:view",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/IntradayPlanningGroupRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/IntradayPlanningGroupRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AsyncIntradayResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AsyncIntradayResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_intradayCmd.AddCommand(createCmd)
-	
 	return workforcemanagement_businessunits_intradayCmd
 }
 

@@ -33,23 +33,30 @@ func Cmdconversations_messages_communications_messages_media() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Accepted",
-  "schema" : {
-    "$ref" : "#/definitions/MessageMediaData"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/MessageMediaData"
+      }
+    }
   }
 }`)
 	conversations_messages_communications_messages_mediaCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}", utils.FormatPermissions([]string{ "conversation:message:view", "conversation:webmessaging:view",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/MessageMediaData"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/MessageMediaData"
+      }
+    }
   }
 }`)
 	conversations_messages_communications_messages_mediaCmd.AddCommand(getCmd)
-	
 	return conversations_messages_communications_messages_mediaCmd
 }
 

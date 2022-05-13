@@ -127,47 +127,6 @@ func (o *Organization) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -183,16 +142,13 @@ func (u *Organization) MarshalJSON() ([]byte, error) {
     }
     OrganizationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         DefaultLanguage string `json:"defaultLanguage"`
         
         DefaultCountryCode string `json:"defaultCountryCode"`
-        
-        
         
         ThirdPartyURI string `json:"thirdPartyURI"`
         
@@ -207,76 +163,53 @@ func (u *Organization) MarshalJSON() ([]byte, error) {
         SupportURI string `json:"supportURI"`
         
         VoicemailEnabled bool `json:"voicemailEnabled"`
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

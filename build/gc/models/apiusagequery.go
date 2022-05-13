@@ -47,21 +47,8 @@ type Apiusagequery struct {
 func (o *Apiusagequery) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.GroupBy = []string{""} 
-    
-    
-    
      o.Metrics = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Apiusagequery) MarshalJSON() ([]byte, error) {
     }
     ApiusagequeryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         Granularity string `json:"granularity"`
@@ -85,30 +73,24 @@ func (u *Apiusagequery) MarshalJSON() ([]byte, error) {
         GroupBy []string `json:"groupBy"`
         
         Metrics []string `json:"metrics"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         GroupBy: []string{""},
         
 
-        
 
         
         Metrics: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

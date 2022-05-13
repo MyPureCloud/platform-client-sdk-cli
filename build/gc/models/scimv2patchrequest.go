@@ -31,15 +31,8 @@ type Scimv2patchrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Scimv2patchrequest) String() string {
-    
-    
      o.Schemas = []string{""} 
-    
-    
-    
      o.Operations = []Scimv2patchoperation{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Scimv2patchrequest) MarshalJSON() ([]byte, error) {
     }
     Scimv2patchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Schemas []string `json:"schemas"`
         
         Operations []Scimv2patchoperation `json:"Operations"`
-        
         *Alias
     }{
-        
 
         
         Schemas: []string{""},
         
 
-        
 
         
         Operations: []Scimv2patchoperation{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

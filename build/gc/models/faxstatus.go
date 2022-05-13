@@ -81,31 +81,6 @@ func (o *Faxstatus) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -121,7 +96,8 @@ func (u *Faxstatus) MarshalJSON() ([]byte, error) {
     }
     FaxstatusMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Direction string `json:"direction"`
         
         ExpectedPages int `json:"expectedPages"`
@@ -137,42 +113,32 @@ func (u *Faxstatus) MarshalJSON() ([]byte, error) {
         PageErrors int `json:"pageErrors"`
         
         LineErrors int `json:"lineErrors"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

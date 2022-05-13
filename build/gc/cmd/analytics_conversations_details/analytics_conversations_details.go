@@ -33,24 +33,31 @@ func Cmdanalytics_conversations_details() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AnalyticsConversationWithoutAttributes"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AnalyticsConversationWithoutAttributes"
+      }
+    }
   }
 }`)
 	analytics_conversations_detailsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Comma-separated conversation ids")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/conversations/details", utils.FormatPermissions([]string{ "analytics:conversationDetail:view", "analytics:agentConversationDetail:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/conversations/details")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AnalyticsConversationWithoutAttributesMultiGetResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AnalyticsConversationWithoutAttributesMultiGetResponse"
+      }
+    }
   }
 }`)
 	analytics_conversations_detailsCmd.AddCommand(listCmd)
-	
 	return analytics_conversations_detailsCmd
 }
 

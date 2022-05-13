@@ -32,14 +32,7 @@ type Availabletimeoffrequest struct {
 // String returns a JSON representation of the model
 func (o *Availabletimeoffrequest) String() string {
     
-    
-    
-    
-    
-    
      o.DateRanges = []Localdaterange{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Availabletimeoffrequest) MarshalJSON() ([]byte, error) {
     }
     AvailabletimeoffrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ActivityCodeId string `json:"activityCodeId"`
         
         DateRanges []Localdaterange `json:"dateRanges"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         DateRanges: []Localdaterange{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,13 +33,6 @@ type Exportscriptrequest struct {
 func (o *Exportscriptrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Exportscriptrequest) MarshalJSON() ([]byte, error) {
     }
     ExportscriptrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FileName string `json:"fileName"`
         
         VersionId string `json:"versionId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

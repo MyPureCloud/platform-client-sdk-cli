@@ -39,18 +39,8 @@ type Buplanninggroupheadcountforecast struct {
 // String returns a JSON representation of the model
 func (o *Buplanninggroupheadcountforecast) String() string {
     
-    
-    
-    
-    
-    
      o.RequiredPerInterval = []float64{0.0} 
-    
-    
-    
      o.RequiredWithoutShrinkagePerInterval = []float64{0.0} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Buplanninggroupheadcountforecast) MarshalJSON() ([]byte, error) {
     }
     BuplanninggroupheadcountforecastMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PlanningGroup Planninggroupreference `json:"planningGroup"`
         
         RequiredPerInterval []float64 `json:"requiredPerInterval"`
         
         RequiredWithoutShrinkagePerInterval []float64 `json:"requiredWithoutShrinkagePerInterval"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         RequiredPerInterval: []float64{0.0},
         
 
-        
 
         
         RequiredWithoutShrinkagePerInterval: []float64{0.0},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

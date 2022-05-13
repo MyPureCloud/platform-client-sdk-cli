@@ -44,18 +44,7 @@ type Timeoffrequestlist struct {
 // String returns a JSON representation of the model
 func (o *Timeoffrequestlist) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.TimeOffRequests = []Timeoffrequestresponse{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -71,36 +60,27 @@ func (u *Timeoffrequestlist) MarshalJSON() ([]byte, error) {
     }
     TimeoffrequestlistMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         TimeOffRequests []Timeoffrequestresponse `json:"timeOffRequests"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         TimeOffRequests: []Timeoffrequestresponse{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

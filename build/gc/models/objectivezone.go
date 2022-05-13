@@ -73,28 +73,6 @@ func (o *Objectivezone) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Objectivezone) MarshalJSON() ([]byte, error) {
     }
     ObjectivezoneMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Label string `json:"label"`
         
         DirectionType string `json:"directionType"`
@@ -124,38 +103,29 @@ func (u *Objectivezone) MarshalJSON() ([]byte, error) {
         UpperLimitValue int `json:"upperLimitValue"`
         
         LowerLimitValue int `json:"lowerLimitValue"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -41,16 +41,6 @@ func (o *Positionsettings) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Positionsettings) MarshalJSON() ([]byte, error) {
     }
     PositionsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Alignment string `json:"alignment"`
         
         SideSpace int `json:"sideSpace"`
         
         BottomSpace int `json:"bottomSpace"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

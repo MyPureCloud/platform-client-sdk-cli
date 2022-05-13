@@ -50,18 +50,6 @@ type Wfmversionedentitymetadata struct {
 // String returns a JSON representation of the model
 func (o *Wfmversionedentitymetadata) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,40 +65,26 @@ func (u *Wfmversionedentitymetadata) MarshalJSON() ([]byte, error) {
     }
     WfmversionedentitymetadataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Version int `json:"version"`
-        
-        
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

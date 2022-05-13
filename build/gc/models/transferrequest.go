@@ -57,22 +57,6 @@ func (o *Transferrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Transferrequest) MarshalJSON() ([]byte, error) {
     }
     TransferrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UserId string `json:"userId"`
         
         Address string `json:"address"`
@@ -98,30 +83,23 @@ func (u *Transferrequest) MarshalJSON() ([]byte, error) {
         QueueId string `json:"queueId"`
         
         Voicemail bool `json:"voicemail"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

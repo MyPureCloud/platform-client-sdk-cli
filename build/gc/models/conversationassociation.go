@@ -49,19 +49,6 @@ func (o *Conversationassociation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Conversationassociation) MarshalJSON() ([]byte, error) {
     }
     ConversationassociationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ExternalContactId string `json:"externalContactId"`
         
         ConversationId string `json:"conversationId"`
@@ -85,26 +73,20 @@ func (u *Conversationassociation) MarshalJSON() ([]byte, error) {
         CommunicationId string `json:"communicationId"`
         
         MediaType string `json:"mediaType"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

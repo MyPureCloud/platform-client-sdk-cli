@@ -39,18 +39,8 @@ type Forecastplanninggroupdata struct {
 // String returns a JSON representation of the model
 func (o *Forecastplanninggroupdata) String() string {
     
-    
-    
-    
-    
-    
      o.OfferedPerInterval = []float64{0.0} 
-    
-    
-    
      o.AverageHandleTimeSecondsPerInterval = []float64{0.0} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Forecastplanninggroupdata) MarshalJSON() ([]byte, error) {
     }
     ForecastplanninggroupdataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PlanningGroupId string `json:"planningGroupId"`
         
         OfferedPerInterval []float64 `json:"offeredPerInterval"`
         
         AverageHandleTimeSecondsPerInterval []float64 `json:"averageHandleTimeSecondsPerInterval"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         OfferedPerInterval: []float64{0.0},
         
 
-        
 
         
         AverageHandleTimeSecondsPerInterval: []float64{0.0},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

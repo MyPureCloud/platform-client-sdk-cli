@@ -30,23 +30,28 @@ func init() {
 func Cmdusers_development_activities_aggregates_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/development/activities/aggregates/query", utils.FormatPermissions([]string{ "learning:assignment:view", "coaching:appointment:view",  }), utils.GenerateDevCentreLink("POST", "Users", "/api/v2/users/development/activities/aggregates/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Aggregate Request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DevelopmentActivityAggregateParam"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DevelopmentActivityAggregateParam"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Query completed successfully",
-  "schema" : {
-    "$ref" : "#/definitions/DevelopmentActivityAggregateResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DevelopmentActivityAggregateResponse"
+      }
+    }
   }
 }`)
 	users_development_activities_aggregates_queryCmd.AddCommand(createCmd)
-	
 	return users_development_activities_aggregates_queryCmd
 }
 

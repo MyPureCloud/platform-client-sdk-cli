@@ -25,10 +25,6 @@ type Asyncqueryresponse struct {
 // String returns a JSON representation of the model
 func (o *Asyncqueryresponse) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Asyncqueryresponse) MarshalJSON() ([]byte, error) {
     }
     AsyncqueryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        JobId string `json:"jobId"`
+    return json.Marshal(&struct {
         
+        JobId string `json:"jobId"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

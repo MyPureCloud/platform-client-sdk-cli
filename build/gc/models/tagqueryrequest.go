@@ -41,16 +41,6 @@ func (o *Tagqueryrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Tagqueryrequest) MarshalJSON() ([]byte, error) {
     }
     TagqueryrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Query string `json:"query"`
         
         PageNumber int `json:"pageNumber"`
         
         PageSize int `json:"pageSize"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

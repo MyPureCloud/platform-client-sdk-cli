@@ -57,22 +57,6 @@ func (o *Quickreply) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Quickreply) MarshalJSON() ([]byte, error) {
     }
     QuickreplyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Text string `json:"text"`
         
         Payload string `json:"payload"`
@@ -98,30 +83,23 @@ func (u *Quickreply) MarshalJSON() ([]byte, error) {
         Action string `json:"action"`
         
         IsSelected bool `json:"isSelected"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -57,22 +57,6 @@ func (o *Forecastsourcedaypointer) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Forecastsourcedaypointer) MarshalJSON() ([]byte, error) {
     }
     ForecastsourcedaypointerMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DayOfWeek string `json:"dayOfWeek"`
         
         Weight int `json:"weight"`
@@ -98,30 +83,23 @@ func (u *Forecastsourcedaypointer) MarshalJSON() ([]byte, error) {
         FileName string `json:"fileName"`
         
         DataKey string `json:"dataKey"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

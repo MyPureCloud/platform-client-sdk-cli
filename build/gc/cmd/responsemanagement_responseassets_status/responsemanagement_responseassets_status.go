@@ -33,12 +33,15 @@ func Cmdresponsemanagement_responseassets_status() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ResponseAssetStatus"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ResponseAssetStatus"
+      }
+    }
   }
 }`)
 	responsemanagement_responseassets_statusCmd.AddCommand(getCmd)
-	
 	return responsemanagement_responseassets_statusCmd
 }
 

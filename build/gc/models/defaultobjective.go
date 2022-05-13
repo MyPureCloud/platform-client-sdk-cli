@@ -73,35 +73,11 @@ type Defaultobjective struct {
 // String returns a JSON representation of the model
 func (o *Defaultobjective) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Zones = []Objectivezone{{}} 
     
-    
-    
-    
-    
-    
-    
      o.MediaTypes = []string{""} 
-    
-    
-    
      o.Queues = []Addressableentityref{{}} 
-    
-    
-    
      o.Topics = []Addressableentityref{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -118,8 +94,7 @@ func (u *Defaultobjective) MarshalJSON() ([]byte, error) {
     }
     DefaultobjectiveMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         TemplateId string `json:"templateId"`
         
@@ -134,50 +109,40 @@ func (u *Defaultobjective) MarshalJSON() ([]byte, error) {
         Topics []Addressableentityref `json:"topics"`
         
         TopicIdsFilterType string `json:"topicIdsFilterType"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Zones: []Objectivezone{{}},
         
 
-        
 
         
 
-        
 
         
         MediaTypes: []string{""},
         
 
-        
 
         
         Queues: []Addressableentityref{{}},
         
 
-        
 
         
         Topics: []Addressableentityref{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

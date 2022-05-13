@@ -40,17 +40,7 @@ type Documentfaq struct {
 func (o *Documentfaq) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Alternatives = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Documentfaq) MarshalJSON() ([]byte, error) {
     }
     DocumentfaqMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Question string `json:"question"`
         
         Answer string `json:"answer"`
         
         Alternatives []string `json:"alternatives"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Alternatives: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

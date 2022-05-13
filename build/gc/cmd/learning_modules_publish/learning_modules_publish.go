@@ -33,12 +33,15 @@ func Cmdlearning_modules_publish() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LearningModulePublishResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningModulePublishResponse"
+      }
+    }
   }
 }`)
 	learning_modules_publishCmd.AddCommand(createCmd)
-	
 	return learning_modules_publishCmd
 }
 

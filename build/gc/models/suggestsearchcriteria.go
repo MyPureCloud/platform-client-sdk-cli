@@ -74,37 +74,12 @@ type Suggestsearchcriteria struct {
 // String returns a JSON representation of the model
 func (o *Suggestsearchcriteria) String() string {
     
-    
-    
-    
-    
-    
      o.Values = []string{""} 
-    
-    
-    
-    
-    
-    
     
      o.Fields = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Group = []Suggestsearchcriteria{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -121,7 +96,8 @@ func (u *Suggestsearchcriteria) MarshalJSON() ([]byte, error) {
     }
     SuggestsearchcriteriaMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EndValue string `json:"endValue"`
         
         Values []string `json:"values"`
@@ -137,48 +113,38 @@ func (u *Suggestsearchcriteria) MarshalJSON() ([]byte, error) {
         Group []Suggestsearchcriteria `json:"group"`
         
         DateFormat string `json:"dateFormat"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Values: []string{""},
         
 
-        
 
         
 
-        
 
         
         Fields: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Group: []Suggestsearchcriteria{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -25,10 +25,6 @@ type Uci10n struct {
 // String returns a JSON representation of the model
 func (o *Uci10n) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Uci10n) MarshalJSON() ([]byte, error) {
     }
     Uci10nMarshalled = true
 
-    return json.Marshal(&struct { 
-        Name string `json:"name"`
+    return json.Marshal(&struct {
         
+        Name string `json:"name"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

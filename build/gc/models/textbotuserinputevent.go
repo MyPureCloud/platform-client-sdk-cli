@@ -32,14 +32,7 @@ type Textbotuserinputevent struct {
 // String returns a JSON representation of the model
 func (o *Textbotuserinputevent) String() string {
     
-    
-    
-    
-    
-    
      o.Alternatives = []Textbotuserinputalternative{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Textbotuserinputevent) MarshalJSON() ([]byte, error) {
     }
     TextbotuserinputeventMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Mode string `json:"mode"`
         
         Alternatives []Textbotuserinputalternative `json:"alternatives"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Alternatives: []Textbotuserinputalternative{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -29,11 +29,6 @@ type Rulesetdiagnostic struct {
 
 // String returns a JSON representation of the model
 func (o *Rulesetdiagnostic) String() string {
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -49,22 +44,15 @@ func (u *Rulesetdiagnostic) MarshalJSON() ([]byte, error) {
     }
     RulesetdiagnosticMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
+    return json.Marshal(&struct {
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

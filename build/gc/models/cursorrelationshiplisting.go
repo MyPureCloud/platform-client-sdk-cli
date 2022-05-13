@@ -45,20 +45,7 @@ type Cursorrelationshiplisting struct {
 
 // String returns a JSON representation of the model
 func (o *Cursorrelationshiplisting) String() string {
-    
-    
      o.Entities = []Relationship{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Cursorrelationshiplisting) MarshalJSON() ([]byte, error) {
     }
     CursorrelationshiplistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Relationship `json:"entities"`
         
         NextUri string `json:"nextUri"`
@@ -85,28 +73,22 @@ func (u *Cursorrelationshiplisting) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         PreviousUri string `json:"previousUri"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Relationship{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

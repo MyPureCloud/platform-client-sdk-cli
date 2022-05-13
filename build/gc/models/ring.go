@@ -31,14 +31,7 @@ type Ring struct {
 
 // String returns a JSON representation of the model
 func (o *Ring) String() string {
-    
-    
      o.ExpansionCriteria = []Expansioncriterium{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Ring) MarshalJSON() ([]byte, error) {
     }
     RingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ExpansionCriteria []Expansioncriterium `json:"expansionCriteria"`
         
         Actions Actions `json:"actions"`
-        
         *Alias
     }{
-        
 
         
         ExpansionCriteria: []Expansioncriterium{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

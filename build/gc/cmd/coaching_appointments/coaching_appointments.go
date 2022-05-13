@@ -30,45 +30,59 @@ func init() {
 func Cmdcoaching_appointments() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/coaching/appointments", utils.FormatPermissions([]string{ "coaching:appointment:add",  }), utils.GenerateDevCentreLink("POST", "Coaching", "/api/v2/coaching/appointments")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The appointment to add",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CreateCoachingAppointmentRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreateCoachingAppointmentRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Appointment created",
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAppointmentResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAppointmentResponse"
+      }
+    }
   }
 }`)
 	coaching_appointmentsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/coaching/appointments/{appointmentId}", utils.FormatPermissions([]string{ "coaching:appointment:delete",  }), utils.GenerateDevCentreLink("DELETE", "Coaching", "/api/v2/coaching/appointments/{appointmentId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "Appointment delete request accepted.",
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAppointmentReference"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAppointmentReference"
+      }
+    }
   }
 }`)
 	coaching_appointmentsCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/coaching/appointments/{appointmentId}", utils.FormatPermissions([]string{ "coaching:appointment:view",  }), utils.GenerateDevCentreLink("GET", "Coaching", "/api/v2/coaching/appointments/{appointmentId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "Retrieved appointment",
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAppointmentResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAppointmentResponse"
+      }
+    }
   }
 }`)
 	coaching_appointmentsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "[]string", "userIds", "", "The user IDs for which to retrieve appointments - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "string", "interval", "", "Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
@@ -86,31 +100,40 @@ func Cmdcoaching_appointments() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "Get users coaching appointments successful",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	coaching_appointmentsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/coaching/appointments/{appointmentId}", utils.FormatPermissions([]string{ "coaching:appointment:edit",  }), utils.GenerateDevCentreLink("PATCH", "Coaching", "/api/v2/coaching/appointments/{appointmentId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The new version of the appointment",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/UpdateCoachingAppointmentRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UpdateCoachingAppointmentRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "Appointment updated",
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAppointmentResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAppointmentResponse"
+      }
+    }
   }
 }`)
 	coaching_appointmentsCmd.AddCommand(updateCmd)
-	
 	return coaching_appointmentsCmd
 }
 

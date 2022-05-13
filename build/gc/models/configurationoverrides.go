@@ -25,10 +25,6 @@ type Configurationoverrides struct {
 // String returns a JSON representation of the model
 func (o *Configurationoverrides) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Configurationoverrides) MarshalJSON() ([]byte, error) {
     }
     ConfigurationoverridesMarshalled = true
 
-    return json.Marshal(&struct { 
-        Priority bool `json:"priority"`
+    return json.Marshal(&struct {
         
+        Priority bool `json:"priority"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

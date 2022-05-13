@@ -24,11 +24,7 @@ type Limitsentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Limitsentitylisting) String() string {
-    
-    
      o.Entities = []Limit{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Limitsentitylisting) MarshalJSON() ([]byte, error) {
     }
     LimitsentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Limit `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Limit `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Limit{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

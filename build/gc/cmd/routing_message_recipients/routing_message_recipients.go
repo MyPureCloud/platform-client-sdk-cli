@@ -33,12 +33,16 @@ func Cmdrouting_message_recipients() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Recipient"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Recipient"
+      }
+    }
   }
 }`)
 	routing_message_recipientsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "messengerType", "", "Messenger Type Valid values: sms, facebook, twitter, line, whatsapp, open, instagram")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
@@ -47,31 +51,40 @@ func Cmdrouting_message_recipients() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	routing_message_recipientsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/message/recipients/{recipientId}", utils.FormatPermissions([]string{ "routing:message:manage",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/message/recipients/{recipientId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Recipient",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Recipient"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Recipient"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Recipient"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Recipient"
+      }
+    }
   }
 }`)
 	routing_message_recipientsCmd.AddCommand(updateCmd)
-	
 	return routing_message_recipientsCmd
 }
 

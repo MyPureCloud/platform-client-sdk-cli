@@ -57,22 +57,6 @@ func (o *Messagemediaattachment) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Messagemediaattachment) MarshalJSON() ([]byte, error) {
     }
     MessagemediaattachmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Url string `json:"url"`
         
         MediaType string `json:"mediaType"`
@@ -98,30 +83,23 @@ func (u *Messagemediaattachment) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         Id string `json:"id"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

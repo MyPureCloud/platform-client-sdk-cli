@@ -110,41 +110,6 @@ func (o *Crossplatformpolicycreate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -160,8 +125,7 @@ func (u *Crossplatformpolicycreate) MarshalJSON() ([]byte, error) {
     }
     CrossplatformpolicycreateMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -182,60 +146,44 @@ func (u *Crossplatformpolicycreate) MarshalJSON() ([]byte, error) {
         Actions Crossplatformpolicyactions `json:"actions"`
         
         PolicyErrors Policyerrors `json:"policyErrors"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

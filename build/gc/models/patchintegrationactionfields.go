@@ -32,14 +32,7 @@ type Patchintegrationactionfields struct {
 // String returns a JSON representation of the model
 func (o *Patchintegrationactionfields) String() string {
     
-    
-    
-    
-    
-    
      o.RequestMappings = []Requestmapping{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Patchintegrationactionfields) MarshalJSON() ([]byte, error) {
     }
     PatchintegrationactionfieldsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         IntegrationAction Patchintegrationaction `json:"integrationAction"`
         
         RequestMappings []Requestmapping `json:"requestMappings"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         RequestMappings: []Requestmapping{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

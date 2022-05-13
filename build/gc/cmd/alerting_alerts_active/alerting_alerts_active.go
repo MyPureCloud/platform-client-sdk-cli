@@ -33,12 +33,15 @@ func Cmdalerting_alerts_active() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ActiveAlertCount"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ActiveAlertCount"
+      }
+    }
   }
 }`)
 	alerting_alerts_activeCmd.AddCommand(getCmd)
-	
 	return alerting_alerts_activeCmd
 }
 

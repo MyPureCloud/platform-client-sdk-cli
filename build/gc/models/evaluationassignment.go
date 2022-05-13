@@ -33,13 +33,6 @@ type Evaluationassignment struct {
 func (o *Evaluationassignment) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Evaluationassignment) MarshalJSON() ([]byte, error) {
     }
     EvaluationassignmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EvaluationForm Evaluationform `json:"evaluationForm"`
         
         User User `json:"user"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

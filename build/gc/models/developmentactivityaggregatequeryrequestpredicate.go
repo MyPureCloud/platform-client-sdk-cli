@@ -33,13 +33,6 @@ type Developmentactivityaggregatequeryrequestpredicate struct {
 func (o *Developmentactivityaggregatequeryrequestpredicate) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Developmentactivityaggregatequeryrequestpredicate) MarshalJSON() ([]byt
     }
     DevelopmentactivityaggregatequeryrequestpredicateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Dimension string `json:"dimension"`
         
         Value string `json:"value"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

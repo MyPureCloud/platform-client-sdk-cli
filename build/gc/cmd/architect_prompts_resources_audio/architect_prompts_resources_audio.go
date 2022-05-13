@@ -32,10 +32,10 @@ func Cmdarchitect_prompts_resources_audio() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Audio successfully deleted"
+  "description" : "Audio successfully deleted",
+  "content" : { }
 }`)
 	architect_prompts_resources_audioCmd.AddCommand(deleteCmd)
-	
 	return architect_prompts_resources_audioCmd
 }
 

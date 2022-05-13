@@ -30,23 +30,29 @@ func init() {
 func Cmdusers_greetings() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/{userId}/greetings", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Greetings", "/api/v2/users/{userId}/greetings")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The Greeting to create",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Greeting"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Greeting"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Greeting"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Greeting"
+      }
+    }
   }
 }`)
 	users_greetingsCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/greetings", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Greetings", "/api/v2/users/{userId}/greetings")))
@@ -54,12 +60,15 @@ func Cmdusers_greetings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	users_greetingsCmd.AddCommand(listCmd)
-	
 	return users_greetingsCmd
 }
 

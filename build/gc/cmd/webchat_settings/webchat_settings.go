@@ -32,40 +32,50 @@ func Cmdwebchat_settings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Deleted"
+  "description" : "Deleted",
+  "content" : { }
 }`)
 	webchat_settingsCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/webchat/settings", utils.FormatPermissions([]string{ "webchat:deployment:read",  }), utils.GenerateDevCentreLink("GET", "WebChat", "/api/v2/webchat/settings")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatSettings"
+      }
+    }
   }
 }`)
 	webchat_settingsCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/webchat/settings", utils.FormatPermissions([]string{ "webchat:deployment:update",  }), utils.GenerateDevCentreLink("PUT", "WebChat", "/api/v2/webchat/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "webChatSettings",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/WebChatSettings"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatSettings"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatSettings"
+      }
+    }
   }
 }`)
 	webchat_settingsCmd.AddCommand(updateCmd)
-	
 	return webchat_settingsCmd
 }
 

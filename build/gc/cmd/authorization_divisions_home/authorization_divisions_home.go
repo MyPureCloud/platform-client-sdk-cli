@@ -33,12 +33,15 @@ func Cmdauthorization_divisions_home() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AuthzDivision"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AuthzDivision"
+      }
+    }
   }
 }`)
 	authorization_divisions_homeCmd.AddCommand(getCmd)
-	
 	return authorization_divisions_homeCmd
 }
 

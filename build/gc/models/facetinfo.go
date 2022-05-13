@@ -32,14 +32,7 @@ type Facetinfo struct {
 // String returns a JSON representation of the model
 func (o *Facetinfo) String() string {
     
-    
-    
-    
-    
-    
      o.Entries = []Entry{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Facetinfo) MarshalJSON() ([]byte, error) {
     }
     FacetinfoMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Entries []Entry `json:"entries"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entries: []Entry{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

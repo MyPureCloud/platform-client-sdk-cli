@@ -34,12 +34,15 @@ func Cmdtelephony_providers_edges_trunkswithrecording() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TrunkRecordingEnabledCount"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TrunkRecordingEnabledCount"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_trunkswithrecordingCmd.AddCommand(getCmd)
-	
 	return telephony_providers_edges_trunkswithrecordingCmd
 }
 

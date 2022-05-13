@@ -100,39 +100,7 @@ func (o *Identitynow) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Certificates = []string{""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -148,8 +116,7 @@ func (u *Identitynow) MarshalJSON() ([]byte, error) {
     }
     IdentitynowMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -168,58 +135,43 @@ func (u *Identitynow) MarshalJSON() ([]byte, error) {
         Certificate string `json:"certificate"`
         
         Certificates []string `json:"certificates"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Certificates: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

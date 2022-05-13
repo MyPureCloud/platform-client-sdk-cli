@@ -83,39 +83,11 @@ func (o *Surveyaggregationquery) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.GroupBy = []string{""} 
-    
-    
-    
-    
-    
-    
     
      o.Metrics = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.Views = []Surveyaggregationview{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -132,7 +104,8 @@ func (u *Surveyaggregationquery) MarshalJSON() ([]byte, error) {
     }
     SurveyaggregationqueryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         Granularity string `json:"granularity"`
@@ -150,52 +123,41 @@ func (u *Surveyaggregationquery) MarshalJSON() ([]byte, error) {
         Views []Surveyaggregationview `json:"views"`
         
         AlternateTimeDimension string `json:"alternateTimeDimension"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         GroupBy: []string{""},
         
 
-        
 
         
 
-        
 
         
         Metrics: []string{""},
         
 
-        
 
         
 
-        
 
         
         Views: []Surveyaggregationview{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

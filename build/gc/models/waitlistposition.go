@@ -50,19 +50,6 @@ func (o *Waitlistposition) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,7 +65,8 @@ func (u *Waitlistposition) MarshalJSON() ([]byte, error) {
     }
     WaitlistpositionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TimeOffRequest Timeoffrequestreference `json:"timeOffRequest"`
         
         TimeOffLimit Timeofflimitreference `json:"timeOffLimit"`
@@ -86,26 +74,20 @@ func (u *Waitlistposition) MarshalJSON() ([]byte, error) {
         Date time.Time `json:"date"`
         
         WaitlistPosition int `json:"waitlistPosition"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

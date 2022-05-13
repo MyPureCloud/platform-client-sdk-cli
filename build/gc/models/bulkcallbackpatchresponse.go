@@ -38,19 +38,9 @@ type Bulkcallbackpatchresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Bulkcallbackpatchresponse) String() string {
-    
-    
      o.Results = []Bulkresult{{}} 
     
-    
-    
-    
-    
-    
-    
      o.ErrorIndexes = []int{0} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Bulkcallbackpatchresponse) MarshalJSON() ([]byte, error) {
     }
     BulkcallbackpatchresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Results []Bulkresult `json:"results"`
         
         ErrorCount int `json:"errorCount"`
         
         ErrorIndexes []int `json:"errorIndexes"`
-        
         *Alias
     }{
-        
 
         
         Results: []Bulkresult{{}},
         
 
-        
 
         
 
-        
 
         
         ErrorIndexes: []int{0},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -39,18 +39,8 @@ type Licenseassignmentrequest struct {
 // String returns a JSON representation of the model
 func (o *Licenseassignmentrequest) String() string {
     
-    
-    
-    
-    
-    
      o.UserIdsAdd = []string{""} 
-    
-    
-    
      o.UserIdsRemove = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Licenseassignmentrequest) MarshalJSON() ([]byte, error) {
     }
     LicenseassignmentrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         LicenseId string `json:"licenseId"`
         
         UserIdsAdd []string `json:"userIdsAdd"`
         
         UserIdsRemove []string `json:"userIdsRemove"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         UserIdsAdd: []string{""},
         
 
-        
 
         
         UserIdsRemove: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

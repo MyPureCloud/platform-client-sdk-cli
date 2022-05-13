@@ -87,38 +87,7 @@ type Flowoutcomedivisionviewentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Flowoutcomedivisionviewentitylisting) String() string {
-    
-    
      o.Entities = []Flowoutcomedivisionview{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Flowoutcomedivisionviewentitylisting) MarshalJSON() ([]byte, error) {
     }
     FlowoutcomedivisionviewentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Flowoutcomedivisionview `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Flowoutcomedivisionviewentitylisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Flowoutcomedivisionview{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

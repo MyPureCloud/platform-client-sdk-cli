@@ -95,36 +95,6 @@ func (o *Voicemailgrouppolicy) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -140,10 +110,9 @@ func (u *Voicemailgrouppolicy) MarshalJSON() ([]byte, error) {
     }
     VoicemailgrouppolicyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
-        
-        
         
         Enabled bool `json:"enabled"`
         
@@ -160,50 +129,38 @@ func (u *Voicemailgrouppolicy) MarshalJSON() ([]byte, error) {
         GroupAlertType string `json:"groupAlertType"`
         
         InteractiveResponsePromptId string `json:"interactiveResponsePromptId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

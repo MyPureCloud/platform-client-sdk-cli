@@ -87,38 +87,7 @@ type Messagingcampaigndivisionviewentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Messagingcampaigndivisionviewentitylisting) String() string {
-    
-    
      o.Entities = []Messagingcampaigndivisionview{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Messagingcampaigndivisionviewentitylisting) MarshalJSON() ([]byte, erro
     }
     MessagingcampaigndivisionviewentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Messagingcampaigndivisionview `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Messagingcampaigndivisionviewentitylisting) MarshalJSON() ([]byte, erro
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Messagingcampaigndivisionview{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

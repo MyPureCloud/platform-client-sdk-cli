@@ -52,23 +52,7 @@ type Categoryentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Categoryentitylisting) String() string {
-    
-    
      o.Entities = []Category{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -88,7 +72,8 @@ func (u *Categoryentitylisting) MarshalJSON() ([]byte, error) {
     }
     CategoryentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Category `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -98,32 +83,25 @@ func (u *Categoryentitylisting) MarshalJSON() ([]byte, error) {
         Total int `json:"total"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Category{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

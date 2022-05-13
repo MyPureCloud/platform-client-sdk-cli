@@ -33,31 +33,40 @@ func Cmdusers_routingstatus() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/RoutingStatus"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RoutingStatus"
+      }
+    }
   }
 }`)
 	users_routingstatusCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingstatus", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/routingstatus")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Routing Status",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/RoutingStatus"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RoutingStatus"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/RoutingStatus"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RoutingStatus"
+      }
+    }
   }
 }`)
 	users_routingstatusCmd.AddCommand(updateCmd)
-	
 	return users_routingstatusCmd
 }
 

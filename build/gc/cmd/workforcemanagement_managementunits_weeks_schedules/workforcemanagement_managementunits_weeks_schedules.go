@@ -35,12 +35,16 @@ func Cmdworkforcemanagement_managementunits_weeks_schedules() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WeekScheduleResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WeekScheduleResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_managementunits_weeks_schedulesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "bool", "includeOnlyPublished", "", "Return only published schedules")
 	utils.AddFlag(listCmd.Flags(), "string", "earliestWeekDate", "", "The start date of the earliest week to query in yyyy-MM-dd format")
 	utils.AddFlag(listCmd.Flags(), "string", "latestWeekDate", "", "The start date of the latest week to query in yyyy-MM-dd format")
@@ -49,12 +53,15 @@ func Cmdworkforcemanagement_managementunits_weeks_schedules() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WeekScheduleListResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WeekScheduleListResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_managementunits_weeks_schedulesCmd.AddCommand(listCmd)
-	
 	return workforcemanagement_managementunits_weeks_schedulesCmd
 }
 

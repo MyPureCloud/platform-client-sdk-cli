@@ -39,18 +39,8 @@ type Conversationdetailqueryfilter struct {
 // String returns a JSON representation of the model
 func (o *Conversationdetailqueryfilter) String() string {
     
-    
-    
-    
-    
-    
      o.Clauses = []Conversationdetailqueryclause{{}} 
-    
-    
-    
      o.Predicates = []Conversationdetailquerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Conversationdetailqueryfilter) MarshalJSON() ([]byte, error) {
     }
     ConversationdetailqueryfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Clauses []Conversationdetailqueryclause `json:"clauses"`
         
         Predicates []Conversationdetailquerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Clauses: []Conversationdetailqueryclause{{}},
         
 
-        
 
         
         Predicates: []Conversationdetailquerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -31,14 +31,7 @@ type Urlcondition struct {
 
 // String returns a JSON representation of the model
 func (o *Urlcondition) String() string {
-    
-    
      o.Values = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Urlcondition) MarshalJSON() ([]byte, error) {
     }
     UrlconditionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Values []string `json:"values"`
         
         Operator string `json:"operator"`
-        
         *Alias
     }{
-        
 
         
         Values: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

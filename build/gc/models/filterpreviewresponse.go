@@ -40,17 +40,7 @@ type Filterpreviewresponse struct {
 func (o *Filterpreviewresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Preview = []Dialercontact{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Filterpreviewresponse) MarshalJSON() ([]byte, error) {
     }
     FilterpreviewresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FilteredContacts int `json:"filteredContacts"`
         
         TotalContacts int `json:"totalContacts"`
         
         Preview []Dialercontact `json:"preview"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Preview: []Dialercontact{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

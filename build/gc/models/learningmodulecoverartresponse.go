@@ -37,14 +37,6 @@ type Learningmodulecoverartresponse struct {
 // String returns a JSON representation of the model
 func (o *Learningmodulecoverartresponse) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -60,28 +52,20 @@ func (u *Learningmodulecoverartresponse) MarshalJSON() ([]byte, error) {
     }
     LearningmodulecoverartresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
+    return json.Marshal(&struct {
         
         Url string `json:"url"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,12 +33,15 @@ func Cmdalerting_interactionstats_alerts_unread() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UnreadMetric"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UnreadMetric"
+      }
+    }
   }
 }`)
 	alerting_interactionstats_alerts_unreadCmd.AddCommand(getCmd)
-	
 	return alerting_interactionstats_alerts_unreadCmd
 }
 

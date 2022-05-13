@@ -30,23 +30,28 @@ func init() {
 func Cmdworkforcemanagement_businessunits_weeks_schedules_reschedule() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule", utils.FormatPermissions([]string{ "wfm:schedule:generate",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/BuRescheduleRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuRescheduleRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuAsyncScheduleRunResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuAsyncScheduleRunResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedules_rescheduleCmd.AddCommand(createCmd)
-	
 	return workforcemanagement_businessunits_weeks_schedules_rescheduleCmd
 }
 

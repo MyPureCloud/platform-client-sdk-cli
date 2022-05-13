@@ -65,25 +65,6 @@ func (o *Learningmoduleinformsteprequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Learningmoduleinformsteprequest) MarshalJSON() ([]byte, error) {
     }
     LearningmoduleinformsteprequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Name string `json:"name"`
@@ -111,34 +93,26 @@ func (u *Learningmoduleinformsteprequest) MarshalJSON() ([]byte, error) {
         ContentType string `json:"contentType"`
         
         Order int `json:"order"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

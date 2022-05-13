@@ -41,16 +41,6 @@ func (o *Initiatescreenrecording) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Initiatescreenrecording) MarshalJSON() ([]byte, error) {
     }
     InitiatescreenrecordingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         RecordACW bool `json:"recordACW"`
         
         ArchiveRetention Archiveretention `json:"archiveRetention"`
         
         DeleteRetention Deleteretention `json:"deleteRetention"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

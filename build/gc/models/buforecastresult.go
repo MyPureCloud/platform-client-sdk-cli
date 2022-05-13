@@ -47,20 +47,7 @@ type Buforecastresult struct {
 // String returns a JSON representation of the model
 func (o *Buforecastresult) String() string {
     
-    
-    
-    
-    
-    
      o.PlanningGroups = []Forecastplanninggroupdata{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -78,7 +65,8 @@ func (u *Buforecastresult) MarshalJSON() ([]byte, error) {
     }
     BuforecastresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ReferenceStartDate time.Time `json:"referenceStartDate"`
         
         PlanningGroups []Forecastplanninggroupdata `json:"planningGroups"`
@@ -86,28 +74,22 @@ func (u *Buforecastresult) MarshalJSON() ([]byte, error) {
         WeekNumber int `json:"weekNumber"`
         
         WeekCount int `json:"weekCount"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         PlanningGroups: []Forecastplanninggroupdata{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

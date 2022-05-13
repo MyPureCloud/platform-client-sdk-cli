@@ -81,40 +81,12 @@ type Searchcriteria struct {
 // String returns a JSON representation of the model
 func (o *Searchcriteria) String() string {
     
-    
-    
-    
-    
-    
      o.Values = []string{""} 
-    
-    
-    
-    
-    
-    
     
      o.Fields = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Group = []Searchcriteria{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -132,7 +104,8 @@ func (u *Searchcriteria) MarshalJSON() ([]byte, error) {
     }
     SearchcriteriaMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EndValue string `json:"endValue"`
         
         Values []string `json:"values"`
@@ -150,52 +123,41 @@ func (u *Searchcriteria) MarshalJSON() ([]byte, error) {
         DateFormat string `json:"dateFormat"`
         
         VarType string `json:"type"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Values: []string{""},
         
 
-        
 
         
 
-        
 
         
         Fields: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Group: []Searchcriteria{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

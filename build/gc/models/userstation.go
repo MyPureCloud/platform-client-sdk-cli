@@ -77,30 +77,7 @@ func (o *Userstation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ProviderInfo = map[string]string{"": ""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -116,8 +93,7 @@ func (u *Userstation) MarshalJSON() ([]byte, error) {
     }
     UserstationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -130,46 +106,34 @@ func (u *Userstation) MarshalJSON() ([]byte, error) {
         DefaultUser User `json:"defaultUser"`
         
         ProviderInfo map[string]string `json:"providerInfo"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ProviderInfo: map[string]string{"": ""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

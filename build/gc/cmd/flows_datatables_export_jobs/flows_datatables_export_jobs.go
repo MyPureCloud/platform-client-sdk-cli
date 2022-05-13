@@ -33,23 +33,30 @@ func Cmdflows_datatables_export_jobs() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DataTableExportJob"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataTableExportJob"
+      }
+    }
   }
 }`)
 	flows_datatables_export_jobsCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}", utils.FormatPermissions([]string{ "architect:datatable:view", "architect:datatableRow:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DataTableExportJob"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataTableExportJob"
+      }
+    }
   }
 }`)
 	flows_datatables_export_jobsCmd.AddCommand(getCmd)
-	
 	return flows_datatables_export_jobsCmd
 }
 

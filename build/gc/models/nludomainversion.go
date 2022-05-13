@@ -115,45 +115,9 @@ type Nludomainversion struct {
 func (o *Nludomainversion) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Intents = []Intentdefinition{{}} 
-    
-    
-    
      o.EntityTypes = []Namedentitytypedefinition{{}} 
-    
-    
-    
      o.Entities = []Namedentitydefinition{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -169,106 +133,70 @@ func (u *Nludomainversion) MarshalJSON() ([]byte, error) {
     }
     NludomainversionMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
+    return json.Marshal(&struct {
         
         Description string `json:"description"`
         
         Language string `json:"language"`
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         Intents []Intentdefinition `json:"intents"`
         
         EntityTypes []Namedentitytypedefinition `json:"entityTypes"`
         
         Entities []Namedentitydefinition `json:"entities"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Intents: []Intentdefinition{{}},
         
 
-        
 
         
         EntityTypes: []Namedentitytypedefinition{{}},
         
 
-        
 
         
         Entities: []Namedentitydefinition{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

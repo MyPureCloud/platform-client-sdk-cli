@@ -41,16 +41,6 @@ func (o *Patchpredictorrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Patchpredictorrequest) MarshalJSON() ([]byte, error) {
     }
     PatchpredictorrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         RoutingTimeoutSeconds int `json:"routingTimeoutSeconds"`
         
         Schedule Predictorschedule `json:"schedule"`
         
         WorkloadBalancingConfig Predictorworkloadbalancing `json:"workloadBalancingConfig"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

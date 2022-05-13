@@ -82,30 +82,6 @@ func (o *Actiontemplate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -121,8 +97,7 @@ func (u *Actiontemplate) MarshalJSON() ([]byte, error) {
     }
     ActiontemplateMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -133,52 +108,35 @@ func (u *Actiontemplate) MarshalJSON() ([]byte, error) {
         State string `json:"state"`
         
         ContentOffer Contentoffer `json:"contentOffer"`
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

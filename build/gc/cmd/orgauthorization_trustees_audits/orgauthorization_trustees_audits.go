@@ -34,23 +34,28 @@ func Cmdorgauthorization_trustees_audits() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "string", "sortOrder", "descending", "Sort order")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/orgauthorization/trustees/audits", utils.FormatPermissions([]string{ "authorization:audit:view",  }), utils.GenerateDevCentreLink("POST", "Organization Authorization", "/api/v2/orgauthorization/trustees/audits")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Values to scope the request.",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/TrusteeAuditQueryRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TrusteeAuditQueryRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AuditQueryResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AuditQueryResponse"
+      }
+    }
   }
 }`)
 	orgauthorization_trustees_auditsCmd.AddCommand(createCmd)
-	
 	return orgauthorization_trustees_auditsCmd
 }
 

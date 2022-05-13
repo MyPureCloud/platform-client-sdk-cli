@@ -24,11 +24,7 @@ type Workplanlistresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Workplanlistresponse) String() string {
-    
-    
      o.Entities = []Workplanlistitemresponse{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Workplanlistresponse) MarshalJSON() ([]byte, error) {
     }
     WorkplanlistresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Workplanlistitemresponse `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Workplanlistitemresponse `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Workplanlistitemresponse{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

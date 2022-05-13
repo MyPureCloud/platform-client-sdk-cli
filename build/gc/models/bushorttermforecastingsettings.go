@@ -25,10 +25,6 @@ type Bushorttermforecastingsettings struct {
 // String returns a JSON representation of the model
 func (o *Bushorttermforecastingsettings) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Bushorttermforecastingsettings) MarshalJSON() ([]byte, error) {
     }
     BushorttermforecastingsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
-        DefaultHistoryWeeks int `json:"defaultHistoryWeeks"`
+    return json.Marshal(&struct {
         
+        DefaultHistoryWeeks int `json:"defaultHistoryWeeks"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

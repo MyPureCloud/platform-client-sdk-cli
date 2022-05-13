@@ -38,19 +38,9 @@ type Suggestsearchrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Suggestsearchrequest) String() string {
-    
-    
      o.Expand = []string{""} 
-    
-    
-    
      o.Types = []string{""} 
-    
-    
-    
      o.Query = []Suggestsearchcriteria{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,34 +56,30 @@ func (u *Suggestsearchrequest) MarshalJSON() ([]byte, error) {
     }
     SuggestsearchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Expand []string `json:"expand"`
         
         Types []string `json:"types"`
         
         Query []Suggestsearchcriteria `json:"query"`
-        
         *Alias
     }{
-        
 
         
         Expand: []string{""},
         
 
-        
 
         
         Types: []string{""},
         
 
-        
 
         
         Query: []Suggestsearchcriteria{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

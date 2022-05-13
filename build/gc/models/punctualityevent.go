@@ -80,28 +80,6 @@ type Punctualityevent struct {
 // String returns a JSON representation of the model
 func (o *Punctualityevent) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -117,70 +95,41 @@ func (u *Punctualityevent) MarshalJSON() ([]byte, error) {
     }
     PunctualityeventMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         
         Bullseye bool `json:"bullseye"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -115,44 +115,7 @@ func (o *Dnclistcreate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.DncCodes = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -170,20 +133,11 @@ func (u *Dnclistcreate) MarshalJSON() ([]byte, error) {
     }
     DnclistcreateMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
-        
-        
-        
-        
         Version int `json:"version"`
-        
-        
-        
-        
         
         DncSourceType string `json:"dncSourceType"`
         
@@ -196,70 +150,52 @@ func (u *Dnclistcreate) MarshalJSON() ([]byte, error) {
         LicenseId string `json:"licenseId"`
         
         Division Domainentityref `json:"division"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         DncCodes: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -57,22 +57,6 @@ func (o *Contentlocation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Contentlocation) MarshalJSON() ([]byte, error) {
     }
     ContentlocationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Url string `json:"url"`
         
         Address string `json:"address"`
@@ -98,30 +83,23 @@ func (u *Contentlocation) MarshalJSON() ([]byte, error) {
         Latitude float64 `json:"latitude"`
         
         Longitude float64 `json:"longitude"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

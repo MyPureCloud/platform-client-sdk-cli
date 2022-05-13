@@ -25,10 +25,6 @@ type Schedulingoptionsrequest struct {
 // String returns a JSON representation of the model
 func (o *Schedulingoptionsrequest) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Schedulingoptionsrequest) MarshalJSON() ([]byte, error) {
     }
     SchedulingoptionsrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        NoForecastOptions Schedulingnoforecastoptionsrequest `json:"noForecastOptions"`
+    return json.Marshal(&struct {
         
+        NoForecastOptions Schedulingnoforecastoptionsrequest `json:"noForecastOptions"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,23 +30,29 @@ func init() {
 func Cmdintegrations_actions_drafts() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/integrations/actions/drafts", utils.FormatPermissions([]string{ "integrations:action:add",  }), utils.GenerateDevCentreLink("POST", "Integrations", "/api/v2/integrations/actions/drafts")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Input used to create Action Draft.",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/PostActionInput"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PostActionInput"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Action"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Action"
+      }
+    }
   }
 }`)
 	integrations_actions_draftsCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "next page token")
@@ -63,12 +69,15 @@ func Cmdintegrations_actions_drafts() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	integrations_actions_draftsCmd.AddCommand(listCmd)
-	
 	return integrations_actions_draftsCmd
 }
 

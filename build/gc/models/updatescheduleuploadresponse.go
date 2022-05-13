@@ -47,20 +47,7 @@ type Updatescheduleuploadresponse struct {
 func (o *Updatescheduleuploadresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Headers = map[string]string{"": ""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Updatescheduleuploadresponse) MarshalJSON() ([]byte, error) {
     }
     UpdatescheduleuploadresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UploadKey string `json:"uploadKey"`
         
         Url string `json:"url"`
@@ -85,28 +73,22 @@ func (u *Updatescheduleuploadresponse) MarshalJSON() ([]byte, error) {
         Headers map[string]string `json:"headers"`
         
         UploadBodySchema Updatescheduleuploadschema `json:"uploadBodySchema"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Headers: map[string]string{"": ""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

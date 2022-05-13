@@ -56,23 +56,7 @@ func (o *Responseassetsearchresults) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Results = []Responseasset{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Responseassetsearchresults) MarshalJSON() ([]byte, error) {
     }
     ResponseassetsearchresultsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         PageCount int `json:"pageCount"`
@@ -98,32 +83,25 @@ func (u *Responseassetsearchresults) MarshalJSON() ([]byte, error) {
         PageNumber int `json:"pageNumber"`
         
         Results []Responseasset `json:"results"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Results: []Responseasset{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

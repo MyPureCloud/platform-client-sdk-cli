@@ -78,33 +78,8 @@ func (o *Edgeinterface) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Endpoints = []Domainentityref{{}} 
-    
-    
-    
      o.LineTypes = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -121,7 +96,8 @@ func (u *Edgeinterface) MarshalJSON() ([]byte, error) {
     }
     EdgeinterfaceMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         IpAddress string `json:"ipAddress"`
@@ -137,46 +113,36 @@ func (u *Edgeinterface) MarshalJSON() ([]byte, error) {
         LineTypes []string `json:"lineTypes"`
         
         AddressFamilyId string `json:"addressFamilyId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Endpoints: []Domainentityref{{}},
         
 
-        
 
         
         LineTypes: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

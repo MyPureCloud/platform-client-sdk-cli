@@ -62,26 +62,7 @@ func (o *Updateworkplanrotationrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Agents = []Updateworkplanrotationagentrequest{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -99,7 +80,8 @@ func (u *Updateworkplanrotationrequest) MarshalJSON() ([]byte, error) {
     }
     UpdateworkplanrotationrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Enabled bool `json:"enabled"`
@@ -111,36 +93,28 @@ func (u *Updateworkplanrotationrequest) MarshalJSON() ([]byte, error) {
         Pattern Workplanpatternrequest `json:"pattern"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Agents: []Updateworkplanrotationagentrequest{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

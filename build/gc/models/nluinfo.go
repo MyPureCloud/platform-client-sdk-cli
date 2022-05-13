@@ -43,18 +43,7 @@ type Nluinfo struct {
 
 // String returns a JSON representation of the model
 func (o *Nluinfo) String() string {
-    
-    
-    
-    
-    
-    
      o.Intents = []Intent{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -71,36 +60,27 @@ func (u *Nluinfo) MarshalJSON() ([]byte, error) {
     }
     NluinfoMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
+    return json.Marshal(&struct {
         
         Intents []Intent `json:"intents"`
         
         EngineVersion string `json:"engineVersion"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Intents: []Intent{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

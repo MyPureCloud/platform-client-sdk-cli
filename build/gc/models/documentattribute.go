@@ -32,14 +32,7 @@ type Documentattribute struct {
 // String returns a JSON representation of the model
 func (o *Documentattribute) String() string {
     
-    
-    
-    
-    
-    
      o.Values = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Documentattribute) MarshalJSON() ([]byte, error) {
     }
     DocumentattributeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Attribute Attribute `json:"attribute"`
         
         Values []string `json:"values"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Values: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

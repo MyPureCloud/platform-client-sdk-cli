@@ -25,10 +25,6 @@ type Unreadstatus struct {
 // String returns a JSON representation of the model
 func (o *Unreadstatus) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Unreadstatus) MarshalJSON() ([]byte, error) {
     }
     UnreadstatusMarshalled = true
 
-    return json.Marshal(&struct { 
-        Unread bool `json:"unread"`
+    return json.Marshal(&struct {
         
+        Unread bool `json:"unread"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

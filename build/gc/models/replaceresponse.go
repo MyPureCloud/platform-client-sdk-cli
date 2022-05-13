@@ -65,25 +65,6 @@ func (o *Replaceresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Replaceresponse) MarshalJSON() ([]byte, error) {
     }
     ReplaceresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -111,34 +93,26 @@ func (u *Replaceresponse) MarshalJSON() ([]byte, error) {
         UploadDestinationUri string `json:"uploadDestinationUri"`
         
         UploadMethod string `json:"uploadMethod"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

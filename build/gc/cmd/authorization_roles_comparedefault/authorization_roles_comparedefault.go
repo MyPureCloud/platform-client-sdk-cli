@@ -30,34 +30,43 @@ func init() {
 func Cmdauthorization_roles_comparedefault() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}", utils.FormatPermissions([]string{ "authorization:role:view",  }), utils.GenerateDevCentreLink("POST", "Authorization", "/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Organization role",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DomainOrganizationRole"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainOrganizationRole"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DomainOrgRoleDifference"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainOrgRoleDifference"
+      }
+    }
   }
 }`)
 	authorization_roles_comparedefaultCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}", utils.FormatPermissions([]string{ "authorization:role:view",  }), utils.GenerateDevCentreLink("GET", "Authorization", "/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DomainOrgRoleDifference"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainOrgRoleDifference"
+      }
+    }
   }
 }`)
 	authorization_roles_comparedefaultCmd.AddCommand(getCmd)
-	
 	return authorization_roles_comparedefaultCmd
 }
 

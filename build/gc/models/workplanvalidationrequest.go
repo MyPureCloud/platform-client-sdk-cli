@@ -264,102 +264,8 @@ func (o *Workplanvalidationrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Shifts = []Workplanshift{{}} 
-    
-    
-    
      o.Agents = []Deletableuserreference{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -376,14 +282,11 @@ func (u *Workplanvalidationrequest) MarshalJSON() ([]byte, error) {
     }
     WorkplanvalidationrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         Enabled bool `json:"enabled"`
-        
-        
         
         ConstrainWeeklyPaidTime bool `json:"constrainWeeklyPaidTime"`
         
@@ -438,144 +341,108 @@ func (u *Workplanvalidationrequest) MarshalJSON() ([]byte, error) {
         Agents []Deletableuserreference `json:"agents"`
         
         AgentCount int `json:"agentCount"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Shifts: []Workplanshift{{}},
         
 
-        
 
         
         Agents: []Deletableuserreference{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

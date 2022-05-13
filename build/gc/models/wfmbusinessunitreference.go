@@ -31,12 +31,6 @@ type Wfmbusinessunitreference struct {
 // String returns a JSON representation of the model
 func (o *Wfmbusinessunitreference) String() string {
     
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -52,22 +46,17 @@ func (u *Wfmbusinessunitreference) MarshalJSON() ([]byte, error) {
     }
     WfmbusinessunitreferenceMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

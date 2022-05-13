@@ -41,16 +41,6 @@ func (o *Atzmtimeslotwithtimezone) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Atzmtimeslotwithtimezone) MarshalJSON() ([]byte, error) {
     }
     AtzmtimeslotwithtimezoneMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EarliestCallableTime string `json:"earliestCallableTime"`
         
         LatestCallableTime string `json:"latestCallableTime"`
         
         TimeZoneId string `json:"timeZoneId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

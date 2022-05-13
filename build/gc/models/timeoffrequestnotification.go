@@ -64,27 +64,8 @@ func (o *Timeoffrequestnotification) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.PartialDayStartDateTimes = []time.Time{{}} 
-    
-    
-    
      o.FullDayManagementUnitDates = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -100,7 +81,8 @@ func (u *Timeoffrequestnotification) MarshalJSON() ([]byte, error) {
     }
     TimeoffrequestnotificationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TimeOffRequestId string `json:"timeOffRequestId"`
         
         User Userreference `json:"user"`
@@ -112,38 +94,30 @@ func (u *Timeoffrequestnotification) MarshalJSON() ([]byte, error) {
         PartialDayStartDateTimes []time.Time `json:"partialDayStartDateTimes"`
         
         FullDayManagementUnitDates []string `json:"fullDayManagementUnitDates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         PartialDayStartDateTimes: []time.Time{{}},
         
 
-        
 
         
         FullDayManagementUnitDates: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

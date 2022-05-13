@@ -39,18 +39,8 @@ type Statisticalresponse struct {
 // String returns a JSON representation of the model
 func (o *Statisticalresponse) String() string {
     
-    
-    
-    
-    
-    
      o.Metrics = []Aggregatemetricdata{{}} 
-    
-    
-    
      o.Views = []Aggregateviewdata{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Statisticalresponse) MarshalJSON() ([]byte, error) {
     }
     StatisticalresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         Metrics []Aggregatemetricdata `json:"metrics"`
         
         Views []Aggregateviewdata `json:"views"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Metrics: []Aggregatemetricdata{{}},
         
 
-        
 
         
         Views: []Aggregateviewdata{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

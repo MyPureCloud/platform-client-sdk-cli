@@ -70,26 +70,6 @@ func (o *Screenrecordingsession) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -105,8 +85,7 @@ func (u *Screenrecordingsession) MarshalJSON() ([]byte, error) {
     }
     ScreenrecordingsessionMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -117,40 +96,29 @@ func (u *Screenrecordingsession) MarshalJSON() ([]byte, error) {
         Conversation Conversation `json:"conversation"`
         
         StartTime time.Time `json:"startTime"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

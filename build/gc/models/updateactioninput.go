@@ -49,19 +49,6 @@ func (o *Updateactioninput) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Updateactioninput) MarshalJSON() ([]byte, error) {
     }
     UpdateactioninputMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Category string `json:"category"`
         
         Name string `json:"name"`
@@ -85,26 +73,20 @@ func (u *Updateactioninput) MarshalJSON() ([]byte, error) {
         Config Actionconfig `json:"config"`
         
         Version int `json:"version"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

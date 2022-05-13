@@ -24,11 +24,7 @@ type Listwrappershiftstartvariance struct {
 
 // String returns a JSON representation of the model
 func (o *Listwrappershiftstartvariance) String() string {
-    
-    
      o.Values = []Shiftstartvariance{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Listwrappershiftstartvariance) MarshalJSON() ([]byte, error) {
     }
     ListwrappershiftstartvarianceMarshalled = true
 
-    return json.Marshal(&struct { 
-        Values []Shiftstartvariance `json:"values"`
+    return json.Marshal(&struct {
         
+        Values []Shiftstartvariance `json:"values"`
         *Alias
     }{
-        
 
         
         Values: []Shiftstartvariance{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

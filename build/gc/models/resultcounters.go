@@ -33,13 +33,6 @@ type Resultcounters struct {
 func (o *Resultcounters) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Resultcounters) MarshalJSON() ([]byte, error) {
     }
     ResultcountersMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Success int `json:"success"`
         
         Failure int `json:"failure"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

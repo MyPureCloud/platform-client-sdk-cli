@@ -87,38 +87,7 @@ type Domainedgesoftwareversiondtoentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Domainedgesoftwareversiondtoentitylisting) String() string {
-    
-    
      o.Entities = []Domainedgesoftwareversiondto{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Domainedgesoftwareversiondtoentitylisting) MarshalJSON() ([]byte, error
     }
     DomainedgesoftwareversiondtoentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Domainedgesoftwareversiondto `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Domainedgesoftwareversiondtoentitylisting) MarshalJSON() ([]byte, error
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Domainedgesoftwareversiondto{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,23 +33,30 @@ func Cmdworkforcemanagement_historicaldata_deletejob() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Delete job is accepted. Try using get API to get the status.",
-  "schema" : {
-    "$ref" : "#/definitions/HistoricalImportDeleteJobResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/HistoricalImportDeleteJobResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_historicaldata_deletejobCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/historicaldata/deletejob", utils.FormatPermissions([]string{ "wfm:historicalData:upload",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/historicaldata/deletejob")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/HistoricalImportDeleteJobResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/HistoricalImportDeleteJobResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_historicaldata_deletejobCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_historicaldata_deletejobCmd
 }
 

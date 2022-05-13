@@ -31,23 +31,28 @@ func Cmdworkforcemanagement_managementunits_workplans_validate() *cobra.Command 
 	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", " Valid values: messages")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate", utils.FormatPermissions([]string{ "wfm:workPlan:add", "wfm:workPlan:edit",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/WorkPlanValidationRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WorkPlanValidationRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ValidateWorkPlanResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ValidateWorkPlanResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_managementunits_workplans_validateCmd.AddCommand(createCmd)
-	
 	return workforcemanagement_managementunits_workplans_validateCmd
 }
 

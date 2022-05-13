@@ -24,11 +24,7 @@ type Evaluationaggregatequeryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Evaluationaggregatequeryresponse) String() string {
-    
-    
      o.Results = []Evaluationaggregatedatacontainer{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Evaluationaggregatequeryresponse) MarshalJSON() ([]byte, error) {
     }
     EvaluationaggregatequeryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Results []Evaluationaggregatedatacontainer `json:"results"`
+    return json.Marshal(&struct {
         
+        Results []Evaluationaggregatedatacontainer `json:"results"`
         *Alias
     }{
-        
 
         
         Results: []Evaluationaggregatedatacontainer{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

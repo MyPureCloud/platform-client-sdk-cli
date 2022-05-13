@@ -32,14 +32,7 @@ type Botintent struct {
 // String returns a JSON representation of the model
 func (o *Botintent) String() string {
     
-    
-    
-    
-    
-    
      o.Slots = map[string]Botslot{"": {}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Botintent) MarshalJSON() ([]byte, error) {
     }
     BotintentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Slots map[string]Botslot `json:"slots"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Slots: map[string]Botslot{"": {}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

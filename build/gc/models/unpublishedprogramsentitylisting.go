@@ -52,23 +52,7 @@ type Unpublishedprogramsentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Unpublishedprogramsentitylisting) String() string {
-    
-    
      o.Entities = []Program{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -88,7 +72,8 @@ func (u *Unpublishedprogramsentitylisting) MarshalJSON() ([]byte, error) {
     }
     UnpublishedprogramsentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Program `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -98,32 +83,25 @@ func (u *Unpublishedprogramsentitylisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Program{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

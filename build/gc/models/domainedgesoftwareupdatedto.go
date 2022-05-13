@@ -98,37 +98,6 @@ func (o *Domainedgesoftwareupdatedto) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -144,7 +113,8 @@ func (u *Domainedgesoftwareupdatedto) MarshalJSON() ([]byte, error) {
     }
     DomainedgesoftwareupdatedtoMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Version Domainedgesoftwareversiondto `json:"version"`
         
         MaxDownloadRate int `json:"maxDownloadRate"`
@@ -164,50 +134,38 @@ func (u *Domainedgesoftwareupdatedto) MarshalJSON() ([]byte, error) {
         CallDrainingWaitTimeSeconds int `json:"callDrainingWaitTimeSeconds"`
         
         Current bool `json:"current"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

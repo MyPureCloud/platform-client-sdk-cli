@@ -60,28 +60,9 @@ type Responseassetfilter struct {
 // String returns a JSON representation of the model
 func (o *Responseassetfilter) String() string {
     
-    
-    
-    
-    
-    
      o.Values = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.Fields = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -99,7 +80,8 @@ func (u *Responseassetfilter) MarshalJSON() ([]byte, error) {
     }
     ResponseassetfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EndValue string `json:"endValue"`
         
         Values []string `json:"values"`
@@ -111,38 +93,30 @@ func (u *Responseassetfilter) MarshalJSON() ([]byte, error) {
         Value string `json:"value"`
         
         VarType string `json:"type"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Values: []string{""},
         
 
-        
 
         
 
-        
 
         
         Fields: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

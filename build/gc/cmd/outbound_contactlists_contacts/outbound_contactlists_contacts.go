@@ -33,77 +33,94 @@ func Cmdoutbound_contactlists_contacts() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "bool", "doNotQueue", "", "Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the `priority` parameter.")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/contactlists/{contactListId}/contacts", utils.FormatPermissions([]string{ "outbound:contact:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/contactlists/{contactListId}/contacts")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Contact",
-  "required" : true,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/WritableDialerContact"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/WritableDialerContact"
+        }
+      }
     }
-  }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/DialerContact"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/DialerContact"
+        }
+      }
     }
   }
 }`)
 	outbound_contactlists_contactsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}", utils.FormatPermissions([]string{ "outbound:contact:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	outbound_contactlists_contactsCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(deletecontactsCmd.Flags(), "[]string", "contactIds", "", "ContactIds to delete. - REQUIRED")
 	deletecontactsCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deletecontactsCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/contactlists/{contactListId}/contacts", utils.FormatPermissions([]string{ "outbound:contact:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/contactlists/{contactListId}/contacts")))
 	utils.AddFileFlagIfUpsert(deletecontactsCmd.Flags(), "DELETE", ``)
 	deletecontactsCmd.MarkFlagRequired("contactIds")
 	
 	utils.AddPaginateFlagsIfListingResponse(deletecontactsCmd.Flags(), "DELETE", `{
-  "description" : "Contacts Deleted."
+  "description" : "Contacts Deleted.",
+  "content" : { }
 }`)
 	outbound_contactlists_contactsCmd.AddCommand(deletecontactsCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}", utils.FormatPermissions([]string{ "outbound:contact:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DialerContact"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DialerContact"
+      }
+    }
   }
 }`)
 	outbound_contactlists_contactsCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}", utils.FormatPermissions([]string{ "outbound:contact:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Contact",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DialerContact"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DialerContact"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DialerContact"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DialerContact"
+      }
+    }
   }
 }`)
 	outbound_contactlists_contactsCmd.AddCommand(updateCmd)
-	
 	return outbound_contactlists_contactsCmd
 }
 

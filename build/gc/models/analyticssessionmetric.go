@@ -42,16 +42,6 @@ func (o *Analyticssessionmetric) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -67,28 +57,24 @@ func (u *Analyticssessionmetric) MarshalJSON() ([]byte, error) {
     }
     AnalyticssessionmetricMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EmitDate time.Time `json:"emitDate"`
         
         Name string `json:"name"`
         
         Value int `json:"value"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

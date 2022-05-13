@@ -30,19 +30,21 @@ func init() {
 func Cmdconversations_cobrowsesessions_participants_replace() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/TransferRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TransferRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Accepted"
+  "description" : "Accepted",
+  "content" : { }
 }`)
 	conversations_cobrowsesessions_participants_replaceCmd.AddCommand(createCmd)
-	
 	return conversations_cobrowsesessions_participants_replaceCmd
 }
 

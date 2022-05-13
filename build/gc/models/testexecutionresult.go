@@ -45,22 +45,9 @@ type Testexecutionresult struct {
 
 // String returns a JSON representation of the model
 func (o *Testexecutionresult) String() string {
-    
-    
      o.Operations = []Testexecutionoperationresult{{}} 
     
-    
-    
-    
-    
-    
-    
      o.FinalResult = Interface{} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Testexecutionresult) MarshalJSON() ([]byte, error) {
     }
     TestexecutionresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Operations []Testexecutionoperationresult `json:"operations"`
         
         VarError Errorbody `json:"error"`
@@ -85,30 +73,24 @@ func (u *Testexecutionresult) MarshalJSON() ([]byte, error) {
         FinalResult interface{} `json:"finalResult"`
         
         Success bool `json:"success"`
-        
         *Alias
     }{
-        
 
         
         Operations: []Testexecutionoperationresult{{}},
         
 
-        
 
         
 
-        
 
         
         FinalResult: Interface{},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

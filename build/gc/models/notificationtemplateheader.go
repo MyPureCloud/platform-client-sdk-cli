@@ -48,20 +48,7 @@ func (o *Notificationtemplateheader) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Parameters = []Notificationtemplateparameter{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Notificationtemplateheader) MarshalJSON() ([]byte, error) {
     }
     NotificationtemplateheaderMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Text string `json:"text"`
@@ -85,28 +73,22 @@ func (u *Notificationtemplateheader) MarshalJSON() ([]byte, error) {
         Media Contentattachment `json:"media"`
         
         Parameters []Notificationtemplateparameter `json:"parameters"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Parameters: []Notificationtemplateparameter{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

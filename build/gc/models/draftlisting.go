@@ -45,20 +45,7 @@ type Draftlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Draftlisting) String() string {
-    
-    
      o.Entities = []Draft{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Draftlisting) MarshalJSON() ([]byte, error) {
     }
     DraftlistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Draft `json:"entities"`
         
         NextUri string `json:"nextUri"`
@@ -85,28 +73,22 @@ func (u *Draftlisting) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         PreviousUri string `json:"previousUri"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Draft{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

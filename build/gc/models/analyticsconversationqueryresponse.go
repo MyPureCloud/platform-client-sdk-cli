@@ -38,18 +38,8 @@ type Analyticsconversationqueryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticsconversationqueryresponse) String() string {
-    
-    
      o.Aggregations = []Aggregationresult{{}} 
-    
-    
-    
      o.Conversations = []Analyticsconversationwithoutattributes{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,32 +56,28 @@ func (u *Analyticsconversationqueryresponse) MarshalJSON() ([]byte, error) {
     }
     AnalyticsconversationqueryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Aggregations []Aggregationresult `json:"aggregations"`
         
         Conversations []Analyticsconversationwithoutattributes `json:"conversations"`
         
         TotalHits int `json:"totalHits"`
-        
         *Alias
     }{
-        
 
         
         Aggregations: []Aggregationresult{{}},
         
 
-        
 
         
         Conversations: []Analyticsconversationwithoutattributes{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

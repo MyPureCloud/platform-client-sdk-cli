@@ -24,11 +24,7 @@ type Querywaitlistpositionsrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Querywaitlistpositionsrequest) String() string {
-    
-    
      o.TimeOffRequests = []Usertimeoffrequestreference{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Querywaitlistpositionsrequest) MarshalJSON() ([]byte, error) {
     }
     QuerywaitlistpositionsrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        TimeOffRequests []Usertimeoffrequestreference `json:"timeOffRequests"`
+    return json.Marshal(&struct {
         
+        TimeOffRequests []Usertimeoffrequestreference `json:"timeOffRequests"`
         *Alias
     }{
-        
 
         
         TimeOffRequests: []Usertimeoffrequestreference{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

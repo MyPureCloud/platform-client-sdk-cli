@@ -30,23 +30,28 @@ func init() {
 func Cmdgamification_profiles_metrics_link() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link", utils.FormatPermissions([]string{ "gamification:profile:update",  }), utils.GenerateDevCentreLink("POST", "Gamification", "/api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "linkedMetric",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/TargetPerformanceProfile"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TargetPerformanceProfile"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Linked Metric successfully created",
-  "schema" : {
-    "$ref" : "#/definitions/Metric"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Metric"
+      }
+    }
   }
 }`)
 	gamification_profiles_metrics_linkCmd.AddCommand(createCmd)
-	
 	return gamification_profiles_metrics_linkCmd
 }
 

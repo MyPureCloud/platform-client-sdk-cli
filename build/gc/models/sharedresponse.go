@@ -57,22 +57,6 @@ func (o *Sharedresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Sharedresponse) MarshalJSON() ([]byte, error) {
     }
     SharedresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         DownloadUri string `json:"downloadUri"`
@@ -98,30 +83,23 @@ func (u *Sharedresponse) MarshalJSON() ([]byte, error) {
         Document Document `json:"document"`
         
         Share Share `json:"share"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

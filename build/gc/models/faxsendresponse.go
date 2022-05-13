@@ -53,20 +53,6 @@ func (o *Faxsendresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -82,40 +68,30 @@ func (u *Faxsendresponse) MarshalJSON() ([]byte, error) {
     }
     FaxsendresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         UploadDestinationUri string `json:"uploadDestinationUri"`
         
         UploadMethodType string `json:"uploadMethodType"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

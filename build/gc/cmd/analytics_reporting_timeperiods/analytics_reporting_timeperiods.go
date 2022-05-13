@@ -33,15 +33,18 @@ func Cmdanalytics_reporting_timeperiods() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "type" : "string"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "type" : "string"
+        }
+      }
     }
   }
 }`)
 	analytics_reporting_timeperiodsCmd.AddCommand(listCmd)
-	
 	return analytics_reporting_timeperiodsCmd
 }
 

@@ -33,12 +33,15 @@ func Cmdworkforcemanagement_managementunits_users_timeoffrequests_timeofflimits(
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/QueryTimeOffLimitValuesResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QueryTimeOffLimitValuesResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_managementunits_users_timeoffrequests_timeofflimitsCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_managementunits_users_timeoffrequests_timeofflimitsCmd
 }
 

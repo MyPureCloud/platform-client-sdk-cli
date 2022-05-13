@@ -39,17 +39,7 @@ type Metadata struct {
 // String returns a JSON representation of the model
 func (o *Metadata) String() string {
     
-    
-    
-    
-    
-    
      o.PairingTrust = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Metadata) MarshalJSON() ([]byte, error) {
     }
     MetadataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PairingToken string `json:"pairing-token"`
         
         PairingTrust []string `json:"pairing-trust"`
         
         PairingUrl string `json:"pairing-url"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         PairingTrust: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

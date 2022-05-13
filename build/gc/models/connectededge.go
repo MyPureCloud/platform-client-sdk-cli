@@ -56,22 +56,7 @@ type Connectededge struct {
 // String returns a JSON representation of the model
 func (o *Connectededge) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.EdgeConnectionList = []Edgeconnectioninfo{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -87,48 +72,33 @@ func (u *Connectededge) MarshalJSON() ([]byte, error) {
     }
     ConnectededgeMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
-        
-        
-        
-        
         EdgeConnectionList []Edgeconnectioninfo `json:"edgeConnectionList"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         EdgeConnectionList: []Edgeconnectioninfo{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

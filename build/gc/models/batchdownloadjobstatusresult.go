@@ -68,27 +68,7 @@ func (o *Batchdownloadjobstatusresult) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Results = []Batchdownloadjobresult{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -104,8 +84,7 @@ func (u *Batchdownloadjobstatusresult) MarshalJSON() ([]byte, error) {
     }
     BatchdownloadjobstatusresultMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         JobId string `json:"jobId"`
         
@@ -116,42 +95,31 @@ func (u *Batchdownloadjobstatusresult) MarshalJSON() ([]byte, error) {
         ErrorCount int `json:"errorCount"`
         
         Results []Batchdownloadjobresult `json:"results"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Results: []Batchdownloadjobresult{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

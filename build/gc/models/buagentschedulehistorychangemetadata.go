@@ -34,13 +34,6 @@ type Buagentschedulehistorychangemetadata struct {
 func (o *Buagentschedulehistorychangemetadata) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -56,22 +49,19 @@ func (u *Buagentschedulehistorychangemetadata) MarshalJSON() ([]byte, error) {
     }
     BuagentschedulehistorychangemetadataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DateModified time.Time `json:"dateModified"`
         
         ModifiedBy Userreference `json:"modifiedBy"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

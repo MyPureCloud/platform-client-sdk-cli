@@ -24,11 +24,7 @@ type Murescheduleresultwrapper struct {
 
 // String returns a JSON representation of the model
 func (o *Murescheduleresultwrapper) String() string {
-    
-    
      o.AgentSchedules = []Buagentschedulerescheduleresponse{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Murescheduleresultwrapper) MarshalJSON() ([]byte, error) {
     }
     MurescheduleresultwrapperMarshalled = true
 
-    return json.Marshal(&struct { 
-        AgentSchedules []Buagentschedulerescheduleresponse `json:"agentSchedules"`
+    return json.Marshal(&struct {
         
+        AgentSchedules []Buagentschedulerescheduleresponse `json:"agentSchedules"`
         *Alias
     }{
-        
 
         
         AgentSchedules: []Buagentschedulerescheduleresponse{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -117,54 +117,13 @@ func (o *Inboundroute) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Skills = []Domainentityref{{}} 
     
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AutoBcc = []Emailaddress{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -181,8 +140,7 @@ func (u *Inboundroute) MarshalJSON() ([]byte, error) {
     }
     InboundrouteMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -207,72 +165,54 @@ func (u *Inboundroute) MarshalJSON() ([]byte, error) {
         AutoBcc []Emailaddress `json:"autoBcc"`
         
         SpamFlow Domainentityref `json:"spamFlow"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Skills: []Domainentityref{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AutoBcc: []Emailaddress{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

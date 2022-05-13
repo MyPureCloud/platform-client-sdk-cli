@@ -35,12 +35,15 @@ func Cmdexternalcontacts_scan_contacts() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	externalcontacts_scan_contactsCmd.AddCommand(listCmd)
-	
 	return externalcontacts_scan_contactsCmd
 }
 

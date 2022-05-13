@@ -24,11 +24,7 @@ type Buschedulelisting struct {
 
 // String returns a JSON representation of the model
 func (o *Buschedulelisting) String() string {
-    
-    
      o.Entities = []Buschedulelistitem{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Buschedulelisting) MarshalJSON() ([]byte, error) {
     }
     BuschedulelistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Buschedulelistitem `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Buschedulelistitem `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Buschedulelistitem{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

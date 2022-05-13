@@ -45,17 +45,6 @@ type Webchatconversation struct {
 func (o *Webchatconversation) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -71,34 +60,25 @@ func (u *Webchatconversation) MarshalJSON() ([]byte, error) {
     }
     WebchatconversationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         Member Webchatmemberinfo `json:"member"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

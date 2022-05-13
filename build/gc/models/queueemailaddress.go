@@ -33,13 +33,6 @@ type Queueemailaddress struct {
 func (o *Queueemailaddress) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Queueemailaddress) MarshalJSON() ([]byte, error) {
     }
     QueueemailaddressMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Domain Domainentityref `json:"domain"`
         
         Route Inboundroute `json:"route"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

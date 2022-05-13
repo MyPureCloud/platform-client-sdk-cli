@@ -33,13 +33,6 @@ type Actionconfig struct {
 func (o *Actionconfig) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Actionconfig) MarshalJSON() ([]byte, error) {
     }
     ActionconfigMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Request Requestconfig `json:"request"`
         
         Response Responseconfig `json:"response"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

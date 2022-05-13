@@ -30,50 +30,62 @@ func init() {
 func Cmdvoicemail_messages() *cobra.Command { 
 	copyCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", copyCmd.UsageTemplate(), "POST", "/api/v2/voicemail/messages", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Voicemail", "/api/v2/voicemail/messages")))
 	utils.AddFileFlagIfUpsert(copyCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/CopyVoicemailMessage"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CopyVoicemailMessage"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(copyCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailMessage"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailMessage"
+      }
+    }
   }
 }`)
 	voicemail_messagesCmd.AddCommand(copyCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Voicemail", "/api/v2/voicemail/messages/{messageId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	voicemail_messagesCmd.AddCommand(deleteCmd)
-	
+
 	deleteallCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteallCmd.UsageTemplate(), "DELETE", "/api/v2/voicemail/messages", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Voicemail", "/api/v2/voicemail/messages")))
 	utils.AddFileFlagIfUpsert(deleteallCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteallCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	voicemail_messagesCmd.AddCommand(deleteallCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "If the caller is a known user, which fields, if any, to expand Valid values: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Voicemail", "/api/v2/voicemail/messages/{messageId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailMessage"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailMessage"
+      }
+    }
   }
 }`)
 	voicemail_messagesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "ids", "", "An optional comma separated list of VoicemailMessage ids")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "If the caller is a known user, which fields, if any, to expand Valid values: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/voicemail/messages", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Voicemail", "/api/v2/voicemail/messages")))
@@ -81,50 +93,65 @@ func Cmdvoicemail_messages() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	voicemail_messagesCmd.AddCommand(listCmd)
-	
+
 	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Voicemail", "/api/v2/voicemail/messages/{messageId}")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "VoicemailMessage",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailMessage"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailMessage"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(patchCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailMessage"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailMessage"
+      }
+    }
   }
 }`)
 	voicemail_messagesCmd.AddCommand(patchCmd)
-	
+
 	putCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", putCmd.UsageTemplate(), "PUT", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Voicemail", "/api/v2/voicemail/messages/{messageId}")))
 	utils.AddFileFlagIfUpsert(putCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "VoicemailMessage",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailMessage"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailMessage"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(putCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailMessage"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailMessage"
+      }
+    }
   }
 }`)
 	voicemail_messagesCmd.AddCommand(putCmd)
-	
 	return voicemail_messagesCmd
 }
 

@@ -33,42 +33,55 @@ func Cmdwebchat_guest_conversations_mediarequests() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatGuestMediaRequest"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatGuestMediaRequest"
+      }
+    }
   }
 }`)
 	webchat_guest_conversations_mediarequestsCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/webchat/guest/conversations/{conversationId}/mediarequests", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "WebChat", "/api/v2/webchat/guest/conversations/{conversationId}/mediarequests")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatGuestMediaRequestEntityList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatGuestMediaRequestEntityList"
+      }
+    }
   }
 }`)
 	webchat_guest_conversations_mediarequestsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "WebChat", "/api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/WebChatGuestMediaRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatGuestMediaRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatGuestMediaRequest"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatGuestMediaRequest"
+      }
+    }
   }
 }`)
 	webchat_guest_conversations_mediarequestsCmd.AddCommand(updateCmd)
-	
 	return webchat_guest_conversations_mediarequestsCmd
 }
 

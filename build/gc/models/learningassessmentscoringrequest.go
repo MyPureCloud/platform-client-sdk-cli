@@ -33,13 +33,6 @@ type Learningassessmentscoringrequest struct {
 func (o *Learningassessmentscoringrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Learningassessmentscoringrequest) MarshalJSON() ([]byte, error) {
     }
     LearningassessmentscoringrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         AssessmentForm Assessmentform `json:"assessmentForm"`
         
         Answers Assessmentscoringset `json:"answers"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

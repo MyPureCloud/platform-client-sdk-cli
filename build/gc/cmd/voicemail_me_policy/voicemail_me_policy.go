@@ -33,31 +33,40 @@ func Cmdvoicemail_me_policy() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailUserPolicy"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailUserPolicy"
+      }
+    }
   }
 }`)
 	voicemail_me_policyCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/voicemail/me/policy", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Voicemail", "/api/v2/voicemail/me/policy")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The user's voicemail policy",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailUserPolicy"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailUserPolicy"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailUserPolicy"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailUserPolicy"
+      }
+    }
   }
 }`)
 	voicemail_me_policyCmd.AddCommand(updateCmd)
-	
 	return voicemail_me_policyCmd
 }
 

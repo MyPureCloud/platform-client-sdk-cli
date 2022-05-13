@@ -81,34 +81,8 @@ func (o *Metricdefinition) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.DividendMetrics = []string{""} 
-    
-    
-    
      o.DivisorMetrics = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -126,8 +100,7 @@ func (u *Metricdefinition) MarshalJSON() ([]byte, error) {
     }
     MetricdefinitionMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -142,52 +115,39 @@ func (u *Metricdefinition) MarshalJSON() ([]byte, error) {
         DefaultObjective Defaultobjective `json:"defaultObjective"`
         
         LockTemplateId string `json:"lockTemplateId"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         DividendMetrics: []string{""},
         
 
-        
 
         
         DivisorMetrics: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

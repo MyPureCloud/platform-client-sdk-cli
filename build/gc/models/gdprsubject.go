@@ -94,40 +94,9 @@ func (o *Gdprsubject) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Addresses = []string{""} 
-    
-    
-    
      o.PhoneNumbers = []string{""} 
-    
-    
-    
      o.EmailAddresses = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,7 +112,8 @@ func (u *Gdprsubject) MarshalJSON() ([]byte, error) {
     }
     GdprsubjectMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         UserId string `json:"userId"`
@@ -163,56 +133,44 @@ func (u *Gdprsubject) MarshalJSON() ([]byte, error) {
         PhoneNumbers []string `json:"phoneNumbers"`
         
         EmailAddresses []string `json:"emailAddresses"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Addresses: []string{""},
         
 
-        
 
         
         PhoneNumbers: []string{""},
         
 
-        
 
         
         EmailAddresses: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

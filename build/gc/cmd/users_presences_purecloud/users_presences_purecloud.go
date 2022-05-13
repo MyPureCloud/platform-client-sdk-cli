@@ -33,31 +33,40 @@ func Cmdusers_presences_purecloud() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserPresence"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserPresence"
+      }
+    }
   }
 }`)
 	users_presences_purecloudCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/presences/purecloud", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Presence", "/api/v2/users/{userId}/presences/purecloud")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "User presence",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/UserPresence"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserPresence"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserPresence"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserPresence"
+      }
+    }
   }
 }`)
 	users_presences_purecloudCmd.AddCommand(updateCmd)
-	
 	return users_presences_purecloudCmd
 }
 

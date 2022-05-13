@@ -84,31 +84,6 @@ func (o *Note) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -124,8 +99,7 @@ func (u *Note) MarshalJSON() ([]byte, error) {
     }
     NoteMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         EntityId string `json:"entityId"`
         
@@ -138,50 +112,35 @@ func (u *Note) MarshalJSON() ([]byte, error) {
         CreateDate time.Time `json:"createDate"`
         
         CreatedBy User `json:"createdBy"`
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -38,18 +38,8 @@ type Campaignruleactionentities struct {
 
 // String returns a JSON representation of the model
 func (o *Campaignruleactionentities) String() string {
-    
-    
      o.Campaigns = []Domainentityref{{}} 
-    
-    
-    
      o.Sequences = []Domainentityref{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,32 +56,28 @@ func (u *Campaignruleactionentities) MarshalJSON() ([]byte, error) {
     }
     CampaignruleactionentitiesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Campaigns []Domainentityref `json:"campaigns"`
         
         Sequences []Domainentityref `json:"sequences"`
         
         UseTriggeringEntity bool `json:"useTriggeringEntity"`
-        
         *Alias
     }{
-        
 
         
         Campaigns: []Domainentityref{{}},
         
 
-        
 
         
         Sequences: []Domainentityref{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -74,26 +74,6 @@ type Coachingannotation struct {
 // String returns a JSON representation of the model
 func (o *Coachingannotation) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -109,64 +89,38 @@ func (u *Coachingannotation) MarshalJSON() ([]byte, error) {
     }
     CoachingannotationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         
         Text string `json:"text"`
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

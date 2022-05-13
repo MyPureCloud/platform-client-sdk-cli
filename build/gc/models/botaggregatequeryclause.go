@@ -32,14 +32,7 @@ type Botaggregatequeryclause struct {
 // String returns a JSON representation of the model
 func (o *Botaggregatequeryclause) String() string {
     
-    
-    
-    
-    
-    
      o.Predicates = []Botaggregatequerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Botaggregatequeryclause) MarshalJSON() ([]byte, error) {
     }
     BotaggregatequeryclauseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Predicates []Botaggregatequerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Predicates: []Botaggregatequerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

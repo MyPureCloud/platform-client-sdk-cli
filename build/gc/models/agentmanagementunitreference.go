@@ -41,16 +41,6 @@ func (o *Agentmanagementunitreference) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Agentmanagementunitreference) MarshalJSON() ([]byte, error) {
     }
     AgentmanagementunitreferenceMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         User Userreference `json:"user"`
         
         ManagementUnit Managementunitreference `json:"managementUnit"`
         
         BusinessUnit Businessunitreference `json:"businessUnit"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

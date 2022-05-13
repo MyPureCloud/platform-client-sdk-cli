@@ -41,16 +41,6 @@ func (o *Matchshifttraderequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Matchshifttraderequest) MarshalJSON() ([]byte, error) {
     }
     MatchshifttraderequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ReceivingScheduleId string `json:"receivingScheduleId"`
         
         ReceivingShiftId string `json:"receivingShiftId"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

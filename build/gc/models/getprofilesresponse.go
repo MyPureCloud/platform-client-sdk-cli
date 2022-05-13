@@ -39,17 +39,7 @@ type Getprofilesresponse struct {
 // String returns a JSON representation of the model
 func (o *Getprofilesresponse) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Performanceprofile{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Getprofilesresponse) MarshalJSON() ([]byte, error) {
     }
     GetprofilesresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Performanceprofile `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Performanceprofile{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

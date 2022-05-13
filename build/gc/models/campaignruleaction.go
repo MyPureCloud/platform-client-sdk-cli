@@ -49,19 +49,6 @@ func (o *Campaignruleaction) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Campaignruleaction) MarshalJSON() ([]byte, error) {
     }
     CampaignruleactionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Parameters Campaignruleparameters `json:"parameters"`
@@ -85,26 +73,20 @@ func (u *Campaignruleaction) MarshalJSON() ([]byte, error) {
         ActionType string `json:"actionType"`
         
         CampaignRuleActionEntities Campaignruleactionentities `json:"campaignRuleActionEntities"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

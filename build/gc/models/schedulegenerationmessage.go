@@ -32,14 +32,7 @@ type Schedulegenerationmessage struct {
 // String returns a JSON representation of the model
 func (o *Schedulegenerationmessage) String() string {
     
-    
-    
-    
-    
-    
      o.Arguments = []Schedulermessageargument{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Schedulegenerationmessage) MarshalJSON() ([]byte, error) {
     }
     SchedulegenerationmessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Arguments []Schedulermessageargument `json:"arguments"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Arguments: []Schedulermessageargument{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -46,19 +46,7 @@ type Voicemailmediainfo struct {
 func (o *Voicemailmediainfo) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.WaveformData = []float32{0.0} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -74,36 +62,29 @@ func (u *Voicemailmediainfo) MarshalJSON() ([]byte, error) {
     }
     VoicemailmediainfoMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         MediaFileUri string `json:"mediaFileUri"`
         
         MediaImageUri string `json:"mediaImageUri"`
         
         WaveformData []float32 `json:"waveformData"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         WaveformData: []float32{0.0},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

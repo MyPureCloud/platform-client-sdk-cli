@@ -30,42 +30,53 @@ func init() {
 func Cmdoutbound_attemptlimits() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/attemptlimits", utils.FormatPermissions([]string{ "outbound:attemptLimits:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/attemptlimits")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "AttemptLimits",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/AttemptLimits"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AttemptLimits"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AttemptLimits"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AttemptLimits"
+      }
+    }
   }
 }`)
 	outbound_attemptlimitsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/attemptlimits/{attemptLimitsId}", utils.FormatPermissions([]string{ "outbound:attemptLimits:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/attemptlimits/{attemptLimitsId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	outbound_attemptlimitsCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/attemptlimits/{attemptLimitsId}", utils.FormatPermissions([]string{ "outbound:attemptLimits:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/attemptlimits/{attemptLimitsId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AttemptLimits"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AttemptLimits"
+      }
+    }
   }
 }`)
 	outbound_attemptlimitsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size. The max that will be returned is 100.")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "bool", "allowEmptyResult", "false", "Whether to return an empty page when there are no results for that page")
@@ -78,31 +89,40 @@ func Cmdoutbound_attemptlimits() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	outbound_attemptlimitsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/attemptlimits/{attemptLimitsId}", utils.FormatPermissions([]string{ "outbound:attemptLimits:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/attemptlimits/{attemptLimitsId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "AttemptLimits",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/AttemptLimits"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AttemptLimits"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AttemptLimits"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AttemptLimits"
+      }
+    }
   }
 }`)
 	outbound_attemptlimitsCmd.AddCommand(updateCmd)
-	
 	return outbound_attemptlimitsCmd
 }
 

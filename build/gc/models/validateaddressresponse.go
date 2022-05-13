@@ -33,13 +33,6 @@ type Validateaddressresponse struct {
 func (o *Validateaddressresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Validateaddressresponse) MarshalJSON() ([]byte, error) {
     }
     ValidateaddressresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Valid bool `json:"valid"`
         
         Response Subscriberresponse `json:"response"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

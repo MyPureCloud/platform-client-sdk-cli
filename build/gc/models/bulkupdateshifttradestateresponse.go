@@ -41,16 +41,6 @@ func (o *Bulkupdateshifttradestateresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Bulkupdateshifttradestateresponse) MarshalJSON() ([]byte, error) {
     }
     BulkupdateshifttradestateresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Status string `json:"status"`
         
         OperationId string `json:"operationId"`
         
         Result Bulkupdateshifttradestateresult `json:"result"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

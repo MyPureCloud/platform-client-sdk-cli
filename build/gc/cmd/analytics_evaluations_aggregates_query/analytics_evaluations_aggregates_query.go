@@ -30,23 +30,28 @@ func init() {
 func Cmdanalytics_evaluations_aggregates_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/evaluations/aggregates/query", utils.FormatPermissions([]string{ "analytics:evaluationAggregate:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/evaluations/aggregates/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/EvaluationAggregationQuery"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EvaluationAggregationQuery"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EvaluationAggregateQueryResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EvaluationAggregateQueryResponse"
+      }
+    }
   }
 }`)
 	analytics_evaluations_aggregates_queryCmd.AddCommand(createCmd)
-	
 	return analytics_evaluations_aggregates_queryCmd
 }
 

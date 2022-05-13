@@ -30,44 +30,55 @@ func init() {
 func Cmdflows_datatables() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/datatables", utils.FormatPermissions([]string{ "architect:datatable:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/datatables")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "datatable json-schema",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DataTable"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataTable"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DataTable"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataTable"
+      }
+    }
   }
 }`)
 	flows_datatablesCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(deleteCmd.Flags(), "bool", "force", "false", "force delete, even if in use")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/flows/datatables/{datatableId}", utils.FormatPermissions([]string{ "architect:datatable:delete",  }), utils.GenerateDevCentreLink("DELETE", "Architect", "/api/v2/flows/datatables/{datatableId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "The datatable was deleted successfully"
+  "description" : "The datatable was deleted successfully",
+  "content" : { }
 }`)
 	flows_datatablesCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand instructions for the result Valid values: schema")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/{datatableId}", utils.FormatPermissions([]string{ "architect:datatable:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/datatables/{datatableId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DataTable"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataTable"
+      }
+    }
   }
 }`)
 	flows_datatablesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Expand instructions for the result Valid values: schema")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
@@ -80,32 +91,41 @@ func Cmdflows_datatables() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	flows_datatablesCmd.AddCommand(listCmd)
-	
+
 	utils.AddFlag(updateCmd.Flags(), "string", "expand", "", "Expand instructions for the result Valid values: schema")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/flows/datatables/{datatableId}", utils.FormatPermissions([]string{ "architect:datatable:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/flows/datatables/{datatableId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "datatable json-schema",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DataTable"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataTable"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DataTable"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataTable"
+      }
+    }
   }
 }`)
 	flows_datatablesCmd.AddCommand(updateCmd)
-	
 	return flows_datatablesCmd
 }
 

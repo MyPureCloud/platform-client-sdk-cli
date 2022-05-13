@@ -39,17 +39,7 @@ type Comparisonperiodlisting struct {
 // String returns a JSON representation of the model
 func (o *Comparisonperiodlisting) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Comparisonperiod{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Comparisonperiodlisting) MarshalJSON() ([]byte, error) {
     }
     ComparisonperiodlistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Comparisonperiod `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Comparisonperiod{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

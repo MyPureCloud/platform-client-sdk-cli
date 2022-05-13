@@ -32,14 +32,7 @@ type Surveydetailqueryclause struct {
 // String returns a JSON representation of the model
 func (o *Surveydetailqueryclause) String() string {
     
-    
-    
-    
-    
-    
      o.Predicates = []Surveydetailquerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Surveydetailqueryclause) MarshalJSON() ([]byte, error) {
     }
     SurveydetailqueryclauseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Predicates []Surveydetailquerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Predicates: []Surveydetailquerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

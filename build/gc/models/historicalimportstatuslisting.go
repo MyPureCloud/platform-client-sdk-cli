@@ -24,11 +24,7 @@ type Historicalimportstatuslisting struct {
 
 // String returns a JSON representation of the model
 func (o *Historicalimportstatuslisting) String() string {
-    
-    
      o.Entities = []Historicalimportstatus{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Historicalimportstatuslisting) MarshalJSON() ([]byte, error) {
     }
     HistoricalimportstatuslistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Historicalimportstatus `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Historicalimportstatus `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Historicalimportstatus{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

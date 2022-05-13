@@ -33,13 +33,6 @@ type Emailmediapolicy struct {
 func (o *Emailmediapolicy) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Emailmediapolicy) MarshalJSON() ([]byte, error) {
     }
     EmailmediapolicyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Actions Policyactions `json:"actions"`
         
         Conditions Emailmediapolicyconditions `json:"conditions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

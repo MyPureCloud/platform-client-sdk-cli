@@ -25,10 +25,6 @@ type Textbotuserinputalternative struct {
 // String returns a JSON representation of the model
 func (o *Textbotuserinputalternative) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Textbotuserinputalternative) MarshalJSON() ([]byte, error) {
     }
     TextbotuserinputalternativeMarshalled = true
 
-    return json.Marshal(&struct { 
-        Transcript Textbottranscript `json:"transcript"`
+    return json.Marshal(&struct {
         
+        Transcript Textbottranscript `json:"transcript"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

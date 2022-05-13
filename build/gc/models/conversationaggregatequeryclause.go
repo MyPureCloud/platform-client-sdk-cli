@@ -32,14 +32,7 @@ type Conversationaggregatequeryclause struct {
 // String returns a JSON representation of the model
 func (o *Conversationaggregatequeryclause) String() string {
     
-    
-    
-    
-    
-    
      o.Predicates = []Conversationaggregatequerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Conversationaggregatequeryclause) MarshalJSON() ([]byte, error) {
     }
     ConversationaggregatequeryclauseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Predicates []Conversationaggregatequerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Predicates: []Conversationaggregatequerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -81,40 +81,12 @@ type Transcriptsearchcriteria struct {
 // String returns a JSON representation of the model
 func (o *Transcriptsearchcriteria) String() string {
     
-    
-    
-    
-    
-    
      o.Values = []string{""} 
-    
-    
-    
-    
-    
-    
     
      o.Fields = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Group = []Transcriptsearchcriteria{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -132,7 +104,8 @@ func (u *Transcriptsearchcriteria) MarshalJSON() ([]byte, error) {
     }
     TranscriptsearchcriteriaMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EndValue string `json:"endValue"`
         
         Values []string `json:"values"`
@@ -150,52 +123,41 @@ func (u *Transcriptsearchcriteria) MarshalJSON() ([]byte, error) {
         DateFormat string `json:"dateFormat"`
         
         VarType string `json:"type"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Values: []string{""},
         
 
-        
 
         
 
-        
 
         
         Fields: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Group: []Transcriptsearchcriteria{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

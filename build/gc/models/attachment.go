@@ -65,25 +65,6 @@ func (o *Attachment) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Attachment) MarshalJSON() ([]byte, error) {
     }
     AttachmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         AttachmentId string `json:"attachmentId"`
         
         Name string `json:"name"`
@@ -111,34 +93,26 @@ func (u *Attachment) MarshalJSON() ([]byte, error) {
         ContentLength int `json:"contentLength"`
         
         InlineImage bool `json:"inlineImage"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

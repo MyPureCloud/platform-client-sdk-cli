@@ -34,12 +34,15 @@ func Cmdgroups_profile() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/GroupProfile"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GroupProfile"
+      }
+    }
   }
 }`)
 	groups_profileCmd.AddCommand(getCmd)
-	
 	return groups_profileCmd
 }
 

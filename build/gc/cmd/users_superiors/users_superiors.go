@@ -34,15 +34,18 @@ func Cmdusers_superiors() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/User"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/User"
+        }
+      }
     }
   }
 }`)
 	users_superiorsCmd.AddCommand(listCmd)
-	
 	return users_superiorsCmd
 }
 

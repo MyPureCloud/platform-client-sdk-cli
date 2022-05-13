@@ -49,19 +49,6 @@ func (o *Bugenerateschedulerequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Bugenerateschedulerequest) MarshalJSON() ([]byte, error) {
     }
     BugenerateschedulerequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Description string `json:"description"`
         
         ShortTermForecast Bushorttermforecastreference `json:"shortTermForecast"`
@@ -85,26 +73,20 @@ func (u *Bugenerateschedulerequest) MarshalJSON() ([]byte, error) {
         WeekCount int `json:"weekCount"`
         
         Options Schedulingoptionsrequest `json:"options"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

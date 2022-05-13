@@ -24,11 +24,7 @@ type Transcriptaggregatequeryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Transcriptaggregatequeryresponse) String() string {
-    
-    
      o.Results = []Transcriptaggregatedatacontainer{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Transcriptaggregatequeryresponse) MarshalJSON() ([]byte, error) {
     }
     TranscriptaggregatequeryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Results []Transcriptaggregatedatacontainer `json:"results"`
+    return json.Marshal(&struct {
         
+        Results []Transcriptaggregatedatacontainer `json:"results"`
         *Alias
     }{
-        
 
         
         Results: []Transcriptaggregatedatacontainer{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

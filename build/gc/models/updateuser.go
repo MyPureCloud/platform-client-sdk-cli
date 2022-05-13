@@ -165,79 +165,18 @@ func (o *Updateuser) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Addresses = []Contact{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
      o.Images = []Userimage{{}} 
     
-    
-    
-    
-    
-    
-    
      o.ProfileSkills = []string{""} 
-    
-    
-    
      o.Locations = []Location{{}} 
-    
-    
-    
      o.Groups = []Group{{}} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Certifications = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -255,8 +194,7 @@ func (u *Updateuser) MarshalJSON() ([]byte, error) {
     }
     UpdateuserMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -265,8 +203,6 @@ func (u *Updateuser) MarshalJSON() ([]byte, error) {
         Department string `json:"department"`
         
         Email string `json:"email"`
-        
-        
         
         Addresses []Contact `json:"addresses"`
         
@@ -295,108 +231,83 @@ func (u *Updateuser) MarshalJSON() ([]byte, error) {
         Biography Biography `json:"biography"`
         
         EmployerInfo Employerinfo `json:"employerInfo"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Addresses: []Contact{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Images: []Userimage{{}},
         
 
-        
 
         
 
-        
 
         
         ProfileSkills: []string{""},
         
 
-        
 
         
         Locations: []Location{{}},
         
 
-        
 
         
         Groups: []Group{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Certifications: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

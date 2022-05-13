@@ -25,10 +25,6 @@ type Webchatsettings struct {
 // String returns a JSON representation of the model
 func (o *Webchatsettings) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Webchatsettings) MarshalJSON() ([]byte, error) {
     }
     WebchatsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
-        RequireDeployment bool `json:"requireDeployment"`
+    return json.Marshal(&struct {
         
+        RequireDeployment bool `json:"requireDeployment"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,13 +33,6 @@ type Actionmapschedulegroups struct {
 func (o *Actionmapschedulegroups) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Actionmapschedulegroups) MarshalJSON() ([]byte, error) {
     }
     ActionmapschedulegroupsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ActionMapScheduleGroup Actionmapschedulegroup `json:"actionMapScheduleGroup"`
         
         EmergencyActionMapScheduleGroup Actionmapschedulegroup `json:"emergencyActionMapScheduleGroup"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

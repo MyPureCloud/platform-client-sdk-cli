@@ -45,20 +45,7 @@ type Cursororganizationlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Cursororganizationlisting) String() string {
-    
-    
      o.Entities = []Externalorganization{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Cursororganizationlisting) MarshalJSON() ([]byte, error) {
     }
     CursororganizationlistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Externalorganization `json:"entities"`
         
         NextUri string `json:"nextUri"`
@@ -85,28 +73,22 @@ func (u *Cursororganizationlisting) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         PreviousUri string `json:"previousUri"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Externalorganization{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

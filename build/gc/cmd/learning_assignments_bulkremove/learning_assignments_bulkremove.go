@@ -30,26 +30,31 @@ func init() {
 func Cmdlearning_assignments_bulkremove() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/assignments/bulkremove", utils.FormatPermissions([]string{ "learning:assignment:delete",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/assignments/bulkremove")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The IDs of the learning assignments to be removed",
-  "required" : false,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "type" : "string"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "type" : "string"
+        }
+      }
     }
-  }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LearningAssignmentBulkRemoveResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningAssignmentBulkRemoveResponse"
+      }
+    }
   }
 }`)
 	learning_assignments_bulkremoveCmd.AddCommand(createCmd)
-	
 	return learning_assignments_bulkremoveCmd
 }
 
@@ -64,6 +69,9 @@ var createCmd = &cobra.Command{
 
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
+			
+			reqModel := models.String{}
+			utils.Render(reqModel.String())
 			
 			return
 		}

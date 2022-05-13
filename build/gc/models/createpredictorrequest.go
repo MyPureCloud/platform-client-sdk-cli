@@ -52,23 +52,7 @@ type Createpredictorrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Createpredictorrequest) String() string {
-    
-    
      o.QueueIds = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -88,7 +72,8 @@ func (u *Createpredictorrequest) MarshalJSON() ([]byte, error) {
     }
     CreatepredictorrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QueueIds []string `json:"queueIds"`
         
         Kpi string `json:"kpi"`
@@ -98,32 +83,25 @@ func (u *Createpredictorrequest) MarshalJSON() ([]byte, error) {
         Schedule Predictorschedule `json:"schedule"`
         
         WorkloadBalancingConfig Predictorworkloadbalancing `json:"workloadBalancingConfig"`
-        
         *Alias
     }{
-        
 
         
         QueueIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

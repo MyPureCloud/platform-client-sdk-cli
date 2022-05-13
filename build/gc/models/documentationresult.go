@@ -159,33 +159,7 @@ type Documentationresult struct {
 // String returns a JSON representation of the model
 func (o *Documentationresult) String() string {
     
-    
-    
-    
-    
-    
      o.Categories = []int{0} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -196,49 +170,14 @@ func (o *Documentationresult) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.FacetFeature = []int{0} 
-    
-    
-    
      o.FacetRole = []int{0} 
-    
-    
-    
      o.FacetService = []int{0} 
-    
-    
-    
      o.FaqCategories = []int{0} 
-    
-    
-    
      o.ReleasenoteCategory = []int{0} 
-    
-    
-    
      o.ReleasenoteTag = []int{0} 
-    
-    
-    
      o.ServiceArea = []int{0} 
-    
-    
-    
      o.VideoCategories = []int{0} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -254,7 +193,8 @@ func (u *Documentationresult) MarshalJSON() ([]byte, error) {
     }
     DocumentationresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id int `json:"id"`
         
         Categories []int `json:"categories"`
@@ -294,110 +234,88 @@ func (u *Documentationresult) MarshalJSON() ([]byte, error) {
         ServiceArea []int `json:"service-area"`
         
         VideoCategories []int `json:"video_categories"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Categories: []int{0},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Service: []int{0},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         FacetFeature: []int{0},
         
 
-        
 
         
         FacetRole: []int{0},
         
 
-        
 
         
         FacetService: []int{0},
         
 
-        
 
         
         FaqCategories: []int{0},
         
 
-        
 
         
         ReleasenoteCategory: []int{0},
         
 
-        
 
         
         ReleasenoteTag: []int{0},
         
 
-        
 
         
         ServiceArea: []int{0},
         
 
-        
 
         
         VideoCategories: []int{0},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

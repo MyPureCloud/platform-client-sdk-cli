@@ -33,12 +33,15 @@ func Cmdspeechandtextanalytics_topics_dialects() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EntityListing"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_topics_dialectsCmd.AddCommand(listCmd)
-	
 	return speechandtextanalytics_topics_dialectsCmd
 }
 

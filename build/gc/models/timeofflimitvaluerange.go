@@ -77,35 +77,10 @@ func (o *Timeofflimitvaluerange) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.LimitMinutesPerInterval = []int{0} 
-    
-    
-    
      o.AllocatedMinutesPerInterval = []int{0} 
-    
-    
-    
      o.WaitlistedMinutesPerInterval = []int{0} 
-    
-    
-    
      o.WaitlistedRequestsPerInterval = []int{0} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -122,7 +97,8 @@ func (u *Timeofflimitvaluerange) MarshalJSON() ([]byte, error) {
     }
     TimeofflimitvaluerangeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TimeOffLimit Timeofflimitreference `json:"timeOffLimit"`
         
         StartDate time.Time `json:"startDate"`
@@ -138,50 +114,40 @@ func (u *Timeofflimitvaluerange) MarshalJSON() ([]byte, error) {
         WaitlistedRequestsPerInterval []int `json:"waitlistedRequestsPerInterval"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         LimitMinutesPerInterval: []int{0},
         
 
-        
 
         
         AllocatedMinutesPerInterval: []int{0},
         
 
-        
 
         
         WaitlistedMinutesPerInterval: []int{0},
         
 
-        
 
         
         WaitlistedRequestsPerInterval: []int{0},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

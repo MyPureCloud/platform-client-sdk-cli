@@ -33,13 +33,6 @@ type Webmessagingofferfields struct {
 func (o *Webmessagingofferfields) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Webmessagingofferfields) MarshalJSON() ([]byte, error) {
     }
     WebmessagingofferfieldsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         OfferText string `json:"offerText"`
         
         ArchitectFlow Addressableentityref `json:"architectFlow"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

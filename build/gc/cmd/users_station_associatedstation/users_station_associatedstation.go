@@ -32,18 +32,19 @@ func Cmdusers_station_associatedstation() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Success"
+  "description" : "Success",
+  "content" : { }
 }`)
 	users_station_associatedstationCmd.AddCommand(deleteCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/station/associatedstation/{stationId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/station/associatedstation/{stationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  "description" : "Success"
+  "description" : "Success",
+  "content" : { }
 }`)
 	users_station_associatedstationCmd.AddCommand(updateCmd)
-	
 	return users_station_associatedstationCmd
 }
 

@@ -33,13 +33,6 @@ type Scrollpercentageeventtrigger struct {
 func (o *Scrollpercentageeventtrigger) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Scrollpercentageeventtrigger) MarshalJSON() ([]byte, error) {
     }
     ScrollpercentageeventtriggerMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Percentage int `json:"percentage"`
         
         EventName string `json:"eventName"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

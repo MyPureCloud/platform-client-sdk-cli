@@ -33,15 +33,18 @@ func Cmdsystempresences() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/SystemPresence"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/SystemPresence"
+        }
+      }
     }
   }
 }`)
 	systempresencesCmd.AddCommand(listCmd)
-	
 	return systempresencesCmd
 }
 

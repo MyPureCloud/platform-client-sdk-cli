@@ -33,12 +33,15 @@ func Cmdanalytics_reporting_schedules_history_latest() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ReportRunEntry"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ReportRunEntry"
+      }
+    }
   }
 }`)
 	analytics_reporting_schedules_history_latestCmd.AddCommand(getCmd)
-	
 	return analytics_reporting_schedules_history_latestCmd
 }
 

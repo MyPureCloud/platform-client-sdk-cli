@@ -49,19 +49,6 @@ func (o *Webmessagingquickreply) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Webmessagingquickreply) MarshalJSON() ([]byte, error) {
     }
     WebmessagingquickreplyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Text string `json:"text"`
         
         Payload string `json:"payload"`
@@ -85,26 +73,20 @@ func (u *Webmessagingquickreply) MarshalJSON() ([]byte, error) {
         Image string `json:"image"`
         
         Action string `json:"action"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,23 +30,28 @@ func init() {
 func Cmdcoaching_appointments_status() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/coaching/appointments/{appointmentId}/status", utils.FormatPermissions([]string{ "coaching:appointmentStatus:edit",  }), utils.GenerateDevCentreLink("PATCH", "Coaching", "/api/v2/coaching/appointments/{appointmentId}/status")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Updated status of the coaching appointment",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAppointmentStatusRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAppointmentStatusRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "The status is posted successfully",
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAppointmentStatusResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAppointmentStatusResponse"
+      }
+    }
   }
 }`)
 	coaching_appointments_statusCmd.AddCommand(updateCmd)
-	
 	return coaching_appointments_statusCmd
 }
 

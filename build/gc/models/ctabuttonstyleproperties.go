@@ -57,22 +57,6 @@ func (o *Ctabuttonstyleproperties) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Ctabuttonstyleproperties) MarshalJSON() ([]byte, error) {
     }
     CtabuttonstylepropertiesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Color string `json:"color"`
         
         Font string `json:"font"`
@@ -98,30 +83,23 @@ func (u *Ctabuttonstyleproperties) MarshalJSON() ([]byte, error) {
         TextAlign string `json:"textAlign"`
         
         BackgroundColor string `json:"backgroundColor"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

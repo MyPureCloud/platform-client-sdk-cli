@@ -73,28 +73,6 @@ func (o *Evaluationquestionscore) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Evaluationquestionscore) MarshalJSON() ([]byte, error) {
     }
     EvaluationquestionscoreMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QuestionId string `json:"questionId"`
         
         AnswerId string `json:"answerId"`
@@ -124,38 +103,29 @@ func (u *Evaluationquestionscore) MarshalJSON() ([]byte, error) {
         FailedKillQuestion bool `json:"failedKillQuestion"`
         
         Comments string `json:"comments"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

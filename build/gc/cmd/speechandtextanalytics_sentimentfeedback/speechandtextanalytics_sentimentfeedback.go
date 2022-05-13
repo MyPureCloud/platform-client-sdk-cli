@@ -30,51 +30,62 @@ func init() {
 func Cmdspeechandtextanalytics_sentimentfeedback() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/speechandtextanalytics/sentimentfeedback", utils.FormatPermissions([]string{ "speechAndTextAnalytics:feedback:add",  }), utils.GenerateDevCentreLink("POST", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/sentimentfeedback")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The SentimentFeedback to create",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/SentimentFeedback"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SentimentFeedback"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Created",
-  "schema" : {
-    "$ref" : "#/definitions/SentimentFeedback"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SentimentFeedback"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_sentimentfeedbackCmd.AddCommand(createCmd)
-	
+
 	deleteallsentimentfeedbackCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteallsentimentfeedbackCmd.UsageTemplate(), "DELETE", "/api/v2/speechandtextanalytics/sentimentfeedback", utils.FormatPermissions([]string{ "speechAndTextAnalytics:feedback:delete",  }), utils.GenerateDevCentreLink("DELETE", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/sentimentfeedback")))
 	utils.AddFileFlagIfUpsert(deleteallsentimentfeedbackCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteallsentimentfeedbackCmd.Flags(), "DELETE", `{
-  "description" : "No Content"
+  "description" : "No Content",
+  "content" : { }
 }`)
 	speechandtextanalytics_sentimentfeedbackCmd.AddCommand(deleteallsentimentfeedbackCmd)
-	
+
 	deletebyidCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deletebyidCmd.UsageTemplate(), "DELETE", "/api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}", utils.FormatPermissions([]string{ "speechAndTextAnalytics:feedback:delete",  }), utils.GenerateDevCentreLink("DELETE", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}")))
 	utils.AddFileFlagIfUpsert(deletebyidCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deletebyidCmd.Flags(), "DELETE", `{
-  "description" : "No Content"
+  "description" : "No Content",
+  "content" : { }
 }`)
 	speechandtextanalytics_sentimentfeedbackCmd.AddCommand(deletebyidCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "string", "dialect", "", "The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/sentimentfeedback", utils.FormatPermissions([]string{ "speechAndTextAnalytics:feedback:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/sentimentfeedback")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SentimentFeedbackEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SentimentFeedbackEntityListing"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_sentimentfeedbackCmd.AddCommand(getCmd)
-	
 	return speechandtextanalytics_sentimentfeedbackCmd
 }
 

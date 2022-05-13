@@ -57,22 +57,6 @@ func (o *Emailattachment) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Emailattachment) MarshalJSON() ([]byte, error) {
     }
     EmailattachmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         ContentPath string `json:"contentPath"`
@@ -98,30 +83,23 @@ func (u *Emailattachment) MarshalJSON() ([]byte, error) {
         AttachmentId string `json:"attachmentId"`
         
         ContentLength int `json:"contentLength"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

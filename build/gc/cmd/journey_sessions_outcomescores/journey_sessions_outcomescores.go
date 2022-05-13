@@ -33,12 +33,15 @@ func Cmdjourney_sessions_outcomescores() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OutcomeScoresResult"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OutcomeScoresResult"
+      }
+    }
   }
 }`)
 	journey_sessions_outcomescoresCmd.AddCommand(getCmd)
-	
 	return journey_sessions_outcomescoresCmd
 }
 

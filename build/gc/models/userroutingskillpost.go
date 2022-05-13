@@ -45,17 +45,6 @@ type Userroutingskillpost struct {
 func (o *Userroutingskillpost) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -71,34 +60,25 @@ func (u *Userroutingskillpost) MarshalJSON() ([]byte, error) {
     }
     UserroutingskillpostMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Proficiency float64 `json:"proficiency"`
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

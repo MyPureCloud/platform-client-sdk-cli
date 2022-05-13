@@ -71,27 +71,6 @@ func (o *Openmessagingfromrecipient) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -107,7 +86,8 @@ func (u *Openmessagingfromrecipient) MarshalJSON() ([]byte, error) {
     }
     OpenmessagingfromrecipientMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Nickname string `json:"nickname"`
         
         Id string `json:"id"`
@@ -118,41 +98,30 @@ func (u *Openmessagingfromrecipient) MarshalJSON() ([]byte, error) {
         
         LastName string `json:"lastName"`
         
-        
-        
         Email string `json:"email"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

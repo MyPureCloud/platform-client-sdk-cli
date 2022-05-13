@@ -52,25 +52,9 @@ type Domainorgroledifference struct {
 
 // String returns a JSON representation of the model
 func (o *Domainorgroledifference) String() string {
-    
-    
      o.RemovedPermissionPolicies = []Domainpermissionpolicy{{}} 
-    
-    
-    
      o.AddedPermissionPolicies = []Domainpermissionpolicy{{}} 
-    
-    
-    
      o.SamePermissionPolicies = []Domainpermissionpolicy{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -88,7 +72,8 @@ func (u *Domainorgroledifference) MarshalJSON() ([]byte, error) {
     }
     DomainorgroledifferenceMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         RemovedPermissionPolicies []Domainpermissionpolicy `json:"removedPermissionPolicies"`
         
         AddedPermissionPolicies []Domainpermissionpolicy `json:"addedPermissionPolicies"`
@@ -98,36 +83,29 @@ func (u *Domainorgroledifference) MarshalJSON() ([]byte, error) {
         UserOrgRole Domainorganizationrole `json:"userOrgRole"`
         
         RoleFromDefault Domainorganizationrole `json:"roleFromDefault"`
-        
         *Alias
     }{
-        
 
         
         RemovedPermissionPolicies: []Domainpermissionpolicy{{}},
         
 
-        
 
         
         AddedPermissionPolicies: []Domainpermissionpolicy{{}},
         
 
-        
 
         
         SamePermissionPolicies: []Domainpermissionpolicy{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

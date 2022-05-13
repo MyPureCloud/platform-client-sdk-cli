@@ -25,10 +25,6 @@ type Uploadurlrequestbody struct {
 // String returns a JSON representation of the model
 func (o *Uploadurlrequestbody) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Uploadurlrequestbody) MarshalJSON() ([]byte, error) {
     }
     UploadurlrequestbodyMarshalled = true
 
-    return json.Marshal(&struct { 
-        ContentLengthBytes int `json:"contentLengthBytes"`
+    return json.Marshal(&struct {
         
+        ContentLengthBytes int `json:"contentLengthBytes"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

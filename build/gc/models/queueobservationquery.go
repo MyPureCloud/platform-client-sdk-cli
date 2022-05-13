@@ -39,18 +39,8 @@ type Queueobservationquery struct {
 // String returns a JSON representation of the model
 func (o *Queueobservationquery) String() string {
     
-    
-    
-    
-    
-    
      o.Metrics = []string{""} 
-    
-    
-    
      o.DetailMetrics = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Queueobservationquery) MarshalJSON() ([]byte, error) {
     }
     QueueobservationqueryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Filter Queueobservationqueryfilter `json:"filter"`
         
         Metrics []string `json:"metrics"`
         
         DetailMetrics []string `json:"detailMetrics"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Metrics: []string{""},
         
 
-        
 
         
         DetailMetrics: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

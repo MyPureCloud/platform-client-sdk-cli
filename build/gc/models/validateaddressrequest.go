@@ -25,10 +25,6 @@ type Validateaddressrequest struct {
 // String returns a JSON representation of the model
 func (o *Validateaddressrequest) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Validateaddressrequest) MarshalJSON() ([]byte, error) {
     }
     ValidateaddressrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        Address Streetaddress `json:"address"`
+    return json.Marshal(&struct {
         
+        Address Streetaddress `json:"address"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

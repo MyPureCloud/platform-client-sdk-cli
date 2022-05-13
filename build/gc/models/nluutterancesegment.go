@@ -33,13 +33,6 @@ type Nluutterancesegment struct {
 func (o *Nluutterancesegment) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Nluutterancesegment) MarshalJSON() ([]byte, error) {
     }
     NluutterancesegmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Text string `json:"text"`
         
         Entity Namedentityannotation `json:"entity"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

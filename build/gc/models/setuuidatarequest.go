@@ -25,10 +25,6 @@ type Setuuidatarequest struct {
 // String returns a JSON representation of the model
 func (o *Setuuidatarequest) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Setuuidatarequest) MarshalJSON() ([]byte, error) {
     }
     SetuuidatarequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        UuiData string `json:"uuiData"`
+    return json.Marshal(&struct {
         
+        UuiData string `json:"uuiData"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,13 +33,6 @@ type Nluconfusionmatrixcolumn struct {
 func (o *Nluconfusionmatrixcolumn) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Nluconfusionmatrixcolumn) MarshalJSON() ([]byte, error) {
     }
     NluconfusionmatrixcolumnMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Value float32 `json:"value"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

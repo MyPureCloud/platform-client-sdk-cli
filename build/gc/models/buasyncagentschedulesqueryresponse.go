@@ -57,22 +57,6 @@ func (o *Buasyncagentschedulesqueryresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Buasyncagentschedulesqueryresponse) MarshalJSON() ([]byte, error) {
     }
     BuasyncagentschedulesqueryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Status string `json:"status"`
         
         OperationId string `json:"operationId"`
@@ -98,30 +83,23 @@ func (u *Buasyncagentschedulesqueryresponse) MarshalJSON() ([]byte, error) {
         Progress int `json:"progress"`
         
         DownloadUrl string `json:"downloadUrl"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

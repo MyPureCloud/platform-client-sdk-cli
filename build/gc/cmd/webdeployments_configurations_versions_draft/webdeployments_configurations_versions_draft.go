@@ -33,30 +33,39 @@ func Cmdwebdeployments_configurations_versions_draft() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebDeploymentConfigurationVersion"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebDeploymentConfigurationVersion"
+      }
+    }
   }
 }`)
 	webdeployments_configurations_versions_draftCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/webdeployments/configurations/{configurationId}/versions/draft", utils.FormatPermissions([]string{ "webDeployments:configuration:edit",  }), utils.GenerateDevCentreLink("PUT", "Web Deployments", "/api/v2/webdeployments/configurations/{configurationId}/versions/draft")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "configurationVersion",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/WebDeploymentConfigurationVersion"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebDeploymentConfigurationVersion"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebDeploymentConfigurationVersion"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebDeploymentConfigurationVersion"
+      }
+    }
   }
 }`)
 	webdeployments_configurations_versions_draftCmd.AddCommand(updateCmd)
-	
 	return webdeployments_configurations_versions_draftCmd
 }
 

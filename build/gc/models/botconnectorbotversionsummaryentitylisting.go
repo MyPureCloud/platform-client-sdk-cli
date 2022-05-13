@@ -87,38 +87,7 @@ type Botconnectorbotversionsummaryentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Botconnectorbotversionsummaryentitylisting) String() string {
-    
-    
      o.Entities = []Botversionsummary{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Botconnectorbotversionsummaryentitylisting) MarshalJSON() ([]byte, erro
     }
     BotconnectorbotversionsummaryentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Botversionsummary `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Botconnectorbotversionsummaryentitylisting) MarshalJSON() ([]byte, erro
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Botversionsummary{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

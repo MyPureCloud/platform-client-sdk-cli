@@ -33,12 +33,15 @@ func Cmdaudits_query_servicemapping() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AuditQueryServiceMapping"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AuditQueryServiceMapping"
+      }
+    }
   }
 }`)
 	audits_query_servicemappingCmd.AddCommand(getCmd)
-	
 	return audits_query_servicemappingCmd
 }
 

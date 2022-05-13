@@ -33,13 +33,6 @@ type Learningassignmentaggregatequeryrequestpredicate struct {
 func (o *Learningassignmentaggregatequeryrequestpredicate) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Learningassignmentaggregatequeryrequestpredicate) MarshalJSON() ([]byte
     }
     LearningassignmentaggregatequeryrequestpredicateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Dimension string `json:"dimension"`
         
         Value string `json:"value"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

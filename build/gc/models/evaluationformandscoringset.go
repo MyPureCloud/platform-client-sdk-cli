@@ -33,13 +33,6 @@ type Evaluationformandscoringset struct {
 func (o *Evaluationformandscoringset) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Evaluationformandscoringset) MarshalJSON() ([]byte, error) {
     }
     EvaluationformandscoringsetMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EvaluationForm Evaluationform `json:"evaluationForm"`
         
         Answers Evaluationscoringset `json:"answers"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

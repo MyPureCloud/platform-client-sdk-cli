@@ -24,11 +24,7 @@ type Botaggregatequeryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Botaggregatequeryresponse) String() string {
-    
-    
      o.Results = []Botaggregatedatacontainer{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Botaggregatequeryresponse) MarshalJSON() ([]byte, error) {
     }
     BotaggregatequeryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Results []Botaggregatedatacontainer `json:"results"`
+    return json.Marshal(&struct {
         
+        Results []Botaggregatedatacontainer `json:"results"`
         *Alias
     }{
-        
 
         
         Results: []Botaggregatedatacontainer{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

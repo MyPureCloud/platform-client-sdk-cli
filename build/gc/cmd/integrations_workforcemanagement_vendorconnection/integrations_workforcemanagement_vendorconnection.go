@@ -30,22 +30,27 @@ func init() {
 func Cmdintegrations_workforcemanagement_vendorconnection() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/integrations/workforcemanagement/vendorconnection", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Integrations", "/api/v2/integrations/workforcemanagement/vendorconnection")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/VendorConnectionRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VendorConnectionRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserActionCategoryEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserActionCategoryEntityListing"
+      }
+    }
   }
 }`)
 	integrations_workforcemanagement_vendorconnectionCmd.AddCommand(createCmd)
-	
 	return integrations_workforcemanagement_vendorconnectionCmd
 }
 

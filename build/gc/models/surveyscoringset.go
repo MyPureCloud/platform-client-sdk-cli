@@ -40,17 +40,7 @@ type Surveyscoringset struct {
 func (o *Surveyscoringset) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.QuestionGroupScores = []Surveyquestiongroupscore{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Surveyscoringset) MarshalJSON() ([]byte, error) {
     }
     SurveyscoringsetMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TotalScore float32 `json:"totalScore"`
         
         NpsScore int `json:"npsScore"`
         
         QuestionGroupScores []Surveyquestiongroupscore `json:"questionGroupScores"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         QuestionGroupScores: []Surveyquestiongroupscore{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -54,23 +54,7 @@ type Webchatroutingtarget struct {
 func (o *Webchatroutingtarget) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Skills = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -88,7 +72,8 @@ func (u *Webchatroutingtarget) MarshalJSON() ([]byte, error) {
     }
     WebchatroutingtargetMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TargetType string `json:"targetType"`
         
         TargetAddress string `json:"targetAddress"`
@@ -98,32 +83,25 @@ func (u *Webchatroutingtarget) MarshalJSON() ([]byte, error) {
         Language string `json:"language"`
         
         Priority int `json:"priority"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Skills: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

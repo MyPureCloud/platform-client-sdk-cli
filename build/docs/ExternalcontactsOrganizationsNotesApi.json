@@ -1,0 +1,118 @@
+{
+    "POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes": {
+        "operationId": "postexternalcontactsorganizationnotes",
+        "functionName": "create",
+        "signature": "create(externalOrganizationId, body)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Note",
+                "required": "true"
+            }
+        ],
+        "return": "Note"
+    },
+    "DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}": {
+        "operationId": "deleteexternalcontactsorganizationnote",
+        "functionName": "delete",
+        "signature": "delete(externalOrganizationId, noteId)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "noteId",
+                "type": "string",
+                "required": "true"
+            }
+        ],
+        "return": "interface{}"
+    },
+    "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}": {
+        "operationId": "getexternalcontactsorganizationnote",
+        "functionName": "get",
+        "signature": "get(externalOrganizationId, noteId, expand)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "noteId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[]string",
+                "required": "false"
+            }
+        ],
+        "return": "Note"
+    },
+    "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes": {
+        "operationId": "getexternalcontactsorganizationnotes",
+        "functionName": "list",
+        "signature": "list(externalOrganizationId, pageSize, pageNumber, sortOrder, expand)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[]string",
+                "required": "false"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}": {
+        "operationId": "putexternalcontactsorganizationnote",
+        "functionName": "update",
+        "signature": "update(externalOrganizationId, noteId, body)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "noteId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Note",
+                "required": "true"
+            }
+        ],
+        "return": "Note"
+    }
+    
+}

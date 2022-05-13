@@ -88,46 +88,15 @@ type Posttextresponse struct {
 // String returns a JSON representation of the model
 func (o *Posttextresponse) String() string {
     
-    
-    
-    
-    
-    
      o.ReplyMessages = []Posttextmessage{{}} 
-    
-    
-    
-    
-    
-    
     
      o.Slots = map[string]string{"": ""} 
     
-    
-    
-    
-    
-    
-    
      o.AmazonLex = map[string]interface{}{"": Interface{}} 
-    
-    
-    
      o.GoogleDialogFlow = map[string]interface{}{"": Interface{}} 
-    
-    
-    
      o.GenesysDialogEngine = map[string]interface{}{"": Interface{}} 
-    
-    
-    
      o.GenesysBotConnector = map[string]interface{}{"": Interface{}} 
-    
-    
-    
      o.NuanceMixDlg = map[string]interface{}{"": Interface{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,7 +112,8 @@ func (u *Posttextresponse) MarshalJSON() ([]byte, error) {
     }
     PosttextresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         BotState string `json:"botState"`
         
         ReplyMessages []Posttextmessage `json:"replyMessages"`
@@ -163,64 +133,52 @@ func (u *Posttextresponse) MarshalJSON() ([]byte, error) {
         GenesysBotConnector map[string]interface{} `json:"genesysBotConnector"`
         
         NuanceMixDlg map[string]interface{} `json:"nuanceMixDlg"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         ReplyMessages: []Posttextmessage{{}},
         
 
-        
 
         
 
-        
 
         
         Slots: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
         AmazonLex: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
         GoogleDialogFlow: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
         GenesysDialogEngine: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
         GenesysBotConnector: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
         NuanceMixDlg: map[string]interface{}{"": Interface{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

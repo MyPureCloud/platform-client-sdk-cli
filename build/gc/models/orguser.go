@@ -256,103 +256,13 @@ func (o *Orguser) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Addresses = []Contact{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
      o.Images = []Userimage{{}} 
     
-    
-    
-    
-    
-    
-    
      o.Certifications = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -373,8 +283,7 @@ func (u *Orguser) MarshalJSON() ([]byte, error) {
     }
     OrguserMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -386,11 +295,7 @@ func (u *Orguser) MarshalJSON() ([]byte, error) {
         
         Email string `json:"email"`
         
-        
-        
         Addresses []Contact `json:"addresses"`
-        
-        
         
         Title string `json:"title"`
         
@@ -408,197 +313,127 @@ func (u *Orguser) MarshalJSON() ([]byte, error) {
         
         EmployerInfo Employerinfo `json:"employerInfo"`
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         AcdAutoAnswer bool `json:"acdAutoAnswer"`
-        
-        
         
         LastTokenIssued Oauthlasttokenissued `json:"lastTokenIssued"`
         
-        
-        
         Organization Organization `json:"organization"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Addresses: []Contact{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Images: []Userimage{{}},
         
 
-        
 
         
 
-        
 
         
         Certifications: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

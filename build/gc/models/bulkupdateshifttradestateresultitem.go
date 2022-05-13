@@ -64,24 +64,6 @@ func (o *Bulkupdateshifttradestateresultitem) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -97,8 +79,7 @@ func (u *Bulkupdateshifttradestateresultitem) MarshalJSON() ([]byte, error) {
     }
     BulkupdateshifttradestateresultitemMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         State string `json:"state"`
         
@@ -109,34 +90,26 @@ func (u *Bulkupdateshifttradestateresultitem) MarshalJSON() ([]byte, error) {
         FailureReason string `json:"failureReason"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

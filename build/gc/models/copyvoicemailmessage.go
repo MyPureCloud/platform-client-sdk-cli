@@ -41,16 +41,6 @@ func (o *Copyvoicemailmessage) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Copyvoicemailmessage) MarshalJSON() ([]byte, error) {
     }
     CopyvoicemailmessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VoicemailMessageId string `json:"voicemailMessageId"`
         
         UserId string `json:"userId"`
         
         GroupId string `json:"groupId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

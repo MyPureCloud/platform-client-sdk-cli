@@ -33,13 +33,6 @@ type Scheduleinterval struct {
 func (o *Scheduleinterval) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Scheduleinterval) MarshalJSON() ([]byte, error) {
     }
     ScheduleintervalMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Start string `json:"start"`
         
         End string `json:"end"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

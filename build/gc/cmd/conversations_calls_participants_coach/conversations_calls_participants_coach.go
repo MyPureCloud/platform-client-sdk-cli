@@ -32,10 +32,10 @@ func Cmdconversations_calls_participants_coach() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Created"
+  "description" : "Created",
+  "content" : { }
 }`)
 	conversations_calls_participants_coachCmd.AddCommand(createCmd)
-	
 	return conversations_calls_participants_coachCmd
 }
 

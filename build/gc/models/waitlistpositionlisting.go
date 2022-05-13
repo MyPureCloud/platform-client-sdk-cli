@@ -24,11 +24,7 @@ type Waitlistpositionlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Waitlistpositionlisting) String() string {
-    
-    
      o.Entities = []Waitlistposition{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Waitlistpositionlisting) MarshalJSON() ([]byte, error) {
     }
     WaitlistpositionlistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Waitlistposition `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Waitlistposition `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Waitlistposition{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

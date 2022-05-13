@@ -24,11 +24,7 @@ type Setwrapperstring struct {
 
 // String returns a JSON representation of the model
 func (o *Setwrapperstring) String() string {
-    
-    
      o.Values = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Setwrapperstring) MarshalJSON() ([]byte, error) {
     }
     SetwrapperstringMarshalled = true
 
-    return json.Marshal(&struct { 
-        Values []string `json:"values"`
+    return json.Marshal(&struct {
         
+        Values []string `json:"values"`
         *Alias
     }{
-        
 
         
         Values: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

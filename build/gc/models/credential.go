@@ -52,21 +52,7 @@ type Credential struct {
 func (o *Credential) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.CredentialFields = map[string]string{"": ""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -82,42 +68,32 @@ func (u *Credential) MarshalJSON() ([]byte, error) {
     }
     CredentialMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         VarType Credentialtype `json:"type"`
         
         CredentialFields map[string]string `json:"credentialFields"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         CredentialFields: map[string]string{"": ""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

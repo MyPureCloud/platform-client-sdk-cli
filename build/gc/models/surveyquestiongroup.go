@@ -63,26 +63,7 @@ func (o *Surveyquestiongroup) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Questions = []Surveyquestion{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -99,7 +80,8 @@ func (u *Surveyquestiongroup) MarshalJSON() ([]byte, error) {
     }
     SurveyquestiongroupMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -111,36 +93,28 @@ func (u *Surveyquestiongroup) MarshalJSON() ([]byte, error) {
         Questions []Surveyquestion `json:"questions"`
         
         VisibilityCondition Visibilitycondition `json:"visibilityCondition"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Questions: []Surveyquestion{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

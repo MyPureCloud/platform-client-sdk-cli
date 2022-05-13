@@ -33,24 +33,31 @@ func Cmdoutbound_contactlists_export() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DomainEntityRef"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainEntityRef"
+      }
+    }
   }
 }`)
 	outbound_contactlists_exportCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "string", "download", "false", "Redirect to download uri")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/contactlists/{contactListId}/export", utils.FormatPermissions([]string{ "outbound:contact:view", "outbound:contactList:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/contactlists/{contactListId}/export")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ExportUri"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ExportUri"
+      }
+    }
   }
 }`)
 	outbound_contactlists_exportCmd.AddCommand(getCmd)
-	
 	return outbound_contactlists_exportCmd
 }
 

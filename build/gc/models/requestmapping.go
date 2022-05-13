@@ -49,19 +49,6 @@ func (o *Requestmapping) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Requestmapping) MarshalJSON() ([]byte, error) {
     }
     RequestmappingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         AttributeType string `json:"attributeType"`
@@ -85,26 +73,20 @@ func (u *Requestmapping) MarshalJSON() ([]byte, error) {
         MappingType string `json:"mappingType"`
         
         Value string `json:"value"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -25,10 +25,6 @@ type Conversationtagsupdate struct {
 // String returns a JSON representation of the model
 func (o *Conversationtagsupdate) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Conversationtagsupdate) MarshalJSON() ([]byte, error) {
     }
     ConversationtagsupdateMarshalled = true
 
-    return json.Marshal(&struct { 
-        ExternalTag string `json:"externalTag"`
+    return json.Marshal(&struct {
         
+        ExternalTag string `json:"externalTag"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

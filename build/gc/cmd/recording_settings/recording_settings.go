@@ -34,31 +34,40 @@ func Cmdrecording_settings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/RecordingSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RecordingSettings"
+      }
+    }
   }
 }`)
 	recording_settingsCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/settings", utils.FormatPermissions([]string{ "recording:settings:editScreenRecordings",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Recording settings",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/RecordingSettings"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RecordingSettings"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/RecordingSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RecordingSettings"
+      }
+    }
   }
 }`)
 	recording_settingsCmd.AddCommand(updateCmd)
-	
 	return recording_settingsCmd
 }
 

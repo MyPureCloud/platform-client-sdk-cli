@@ -62,26 +62,7 @@ func (o *Knowledgedocumentbulkrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Categories = []Documentcategoryinput{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -99,7 +80,8 @@ func (u *Knowledgedocumentbulkrequest) MarshalJSON() ([]byte, error) {
     }
     KnowledgedocumentbulkrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         ExternalUrl string `json:"externalUrl"`
@@ -111,36 +93,28 @@ func (u *Knowledgedocumentbulkrequest) MarshalJSON() ([]byte, error) {
         Article Documentarticle `json:"article"`
         
         Id string `json:"id"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Categories: []Documentcategoryinput{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

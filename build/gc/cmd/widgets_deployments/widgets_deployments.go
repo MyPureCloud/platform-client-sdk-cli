@@ -30,72 +30,92 @@ func init() {
 func Cmdwidgets_deployments() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/widgets/deployments", utils.FormatPermissions([]string{ "widgets:deployment:add", "webchat:deployment:create",  }), utils.GenerateDevCentreLink("POST", "Widgets", "/api/v2/widgets/deployments")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Deployment",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/WidgetDeployment"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WidgetDeployment"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WidgetDeployment"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WidgetDeployment"
+      }
+    }
   }
 }`)
 	widgets_deploymentsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/widgets/deployments/{deploymentId}", utils.FormatPermissions([]string{ "widgets:deployment:delete", "webchat:deployment:delete",  }), utils.GenerateDevCentreLink("DELETE", "Widgets", "/api/v2/widgets/deployments/{deploymentId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Deleted"
+  "description" : "Deleted",
+  "content" : { }
 }`)
 	widgets_deploymentsCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/widgets/deployments/{deploymentId}", utils.FormatPermissions([]string{ "widgets:deployment:view", "webchat:deployment:read",  }), utils.GenerateDevCentreLink("GET", "Widgets", "/api/v2/widgets/deployments/{deploymentId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WidgetDeployment"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WidgetDeployment"
+      }
+    }
   }
 }`)
 	widgets_deploymentsCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/widgets/deployments", utils.FormatPermissions([]string{ "widgets:deployment:view", "webchat:deployment:read",  }), utils.GenerateDevCentreLink("GET", "Widgets", "/api/v2/widgets/deployments")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WidgetDeploymentEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WidgetDeploymentEntityListing"
+      }
+    }
   }
 }`)
 	widgets_deploymentsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/widgets/deployments/{deploymentId}", utils.FormatPermissions([]string{ "widgets:deployment:edit", "webchat:deployment:update",  }), utils.GenerateDevCentreLink("PUT", "Widgets", "/api/v2/widgets/deployments/{deploymentId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Deployment",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/WidgetDeployment"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WidgetDeployment"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WidgetDeployment"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WidgetDeployment"
+      }
+    }
   }
 }`)
 	widgets_deploymentsCmd.AddCommand(updateCmd)
-	
 	return widgets_deploymentsCmd
 }
 

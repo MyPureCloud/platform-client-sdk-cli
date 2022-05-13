@@ -33,31 +33,40 @@ func Cmdlearning_modules_rule() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LearningModuleRule"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningModuleRule"
+      }
+    }
   }
 }`)
 	learning_modules_ruleCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/learning/modules/{moduleId}/rule", utils.FormatPermissions([]string{ "learning:rule:edit",  }), utils.GenerateDevCentreLink("PUT", "Learning", "/api/v2/learning/modules/{moduleId}/rule")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The learning module rule to be updated",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/LearningModuleRule"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningModuleRule"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LearningModuleRule"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningModuleRule"
+      }
+    }
   }
 }`)
 	learning_modules_ruleCmd.AddCommand(updateCmd)
-	
 	return learning_modules_ruleCmd
 }
 

@@ -35,12 +35,15 @@ func Cmdgamification_scorecards_points_alltime() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AllTimePoints"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AllTimePoints"
+      }
+    }
   }
 }`)
 	gamification_scorecards_points_alltimeCmd.AddCommand(getCmd)
-	
 	return gamification_scorecards_points_alltimeCmd
 }
 

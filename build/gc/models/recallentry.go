@@ -33,13 +33,6 @@ type Recallentry struct {
 func (o *Recallentry) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Recallentry) MarshalJSON() ([]byte, error) {
     }
     RecallentryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         NbrAttempts int `json:"nbrAttempts"`
         
         MinutesBetweenAttempts int `json:"minutesBetweenAttempts"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

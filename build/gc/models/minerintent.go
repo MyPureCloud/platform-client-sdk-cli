@@ -59,24 +59,7 @@ type Minerintent struct {
 func (o *Minerintent) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Utterances = []Utterance{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -93,8 +76,7 @@ func (u *Minerintent) MarshalJSON() ([]byte, error) {
     }
     MinerintentMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -103,38 +85,28 @@ func (u *Minerintent) MarshalJSON() ([]byte, error) {
         Utterances []Utterance `json:"utterances"`
         
         AnalyticVolumePercent float64 `json:"analyticVolumePercent"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Utterances: []Utterance{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

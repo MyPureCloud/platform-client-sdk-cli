@@ -60,30 +60,11 @@ type Campaigninteractions struct {
 // String returns a JSON representation of the model
 func (o *Campaigninteractions) String() string {
     
-    
-    
-    
-    
-    
      o.PendingInteractions = []Campaigninteraction{{}} 
-    
-    
-    
      o.ProceedingInteractions = []Campaigninteraction{{}} 
-    
-    
-    
      o.PreviewingInteractions = []Campaigninteraction{{}} 
-    
-    
-    
      o.InteractingInteractions = []Campaigninteraction{{}} 
-    
-    
-    
      o.ScheduledInteractions = []Campaigninteraction{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Campaigninteractions) MarshalJSON() ([]byte, error) {
     }
     CampaigninteractionsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Campaign Domainentityref `json:"campaign"`
         
         PendingInteractions []Campaigninteraction `json:"pendingInteractions"`
@@ -111,44 +93,36 @@ func (u *Campaigninteractions) MarshalJSON() ([]byte, error) {
         InteractingInteractions []Campaigninteraction `json:"interactingInteractions"`
         
         ScheduledInteractions []Campaigninteraction `json:"scheduledInteractions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         PendingInteractions: []Campaigninteraction{{}},
         
 
-        
 
         
         ProceedingInteractions: []Campaigninteraction{{}},
         
 
-        
 
         
         PreviewingInteractions: []Campaigninteraction{{}},
         
 
-        
 
         
         InteractingInteractions: []Campaigninteraction{{}},
         
 
-        
 
         
         ScheduledInteractions: []Campaigninteraction{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -93,41 +93,10 @@ func (o *Errorbody) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.MessageParams = map[string]string{"": ""} 
     
-    
-    
-    
-    
-    
-    
      o.Details = []Detail{{}} 
-    
-    
-    
      o.Errors = []Errorbody{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,7 +112,8 @@ func (u *Errorbody) MarshalJSON() ([]byte, error) {
     }
     ErrorbodyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Message string `json:"message"`
         
         Code string `json:"code"`
@@ -163,56 +133,44 @@ func (u *Errorbody) MarshalJSON() ([]byte, error) {
         Details []Detail `json:"details"`
         
         Errors []Errorbody `json:"errors"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MessageParams: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
         Details: []Detail{{}},
         
 
-        
 
         
         Errors: []Errorbody{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

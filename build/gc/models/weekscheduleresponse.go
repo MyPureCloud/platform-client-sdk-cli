@@ -33,13 +33,6 @@ type Weekscheduleresponse struct {
 func (o *Weekscheduleresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Weekscheduleresponse) MarshalJSON() ([]byte, error) {
     }
     WeekscheduleresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Result Weekschedule `json:"result"`
         
         DownloadUrl string `json:"downloadUrl"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

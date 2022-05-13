@@ -34,16 +34,19 @@ func Cmdauthorization_subjects_rolecounts() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "object",
-    "additionalProperties" : {
-      "type" : "object",
-      "properties" : { }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "object",
+        "additionalProperties" : {
+          "type" : "object",
+          "properties" : { }
+        }
+      }
     }
   }
 }`)
 	authorization_subjects_rolecountsCmd.AddCommand(getCmd)
-	
 	return authorization_subjects_rolecountsCmd
 }
 

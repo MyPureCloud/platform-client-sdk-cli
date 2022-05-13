@@ -77,36 +77,11 @@ func (o *Edgemetrics) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Processors = []Edgemetricsprocessor{{}} 
-    
-    
-    
      o.Memory = []Edgemetricsmemory{{}} 
-    
-    
-    
      o.Disks = []Edgemetricsdisk{{}} 
-    
-    
-    
      o.Subsystems = []Edgemetricssubsystem{{}} 
-    
-    
-    
      o.Networks = []Edgemetricsnetwork{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -122,7 +97,8 @@ func (u *Edgemetrics) MarshalJSON() ([]byte, error) {
     }
     EdgemetricsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Edge Domainentityref `json:"edge"`
         
         EventTime time.Time `json:"eventTime"`
@@ -138,52 +114,42 @@ func (u *Edgemetrics) MarshalJSON() ([]byte, error) {
         Subsystems []Edgemetricssubsystem `json:"subsystems"`
         
         Networks []Edgemetricsnetwork `json:"networks"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Processors: []Edgemetricsprocessor{{}},
         
 
-        
 
         
         Memory: []Edgemetricsmemory{{}},
         
 
-        
 
         
         Disks: []Edgemetricsdisk{{}},
         
 
-        
 
         
         Subsystems: []Edgemetricssubsystem{{}},
         
 
-        
 
         
         Networks: []Edgemetricsnetwork{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

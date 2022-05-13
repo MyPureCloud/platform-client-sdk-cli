@@ -32,14 +32,7 @@ type Namedentitytypeitem struct {
 // String returns a JSON representation of the model
 func (o *Namedentitytypeitem) String() string {
     
-    
-    
-    
-    
-    
      o.Synonyms = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Namedentitytypeitem) MarshalJSON() ([]byte, error) {
     }
     NamedentitytypeitemMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Value string `json:"value"`
         
         Synonyms []string `json:"synonyms"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Synonyms: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

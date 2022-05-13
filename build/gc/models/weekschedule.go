@@ -98,39 +98,7 @@ func (o *Weekschedule) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.UserSchedules = map[string]Userschedule{"": {}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -148,10 +116,7 @@ func (u *Weekschedule) MarshalJSON() ([]byte, error) {
     }
     WeekscheduleMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
+    return json.Marshal(&struct {
         
         WeekDate string `json:"weekDate"`
         
@@ -170,56 +135,43 @@ func (u *Weekschedule) MarshalJSON() ([]byte, error) {
         HeadcountForecast Headcountforecast `json:"headcountForecast"`
         
         AgentSchedulesVersion int `json:"agentSchedulesVersion"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         UserSchedules: map[string]Userschedule{"": {}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

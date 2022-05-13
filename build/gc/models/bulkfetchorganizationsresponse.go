@@ -38,19 +38,9 @@ type Bulkfetchorganizationsresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Bulkfetchorganizationsresponse) String() string {
-    
-    
      o.Results = []Bulkresponseresultexternalorganizationentity{{}} 
     
-    
-    
-    
-    
-    
-    
      o.ErrorIndexes = []int{0} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Bulkfetchorganizationsresponse) MarshalJSON() ([]byte, error) {
     }
     BulkfetchorganizationsresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Results []Bulkresponseresultexternalorganizationentity `json:"results"`
         
         ErrorCount int `json:"errorCount"`
         
         ErrorIndexes []int `json:"errorIndexes"`
-        
         *Alias
     }{
-        
 
         
         Results: []Bulkresponseresultexternalorganizationentity{{}},
         
 
-        
 
         
 
-        
 
         
         ErrorIndexes: []int{0},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,13 +33,6 @@ type Buaveragespeedofanswer struct {
 func (o *Buaveragespeedofanswer) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Buaveragespeedofanswer) MarshalJSON() ([]byte, error) {
     }
     BuaveragespeedofanswerMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Include bool `json:"include"`
         
         Seconds int `json:"seconds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

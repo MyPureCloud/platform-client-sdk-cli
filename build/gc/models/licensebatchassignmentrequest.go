@@ -24,11 +24,7 @@ type Licensebatchassignmentrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Licensebatchassignmentrequest) String() string {
-    
-    
      o.Assignments = []Licenseassignmentrequest{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Licensebatchassignmentrequest) MarshalJSON() ([]byte, error) {
     }
     LicensebatchassignmentrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        Assignments []Licenseassignmentrequest `json:"assignments"`
+    return json.Marshal(&struct {
         
+        Assignments []Licenseassignmentrequest `json:"assignments"`
         *Alias
     }{
-        
 
         
         Assignments: []Licenseassignmentrequest{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

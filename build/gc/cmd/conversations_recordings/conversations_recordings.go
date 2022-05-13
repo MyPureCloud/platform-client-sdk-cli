@@ -32,7 +32,7 @@ func Cmdconversations_recordings() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "string", "emailFormatId", "EML", "The desired media format when downloading an email recording. Valid values:EML,NONE Valid values: EML, NONE")
 	utils.AddFlag(getCmd.Flags(), "string", "chatFormatId", "ZIP", "The desired media format when downloading a chat recording. Valid values:ZIP,NONE  Valid values: ZIP, NONE")
 	utils.AddFlag(getCmd.Flags(), "string", "messageFormatId", "ZIP", "The desired media format when downloading a message recording. Valid values:ZIP,NONE Valid values: ZIP, NONE")
-	utils.AddFlag(getCmd.Flags(), "bool", "download", "false", "requesting a download format of the recording. Valid values:true,false")
+	utils.AddFlag(getCmd.Flags(), "bool", "download", "false", "requesting a download format of the recording. Valid values:true,false Valid values: true, false")
 	utils.AddFlag(getCmd.Flags(), "string", "fileName", "", "the name of the downloaded fileName")
 	utils.AddFlag(getCmd.Flags(), "string", "locale", "", "The locale for the requested file when downloading, as an ISO 639-1 code")
 	utils.AddFlag(getCmd.Flags(), "[]string", "mediaFormats", "", "All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3")
@@ -41,12 +41,16 @@ func Cmdconversations_recordings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "Success - recording is transcoding",
-  "schema" : {
-    "$ref" : "#/definitions/Recording"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Recording"
+      }
+    }
   }
 }`)
 	conversations_recordingsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "maxWaitMs", "5000", "The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.")
 	utils.AddFlag(listCmd.Flags(), "string", "formatId", "WEBM", "The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE")
 	utils.AddFlag(listCmd.Flags(), "[]string", "mediaFormats", "", "All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.")
@@ -55,34 +59,43 @@ func Cmdconversations_recordings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/Recording"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Recording"
+        }
+      }
     }
   }
 }`)
 	conversations_recordingsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recording:editRetention", "recording:screenRecording:editRetention",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "recording",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Recording"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Recording"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Recording"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Recording"
+      }
+    }
   }
 }`)
 	conversations_recordingsCmd.AddCommand(updateCmd)
-	
 	return conversations_recordingsCmd
 }
 

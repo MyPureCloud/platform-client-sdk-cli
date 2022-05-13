@@ -33,31 +33,40 @@ func Cmdanalytics_reporting_settings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AnalyticsReportingSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AnalyticsReportingSettings"
+      }
+    }
   }
 }`)
 	analytics_reporting_settingsCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/analytics/reporting/settings", utils.FormatPermissions([]string{ "recording:recordingSegment:view", "analytics:conversationDetail:view", "analytics:conversationAggregate:view", "analytics:dashboardConfigurations:view",  }), utils.GenerateDevCentreLink("PATCH", "Analytics", "/api/v2/analytics/reporting/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "AnalyticsReportingSettingsRequest",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/AnalyticsReportingSettings"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AnalyticsReportingSettings"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AnalyticsReportingSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AnalyticsReportingSettings"
+      }
+    }
   }
 }`)
 	analytics_reporting_settingsCmd.AddCommand(updateCmd)
-	
 	return analytics_reporting_settingsCmd
 }
 

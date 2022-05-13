@@ -70,30 +70,8 @@ func (o *Admintimeoffrequestpatch) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.FullDayManagementUnitDates = []string{""} 
-    
-    
-    
      o.PartialDayStartDateTimes = []time.Time{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -111,7 +89,8 @@ func (u *Admintimeoffrequestpatch) MarshalJSON() ([]byte, error) {
     }
     AdmintimeoffrequestpatchMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Status string `json:"status"`
         
         ActivityCodeId string `json:"activityCodeId"`
@@ -125,42 +104,33 @@ func (u *Admintimeoffrequestpatch) MarshalJSON() ([]byte, error) {
         DailyDurationMinutes int `json:"dailyDurationMinutes"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         FullDayManagementUnitDates: []string{""},
         
 
-        
 
         
         PartialDayStartDateTimes: []time.Time{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

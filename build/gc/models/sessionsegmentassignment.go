@@ -34,13 +34,6 @@ type Sessionsegmentassignment struct {
 func (o *Sessionsegmentassignment) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -56,22 +49,19 @@ func (u *Sessionsegmentassignment) MarshalJSON() ([]byte, error) {
     }
     SessionsegmentassignmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Segment Assignedsegment `json:"segment"`
         
         AssignedDate time.Time `json:"assignedDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

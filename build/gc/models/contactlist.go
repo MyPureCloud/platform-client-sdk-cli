@@ -127,53 +127,10 @@ func (o *Contactlist) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ColumnNames = []string{""} 
-    
-    
-    
      o.PhoneColumns = []Contactphonenumbercolumn{{}} 
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.PreviewModeAcceptedValues = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -192,14 +149,9 @@ func (u *Contactlist) MarshalJSON() ([]byte, error) {
     }
     ContactlistMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
@@ -209,95 +161,71 @@ func (u *Contactlist) MarshalJSON() ([]byte, error) {
         
         PhoneColumns []Contactphonenumbercolumn `json:"phoneColumns"`
         
-        
-        
         PreviewModeColumnName string `json:"previewModeColumnName"`
         
         PreviewModeAcceptedValues []string `json:"previewModeAcceptedValues"`
-        
-        
         
         AttemptLimits Domainentityref `json:"attemptLimits"`
         
         AutomaticTimeZoneMapping bool `json:"automaticTimeZoneMapping"`
         
         ZipCodeColumnName string `json:"zipCodeColumnName"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ColumnNames: []string{""},
         
 
-        
 
         
         PhoneColumns: []Contactphonenumbercolumn{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         PreviewModeAcceptedValues: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

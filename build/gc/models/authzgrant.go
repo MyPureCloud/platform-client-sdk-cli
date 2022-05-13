@@ -50,19 +50,6 @@ func (o *Authzgrant) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,7 +65,8 @@ func (u *Authzgrant) MarshalJSON() ([]byte, error) {
     }
     AuthzgrantMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SubjectId string `json:"subjectId"`
         
         Division Authzdivision `json:"division"`
@@ -86,26 +74,20 @@ func (u *Authzgrant) MarshalJSON() ([]byte, error) {
         Role Authzgrantrole `json:"role"`
         
         GrantMadeAt time.Time `json:"grantMadeAt"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

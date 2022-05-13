@@ -25,10 +25,6 @@ type Edgeversioninformation struct {
 // String returns a JSON representation of the model
 func (o *Edgeversioninformation) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Edgeversioninformation) MarshalJSON() ([]byte, error) {
     }
     EdgeversioninformationMarshalled = true
 
-    return json.Marshal(&struct { 
-        SoftwareVersion string `json:"softwareVersion"`
+    return json.Marshal(&struct {
         
+        SoftwareVersion string `json:"softwareVersion"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

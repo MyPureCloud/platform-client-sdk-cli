@@ -45,17 +45,6 @@ type Oauthprovider struct {
 func (o *Oauthprovider) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -71,34 +60,25 @@ func (u *Oauthprovider) MarshalJSON() ([]byte, error) {
     }
     OauthproviderMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         Disabled bool `json:"disabled"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

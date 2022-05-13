@@ -41,12 +41,15 @@ func Cmdscripts_published_divisionviews() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	scripts_published_divisionviewsCmd.AddCommand(listCmd)
-	
 	return scripts_published_divisionviewsCmd
 }
 

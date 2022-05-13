@@ -45,20 +45,7 @@ type Authzgrantpolicy struct {
 
 // String returns a JSON representation of the model
 func (o *Authzgrantpolicy) String() string {
-    
-    
      o.Actions = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Authzgrantpolicy) MarshalJSON() ([]byte, error) {
     }
     AuthzgrantpolicyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Actions []string `json:"actions"`
         
         Condition string `json:"condition"`
@@ -85,28 +73,22 @@ func (u *Authzgrantpolicy) MarshalJSON() ([]byte, error) {
         Domain string `json:"domain"`
         
         EntityName string `json:"entityName"`
-        
         *Alias
     }{
-        
 
         
         Actions: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

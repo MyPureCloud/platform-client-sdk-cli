@@ -41,16 +41,6 @@ func (o *Buservicelevel) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Buservicelevel) MarshalJSON() ([]byte, error) {
     }
     BuservicelevelMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Include bool `json:"include"`
         
         Percent int `json:"percent"`
         
         Seconds int `json:"seconds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -57,22 +57,6 @@ func (o *Journeyaggregatequerypredicate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Journeyaggregatequerypredicate) MarshalJSON() ([]byte, error) {
     }
     JourneyaggregatequerypredicateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Dimension string `json:"dimension"`
@@ -98,30 +83,23 @@ func (u *Journeyaggregatequerypredicate) MarshalJSON() ([]byte, error) {
         Value string `json:"value"`
         
         VarRange Numericrange `json:"range"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

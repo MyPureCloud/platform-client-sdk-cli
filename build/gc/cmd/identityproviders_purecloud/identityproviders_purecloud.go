@@ -33,42 +33,55 @@ func Cmdidentityproviders_purecloud() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Empty"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Empty"
+      }
+    }
   }
 }`)
 	identityproviders_purecloudCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/identityproviders/purecloud", utils.FormatPermissions([]string{ "sso:provider:view",  }), utils.GenerateDevCentreLink("GET", "Identity Provider", "/api/v2/identityproviders/purecloud")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/PureCloud"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PureCloud"
+      }
+    }
   }
 }`)
 	identityproviders_purecloudCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/identityproviders/purecloud", utils.FormatPermissions([]string{ "sso:provider:add", "sso:provider:edit",  }), utils.GenerateDevCentreLink("PUT", "Identity Provider", "/api/v2/identityproviders/purecloud")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Provider",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/PureCloud"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PureCloud"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OAuthProvider"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OAuthProvider"
+      }
+    }
   }
 }`)
 	identityproviders_purecloudCmd.AddCommand(updateCmd)
-	
 	return identityproviders_purecloudCmd
 }
 

@@ -30,23 +30,28 @@ func init() {
 func Cmdconversations_assign() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/assign", utils.FormatPermissions([]string{ "conversation:call:pull", "conversation:call:assign", "conversation:callback:pull", "conversation:callback:assign", "conversation:webchat:pull", "conversation:webchat:assign", "conversation:email:pull", "conversation:email:assign", "conversation:message:pull", "conversation:message:assign",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/{conversationId}/assign")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Targeted user",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ConversationUser"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ConversationUser"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "The manual assignment request was accepted",
-  "schema" : {
-    "type" : "string"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "string"
+      }
+    }
   }
 }`)
 	conversations_assignCmd.AddCommand(createCmd)
-	
 	return conversations_assignCmd
 }
 

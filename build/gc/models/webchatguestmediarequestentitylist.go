@@ -24,11 +24,7 @@ type Webchatguestmediarequestentitylist struct {
 
 // String returns a JSON representation of the model
 func (o *Webchatguestmediarequestentitylist) String() string {
-    
-    
      o.Entities = []Webchatguestmediarequest{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Webchatguestmediarequestentitylist) MarshalJSON() ([]byte, error) {
     }
     WebchatguestmediarequestentitylistMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Webchatguestmediarequest `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Webchatguestmediarequest `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Webchatguestmediarequest{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

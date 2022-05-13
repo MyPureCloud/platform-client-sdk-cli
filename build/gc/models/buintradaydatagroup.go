@@ -68,33 +68,11 @@ type Buintradaydatagroup struct {
 func (o *Buintradaydatagroup) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.ForecastDataPerInterval = []Buintradayforecastdata{{}} 
-    
-    
-    
-    
-    
-    
     
      o.ScheduleDataPerInterval = []Buintradayscheduledata{{}} 
     
-    
-    
-    
-    
-    
-    
      o.PerformancePredictionDataPerInterval = []Intradayperformancepredictiondata{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Buintradaydatagroup) MarshalJSON() ([]byte, error) {
     }
     BuintradaydatagroupMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MediaType string `json:"mediaType"`
         
         ForecastDataSummary Buintradayforecastdata `json:"forecastDataSummary"`
@@ -124,44 +103,35 @@ func (u *Buintradaydatagroup) MarshalJSON() ([]byte, error) {
         PerformancePredictionDataSummary Intradayperformancepredictiondata `json:"performancePredictionDataSummary"`
         
         PerformancePredictionDataPerInterval []Intradayperformancepredictiondata `json:"performancePredictionDataPerInterval"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         ForecastDataPerInterval: []Buintradayforecastdata{{}},
         
 
-        
 
         
 
-        
 
         
         ScheduleDataPerInterval: []Buintradayscheduledata{{}},
         
 
-        
 
         
 
-        
 
         
         PerformancePredictionDataPerInterval: []Intradayperformancepredictiondata{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

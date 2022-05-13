@@ -37,12 +37,15 @@ func Cmdauthorization_divisionspermitted_paged_me() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	authorization_divisionspermitted_paged_meCmd.AddCommand(listCmd)
-	
 	return authorization_divisionspermitted_paged_meCmd
 }
 

@@ -25,10 +25,6 @@ type Forecastaveragespeedofanswerresponse struct {
 // String returns a JSON representation of the model
 func (o *Forecastaveragespeedofanswerresponse) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Forecastaveragespeedofanswerresponse) MarshalJSON() ([]byte, error) {
     }
     ForecastaveragespeedofanswerresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Seconds int `json:"seconds"`
+    return json.Marshal(&struct {
         
+        Seconds int `json:"seconds"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

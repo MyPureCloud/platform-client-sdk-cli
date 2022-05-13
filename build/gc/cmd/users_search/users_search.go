@@ -30,23 +30,29 @@ func init() {
 func Cmdusers_search() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/search", utils.FormatPermissions([]string{ "directory:user:view",  }), utils.GenerateDevCentreLink("POST", "Users", "/api/v2/users/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Search request options",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/UserSearchRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserSearchRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UsersSearchResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UsersSearchResponse"
+      }
+    }
   }
 }`)
 	users_searchCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "q64", "", "q64 - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "expand")
 	utils.AddFlag(listCmd.Flags(), "string", "integrationPresenceSource", "", "integrationPresenceSource Valid values: MicrosoftTeams, ZoomPhone, RingCentral")
@@ -56,12 +62,15 @@ func Cmdusers_search() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	users_searchCmd.AddCommand(listCmd)
-	
 	return users_searchCmd
 }
 

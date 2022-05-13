@@ -76,32 +76,7 @@ func (o *Createuser) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Addresses = []Contact{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -121,7 +96,8 @@ func (u *Createuser) MarshalJSON() ([]byte, error) {
     }
     CreateuserMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Department string `json:"department"`
@@ -137,44 +113,34 @@ func (u *Createuser) MarshalJSON() ([]byte, error) {
         DivisionId string `json:"divisionId"`
         
         State string `json:"state"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Addresses: []Contact{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

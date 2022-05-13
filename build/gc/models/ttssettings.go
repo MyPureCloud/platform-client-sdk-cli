@@ -32,14 +32,7 @@ type Ttssettings struct {
 // String returns a JSON representation of the model
 func (o *Ttssettings) String() string {
     
-    
-    
-    
-    
-    
      o.LanguageOverrides = []Languageoverride{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Ttssettings) MarshalJSON() ([]byte, error) {
     }
     TtssettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DefaultEngine string `json:"defaultEngine"`
         
         LanguageOverrides []Languageoverride `json:"languageOverrides"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         LanguageOverrides: []Languageoverride{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

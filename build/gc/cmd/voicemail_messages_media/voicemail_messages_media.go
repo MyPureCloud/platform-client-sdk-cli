@@ -34,12 +34,15 @@ func Cmdvoicemail_messages_media() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailMediaInfo"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailMediaInfo"
+      }
+    }
   }
 }`)
 	voicemail_messages_mediaCmd.AddCommand(getCmd)
-	
 	return voicemail_messages_mediaCmd
 }
 

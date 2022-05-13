@@ -24,11 +24,7 @@ type Bulkcallbackdisconnectrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Bulkcallbackdisconnectrequest) String() string {
-    
-    
      o.CallbackDisconnectIdentifiers = []Callbackdisconnectidentifier{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Bulkcallbackdisconnectrequest) MarshalJSON() ([]byte, error) {
     }
     BulkcallbackdisconnectrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        CallbackDisconnectIdentifiers []Callbackdisconnectidentifier `json:"callbackDisconnectIdentifiers"`
+    return json.Marshal(&struct {
         
+        CallbackDisconnectIdentifiers []Callbackdisconnectidentifier `json:"callbackDisconnectIdentifiers"`
         *Alias
     }{
-        
 
         
         CallbackDisconnectIdentifiers: []Callbackdisconnectidentifier{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

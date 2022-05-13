@@ -24,11 +24,7 @@ type Setwrapperroutepathrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Setwrapperroutepathrequest) String() string {
-    
-    
      o.Values = []Routepathrequest{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Setwrapperroutepathrequest) MarshalJSON() ([]byte, error) {
     }
     SetwrapperroutepathrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        Values []Routepathrequest `json:"values"`
+    return json.Marshal(&struct {
         
+        Values []Routepathrequest `json:"values"`
         *Alias
     }{
-        
 
         
         Values: []Routepathrequest{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

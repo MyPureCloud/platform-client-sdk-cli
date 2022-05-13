@@ -24,11 +24,7 @@ type Smsavailablephonenumberentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Smsavailablephonenumberentitylisting) String() string {
-    
-    
      o.Entities = []Smsavailablephonenumber{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Smsavailablephonenumberentitylisting) MarshalJSON() ([]byte, error) {
     }
     SmsavailablephonenumberentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Smsavailablephonenumber `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Smsavailablephonenumber `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Smsavailablephonenumber{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

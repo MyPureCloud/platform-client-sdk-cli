@@ -41,16 +41,6 @@ func (o *Scheduleuploadprocessingresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Scheduleuploadprocessingresponse) MarshalJSON() ([]byte, error) {
     }
     ScheduleuploadprocessingresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Status string `json:"status"`
         
         OperationId string `json:"operationId"`
         
         Result Buschedulemetadata `json:"result"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

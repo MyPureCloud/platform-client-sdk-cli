@@ -36,12 +36,15 @@ func Cmdquality_conversations_audits_query_results() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	quality_conversations_audits_query_resultsCmd.AddCommand(listCmd)
-	
 	return quality_conversations_audits_query_resultsCmd
 }
 

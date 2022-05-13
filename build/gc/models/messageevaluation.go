@@ -58,22 +58,6 @@ func (o *Messageevaluation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,7 +73,8 @@ func (u *Messageevaluation) MarshalJSON() ([]byte, error) {
     }
     MessageevaluationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ContactColumn string `json:"contactColumn"`
         
         ContactAddress string `json:"contactAddress"`
@@ -99,30 +84,23 @@ func (u *Messageevaluation) MarshalJSON() ([]byte, error) {
         WrapupCodeId string `json:"wrapupCodeId"`
         
         Timestamp time.Time `json:"timestamp"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

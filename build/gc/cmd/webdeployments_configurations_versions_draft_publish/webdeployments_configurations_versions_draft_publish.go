@@ -33,12 +33,15 @@ func Cmdwebdeployments_configurations_versions_draft_publish() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebDeploymentConfigurationVersion"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebDeploymentConfigurationVersion"
+      }
+    }
   }
 }`)
 	webdeployments_configurations_versions_draft_publishCmd.AddCommand(createCmd)
-	
 	return webdeployments_configurations_versions_draft_publishCmd
 }
 

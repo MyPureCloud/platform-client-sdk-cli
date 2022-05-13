@@ -68,32 +68,10 @@ type Createwebchatrequest struct {
 func (o *Createwebchatrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.SkillIds = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Attributes = map[string]string{"": ""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -110,7 +88,8 @@ func (u *Createwebchatrequest) MarshalJSON() ([]byte, error) {
     }
     CreatewebchatrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QueueId string `json:"queueId"`
         
         Provider string `json:"provider"`
@@ -124,42 +103,33 @@ func (u *Createwebchatrequest) MarshalJSON() ([]byte, error) {
         Attributes map[string]string `json:"attributes"`
         
         CustomerName string `json:"customerName"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         SkillIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Attributes: map[string]string{"": ""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

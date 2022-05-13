@@ -45,17 +45,6 @@ type Createintegrationrequest struct {
 func (o *Createintegrationrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -71,34 +60,25 @@ func (u *Createintegrationrequest) MarshalJSON() ([]byte, error) {
     }
     CreateintegrationrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         IntegrationType Integrationtype `json:"integrationType"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

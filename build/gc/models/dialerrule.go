@@ -61,26 +61,8 @@ func (o *Dialerrule) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Conditions = []Condition{{}} 
-    
-    
-    
      o.Actions = []Dialeraction{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -96,8 +78,7 @@ func (u *Dialerrule) MarshalJSON() ([]byte, error) {
     }
     DialerruleMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -108,38 +89,30 @@ func (u *Dialerrule) MarshalJSON() ([]byte, error) {
         Conditions []Condition `json:"conditions"`
         
         Actions []Dialeraction `json:"actions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Conditions: []Condition{{}},
         
 
-        
 
         
         Actions: []Dialeraction{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

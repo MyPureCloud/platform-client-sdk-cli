@@ -30,34 +30,41 @@ func init() {
 func Cmdrouting_queues_users() *cobra.Command { 
 	activateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", activateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/routing/queues/{queueId}/users")))
 	utils.AddFileFlagIfUpsert(activateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Queue Members",
-  "required" : true,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/QueueMember"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/QueueMember"
+        }
+      }
     }
-  }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(activateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/QueueMemberEntityListingV1"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QueueMemberEntityListingV1"
+      }
+    }
   }
 }`)
 	routing_queues_usersCmd.AddCommand(activateCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/queues/{queueId}/users/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/queues/{queueId}/users/{memberId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	routing_queues_usersCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Max value is 100")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Note: results are sorted by name. Valid values: asc, desc")
@@ -74,31 +81,41 @@ func Cmdrouting_queues_users() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	routing_queues_usersCmd.AddCommand(listCmd)
-	
+
 	utils.AddFlag(moveCmd.Flags(), "bool", "delete", "false", "True to delete queue members")
 	moveCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", moveCmd.UsageTemplate(), "POST", "/api/v2/routing/queues/{queueId}/users", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/queues/{queueId}/users")))
 	utils.AddFileFlagIfUpsert(moveCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Queue Members",
-  "required" : true,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/WritableEntity"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/WritableEntity"
+        }
+      }
     }
-  }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(moveCmd.Flags(), "POST", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "Invalid request data.  Make sure you submit a valid number of queue members.",
@@ -113,23 +130,25 @@ func Cmdrouting_queues_users() *cobra.Command {
   }
 }`)
 	routing_queues_usersCmd.AddCommand(moveCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/queues/{queueId}/users/{memberId}", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:queueMember:manage",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/routing/queues/{queueId}/users/{memberId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Queue Member",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/QueueMember"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QueueMember"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  "description" : "User update has been accepted"
+  "description" : "User update has been accepted",
+  "content" : { }
 }`)
 	routing_queues_usersCmd.AddCommand(updateCmd)
-	
 	return routing_queues_usersCmd
 }
 

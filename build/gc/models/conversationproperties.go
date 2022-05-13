@@ -105,40 +105,6 @@ func (o *Conversationproperties) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -154,7 +120,8 @@ func (u *Conversationproperties) MarshalJSON() ([]byte, error) {
     }
     ConversationpropertiesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         IsWaiting bool `json:"isWaiting"`
         
         IsActive bool `json:"isActive"`
@@ -176,54 +143,41 @@ func (u *Conversationproperties) MarshalJSON() ([]byte, error) {
         FilterWrapUpNotes bool `json:"filterWrapUpNotes"`
         
         MatchAll bool `json:"matchAll"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -52,23 +52,7 @@ type Programsmappingsentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Programsmappingsentitylisting) String() string {
-    
-    
      o.Entities = []Programmappings{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -88,7 +72,8 @@ func (u *Programsmappingsentitylisting) MarshalJSON() ([]byte, error) {
     }
     ProgramsmappingsentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Programmappings `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -98,32 +83,25 @@ func (u *Programsmappingsentitylisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Programmappings{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

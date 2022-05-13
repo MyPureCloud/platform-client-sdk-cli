@@ -41,17 +41,7 @@ type Timeofflimitrange struct {
 func (o *Timeofflimitrange) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.LimitMinutesPerInterval = []int{0} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -67,30 +57,26 @@ func (u *Timeofflimitrange) MarshalJSON() ([]byte, error) {
     }
     TimeofflimitrangeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         StartDate time.Time `json:"startDate"`
         
         Granularity string `json:"granularity"`
         
         LimitMinutesPerInterval []int `json:"limitMinutesPerInterval"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         LimitMinutesPerInterval: []int{0},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

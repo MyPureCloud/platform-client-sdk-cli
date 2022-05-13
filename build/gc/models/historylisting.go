@@ -164,30 +164,7 @@ func (o *Historylisting) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ErrorDetails = []Detail{{}} 
-    
-    
-    
      o.ErrorMessageParams = map[string]string{"": ""} 
     
     
@@ -199,45 +176,7 @@ func (o *Historylisting) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Entities = []Historyentry{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -254,7 +193,8 @@ func (u *Historylisting) MarshalJSON() ([]byte, error) {
     }
     HistorylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Complete bool `json:"complete"`
@@ -294,96 +234,74 @@ func (u *Historylisting) MarshalJSON() ([]byte, error) {
         Entities []Historyentry `json:"entities"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ErrorDetails: []Detail{{}},
         
 
-        
 
         
         ErrorMessageParams: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Entities: []Historyentry{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

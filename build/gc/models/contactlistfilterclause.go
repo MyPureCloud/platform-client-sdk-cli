@@ -32,14 +32,7 @@ type Contactlistfilterclause struct {
 // String returns a JSON representation of the model
 func (o *Contactlistfilterclause) String() string {
     
-    
-    
-    
-    
-    
      o.Predicates = []Contactlistfilterpredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Contactlistfilterclause) MarshalJSON() ([]byte, error) {
     }
     ContactlistfilterclauseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FilterType string `json:"filterType"`
         
         Predicates []Contactlistfilterpredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Predicates: []Contactlistfilterpredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

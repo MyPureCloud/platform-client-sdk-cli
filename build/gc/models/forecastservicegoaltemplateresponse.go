@@ -41,16 +41,6 @@ func (o *Forecastservicegoaltemplateresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Forecastservicegoaltemplateresponse) MarshalJSON() ([]byte, error) {
     }
     ForecastservicegoaltemplateresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ServiceLevel Forecastservicelevelresponse `json:"serviceLevel"`
         
         AverageSpeedOfAnswer Forecastaveragespeedofanswerresponse `json:"averageSpeedOfAnswer"`
         
         AbandonRate Forecastabandonrateresponse `json:"abandonRate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

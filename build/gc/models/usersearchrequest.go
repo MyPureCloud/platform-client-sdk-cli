@@ -84,37 +84,9 @@ func (o *Usersearchrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Sort = []Searchsort{{}} 
-    
-    
-    
      o.Expand = []string{""} 
-    
-    
-    
      o.Query = []Usersearchcriteria{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -132,7 +104,8 @@ func (u *Usersearchrequest) MarshalJSON() ([]byte, error) {
     }
     UsersearchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SortOrder string `json:"sortOrder"`
         
         SortBy string `json:"sortBy"`
@@ -150,52 +123,41 @@ func (u *Usersearchrequest) MarshalJSON() ([]byte, error) {
         IntegrationPresenceSource string `json:"integrationPresenceSource"`
         
         EnforcePermissions bool `json:"enforcePermissions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Sort: []Searchsort{{}},
         
 
-        
 
         
         Expand: []string{""},
         
 
-        
 
         
         Query: []Usersearchcriteria{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

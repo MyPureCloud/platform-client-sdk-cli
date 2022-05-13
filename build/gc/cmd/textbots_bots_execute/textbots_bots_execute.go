@@ -30,22 +30,27 @@ func init() {
 func Cmdtextbots_bots_execute() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/textbots/bots/execute", utils.FormatPermissions([]string{ "textbots:session:execute",  }), utils.GenerateDevCentreLink("POST", "Textbots", "/api/v2/textbots/bots/execute")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "postTextRequest",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/PostTextRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PostTextRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/PostTextResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PostTextResponse"
+      }
+    }
   }
 }`)
 	textbots_bots_executeCmd.AddCommand(createCmd)
-	
 	return textbots_bots_executeCmd
 }
 

@@ -33,13 +33,6 @@ type Freeseatingconfiguration struct {
 func (o *Freeseatingconfiguration) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Freeseatingconfiguration) MarshalJSON() ([]byte, error) {
     }
     FreeseatingconfigurationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FreeSeatingState string `json:"freeSeatingState"`
         
         TtlMinutes int `json:"ttlMinutes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

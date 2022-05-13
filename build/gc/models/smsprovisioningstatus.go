@@ -49,19 +49,6 @@ func (o *Smsprovisioningstatus) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Smsprovisioningstatus) MarshalJSON() ([]byte, error) {
     }
     SmsprovisioningstatusMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Action string `json:"action"`
         
         State string `json:"state"`
@@ -85,26 +73,20 @@ func (u *Smsprovisioningstatus) MarshalJSON() ([]byte, error) {
         VarError Errorbody `json:"error"`
         
         Version int `json:"version"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

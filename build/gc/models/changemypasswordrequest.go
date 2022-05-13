@@ -33,13 +33,6 @@ type Changemypasswordrequest struct {
 func (o *Changemypasswordrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Changemypasswordrequest) MarshalJSON() ([]byte, error) {
     }
     ChangemypasswordrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         NewPassword string `json:"newPassword"`
         
         OldPassword string `json:"oldPassword"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

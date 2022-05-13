@@ -33,31 +33,40 @@ func Cmdvoicemail_policy() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailOrganizationPolicy"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailOrganizationPolicy"
+      }
+    }
   }
 }`)
 	voicemail_policyCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/voicemail/policy", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Voicemail", "/api/v2/voicemail/policy")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Policy",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailOrganizationPolicy"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailOrganizationPolicy"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailOrganizationPolicy"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailOrganizationPolicy"
+      }
+    }
   }
 }`)
 	voicemail_policyCmd.AddCommand(updateCmd)
-	
 	return voicemail_policyCmd
 }
 

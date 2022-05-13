@@ -72,29 +72,7 @@ func (o *Contentlist) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Components = []Listitemcomponent{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Contentlist) MarshalJSON() ([]byte, error) {
     }
     ContentlistMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         ListType string `json:"listType"`
@@ -124,40 +103,31 @@ func (u *Contentlist) MarshalJSON() ([]byte, error) {
         Actions Contentactions `json:"actions"`
         
         Components []Listitemcomponent `json:"components"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Components: []Listitemcomponent{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

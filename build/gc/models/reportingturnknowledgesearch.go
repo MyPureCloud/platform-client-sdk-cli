@@ -39,17 +39,7 @@ type Reportingturnknowledgesearch struct {
 // String returns a JSON representation of the model
 func (o *Reportingturnknowledgesearch) String() string {
     
-    
-    
-    
-    
-    
      o.Documents = []Reportingturnknowledgedocument{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Reportingturnknowledgesearch) MarshalJSON() ([]byte, error) {
     }
     ReportingturnknowledgesearchMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SearchId string `json:"searchId"`
         
         Documents []Reportingturnknowledgedocument `json:"documents"`
         
         Query string `json:"query"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Documents: []Reportingturnknowledgedocument{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

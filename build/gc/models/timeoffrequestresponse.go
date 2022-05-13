@@ -147,61 +147,8 @@ func (o *Timeoffrequestresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.PartialDayStartDateTimes = []time.Time{{}} 
-    
-    
-    
      o.FullDayManagementUnitDates = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -226,8 +173,7 @@ func (u *Timeoffrequestresponse) MarshalJSON() ([]byte, error) {
     }
     TimeoffrequestresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         User Userreference `json:"user"`
         
@@ -260,88 +206,66 @@ func (u *Timeoffrequestresponse) MarshalJSON() ([]byte, error) {
         ModifiedDate time.Time `json:"modifiedDate"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         PartialDayStartDateTimes: []time.Time{{}},
         
 
-        
 
         
         FullDayManagementUnitDates: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

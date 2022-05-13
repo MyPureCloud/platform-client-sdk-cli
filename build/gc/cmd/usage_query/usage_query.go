@@ -30,23 +30,28 @@ func init() {
 func Cmdusage_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/usage/query", utils.FormatPermissions([]string{ "oauth:client:view",  }), utils.GenerateDevCentreLink("POST", "Usage", "/api/v2/usage/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ApiUsageQuery"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ApiUsageQuery"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UsageExecutionResult"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UsageExecutionResult"
+      }
+    }
   }
 }`)
 	usage_queryCmd.AddCommand(createCmd)
-	
 	return usage_queryCmd
 }
 

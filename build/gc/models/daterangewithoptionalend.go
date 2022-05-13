@@ -34,13 +34,6 @@ type Daterangewithoptionalend struct {
 func (o *Daterangewithoptionalend) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -56,22 +49,19 @@ func (u *Daterangewithoptionalend) MarshalJSON() ([]byte, error) {
     }
     DaterangewithoptionalendMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         StartBusinessUnitDate time.Time `json:"startBusinessUnitDate"`
         
         EndBusinessUnitDate time.Time `json:"endBusinessUnitDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

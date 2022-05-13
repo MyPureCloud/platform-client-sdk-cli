@@ -33,12 +33,15 @@ func Cmdoutbound_contactlists_timezonemappingpreview() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TimeZoneMappingPreview"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TimeZoneMappingPreview"
+      }
+    }
   }
 }`)
 	outbound_contactlists_timezonemappingpreviewCmd.AddCommand(getCmd)
-	
 	return outbound_contactlists_timezonemappingpreviewCmd
 }
 

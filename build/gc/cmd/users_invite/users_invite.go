@@ -33,10 +33,10 @@ func Cmdusers_invite() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Invitation Sent"
+  "description" : "Invitation Sent",
+  "content" : { }
 }`)
 	users_inviteCmd.AddCommand(createCmd)
-	
 	return users_inviteCmd
 }
 

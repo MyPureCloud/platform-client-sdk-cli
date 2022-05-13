@@ -30,23 +30,28 @@ func init() {
 func Cmdanalytics_conversations_details_properties() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/conversations/{conversationId}/details/properties", utils.FormatPermissions([]string{ "analytics:conversationProperties:index",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/conversations/{conversationId}/details/properties")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/PropertyIndexRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PropertyIndexRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Accepted - Indexing properties",
-  "schema" : {
-    "$ref" : "#/definitions/PropertyIndexRequest"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PropertyIndexRequest"
+      }
+    }
   }
 }`)
 	analytics_conversations_details_propertiesCmd.AddCommand(createCmd)
-	
 	return analytics_conversations_details_propertiesCmd
 }
 

@@ -94,41 +94,7 @@ type Learningassignmentuserlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Learningassignmentuserlisting) String() string {
-    
-    
      o.Entities = []Learningassignmentuser{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -154,7 +120,8 @@ func (u *Learningassignmentuserlisting) MarshalJSON() ([]byte, error) {
     }
     LearningassignmentuserlistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Learningassignmentuser `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -176,56 +143,43 @@ func (u *Learningassignmentuserlisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Learningassignmentuser{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

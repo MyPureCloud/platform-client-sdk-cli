@@ -46,21 +46,8 @@ type Developmentactivityaggregateparam struct {
 // String returns a JSON representation of the model
 func (o *Developmentactivityaggregateparam) String() string {
     
-    
-    
-    
-    
-    
      o.Metrics = []string{""} 
-    
-    
-    
      o.GroupBy = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Developmentactivityaggregateparam) MarshalJSON() ([]byte, error) {
     }
     DevelopmentactivityaggregateparamMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         Metrics []string `json:"metrics"`
@@ -85,30 +73,24 @@ func (u *Developmentactivityaggregateparam) MarshalJSON() ([]byte, error) {
         GroupBy []string `json:"groupBy"`
         
         Filter Developmentactivityaggregatequeryrequestfilter `json:"filter"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Metrics: []string{""},
         
 
-        
 
         
         GroupBy: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

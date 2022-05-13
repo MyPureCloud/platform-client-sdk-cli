@@ -33,13 +33,6 @@ type Contactcolumntodataactionfieldmapping struct {
 func (o *Contactcolumntodataactionfieldmapping) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Contactcolumntodataactionfieldmapping) MarshalJSON() ([]byte, error) {
     }
     ContactcolumntodataactionfieldmappingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ContactColumnName string `json:"contactColumnName"`
         
         DataActionField string `json:"dataActionField"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

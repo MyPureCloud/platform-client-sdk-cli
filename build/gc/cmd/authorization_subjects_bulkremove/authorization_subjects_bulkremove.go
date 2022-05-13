@@ -30,20 +30,22 @@ func init() {
 func Cmdauthorization_subjects_bulkremove() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/subjects/{subjectId}/bulkremove", utils.FormatPermissions([]string{ "authorization:grant:delete",  }), utils.GenerateDevCentreLink("POST", "Authorization", "/api/v2/authorization/subjects/{subjectId}/bulkremove")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Pairs of role and division IDs",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/RoleDivisionGrants"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RoleDivisionGrants"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Bulk Grants Deleted"
+  "description" : "Bulk Grants Deleted",
+  "content" : { }
 }`)
 	authorization_subjects_bulkremoveCmd.AddCommand(createCmd)
-	
 	return authorization_subjects_bulkremoveCmd
 }
 

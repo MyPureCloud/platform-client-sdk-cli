@@ -55,23 +55,7 @@ type Assignedwrapupcode struct {
 func (o *Assignedwrapupcode) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Tags = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -89,7 +73,8 @@ func (u *Assignedwrapupcode) MarshalJSON() ([]byte, error) {
     }
     AssignedwrapupcodeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Code string `json:"code"`
         
         Notes string `json:"notes"`
@@ -99,32 +84,25 @@ func (u *Assignedwrapupcode) MarshalJSON() ([]byte, error) {
         DurationSeconds int `json:"durationSeconds"`
         
         EndTime time.Time `json:"endTime"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Tags: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

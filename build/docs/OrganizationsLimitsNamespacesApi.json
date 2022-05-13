@@ -1,0 +1,34 @@
+{
+    "GET /api/v2/organizations/limits/namespaces/{namespaceName}": {
+        "operationId": "getorganizationslimitsnamespace",
+        "functionName": "get",
+        "signature": "get(namespaceName)",
+        "parameters": [
+            {
+                "name": "namespaceName",
+                "type": "string",
+                "required": "true"
+            }
+        ],
+        "return": "Limitsentitylisting"
+    },
+    "GET /api/v2/organizations/limits/namespaces": {
+        "operationId": "getorganizationslimitsnamespaces",
+        "functionName": "list",
+        "signature": "list(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "interface{}"
+    }
+    
+}

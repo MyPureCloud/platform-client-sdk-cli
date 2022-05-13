@@ -24,11 +24,7 @@ type Sentimentfeedbackentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Sentimentfeedbackentitylisting) String() string {
-    
-    
      o.Entities = []Sentimentfeedback{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Sentimentfeedbackentitylisting) MarshalJSON() ([]byte, error) {
     }
     SentimentfeedbackentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Sentimentfeedback `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Sentimentfeedback `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Sentimentfeedback{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

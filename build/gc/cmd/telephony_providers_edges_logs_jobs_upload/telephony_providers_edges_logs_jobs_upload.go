@@ -30,20 +30,22 @@ func init() {
 func Cmdtelephony_providers_edges_logs_jobs_upload() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Log upload request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/EdgeLogsJobUploadRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EdgeLogsJobUploadRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Accepted - Files are being uploaded to the job.  Watch the uploadStatus property on the job files."
+  "description" : "Accepted - Files are being uploaded to the job.  Watch the uploadStatus property on the job files.",
+  "content" : { }
 }`)
 	telephony_providers_edges_logs_jobs_uploadCmd.AddCommand(createCmd)
-	
 	return telephony_providers_edges_logs_jobs_uploadCmd
 }
 

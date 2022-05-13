@@ -65,25 +65,6 @@ func (o *Domainpermission) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Domainpermission) MarshalJSON() ([]byte, error) {
     }
     DomainpermissionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Domain string `json:"domain"`
         
         EntityType string `json:"entityType"`
@@ -111,34 +93,26 @@ func (u *Domainpermission) MarshalJSON() ([]byte, error) {
         AllowsConditions bool `json:"allowsConditions"`
         
         DivisionAware bool `json:"divisionAware"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -57,23 +57,7 @@ func (o *Minerexecuterequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.QueueIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,7 +73,8 @@ func (u *Minerexecuterequest) MarshalJSON() ([]byte, error) {
     }
     MinerexecuterequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DateStart time.Time `json:"dateStart"`
         
         DateEnd time.Time `json:"dateEnd"`
@@ -99,32 +84,25 @@ func (u *Minerexecuterequest) MarshalJSON() ([]byte, error) {
         MediaType string `json:"mediaType"`
         
         QueueIds []string `json:"queueIds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         QueueIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

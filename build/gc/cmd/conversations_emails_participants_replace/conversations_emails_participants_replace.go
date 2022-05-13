@@ -30,20 +30,22 @@ func init() {
 func Cmdconversations_emails_participants_replace() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Transfer request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/TransferRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TransferRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Accepted"
+  "description" : "Accepted",
+  "content" : { }
 }`)
 	conversations_emails_participants_replaceCmd.AddCommand(createCmd)
-	
 	return conversations_emails_participants_replaceCmd
 }
 

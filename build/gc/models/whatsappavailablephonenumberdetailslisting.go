@@ -24,11 +24,7 @@ type Whatsappavailablephonenumberdetailslisting struct {
 
 // String returns a JSON representation of the model
 func (o *Whatsappavailablephonenumberdetailslisting) String() string {
-    
-    
      o.Entities = []Whatsappavailablephonenumberdetails{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Whatsappavailablephonenumberdetailslisting) MarshalJSON() ([]byte, erro
     }
     WhatsappavailablephonenumberdetailslistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Whatsappavailablephonenumberdetails `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Whatsappavailablephonenumberdetails `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Whatsappavailablephonenumberdetails{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

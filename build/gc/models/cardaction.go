@@ -57,22 +57,6 @@ func (o *Cardaction) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Cardaction) MarshalJSON() ([]byte, error) {
     }
     CardactionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Text string `json:"text"`
@@ -98,30 +83,23 @@ func (u *Cardaction) MarshalJSON() ([]byte, error) {
         Url string `json:"url"`
         
         IsSelected bool `json:"isSelected"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,13 +33,6 @@ type Batchdownloadrequest struct {
 func (o *Batchdownloadrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Batchdownloadrequest) MarshalJSON() ([]byte, error) {
     }
     BatchdownloadrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ConversationId string `json:"conversationId"`
         
         RecordingId string `json:"recordingId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

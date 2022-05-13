@@ -33,31 +33,40 @@ func Cmdintegrations_config_current() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/IntegrationConfiguration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/IntegrationConfiguration"
+      }
+    }
   }
 }`)
 	integrations_config_currentCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/integrations/{integrationId}/config/current", utils.FormatPermissions([]string{ "integrations:integration:edit",  }), utils.GenerateDevCentreLink("PUT", "Integrations", "/api/v2/integrations/{integrationId}/config/current")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Integration Configuration",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/IntegrationConfiguration"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/IntegrationConfiguration"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/IntegrationConfiguration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/IntegrationConfiguration"
+      }
+    }
   }
 }`)
 	integrations_config_currentCmd.AddCommand(updateCmd)
-	
 	return integrations_config_currentCmd
 }
 

@@ -25,10 +25,6 @@ type Queuemessagingaddresses struct {
 // String returns a JSON representation of the model
 func (o *Queuemessagingaddresses) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Queuemessagingaddresses) MarshalJSON() ([]byte, error) {
     }
     QueuemessagingaddressesMarshalled = true
 
-    return json.Marshal(&struct { 
-        SmsAddress Domainentityref `json:"smsAddress"`
+    return json.Marshal(&struct {
         
+        SmsAddress Domainentityref `json:"smsAddress"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

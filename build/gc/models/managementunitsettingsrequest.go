@@ -65,25 +65,6 @@ func (o *Managementunitsettingsrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Managementunitsettingsrequest) MarshalJSON() ([]byte, error) {
     }
     ManagementunitsettingsrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Adherence Adherencesettings `json:"adherence"`
         
         ShortTermForecasting Shorttermforecastingsettings `json:"shortTermForecasting"`
@@ -111,34 +93,26 @@ func (u *Managementunitsettingsrequest) MarshalJSON() ([]byte, error) {
         ShiftTrading Shifttradesettings `json:"shiftTrading"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

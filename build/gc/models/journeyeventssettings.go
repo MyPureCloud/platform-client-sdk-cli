@@ -88,46 +88,15 @@ type Journeyeventssettings struct {
 // String returns a JSON representation of the model
 func (o *Journeyeventssettings) String() string {
     
-    
-    
-    
-    
-    
      o.ExcludedQueryParameters = []string{""} 
-    
-    
-    
-    
-    
-    
     
      o.SearchQueryParameters = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.ClickEvents = []Selectoreventtrigger{{}} 
-    
-    
-    
      o.FormsTrackEvents = []Formstracktrigger{{}} 
-    
-    
-    
      o.IdleEvents = []Idleeventtrigger{{}} 
-    
-    
-    
      o.InViewportEvents = []Selectoreventtrigger{{}} 
-    
-    
-    
      o.ScrollDepthEvents = []Scrollpercentageeventtrigger{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,7 +112,8 @@ func (u *Journeyeventssettings) MarshalJSON() ([]byte, error) {
     }
     JourneyeventssettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Enabled bool `json:"enabled"`
         
         ExcludedQueryParameters []string `json:"excludedQueryParameters"`
@@ -163,64 +133,52 @@ func (u *Journeyeventssettings) MarshalJSON() ([]byte, error) {
         InViewportEvents []Selectoreventtrigger `json:"inViewportEvents"`
         
         ScrollDepthEvents []Scrollpercentageeventtrigger `json:"scrollDepthEvents"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         ExcludedQueryParameters: []string{""},
         
 
-        
 
         
 
-        
 
         
         SearchQueryParameters: []string{""},
         
 
-        
 
         
 
-        
 
         
         ClickEvents: []Selectoreventtrigger{{}},
         
 
-        
 
         
         FormsTrackEvents: []Formstracktrigger{{}},
         
 
-        
 
         
         IdleEvents: []Idleeventtrigger{{}},
         
 
-        
 
         
         InViewportEvents: []Selectoreventtrigger{{}},
         
 
-        
 
         
         ScrollDepthEvents: []Scrollpercentageeventtrigger{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

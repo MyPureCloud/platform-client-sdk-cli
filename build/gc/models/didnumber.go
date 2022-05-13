@@ -77,29 +77,6 @@ func (o *Didnumber) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -115,8 +92,7 @@ func (u *Didnumber) MarshalJSON() ([]byte, error) {
     }
     DidnumberMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -129,44 +105,32 @@ func (u *Didnumber) MarshalJSON() ([]byte, error) {
         Owner Domainentityref `json:"owner"`
         
         OwnerType string `json:"ownerType"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

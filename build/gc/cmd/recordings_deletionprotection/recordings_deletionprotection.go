@@ -30,42 +30,50 @@ func init() {
 func Cmdrecordings_deletionprotection() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recordings/deletionprotection", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recordings/deletionprotection")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "conversationIds",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ConversationDeletionProtectionQuery"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ConversationDeletionProtectionQuery"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/AddressableEntityRef"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/AddressableEntityRef"
+        }
+      }
     }
   }
 }`)
 	recordings_deletionprotectionCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(updateCmd.Flags(), "bool", "protect", "true", "Check for apply, uncheck for revoke (each action requires the respective permission)")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recordings/deletionprotection", utils.FormatPermissions([]string{ "recording:deletionProtection:apply", "recording:deletionProtection:revoke",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recordings/deletionprotection")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/ConversationDeletionProtectionQuery"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ConversationDeletionProtectionQuery"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	recordings_deletionprotectionCmd.AddCommand(updateCmd)
-	
 	return recordings_deletionprotectionCmd
 }
 

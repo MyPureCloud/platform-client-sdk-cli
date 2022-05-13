@@ -25,10 +25,6 @@ type Utterance struct {
 // String returns a JSON representation of the model
 func (o *Utterance) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Utterance) MarshalJSON() ([]byte, error) {
     }
     UtteranceMarshalled = true
 
-    return json.Marshal(&struct { 
-        UtteranceText string `json:"utteranceText"`
+    return json.Marshal(&struct {
         
+        UtteranceText string `json:"utteranceText"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

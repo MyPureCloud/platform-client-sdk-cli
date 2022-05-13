@@ -93,36 +93,7 @@ func (o *Dependencystatus) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.FailedObjects = []Failedobject{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -138,8 +109,7 @@ func (u *Dependencystatus) MarshalJSON() ([]byte, error) {
     }
     DependencystatusMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -156,54 +126,40 @@ func (u *Dependencystatus) MarshalJSON() ([]byte, error) {
         Status string `json:"status"`
         
         FailedObjects []Failedobject `json:"failedObjects"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         FailedObjects: []Failedobject{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

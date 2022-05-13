@@ -32,14 +32,7 @@ type Speechtextanalyticssettingsrequest struct {
 // String returns a JSON representation of the model
 func (o *Speechtextanalyticssettingsrequest) String() string {
     
-    
-    
-    
-    
-    
      o.ExpectedDialects = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Speechtextanalyticssettingsrequest) MarshalJSON() ([]byte, error) {
     }
     SpeechtextanalyticssettingsrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DefaultProgramId string `json:"defaultProgramId"`
         
         ExpectedDialects []string `json:"expectedDialects"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         ExpectedDialects: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -31,15 +31,8 @@ type Transcripttopics struct {
 
 // String returns a JSON representation of the model
 func (o *Transcripttopics) String() string {
-    
-    
      o.Includes = []string{""} 
-    
-    
-    
      o.Excludes = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Transcripttopics) MarshalJSON() ([]byte, error) {
     }
     TranscripttopicsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Includes []string `json:"includes"`
         
         Excludes []string `json:"excludes"`
-        
         *Alias
     }{
-        
 
         
         Includes: []string{""},
         
 
-        
 
         
         Excludes: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

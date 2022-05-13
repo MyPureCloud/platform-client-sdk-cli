@@ -39,17 +39,7 @@ type Createplanninggrouprequest struct {
 // String returns a JSON representation of the model
 func (o *Createplanninggrouprequest) String() string {
     
-    
-    
-    
-    
-    
      o.RoutePaths = []Routepathrequest{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Createplanninggrouprequest) MarshalJSON() ([]byte, error) {
     }
     CreateplanninggrouprequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         RoutePaths []Routepathrequest `json:"routePaths"`
         
         ServiceGoalTemplateId string `json:"serviceGoalTemplateId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         RoutePaths: []Routepathrequest{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

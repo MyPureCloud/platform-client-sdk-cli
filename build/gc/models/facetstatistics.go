@@ -74,28 +74,6 @@ func (o *Facetstatistics) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -111,7 +89,8 @@ func (u *Facetstatistics) MarshalJSON() ([]byte, error) {
     }
     FacetstatisticsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Count int `json:"count"`
         
         Min float64 `json:"min"`
@@ -125,38 +104,29 @@ func (u *Facetstatistics) MarshalJSON() ([]byte, error) {
         DateMin time.Time `json:"dateMin"`
         
         DateMax time.Time `json:"dateMax"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

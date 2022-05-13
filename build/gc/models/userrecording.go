@@ -116,45 +116,7 @@ func (o *Userrecording) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Thumbnails = []Documentthumbnail{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -171,8 +133,7 @@ func (u *Userrecording) MarshalJSON() ([]byte, error) {
     }
     UserrecordingMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -195,66 +156,49 @@ func (u *Userrecording) MarshalJSON() ([]byte, error) {
         Thumbnails []Documentthumbnail `json:"thumbnails"`
         
         Read bool `json:"read"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Thumbnails: []Documentthumbnail{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

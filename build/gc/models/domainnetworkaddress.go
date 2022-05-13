@@ -49,19 +49,6 @@ func (o *Domainnetworkaddress) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Domainnetworkaddress) MarshalJSON() ([]byte, error) {
     }
     DomainnetworkaddressMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Address string `json:"address"`
@@ -85,26 +73,20 @@ func (u *Domainnetworkaddress) MarshalJSON() ([]byte, error) {
         Persistent bool `json:"persistent"`
         
         Family int `json:"family"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

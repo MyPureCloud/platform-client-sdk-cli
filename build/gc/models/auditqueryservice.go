@@ -32,14 +32,7 @@ type Auditqueryservice struct {
 // String returns a JSON representation of the model
 func (o *Auditqueryservice) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Auditqueryentity{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Auditqueryservice) MarshalJSON() ([]byte, error) {
     }
     AuditqueryserviceMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Entities []Auditqueryentity `json:"entities"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Auditqueryentity{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

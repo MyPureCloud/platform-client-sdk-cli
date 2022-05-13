@@ -33,12 +33,16 @@ func Cmdspeechandtextanalytics_programs_mappings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ProgramMappings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ProgramMappings"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_programs_mappingsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "The key for listing the next page")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "20", "The page size for the listing")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/programs/mappings", utils.FormatPermissions([]string{ "speechAndTextAnalytics:program:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/programs/mappings")))
@@ -46,31 +50,40 @@ func Cmdspeechandtextanalytics_programs_mappings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_programs_mappingsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/speechandtextanalytics/programs/{programId}/mappings", utils.FormatPermissions([]string{ "speechAndTextAnalytics:program:edit",  }), utils.GenerateDevCentreLink("PUT", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/programs/{programId}/mappings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The program to set mappings for",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ProgramMappingsRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ProgramMappingsRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ProgramMappings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ProgramMappings"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_programs_mappingsCmd.AddCommand(updateCmd)
-	
 	return speechandtextanalytics_programs_mappingsCmd
 }
 

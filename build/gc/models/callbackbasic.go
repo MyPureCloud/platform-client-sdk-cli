@@ -209,14 +209,6 @@ type Callbackbasic struct {
 func (o *Callbackbasic) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Segments = []Segment{{}} 
     
     
@@ -224,81 +216,7 @@ func (o *Callbackbasic) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.CallbackNumbers = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -331,7 +249,8 @@ func (u *Callbackbasic) MarshalJSON() ([]byte, error) {
     }
     CallbackbasicMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         State string `json:"state"`
         
         Id string `json:"id"`
@@ -385,122 +304,93 @@ func (u *Callbackbasic) MarshalJSON() ([]byte, error) {
         CallerId string `json:"callerId"`
         
         CallerIdName string `json:"callerIdName"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Segments: []Segment{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         CallbackNumbers: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -41,16 +41,6 @@ func (o *Edgelogsjobrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Edgelogsjobrequest) MarshalJSON() ([]byte, error) {
     }
     EdgelogsjobrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Path string `json:"path"`
         
         Query string `json:"query"`
         
         Recurse bool `json:"recurse"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

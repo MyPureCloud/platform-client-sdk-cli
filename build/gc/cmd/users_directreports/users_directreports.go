@@ -34,15 +34,18 @@ func Cmdusers_directreports() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/User"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/User"
+        }
+      }
     }
   }
 }`)
 	users_directreportsCmd.AddCommand(listCmd)
-	
 	return users_directreportsCmd
 }
 

@@ -36,15 +36,7 @@ type Licenseuser struct {
 
 // String returns a JSON representation of the model
 func (o *Licenseuser) String() string {
-    
-    
-    
-    
      o.Licenses = []Licensedefinition{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -60,30 +52,22 @@ func (u *Licenseuser) MarshalJSON() ([]byte, error) {
     }
     LicenseuserMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Licenses []Licensedefinition `json:"licenses"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Licenses: []Licensedefinition{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

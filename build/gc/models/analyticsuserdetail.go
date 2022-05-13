@@ -39,18 +39,8 @@ type Analyticsuserdetail struct {
 // String returns a JSON representation of the model
 func (o *Analyticsuserdetail) String() string {
     
-    
-    
-    
-    
-    
      o.PrimaryPresence = []Analyticsuserpresencerecord{{}} 
-    
-    
-    
      o.RoutingStatus = []Analyticsroutingstatusrecord{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Analyticsuserdetail) MarshalJSON() ([]byte, error) {
     }
     AnalyticsuserdetailMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UserId string `json:"userId"`
         
         PrimaryPresence []Analyticsuserpresencerecord `json:"primaryPresence"`
         
         RoutingStatus []Analyticsroutingstatusrecord `json:"routingStatus"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         PrimaryPresence: []Analyticsuserpresencerecord{{}},
         
 
-        
 
         
         RoutingStatus: []Analyticsroutingstatusrecord{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

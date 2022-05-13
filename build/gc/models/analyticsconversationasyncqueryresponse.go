@@ -41,17 +41,7 @@ type Analyticsconversationasyncqueryresponse struct {
 func (o *Analyticsconversationasyncqueryresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Conversations = []Analyticsconversation{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -67,30 +57,26 @@ func (u *Analyticsconversationasyncqueryresponse) MarshalJSON() ([]byte, error) 
     }
     AnalyticsconversationasyncqueryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Cursor string `json:"cursor"`
         
         DataAvailabilityDate time.Time `json:"dataAvailabilityDate"`
         
         Conversations []Analyticsconversation `json:"conversations"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Conversations: []Analyticsconversation{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,13 +33,6 @@ type Patchbureschedulingoptionsmanagementunitrequest struct {
 func (o *Patchbureschedulingoptionsmanagementunitrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Patchbureschedulingoptionsmanagementunitrequest) MarshalJSON() ([]byte,
     }
     PatchbureschedulingoptionsmanagementunitrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ManagementUnitId string `json:"managementUnitId"`
         
         Applied bool `json:"applied"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

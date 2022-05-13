@@ -76,31 +76,8 @@ func (o *Page) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.RootContainer = map[string]interface{}{"": Interface{}} 
-    
-    
-    
      o.Properties = map[string]interface{}{"": Interface{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -116,8 +93,7 @@ func (u *Page) MarshalJSON() ([]byte, error) {
     }
     PageMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -130,48 +106,36 @@ func (u *Page) MarshalJSON() ([]byte, error) {
         RootContainer map[string]interface{} `json:"rootContainer"`
         
         Properties map[string]interface{} `json:"properties"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RootContainer: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
         Properties: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

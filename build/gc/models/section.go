@@ -45,20 +45,7 @@ type Section struct {
 
 // String returns a JSON representation of the model
 func (o *Section) String() string {
-    
-    
      o.FieldList = []Fieldlist{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Section) MarshalJSON() ([]byte, error) {
     }
     SectionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FieldList []Fieldlist `json:"fieldList"`
         
         InstructionText string `json:"instructionText"`
@@ -85,28 +73,22 @@ func (u *Section) MarshalJSON() ([]byte, error) {
         Key string `json:"key"`
         
         State string `json:"state"`
-        
         *Alias
     }{
-        
 
         
         FieldList: []Fieldlist{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

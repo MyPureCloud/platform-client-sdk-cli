@@ -90,39 +90,8 @@ func (o *Fieldlist) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.LabelKeys = []string{""} 
-    
-    
-    
      o.Params = map[string]interface{}{"": Interface{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Fieldlist) MarshalJSON() ([]byte, error) {
     }
     FieldlistMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         CustomLabels bool `json:"customLabels"`
         
         InstructionText string `json:"instructionText"`
@@ -163,54 +133,42 @@ func (u *Fieldlist) MarshalJSON() ([]byte, error) {
         Required bool `json:"required"`
         
         Gdpr bool `json:"gdpr"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         LabelKeys: []string{""},
         
 
-        
 
         
         Params: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

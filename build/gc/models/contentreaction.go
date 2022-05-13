@@ -33,13 +33,6 @@ type Contentreaction struct {
 func (o *Contentreaction) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Contentreaction) MarshalJSON() ([]byte, error) {
     }
     ContentreactionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ReactionType string `json:"reactionType"`
         
         Count int `json:"count"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

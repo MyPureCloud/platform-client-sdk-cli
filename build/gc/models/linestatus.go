@@ -56,23 +56,7 @@ func (o *Linestatus) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ContactAddresses = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -89,7 +73,8 @@ func (u *Linestatus) MarshalJSON() ([]byte, error) {
     }
     LinestatusMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Reachable bool `json:"reachable"`
@@ -99,32 +84,25 @@ func (u *Linestatus) MarshalJSON() ([]byte, error) {
         ContactAddresses []string `json:"contactAddresses"`
         
         ReachableStateTime time.Time `json:"reachableStateTime"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ContactAddresses: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

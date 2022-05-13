@@ -33,31 +33,40 @@ func Cmdorganizations_whitelist() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OrgWhitelistSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrgWhitelistSettings"
+      }
+    }
   }
 }`)
 	organizations_whitelistCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/organizations/whitelist", utils.FormatPermissions([]string{ "directory:organization:admin",  }), utils.GenerateDevCentreLink("PUT", "Organization", "/api/v2/organizations/whitelist")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Whitelist settings",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/OrgWhitelistSettings"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrgWhitelistSettings"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OrgWhitelistSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrgWhitelistSettings"
+      }
+    }
   }
 }`)
 	organizations_whitelistCmd.AddCommand(updateCmd)
-	
 	return organizations_whitelistCmd
 }
 

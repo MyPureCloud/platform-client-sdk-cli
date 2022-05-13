@@ -112,50 +112,12 @@ func (o *Conversation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Participants = []Participant{{}} 
-    
-    
-    
      o.ConversationIds = []string{""} 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Divisions = []Conversationdivisionmembership{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -171,8 +133,7 @@ func (u *Conversation) MarshalJSON() ([]byte, error) {
     }
     ConversationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -195,70 +156,53 @@ func (u *Conversation) MarshalJSON() ([]byte, error) {
         State string `json:"state"`
         
         Divisions []Conversationdivisionmembership `json:"divisions"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Participants: []Participant{{}},
         
 
-        
 
         
         ConversationIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Divisions: []Conversationdivisionmembership{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

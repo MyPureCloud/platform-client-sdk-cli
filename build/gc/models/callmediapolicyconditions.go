@@ -73,38 +73,13 @@ type Callmediapolicyconditions struct {
 
 // String returns a JSON representation of the model
 func (o *Callmediapolicyconditions) String() string {
-    
-    
      o.ForUsers = []User{{}} 
-    
-    
-    
      o.DateRanges = []string{""} 
-    
-    
-    
      o.ForQueues = []Queue{{}} 
-    
-    
-    
      o.WrapupCodes = []Wrapupcode{{}} 
-    
-    
-    
      o.Languages = []Language{{}} 
     
-    
-    
-    
-    
-    
-    
      o.Directions = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -121,7 +96,8 @@ func (u *Callmediapolicyconditions) MarshalJSON() ([]byte, error) {
     }
     CallmediapolicyconditionsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ForUsers []User `json:"forUsers"`
         
         DateRanges []string `json:"dateRanges"`
@@ -137,54 +113,44 @@ func (u *Callmediapolicyconditions) MarshalJSON() ([]byte, error) {
         Directions []string `json:"directions"`
         
         Duration Durationcondition `json:"duration"`
-        
         *Alias
     }{
-        
 
         
         ForUsers: []User{{}},
         
 
-        
 
         
         DateRanges: []string{""},
         
 
-        
 
         
         ForQueues: []Queue{{}},
         
 
-        
 
         
         WrapupCodes: []Wrapupcode{{}},
         
 
-        
 
         
         Languages: []Language{{}},
         
 
-        
 
         
 
-        
 
         
         Directions: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

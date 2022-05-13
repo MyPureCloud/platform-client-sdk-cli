@@ -24,11 +24,7 @@ type Querytimeofflimitvaluesresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Querytimeofflimitvaluesresponse) String() string {
-    
-    
      o.Values = []Timeofflimitvaluerange{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Querytimeofflimitvaluesresponse) MarshalJSON() ([]byte, error) {
     }
     QuerytimeofflimitvaluesresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Values []Timeofflimitvaluerange `json:"values"`
+    return json.Marshal(&struct {
         
+        Values []Timeofflimitvaluerange `json:"values"`
         *Alias
     }{
-        
 
         
         Values: []Timeofflimitvaluerange{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

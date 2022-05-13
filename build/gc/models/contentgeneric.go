@@ -64,26 +64,7 @@ func (o *Contentgeneric) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Components = []Buttoncomponent{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Contentgeneric) MarshalJSON() ([]byte, error) {
     }
     ContentgenericMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Title string `json:"title"`
         
         Description string `json:"description"`
@@ -111,36 +93,28 @@ func (u *Contentgeneric) MarshalJSON() ([]byte, error) {
         Actions Contentactions `json:"actions"`
         
         Components []Buttoncomponent `json:"components"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Components: []Buttoncomponent{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

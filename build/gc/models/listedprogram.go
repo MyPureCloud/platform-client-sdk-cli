@@ -83,33 +83,7 @@ func (o *Listedprogram) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Tags = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -127,8 +101,7 @@ func (u *Listedprogram) MarshalJSON() ([]byte, error) {
     }
     ListedprogramMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -143,50 +116,37 @@ func (u *Listedprogram) MarshalJSON() ([]byte, error) {
         ModifiedBy Addressableentityref `json:"modifiedBy"`
         
         DateModified time.Time `json:"dateModified"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Tags: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

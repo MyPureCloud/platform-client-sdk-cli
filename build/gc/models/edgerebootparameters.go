@@ -25,10 +25,6 @@ type Edgerebootparameters struct {
 // String returns a JSON representation of the model
 func (o *Edgerebootparameters) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Edgerebootparameters) MarshalJSON() ([]byte, error) {
     }
     EdgerebootparametersMarshalled = true
 
-    return json.Marshal(&struct { 
-        CallDrainingWaitTimeSeconds int `json:"callDrainingWaitTimeSeconds"`
+    return json.Marshal(&struct {
         
+        CallDrainingWaitTimeSeconds int `json:"callDrainingWaitTimeSeconds"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

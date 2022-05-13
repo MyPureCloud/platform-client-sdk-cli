@@ -30,23 +30,28 @@ func init() {
 func Cmdanalytics_users_observations_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/users/observations/query", utils.FormatPermissions([]string{ "analytics:userObservation:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/users/observations/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/UserObservationQuery"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserObservationQuery"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserObservationQueryResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserObservationQueryResponse"
+      }
+    }
   }
 }`)
 	analytics_users_observations_queryCmd.AddCommand(createCmd)
-	
 	return analytics_users_observations_queryCmd
 }
 

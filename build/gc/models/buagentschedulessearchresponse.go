@@ -38,19 +38,9 @@ type Buagentschedulessearchresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Buagentschedulessearchresponse) String() string {
-    
-    
      o.AgentSchedules = []Buagentschedulesearchresponse{{}} 
     
-    
-    
-    
-    
-    
-    
      o.PublishedSchedules = []Buagentschedulepublishedschedulereference{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Buagentschedulessearchresponse) MarshalJSON() ([]byte, error) {
     }
     BuagentschedulessearchresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         AgentSchedules []Buagentschedulesearchresponse `json:"agentSchedules"`
         
         BusinessUnitTimeZone string `json:"businessUnitTimeZone"`
         
         PublishedSchedules []Buagentschedulepublishedschedulereference `json:"publishedSchedules"`
-        
         *Alias
     }{
-        
 
         
         AgentSchedules: []Buagentschedulesearchresponse{{}},
         
 
-        
 
         
 
-        
 
         
         PublishedSchedules: []Buagentschedulepublishedschedulereference{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

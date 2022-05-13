@@ -57,22 +57,6 @@ func (o *Patchactiontemplate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Patchactiontemplate) MarshalJSON() ([]byte, error) {
     }
     PatchactiontemplateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Description string `json:"description"`
@@ -98,30 +83,23 @@ func (u *Patchactiontemplate) MarshalJSON() ([]byte, error) {
         State string `json:"state"`
         
         ContentOffer Patchcontentoffer `json:"contentOffer"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

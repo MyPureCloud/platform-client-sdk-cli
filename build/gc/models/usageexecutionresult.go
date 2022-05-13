@@ -33,13 +33,6 @@ type Usageexecutionresult struct {
 func (o *Usageexecutionresult) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Usageexecutionresult) MarshalJSON() ([]byte, error) {
     }
     UsageexecutionresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ExecutionId string `json:"executionId"`
         
         ResultsUri string `json:"resultsUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

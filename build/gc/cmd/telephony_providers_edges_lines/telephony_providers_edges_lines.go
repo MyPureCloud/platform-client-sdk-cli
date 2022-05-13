@@ -33,23 +33,31 @@ func Cmdtelephony_providers_edges_lines() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Line"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Line"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_linesCmd.AddCommand(getCmd)
-	
+
 	getedgelineCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getedgelineCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}")))
 	utils.AddFileFlagIfUpsert(getedgelineCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getedgelineCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EdgeLine"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EdgeLine"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_linesCmd.AddCommand(getedgelineCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
@@ -60,12 +68,16 @@ func Cmdtelephony_providers_edges_lines() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_linesCmd.AddCommand(listCmd)
-	
+
 	utils.AddFlag(listedgelinesCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listedgelinesCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	listedgelinesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listedgelinesCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/lines", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/lines")))
@@ -73,31 +85,40 @@ func Cmdtelephony_providers_edges_lines() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listedgelinesCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_linesCmd.AddCommand(listedgelinesCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Line",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/EdgeLine"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EdgeLine"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EdgeLine"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EdgeLine"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_linesCmd.AddCommand(updateCmd)
-	
 	return telephony_providers_edges_linesCmd
 }
 

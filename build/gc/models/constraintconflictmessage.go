@@ -32,14 +32,7 @@ type Constraintconflictmessage struct {
 // String returns a JSON representation of the model
 func (o *Constraintconflictmessage) String() string {
     
-    
-    
-    
-    
-    
      o.ConflictedConstraintMessages = []Workplanconstraintmessage{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Constraintconflictmessage) MarshalJSON() ([]byte, error) {
     }
     ConstraintconflictmessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Message Workplanconstraintconflictmessage `json:"message"`
         
         ConflictedConstraintMessages []Workplanconstraintmessage `json:"conflictedConstraintMessages"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         ConflictedConstraintMessages: []Workplanconstraintmessage{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

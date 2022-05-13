@@ -24,11 +24,7 @@ type Botlist struct {
 
 // String returns a JSON representation of the model
 func (o *Botlist) String() string {
-    
-    
      o.ChatBots = []Botconnectorbot{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Botlist) MarshalJSON() ([]byte, error) {
     }
     BotlistMarshalled = true
 
-    return json.Marshal(&struct { 
-        ChatBots []Botconnectorbot `json:"chatBots"`
+    return json.Marshal(&struct {
         
+        ChatBots []Botconnectorbot `json:"chatBots"`
         *Alias
     }{
-        
 
         
         ChatBots: []Botconnectorbot{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

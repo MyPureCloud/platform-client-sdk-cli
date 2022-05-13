@@ -56,22 +56,7 @@ type Scimv2group struct {
 // String returns a JSON representation of the model
 func (o *Scimv2group) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Members = []Scimv2memberreference{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -87,48 +72,33 @@ func (u *Scimv2group) MarshalJSON() ([]byte, error) {
     }
     Scimv2groupMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         
         ExternalId string `json:"externalId"`
         
         Members []Scimv2memberreference `json:"members"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Members: []Scimv2memberreference{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

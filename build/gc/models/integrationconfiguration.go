@@ -73,33 +73,10 @@ type Integrationconfiguration struct {
 func (o *Integrationconfiguration) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Properties = Interface{} 
-    
-    
-    
      o.Advanced = Interface{} 
     
-    
-    
-    
-    
-    
-    
      o.Credentials = map[string]Credentialinfo{"": {}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -115,8 +92,7 @@ func (u *Integrationconfiguration) MarshalJSON() ([]byte, error) {
     }
     IntegrationconfigurationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -129,50 +105,38 @@ func (u *Integrationconfiguration) MarshalJSON() ([]byte, error) {
         Notes string `json:"notes"`
         
         Credentials map[string]Credentialinfo `json:"credentials"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Properties: Interface{},
         
 
-        
 
         
         Advanced: Interface{},
         
 
-        
 
         
 
-        
 
         
         Credentials: map[string]Credentialinfo{"": {}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,43 +30,54 @@ func init() {
 func Cmdlanguageunderstanding_domains_feedback() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/languageunderstanding/domains/{domainId}/feedback", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:add", "dialog:bot:add",  }), utils.GenerateDevCentreLink("POST", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/feedback")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The Feedback to create.",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/NluFeedbackRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NluFeedbackRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/NluFeedbackResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NluFeedbackResponse"
+      }
+    }
   }
 }`)
 	languageunderstanding_domains_feedbackCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:delete", "dialog:bot:delete",  }), utils.GenerateDevCentreLink("DELETE", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Feedback deleted successfully"
+  "description" : "Feedback deleted successfully",
+  "content" : { }
 }`)
 	languageunderstanding_domains_feedbackCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "[]string", "fields", "", "Fields and properties to get, comma-separated Valid values: version, dateCreated, text, intents")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:view", "dialog:bot:view",  }), utils.GenerateDevCentreLink("GET", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/NluFeedbackResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NluFeedbackResponse"
+      }
+    }
   }
 }`)
 	languageunderstanding_domains_feedbackCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "intentName", "", "The top intent name to retrieve feedback for.")
 	utils.AddFlag(listCmd.Flags(), "string", "assessment", "", "The top assessment to retrieve feedback for. Valid values: Incorrect, Correct, Unknown, Disabled")
 	utils.AddFlag(listCmd.Flags(), "time.Time", "dateStart", "", "Begin of time window as ISO-8601 date.")
@@ -82,12 +93,15 @@ func Cmdlanguageunderstanding_domains_feedback() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	languageunderstanding_domains_feedbackCmd.AddCommand(listCmd)
-	
 	return languageunderstanding_domains_feedbackCmd
 }
 

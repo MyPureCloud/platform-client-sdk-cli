@@ -39,17 +39,7 @@ type Recordingencryptionconfigurationlisting struct {
 // String returns a JSON representation of the model
 func (o *Recordingencryptionconfigurationlisting) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Recordingencryptionconfiguration{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Recordingencryptionconfigurationlisting) MarshalJSON() ([]byte, error) 
     }
     RecordingencryptionconfigurationlistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Recordingencryptionconfiguration `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Recordingencryptionconfiguration{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

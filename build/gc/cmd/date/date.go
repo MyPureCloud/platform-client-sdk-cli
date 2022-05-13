@@ -33,12 +33,15 @@ func Cmddate() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ServerDate"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ServerDate"
+      }
+    }
   }
 }`)
 	dateCmd.AddCommand(getCmd)
-	
 	return dateCmd
 }
 

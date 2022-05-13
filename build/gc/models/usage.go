@@ -24,11 +24,7 @@ type Usage struct {
 
 // String returns a JSON representation of the model
 func (o *Usage) String() string {
-    
-    
      o.Types = []Usageitem{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Usage) MarshalJSON() ([]byte, error) {
     }
     UsageMarshalled = true
 
-    return json.Marshal(&struct { 
-        Types []Usageitem `json:"types"`
+    return json.Marshal(&struct {
         
+        Types []Usageitem `json:"types"`
         *Alias
     }{
-        
 
         
         Types: []Usageitem{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -35,12 +35,15 @@ func Cmdtelephony_providers_edges_lines_template() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Line"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Line"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_lines_templateCmd.AddCommand(getCmd)
-	
 	return telephony_providers_edges_lines_templateCmd
 }
 

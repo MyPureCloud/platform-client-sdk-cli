@@ -42,16 +42,6 @@ func (o *Screenrecordingsessionrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -67,28 +57,24 @@ func (u *Screenrecordingsessionrequest) MarshalJSON() ([]byte, error) {
     }
     ScreenrecordingsessionrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         State string `json:"state"`
         
         ArchiveDate time.Time `json:"archiveDate"`
         
         DeleteDate time.Time `json:"deleteDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,12 +33,16 @@ func Cmdintegrations_speech_dialogflow_agents() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DialogflowAgent"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DialogflowAgent"
+      }
+    }
   }
 }`)
 	integrations_speech_dialogflow_agentsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter on agent name")
@@ -47,12 +51,15 @@ func Cmdintegrations_speech_dialogflow_agents() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	integrations_speech_dialogflow_agentsCmd.AddCommand(listCmd)
-	
 	return integrations_speech_dialogflow_agentsCmd
 }
 

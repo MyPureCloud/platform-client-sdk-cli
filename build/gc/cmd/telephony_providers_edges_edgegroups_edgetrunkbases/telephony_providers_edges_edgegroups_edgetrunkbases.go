@@ -33,31 +33,40 @@ func Cmdtelephony_providers_edges_edgegroups_edgetrunkbases() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EdgeTrunkBase"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EdgeTrunkBase"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_edgegroups_edgetrunkbasesCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "EdgeTrunkBase",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/EdgeTrunkBase"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EdgeTrunkBase"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EdgeTrunkBase"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EdgeTrunkBase"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_edgegroups_edgetrunkbasesCmd.AddCommand(updateCmd)
-	
 	return telephony_providers_edges_edgegroups_edgetrunkbasesCmd
 }
 

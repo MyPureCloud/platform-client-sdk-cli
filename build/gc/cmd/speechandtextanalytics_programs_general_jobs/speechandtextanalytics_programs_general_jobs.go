@@ -30,34 +30,43 @@ func init() {
 func Cmdspeechandtextanalytics_programs_general_jobs() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/speechandtextanalytics/programs/general/jobs", utils.FormatPermissions([]string{ "speechAndTextAnalytics:program:add", "speechAndTextAnalytics:program:edit", "speechAndTextAnalytics:topic:add", "speechAndTextAnalytics:topic:edit",  }), utils.GenerateDevCentreLink("POST", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/programs/general/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The general programs job to create",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/GeneralProgramJobRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GeneralProgramJobRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/GeneralProgramJob"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GeneralProgramJob"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_programs_general_jobsCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/programs/general/jobs/{jobId}", utils.FormatPermissions([]string{ "speechAndTextAnalytics:program:add", "speechAndTextAnalytics:program:edit", "speechAndTextAnalytics:topic:add", "speechAndTextAnalytics:topic:edit",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/programs/general/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/GeneralProgramJob"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GeneralProgramJob"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_programs_general_jobsCmd.AddCommand(getCmd)
-	
 	return speechandtextanalytics_programs_general_jobsCmd
 }
 

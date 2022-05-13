@@ -59,25 +59,8 @@ type Licensedefinition struct {
 func (o *Licensedefinition) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Prerequisites = []Addressablelicensedefinition{{}} 
-    
-    
-    
      o.Comprises = []Licensedefinition{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -93,8 +76,7 @@ func (u *Licensedefinition) MarshalJSON() ([]byte, error) {
     }
     LicensedefinitionMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Description string `json:"description"`
         
@@ -103,40 +85,30 @@ func (u *Licensedefinition) MarshalJSON() ([]byte, error) {
         Prerequisites []Addressablelicensedefinition `json:"prerequisites"`
         
         Comprises []Licensedefinition `json:"comprises"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Prerequisites: []Addressablelicensedefinition{{}},
         
 
-        
 
         
         Comprises: []Licensedefinition{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

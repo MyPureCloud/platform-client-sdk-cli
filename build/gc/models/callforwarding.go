@@ -83,33 +83,7 @@ func (o *Callforwarding) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Calls = []Callroute{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -127,8 +101,7 @@ func (u *Callforwarding) MarshalJSON() ([]byte, error) {
     }
     CallforwardingMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -143,50 +116,37 @@ func (u *Callforwarding) MarshalJSON() ([]byte, error) {
         Voicemail string `json:"voicemail"`
         
         ModifiedDate time.Time `json:"modifiedDate"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Calls: []Callroute{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -39,17 +39,7 @@ type Mediautilization struct {
 // String returns a JSON representation of the model
 func (o *Mediautilization) String() string {
     
-    
-    
-    
-    
-    
      o.InterruptableMediaTypes = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Mediautilization) MarshalJSON() ([]byte, error) {
     }
     MediautilizationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MaximumCapacity int `json:"maximumCapacity"`
         
         InterruptableMediaTypes []string `json:"interruptableMediaTypes"`
         
         IncludeNonAcd bool `json:"includeNonAcd"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         InterruptableMediaTypes: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

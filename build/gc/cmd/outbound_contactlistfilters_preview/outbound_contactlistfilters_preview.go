@@ -30,23 +30,28 @@ func init() {
 func Cmdoutbound_contactlistfilters_preview() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/contactlistfilters/preview", utils.FormatPermissions([]string{ "outbound:contact:view",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/contactlistfilters/preview")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "ContactListFilter",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ContactListFilter"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContactListFilter"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/FilterPreviewResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/FilterPreviewResponse"
+      }
+    }
   }
 }`)
 	outbound_contactlistfilters_previewCmd.AddCommand(createCmd)
-	
 	return outbound_contactlistfilters_previewCmd
 }
 

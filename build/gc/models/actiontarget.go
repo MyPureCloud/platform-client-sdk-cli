@@ -94,40 +94,8 @@ type Actiontarget struct {
 // String returns a JSON representation of the model
 func (o *Actiontarget) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.UserData = []Keyvalue{{}} 
-    
-    
-    
      o.SupportedMediaTypes = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -149,8 +117,7 @@ func (u *Actiontarget) MarshalJSON() ([]byte, error) {
     }
     ActiontargetMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -166,63 +133,48 @@ func (u *Actiontarget) MarshalJSON() ([]byte, error) {
         
         ShortAbandonThreshold int `json:"shortAbandonThreshold"`
         
-        
-        
         CreatedDate time.Time `json:"createdDate"`
         
         ModifiedDate time.Time `json:"modifiedDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         UserData: []Keyvalue{{}},
         
 
-        
 
         
         SupportedMediaTypes: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

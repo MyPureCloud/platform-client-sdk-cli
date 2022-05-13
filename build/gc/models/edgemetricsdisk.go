@@ -41,16 +41,6 @@ func (o *Edgemetricsdisk) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Edgemetricsdisk) MarshalJSON() ([]byte, error) {
     }
     EdgemetricsdiskMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         AvailableBytes float64 `json:"availableBytes"`
         
         PartitionName string `json:"partitionName"`
         
         TotalBytes float64 `json:"totalBytes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

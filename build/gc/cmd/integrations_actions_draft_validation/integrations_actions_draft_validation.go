@@ -33,12 +33,15 @@ func Cmdintegrations_actions_draft_validation() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DraftValidationResult"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DraftValidationResult"
+      }
+    }
   }
 }`)
 	integrations_actions_draft_validationCmd.AddCommand(getCmd)
-	
 	return integrations_actions_draft_validationCmd
 }
 

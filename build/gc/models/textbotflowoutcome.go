@@ -57,23 +57,7 @@ func (o *Textbotflowoutcome) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Milestones = []Textbotflowmilestone{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,7 +73,8 @@ func (u *Textbotflowoutcome) MarshalJSON() ([]byte, error) {
     }
     TextbotflowoutcomeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         OutcomeId string `json:"outcomeId"`
         
         OutcomeValue string `json:"outcomeValue"`
@@ -99,32 +84,25 @@ func (u *Textbotflowoutcome) MarshalJSON() ([]byte, error) {
         DateEnd time.Time `json:"dateEnd"`
         
         Milestones []Textbotflowmilestone `json:"milestones"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Milestones: []Textbotflowmilestone{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

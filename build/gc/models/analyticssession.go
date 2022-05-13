@@ -536,45 +536,7 @@ type Analyticssession struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticssession) String() string {
-    
-    
      o.ActiveSkillIds = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -594,49 +556,7 @@ func (o *Analyticssession) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.DestinationAddresses = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -667,85 +587,7 @@ func (o *Analyticssession) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.RemovedSkillIds = []string{""} 
-    
-    
-    
      o.RequestedRoutings = []string{""} 
     
     
@@ -762,77 +604,12 @@ func (o *Analyticssession) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.WaitingInteractionCounts = []int{0} 
-    
-    
-    
      o.ProposedAgents = []Analyticsproposedagent{{}} 
-    
-    
-    
      o.MediaEndpointStats = []Analyticsmediaendpointstat{{}} 
     
-    
-    
-    
-    
-    
-    
      o.Metrics = []Analyticssessionmetric{{}} 
-    
-    
-    
      o.Segments = []Analyticsconversationsegment{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -848,7 +625,8 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
     }
     AnalyticssessionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ActiveSkillIds []string `json:"activeSkillIds"`
         
         AcwSkipped bool `json:"acwSkipped"`
@@ -996,328 +774,252 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         Metrics []Analyticssessionmetric `json:"metrics"`
         
         Segments []Analyticsconversationsegment `json:"segments"`
-        
         *Alias
     }{
-        
 
         
         ActiveSkillIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         CallbackNumbers: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         DestinationAddresses: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         EligibleAgentCounts: []int{0},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RemovedSkillIds: []string{""},
         
 
-        
 
         
         RequestedRoutings: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         WaitingInteractionCounts: []int{0},
         
 
-        
 
         
         ProposedAgents: []Analyticsproposedagent{{}},
         
 
-        
 
         
         MediaEndpointStats: []Analyticsmediaendpointstat{{}},
         
 
-        
 
         
 
-        
 
         
         Metrics: []Analyticssessionmetric{{}},
         
 
-        
 
         
         Segments: []Analyticsconversationsegment{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

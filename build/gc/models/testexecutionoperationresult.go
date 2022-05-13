@@ -55,23 +55,7 @@ func (o *Testexecutionoperationresult) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Result = Interface{} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -88,7 +72,8 @@ func (u *Testexecutionoperationresult) MarshalJSON() ([]byte, error) {
     }
     TestexecutionoperationresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Step int `json:"step"`
         
         Name string `json:"name"`
@@ -98,32 +83,25 @@ func (u *Testexecutionoperationresult) MarshalJSON() ([]byte, error) {
         Result interface{} `json:"result"`
         
         VarError Errorbody `json:"error"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Result: Interface{},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

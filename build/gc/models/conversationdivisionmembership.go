@@ -32,14 +32,7 @@ type Conversationdivisionmembership struct {
 // String returns a JSON representation of the model
 func (o *Conversationdivisionmembership) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Domainentityref{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Conversationdivisionmembership) MarshalJSON() ([]byte, error) {
     }
     ConversationdivisionmembershipMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Division Domainentityref `json:"division"`
         
         Entities []Domainentityref `json:"entities"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Domainentityref{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

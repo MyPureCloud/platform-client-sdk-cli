@@ -74,30 +74,7 @@ func (o *Fieldconfig) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Sections = []Section{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -115,8 +92,7 @@ func (u *Fieldconfig) MarshalJSON() ([]byte, error) {
     }
     FieldconfigMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -129,46 +105,34 @@ func (u *Fieldconfig) MarshalJSON() ([]byte, error) {
         Version string `json:"version"`
         
         SchemaVersion string `json:"schemaVersion"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Sections: []Section{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

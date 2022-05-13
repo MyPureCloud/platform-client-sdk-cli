@@ -65,25 +65,6 @@ func (o *Contactlistfilterpredicate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Contactlistfilterpredicate) MarshalJSON() ([]byte, error) {
     }
     ContactlistfilterpredicateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Column string `json:"column"`
         
         ColumnType string `json:"columnType"`
@@ -111,34 +93,26 @@ func (u *Contactlistfilterpredicate) MarshalJSON() ([]byte, error) {
         VarRange Contactlistfilterrange `json:"range"`
         
         Inverted bool `json:"inverted"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

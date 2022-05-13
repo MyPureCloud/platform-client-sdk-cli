@@ -30,30 +30,40 @@ func init() {
 func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Logical interface",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DomainLogicalInterface"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainLogicalInterface"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DomainLogicalInterface"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainLogicalInterface"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("DELETE", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
@@ -61,31 +71,39 @@ func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command {
   }
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Field to expand in the response Valid values: externalTrunkBaseAssignments, phoneTrunkBaseAssignments")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DomainLogicalInterface"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainLogicalInterface"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(getedgelogicalinterfacesCmd.Flags(), "[]string", "expand", "", "Field to expand in the response Valid values: externalTrunkBaseAssignments, phoneTrunkBaseAssignments")
 	getedgelogicalinterfacesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getedgelogicalinterfacesCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces")))
 	utils.AddFileFlagIfUpsert(getedgelogicalinterfacesCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getedgelogicalinterfacesCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(getedgelogicalinterfacesCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "edgeIds", "", "Comma separated list of Edge Id`s - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Field to expand in the response Valid values: externalTrunkBaseAssignments, phoneTrunkBaseAssignments")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/logicalinterfaces", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/logicalinterfaces")))
@@ -94,31 +112,40 @@ func Cmdtelephony_providers_edges_logicalinterfaces() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Logical interface",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DomainLogicalInterface"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainLogicalInterface"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DomainLogicalInterface"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainLogicalInterface"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_logicalinterfacesCmd.AddCommand(updateCmd)
-	
 	return telephony_providers_edges_logicalinterfacesCmd
 }
 

@@ -76,36 +76,11 @@ func (o *Evaluationscoringset) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.QuestionGroupScores = []Evaluationquestiongroupscore{{}} 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.TranscriptTopics = []Transcripttopic{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -121,7 +96,8 @@ func (u *Evaluationscoringset) MarshalJSON() ([]byte, error) {
     }
     EvaluationscoringsetMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TotalScore float32 `json:"totalScore"`
         
         TotalCriticalScore float32 `json:"totalCriticalScore"`
@@ -137,46 +113,36 @@ func (u *Evaluationscoringset) MarshalJSON() ([]byte, error) {
         AgentComments string `json:"agentComments"`
         
         TranscriptTopics []Transcripttopic `json:"transcriptTopics"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         QuestionGroupScores: []Evaluationquestiongroupscore{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         TranscriptTopics: []Transcripttopic{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

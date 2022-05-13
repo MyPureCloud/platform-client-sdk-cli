@@ -33,12 +33,15 @@ func Cmdvoicemail_mailbox() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailMailboxInfo"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailMailboxInfo"
+      }
+    }
   }
 }`)
 	voicemail_mailboxCmd.AddCommand(getCmd)
-	
 	return voicemail_mailboxCmd
 }
 

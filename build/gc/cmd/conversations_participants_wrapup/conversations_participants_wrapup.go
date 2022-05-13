@@ -34,12 +34,15 @@ func Cmdconversations_participants_wrapup() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AssignedWrapupCode"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AssignedWrapupCode"
+      }
+    }
   }
 }`)
 	conversations_participants_wrapupCmd.AddCommand(getCmd)
-	
 	return conversations_participants_wrapupCmd
 }
 

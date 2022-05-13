@@ -49,19 +49,6 @@ func (o *Createsecuresession) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Createsecuresession) MarshalJSON() ([]byte, error) {
     }
     CreatesecuresessionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SourceParticipantId string `json:"sourceParticipantId"`
         
         FlowId string `json:"flowId"`
@@ -85,26 +73,20 @@ func (u *Createsecuresession) MarshalJSON() ([]byte, error) {
         UserData string `json:"userData"`
         
         Disconnect bool `json:"disconnect"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

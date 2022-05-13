@@ -33,12 +33,15 @@ func Cmdworkforcemanagement_businessunits_weeks_schedules_generationresults() *c
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ScheduleGenerationResult"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScheduleGenerationResult"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedules_generationresultsCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_businessunits_weeks_schedules_generationresultsCmd
 }
 

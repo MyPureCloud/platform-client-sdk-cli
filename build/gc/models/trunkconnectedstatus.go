@@ -34,13 +34,6 @@ type Trunkconnectedstatus struct {
 func (o *Trunkconnectedstatus) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -56,22 +49,19 @@ func (u *Trunkconnectedstatus) MarshalJSON() ([]byte, error) {
     }
     TrunkconnectedstatusMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Connected bool `json:"connected"`
         
         ConnectedStateTime time.Time `json:"connectedStateTime"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

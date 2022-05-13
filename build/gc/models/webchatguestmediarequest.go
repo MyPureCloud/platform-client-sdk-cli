@@ -65,27 +65,7 @@ type Webchatguestmediarequest struct {
 // String returns a JSON representation of the model
 func (o *Webchatguestmediarequest) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Types = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -104,8 +84,7 @@ func (u *Webchatguestmediarequest) MarshalJSON() ([]byte, error) {
     }
     WebchatguestmediarequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -116,42 +95,31 @@ func (u *Webchatguestmediarequest) MarshalJSON() ([]byte, error) {
         CommunicationId string `json:"communicationId"`
         
         SecurityKey string `json:"securityKey"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Types: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

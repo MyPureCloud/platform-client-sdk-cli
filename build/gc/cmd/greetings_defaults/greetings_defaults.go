@@ -33,31 +33,40 @@ func Cmdgreetings_defaults() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DefaultGreetingList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DefaultGreetingList"
+      }
+    }
   }
 }`)
 	greetings_defaultsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/greetings/defaults", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Greetings", "/api/v2/greetings/defaults")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The updated defaultGreetingList",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DefaultGreetingList"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DefaultGreetingList"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DefaultGreetingList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DefaultGreetingList"
+      }
+    }
   }
 }`)
 	greetings_defaultsCmd.AddCommand(updateCmd)
-	
 	return greetings_defaultsCmd
 }
 

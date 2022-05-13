@@ -30,23 +30,28 @@ func init() {
 func Cmdknowledge_documentuploads() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/knowledge/documentuploads", utils.FormatPermissions([]string{ "knowledge:document:upload",  }), utils.GenerateDevCentreLink("POST", "Knowledge", "/api/v2/knowledge/documentuploads")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/UploadUrlRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UploadUrlRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Presigned URL successfully created.",
-  "schema" : {
-    "$ref" : "#/definitions/UploadUrlResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UploadUrlResponse"
+      }
+    }
   }
 }`)
 	knowledge_documentuploadsCmd.AddCommand(createCmd)
-	
 	return knowledge_documentuploadsCmd
 }
 

@@ -39,17 +39,7 @@ type Mailfromresult struct {
 // String returns a JSON representation of the model
 func (o *Mailfromresult) String() string {
     
-    
-    
-    
-    
-    
      o.Records = []Record{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Mailfromresult) MarshalJSON() ([]byte, error) {
     }
     MailfromresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Status string `json:"status"`
         
         Records []Record `json:"records"`
         
         MailFromDomain string `json:"mailFromDomain"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Records: []Record{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

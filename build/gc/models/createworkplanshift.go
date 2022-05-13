@@ -176,68 +176,7 @@ func (o *Createworkplanshift) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Activities = []Createworkplanactivity{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -253,7 +192,8 @@ func (u *Createworkplanshift) MarshalJSON() ([]byte, error) {
     }
     CreateworkplanshiftMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Days Setwrapperdayofweek `json:"days"`
@@ -293,92 +233,70 @@ func (u *Createworkplanshift) MarshalJSON() ([]byte, error) {
         MaximumContiguousWorkTimeMinutes int `json:"maximumContiguousWorkTimeMinutes"`
         
         Activities []Createworkplanactivity `json:"activities"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Activities: []Createworkplanactivity{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -77,29 +77,6 @@ func (o *Agentevaluatoractivity) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -115,8 +92,7 @@ func (u *Agentevaluatoractivity) MarshalJSON() ([]byte, error) {
     }
     AgentevaluatoractivityMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -129,44 +105,32 @@ func (u *Agentevaluatoractivity) MarshalJSON() ([]byte, error) {
         AverageEvaluationScore int `json:"averageEvaluationScore"`
         
         NumEvaluationsWithoutViewPermission int `json:"numEvaluationsWithoutViewPermission"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

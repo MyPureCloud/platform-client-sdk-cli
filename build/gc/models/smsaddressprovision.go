@@ -85,32 +85,6 @@ func (o *Smsaddressprovision) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -126,8 +100,7 @@ func (u *Smsaddressprovision) MarshalJSON() ([]byte, error) {
     }
     SmsaddressprovisionMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -142,48 +115,35 @@ func (u *Smsaddressprovision) MarshalJSON() ([]byte, error) {
         CountryCode string `json:"countryCode"`
         
         AutoCorrectAddress bool `json:"autoCorrectAddress"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

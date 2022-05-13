@@ -81,40 +81,12 @@ type Voicemailsearchcriteria struct {
 // String returns a JSON representation of the model
 func (o *Voicemailsearchcriteria) String() string {
     
-    
-    
-    
-    
-    
      o.Values = []string{""} 
-    
-    
-    
-    
-    
-    
     
      o.Fields = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Group = []Voicemailsearchcriteria{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -132,7 +104,8 @@ func (u *Voicemailsearchcriteria) MarshalJSON() ([]byte, error) {
     }
     VoicemailsearchcriteriaMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EndValue string `json:"endValue"`
         
         Values []string `json:"values"`
@@ -150,52 +123,41 @@ func (u *Voicemailsearchcriteria) MarshalJSON() ([]byte, error) {
         DateFormat string `json:"dateFormat"`
         
         VarType string `json:"type"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Values: []string{""},
         
 
-        
 
         
 
-        
 
         
         Fields: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Group: []Voicemailsearchcriteria{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

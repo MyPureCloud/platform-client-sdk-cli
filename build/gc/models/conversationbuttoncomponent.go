@@ -33,13 +33,6 @@ type Conversationbuttoncomponent struct {
 func (o *Conversationbuttoncomponent) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Conversationbuttoncomponent) MarshalJSON() ([]byte, error) {
     }
     ConversationbuttoncomponentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Title string `json:"title"`
         
         Actions Conversationcontentactions `json:"actions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

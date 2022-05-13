@@ -31,46 +31,59 @@ func Cmdauthorization_roles() *cobra.Command {
 	utils.AddFlag(bulkgrantCmd.Flags(), "string", "subjectType", "PC_USER", "what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)")
 	bulkgrantCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", bulkgrantCmd.UsageTemplate(), "POST", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:grant:add",  }), utils.GenerateDevCentreLink("POST", "Authorization", "/api/v2/authorization/roles/{roleId}")))
 	utils.AddFileFlagIfUpsert(bulkgrantCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Subjects and Divisions",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/SubjectDivisions"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SubjectDivisions"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(bulkgrantCmd.Flags(), "POST", `{
-  "description" : "Bulk Grants Created"
+  "description" : "Bulk Grants Created",
+  "content" : { }
 }`)
 	authorization_rolesCmd.AddCommand(bulkgrantCmd)
-	
+
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/roles", utils.FormatPermissions([]string{ "authorization:role:add",  }), utils.GenerateDevCentreLink("POST", "Authorization", "/api/v2/authorization/roles")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Organization role",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DomainOrganizationRoleCreate"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainOrganizationRoleCreate"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DomainOrganizationRole"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainOrganizationRole"
+      }
+    }
   }
 }`)
 	authorization_rolesCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:delete",  }), utils.GenerateDevCentreLink("DELETE", "Authorization", "/api/v2/authorization/roles/{roleId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
@@ -78,19 +91,23 @@ func Cmdauthorization_roles() *cobra.Command {
   }
 }`)
 	authorization_rolesCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role Valid values: unusedPermissions")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:view",  }), utils.GenerateDevCentreLink("GET", "Authorization", "/api/v2/authorization/roles/{roleId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DomainOrganizationRole"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainOrganizationRole"
+      }
+    }
   }
 }`)
 	authorization_rolesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
@@ -107,50 +124,65 @@ func Cmdauthorization_roles() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	authorization_rolesCmd.AddCommand(listCmd)
-	
+
 	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:edit",  }), utils.GenerateDevCentreLink("PATCH", "Authorization", "/api/v2/authorization/roles/{roleId}")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Organization role",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DomainOrganizationRole"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainOrganizationRole"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(patchCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DomainOrganizationRole"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainOrganizationRole"
+      }
+    }
   }
 }`)
 	authorization_rolesCmd.AddCommand(patchCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:edit",  }), utils.GenerateDevCentreLink("PUT", "Authorization", "/api/v2/authorization/roles/{roleId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Organization role",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DomainOrganizationRoleUpdate"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainOrganizationRoleUpdate"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DomainOrganizationRole"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DomainOrganizationRole"
+      }
+    }
   }
 }`)
 	authorization_rolesCmd.AddCommand(updateCmd)
-	
 	return authorization_rolesCmd
 }
 

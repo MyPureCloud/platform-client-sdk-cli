@@ -26,10 +26,6 @@ type Valuewrapperdate struct {
 // String returns a JSON representation of the model
 func (o *Valuewrapperdate) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -45,16 +41,14 @@ func (u *Valuewrapperdate) MarshalJSON() ([]byte, error) {
     }
     ValuewrapperdateMarshalled = true
 
-    return json.Marshal(&struct { 
-        Value time.Time `json:"value"`
+    return json.Marshal(&struct {
         
+        Value time.Time `json:"value"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

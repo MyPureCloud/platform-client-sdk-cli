@@ -33,12 +33,15 @@ func Cmdworkforcemanagement_managementunits_activitycodes() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ActivityCodeContainer"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ActivityCodeContainer"
+      }
+    }
   }
 }`)
 	workforcemanagement_managementunits_activitycodesCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_managementunits_activitycodesCmd
 }
 

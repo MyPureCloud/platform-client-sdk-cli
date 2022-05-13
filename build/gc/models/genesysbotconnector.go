@@ -24,11 +24,7 @@ type Genesysbotconnector struct {
 
 // String returns a JSON representation of the model
 func (o *Genesysbotconnector) String() string {
-    
-    
      o.QueryParameters = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Genesysbotconnector) MarshalJSON() ([]byte, error) {
     }
     GenesysbotconnectorMarshalled = true
 
-    return json.Marshal(&struct { 
-        QueryParameters map[string]string `json:"queryParameters"`
+    return json.Marshal(&struct {
         
+        QueryParameters map[string]string `json:"queryParameters"`
         *Alias
     }{
-        
 
         
         QueryParameters: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

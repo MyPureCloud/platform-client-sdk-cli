@@ -59,24 +59,7 @@ type Planninggroup struct {
 func (o *Planninggroup) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.RoutePaths = []Routepathresponse{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -93,8 +76,7 @@ func (u *Planninggroup) MarshalJSON() ([]byte, error) {
     }
     PlanninggroupMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -103,38 +85,28 @@ func (u *Planninggroup) MarshalJSON() ([]byte, error) {
         RoutePaths []Routepathresponse `json:"routePaths"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RoutePaths: []Routepathresponse{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

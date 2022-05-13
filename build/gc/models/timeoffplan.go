@@ -79,34 +79,8 @@ type Timeoffplan struct {
 // String returns a JSON representation of the model
 func (o *Timeoffplan) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.ActivityCodeIds = []string{""} 
-    
-    
-    
      o.TimeOffLimits = []Timeofflimitreference{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -126,8 +100,7 @@ func (u *Timeoffplan) MarshalJSON() ([]byte, error) {
     }
     TimeoffplanMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -142,52 +115,39 @@ func (u *Timeoffplan) MarshalJSON() ([]byte, error) {
         Active bool `json:"active"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         ActivityCodeIds: []string{""},
         
 
-        
 
         
         TimeOffLimits: []Timeofflimitreference{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

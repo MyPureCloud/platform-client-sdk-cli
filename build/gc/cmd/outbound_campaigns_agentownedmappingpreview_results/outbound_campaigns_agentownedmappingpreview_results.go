@@ -33,12 +33,15 @@ func Cmdoutbound_campaigns_agentownedmappingpreview_results() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AgentOwnedMappingPreviewListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AgentOwnedMappingPreviewListing"
+      }
+    }
   }
 }`)
 	outbound_campaigns_agentownedmappingpreview_resultsCmd.AddCommand(listCmd)
-	
 	return outbound_campaigns_agentownedmappingpreview_resultsCmd
 }
 

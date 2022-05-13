@@ -32,14 +32,7 @@ type Contactablestatus struct {
 // String returns a JSON representation of the model
 func (o *Contactablestatus) String() string {
     
-    
-    
-    
-    
-    
      o.ColumnStatus = map[string]Columnstatus{"": {}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Contactablestatus) MarshalJSON() ([]byte, error) {
     }
     ContactablestatusMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Contactable bool `json:"contactable"`
         
         ColumnStatus map[string]Columnstatus `json:"columnStatus"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         ColumnStatus: map[string]Columnstatus{"": {}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

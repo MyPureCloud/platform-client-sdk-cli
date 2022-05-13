@@ -72,26 +72,6 @@ func (o *Trustee) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -107,58 +87,39 @@ func (u *Trustee) MarshalJSON() ([]byte, error) {
     }
     TrusteeMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Enabled bool `json:"enabled"`
         
         UsesDefaultRole bool `json:"usesDefaultRole"`
         
-        
-        
         DateExpired time.Time `json:"dateExpired"`
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -55,24 +55,8 @@ func (o *Schedulegenerationresult) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Messages = []Schedulegenerationmessage{{}} 
-    
-    
-    
      o.MessageSeverities = []Schedulermessagetypeseverity{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Schedulegenerationresult) MarshalJSON() ([]byte, error) {
     }
     SchedulegenerationresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Failed bool `json:"failed"`
         
         RunId string `json:"runId"`
@@ -98,34 +83,27 @@ func (u *Schedulegenerationresult) MarshalJSON() ([]byte, error) {
         Messages []Schedulegenerationmessage `json:"messages"`
         
         MessageSeverities []Schedulermessagetypeseverity `json:"messageSeverities"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Messages: []Schedulegenerationmessage{{}},
         
 
-        
 
         
         MessageSeverities: []Schedulermessagetypeseverity{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

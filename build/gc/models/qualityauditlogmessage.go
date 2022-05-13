@@ -135,23 +135,6 @@ func (o *Qualityauditlogmessage) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.RemoteIps = []string{""} 
     
     
@@ -161,40 +144,8 @@ func (o *Qualityauditlogmessage) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.PropertyChanges = []Propertychange{{}} 
-    
-    
-    
      o.Context = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -210,7 +161,8 @@ func (u *Qualityauditlogmessage) MarshalJSON() ([]byte, error) {
     }
     QualityauditlogmessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         UserHomeOrgId string `json:"userHomeOrgId"`
@@ -242,80 +194,62 @@ func (u *Qualityauditlogmessage) MarshalJSON() ([]byte, error) {
         PropertyChanges []Propertychange `json:"propertyChanges"`
         
         Context map[string]string `json:"context"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RemoteIps: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         PropertyChanges: []Propertychange{{}},
         
 
-        
 
         
         Context: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

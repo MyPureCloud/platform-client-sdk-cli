@@ -24,11 +24,7 @@ type Nluutterance struct {
 
 // String returns a JSON representation of the model
 func (o *Nluutterance) String() string {
-    
-    
      o.Segments = []Nluutterancesegment{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Nluutterance) MarshalJSON() ([]byte, error) {
     }
     NluutteranceMarshalled = true
 
-    return json.Marshal(&struct { 
-        Segments []Nluutterancesegment `json:"segments"`
+    return json.Marshal(&struct {
         
+        Segments []Nluutterancesegment `json:"segments"`
         *Alias
     }{
-        
 
         
         Segments: []Nluutterancesegment{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

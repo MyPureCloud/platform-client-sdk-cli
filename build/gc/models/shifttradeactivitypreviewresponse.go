@@ -50,19 +50,6 @@ func (o *Shifttradeactivitypreviewresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,7 +65,8 @@ func (u *Shifttradeactivitypreviewresponse) MarshalJSON() ([]byte, error) {
     }
     ShifttradeactivitypreviewresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         StartDate time.Time `json:"startDate"`
         
         LengthMinutes int `json:"lengthMinutes"`
@@ -86,26 +74,20 @@ func (u *Shifttradeactivitypreviewresponse) MarshalJSON() ([]byte, error) {
         ActivityCodeId string `json:"activityCodeId"`
         
         CountsAsPaidTime bool `json:"countsAsPaidTime"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

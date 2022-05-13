@@ -30,23 +30,28 @@ func init() {
 func Cmdconversations_emails_inboundmessages() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/emails/{conversationId}/inboundmessages", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/emails/{conversationId}/inboundmessages")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Send external email reply",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/InboundMessageRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/InboundMessageRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EmailConversation"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EmailConversation"
+      }
+    }
   }
 }`)
 	conversations_emails_inboundmessagesCmd.AddCommand(createCmd)
-	
 	return conversations_emails_inboundmessagesCmd
 }
 

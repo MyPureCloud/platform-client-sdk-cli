@@ -47,21 +47,8 @@ type Change struct {
 func (o *Change) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.OldValues = []string{""} 
-    
-    
-    
      o.NewValues = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Change) MarshalJSON() ([]byte, error) {
     }
     ChangeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entity Auditentity `json:"entity"`
         
         Property string `json:"property"`
@@ -85,30 +73,24 @@ func (u *Change) MarshalJSON() ([]byte, error) {
         OldValues []string `json:"oldValues"`
         
         NewValues []string `json:"newValues"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         OldValues: []string{""},
         
 
-        
 
         
         NewValues: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

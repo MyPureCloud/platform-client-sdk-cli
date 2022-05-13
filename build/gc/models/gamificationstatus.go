@@ -50,19 +50,6 @@ func (o *Gamificationstatus) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,7 +65,8 @@ func (u *Gamificationstatus) MarshalJSON() ([]byte, error) {
     }
     GamificationstatusMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         IsActive bool `json:"isActive"`
         
         DateStart time.Time `json:"dateStart"`
@@ -86,26 +74,20 @@ func (u *Gamificationstatus) MarshalJSON() ([]byte, error) {
         AutomaticUserAssignment bool `json:"automaticUserAssignment"`
         
         DateStartPersonalBest time.Time `json:"dateStartPersonalBest"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

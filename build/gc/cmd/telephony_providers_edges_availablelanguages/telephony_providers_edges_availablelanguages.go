@@ -33,12 +33,15 @@ func Cmdtelephony_providers_edges_availablelanguages() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AvailableLanguageList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AvailableLanguageList"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_availablelanguagesCmd.AddCommand(listCmd)
-	
 	return telephony_providers_edges_availablelanguagesCmd
 }
 

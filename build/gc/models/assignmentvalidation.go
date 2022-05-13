@@ -45,23 +45,10 @@ type Assignmentvalidation struct {
 
 // String returns a JSON representation of the model
 func (o *Assignmentvalidation) String() string {
-    
-    
      o.MembersNotAssigned = []Userreference{{}} 
-    
-    
-    
      o.MembersAlreadyAssigned = []Userreference{{}} 
-    
-    
-    
      o.MembersAlreadyAssignedToOther = []Otherprofileassignment{{}} 
-    
-    
-    
      o.InvalidMemberAssignments = []Invalidassignment{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Assignmentvalidation) MarshalJSON() ([]byte, error) {
     }
     AssignmentvalidationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MembersNotAssigned []Userreference `json:"membersNotAssigned"`
         
         MembersAlreadyAssigned []Userreference `json:"membersAlreadyAssigned"`
@@ -85,34 +73,28 @@ func (u *Assignmentvalidation) MarshalJSON() ([]byte, error) {
         MembersAlreadyAssignedToOther []Otherprofileassignment `json:"membersAlreadyAssignedToOther"`
         
         InvalidMemberAssignments []Invalidassignment `json:"invalidMemberAssignments"`
-        
         *Alias
     }{
-        
 
         
         MembersNotAssigned: []Userreference{{}},
         
 
-        
 
         
         MembersAlreadyAssigned: []Userreference{{}},
         
 
-        
 
         
         MembersAlreadyAssignedToOther: []Otherprofileassignment{{}},
         
 
-        
 
         
         InvalidMemberAssignments: []Invalidassignment{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

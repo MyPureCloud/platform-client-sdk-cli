@@ -33,13 +33,6 @@ type Recordingsettings struct {
 func (o *Recordingsettings) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Recordingsettings) MarshalJSON() ([]byte, error) {
     }
     RecordingsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MaxSimultaneousStreams int `json:"maxSimultaneousStreams"`
         
         MaxConfigurableScreenRecordingStreams int `json:"maxConfigurableScreenRecordingStreams"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

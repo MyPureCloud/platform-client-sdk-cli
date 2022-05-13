@@ -33,12 +33,16 @@ func Cmdanalytics_reporting_schedules_history() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ReportRunEntry"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ReportRunEntry"
+      }
+    }
   }
 }`)
 	analytics_reporting_schedules_historyCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/reporting/schedules/{scheduleId}/history", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/reporting/schedules/{scheduleId}/history")))
@@ -46,12 +50,15 @@ func Cmdanalytics_reporting_schedules_history() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	analytics_reporting_schedules_historyCmd.AddCommand(listCmd)
-	
 	return analytics_reporting_schedules_historyCmd
 }
 

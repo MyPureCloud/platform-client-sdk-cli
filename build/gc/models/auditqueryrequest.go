@@ -47,21 +47,8 @@ type Auditqueryrequest struct {
 func (o *Auditqueryrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Filters = []Auditqueryfilter{{}} 
-    
-    
-    
      o.Sort = []Auditquerysort{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Auditqueryrequest) MarshalJSON() ([]byte, error) {
     }
     AuditqueryrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         ServiceName string `json:"serviceName"`
@@ -85,30 +73,24 @@ func (u *Auditqueryrequest) MarshalJSON() ([]byte, error) {
         Filters []Auditqueryfilter `json:"filters"`
         
         Sort []Auditquerysort `json:"sort"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Filters: []Auditqueryfilter{{}},
         
 
-        
 
         
         Sort: []Auditquerysort{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

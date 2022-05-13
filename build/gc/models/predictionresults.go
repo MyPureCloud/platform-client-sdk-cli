@@ -41,16 +41,6 @@ func (o *Predictionresults) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Predictionresults) MarshalJSON() ([]byte, error) {
     }
     PredictionresultsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Intent string `json:"intent"`
         
         Formula string `json:"formula"`
         
         EstimatedWaitTimeSeconds int `json:"estimatedWaitTimeSeconds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

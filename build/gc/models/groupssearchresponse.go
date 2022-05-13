@@ -87,36 +87,8 @@ func (o *Groupssearchresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Types = []string{""} 
-    
-    
-    
      o.Results = []Group{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -132,7 +104,8 @@ func (u *Groupssearchresponse) MarshalJSON() ([]byte, error) {
     }
     GroupssearchresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         PageCount int `json:"pageCount"`
@@ -150,50 +123,39 @@ func (u *Groupssearchresponse) MarshalJSON() ([]byte, error) {
         Types []string `json:"types"`
         
         Results []Group `json:"results"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Types: []string{""},
         
 
-        
 
         
         Results: []Group{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

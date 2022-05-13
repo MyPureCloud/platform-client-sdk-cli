@@ -83,40 +83,12 @@ func (o *Documentupdate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AddTags = []string{""} 
-    
-    
-    
      o.RemoveTags = []string{""} 
-    
-    
-    
      o.AddTagIds = []string{""} 
-    
-    
-    
      o.RemoveTagIds = []string{""} 
-    
-    
-    
      o.UpdateAttributes = []Documentattribute{{}} 
-    
-    
-    
      o.RemoveAttributes = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -132,7 +104,8 @@ func (u *Documentupdate) MarshalJSON() ([]byte, error) {
     }
     DocumentupdateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ChangeNumber int `json:"changeNumber"`
         
         Name string `json:"name"`
@@ -150,58 +123,47 @@ func (u *Documentupdate) MarshalJSON() ([]byte, error) {
         UpdateAttributes []Documentattribute `json:"updateAttributes"`
         
         RemoveAttributes []string `json:"removeAttributes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AddTags: []string{""},
         
 
-        
 
         
         RemoveTags: []string{""},
         
 
-        
 
         
         AddTagIds: []string{""},
         
 
-        
 
         
         RemoveTagIds: []string{""},
         
 
-        
 
         
         UpdateAttributes: []Documentattribute{{}},
         
 
-        
 
         
         RemoveAttributes: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

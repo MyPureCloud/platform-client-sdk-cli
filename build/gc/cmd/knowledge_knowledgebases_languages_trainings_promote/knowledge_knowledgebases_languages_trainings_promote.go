@@ -33,12 +33,15 @@ func Cmdknowledge_knowledgebases_languages_trainings_promote() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/KnowledgeTraining"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/KnowledgeTraining"
+      }
+    }
   }
 }`)
 	knowledge_knowledgebases_languages_trainings_promoteCmd.AddCommand(createCmd)
-	
 	return knowledge_knowledgebases_languages_trainings_promoteCmd
 }
 

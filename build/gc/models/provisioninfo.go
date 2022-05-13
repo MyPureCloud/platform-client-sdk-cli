@@ -42,16 +42,6 @@ func (o *Provisioninfo) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -67,28 +57,24 @@ func (u *Provisioninfo) MarshalJSON() ([]byte, error) {
     }
     ProvisioninfoMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Time time.Time `json:"time"`
         
         Source string `json:"source"`
         
         ErrorInfo string `json:"errorInfo"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

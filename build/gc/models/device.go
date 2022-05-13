@@ -81,31 +81,6 @@ func (o *Device) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -121,7 +96,8 @@ func (u *Device) MarshalJSON() ([]byte, error) {
     }
     DeviceMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Category string `json:"category"`
         
         VarType string `json:"type"`
@@ -137,42 +113,32 @@ func (u *Device) MarshalJSON() ([]byte, error) {
         OsFamily string `json:"osFamily"`
         
         OsVersion string `json:"osVersion"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

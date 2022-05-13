@@ -24,11 +24,7 @@ type Bushorttermforecastlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Bushorttermforecastlisting) String() string {
-    
-    
      o.Entities = []Bushorttermforecastlistitem{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Bushorttermforecastlisting) MarshalJSON() ([]byte, error) {
     }
     BushorttermforecastlistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Bushorttermforecastlistitem `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Bushorttermforecastlistitem `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Bushorttermforecastlistitem{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,12 +33,15 @@ func Cmdintegrations_speech_lex_bot_alias() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LexBotAlias"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LexBotAlias"
+      }
+    }
   }
 }`)
 	integrations_speech_lex_bot_aliasCmd.AddCommand(getCmd)
-	
 	return integrations_speech_lex_bot_aliasCmd
 }
 

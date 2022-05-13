@@ -33,12 +33,15 @@ func Cmdconversations_emails_settings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EmailsSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EmailsSettings"
+      }
+    }
   }
 }`)
 	conversations_emails_settingsCmd.AddCommand(getCmd)
-	
 	return conversations_emails_settingsCmd
 }
 

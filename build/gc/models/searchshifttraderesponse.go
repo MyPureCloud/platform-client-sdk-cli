@@ -39,17 +39,7 @@ type Searchshifttraderesponse struct {
 // String returns a JSON representation of the model
 func (o *Searchshifttraderesponse) String() string {
     
-    
-    
-    
-    
-    
      o.MatchingReceivingShiftIds = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Searchshifttraderesponse) MarshalJSON() ([]byte, error) {
     }
     SearchshifttraderesponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Trade Shifttraderesponse `json:"trade"`
         
         MatchingReceivingShiftIds []string `json:"matchingReceivingShiftIds"`
         
         Preview Shifttradepreviewresponse `json:"preview"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         MatchingReceivingShiftIds: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -90,36 +90,7 @@ func (o *Widgetdeployment) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AllowedDomains = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -137,8 +108,7 @@ func (u *Widgetdeployment) MarshalJSON() ([]byte, error) {
     }
     WidgetdeploymentMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -155,54 +125,40 @@ func (u *Widgetdeployment) MarshalJSON() ([]byte, error) {
         ClientType string `json:"clientType"`
         
         ClientConfig Widgetclientconfig `json:"clientConfig"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AllowedDomains: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,31 +33,40 @@ func Cmdrecording_recordingkeys_rotationschedule() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/KeyRotationSchedule"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/KeyRotationSchedule"
+      }
+    }
   }
 }`)
 	recording_recordingkeys_rotationscheduleCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/recordingkeys/rotationschedule", utils.FormatPermissions([]string{ "recording:encryptionKey:edit",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/recordingkeys/rotationschedule")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "KeyRotationSchedule",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/KeyRotationSchedule"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/KeyRotationSchedule"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/KeyRotationSchedule"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/KeyRotationSchedule"
+      }
+    }
   }
 }`)
 	recording_recordingkeys_rotationscheduleCmd.AddCommand(updateCmd)
-	
 	return recording_recordingkeys_rotationscheduleCmd
 }
 

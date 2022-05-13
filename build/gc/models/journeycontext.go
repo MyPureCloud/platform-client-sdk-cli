@@ -41,16 +41,6 @@ func (o *Journeycontext) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Journeycontext) MarshalJSON() ([]byte, error) {
     }
     JourneycontextMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Customer Journeycustomer `json:"customer"`
         
         CustomerSession Journeycustomersession `json:"customerSession"`
         
         TriggeringAction Journeyaction `json:"triggeringAction"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -25,10 +25,6 @@ type Urlresponse struct {
 // String returns a JSON representation of the model
 func (o *Urlresponse) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Urlresponse) MarshalJSON() ([]byte, error) {
     }
     UrlresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Url string `json:"url"`
+    return json.Marshal(&struct {
         
+        Url string `json:"url"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

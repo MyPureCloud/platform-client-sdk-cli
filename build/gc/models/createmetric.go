@@ -57,22 +57,6 @@ func (o *Createmetric) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Createmetric) MarshalJSON() ([]byte, error) {
     }
     CreatemetricMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MetricDefinitionId string `json:"metricDefinitionId"`
         
         ExternalMetricDefinitionId string `json:"externalMetricDefinitionId"`
@@ -98,30 +83,23 @@ func (u *Createmetric) MarshalJSON() ([]byte, error) {
         PerformanceProfileId string `json:"performanceProfileId"`
         
         Name string `json:"name"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

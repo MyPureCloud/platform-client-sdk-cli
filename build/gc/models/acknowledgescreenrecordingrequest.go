@@ -41,16 +41,6 @@ func (o *Acknowledgescreenrecordingrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Acknowledgescreenrecordingrequest) MarshalJSON() ([]byte, error) {
     }
     AcknowledgescreenrecordingrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ParticipantJid string `json:"participantJid"`
         
         RoomId string `json:"roomId"`
         
         ConversationId string `json:"conversationId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -74,28 +74,6 @@ func (o *Historyentry) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -111,7 +89,8 @@ func (u *Historyentry) MarshalJSON() ([]byte, error) {
     }
     HistoryentryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Action string `json:"action"`
         
         Resource string `json:"resource"`
@@ -125,38 +104,29 @@ func (u *Historyentry) MarshalJSON() ([]byte, error) {
         Version string `json:"version"`
         
         Secure bool `json:"secure"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

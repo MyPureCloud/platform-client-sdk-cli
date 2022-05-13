@@ -32,14 +32,7 @@ type Shifttradematchviolation struct {
 // String returns a JSON representation of the model
 func (o *Shifttradematchviolation) String() string {
     
-    
-    
-    
-    
-    
      o.Params = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Shifttradematchviolation) MarshalJSON() ([]byte, error) {
     }
     ShifttradematchviolationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Params map[string]string `json:"params"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Params: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

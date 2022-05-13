@@ -33,50 +33,65 @@ func Cmdusers_callforwarding() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CallForwarding"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CallForwarding"
+      }
+    }
   }
 }`)
 	users_callforwardingCmd.AddCommand(getCmd)
-	
+
 	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/callforwarding", utils.FormatPermissions([]string{ "conversation:callForwarding:edit",  }), utils.GenerateDevCentreLink("PATCH", "Users", "/api/v2/users/{userId}/callforwarding")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Call forwarding",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CallForwarding"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CallForwarding"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(patchCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CallForwarding"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CallForwarding"
+      }
+    }
   }
 }`)
 	users_callforwardingCmd.AddCommand(patchCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/callforwarding", utils.FormatPermissions([]string{ "conversation:callForwarding:edit",  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/callforwarding")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Call forwarding",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CallForwarding"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CallForwarding"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CallForwarding"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CallForwarding"
+      }
+    }
   }
 }`)
 	users_callforwardingCmd.AddCommand(updateCmd)
-	
 	return users_callforwardingCmd
 }
 

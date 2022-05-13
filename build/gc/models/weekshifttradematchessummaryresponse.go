@@ -34,13 +34,6 @@ type Weekshifttradematchessummaryresponse struct {
 func (o *Weekshifttradematchessummaryresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -56,22 +49,19 @@ func (u *Weekshifttradematchessummaryresponse) MarshalJSON() ([]byte, error) {
     }
     WeekshifttradematchessummaryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         WeekDate time.Time `json:"weekDate"`
         
         Count int `json:"count"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

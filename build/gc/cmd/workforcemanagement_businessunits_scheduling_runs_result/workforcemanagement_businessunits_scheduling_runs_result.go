@@ -37,12 +37,15 @@ func Cmdworkforcemanagement_businessunits_scheduling_runs_result() *cobra.Comman
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuRescheduleResult"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuRescheduleResult"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_scheduling_runs_resultCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_businessunits_scheduling_runs_resultCmd
 }
 

@@ -56,23 +56,7 @@ func (o *Responseassetsearchrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Query = []Responseassetfilter{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Responseassetsearchrequest) MarshalJSON() ([]byte, error) {
     }
     ResponseassetsearchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PageSize int `json:"pageSize"`
         
         PageNumber int `json:"pageNumber"`
@@ -98,32 +83,25 @@ func (u *Responseassetsearchrequest) MarshalJSON() ([]byte, error) {
         SortBy string `json:"sortBy"`
         
         Query []Responseassetfilter `json:"query"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Query: []Responseassetfilter{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

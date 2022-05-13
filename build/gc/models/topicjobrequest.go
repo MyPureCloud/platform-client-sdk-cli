@@ -24,11 +24,7 @@ type Topicjobrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Topicjobrequest) String() string {
-    
-    
      o.TopicIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Topicjobrequest) MarshalJSON() ([]byte, error) {
     }
     TopicjobrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        TopicIds []string `json:"topicIds"`
+    return json.Marshal(&struct {
         
+        TopicIds []string `json:"topicIds"`
         *Alias
     }{
-        
 
         
         TopicIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

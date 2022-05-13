@@ -65,25 +65,6 @@ func (o *Phonenumber) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Phonenumber) MarshalJSON() ([]byte, error) {
     }
     PhonenumberMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Display string `json:"display"`
         
         Extension int `json:"extension"`
@@ -111,34 +93,26 @@ func (u *Phonenumber) MarshalJSON() ([]byte, error) {
         E164 string `json:"e164"`
         
         CountryCode string `json:"countryCode"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

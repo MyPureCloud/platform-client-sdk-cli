@@ -31,15 +31,8 @@ type Campaignruleentities struct {
 
 // String returns a JSON representation of the model
 func (o *Campaignruleentities) String() string {
-    
-    
      o.Campaigns = []Domainentityref{{}} 
-    
-    
-    
      o.Sequences = []Domainentityref{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Campaignruleentities) MarshalJSON() ([]byte, error) {
     }
     CampaignruleentitiesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Campaigns []Domainentityref `json:"campaigns"`
         
         Sequences []Domainentityref `json:"sequences"`
-        
         *Alias
     }{
-        
 
         
         Campaigns: []Domainentityref{{}},
         
 
-        
 
         
         Sequences: []Domainentityref{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

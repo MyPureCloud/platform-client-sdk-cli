@@ -32,14 +32,7 @@ type Dialogflowintent struct {
 // String returns a JSON representation of the model
 func (o *Dialogflowintent) String() string {
     
-    
-    
-    
-    
-    
      o.Parameters = map[string]Dialogflowparameter{"": {}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Dialogflowintent) MarshalJSON() ([]byte, error) {
     }
     DialogflowintentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Parameters map[string]Dialogflowparameter `json:"parameters"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Parameters: map[string]Dialogflowparameter{"": {}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

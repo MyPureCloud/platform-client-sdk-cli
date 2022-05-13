@@ -31,67 +31,86 @@ func Cmdquality_conversations_evaluations() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "string", "expand", "", "evaluatorId")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/conversations/{conversationId}/evaluations", utils.FormatPermissions([]string{ "quality:evaluation:add",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/conversations/{conversationId}/evaluations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "evaluation",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Evaluation"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Evaluation"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Evaluation"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Evaluation"
+      }
+    }
   }
 }`)
 	quality_conversations_evaluationsCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(deleteCmd.Flags(), "string", "expand", "", "evaluatorId, evaluationForm")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}", utils.FormatPermissions([]string{ "quality:evaluation:delete",  }), utils.GenerateDevCentreLink("DELETE", "Quality", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Evaluation"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Evaluation"
+      }
+    }
   }
 }`)
 	quality_conversations_evaluationsCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "agent, evaluator, evaluationForm")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}", utils.FormatPermissions([]string{ "quality:evaluation:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Evaluation"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Evaluation"
+      }
+    }
   }
 }`)
 	quality_conversations_evaluationsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(updateCmd.Flags(), "string", "expand", "", "evaluatorId, evaluationForm")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}", utils.FormatPermissions([]string{ "quality:evaluation:edit", "quality:evaluation:editScore", "quality:evaluation:editAgentSignoff",  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "evaluation",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Evaluation"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Evaluation"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Evaluation"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Evaluation"
+      }
+    }
   }
 }`)
 	quality_conversations_evaluationsCmd.AddCommand(updateCmd)
-	
 	return quality_conversations_evaluationsCmd
 }
 

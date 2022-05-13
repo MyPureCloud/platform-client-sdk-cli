@@ -33,12 +33,15 @@ func Cmdtelephony_providers_edges_unpair() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "string"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "string"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_unpairCmd.AddCommand(createCmd)
-	
 	return telephony_providers_edges_unpairCmd
 }
 

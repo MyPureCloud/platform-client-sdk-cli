@@ -87,36 +87,8 @@ func (o *Voicemailssearchresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Types = []string{""} 
-    
-    
-    
      o.Results = []Voicemailmessage{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -132,7 +104,8 @@ func (u *Voicemailssearchresponse) MarshalJSON() ([]byte, error) {
     }
     VoicemailssearchresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         PageCount int `json:"pageCount"`
@@ -150,50 +123,39 @@ func (u *Voicemailssearchresponse) MarshalJSON() ([]byte, error) {
         Types []string `json:"types"`
         
         Results []Voicemailmessage `json:"results"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Types: []string{""},
         
 
-        
 
         
         Results: []Voicemailmessage{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

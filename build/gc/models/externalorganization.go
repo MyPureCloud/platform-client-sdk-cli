@@ -180,46 +180,8 @@ func (o *Externalorganization) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Tags = []string{""} 
-    
-    
-    
      o.Websites = []string{""} 
-    
-    
-    
      o.Tickers = []Ticker{{}} 
     
     
@@ -227,34 +189,7 @@ func (o *Externalorganization) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.CustomFields = map[string]interface{}{"": Interface{}} 
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -270,7 +205,8 @@ func (u *Externalorganization) MarshalJSON() ([]byte, error) {
     }
     ExternalorganizationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -310,110 +246,82 @@ func (u *Externalorganization) MarshalJSON() ([]byte, error) {
         Schema Dataschema `json:"schema"`
         
         CustomFields map[string]interface{} `json:"customFields"`
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Tags: []string{""},
         
 
-        
 
         
         Websites: []string{""},
         
 
-        
 
         
         Tickers: []Ticker{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         CustomFields: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

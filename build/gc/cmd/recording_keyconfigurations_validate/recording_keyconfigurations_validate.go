@@ -30,23 +30,28 @@ func init() {
 func Cmdrecording_keyconfigurations_validate() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/keyconfigurations/validate", utils.FormatPermissions([]string{ "recording:encryptionKey:edit",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recording/keyconfigurations/validate")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Encryption Configuration",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/RecordingEncryptionConfiguration"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RecordingEncryptionConfiguration"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/RecordingEncryptionConfiguration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RecordingEncryptionConfiguration"
+      }
+    }
   }
 }`)
 	recording_keyconfigurations_validateCmd.AddCommand(createCmd)
-	
 	return recording_keyconfigurations_validateCmd
 }
 

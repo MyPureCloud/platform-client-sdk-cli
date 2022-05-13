@@ -142,56 +142,7 @@ func (o *Auditmessage) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Changes = []Change{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -209,7 +160,8 @@ func (u *Auditmessage) MarshalJSON() ([]byte, error) {
     }
     AuditmessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         User Audituser `json:"user"`
@@ -241,76 +193,58 @@ func (u *Auditmessage) MarshalJSON() ([]byte, error) {
         Entity Auditentity `json:"entity"`
         
         ServiceContext Servicecontext `json:"serviceContext"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Changes: []Change{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

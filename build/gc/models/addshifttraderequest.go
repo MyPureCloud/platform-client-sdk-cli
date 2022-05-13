@@ -57,23 +57,7 @@ func (o *Addshifttraderequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AcceptableIntervals = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,7 +73,8 @@ func (u *Addshifttraderequest) MarshalJSON() ([]byte, error) {
     }
     AddshifttraderequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ScheduleId string `json:"scheduleId"`
         
         InitiatingShiftId string `json:"initiatingShiftId"`
@@ -99,32 +84,25 @@ func (u *Addshifttraderequest) MarshalJSON() ([]byte, error) {
         Expiration time.Time `json:"expiration"`
         
         AcceptableIntervals []string `json:"acceptableIntervals"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AcceptableIntervals: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

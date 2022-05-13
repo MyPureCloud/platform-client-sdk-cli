@@ -65,25 +65,6 @@ func (o *Createactivitycoderequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Createactivitycoderequest) MarshalJSON() ([]byte, error) {
     }
     CreateactivitycoderequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Category string `json:"category"`
@@ -111,34 +93,26 @@ func (u *Createactivitycoderequest) MarshalJSON() ([]byte, error) {
         CountsAsWorkTime bool `json:"countsAsWorkTime"`
         
         AgentTimeOffSelectable bool `json:"agentTimeOffSelectable"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

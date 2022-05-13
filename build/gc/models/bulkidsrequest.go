@@ -24,11 +24,7 @@ type Bulkidsrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Bulkidsrequest) String() string {
-    
-    
      o.Entities = []Entity{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Bulkidsrequest) MarshalJSON() ([]byte, error) {
     }
     BulkidsrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Entity `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Entity `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Entity{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

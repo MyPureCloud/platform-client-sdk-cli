@@ -32,14 +32,7 @@ type Architectflowfields struct {
 // String returns a JSON representation of the model
 func (o *Architectflowfields) String() string {
     
-    
-    
-    
-    
-    
      o.FlowRequestMappings = []Requestmapping{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Architectflowfields) MarshalJSON() ([]byte, error) {
     }
     ArchitectflowfieldsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ArchitectFlow Addressableentityref `json:"architectFlow"`
         
         FlowRequestMappings []Requestmapping `json:"flowRequestMappings"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         FlowRequestMappings: []Requestmapping{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

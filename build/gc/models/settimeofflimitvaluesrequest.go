@@ -31,14 +31,7 @@ type Settimeofflimitvaluesrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Settimeofflimitvaluesrequest) String() string {
-    
-    
      o.Values = []Timeofflimitrange{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Settimeofflimitvaluesrequest) MarshalJSON() ([]byte, error) {
     }
     SettimeofflimitvaluesrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Values []Timeofflimitrange `json:"values"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
         Values: []Timeofflimitrange{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

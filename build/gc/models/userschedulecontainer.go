@@ -39,18 +39,8 @@ type Userschedulecontainer struct {
 // String returns a JSON representation of the model
 func (o *Userschedulecontainer) String() string {
     
-    
-    
-    
-    
-    
      o.PublishedSchedules = []Weekschedulereference{{}} 
-    
-    
-    
      o.UserSchedules = map[string]Userschedule{"": {}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Userschedulecontainer) MarshalJSON() ([]byte, error) {
     }
     UserschedulecontainerMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ManagementUnitTimeZone string `json:"managementUnitTimeZone"`
         
         PublishedSchedules []Weekschedulereference `json:"publishedSchedules"`
         
         UserSchedules map[string]Userschedule `json:"userSchedules"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         PublishedSchedules: []Weekschedulereference{{}},
         
 
-        
 
         
         UserSchedules: map[string]Userschedule{"": {}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

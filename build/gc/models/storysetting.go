@@ -33,13 +33,6 @@ type Storysetting struct {
 func (o *Storysetting) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Storysetting) MarshalJSON() ([]byte, error) {
     }
     StorysettingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Mention Inboundonlysetting `json:"mention"`
         
         Reply Inboundonlysetting `json:"reply"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

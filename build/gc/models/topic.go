@@ -125,55 +125,11 @@ func (o *Topic) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Programs = []Baseprogramentity{{}} 
-    
-    
-    
      o.Tags = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Phrases = []Phrase{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -193,8 +149,7 @@ func (u *Topic) MarshalJSON() ([]byte, error) {
     }
     TopicMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -221,78 +176,59 @@ func (u *Topic) MarshalJSON() ([]byte, error) {
         PublishedBy Addressableentityref `json:"publishedBy"`
         
         DatePublished time.Time `json:"datePublished"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Programs: []Baseprogramentity{{}},
         
 
-        
 
         
         Tags: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Phrases: []Phrase{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

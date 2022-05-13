@@ -33,12 +33,15 @@ func Cmdconversations_messaging_facebook_app() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/FacebookAppCredentials"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/FacebookAppCredentials"
+      }
+    }
   }
 }`)
 	conversations_messaging_facebook_appCmd.AddCommand(getCmd)
-	
 	return conversations_messaging_facebook_appCmd
 }
 

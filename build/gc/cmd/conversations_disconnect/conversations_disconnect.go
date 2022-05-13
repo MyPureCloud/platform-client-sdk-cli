@@ -33,12 +33,15 @@ func Cmdconversations_disconnect() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Accepted",
-  "schema" : {
-    "type" : "string"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "string"
+      }
+    }
   }
 }`)
 	conversations_disconnectCmd.AddCommand(createCmd)
-	
 	return conversations_disconnectCmd
 }
 

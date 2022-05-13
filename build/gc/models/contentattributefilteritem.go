@@ -40,17 +40,7 @@ type Contentattributefilteritem struct {
 func (o *Contentattributefilteritem) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Values = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Contentattributefilteritem) MarshalJSON() ([]byte, error) {
     }
     ContentattributefilteritemMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Operator string `json:"operator"`
         
         Values []string `json:"values"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Values: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -32,10 +32,10 @@ func Cmdoutbound_contactlists_clear() *cobra.Command {
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Contacts will be deleted."
+  "description" : "Contacts will be deleted.",
+  "content" : { }
 }`)
 	outbound_contactlists_clearCmd.AddCommand(createCmd)
-	
 	return outbound_contactlists_clearCmd
 }
 

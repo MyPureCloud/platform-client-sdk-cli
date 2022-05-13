@@ -24,11 +24,7 @@ type Workdaymetriclisting struct {
 
 // String returns a JSON representation of the model
 func (o *Workdaymetriclisting) String() string {
-    
-    
      o.Entities = []Workdaymetric{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Workdaymetriclisting) MarshalJSON() ([]byte, error) {
     }
     WorkdaymetriclistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Workdaymetric `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Workdaymetric `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Workdaymetric{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

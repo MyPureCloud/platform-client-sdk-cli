@@ -69,26 +69,6 @@ func (o *Servicegoaltemplate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -104,8 +84,7 @@ func (u *Servicegoaltemplate) MarshalJSON() ([]byte, error) {
     }
     ServicegoaltemplateMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -116,40 +95,29 @@ func (u *Servicegoaltemplate) MarshalJSON() ([]byte, error) {
         AbandonRate Buabandonrate `json:"abandonRate"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

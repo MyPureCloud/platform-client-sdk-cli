@@ -30,23 +30,28 @@ func init() {
 func Cmdanalytics_users_details_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/users/details/query", utils.FormatPermissions([]string{ "analytics:userDetail:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/users/details/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/UserDetailsQuery"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserDetailsQuery"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AnalyticsUserDetailsQueryResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AnalyticsUserDetailsQueryResponse"
+      }
+    }
   }
 }`)
 	analytics_users_details_queryCmd.AddCommand(createCmd)
-	
 	return analytics_users_details_queryCmd
 }
 

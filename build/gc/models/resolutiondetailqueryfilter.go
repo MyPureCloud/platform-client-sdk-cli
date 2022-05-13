@@ -39,18 +39,8 @@ type Resolutiondetailqueryfilter struct {
 // String returns a JSON representation of the model
 func (o *Resolutiondetailqueryfilter) String() string {
     
-    
-    
-    
-    
-    
      o.Clauses = []Resolutiondetailqueryclause{{}} 
-    
-    
-    
      o.Predicates = []Resolutiondetailquerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Resolutiondetailqueryfilter) MarshalJSON() ([]byte, error) {
     }
     ResolutiondetailqueryfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Clauses []Resolutiondetailqueryclause `json:"clauses"`
         
         Predicates []Resolutiondetailquerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Clauses: []Resolutiondetailqueryclause{{}},
         
 
-        
 
         
         Predicates: []Resolutiondetailquerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

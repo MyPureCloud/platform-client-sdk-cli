@@ -50,19 +50,6 @@ func (o *Locationaddressverificationdetails) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,7 +65,8 @@ func (u *Locationaddressverificationdetails) MarshalJSON() ([]byte, error) {
     }
     LocationaddressverificationdetailsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Status string `json:"status"`
         
         DateFinished time.Time `json:"dateFinished"`
@@ -86,26 +74,20 @@ func (u *Locationaddressverificationdetails) MarshalJSON() ([]byte, error) {
         DateStarted time.Time `json:"dateStarted"`
         
         Service string `json:"service"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

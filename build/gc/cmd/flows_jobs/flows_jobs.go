@@ -33,24 +33,31 @@ func Cmdflows_jobs() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/RegisterArchitectJobResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RegisterArchitectJobResponse"
+      }
+    }
   }
 }`)
 	flows_jobsCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: messages")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/jobs/{jobId}", utils.FormatPermissions([]string{ "architect:job:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ArchitectJobStateResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ArchitectJobStateResponse"
+      }
+    }
   }
 }`)
 	flows_jobsCmd.AddCommand(getCmd)
-	
 	return flows_jobsCmd
 }
 

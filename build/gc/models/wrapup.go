@@ -70,29 +70,7 @@ func (o *Wrapup) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Tags = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -111,7 +89,8 @@ func (u *Wrapup) MarshalJSON() ([]byte, error) {
     }
     WrapupMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Code string `json:"code"`
         
         Name string `json:"name"`
@@ -125,40 +104,31 @@ func (u *Wrapup) MarshalJSON() ([]byte, error) {
         EndTime time.Time `json:"endTime"`
         
         Provisional bool `json:"provisional"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Tags: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

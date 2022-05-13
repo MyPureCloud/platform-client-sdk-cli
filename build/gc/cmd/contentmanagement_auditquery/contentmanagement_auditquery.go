@@ -30,23 +30,28 @@ func init() {
 func Cmdcontentmanagement_auditquery() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/contentmanagement/auditquery", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Content Management", "/api/v2/contentmanagement/auditquery")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Allows for a filtered query returning facet information",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ContentQueryRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContentQueryRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/QueryResults"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QueryResults"
+      }
+    }
   }
 }`)
 	contentmanagement_auditqueryCmd.AddCommand(createCmd)
-	
 	return contentmanagement_auditqueryCmd
 }
 

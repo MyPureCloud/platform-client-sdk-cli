@@ -35,12 +35,15 @@ func Cmdworkforcemanagement_businessunits_intraday_planninggroups() *cobra.Comma
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WfmIntradayPlanningGroupListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WfmIntradayPlanningGroupListing"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_intraday_planninggroupsCmd.AddCommand(listCmd)
-	
 	return workforcemanagement_businessunits_intraday_planninggroupsCmd
 }
 

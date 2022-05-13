@@ -63,27 +63,8 @@ func (o *Gkndocumentationsearchrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Sort = []Searchsort{{}} 
-    
-    
-    
      o.Query = []Gkndocumentationsearchcriteria{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Gkndocumentationsearchrequest) MarshalJSON() ([]byte, error) {
     }
     GkndocumentationsearchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SortOrder string `json:"sortOrder"`
         
         SortBy string `json:"sortBy"`
@@ -111,38 +93,30 @@ func (u *Gkndocumentationsearchrequest) MarshalJSON() ([]byte, error) {
         Sort []Searchsort `json:"sort"`
         
         Query []Gkndocumentationsearchcriteria `json:"query"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Sort: []Searchsort{{}},
         
 
-        
 
         
         Query: []Gkndocumentationsearchcriteria{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

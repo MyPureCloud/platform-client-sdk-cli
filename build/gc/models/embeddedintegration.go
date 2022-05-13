@@ -32,14 +32,7 @@ type Embeddedintegration struct {
 // String returns a JSON representation of the model
 func (o *Embeddedintegration) String() string {
     
-    
-    
-    
-    
-    
      o.DomainWhitelist = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Embeddedintegration) MarshalJSON() ([]byte, error) {
     }
     EmbeddedintegrationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EnableWhitelist bool `json:"enableWhitelist"`
         
         DomainWhitelist []string `json:"domainWhitelist"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         DomainWhitelist: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

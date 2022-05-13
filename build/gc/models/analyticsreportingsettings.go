@@ -33,13 +33,6 @@ type Analyticsreportingsettings struct {
 func (o *Analyticsreportingsettings) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Analyticsreportingsettings) MarshalJSON() ([]byte, error) {
     }
     AnalyticsreportingsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PiiMaskingEnabled bool `json:"piiMaskingEnabled"`
         
         QueueAgentAccessObfuscation bool `json:"queueAgentAccessObfuscation"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

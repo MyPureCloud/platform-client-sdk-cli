@@ -46,22 +46,9 @@ type Routingconversationattributesrequest struct {
 // String returns a JSON representation of the model
 func (o *Routingconversationattributesrequest) String() string {
     
-    
-    
-    
-    
-    
      o.SkillIds = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.RequestScoredAgents = []Requestscoredagent{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Routingconversationattributesrequest) MarshalJSON() ([]byte, error) {
     }
     RoutingconversationattributesrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Priority int `json:"priority"`
         
         SkillIds []string `json:"skillIds"`
@@ -85,30 +73,24 @@ func (u *Routingconversationattributesrequest) MarshalJSON() ([]byte, error) {
         LanguageId string `json:"languageId"`
         
         RequestScoredAgents []Requestscoredagent `json:"requestScoredAgents"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         SkillIds: []string{""},
         
 
-        
 
         
 
-        
 
         
         RequestScoredAgents: []Requestscoredagent{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

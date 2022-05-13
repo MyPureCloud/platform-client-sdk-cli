@@ -32,14 +32,7 @@ type Nuancemixdlgsettings struct {
 // String returns a JSON representation of the model
 func (o *Nuancemixdlgsettings) String() string {
     
-    
-    
-    
-    
-    
      o.InputParameters = map[string]interface{}{"": Interface{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Nuancemixdlgsettings) MarshalJSON() ([]byte, error) {
     }
     NuancemixdlgsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ChannelId string `json:"channelId"`
         
         InputParameters map[string]interface{} `json:"inputParameters"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         InputParameters: map[string]interface{}{"": Interface{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

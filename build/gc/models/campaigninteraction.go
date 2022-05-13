@@ -185,71 +185,7 @@ func (o *Campaigninteraction) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Skills = []Domainentityref{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -265,7 +201,8 @@ func (u *Campaigninteraction) MarshalJSON() ([]byte, error) {
     }
     CampaigninteractionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Campaign Domainentityref `json:"campaign"`
@@ -307,96 +244,73 @@ func (u *Campaigninteraction) MarshalJSON() ([]byte, error) {
         DialingMode string `json:"dialingMode"`
         
         Skills []Domainentityref `json:"skills"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Skills: []Domainentityref{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

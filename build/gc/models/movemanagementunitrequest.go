@@ -25,10 +25,6 @@ type Movemanagementunitrequest struct {
 // String returns a JSON representation of the model
 func (o *Movemanagementunitrequest) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Movemanagementunitrequest) MarshalJSON() ([]byte, error) {
     }
     MovemanagementunitrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        BusinessUnitId string `json:"businessUnitId"`
+    return json.Marshal(&struct {
         
+        BusinessUnitId string `json:"businessUnitId"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

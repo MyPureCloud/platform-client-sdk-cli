@@ -49,19 +49,6 @@ func (o *Fieldconfigs) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Fieldconfigs) MarshalJSON() ([]byte, error) {
     }
     FieldconfigsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Org Fieldconfig `json:"org"`
         
         Person Fieldconfig `json:"person"`
@@ -85,26 +73,20 @@ func (u *Fieldconfigs) MarshalJSON() ([]byte, error) {
         Group Fieldconfig `json:"group"`
         
         ExternalContact Fieldconfig `json:"externalContact"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

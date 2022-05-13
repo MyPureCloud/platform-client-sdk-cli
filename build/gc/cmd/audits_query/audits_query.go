@@ -30,34 +30,43 @@ func init() {
 func Cmdaudits_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/audits/query", utils.FormatPermissions([]string{ "audits:audit:view",  }), utils.GenerateDevCentreLink("POST", "Audit", "/api/v2/audits/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/AuditQueryRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AuditQueryRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AuditQueryExecutionStatusResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AuditQueryExecutionStatusResponse"
+      }
+    }
   }
 }`)
 	audits_queryCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/audits/query/{transactionId}", utils.FormatPermissions([]string{ "audits:audit:view",  }), utils.GenerateDevCentreLink("GET", "Audit", "/api/v2/audits/query/{transactionId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AuditQueryExecutionStatusResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AuditQueryExecutionStatusResponse"
+      }
+    }
   }
 }`)
 	audits_queryCmd.AddCommand(getCmd)
-	
 	return audits_queryCmd
 }
 

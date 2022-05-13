@@ -239,93 +239,8 @@ func (o *Createworkplan) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Shifts = []Createworkplanshift{{}} 
-    
-    
-    
      o.Agents = []Userreference{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -341,7 +256,8 @@ func (u *Createworkplan) MarshalJSON() ([]byte, error) {
     }
     CreateworkplanMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Enabled bool `json:"enabled"`
@@ -397,126 +313,96 @@ func (u *Createworkplan) MarshalJSON() ([]byte, error) {
         Shifts []Createworkplanshift `json:"shifts"`
         
         Agents []Userreference `json:"agents"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Shifts: []Createworkplanshift{{}},
         
 
-        
 
         
         Agents: []Userreference{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

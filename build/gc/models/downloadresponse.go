@@ -40,17 +40,7 @@ type Downloadresponse struct {
 func (o *Downloadresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Thumbnails = []Documentthumbnail{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Downloadresponse) MarshalJSON() ([]byte, error) {
     }
     DownloadresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ContentLocationUri string `json:"contentLocationUri"`
         
         ImageUri string `json:"imageUri"`
         
         Thumbnails []Documentthumbnail `json:"thumbnails"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Thumbnails: []Documentthumbnail{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

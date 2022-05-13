@@ -34,12 +34,15 @@ func Cmdusers_adjacents() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Adjacents"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Adjacents"
+      }
+    }
   }
 }`)
 	users_adjacentsCmd.AddCommand(getCmd)
-	
 	return users_adjacentsCmd
 }
 

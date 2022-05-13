@@ -31,15 +31,8 @@ type Queryresponsegroupeddata struct {
 
 // String returns a JSON representation of the model
 func (o *Queryresponsegroupeddata) String() string {
-    
-    
      o.Group = map[string]string{"": ""} 
-    
-    
-    
      o.Data = []Queryresponsedata{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Queryresponsegroupeddata) MarshalJSON() ([]byte, error) {
     }
     QueryresponsegroupeddataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Group map[string]string `json:"group"`
         
         Data []Queryresponsedata `json:"data"`
-        
         *Alias
     }{
-        
 
         
         Group: map[string]string{"": ""},
         
 
-        
 
         
         Data: []Queryresponsedata{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

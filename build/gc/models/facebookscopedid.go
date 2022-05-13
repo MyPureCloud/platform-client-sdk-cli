@@ -25,10 +25,6 @@ type Facebookscopedid struct {
 // String returns a JSON representation of the model
 func (o *Facebookscopedid) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Facebookscopedid) MarshalJSON() ([]byte, error) {
     }
     FacebookscopedidMarshalled = true
 
-    return json.Marshal(&struct { 
-        ScopedId string `json:"scopedId"`
+    return json.Marshal(&struct {
         
+        ScopedId string `json:"scopedId"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

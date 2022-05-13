@@ -30,23 +30,28 @@ func init() {
 func Cmdcertificate_details() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/certificate/details", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Utilities", "/api/v2/certificate/details")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Certificate",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Certificate"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Certificate"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ParsedCertificate"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ParsedCertificate"
+      }
+    }
   }
 }`)
 	certificate_detailsCmd.AddCommand(createCmd)
-	
 	return certificate_detailsCmd
 }
 

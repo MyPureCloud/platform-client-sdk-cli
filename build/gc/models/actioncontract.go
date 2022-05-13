@@ -33,13 +33,6 @@ type Actioncontract struct {
 func (o *Actioncontract) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Actioncontract) MarshalJSON() ([]byte, error) {
     }
     ActioncontractMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Output Actionoutput `json:"output"`
         
         Input Actioninput `json:"input"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

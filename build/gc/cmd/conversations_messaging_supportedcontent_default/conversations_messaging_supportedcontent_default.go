@@ -33,31 +33,40 @@ func Cmdconversations_messaging_supportedcontent_default() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SupportedContent"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SupportedContent"
+      }
+    }
   }
 }`)
 	conversations_messaging_supportedcontent_defaultCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/messaging/supportedcontent/default", utils.FormatPermissions([]string{ "messaging:supportedContent:edit",  }), utils.GenerateDevCentreLink("PUT", "Conversations", "/api/v2/conversations/messaging/supportedcontent/default")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "SupportedContent",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/SupportedContentReference"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SupportedContentReference"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SupportedContent"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SupportedContent"
+      }
+    }
   }
 }`)
 	conversations_messaging_supportedcontent_defaultCmd.AddCommand(updateCmd)
-	
 	return conversations_messaging_supportedcontent_defaultCmd
 }
 

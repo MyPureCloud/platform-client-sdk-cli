@@ -24,11 +24,7 @@ type Bullseye struct {
 
 // String returns a JSON representation of the model
 func (o *Bullseye) String() string {
-    
-    
      o.Rings = []Ring{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Bullseye) MarshalJSON() ([]byte, error) {
     }
     BullseyeMarshalled = true
 
-    return json.Marshal(&struct { 
-        Rings []Ring `json:"rings"`
+    return json.Marshal(&struct {
         
+        Rings []Ring `json:"rings"`
         *Alias
     }{
-        
 
         
         Rings: []Ring{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

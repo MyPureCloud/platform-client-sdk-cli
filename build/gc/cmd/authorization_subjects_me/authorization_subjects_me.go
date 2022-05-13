@@ -33,12 +33,15 @@ func Cmdauthorization_subjects_me() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AuthzSubject"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AuthzSubject"
+      }
+    }
   }
 }`)
 	authorization_subjects_meCmd.AddCommand(getCmd)
-	
 	return authorization_subjects_meCmd
 }
 

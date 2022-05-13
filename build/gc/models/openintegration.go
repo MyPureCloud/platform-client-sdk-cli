@@ -130,51 +130,7 @@ func (o *Openintegration) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.WebhookHeaders = map[string]string{"": ""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -195,8 +151,7 @@ func (u *Openintegration) MarshalJSON() ([]byte, error) {
     }
     OpenintegrationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -212,8 +167,6 @@ func (u *Openintegration) MarshalJSON() ([]byte, error) {
         
         Status string `json:"status"`
         
-        
-        
         DateCreated time.Time `json:"dateCreated"`
         
         DateModified time.Time `json:"dateModified"`
@@ -221,82 +174,58 @@ func (u *Openintegration) MarshalJSON() ([]byte, error) {
         CreatedBy Domainentityref `json:"createdBy"`
         
         ModifiedBy Domainentityref `json:"modifiedBy"`
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         WebhookHeaders: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

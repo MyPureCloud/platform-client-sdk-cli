@@ -102,40 +102,7 @@ func (o *Flowruntimeexecution) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.OutputData = map[string]interface{}{"": Interface{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -152,7 +119,8 @@ func (u *Flowruntimeexecution) MarshalJSON() ([]byte, error) {
     }
     FlowruntimeexecutionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -172,58 +140,43 @@ func (u *Flowruntimeexecution) MarshalJSON() ([]byte, error) {
         OutputData map[string]interface{} `json:"outputData"`
         
         Conversation Domainentityref `json:"conversation"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         OutputData: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

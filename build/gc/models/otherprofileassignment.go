@@ -39,15 +39,6 @@ type Otherprofileassignment struct {
 func (o *Otherprofileassignment) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,28 +54,22 @@ func (u *Otherprofileassignment) MarshalJSON() ([]byte, error) {
     }
     OtherprofileassignmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         CurrentProfile Domainentityref `json:"currentProfile"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

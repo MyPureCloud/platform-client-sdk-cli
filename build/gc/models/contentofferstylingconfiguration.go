@@ -73,28 +73,6 @@ func (o *Contentofferstylingconfiguration) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Contentofferstylingconfiguration) MarshalJSON() ([]byte, error) {
     }
     ContentofferstylingconfigurationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Position Contentpositionproperties `json:"position"`
         
         Offer Contentofferstyleproperties `json:"offer"`
@@ -124,38 +103,29 @@ func (u *Contentofferstylingconfiguration) MarshalJSON() ([]byte, error) {
         Headline Textstyleproperties `json:"headline"`
         
         Body Textstyleproperties `json:"body"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

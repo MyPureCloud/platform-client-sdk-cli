@@ -53,26 +53,10 @@ type Biography struct {
 // String returns a JSON representation of the model
 func (o *Biography) String() string {
     
-    
-    
-    
-    
-    
      o.Interests = []string{""} 
-    
-    
-    
      o.Hobbies = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.Education = []Education{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Biography) MarshalJSON() ([]byte, error) {
     }
     BiographyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Biography string `json:"biography"`
         
         Interests []string `json:"interests"`
@@ -98,36 +83,29 @@ func (u *Biography) MarshalJSON() ([]byte, error) {
         Spouse string `json:"spouse"`
         
         Education []Education `json:"education"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Interests: []string{""},
         
 
-        
 
         
         Hobbies: []string{""},
         
 
-        
 
         
 
-        
 
         
         Education: []Education{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

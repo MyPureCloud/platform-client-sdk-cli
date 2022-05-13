@@ -24,11 +24,7 @@ type Actions struct {
 
 // String returns a JSON representation of the model
 func (o *Actions) String() string {
-    
-    
      o.SkillsToRemove = []Skillstoremove{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Actions) MarshalJSON() ([]byte, error) {
     }
     ActionsMarshalled = true
 
-    return json.Marshal(&struct { 
-        SkillsToRemove []Skillstoremove `json:"skillsToRemove"`
+    return json.Marshal(&struct {
         
+        SkillsToRemove []Skillstoremove `json:"skillsToRemove"`
         *Alias
     }{
-        
 
         
         SkillsToRemove: []Skillstoremove{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

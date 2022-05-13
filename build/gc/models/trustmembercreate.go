@@ -39,17 +39,7 @@ type Trustmembercreate struct {
 // String returns a JSON representation of the model
 func (o *Trustmembercreate) String() string {
     
-    
-    
-    
-    
-    
      o.RoleIds = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Trustmembercreate) MarshalJSON() ([]byte, error) {
     }
     TrustmembercreateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         RoleIds []string `json:"roleIds"`
         
         RoleDivisions Roledivisiongrants `json:"roleDivisions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         RoleIds: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

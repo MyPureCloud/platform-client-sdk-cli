@@ -251,107 +251,15 @@ func (o *Document) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Tags = []string{""} 
-    
-    
-    
      o.TagValues = []Tagvalue{{}} 
-    
-    
-    
      o.Attributes = []Documentattribute{{}} 
-    
-    
-    
      o.Thumbnails = []Documentthumbnail{{}} 
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Acl = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -369,8 +277,7 @@ func (u *Document) MarshalJSON() ([]byte, error) {
     }
     DocumentMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -429,146 +336,111 @@ func (u *Document) MarshalJSON() ([]byte, error) {
         SharingStatus string `json:"sharingStatus"`
         
         DownloadSharingUri string `json:"downloadSharingUri"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Tags: []string{""},
         
 
-        
 
         
         TagValues: []Tagvalue{{}},
         
 
-        
 
         
         Attributes: []Documentattribute{{}},
         
 
-        
 
         
         Thumbnails: []Documentthumbnail{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Acl: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

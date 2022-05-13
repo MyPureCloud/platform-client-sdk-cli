@@ -49,19 +49,6 @@ func (o *Scimv2enterpriseuser) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Scimv2enterpriseuser) MarshalJSON() ([]byte, error) {
     }
     Scimv2enterpriseuserMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Division string `json:"division"`
         
         Department string `json:"department"`
@@ -85,26 +73,20 @@ func (u *Scimv2enterpriseuser) MarshalJSON() ([]byte, error) {
         Manager Manager `json:"manager"`
         
         EmployeeNumber string `json:"employeeNumber"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

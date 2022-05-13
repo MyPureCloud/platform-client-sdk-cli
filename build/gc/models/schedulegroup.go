@@ -145,58 +145,9 @@ func (o *Schedulegroup) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.OpenSchedules = []Domainentityref{{}} 
-    
-    
-    
      o.ClosedSchedules = []Domainentityref{{}} 
-    
-    
-    
      o.HolidaySchedules = []Domainentityref{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -212,8 +163,7 @@ func (u *Schedulegroup) MarshalJSON() ([]byte, error) {
     }
     SchedulegroupMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -231,8 +181,6 @@ func (u *Schedulegroup) MarshalJSON() ([]byte, error) {
         
         CreatedBy string `json:"createdBy"`
         
-        
-        
         ModifiedByApp string `json:"modifiedByApp"`
         
         CreatedByApp string `json:"createdByApp"`
@@ -244,86 +192,65 @@ func (u *Schedulegroup) MarshalJSON() ([]byte, error) {
         ClosedSchedules []Domainentityref `json:"closedSchedules"`
         
         HolidaySchedules []Domainentityref `json:"holidaySchedules"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         OpenSchedules: []Domainentityref{{}},
         
 
-        
 
         
         ClosedSchedules: []Domainentityref{{}},
         
 
-        
 
         
         HolidaySchedules: []Domainentityref{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

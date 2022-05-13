@@ -25,10 +25,6 @@ type Stationsettings struct {
 // String returns a JSON representation of the model
 func (o *Stationsettings) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Stationsettings) MarshalJSON() ([]byte, error) {
     }
     StationsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
-        FreeSeatingConfiguration Freeseatingconfiguration `json:"freeSeatingConfiguration"`
+    return json.Marshal(&struct {
         
+        FreeSeatingConfiguration Freeseatingconfiguration `json:"freeSeatingConfiguration"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

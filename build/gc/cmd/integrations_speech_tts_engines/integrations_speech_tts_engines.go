@@ -34,12 +34,16 @@ func Cmdintegrations_speech_tts_engines() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TtsEngineEntity"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TtsEngineEntity"
+      }
+    }
   }
 }`)
 	integrations_speech_tts_enginesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeVoices", "false", "Include voices for the engine")
@@ -50,12 +54,15 @@ func Cmdintegrations_speech_tts_engines() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	integrations_speech_tts_enginesCmd.AddCommand(listCmd)
-	
 	return integrations_speech_tts_enginesCmd
 }
 

@@ -30,23 +30,28 @@ func init() {
 func Cmdcoaching_scheduleslots_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/coaching/scheduleslots/query", utils.FormatPermissions([]string{ "coaching:scheduleSlot:view",  }), utils.GenerateDevCentreLink("POST", "Coaching", "/api/v2/coaching/scheduleslots/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The slot search request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CoachingSlotsRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingSlotsRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Coaching slots retrieved",
-  "schema" : {
-    "$ref" : "#/definitions/CoachingSlotsResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingSlotsResponse"
+      }
+    }
   }
 }`)
 	coaching_scheduleslots_queryCmd.AddCommand(createCmd)
-	
 	return coaching_scheduleslots_queryCmd
 }
 

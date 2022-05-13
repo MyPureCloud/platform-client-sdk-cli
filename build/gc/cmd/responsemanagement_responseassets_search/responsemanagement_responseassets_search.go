@@ -31,23 +31,28 @@ func Cmdresponsemanagement_responseassets_search() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: user, division")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/responsemanagement/responseassets/search", utils.FormatPermissions([]string{ "responseAssets:asset:view",  }), utils.GenerateDevCentreLink("POST", "Response Management", "/api/v2/responsemanagement/responseassets/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ResponseAssetSearchRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ResponseAssetSearchRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ResponseAssetSearchResults"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ResponseAssetSearchResults"
+      }
+    }
   }
 }`)
 	responsemanagement_responseassets_searchCmd.AddCommand(createCmd)
-	
 	return responsemanagement_responseassets_searchCmd
 }
 

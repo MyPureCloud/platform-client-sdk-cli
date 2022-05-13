@@ -49,19 +49,6 @@ func (o *Bulkresponseresultnoteentity) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Bulkresponseresultnoteentity) MarshalJSON() ([]byte, error) {
     }
     BulkresponseresultnoteentityMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Success bool `json:"success"`
@@ -85,26 +73,20 @@ func (u *Bulkresponseresultnoteentity) MarshalJSON() ([]byte, error) {
         Entity Note `json:"entity"`
         
         VarError Bulkerrorentity `json:"error"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -38,19 +38,9 @@ type Transcripts struct {
 
 // String returns a JSON representation of the model
 func (o *Transcripts) String() string {
-    
-    
      o.ExactMatch = []string{""} 
-    
-    
-    
      o.Contains = []string{""} 
-    
-    
-    
      o.DoesNotContain = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,34 +56,30 @@ func (u *Transcripts) MarshalJSON() ([]byte, error) {
     }
     TranscriptsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ExactMatch []string `json:"exactMatch"`
         
         Contains []string `json:"contains"`
         
         DoesNotContain []string `json:"doesNotContain"`
-        
         *Alias
     }{
-        
 
         
         ExactMatch: []string{""},
         
 
-        
 
         
         Contains: []string{""},
         
 
-        
 
         
         DoesNotContain: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

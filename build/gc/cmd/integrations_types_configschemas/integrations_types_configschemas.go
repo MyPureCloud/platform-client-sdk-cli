@@ -33,12 +33,15 @@ func Cmdintegrations_types_configschemas() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/JsonSchemaDocument"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/JsonSchemaDocument"
+      }
+    }
   }
 }`)
 	integrations_types_configschemasCmd.AddCommand(getCmd)
-	
 	return integrations_types_configschemasCmd
 }
 

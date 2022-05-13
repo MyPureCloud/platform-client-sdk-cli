@@ -24,11 +24,7 @@ type Forecastplanninggroupsresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Forecastplanninggroupsresponse) String() string {
-    
-    
      o.Entities = []Forecastplanninggroupresponse{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Forecastplanninggroupsresponse) MarshalJSON() ([]byte, error) {
     }
     ForecastplanninggroupsresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Forecastplanninggroupresponse `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Forecastplanninggroupresponse `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Forecastplanninggroupresponse{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

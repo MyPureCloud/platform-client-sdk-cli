@@ -33,13 +33,6 @@ type Openmessagecontent struct {
 func (o *Openmessagecontent) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Openmessagecontent) MarshalJSON() ([]byte, error) {
     }
     OpenmessagecontentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ContentType string `json:"contentType"`
         
         Attachment Contentattachment `json:"attachment"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

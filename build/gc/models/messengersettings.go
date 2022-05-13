@@ -65,25 +65,6 @@ func (o *Messengersettings) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Messengersettings) MarshalJSON() ([]byte, error) {
     }
     MessengersettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Enabled bool `json:"enabled"`
         
         Styles Messengerstyles `json:"styles"`
@@ -111,34 +93,26 @@ func (u *Messengersettings) MarshalJSON() ([]byte, error) {
         Apps Messengerapps `json:"apps"`
         
         HomeScreen Messengerhomescreen `json:"homeScreen"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

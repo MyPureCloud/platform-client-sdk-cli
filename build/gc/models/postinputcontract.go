@@ -25,10 +25,6 @@ type Postinputcontract struct {
 // String returns a JSON representation of the model
 func (o *Postinputcontract) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Postinputcontract) MarshalJSON() ([]byte, error) {
     }
     PostinputcontractMarshalled = true
 
-    return json.Marshal(&struct { 
-        InputSchema Jsonschemadocument `json:"inputSchema"`
+    return json.Marshal(&struct {
         
+        InputSchema Jsonschemadocument `json:"inputSchema"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

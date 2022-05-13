@@ -136,53 +136,7 @@ func (o *Evaluationquestiongroupscore) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.QuestionScores = []Evaluationquestionscore{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -198,7 +152,8 @@ func (u *Evaluationquestiongroupscore) MarshalJSON() ([]byte, error) {
     }
     EvaluationquestiongroupscoreMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QuestionGroupId string `json:"questionGroupId"`
         
         TotalScore float32 `json:"totalScore"`
@@ -228,72 +183,55 @@ func (u *Evaluationquestiongroupscore) MarshalJSON() ([]byte, error) {
         MaxTotalNonCriticalScoreUnweighted float32 `json:"maxTotalNonCriticalScoreUnweighted"`
         
         QuestionScores []Evaluationquestionscore `json:"questionScores"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         QuestionScores: []Evaluationquestionscore{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

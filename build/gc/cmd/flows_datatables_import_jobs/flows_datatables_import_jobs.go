@@ -30,34 +30,44 @@ func init() {
 func Cmdflows_datatables_import_jobs() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/datatables/{datatableId}/import/jobs", utils.FormatPermissions([]string{ "architect:datatable:edit", "architect:datatableRow:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/datatables/{datatableId}/import/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "import job information",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DataTableImportJob"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataTableImportJob"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DataTableImportJob"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataTableImportJob"
+      }
+    }
   }
 }`)
 	flows_datatables_import_jobsCmd.AddCommand(createCmd)
-	
+
 	getstateinformationCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getstateinformationCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}", utils.FormatPermissions([]string{ "architect:datatable:view", "architect:datatableRow:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}")))
 	utils.AddFileFlagIfUpsert(getstateinformationCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getstateinformationCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DataTableImportJob"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataTableImportJob"
+      }
+    }
   }
 }`)
 	flows_datatables_import_jobsCmd.AddCommand(getstateinformationCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/{datatableId}/import/jobs", utils.FormatPermissions([]string{ "architect:datatable:edit", "architect:datatableRow:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/datatables/{datatableId}/import/jobs")))
@@ -65,12 +75,15 @@ func Cmdflows_datatables_import_jobs() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	flows_datatables_import_jobsCmd.AddCommand(listCmd)
-	
 	return flows_datatables_import_jobsCmd
 }
 

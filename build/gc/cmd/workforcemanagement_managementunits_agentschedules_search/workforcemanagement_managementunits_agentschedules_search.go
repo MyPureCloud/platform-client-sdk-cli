@@ -32,23 +32,28 @@ func Cmdworkforcemanagement_managementunits_agentschedules_search() *cobra.Comma
 	utils.AddFlag(createCmd.Flags(), "bool", "forceDownloadService", "", "Force the result of this operation to be sent via download service.  For testing/app development purposes")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search", utils.FormatPermissions([]string{ "wfm:publishedSchedule:view", "wfm:schedule:view",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/BuSearchAgentSchedulesRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuSearchAgentSchedulesRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuAsyncAgentSchedulesSearchResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuAsyncAgentSchedulesSearchResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_managementunits_agentschedules_searchCmd.AddCommand(createCmd)
-	
 	return workforcemanagement_managementunits_agentschedules_searchCmd
 }
 

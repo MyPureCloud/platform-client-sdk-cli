@@ -79,31 +79,7 @@ type Campaignschedule struct {
 func (o *Campaignschedule) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Intervals = []Scheduleinterval{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -121,14 +97,9 @@ func (u *Campaignschedule) MarshalJSON() ([]byte, error) {
     }
     CampaignscheduleMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
@@ -137,50 +108,37 @@ func (u *Campaignschedule) MarshalJSON() ([]byte, error) {
         TimeZone string `json:"timeZone"`
         
         Campaign Domainentityref `json:"campaign"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Intervals: []Scheduleinterval{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

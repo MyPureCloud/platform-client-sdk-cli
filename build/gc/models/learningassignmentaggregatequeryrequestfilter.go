@@ -32,14 +32,7 @@ type Learningassignmentaggregatequeryrequestfilter struct {
 // String returns a JSON representation of the model
 func (o *Learningassignmentaggregatequeryrequestfilter) String() string {
     
-    
-    
-    
-    
-    
      o.Clauses = []Learningassignmentaggregatequeryrequestclause{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Learningassignmentaggregatequeryrequestfilter) MarshalJSON() ([]byte, e
     }
     LearningassignmentaggregatequeryrequestfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Clauses []Learningassignmentaggregatequeryrequestclause `json:"clauses"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Clauses: []Learningassignmentaggregatequeryrequestclause{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

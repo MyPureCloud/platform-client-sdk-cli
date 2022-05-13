@@ -95,41 +95,7 @@ type Analyticsmediaendpointstat struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticsmediaendpointstat) String() string {
-    
-    
      o.Codecs = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -155,7 +121,8 @@ func (u *Analyticsmediaendpointstat) MarshalJSON() ([]byte, error) {
     }
     AnalyticsmediaendpointstatMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Codecs []string `json:"codecs"`
         
         DiscardedPackets int `json:"discardedPackets"`
@@ -177,56 +144,43 @@ func (u *Analyticsmediaendpointstat) MarshalJSON() ([]byte, error) {
         ReceivedPackets int `json:"receivedPackets"`
         
         UnderrunPackets int `json:"underrunPackets"`
-        
         *Alias
     }{
-        
 
         
         Codecs: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

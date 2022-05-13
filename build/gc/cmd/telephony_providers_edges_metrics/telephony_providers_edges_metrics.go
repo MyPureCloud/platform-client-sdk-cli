@@ -33,12 +33,16 @@ func Cmdtelephony_providers_edges_metrics() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EdgeMetrics"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EdgeMetrics"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_metricsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "edgeIds", "", "Comma separated list of Edge Id`s - REQUIRED")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/metrics", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/metrics")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -46,15 +50,18 @@ func Cmdtelephony_providers_edges_metrics() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/EdgeMetrics"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/EdgeMetrics"
+        }
+      }
     }
   }
 }`)
 	telephony_providers_edges_metricsCmd.AddCommand(listCmd)
-	
 	return telephony_providers_edges_metricsCmd
 }
 

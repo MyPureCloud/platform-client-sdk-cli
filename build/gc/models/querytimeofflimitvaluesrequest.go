@@ -40,17 +40,7 @@ type Querytimeofflimitvaluesrequest struct {
 func (o *Querytimeofflimitvaluesrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.DateRanges = []Localdaterange{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Querytimeofflimitvaluesrequest) MarshalJSON() ([]byte, error) {
     }
     QuerytimeofflimitvaluesrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TimeOffLimitId string `json:"timeOffLimitId"`
         
         ActivityCodeId string `json:"activityCodeId"`
         
         DateRanges []Localdaterange `json:"dateRanges"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         DateRanges: []Localdaterange{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

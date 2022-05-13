@@ -46,21 +46,8 @@ type Additionalmessage struct {
 // String returns a JSON representation of the model
 func (o *Additionalmessage) String() string {
     
-    
-    
-    
-    
-    
      o.MediaIds = []string{""} 
-    
-    
-    
      o.StickerIds = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Additionalmessage) MarshalJSON() ([]byte, error) {
     }
     AdditionalmessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TextBody string `json:"textBody"`
         
         MediaIds []string `json:"mediaIds"`
@@ -85,30 +73,24 @@ func (u *Additionalmessage) MarshalJSON() ([]byte, error) {
         StickerIds []string `json:"stickerIds"`
         
         MessagingTemplate Messagingtemplaterequest `json:"messagingTemplate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         MediaIds: []string{""},
         
 
-        
 
         
         StickerIds: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

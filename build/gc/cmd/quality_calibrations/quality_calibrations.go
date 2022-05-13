@@ -31,23 +31,29 @@ func Cmdquality_calibrations() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "string", "expand", "", "calibratorId")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/calibrations", utils.FormatPermissions([]string{ "quality:calibration:add",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/calibrations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "calibration",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CalibrationCreate"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CalibrationCreate"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Calibration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Calibration"
+      }
+    }
   }
 }`)
 	quality_calibrationsCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(deleteCmd.Flags(), "string", "calibratorId", "", "calibratorId - REQUIRED")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/quality/calibrations/{calibrationId}", utils.FormatPermissions([]string{ "quality:calibration:delete",  }), utils.GenerateDevCentreLink("DELETE", "Quality", "/api/v2/quality/calibrations/{calibrationId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
@@ -55,12 +61,16 @@ func Cmdquality_calibrations() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Calibration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Calibration"
+      }
+    }
   }
 }`)
 	quality_calibrationsCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "string", "calibratorId", "", "calibratorId")
 	utils.AddFlag(getCmd.Flags(), "string", "conversationId", "", "conversationId")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/calibrations/{calibrationId}", utils.FormatPermissions([]string{ "quality:calibration:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/calibrations/{calibrationId}")))
@@ -68,12 +78,16 @@ func Cmdquality_calibrations() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Calibration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Calibration"
+      }
+    }
   }
 }`)
 	quality_calibrationsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
@@ -90,31 +104,40 @@ func Cmdquality_calibrations() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	quality_calibrationsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/calibrations/{calibrationId}", utils.FormatPermissions([]string{ "quality:calibration:edit",  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/calibrations/{calibrationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Calibration",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Calibration"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Calibration"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Calibration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Calibration"
+      }
+    }
   }
 }`)
 	quality_calibrationsCmd.AddCommand(updateCmd)
-	
 	return quality_calibrationsCmd
 }
 

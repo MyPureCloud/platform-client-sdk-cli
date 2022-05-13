@@ -30,48 +30,59 @@ func init() {
 func Cmdusers_routingskills_bulk() *cobra.Command { 
 	bulkaddCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", bulkaddCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  }), utils.GenerateDevCentreLink("PATCH", "Users", "/api/v2/users/{userId}/routingskills/bulk")))
 	utils.AddFileFlagIfUpsert(bulkaddCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Skill",
-  "required" : true,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/UserRoutingSkillPost"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/UserRoutingSkillPost"
+        }
+      }
     }
-  }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(bulkaddCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserSkillEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserSkillEntityListing"
+      }
+    }
   }
 }`)
 	users_routingskills_bulkCmd.AddCommand(bulkaddCmd)
-	
+
 	bulkupdateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", bulkupdateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/routingskills/bulk", utils.FormatPermissions([]string{ "routing:skill:assign",  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/routingskills/bulk")))
 	utils.AddFileFlagIfUpsert(bulkupdateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Skill",
-  "required" : true,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/UserRoutingSkillPost"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/UserRoutingSkillPost"
+        }
+      }
     }
-  }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(bulkupdateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserSkillEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserSkillEntityListing"
+      }
+    }
   }
 }`)
 	users_routingskills_bulkCmd.AddCommand(bulkupdateCmd)
-	
 	return users_routingskills_bulkCmd
 }
 

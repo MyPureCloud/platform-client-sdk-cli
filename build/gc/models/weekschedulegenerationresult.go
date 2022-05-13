@@ -47,20 +47,7 @@ type Weekschedulegenerationresult struct {
 func (o *Weekschedulegenerationresult) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.AgentWarnings = []Schedulegenerationwarning{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Weekschedulegenerationresult) MarshalJSON() ([]byte, error) {
     }
     WeekschedulegenerationresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Failed bool `json:"failed"`
         
         RunId string `json:"runId"`
@@ -85,28 +73,22 @@ func (u *Weekschedulegenerationresult) MarshalJSON() ([]byte, error) {
         AgentWarnings []Schedulegenerationwarning `json:"agentWarnings"`
         
         AgentWarningCount int `json:"agentWarningCount"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         AgentWarnings: []Schedulegenerationwarning{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

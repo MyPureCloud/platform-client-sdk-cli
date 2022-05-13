@@ -33,31 +33,40 @@ func Cmdintegrations_speech_tts_settings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TtsSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TtsSettings"
+      }
+    }
   }
 }`)
 	integrations_speech_tts_settingsCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/integrations/speech/tts/settings", utils.FormatPermissions([]string{ "integrations:integration:edit",  }), utils.GenerateDevCentreLink("PUT", "Integrations", "/api/v2/integrations/speech/tts/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Updated TtsSettings",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/TtsSettings"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TtsSettings"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TtsSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TtsSettings"
+      }
+    }
   }
 }`)
 	integrations_speech_tts_settingsCmd.AddCommand(updateCmd)
-	
 	return integrations_speech_tts_settingsCmd
 }
 

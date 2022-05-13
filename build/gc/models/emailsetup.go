@@ -25,10 +25,6 @@ type Emailsetup struct {
 // String returns a JSON representation of the model
 func (o *Emailsetup) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Emailsetup) MarshalJSON() ([]byte, error) {
     }
     EmailsetupMarshalled = true
 
-    return json.Marshal(&struct { 
-        RootDomain string `json:"rootDomain"`
+    return json.Marshal(&struct {
         
+        RootDomain string `json:"rootDomain"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

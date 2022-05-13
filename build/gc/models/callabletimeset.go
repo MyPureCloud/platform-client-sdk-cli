@@ -65,25 +65,7 @@ type Callabletimeset struct {
 func (o *Callabletimeset) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.CallableTimes = []Callabletime{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,54 +81,38 @@ func (u *Callabletimeset) MarshalJSON() ([]byte, error) {
     }
     CallabletimesetMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
         CallableTimes []Callabletime `json:"callableTimes"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         CallableTimes: []Callabletime{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

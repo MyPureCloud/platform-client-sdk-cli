@@ -33,13 +33,6 @@ type Callablewindow struct {
 func (o *Callablewindow) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Callablewindow) MarshalJSON() ([]byte, error) {
     }
     CallablewindowMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Mapped Atzmtimeslot `json:"mapped"`
         
         Unmapped Atzmtimeslotwithtimezone `json:"unmapped"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

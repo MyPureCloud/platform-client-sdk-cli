@@ -52,23 +52,7 @@ type Auditrealtimequeryresultsresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Auditrealtimequeryresultsresponse) String() string {
-    
-    
      o.Entities = []Auditlogmessage{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -88,7 +72,8 @@ func (u *Auditrealtimequeryresultsresponse) MarshalJSON() ([]byte, error) {
     }
     AuditrealtimequeryresultsresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Auditlogmessage `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -98,32 +83,25 @@ func (u *Auditrealtimequeryresultsresponse) MarshalJSON() ([]byte, error) {
         Total int `json:"total"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Auditlogmessage{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

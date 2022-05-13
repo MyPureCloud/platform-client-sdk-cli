@@ -33,13 +33,6 @@ type Voicemailretentionpolicy struct {
 func (o *Voicemailretentionpolicy) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Voicemailretentionpolicy) MarshalJSON() ([]byte, error) {
     }
     VoicemailretentionpolicyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VoicemailRetentionPolicyType string `json:"voicemailRetentionPolicyType"`
         
         NumberOfDays int `json:"numberOfDays"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -101,38 +101,6 @@ func (o *Evaluatoractivity) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -148,8 +116,7 @@ func (u *Evaluatoractivity) MarshalJSON() ([]byte, error) {
     }
     EvaluatoractivityMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -168,56 +135,41 @@ func (u *Evaluatoractivity) MarshalJSON() ([]byte, error) {
         NumCalibrationsCompleted int `json:"numCalibrationsCompleted"`
         
         NumEvaluationsWithoutViewPermission int `json:"numEvaluationsWithoutViewPermission"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

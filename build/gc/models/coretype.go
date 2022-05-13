@@ -98,41 +98,9 @@ func (o *Coretype) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ValidationFields = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.ItemValidationFields = []string{""} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -149,8 +117,7 @@ func (u *Coretype) MarshalJSON() ([]byte, error) {
     }
     CoretypeMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -169,60 +136,45 @@ func (u *Coretype) MarshalJSON() ([]byte, error) {
         ItemValidationFields []string `json:"itemValidationFields"`
         
         ItemValidationLimits Itemvalidationlimits `json:"itemValidationLimits"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ValidationFields: []string{""},
         
 
-        
 
         
 
-        
 
         
         ItemValidationFields: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,23 +30,28 @@ func init() {
 func Cmdexternalcontacts_bulk_relationships() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/bulk/relationships", utils.FormatPermissions([]string{ "externalContacts:contact:view", "externalContacts:externalOrganization:view",  }), utils.GenerateDevCentreLink("POST", "External Contacts", "/api/v2/externalcontacts/bulk/relationships")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Relationships ids",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/BulkIdsRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BulkIdsRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BulkFetchRelationshipsResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BulkFetchRelationshipsResponse"
+      }
+    }
   }
 }`)
 	externalcontacts_bulk_relationshipsCmd.AddCommand(createCmd)
-	
 	return externalcontacts_bulk_relationshipsCmd
 }
 

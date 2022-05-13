@@ -77,29 +77,6 @@ func (o *Batchdownloadjobresult) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -115,8 +92,7 @@ func (u *Batchdownloadjobresult) MarshalJSON() ([]byte, error) {
     }
     BatchdownloadjobresultMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -129,44 +105,32 @@ func (u *Batchdownloadjobresult) MarshalJSON() ([]byte, error) {
         ContentType string `json:"contentType"`
         
         ErrorMsg string `json:"errorMsg"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

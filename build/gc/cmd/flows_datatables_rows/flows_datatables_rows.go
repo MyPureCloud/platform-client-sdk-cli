@@ -30,54 +30,65 @@ func init() {
 func Cmdflows_datatables_rows() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/datatables/{datatableId}/rows", utils.FormatPermissions([]string{ "architect:datatable:add", "architect:datatableRow:add",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/datatables/{datatableId}/rows")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "dataTableRow",
-  "required" : true,
-  "schema" : {
-    "type" : "object",
-    "additionalProperties" : {
-      "type" : "object",
-      "properties" : { }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "object",
+        "additionalProperties" : {
+          "type" : "object",
+          "properties" : { }
+        }
+      }
     }
-  }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "object",
-    "additionalProperties" : {
-      "type" : "object",
-      "properties" : { }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "object",
+        "additionalProperties" : {
+          "type" : "object",
+          "properties" : { }
+        }
+      }
     }
   }
 }`)
 	flows_datatables_rowsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/flows/datatables/{datatableId}/rows/{rowId}", utils.FormatPermissions([]string{ "architect:datatable:delete", "architect:datatableRow:delete",  }), utils.GenerateDevCentreLink("DELETE", "Architect", "/api/v2/flows/datatables/{datatableId}/rows/{rowId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "The row was deleted successfully"
+  "description" : "The row was deleted successfully",
+  "content" : { }
 }`)
 	flows_datatables_rowsCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "bool", "showbrief", "true", "if true returns just the key field for the row")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/{datatableId}/rows/{rowId}", utils.FormatPermissions([]string{ "architect:datatable:view", "architect:datatableRow:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/datatables/{datatableId}/rows/{rowId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "object",
-    "additionalProperties" : {
-      "type" : "object",
-      "properties" : { }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "object",
+        "additionalProperties" : {
+          "type" : "object",
+          "properties" : { }
+        }
+      }
     }
   }
 }`)
 	flows_datatables_rowsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "bool", "showbrief", "true", "If true returns just the key value of the row")
@@ -86,39 +97,48 @@ func Cmdflows_datatables_rows() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	flows_datatables_rowsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/flows/datatables/{datatableId}/rows/{rowId}", utils.FormatPermissions([]string{ "architect:datatable:edit", "architect:datatableRow:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/flows/datatables/{datatableId}/rows/{rowId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "datatable row",
-  "required" : false,
-  "schema" : {
-    "type" : "object",
-    "additionalProperties" : {
-      "type" : "object",
-      "properties" : { }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "object",
+        "additionalProperties" : {
+          "type" : "object",
+          "properties" : { }
+        }
+      }
     }
-  }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "object",
-    "additionalProperties" : {
-      "type" : "object",
-      "properties" : { }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "object",
+        "additionalProperties" : {
+          "type" : "object",
+          "properties" : { }
+        }
+      }
     }
   }
 }`)
 	flows_datatables_rowsCmd.AddCommand(updateCmd)
-	
 	return flows_datatables_rowsCmd
 }
 

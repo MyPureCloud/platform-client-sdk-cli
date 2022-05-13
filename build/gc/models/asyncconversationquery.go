@@ -87,42 +87,11 @@ type Asyncconversationquery struct {
 
 // String returns a JSON representation of the model
 func (o *Asyncconversationquery) String() string {
-    
-    
      o.ConversationFilters = []Conversationdetailqueryfilter{{}} 
-    
-    
-    
      o.SegmentFilters = []Segmentdetailqueryfilter{{}} 
-    
-    
-    
      o.EvaluationFilters = []Evaluationdetailqueryfilter{{}} 
-    
-    
-    
      o.SurveyFilters = []Surveydetailqueryfilter{{}} 
-    
-    
-    
      o.ResolutionFilters = []Resolutiondetailqueryfilter{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Asyncconversationquery) MarshalJSON() ([]byte, error) {
     }
     AsyncconversationqueryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ConversationFilters []Conversationdetailqueryfilter `json:"conversationFilters"`
         
         SegmentFilters []Segmentdetailqueryfilter `json:"segmentFilters"`
@@ -163,60 +133,48 @@ func (u *Asyncconversationquery) MarshalJSON() ([]byte, error) {
         Limit int `json:"limit"`
         
         StartOfDayIntervalMatching bool `json:"startOfDayIntervalMatching"`
-        
         *Alias
     }{
-        
 
         
         ConversationFilters: []Conversationdetailqueryfilter{{}},
         
 
-        
 
         
         SegmentFilters: []Segmentdetailqueryfilter{{}},
         
 
-        
 
         
         EvaluationFilters: []Evaluationdetailqueryfilter{{}},
         
 
-        
 
         
         SurveyFilters: []Surveydetailqueryfilter{{}},
         
 
-        
 
         
         ResolutionFilters: []Resolutiondetailqueryfilter{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

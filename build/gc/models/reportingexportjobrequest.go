@@ -158,64 +158,9 @@ func (o *Reportingexportjobrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.SelectedColumns = []Selectedcolumns{{}} 
     
-    
-    
-    
-    
-    
-    
      o.RecipientEmails = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -231,7 +176,8 @@ func (u *Reportingexportjobrequest) MarshalJSON() ([]byte, error) {
     }
     ReportingexportjobrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         TimeZone string `json:"timeZone"`
@@ -267,86 +213,66 @@ func (u *Reportingexportjobrequest) MarshalJSON() ([]byte, error) {
         HasCustomParticipantAttributes bool `json:"hasCustomParticipantAttributes"`
         
         RecipientEmails []string `json:"recipientEmails"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SelectedColumns: []Selectedcolumns{{}},
         
 
-        
 
         
 
-        
 
         
         RecipientEmails: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

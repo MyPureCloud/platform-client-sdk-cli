@@ -33,13 +33,6 @@ type Searchsort struct {
 func (o *Searchsort) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Searchsort) MarshalJSON() ([]byte, error) {
     }
     SearchsortMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SortOrder string `json:"sortOrder"`
         
         SortBy string `json:"sortBy"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

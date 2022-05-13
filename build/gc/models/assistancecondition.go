@@ -32,14 +32,7 @@ type Assistancecondition struct {
 // String returns a JSON representation of the model
 func (o *Assistancecondition) String() string {
     
-    
-    
-    
-    
-    
      o.TopicIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Assistancecondition) MarshalJSON() ([]byte, error) {
     }
     AssistanceconditionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Operator string `json:"operator"`
         
         TopicIds []string `json:"topicIds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         TopicIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

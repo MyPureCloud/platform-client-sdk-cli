@@ -31,14 +31,7 @@ type Activitycodecontainer struct {
 
 // String returns a JSON representation of the model
 func (o *Activitycodecontainer) String() string {
-    
-    
      o.ActivityCodes = map[string]Activitycode{"": {}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Activitycodecontainer) MarshalJSON() ([]byte, error) {
     }
     ActivitycodecontainerMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ActivityCodes map[string]Activitycode `json:"activityCodes"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
         ActivityCodes: map[string]Activitycode{"": {}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,23 +30,28 @@ func init() {
 func Cmdquality_evaluations_scoring() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/evaluations/scoring", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/evaluations/scoring")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "evaluationAndScoringSet",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/EvaluationFormAndScoringSet"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EvaluationFormAndScoringSet"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EvaluationScoringSet"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EvaluationScoringSet"
+      }
+    }
   }
 }`)
 	quality_evaluations_scoringCmd.AddCommand(createCmd)
-	
 	return quality_evaluations_scoringCmd
 }
 

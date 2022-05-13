@@ -49,19 +49,6 @@ func (o *Asyncforecastoperationresult) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Asyncforecastoperationresult) MarshalJSON() ([]byte, error) {
     }
     AsyncforecastoperationresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Status string `json:"status"`
         
         OperationId string `json:"operationId"`
@@ -85,26 +73,20 @@ func (u *Asyncforecastoperationresult) MarshalJSON() ([]byte, error) {
         Result Bushorttermforecast `json:"result"`
         
         Progress int `json:"progress"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

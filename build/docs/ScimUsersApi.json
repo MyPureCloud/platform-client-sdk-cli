@@ -1,0 +1,141 @@
+{
+    "POST /api/v2/scim/users": {
+        "operationId": "postscimusers",
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Scimv2createuser",
+                "required": "true"
+            }
+        ],
+        "return": "Scimv2user"
+    },
+    "DELETE /api/v2/scim/users/{userId}": {
+        "operationId": "deletescimuser",
+        "functionName": "delete",
+        "signature": "delete(userId, ifMatch)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "ifMatch",
+                "type": "string",
+                "required": "false"
+            }
+        ],
+        "return": "interface{}"
+    },
+    "GET /api/v2/scim/users/{userId}": {
+        "operationId": "getscimuser",
+        "functionName": "get",
+        "signature": "get(userId, attributes, excludedAttributes, ifNoneMatch)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "attributes",
+                "type": "[]string",
+                "required": "false"
+            },
+            {
+                "name": "excludedAttributes",
+                "type": "[]string",
+                "required": "false"
+            },
+            {
+                "name": "ifNoneMatch",
+                "type": "string",
+                "required": "false"
+            }
+        ],
+        "return": "Scimv2user"
+    },
+    "GET /api/v2/scim/users": {
+        "operationId": "getscimusers",
+        "functionName": "list",
+        "signature": "list(startIndex, count, attributes, excludedAttributes, filter)",
+        "parameters": [
+            {
+                "name": "startIndex",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "count",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "attributes",
+                "type": "[]string",
+                "required": "false"
+            },
+            {
+                "name": "excludedAttributes",
+                "type": "[]string",
+                "required": "false"
+            },
+            {
+                "name": "filter",
+                "type": "string",
+                "required": "false"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/scim/users/{userId}": {
+        "operationId": "putscimuser",
+        "functionName": "replace",
+        "signature": "replace(userId, body, ifMatch)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Scimv2user",
+                "required": "true"
+            },
+            {
+                "name": "ifMatch",
+                "type": "string",
+                "required": "false"
+            }
+        ],
+        "return": "Scimv2user"
+    },
+    "PATCH /api/v2/scim/users/{userId}": {
+        "operationId": "patchscimuser",
+        "functionName": "update",
+        "signature": "update(userId, body, ifMatch)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Scimv2patchrequest",
+                "required": "true"
+            },
+            {
+                "name": "ifMatch",
+                "type": "string",
+                "required": "false"
+            }
+        ],
+        "return": "Scimv2user"
+    }
+    
+}

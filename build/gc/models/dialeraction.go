@@ -83,37 +83,9 @@ func (o *Dialeraction) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Properties = map[string]string{"": ""} 
     
-    
-    
-    
-    
-    
-    
      o.ContactColumnToDataActionFieldMappings = []Contactcolumntodataactionfieldmapping{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -132,7 +104,8 @@ func (u *Dialeraction) MarshalJSON() ([]byte, error) {
     }
     DialeractionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         ActionTypeName string `json:"actionTypeName"`
@@ -150,50 +123,39 @@ func (u *Dialeraction) MarshalJSON() ([]byte, error) {
         CallAnalysisResultField string `json:"callAnalysisResultField"`
         
         AgentWrapupField string `json:"agentWrapupField"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Properties: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
         ContactColumnToDataActionFieldMappings: []Contactcolumntodataactionfieldmapping{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

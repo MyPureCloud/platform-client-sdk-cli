@@ -33,13 +33,6 @@ type Atzmtimeslot struct {
 func (o *Atzmtimeslot) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Atzmtimeslot) MarshalJSON() ([]byte, error) {
     }
     AtzmtimeslotMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EarliestCallableTime string `json:"earliestCallableTime"`
         
         LatestCallableTime string `json:"latestCallableTime"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

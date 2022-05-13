@@ -24,11 +24,7 @@ type Flowobservationqueryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Flowobservationqueryresponse) String() string {
-    
-    
      o.Results = []Flowobservationdatacontainer{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Flowobservationqueryresponse) MarshalJSON() ([]byte, error) {
     }
     FlowobservationqueryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Results []Flowobservationdatacontainer `json:"results"`
+    return json.Marshal(&struct {
         
+        Results []Flowobservationdatacontainer `json:"results"`
         *Alias
     }{
-        
 
         
         Results: []Flowobservationdatacontainer{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

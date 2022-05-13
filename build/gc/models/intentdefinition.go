@@ -45,20 +45,8 @@ type Intentdefinition struct {
 // String returns a JSON representation of the model
 func (o *Intentdefinition) String() string {
     
-    
-    
-    
-    
-    
      o.EntityTypeBindings = []Namedentitytypebinding{{}} 
-    
-    
-    
-    
-    
      o.Utterances = []Nluutterance{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -74,38 +62,31 @@ func (u *Intentdefinition) MarshalJSON() ([]byte, error) {
     }
     IntentdefinitionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         EntityTypeBindings []Namedentitytypebinding `json:"entityTypeBindings"`
         
-        
-        
         Utterances []Nluutterance `json:"utterances"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         EntityTypeBindings: []Namedentitytypebinding{{}},
         
 
-        
 
         
 
-        
 
         
         Utterances: []Nluutterance{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

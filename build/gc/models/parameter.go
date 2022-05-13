@@ -49,19 +49,6 @@ func (o *Parameter) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Parameter) MarshalJSON() ([]byte, error) {
     }
     ParameterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         ParameterType string `json:"parameterType"`
@@ -85,26 +73,20 @@ func (u *Parameter) MarshalJSON() ([]byte, error) {
         Domain string `json:"domain"`
         
         Required bool `json:"required"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

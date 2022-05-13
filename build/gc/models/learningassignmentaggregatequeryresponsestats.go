@@ -49,19 +49,6 @@ func (o *Learningassignmentaggregatequeryresponsestats) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Learningassignmentaggregatequeryresponsestats) MarshalJSON() ([]byte, e
     }
     LearningassignmentaggregatequeryresponsestatsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Count int `json:"count"`
         
         Min float32 `json:"min"`
@@ -85,26 +73,20 @@ func (u *Learningassignmentaggregatequeryresponsestats) MarshalJSON() ([]byte, e
         Max float32 `json:"max"`
         
         Sum float32 `json:"sum"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,13 +33,6 @@ type Crossplatformemailmediapolicy struct {
 func (o *Crossplatformemailmediapolicy) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Crossplatformemailmediapolicy) MarshalJSON() ([]byte, error) {
     }
     CrossplatformemailmediapolicyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Actions Crossplatformpolicyactions `json:"actions"`
         
         Conditions Emailmediapolicyconditions `json:"conditions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

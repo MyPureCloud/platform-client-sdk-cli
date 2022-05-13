@@ -33,12 +33,15 @@ func Cmdconversations_calls_maximumconferenceparties() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/MaxParticipants"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/MaxParticipants"
+      }
+    }
   }
 }`)
 	conversations_calls_maximumconferencepartiesCmd.AddCommand(getCmd)
-	
 	return conversations_calls_maximumconferencepartiesCmd
 }
 

@@ -42,12 +42,16 @@ func Cmdgamification_scorecards_users_values_trends() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WorkdayValuesTrend"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WorkdayValuesTrend"
+      }
+    }
   }
 }`)
 	gamification_scorecards_users_values_trendsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "time.Time", "startWorkday", "", "Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "time.Time", "endWorkday", "", "End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "string", "timeZone", "UTC", "Timezone for the workday. Defaults to UTC")
@@ -58,12 +62,15 @@ func Cmdgamification_scorecards_users_values_trends() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WorkdayValuesTrend"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WorkdayValuesTrend"
+      }
+    }
   }
 }`)
 	gamification_scorecards_users_values_trendsCmd.AddCommand(listCmd)
-	
 	return gamification_scorecards_users_values_trendsCmd
 }
 

@@ -33,12 +33,15 @@ func Cmdworkforcemanagement_shifttrades() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ShiftTradeListResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ShiftTradeListResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_shifttradesCmd.AddCommand(listCmd)
-	
 	return workforcemanagement_shifttradesCmd
 }
 

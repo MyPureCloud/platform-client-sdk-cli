@@ -77,29 +77,6 @@ func (o *Weekschedulelistitemresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -115,10 +92,7 @@ func (u *Weekschedulelistitemresponse) MarshalJSON() ([]byte, error) {
     }
     WeekschedulelistitemresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
+    return json.Marshal(&struct {
         
         WeekDate string `json:"weekDate"`
         
@@ -131,42 +105,32 @@ func (u *Weekschedulelistitemresponse) MarshalJSON() ([]byte, error) {
         ShortTermForecast Shorttermforecastreference `json:"shortTermForecast"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -87,37 +87,9 @@ func (o *Historicaladherencequeryresult) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ExceptionInfo = []Historicaladherenceexceptioninfo{{}} 
-    
-    
-    
      o.DayMetrics = []Historicaladherencedaymetrics{{}} 
-    
-    
-    
      o.Actuals = []Historicaladherenceactuals{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -133,7 +105,8 @@ func (u *Historicaladherencequeryresult) MarshalJSON() ([]byte, error) {
     }
     HistoricaladherencequeryresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UserId string `json:"userId"`
         
         StartDate time.Time `json:"startDate"`
@@ -151,52 +124,41 @@ func (u *Historicaladherencequeryresult) MarshalJSON() ([]byte, error) {
         DayMetrics []Historicaladherencedaymetrics `json:"dayMetrics"`
         
         Actuals []Historicaladherenceactuals `json:"actuals"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ExceptionInfo: []Historicaladherenceexceptioninfo{{}},
         
 
-        
 
         
         DayMetrics: []Historicaladherencedaymetrics{{}},
         
 
-        
 
         
         Actuals: []Historicaladherenceactuals{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

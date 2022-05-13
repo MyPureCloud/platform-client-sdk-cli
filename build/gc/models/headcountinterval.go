@@ -34,13 +34,6 @@ type Headcountinterval struct {
 func (o *Headcountinterval) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -56,22 +49,19 @@ func (u *Headcountinterval) MarshalJSON() ([]byte, error) {
     }
     HeadcountintervalMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval time.Time `json:"interval"`
         
         Value float64 `json:"value"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

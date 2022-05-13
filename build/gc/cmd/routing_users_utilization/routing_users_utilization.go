@@ -32,40 +32,50 @@ func Cmdrouting_users_utilization() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	routing_users_utilizationCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/users/{userId}/utilization", utils.FormatPermissions([]string{ "routing:utilization:manage", "routing:utilization:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/users/{userId}/utilization")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AgentMaxUtilization"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AgentMaxUtilization"
+      }
+    }
   }
 }`)
 	routing_users_utilizationCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/users/{userId}/utilization", utils.FormatPermissions([]string{ "routing:utilization:manage",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/users/{userId}/utilization")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "utilization",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/Utilization"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Utilization"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "Operation was successful.",
-  "schema" : {
-    "$ref" : "#/definitions/AgentMaxUtilization"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AgentMaxUtilization"
+      }
+    }
   }
 }`)
 	routing_users_utilizationCmd.AddCommand(updateCmd)
-	
 	return routing_users_utilizationCmd
 }
 

@@ -39,18 +39,8 @@ type Botconnectorbotversion struct {
 // String returns a JSON representation of the model
 func (o *Botconnectorbotversion) String() string {
     
-    
-    
-    
-    
-    
      o.SupportedLanguages = []string{""} 
-    
-    
-    
      o.Intents = []Botintent{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Botconnectorbotversion) MarshalJSON() ([]byte, error) {
     }
     BotconnectorbotversionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Version string `json:"version"`
         
         SupportedLanguages []string `json:"supportedLanguages"`
         
         Intents []Botintent `json:"intents"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         SupportedLanguages: []string{""},
         
 
-        
 
         
         Intents: []Botintent{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

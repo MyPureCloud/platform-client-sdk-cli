@@ -66,29 +66,7 @@ type Queuememberentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Queuememberentitylisting) String() string {
-    
-    
      o.Entities = []Queuemember{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -110,7 +88,8 @@ func (u *Queuememberentitylisting) MarshalJSON() ([]byte, error) {
     }
     QueuememberentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Queuemember `json:"entities"`
         
         PageNumber int `json:"pageNumber"`
@@ -124,40 +103,31 @@ func (u *Queuememberentitylisting) MarshalJSON() ([]byte, error) {
         PreviousUri string `json:"previousUri"`
         
         NextUri string `json:"nextUri"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Queuemember{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

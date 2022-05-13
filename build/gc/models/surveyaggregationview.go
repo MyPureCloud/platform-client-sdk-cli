@@ -49,19 +49,6 @@ func (o *Surveyaggregationview) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Surveyaggregationview) MarshalJSON() ([]byte, error) {
     }
     SurveyaggregationviewMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Target string `json:"target"`
         
         Name string `json:"name"`
@@ -85,26 +73,20 @@ func (u *Surveyaggregationview) MarshalJSON() ([]byte, error) {
         Function string `json:"function"`
         
         VarRange Aggregationrange `json:"range"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

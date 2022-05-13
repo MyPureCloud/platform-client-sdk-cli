@@ -33,12 +33,15 @@ func Cmdrouting_email_setup() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EmailSetup"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EmailSetup"
+      }
+    }
   }
 }`)
 	routing_email_setupCmd.AddCommand(getCmd)
-	
 	return routing_email_setupCmd
 }
 

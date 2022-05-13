@@ -39,17 +39,7 @@ type Webdeploymentconfigurationversionentitylisting struct {
 // String returns a JSON representation of the model
 func (o *Webdeploymentconfigurationversionentitylisting) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Webdeploymentconfigurationversion{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Webdeploymentconfigurationversionentitylisting) MarshalJSON() ([]byte, 
     }
     WebdeploymentconfigurationversionentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Webdeploymentconfigurationversion `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Webdeploymentconfigurationversion{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

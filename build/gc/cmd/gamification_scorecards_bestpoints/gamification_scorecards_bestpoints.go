@@ -33,12 +33,15 @@ func Cmdgamification_scorecards_bestpoints() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserBestPoints"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserBestPoints"
+      }
+    }
   }
 }`)
 	gamification_scorecards_bestpointsCmd.AddCommand(getCmd)
-	
 	return gamification_scorecards_bestpointsCmd
 }
 

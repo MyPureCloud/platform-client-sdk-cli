@@ -58,22 +58,6 @@ func (o *Orphanupdaterequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,7 +73,8 @@ func (u *Orphanupdaterequest) MarshalJSON() ([]byte, error) {
     }
     OrphanupdaterequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ArchiveDate time.Time `json:"archiveDate"`
         
         DeleteDate time.Time `json:"deleteDate"`
@@ -99,30 +84,23 @@ func (u *Orphanupdaterequest) MarshalJSON() ([]byte, error) {
         IntegrationId string `json:"integrationId"`
         
         ConversationId string `json:"conversationId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

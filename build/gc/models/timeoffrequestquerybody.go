@@ -38,18 +38,8 @@ type Timeoffrequestquerybody struct {
 
 // String returns a JSON representation of the model
 func (o *Timeoffrequestquerybody) String() string {
-    
-    
      o.UserIds = []string{""} 
-    
-    
-    
      o.Statuses = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,32 +56,28 @@ func (u *Timeoffrequestquerybody) MarshalJSON() ([]byte, error) {
     }
     TimeoffrequestquerybodyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UserIds []string `json:"userIds"`
         
         Statuses []string `json:"statuses"`
         
         DateRange Daterange `json:"dateRange"`
-        
         *Alias
     }{
-        
 
         
         UserIds: []string{""},
         
 
-        
 
         
         Statuses: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

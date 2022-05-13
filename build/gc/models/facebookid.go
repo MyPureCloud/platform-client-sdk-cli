@@ -31,14 +31,7 @@ type Facebookid struct {
 
 // String returns a JSON representation of the model
 func (o *Facebookid) String() string {
-    
-    
      o.Ids = []Facebookscopedid{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Facebookid) MarshalJSON() ([]byte, error) {
     }
     FacebookidMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Ids []Facebookscopedid `json:"ids"`
         
         DisplayName string `json:"displayName"`
-        
         *Alias
     }{
-        
 
         
         Ids: []Facebookscopedid{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -35,12 +35,15 @@ func Cmdworkforcemanagement_calendar_data_ics() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "string"
+  "content" : {
+    "text/calendar" : {
+      "schema" : {
+        "type" : "string"
+      }
+    }
   }
 }`)
 	workforcemanagement_calendar_data_icsCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_calendar_data_icsCmd
 }
 

@@ -24,11 +24,7 @@ type Participantattributes struct {
 
 // String returns a JSON representation of the model
 func (o *Participantattributes) String() string {
-    
-    
      o.Attributes = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Participantattributes) MarshalJSON() ([]byte, error) {
     }
     ParticipantattributesMarshalled = true
 
-    return json.Marshal(&struct { 
-        Attributes map[string]string `json:"attributes"`
+    return json.Marshal(&struct {
         
+        Attributes map[string]string `json:"attributes"`
         *Alias
     }{
-        
 
         
         Attributes: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

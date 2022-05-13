@@ -46,20 +46,7 @@ type Calibrationassignment struct {
 // String returns a JSON representation of the model
 func (o *Calibrationassignment) String() string {
     
-    
-    
-    
-    
-    
      o.Evaluators = []User{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -77,7 +64,8 @@ func (u *Calibrationassignment) MarshalJSON() ([]byte, error) {
     }
     CalibrationassignmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Calibrator User `json:"calibrator"`
         
         Evaluators []User `json:"evaluators"`
@@ -85,28 +73,22 @@ func (u *Calibrationassignment) MarshalJSON() ([]byte, error) {
         EvaluationForm Evaluationform `json:"evaluationForm"`
         
         ExpertEvaluator User `json:"expertEvaluator"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Evaluators: []User{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

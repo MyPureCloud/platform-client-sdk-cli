@@ -32,14 +32,7 @@ type Userobservationqueryclause struct {
 // String returns a JSON representation of the model
 func (o *Userobservationqueryclause) String() string {
     
-    
-    
-    
-    
-    
      o.Predicates = []Userobservationquerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Userobservationqueryclause) MarshalJSON() ([]byte, error) {
     }
     UserobservationqueryclauseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Predicates []Userobservationquerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Predicates: []Userobservationquerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

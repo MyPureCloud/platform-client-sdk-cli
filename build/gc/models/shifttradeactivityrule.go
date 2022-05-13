@@ -41,16 +41,6 @@ func (o *Shifttradeactivityrule) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Shifttradeactivityrule) MarshalJSON() ([]byte, error) {
     }
     ShifttradeactivityruleMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ActivityCategory string `json:"activityCategory"`
         
         Action string `json:"action"`
         
         ActivityCodeIdReplacement string `json:"activityCodeIdReplacement"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -25,10 +25,6 @@ type Contentsetting struct {
 // String returns a JSON representation of the model
 func (o *Contentsetting) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Contentsetting) MarshalJSON() ([]byte, error) {
     }
     ContentsettingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Story Storysetting `json:"story"`
+    return json.Marshal(&struct {
         
+        Story Storysetting `json:"story"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

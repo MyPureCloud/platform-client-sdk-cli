@@ -39,17 +39,7 @@ type Cloneduserentitylisting struct {
 // String returns a JSON representation of the model
 func (o *Cloneduserentitylisting) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Cloneduser{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Cloneduserentitylisting) MarshalJSON() ([]byte, error) {
     }
     CloneduserentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Cloneduser `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Cloneduser{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

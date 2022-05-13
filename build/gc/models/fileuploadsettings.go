@@ -24,11 +24,7 @@ type Fileuploadsettings struct {
 
 // String returns a JSON representation of the model
 func (o *Fileuploadsettings) String() string {
-    
-    
      o.Modes = []Fileuploadmode{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Fileuploadsettings) MarshalJSON() ([]byte, error) {
     }
     FileuploadsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
-        Modes []Fileuploadmode `json:"modes"`
+    return json.Marshal(&struct {
         
+        Modes []Fileuploadmode `json:"modes"`
         *Alias
     }{
-        
 
         
         Modes: []Fileuploadmode{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

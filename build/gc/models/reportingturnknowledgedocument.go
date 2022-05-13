@@ -49,19 +49,6 @@ func (o *Reportingturnknowledgedocument) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Reportingturnknowledgedocument) MarshalJSON() ([]byte, error) {
     }
     ReportingturnknowledgedocumentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Question string `json:"question"`
@@ -85,26 +73,20 @@ func (u *Reportingturnknowledgedocument) MarshalJSON() ([]byte, error) {
         Answer string `json:"answer"`
         
         Confidence float64 `json:"confidence"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

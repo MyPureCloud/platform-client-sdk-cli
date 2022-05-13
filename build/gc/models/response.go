@@ -114,53 +114,14 @@ type Response struct {
 func (o *Response) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Libraries = []Domainentityref{{}} 
-    
-    
-    
      o.Texts = []Responsetext{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
      o.Substitutions = []Responsesubstitution{{}} 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Assets = []Addressableentityref{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -176,8 +137,7 @@ func (u *Response) MarshalJSON() ([]byte, error) {
     }
     ResponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -186,10 +146,6 @@ func (u *Response) MarshalJSON() ([]byte, error) {
         Libraries []Domainentityref `json:"libraries"`
         
         Texts []Responsetext `json:"texts"`
-        
-        
-        
-        
         
         InteractionType string `json:"interactionType"`
         
@@ -202,76 +158,58 @@ func (u *Response) MarshalJSON() ([]byte, error) {
         MessagingTemplate Messagingtemplate `json:"messagingTemplate"`
         
         Assets []Addressableentityref `json:"assets"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Libraries: []Domainentityref{{}},
         
 
-        
 
         
         Texts: []Responsetext{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Substitutions: []Responsesubstitution{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Assets: []Addressableentityref{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -62,28 +62,9 @@ func (o *Eventmessage) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.MessageParams = map[string]interface{}{"": Interface{}} 
     
-    
-    
-    
-    
-    
-    
      o.ResourceURIs = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Eventmessage) MarshalJSON() ([]byte, error) {
     }
     EventmessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Code string `json:"code"`
         
         Message string `json:"message"`
@@ -111,38 +93,30 @@ func (u *Eventmessage) MarshalJSON() ([]byte, error) {
         DocumentationUri string `json:"documentationUri"`
         
         ResourceURIs []string `json:"resourceURIs"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MessageParams: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
         ResourceURIs: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

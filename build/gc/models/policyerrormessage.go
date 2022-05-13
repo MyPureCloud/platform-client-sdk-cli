@@ -68,33 +68,11 @@ type Policyerrormessage struct {
 // String returns a JSON representation of the model
 func (o *Policyerrormessage) String() string {
     
-    
-    
-    
-    
-    
      o.UserMessage = Interface{} 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.UserParams = []Userparam{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -111,7 +89,8 @@ func (u *Policyerrormessage) MarshalJSON() ([]byte, error) {
     }
     PolicyerrormessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         StatusCode int `json:"statusCode"`
         
         UserMessage interface{} `json:"userMessage"`
@@ -125,42 +104,33 @@ func (u *Policyerrormessage) MarshalJSON() ([]byte, error) {
         UserParams []Userparam `json:"userParams"`
         
         InsertDate time.Time `json:"insertDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         UserMessage: Interface{},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         UserParams: []Userparam{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -46,22 +46,9 @@ type Dialerauditrequest struct {
 // String returns a JSON representation of the model
 func (o *Dialerauditrequest) String() string {
     
-    
-    
-    
-    
-    
      o.QueryFields = []string{""} 
-    
-    
-    
      o.Facets = []Auditfacet{{}} 
-    
-    
-    
      o.Filters = []Auditfilter{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Dialerauditrequest) MarshalJSON() ([]byte, error) {
     }
     DialerauditrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QueryPhrase string `json:"queryPhrase"`
         
         QueryFields []string `json:"queryFields"`
@@ -85,32 +73,26 @@ func (u *Dialerauditrequest) MarshalJSON() ([]byte, error) {
         Facets []Auditfacet `json:"facets"`
         
         Filters []Auditfilter `json:"filters"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         QueryFields: []string{""},
         
 
-        
 
         
         Facets: []Auditfacet{{}},
         
 
-        
 
         
         Filters: []Auditfilter{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

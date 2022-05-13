@@ -31,15 +31,8 @@ type Userobservationdatacontainer struct {
 
 // String returns a JSON representation of the model
 func (o *Userobservationdatacontainer) String() string {
-    
-    
      o.Group = map[string]string{"": ""} 
-    
-    
-    
      o.Data = []Observationmetricdata{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Userobservationdatacontainer) MarshalJSON() ([]byte, error) {
     }
     UserobservationdatacontainerMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Group map[string]string `json:"group"`
         
         Data []Observationmetricdata `json:"data"`
-        
         *Alias
     }{
-        
 
         
         Group: map[string]string{"": ""},
         
 
-        
 
         
         Data: []Observationmetricdata{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

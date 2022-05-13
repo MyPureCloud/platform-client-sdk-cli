@@ -47,20 +47,7 @@ type Learningmoduleruleparts struct {
 func (o *Learningmoduleruleparts) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Value = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Learningmoduleruleparts) MarshalJSON() ([]byte, error) {
     }
     LearningmodulerulepartsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Operation string `json:"operation"`
         
         Selector string `json:"selector"`
@@ -85,28 +73,22 @@ func (u *Learningmoduleruleparts) MarshalJSON() ([]byte, error) {
         Value []string `json:"value"`
         
         Order int `json:"order"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Value: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

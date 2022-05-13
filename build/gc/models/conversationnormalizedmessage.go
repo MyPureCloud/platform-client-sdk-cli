@@ -97,41 +97,10 @@ type Conversationnormalizedmessage struct {
 func (o *Conversationnormalizedmessage) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Content = []Conversationmessagecontent{{}} 
-    
-    
-    
      o.Events = []Conversationmessageevent{{}} 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Metadata = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -147,10 +116,7 @@ func (u *Conversationnormalizedmessage) MarshalJSON() ([]byte, error) {
     }
     ConversationnormalizedmessageMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
+    return json.Marshal(&struct {
         
         VarType string `json:"type"`
         
@@ -160,75 +126,53 @@ func (u *Conversationnormalizedmessage) MarshalJSON() ([]byte, error) {
         
         Events []Conversationmessageevent `json:"events"`
         
-        
-        
-        
-        
         OriginatingEntity string `json:"originatingEntity"`
         
-        
-        
-        
-        
         Metadata map[string]string `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Content: []Conversationmessagecontent{{}},
         
 
-        
 
         
         Events: []Conversationmessageevent{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Metadata: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

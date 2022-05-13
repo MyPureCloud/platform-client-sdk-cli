@@ -73,28 +73,6 @@ func (o *Conversationcontentattachment) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Conversationcontentattachment) MarshalJSON() ([]byte, error) {
     }
     ConversationcontentattachmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         MediaType string `json:"mediaType"`
@@ -124,38 +103,29 @@ func (u *Conversationcontentattachment) MarshalJSON() ([]byte, error) {
         Sha256 string `json:"sha256"`
         
         Filename string `json:"filename"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

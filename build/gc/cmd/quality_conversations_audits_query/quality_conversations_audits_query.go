@@ -30,34 +30,43 @@ func init() {
 func Cmdquality_conversations_audits_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/conversations/audits/query", utils.FormatPermissions([]string{ "audits:interactionDetails:view",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/conversations/audits/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/QMAuditQueryRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QMAuditQueryRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/QualityAuditQueryExecutionStatusResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QualityAuditQueryExecutionStatusResponse"
+      }
+    }
   }
 }`)
 	quality_conversations_audits_queryCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/conversations/audits/query/{transactionId}", utils.FormatPermissions([]string{ "audits:interactionDetails:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/conversations/audits/query/{transactionId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "Query execution completed.",
-  "schema" : {
-    "$ref" : "#/definitions/QualityAuditQueryExecutionStatusResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QualityAuditQueryExecutionStatusResponse"
+      }
+    }
   }
 }`)
 	quality_conversations_audits_queryCmd.AddCommand(getCmd)
-	
 	return quality_conversations_audits_queryCmd
 }
 

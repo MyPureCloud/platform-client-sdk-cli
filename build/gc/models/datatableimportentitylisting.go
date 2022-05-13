@@ -52,23 +52,7 @@ type Datatableimportentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Datatableimportentitylisting) String() string {
-    
-    
      o.Entities = []Datatableimportjob{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -88,7 +72,8 @@ func (u *Datatableimportentitylisting) MarshalJSON() ([]byte, error) {
     }
     DatatableimportentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Datatableimportjob `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -98,32 +83,25 @@ func (u *Datatableimportentitylisting) MarshalJSON() ([]byte, error) {
         Total int `json:"total"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Datatableimportjob{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

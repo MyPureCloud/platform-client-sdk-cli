@@ -136,53 +136,7 @@ func (o *Analyticsflow) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Outcomes = []Analyticsflowoutcome{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -198,7 +152,8 @@ func (u *Analyticsflow) MarshalJSON() ([]byte, error) {
     }
     AnalyticsflowMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EndingLanguage string `json:"endingLanguage"`
         
         EntryReason string `json:"entryReason"`
@@ -228,72 +183,55 @@ func (u *Analyticsflow) MarshalJSON() ([]byte, error) {
         TransferType string `json:"transferType"`
         
         Outcomes []Analyticsflowoutcome `json:"outcomes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Outcomes: []Analyticsflowoutcome{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

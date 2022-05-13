@@ -31,20 +31,22 @@ func Cmdauthorization_subjects_bulkadd() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "string", "subjectType", "PC_USER", "what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/subjects/{subjectId}/bulkadd", utils.FormatPermissions([]string{ "authorization:grant:add",  }), utils.GenerateDevCentreLink("POST", "Authorization", "/api/v2/authorization/subjects/{subjectId}/bulkadd")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Pairs of role and division IDs",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/RoleDivisionGrants"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RoleDivisionGrants"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Bulk Grants Created"
+  "description" : "Bulk Grants Created",
+  "content" : { }
 }`)
 	authorization_subjects_bulkaddCmd.AddCommand(createCmd)
-	
 	return authorization_subjects_bulkaddCmd
 }
 

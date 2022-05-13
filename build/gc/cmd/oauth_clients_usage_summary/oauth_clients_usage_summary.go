@@ -34,12 +34,15 @@ func Cmdoauth_clients_usage_summary() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UsageExecutionResult"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UsageExecutionResult"
+      }
+    }
   }
 }`)
 	oauth_clients_usage_summaryCmd.AddCommand(getCmd)
-	
 	return oauth_clients_usage_summaryCmd
 }
 

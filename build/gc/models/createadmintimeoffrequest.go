@@ -68,33 +68,11 @@ type Createadmintimeoffrequest struct {
 // String returns a JSON representation of the model
 func (o *Createadmintimeoffrequest) String() string {
     
-    
-    
-    
-    
-    
      o.Users = []Userreference{{}} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.FullDayManagementUnitDates = []string{""} 
-    
-    
-    
      o.PartialDayStartDateTimes = []time.Time{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -111,7 +89,8 @@ func (u *Createadmintimeoffrequest) MarshalJSON() ([]byte, error) {
     }
     CreateadmintimeoffrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Status string `json:"status"`
         
         Users []Userreference `json:"users"`
@@ -125,44 +104,35 @@ func (u *Createadmintimeoffrequest) MarshalJSON() ([]byte, error) {
         PartialDayStartDateTimes []time.Time `json:"partialDayStartDateTimes"`
         
         DailyDurationMinutes int `json:"dailyDurationMinutes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Users: []Userreference{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         FullDayManagementUnitDates: []string{""},
         
 
-        
 
         
         PartialDayStartDateTimes: []time.Time{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

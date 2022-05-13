@@ -76,32 +76,7 @@ func (o *Errordetails) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.MessageParams = map[string]string{"": ""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -121,7 +96,8 @@ func (u *Errordetails) MarshalJSON() ([]byte, error) {
     }
     ErrordetailsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Status int `json:"status"`
         
         Message string `json:"message"`
@@ -137,44 +113,34 @@ func (u *Errordetails) MarshalJSON() ([]byte, error) {
         Nested *Errordetails `json:"nested"`
         
         Details string `json:"details"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MessageParams: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

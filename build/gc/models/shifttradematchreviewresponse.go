@@ -47,21 +47,8 @@ type Shifttradematchreviewresponse struct {
 func (o *Shifttradematchreviewresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Violations = []Shifttradematchviolation{{}} 
-    
-    
-    
      o.AdminReviewViolations = []Shifttradematchviolation{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Shifttradematchreviewresponse) MarshalJSON() ([]byte, error) {
     }
     ShifttradematchreviewresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         InitiatingUser Shifttradematchreviewuserresponse `json:"initiatingUser"`
         
         ReceivingUser Shifttradematchreviewuserresponse `json:"receivingUser"`
@@ -85,30 +73,24 @@ func (u *Shifttradematchreviewresponse) MarshalJSON() ([]byte, error) {
         Violations []Shifttradematchviolation `json:"violations"`
         
         AdminReviewViolations []Shifttradematchviolation `json:"adminReviewViolations"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Violations: []Shifttradematchviolation{{}},
         
 
-        
 
         
         AdminReviewViolations: []Shifttradematchviolation{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

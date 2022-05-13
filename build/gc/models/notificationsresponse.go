@@ -24,11 +24,7 @@ type Notificationsresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Notificationsresponse) String() string {
-    
-    
      o.Entities = []Wfmusernotification{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Notificationsresponse) MarshalJSON() ([]byte, error) {
     }
     NotificationsresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Wfmusernotification `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Wfmusernotification `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Wfmusernotification{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

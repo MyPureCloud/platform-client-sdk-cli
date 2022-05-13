@@ -90,43 +90,12 @@ func (o *Crossplatformpolicyactions) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AssignEvaluations = []Evaluationassignment{{}} 
-    
-    
-    
      o.AssignMeteredEvaluations = []Meteredevaluationassignment{{}} 
-    
-    
-    
      o.AssignMeteredAssignmentByAgent = []Meteredassignmentbyagent{{}} 
-    
-    
-    
      o.AssignCalibrations = []Calibrationassignment{{}} 
     
-    
-    
-    
-    
-    
-    
      o.MediaTranscriptions = []Mediatranscription{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -143,7 +112,8 @@ func (u *Crossplatformpolicyactions) MarshalJSON() ([]byte, error) {
     }
     CrossplatformpolicyactionsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         RetainRecording bool `json:"retainRecording"`
         
         DeleteRecording bool `json:"deleteRecording"`
@@ -163,60 +133,48 @@ func (u *Crossplatformpolicyactions) MarshalJSON() ([]byte, error) {
         MediaTranscriptions []Mediatranscription `json:"mediaTranscriptions"`
         
         IntegrationExport Integrationexport `json:"integrationExport"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AssignEvaluations: []Evaluationassignment{{}},
         
 
-        
 
         
         AssignMeteredEvaluations: []Meteredevaluationassignment{{}},
         
 
-        
 
         
         AssignMeteredAssignmentByAgent: []Meteredassignmentbyagent{{}},
         
 
-        
 
         
         AssignCalibrations: []Calibrationassignment{{}},
         
 
-        
 
         
 
-        
 
         
         MediaTranscriptions: []Mediatranscription{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

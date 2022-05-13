@@ -33,12 +33,15 @@ func Cmdusers_station() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserStations"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserStations"
+      }
+    }
   }
 }`)
 	users_stationCmd.AddCommand(getCmd)
-	
 	return users_stationCmd
 }
 

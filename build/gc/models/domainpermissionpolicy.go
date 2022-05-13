@@ -77,33 +77,8 @@ func (o *Domainpermissionpolicy) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ActionSet = []string{""} 
-    
-    
-    
      o.NamedResources = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -121,7 +96,8 @@ func (u *Domainpermissionpolicy) MarshalJSON() ([]byte, error) {
     }
     DomainpermissionpolicyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Domain string `json:"domain"`
         
         EntityName string `json:"entityName"`
@@ -137,46 +113,36 @@ func (u *Domainpermissionpolicy) MarshalJSON() ([]byte, error) {
         AllowConditions bool `json:"allowConditions"`
         
         ResourceConditionNode Domainresourceconditionnode `json:"resourceConditionNode"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ActionSet: []string{""},
         
 
-        
 
         
         NamedResources: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

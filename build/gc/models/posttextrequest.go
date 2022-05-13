@@ -122,50 +122,7 @@ func (o *Posttextrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.BotChannels = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -187,7 +144,8 @@ func (u *Posttextrequest) MarshalJSON() ([]byte, error) {
     }
     PosttextrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         BotId string `json:"botId"`
         
         BotAlias string `json:"botAlias"`
@@ -215,68 +173,52 @@ func (u *Posttextrequest) MarshalJSON() ([]byte, error) {
         GenesysBotConnector Genesysbotconnector `json:"genesysBotConnector"`
         
         NuanceMixDlg Nuancemixdlgsettings `json:"nuanceMixDlg"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         BotChannels: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

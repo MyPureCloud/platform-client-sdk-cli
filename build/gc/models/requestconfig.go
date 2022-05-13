@@ -56,23 +56,7 @@ func (o *Requestconfig) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Headers = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Requestconfig) MarshalJSON() ([]byte, error) {
     }
     RequestconfigMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         RequestUrlTemplate string `json:"requestUrlTemplate"`
         
         RequestTemplate string `json:"requestTemplate"`
@@ -98,32 +83,25 @@ func (u *Requestconfig) MarshalJSON() ([]byte, error) {
         RequestType string `json:"requestType"`
         
         Headers map[string]string `json:"headers"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Headers: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

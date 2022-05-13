@@ -45,21 +45,8 @@ type Responseconfig struct {
 
 // String returns a JSON representation of the model
 func (o *Responseconfig) String() string {
-    
-    
      o.TranslationMap = map[string]string{"": ""} 
-    
-    
-    
      o.TranslationMapDefaults = map[string]string{"": ""} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -77,7 +64,8 @@ func (u *Responseconfig) MarshalJSON() ([]byte, error) {
     }
     ResponseconfigMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TranslationMap map[string]string `json:"translationMap"`
         
         TranslationMapDefaults map[string]string `json:"translationMapDefaults"`
@@ -85,30 +73,24 @@ func (u *Responseconfig) MarshalJSON() ([]byte, error) {
         SuccessTemplate string `json:"successTemplate"`
         
         SuccessTemplateUri string `json:"successTemplateUri"`
-        
         *Alias
     }{
-        
 
         
         TranslationMap: map[string]string{"": ""},
         
 
-        
 
         
         TranslationMapDefaults: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

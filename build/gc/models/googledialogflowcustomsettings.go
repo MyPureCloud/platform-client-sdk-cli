@@ -47,21 +47,8 @@ type Googledialogflowcustomsettings struct {
 func (o *Googledialogflowcustomsettings) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.WebhookQueryParameters = map[string]string{"": ""} 
-    
-    
-    
      o.EventInputParameters = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Googledialogflowcustomsettings) MarshalJSON() ([]byte, error) {
     }
     GoogledialogflowcustomsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Environment string `json:"environment"`
         
         EventName string `json:"eventName"`
@@ -85,30 +73,24 @@ func (u *Googledialogflowcustomsettings) MarshalJSON() ([]byte, error) {
         WebhookQueryParameters map[string]string `json:"webhookQueryParameters"`
         
         EventInputParameters map[string]string `json:"eventInputParameters"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         WebhookQueryParameters: map[string]string{"": ""},
         
 
-        
 
         
         EventInputParameters: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

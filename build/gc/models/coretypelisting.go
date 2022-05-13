@@ -39,17 +39,7 @@ type Coretypelisting struct {
 // String returns a JSON representation of the model
 func (o *Coretypelisting) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Coretype{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Coretypelisting) MarshalJSON() ([]byte, error) {
     }
     CoretypelistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Coretype `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Coretype{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

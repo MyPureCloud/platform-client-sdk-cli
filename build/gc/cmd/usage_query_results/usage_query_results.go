@@ -33,12 +33,15 @@ func Cmdusage_query_results() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ApiUsageQueryResult"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ApiUsageQueryResult"
+      }
+    }
   }
 }`)
 	usage_query_resultsCmd.AddCommand(getCmd)
-	
 	return usage_query_resultsCmd
 }
 

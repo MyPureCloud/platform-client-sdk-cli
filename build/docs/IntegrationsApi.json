@@ -109,17 +109,12 @@
     "PATCH /api/v2/integrations/{integrationId}": {
         "operationId": "patchintegration",
         "functionName": "update",
-        "signature": "update(integrationId, body, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)",
+        "signature": "update(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, body)",
         "parameters": [
             {
                 "name": "integrationId",
                 "type": "string",
                 "required": "true"
-            },
-            {
-                "name": "body",
-                "type": "Integration",
-                "required": "false"
             },
             {
                 "name": "pageSize",
@@ -149,6 +144,11 @@
             {
                 "name": "previousPage",
                 "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "Integration",
                 "required": "false"
             }
         ],

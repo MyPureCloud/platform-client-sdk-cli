@@ -30,23 +30,28 @@ func init() {
 func Cmdworkforcemanagement_managementunits_schedules_search() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search", utils.FormatPermissions([]string{ "wfm:publishedSchedule:view", "wfm:schedule:view",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/UserListScheduleRequestBody"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserListScheduleRequestBody"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserScheduleContainer"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserScheduleContainer"
+      }
+    }
   }
 }`)
 	workforcemanagement_managementunits_schedules_searchCmd.AddCommand(createCmd)
-	
 	return workforcemanagement_managementunits_schedules_searchCmd
 }
 

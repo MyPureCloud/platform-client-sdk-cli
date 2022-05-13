@@ -33,15 +33,18 @@ func Cmdquality_conversations_surveys() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/Survey"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Survey"
+        }
+      }
     }
   }
 }`)
 	quality_conversations_surveysCmd.AddCommand(listCmd)
-	
 	return quality_conversations_surveysCmd
 }
 

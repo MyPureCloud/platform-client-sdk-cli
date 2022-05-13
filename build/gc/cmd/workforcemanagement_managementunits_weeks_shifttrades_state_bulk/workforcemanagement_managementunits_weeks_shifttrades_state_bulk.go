@@ -31,23 +31,28 @@ func Cmdworkforcemanagement_managementunits_weeks_shifttrades_state_bulk() *cobr
 	utils.AddFlag(createCmd.Flags(), "bool", "forceAsync", "", "Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk", utils.FormatPermissions([]string{ "wfm:agentShiftTradeRequest:participate", "wfm:shiftTradeRequest:edit",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/BulkShiftTradeStateUpdateRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BulkShiftTradeStateUpdateRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BulkUpdateShiftTradeStateResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BulkUpdateShiftTradeStateResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_managementunits_weeks_shifttrades_state_bulkCmd.AddCommand(createCmd)
-	
 	return workforcemanagement_managementunits_weeks_shifttrades_state_bulkCmd
 }
 

@@ -131,62 +131,15 @@ func (o *Oauthclientlisting) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.RegisteredRedirectUri = []string{""} 
-    
-    
-    
-    
-    
-    
     
      o.RoleIds = []string{""} 
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Scope = []string{""} 
-    
-    
-    
      o.RoleDivisions = []Roledivision{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -204,8 +157,7 @@ func (u *Oauthclientlisting) MarshalJSON() ([]byte, error) {
     }
     OauthclientlistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -234,84 +186,64 @@ func (u *Oauthclientlisting) MarshalJSON() ([]byte, error) {
         State string `json:"state"`
         
         DateToDelete time.Time `json:"dateToDelete"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RegisteredRedirectUri: []string{""},
         
 
-        
 
         
 
-        
 
         
         RoleIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Scope: []string{""},
         
 
-        
 
         
         RoleDivisions: []Roledivision{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

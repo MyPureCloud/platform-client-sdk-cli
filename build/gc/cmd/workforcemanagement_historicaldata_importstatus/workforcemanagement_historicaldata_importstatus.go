@@ -33,12 +33,15 @@ func Cmdworkforcemanagement_historicaldata_importstatus() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/HistoricalImportStatusListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/HistoricalImportStatusListing"
+      }
+    }
   }
 }`)
 	workforcemanagement_historicaldata_importstatusCmd.AddCommand(listCmd)
-	
 	return workforcemanagement_historicaldata_importstatusCmd
 }
 

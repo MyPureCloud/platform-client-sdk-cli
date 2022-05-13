@@ -76,32 +76,7 @@ func (o *Locationupdatedefinition) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Path = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -121,7 +96,8 @@ func (u *Locationupdatedefinition) MarshalJSON() ([]byte, error) {
     }
     LocationupdatedefinitionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Version int `json:"version"`
@@ -137,44 +113,34 @@ func (u *Locationupdatedefinition) MarshalJSON() ([]byte, error) {
         EmergencyNumber Locationemergencynumber `json:"emergencyNumber"`
         
         Address Locationaddress `json:"address"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Path: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

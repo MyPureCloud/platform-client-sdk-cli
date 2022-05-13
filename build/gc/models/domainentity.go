@@ -37,14 +37,6 @@ type Domainentity struct {
 // String returns a JSON representation of the model
 func (o *Domainentity) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -60,28 +52,20 @@ func (u *Domainentity) MarshalJSON() ([]byte, error) {
     }
     DomainentityMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

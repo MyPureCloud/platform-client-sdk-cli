@@ -112,41 +112,7 @@ type Assessmentquestiongroupscore struct {
 func (o *Assessmentquestiongroupscore) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.QuestionScores = []Assessmentquestionscore{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -162,102 +128,62 @@ func (u *Assessmentquestiongroupscore) MarshalJSON() ([]byte, error) {
     }
     AssessmentquestiongroupscoreMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QuestionGroupId string `json:"questionGroupId"`
-        
-        
-        
-        
         
         MarkedNA bool `json:"markedNA"`
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         QuestionScores []Assessmentquestionscore `json:"questionScores"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         QuestionScores: []Assessmentquestionscore{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

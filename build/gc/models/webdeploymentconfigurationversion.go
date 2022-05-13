@@ -151,59 +151,7 @@ type Webdeploymentconfigurationversion struct {
 func (o *Webdeploymentconfigurationversion) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Languages = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -227,12 +175,9 @@ func (u *Webdeploymentconfigurationversion) MarshalJSON() ([]byte, error) {
     }
     WebdeploymentconfigurationversionMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
         
         Description string `json:"description"`
         
@@ -252,107 +197,71 @@ func (u *Webdeploymentconfigurationversion) MarshalJSON() ([]byte, error) {
         
         AuthenticationSettings Authenticationsettings `json:"authenticationSettings"`
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         Status string `json:"status"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Languages: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

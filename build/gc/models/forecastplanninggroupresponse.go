@@ -47,20 +47,7 @@ type Forecastplanninggroupresponse struct {
 func (o *Forecastplanninggroupresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.RoutePaths = []Routepathresponse{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Forecastplanninggroupresponse) MarshalJSON() ([]byte, error) {
     }
     ForecastplanninggroupresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -85,28 +73,22 @@ func (u *Forecastplanninggroupresponse) MarshalJSON() ([]byte, error) {
         RoutePaths []Routepathresponse `json:"routePaths"`
         
         ServiceGoalTemplate Forecastservicegoaltemplateresponse `json:"serviceGoalTemplate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         RoutePaths: []Routepathresponse{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

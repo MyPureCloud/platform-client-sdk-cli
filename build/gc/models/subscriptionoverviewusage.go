@@ -113,43 +113,6 @@ func (o *Subscriptionoverviewusage) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -165,7 +128,8 @@ func (u *Subscriptionoverviewusage) MarshalJSON() ([]byte, error) {
     }
     SubscriptionoverviewusageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         PartNumber string `json:"partNumber"`
@@ -189,58 +153,44 @@ func (u *Subscriptionoverviewusage) MarshalJSON() ([]byte, error) {
         BundleQuantity string `json:"bundleQuantity"`
         
         IsThirdParty bool `json:"isThirdParty"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

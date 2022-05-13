@@ -38,19 +38,9 @@ type Scimuserextensions struct {
 
 // String returns a JSON representation of the model
 func (o *Scimuserextensions) String() string {
-    
-    
      o.RoutingSkills = []Scimuserroutingskill{{}} 
-    
-    
-    
      o.RoutingLanguages = []Scimuserroutinglanguage{{}} 
-    
-    
-    
      o.ExternalIds = []Scimgenesysuserexternalid{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,34 +56,30 @@ func (u *Scimuserextensions) MarshalJSON() ([]byte, error) {
     }
     ScimuserextensionsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         RoutingSkills []Scimuserroutingskill `json:"routingSkills"`
         
         RoutingLanguages []Scimuserroutinglanguage `json:"routingLanguages"`
         
         ExternalIds []Scimgenesysuserexternalid `json:"externalIds"`
-        
         *Alias
     }{
-        
 
         
         RoutingSkills: []Scimuserroutingskill{{}},
         
 
-        
 
         
         RoutingLanguages: []Scimuserroutinglanguage{{}},
         
 
-        
 
         
         ExternalIds: []Scimgenesysuserexternalid{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

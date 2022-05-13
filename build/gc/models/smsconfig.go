@@ -49,19 +49,6 @@ func (o *Smsconfig) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Smsconfig) MarshalJSON() ([]byte, error) {
     }
     SmsconfigMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MessageColumn string `json:"messageColumn"`
         
         PhoneColumn string `json:"phoneColumn"`
@@ -85,26 +73,20 @@ func (u *Smsconfig) MarshalJSON() ([]byte, error) {
         SenderSmsPhoneNumber Smsphonenumberref `json:"senderSmsPhoneNumber"`
         
         ContentTemplate Domainentityref `json:"contentTemplate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

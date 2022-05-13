@@ -45,20 +45,7 @@ type Assessmentlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Assessmentlisting) String() string {
-    
-    
      o.Entities = []Benefitassessment{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Assessmentlisting) MarshalJSON() ([]byte, error) {
     }
     AssessmentlistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Benefitassessment `json:"entities"`
         
         NextUri string `json:"nextUri"`
@@ -85,28 +73,22 @@ func (u *Assessmentlisting) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         PreviousUri string `json:"previousUri"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Benefitassessment{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

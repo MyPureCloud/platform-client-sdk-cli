@@ -17,7 +17,6 @@ type Widgetclientconfigv2 struct { }
 
 // String returns a JSON representation of the model
 func (o *Widgetclientconfigv2) String() string {
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -33,10 +32,9 @@ func (u *Widgetclientconfigv2) MarshalJSON() ([]byte, error) {
     }
     Widgetclientconfigv2Marshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
         *Alias
     }{
-        
         Alias: (*Alias)(u),
     })
 }

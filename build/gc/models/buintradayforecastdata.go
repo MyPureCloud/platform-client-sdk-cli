@@ -33,13 +33,6 @@ type Buintradayforecastdata struct {
 func (o *Buintradayforecastdata) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Buintradayforecastdata) MarshalJSON() ([]byte, error) {
     }
     BuintradayforecastdataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Offered float64 `json:"offered"`
         
         AverageHandleTimeSeconds float64 `json:"averageHandleTimeSeconds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

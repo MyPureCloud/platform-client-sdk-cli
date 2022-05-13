@@ -73,28 +73,6 @@ func (o *Journeycampaign) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Journeycampaign) MarshalJSON() ([]byte, error) {
     }
     JourneycampaignMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Content string `json:"content"`
         
         Medium string `json:"medium"`
@@ -124,38 +103,29 @@ func (u *Journeycampaign) MarshalJSON() ([]byte, error) {
         ClickId string `json:"clickId"`
         
         Network string `json:"network"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

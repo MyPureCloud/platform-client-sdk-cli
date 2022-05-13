@@ -30,23 +30,29 @@ func init() {
 func Cmddocumentationfile_search() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/documentation/search", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Search", "/api/v2/documentation/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Search request options",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/DocumentationSearchRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DocumentationSearchRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DocumentationSearchResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DocumentationSearchResponse"
+      }
+    }
   }
 }`)
 	documentationfile_searchCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "q64", "", "q64 - REQUIRED")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/documentation/search", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Search", "/api/v2/documentation/search")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -54,12 +60,15 @@ func Cmddocumentationfile_search() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	documentationfile_searchCmd.AddCommand(listCmd)
-	
 	return documentationfile_searchCmd
 }
 

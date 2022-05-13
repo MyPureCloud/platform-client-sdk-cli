@@ -107,42 +107,7 @@ func (o *Pureengage) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Certificates = []string{""} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -159,8 +124,7 @@ func (u *Pureengage) MarshalJSON() ([]byte, error) {
     }
     PureengageMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -181,62 +145,46 @@ func (u *Pureengage) MarshalJSON() ([]byte, error) {
         Certificates []string `json:"certificates"`
         
         AutoProvisionUsers bool `json:"autoProvisionUsers"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Certificates: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

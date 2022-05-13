@@ -64,27 +64,8 @@ func (o *Qualityauditqueryexecutionstatusresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Filters = []Qualityauditqueryfilter{{}} 
-    
-    
-    
      o.Sort = []Auditquerysort{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -100,7 +81,8 @@ func (u *Qualityauditqueryexecutionstatusresponse) MarshalJSON() ([]byte, error)
     }
     QualityauditqueryexecutionstatusresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         State string `json:"state"`
@@ -112,38 +94,30 @@ func (u *Qualityauditqueryexecutionstatusresponse) MarshalJSON() ([]byte, error)
         Filters []Qualityauditqueryfilter `json:"filters"`
         
         Sort []Auditquerysort `json:"sort"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Filters: []Qualityauditqueryfilter{{}},
         
 
-        
 
         
         Sort: []Auditquerysort{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

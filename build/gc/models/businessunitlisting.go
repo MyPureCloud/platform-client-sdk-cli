@@ -24,11 +24,7 @@ type Businessunitlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Businessunitlisting) String() string {
-    
-    
      o.Entities = []Businessunitlistitem{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Businessunitlisting) MarshalJSON() ([]byte, error) {
     }
     BusinessunitlistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Businessunitlistitem `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Businessunitlistitem `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Businessunitlistitem{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

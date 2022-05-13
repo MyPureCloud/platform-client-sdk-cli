@@ -32,40 +32,50 @@ func Cmdresponsemanagement_responseassets() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Response asset is deleted"
+  "description" : "Response asset is deleted",
+  "content" : { }
 }`)
 	responsemanagement_responseassetsCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/responsemanagement/responseassets/{responseAssetId}", utils.FormatPermissions([]string{ "responseAssets:asset:view",  }), utils.GenerateDevCentreLink("GET", "Response Management", "/api/v2/responsemanagement/responseassets/{responseAssetId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ResponseAsset"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ResponseAsset"
+      }
+    }
   }
 }`)
 	responsemanagement_responseassetsCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/responsemanagement/responseassets/{responseAssetId}", utils.FormatPermissions([]string{ "responseAssets:asset:edit",  }), utils.GenerateDevCentreLink("PUT", "Response Management", "/api/v2/responsemanagement/responseassets/{responseAssetId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ResponseAssetRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ResponseAssetRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ResponseAsset"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ResponseAsset"
+      }
+    }
   }
 }`)
 	responsemanagement_responseassetsCmd.AddCommand(updateCmd)
-	
 	return responsemanagement_responseassetsCmd
 }
 

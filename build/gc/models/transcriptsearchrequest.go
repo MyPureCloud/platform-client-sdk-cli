@@ -77,35 +77,10 @@ func (o *Transcriptsearchrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Sort = []Searchsort{{}} 
-    
-    
-    
      o.ReturnFields = []string{""} 
-    
-    
-    
      o.Types = []string{""} 
-    
-    
-    
      o.Query = []Transcriptsearchcriteria{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -121,7 +96,8 @@ func (u *Transcriptsearchrequest) MarshalJSON() ([]byte, error) {
     }
     TranscriptsearchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SortOrder string `json:"sortOrder"`
         
         SortBy string `json:"sortBy"`
@@ -137,50 +113,40 @@ func (u *Transcriptsearchrequest) MarshalJSON() ([]byte, error) {
         Types []string `json:"types"`
         
         Query []Transcriptsearchcriteria `json:"query"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Sort: []Searchsort{{}},
         
 
-        
 
         
         ReturnFields: []string{""},
         
 
-        
 
         
         Types: []string{""},
         
 
-        
 
         
         Query: []Transcriptsearchcriteria{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

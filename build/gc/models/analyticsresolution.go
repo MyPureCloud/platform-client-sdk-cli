@@ -50,19 +50,6 @@ func (o *Analyticsresolution) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,7 +65,8 @@ func (u *Analyticsresolution) MarshalJSON() ([]byte, error) {
     }
     AnalyticsresolutionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EventTime time.Time `json:"eventTime"`
         
         QueueId string `json:"queueId"`
@@ -86,26 +74,20 @@ func (u *Analyticsresolution) MarshalJSON() ([]byte, error) {
         UserId string `json:"userId"`
         
         NNextContactAvoided int `json:"nNextContactAvoided"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

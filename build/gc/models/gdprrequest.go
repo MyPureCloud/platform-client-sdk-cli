@@ -83,32 +83,7 @@ type Gdprrequest struct {
 // String returns a JSON representation of the model
 func (o *Gdprrequest) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ReplacementTerms = []Replacementterm{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -126,72 +101,49 @@ func (u *Gdprrequest) MarshalJSON() ([]byte, error) {
     }
     GdprrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
         
         ReplacementTerms []Replacementterm `json:"replacementTerms"`
         
         RequestType string `json:"requestType"`
         
-        
-        
-        
-        
         Subject Gdprsubject `json:"subject"`
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ReplacementTerms: []Replacementterm{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

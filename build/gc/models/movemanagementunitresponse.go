@@ -33,13 +33,6 @@ type Movemanagementunitresponse struct {
 func (o *Movemanagementunitresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Movemanagementunitresponse) MarshalJSON() ([]byte, error) {
     }
     MovemanagementunitresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         BusinessUnit Businessunitreference `json:"businessUnit"`
         
         Status string `json:"status"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

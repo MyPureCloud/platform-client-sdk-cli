@@ -24,11 +24,7 @@ type Analyticsconversationwithoutattributesmultigetresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticsconversationwithoutattributesmultigetresponse) String() string {
-    
-    
      o.Conversations = []Analyticsconversationwithoutattributes{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Analyticsconversationwithoutattributesmultigetresponse) MarshalJSON() (
     }
     AnalyticsconversationwithoutattributesmultigetresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Conversations []Analyticsconversationwithoutattributes `json:"conversations"`
+    return json.Marshal(&struct {
         
+        Conversations []Analyticsconversationwithoutattributes `json:"conversations"`
         *Alias
     }{
-        
 
         
         Conversations: []Analyticsconversationwithoutattributes{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

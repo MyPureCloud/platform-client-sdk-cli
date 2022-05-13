@@ -57,22 +57,6 @@ func (o *Patchactionproperties) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Patchactionproperties) MarshalJSON() ([]byte, error) {
     }
     PatchactionpropertiesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         WebchatPrompt string `json:"webchatPrompt"`
         
         WebchatTitleText string `json:"webchatTitleText"`
@@ -98,30 +83,23 @@ func (u *Patchactionproperties) MarshalJSON() ([]byte, error) {
         WebchatDeclineText string `json:"webchatDeclineText"`
         
         WebchatSurvey Patchactionsurvey `json:"webchatSurvey"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -91,36 +91,7 @@ func (o *Webchatdeployment) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AllowedDomains = []string{""} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -137,8 +108,7 @@ func (u *Webchatdeployment) MarshalJSON() ([]byte, error) {
     }
     WebchatdeploymentMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -155,54 +125,40 @@ func (u *Webchatdeployment) MarshalJSON() ([]byte, error) {
         AllowedDomains []string `json:"allowedDomains"`
         
         Flow Domainentityref `json:"flow"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AllowedDomains: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

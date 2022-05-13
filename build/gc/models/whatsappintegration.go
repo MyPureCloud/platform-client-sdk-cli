@@ -146,53 +146,6 @@ func (o *Whatsappintegration) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -208,8 +161,7 @@ func (u *Whatsappintegration) MarshalJSON() ([]byte, error) {
     }
     WhatsappintegrationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -219,11 +171,7 @@ func (u *Whatsappintegration) MarshalJSON() ([]byte, error) {
         
         PhoneNumber string `json:"phoneNumber"`
         
-        
-        
         Status string `json:"status"`
-        
-        
         
         DateCreated time.Time `json:"dateCreated"`
         
@@ -234,92 +182,62 @@ func (u *Whatsappintegration) MarshalJSON() ([]byte, error) {
         ModifiedBy Domainentityref `json:"modifiedBy"`
         
         Version int `json:"version"`
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

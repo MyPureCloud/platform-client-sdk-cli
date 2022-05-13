@@ -45,20 +45,7 @@ type Emailconfig struct {
 
 // String returns a JSON representation of the model
 func (o *Emailconfig) String() string {
-    
-    
      o.EmailColumns = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Emailconfig) MarshalJSON() ([]byte, error) {
     }
     EmailconfigMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EmailColumns []string `json:"emailColumns"`
         
         ContentTemplate Domainentityref `json:"contentTemplate"`
@@ -85,28 +73,22 @@ func (u *Emailconfig) MarshalJSON() ([]byte, error) {
         FromAddress Fromemailaddress `json:"fromAddress"`
         
         ReplyToAddress Replytoemailaddress `json:"replyToAddress"`
-        
         *Alias
     }{
-        
 
         
         EmailColumns: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

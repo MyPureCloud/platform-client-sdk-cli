@@ -33,12 +33,15 @@ func Cmdfax_documents_content() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DownloadResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DownloadResponse"
+      }
+    }
   }
 }`)
 	fax_documents_contentCmd.AddCommand(getCmd)
-	
 	return fax_documents_contentCmd
 }
 

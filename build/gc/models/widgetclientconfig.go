@@ -31,7 +31,7 @@ type Widgetclientconfig struct {
 
 
     // V2
-    V2 Widgetclientconfigv2 `json:"v2"`
+    V2 interface{} `json:"v2"`
 
 
     // V1Http
@@ -39,29 +39,16 @@ type Widgetclientconfig struct {
 
 
     // ThirdParty
-    ThirdParty Widgetclientconfigthirdparty `json:"third-party"`
+    ThirdParty interface{} `json:"third-party"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Widgetclientconfig) String() string {
     
+     o.V2 = Interface{} 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+     o.ThirdParty = Interface{} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,34 +64,33 @@ func (u *Widgetclientconfig) MarshalJSON() ([]byte, error) {
     }
     WidgetclientconfigMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         V1 Widgetclientconfigv1 `json:"v1"`
         
-        V2 Widgetclientconfigv2 `json:"v2"`
+        V2 interface{} `json:"v2"`
         
         V1Http Widgetclientconfigv1http `json:"v1-http"`
         
-        ThirdParty Widgetclientconfigthirdparty `json:"third-party"`
-        
+        ThirdParty interface{} `json:"third-party"`
         *Alias
     }{
-        
 
         
 
+
         
+        V2: Interface{},
+        
+
 
         
 
-        
 
         
-
+        ThirdParty: Interface{},
         
 
-        
-
-        
         Alias: (*Alias)(u),
     })
 }

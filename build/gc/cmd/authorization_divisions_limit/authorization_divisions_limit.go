@@ -33,13 +33,16 @@ func Cmdauthorization_divisions_limit() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "integer",
-    "format" : "int32"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "integer",
+        "format" : "int32"
+      }
+    }
   }
 }`)
 	authorization_divisions_limitCmd.AddCommand(getCmd)
-	
 	return authorization_divisions_limitCmd
 }
 

@@ -32,14 +32,7 @@ type Flowaggregatequeryclause struct {
 // String returns a JSON representation of the model
 func (o *Flowaggregatequeryclause) String() string {
     
-    
-    
-    
-    
-    
      o.Predicates = []Flowaggregatequerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Flowaggregatequeryclause) MarshalJSON() ([]byte, error) {
     }
     FlowaggregatequeryclauseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Predicates []Flowaggregatequerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Predicates: []Flowaggregatequerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

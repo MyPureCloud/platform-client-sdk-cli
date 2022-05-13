@@ -97,37 +97,6 @@ func (o *Journeygeolocation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,7 +112,8 @@ func (u *Journeygeolocation) MarshalJSON() ([]byte, error) {
     }
     JourneygeolocationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Country string `json:"country"`
         
         CountryName string `json:"countryName"`
@@ -163,50 +133,38 @@ func (u *Journeygeolocation) MarshalJSON() ([]byte, error) {
         Source string `json:"source"`
         
         Timezone string `json:"timezone"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,23 +30,28 @@ func init() {
 func Cmdconversations_tags() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/tags", utils.FormatPermissions([]string{ "conversation:externalTag:edit",  }), utils.GenerateDevCentreLink("PUT", "Conversations", "/api/v2/conversations/{conversationId}/tags")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Conversation Tags",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ConversationTagsUpdate"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ConversationTagsUpdate"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "The tags update request was accepted.",
-  "schema" : {
-    "type" : "string"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "string"
+      }
+    }
   }
 }`)
 	conversations_tagsCmd.AddCommand(updateCmd)
-	
 	return conversations_tagsCmd
 }
 

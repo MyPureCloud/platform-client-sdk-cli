@@ -24,11 +24,7 @@ type Estimatedwaittimepredictions struct {
 
 // String returns a JSON representation of the model
 func (o *Estimatedwaittimepredictions) String() string {
-    
-    
      o.Results = []Predictionresults{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Estimatedwaittimepredictions) MarshalJSON() ([]byte, error) {
     }
     EstimatedwaittimepredictionsMarshalled = true
 
-    return json.Marshal(&struct { 
-        Results []Predictionresults `json:"results"`
+    return json.Marshal(&struct {
         
+        Results []Predictionresults `json:"results"`
         *Alias
     }{
-        
 
         
         Results: []Predictionresults{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

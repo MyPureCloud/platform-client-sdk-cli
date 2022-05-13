@@ -31,15 +31,8 @@ type Surveyaggregatedatacontainer struct {
 
 // String returns a JSON representation of the model
 func (o *Surveyaggregatedatacontainer) String() string {
-    
-    
      o.Group = map[string]string{"": ""} 
-    
-    
-    
      o.Data = []Statisticalresponse{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Surveyaggregatedatacontainer) MarshalJSON() ([]byte, error) {
     }
     SurveyaggregatedatacontainerMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Group map[string]string `json:"group"`
         
         Data []Statisticalresponse `json:"data"`
-        
         *Alias
     }{
-        
 
         
         Group: map[string]string{"": ""},
         
 
-        
 
         
         Data: []Statisticalresponse{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -39,17 +39,7 @@ type Analyticsuserdetailsasyncqueryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticsuserdetailsasyncqueryresponse) String() string {
-    
-    
      o.UserDetails = []Analyticsuserdetail{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -67,30 +57,26 @@ func (u *Analyticsuserdetailsasyncqueryresponse) MarshalJSON() ([]byte, error) {
     }
     AnalyticsuserdetailsasyncqueryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UserDetails []Analyticsuserdetail `json:"userDetails"`
         
         Cursor string `json:"cursor"`
         
         DataAvailabilityDate time.Time `json:"dataAvailabilityDate"`
-        
         *Alias
     }{
-        
 
         
         UserDetails: []Analyticsuserdetail{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

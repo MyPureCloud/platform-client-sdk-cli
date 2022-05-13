@@ -33,42 +33,55 @@ func Cmdidentityproviders_identitynow() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Empty"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Empty"
+      }
+    }
   }
 }`)
 	identityproviders_identitynowCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/identityproviders/identitynow", utils.FormatPermissions([]string{ "sso:provider:view",  }), utils.GenerateDevCentreLink("GET", "Identity Provider", "/api/v2/identityproviders/identitynow")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/IdentityNow"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/IdentityNow"
+      }
+    }
   }
 }`)
 	identityproviders_identitynowCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/identityproviders/identitynow", utils.FormatPermissions([]string{ "sso:provider:add", "sso:provider:edit",  }), utils.GenerateDevCentreLink("PUT", "Identity Provider", "/api/v2/identityproviders/identitynow")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Provider",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/IdentityNow"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/IdentityNow"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/IdentityNow"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/IdentityNow"
+      }
+    }
   }
 }`)
 	identityproviders_identitynowCmd.AddCommand(updateCmd)
-	
 	return identityproviders_identitynowCmd
 }
 

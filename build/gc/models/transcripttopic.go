@@ -61,22 +61,6 @@ type Transcripttopic struct {
 // String returns a JSON representation of the model
 func (o *Transcripttopic) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -92,52 +76,32 @@ func (u *Transcripttopic) MarshalJSON() ([]byte, error) {
     }
     TranscripttopicMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         
         Duration Topicduration `json:"duration"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

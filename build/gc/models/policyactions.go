@@ -104,51 +104,14 @@ func (o *Policyactions) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AssignEvaluations = []Evaluationassignment{{}} 
-    
-    
-    
      o.AssignMeteredEvaluations = []Meteredevaluationassignment{{}} 
-    
-    
-    
      o.AssignMeteredAssignmentByAgent = []Meteredassignmentbyagent{{}} 
-    
-    
-    
      o.AssignCalibrations = []Calibrationassignment{{}} 
-    
-    
-    
      o.AssignSurveys = []Surveyassignment{{}} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.MediaTranscriptions = []Mediatranscription{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -165,7 +128,8 @@ func (u *Policyactions) MarshalJSON() ([]byte, error) {
     }
     PolicyactionsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         RetainRecording bool `json:"retainRecording"`
         
         DeleteRecording bool `json:"deleteRecording"`
@@ -189,70 +153,56 @@ func (u *Policyactions) MarshalJSON() ([]byte, error) {
         MediaTranscriptions []Mediatranscription `json:"mediaTranscriptions"`
         
         IntegrationExport Integrationexport `json:"integrationExport"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AssignEvaluations: []Evaluationassignment{{}},
         
 
-        
 
         
         AssignMeteredEvaluations: []Meteredevaluationassignment{{}},
         
 
-        
 
         
         AssignMeteredAssignmentByAgent: []Meteredassignmentbyagent{{}},
         
 
-        
 
         
         AssignCalibrations: []Calibrationassignment{{}},
         
 
-        
 
         
         AssignSurveys: []Surveyassignment{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MediaTranscriptions: []Mediatranscription{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

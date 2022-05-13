@@ -60,28 +60,9 @@ type Asyncuserdetailsquery struct {
 // String returns a JSON representation of the model
 func (o *Asyncuserdetailsquery) String() string {
     
-    
-    
-    
-    
-    
      o.UserFilters = []Userdetailqueryfilter{{}} 
-    
-    
-    
      o.PresenceFilters = []Presencedetailqueryfilter{{}} 
-    
-    
-    
      o.RoutingStatusFilters = []Routingstatusdetailqueryfilter{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -99,7 +80,8 @@ func (u *Asyncuserdetailsquery) MarshalJSON() ([]byte, error) {
     }
     AsyncuserdetailsqueryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         UserFilters []Userdetailqueryfilter `json:"userFilters"`
@@ -111,40 +93,32 @@ func (u *Asyncuserdetailsquery) MarshalJSON() ([]byte, error) {
         Order string `json:"order"`
         
         Limit int `json:"limit"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         UserFilters: []Userdetailqueryfilter{{}},
         
 
-        
 
         
         PresenceFilters: []Presencedetailqueryfilter{{}},
         
 
-        
 
         
         RoutingStatusFilters: []Routingstatusdetailqueryfilter{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

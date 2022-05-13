@@ -60,26 +60,7 @@ type Eventcondition struct {
 // String returns a JSON representation of the model
 func (o *Eventcondition) String() string {
     
-    
-    
-    
-    
-    
      o.Values = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -99,7 +80,8 @@ func (u *Eventcondition) MarshalJSON() ([]byte, error) {
     }
     EventconditionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Key string `json:"key"`
         
         Values []string `json:"values"`
@@ -111,36 +93,28 @@ func (u *Eventcondition) MarshalJSON() ([]byte, error) {
         SessionType string `json:"sessionType"`
         
         EventName string `json:"eventName"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Values: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -84,33 +84,7 @@ func (o *Lexbotalias) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Intents = []Lexintent{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -126,8 +100,7 @@ func (u *Lexbotalias) MarshalJSON() ([]byte, error) {
     }
     LexbotaliasMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -142,50 +115,37 @@ func (u *Lexbotalias) MarshalJSON() ([]byte, error) {
         Language string `json:"language"`
         
         Intents []Lexintent `json:"intents"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Intents: []Lexintent{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

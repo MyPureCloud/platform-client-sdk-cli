@@ -33,12 +33,15 @@ func Cmdintegrations_actions_draft_templates() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "string"
+  "content" : {
+    "text/plain" : {
+      "schema" : {
+        "type" : "string"
+      }
+    }
   }
 }`)
 	integrations_actions_draft_templatesCmd.AddCommand(getCmd)
-	
 	return integrations_actions_draft_templatesCmd
 }
 

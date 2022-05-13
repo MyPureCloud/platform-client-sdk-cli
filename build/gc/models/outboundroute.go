@@ -156,63 +156,10 @@ func (o *Outboundroute) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ClassificationTypes = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ExternalTrunkBases = []Domainentityref{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -228,8 +175,7 @@ func (u *Outboundroute) MarshalJSON() ([]byte, error) {
     }
     OutboundrouteMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -247,8 +193,6 @@ func (u *Outboundroute) MarshalJSON() ([]byte, error) {
         
         CreatedBy string `json:"createdBy"`
         
-        
-        
         ModifiedByApp string `json:"modifiedByApp"`
         
         CreatedByApp string `json:"createdByApp"`
@@ -260,96 +204,69 @@ func (u *Outboundroute) MarshalJSON() ([]byte, error) {
         Distribution string `json:"distribution"`
         
         ExternalTrunkBases []Domainentityref `json:"externalTrunkBases"`
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ClassificationTypes: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ExternalTrunkBases: []Domainentityref{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

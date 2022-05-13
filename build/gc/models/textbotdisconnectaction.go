@@ -48,20 +48,7 @@ func (o *Textbotdisconnectaction) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.FlowOutcomes = []Textbotflowoutcome{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Textbotdisconnectaction) MarshalJSON() ([]byte, error) {
     }
     TextbotdisconnectactionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Reason string `json:"reason"`
         
         ReasonExtendedInfo string `json:"reasonExtendedInfo"`
@@ -85,28 +73,22 @@ func (u *Textbotdisconnectaction) MarshalJSON() ([]byte, error) {
         FlowLocation Textbotflowlocation `json:"flowLocation"`
         
         FlowOutcomes []Textbotflowoutcome `json:"flowOutcomes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         FlowOutcomes: []Textbotflowoutcome{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -101,42 +101,8 @@ func (o *Domainorganizationrolecreate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Permissions = []string{""} 
-    
-    
-    
-    
-    
      o.PermissionPolicies = []Domainpermissionpolicy{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -156,8 +122,7 @@ func (u *Domainorganizationrolecreate) MarshalJSON() ([]byte, error) {
     }
     DomainorganizationrolecreateMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -166,8 +131,6 @@ func (u *Domainorganizationrolecreate) MarshalJSON() ([]byte, error) {
         DefaultRoleId string `json:"defaultRoleId"`
         
         Permissions []string `json:"permissions"`
-        
-        
         
         PermissionPolicies []Domainpermissionpolicy `json:"permissionPolicies"`
         
@@ -178,64 +141,48 @@ func (u *Domainorganizationrolecreate) MarshalJSON() ([]byte, error) {
         Base bool `json:"base"`
         
         VarDefault bool `json:"default"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Permissions: []string{""},
         
 
-        
 
         
 
-        
 
         
         PermissionPolicies: []Domainpermissionpolicy{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

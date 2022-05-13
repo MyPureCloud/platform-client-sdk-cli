@@ -31,12 +31,6 @@ type Calendarurlresponse struct {
 // String returns a JSON representation of the model
 func (o *Calendarurlresponse) String() string {
     
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -52,22 +46,17 @@ func (u *Calendarurlresponse) MarshalJSON() ([]byte, error) {
     }
     CalendarurlresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         CalendarUrl string `json:"calendarUrl"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

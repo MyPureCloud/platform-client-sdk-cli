@@ -52,27 +52,11 @@ type Effectiveconfiguration struct {
 
 // String returns a JSON representation of the model
 func (o *Effectiveconfiguration) String() string {
-    
-    
      o.Properties = map[string]interface{}{"": Interface{}} 
-    
-    
-    
      o.Advanced = map[string]interface{}{"": Interface{}} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Credentials = map[string]Credentialinfo{"": {}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Effectiveconfiguration) MarshalJSON() ([]byte, error) {
     }
     EffectiveconfigurationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Properties map[string]interface{} `json:"properties"`
         
         Advanced map[string]interface{} `json:"advanced"`
@@ -98,36 +83,29 @@ func (u *Effectiveconfiguration) MarshalJSON() ([]byte, error) {
         Notes string `json:"notes"`
         
         Credentials map[string]Credentialinfo `json:"credentials"`
-        
         *Alias
     }{
-        
 
         
         Properties: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
         Advanced: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Credentials: map[string]Credentialinfo{"": {}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

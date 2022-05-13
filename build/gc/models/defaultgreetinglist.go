@@ -89,36 +89,7 @@ func (o *Defaultgreetinglist) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Greetings = map[string]Greeting{"": {}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -138,8 +109,7 @@ func (u *Defaultgreetinglist) MarshalJSON() ([]byte, error) {
     }
     DefaultgreetinglistMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -156,54 +126,40 @@ func (u *Defaultgreetinglist) MarshalJSON() ([]byte, error) {
         ModifiedDate time.Time `json:"modifiedDate"`
         
         ModifiedBy string `json:"modifiedBy"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Greetings: map[string]Greeting{"": {}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

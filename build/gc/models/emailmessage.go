@@ -115,54 +115,13 @@ type Emailmessage struct {
 // String returns a JSON representation of the model
 func (o *Emailmessage) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.To = []Emailaddress{{}} 
-    
-    
-    
      o.Cc = []Emailaddress{{}} 
-    
-    
-    
      o.Bcc = []Emailaddress{{}} 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Attachments = []Attachment{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -182,8 +141,7 @@ func (u *Emailmessage) MarshalJSON() ([]byte, error) {
     }
     EmailmessageMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -208,76 +166,58 @@ func (u *Emailmessage) MarshalJSON() ([]byte, error) {
         Time time.Time `json:"time"`
         
         HistoryIncluded bool `json:"historyIncluded"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         To: []Emailaddress{{}},
         
 
-        
 
         
         Cc: []Emailaddress{{}},
         
 
-        
 
         
         Bcc: []Emailaddress{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Attachments: []Attachment{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

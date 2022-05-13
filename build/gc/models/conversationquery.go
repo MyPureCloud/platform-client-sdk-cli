@@ -87,46 +87,15 @@ type Conversationquery struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationquery) String() string {
-    
-    
      o.ConversationFilters = []Conversationdetailqueryfilter{{}} 
-    
-    
-    
      o.SegmentFilters = []Segmentdetailqueryfilter{{}} 
-    
-    
-    
      o.EvaluationFilters = []Evaluationdetailqueryfilter{{}} 
-    
-    
-    
      o.SurveyFilters = []Surveydetailqueryfilter{{}} 
-    
-    
-    
      o.ResolutionFilters = []Resolutiondetailqueryfilter{{}} 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Aggregations = []Analyticsqueryaggregation{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -143,7 +112,8 @@ func (u *Conversationquery) MarshalJSON() ([]byte, error) {
     }
     ConversationqueryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ConversationFilters []Conversationdetailqueryfilter `json:"conversationFilters"`
         
         SegmentFilters []Segmentdetailqueryfilter `json:"segmentFilters"`
@@ -163,62 +133,50 @@ func (u *Conversationquery) MarshalJSON() ([]byte, error) {
         Aggregations []Analyticsqueryaggregation `json:"aggregations"`
         
         Paging Pagingspec `json:"paging"`
-        
         *Alias
     }{
-        
 
         
         ConversationFilters: []Conversationdetailqueryfilter{{}},
         
 
-        
 
         
         SegmentFilters: []Segmentdetailqueryfilter{{}},
         
 
-        
 
         
         EvaluationFilters: []Evaluationdetailqueryfilter{{}},
         
 
-        
 
         
         SurveyFilters: []Surveydetailqueryfilter{{}},
         
 
-        
 
         
         ResolutionFilters: []Resolutiondetailqueryfilter{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Aggregations: []Analyticsqueryaggregation{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,13 +33,6 @@ type Patchclosebuttonstyleproperties struct {
 func (o *Patchclosebuttonstyleproperties) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Patchclosebuttonstyleproperties) MarshalJSON() ([]byte, error) {
     }
     PatchclosebuttonstylepropertiesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Color string `json:"color"`
         
         Opacity float32 `json:"opacity"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

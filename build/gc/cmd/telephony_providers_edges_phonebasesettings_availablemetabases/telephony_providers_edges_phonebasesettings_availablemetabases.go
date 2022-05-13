@@ -35,12 +35,15 @@ func Cmdtelephony_providers_edges_phonebasesettings_availablemetabases() *cobra.
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_phonebasesettings_availablemetabasesCmd.AddCommand(listCmd)
-	
 	return telephony_providers_edges_phonebasesettings_availablemetabasesCmd
 }
 

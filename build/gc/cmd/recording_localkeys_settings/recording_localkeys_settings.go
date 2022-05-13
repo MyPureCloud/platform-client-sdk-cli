@@ -30,64 +30,83 @@ func init() {
 func Cmdrecording_localkeys_settings() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/localkeys/settings", utils.FormatPermissions([]string{ "recording:encryptionKey:edit",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recording/localkeys/settings")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Local Encryption Configuration",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/LocalEncryptionConfiguration"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LocalEncryptionConfiguration"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LocalEncryptionConfiguration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LocalEncryptionConfiguration"
+      }
+    }
   }
 }`)
 	recording_localkeys_settingsCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/recording/localkeys/settings/{settingsId}", utils.FormatPermissions([]string{ "recording:encryptionKey:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/localkeys/settings/{settingsId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LocalEncryptionConfiguration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LocalEncryptionConfiguration"
+      }
+    }
   }
 }`)
 	recording_localkeys_settingsCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recording/localkeys/settings", utils.FormatPermissions([]string{ "recording:encryptionKey:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/localkeys/settings")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LocalEncryptionConfigurationListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LocalEncryptionConfigurationListing"
+      }
+    }
   }
 }`)
 	recording_localkeys_settingsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/localkeys/settings/{settingsId}", utils.FormatPermissions([]string{ "recording:encryptionKey:edit",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/localkeys/settings/{settingsId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Local Encryption metadata",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/LocalEncryptionConfiguration"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LocalEncryptionConfiguration"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LocalEncryptionConfiguration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LocalEncryptionConfiguration"
+      }
+    }
   }
 }`)
 	recording_localkeys_settingsCmd.AddCommand(updateCmd)
-	
 	return recording_localkeys_settingsCmd
 }
 

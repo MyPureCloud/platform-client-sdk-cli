@@ -34,12 +34,15 @@ func Cmdworkforcemanagement_businessunits_weeks_shorttermforecasts_longtermforec
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LongTermForecastResultResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LongTermForecastResultResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_shorttermforecasts_longtermforecastdataCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_businessunits_weeks_shorttermforecasts_longtermforecastdataCmd
 }
 

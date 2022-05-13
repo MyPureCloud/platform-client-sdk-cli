@@ -31,14 +31,7 @@ type Fileuploadmode struct {
 
 // String returns a JSON representation of the model
 func (o *Fileuploadmode) String() string {
-    
-    
      o.FileTypes = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Fileuploadmode) MarshalJSON() ([]byte, error) {
     }
     FileuploadmodeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FileTypes []string `json:"fileTypes"`
         
         MaxFileSizeKB int `json:"maxFileSizeKB"`
-        
         *Alias
     }{
-        
 
         
         FileTypes: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

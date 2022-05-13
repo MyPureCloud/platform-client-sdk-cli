@@ -33,12 +33,15 @@ func Cmdanalytics_reporting_schedules_runreport() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Accepted - Processing Report",
-  "schema" : {
-    "$ref" : "#/definitions/RunNowResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RunNowResponse"
+      }
+    }
   }
 }`)
 	analytics_reporting_schedules_runreportCmd.AddCommand(createCmd)
-	
 	return analytics_reporting_schedules_runreportCmd
 }
 

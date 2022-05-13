@@ -52,23 +52,7 @@ type Coachingappointmentstatusresponselist struct {
 
 // String returns a JSON representation of the model
 func (o *Coachingappointmentstatusresponselist) String() string {
-    
-    
      o.Entities = []Coachingappointmentstatusresponse{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -88,7 +72,8 @@ func (u *Coachingappointmentstatusresponselist) MarshalJSON() ([]byte, error) {
     }
     CoachingappointmentstatusresponselistMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Coachingappointmentstatusresponse `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -98,32 +83,25 @@ func (u *Coachingappointmentstatusresponselist) MarshalJSON() ([]byte, error) {
         Total int `json:"total"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Coachingappointmentstatusresponse{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

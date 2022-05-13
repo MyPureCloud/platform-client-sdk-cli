@@ -33,12 +33,15 @@ func Cmdworkforcemanagement_notifications() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/NotificationsResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NotificationsResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_notificationsCmd.AddCommand(listCmd)
-	
 	return workforcemanagement_notificationsCmd
 }
 

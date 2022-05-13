@@ -24,11 +24,7 @@ type Securesessionentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Securesessionentitylisting) String() string {
-    
-    
      o.Entities = []Securesession{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Securesessionentitylisting) MarshalJSON() ([]byte, error) {
     }
     SecuresessionentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Securesession `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Securesession `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Securesession{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

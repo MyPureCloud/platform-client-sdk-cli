@@ -130,49 +130,6 @@ func (o *Analyticsevaluation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -188,7 +145,8 @@ func (u *Analyticsevaluation) MarshalJSON() ([]byte, error) {
     }
     AnalyticsevaluationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         CalibrationId string `json:"calibrationId"`
         
         ContextId string `json:"contextId"`
@@ -216,66 +174,50 @@ func (u *Analyticsevaluation) MarshalJSON() ([]byte, error) {
         OTotalCriticalScore int `json:"oTotalCriticalScore"`
         
         OTotalScore int `json:"oTotalScore"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

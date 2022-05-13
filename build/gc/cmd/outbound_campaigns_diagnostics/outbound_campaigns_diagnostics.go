@@ -33,12 +33,15 @@ func Cmdoutbound_campaigns_diagnostics() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CampaignDiagnostics"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CampaignDiagnostics"
+      }
+    }
   }
 }`)
 	outbound_campaigns_diagnosticsCmd.AddCommand(getCmd)
-	
 	return outbound_campaigns_diagnosticsCmd
 }
 

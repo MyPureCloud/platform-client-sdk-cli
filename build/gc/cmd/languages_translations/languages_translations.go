@@ -33,12 +33,15 @@ func Cmdlanguages_translations() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AvailableTranslations"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AvailableTranslations"
+      }
+    }
   }
 }`)
 	languages_translationsCmd.AddCommand(getCmd)
-	
 	return languages_translationsCmd
 }
 

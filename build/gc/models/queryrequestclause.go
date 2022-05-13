@@ -32,14 +32,7 @@ type Queryrequestclause struct {
 // String returns a JSON representation of the model
 func (o *Queryrequestclause) String() string {
     
-    
-    
-    
-    
-    
      o.Predicates = []Queryrequestpredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Queryrequestclause) MarshalJSON() ([]byte, error) {
     }
     QueryrequestclauseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Predicates []Queryrequestpredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Predicates: []Queryrequestpredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

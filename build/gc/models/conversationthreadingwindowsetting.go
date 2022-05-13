@@ -33,13 +33,6 @@ type Conversationthreadingwindowsetting struct {
 func (o *Conversationthreadingwindowsetting) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Conversationthreadingwindowsetting) MarshalJSON() ([]byte, error) {
     }
     ConversationthreadingwindowsettingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MessengerType string `json:"messengerType"`
         
         TimeoutInMinutes int `json:"timeoutInMinutes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

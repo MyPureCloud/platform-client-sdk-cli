@@ -33,13 +33,6 @@ type Scimuserroutinglanguage struct {
 func (o *Scimuserroutinglanguage) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Scimuserroutinglanguage) MarshalJSON() ([]byte, error) {
     }
     ScimuserroutinglanguageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Proficiency float64 `json:"proficiency"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

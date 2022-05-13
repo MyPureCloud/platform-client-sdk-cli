@@ -33,13 +33,6 @@ type Textboterrorinputevent struct {
 func (o *Textboterrorinputevent) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Textboterrorinputevent) MarshalJSON() ([]byte, error) {
     }
     TextboterrorinputeventMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Code string `json:"code"`
         
         Message string `json:"message"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

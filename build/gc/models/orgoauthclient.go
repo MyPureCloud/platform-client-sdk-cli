@@ -106,43 +106,8 @@ func (o *Orgoauthclient) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Scope = []string{""} 
-    
-    
-    
      o.RoleDivisions = []Roledivision{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -160,8 +125,7 @@ func (u *Orgoauthclient) MarshalJSON() ([]byte, error) {
     }
     OrgoauthclientMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -182,64 +146,48 @@ func (u *Orgoauthclient) MarshalJSON() ([]byte, error) {
         State string `json:"state"`
         
         DateToDelete time.Time `json:"dateToDelete"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Scope: []string{""},
         
 
-        
 
         
         RoleDivisions: []Roledivision{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

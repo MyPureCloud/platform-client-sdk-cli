@@ -53,19 +53,6 @@ type Agentownedmappingpreview struct {
 
 // String returns a JSON representation of the model
 func (o *Agentownedmappingpreview) String() string {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -81,46 +68,27 @@ func (u *Agentownedmappingpreview) MarshalJSON() ([]byte, error) {
     }
     AgentownedmappingpreviewMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

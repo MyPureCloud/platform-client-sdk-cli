@@ -124,48 +124,7 @@ func (o *Systempromptasset) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Tags = map[string][]string{"": {}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -181,8 +140,7 @@ func (u *Systempromptasset) MarshalJSON() ([]byte, error) {
     }
     SystempromptassetMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -207,70 +165,52 @@ func (u *Systempromptasset) MarshalJSON() ([]byte, error) {
         LanguageDefault bool `json:"languageDefault"`
         
         Tags map[string][]string `json:"tags"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Tags: map[string][]string{"": {}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

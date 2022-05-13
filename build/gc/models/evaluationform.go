@@ -76,30 +76,7 @@ func (o *Evaluationform) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.QuestionGroups = []Evaluationquestiongroup{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -116,8 +93,7 @@ func (u *Evaluationform) MarshalJSON() ([]byte, error) {
     }
     EvaluationformMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -130,46 +106,34 @@ func (u *Evaluationform) MarshalJSON() ([]byte, error) {
         QuestionGroups []Evaluationquestiongroup `json:"questionGroups"`
         
         PublishedVersions Domainentitylistingevaluationform `json:"publishedVersions"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         QuestionGroups: []Evaluationquestiongroup{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

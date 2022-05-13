@@ -76,29 +76,7 @@ type Drafttopics struct {
 func (o *Drafttopics) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Phrases = []string{""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -114,66 +92,44 @@ func (u *Drafttopics) MarshalJSON() ([]byte, error) {
     }
     DrafttopicsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         Phrases []string `json:"phrases"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Phrases: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

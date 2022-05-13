@@ -59,24 +59,7 @@ type Authzgrantrole struct {
 func (o *Authzgrantrole) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Policies = []Authzgrantpolicy{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -93,8 +76,7 @@ func (u *Authzgrantrole) MarshalJSON() ([]byte, error) {
     }
     AuthzgrantroleMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -103,38 +85,28 @@ func (u *Authzgrantrole) MarshalJSON() ([]byte, error) {
         Policies []Authzgrantpolicy `json:"policies"`
         
         VarDefault bool `json:"default"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Policies: []Authzgrantpolicy{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

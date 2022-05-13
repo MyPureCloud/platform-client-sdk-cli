@@ -51,21 +51,7 @@ type Authzsubject struct {
 // String returns a JSON representation of the model
 func (o *Authzsubject) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Grants = []Authzgrant{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -82,42 +68,32 @@ func (u *Authzsubject) MarshalJSON() ([]byte, error) {
     }
     AuthzsubjectMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         Grants []Authzgrant `json:"grants"`
         
         Version int `json:"version"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Grants: []Authzgrant{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

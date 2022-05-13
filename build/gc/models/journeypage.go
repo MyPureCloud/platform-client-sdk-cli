@@ -96,38 +96,7 @@ func (o *Journeypage) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Breadcrumb = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,7 +112,8 @@ func (u *Journeypage) MarshalJSON() ([]byte, error) {
     }
     JourneypageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Url string `json:"url"`
         
         Title string `json:"title"`
@@ -163,52 +133,40 @@ func (u *Journeypage) MarshalJSON() ([]byte, error) {
         QueryString string `json:"queryString"`
         
         Breadcrumb []string `json:"breadcrumb"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Breadcrumb: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

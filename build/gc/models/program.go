@@ -96,40 +96,8 @@ func (o *Program) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Topics = []Basetopicentitiy{{}} 
-    
-    
-    
      o.Tags = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -149,8 +117,7 @@ func (u *Program) MarshalJSON() ([]byte, error) {
     }
     ProgramMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -169,60 +136,45 @@ func (u *Program) MarshalJSON() ([]byte, error) {
         PublishedBy Addressableentityref `json:"publishedBy"`
         
         DatePublished time.Time `json:"datePublished"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Topics: []Basetopicentitiy{{}},
         
 
-        
 
         
         Tags: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

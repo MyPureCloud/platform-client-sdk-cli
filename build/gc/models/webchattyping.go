@@ -50,19 +50,6 @@ func (o *Webchattyping) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,7 +65,8 @@ func (u *Webchattyping) MarshalJSON() ([]byte, error) {
     }
     WebchattypingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Conversation Webchatconversation `json:"conversation"`
@@ -86,26 +74,20 @@ func (u *Webchattyping) MarshalJSON() ([]byte, error) {
         Sender Webchatmemberinfo `json:"sender"`
         
         Timestamp time.Time `json:"timestamp"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

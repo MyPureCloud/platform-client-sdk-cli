@@ -41,16 +41,6 @@ func (o *Outcomeprobabilitycondition) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Outcomeprobabilitycondition) MarshalJSON() ([]byte, error) {
     }
     OutcomeprobabilityconditionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         OutcomeId string `json:"outcomeId"`
         
         MaximumProbability float32 `json:"maximumProbability"`
         
         Probability float32 `json:"probability"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

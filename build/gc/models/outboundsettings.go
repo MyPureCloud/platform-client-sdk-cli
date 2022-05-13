@@ -104,38 +104,6 @@ func (o *Outboundsettings) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -151,20 +119,13 @@ func (u *Outboundsettings) MarshalJSON() ([]byte, error) {
     }
     OutboundsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
         MaxCallsPerAgent int `json:"maxCallsPerAgent"`
-        
-        
         
         MaxLineUtilization float64 `json:"maxLineUtilization"`
         
@@ -173,60 +134,44 @@ func (u *Outboundsettings) MarshalJSON() ([]byte, error) {
         ComplianceAbandonRateDenominator string `json:"complianceAbandonRateDenominator"`
         
         AutomaticTimeZoneMapping Automatictimezonemappingsettings `json:"automaticTimeZoneMapping"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

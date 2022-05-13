@@ -62,23 +62,6 @@ func (o *Generalprogramjob) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -94,8 +77,7 @@ func (u *Generalprogramjob) MarshalJSON() ([]byte, error) {
     }
     GeneralprogramjobMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         State string `json:"state"`
         
@@ -104,36 +86,26 @@ func (u *Generalprogramjob) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         
         DateModified time.Time `json:"dateModified"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

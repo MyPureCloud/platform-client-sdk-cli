@@ -30,42 +30,53 @@ func init() {
 func Cmdoutbound_callabletimesets() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/callabletimesets", utils.FormatPermissions([]string{ "outbound:callableTimeSet:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/callabletimesets")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "DialerCallableTimeSet",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CallableTimeSet"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CallableTimeSet"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CallableTimeSet"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CallableTimeSet"
+      }
+    }
   }
 }`)
 	outbound_callabletimesetsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/callabletimesets/{callableTimeSetId}", utils.FormatPermissions([]string{ "outbound:callableTimeSet:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/callabletimesets/{callableTimeSetId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	outbound_callabletimesetsCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/callabletimesets/{callableTimeSetId}", utils.FormatPermissions([]string{ "outbound:callableTimeSet:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/callabletimesets/{callableTimeSetId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CallableTimeSet"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CallableTimeSet"
+      }
+    }
   }
 }`)
 	outbound_callabletimesetsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size. The max that will be returned is 100.")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "bool", "allowEmptyResult", "false", "Whether to return an empty page when there are no results for that page")
@@ -78,31 +89,40 @@ func Cmdoutbound_callabletimesets() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	outbound_callabletimesetsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/callabletimesets/{callableTimeSetId}", utils.FormatPermissions([]string{ "outbound:callableTimeSet:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/callabletimesets/{callableTimeSetId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "DialerCallableTimeSet",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CallableTimeSet"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CallableTimeSet"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CallableTimeSet"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CallableTimeSet"
+      }
+    }
   }
 }`)
 	outbound_callabletimesetsCmd.AddCommand(updateCmd)
-	
 	return outbound_callabletimesetsCmd
 }
 

@@ -33,12 +33,15 @@ func Cmdwebchat_guest_conversations_members_typing() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatTyping"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatTyping"
+      }
+    }
   }
 }`)
 	webchat_guest_conversations_members_typingCmd.AddCommand(createCmd)
-	
 	return webchat_guest_conversations_members_typingCmd
 }
 

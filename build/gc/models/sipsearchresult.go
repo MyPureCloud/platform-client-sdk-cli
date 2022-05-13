@@ -75,30 +75,7 @@ func (o *Sipsearchresult) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Data = []Homerrecord{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -115,8 +92,7 @@ func (u *Sipsearchresult) MarshalJSON() ([]byte, error) {
     }
     SipsearchresultMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Status int `json:"status"`
         
@@ -129,46 +105,34 @@ func (u *Sipsearchresult) MarshalJSON() ([]byte, error) {
         Data []Homerrecord `json:"data"`
         
         Count int `json:"count"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Data: []Homerrecord{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

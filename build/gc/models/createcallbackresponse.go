@@ -32,14 +32,7 @@ type Createcallbackresponse struct {
 // String returns a JSON representation of the model
 func (o *Createcallbackresponse) String() string {
     
-    
-    
-    
-    
-    
      o.CallbackIdentifiers = []Callbackidentifier{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Createcallbackresponse) MarshalJSON() ([]byte, error) {
     }
     CreatecallbackresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Conversation Domainentityref `json:"conversation"`
         
         CallbackIdentifiers []Callbackidentifier `json:"callbackIdentifiers"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         CallbackIdentifiers: []Callbackidentifier{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

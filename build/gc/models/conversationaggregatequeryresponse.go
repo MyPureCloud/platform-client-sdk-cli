@@ -24,11 +24,7 @@ type Conversationaggregatequeryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationaggregatequeryresponse) String() string {
-    
-    
      o.Results = []Conversationaggregatedatacontainer{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Conversationaggregatequeryresponse) MarshalJSON() ([]byte, error) {
     }
     ConversationaggregatequeryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Results []Conversationaggregatedatacontainer `json:"results"`
+    return json.Marshal(&struct {
         
+        Results []Conversationaggregatedatacontainer `json:"results"`
         *Alias
     }{
-        
 
         
         Results: []Conversationaggregatedatacontainer{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

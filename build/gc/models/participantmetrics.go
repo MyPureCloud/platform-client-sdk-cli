@@ -81,31 +81,6 @@ func (o *Participantmetrics) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -121,7 +96,8 @@ func (u *Participantmetrics) MarshalJSON() ([]byte, error) {
     }
     ParticipantmetricsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         AgentDurationPercentage float64 `json:"agentDurationPercentage"`
         
         CustomerDurationPercentage float64 `json:"customerDurationPercentage"`
@@ -137,42 +113,32 @@ func (u *Participantmetrics) MarshalJSON() ([]byte, error) {
         OtherDurationPercentage float64 `json:"otherDurationPercentage"`
         
         OvertalkCount int `json:"overtalkCount"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

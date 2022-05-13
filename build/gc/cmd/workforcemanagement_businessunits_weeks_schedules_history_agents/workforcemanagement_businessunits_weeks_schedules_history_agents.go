@@ -33,12 +33,15 @@ func Cmdworkforcemanagement_businessunits_weeks_schedules_history_agents() *cobr
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuAgentScheduleHistoryResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuAgentScheduleHistoryResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedules_history_agentsCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_businessunits_weeks_schedules_history_agentsCmd
 }
 

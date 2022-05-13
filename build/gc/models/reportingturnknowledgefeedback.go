@@ -40,17 +40,7 @@ type Reportingturnknowledgefeedback struct {
 func (o *Reportingturnknowledgefeedback) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Documents = []Reportingturnknowledgedocument{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Reportingturnknowledgefeedback) MarshalJSON() ([]byte, error) {
     }
     ReportingturnknowledgefeedbackMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SearchId string `json:"searchId"`
         
         Rating int `json:"rating"`
         
         Documents []Reportingturnknowledgedocument `json:"documents"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Documents: []Reportingturnknowledgedocument{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

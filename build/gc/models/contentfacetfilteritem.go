@@ -48,20 +48,7 @@ func (o *Contentfacetfilteritem) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Values = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Contentfacetfilteritem) MarshalJSON() ([]byte, error) {
     }
     ContentfacetfilteritemMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         VarType string `json:"type"`
@@ -85,28 +73,22 @@ func (u *Contentfacetfilteritem) MarshalJSON() ([]byte, error) {
         Operator string `json:"operator"`
         
         Values []string `json:"values"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Values: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

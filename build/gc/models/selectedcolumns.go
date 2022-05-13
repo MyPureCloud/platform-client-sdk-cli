@@ -33,13 +33,6 @@ type Selectedcolumns struct {
 func (o *Selectedcolumns) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Selectedcolumns) MarshalJSON() ([]byte, error) {
     }
     SelectedcolumnsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ColumnOrder int `json:"columnOrder"`
         
         ColumnName string `json:"columnName"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

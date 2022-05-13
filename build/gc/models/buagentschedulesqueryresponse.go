@@ -31,14 +31,7 @@ type Buagentschedulesqueryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Buagentschedulesqueryresponse) String() string {
-    
-    
      o.AgentSchedules = []Buagentschedulequeryresponse{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Buagentschedulesqueryresponse) MarshalJSON() ([]byte, error) {
     }
     BuagentschedulesqueryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         AgentSchedules []Buagentschedulequeryresponse `json:"agentSchedules"`
         
         BusinessUnitTimeZone string `json:"businessUnitTimeZone"`
-        
         *Alias
     }{
-        
 
         
         AgentSchedules: []Buagentschedulequeryresponse{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

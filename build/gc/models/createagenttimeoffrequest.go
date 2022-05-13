@@ -55,24 +55,8 @@ type Createagenttimeoffrequest struct {
 func (o *Createagenttimeoffrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.FullDayManagementUnitDates = []string{""} 
-    
-    
-    
      o.PartialDayStartDateTimes = []time.Time{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -89,7 +73,8 @@ func (u *Createagenttimeoffrequest) MarshalJSON() ([]byte, error) {
     }
     CreateagenttimeoffrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ActivityCodeId string `json:"activityCodeId"`
         
         Notes string `json:"notes"`
@@ -99,34 +84,27 @@ func (u *Createagenttimeoffrequest) MarshalJSON() ([]byte, error) {
         PartialDayStartDateTimes []time.Time `json:"partialDayStartDateTimes"`
         
         DailyDurationMinutes int `json:"dailyDurationMinutes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         FullDayManagementUnitDates: []string{""},
         
 
-        
 
         
         PartialDayStartDateTimes: []time.Time{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -41,16 +41,6 @@ func (o *Webmessagingevent) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Webmessagingevent) MarshalJSON() ([]byte, error) {
     }
     WebmessagingeventMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EventType string `json:"eventType"`
         
         CoBrowse Webmessagingeventcobrowse `json:"coBrowse"`
         
         Presence Webmessagingeventpresence `json:"presence"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

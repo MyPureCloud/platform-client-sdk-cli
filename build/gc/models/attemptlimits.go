@@ -97,37 +97,7 @@ func (o *Attemptlimits) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.RecallEntries = map[string]Recallentry{"": {}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,14 +113,9 @@ func (u *Attemptlimits) MarshalJSON() ([]byte, error) {
     }
     AttemptlimitsMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
@@ -163,58 +128,43 @@ func (u *Attemptlimits) MarshalJSON() ([]byte, error) {
         ResetPeriod string `json:"resetPeriod"`
         
         RecallEntries map[string]Recallentry `json:"recallEntries"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RecallEntries: map[string]Recallentry{"": {}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -52,23 +52,7 @@ type Organizationproductentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Organizationproductentitylisting) String() string {
-    
-    
      o.Entities = []Domainorganizationproduct{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -88,7 +72,8 @@ func (u *Organizationproductentitylisting) MarshalJSON() ([]byte, error) {
     }
     OrganizationproductentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Domainorganizationproduct `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -98,32 +83,25 @@ func (u *Organizationproductentitylisting) MarshalJSON() ([]byte, error) {
         Total int `json:"total"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Domainorganizationproduct{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

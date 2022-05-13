@@ -63,27 +63,8 @@ func (o *Auditsearchresult) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.FacetInfo = []Facetinfo{{}} 
-    
-    
-    
      o.AuditMessages = []Auditmessage{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Auditsearchresult) MarshalJSON() ([]byte, error) {
     }
     AuditsearchresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PageNumber int `json:"pageNumber"`
         
         PageSize int `json:"pageSize"`
@@ -111,38 +93,30 @@ func (u *Auditsearchresult) MarshalJSON() ([]byte, error) {
         FacetInfo []Facetinfo `json:"facetInfo"`
         
         AuditMessages []Auditmessage `json:"auditMessages"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         FacetInfo: []Facetinfo{{}},
         
 
-        
 
         
         AuditMessages: []Auditmessage{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

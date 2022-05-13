@@ -38,17 +38,7 @@ type Namedentitytypemechanism struct {
 
 // String returns a JSON representation of the model
 func (o *Namedentitytypemechanism) String() string {
-    
-    
      o.Items = []Namedentitytypeitem{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -66,30 +56,26 @@ func (u *Namedentitytypemechanism) MarshalJSON() ([]byte, error) {
     }
     NamedentitytypemechanismMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Items []Namedentitytypeitem `json:"items"`
         
         Restricted bool `json:"restricted"`
         
         VarType string `json:"type"`
-        
         *Alias
     }{
-        
 
         
         Items: []Namedentitytypeitem{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

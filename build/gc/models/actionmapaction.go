@@ -57,22 +57,6 @@ func (o *Actionmapaction) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Actionmapaction) MarshalJSON() ([]byte, error) {
     }
     ActionmapactionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ActionTemplate Actionmapactiontemplate `json:"actionTemplate"`
         
         MediaType string `json:"mediaType"`
@@ -98,30 +83,23 @@ func (u *Actionmapaction) MarshalJSON() ([]byte, error) {
         WebMessagingOfferFields Webmessagingofferfields `json:"webMessagingOfferFields"`
         
         OpenActionFields Openactionfields `json:"openActionFields"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

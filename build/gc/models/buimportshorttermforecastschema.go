@@ -54,24 +54,8 @@ type Buimportshorttermforecastschema struct {
 func (o *Buimportshorttermforecastschema) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.PlanningGroups = []Forecastplanninggroupdata{{}} 
-    
-    
-    
      o.LongTermPlanningGroups = []Longtermforecastplanninggroupdata{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -88,7 +72,8 @@ func (u *Buimportshorttermforecastschema) MarshalJSON() ([]byte, error) {
     }
     BuimportshorttermforecastschemaMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Description string `json:"description"`
         
         WeekCount int `json:"weekCount"`
@@ -98,34 +83,27 @@ func (u *Buimportshorttermforecastschema) MarshalJSON() ([]byte, error) {
         LongTermPlanningGroups []Longtermforecastplanninggroupdata `json:"longTermPlanningGroups"`
         
         CanUseForScheduling bool `json:"canUseForScheduling"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         PlanningGroups: []Forecastplanninggroupdata{{}},
         
 
-        
 
         
         LongTermPlanningGroups: []Longtermforecastplanninggroupdata{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

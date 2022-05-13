@@ -65,25 +65,6 @@ func (o *Createwebchatconversationrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Createwebchatconversationrequest) MarshalJSON() ([]byte, error) {
     }
     CreatewebchatconversationrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         OrganizationId string `json:"organizationId"`
         
         DeploymentId string `json:"deploymentId"`
@@ -111,34 +93,26 @@ func (u *Createwebchatconversationrequest) MarshalJSON() ([]byte, error) {
         MemberAuthToken string `json:"memberAuthToken"`
         
         JourneyContext Journeycontext `json:"journeyContext"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

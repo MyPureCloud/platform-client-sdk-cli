@@ -33,12 +33,15 @@ func Cmdtelephony_providers_edges_expired() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ExpiredEdgeListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ExpiredEdgeListing"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_expiredCmd.AddCommand(getCmd)
-	
 	return telephony_providers_edges_expiredCmd
 }
 

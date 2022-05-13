@@ -24,11 +24,7 @@ type Contentcarousel struct {
 
 // String returns a JSON representation of the model
 func (o *Contentcarousel) String() string {
-    
-    
      o.Cards = []Contentcard{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Contentcarousel) MarshalJSON() ([]byte, error) {
     }
     ContentcarouselMarshalled = true
 
-    return json.Marshal(&struct { 
-        Cards []Contentcard `json:"cards"`
+    return json.Marshal(&struct {
         
+        Cards []Contentcard `json:"cards"`
         *Alias
     }{
-        
 
         
         Cards: []Contentcard{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

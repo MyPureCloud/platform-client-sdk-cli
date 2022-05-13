@@ -30,23 +30,28 @@ func init() {
 func Cmdconversations_emails_messages_draft_attachments_copy() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Copy Attachment Request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CopyAttachmentsRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CopyAttachmentsRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EmailMessage"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EmailMessage"
+      }
+    }
   }
 }`)
 	conversations_emails_messages_draft_attachments_copyCmd.AddCommand(createCmd)
-	
 	return conversations_emails_messages_draft_attachments_copyCmd
 }
 

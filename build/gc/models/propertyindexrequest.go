@@ -41,17 +41,7 @@ type Propertyindexrequest struct {
 func (o *Propertyindexrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Properties = []Analyticsproperty{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -67,30 +57,26 @@ func (u *Propertyindexrequest) MarshalJSON() ([]byte, error) {
     }
     PropertyindexrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SessionId string `json:"sessionId"`
         
         TargetDate time.Time `json:"targetDate"`
         
         Properties []Analyticsproperty `json:"properties"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Properties: []Analyticsproperty{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

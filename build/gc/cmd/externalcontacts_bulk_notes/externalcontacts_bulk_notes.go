@@ -30,23 +30,28 @@ func init() {
 func Cmdexternalcontacts_bulk_notes() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/bulk/notes", utils.FormatPermissions([]string{ "externalContacts:contact:view", "externalContacts:externalOrganization:view",  }), utils.GenerateDevCentreLink("POST", "External Contacts", "/api/v2/externalcontacts/bulk/notes")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Note ids",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/BulkIdsRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BulkIdsRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BulkFetchNotesResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BulkFetchNotesResponse"
+      }
+    }
   }
 }`)
 	externalcontacts_bulk_notesCmd.AddCommand(createCmd)
-	
 	return externalcontacts_bulk_notesCmd
 }
 

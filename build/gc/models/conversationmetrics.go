@@ -57,22 +57,6 @@ func (o *Conversationmetrics) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Conversationmetrics) MarshalJSON() ([]byte, error) {
     }
     ConversationmetricsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Conversation Addressableentityref `json:"conversation"`
         
         SentimentScore float64 `json:"sentimentScore"`
@@ -98,30 +83,23 @@ func (u *Conversationmetrics) MarshalJSON() ([]byte, error) {
         SentimentTrendClass string `json:"sentimentTrendClass"`
         
         ParticipantMetrics Participantmetrics `json:"participantMetrics"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -102,43 +102,9 @@ func (o *Resourcepermissionpolicy) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.NamedResources = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.ActionSet = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -154,7 +120,8 @@ func (u *Resourcepermissionpolicy) MarshalJSON() ([]byte, error) {
     }
     ResourcepermissionpolicyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Domain string `json:"domain"`
@@ -176,58 +143,45 @@ func (u *Resourcepermissionpolicy) MarshalJSON() ([]byte, error) {
         ResourceCondition string `json:"resourceCondition"`
         
         ActionSet []string `json:"actionSet"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         NamedResources: []string{""},
         
 
-        
 
         
 
-        
 
         
         ActionSet: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

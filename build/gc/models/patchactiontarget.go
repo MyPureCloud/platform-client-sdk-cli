@@ -53,20 +53,6 @@ func (o *Patchactiontarget) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -82,40 +68,30 @@ func (u *Patchactiontarget) MarshalJSON() ([]byte, error) {
     }
     PatchactiontargetMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         ServiceLevel Servicelevel `json:"serviceLevel"`
         
         ShortAbandonThreshold int `json:"shortAbandonThreshold"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

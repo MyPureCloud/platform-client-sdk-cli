@@ -95,39 +95,8 @@ func (o *Analyticsparticipant) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Sessions = []Analyticssession{{}} 
-    
-    
-    
      o.Attributes = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,7 +112,8 @@ func (u *Analyticsparticipant) MarshalJSON() ([]byte, error) {
     }
     AnalyticsparticipantMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ExternalContactId string `json:"externalContactId"`
         
         ExternalOrganizationId string `json:"externalOrganizationId"`
@@ -163,54 +133,42 @@ func (u *Analyticsparticipant) MarshalJSON() ([]byte, error) {
         Sessions []Analyticssession `json:"sessions"`
         
         Attributes map[string]string `json:"attributes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Sessions: []Analyticssession{{}},
         
 
-        
 
         
         Attributes: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

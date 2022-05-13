@@ -55,23 +55,7 @@ func (o *Journeysurveyquestion) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Choices = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -88,7 +72,8 @@ func (u *Journeysurveyquestion) MarshalJSON() ([]byte, error) {
     }
     JourneysurveyquestionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Label string `json:"label"`
@@ -98,32 +83,25 @@ func (u *Journeysurveyquestion) MarshalJSON() ([]byte, error) {
         Choices []string `json:"choices"`
         
         IsMandatory bool `json:"isMandatory"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Choices: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

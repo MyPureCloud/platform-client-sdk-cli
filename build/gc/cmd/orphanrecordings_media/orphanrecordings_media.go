@@ -32,7 +32,7 @@ func Cmdorphanrecordings_media() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "string", "emailFormatId", "EML", "The desired media format when downloading an email recording. Valid values: EML, NONE")
 	utils.AddFlag(getCmd.Flags(), "string", "chatFormatId", "ZIP", "The desired media format when downloading a chat recording. Valid values: ZIP, NONE")
 	utils.AddFlag(getCmd.Flags(), "string", "messageFormatId", "ZIP", "The desired media format when downloading a message recording. Valid values: ZIP, NONE")
-	utils.AddFlag(getCmd.Flags(), "bool", "download", "false", "requesting a download format of the recording")
+	utils.AddFlag(getCmd.Flags(), "bool", "download", "false", "requesting a download format of the recording Valid values: true, false")
 	utils.AddFlag(getCmd.Flags(), "string", "fileName", "", "the name of the downloaded fileName")
 	utils.AddFlag(getCmd.Flags(), "string", "locale", "", "The locale for the requested file when downloading, as an ISO 639-1 code")
 	utils.AddFlag(getCmd.Flags(), "[]string", "mediaFormats", "", "All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3")
@@ -41,12 +41,15 @@ func Cmdorphanrecordings_media() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Recording"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Recording"
+      }
+    }
   }
 }`)
 	orphanrecordings_mediaCmd.AddCommand(getCmd)
-	
 	return orphanrecordings_mediaCmd
 }
 

@@ -33,13 +33,6 @@ type Widgetclientconfigv1http struct {
 func (o *Widgetclientconfigv1http) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Widgetclientconfigv1http) MarshalJSON() ([]byte, error) {
     }
     Widgetclientconfigv1httpMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         WebChatSkin string `json:"webChatSkin"`
         
         AuthenticationUrl string `json:"authenticationUrl"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

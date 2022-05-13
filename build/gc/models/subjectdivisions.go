@@ -31,15 +31,8 @@ type Subjectdivisions struct {
 
 // String returns a JSON representation of the model
 func (o *Subjectdivisions) String() string {
-    
-    
      o.SubjectIds = []string{""} 
-    
-    
-    
      o.DivisionIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Subjectdivisions) MarshalJSON() ([]byte, error) {
     }
     SubjectdivisionsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SubjectIds []string `json:"subjectIds"`
         
         DivisionIds []string `json:"divisionIds"`
-        
         *Alias
     }{
-        
 
         
         SubjectIds: []string{""},
         
 
-        
 
         
         DivisionIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

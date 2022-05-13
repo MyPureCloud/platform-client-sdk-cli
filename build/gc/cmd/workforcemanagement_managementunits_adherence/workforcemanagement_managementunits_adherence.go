@@ -34,12 +34,15 @@ func Cmdworkforcemanagement_managementunits_adherence() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UserScheduleAdherenceListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UserScheduleAdherenceListing"
+      }
+    }
   }
 }`)
 	workforcemanagement_managementunits_adherenceCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_managementunits_adherenceCmd
 }
 

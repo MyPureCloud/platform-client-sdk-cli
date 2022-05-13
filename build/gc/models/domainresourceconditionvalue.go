@@ -49,19 +49,6 @@ func (o *Domainresourceconditionvalue) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Domainresourceconditionvalue) MarshalJSON() ([]byte, error) {
     }
     DomainresourceconditionvalueMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         User User `json:"user"`
         
         Queue Queue `json:"queue"`
@@ -85,26 +73,20 @@ func (u *Domainresourceconditionvalue) MarshalJSON() ([]byte, error) {
         Value string `json:"value"`
         
         VarType string `json:"type"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

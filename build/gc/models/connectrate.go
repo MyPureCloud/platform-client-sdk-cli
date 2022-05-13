@@ -35,13 +35,6 @@ type Connectrate struct {
 
 // String returns a JSON representation of the model
 func (o *Connectrate) String() string {
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -57,28 +50,18 @@ func (u *Connectrate) MarshalJSON() ([]byte, error) {
     }
     ConnectrateMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

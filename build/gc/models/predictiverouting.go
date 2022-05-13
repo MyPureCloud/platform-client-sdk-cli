@@ -25,10 +25,6 @@ type Predictiverouting struct {
 // String returns a JSON representation of the model
 func (o *Predictiverouting) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Predictiverouting) MarshalJSON() ([]byte, error) {
     }
     PredictiveroutingMarshalled = true
 
-    return json.Marshal(&struct { 
-        RespectSkills bool `json:"respectSkills"`
+    return json.Marshal(&struct {
         
+        RespectSkills bool `json:"respectSkills"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

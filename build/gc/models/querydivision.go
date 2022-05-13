@@ -17,7 +17,6 @@ type Querydivision struct { }
 
 // String returns a JSON representation of the model
 func (o *Querydivision) String() string {
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -33,10 +32,9 @@ func (u *Querydivision) MarshalJSON() ([]byte, error) {
     }
     QuerydivisionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
         *Alias
     }{
-        
         Alias: (*Alias)(u),
     })
 }

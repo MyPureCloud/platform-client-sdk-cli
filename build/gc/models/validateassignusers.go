@@ -24,11 +24,7 @@ type Validateassignusers struct {
 
 // String returns a JSON representation of the model
 func (o *Validateassignusers) String() string {
-    
-    
      o.MembersToAssign = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Validateassignusers) MarshalJSON() ([]byte, error) {
     }
     ValidateassignusersMarshalled = true
 
-    return json.Marshal(&struct { 
-        MembersToAssign []string `json:"membersToAssign"`
+    return json.Marshal(&struct {
         
+        MembersToAssign []string `json:"membersToAssign"`
         *Alias
     }{
-        
 
         
         MembersToAssign: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

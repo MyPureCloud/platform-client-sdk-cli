@@ -33,12 +33,15 @@ func Cmdtelephony_providers_edges_setuppackage() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VmPairingInfo"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VmPairingInfo"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_setuppackageCmd.AddCommand(getCmd)
-	
 	return telephony_providers_edges_setuppackageCmd
 }
 

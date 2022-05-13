@@ -41,16 +41,6 @@ func (o *Localencryptionkeyrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Localencryptionkeyrequest) MarshalJSON() ([]byte, error) {
     }
     LocalencryptionkeyrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ConfigId string `json:"configId"`
         
         PublicKey string `json:"publicKey"`
         
         KeypairId string `json:"keypairId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

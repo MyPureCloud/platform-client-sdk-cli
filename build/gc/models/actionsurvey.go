@@ -24,11 +24,7 @@ type Actionsurvey struct {
 
 // String returns a JSON representation of the model
 func (o *Actionsurvey) String() string {
-    
-    
      o.Questions = []Journeysurveyquestion{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Actionsurvey) MarshalJSON() ([]byte, error) {
     }
     ActionsurveyMarshalled = true
 
-    return json.Marshal(&struct { 
-        Questions []Journeysurveyquestion `json:"questions"`
+    return json.Marshal(&struct {
         
+        Questions []Journeysurveyquestion `json:"questions"`
         *Alias
     }{
-        
 
         
         Questions: []Journeysurveyquestion{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

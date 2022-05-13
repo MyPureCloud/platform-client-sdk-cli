@@ -85,32 +85,6 @@ func (o *Lineintegrationrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -126,8 +100,7 @@ func (u *Lineintegrationrequest) MarshalJSON() ([]byte, error) {
     }
     LineintegrationrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -142,48 +115,35 @@ func (u *Lineintegrationrequest) MarshalJSON() ([]byte, error) {
         SwitcherSecret string `json:"switcherSecret"`
         
         ServiceCode string `json:"serviceCode"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

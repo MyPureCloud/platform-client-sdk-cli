@@ -33,12 +33,15 @@ func Cmdworkforcemanagement_adhocmodelingjobs() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ModelingStatusResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ModelingStatusResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_adhocmodelingjobsCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_adhocmodelingjobsCmd
 }
 

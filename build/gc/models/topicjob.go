@@ -66,27 +66,7 @@ type Topicjob struct {
 // String returns a JSON representation of the model
 func (o *Topicjob) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Topics = []Basetopicentitiy{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -105,8 +85,7 @@ func (u *Topicjob) MarshalJSON() ([]byte, error) {
     }
     TopicjobMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         State string `json:"state"`
         
@@ -117,42 +96,31 @@ func (u *Topicjob) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         
         DateModified time.Time `json:"dateModified"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Topics: []Basetopicentitiy{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

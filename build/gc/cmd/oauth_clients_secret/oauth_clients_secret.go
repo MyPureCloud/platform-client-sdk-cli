@@ -33,12 +33,15 @@ func Cmdoauth_clients_secret() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OAuthClient"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OAuthClient"
+      }
+    }
   }
 }`)
 	oauth_clients_secretCmd.AddCommand(createCmd)
-	
 	return oauth_clients_secretCmd
 }
 

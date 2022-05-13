@@ -60,26 +60,7 @@ type Meteredevaluationassignment struct {
 // String returns a JSON representation of the model
 func (o *Meteredevaluationassignment) String() string {
     
-    
-    
-    
-    
-    
      o.Evaluators = []User{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -99,7 +80,8 @@ func (u *Meteredevaluationassignment) MarshalJSON() ([]byte, error) {
     }
     MeteredevaluationassignmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EvaluationContextId string `json:"evaluationContextId"`
         
         Evaluators []User `json:"evaluators"`
@@ -111,36 +93,28 @@ func (u *Meteredevaluationassignment) MarshalJSON() ([]byte, error) {
         AssignToActiveUser bool `json:"assignToActiveUser"`
         
         TimeInterval Timeinterval `json:"timeInterval"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Evaluators: []User{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

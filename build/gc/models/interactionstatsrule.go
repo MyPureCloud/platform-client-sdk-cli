@@ -121,48 +121,8 @@ func (o *Interactionstatsrule) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.NotificationUsers = []User{{}} 
-    
-    
-    
      o.AlertTypes = []string{""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -178,8 +138,7 @@ func (u *Interactionstatsrule) MarshalJSON() ([]byte, error) {
     }
     InteractionstatsruleMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -199,77 +158,57 @@ func (u *Interactionstatsrule) MarshalJSON() ([]byte, error) {
         
         Enabled bool `json:"enabled"`
         
-        
-        
         NotificationUsers []User `json:"notificationUsers"`
         
         AlertTypes []string `json:"alertTypes"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         NotificationUsers: []User{{}},
         
 
-        
 
         
         AlertTypes: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

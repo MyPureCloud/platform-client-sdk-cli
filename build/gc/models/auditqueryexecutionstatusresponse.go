@@ -72,30 +72,8 @@ func (o *Auditqueryexecutionstatusresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Filters = []Auditqueryfilter{{}} 
-    
-    
-    
      o.Sort = []Auditquerysort{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -111,7 +89,8 @@ func (u *Auditqueryexecutionstatusresponse) MarshalJSON() ([]byte, error) {
     }
     AuditqueryexecutionstatusresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         State string `json:"state"`
@@ -125,42 +104,33 @@ func (u *Auditqueryexecutionstatusresponse) MarshalJSON() ([]byte, error) {
         Filters []Auditqueryfilter `json:"filters"`
         
         Sort []Auditquerysort `json:"sort"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Filters: []Auditqueryfilter{{}},
         
 
-        
 
         
         Sort: []Auditquerysort{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

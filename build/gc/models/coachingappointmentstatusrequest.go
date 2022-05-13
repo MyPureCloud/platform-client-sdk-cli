@@ -25,10 +25,6 @@ type Coachingappointmentstatusrequest struct {
 // String returns a JSON representation of the model
 func (o *Coachingappointmentstatusrequest) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Coachingappointmentstatusrequest) MarshalJSON() ([]byte, error) {
     }
     CoachingappointmentstatusrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        Status string `json:"status"`
+    return json.Marshal(&struct {
         
+        Status string `json:"status"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

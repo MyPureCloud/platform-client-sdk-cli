@@ -34,12 +34,15 @@ func Cmdbilling_trusteebillingoverview() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TrusteeBillingOverview"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TrusteeBillingOverview"
+      }
+    }
   }
 }`)
 	billing_trusteebillingoverviewCmd.AddCommand(getCmd)
-	
 	return billing_trusteebillingoverviewCmd
 }
 

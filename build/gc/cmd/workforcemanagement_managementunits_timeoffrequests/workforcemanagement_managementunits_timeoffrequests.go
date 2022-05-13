@@ -30,23 +30,28 @@ func init() {
 func Cmdworkforcemanagement_managementunits_timeoffrequests() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests", utils.FormatPermissions([]string{ "wfm:timeOffRequest:add",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/CreateAdminTimeOffRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreateAdminTimeOffRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TimeOffRequestList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TimeOffRequestList"
+      }
+    }
   }
 }`)
 	workforcemanagement_managementunits_timeoffrequestsCmd.AddCommand(createCmd)
-	
 	return workforcemanagement_managementunits_timeoffrequestsCmd
 }
 

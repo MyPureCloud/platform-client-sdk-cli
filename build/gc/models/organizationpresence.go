@@ -94,39 +94,7 @@ type Organizationpresence struct {
 // String returns a JSON representation of the model
 func (o *Organizationpresence) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.LanguageLabels = map[string]string{"": ""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -149,8 +117,7 @@ func (u *Organizationpresence) MarshalJSON() ([]byte, error) {
     }
     OrganizationpresenceMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -169,58 +136,43 @@ func (u *Organizationpresence) MarshalJSON() ([]byte, error) {
         ModifiedBy User `json:"modifiedBy"`
         
         ModifiedDate time.Time `json:"modifiedDate"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         LanguageLabels: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

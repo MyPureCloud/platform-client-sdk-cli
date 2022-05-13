@@ -45,20 +45,7 @@ type Knowledgebaselisting struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgebaselisting) String() string {
-    
-    
      o.Entities = []Knowledgebase{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Knowledgebaselisting) MarshalJSON() ([]byte, error) {
     }
     KnowledgebaselistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Knowledgebase `json:"entities"`
         
         NextUri string `json:"nextUri"`
@@ -85,28 +73,22 @@ func (u *Knowledgebaselisting) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         PreviousUri string `json:"previousUri"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Knowledgebase{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

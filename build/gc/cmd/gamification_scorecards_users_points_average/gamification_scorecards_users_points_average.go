@@ -39,12 +39,15 @@ func Cmdgamification_scorecards_users_points_average() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SingleWorkdayAveragePoints"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SingleWorkdayAveragePoints"
+      }
+    }
   }
 }`)
 	gamification_scorecards_users_points_averageCmd.AddCommand(getCmd)
-	
 	return gamification_scorecards_users_points_averageCmd
 }
 

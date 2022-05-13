@@ -51,22 +51,8 @@ type Callbackconversation struct {
 // String returns a JSON representation of the model
 func (o *Callbackconversation) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Participants = []Callbackmediaparticipant{{}} 
-    
-    
-    
      o.OtherMediaUris = []string{""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -82,44 +68,34 @@ func (u *Callbackconversation) MarshalJSON() ([]byte, error) {
     }
     CallbackconversationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         Participants []Callbackmediaparticipant `json:"participants"`
         
         OtherMediaUris []string `json:"otherMediaUris"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Participants: []Callbackmediaparticipant{{}},
         
 
-        
 
         
         OtherMediaUris: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -52,22 +52,7 @@ type Location struct {
 // String returns a JSON representation of the model
 func (o *Location) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Coordinates = map[string]float64{"": 0.0} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -85,42 +70,34 @@ func (u *Location) MarshalJSON() ([]byte, error) {
     }
     LocationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
-        
-        
         
         Coordinates map[string]float64 `json:"coordinates"`
         
         Notes string `json:"notes"`
         
         LocationDefinition Locationdefinition `json:"locationDefinition"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Coordinates: map[string]float64{"": 0.0},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

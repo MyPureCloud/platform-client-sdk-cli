@@ -107,41 +107,7 @@ func (o *Webdeployment) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AllowedDomains = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -159,8 +125,7 @@ func (u *Webdeployment) MarshalJSON() ([]byte, error) {
     }
     WebdeploymentMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -172,77 +137,52 @@ func (u *Webdeployment) MarshalJSON() ([]byte, error) {
         
         AllowedDomains []string `json:"allowedDomains"`
         
-        
-        
-        
-        
-        
-        
-        
-        
         Flow Domainentityref `json:"flow"`
         
         Status string `json:"status"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AllowedDomains: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

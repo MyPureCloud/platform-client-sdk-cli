@@ -41,16 +41,6 @@ func (o *Useragentinfo) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Useragentinfo) MarshalJSON() ([]byte, error) {
     }
     UseragentinfoMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FirmwareVersion string `json:"firmwareVersion"`
         
         Manufacturer string `json:"manufacturer"`
         
         Model string `json:"model"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

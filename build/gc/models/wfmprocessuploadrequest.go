@@ -25,10 +25,6 @@ type Wfmprocessuploadrequest struct {
 // String returns a JSON representation of the model
 func (o *Wfmprocessuploadrequest) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Wfmprocessuploadrequest) MarshalJSON() ([]byte, error) {
     }
     WfmprocessuploadrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        UploadKey string `json:"uploadKey"`
+    return json.Marshal(&struct {
         
+        UploadKey string `json:"uploadKey"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

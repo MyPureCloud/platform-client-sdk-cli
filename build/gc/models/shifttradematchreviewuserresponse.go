@@ -57,22 +57,6 @@ func (o *Shifttradematchreviewuserresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Shifttradematchreviewuserresponse) MarshalJSON() ([]byte, error) {
     }
     ShifttradematchreviewuserresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         WeeklyMinimumPaidMinutes int `json:"weeklyMinimumPaidMinutes"`
         
         WeeklyMaximumPaidMinutes int `json:"weeklyMaximumPaidMinutes"`
@@ -98,30 +83,23 @@ func (u *Shifttradematchreviewuserresponse) MarshalJSON() ([]byte, error) {
         PostTradeSchedulePaidMinutes int `json:"postTradeSchedulePaidMinutes"`
         
         PostTradeNewShift Shifttradepreviewresponse `json:"postTradeNewShift"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

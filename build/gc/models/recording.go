@@ -246,50 +246,10 @@ func (o *Recording) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Annotations = []Annotation{{}} 
-    
-    
-    
      o.Transcript = []Chatmessage{{}} 
-    
-    
-    
      o.EmailTranscript = []Recordingemailmessage{{}} 
-    
-    
-    
      o.MessagingTranscript = []Recordingmessagingmessage{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
      o.MediaUris = map[string]Mediaresult{"": {}} 
@@ -305,62 +265,7 @@ func (o *Recording) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Users = []User{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -380,8 +285,7 @@ func (u *Recording) MarshalJSON() ([]byte, error) {
     }
     RecordingMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -442,152 +346,116 @@ func (u *Recording) MarshalJSON() ([]byte, error) {
         OriginalRecordingStartTime time.Time `json:"originalRecordingStartTime"`
         
         CreationTime time.Time `json:"creationTime"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Annotations: []Annotation{{}},
         
 
-        
 
         
         Transcript: []Chatmessage{{}},
         
 
-        
 
         
         EmailTranscript: []Recordingemailmessage{{}},
         
 
-        
 
         
         MessagingTranscript: []Recordingmessagingmessage{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MediaUris: map[string]Mediaresult{"": {}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Users: []User{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

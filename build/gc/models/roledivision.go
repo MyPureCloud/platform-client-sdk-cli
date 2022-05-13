@@ -33,13 +33,6 @@ type Roledivision struct {
 func (o *Roledivision) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Roledivision) MarshalJSON() ([]byte, error) {
     }
     RoledivisionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         RoleId string `json:"roleId"`
         
         DivisionId string `json:"divisionId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

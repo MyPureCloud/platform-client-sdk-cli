@@ -78,29 +78,6 @@ func (o *Domainedgesoftwareversiondto) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -116,8 +93,7 @@ func (u *Domainedgesoftwareversiondto) MarshalJSON() ([]byte, error) {
     }
     DomainedgesoftwareversiondtoMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -130,44 +106,32 @@ func (u *Domainedgesoftwareversiondto) MarshalJSON() ([]byte, error) {
         Current bool `json:"current"`
         
         LatestRelease bool `json:"latestRelease"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

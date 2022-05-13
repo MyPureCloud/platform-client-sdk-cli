@@ -25,10 +25,6 @@ type Inboundonlysetting struct {
 // String returns a JSON representation of the model
 func (o *Inboundonlysetting) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Inboundonlysetting) MarshalJSON() ([]byte, error) {
     }
     InboundonlysettingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Inbound string `json:"inbound"`
+    return json.Marshal(&struct {
         
+        Inbound string `json:"inbound"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

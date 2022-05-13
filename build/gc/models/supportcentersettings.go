@@ -68,32 +68,10 @@ type Supportcentersettings struct {
 func (o *Supportcentersettings) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.CustomMessages = []Supportcentercustommessage{{}} 
     
-    
-    
-    
-    
-    
-    
      o.Screens = []Supportcenterscreen{{}} 
-    
-    
-    
      o.EnabledCategories = []Addressableentityref{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -110,7 +88,8 @@ func (u *Supportcentersettings) MarshalJSON() ([]byte, error) {
     }
     SupportcentersettingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Enabled bool `json:"enabled"`
         
         KnowledgeBase Addressableentityref `json:"knowledgeBase"`
@@ -124,44 +103,35 @@ func (u *Supportcentersettings) MarshalJSON() ([]byte, error) {
         EnabledCategories []Addressableentityref `json:"enabledCategories"`
         
         StyleSetting Supportcenterstylesetting `json:"styleSetting"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         CustomMessages: []Supportcentercustommessage{{}},
         
 
-        
 
         
 
-        
 
         
         Screens: []Supportcenterscreen{{}},
         
 
-        
 
         
         EnabledCategories: []Addressableentityref{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

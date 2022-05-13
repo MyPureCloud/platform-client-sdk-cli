@@ -41,16 +41,6 @@ func (o *Mediatranscription) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Mediatranscription) MarshalJSON() ([]byte, error) {
     }
     MediatranscriptionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DisplayName string `json:"displayName"`
         
         TranscriptionProvider string `json:"transcriptionProvider"`
         
         IntegrationId string `json:"integrationId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -200,58 +200,11 @@ func (o *Analyticsconversationsegment) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Q850ResponseCodes = []int{0} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.RequestedRoutingSkillIds = []string{""} 
-    
-    
-    
      o.RequestedRoutingUserIds = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -262,38 +215,9 @@ func (o *Analyticsconversationsegment) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.WrapUpTags = []string{""} 
-    
-    
-    
      o.ScoredAgents = []Analyticsscoredagent{{}} 
-    
-    
-    
      o.Properties = []Analyticsproperty{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -309,7 +233,8 @@ func (u *Analyticsconversationsegment) MarshalJSON() ([]byte, error) {
     }
     AnalyticsconversationsegmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         AudioMuted bool `json:"audioMuted"`
         
         Conference bool `json:"conference"`
@@ -359,124 +284,97 @@ func (u *Analyticsconversationsegment) MarshalJSON() ([]byte, error) {
         ScoredAgents []Analyticsscoredagent `json:"scoredAgents"`
         
         Properties []Analyticsproperty `json:"properties"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Q850ResponseCodes: []int{0},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RequestedRoutingSkillIds: []string{""},
         
 
-        
 
         
         RequestedRoutingUserIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SipResponseCodes: []int{0},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         WrapUpTags: []string{""},
         
 
-        
 
         
         ScoredAgents: []Analyticsscoredagent{{}},
         
 
-        
 
         
         Properties: []Analyticsproperty{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

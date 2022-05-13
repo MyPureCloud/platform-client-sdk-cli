@@ -64,26 +64,7 @@ func (o *Bulkerrorexternalorganization) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Details = []Bulkerrordetail{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Bulkerrorexternalorganization) MarshalJSON() ([]byte, error) {
     }
     BulkerrorexternalorganizationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Code string `json:"code"`
         
         Message string `json:"message"`
@@ -111,36 +93,28 @@ func (u *Bulkerrorexternalorganization) MarshalJSON() ([]byte, error) {
         Entity Externalorganization `json:"entity"`
         
         Details []Bulkerrordetail `json:"details"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Details: []Bulkerrordetail{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

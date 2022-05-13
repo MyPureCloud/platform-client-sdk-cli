@@ -54,24 +54,8 @@ type Programmappings struct {
 // String returns a JSON representation of the model
 func (o *Programmappings) String() string {
     
-    
-    
-    
-    
-    
      o.Queues = []Addressableentityref{{}} 
-    
-    
-    
      o.Flows = []Addressableentityref{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -89,7 +73,8 @@ func (u *Programmappings) MarshalJSON() ([]byte, error) {
     }
     ProgrammappingsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Program Baseprogramentity `json:"program"`
         
         Queues []Addressableentityref `json:"queues"`
@@ -99,34 +84,27 @@ func (u *Programmappings) MarshalJSON() ([]byte, error) {
         ModifiedBy Addressableentityref `json:"modifiedBy"`
         
         DateModified time.Time `json:"dateModified"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Queues: []Addressableentityref{{}},
         
 
-        
 
         
         Flows: []Addressableentityref{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -132,59 +132,10 @@ func (o *Createemailrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.SkillIds = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Attributes = map[string]string{"": ""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -209,7 +160,8 @@ func (u *Createemailrequest) MarshalJSON() ([]byte, error) {
     }
     CreateemailrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QueueId string `json:"queueId"`
         
         FlowId string `json:"flowId"`
@@ -241,78 +193,60 @@ func (u *Createemailrequest) MarshalJSON() ([]byte, error) {
         TextBody string `json:"textBody"`
         
         ExternalContactId string `json:"externalContactId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SkillIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Attributes: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

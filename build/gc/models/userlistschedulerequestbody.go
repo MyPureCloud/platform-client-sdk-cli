@@ -46,20 +46,7 @@ type Userlistschedulerequestbody struct {
 
 // String returns a JSON representation of the model
 func (o *Userlistschedulerequestbody) String() string {
-    
-    
      o.UserIds = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -78,7 +65,8 @@ func (u *Userlistschedulerequestbody) MarshalJSON() ([]byte, error) {
     }
     UserlistschedulerequestbodyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UserIds []string `json:"userIds"`
         
         StartDate time.Time `json:"startDate"`
@@ -86,28 +74,22 @@ func (u *Userlistschedulerequestbody) MarshalJSON() ([]byte, error) {
         EndDate time.Time `json:"endDate"`
         
         LoadFullWeeks bool `json:"loadFullWeeks"`
-        
         *Alias
     }{
-        
 
         
         UserIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,42 +30,53 @@ func init() {
 func Cmdmessaging_supportedcontent() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/messaging/supportedcontent", utils.FormatPermissions([]string{ "messaging:supportedContent:add",  }), utils.GenerateDevCentreLink("POST", "Messaging", "/api/v2/messaging/supportedcontent")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "SupportedContent",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/SupportedContent"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SupportedContent"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SupportedContent"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SupportedContent"
+      }
+    }
   }
 }`)
 	messaging_supportedcontentCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/messaging/supportedcontent/{supportedContentId}", utils.FormatPermissions([]string{ "messaging:supportedContent:delete",  }), utils.GenerateDevCentreLink("DELETE", "Messaging", "/api/v2/messaging/supportedcontent/{supportedContentId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful"
+  "description" : "Operation was successful",
+  "content" : { }
 }`)
 	messaging_supportedcontentCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/messaging/supportedcontent/{supportedContentId}", utils.FormatPermissions([]string{ "messaging:supportedContent:view",  }), utils.GenerateDevCentreLink("GET", "Messaging", "/api/v2/messaging/supportedcontent/{supportedContentId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SupportedContent"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SupportedContent"
+      }
+    }
   }
 }`)
 	messaging_supportedcontentCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/messaging/supportedcontent", utils.FormatPermissions([]string{ "messaging:supportedContent:view",  }), utils.GenerateDevCentreLink("GET", "Messaging", "/api/v2/messaging/supportedcontent")))
@@ -73,31 +84,40 @@ func Cmdmessaging_supportedcontent() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	messaging_supportedcontentCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/messaging/supportedcontent/{supportedContentId}", utils.FormatPermissions([]string{ "messaging:supportedContent:edit",  }), utils.GenerateDevCentreLink("PATCH", "Messaging", "/api/v2/messaging/supportedcontent/{supportedContentId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "SupportedContent",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/SupportedContent"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SupportedContent"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SupportedContent"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SupportedContent"
+      }
+    }
   }
 }`)
 	messaging_supportedcontentCmd.AddCommand(updateCmd)
-	
 	return messaging_supportedcontentCmd
 }
 

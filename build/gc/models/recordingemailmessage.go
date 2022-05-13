@@ -91,43 +91,12 @@ func (o *Recordingemailmessage) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.To = []Emailaddress{{}} 
-    
-    
-    
      o.Cc = []Emailaddress{{}} 
-    
-    
-    
      o.Bcc = []Emailaddress{{}} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Attachments = []Emailattachment{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -144,7 +113,8 @@ func (u *Recordingemailmessage) MarshalJSON() ([]byte, error) {
     }
     RecordingemailmessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         HtmlBody string `json:"htmlBody"`
         
         TextBody string `json:"textBody"`
@@ -164,58 +134,46 @@ func (u *Recordingemailmessage) MarshalJSON() ([]byte, error) {
         Attachments []Emailattachment `json:"attachments"`
         
         Time time.Time `json:"time"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         To: []Emailaddress{{}},
         
 
-        
 
         
         Cc: []Emailaddress{{}},
         
 
-        
 
         
         Bcc: []Emailaddress{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Attachments: []Emailattachment{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

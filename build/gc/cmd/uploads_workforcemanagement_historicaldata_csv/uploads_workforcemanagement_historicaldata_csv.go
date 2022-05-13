@@ -30,23 +30,28 @@ func init() {
 func Cmduploads_workforcemanagement_historicaldata_csv() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/uploads/workforcemanagement/historicaldata/csv", utils.FormatPermissions([]string{ "wfm:historicalData:upload",  }), utils.GenerateDevCentreLink("POST", "Uploads", "/api/v2/uploads/workforcemanagement/historicaldata/csv")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/UploadUrlRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UploadUrlRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Presigned url successfully created.",
-  "schema" : {
-    "$ref" : "#/definitions/UploadUrlResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UploadUrlResponse"
+      }
+    }
   }
 }`)
 	uploads_workforcemanagement_historicaldata_csvCmd.AddCommand(createCmd)
-	
 	return uploads_workforcemanagement_historicaldata_csvCmd
 }
 

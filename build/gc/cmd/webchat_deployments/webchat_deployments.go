@@ -30,72 +30,92 @@ func init() {
 func Cmdwebchat_deployments() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/webchat/deployments", utils.FormatPermissions([]string{ "webchat:deployment:create",  }), utils.GenerateDevCentreLink("POST", "WebChat", "/api/v2/webchat/deployments")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Deployment",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/WebChatDeployment"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatDeployment"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatDeployment"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatDeployment"
+      }
+    }
   }
 }`)
 	webchat_deploymentsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/webchat/deployments/{deploymentId}", utils.FormatPermissions([]string{ "webchat:deployment:delete",  }), utils.GenerateDevCentreLink("DELETE", "WebChat", "/api/v2/webchat/deployments/{deploymentId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Deleted"
+  "description" : "Deleted",
+  "content" : { }
 }`)
 	webchat_deploymentsCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/webchat/deployments/{deploymentId}", utils.FormatPermissions([]string{ "webchat:deployment:read",  }), utils.GenerateDevCentreLink("GET", "WebChat", "/api/v2/webchat/deployments/{deploymentId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatDeployment"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatDeployment"
+      }
+    }
   }
 }`)
 	webchat_deploymentsCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/webchat/deployments", utils.FormatPermissions([]string{ "webchat:deployment:read",  }), utils.GenerateDevCentreLink("GET", "WebChat", "/api/v2/webchat/deployments")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatDeploymentEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatDeploymentEntityListing"
+      }
+    }
   }
 }`)
 	webchat_deploymentsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/webchat/deployments/{deploymentId}", utils.FormatPermissions([]string{ "webchat:deployment:update",  }), utils.GenerateDevCentreLink("PUT", "WebChat", "/api/v2/webchat/deployments/{deploymentId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Deployment",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/WebChatDeployment"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatDeployment"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatDeployment"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatDeployment"
+      }
+    }
   }
 }`)
 	webchat_deploymentsCmd.AddCommand(updateCmd)
-	
 	return webchat_deploymentsCmd
 }
 

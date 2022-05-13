@@ -70,31 +70,9 @@ func (o *Voicemailsearchrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Sort = []Searchsort{{}} 
-    
-    
-    
      o.Expand = []string{""} 
-    
-    
-    
      o.Query = []Voicemailsearchcriteria{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Voicemailsearchrequest) MarshalJSON() ([]byte, error) {
     }
     VoicemailsearchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SortOrder string `json:"sortOrder"`
         
         SortBy string `json:"sortBy"`
@@ -124,44 +103,35 @@ func (u *Voicemailsearchrequest) MarshalJSON() ([]byte, error) {
         Expand []string `json:"expand"`
         
         Query []Voicemailsearchcriteria `json:"query"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Sort: []Searchsort{{}},
         
 
-        
 
         
         Expand: []string{""},
         
 
-        
 
         
         Query: []Voicemailsearchcriteria{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

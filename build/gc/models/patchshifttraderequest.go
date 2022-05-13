@@ -49,19 +49,6 @@ func (o *Patchshifttraderequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Patchshifttraderequest) MarshalJSON() ([]byte, error) {
     }
     PatchshifttraderequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ReceivingUserId Valuewrapperstring `json:"receivingUserId"`
         
         Expiration Valuewrapperdate `json:"expiration"`
@@ -85,26 +73,20 @@ func (u *Patchshifttraderequest) MarshalJSON() ([]byte, error) {
         AcceptableIntervals Listwrapperinterval `json:"acceptableIntervals"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

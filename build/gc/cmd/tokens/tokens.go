@@ -32,10 +32,10 @@ func Cmdtokens() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	tokensCmd.AddCommand(deleteCmd)
-	
 	return tokensCmd
 }
 

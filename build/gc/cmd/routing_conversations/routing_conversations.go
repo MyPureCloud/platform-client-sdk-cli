@@ -30,23 +30,28 @@ func init() {
 func Cmdrouting_conversations() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/conversations/{conversationId}", utils.FormatPermissions([]string{ "routing:conversation:edit",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/routing/conversations/{conversationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Conversation Attributes",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/RoutingConversationAttributesRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RoutingConversationAttributesRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/RoutingConversationAttributesResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RoutingConversationAttributesResponse"
+      }
+    }
   }
 }`)
 	routing_conversationsCmd.AddCommand(updateCmd)
-	
 	return routing_conversationsCmd
 }
 

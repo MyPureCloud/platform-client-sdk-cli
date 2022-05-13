@@ -91,35 +91,7 @@ type Campaignsequence struct {
 func (o *Campaignsequence) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Campaigns = []Domainentityref{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -137,78 +109,54 @@ func (u *Campaignsequence) MarshalJSON() ([]byte, error) {
     }
     CampaignsequenceMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
         Campaigns []Domainentityref `json:"campaigns"`
         
-        
-        
         Status string `json:"status"`
         
-        
-        
         Repeat bool `json:"repeat"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Campaigns: []Domainentityref{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

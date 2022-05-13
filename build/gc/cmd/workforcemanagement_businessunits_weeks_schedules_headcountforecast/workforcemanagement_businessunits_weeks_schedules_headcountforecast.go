@@ -34,12 +34,15 @@ func Cmdworkforcemanagement_businessunits_weeks_schedules_headcountforecast() *c
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuHeadcountForecastResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuHeadcountForecastResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_businessunits_weeks_schedules_headcountforecastCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_businessunits_weeks_schedules_headcountforecastCmd
 }
 

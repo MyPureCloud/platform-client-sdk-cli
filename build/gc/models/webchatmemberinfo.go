@@ -120,47 +120,7 @@ func (o *Webchatmemberinfo) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.CustomFields = map[string]string{"": ""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -177,7 +137,8 @@ func (u *Webchatmemberinfo) MarshalJSON() ([]byte, error) {
     }
     WebchatmemberinfoMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         DisplayName string `json:"displayName"`
@@ -203,64 +164,49 @@ func (u *Webchatmemberinfo) MarshalJSON() ([]byte, error) {
         CustomFields map[string]string `json:"customFields"`
         
         State string `json:"state"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         CustomFields: map[string]string{"": ""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

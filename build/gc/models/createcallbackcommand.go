@@ -99,45 +99,11 @@ func (o *Createcallbackcommand) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.CallbackNumbers = []string{""} 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Data = map[string]string{"": ""} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -155,7 +121,8 @@ func (u *Createcallbackcommand) MarshalJSON() ([]byte, error) {
     }
     CreatecallbackcommandMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ScriptId string `json:"scriptId"`
         
         QueueId string `json:"queueId"`
@@ -177,58 +144,45 @@ func (u *Createcallbackcommand) MarshalJSON() ([]byte, error) {
         CallerId string `json:"callerId"`
         
         CallerIdName string `json:"callerIdName"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         CallbackNumbers: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Data: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

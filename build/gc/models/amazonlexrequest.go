@@ -31,15 +31,8 @@ type Amazonlexrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Amazonlexrequest) String() string {
-    
-    
      o.RequestAttributes = map[string]string{"": ""} 
-    
-    
-    
      o.SessionAttributes = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Amazonlexrequest) MarshalJSON() ([]byte, error) {
     }
     AmazonlexrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         RequestAttributes map[string]string `json:"requestAttributes"`
         
         SessionAttributes map[string]string `json:"sessionAttributes"`
-        
         *Alias
     }{
-        
 
         
         RequestAttributes: map[string]string{"": ""},
         
 
-        
 
         
         SessionAttributes: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

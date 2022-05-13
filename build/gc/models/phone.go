@@ -210,85 +210,10 @@ func (o *Phone) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Lines = []Line{{}} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Properties = map[string]interface{}{"": Interface{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -308,8 +233,7 @@ func (u *Phone) MarshalJSON() ([]byte, error) {
     }
     PhoneMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -326,8 +250,6 @@ func (u *Phone) MarshalJSON() ([]byte, error) {
         ModifiedBy string `json:"modifiedBy"`
         
         CreatedBy string `json:"createdBy"`
-        
-        
         
         ModifiedByApp string `json:"modifiedByApp"`
         
@@ -347,8 +269,6 @@ func (u *Phone) MarshalJSON() ([]byte, error) {
         
         SecondaryStatus Phonestatus `json:"secondaryStatus"`
         
-        
-        
         Properties map[string]interface{} `json:"properties"`
         
         Capabilities Phonecapabilities `json:"capabilities"`
@@ -358,120 +278,90 @@ func (u *Phone) MarshalJSON() ([]byte, error) {
         PrimaryEdge Edge `json:"primaryEdge"`
         
         SecondaryEdge Edge `json:"secondaryEdge"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Lines: []Line{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Properties: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

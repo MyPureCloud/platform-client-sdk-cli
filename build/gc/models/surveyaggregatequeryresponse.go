@@ -24,11 +24,7 @@ type Surveyaggregatequeryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Surveyaggregatequeryresponse) String() string {
-    
-    
      o.Results = []Surveyaggregatedatacontainer{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Surveyaggregatequeryresponse) MarshalJSON() ([]byte, error) {
     }
     SurveyaggregatequeryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Results []Surveyaggregatedatacontainer `json:"results"`
+    return json.Marshal(&struct {
         
+        Results []Surveyaggregatedatacontainer `json:"results"`
         *Alias
     }{
-        
 
         
         Results: []Surveyaggregatedatacontainer{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

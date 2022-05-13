@@ -24,11 +24,7 @@ type Botsearchresponseentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Botsearchresponseentitylisting) String() string {
-    
-    
      o.Entities = []Botsearchresponse{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Botsearchresponseentitylisting) MarshalJSON() ([]byte, error) {
     }
     BotsearchresponseentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Botsearchresponse `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Botsearchresponse `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Botsearchresponse{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

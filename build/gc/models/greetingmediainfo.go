@@ -39,15 +39,6 @@ type Greetingmediainfo struct {
 func (o *Greetingmediainfo) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,28 +54,22 @@ func (u *Greetingmediainfo) MarshalJSON() ([]byte, error) {
     }
     GreetingmediainfoMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         MediaFileUri string `json:"mediaFileUri"`
         
         MediaImageUri string `json:"mediaImageUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

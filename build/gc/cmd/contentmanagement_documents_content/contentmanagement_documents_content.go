@@ -31,23 +31,29 @@ func Cmdcontentmanagement_documents_content() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "bool", "override", "", "Override any lock on the document")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/contentmanagement/documents/{documentId}/content", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Content Management", "/api/v2/contentmanagement/documents/{documentId}/content")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Replace Request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ReplaceRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ReplaceRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Accepted - Ready for upload",
-  "schema" : {
-    "$ref" : "#/definitions/ReplaceResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ReplaceResponse"
+      }
+    }
   }
 }`)
 	contentmanagement_documents_contentCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "string", "disposition", "", "Request how the content will be downloaded: a file attachment or inline. Default is attachment. Valid values: attachment, inline")
 	utils.AddFlag(getCmd.Flags(), "string", "contentType", "", "The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/contentmanagement/documents/{documentId}/content", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Content Management", "/api/v2/contentmanagement/documents/{documentId}/content")))
@@ -55,12 +61,15 @@ func Cmdcontentmanagement_documents_content() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "Download location returned",
-  "schema" : {
-    "$ref" : "#/definitions/DownloadResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DownloadResponse"
+      }
+    }
   }
 }`)
 	contentmanagement_documents_contentCmd.AddCommand(getCmd)
-	
 	return contentmanagement_documents_contentCmd
 }
 

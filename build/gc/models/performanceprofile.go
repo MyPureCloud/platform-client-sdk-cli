@@ -91,36 +91,8 @@ type Performanceprofile struct {
 func (o *Performanceprofile) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.MetricOrders = []string{""} 
-    
-    
-    
-    
-    
      o.ReportingIntervals = []Reportinginterval{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -137,80 +109,56 @@ func (u *Performanceprofile) MarshalJSON() ([]byte, error) {
     }
     PerformanceprofileMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
         
         Description string `json:"description"`
         
         MetricOrders []string `json:"metricOrders"`
         
-        
-        
         ReportingIntervals []Reportinginterval `json:"reportingIntervals"`
         
-        
-        
-        
-        
         MaxLeaderboardRankSize int `json:"maxLeaderboardRankSize"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MetricOrders: []string{""},
         
 
-        
 
         
 
-        
 
         
         ReportingIntervals: []Reportinginterval{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

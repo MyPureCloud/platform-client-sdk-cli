@@ -24,11 +24,7 @@ type Edgelogsjobuploadrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Edgelogsjobuploadrequest) String() string {
-    
-    
      o.FileIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Edgelogsjobuploadrequest) MarshalJSON() ([]byte, error) {
     }
     EdgelogsjobuploadrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        FileIds []string `json:"fileIds"`
+    return json.Marshal(&struct {
         
+        FileIds []string `json:"fileIds"`
         *Alias
     }{
-        
 
         
         FileIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

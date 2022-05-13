@@ -56,23 +56,7 @@ func (o *Wfmhistoricaladherencequery) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.UserIds = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -89,7 +73,8 @@ func (u *Wfmhistoricaladherencequery) MarshalJSON() ([]byte, error) {
     }
     WfmhistoricaladherencequeryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         StartDate time.Time `json:"startDate"`
         
         EndDate time.Time `json:"endDate"`
@@ -99,32 +84,25 @@ func (u *Wfmhistoricaladherencequery) MarshalJSON() ([]byte, error) {
         UserIds []string `json:"userIds"`
         
         IncludeExceptions bool `json:"includeExceptions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         UserIds: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

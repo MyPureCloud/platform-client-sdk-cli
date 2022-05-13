@@ -72,28 +72,7 @@ type Responseset struct {
 func (o *Responseset) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Responses = map[string]Reaction{"": {}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -110,60 +89,43 @@ func (u *Responseset) MarshalJSON() ([]byte, error) {
     }
     ResponsesetMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
         Responses map[string]Reaction `json:"responses"`
         
         BeepDetectionEnabled bool `json:"beepDetectionEnabled"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Responses: map[string]Reaction{"": {}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

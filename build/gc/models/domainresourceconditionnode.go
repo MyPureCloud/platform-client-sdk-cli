@@ -54,25 +54,9 @@ type Domainresourceconditionnode struct {
 func (o *Domainresourceconditionnode) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Operands = []Domainresourceconditionvalue{{}} 
     
-    
-    
-    
-    
-    
-    
      o.Terms = []Domainresourceconditionnode{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Domainresourceconditionnode) MarshalJSON() ([]byte, error) {
     }
     DomainresourceconditionnodeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VariableName string `json:"variableName"`
         
         Operator string `json:"operator"`
@@ -98,34 +83,27 @@ func (u *Domainresourceconditionnode) MarshalJSON() ([]byte, error) {
         Conjunction string `json:"conjunction"`
         
         Terms []Domainresourceconditionnode `json:"terms"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Operands: []Domainresourceconditionvalue{{}},
         
 
-        
 
         
 
-        
 
         
         Terms: []Domainresourceconditionnode{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

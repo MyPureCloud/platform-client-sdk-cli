@@ -34,12 +34,15 @@ func Cmdlearning_modules_versions() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LearningModule"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningModule"
+      }
+    }
   }
 }`)
 	learning_modules_versionsCmd.AddCommand(getCmd)
-	
 	return learning_modules_versionsCmd
 }
 

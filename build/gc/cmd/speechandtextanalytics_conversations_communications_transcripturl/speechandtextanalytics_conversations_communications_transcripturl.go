@@ -33,12 +33,15 @@ func Cmdspeechandtextanalytics_conversations_communications_transcripturl() *cob
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TranscriptUrl"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TranscriptUrl"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_conversations_communications_transcripturlCmd.AddCommand(getCmd)
-	
 	return speechandtextanalytics_conversations_communications_transcripturlCmd
 }
 

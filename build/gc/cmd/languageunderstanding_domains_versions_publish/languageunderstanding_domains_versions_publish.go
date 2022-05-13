@@ -33,12 +33,15 @@ func Cmdlanguageunderstanding_domains_versions_publish() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/NluDomainVersion"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/NluDomainVersion"
+      }
+    }
   }
 }`)
 	languageunderstanding_domains_versions_publishCmd.AddCommand(createCmd)
-	
 	return languageunderstanding_domains_versions_publishCmd
 }
 

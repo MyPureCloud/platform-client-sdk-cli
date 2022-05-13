@@ -83,39 +83,11 @@ func (o *Evaluationaggregationquery) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.GroupBy = []string{""} 
-    
-    
-    
-    
-    
-    
     
      o.Metrics = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.Views = []Evaluationaggregationview{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -132,7 +104,8 @@ func (u *Evaluationaggregationquery) MarshalJSON() ([]byte, error) {
     }
     EvaluationaggregationqueryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         Granularity string `json:"granularity"`
@@ -150,52 +123,41 @@ func (u *Evaluationaggregationquery) MarshalJSON() ([]byte, error) {
         Views []Evaluationaggregationview `json:"views"`
         
         AlternateTimeDimension string `json:"alternateTimeDimension"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         GroupBy: []string{""},
         
 
-        
 
         
 
-        
 
         
         Metrics: []string{""},
         
 
-        
 
         
 
-        
 
         
         Views: []Evaluationaggregationview{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

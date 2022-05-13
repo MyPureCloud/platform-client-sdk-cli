@@ -33,13 +33,6 @@ type Scoredagent struct {
 func (o *Scoredagent) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Scoredagent) MarshalJSON() ([]byte, error) {
     }
     ScoredagentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Agent Domainentityref `json:"agent"`
         
         Score int `json:"score"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

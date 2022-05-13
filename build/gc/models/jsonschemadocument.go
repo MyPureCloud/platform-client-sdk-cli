@@ -78,34 +78,9 @@ func (o *Jsonschemadocument) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Required = []string{""} 
-    
-    
-    
      o.Properties = map[string]interface{}{"": Interface{}} 
-    
-    
-    
      o.AdditionalProperties = Interface{} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -121,7 +96,8 @@ func (u *Jsonschemadocument) MarshalJSON() ([]byte, error) {
     }
     JsonschemadocumentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Schema string `json:"$schema"`
@@ -137,48 +113,38 @@ func (u *Jsonschemadocument) MarshalJSON() ([]byte, error) {
         Properties map[string]interface{} `json:"properties"`
         
         AdditionalProperties interface{} `json:"additionalProperties"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Required: []string{""},
         
 
-        
 
         
         Properties: map[string]interface{}{"": Interface{}},
         
 
-        
 
         
         AdditionalProperties: Interface{},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

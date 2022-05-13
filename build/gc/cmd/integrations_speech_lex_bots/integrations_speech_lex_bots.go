@@ -36,12 +36,15 @@ func Cmdintegrations_speech_lex_bots() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	integrations_speech_lex_botsCmd.AddCommand(listCmd)
-	
 	return integrations_speech_lex_botsCmd
 }
 

@@ -33,26 +33,33 @@ func Cmdconversations_recordingmetadata() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(conversationmetadataCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/RecordingMetadata"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/RecordingMetadata"
+        }
+      }
     }
   }
 }`)
 	conversations_recordingmetadataCmd.AddCommand(conversationmetadataCmd)
-	
+
 	recordingmetadataCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", recordingmetadataCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}")))
 	utils.AddFileFlagIfUpsert(recordingmetadataCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(recordingmetadataCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/RecordingMetadata"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RecordingMetadata"
+      }
+    }
   }
 }`)
 	conversations_recordingmetadataCmd.AddCommand(recordingmetadataCmd)
-	
 	return conversations_recordingmetadataCmd
 }
 

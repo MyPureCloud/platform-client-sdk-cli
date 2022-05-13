@@ -49,19 +49,6 @@ func (o *Documentthumbnail) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Documentthumbnail) MarshalJSON() ([]byte, error) {
     }
     DocumentthumbnailMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Resolution string `json:"resolution"`
         
         ImageUri string `json:"imageUri"`
@@ -85,26 +73,20 @@ func (u *Documentthumbnail) MarshalJSON() ([]byte, error) {
         Height int `json:"height"`
         
         Width int `json:"width"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

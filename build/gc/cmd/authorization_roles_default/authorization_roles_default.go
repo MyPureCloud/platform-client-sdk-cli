@@ -34,34 +34,43 @@ func Cmdauthorization_roles_default() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OrganizationRoleEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrganizationRoleEntityListing"
+      }
+    }
   }
 }`)
 	authorization_roles_defaultCmd.AddCommand(createCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/roles/default", utils.FormatPermissions([]string{ "authorization:role:edit",  }), utils.GenerateDevCentreLink("PUT", "Authorization", "/api/v2/authorization/roles/default")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Organization roles list",
-  "required" : true,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/DomainOrganizationRole"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/DomainOrganizationRole"
+        }
+      }
     }
-  }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OrganizationRoleEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrganizationRoleEntityListing"
+      }
+    }
   }
 }`)
 	authorization_roles_defaultCmd.AddCommand(updateCmd)
-	
 	return authorization_roles_defaultCmd
 }
 

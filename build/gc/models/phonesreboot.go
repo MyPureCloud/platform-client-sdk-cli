@@ -31,14 +31,7 @@ type Phonesreboot struct {
 
 // String returns a JSON representation of the model
 func (o *Phonesreboot) String() string {
-    
-    
      o.PhoneIds = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Phonesreboot) MarshalJSON() ([]byte, error) {
     }
     PhonesrebootMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PhoneIds []string `json:"phoneIds"`
         
         SiteId string `json:"siteId"`
-        
         *Alias
     }{
-        
 
         
         PhoneIds: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

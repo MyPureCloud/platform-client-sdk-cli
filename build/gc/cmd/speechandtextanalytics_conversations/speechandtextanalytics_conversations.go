@@ -33,12 +33,15 @@ func Cmdspeechandtextanalytics_conversations() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ConversationMetrics"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ConversationMetrics"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_conversationsCmd.AddCommand(getCmd)
-	
 	return speechandtextanalytics_conversationsCmd
 }
 

@@ -25,10 +25,6 @@ type Textbotwaitforinputaction struct {
 // String returns a JSON representation of the model
 func (o *Textbotwaitforinputaction) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Textbotwaitforinputaction) MarshalJSON() ([]byte, error) {
     }
     TextbotwaitforinputactionMarshalled = true
 
-    return json.Marshal(&struct { 
-        ModeConstraints Textbotmodeconstraints `json:"modeConstraints"`
+    return json.Marshal(&struct {
         
+        ModeConstraints Textbotmodeconstraints `json:"modeConstraints"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,13 +33,6 @@ type Inbounddomainpatchrequest struct {
 func (o *Inbounddomainpatchrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Inbounddomainpatchrequest) MarshalJSON() ([]byte, error) {
     }
     InbounddomainpatchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MailFromSettings Mailfromresult `json:"mailFromSettings"`
         
         CustomSMTPServer Domainentityref `json:"customSMTPServer"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

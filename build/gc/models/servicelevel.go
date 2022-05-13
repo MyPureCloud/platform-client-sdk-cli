@@ -33,13 +33,6 @@ type Servicelevel struct {
 func (o *Servicelevel) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Servicelevel) MarshalJSON() ([]byte, error) {
     }
     ServicelevelMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Percentage float64 `json:"percentage"`
         
         DurationMs int `json:"durationMs"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

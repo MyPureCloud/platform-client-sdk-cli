@@ -33,13 +33,6 @@ type Wfmforecastmodificationintervaloffsetvalue struct {
 func (o *Wfmforecastmodificationintervaloffsetvalue) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Wfmforecastmodificationintervaloffsetvalue) MarshalJSON() ([]byte, erro
     }
     WfmforecastmodificationintervaloffsetvalueMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         IntervalIndex int `json:"intervalIndex"`
         
         Value float64 `json:"value"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

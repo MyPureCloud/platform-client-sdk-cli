@@ -35,12 +35,16 @@ func Cmdoutbound_contactlists_divisionviews() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ContactListDivisionView"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContactListDivisionView"
+      }
+    }
   }
 }`)
 	outbound_contactlists_divisionviewsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "bool", "includeImportStatus", "false", "Include import status")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeSize", "false", "Include size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size. The max that will be returned is 100.")
@@ -55,12 +59,15 @@ func Cmdoutbound_contactlists_divisionviews() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	outbound_contactlists_divisionviewsCmd.AddCommand(listCmd)
-	
 	return outbound_contactlists_divisionviewsCmd
 }
 

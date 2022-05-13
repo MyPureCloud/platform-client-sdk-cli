@@ -30,41 +30,49 @@ func init() {
 func Cmdoutbound_contactlists() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/contactlists", utils.FormatPermissions([]string{ "outbound:contactList:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/contactlists")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "ContactList",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ContactList"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContactList"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ContactList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContactList"
+      }
+    }
   }
 }`)
 	outbound_contactlistsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/contactlists/{contactListId}", utils.FormatPermissions([]string{ "outbound:contactList:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/contactlists/{contactListId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	outbound_contactlistsCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(deletecontactlistsCmd.Flags(), "[]string", "id", "", "contact list id(s) to delete - REQUIRED")
 	deletecontactlistsCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deletecontactlistsCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/contactlists", utils.FormatPermissions([]string{ "outbound:contactList:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/contactlists")))
 	utils.AddFileFlagIfUpsert(deletecontactlistsCmd.Flags(), "DELETE", ``)
 	deletecontactlistsCmd.MarkFlagRequired("id")
 	
 	utils.AddPaginateFlagsIfListingResponse(deletecontactlistsCmd.Flags(), "DELETE", `{
-  "description" : "Contact lists accepted for delete."
+  "description" : "Contact lists accepted for delete.",
+  "content" : { }
 }`)
 	outbound_contactlistsCmd.AddCommand(deletecontactlistsCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "bool", "includeImportStatus", "false", "Import status")
 	utils.AddFlag(getCmd.Flags(), "bool", "includeSize", "false", "Include size")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/contactlists/{contactListId}", utils.FormatPermissions([]string{ "outbound:contactList:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/contactlists/{contactListId}")))
@@ -72,12 +80,16 @@ func Cmdoutbound_contactlists() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ContactList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContactList"
+      }
+    }
   }
 }`)
 	outbound_contactlistsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "bool", "includeImportStatus", "false", "Include import status")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeSize", "false", "Include size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size. The max that will be returned is 100.")
@@ -94,31 +106,40 @@ func Cmdoutbound_contactlists() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	outbound_contactlistsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/contactlists/{contactListId}", utils.FormatPermissions([]string{ "outbound:contactList:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/contactlists/{contactListId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "ContactList",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ContactList"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContactList"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ContactList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContactList"
+      }
+    }
   }
 }`)
 	outbound_contactlistsCmd.AddCommand(updateCmd)
-	
 	return outbound_contactlistsCmd
 }
 

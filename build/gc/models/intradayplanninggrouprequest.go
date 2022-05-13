@@ -47,21 +47,8 @@ type Intradayplanninggrouprequest struct {
 // String returns a JSON representation of the model
 func (o *Intradayplanninggrouprequest) String() string {
     
-    
-    
-    
-    
-    
      o.Categories = []string{""} 
-    
-    
-    
      o.PlanningGroupIds = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -78,7 +65,8 @@ func (u *Intradayplanninggrouprequest) MarshalJSON() ([]byte, error) {
     }
     IntradayplanninggrouprequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         BusinessUnitDate time.Time `json:"businessUnitDate"`
         
         Categories []string `json:"categories"`
@@ -86,30 +74,24 @@ func (u *Intradayplanninggrouprequest) MarshalJSON() ([]byte, error) {
         PlanningGroupIds []string `json:"planningGroupIds"`
         
         IntervalLengthMinutes int `json:"intervalLengthMinutes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Categories: []string{""},
         
 
-        
 
         
         PlanningGroupIds: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

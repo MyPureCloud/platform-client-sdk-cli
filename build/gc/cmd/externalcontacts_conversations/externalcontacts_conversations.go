@@ -30,20 +30,22 @@ func init() {
 func Cmdexternalcontacts_conversations() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/externalcontacts/conversations/{conversationId}", utils.FormatPermissions([]string{ "externalContacts:conversation:associate",  }), utils.GenerateDevCentreLink("PUT", "External Contacts", "/api/v2/externalcontacts/conversations/{conversationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "ConversationAssociation",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ConversationAssociation"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ConversationAssociation"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  "description" : "Accepted - Processing association"
+  "description" : "Accepted - Processing association",
+  "content" : { }
 }`)
 	externalcontacts_conversationsCmd.AddCommand(updateCmd)
-	
 	return externalcontacts_conversationsCmd
 }
 

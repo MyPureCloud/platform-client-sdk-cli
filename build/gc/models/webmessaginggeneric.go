@@ -56,23 +56,7 @@ func (o *Webmessaginggeneric) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Components = []Buttoncomponent{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Webmessaginggeneric) MarshalJSON() ([]byte, error) {
     }
     WebmessaginggenericMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Title string `json:"title"`
         
         Description string `json:"description"`
@@ -98,32 +83,25 @@ func (u *Webmessaginggeneric) MarshalJSON() ([]byte, error) {
         Actions Contentactions `json:"actions"`
         
         Components []Buttoncomponent `json:"components"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Components: []Buttoncomponent{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,23 +30,28 @@ func init() {
 func Cmdlearning_assessments_scoring() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/assessments/scoring", utils.FormatPermissions([]string{ "learning:module:view", "learning:module:add", "learning:module:edit",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/assessments/scoring")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Assessment form and answers to score",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/LearningAssessmentScoringRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningAssessmentScoringRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AssessmentScoringSet"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AssessmentScoringSet"
+      }
+    }
   }
 }`)
 	learning_assessments_scoringCmd.AddCommand(createCmd)
-	
 	return learning_assessments_scoringCmd
 }
 

@@ -24,11 +24,7 @@ type Format struct {
 
 // String returns a JSON representation of the model
 func (o *Format) String() string {
-    
-    
      o.Flags = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Format) MarshalJSON() ([]byte, error) {
     }
     FormatMarshalled = true
 
-    return json.Marshal(&struct { 
-        Flags []string `json:"flags"`
+    return json.Marshal(&struct {
         
+        Flags []string `json:"flags"`
         *Alias
     }{
-        
 
         
         Flags: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

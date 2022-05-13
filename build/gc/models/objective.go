@@ -81,38 +81,11 @@ type Objective struct {
 // String returns a JSON representation of the model
 func (o *Objective) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Zones = []Objectivezone{{}} 
     
-    
-    
-    
-    
-    
-    
      o.MediaTypes = []string{""} 
-    
-    
-    
      o.Queues = []Addressableentityref{{}} 
-    
-    
-    
      o.Topics = []Addressableentityref{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -130,8 +103,7 @@ func (u *Objective) MarshalJSON() ([]byte, error) {
     }
     ObjectiveMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         TemplateId string `json:"templateId"`
         
@@ -148,54 +120,43 @@ func (u *Objective) MarshalJSON() ([]byte, error) {
         TopicIdsFilterType string `json:"topicIdsFilterType"`
         
         DateStart time.Time `json:"dateStart"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Zones: []Objectivezone{{}},
         
 
-        
 
         
 
-        
 
         
         MediaTypes: []string{""},
         
 
-        
 
         
         Queues: []Addressableentityref{{}},
         
 
-        
 
         
         Topics: []Addressableentityref{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

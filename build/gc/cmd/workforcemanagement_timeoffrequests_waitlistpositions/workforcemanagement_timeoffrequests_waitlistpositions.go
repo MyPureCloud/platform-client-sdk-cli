@@ -33,12 +33,15 @@ func Cmdworkforcemanagement_timeoffrequests_waitlistpositions() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WaitlistPositionListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WaitlistPositionListing"
+      }
+    }
   }
 }`)
 	workforcemanagement_timeoffrequests_waitlistpositionsCmd.AddCommand(listCmd)
-	
 	return workforcemanagement_timeoffrequests_waitlistpositionsCmd
 }
 

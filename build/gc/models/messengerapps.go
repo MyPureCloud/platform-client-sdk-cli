@@ -33,13 +33,6 @@ type Messengerapps struct {
 func (o *Messengerapps) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Messengerapps) MarshalJSON() ([]byte, error) {
     }
     MessengerappsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Conversations Conversationappsettings `json:"conversations"`
         
         Knowledge Knowledge `json:"knowledge"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

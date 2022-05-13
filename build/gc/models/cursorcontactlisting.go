@@ -45,20 +45,7 @@ type Cursorcontactlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Cursorcontactlisting) String() string {
-    
-    
      o.Entities = []Externalcontact{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Cursorcontactlisting) MarshalJSON() ([]byte, error) {
     }
     CursorcontactlistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Externalcontact `json:"entities"`
         
         NextUri string `json:"nextUri"`
@@ -85,28 +73,22 @@ func (u *Cursorcontactlisting) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         PreviousUri string `json:"previousUri"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Externalcontact{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

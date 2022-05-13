@@ -66,28 +66,7 @@ type Testmessage struct {
 
 // String returns a JSON representation of the model
 func (o *Testmessage) String() string {
-    
-    
-    
-    
      o.To = []Emailaddress{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -108,8 +87,7 @@ func (u *Testmessage) MarshalJSON() ([]byte, error) {
     }
     TestmessageMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         To []Emailaddress `json:"to"`
         
@@ -122,40 +100,31 @@ func (u *Testmessage) MarshalJSON() ([]byte, error) {
         HtmlBody string `json:"htmlBody"`
         
         Time time.Time `json:"time"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         To: []Emailaddress{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

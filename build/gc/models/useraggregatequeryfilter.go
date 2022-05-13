@@ -39,18 +39,8 @@ type Useraggregatequeryfilter struct {
 // String returns a JSON representation of the model
 func (o *Useraggregatequeryfilter) String() string {
     
-    
-    
-    
-    
-    
      o.Clauses = []Useraggregatequeryclause{{}} 
-    
-    
-    
      o.Predicates = []Useraggregatequerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Useraggregatequeryfilter) MarshalJSON() ([]byte, error) {
     }
     UseraggregatequeryfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Clauses []Useraggregatequeryclause `json:"clauses"`
         
         Predicates []Useraggregatequerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Clauses: []Useraggregatequeryclause{{}},
         
 
-        
 
         
         Predicates: []Useraggregatequerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

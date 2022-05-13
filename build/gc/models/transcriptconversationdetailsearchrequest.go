@@ -70,31 +70,9 @@ func (o *Transcriptconversationdetailsearchrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Sort = []Searchsort{{}} 
-    
-    
-    
      o.Types = []string{""} 
-    
-    
-    
      o.Query = []Transcriptconversationdetailsearchcriteria{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Transcriptconversationdetailsearchrequest) MarshalJSON() ([]byte, error
     }
     TranscriptconversationdetailsearchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SortOrder string `json:"sortOrder"`
         
         SortBy string `json:"sortBy"`
@@ -124,44 +103,35 @@ func (u *Transcriptconversationdetailsearchrequest) MarshalJSON() ([]byte, error
         Types []string `json:"types"`
         
         Query []Transcriptconversationdetailsearchcriteria `json:"query"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Sort: []Searchsort{{}},
         
 
-        
 
         
         Types: []string{""},
         
 
-        
 
         
         Query: []Transcriptconversationdetailsearchcriteria{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

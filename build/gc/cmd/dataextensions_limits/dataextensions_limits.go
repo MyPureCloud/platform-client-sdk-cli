@@ -33,12 +33,15 @@ func Cmddataextensions_limits() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SchemaQuantityLimits"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SchemaQuantityLimits"
+      }
+    }
   }
 }`)
 	dataextensions_limitsCmd.AddCommand(getCmd)
-	
 	return dataextensions_limitsCmd
 }
 

@@ -49,19 +49,6 @@ func (o *Failedobject) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Failedobject) MarshalJSON() ([]byte, error) {
     }
     FailedobjectMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Version string `json:"version"`
@@ -85,26 +73,20 @@ func (u *Failedobject) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         ErrorCode string `json:"errorCode"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -135,26 +135,6 @@ func (o *Condition) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Codes = []string{""} 
     
     
@@ -163,37 +143,8 @@ func (o *Condition) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ContactColumnToDataActionFieldMappings = []Contactcolumntodataactionfieldmapping{{}} 
-    
-    
-    
      o.Predicates = []Dataactionconditionpredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -209,7 +160,8 @@ func (u *Condition) MarshalJSON() ([]byte, error) {
     }
     ConditionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Inverted bool `json:"inverted"`
@@ -241,80 +193,62 @@ func (u *Condition) MarshalJSON() ([]byte, error) {
         ContactColumnToDataActionFieldMappings []Contactcolumntodataactionfieldmapping `json:"contactColumnToDataActionFieldMappings"`
         
         Predicates []Dataactionconditionpredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Codes: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ContactColumnToDataActionFieldMappings: []Contactcolumntodataactionfieldmapping{{}},
         
 
-        
 
         
         Predicates: []Dataactionconditionpredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

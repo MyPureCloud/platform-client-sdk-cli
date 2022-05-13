@@ -30,23 +30,28 @@ func init() {
 func Cmdorganizations_features() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/organizations/features/{featureName}", utils.FormatPermissions([]string{ "directory:organization:admin",  }), utils.GenerateDevCentreLink("PATCH", "Organization", "/api/v2/organizations/features/{featureName}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "enabled",
   "description" : "New state of feature",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/FeatureState"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/FeatureState"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OrganizationFeatures"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrganizationFeatures"
+      }
+    }
   }
 }`)
 	organizations_featuresCmd.AddCommand(updateCmd)
-	
 	return organizations_featuresCmd
 }
 

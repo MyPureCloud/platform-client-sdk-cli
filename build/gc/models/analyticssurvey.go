@@ -106,40 +106,6 @@ func (o *Analyticssurvey) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -155,7 +121,8 @@ func (u *Analyticssurvey) MarshalJSON() ([]byte, error) {
     }
     AnalyticssurveyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EventTime time.Time `json:"eventTime"`
         
         QueueId string `json:"queueId"`
@@ -177,54 +144,41 @@ func (u *Analyticssurvey) MarshalJSON() ([]byte, error) {
         UserId string `json:"userId"`
         
         OSurveyTotalScore int `json:"oSurveyTotalScore"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

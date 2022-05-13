@@ -32,14 +32,7 @@ type Buheadcountforecast struct {
 
 // String returns a JSON representation of the model
 func (o *Buheadcountforecast) String() string {
-    
-    
      o.Entities = []Buplanninggroupheadcountforecast{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -56,24 +49,21 @@ func (u *Buheadcountforecast) MarshalJSON() ([]byte, error) {
     }
     BuheadcountforecastMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Buplanninggroupheadcountforecast `json:"entities"`
         
         ReferenceStartDate time.Time `json:"referenceStartDate"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Buplanninggroupheadcountforecast{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

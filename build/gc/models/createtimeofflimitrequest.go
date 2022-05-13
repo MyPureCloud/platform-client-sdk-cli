@@ -33,13 +33,6 @@ type Createtimeofflimitrequest struct {
 func (o *Createtimeofflimitrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Createtimeofflimitrequest) MarshalJSON() ([]byte, error) {
     }
     CreatetimeofflimitrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Granularity string `json:"granularity"`
         
         DefaultLimitMinutes int `json:"defaultLimitMinutes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

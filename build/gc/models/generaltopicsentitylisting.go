@@ -24,11 +24,7 @@ type Generaltopicsentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Generaltopicsentitylisting) String() string {
-    
-    
      o.Entities = []Generaltopic{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Generaltopicsentitylisting) MarshalJSON() ([]byte, error) {
     }
     GeneraltopicsentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Generaltopic `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Generaltopic `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Generaltopic{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,13 +33,6 @@ type Integrationexport struct {
 func (o *Integrationexport) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Integrationexport) MarshalJSON() ([]byte, error) {
     }
     IntegrationexportMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Integration Domainentityref `json:"integration"`
         
         ShouldExportScreenRecordings bool `json:"shouldExportScreenRecordings"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

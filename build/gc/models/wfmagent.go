@@ -96,41 +96,9 @@ func (o *Wfmagent) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Queues = []Queuereference{{}} 
-    
-    
-    
      o.Languages = []Languagereference{{}} 
-    
-    
-    
      o.Skills = []Routingskillreference{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -148,8 +116,7 @@ func (u *Wfmagent) MarshalJSON() ([]byte, error) {
     }
     WfmagentMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         User Userreference `json:"user"`
         
@@ -168,62 +135,47 @@ func (u *Wfmagent) MarshalJSON() ([]byte, error) {
         Schedulable bool `json:"schedulable"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Queues: []Queuereference{{}},
         
 
-        
 
         
         Languages: []Languagereference{{}},
         
 
-        
 
         
         Skills: []Routingskillreference{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

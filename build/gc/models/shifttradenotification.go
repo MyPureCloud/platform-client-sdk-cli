@@ -82,31 +82,6 @@ func (o *Shifttradenotification) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -122,7 +97,8 @@ func (u *Shifttradenotification) MarshalJSON() ([]byte, error) {
     }
     ShifttradenotificationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         WeekDate string `json:"weekDate"`
         
         TradeId string `json:"tradeId"`
@@ -138,42 +114,32 @@ func (u *Shifttradenotification) MarshalJSON() ([]byte, error) {
         ReceivingUser Userreference `json:"receivingUser"`
         
         ReceivingShiftDate time.Time `json:"receivingShiftDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

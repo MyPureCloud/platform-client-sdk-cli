@@ -34,12 +34,15 @@ func Cmdrouting_queues_estimatedwaittime() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/EstimatedWaitTimePredictions"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EstimatedWaitTimePredictions"
+      }
+    }
   }
 }`)
 	routing_queues_estimatedwaittimeCmd.AddCommand(getCmd)
-	
 	return routing_queues_estimatedwaittimeCmd
 }
 

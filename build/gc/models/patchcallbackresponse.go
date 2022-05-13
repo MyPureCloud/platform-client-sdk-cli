@@ -32,14 +32,7 @@ type Patchcallbackresponse struct {
 // String returns a JSON representation of the model
 func (o *Patchcallbackresponse) String() string {
     
-    
-    
-    
-    
-    
      o.CallbackIdentifiers = []Callbackidentifier{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Patchcallbackresponse) MarshalJSON() ([]byte, error) {
     }
     PatchcallbackresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Conversation Domainentityref `json:"conversation"`
         
         CallbackIdentifiers []Callbackidentifier `json:"callbackIdentifiers"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         CallbackIdentifiers: []Callbackidentifier{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

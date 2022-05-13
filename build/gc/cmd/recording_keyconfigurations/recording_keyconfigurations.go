@@ -30,64 +30,83 @@ func init() {
 func Cmdrecording_keyconfigurations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/keyconfigurations", utils.FormatPermissions([]string{ "recording:encryptionKey:edit",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recording/keyconfigurations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Encryption Configuration",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/RecordingEncryptionConfiguration"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RecordingEncryptionConfiguration"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/RecordingEncryptionConfiguration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RecordingEncryptionConfiguration"
+      }
+    }
   }
 }`)
 	recording_keyconfigurationsCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/recording/keyconfigurations/{keyConfigurationId}", utils.FormatPermissions([]string{ "recording:encryptionKey:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/keyconfigurations/{keyConfigurationId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/RecordingEncryptionConfiguration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RecordingEncryptionConfiguration"
+      }
+    }
   }
 }`)
 	recording_keyconfigurationsCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recording/keyconfigurations", utils.FormatPermissions([]string{ "recording:encryptionKey:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/keyconfigurations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/RecordingEncryptionConfigurationListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RecordingEncryptionConfigurationListing"
+      }
+    }
   }
 }`)
 	recording_keyconfigurationsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/keyconfigurations/{keyConfigurationId}", utils.FormatPermissions([]string{ "recording:encryptionKey:edit",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/keyconfigurations/{keyConfigurationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Encryption key configuration metadata",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/RecordingEncryptionConfiguration"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RecordingEncryptionConfiguration"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/RecordingEncryptionConfiguration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RecordingEncryptionConfiguration"
+      }
+    }
   }
 }`)
 	recording_keyconfigurationsCmd.AddCommand(updateCmd)
-	
 	return recording_keyconfigurationsCmd
 }
 

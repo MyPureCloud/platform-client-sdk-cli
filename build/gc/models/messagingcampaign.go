@@ -139,60 +139,12 @@ func (o *Messagingcampaign) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.DncLists = []Domainentityref{{}} 
-    
-    
-    
-    
-    
-    
     
      o.ContactSorts = []Contactsort{{}} 
     
-    
-    
-    
-    
-    
-    
      o.ContactListFilters = []Domainentityref{{}} 
-    
-    
-    
      o.Errors = []Resterrordetail{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -209,14 +161,9 @@ func (u *Messagingcampaign) MarshalJSON() ([]byte, error) {
     }
     MessagingcampaignMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
@@ -241,88 +188,67 @@ func (u *Messagingcampaign) MarshalJSON() ([]byte, error) {
         Errors []Resterrordetail `json:"errors"`
         
         SmsConfig Smsconfig `json:"smsConfig"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         DncLists: []Domainentityref{{}},
         
 
-        
 
         
 
-        
 
         
         ContactSorts: []Contactsort{{}},
         
 
-        
 
         
 
-        
 
         
         ContactListFilters: []Domainentityref{{}},
         
 
-        
 
         
         Errors: []Resterrordetail{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

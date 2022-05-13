@@ -50,19 +50,6 @@ func (o *Patchcallbackrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,7 +65,8 @@ func (u *Patchcallbackrequest) MarshalJSON() ([]byte, error) {
     }
     PatchcallbackrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ConversationId string `json:"conversationId"`
         
         QueueId string `json:"queueId"`
@@ -86,26 +74,20 @@ func (u *Patchcallbackrequest) MarshalJSON() ([]byte, error) {
         AgentId string `json:"agentId"`
         
         CallbackScheduledTime time.Time `json:"callbackScheduledTime"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

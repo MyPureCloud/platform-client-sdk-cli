@@ -24,11 +24,7 @@ type Conversationdeletionprotectionquery struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationdeletionprotectionquery) String() string {
-    
-    
      o.ConversationIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Conversationdeletionprotectionquery) MarshalJSON() ([]byte, error) {
     }
     ConversationdeletionprotectionqueryMarshalled = true
 
-    return json.Marshal(&struct { 
-        ConversationIds []string `json:"conversationIds"`
+    return json.Marshal(&struct {
         
+        ConversationIds []string `json:"conversationIds"`
         *Alias
     }{
-        
 
         
         ConversationIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -24,11 +24,7 @@ type Auditqueryservicemapping struct {
 
 // String returns a JSON representation of the model
 func (o *Auditqueryservicemapping) String() string {
-    
-    
      o.Services = []Auditqueryservice{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Auditqueryservicemapping) MarshalJSON() ([]byte, error) {
     }
     AuditqueryservicemappingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Services []Auditqueryservice `json:"services"`
+    return json.Marshal(&struct {
         
+        Services []Auditqueryservice `json:"services"`
         *Alias
     }{
-        
 
         
         Services: []Auditqueryservice{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

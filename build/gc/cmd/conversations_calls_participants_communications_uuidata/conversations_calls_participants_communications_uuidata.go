@@ -30,23 +30,28 @@ func init() {
 func Cmdconversations_calls_participants_communications_uuidata() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Conversations", "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "UUIData Request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/SetUuiDataRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SetUuiDataRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Empty"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Empty"
+      }
+    }
   }
 }`)
 	conversations_calls_participants_communications_uuidataCmd.AddCommand(updateCmd)
-	
 	return conversations_calls_participants_communications_uuidataCmd
 }
 

@@ -105,40 +105,6 @@ func (o *Historicaladherencedaymetrics) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -154,7 +120,8 @@ func (u *Historicaladherencedaymetrics) MarshalJSON() ([]byte, error) {
     }
     HistoricaladherencedaymetricsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DayStartOffsetSecs int `json:"dayStartOffsetSecs"`
         
         AdherenceScheduleSecs int `json:"adherenceScheduleSecs"`
@@ -176,54 +143,41 @@ func (u *Historicaladherencedaymetrics) MarshalJSON() ([]byte, error) {
         AdherencePercentage float64 `json:"adherencePercentage"`
         
         ConformancePercentage float64 `json:"conformancePercentage"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

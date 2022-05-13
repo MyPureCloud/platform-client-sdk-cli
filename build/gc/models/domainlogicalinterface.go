@@ -326,94 +326,8 @@ func (o *Domainlogicalinterface) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Routes = []Domainnetworkroute{{}} 
-    
-    
-    
      o.Addresses = []Domainnetworkaddress{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -425,44 +339,8 @@ func (o *Domainlogicalinterface) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ExternalTrunkBaseAssignments = []Trunkbaseassignment{{}} 
-    
-    
-    
      o.PhoneTrunkBaseAssignments = []Trunkbaseassignment{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -481,8 +359,7 @@ func (u *Domainlogicalinterface) MarshalJSON() ([]byte, error) {
     }
     DomainlogicalinterfaceMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -499,8 +376,6 @@ func (u *Domainlogicalinterface) MarshalJSON() ([]byte, error) {
         ModifiedBy string `json:"modifiedBy"`
         
         CreatedBy string `json:"createdBy"`
-        
-        
         
         ModifiedByApp string `json:"modifiedByApp"`
         
@@ -519,8 +394,6 @@ func (u *Domainlogicalinterface) MarshalJSON() ([]byte, error) {
         PhysicalAdapterId string `json:"physicalAdapterId"`
         
         IfStatus string `json:"ifStatus"`
-        
-        
         
         PublicNatAddressIpV4 string `json:"publicNatAddressIpV4"`
         
@@ -552,8 +425,6 @@ func (u *Domainlogicalinterface) MarshalJSON() ([]byte, error) {
         
         UseForCloudProxyEdgeCommunication bool `json:"useForCloudProxyEdgeCommunication"`
         
-        
-        
         ExternalTrunkBaseAssignments []Trunkbaseassignment `json:"externalTrunkBaseAssignments"`
         
         PhoneTrunkBaseAssignments []Trunkbaseassignment `json:"phoneTrunkBaseAssignments"`
@@ -563,190 +434,144 @@ func (u *Domainlogicalinterface) MarshalJSON() ([]byte, error) {
         StartDate time.Time `json:"startDate"`
         
         EndDate time.Time `json:"endDate"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Routes: []Domainnetworkroute{{}},
         
 
-        
 
         
         Addresses: []Domainnetworkaddress{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         CommandResponses: []Domainnetworkcommandresponse{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ExternalTrunkBaseAssignments: []Trunkbaseassignment{{}},
         
 
-        
 
         
         PhoneTrunkBaseAssignments: []Trunkbaseassignment{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

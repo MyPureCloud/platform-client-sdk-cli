@@ -33,13 +33,6 @@ type Chatmediapolicy struct {
 func (o *Chatmediapolicy) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Chatmediapolicy) MarshalJSON() ([]byte, error) {
     }
     ChatmediapolicyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Actions Policyactions `json:"actions"`
         
         Conditions Chatmediapolicyconditions `json:"conditions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,23 +30,28 @@ func init() {
 func Cmdintegrations_actions_draft_publish() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/integrations/actions/{actionId}/draft/publish", utils.FormatPermissions([]string{ "integrations:action:edit",  }), utils.GenerateDevCentreLink("POST", "Integrations", "/api/v2/integrations/actions/{actionId}/draft/publish")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Input used to patch the Action.",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/PublishDraftInput"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PublishDraftInput"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Action"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Action"
+      }
+    }
   }
 }`)
 	integrations_actions_draft_publishCmd.AddCommand(createCmd)
-	
 	return integrations_actions_draft_publishCmd
 }
 

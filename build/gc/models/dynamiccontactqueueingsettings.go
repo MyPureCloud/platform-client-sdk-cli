@@ -25,10 +25,6 @@ type Dynamiccontactqueueingsettings struct {
 // String returns a JSON representation of the model
 func (o *Dynamiccontactqueueingsettings) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Dynamiccontactqueueingsettings) MarshalJSON() ([]byte, error) {
     }
     DynamiccontactqueueingsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
-        Sort bool `json:"sort"`
+    return json.Marshal(&struct {
         
+        Sort bool `json:"sort"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -40,17 +40,7 @@ type Screenrecordingmetadatarequest struct {
 func (o *Screenrecordingmetadatarequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.MetaData = []Screenrecordingmetadata{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Screenrecordingmetadatarequest) MarshalJSON() ([]byte, error) {
     }
     ScreenrecordingmetadatarequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ParticipantJid string `json:"participantJid"`
         
         RoomId string `json:"roomId"`
         
         MetaData []Screenrecordingmetadata `json:"metaData"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         MetaData: []Screenrecordingmetadata{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -87,38 +87,7 @@ type Commoncampaigndivisionviewentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Commoncampaigndivisionviewentitylisting) String() string {
-    
-    
      o.Entities = []Commoncampaigndivisionview{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Commoncampaigndivisionviewentitylisting) MarshalJSON() ([]byte, error) 
     }
     CommoncampaigndivisionviewentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Commoncampaigndivisionview `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Commoncampaigndivisionviewentitylisting) MarshalJSON() ([]byte, error) 
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Commoncampaigndivisionview{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

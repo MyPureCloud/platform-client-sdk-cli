@@ -142,56 +142,8 @@ func (o *Messagedata) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Media = []Messagemedia{{}} 
-    
-    
-    
      o.Stickers = []Messagesticker{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -209,8 +161,7 @@ func (u *Messagedata) MarshalJSON() ([]byte, error) {
     }
     MessagedataMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -234,91 +185,66 @@ func (u *Messagedata) MarshalJSON() ([]byte, error) {
         
         Stickers []Messagesticker `json:"stickers"`
         
-        
-        
-        
-        
         CreatedBy User `json:"createdBy"`
         
         ConversationId string `json:"conversationId"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Media: []Messagemedia{{}},
         
 
-        
 
         
         Stickers: []Messagesticker{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

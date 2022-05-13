@@ -30,23 +30,29 @@ func init() {
 func Cmdanalytics_reporting_exports() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/reporting/exports", utils.FormatPermissions([]string{ "analytics:dataExport:add",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/reporting/exports")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "ReportingExportJobRequest",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ReportingExportJobRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ReportingExportJobRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ReportingExportJobResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ReportingExportJobResponse"
+      }
+    }
   }
 }`)
 	analytics_reporting_exportsCmd.AddCommand(createCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/reporting/exports", utils.FormatPermissions([]string{ "analytics:dataExport:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/reporting/exports")))
@@ -54,12 +60,15 @@ func Cmdanalytics_reporting_exports() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	analytics_reporting_exportsCmd.AddCommand(listCmd)
-	
 	return analytics_reporting_exportsCmd
 }
 

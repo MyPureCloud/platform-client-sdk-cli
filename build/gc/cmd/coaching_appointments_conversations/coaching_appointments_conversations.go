@@ -30,23 +30,28 @@ func init() {
 func Cmdcoaching_appointments_conversations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/coaching/appointments/{appointmentId}/conversations", utils.FormatPermissions([]string{ "coaching:appointment:edit", "coaching:appointmentConversation:add",  }), utils.GenerateDevCentreLink("POST", "Coaching", "/api/v2/coaching/appointments/{appointmentId}/conversations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/AddConversationRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AddConversationRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Conversation Added",
-  "schema" : {
-    "$ref" : "#/definitions/AddConversationResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AddConversationResponse"
+      }
+    }
   }
 }`)
 	coaching_appointments_conversationsCmd.AddCommand(createCmd)
-	
 	return coaching_appointments_conversationsCmd
 }
 

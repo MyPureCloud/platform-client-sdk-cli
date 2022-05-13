@@ -24,11 +24,7 @@ type Policyerrors struct {
 
 // String returns a JSON representation of the model
 func (o *Policyerrors) String() string {
-    
-    
      o.PolicyErrorMessages = []Policyerrormessage{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Policyerrors) MarshalJSON() ([]byte, error) {
     }
     PolicyerrorsMarshalled = true
 
-    return json.Marshal(&struct { 
-        PolicyErrorMessages []Policyerrormessage `json:"policyErrorMessages"`
+    return json.Marshal(&struct {
         
+        PolicyErrorMessages []Policyerrormessage `json:"policyErrorMessages"`
         *Alias
     }{
-        
 
         
         PolicyErrorMessages: []Policyerrormessage{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

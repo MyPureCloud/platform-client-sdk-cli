@@ -39,18 +39,8 @@ type Routingstatusdetailqueryfilter struct {
 // String returns a JSON representation of the model
 func (o *Routingstatusdetailqueryfilter) String() string {
     
-    
-    
-    
-    
-    
      o.Clauses = []Routingstatusdetailqueryclause{{}} 
-    
-    
-    
      o.Predicates = []Routingstatusdetailquerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Routingstatusdetailqueryfilter) MarshalJSON() ([]byte, error) {
     }
     RoutingstatusdetailqueryfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Clauses []Routingstatusdetailqueryclause `json:"clauses"`
         
         Predicates []Routingstatusdetailquerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Clauses: []Routingstatusdetailqueryclause{{}},
         
 
-        
 
         
         Predicates: []Routingstatusdetailquerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

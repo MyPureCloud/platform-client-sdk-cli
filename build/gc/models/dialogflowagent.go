@@ -66,29 +66,9 @@ type Dialogflowagent struct {
 func (o *Dialogflowagent) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Languages = []string{""} 
-    
-    
-    
      o.Intents = []Dialogflowintent{{}} 
-    
-    
-    
      o.Environments = []string{""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -104,8 +84,7 @@ func (u *Dialogflowagent) MarshalJSON() ([]byte, error) {
     }
     DialogflowagentMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -116,46 +95,35 @@ func (u *Dialogflowagent) MarshalJSON() ([]byte, error) {
         Intents []Dialogflowintent `json:"intents"`
         
         Environments []string `json:"environments"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Languages: []string{""},
         
 
-        
 
         
         Intents: []Dialogflowintent{{}},
         
 
-        
 
         
         Environments: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -32,14 +32,7 @@ type Copyattachmentsrequest struct {
 // String returns a JSON representation of the model
 func (o *Copyattachmentsrequest) String() string {
     
-    
-    
-    
-    
-    
      o.Attachments = []Attachment{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Copyattachmentsrequest) MarshalJSON() ([]byte, error) {
     }
     CopyattachmentsrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SourceMessage Domainentityref `json:"sourceMessage"`
         
         Attachments []Attachment `json:"attachments"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Attachments: []Attachment{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

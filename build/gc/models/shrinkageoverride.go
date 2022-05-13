@@ -33,13 +33,6 @@ type Shrinkageoverride struct {
 func (o *Shrinkageoverride) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Shrinkageoverride) MarshalJSON() ([]byte, error) {
     }
     ShrinkageoverrideMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         IntervalIndex int `json:"intervalIndex"`
         
         ShrinkagePercent float64 `json:"shrinkagePercent"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

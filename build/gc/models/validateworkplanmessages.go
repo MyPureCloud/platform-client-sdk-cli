@@ -31,14 +31,7 @@ type Validateworkplanmessages struct {
 
 // String returns a JSON representation of the model
 func (o *Validateworkplanmessages) String() string {
-    
-    
      o.ViolationMessages = []Workplanconfigurationviolationmessage{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Validateworkplanmessages) MarshalJSON() ([]byte, error) {
     }
     ValidateworkplanmessagesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ViolationMessages []Workplanconfigurationviolationmessage `json:"violationMessages"`
         
         ConstraintConflictMessage Constraintconflictmessage `json:"constraintConflictMessage"`
-        
         *Alias
     }{
-        
 
         
         ViolationMessages: []Workplanconfigurationviolationmessage{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -39,18 +39,8 @@ type Qmauditqueryrequest struct {
 // String returns a JSON representation of the model
 func (o *Qmauditqueryrequest) String() string {
     
-    
-    
-    
-    
-    
      o.Filters = []Qualityauditqueryfilter{{}} 
-    
-    
-    
      o.Sort = []Auditquerysort{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Qmauditqueryrequest) MarshalJSON() ([]byte, error) {
     }
     QmauditqueryrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         Filters []Qualityauditqueryfilter `json:"filters"`
         
         Sort []Auditquerysort `json:"sort"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Filters: []Qualityauditqueryfilter{{}},
         
 
-        
 
         
         Sort: []Auditquerysort{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

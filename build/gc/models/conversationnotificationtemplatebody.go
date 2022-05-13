@@ -32,14 +32,7 @@ type Conversationnotificationtemplatebody struct {
 // String returns a JSON representation of the model
 func (o *Conversationnotificationtemplatebody) String() string {
     
-    
-    
-    
-    
-    
      o.Parameters = []Conversationnotificationtemplateparameter{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Conversationnotificationtemplatebody) MarshalJSON() ([]byte, error) {
     }
     ConversationnotificationtemplatebodyMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Text string `json:"text"`
         
         Parameters []Conversationnotificationtemplateparameter `json:"parameters"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Parameters: []Conversationnotificationtemplateparameter{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

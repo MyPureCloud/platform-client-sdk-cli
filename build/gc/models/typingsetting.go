@@ -25,10 +25,6 @@ type Typingsetting struct {
 // String returns a JSON representation of the model
 func (o *Typingsetting) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Typingsetting) MarshalJSON() ([]byte, error) {
     }
     TypingsettingMarshalled = true
 
-    return json.Marshal(&struct { 
-        On Settingdirection `json:"on"`
+    return json.Marshal(&struct {
         
+        On Settingdirection `json:"on"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

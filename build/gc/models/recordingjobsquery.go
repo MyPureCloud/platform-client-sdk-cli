@@ -58,22 +58,6 @@ func (o *Recordingjobsquery) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,7 +73,8 @@ func (u *Recordingjobsquery) MarshalJSON() ([]byte, error) {
     }
     RecordingjobsqueryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Action string `json:"action"`
         
         ActionDate time.Time `json:"actionDate"`
@@ -99,30 +84,23 @@ func (u *Recordingjobsquery) MarshalJSON() ([]byte, error) {
         IncludeScreenRecordings bool `json:"includeScreenRecordings"`
         
         ConversationQuery Asyncconversationquery `json:"conversationQuery"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

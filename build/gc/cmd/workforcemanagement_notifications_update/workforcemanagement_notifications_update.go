@@ -30,23 +30,28 @@ func init() {
 func Cmdworkforcemanagement_notifications_update() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/notifications/update", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/notifications/update")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/UpdateNotificationsRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UpdateNotificationsRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UpdateNotificationsResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UpdateNotificationsResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_notifications_updateCmd.AddCommand(createCmd)
-	
 	return workforcemanagement_notifications_updateCmd
 }
 

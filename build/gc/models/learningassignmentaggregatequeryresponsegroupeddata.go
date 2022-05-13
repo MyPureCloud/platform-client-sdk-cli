@@ -31,15 +31,8 @@ type Learningassignmentaggregatequeryresponsegroupeddata struct {
 
 // String returns a JSON representation of the model
 func (o *Learningassignmentaggregatequeryresponsegroupeddata) String() string {
-    
-    
      o.Group = map[string]string{"": ""} 
-    
-    
-    
      o.Data = []Learningassignmentaggregatequeryresponsedata{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Learningassignmentaggregatequeryresponsegroupeddata) MarshalJSON() ([]b
     }
     LearningassignmentaggregatequeryresponsegroupeddataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Group map[string]string `json:"group"`
         
         Data []Learningassignmentaggregatequeryresponsedata `json:"data"`
-        
         *Alias
     }{
-        
 
         
         Group: map[string]string{"": ""},
         
 
-        
 
         
         Data: []Learningassignmentaggregatequeryresponsedata{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

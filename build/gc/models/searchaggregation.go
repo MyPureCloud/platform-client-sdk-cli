@@ -64,26 +64,7 @@ func (o *Searchaggregation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Order = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Searchaggregation) MarshalJSON() ([]byte, error) {
     }
     SearchaggregationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Field string `json:"field"`
         
         Name string `json:"name"`
@@ -111,36 +93,28 @@ func (u *Searchaggregation) MarshalJSON() ([]byte, error) {
         Size int `json:"size"`
         
         Order []string `json:"order"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Order: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

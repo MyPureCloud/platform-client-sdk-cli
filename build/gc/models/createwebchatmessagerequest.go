@@ -33,13 +33,6 @@ type Createwebchatmessagerequest struct {
 func (o *Createwebchatmessagerequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Createwebchatmessagerequest) MarshalJSON() ([]byte, error) {
     }
     CreatewebchatmessagerequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Body string `json:"body"`
         
         BodyType string `json:"bodyType"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

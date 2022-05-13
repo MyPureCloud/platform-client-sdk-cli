@@ -45,20 +45,7 @@ type Limitchangerequestsentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Limitchangerequestsentitylisting) String() string {
-    
-    
      o.Entities = []Limitchangerequestdetails{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Limitchangerequestsentitylisting) MarshalJSON() ([]byte, error) {
     }
     LimitchangerequestsentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Limitchangerequestdetails `json:"entities"`
         
         NextUri string `json:"nextUri"`
@@ -85,28 +73,22 @@ func (u *Limitchangerequestsentitylisting) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         PreviousUri string `json:"previousUri"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Limitchangerequestdetails{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -24,11 +24,7 @@ type Workplanrotationlistresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Workplanrotationlistresponse) String() string {
-    
-    
      o.Entities = []Workplanrotationresponse{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Workplanrotationlistresponse) MarshalJSON() ([]byte, error) {
     }
     WorkplanrotationlistresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Workplanrotationresponse `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Workplanrotationresponse `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Workplanrotationresponse{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

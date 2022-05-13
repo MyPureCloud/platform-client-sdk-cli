@@ -49,19 +49,6 @@ func (o *Vmpairinginfo) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Vmpairinginfo) MarshalJSON() ([]byte, error) {
     }
     VmpairinginfoMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MetaData Metadata `json:"meta-data"`
         
         EdgeId string `json:"edge-id"`
@@ -85,26 +73,20 @@ func (u *Vmpairinginfo) MarshalJSON() ([]byte, error) {
         AuthToken string `json:"auth-token"`
         
         OrgId string `json:"org-id"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

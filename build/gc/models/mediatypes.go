@@ -25,10 +25,6 @@ type Mediatypes struct {
 // String returns a JSON representation of the model
 func (o *Mediatypes) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Mediatypes) MarshalJSON() ([]byte, error) {
     }
     MediatypesMarshalled = true
 
-    return json.Marshal(&struct { 
-        Allow Mediatypeaccess `json:"allow"`
+    return json.Marshal(&struct {
         
+        Allow Mediatypeaccess `json:"allow"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

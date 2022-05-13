@@ -46,21 +46,8 @@ type Learningassignmentaggregateparam struct {
 // String returns a JSON representation of the model
 func (o *Learningassignmentaggregateparam) String() string {
     
-    
-    
-    
-    
-    
      o.Metrics = []string{""} 
-    
-    
-    
      o.GroupBy = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Learningassignmentaggregateparam) MarshalJSON() ([]byte, error) {
     }
     LearningassignmentaggregateparamMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         Metrics []string `json:"metrics"`
@@ -85,30 +73,24 @@ func (u *Learningassignmentaggregateparam) MarshalJSON() ([]byte, error) {
         GroupBy []string `json:"groupBy"`
         
         Filter Learningassignmentaggregatequeryrequestfilter `json:"filter"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Metrics: []string{""},
         
 
-        
 
         
         GroupBy: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

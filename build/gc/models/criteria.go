@@ -46,20 +46,7 @@ type Criteria struct {
 // String returns a JSON representation of the model
 func (o *Criteria) String() string {
     
-    
-    
-    
-    
-    
      o.Values = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -77,7 +64,8 @@ func (u *Criteria) MarshalJSON() ([]byte, error) {
     }
     CriteriaMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Key string `json:"key"`
         
         Values []string `json:"values"`
@@ -85,28 +73,22 @@ func (u *Criteria) MarshalJSON() ([]byte, error) {
         ShouldIgnoreCase bool `json:"shouldIgnoreCase"`
         
         Operator string `json:"operator"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Values: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

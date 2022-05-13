@@ -25,10 +25,6 @@ type Publishdraftinput struct {
 // String returns a JSON representation of the model
 func (o *Publishdraftinput) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Publishdraftinput) MarshalJSON() ([]byte, error) {
     }
     PublishdraftinputMarshalled = true
 
-    return json.Marshal(&struct { 
-        Version int `json:"version"`
+    return json.Marshal(&struct {
         
+        Version int `json:"version"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

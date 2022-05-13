@@ -253,70 +253,9 @@ func (o *Campaign) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.PhoneColumns = []Phonecolumn{{}} 
     
-    
-    
-    
-    
-    
-    
      o.DncLists = []Domainentityref{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -327,45 +266,11 @@ func (o *Campaign) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ContactSorts = []Contactsort{{}} 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ContactListFilters = []Domainentityref{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -382,14 +287,9 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
     }
     CampaignMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
@@ -416,8 +316,6 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
         CallableTimeSet Domainentityref `json:"callableTimeSet"`
         
         CallAnalysisResponseSet Domainentityref `json:"callAnalysisResponseSet"`
-        
-        
         
         CallerName string `json:"callerName"`
         
@@ -446,154 +344,117 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
         ContactListFilters []Domainentityref `json:"contactListFilters"`
         
         Division Domainentityref `json:"division"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         PhoneColumns: []Phonecolumn{{}},
         
 
-        
 
         
 
-        
 
         
         DncLists: []Domainentityref{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RuleSets: []Domainentityref{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ContactSorts: []Contactsort{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ContactListFilters: []Domainentityref{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

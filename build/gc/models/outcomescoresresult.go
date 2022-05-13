@@ -31,13 +31,7 @@ type Outcomescoresresult struct {
 
 // String returns a JSON representation of the model
 func (o *Outcomescoresresult) String() string {
-    
-    
      o.OutcomeScores = []Outcomeeventscore{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,24 +47,19 @@ func (u *Outcomescoresresult) MarshalJSON() ([]byte, error) {
     }
     OutcomescoresresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         OutcomeScores []Outcomeeventscore `json:"outcomeScores"`
-        
-        
-        
         *Alias
     }{
-        
 
         
         OutcomeScores: []Outcomeeventscore{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

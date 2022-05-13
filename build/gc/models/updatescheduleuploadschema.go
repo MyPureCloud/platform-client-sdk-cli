@@ -63,26 +63,7 @@ func (o *Updatescheduleuploadschema) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AgentSchedules = []Buupdateagentscheduleuploadschema{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -99,7 +80,8 @@ func (u *Updatescheduleuploadschema) MarshalJSON() ([]byte, error) {
     }
     UpdatescheduleuploadschemaMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Description string `json:"description"`
         
         Published bool `json:"published"`
@@ -111,36 +93,28 @@ func (u *Updatescheduleuploadschema) MarshalJSON() ([]byte, error) {
         AgentSchedules []Buupdateagentscheduleuploadschema `json:"agentSchedules"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AgentSchedules: []Buupdateagentscheduleuploadschema{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

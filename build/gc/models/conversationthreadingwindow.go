@@ -36,15 +36,7 @@ type Conversationthreadingwindow struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationthreadingwindow) String() string {
-    
-    
-    
-    
      o.Settings = []Conversationthreadingwindowsetting{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -60,30 +52,22 @@ func (u *Conversationthreadingwindow) MarshalJSON() ([]byte, error) {
     }
     ConversationthreadingwindowMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Settings []Conversationthreadingwindowsetting `json:"settings"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Settings: []Conversationthreadingwindowsetting{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

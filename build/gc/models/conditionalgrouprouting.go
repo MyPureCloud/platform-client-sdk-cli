@@ -24,11 +24,7 @@ type Conditionalgrouprouting struct {
 
 // String returns a JSON representation of the model
 func (o *Conditionalgrouprouting) String() string {
-    
-    
      o.Rules = []Conditionalgrouproutingrule{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Conditionalgrouprouting) MarshalJSON() ([]byte, error) {
     }
     ConditionalgrouproutingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Rules []Conditionalgrouproutingrule `json:"rules"`
+    return json.Marshal(&struct {
         
+        Rules []Conditionalgrouproutingrule `json:"rules"`
         *Alias
     }{
-        
 
         
         Rules: []Conditionalgrouproutingrule{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

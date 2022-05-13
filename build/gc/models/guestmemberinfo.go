@@ -72,29 +72,7 @@ func (o *Guestmemberinfo) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.CustomFields = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Guestmemberinfo) MarshalJSON() ([]byte, error) {
     }
     GuestmemberinfoMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DisplayName string `json:"displayName"`
         
         FirstName string `json:"firstName"`
@@ -124,40 +103,31 @@ func (u *Guestmemberinfo) MarshalJSON() ([]byte, error) {
         AvatarImageUrl string `json:"avatarImageUrl"`
         
         CustomFields map[string]string `json:"customFields"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         CustomFields: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

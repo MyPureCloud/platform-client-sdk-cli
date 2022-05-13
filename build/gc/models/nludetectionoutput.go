@@ -29,11 +29,6 @@ type Nludetectionoutput struct {
 
 // String returns a JSON representation of the model
 func (o *Nludetectionoutput) String() string {
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -49,22 +44,15 @@ func (u *Nludetectionoutput) MarshalJSON() ([]byte, error) {
     }
     NludetectionoutputMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
+    return json.Marshal(&struct {
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

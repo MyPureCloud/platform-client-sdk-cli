@@ -32,14 +32,7 @@ type Developmentactivityaggregatequeryrequestfilter struct {
 // String returns a JSON representation of the model
 func (o *Developmentactivityaggregatequeryrequestfilter) String() string {
     
-    
-    
-    
-    
-    
      o.Clauses = []Developmentactivityaggregatequeryrequestclause{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Developmentactivityaggregatequeryrequestfilter) MarshalJSON() ([]byte, 
     }
     DevelopmentactivityaggregatequeryrequestfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Clauses []Developmentactivityaggregatequeryrequestclause `json:"clauses"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Clauses: []Developmentactivityaggregatequeryrequestclause{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

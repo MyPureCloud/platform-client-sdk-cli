@@ -41,16 +41,6 @@ func (o *Recordingcontentactions) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Recordingcontentactions) MarshalJSON() ([]byte, error) {
     }
     RecordingcontentactionsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Url string `json:"url"`
         
         UrlTarget string `json:"urlTarget"`
         
         Textback string `json:"textback"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

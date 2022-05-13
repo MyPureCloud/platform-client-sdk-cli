@@ -25,10 +25,6 @@ type Routingsettings struct {
 // String returns a JSON representation of the model
 func (o *Routingsettings) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Routingsettings) MarshalJSON() ([]byte, error) {
     }
     RoutingsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
-        ResetAgentScoreOnPresenceChange bool `json:"resetAgentScoreOnPresenceChange"`
+    return json.Marshal(&struct {
         
+        ResetAgentScoreOnPresenceChange bool `json:"resetAgentScoreOnPresenceChange"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

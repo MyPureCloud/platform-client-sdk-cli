@@ -34,8 +34,12 @@ func Cmdauthorization_subjects_divisions_roles() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "max.role.assignments.exceeded" : "Too many roles granted to a subject",
@@ -50,14 +54,18 @@ func Cmdauthorization_subjects_divisions_roles() *cobra.Command {
   }
 }`)
 	authorization_subjects_divisions_rolesCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:grant:delete",  }), utils.GenerateDevCentreLink("DELETE", "Authorization", "/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
@@ -65,7 +73,6 @@ func Cmdauthorization_subjects_divisions_roles() *cobra.Command {
   }
 }`)
 	authorization_subjects_divisions_rolesCmd.AddCommand(deleteCmd)
-	
 	return authorization_subjects_divisions_rolesCmd
 }
 

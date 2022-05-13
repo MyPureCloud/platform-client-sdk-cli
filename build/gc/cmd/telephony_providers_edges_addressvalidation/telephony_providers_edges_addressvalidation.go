@@ -30,23 +30,28 @@ func init() {
 func Cmdtelephony_providers_edges_addressvalidation() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/addressvalidation", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/addressvalidation")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Address",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ValidateAddressRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ValidateAddressRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ValidateAddressResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ValidateAddressResponse"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_addressvalidationCmd.AddCommand(createCmd)
-	
 	return telephony_providers_edges_addressvalidationCmd
 }
 

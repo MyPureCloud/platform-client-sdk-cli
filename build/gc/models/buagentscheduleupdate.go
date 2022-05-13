@@ -33,14 +33,7 @@ type Buagentscheduleupdate struct {
 // String returns a JSON representation of the model
 func (o *Buagentscheduleupdate) String() string {
     
-    
-    
-    
-    
-    
      o.ShiftStartDates = []time.Time{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -56,24 +49,21 @@ func (u *Buagentscheduleupdate) MarshalJSON() ([]byte, error) {
     }
     BuagentscheduleupdateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         ShiftStartDates []time.Time `json:"shiftStartDates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         ShiftStartDates: []time.Time{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

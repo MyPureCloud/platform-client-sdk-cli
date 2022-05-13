@@ -56,23 +56,7 @@ func (o *Aggregationresult) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Results = []Aggregationresultentry{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Aggregationresult) MarshalJSON() ([]byte, error) {
     }
     AggregationresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Dimension string `json:"dimension"`
@@ -98,32 +83,25 @@ func (u *Aggregationresult) MarshalJSON() ([]byte, error) {
         Count int `json:"count"`
         
         Results []Aggregationresultentry `json:"results"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Results: []Aggregationresultentry{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

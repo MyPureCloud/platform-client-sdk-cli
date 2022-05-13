@@ -30,23 +30,29 @@ func init() {
 func Cmdgroups_members() *cobra.Command { 
 	addCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", addCmd.UsageTemplate(), "POST", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Groups", "/api/v2/groups/{groupId}/members")))
 	utils.AddFileFlagIfUpsert(addCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Add members",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/GroupMembersUpdate"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GroupMembersUpdate"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(addCmd.Flags(), "POST", `{
   "description" : "Success, group membership was updated",
-  "schema" : {
-    "$ref" : "#/definitions/Empty"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Empty"
+      }
+    }
   }
 }`)
 	groups_membersCmd.AddCommand(addCmd)
-	
+
 	utils.AddFlag(deleteCmd.Flags(), "string", "ids", "", "Comma separated list of userIds to remove - REQUIRED")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Groups", "/api/v2/groups/{groupId}/members")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
@@ -54,12 +60,16 @@ func Cmdgroups_members() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "Success, group membership was updated",
-  "schema" : {
-    "$ref" : "#/definitions/Empty"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Empty"
+      }
+    }
   }
 }`)
 	groups_membersCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Ascending or descending sort order Valid values: ascending, descending")
@@ -69,12 +79,15 @@ func Cmdgroups_members() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	groups_membersCmd.AddCommand(listCmd)
-	
 	return groups_membersCmd
 }
 

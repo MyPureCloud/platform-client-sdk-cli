@@ -39,17 +39,7 @@ type Dataschemalisting struct {
 // String returns a JSON representation of the model
 func (o *Dataschemalisting) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Dataschema{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Dataschemalisting) MarshalJSON() ([]byte, error) {
     }
     DataschemalistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Dataschema `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Dataschema{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

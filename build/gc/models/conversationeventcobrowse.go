@@ -41,16 +41,6 @@ func (o *Conversationeventcobrowse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Conversationeventcobrowse) MarshalJSON() ([]byte, error) {
     }
     ConversationeventcobrowseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         SessionId string `json:"sessionId"`
         
         SessionJoinToken string `json:"sessionJoinToken"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

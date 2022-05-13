@@ -24,11 +24,7 @@ type Weekschedulelistresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Weekschedulelistresponse) String() string {
-    
-    
      o.Entities = []Weekschedulelistitemresponse{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Weekschedulelistresponse) MarshalJSON() ([]byte, error) {
     }
     WeekschedulelistresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Weekschedulelistitemresponse `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Weekschedulelistitemresponse `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Weekschedulelistitemresponse{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

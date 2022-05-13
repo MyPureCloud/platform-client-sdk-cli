@@ -24,11 +24,7 @@ type Expirededgelisting struct {
 
 // String returns a JSON representation of the model
 func (o *Expirededgelisting) String() string {
-    
-    
      o.Entities = []Domainentityref{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Expirededgelisting) MarshalJSON() ([]byte, error) {
     }
     ExpirededgelistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Domainentityref `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Domainentityref `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Domainentityref{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

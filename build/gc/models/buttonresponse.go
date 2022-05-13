@@ -49,19 +49,6 @@ func (o *Buttonresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Buttonresponse) MarshalJSON() ([]byte, error) {
     }
     ButtonresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Text string `json:"text"`
@@ -85,26 +73,20 @@ func (u *Buttonresponse) MarshalJSON() ([]byte, error) {
         Payload string `json:"payload"`
         
         MessageType string `json:"messageType"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

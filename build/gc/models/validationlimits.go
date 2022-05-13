@@ -65,25 +65,6 @@ func (o *Validationlimits) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Validationlimits) MarshalJSON() ([]byte, error) {
     }
     ValidationlimitsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MinLength Minlength `json:"minLength"`
         
         MaxLength Maxlength `json:"maxLength"`
@@ -111,34 +93,26 @@ func (u *Validationlimits) MarshalJSON() ([]byte, error) {
         Minimum Minlength `json:"minimum"`
         
         Maximum Maxlength `json:"maximum"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

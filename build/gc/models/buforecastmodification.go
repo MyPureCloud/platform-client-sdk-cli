@@ -98,44 +98,11 @@ func (o *Buforecastmodification) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Values = []Wfmforecastmodificationintervaloffsetvalue{{}} 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.PlanningGroupIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -151,7 +118,8 @@ func (u *Buforecastmodification) MarshalJSON() ([]byte, error) {
     }
     BuforecastmodificationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         StartIntervalIndex int `json:"startIntervalIndex"`
@@ -159,8 +127,6 @@ func (u *Buforecastmodification) MarshalJSON() ([]byte, error) {
         EndIntervalIndex int `json:"endIntervalIndex"`
         
         Metric string `json:"metric"`
-        
-        
         
         Value float64 `json:"value"`
         
@@ -173,58 +139,45 @@ func (u *Buforecastmodification) MarshalJSON() ([]byte, error) {
         Enabled bool `json:"enabled"`
         
         PlanningGroupIds []string `json:"planningGroupIds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Values: []Wfmforecastmodificationintervaloffsetvalue{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         PlanningGroupIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

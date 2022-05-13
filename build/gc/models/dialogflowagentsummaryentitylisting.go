@@ -87,38 +87,7 @@ type Dialogflowagentsummaryentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Dialogflowagentsummaryentitylisting) String() string {
-    
-    
      o.Entities = []Dialogflowagentsummary{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Dialogflowagentsummaryentitylisting) MarshalJSON() ([]byte, error) {
     }
     DialogflowagentsummaryentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Dialogflowagentsummary `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Dialogflowagentsummaryentitylisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Dialogflowagentsummary{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

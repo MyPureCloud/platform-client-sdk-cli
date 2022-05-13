@@ -60,22 +60,6 @@ func (o *Sentimentfeedback) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -91,46 +75,33 @@ func (u *Sentimentfeedback) MarshalJSON() ([]byte, error) {
     }
     SentimentfeedbackMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Phrase string `json:"phrase"`
         
         Dialect string `json:"dialect"`
         
         FeedbackValue string `json:"feedbackValue"`
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

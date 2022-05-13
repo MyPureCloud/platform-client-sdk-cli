@@ -40,17 +40,7 @@ type Posttextmessage struct {
 func (o *Posttextmessage) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Content = []Messagecontent{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Posttextmessage) MarshalJSON() ([]byte, error) {
     }
     PosttextmessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Text string `json:"text"`
         
         Content []Messagecontent `json:"content"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Content: []Messagecontent{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

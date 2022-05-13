@@ -104,47 +104,10 @@ func (o *Inboundmessagerequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.SkillIds = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Attributes = map[string]string{"": ""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -165,7 +128,8 @@ func (u *Inboundmessagerequest) MarshalJSON() ([]byte, error) {
     }
     InboundmessagerequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QueueId string `json:"queueId"`
         
         FlowId string `json:"flowId"`
@@ -189,62 +153,48 @@ func (u *Inboundmessagerequest) MarshalJSON() ([]byte, error) {
         FromName string `json:"fromName"`
         
         Subject string `json:"subject"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SkillIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Attributes: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -66,7 +66,7 @@ type Openmessagingchannel struct {
 
 
     // Metadata - Information about the channel.
-    Metadata Channelmetadata `json:"metadata"`
+    Metadata interface{} `json:"metadata"`
 
 }
 
@@ -77,30 +77,7 @@ func (o *Openmessagingchannel) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+     o.Metadata = Interface{} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -116,10 +93,7 @@ func (u *Openmessagingchannel) MarshalJSON() ([]byte, error) {
     }
     OpenmessagingchannelMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
+    return json.Marshal(&struct {
         
         VarType string `json:"type"`
         
@@ -131,43 +105,35 @@ func (u *Openmessagingchannel) MarshalJSON() ([]byte, error) {
         
         Time time.Time `json:"time"`
         
-        Metadata Channelmetadata `json:"metadata"`
-        
+        Metadata interface{} `json:"metadata"`
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
-
+        Metadata: Interface{},
         
+
         Alias: (*Alias)(u),
     })
 }

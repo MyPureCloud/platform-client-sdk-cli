@@ -57,22 +57,6 @@ func (o *Schedulingtestingoptionsrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Schedulingtestingoptionsrequest) MarshalJSON() ([]byte, error) {
     }
     SchedulingtestingoptionsrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FastScheduling bool `json:"fastScheduling"`
         
         DelayScheduling bool `json:"delayScheduling"`
@@ -98,30 +83,23 @@ func (u *Schedulingtestingoptionsrequest) MarshalJSON() ([]byte, error) {
         PopulateWarnings bool `json:"populateWarnings"`
         
         PopulateDeprecatedWarnings bool `json:"populateDeprecatedWarnings"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

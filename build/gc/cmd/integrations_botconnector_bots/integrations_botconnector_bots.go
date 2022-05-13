@@ -34,38 +34,48 @@ func Cmdintegrations_botconnector_bots() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BotConnectorBot"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BotConnectorBot"
+      }
+    }
   }
 }`)
 	integrations_botconnector_botsCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations/botconnector/{integrationId}/bots", utils.FormatPermissions([]string{ "integration:botconnector:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/botconnector/{integrationId}/bots")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BotList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BotList"
+      }
+    }
   }
 }`)
 	integrations_botconnector_botsCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/integrations/botconnector/{integrationId}/bots", utils.FormatPermissions([]string{ "integration:botconnector:edit",  }), utils.GenerateDevCentreLink("PUT", "Integrations", "/api/v2/integrations/botconnector/{integrationId}/bots")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "botList",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/BotList"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BotList"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	integrations_botconnector_botsCmd.AddCommand(updateCmd)
-	
 	return integrations_botconnector_botsCmd
 }
 

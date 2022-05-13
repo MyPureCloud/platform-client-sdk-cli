@@ -24,11 +24,7 @@ type Bulkshifttradestateupdaterequest struct {
 
 // String returns a JSON representation of the model
 func (o *Bulkshifttradestateupdaterequest) String() string {
-    
-    
      o.Entities = []Bulkupdateshifttradestaterequestitem{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Bulkshifttradestateupdaterequest) MarshalJSON() ([]byte, error) {
     }
     BulkshifttradestateupdaterequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Bulkupdateshifttradestaterequestitem `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Bulkupdateshifttradestaterequestitem `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Bulkupdateshifttradestaterequestitem{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

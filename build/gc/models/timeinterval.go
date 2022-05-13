@@ -49,19 +49,6 @@ func (o *Timeinterval) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Timeinterval) MarshalJSON() ([]byte, error) {
     }
     TimeintervalMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Months int `json:"months"`
         
         Weeks int `json:"weeks"`
@@ -85,26 +73,20 @@ func (u *Timeinterval) MarshalJSON() ([]byte, error) {
         Days int `json:"days"`
         
         Hours int `json:"hours"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

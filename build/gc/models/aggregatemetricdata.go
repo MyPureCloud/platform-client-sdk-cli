@@ -41,16 +41,6 @@ func (o *Aggregatemetricdata) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Aggregatemetricdata) MarshalJSON() ([]byte, error) {
     }
     AggregatemetricdataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Metric string `json:"metric"`
         
         Qualifier string `json:"qualifier"`
         
         Stats Statisticalsummary `json:"stats"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

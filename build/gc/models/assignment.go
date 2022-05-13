@@ -38,19 +38,9 @@ type Assignment struct {
 
 // String returns a JSON representation of the model
 func (o *Assignment) String() string {
-    
-    
      o.AssignedMembers = []Userreference{{}} 
-    
-    
-    
      o.RemovedMembers = []Userreference{{}} 
-    
-    
-    
      o.AssignmentErrors = []Assignmenterror{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,34 +56,30 @@ func (u *Assignment) MarshalJSON() ([]byte, error) {
     }
     AssignmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         AssignedMembers []Userreference `json:"assignedMembers"`
         
         RemovedMembers []Userreference `json:"removedMembers"`
         
         AssignmentErrors []Assignmenterror `json:"assignmentErrors"`
-        
         *Alias
     }{
-        
 
         
         AssignedMembers: []Userreference{{}},
         
 
-        
 
         
         RemovedMembers: []Userreference{{}},
         
 
-        
 
         
         AssignmentErrors: []Assignmenterror{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

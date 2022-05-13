@@ -49,19 +49,6 @@ func (o *Uploadurlrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Uploadurlrequest) MarshalJSON() ([]byte, error) {
     }
     UploadurlrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FileName string `json:"fileName"`
         
         ContentMd5 string `json:"contentMd5"`
@@ -85,26 +73,20 @@ func (u *Uploadurlrequest) MarshalJSON() ([]byte, error) {
         SignedUrlTimeoutSeconds int `json:"signedUrlTimeoutSeconds"`
         
         ServerSideEncryption string `json:"serverSideEncryption"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

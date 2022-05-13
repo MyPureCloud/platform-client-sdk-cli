@@ -33,12 +33,16 @@ func Cmdorganizations_limits_namespaces() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LimitsEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LimitsEntityListing"
+      }
+    }
   }
 }`)
 	organizations_limits_namespacesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "100", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/organizations/limits/namespaces", utils.FormatPermissions([]string{ "limits:organization:view",  }), utils.GenerateDevCentreLink("GET", "Organization", "/api/v2/organizations/limits/namespaces")))
@@ -46,12 +50,15 @@ func Cmdorganizations_limits_namespaces() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/PagedNamespaceListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PagedNamespaceListing"
+      }
+    }
   }
 }`)
 	organizations_limits_namespacesCmd.AddCommand(listCmd)
-	
 	return organizations_limits_namespacesCmd
 }
 

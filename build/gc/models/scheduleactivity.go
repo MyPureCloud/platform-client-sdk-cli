@@ -82,31 +82,6 @@ func (o *Scheduleactivity) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -122,7 +97,8 @@ func (u *Scheduleactivity) MarshalJSON() ([]byte, error) {
     }
     ScheduleactivityMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DateStart time.Time `json:"dateStart"`
         
         LengthMinutes int `json:"lengthMinutes"`
@@ -138,42 +114,32 @@ func (u *Scheduleactivity) MarshalJSON() ([]byte, error) {
         ExternalActivityId string `json:"externalActivityId"`
         
         ExternalActivityType string `json:"externalActivityType"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

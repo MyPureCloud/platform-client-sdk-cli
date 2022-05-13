@@ -39,15 +39,6 @@ type Nludetectionresponse struct {
 func (o *Nludetectionresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,28 +54,22 @@ func (u *Nludetectionresponse) MarshalJSON() ([]byte, error) {
     }
     NludetectionresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Output Nludetectionoutput `json:"output"`
         
         Input Nludetectioninput `json:"input"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

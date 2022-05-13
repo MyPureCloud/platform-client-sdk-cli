@@ -39,17 +39,7 @@ type Getmetricresponse struct {
 // String returns a JSON representation of the model
 func (o *Getmetricresponse) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Metric{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Getmetricresponse) MarshalJSON() ([]byte, error) {
     }
     GetmetricresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Metric `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Metric{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

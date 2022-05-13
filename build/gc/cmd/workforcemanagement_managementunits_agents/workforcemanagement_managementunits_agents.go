@@ -34,12 +34,15 @@ func Cmdworkforcemanagement_managementunits_agents() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WfmAgent"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WfmAgent"
+      }
+    }
   }
 }`)
 	workforcemanagement_managementunits_agentsCmd.AddCommand(getCmd)
-	
 	return workforcemanagement_managementunits_agentsCmd
 }
 

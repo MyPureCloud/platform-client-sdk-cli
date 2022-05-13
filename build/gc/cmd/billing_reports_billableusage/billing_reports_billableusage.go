@@ -37,12 +37,15 @@ func Cmdbilling_reports_billableusage() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BillingUsageReport"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BillingUsageReport"
+      }
+    }
   }
 }`)
 	billing_reports_billableusageCmd.AddCommand(getCmd)
-	
 	return billing_reports_billableusageCmd
 }
 

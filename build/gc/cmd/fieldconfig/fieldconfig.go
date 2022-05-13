@@ -35,12 +35,15 @@ func Cmdfieldconfig() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/FieldConfig"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/FieldConfig"
+      }
+    }
   }
 }`)
 	fieldconfigCmd.AddCommand(getCmd)
-	
 	return fieldconfigCmd
 }
 

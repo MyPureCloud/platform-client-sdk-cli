@@ -31,14 +31,7 @@ type Callabletime struct {
 
 // String returns a JSON representation of the model
 func (o *Callabletime) String() string {
-    
-    
      o.TimeSlots = []Campaigntimeslot{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Callabletime) MarshalJSON() ([]byte, error) {
     }
     CallabletimeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TimeSlots []Campaigntimeslot `json:"timeSlots"`
         
         TimeZoneId string `json:"timeZoneId"`
-        
         *Alias
     }{
-        
 
         
         TimeSlots: []Campaigntimeslot{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

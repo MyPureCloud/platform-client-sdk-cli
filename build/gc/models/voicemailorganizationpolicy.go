@@ -86,32 +86,6 @@ func (o *Voicemailorganizationpolicy) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -127,8 +101,7 @@ func (u *Voicemailorganizationpolicy) MarshalJSON() ([]byte, error) {
     }
     VoicemailorganizationpolicyMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         AlertTimeoutSeconds int `json:"alertTimeoutSeconds"`
         
@@ -143,48 +116,35 @@ func (u *Voicemailorganizationpolicy) MarshalJSON() ([]byte, error) {
         SendEmailNotifications bool `json:"sendEmailNotifications"`
         
         DisableEmailPii bool `json:"disableEmailPii"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

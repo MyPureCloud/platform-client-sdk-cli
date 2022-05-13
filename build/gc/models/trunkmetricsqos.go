@@ -25,10 +25,6 @@ type Trunkmetricsqos struct {
 // String returns a JSON representation of the model
 func (o *Trunkmetricsqos) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Trunkmetricsqos) MarshalJSON() ([]byte, error) {
     }
     TrunkmetricsqosMarshalled = true
 
-    return json.Marshal(&struct { 
-        MismatchCount int `json:"mismatchCount"`
+    return json.Marshal(&struct {
         
+        MismatchCount int `json:"mismatchCount"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

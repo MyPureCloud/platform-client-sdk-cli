@@ -42,12 +42,15 @@ func Cmdrouting_sms_availablephonenumbers() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SMSAvailablePhoneNumberEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SMSAvailablePhoneNumberEntityListing"
+      }
+    }
   }
 }`)
 	routing_sms_availablephonenumbersCmd.AddCommand(listCmd)
-	
 	return routing_sms_availablephonenumbersCmd
 }
 

@@ -35,12 +35,15 @@ func Cmdflows_actions_unlock() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Flow"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Flow"
+      }
+    }
   }
 }`)
 	flows_actions_unlockCmd.AddCommand(createCmd)
-	
 	return flows_actions_unlockCmd
 }
 

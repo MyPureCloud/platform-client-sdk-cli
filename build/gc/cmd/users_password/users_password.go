@@ -30,20 +30,22 @@ func init() {
 func Cmdusers_password() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/users/{userId}/password", utils.FormatPermissions([]string{ "directory:user:setPassword",  }), utils.GenerateDevCentreLink("POST", "Users", "/api/v2/users/{userId}/password")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Password",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ChangePasswordRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ChangePasswordRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Password changed"
+  "description" : "Password changed",
+  "content" : { }
 }`)
 	users_passwordCmd.AddCommand(createCmd)
-	
 	return users_passwordCmd
 }
 

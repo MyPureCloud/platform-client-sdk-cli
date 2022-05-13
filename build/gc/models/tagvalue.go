@@ -52,21 +52,7 @@ type Tagvalue struct {
 func (o *Tagvalue) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Acl = []string{""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -82,42 +68,32 @@ func (u *Tagvalue) MarshalJSON() ([]byte, error) {
     }
     TagvalueMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         InUse bool `json:"inUse"`
         
         Acl []string `json:"acl"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Acl: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

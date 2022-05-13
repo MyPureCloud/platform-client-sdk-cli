@@ -39,15 +39,6 @@ type Conversationuserdisposition struct {
 func (o *Conversationuserdisposition) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,28 +54,22 @@ func (u *Conversationuserdisposition) MarshalJSON() ([]byte, error) {
     }
     ConversationuserdispositionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Code string `json:"code"`
         
         Notes string `json:"notes"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

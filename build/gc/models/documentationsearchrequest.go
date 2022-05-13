@@ -63,27 +63,8 @@ func (o *Documentationsearchrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Sort = []Searchsort{{}} 
-    
-    
-    
      o.Query = []Documentationsearchcriteria{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Documentationsearchrequest) MarshalJSON() ([]byte, error) {
     }
     DocumentationsearchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SortOrder string `json:"sortOrder"`
         
         SortBy string `json:"sortBy"`
@@ -111,38 +93,30 @@ func (u *Documentationsearchrequest) MarshalJSON() ([]byte, error) {
         Sort []Searchsort `json:"sort"`
         
         Query []Documentationsearchcriteria `json:"query"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Sort: []Searchsort{{}},
         
 
-        
 
         
         Query: []Documentationsearchcriteria{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

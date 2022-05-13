@@ -94,38 +94,8 @@ func (o *Campaignrule) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.CampaignRuleConditions = []Campaignrulecondition{{}} 
-    
-    
-    
      o.CampaignRuleActions = []Campaignruleaction{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -143,14 +113,9 @@ func (u *Campaignrule) MarshalJSON() ([]byte, error) {
     }
     CampaignruleMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
@@ -163,60 +128,45 @@ func (u *Campaignrule) MarshalJSON() ([]byte, error) {
         MatchAnyConditions bool `json:"matchAnyConditions"`
         
         Enabled bool `json:"enabled"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         CampaignRuleConditions: []Campaignrulecondition{{}},
         
 
-        
 
         
         CampaignRuleActions: []Campaignruleaction{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

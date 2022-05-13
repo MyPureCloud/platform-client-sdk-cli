@@ -24,11 +24,7 @@ type Bulkupdateshifttradestateresult struct {
 
 // String returns a JSON representation of the model
 func (o *Bulkupdateshifttradestateresult) String() string {
-    
-    
      o.Entities = []Bulkupdateshifttradestateresultitem{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Bulkupdateshifttradestateresult) MarshalJSON() ([]byte, error) {
     }
     BulkupdateshifttradestateresultMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Bulkupdateshifttradestateresultitem `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Bulkupdateshifttradestateresultitem `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Bulkupdateshifttradestateresultitem{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

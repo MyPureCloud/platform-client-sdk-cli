@@ -30,23 +30,28 @@ func init() {
 func Cmdanalytics_queues_observations_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/queues/observations/query", utils.FormatPermissions([]string{ "analytics:queueObservation:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/queues/observations/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/QueueObservationQuery"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QueueObservationQuery"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/QueueObservationQueryResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/QueueObservationQueryResponse"
+      }
+    }
   }
 }`)
 	analytics_queues_observations_queryCmd.AddCommand(createCmd)
-	
 	return analytics_queues_observations_queryCmd
 }
 

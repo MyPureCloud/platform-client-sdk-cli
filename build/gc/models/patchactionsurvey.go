@@ -24,11 +24,7 @@ type Patchactionsurvey struct {
 
 // String returns a JSON representation of the model
 func (o *Patchactionsurvey) String() string {
-    
-    
      o.Questions = []Patchsurveyquestion{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Patchactionsurvey) MarshalJSON() ([]byte, error) {
     }
     PatchactionsurveyMarshalled = true
 
-    return json.Marshal(&struct { 
-        Questions []Patchsurveyquestion `json:"questions"`
+    return json.Marshal(&struct {
         
+        Questions []Patchsurveyquestion `json:"questions"`
         *Alias
     }{
-        
 
         
         Questions: []Patchsurveyquestion{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -61,23 +61,6 @@ func (o *Localencryptionconfiguration) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -93,8 +76,7 @@ func (u *Localencryptionconfiguration) MarshalJSON() ([]byte, error) {
     }
     LocalencryptionconfigurationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -103,36 +85,26 @@ func (u *Localencryptionconfiguration) MarshalJSON() ([]byte, error) {
         ApiId string `json:"apiId"`
         
         ApiKey string `json:"apiKey"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

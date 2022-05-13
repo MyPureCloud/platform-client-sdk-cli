@@ -36,12 +36,15 @@ func Cmdquality_forms_evaluations_versions() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	quality_forms_evaluations_versionsCmd.AddCommand(listCmd)
-	
 	return quality_forms_evaluations_versionsCmd
 }
 

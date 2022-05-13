@@ -33,42 +33,55 @@ func Cmdidentityproviders_generic() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Empty"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Empty"
+      }
+    }
   }
 }`)
 	identityproviders_genericCmd.AddCommand(deleteCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/identityproviders/generic", utils.FormatPermissions([]string{ "sso:provider:view",  }), utils.GenerateDevCentreLink("GET", "Identity Provider", "/api/v2/identityproviders/generic")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/GenericSAML"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GenericSAML"
+      }
+    }
   }
 }`)
 	identityproviders_genericCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/identityproviders/generic", utils.FormatPermissions([]string{ "sso:provider:add", "sso:provider:edit",  }), utils.GenerateDevCentreLink("PUT", "Identity Provider", "/api/v2/identityproviders/generic")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Provider",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/GenericSAML"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GenericSAML"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/OAuthProvider"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OAuthProvider"
+      }
+    }
   }
 }`)
 	identityproviders_genericCmd.AddCommand(updateCmd)
-	
 	return identityproviders_genericCmd
 }
 

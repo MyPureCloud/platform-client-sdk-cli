@@ -35,7 +35,7 @@ type Bulkresponseresultvoidentity struct {
 
 
     // Entity
-    Entity Void `json:"entity"`
+    Entity interface{} `json:"entity"`
 
 
     // VarError
@@ -47,20 +47,7 @@ type Bulkresponseresultvoidentity struct {
 func (o *Bulkresponseresultvoidentity) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+     o.Entity = Interface{} 
     
 
     j, _ := json.Marshal(o)
@@ -77,34 +64,31 @@ func (u *Bulkresponseresultvoidentity) MarshalJSON() ([]byte, error) {
     }
     BulkresponseresultvoidentityMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Success bool `json:"success"`
         
-        Entity Void `json:"entity"`
+        Entity interface{} `json:"entity"`
         
         VarError Bulkerrorentity `json:"error"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
+
         
+        Entity: Interface{},
+        
+
 
         
 
-        
-
-        
-
-        
         Alias: (*Alias)(u),
     })
 }

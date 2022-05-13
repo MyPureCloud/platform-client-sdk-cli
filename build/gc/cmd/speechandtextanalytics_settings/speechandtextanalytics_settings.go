@@ -33,50 +33,65 @@ func Cmdspeechandtextanalytics_settings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SpeechTextAnalyticsSettingsResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SpeechTextAnalyticsSettingsResponse"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_settingsCmd.AddCommand(getCmd)
-	
+
 	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/speechandtextanalytics/settings", utils.FormatPermissions([]string{ "speechAndTextAnalytics:settings:edit",  }), utils.GenerateDevCentreLink("PATCH", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/settings")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Speech And Text Analytics Settings",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/SpeechTextAnalyticsSettingsRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SpeechTextAnalyticsSettingsRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(patchCmd.Flags(), "PATCH", `{
   "description" : "Speech And Text Analytics settings has been updated",
-  "schema" : {
-    "$ref" : "#/definitions/SpeechTextAnalyticsSettingsResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SpeechTextAnalyticsSettingsResponse"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_settingsCmd.AddCommand(patchCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/speechandtextanalytics/settings", utils.FormatPermissions([]string{ "speechAndTextAnalytics:settings:edit",  }), utils.GenerateDevCentreLink("PUT", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Speech And Text Analytics Settings",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/SpeechTextAnalyticsSettingsRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SpeechTextAnalyticsSettingsRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "Speech And Text Analytics settings has been updated",
-  "schema" : {
-    "$ref" : "#/definitions/SpeechTextAnalyticsSettingsResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SpeechTextAnalyticsSettingsResponse"
+      }
+    }
   }
 }`)
 	speechandtextanalytics_settingsCmd.AddCommand(updateCmd)
-	
 	return speechandtextanalytics_settingsCmd
 }
 

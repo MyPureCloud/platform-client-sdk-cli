@@ -24,11 +24,7 @@ type Availablelanguagelist struct {
 
 // String returns a JSON representation of the model
 func (o *Availablelanguagelist) String() string {
-    
-    
      o.Languages = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Availablelanguagelist) MarshalJSON() ([]byte, error) {
     }
     AvailablelanguagelistMarshalled = true
 
-    return json.Marshal(&struct { 
-        Languages []string `json:"languages"`
+    return json.Marshal(&struct {
         
+        Languages []string `json:"languages"`
         *Alias
     }{
-        
 
         
         Languages: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

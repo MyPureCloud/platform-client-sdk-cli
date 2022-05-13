@@ -25,10 +25,6 @@ type Buintradayscheduledata struct {
 // String returns a JSON representation of the model
 func (o *Buintradayscheduledata) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Buintradayscheduledata) MarshalJSON() ([]byte, error) {
     }
     BuintradayscheduledataMarshalled = true
 
-    return json.Marshal(&struct { 
-        OnQueueTimeSeconds int `json:"onQueueTimeSeconds"`
+    return json.Marshal(&struct {
         
+        OnQueueTimeSeconds int `json:"onQueueTimeSeconds"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

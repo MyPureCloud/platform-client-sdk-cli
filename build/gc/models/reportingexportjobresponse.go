@@ -248,99 +248,10 @@ func (o *Reportingexportjobresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.SelectedColumns = []Selectedcolumns{{}} 
     
-    
-    
-    
-    
-    
-    
      o.RecipientEmails = []string{""} 
-    
-    
-    
      o.EmailStatuses = map[string]string{"": ""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -358,8 +269,7 @@ func (u *Reportingexportjobresponse) MarshalJSON() ([]byte, error) {
     }
     ReportingexportjobresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -416,138 +326,104 @@ func (u *Reportingexportjobresponse) MarshalJSON() ([]byte, error) {
         EmailErrorDescription string `json:"emailErrorDescription"`
         
         Enabled bool `json:"enabled"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SelectedColumns: []Selectedcolumns{{}},
         
 
-        
 
         
 
-        
 
         
         RecipientEmails: []string{""},
         
 
-        
 
         
         EmailStatuses: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,13 +33,6 @@ type Mediasetting struct {
 func (o *Mediasetting) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Mediasetting) MarshalJSON() ([]byte, error) {
     }
     MediasettingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         AlertingTimeoutSeconds int `json:"alertingTimeoutSeconds"`
         
         ServiceLevel Servicelevel `json:"serviceLevel"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

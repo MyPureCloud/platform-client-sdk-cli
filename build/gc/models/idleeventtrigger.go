@@ -33,13 +33,6 @@ type Idleeventtrigger struct {
 func (o *Idleeventtrigger) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Idleeventtrigger) MarshalJSON() ([]byte, error) {
     }
     IdleeventtriggerMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EventName string `json:"eventName"`
         
         IdleAfterSeconds int `json:"idleAfterSeconds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

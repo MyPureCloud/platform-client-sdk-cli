@@ -58,22 +58,6 @@ func (o *Asyncquerystatus) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,7 +73,8 @@ func (u *Asyncquerystatus) MarshalJSON() ([]byte, error) {
     }
     AsyncquerystatusMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         State string `json:"state"`
         
         ErrorMessage string `json:"errorMessage"`
@@ -99,30 +84,23 @@ func (u *Asyncquerystatus) MarshalJSON() ([]byte, error) {
         SubmissionDate time.Time `json:"submissionDate"`
         
         CompletionDate time.Time `json:"completionDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

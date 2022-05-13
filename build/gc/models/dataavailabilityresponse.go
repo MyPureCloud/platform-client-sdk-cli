@@ -26,10 +26,6 @@ type Dataavailabilityresponse struct {
 // String returns a JSON representation of the model
 func (o *Dataavailabilityresponse) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -45,16 +41,14 @@ func (u *Dataavailabilityresponse) MarshalJSON() ([]byte, error) {
     }
     DataavailabilityresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        DataAvailabilityDate time.Time `json:"dataAvailabilityDate"`
+    return json.Marshal(&struct {
         
+        DataAvailabilityDate time.Time `json:"dataAvailabilityDate"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

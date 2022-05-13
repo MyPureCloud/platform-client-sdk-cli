@@ -33,31 +33,40 @@ func Cmdrouting_settings_transcription() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TranscriptionSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TranscriptionSettings"
+      }
+    }
   }
 }`)
 	routing_settings_transcriptionCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/settings/transcription", utils.FormatPermissions([]string{ "routing:transcriptionSettings:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/settings/transcription")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Organization Settings",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/TranscriptionSettings"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TranscriptionSettings"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TranscriptionSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TranscriptionSettings"
+      }
+    }
   }
 }`)
 	routing_settings_transcriptionCmd.AddCommand(updateCmd)
-	
 	return routing_settings_transcriptionCmd
 }
 

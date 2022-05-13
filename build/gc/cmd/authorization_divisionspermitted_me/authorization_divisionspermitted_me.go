@@ -36,15 +36,18 @@ func Cmdauthorization_divisionspermitted_me() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/AuthzDivision"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/AuthzDivision"
+        }
+      }
     }
   }
 }`)
 	authorization_divisionspermitted_meCmd.AddCommand(getCmd)
-	
 	return authorization_divisionspermitted_meCmd
 }
 

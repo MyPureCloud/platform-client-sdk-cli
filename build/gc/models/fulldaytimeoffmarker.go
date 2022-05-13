@@ -66,25 +66,6 @@ func (o *Fulldaytimeoffmarker) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -100,7 +81,8 @@ func (u *Fulldaytimeoffmarker) MarshalJSON() ([]byte, error) {
     }
     FulldaytimeoffmarkerMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         BusinessUnitDate time.Time `json:"businessUnitDate"`
         
         LengthMinutes int `json:"lengthMinutes"`
@@ -112,34 +94,26 @@ func (u *Fulldaytimeoffmarker) MarshalJSON() ([]byte, error) {
         Paid bool `json:"paid"`
         
         TimeOffRequestId string `json:"timeOffRequestId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

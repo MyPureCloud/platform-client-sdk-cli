@@ -60,26 +60,7 @@ type Meteredassignmentbyagent struct {
 // String returns a JSON representation of the model
 func (o *Meteredassignmentbyagent) String() string {
     
-    
-    
-    
-    
-    
      o.Evaluators = []User{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -99,7 +80,8 @@ func (u *Meteredassignmentbyagent) MarshalJSON() ([]byte, error) {
     }
     MeteredassignmentbyagentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EvaluationContextId string `json:"evaluationContextId"`
         
         Evaluators []User `json:"evaluators"`
@@ -111,36 +93,28 @@ func (u *Meteredassignmentbyagent) MarshalJSON() ([]byte, error) {
         TimeInterval Timeinterval `json:"timeInterval"`
         
         TimeZone string `json:"timeZone"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Evaluators: []User{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -63,26 +63,7 @@ func (o *Conditionalgrouproutingrule) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Groups = []Membergroup{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -99,7 +80,8 @@ func (u *Conditionalgrouproutingrule) MarshalJSON() ([]byte, error) {
     }
     ConditionalgrouproutingruleMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Queue Domainentityref `json:"queue"`
         
         Metric string `json:"metric"`
@@ -111,36 +93,28 @@ func (u *Conditionalgrouproutingrule) MarshalJSON() ([]byte, error) {
         Groups []Membergroup `json:"groups"`
         
         WaitSeconds int `json:"waitSeconds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Groups: []Membergroup{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

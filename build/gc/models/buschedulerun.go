@@ -155,60 +155,7 @@ func (o *Buschedulerun) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.MessageSeverityCounts = []Schedulermessageseveritycount{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -226,8 +173,7 @@ func (u *Buschedulerun) MarshalJSON() ([]byte, error) {
     }
     BuschedulerunMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         SchedulerRunId string `json:"schedulerRunId"`
         
@@ -260,86 +206,64 @@ func (u *Buschedulerun) MarshalJSON() ([]byte, error) {
         ReschedulingOptions Reschedulingoptionsrunresponse `json:"reschedulingOptions"`
         
         ReschedulingResultExpiration time.Time `json:"reschedulingResultExpiration"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MessageSeverityCounts: []Schedulermessageseveritycount{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,26 +30,31 @@ func init() {
 func Cmdlearning_assignments_bulkadd() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/assignments/bulkadd", utils.FormatPermissions([]string{ "learning:assignment:add",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/assignments/bulkadd")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The learning assignments to be created",
-  "required" : false,
-  "schema" : {
-    "type" : "array",
-    "items" : {
-      "$ref" : "#/definitions/LearningAssignmentItem"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/LearningAssignmentItem"
+        }
+      }
     }
-  }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LearningAssignmentBulkAddResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningAssignmentBulkAddResponse"
+      }
+    }
   }
 }`)
 	learning_assignments_bulkaddCmd.AddCommand(createCmd)
-	
 	return learning_assignments_bulkaddCmd
 }
 

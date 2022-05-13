@@ -30,23 +30,28 @@ func init() {
 func Cmdworkforcemanagement_timeofflimits_available_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/timeofflimits/available/query", utils.FormatPermissions([]string{ "wfm:agentTimeOffRequest:submit",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/timeofflimits/available/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/AvailableTimeOffRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AvailableTimeOffRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AvailableTimeOffResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AvailableTimeOffResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_timeofflimits_available_queryCmd.AddCommand(createCmd)
-	
 	return workforcemanagement_timeofflimits_available_queryCmd
 }
 

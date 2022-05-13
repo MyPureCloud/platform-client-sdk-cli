@@ -38,17 +38,7 @@ type Timeallowed struct {
 
 // String returns a JSON representation of the model
 func (o *Timeallowed) String() string {
-    
-    
      o.TimeSlots = []Timeslot{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -66,30 +56,26 @@ func (u *Timeallowed) MarshalJSON() ([]byte, error) {
     }
     TimeallowedMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TimeSlots []Timeslot `json:"timeSlots"`
         
         TimeZoneId string `json:"timeZoneId"`
         
         Empty bool `json:"empty"`
-        
         *Alias
     }{
-        
 
         
         TimeSlots: []Timeslot{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

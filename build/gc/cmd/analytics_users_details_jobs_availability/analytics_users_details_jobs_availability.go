@@ -33,12 +33,15 @@ func Cmdanalytics_users_details_jobs_availability() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DataAvailabilityResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DataAvailabilityResponse"
+      }
+    }
   }
 }`)
 	analytics_users_details_jobs_availabilityCmd.AddCommand(getCmd)
-	
 	return analytics_users_details_jobs_availabilityCmd
 }
 

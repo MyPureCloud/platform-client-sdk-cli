@@ -45,20 +45,7 @@ type Reportingturnsresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Reportingturnsresponse) String() string {
-    
-    
      o.Entities = []Reportingturn{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -77,7 +64,8 @@ func (u *Reportingturnsresponse) MarshalJSON() ([]byte, error) {
     }
     ReportingturnsresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Reportingturn `json:"entities"`
         
         NextUri string `json:"nextUri"`
@@ -85,28 +73,22 @@ func (u *Reportingturnsresponse) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         PreviousUri string `json:"previousUri"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Reportingturn{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

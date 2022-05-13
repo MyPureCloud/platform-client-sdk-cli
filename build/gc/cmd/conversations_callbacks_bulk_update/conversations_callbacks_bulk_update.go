@@ -30,23 +30,28 @@ func init() {
 func Cmdconversations_callbacks_bulk_update() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/callbacks/bulk/update", utils.FormatPermissions([]string{ "conversation:callback:edit",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/callbacks/bulk/update")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "BulkCallbackPatchRequest",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/BulkCallbackPatchRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BulkCallbackPatchRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BulkCallbackPatchResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BulkCallbackPatchResponse"
+      }
+    }
   }
 }`)
 	conversations_callbacks_bulk_updateCmd.AddCommand(createCmd)
-	
 	return conversations_callbacks_bulk_updateCmd
 }
 

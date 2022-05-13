@@ -46,19 +46,7 @@ type Draftintents struct {
 func (o *Draftintents) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Utterances = []string{""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -74,36 +62,29 @@ func (u *Draftintents) MarshalJSON() ([]byte, error) {
     }
     DraftintentsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
         
         Utterances []string `json:"utterances"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Utterances: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

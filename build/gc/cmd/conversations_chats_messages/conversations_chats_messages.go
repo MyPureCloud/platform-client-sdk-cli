@@ -33,12 +33,16 @@ func Cmdconversations_chats_messages() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatMessage"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatMessage"
+      }
+    }
   }
 }`)
 	conversations_chats_messagesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "If specified, get the messages chronologically after the id of this message")
 	utils.AddFlag(listCmd.Flags(), "string", "before", "", "If specified, get the messages chronologically before the id of this message")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ascending", "Sort order Valid values: ascending, descending")
@@ -48,12 +52,15 @@ func Cmdconversations_chats_messages() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatMessageEntityList"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatMessageEntityList"
+      }
+    }
   }
 }`)
 	conversations_chats_messagesCmd.AddCommand(listCmd)
-	
 	return conversations_chats_messagesCmd
 }
 

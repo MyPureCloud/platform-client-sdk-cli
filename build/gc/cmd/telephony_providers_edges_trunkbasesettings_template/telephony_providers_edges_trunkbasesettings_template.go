@@ -35,12 +35,15 @@ func Cmdtelephony_providers_edges_trunkbasesettings_template() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TrunkBase"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TrunkBase"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_trunkbasesettings_templateCmd.AddCommand(getCmd)
-	
 	return telephony_providers_edges_trunkbasesettings_templateCmd
 }
 

@@ -95,41 +95,8 @@ type Oauthauthorization struct {
 // String returns a JSON representation of the model
 func (o *Oauthauthorization) String() string {
     
-    
-    
-    
-    
-    
      o.Scope = []string{""} 
-    
-    
-    
      o.Roles = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -152,7 +119,8 @@ func (u *Oauthauthorization) MarshalJSON() ([]byte, error) {
     }
     OauthauthorizationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Client Oauthclient `json:"client"`
         
         Scope []string `json:"scope"`
@@ -172,60 +140,45 @@ func (u *Oauthauthorization) MarshalJSON() ([]byte, error) {
         Pending bool `json:"pending"`
         
         State string `json:"state"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Scope: []string{""},
         
 
-        
 
         
         Roles: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

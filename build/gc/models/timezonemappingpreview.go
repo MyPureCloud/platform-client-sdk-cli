@@ -81,36 +81,8 @@ type Timezonemappingpreview struct {
 // String returns a JSON representation of the model
 func (o *Timezonemappingpreview) String() string {
     
-    
-    
-    
-    
-    
      o.ContactsPerTimeZone = map[string]int{"": 0} 
-    
-    
-    
      o.ContactsMappedUsingZipCode = map[string]int{"": 0} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -132,7 +104,8 @@ func (u *Timezonemappingpreview) MarshalJSON() ([]byte, error) {
     }
     TimezonemappingpreviewMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ContactList Domainentityref `json:"contactList"`
         
         ContactsPerTimeZone map[string]int `json:"contactsPerTimeZone"`
@@ -150,50 +123,39 @@ func (u *Timezonemappingpreview) MarshalJSON() ([]byte, error) {
         ContactsInDefaultWindow int `json:"contactsInDefaultWindow"`
         
         ContactListSize int `json:"contactListSize"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         ContactsPerTimeZone: map[string]int{"": 0},
         
 
-        
 
         
         ContactsMappedUsingZipCode: map[string]int{"": 0},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

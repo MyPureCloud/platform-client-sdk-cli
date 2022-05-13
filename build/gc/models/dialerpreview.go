@@ -56,23 +56,7 @@ func (o *Dialerpreview) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.PhoneNumberColumns = []Phonenumbercolumn{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Dialerpreview) MarshalJSON() ([]byte, error) {
     }
     DialerpreviewMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         ContactId string `json:"contactId"`
@@ -98,32 +83,25 @@ func (u *Dialerpreview) MarshalJSON() ([]byte, error) {
         CampaignId string `json:"campaignId"`
         
         PhoneNumberColumns []Phonenumbercolumn `json:"phoneNumberColumns"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         PhoneNumberColumns: []Phonenumbercolumn{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

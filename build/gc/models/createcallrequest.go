@@ -116,49 +116,9 @@ func (o *Createcallrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.RoutingSkillsIds = []string{""} 
-    
-    
-    
      o.ConversationIds = []string{""} 
-    
-    
-    
      o.Participants = []Destination{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -176,7 +136,8 @@ func (u *Createcallrequest) MarshalJSON() ([]byte, error) {
     }
     CreatecallrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PhoneNumber string `json:"phoneNumber"`
         
         CallerId string `json:"callerId"`
@@ -202,68 +163,53 @@ func (u *Createcallrequest) MarshalJSON() ([]byte, error) {
         UuiData string `json:"uuiData"`
         
         ExternalContactId string `json:"externalContactId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RoutingSkillsIds: []string{""},
         
 
-        
 
         
         ConversationIds: []string{""},
         
 
-        
 
         
         Participants: []Destination{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

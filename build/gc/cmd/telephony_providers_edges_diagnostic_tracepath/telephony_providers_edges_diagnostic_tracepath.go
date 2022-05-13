@@ -30,34 +30,43 @@ func init() {
 func Cmdtelephony_providers_edges_diagnostic_tracepath() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "request payload to get network diagnostic",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/EdgeNetworkDiagnosticRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EdgeNetworkDiagnosticRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Request to get network diagnostic has been accepted",
-  "schema" : {
-    "$ref" : "#/definitions/EdgeNetworkDiagnostic"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EdgeNetworkDiagnostic"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_diagnostic_tracepathCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "Request to get network diagnostic was successful.",
-  "schema" : {
-    "$ref" : "#/definitions/EdgeNetworkDiagnosticResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EdgeNetworkDiagnosticResponse"
+      }
+    }
   }
 }`)
 	telephony_providers_edges_diagnostic_tracepathCmd.AddCommand(getCmd)
-	
 	return telephony_providers_edges_diagnostic_tracepathCmd
 }
 

@@ -33,28 +33,34 @@ func Cmdrouting_settings_contactcenter() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ContactCenterSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContactCenterSettings"
+      }
+    }
   }
 }`)
 	routing_settings_contactcenterCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/settings/contactcenter", utils.FormatPermissions([]string{ "routing:settings:edit",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/routing/settings/contactcenter")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Contact Center Settings",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ContactCenterSettings"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContactCenterSettings"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  "description" : "Accepted"
+  "description" : "Accepted",
+  "content" : { }
 }`)
 	routing_settings_contactcenterCmd.AddCommand(updateCmd)
-	
 	return routing_settings_contactcenterCmd
 }
 

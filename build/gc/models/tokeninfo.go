@@ -49,18 +49,6 @@ type Tokeninfo struct {
 // String returns a JSON representation of the model
 func (o *Tokeninfo) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -76,40 +64,26 @@ func (u *Tokeninfo) MarshalJSON() ([]byte, error) {
     }
     TokeninfoMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         
         OAuthClient Orgoauthclient `json:"OAuthClient"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

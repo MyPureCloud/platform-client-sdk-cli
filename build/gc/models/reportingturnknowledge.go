@@ -41,16 +41,6 @@ func (o *Reportingturnknowledge) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Reportingturnknowledge) MarshalJSON() ([]byte, error) {
     }
     ReportingturnknowledgeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         KnowledgeBaseId string `json:"knowledgeBaseId"`
         
         Feedback Reportingturnknowledgefeedback `json:"feedback"`
         
         Search Reportingturnknowledgesearch `json:"search"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

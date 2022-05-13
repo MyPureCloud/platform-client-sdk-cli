@@ -48,20 +48,7 @@ func (o *Answeroption) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AssistanceConditions = []Assistancecondition{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Answeroption) MarshalJSON() ([]byte, error) {
     }
     AnsweroptionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Text string `json:"text"`
@@ -85,28 +73,22 @@ func (u *Answeroption) MarshalJSON() ([]byte, error) {
         Value int `json:"value"`
         
         AssistanceConditions []Assistancecondition `json:"assistanceConditions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AssistanceConditions: []Assistancecondition{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

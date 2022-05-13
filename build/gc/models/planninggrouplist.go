@@ -24,11 +24,7 @@ type Planninggrouplist struct {
 
 // String returns a JSON representation of the model
 func (o *Planninggrouplist) String() string {
-    
-    
      o.Entities = []Planninggroup{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Planninggrouplist) MarshalJSON() ([]byte, error) {
     }
     PlanninggrouplistMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Planninggroup `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Planninggroup `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Planninggroup{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

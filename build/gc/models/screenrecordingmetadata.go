@@ -73,28 +73,6 @@ func (o *Screenrecordingmetadata) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Screenrecordingmetadata) MarshalJSON() ([]byte, error) {
     }
     ScreenrecordingmetadataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TrackId string `json:"trackId"`
         
         MediaId string `json:"mediaId"`
@@ -124,38 +103,29 @@ func (u *Screenrecordingmetadata) MarshalJSON() ([]byte, error) {
         Primary bool `json:"primary"`
         
         Main bool `json:"main"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

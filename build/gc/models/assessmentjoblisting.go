@@ -39,17 +39,7 @@ type Assessmentjoblisting struct {
 // String returns a JSON representation of the model
 func (o *Assessmentjoblisting) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Benefitassessmentjob{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Assessmentjoblisting) MarshalJSON() ([]byte, error) {
     }
     AssessmentjoblistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Benefitassessmentjob `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Benefitassessmentjob{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

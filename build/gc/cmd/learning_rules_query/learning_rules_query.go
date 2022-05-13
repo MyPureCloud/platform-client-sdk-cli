@@ -32,25 +32,30 @@ func Cmdlearning_rules_query() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "int", "pageNumber", "1", "Page number - REQUIRED")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/rules/query", utils.FormatPermissions([]string{ "learning:rule:view",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/rules/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The learning module rule to fetch users",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/LearningAssignmentUserQuery"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningAssignmentUserQuery"
+      }
+    }
+  },
+  "required" : true
 }`)
 	createCmd.MarkFlagRequired("pageSize")
 	createCmd.MarkFlagRequired("pageNumber")
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LearningAssignmentUserListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningAssignmentUserListing"
+      }
+    }
   }
 }`)
 	learning_rules_queryCmd.AddCommand(createCmd)
-	
 	return learning_rules_queryCmd
 }
 

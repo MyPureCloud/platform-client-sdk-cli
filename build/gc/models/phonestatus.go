@@ -90,36 +90,7 @@ func (o *Phonestatus) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.LineStatuses = []Linestatus{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -137,8 +108,7 @@ func (u *Phonestatus) MarshalJSON() ([]byte, error) {
     }
     PhonestatusMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -155,54 +125,40 @@ func (u *Phonestatus) MarshalJSON() ([]byte, error) {
         PhoneAssignmentToEdgeType string `json:"phoneAssignmentToEdgeType"`
         
         Edge Domainentityref `json:"edge"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         LineStatuses: []Linestatus{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

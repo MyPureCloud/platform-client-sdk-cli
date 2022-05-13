@@ -25,10 +25,6 @@ type Autostart struct {
 // String returns a JSON representation of the model
 func (o *Autostart) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Autostart) MarshalJSON() ([]byte, error) {
     }
     AutostartMarshalled = true
 
-    return json.Marshal(&struct { 
-        Enabled bool `json:"enabled"`
+    return json.Marshal(&struct {
         
+        Enabled bool `json:"enabled"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

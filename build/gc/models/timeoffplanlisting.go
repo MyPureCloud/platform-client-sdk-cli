@@ -24,11 +24,7 @@ type Timeoffplanlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Timeoffplanlisting) String() string {
-    
-    
      o.Entities = []Timeoffplan{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Timeoffplanlisting) MarshalJSON() ([]byte, error) {
     }
     TimeoffplanlistingMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Timeoffplan `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Timeoffplan `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Timeoffplan{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

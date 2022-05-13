@@ -65,25 +65,6 @@ func (o *Updatedraftinput) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Updatedraftinput) MarshalJSON() ([]byte, error) {
     }
     UpdatedraftinputMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Category string `json:"category"`
         
         Name string `json:"name"`
@@ -111,34 +93,26 @@ func (u *Updatedraftinput) MarshalJSON() ([]byte, error) {
         Secure bool `json:"secure"`
         
         Version int `json:"version"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

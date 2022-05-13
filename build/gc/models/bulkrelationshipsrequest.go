@@ -24,11 +24,7 @@ type Bulkrelationshipsrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Bulkrelationshipsrequest) String() string {
-    
-    
      o.Entities = []Relationship{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Bulkrelationshipsrequest) MarshalJSON() ([]byte, error) {
     }
     BulkrelationshipsrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Relationship `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Relationship `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Relationship{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

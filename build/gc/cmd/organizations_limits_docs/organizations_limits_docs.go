@@ -33,12 +33,15 @@ func Cmdorganizations_limits_docs() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/UrlResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UrlResponse"
+      }
+    }
   }
 }`)
 	organizations_limits_docsCmd.AddCommand(getCmd)
-	
 	return organizations_limits_docsCmd
 }
 

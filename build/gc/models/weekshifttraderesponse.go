@@ -33,13 +33,6 @@ type Weekshifttraderesponse struct {
 func (o *Weekshifttraderesponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Weekshifttraderesponse) MarshalJSON() ([]byte, error) {
     }
     WeekshifttraderesponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Trade Shifttraderesponse `json:"trade"`
         
         MatchReview Shifttradematchreviewresponse `json:"matchReview"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -47,21 +47,8 @@ type Programrequest struct {
 func (o *Programrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.TopicIds = []string{""} 
-    
-    
-    
      o.Tags = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Programrequest) MarshalJSON() ([]byte, error) {
     }
     ProgramrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Description string `json:"description"`
@@ -85,30 +73,24 @@ func (u *Programrequest) MarshalJSON() ([]byte, error) {
         TopicIds []string `json:"topicIds"`
         
         Tags []string `json:"tags"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         TopicIds: []string{""},
         
 
-        
 
         
         Tags: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

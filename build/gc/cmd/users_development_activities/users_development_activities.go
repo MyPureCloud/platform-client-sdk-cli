@@ -35,12 +35,16 @@ func Cmdusers_development_activities() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DevelopmentActivity"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DevelopmentActivity"
+      }
+    }
   }
 }`)
 	users_development_activitiesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "[]string", "userId", "", "Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId.")
 	utils.AddFlag(listCmd.Flags(), "string", "moduleId", "", "Specifies the ID of the learning module.")
 	utils.AddFlag(listCmd.Flags(), "string", "interval", "", "Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
@@ -57,12 +61,15 @@ func Cmdusers_development_activities() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	users_development_activitiesCmd.AddCommand(listCmd)
-	
 	return users_development_activitiesCmd
 }
 

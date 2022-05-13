@@ -41,15 +41,6 @@ type Callablecontactsdiagnostic struct {
 
 // String returns a JSON representation of the model
 func (o *Callablecontactsdiagnostic) String() string {
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -65,34 +56,21 @@ func (u *Callablecontactsdiagnostic) MarshalJSON() ([]byte, error) {
     }
     CallablecontactsdiagnosticMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -93,36 +93,7 @@ func (o *Createperformanceprofile) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ReportingIntervals = []Reportinginterval{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -140,8 +111,7 @@ func (u *Createperformanceprofile) MarshalJSON() ([]byte, error) {
     }
     CreateperformanceprofileMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -149,69 +119,48 @@ func (u *Createperformanceprofile) MarshalJSON() ([]byte, error) {
         
         Description string `json:"description"`
         
-        
-        
-        
-        
         ReportingIntervals []Reportinginterval `json:"reportingIntervals"`
         
         Active bool `json:"active"`
         
-        
-        
         MaxLeaderboardRankSize int `json:"maxLeaderboardRankSize"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ReportingIntervals: []Reportinginterval{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

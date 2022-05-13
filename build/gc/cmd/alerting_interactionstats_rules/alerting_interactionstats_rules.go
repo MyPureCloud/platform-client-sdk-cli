@@ -31,75 +31,95 @@ func Cmdalerting_interactionstats_rules() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/alerting/interactionstats/rules", utils.FormatPermissions([]string{ "alerting:rule:add",  }), utils.GenerateDevCentreLink("POST", "Alerting", "/api/v2/alerting/interactionstats/rules")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "AlertingRule",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/InteractionStatsRule"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/InteractionStatsRule"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/InteractionStatsRule"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/InteractionStatsRule"
+      }
+    }
   }
 }`)
 	alerting_interactionstats_rulesCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/alerting/interactionstats/rules/{ruleId}", utils.FormatPermissions([]string{ "alerting:rule:delete",  }), utils.GenerateDevCentreLink("DELETE", "Alerting", "/api/v2/alerting/interactionstats/rules/{ruleId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Interaction stats rule deleted"
+  "description" : "Interaction stats rule deleted",
+  "content" : { }
 }`)
 	alerting_interactionstats_rulesCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/alerting/interactionstats/rules/{ruleId}", utils.FormatPermissions([]string{ "alerting:rule:view",  }), utils.GenerateDevCentreLink("GET", "Alerting", "/api/v2/alerting/interactionstats/rules/{ruleId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/InteractionStatsRule"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/InteractionStatsRule"
+      }
+    }
   }
 }`)
 	alerting_interactionstats_rulesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/alerting/interactionstats/rules", utils.FormatPermissions([]string{ "alerting:rule:view",  }), utils.GenerateDevCentreLink("GET", "Alerting", "/api/v2/alerting/interactionstats/rules")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	alerting_interactionstats_rulesCmd.AddCommand(listCmd)
-	
+
 	utils.AddFlag(updateCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: notificationUsers")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/alerting/interactionstats/rules/{ruleId}", utils.FormatPermissions([]string{ "alerting:rule:edit",  }), utils.GenerateDevCentreLink("PUT", "Alerting", "/api/v2/alerting/interactionstats/rules/{ruleId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "AlertingRule",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/InteractionStatsRule"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/InteractionStatsRule"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/InteractionStatsRule"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/InteractionStatsRule"
+      }
+    }
   }
 }`)
 	alerting_interactionstats_rulesCmd.AddCommand(updateCmd)
-	
 	return alerting_interactionstats_rulesCmd
 }
 

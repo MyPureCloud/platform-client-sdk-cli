@@ -37,12 +37,15 @@ func Cmdtextbots_bots_search() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BotSearchResponseEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BotSearchResponseEntityListing"
+      }
+    }
   }
 }`)
 	textbots_bots_searchCmd.AddCommand(getCmd)
-	
 	return textbots_bots_searchCmd
 }
 

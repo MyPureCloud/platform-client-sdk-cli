@@ -30,19 +30,21 @@ func init() {
 func Cmdconversations_participants_callbacks() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks", utils.FormatPermissions([]string{ "conversation:callback:create",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/CreateCallbackOnConversationCommand"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreateCallbackOnConversationCommand"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Created"
+  "description" : "Created",
+  "content" : { }
 }`)
 	conversations_participants_callbacksCmd.AddCommand(createCmd)
-	
 	return conversations_participants_callbacksCmd
 }
 

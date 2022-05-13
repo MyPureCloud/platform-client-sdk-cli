@@ -49,19 +49,6 @@ func (o *Conversationmessageevent) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Conversationmessageevent) MarshalJSON() ([]byte, error) {
     }
     ConversationmessageeventMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EventType string `json:"eventType"`
         
         CoBrowse Conversationeventcobrowse `json:"coBrowse"`
@@ -85,26 +73,20 @@ func (u *Conversationmessageevent) MarshalJSON() ([]byte, error) {
         Typing Conversationeventtyping `json:"typing"`
         
         Presence Conversationeventpresence `json:"presence"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

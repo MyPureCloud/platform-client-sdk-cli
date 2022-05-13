@@ -30,23 +30,28 @@ func init() {
 func Cmdcoaching_appointments_aggregates_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/coaching/appointments/aggregates/query", utils.FormatPermissions([]string{ "coaching:appointment:view",  }), utils.GenerateDevCentreLink("POST", "Coaching", "/api/v2/coaching/appointments/aggregates/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Aggregate Request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAppointmentAggregateRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAppointmentAggregateRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Query completed successfully",
-  "schema" : {
-    "$ref" : "#/definitions/CoachingAppointmentAggregateResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CoachingAppointmentAggregateResponse"
+      }
+    }
   }
 }`)
 	coaching_appointments_aggregates_queryCmd.AddCommand(createCmd)
-	
 	return coaching_appointments_aggregates_queryCmd
 }
 

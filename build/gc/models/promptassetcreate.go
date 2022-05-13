@@ -105,40 +105,7 @@ func (o *Promptassetcreate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Tags = map[string][]string{"": {}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -155,90 +122,62 @@ func (u *Promptassetcreate) MarshalJSON() ([]byte, error) {
     }
     PromptassetcreateMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
-        
-        
         Language string `json:"language"`
-        
-        
         
         TtsString string `json:"ttsString"`
         
         Text string `json:"text"`
         
-        
-        
-        
-        
-        
-        
         Tags map[string][]string `json:"tags"`
         
         DurationSeconds float64 `json:"durationSeconds"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Tags: map[string][]string{"": {}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

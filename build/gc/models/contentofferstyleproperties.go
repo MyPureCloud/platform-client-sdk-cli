@@ -41,16 +41,6 @@ func (o *Contentofferstyleproperties) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Contentofferstyleproperties) MarshalJSON() ([]byte, error) {
     }
     ContentofferstylepropertiesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Padding string `json:"padding"`
         
         Color string `json:"color"`
         
         BackgroundColor string `json:"backgroundColor"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

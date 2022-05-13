@@ -33,13 +33,6 @@ type Replytoemailaddress struct {
 func (o *Replytoemailaddress) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Replytoemailaddress) MarshalJSON() ([]byte, error) {
     }
     ReplytoemailaddressMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Domain Domainentityref `json:"domain"`
         
         Route Domainentityref `json:"route"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -81,31 +81,7 @@ func (o *Ruleset) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Rules = []Dialerrule{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -121,14 +97,9 @@ func (u *Ruleset) MarshalJSON() ([]byte, error) {
     }
     RulesetMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
-        
         
         Version int `json:"version"`
         
@@ -137,50 +108,37 @@ func (u *Ruleset) MarshalJSON() ([]byte, error) {
         Queue Domainentityref `json:"queue"`
         
         Rules []Dialerrule `json:"rules"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Rules: []Dialerrule{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

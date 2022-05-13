@@ -48,19 +48,7 @@ type Scimgrouplistresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Scimgrouplistresponse) String() string {
-    
-    
      o.Schemas = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -76,42 +64,28 @@ func (u *Scimgrouplistresponse) MarshalJSON() ([]byte, error) {
     }
     ScimgrouplistresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Schemas []string `json:"schemas"`
-        
-        
-        
-        
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
         Schemas: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

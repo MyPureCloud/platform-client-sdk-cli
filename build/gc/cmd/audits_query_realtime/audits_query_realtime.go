@@ -31,23 +31,28 @@ func Cmdaudits_query_realtime() *cobra.Command {
 	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: user")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/audits/query/realtime", utils.FormatPermissions([]string{ "audits:audit:view",  }), utils.GenerateDevCentreLink("POST", "Audit", "/api/v2/audits/query/realtime")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/AuditRealtimeQueryRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AuditRealtimeQueryRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AuditRealtimeQueryResultsResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AuditRealtimeQueryResultsResponse"
+      }
+    }
   }
 }`)
 	audits_query_realtimeCmd.AddCommand(createCmd)
-	
 	return audits_query_realtimeCmd
 }
 

@@ -24,11 +24,7 @@ type Journeyaggregatequeryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Journeyaggregatequeryresponse) String() string {
-    
-    
      o.Results = []Journeyaggregatedatacontainer{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Journeyaggregatequeryresponse) MarshalJSON() ([]byte, error) {
     }
     JourneyaggregatequeryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        Results []Journeyaggregatedatacontainer `json:"results"`
+    return json.Marshal(&struct {
         
+        Results []Journeyaggregatedatacontainer `json:"results"`
         *Alias
     }{
-        
 
         
         Results: []Journeyaggregatedatacontainer{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

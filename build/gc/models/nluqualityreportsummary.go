@@ -24,11 +24,7 @@ type Nluqualityreportsummary struct {
 
 // String returns a JSON representation of the model
 func (o *Nluqualityreportsummary) String() string {
-    
-    
      o.Metrics = []Nluqualityreportsummarymetric{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Nluqualityreportsummary) MarshalJSON() ([]byte, error) {
     }
     NluqualityreportsummaryMarshalled = true
 
-    return json.Marshal(&struct { 
-        Metrics []Nluqualityreportsummarymetric `json:"metrics"`
+    return json.Marshal(&struct {
         
+        Metrics []Nluqualityreportsummarymetric `json:"metrics"`
         *Alias
     }{
-        
 
         
         Metrics: []Nluqualityreportsummarymetric{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

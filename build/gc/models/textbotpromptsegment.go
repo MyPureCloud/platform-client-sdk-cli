@@ -48,20 +48,7 @@ func (o *Textbotpromptsegment) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Content = []Messagecontent{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Textbotpromptsegment) MarshalJSON() ([]byte, error) {
     }
     TextbotpromptsegmentMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Text string `json:"text"`
         
         VarType string `json:"type"`
@@ -85,28 +73,22 @@ func (u *Textbotpromptsegment) MarshalJSON() ([]byte, error) {
         Format Format `json:"format"`
         
         Content []Messagecontent `json:"content"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Content: []Messagecontent{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

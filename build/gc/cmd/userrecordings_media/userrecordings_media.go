@@ -34,12 +34,15 @@ func Cmduserrecordings_media() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DownloadResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DownloadResponse"
+      }
+    }
   }
 }`)
 	userrecordings_mediaCmd.AddCommand(getCmd)
-	
 	return userrecordings_mediaCmd
 }
 

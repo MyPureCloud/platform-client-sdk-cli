@@ -39,17 +39,7 @@ type Longtermforecastresult struct {
 
 // String returns a JSON representation of the model
 func (o *Longtermforecastresult) String() string {
-    
-    
      o.PlanningGroups = []Longtermforecastplanninggroupdata{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -67,30 +57,26 @@ func (u *Longtermforecastresult) MarshalJSON() ([]byte, error) {
     }
     LongtermforecastresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PlanningGroups []Longtermforecastplanninggroupdata `json:"planningGroups"`
         
         ReferenceStartDate time.Time `json:"referenceStartDate"`
         
         WeekCount int `json:"weekCount"`
-        
         *Alias
     }{
-        
 
         
         PlanningGroups: []Longtermforecastplanninggroupdata{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

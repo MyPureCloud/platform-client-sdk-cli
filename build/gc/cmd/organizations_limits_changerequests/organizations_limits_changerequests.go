@@ -33,12 +33,16 @@ func Cmdorganizations_limits_changerequests() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LimitChangeRequestDetails"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LimitChangeRequestDetails"
+      }
+    }
   }
 }`)
 	organizations_limits_changerequestsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "after", "", "Timestamp indicating the date to begin after when searching for requests.")
 	utils.AddFlag(listCmd.Flags(), "int", "before", "", "Timestamp indicating the date to end before when searching for requests.")
 	utils.AddFlag(listCmd.Flags(), "string", "status", "", "Status of the request to be filtered by Valid values: Open, Approved, ImplementingChange, ChangeImplemented, Rejected, Rollback, ImplementingRollback, RollbackImplemented")
@@ -49,12 +53,15 @@ func Cmdorganizations_limits_changerequests() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	organizations_limits_changerequestsCmd.AddCommand(listCmd)
-	
 	return organizations_limits_changerequestsCmd
 }
 

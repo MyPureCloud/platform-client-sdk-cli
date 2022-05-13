@@ -30,23 +30,28 @@ func init() {
 func Cmduploads_publicassets_images() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/uploads/publicassets/images", utils.FormatPermissions([]string{ "uploads:publicasset:upload",  }), utils.GenerateDevCentreLink("POST", "Uploads", "/api/v2/uploads/publicassets/images")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "query",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/UploadUrlRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UploadUrlRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Presigned url successfully created.",
-  "schema" : {
-    "$ref" : "#/definitions/UploadUrlResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UploadUrlResponse"
+      }
+    }
   }
 }`)
 	uploads_publicassets_imagesCmd.AddCommand(createCmd)
-	
 	return uploads_publicassets_imagesCmd
 }
 

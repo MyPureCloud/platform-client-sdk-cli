@@ -33,8 +33,12 @@ func Cmdconversations_participants_codes() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
-  "schema" : {
-    "$ref" : "#/definitions/ErrorBody"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorBody"
+      }
+    }
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
@@ -42,7 +46,6 @@ func Cmdconversations_participants_codes() *cobra.Command {
   }
 }`)
 	conversations_participants_codesCmd.AddCommand(deleteCmd)
-	
 	return conversations_participants_codesCmd
 }
 

@@ -33,13 +33,6 @@ type Selectoreventtrigger struct {
 func (o *Selectoreventtrigger) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Selectoreventtrigger) MarshalJSON() ([]byte, error) {
     }
     SelectoreventtriggerMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Selector string `json:"selector"`
         
         EventName string `json:"eventName"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

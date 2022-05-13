@@ -49,19 +49,6 @@ func (o *Formstracktrigger) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Formstracktrigger) MarshalJSON() ([]byte, error) {
     }
     FormstracktriggerMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Selector string `json:"selector"`
         
         FormName string `json:"formName"`
@@ -85,26 +73,20 @@ func (u *Formstracktrigger) MarshalJSON() ([]byte, error) {
         CaptureDataOnFormAbandon bool `json:"captureDataOnFormAbandon"`
         
         CaptureDataOnFormSubmit bool `json:"captureDataOnFormSubmit"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

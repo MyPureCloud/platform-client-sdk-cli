@@ -39,18 +39,8 @@ type Wfmhistoricaladherenceresultwrapper struct {
 // String returns a JSON representation of the model
 func (o *Wfmhistoricaladherenceresultwrapper) String() string {
     
-    
-    
-    
-    
-    
      o.Data = []Historicaladherencequeryresult{{}} 
-    
-    
-    
      o.LookupIdToSecondaryPresenceId = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Wfmhistoricaladherenceresultwrapper) MarshalJSON() ([]byte, error) {
     }
     WfmhistoricaladherenceresultwrapperMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         EntityId string `json:"entityId"`
         
         Data []Historicaladherencequeryresult `json:"data"`
         
         LookupIdToSecondaryPresenceId map[string]string `json:"lookupIdToSecondaryPresenceId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Data: []Historicaladherencequeryresult{{}},
         
 
-        
 
         
         LookupIdToSecondaryPresenceId: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

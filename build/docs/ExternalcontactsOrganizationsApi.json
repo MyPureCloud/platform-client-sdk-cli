@@ -1,0 +1,113 @@
+{
+    "POST /api/v2/externalcontacts/organizations": {
+        "operationId": "postexternalcontactsorganizations",
+        "functionName": "create",
+        "signature": "create(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Externalorganization",
+                "required": "true"
+            }
+        ],
+        "return": "Externalorganization"
+    },
+    "DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}": {
+        "operationId": "deleteexternalcontactsorganization",
+        "functionName": "delete",
+        "signature": "delete(externalOrganizationId)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string",
+                "required": "true"
+            }
+        ],
+        "return": "interface{}"
+    },
+    "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}": {
+        "operationId": "getexternalcontactsorganization",
+        "functionName": "get",
+        "signature": "get(externalOrganizationId, expand, includeTrustors)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "includeTrustors",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "Externalorganization"
+    },
+    "GET /api/v2/externalcontacts/organizations": {
+        "operationId": "getexternalcontactsorganizations",
+        "functionName": "search",
+        "signature": "search(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "q",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "trustorId",
+                "type": "[]string",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "string",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[]string",
+                "required": "false"
+            },
+            {
+                "name": "includeTrustors",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "Swaggeroverridelist"
+    },
+    "PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}": {
+        "operationId": "putexternalcontactsorganization",
+        "functionName": "update",
+        "signature": "update(externalOrganizationId, body)",
+        "parameters": [
+            {
+                "name": "externalOrganizationId",
+                "type": "string",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Externalorganization",
+                "required": "true"
+            }
+        ],
+        "return": "Externalorganization"
+    }
+    
+}

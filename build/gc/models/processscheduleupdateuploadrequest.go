@@ -39,18 +39,8 @@ type Processscheduleupdateuploadrequest struct {
 // String returns a JSON representation of the model
 func (o *Processscheduleupdateuploadrequest) String() string {
     
-    
-    
-    
-    
-    
      o.TeamIds = []string{""} 
-    
-    
-    
      o.ManagementUnitIdsForAddedTeamUsers = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Processscheduleupdateuploadrequest) MarshalJSON() ([]byte, error) {
     }
     ProcessscheduleupdateuploadrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UploadKey string `json:"uploadKey"`
         
         TeamIds []string `json:"teamIds"`
         
         ManagementUnitIdsForAddedTeamUsers []string `json:"managementUnitIdsForAddedTeamUsers"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         TeamIds: []string{""},
         
 
-        
 
         
         ManagementUnitIdsForAddedTeamUsers: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -32,10 +32,10 @@ func Cmdconversations_emails_messages_draft_attachments() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	conversations_emails_messages_draft_attachmentsCmd.AddCommand(deleteCmd)
-	
 	return conversations_emails_messages_draft_attachmentsCmd
 }
 

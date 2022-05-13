@@ -25,10 +25,6 @@ type Textbotflow struct {
 // String returns a JSON representation of the model
 func (o *Textbotflow) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Textbotflow) MarshalJSON() ([]byte, error) {
     }
     TextbotflowMarshalled = true
 
-    return json.Marshal(&struct { 
-        Id string `json:"id"`
+    return json.Marshal(&struct {
         
+        Id string `json:"id"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

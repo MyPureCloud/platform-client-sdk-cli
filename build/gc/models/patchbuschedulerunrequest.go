@@ -25,10 +25,6 @@ type Patchbuschedulerunrequest struct {
 // String returns a JSON representation of the model
 func (o *Patchbuschedulerunrequest) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Patchbuschedulerunrequest) MarshalJSON() ([]byte, error) {
     }
     PatchbuschedulerunrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        ReschedulingOptions Patchbureschedulingoptionsrequest `json:"reschedulingOptions"`
+    return json.Marshal(&struct {
         
+        ReschedulingOptions Patchbureschedulingoptionsrequest `json:"reschedulingOptions"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

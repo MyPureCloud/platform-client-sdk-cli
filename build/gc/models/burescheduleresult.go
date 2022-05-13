@@ -56,23 +56,7 @@ func (o *Burescheduleresult) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AgentSchedules = []Burescheduleagentscheduleresult{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Burescheduleresult) MarshalJSON() ([]byte, error) {
     }
     BurescheduleresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         GenerationResults Schedulegenerationresult `json:"generationResults"`
         
         GenerationResultsDownloadUrl string `json:"generationResultsDownloadUrl"`
@@ -98,32 +83,25 @@ func (u *Burescheduleresult) MarshalJSON() ([]byte, error) {
         HeadcountForecastDownloadUrl string `json:"headcountForecastDownloadUrl"`
         
         AgentSchedules []Burescheduleagentscheduleresult `json:"agentSchedules"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AgentSchedules: []Burescheduleagentscheduleresult{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

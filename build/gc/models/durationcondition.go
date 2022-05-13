@@ -49,19 +49,6 @@ func (o *Durationcondition) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Durationcondition) MarshalJSON() ([]byte, error) {
     }
     DurationconditionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DurationTarget string `json:"durationTarget"`
         
         DurationOperator string `json:"durationOperator"`
@@ -85,26 +73,20 @@ func (u *Durationcondition) MarshalJSON() ([]byte, error) {
         DurationRange string `json:"durationRange"`
         
         DurationMode string `json:"durationMode"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

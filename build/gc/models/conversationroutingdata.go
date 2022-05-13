@@ -55,24 +55,8 @@ func (o *Conversationroutingdata) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Skills = []Addressableentityref{{}} 
-    
-    
-    
      o.ScoredAgents = []Scoredagent{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Conversationroutingdata) MarshalJSON() ([]byte, error) {
     }
     ConversationroutingdataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Queue Addressableentityref `json:"queue"`
         
         Language Addressableentityref `json:"language"`
@@ -98,34 +83,27 @@ func (u *Conversationroutingdata) MarshalJSON() ([]byte, error) {
         Skills []Addressableentityref `json:"skills"`
         
         ScoredAgents []Scoredagent `json:"scoredAgents"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Skills: []Addressableentityref{{}},
         
 
-        
 
         
         ScoredAgents: []Scoredagent{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

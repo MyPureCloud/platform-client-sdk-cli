@@ -31,15 +31,8 @@ type Trustrequestcreate struct {
 
 // String returns a JSON representation of the model
 func (o *Trustrequestcreate) String() string {
-    
-    
      o.UserIds = []string{""} 
-    
-    
-    
      o.GroupIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Trustrequestcreate) MarshalJSON() ([]byte, error) {
     }
     TrustrequestcreateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         UserIds []string `json:"userIds"`
         
         GroupIds []string `json:"groupIds"`
-        
         *Alias
     }{
-        
 
         
         UserIds: []string{""},
         
 
-        
 
         
         GroupIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

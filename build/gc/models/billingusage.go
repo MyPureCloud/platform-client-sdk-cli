@@ -40,17 +40,7 @@ type Billingusage struct {
 func (o *Billingusage) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Resources = []Billingusageresource{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,30 +56,26 @@ func (u *Billingusage) MarshalJSON() ([]byte, error) {
     }
     BillingusageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         TotalUsage string `json:"totalUsage"`
         
         Resources []Billingusageresource `json:"resources"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Resources: []Billingusageresource{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

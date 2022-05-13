@@ -69,26 +69,6 @@ func (o *Webmessagingcontent) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -104,10 +84,7 @@ func (u *Webmessagingcontent) MarshalJSON() ([]byte, error) {
     }
     WebmessagingcontentMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
+    return json.Marshal(&struct {
         
         QuickReply Webmessagingquickreply `json:"quickReply"`
         
@@ -118,38 +95,29 @@ func (u *Webmessagingcontent) MarshalJSON() ([]byte, error) {
         Card Contentcard `json:"card"`
         
         Carousel Contentcarousel `json:"carousel"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

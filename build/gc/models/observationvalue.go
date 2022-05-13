@@ -154,57 +154,7 @@ func (o *Observationvalue) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.RequestedRoutingSkillIds = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -219,15 +169,7 @@ func (o *Observationvalue) String() string {
     
      o.RequestedRoutings = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.ScoredAgents = []Analyticsscoredagent{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -243,7 +185,8 @@ func (u *Observationvalue) MarshalJSON() ([]byte, error) {
     }
     ObservationvalueMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ObservationDate time.Time `json:"observationDate"`
         
         ConversationId string `json:"conversationId"`
@@ -281,92 +224,71 @@ func (u *Observationvalue) MarshalJSON() ([]byte, error) {
         UsedRouting string `json:"usedRouting"`
         
         ScoredAgents []Analyticsscoredagent `json:"scoredAgents"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RequestedRoutingSkillIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RequestedRoutings: []string{""},
         
 
-        
 
         
 
-        
 
         
         ScoredAgents: []Analyticsscoredagent{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

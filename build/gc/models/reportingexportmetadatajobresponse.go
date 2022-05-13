@@ -88,40 +88,11 @@ func (o *Reportingexportmetadatajobresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.RequiredFilters = []string{""} 
-    
-    
-    
      o.SupportedFilters = []string{""} 
-    
-    
-    
      o.RequiredColumnIds = []string{""} 
-    
-    
-    
      o.DependentColumnIds = map[string][]string{"": {}} 
-    
-    
-    
      o.AvailableColumnIds = []string{""} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -137,8 +108,7 @@ func (u *Reportingexportmetadatajobresponse) MarshalJSON() ([]byte, error) {
     }
     ReportingexportmetadatajobresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -155,62 +125,48 @@ func (u *Reportingexportmetadatajobresponse) MarshalJSON() ([]byte, error) {
         DependentColumnIds map[string][]string `json:"dependentColumnIds"`
         
         AvailableColumnIds []string `json:"availableColumnIds"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RequiredFilters: []string{""},
         
 
-        
 
         
         SupportedFilters: []string{""},
         
 
-        
 
         
         RequiredColumnIds: []string{""},
         
 
-        
 
         
         DependentColumnIds: map[string][]string{"": {}},
         
 
-        
 
         
         AvailableColumnIds: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

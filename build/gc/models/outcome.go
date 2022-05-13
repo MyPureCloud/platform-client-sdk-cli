@@ -110,41 +110,6 @@ func (o *Outcome) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -160,8 +125,7 @@ func (u *Outcome) MarshalJSON() ([]byte, error) {
     }
     OutcomeMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         IsActive bool `json:"isActive"`
         
@@ -179,63 +143,47 @@ func (u *Outcome) MarshalJSON() ([]byte, error) {
         
         AssociatedValueField Associatedvaluefield `json:"associatedValueField"`
         
-        
-        
         CreatedDate time.Time `json:"createdDate"`
         
         ModifiedDate time.Time `json:"modifiedDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

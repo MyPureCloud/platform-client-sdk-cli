@@ -33,50 +33,65 @@ func Cmdchat_settings() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ChatSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ChatSettings"
+      }
+    }
   }
 }`)
 	chat_settingsCmd.AddCommand(getCmd)
-	
+
 	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/chat/settings", utils.FormatPermissions([]string{ "chat:setting:edit",  }), utils.GenerateDevCentreLink("PATCH", "Chat", "/api/v2/chat/settings")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Chat",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ChatSettings"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ChatSettings"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(patchCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ChatSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ChatSettings"
+      }
+    }
   }
 }`)
 	chat_settingsCmd.AddCommand(patchCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/chat/settings", utils.FormatPermissions([]string{ "chat:setting:edit",  }), utils.GenerateDevCentreLink("PUT", "Chat", "/api/v2/chat/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Chat",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ChatSettings"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ChatSettings"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ChatSettings"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ChatSettings"
+      }
+    }
   }
 }`)
 	chat_settingsCmd.AddCommand(updateCmd)
-	
 	return chat_settingsCmd
 }
 

@@ -38,19 +38,9 @@ type Bulknotesresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Bulknotesresponse) String() string {
-    
-    
      o.Results = []Bulkresponseresultnotenote{{}} 
     
-    
-    
-    
-    
-    
-    
      o.ErrorIndexes = []int{0} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Bulknotesresponse) MarshalJSON() ([]byte, error) {
     }
     BulknotesresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Results []Bulkresponseresultnotenote `json:"results"`
         
         ErrorCount int `json:"errorCount"`
         
         ErrorIndexes []int `json:"errorIndexes"`
-        
         *Alias
     }{
-        
 
         
         Results: []Bulkresponseresultnotenote{{}},
         
 
-        
 
         
 
-        
 
         
         ErrorIndexes: []int{0},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

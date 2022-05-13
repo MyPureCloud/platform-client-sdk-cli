@@ -39,18 +39,8 @@ type Transcriptaggregatequeryfilter struct {
 // String returns a JSON representation of the model
 func (o *Transcriptaggregatequeryfilter) String() string {
     
-    
-    
-    
-    
-    
      o.Clauses = []Transcriptaggregatequeryclause{{}} 
-    
-    
-    
      o.Predicates = []Transcriptaggregatequerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Transcriptaggregatequeryfilter) MarshalJSON() ([]byte, error) {
     }
     TranscriptaggregatequeryfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Clauses []Transcriptaggregatequeryclause `json:"clauses"`
         
         Predicates []Transcriptaggregatequerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Clauses: []Transcriptaggregatequeryclause{{}},
         
 
-        
 
         
         Predicates: []Transcriptaggregatequerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

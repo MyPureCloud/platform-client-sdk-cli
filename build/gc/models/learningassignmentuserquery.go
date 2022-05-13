@@ -33,13 +33,6 @@ type Learningassignmentuserquery struct {
 func (o *Learningassignmentuserquery) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Learningassignmentuserquery) MarshalJSON() ([]byte, error) {
     }
     LearningassignmentuserqueryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Rule Learningmodulerule `json:"rule"`
         
         SearchTerm string `json:"searchTerm"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

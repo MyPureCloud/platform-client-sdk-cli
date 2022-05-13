@@ -42,12 +42,15 @@ func Cmdarchitect_dependencytracking_object() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/DependencyObject"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DependencyObject"
+      }
+    }
   }
 }`)
 	architect_dependencytracking_objectCmd.AddCommand(getCmd)
-	
 	return architect_dependencytracking_objectCmd
 }
 

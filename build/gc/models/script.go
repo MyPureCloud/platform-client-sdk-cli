@@ -130,54 +130,10 @@ func (o *Script) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Features = Interface{} 
-    
-    
-    
      o.Variables = Interface{} 
-    
-    
-    
      o.CustomActions = Interface{} 
-    
-    
-    
      o.Pages = []Page{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -193,8 +149,7 @@ func (u *Script) MarshalJSON() ([]byte, error) {
     }
     ScriptMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -221,80 +176,61 @@ func (u *Script) MarshalJSON() ([]byte, error) {
         CustomActions interface{} `json:"customActions"`
         
         Pages []Page `json:"pages"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Features: Interface{},
         
 
-        
 
         
         Variables: Interface{},
         
 
-        
 
         
         CustomActions: Interface{},
         
 
-        
 
         
         Pages: []Page{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

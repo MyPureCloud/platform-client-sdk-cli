@@ -49,19 +49,6 @@ func (o *Employerinfo) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Employerinfo) MarshalJSON() ([]byte, error) {
     }
     EmployerinfoMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         OfficialName string `json:"officialName"`
         
         EmployeeId string `json:"employeeId"`
@@ -85,26 +73,20 @@ func (u *Employerinfo) MarshalJSON() ([]byte, error) {
         EmployeeType string `json:"employeeType"`
         
         DateHire string `json:"dateHire"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -39,18 +39,8 @@ type Propertychange struct {
 // String returns a JSON representation of the model
 func (o *Propertychange) String() string {
     
-    
-    
-    
-    
-    
      o.OldValues = []string{""} 
-    
-    
-    
      o.NewValues = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Propertychange) MarshalJSON() ([]byte, error) {
     }
     PropertychangeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Property string `json:"property"`
         
         OldValues []string `json:"oldValues"`
         
         NewValues []string `json:"newValues"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         OldValues: []string{""},
         
 
-        
 
         
         NewValues: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

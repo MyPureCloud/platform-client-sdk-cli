@@ -33,13 +33,6 @@ type Externaldatasource struct {
 func (o *Externaldatasource) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Externaldatasource) MarshalJSON() ([]byte, error) {
     }
     ExternaldatasourceMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Platform string `json:"platform"`
         
         Url string `json:"url"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

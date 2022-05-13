@@ -64,26 +64,7 @@ func (o *Actionoutput) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ErrorSchemaFlattened = Interface{} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Actionoutput) MarshalJSON() ([]byte, error) {
     }
     ActionoutputMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SuccessSchema Jsonschemadocument `json:"successSchema"`
         
         SuccessSchemaUri string `json:"successSchemaUri"`
@@ -111,36 +93,28 @@ func (u *Actionoutput) MarshalJSON() ([]byte, error) {
         SuccessSchemaFlattened Jsonschemadocument `json:"successSchemaFlattened"`
         
         ErrorSchemaFlattened interface{} `json:"errorSchemaFlattened"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ErrorSchemaFlattened: Interface{},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

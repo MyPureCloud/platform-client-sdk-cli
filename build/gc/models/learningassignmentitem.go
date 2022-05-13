@@ -33,13 +33,6 @@ type Learningassignmentitem struct {
 func (o *Learningassignmentitem) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Learningassignmentitem) MarshalJSON() ([]byte, error) {
     }
     LearningassignmentitemMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ModuleId string `json:"moduleId"`
         
         UserId string `json:"userId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

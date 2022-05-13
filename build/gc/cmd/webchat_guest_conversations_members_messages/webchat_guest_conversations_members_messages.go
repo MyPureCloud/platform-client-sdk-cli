@@ -30,23 +30,28 @@ func init() {
 func Cmdwebchat_guest_conversations_members_messages() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "WebChat", "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Message",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CreateWebChatMessageRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreateWebChatMessageRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/WebChatMessage"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WebChatMessage"
+      }
+    }
   }
 }`)
 	webchat_guest_conversations_members_messagesCmd.AddCommand(createCmd)
-	
 	return webchat_guest_conversations_members_messagesCmd
 }
 

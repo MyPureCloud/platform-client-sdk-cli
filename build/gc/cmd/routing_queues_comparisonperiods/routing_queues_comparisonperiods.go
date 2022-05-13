@@ -33,23 +33,30 @@ func Cmdrouting_queues_comparisonperiods() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ComparisonPeriod"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ComparisonPeriod"
+      }
+    }
   }
 }`)
 	routing_queues_comparisonperiodsCmd.AddCommand(getCmd)
-	
+
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/comparisonperiods", utils.FormatPermissions([]string{ "routing:comparisonPeriod:view", "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/{queueId}/comparisonperiods")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ComparisonPeriodListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ComparisonPeriodListing"
+      }
+    }
   }
 }`)
 	routing_queues_comparisonperiodsCmd.AddCommand(listCmd)
-	
 	return routing_queues_comparisonperiodsCmd
 }
 

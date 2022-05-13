@@ -121,48 +121,7 @@ func (o *Genericsaml) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Certificates = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -181,8 +140,7 @@ func (u *Genericsaml) MarshalJSON() ([]byte, error) {
     }
     GenericsamlMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -207,70 +165,52 @@ func (u *Genericsaml) MarshalJSON() ([]byte, error) {
         EndpointCompression bool `json:"endpointCompression"`
         
         NameIdentifierFormat string `json:"nameIdentifierFormat"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Certificates: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

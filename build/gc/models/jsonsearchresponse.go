@@ -56,11 +56,11 @@ type Jsonsearchresponse struct {
 
 
     // Results - Search results
-    Results Arraynode `json:"results"`
+    Results interface{} `json:"results"`
 
 
     // Aggregations
-    Aggregations Arraynode `json:"aggregations"`
+    Aggregations interface{} `json:"aggregations"`
 
 }
 
@@ -70,31 +70,9 @@ func (o *Jsonsearchresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Types = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+     o.Results = Interface{} 
+     o.Aggregations = Interface{} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Jsonsearchresponse) MarshalJSON() ([]byte, error) {
     }
     JsonsearchresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         PageCount int `json:"pageCount"`
@@ -121,43 +100,38 @@ func (u *Jsonsearchresponse) MarshalJSON() ([]byte, error) {
         
         Types []string `json:"types"`
         
-        Results Arraynode `json:"results"`
+        Results interface{} `json:"results"`
         
-        Aggregations Arraynode `json:"aggregations"`
-        
+        Aggregations interface{} `json:"aggregations"`
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Types: []string{""},
         
 
-        
 
         
-
+        Results: Interface{},
         
 
-        
 
         
+        Aggregations: Interface{},
+        
+
         Alias: (*Alias)(u),
     })
 }

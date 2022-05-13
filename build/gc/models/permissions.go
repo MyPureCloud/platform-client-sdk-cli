@@ -24,11 +24,7 @@ type Permissions struct {
 
 // String returns a JSON representation of the model
 func (o *Permissions) String() string {
-    
-    
      o.Ids = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Permissions) MarshalJSON() ([]byte, error) {
     }
     PermissionsMarshalled = true
 
-    return json.Marshal(&struct { 
-        Ids []string `json:"ids"`
+    return json.Marshal(&struct {
         
+        Ids []string `json:"ids"`
         *Alias
     }{
-        
 
         
         Ids: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

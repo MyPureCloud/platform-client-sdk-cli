@@ -45,23 +45,10 @@ type Buagentschedulehistoryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Buagentschedulehistoryresponse) String() string {
-    
-    
      o.PriorPublishedSchedules = []Buschedulereference{{}} 
     
-    
-    
-    
-    
-    
-    
      o.DroppedChanges = []Buagentschedulehistorydroppedchange{{}} 
-    
-    
-    
      o.Changes = []Buagentschedulehistorychange{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Buagentschedulehistoryresponse) MarshalJSON() ([]byte, error) {
     }
     BuagentschedulehistoryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PriorPublishedSchedules []Buschedulereference `json:"priorPublishedSchedules"`
         
         BasePublishedSchedule Buagentschedulehistorychange `json:"basePublishedSchedule"`
@@ -85,32 +73,26 @@ func (u *Buagentschedulehistoryresponse) MarshalJSON() ([]byte, error) {
         DroppedChanges []Buagentschedulehistorydroppedchange `json:"droppedChanges"`
         
         Changes []Buagentschedulehistorychange `json:"changes"`
-        
         *Alias
     }{
-        
 
         
         PriorPublishedSchedules: []Buschedulereference{{}},
         
 
-        
 
         
 
-        
 
         
         DroppedChanges: []Buagentschedulehistorydroppedchange{{}},
         
 
-        
 
         
         Changes: []Buagentschedulehistorychange{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

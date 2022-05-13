@@ -57,22 +57,6 @@ func (o *Schedulingsettingsresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Schedulingsettingsresponse) MarshalJSON() ([]byte, error) {
     }
     SchedulingsettingsresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MaxOccupancyPercentForDeferredWork int `json:"maxOccupancyPercentForDeferredWork"`
         
         DefaultShrinkagePercent float64 `json:"defaultShrinkagePercent"`
@@ -98,30 +83,23 @@ func (u *Schedulingsettingsresponse) MarshalJSON() ([]byte, error) {
         PlanningPeriod Planningperiodsettings `json:"planningPeriod"`
         
         StartDayOfWeekend string `json:"startDayOfWeekend"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

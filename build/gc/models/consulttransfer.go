@@ -33,13 +33,6 @@ type Consulttransfer struct {
 func (o *Consulttransfer) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Consulttransfer) MarshalJSON() ([]byte, error) {
     }
     ConsulttransferMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SpeakTo string `json:"speakTo"`
         
         Destination Destination `json:"destination"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

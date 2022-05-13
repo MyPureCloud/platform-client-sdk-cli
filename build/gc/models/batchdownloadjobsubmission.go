@@ -24,11 +24,7 @@ type Batchdownloadjobsubmission struct {
 
 // String returns a JSON representation of the model
 func (o *Batchdownloadjobsubmission) String() string {
-    
-    
      o.BatchDownloadRequestList = []Batchdownloadrequest{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Batchdownloadjobsubmission) MarshalJSON() ([]byte, error) {
     }
     BatchdownloadjobsubmissionMarshalled = true
 
-    return json.Marshal(&struct { 
-        BatchDownloadRequestList []Batchdownloadrequest `json:"batchDownloadRequestList"`
+    return json.Marshal(&struct {
         
+        BatchDownloadRequestList []Batchdownloadrequest `json:"batchDownloadRequestList"`
         *Alias
     }{
-        
 
         
         BatchDownloadRequestList: []Batchdownloadrequest{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

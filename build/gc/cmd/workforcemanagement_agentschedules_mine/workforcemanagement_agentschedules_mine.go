@@ -30,23 +30,28 @@ func init() {
 func Cmdworkforcemanagement_agentschedules_mine() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/agentschedules/mine", utils.FormatPermissions([]string{ "wfm:agentSchedule:view",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/agentschedules/mine")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/BuGetCurrentAgentScheduleRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuGetCurrentAgentScheduleRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BuCurrentAgentScheduleSearchResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BuCurrentAgentScheduleSearchResponse"
+      }
+    }
   }
 }`)
 	workforcemanagement_agentschedules_mineCmd.AddCommand(createCmd)
-	
 	return workforcemanagement_agentschedules_mineCmd
 }
 

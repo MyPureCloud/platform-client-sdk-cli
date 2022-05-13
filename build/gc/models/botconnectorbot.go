@@ -60,24 +60,7 @@ func (o *Botconnectorbot) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Versions = []Botconnectorbotversion{{}} 
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -93,7 +76,8 @@ func (u *Botconnectorbot) MarshalJSON() ([]byte, error) {
     }
     BotconnectorbotMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -101,40 +85,28 @@ func (u *Botconnectorbot) MarshalJSON() ([]byte, error) {
         Description string `json:"description"`
         
         Versions []Botconnectorbotversion `json:"versions"`
-        
-        
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Versions: []Botconnectorbotversion{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

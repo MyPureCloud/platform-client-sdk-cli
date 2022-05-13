@@ -42,16 +42,6 @@ func (o *Channel) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -67,28 +57,24 @@ func (u *Channel) MarshalJSON() ([]byte, error) {
     }
     ChannelMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ConnectUri string `json:"connectUri"`
         
         Id string `json:"id"`
         
         Expires time.Time `json:"expires"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

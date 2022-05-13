@@ -42,12 +42,15 @@ func Cmdgamification_leaderboard_all() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Leaderboard"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Leaderboard"
+      }
+    }
   }
 }`)
 	gamification_leaderboard_allCmd.AddCommand(getCmd)
-	
 	return gamification_leaderboard_allCmd
 }
 

@@ -61,27 +61,8 @@ type Evaluationaggregationqueryme struct {
 func (o *Evaluationaggregationqueryme) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.GroupBy = []string{""} 
-    
-    
-    
      o.Metrics = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -99,7 +80,8 @@ func (u *Evaluationaggregationqueryme) MarshalJSON() ([]byte, error) {
     }
     EvaluationaggregationquerymeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         TimeZone string `json:"timeZone"`
@@ -111,38 +93,30 @@ func (u *Evaluationaggregationqueryme) MarshalJSON() ([]byte, error) {
         AlternateTimeDimension string `json:"alternateTimeDimension"`
         
         ContextId string `json:"contextId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         GroupBy: []string{""},
         
 
-        
 
         
         Metrics: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

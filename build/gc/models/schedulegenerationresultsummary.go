@@ -48,20 +48,7 @@ func (o *Schedulegenerationresultsummary) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.MessageSeverityCounts = []Schedulermessageseveritycount{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Schedulegenerationresultsummary) MarshalJSON() ([]byte, error) {
     }
     SchedulegenerationresultsummaryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Failed bool `json:"failed"`
         
         RunId string `json:"runId"`
@@ -85,28 +73,22 @@ func (u *Schedulegenerationresultsummary) MarshalJSON() ([]byte, error) {
         MessageCount int `json:"messageCount"`
         
         MessageSeverityCounts []Schedulermessageseveritycount `json:"messageSeverityCounts"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MessageSeverityCounts: []Schedulermessageseveritycount{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

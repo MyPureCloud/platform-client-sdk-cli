@@ -46,17 +46,6 @@ type Buschedulereferenceformuroute struct {
 func (o *Buschedulereferenceformuroute) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -72,34 +61,25 @@ func (u *Buschedulereferenceformuroute) MarshalJSON() ([]byte, error) {
     }
     BuschedulereferenceformurouteMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         WeekDate time.Time `json:"weekDate"`
         
         BusinessUnit Businessunitreference `json:"businessUnit"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -134,54 +134,8 @@ func (o *Bushorttermforecast) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.SourceDays = []Forecastsourcedaypointer{{}} 
-    
-    
-    
      o.Modifications = []Buforecastmodification{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -201,8 +155,7 @@ func (u *Bushorttermforecast) MarshalJSON() ([]byte, error) {
     }
     BushorttermforecastMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         WeekDate time.Time `json:"weekDate"`
         
@@ -211,8 +164,6 @@ func (u *Bushorttermforecast) MarshalJSON() ([]byte, error) {
         CreationMethod string `json:"creationMethod"`
         
         Description string `json:"description"`
-        
-        
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         
@@ -231,80 +182,60 @@ func (u *Bushorttermforecast) MarshalJSON() ([]byte, error) {
         PlanningGroupsVersion int `json:"planningGroupsVersion"`
         
         PlanningGroups Forecastplanninggroupsresponse `json:"planningGroups"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SourceDays: []Forecastsourcedaypointer{{}},
         
 
-        
 
         
         Modifications: []Buforecastmodification{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

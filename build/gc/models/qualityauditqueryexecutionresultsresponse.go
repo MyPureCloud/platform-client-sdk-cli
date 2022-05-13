@@ -48,20 +48,7 @@ func (o *Qualityauditqueryexecutionresultsresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Entities = []Qualityauditlogmessage{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Qualityauditqueryexecutionresultsresponse) MarshalJSON() ([]byte, error
     }
     QualityauditqueryexecutionresultsresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         PageSize int `json:"pageSize"`
@@ -85,28 +73,22 @@ func (u *Qualityauditqueryexecutionresultsresponse) MarshalJSON() ([]byte, error
         Cursor string `json:"cursor"`
         
         Entities []Qualityauditlogmessage `json:"entities"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Entities: []Qualityauditlogmessage{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

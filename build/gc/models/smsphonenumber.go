@@ -210,78 +210,6 @@ func (o *Smsphonenumber) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -297,20 +225,15 @@ func (u *Smsphonenumber) MarshalJSON() ([]byte, error) {
     }
     SmsphonenumberMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
         PhoneNumber string `json:"phoneNumber"`
         
-        
-        
         ProvisionedThroughPureCloud bool `json:"provisionedThroughPureCloud"`
         
         PhoneNumberStatus string `json:"phoneNumberStatus"`
-        
-        
         
         CountryCode string `json:"countryCode"`
         
@@ -345,112 +268,83 @@ func (u *Smsphonenumber) MarshalJSON() ([]byte, error) {
         SupportsMms bool `json:"supportsMms"`
         
         SupportsVoice bool `json:"supportsVoice"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

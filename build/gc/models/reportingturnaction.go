@@ -49,19 +49,6 @@ func (o *Reportingturnaction) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Reportingturnaction) MarshalJSON() ([]byte, error) {
     }
     ReportingturnactionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ActionId string `json:"actionId"`
         
         ActionName string `json:"actionName"`
@@ -85,26 +73,20 @@ func (u *Reportingturnaction) MarshalJSON() ([]byte, error) {
         ActionNumber int `json:"actionNumber"`
         
         ActionType string `json:"actionType"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

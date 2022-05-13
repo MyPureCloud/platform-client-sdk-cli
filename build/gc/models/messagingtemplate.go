@@ -25,10 +25,6 @@ type Messagingtemplate struct {
 // String returns a JSON representation of the model
 func (o *Messagingtemplate) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Messagingtemplate) MarshalJSON() ([]byte, error) {
     }
     MessagingtemplateMarshalled = true
 
-    return json.Marshal(&struct { 
-        WhatsApp Whatsappdefinition `json:"whatsApp"`
+    return json.Marshal(&struct {
         
+        WhatsApp Whatsappdefinition `json:"whatsApp"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

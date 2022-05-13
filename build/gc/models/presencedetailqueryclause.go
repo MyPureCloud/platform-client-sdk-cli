@@ -32,14 +32,7 @@ type Presencedetailqueryclause struct {
 // String returns a JSON representation of the model
 func (o *Presencedetailqueryclause) String() string {
     
-    
-    
-    
-    
-    
      o.Predicates = []Presencedetailquerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Presencedetailqueryclause) MarshalJSON() ([]byte, error) {
     }
     PresencedetailqueryclauseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Predicates []Presencedetailquerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Predicates: []Presencedetailquerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

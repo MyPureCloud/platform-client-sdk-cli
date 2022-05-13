@@ -25,10 +25,6 @@ type Phonenumberstatus struct {
 // String returns a JSON representation of the model
 func (o *Phonenumberstatus) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Phonenumberstatus) MarshalJSON() ([]byte, error) {
     }
     PhonenumberstatusMarshalled = true
 
-    return json.Marshal(&struct { 
-        Callable bool `json:"callable"`
+    return json.Marshal(&struct {
         
+        Callable bool `json:"callable"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

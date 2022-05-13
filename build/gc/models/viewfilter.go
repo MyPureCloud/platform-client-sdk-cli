@@ -1018,577 +1018,147 @@ type Viewfilter struct {
 
 // String returns a JSON representation of the model
 func (o *Viewfilter) String() string {
-    
-    
      o.MediaTypes = []string{""} 
-    
-    
-    
      o.QueueIds = []string{""} 
-    
-    
-    
      o.SkillIds = []string{""} 
-    
-    
-    
      o.SkillGroups = []string{""} 
-    
-    
-    
      o.LanguageIds = []string{""} 
-    
-    
-    
      o.LanguageGroups = []string{""} 
-    
-    
-    
      o.Directions = []string{""} 
-    
-    
-    
      o.OriginatingDirections = []string{""} 
-    
-    
-    
      o.WrapUpCodes = []string{""} 
-    
-    
-    
      o.DnisList = []string{""} 
-    
-    
-    
      o.SessionDnisList = []string{""} 
-    
-    
-    
      o.FilterQueuesByUserIds = []string{""} 
-    
-    
-    
      o.FilterUsersByQueueIds = []string{""} 
-    
-    
-    
      o.UserIds = []string{""} 
-    
-    
-    
      o.ManagementUnitIds = []string{""} 
-    
-    
-    
      o.AddressTos = []string{""} 
-    
-    
-    
      o.AddressFroms = []string{""} 
-    
-    
-    
      o.OutboundCampaignIds = []string{""} 
-    
-    
-    
      o.OutboundContactListIds = []string{""} 
-    
-    
-    
      o.ContactIds = []string{""} 
-    
-    
-    
      o.ExternalContactIds = []string{""} 
-    
-    
-    
      o.ExternalOrgIds = []string{""} 
-    
-    
-    
      o.AniList = []string{""} 
-    
-    
-    
      o.DurationsMilliseconds = []Numericrange{{}} 
-    
-    
-    
      o.AcdDurationsMilliseconds = []Numericrange{{}} 
-    
-    
-    
      o.TalkDurationsMilliseconds = []Numericrange{{}} 
-    
-    
-    
      o.AcwDurationsMilliseconds = []Numericrange{{}} 
-    
-    
-    
      o.HandleDurationsMilliseconds = []Numericrange{{}} 
-    
-    
-    
      o.HoldDurationsMilliseconds = []Numericrange{{}} 
-    
-    
-    
      o.AbandonDurationsMilliseconds = []Numericrange{{}} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.EvaluationFormIds = []string{""} 
-    
-    
-    
      o.EvaluatedAgentIds = []string{""} 
-    
-    
-    
      o.EvaluatorIds = []string{""} 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.MessageTypes = []string{""} 
-    
-    
-    
      o.DivisionIds = []string{""} 
-    
-    
-    
      o.SurveyFormIds = []string{""} 
     
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.SurveyFormContextIds = []string{""} 
-    
-    
-    
      o.ConversationIds = []string{""} 
-    
-    
-    
      o.SipCallIds = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.SurveyScores = []Numericrange{{}} 
-    
-    
-    
      o.PromoterScores = []Numericrange{{}} 
-    
-    
-    
-    
-    
-    
     
      o.SurveyStatuses = []string{""} 
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.RemoteParticipants = []string{""} 
-    
-    
-    
      o.FlowIds = []string{""} 
-    
-    
-    
      o.FlowOutcomeIds = []string{""} 
-    
-    
-    
      o.FlowOutcomeValues = []string{""} 
-    
-    
-    
      o.FlowDestinationTypes = []string{""} 
-    
-    
-    
      o.FlowDisconnectReasons = []string{""} 
-    
-    
-    
      o.FlowTypes = []string{""} 
-    
-    
-    
      o.FlowEntryTypes = []string{""} 
-    
-    
-    
      o.FlowEntryReasons = []string{""} 
-    
-    
-    
      o.FlowVersions = []string{""} 
-    
-    
-    
      o.GroupIds = []string{""} 
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.RoleIds = []string{""} 
-    
-    
-    
      o.ReportsTos = []string{""} 
-    
-    
-    
      o.LocationIds = []string{""} 
-    
-    
-    
      o.FlowOutTypes = []string{""} 
-    
-    
-    
      o.ProviderList = []string{""} 
-    
-    
-    
      o.CallbackNumberList = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.UsedRoutingTypes = []string{""} 
-    
-    
-    
      o.RequestedRoutingTypes = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.Transcripts = []Transcripts{{}} 
-    
-    
-    
      o.TranscriptLanguages = []string{""} 
-    
-    
-    
      o.ParticipantPurposes = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.TeamIds = []string{""} 
-    
-    
-    
      o.FilterUsersByTeamIds = []string{""} 
-    
-    
-    
      o.JourneyActionMapIds = []string{""} 
-    
-    
-    
      o.JourneyOutcomeIds = []string{""} 
-    
-    
-    
      o.JourneySegmentIds = []string{""} 
-    
-    
-    
      o.JourneyActionMapTypes = []string{""} 
-    
-    
-    
      o.DevelopmentRoleList = []string{""} 
-    
-    
-    
      o.DevelopmentTypeList = []string{""} 
-    
-    
-    
      o.DevelopmentStatusList = []string{""} 
-    
-    
-    
      o.DevelopmentModuleIds = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
      o.FlowTransferTargets = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.TopicIds = []string{""} 
-    
-    
-    
      o.ExternalTags = []string{""} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.BotIds = []string{""} 
-    
-    
-    
      o.BotVersions = []string{""} 
-    
-    
-    
      o.BotMessageTypes = []string{""} 
-    
-    
-    
      o.BotProviderList = []string{""} 
-    
-    
-    
      o.BotProductList = []string{""} 
-    
-    
-    
      o.BotRecognitionFailureReasonList = []string{""} 
-    
-    
-    
      o.BotIntentList = []string{""} 
-    
-    
-    
      o.BotFinalIntentList = []string{""} 
-    
-    
-    
      o.BotSlotList = []string{""} 
-    
-    
-    
      o.BotResultList = []string{""} 
-    
-    
-    
      o.BlockedReasons = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
      o.EmailDeliveryStatusList = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.AgentCallbackOwnerIds = []string{""} 
-    
-    
-    
      o.TranscriptTopics = []Transcripttopics{{}} 
-    
-    
-    
      o.JourneyFrequencyCapReasons = []string{""} 
-    
-    
-    
      o.JourneyBlockingActionMapIds = []string{""} 
-    
-    
-    
      o.JourneyActionTargetIds = []string{""} 
-    
-    
-    
      o.JourneyBlockingScheduleGroupIds = []string{""} 
-    
-    
-    
      o.JourneyBlockingEmergencyScheduleGroupIds = []string{""} 
-    
-    
-    
      o.JourneyUrlEqualConditions = []string{""} 
-    
-    
-    
      o.JourneyUrlNotEqualConditions = []string{""} 
-    
-    
-    
      o.JourneyUrlStartsWithConditions = []string{""} 
-    
-    
-    
      o.JourneyUrlEndsWithConditions = []string{""} 
-    
-    
-    
      o.JourneyUrlContainsAnyConditions = []string{""} 
-    
-    
-    
      o.JourneyUrlNotContainsAnyConditions = []string{""} 
-    
-    
-    
      o.JourneyUrlContainsAllConditions = []string{""} 
-    
-    
-    
      o.JourneyUrlNotContainsAllConditions = []string{""} 
-    
-    
-    
      o.FlowMilestoneIds = []string{""} 
     
-    
-    
-    
-    
-    
-    
      o.ConversationInitiators = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -1606,7 +1176,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
     }
     ViewfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MediaTypes []string `json:"mediaTypes"`
         
         QueueIds []string `json:"queueIds"`
@@ -1892,794 +1463,649 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         HasCustomerParticipated bool `json:"hasCustomerParticipated"`
         
         IsAcdInteraction bool `json:"isAcdInteraction"`
-        
         *Alias
     }{
-        
 
         
         MediaTypes: []string{""},
         
 
-        
 
         
         QueueIds: []string{""},
         
 
-        
 
         
         SkillIds: []string{""},
         
 
-        
 
         
         SkillGroups: []string{""},
         
 
-        
 
         
         LanguageIds: []string{""},
         
 
-        
 
         
         LanguageGroups: []string{""},
         
 
-        
 
         
         Directions: []string{""},
         
 
-        
 
         
         OriginatingDirections: []string{""},
         
 
-        
 
         
         WrapUpCodes: []string{""},
         
 
-        
 
         
         DnisList: []string{""},
         
 
-        
 
         
         SessionDnisList: []string{""},
         
 
-        
 
         
         FilterQueuesByUserIds: []string{""},
         
 
-        
 
         
         FilterUsersByQueueIds: []string{""},
         
 
-        
 
         
         UserIds: []string{""},
         
 
-        
 
         
         ManagementUnitIds: []string{""},
         
 
-        
 
         
         AddressTos: []string{""},
         
 
-        
 
         
         AddressFroms: []string{""},
         
 
-        
 
         
         OutboundCampaignIds: []string{""},
         
 
-        
 
         
         OutboundContactListIds: []string{""},
         
 
-        
 
         
         ContactIds: []string{""},
         
 
-        
 
         
         ExternalContactIds: []string{""},
         
 
-        
 
         
         ExternalOrgIds: []string{""},
         
 
-        
 
         
         AniList: []string{""},
         
 
-        
 
         
         DurationsMilliseconds: []Numericrange{{}},
         
 
-        
 
         
         AcdDurationsMilliseconds: []Numericrange{{}},
         
 
-        
 
         
         TalkDurationsMilliseconds: []Numericrange{{}},
         
 
-        
 
         
         AcwDurationsMilliseconds: []Numericrange{{}},
         
 
-        
 
         
         HandleDurationsMilliseconds: []Numericrange{{}},
         
 
-        
 
         
         HoldDurationsMilliseconds: []Numericrange{{}},
         
 
-        
 
         
         AbandonDurationsMilliseconds: []Numericrange{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         EvaluationFormIds: []string{""},
         
 
-        
 
         
         EvaluatedAgentIds: []string{""},
         
 
-        
 
         
         EvaluatorIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MessageTypes: []string{""},
         
 
-        
 
         
         DivisionIds: []string{""},
         
 
-        
 
         
         SurveyFormIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SurveyFormContextIds: []string{""},
         
 
-        
 
         
         ConversationIds: []string{""},
         
 
-        
 
         
         SipCallIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SurveyScores: []Numericrange{{}},
         
 
-        
 
         
         PromoterScores: []Numericrange{{}},
         
 
-        
 
         
 
-        
 
         
         SurveyStatuses: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RemoteParticipants: []string{""},
         
 
-        
 
         
         FlowIds: []string{""},
         
 
-        
 
         
         FlowOutcomeIds: []string{""},
         
 
-        
 
         
         FlowOutcomeValues: []string{""},
         
 
-        
 
         
         FlowDestinationTypes: []string{""},
         
 
-        
 
         
         FlowDisconnectReasons: []string{""},
         
 
-        
 
         
         FlowTypes: []string{""},
         
 
-        
 
         
         FlowEntryTypes: []string{""},
         
 
-        
 
         
         FlowEntryReasons: []string{""},
         
 
-        
 
         
         FlowVersions: []string{""},
         
 
-        
 
         
         GroupIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         RoleIds: []string{""},
         
 
-        
 
         
         ReportsTos: []string{""},
         
 
-        
 
         
         LocationIds: []string{""},
         
 
-        
 
         
         FlowOutTypes: []string{""},
         
 
-        
 
         
         ProviderList: []string{""},
         
 
-        
 
         
         CallbackNumberList: []string{""},
         
 
-        
 
         
 
-        
 
         
         UsedRoutingTypes: []string{""},
         
 
-        
 
         
         RequestedRoutingTypes: []string{""},
         
 
-        
 
         
 
-        
 
         
         Transcripts: []Transcripts{{}},
         
 
-        
 
         
         TranscriptLanguages: []string{""},
         
 
-        
 
         
         ParticipantPurposes: []string{""},
         
 
-        
 
         
 
-        
 
         
         TeamIds: []string{""},
         
 
-        
 
         
         FilterUsersByTeamIds: []string{""},
         
 
-        
 
         
         JourneyActionMapIds: []string{""},
         
 
-        
 
         
         JourneyOutcomeIds: []string{""},
         
 
-        
 
         
         JourneySegmentIds: []string{""},
         
 
-        
 
         
         JourneyActionMapTypes: []string{""},
         
 
-        
 
         
         DevelopmentRoleList: []string{""},
         
 
-        
 
         
         DevelopmentTypeList: []string{""},
         
 
-        
 
         
         DevelopmentStatusList: []string{""},
         
 
-        
 
         
         DevelopmentModuleIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         FlowTransferTargets: []string{""},
         
 
-        
 
         
 
-        
 
         
         TopicIds: []string{""},
         
 
-        
 
         
         ExternalTags: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         BotIds: []string{""},
         
 
-        
 
         
         BotVersions: []string{""},
         
 
-        
 
         
         BotMessageTypes: []string{""},
         
 
-        
 
         
         BotProviderList: []string{""},
         
 
-        
 
         
         BotProductList: []string{""},
         
 
-        
 
         
         BotRecognitionFailureReasonList: []string{""},
         
 
-        
 
         
         BotIntentList: []string{""},
         
 
-        
 
         
         BotFinalIntentList: []string{""},
         
 
-        
 
         
         BotSlotList: []string{""},
         
 
-        
 
         
         BotResultList: []string{""},
         
 
-        
 
         
         BlockedReasons: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         EmailDeliveryStatusList: []string{""},
         
 
-        
 
         
 
-        
 
         
         AgentCallbackOwnerIds: []string{""},
         
 
-        
 
         
         TranscriptTopics: []Transcripttopics{{}},
         
 
-        
 
         
         JourneyFrequencyCapReasons: []string{""},
         
 
-        
 
         
         JourneyBlockingActionMapIds: []string{""},
         
 
-        
 
         
         JourneyActionTargetIds: []string{""},
         
 
-        
 
         
         JourneyBlockingScheduleGroupIds: []string{""},
         
 
-        
 
         
         JourneyBlockingEmergencyScheduleGroupIds: []string{""},
         
 
-        
 
         
         JourneyUrlEqualConditions: []string{""},
         
 
-        
 
         
         JourneyUrlNotEqualConditions: []string{""},
         
 
-        
 
         
         JourneyUrlStartsWithConditions: []string{""},
         
 
-        
 
         
         JourneyUrlEndsWithConditions: []string{""},
         
 
-        
 
         
         JourneyUrlContainsAnyConditions: []string{""},
         
 
-        
 
         
         JourneyUrlNotContainsAnyConditions: []string{""},
         
 
-        
 
         
         JourneyUrlContainsAllConditions: []string{""},
         
 
-        
 
         
         JourneyUrlNotContainsAllConditions: []string{""},
         
 
-        
 
         
         FlowMilestoneIds: []string{""},
         
 
-        
 
         
 
-        
 
         
         ConversationInitiators: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

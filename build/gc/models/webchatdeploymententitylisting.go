@@ -39,17 +39,7 @@ type Webchatdeploymententitylisting struct {
 // String returns a JSON representation of the model
 func (o *Webchatdeploymententitylisting) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Webchatdeployment{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Webchatdeploymententitylisting) MarshalJSON() ([]byte, error) {
     }
     WebchatdeploymententitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Webchatdeployment `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Webchatdeployment{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

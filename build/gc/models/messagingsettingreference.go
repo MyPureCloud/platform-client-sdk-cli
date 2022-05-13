@@ -86,31 +86,6 @@ func (o *Messagingsettingreference) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -126,70 +101,47 @@ func (u *Messagingsettingreference) MarshalJSON() ([]byte, error) {
     }
     MessagingsettingreferenceMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
-        
-        
-        
-        
-        
-        
-        
-        
         Version string `json:"version"`
-        
-        
-        
-        
         
         Content Contentsetting `json:"content"`
         
         Event Eventsetting `json:"event"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

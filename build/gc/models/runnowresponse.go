@@ -37,14 +37,6 @@ type Runnowresponse struct {
 // String returns a JSON representation of the model
 func (o *Runnowresponse) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -60,28 +52,20 @@ func (u *Runnowresponse) MarshalJSON() ([]byte, error) {
     }
     RunnowresponseMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

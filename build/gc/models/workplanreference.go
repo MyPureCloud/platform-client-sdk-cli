@@ -37,14 +37,6 @@ type Workplanreference struct {
 // String returns a JSON representation of the model
 func (o *Workplanreference) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -60,28 +52,20 @@ func (u *Workplanreference) MarshalJSON() ([]byte, error) {
     }
     WorkplanreferenceMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         ManagementUnit Managementunitreference `json:"managementUnit"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

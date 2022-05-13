@@ -33,12 +33,15 @@ func Cmdfax_summary() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/FaxSummary"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/FaxSummary"
+      }
+    }
   }
 }`)
 	fax_summaryCmd.AddCommand(getCmd)
-	
 	return fax_summaryCmd
 }
 

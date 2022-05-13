@@ -58,22 +58,6 @@ func (o *Education) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,7 +73,8 @@ func (u *Education) MarshalJSON() ([]byte, error) {
     }
     EducationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         School string `json:"school"`
         
         FieldOfStudy string `json:"fieldOfStudy"`
@@ -99,30 +84,23 @@ func (u *Education) MarshalJSON() ([]byte, error) {
         DateStart time.Time `json:"dateStart"`
         
         DateEnd time.Time `json:"dateEnd"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

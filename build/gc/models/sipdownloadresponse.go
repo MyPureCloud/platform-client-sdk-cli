@@ -33,13 +33,6 @@ type Sipdownloadresponse struct {
 func (o *Sipdownloadresponse) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Sipdownloadresponse) MarshalJSON() ([]byte, error) {
     }
     SipdownloadresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         DownloadId string `json:"downloadId"`
         
         DocumentId string `json:"documentId"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

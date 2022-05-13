@@ -30,34 +30,44 @@ func init() {
 func Cmdintegrations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/integrations", utils.FormatPermissions([]string{ "integrations:integration:add",  }), utils.GenerateDevCentreLink("POST", "Integrations", "/api/v2/integrations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Integration",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/CreateIntegrationRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreateIntegrationRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Integration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Integration"
+      }
+    }
   }
 }`)
 	integrationsCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/integrations/{integrationId}", utils.FormatPermissions([]string{ "integrations:integration:delete",  }), utils.GenerateDevCentreLink("DELETE", "Integrations", "/api/v2/integrations/{integrationId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Integration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Integration"
+      }
+    }
   }
 }`)
 	integrationsCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(getCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
 	utils.AddFlag(getCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
 	utils.AddFlag(getCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
@@ -69,12 +79,16 @@ func Cmdintegrations() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Integration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Integration"
+      }
+    }
   }
 }`)
 	integrationsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
@@ -86,12 +100,16 @@ func Cmdintegrations() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	integrationsCmd.AddCommand(listCmd)
-	
+
 	utils.AddFlag(updateCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
 	utils.AddFlag(updateCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
 	utils.AddFlag(updateCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
@@ -100,23 +118,28 @@ func Cmdintegrations() *cobra.Command {
 	utils.AddFlag(updateCmd.Flags(), "string", "previousPage", "", "Previous page token")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/integrations/{integrationId}", utils.FormatPermissions([]string{ "integrations:integration:edit",  }), utils.GenerateDevCentreLink("PATCH", "Integrations", "/api/v2/integrations/{integrationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Integration Update",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/Integration"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Integration"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/Integration"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Integration"
+      }
+    }
   }
 }`)
 	integrationsCmd.AddCommand(updateCmd)
-	
 	return integrationsCmd
 }
 

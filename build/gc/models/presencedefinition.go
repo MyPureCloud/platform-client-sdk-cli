@@ -39,15 +39,6 @@ type Presencedefinition struct {
 func (o *Presencedefinition) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,28 +54,22 @@ func (u *Presencedefinition) MarshalJSON() ([]byte, error) {
     }
     PresencedefinitionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         SystemPresence string `json:"systemPresence"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

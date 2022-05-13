@@ -74,37 +74,12 @@ type Userdetailsquery struct {
 // String returns a JSON representation of the model
 func (o *Userdetailsquery) String() string {
     
-    
-    
-    
-    
-    
      o.UserFilters = []Userdetailqueryfilter{{}} 
-    
-    
-    
      o.PresenceFilters = []Presencedetailqueryfilter{{}} 
-    
-    
-    
      o.RoutingStatusFilters = []Routingstatusdetailqueryfilter{{}} 
     
-    
-    
-    
-    
-    
-    
      o.PresenceAggregations = []Analyticsqueryaggregation{{}} 
-    
-    
-    
      o.RoutingStatusAggregations = []Analyticsqueryaggregation{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -121,7 +96,8 @@ func (u *Userdetailsquery) MarshalJSON() ([]byte, error) {
     }
     UserdetailsqueryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Interval string `json:"interval"`
         
         UserFilters []Userdetailqueryfilter `json:"userFilters"`
@@ -137,52 +113,42 @@ func (u *Userdetailsquery) MarshalJSON() ([]byte, error) {
         RoutingStatusAggregations []Analyticsqueryaggregation `json:"routingStatusAggregations"`
         
         Paging Pagingspec `json:"paging"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         UserFilters: []Userdetailqueryfilter{{}},
         
 
-        
 
         
         PresenceFilters: []Presencedetailqueryfilter{{}},
         
 
-        
 
         
         RoutingStatusFilters: []Routingstatusdetailqueryfilter{{}},
         
 
-        
 
         
 
-        
 
         
         PresenceAggregations: []Analyticsqueryaggregation{{}},
         
 
-        
 
         
         RoutingStatusAggregations: []Analyticsqueryaggregation{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

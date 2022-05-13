@@ -41,16 +41,6 @@ func (o *Vendorconnectionrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Vendorconnectionrequest) MarshalJSON() ([]byte, error) {
     }
     VendorconnectionrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Publisher string `json:"publisher"`
         
         VarType string `json:"type"`
         
         Name string `json:"name"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

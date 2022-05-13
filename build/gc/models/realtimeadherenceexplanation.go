@@ -54,20 +54,6 @@ func (o *Realtimeadherenceexplanation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -83,40 +69,30 @@ func (u *Realtimeadherenceexplanation) MarshalJSON() ([]byte, error) {
     }
     RealtimeadherenceexplanationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         StartDate time.Time `json:"startDate"`
         
         LengthMinutes int `json:"lengthMinutes"`
         
         Status string `json:"status"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

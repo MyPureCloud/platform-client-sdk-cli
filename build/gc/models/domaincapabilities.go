@@ -63,24 +63,6 @@ func (o *Domaincapabilities) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -96,7 +78,8 @@ func (u *Domaincapabilities) MarshalJSON() ([]byte, error) {
     }
     DomaincapabilitiesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Enabled bool `json:"enabled"`
         
         Dhcp bool `json:"dhcp"`
@@ -105,37 +88,27 @@ func (u *Domaincapabilities) MarshalJSON() ([]byte, error) {
         
         AutoMetric bool `json:"autoMetric"`
         
-        
-        
         PingEnabled bool `json:"pingEnabled"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

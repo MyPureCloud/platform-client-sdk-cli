@@ -73,28 +73,6 @@ func (o *Mediaparticipantrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Mediaparticipantrequest) MarshalJSON() ([]byte, error) {
     }
     MediaparticipantrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Wrapup Wrapup `json:"wrapup"`
         
         State string `json:"state"`
@@ -124,38 +103,29 @@ func (u *Mediaparticipantrequest) MarshalJSON() ([]byte, error) {
         Held bool `json:"held"`
         
         WrapupSkipped bool `json:"wrapupSkipped"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

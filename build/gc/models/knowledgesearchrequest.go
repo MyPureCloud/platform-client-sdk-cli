@@ -65,25 +65,6 @@ func (o *Knowledgesearchrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Knowledgesearchrequest) MarshalJSON() ([]byte, error) {
     }
     KnowledgesearchrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Query string `json:"query"`
         
         PageSize int `json:"pageSize"`
@@ -111,34 +93,26 @@ func (u *Knowledgesearchrequest) MarshalJSON() ([]byte, error) {
         LanguageCode string `json:"languageCode"`
         
         SearchOnDraftDocuments bool `json:"searchOnDraftDocuments"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -31,14 +31,7 @@ type Apiusagequeryresult struct {
 
 // String returns a JSON representation of the model
 func (o *Apiusagequeryresult) String() string {
-    
-    
      o.Results = []Apiusagerow{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Apiusagequeryresult) MarshalJSON() ([]byte, error) {
     }
     ApiusagequeryresultMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Results []Apiusagerow `json:"results"`
         
         QueryStatus string `json:"queryStatus"`
-        
         *Alias
     }{
-        
 
         
         Results: []Apiusagerow{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

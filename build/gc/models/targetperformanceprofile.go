@@ -25,10 +25,6 @@ type Targetperformanceprofile struct {
 // String returns a JSON representation of the model
 func (o *Targetperformanceprofile) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Targetperformanceprofile) MarshalJSON() ([]byte, error) {
     }
     TargetperformanceprofileMarshalled = true
 
-    return json.Marshal(&struct { 
-        TargetPerformanceProfileId string `json:"targetPerformanceProfileId"`
+    return json.Marshal(&struct {
         
+        TargetPerformanceProfileId string `json:"targetPerformanceProfileId"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

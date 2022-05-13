@@ -138,55 +138,8 @@ func (o *Calibration) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Evaluations = []Evaluation{{}} 
-    
-    
-    
      o.Evaluators = []User{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -204,8 +157,7 @@ func (u *Calibration) MarshalJSON() ([]byte, error) {
     }
     CalibrationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -234,80 +186,60 @@ func (u *Calibration) MarshalJSON() ([]byte, error) {
         ScoringIndex *Evaluation `json:"scoringIndex"`
         
         ExpertEvaluator User `json:"expertEvaluator"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Evaluations: []Evaluation{{}},
         
 
-        
 
         
         Evaluators: []User{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

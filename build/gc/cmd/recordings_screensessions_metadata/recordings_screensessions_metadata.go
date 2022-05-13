@@ -30,20 +30,22 @@ func init() {
 func Cmdrecordings_screensessions_metadata() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recordings/screensessions/metadata", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recordings/screensessions/metadata")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "ScreenRecordingMetaDataRequest",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ScreenRecordingMetaDataRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScreenRecordingMetaDataRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Meta-data supplied to screen recording."
+  "description" : "Meta-data supplied to screen recording.",
+  "content" : { }
 }`)
 	recordings_screensessions_metadataCmd.AddCommand(createCmd)
-	
 	return recordings_screensessions_metadataCmd
 }
 

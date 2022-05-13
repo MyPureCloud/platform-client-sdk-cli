@@ -30,52 +30,64 @@ func init() {
 func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/recording/crossplatform/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:add",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Policy",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CrossPlatformPolicyCreate"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CrossPlatformPolicyCreate"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CrossPlatformPolicy"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CrossPlatformPolicy"
+      }
+    }
   }
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:delete",  }), utils.GenerateDevCentreLink("DELETE", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(deleteCmd)
-	
+
 	utils.AddFlag(deletepoliciesCmd.Flags(), "string", "ids", "", " - REQUIRED")
 	deletepoliciesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deletepoliciesCmd.UsageTemplate(), "DELETE", "/api/v2/recording/crossplatform/mediaretentionpolicies", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:delete",  }), utils.GenerateDevCentreLink("DELETE", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies")))
 	utils.AddFileFlagIfUpsert(deletepoliciesCmd.Flags(), "DELETE", ``)
 	deletepoliciesCmd.MarkFlagRequired("ids")
 	
 	utils.AddPaginateFlagsIfListingResponse(deletepoliciesCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(deletepoliciesCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CrossPlatformPolicy"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CrossPlatformPolicy"
+      }
+    }
   }
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
@@ -92,50 +104,65 @@ func Cmdrecording_crossplatform_mediaretentionpolicies() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(listCmd)
-	
+
 	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:edit",  }), utils.GenerateDevCentreLink("PATCH", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Policy",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CrossPlatformPolicyUpdate"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CrossPlatformPolicyUpdate"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(patchCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CrossPlatformPolicy"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CrossPlatformPolicy"
+      }
+    }
   }
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(patchCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}", utils.FormatPermissions([]string{ "recording:crossPlatformRetentionPolicy:edit",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Policy",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CrossPlatformPolicy"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CrossPlatformPolicy"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CrossPlatformPolicy"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CrossPlatformPolicy"
+      }
+    }
   }
 }`)
 	recording_crossplatform_mediaretentionpoliciesCmd.AddCommand(updateCmd)
-	
 	return recording_crossplatform_mediaretentionpoliciesCmd
 }
 

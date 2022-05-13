@@ -32,18 +32,19 @@ func Cmdusers_station_defaultstation() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Success"
+  "description" : "Success",
+  "content" : { }
 }`)
 	users_station_defaultstationCmd.AddCommand(deleteCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/station/defaultstation/{stationId}", utils.FormatPermissions([]string{ "telephony:plugin:all", "telephony:phone:assign",  }), utils.GenerateDevCentreLink("PUT", "Users", "/api/v2/users/{userId}/station/defaultstation/{stationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  "description" : "Success"
+  "description" : "Success",
+  "content" : { }
 }`)
 	users_station_defaultstationCmd.AddCommand(updateCmd)
-	
 	return users_station_defaultstationCmd
 }
 

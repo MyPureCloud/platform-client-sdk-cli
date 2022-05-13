@@ -122,46 +122,6 @@ func (o *Apiusagerow) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -177,7 +137,8 @@ func (u *Apiusagerow) MarshalJSON() ([]byte, error) {
     }
     ApiusagerowMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ClientId string `json:"clientId"`
         
         ClientName string `json:"clientName"`
@@ -203,62 +164,47 @@ func (u *Apiusagerow) MarshalJSON() ([]byte, error) {
         Requests int `json:"requests"`
         
         Date time.Time `json:"date"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

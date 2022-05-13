@@ -24,11 +24,7 @@ type Ntpsettings struct {
 
 // String returns a JSON representation of the model
 func (o *Ntpsettings) String() string {
-    
-    
      o.Servers = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Ntpsettings) MarshalJSON() ([]byte, error) {
     }
     NtpsettingsMarshalled = true
 
-    return json.Marshal(&struct { 
-        Servers []string `json:"servers"`
+    return json.Marshal(&struct {
         
+        Servers []string `json:"servers"`
         *Alias
     }{
-        
 
         
         Servers: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,23 +30,28 @@ func init() {
 func Cmdwebchat_guest_conversations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/webchat/guest/conversations", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "WebChat", "/api/v2/webchat/guest/conversations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "CreateConversationRequest",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/CreateWebChatConversationRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreateWebChatConversationRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/CreateWebChatConversationResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreateWebChatConversationResponse"
+      }
+    }
   }
 }`)
 	webchat_guest_conversationsCmd.AddCommand(createCmd)
-	
 	return webchat_guest_conversationsCmd
 }
 

@@ -25,10 +25,6 @@ type Contactcentersettings struct {
 // String returns a JSON representation of the model
 func (o *Contactcentersettings) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Contactcentersettings) MarshalJSON() ([]byte, error) {
     }
     ContactcentersettingsMarshalled = true
 
-    return json.Marshal(&struct { 
-        RemoveSkillsFromBlindTransfer bool `json:"removeSkillsFromBlindTransfer"`
+    return json.Marshal(&struct {
         
+        RemoveSkillsFromBlindTransfer bool `json:"removeSkillsFromBlindTransfer"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

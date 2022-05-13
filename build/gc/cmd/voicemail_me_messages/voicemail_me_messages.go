@@ -35,12 +35,15 @@ func Cmdvoicemail_me_messages() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	voicemail_me_messagesCmd.AddCommand(listCmd)
-	
 	return voicemail_me_messagesCmd
 }
 

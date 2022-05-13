@@ -52,23 +52,7 @@ type Authzdivisiongrantentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Authzdivisiongrantentitylisting) String() string {
-    
-    
      o.Entities = []Authzgrant{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -88,7 +72,8 @@ func (u *Authzdivisiongrantentitylisting) MarshalJSON() ([]byte, error) {
     }
     AuthzdivisiongrantentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Authzgrant `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -98,32 +83,25 @@ func (u *Authzdivisiongrantentitylisting) MarshalJSON() ([]byte, error) {
         Total int `json:"total"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Authzgrant{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

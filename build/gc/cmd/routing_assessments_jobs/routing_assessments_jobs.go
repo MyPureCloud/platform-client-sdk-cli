@@ -30,45 +30,58 @@ func init() {
 func Cmdrouting_assessments_jobs() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/assessments/jobs", utils.FormatPermissions([]string{ "routing:assessment:add",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/assessments/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/CreateBenefitAssessmentJobRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreateBenefitAssessmentJobRequest"
+      }
+    }
+  },
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/BenefitAssessmentJob"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BenefitAssessmentJob"
+      }
+    }
   }
 }`)
 	routing_assessments_jobsCmd.AddCommand(createCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/assessments/jobs/{jobId}", utils.FormatPermissions([]string{ "routing:assessment:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/assessments/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "The benefit assessment job is finished.",
-  "schema" : {
-    "$ref" : "#/definitions/BenefitAssessmentJob"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BenefitAssessmentJob"
+      }
+    }
   }
 }`)
 	routing_assessments_jobsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Division ID(s) to filter assessment jobs by.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/assessments/jobs", utils.FormatPermissions([]string{ "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/assessments/jobs")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/AssessmentJobListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AssessmentJobListing"
+      }
+    }
   }
 }`)
 	routing_assessments_jobsCmd.AddCommand(listCmd)
-	
 	return routing_assessments_jobsCmd
 }
 

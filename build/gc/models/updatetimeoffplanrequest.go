@@ -73,28 +73,6 @@ func (o *Updatetimeoffplanrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,7 +88,8 @@ func (u *Updatetimeoffplanrequest) MarshalJSON() ([]byte, error) {
     }
     UpdatetimeoffplanrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         ActivityCodeIds Setwrapperstring `json:"activityCodeIds"`
@@ -124,38 +103,29 @@ func (u *Updatetimeoffplanrequest) MarshalJSON() ([]byte, error) {
         Active bool `json:"active"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

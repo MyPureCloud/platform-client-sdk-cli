@@ -30,23 +30,28 @@ func init() {
 func Cmdlearning_assignments_aggregates_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/assignments/aggregates/query", utils.FormatPermissions([]string{ "learning:assignment:view",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/assignments/aggregates/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Aggregate Request",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/LearningAssignmentAggregateParam"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningAssignmentAggregateParam"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Query completed successfully",
-  "schema" : {
-    "$ref" : "#/definitions/LearningAssignmentAggregateResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningAssignmentAggregateResponse"
+      }
+    }
   }
 }`)
 	learning_assignments_aggregates_queryCmd.AddCommand(createCmd)
-	
 	return learning_assignments_aggregates_queryCmd
 }
 

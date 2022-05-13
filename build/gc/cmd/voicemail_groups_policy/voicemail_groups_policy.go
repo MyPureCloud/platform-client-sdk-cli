@@ -33,31 +33,40 @@ func Cmdvoicemail_groups_policy() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailGroupPolicy"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailGroupPolicy"
+      }
+    }
   }
 }`)
 	voicemail_groups_policyCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/voicemail/groups/{groupId}/policy", utils.FormatPermissions([]string{ "directory:group:add", "directory:group:edit",  }), utils.GenerateDevCentreLink("PATCH", "Voicemail", "/api/v2/voicemail/groups/{groupId}/policy")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The group's voicemail policy",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailGroupPolicy"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailGroupPolicy"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/VoicemailGroupPolicy"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VoicemailGroupPolicy"
+      }
+    }
   }
 }`)
 	voicemail_groups_policyCmd.AddCommand(updateCmd)
-	
 	return voicemail_groups_policyCmd
 }
 

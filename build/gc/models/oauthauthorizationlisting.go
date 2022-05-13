@@ -39,17 +39,7 @@ type Oauthauthorizationlisting struct {
 // String returns a JSON representation of the model
 func (o *Oauthauthorizationlisting) String() string {
     
-    
-    
-    
-    
-    
      o.Entities = []Oauthauthorization{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Oauthauthorizationlisting) MarshalJSON() ([]byte, error) {
     }
     OauthauthorizationlistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Total int `json:"total"`
         
         Entities []Oauthauthorization `json:"entities"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Entities: []Oauthauthorization{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

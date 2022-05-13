@@ -94,35 +94,6 @@ func (o *Sipsearchpublicrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -138,8 +109,7 @@ func (u *Sipsearchpublicrequest) MarshalJSON() ([]byte, error) {
     }
     SipsearchpublicrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -156,52 +126,38 @@ func (u *Sipsearchpublicrequest) MarshalJSON() ([]byte, error) {
         DateStart time.Time `json:"dateStart"`
         
         DateEnd time.Time `json:"dateEnd"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

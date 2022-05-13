@@ -31,14 +31,7 @@ type Groupmembersupdate struct {
 
 // String returns a JSON representation of the model
 func (o *Groupmembersupdate) String() string {
-    
-    
      o.MemberIds = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -55,24 +48,21 @@ func (u *Groupmembersupdate) MarshalJSON() ([]byte, error) {
     }
     GroupmembersupdateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MemberIds []string `json:"memberIds"`
         
         Version int `json:"version"`
-        
         *Alias
     }{
-        
 
         
         MemberIds: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

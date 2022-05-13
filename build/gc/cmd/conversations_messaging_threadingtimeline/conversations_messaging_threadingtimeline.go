@@ -33,31 +33,40 @@ func Cmdconversations_messaging_threadingtimeline() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ConversationThreadingWindow"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ConversationThreadingWindow"
+      }
+    }
   }
 }`)
 	conversations_messaging_threadingtimelineCmd.AddCommand(getCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/messaging/threadingtimeline", utils.FormatPermissions([]string{ "conversation:threadingTimeline:edit",  }), utils.GenerateDevCentreLink("PUT", "Conversations", "/api/v2/conversations/messaging/threadingtimeline")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "ConversationThreadingWindowRequest",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ConversationThreadingWindow"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ConversationThreadingWindow"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ConversationThreadingWindow"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ConversationThreadingWindow"
+      }
+    }
   }
 }`)
 	conversations_messaging_threadingtimelineCmd.AddCommand(updateCmd)
-	
 	return conversations_messaging_threadingtimelineCmd
 }
 

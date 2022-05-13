@@ -167,65 +167,7 @@ func (o *Callhistoryparticipant) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.SipResponseCodes = []int{0} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -243,7 +185,8 @@ func (u *Callhistoryparticipant) MarshalJSON() ([]byte, error) {
     }
     CallhistoryparticipantMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -281,88 +224,67 @@ func (u *Callhistoryparticipant) MarshalJSON() ([]byte, error) {
         FlaggedReason string `json:"flaggedReason"`
         
         OutboundCampaign Campaign `json:"outboundCampaign"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         SipResponseCodes: []int{0},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

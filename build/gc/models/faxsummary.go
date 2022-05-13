@@ -41,16 +41,6 @@ func (o *Faxsummary) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Faxsummary) MarshalJSON() ([]byte, error) {
     }
     FaxsummaryMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ReadCount int `json:"readCount"`
         
         UnreadCount int `json:"unreadCount"`
         
         TotalCount int `json:"totalCount"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

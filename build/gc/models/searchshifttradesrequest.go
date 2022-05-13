@@ -32,14 +32,7 @@ type Searchshifttradesrequest struct {
 // String returns a JSON representation of the model
 func (o *Searchshifttradesrequest) String() string {
     
-    
-    
-    
-    
-    
      o.ReceivingShiftIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,24 +48,21 @@ func (u *Searchshifttradesrequest) MarshalJSON() ([]byte, error) {
     }
     SearchshifttradesrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ReceivingScheduleId string `json:"receivingScheduleId"`
         
         ReceivingShiftIds []string `json:"receivingShiftIds"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         ReceivingShiftIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

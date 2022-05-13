@@ -76,35 +76,10 @@ func (o *Queryrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.FacetNameRequests = []string{""} 
-    
-    
-    
      o.Sort = []Sortitem{{}} 
-    
-    
-    
      o.Filters = []Contentfilteritem{{}} 
-    
-    
-    
      o.AttributeFilters = []Attributefilteritem{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -121,7 +96,8 @@ func (u *Queryrequest) MarshalJSON() ([]byte, error) {
     }
     QueryrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         QueryPhrase string `json:"queryPhrase"`
         
         PageNumber int `json:"pageNumber"`
@@ -137,50 +113,40 @@ func (u *Queryrequest) MarshalJSON() ([]byte, error) {
         AttributeFilters []Attributefilteritem `json:"attributeFilters"`
         
         IncludeShares bool `json:"includeShares"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         FacetNameRequests: []string{""},
         
 
-        
 
         
         Sort: []Sortitem{{}},
         
 
-        
 
         
         Filters: []Contentfilteritem{{}},
         
 
-        
 
         
         AttributeFilters: []Attributefilteritem{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

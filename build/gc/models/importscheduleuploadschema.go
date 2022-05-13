@@ -64,26 +64,7 @@ func (o *Importscheduleuploadschema) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.AgentSchedules = []Buimportagentscheduleuploadschema{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Importscheduleuploadschema) MarshalJSON() ([]byte, error) {
     }
     ImportscheduleuploadschemaMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Description string `json:"description"`
         
         WeekCount int `json:"weekCount"`
@@ -111,36 +93,28 @@ func (u *Importscheduleuploadschema) MarshalJSON() ([]byte, error) {
         HeadcountForecast Buheadcountforecast `json:"headcountForecast"`
         
         AgentSchedules []Buimportagentscheduleuploadschema `json:"agentSchedules"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         AgentSchedules: []Buimportagentscheduleuploadschema{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

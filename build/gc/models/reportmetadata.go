@@ -81,35 +81,9 @@ func (o *Reportmetadata) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Keywords = []string{""} 
-    
-    
-    
      o.AvailableLocales = []string{""} 
-    
-    
-    
      o.Parameters = []Parameter{{}} 
-    
-    
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -126,8 +100,7 @@ func (u *Reportmetadata) MarshalJSON() ([]byte, error) {
     }
     ReportmetadataMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -142,54 +115,41 @@ func (u *Reportmetadata) MarshalJSON() ([]byte, error) {
         Parameters []Parameter `json:"parameters"`
         
         ExampleUrl string `json:"exampleUrl"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Keywords: []string{""},
         
 
-        
 
         
         AvailableLocales: []string{""},
         
 
-        
 
         
         Parameters: []Parameter{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -42,16 +42,6 @@ func (o *Learningassignmentcreate) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -67,28 +57,24 @@ func (u *Learningassignmentcreate) MarshalJSON() ([]byte, error) {
     }
     LearningassignmentcreateMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ModuleId string `json:"moduleId"`
         
         UserId string `json:"userId"`
         
         RecommendedCompletionDate time.Time `json:"recommendedCompletionDate"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -49,19 +49,6 @@ func (o *Textbotflowturnrequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,7 +64,8 @@ func (u *Textbotflowturnrequest) MarshalJSON() ([]byte, error) {
     }
     TextbotflowturnrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         PreviousTurn Textbotturnreference `json:"previousTurn"`
         
         InputEventType string `json:"inputEventType"`
@@ -85,26 +73,20 @@ func (u *Textbotflowturnrequest) MarshalJSON() ([]byte, error) {
         InputEventUserInput Textbotuserinputevent `json:"inputEventUserInput"`
         
         InputEventError Textboterrorinputevent `json:"inputEventError"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

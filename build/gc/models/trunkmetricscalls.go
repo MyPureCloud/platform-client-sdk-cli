@@ -33,13 +33,6 @@ type Trunkmetricscalls struct {
 func (o *Trunkmetricscalls) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Trunkmetricscalls) MarshalJSON() ([]byte, error) {
     }
     TrunkmetricscallsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         InboundCallCount int `json:"inboundCallCount"`
         
         OutboundCallCount int `json:"outboundCallCount"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

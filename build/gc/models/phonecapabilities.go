@@ -87,35 +87,7 @@ func (o *Phonecapabilities) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.MediaCodecs = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -132,7 +104,8 @@ func (u *Phonecapabilities) MarshalJSON() ([]byte, error) {
     }
     PhonecapabilitiesMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Provisions bool `json:"provisions"`
         
         Registers bool `json:"registers"`
@@ -150,48 +123,37 @@ func (u *Phonecapabilities) MarshalJSON() ([]byte, error) {
         MediaCodecs []string `json:"mediaCodecs"`
         
         Cdm bool `json:"cdm"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         MediaCodecs: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -25,10 +25,6 @@ type Responsequeryresults struct {
 // String returns a JSON representation of the model
 func (o *Responsequeryresults) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Responsequeryresults) MarshalJSON() ([]byte, error) {
     }
     ResponsequeryresultsMarshalled = true
 
-    return json.Marshal(&struct { 
-        Results Responseentitylist `json:"results"`
+    return json.Marshal(&struct {
         
+        Results Responseentitylist `json:"results"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

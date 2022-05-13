@@ -41,16 +41,6 @@ func (o *Intradayperformancepredictiondata) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Intradayperformancepredictiondata) MarshalJSON() ([]byte, error) {
     }
     IntradayperformancepredictiondataMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ServiceLevelPercent float64 `json:"serviceLevelPercent"`
         
         AverageSpeedOfAnswerSeconds float64 `json:"averageSpeedOfAnswerSeconds"`
         
         OccupancyPercent float64 `json:"occupancyPercent"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

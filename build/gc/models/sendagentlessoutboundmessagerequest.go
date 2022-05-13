@@ -65,25 +65,6 @@ func (o *Sendagentlessoutboundmessagerequest) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Sendagentlessoutboundmessagerequest) MarshalJSON() ([]byte, error) {
     }
     SendagentlessoutboundmessagerequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FromAddress string `json:"fromAddress"`
         
         ToAddress string `json:"toAddress"`
@@ -111,34 +93,26 @@ func (u *Sendagentlessoutboundmessagerequest) MarshalJSON() ([]byte, error) {
         MessagingTemplate Messagingtemplaterequest `json:"messagingTemplate"`
         
         UseExistingActiveConversation bool `json:"useExistingActiveConversation"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

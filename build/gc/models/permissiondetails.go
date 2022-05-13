@@ -46,20 +46,7 @@ type Permissiondetails struct {
 // String returns a JSON representation of the model
 func (o *Permissiondetails) String() string {
     
-    
-    
-    
-    
-    
      o.Permissions = []string{""} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -77,7 +64,8 @@ func (u *Permissiondetails) MarshalJSON() ([]byte, error) {
     }
     PermissiondetailsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Permissions []string `json:"permissions"`
@@ -85,28 +73,22 @@ func (u *Permissiondetails) MarshalJSON() ([]byte, error) {
         AllowsCurrentUser bool `json:"allowsCurrentUser"`
         
         Enforced bool `json:"enforced"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Permissions: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

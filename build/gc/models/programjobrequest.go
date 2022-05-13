@@ -24,11 +24,7 @@ type Programjobrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Programjobrequest) String() string {
-    
-    
      o.ProgramIds = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Programjobrequest) MarshalJSON() ([]byte, error) {
     }
     ProgramjobrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        ProgramIds []string `json:"programIds"`
+    return json.Marshal(&struct {
         
+        ProgramIds []string `json:"programIds"`
         *Alias
     }{
-        
 
         
         ProgramIds: []string{""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -56,23 +56,7 @@ func (o *Chatmessageuser) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Images = []Userimage{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Chatmessageuser) MarshalJSON() ([]byte, error) {
     }
     ChatmessageuserMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -98,32 +83,25 @@ func (u *Chatmessageuser) MarshalJSON() ([]byte, error) {
         Username string `json:"username"`
         
         Images []Userimage `json:"images"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Images: []Userimage{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

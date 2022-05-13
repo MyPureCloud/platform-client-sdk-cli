@@ -146,57 +146,8 @@ func (o *Domaincertificateauthority) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Services = []string{""} 
-    
-    
-    
      o.CertificateDetails = []Certificatedetails{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -212,8 +163,7 @@ func (u *Domaincertificateauthority) MarshalJSON() ([]byte, error) {
     }
     DomaincertificateauthorityMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -231,8 +181,6 @@ func (u *Domaincertificateauthority) MarshalJSON() ([]byte, error) {
         
         CreatedBy string `json:"createdBy"`
         
-        
-        
         ModifiedByApp string `json:"modifiedByApp"`
         
         CreatedByApp string `json:"createdByApp"`
@@ -244,84 +192,63 @@ func (u *Domaincertificateauthority) MarshalJSON() ([]byte, error) {
         Services []string `json:"services"`
         
         CertificateDetails []Certificatedetails `json:"certificateDetails"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Services: []string{""},
         
 
-        
 
         
         CertificateDetails: []Certificatedetails{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

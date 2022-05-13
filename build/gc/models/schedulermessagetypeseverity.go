@@ -33,13 +33,6 @@ type Schedulermessagetypeseverity struct {
 func (o *Schedulermessagetypeseverity) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Schedulermessagetypeseverity) MarshalJSON() ([]byte, error) {
     }
     SchedulermessagetypeseverityMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Severity string `json:"severity"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

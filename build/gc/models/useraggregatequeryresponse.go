@@ -31,15 +31,8 @@ type Useraggregatequeryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Useraggregatequeryresponse) String() string {
-    
-    
      o.SystemToOrganizationMappings = map[string][]string{"": {}} 
-    
-    
-    
      o.Results = []Useraggregatedatacontainer{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,26 +48,23 @@ func (u *Useraggregatequeryresponse) MarshalJSON() ([]byte, error) {
     }
     UseraggregatequeryresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         SystemToOrganizationMappings map[string][]string `json:"systemToOrganizationMappings"`
         
         Results []Useraggregatedatacontainer `json:"results"`
-        
         *Alias
     }{
-        
 
         
         SystemToOrganizationMappings: map[string][]string{"": {}},
         
 
-        
 
         
         Results: []Useraggregatedatacontainer{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

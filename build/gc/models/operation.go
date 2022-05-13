@@ -93,39 +93,8 @@ func (o *Operation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.ErrorDetails = []Detail{{}} 
-    
-    
-    
      o.ErrorMessageParams = map[string]string{"": ""} 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -143,7 +112,8 @@ func (u *Operation) MarshalJSON() ([]byte, error) {
     }
     OperationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Complete bool `json:"complete"`
@@ -163,54 +133,42 @@ func (u *Operation) MarshalJSON() ([]byte, error) {
         ActionName string `json:"actionName"`
         
         ActionStatus string `json:"actionStatus"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         ErrorDetails: []Detail{{}},
         
 
-        
 
         
         ErrorMessageParams: map[string]string{"": ""},
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

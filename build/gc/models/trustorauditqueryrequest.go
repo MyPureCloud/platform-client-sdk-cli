@@ -68,34 +68,12 @@ type Trustorauditqueryrequest struct {
 // String returns a JSON representation of the model
 func (o *Trustorauditqueryrequest) String() string {
     
-    
-    
-    
-    
-    
      o.TrusteeUserIds = []string{""} 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Facets = []Facet{{}} 
-    
-    
-    
      o.Filters = []Filter{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -111,7 +89,8 @@ func (u *Trustorauditqueryrequest) MarshalJSON() ([]byte, error) {
     }
     TrustorauditqueryrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         TrustorOrganizationId string `json:"trustorOrganizationId"`
         
         TrusteeUserIds []string `json:"trusteeUserIds"`
@@ -125,44 +104,35 @@ func (u *Trustorauditqueryrequest) MarshalJSON() ([]byte, error) {
         Facets []Facet `json:"facets"`
         
         Filters []Filter `json:"filters"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         TrusteeUserIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Facets: []Facet{{}},
         
 
-        
 
         
         Filters: []Filter{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,12 +33,15 @@ func Cmdorganizations_limits_namespaces_defaults() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/LimitsEntityListing"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LimitsEntityListing"
+      }
+    }
   }
 }`)
 	organizations_limits_namespaces_defaultsCmd.AddCommand(listCmd)
-	
 	return organizations_limits_namespaces_defaultsCmd
 }
 

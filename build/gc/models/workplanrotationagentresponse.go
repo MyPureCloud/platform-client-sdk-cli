@@ -41,16 +41,6 @@ func (o *Workplanrotationagentresponse) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Workplanrotationagentresponse) MarshalJSON() ([]byte, error) {
     }
     WorkplanrotationagentresponseMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         User Userreference `json:"user"`
         
         DateRange Daterangewithoptionalend `json:"dateRange"`
         
         Position int `json:"position"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

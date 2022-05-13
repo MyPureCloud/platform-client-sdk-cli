@@ -35,12 +35,21 @@ func Cmdscim_v2_groups() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ScimV2Group"
+  "content" : {
+    "application/scim+json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScimV2Group"
+      }
+    },
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScimV2Group"
+      }
+    }
   }
 }`)
 	scim_v2_groupsCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "startIndex", "1", "The 1-based index of the first query result.")
 	utils.AddFlag(listCmd.Flags(), "int", "count", "25", "The requested number of items per page. A value of 0 returns totalResults. A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the excludedAttributes or attributes query parameters to exclude or only include secondary lookup values such as externalId,  roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, or urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "attributes", "", "Indicates which attributes to include. Returns these attributes and the id, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes. Valid values: id, displayName, members, externalId, meta, meta.version, meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:meta, urn:ietf:params:scim:schemas:core:2.0:Group:meta.version, urn:ietf:params:scim:schemas:core:2.0:Group:meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId")
@@ -52,50 +61,90 @@ func Cmdscim_v2_groups() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/scim+json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    },
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	scim_v2_groupsCmd.AddCommand(listCmd)
-	
+
 	modifyCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", modifyCmd.UsageTemplate(), "PATCH", "/api/v2/scim/v2/groups/{groupId}", utils.FormatPermissions([]string{ "directory:group:edit",  }), utils.GenerateDevCentreLink("PATCH", "SCIM", "/api/v2/scim/v2/groups/{groupId}")))
 	utils.AddFileFlagIfUpsert(modifyCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The information used to modify a group.",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ScimV2PatchRequest"
-  }
+  "content" : {
+    "application/scim+json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScimV2PatchRequest"
+      }
+    },
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScimV2PatchRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(modifyCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ScimV2Group"
+  "content" : {
+    "application/scim+json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScimV2Group"
+      }
+    },
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScimV2Group"
+      }
+    }
   }
 }`)
 	scim_v2_groupsCmd.AddCommand(modifyCmd)
-	
+
 	replaceCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", replaceCmd.UsageTemplate(), "PUT", "/api/v2/scim/v2/groups/{groupId}", utils.FormatPermissions([]string{ "directory:group:edit",  }), utils.GenerateDevCentreLink("PUT", "SCIM", "/api/v2/scim/v2/groups/{groupId}")))
 	utils.AddFileFlagIfUpsert(replaceCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "The information used to replace a group.",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/ScimV2Group"
-  }
+  "content" : {
+    "application/scim+json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScimV2Group"
+      }
+    },
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScimV2Group"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(replaceCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/ScimV2Group"
+  "content" : {
+    "application/scim+json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScimV2Group"
+      }
+    },
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ScimV2Group"
+      }
+    }
   }
 }`)
 	scim_v2_groupsCmd.AddCommand(replaceCmd)
-	
 	return scim_v2_groupsCmd
 }
 

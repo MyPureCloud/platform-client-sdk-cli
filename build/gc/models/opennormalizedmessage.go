@@ -91,43 +91,12 @@ func (o *Opennormalizedmessage) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Content = []Openmessagecontent{{}} 
-    
-    
-    
-    
-    
-    
     
      o.Reasons = []Reason{{}} 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Metadata = map[string]string{"": ""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,7 +112,8 @@ func (u *Opennormalizedmessage) MarshalJSON() ([]byte, error) {
     }
     OpennormalizedmessageMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Channel Openmessagingchannel `json:"channel"`
@@ -163,56 +133,44 @@ func (u *Opennormalizedmessage) MarshalJSON() ([]byte, error) {
         Direction string `json:"direction"`
         
         Metadata map[string]string `json:"metadata"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Content: []Openmessagecontent{{}},
         
 
-        
 
         
 
-        
 
         
         Reasons: []Reason{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Metadata: map[string]string{"": ""},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

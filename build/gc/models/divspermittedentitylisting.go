@@ -94,41 +94,7 @@ type Divspermittedentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Divspermittedentitylisting) String() string {
-    
-    
      o.Entities = []Authzdivision{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -154,7 +120,8 @@ func (u *Divspermittedentitylisting) MarshalJSON() ([]byte, error) {
     }
     DivspermittedentitylistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Authzdivision `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -176,56 +143,43 @@ func (u *Divspermittedentitylisting) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Authzdivision{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -24,11 +24,7 @@ type Textbotmodeoutputprompts struct {
 
 // String returns a JSON representation of the model
 func (o *Textbotmodeoutputprompts) String() string {
-    
-    
      o.Segments = []Textbotpromptsegment{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Textbotmodeoutputprompts) MarshalJSON() ([]byte, error) {
     }
     TextbotmodeoutputpromptsMarshalled = true
 
-    return json.Marshal(&struct { 
-        Segments []Textbotpromptsegment `json:"segments"`
+    return json.Marshal(&struct {
         
+        Segments []Textbotpromptsegment `json:"segments"`
         *Alias
     }{
-        
 
         
         Segments: []Textbotpromptsegment{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -30,61 +30,78 @@ func init() {
 func Cmdquality_forms_surveys() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/quality/forms/surveys", utils.FormatPermissions([]string{ "quality:surveyForm:add",  }), utils.GenerateDevCentreLink("POST", "Quality", "/api/v2/quality/forms/surveys")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Survey form",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/SurveyForm"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SurveyForm"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SurveyForm"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SurveyForm"
+      }
+    }
   }
 }`)
 	quality_forms_surveysCmd.AddCommand(createCmd)
-	
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:delete",  }), utils.GenerateDevCentreLink("DELETE", "Quality", "/api/v2/quality/forms/surveys/{formId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful."
+  "description" : "Operation was successful.",
+  "content" : { }
 }`)
 	quality_forms_surveysCmd.AddCommand(deleteCmd)
-	
+
 	disableCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", disableCmd.UsageTemplate(), "PATCH", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:disable",  }), utils.GenerateDevCentreLink("PATCH", "Quality", "/api/v2/quality/forms/surveys/{formId}")))
 	utils.AddFileFlagIfUpsert(disableCmd.Flags(), "PATCH", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Survey form",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/SurveyForm"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SurveyForm"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(disableCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SurveyForm"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SurveyForm"
+      }
+    }
   }
 }`)
 	quality_forms_surveysCmd.AddCommand(disableCmd)
-	
+
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/forms/surveys/{formId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SurveyForm"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SurveyForm"
+      }
+    }
   }
 }`)
 	quality_forms_surveysCmd.AddCommand(getCmd)
-	
+
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
@@ -98,31 +115,40 @@ func Cmdquality_forms_surveys() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SWAGGER_OVERRIDE_list"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
   }
 }`)
 	quality_forms_surveysCmd.AddCommand(listCmd)
-	
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/forms/surveys/{formId}", utils.FormatPermissions([]string{ "quality:surveyForm:edit",  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/forms/surveys/{formId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "in" : "body",
-  "name" : "body",
   "description" : "Survey form",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/SurveyForm"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SurveyForm"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/SurveyForm"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SurveyForm"
+      }
+    }
   }
 }`)
 	quality_forms_surveysCmd.AddCommand(updateCmd)
-	
 	return quality_forms_surveysCmd
 }
 

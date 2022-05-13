@@ -135,66 +135,17 @@ func (o *Analyticsconversation) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.DivisionIds = []string{""} 
-    
-    
-    
-    
-    
-    
     
      o.KnowledgeBaseIds = []string{""} 
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Evaluations = []Analyticsevaluation{{}} 
-    
-    
-    
      o.Surveys = []Analyticssurvey{{}} 
-    
-    
-    
      o.Resolutions = []Analyticsresolution{{}} 
-    
-    
-    
      o.Participants = []Analyticsparticipant{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -210,7 +161,8 @@ func (u *Analyticsconversation) MarshalJSON() ([]byte, error) {
     }
     AnalyticsconversationMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         ConversationEnd time.Time `json:"conversationEnd"`
         
         ConversationId string `json:"conversationId"`
@@ -242,86 +194,68 @@ func (u *Analyticsconversation) MarshalJSON() ([]byte, error) {
         Resolutions []Analyticsresolution `json:"resolutions"`
         
         Participants []Analyticsparticipant `json:"participants"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         DivisionIds: []string{""},
         
 
-        
 
         
 
-        
 
         
         KnowledgeBaseIds: []string{""},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Evaluations: []Analyticsevaluation{{}},
         
 
-        
 
         
         Surveys: []Analyticssurvey{{}},
         
 
-        
 
         
         Resolutions: []Analyticsresolution{{}},
         
 
-        
 
         
         Participants: []Analyticsparticipant{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

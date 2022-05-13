@@ -79,33 +79,8 @@ func (o *Messagedetails) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Media = []Messagemedia{{}} 
-    
-    
-    
      o.Stickers = []Messagesticker{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -122,7 +97,8 @@ func (u *Messagedetails) MarshalJSON() ([]byte, error) {
     }
     MessagedetailsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         MessageId string `json:"messageId"`
         
         MessageURI string `json:"messageURI"`
@@ -138,46 +114,36 @@ func (u *Messagedetails) MarshalJSON() ([]byte, error) {
         Stickers []Messagesticker `json:"stickers"`
         
         ErrorInfo Errorbody `json:"errorInfo"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Media: []Messagemedia{{}},
         
 
-        
 
         
         Stickers: []Messagesticker{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

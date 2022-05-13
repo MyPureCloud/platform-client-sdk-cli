@@ -44,18 +44,7 @@ type Learningmodulerule struct {
 // String returns a JSON representation of the model
 func (o *Learningmodulerule) String() string {
     
-    
-    
-    
-    
-    
-    
-    
      o.Parts = []Learningmoduleruleparts{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -71,36 +60,27 @@ func (u *Learningmodulerule) MarshalJSON() ([]byte, error) {
     }
     LearningmoduleruleMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         IsActive bool `json:"isActive"`
         
         Parts []Learningmoduleruleparts `json:"parts"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Parts: []Learningmoduleruleparts{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

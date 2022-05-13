@@ -25,10 +25,6 @@ type Consulttransferupdate struct {
 // String returns a JSON representation of the model
 func (o *Consulttransferupdate) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Consulttransferupdate) MarshalJSON() ([]byte, error) {
     }
     ConsulttransferupdateMarshalled = true
 
-    return json.Marshal(&struct { 
-        SpeakTo string `json:"speakTo"`
+    return json.Marshal(&struct {
         
+        SpeakTo string `json:"speakTo"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

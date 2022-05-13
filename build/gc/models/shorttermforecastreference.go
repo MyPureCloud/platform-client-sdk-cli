@@ -45,17 +45,6 @@ type Shorttermforecastreference struct {
 func (o *Shorttermforecastreference) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -71,34 +60,25 @@ func (u *Shorttermforecastreference) MarshalJSON() ([]byte, error) {
     }
     ShorttermforecastreferenceMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
+    return json.Marshal(&struct {
         
         WeekDate string `json:"weekDate"`
         
         Description string `json:"description"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -33,13 +33,6 @@ type Surveyerrordetails struct {
 func (o *Surveyerrordetails) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Surveyerrordetails) MarshalJSON() ([]byte, error) {
     }
     SurveyerrordetailsMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         FlowDiagnosticInfo Flowdiagnosticinfo `json:"flowDiagnosticInfo"`
         
         SurveyErrorReason string `json:"surveyErrorReason"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

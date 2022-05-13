@@ -39,17 +39,7 @@ type Nludomainversionqualityreport struct {
 // String returns a JSON representation of the model
 func (o *Nludomainversionqualityreport) String() string {
     
-    
-    
-    
-    
-    
      o.ConfusionMatrix = []Nluconfusionmatrixrow{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -66,30 +56,26 @@ func (u *Nludomainversionqualityreport) MarshalJSON() ([]byte, error) {
     }
     NludomainversionqualityreportMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Version Nludomainversion `json:"version"`
         
         ConfusionMatrix []Nluconfusionmatrixrow `json:"confusionMatrix"`
         
         Summary Nluqualityreportsummary `json:"summary"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         ConfusionMatrix: []Nluconfusionmatrixrow{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

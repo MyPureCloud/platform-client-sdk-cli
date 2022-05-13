@@ -69,26 +69,6 @@ func (o *Recordingencryptionconfiguration) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -104,8 +84,7 @@ func (u *Recordingencryptionconfiguration) MarshalJSON() ([]byte, error) {
     }
     RecordingencryptionconfigurationMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Url string `json:"url"`
         
@@ -116,40 +95,29 @@ func (u *Recordingencryptionconfiguration) MarshalJSON() ([]byte, error) {
         KeyConfigurationType string `json:"keyConfigurationType"`
         
         LastError Errorbody `json:"lastError"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

@@ -49,18 +49,6 @@ type Userapp struct {
 // String returns a JSON representation of the model
 func (o *Userapp) String() string {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -76,40 +64,26 @@ func (u *Userapp) MarshalJSON() ([]byte, error) {
     }
     UserappMarshalled = true
 
-    return json.Marshal(&struct { 
-        
-        
-        
-        
-        
+    return json.Marshal(&struct {
         
         Config Userappconfigurationinfo `json:"config"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

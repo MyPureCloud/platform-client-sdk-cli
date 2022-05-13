@@ -147,56 +147,7 @@ func (o *Edgegroup) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.PhoneTrunkBases = []Trunkbase{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -212,8 +163,7 @@ func (u *Edgegroup) MarshalJSON() ([]byte, error) {
     }
     EdgegroupMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -231,8 +181,6 @@ func (u *Edgegroup) MarshalJSON() ([]byte, error) {
         
         CreatedBy string `json:"createdBy"`
         
-        
-        
         ModifiedByApp string `json:"modifiedByApp"`
         
         CreatedByApp string `json:"createdByApp"`
@@ -244,82 +192,61 @@ func (u *Edgegroup) MarshalJSON() ([]byte, error) {
         EdgeTrunkBaseAssignment Trunkbaseassignment `json:"edgeTrunkBaseAssignment"`
         
         PhoneTrunkBases []Trunkbase `json:"phoneTrunkBases"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         PhoneTrunkBases: []Trunkbase{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

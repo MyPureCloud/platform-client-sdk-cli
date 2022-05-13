@@ -63,24 +63,6 @@ func (o *Flowoutcome) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -96,7 +78,8 @@ func (u *Flowoutcome) MarshalJSON() ([]byte, error) {
     }
     FlowoutcomeMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Id string `json:"id"`
         
         Name string `json:"name"`
@@ -106,36 +89,26 @@ func (u *Flowoutcome) MarshalJSON() ([]byte, error) {
         Description string `json:"description"`
         
         CurrentOperation Operation `json:"currentOperation"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

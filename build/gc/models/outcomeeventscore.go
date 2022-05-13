@@ -41,16 +41,6 @@ func (o *Outcomeeventscore) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,28 +56,24 @@ func (u *Outcomeeventscore) MarshalJSON() ([]byte, error) {
     }
     OutcomeeventscoreMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Outcome Addressableentityref `json:"outcome"`
         
         SessionMaxProbability float32 `json:"sessionMaxProbability"`
         
         Probability float32 `json:"probability"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

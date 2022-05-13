@@ -30,22 +30,27 @@ func init() {
 func Cmdtextbots_botflows_sessions_turns() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/textbots/botflows/sessions/{sessionId}/turns", utils.FormatPermissions([]string{ "textbots:botFlowSession:execute",  }), utils.GenerateDevCentreLink("POST", "Textbots", "/api/v2/textbots/botflows/sessions/{sessionId}/turns")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "in" : "body",
-  "name" : "turnRequest",
-  "required" : true,
-  "schema" : {
-    "$ref" : "#/definitions/TextBotFlowTurnRequest"
-  }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TextBotFlowTurnRequest"
+      }
+    }
+  },
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/TextBotFlowTurnResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/TextBotFlowTurnResponse"
+      }
+    }
   }
 }`)
 	textbots_botflows_sessions_turnsCmd.AddCommand(createCmd)
-	
 	return textbots_botflows_sessions_turnsCmd
 }
 

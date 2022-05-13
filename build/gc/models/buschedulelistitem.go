@@ -86,32 +86,6 @@ func (o *Buschedulelistitem) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -127,8 +101,7 @@ func (u *Buschedulelistitem) MarshalJSON() ([]byte, error) {
     }
     BuschedulelistitemMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         WeekDate time.Time `json:"weekDate"`
         
@@ -143,48 +116,35 @@ func (u *Buschedulelistitem) MarshalJSON() ([]byte, error) {
         GenerationResults Schedulegenerationresultsummary `json:"generationResults"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

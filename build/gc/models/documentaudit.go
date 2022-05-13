@@ -141,54 +141,7 @@ func (o *Documentaudit) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Changes = []Auditchange{{}} 
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -204,8 +157,7 @@ func (u *Documentaudit) MarshalJSON() ([]byte, error) {
     }
     DocumentauditMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
@@ -234,78 +186,58 @@ func (u *Documentaudit) MarshalJSON() ([]byte, error) {
         Entity Auditentityreference `json:"entity"`
         
         Changes []Auditchange `json:"changes"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Changes: []Auditchange{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

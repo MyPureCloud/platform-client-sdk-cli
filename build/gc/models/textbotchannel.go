@@ -46,21 +46,8 @@ type Textbotchannel struct {
 // String returns a JSON representation of the model
 func (o *Textbotchannel) String() string {
     
-    
-    
-    
-    
-    
      o.InputModes = []string{""} 
-    
-    
-    
      o.OutputModes = []string{""} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Textbotchannel) MarshalJSON() ([]byte, error) {
     }
     TextbotchannelMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         InputModes []string `json:"inputModes"`
@@ -85,30 +73,24 @@ func (u *Textbotchannel) MarshalJSON() ([]byte, error) {
         OutputModes []string `json:"outputModes"`
         
         UserAgent Textbotuseragent `json:"userAgent"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         InputModes: []string{""},
         
 
-        
 
         
         OutputModes: []string{""},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

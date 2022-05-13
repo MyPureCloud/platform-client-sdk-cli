@@ -24,11 +24,7 @@ type Bulkcontactsrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Bulkcontactsrequest) String() string {
-    
-    
      o.Entities = []Externalcontact{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Bulkcontactsrequest) MarshalJSON() ([]byte, error) {
     }
     BulkcontactsrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        Entities []Externalcontact `json:"entities"`
+    return json.Marshal(&struct {
         
+        Entities []Externalcontact `json:"entities"`
         *Alias
     }{
-        
 
         
         Entities: []Externalcontact{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

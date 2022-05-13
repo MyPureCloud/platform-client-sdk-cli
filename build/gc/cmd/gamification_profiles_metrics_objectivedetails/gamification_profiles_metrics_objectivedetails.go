@@ -34,12 +34,15 @@ func Cmdgamification_profiles_metrics_objectivedetails() *cobra.Command {
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
-  "schema" : {
-    "$ref" : "#/definitions/GetMetricsResponse"
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/GetMetricsResponse"
+      }
+    }
   }
 }`)
 	gamification_profiles_metrics_objectivedetailsCmd.AddCommand(listCmd)
-	
 	return gamification_profiles_metrics_objectivedetailsCmd
 }
 

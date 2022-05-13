@@ -64,26 +64,7 @@ func (o *Textbotexitaction) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.FlowOutcomes = []Textbotflowoutcome{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,7 +80,8 @@ func (u *Textbotexitaction) MarshalJSON() ([]byte, error) {
     }
     TextbotexitactionMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Reason string `json:"reason"`
         
         ReasonExtendedInfo string `json:"reasonExtendedInfo"`
@@ -111,36 +93,28 @@ func (u *Textbotexitaction) MarshalJSON() ([]byte, error) {
         OutputData Textbotinputoutputdata `json:"outputData"`
         
         FlowOutcomes []Textbotflowoutcome `json:"flowOutcomes"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         FlowOutcomes: []Textbotflowoutcome{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

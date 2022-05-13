@@ -33,13 +33,6 @@ type Trunkmetricsnetworktypeip struct {
 func (o *Trunkmetricsnetworktypeip) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Trunkmetricsnetworktypeip) MarshalJSON() ([]byte, error) {
     }
     TrunkmetricsnetworktypeipMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Address string `json:"address"`
         
         ErrorInfo Trunkerrorinfo `json:"errorInfo"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

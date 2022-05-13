@@ -87,38 +87,7 @@ type Managementunitlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Managementunitlisting) String() string {
-    
-    
      o.Entities = []Managementunit{{}} 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -143,7 +112,8 @@ func (u *Managementunitlisting) MarshalJSON() ([]byte, error) {
     }
     ManagementunitlistingMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Entities []Managementunit `json:"entities"`
         
         PageSize int `json:"pageSize"`
@@ -163,52 +133,40 @@ func (u *Managementunitlisting) MarshalJSON() ([]byte, error) {
         PageCount int `json:"pageCount"`
         
         SelfUri string `json:"selfUri"`
-        
         *Alias
     }{
-        
 
         
         Entities: []Managementunit{{}},
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

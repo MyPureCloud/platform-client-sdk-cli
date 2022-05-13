@@ -64,7 +64,7 @@ type Supportedcontent struct {
     
 
 
-    // MediaTypes - Defines the allowable media that may be accepted for an inbound message or to be sent in an outbound message. The following is an example of allowing all inbound media, and for outbound all images and only mpeg video: {   \"mediaTypes\": {     \"allow\": {       \"inbound\": [{\"type\": \"*/*\"}],       \"outbound\": [{\"type\": \"image/*\"}, {\"type\": \"video/mpeg\"}]     }   } }
+    // MediaTypes - Defines the allowable media that may be accepted for an inbound message or to be sent in an outbound message. The following is an example of allowing all inbound media, and for outbound all images and only mpeg video: {   \"mediaTypes\": {     \"allow\": {       \"inbound\": [{\"type\": \"*_/_*\"}],       \"outbound\": [{\"type\": \"image/_*\"}, {\"type\": \"video/mpeg\"}]     }   } }
     MediaTypes Mediatypes `json:"mediaTypes"`
 
 
@@ -74,27 +74,6 @@ type Supportedcontent struct {
 
 // String returns a JSON representation of the model
 func (o *Supportedcontent) String() string {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -112,64 +91,40 @@ func (u *Supportedcontent) MarshalJSON() ([]byte, error) {
     }
     SupportedcontentMarshalled = true
 
-    return json.Marshal(&struct { 
-        
+    return json.Marshal(&struct {
         
         Name string `json:"name"`
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         MediaTypes Mediatypes `json:"mediaTypes"`
-        
-        
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

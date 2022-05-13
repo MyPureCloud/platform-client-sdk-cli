@@ -25,10 +25,6 @@ type Scimuserrole struct {
 // String returns a JSON representation of the model
 func (o *Scimuserrole) String() string {
     
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,16 +40,14 @@ func (u *Scimuserrole) MarshalJSON() ([]byte, error) {
     }
     ScimuserroleMarshalled = true
 
-    return json.Marshal(&struct { 
-        Value string `json:"value"`
+    return json.Marshal(&struct {
         
+        Value string `json:"value"`
         *Alias
     }{
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

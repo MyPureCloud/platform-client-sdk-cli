@@ -33,13 +33,6 @@ type Conversationnotificationtemplateparameter struct {
 func (o *Conversationnotificationtemplateparameter) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -55,22 +48,19 @@ func (u *Conversationnotificationtemplateparameter) MarshalJSON() ([]byte, error
     }
     ConversationnotificationtemplateparameterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         Text string `json:"text"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

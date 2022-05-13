@@ -47,20 +47,7 @@ type Addworkplanrotationrequest struct {
 func (o *Addworkplanrotationrequest) String() string {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
      o.Agents = []Addworkplanrotationagentrequest{{}} 
-    
-    
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -77,7 +64,8 @@ func (u *Addworkplanrotationrequest) MarshalJSON() ([]byte, error) {
     }
     AddworkplanrotationrequestMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Name string `json:"name"`
         
         DateRange Daterangewithoptionalend `json:"dateRange"`
@@ -85,28 +73,22 @@ func (u *Addworkplanrotationrequest) MarshalJSON() ([]byte, error) {
         Agents []Addworkplanrotationagentrequest `json:"agents"`
         
         Pattern Workplanpatternrequest `json:"pattern"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
         Agents: []Addworkplanrotationagentrequest{{}},
         
 
-        
 
         
 
-        
         Alias: (*Alias)(u),
     })
 }

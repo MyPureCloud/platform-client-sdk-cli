@@ -24,11 +24,7 @@ type Draftrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Draftrequest) String() string {
-    
-    
      o.Intents = []Draftintents{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,18 +40,16 @@ func (u *Draftrequest) MarshalJSON() ([]byte, error) {
     }
     DraftrequestMarshalled = true
 
-    return json.Marshal(&struct { 
-        Intents []Draftintents `json:"intents"`
+    return json.Marshal(&struct {
         
+        Intents []Draftintents `json:"intents"`
         *Alias
     }{
-        
 
         
         Intents: []Draftintents{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

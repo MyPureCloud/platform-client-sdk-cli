@@ -39,18 +39,8 @@ type Evaluationdetailqueryfilter struct {
 // String returns a JSON representation of the model
 func (o *Evaluationdetailqueryfilter) String() string {
     
-    
-    
-    
-    
-    
      o.Clauses = []Evaluationdetailqueryclause{{}} 
-    
-    
-    
      o.Predicates = []Evaluationdetailquerypredicate{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -66,32 +56,28 @@ func (u *Evaluationdetailqueryfilter) MarshalJSON() ([]byte, error) {
     }
     EvaluationdetailqueryfilterMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         VarType string `json:"type"`
         
         Clauses []Evaluationdetailqueryclause `json:"clauses"`
         
         Predicates []Evaluationdetailquerypredicate `json:"predicates"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
         Clauses: []Evaluationdetailqueryclause{{}},
         
 
-        
 
         
         Predicates: []Evaluationdetailquerypredicate{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

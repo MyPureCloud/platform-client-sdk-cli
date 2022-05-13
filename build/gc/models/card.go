@@ -56,23 +56,7 @@ func (o *Card) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
      o.Actions = []Cardaction{{}} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,7 +72,8 @@ func (u *Card) MarshalJSON() ([]byte, error) {
     }
     CardMarshalled = true
 
-    return json.Marshal(&struct { 
+    return json.Marshal(&struct {
+        
         Title string `json:"title"`
         
         Description string `json:"description"`
@@ -98,32 +83,25 @@ func (u *Card) MarshalJSON() ([]byte, error) {
         DefaultAction Cardaction `json:"defaultAction"`
         
         Actions []Cardaction `json:"actions"`
-        
         *Alias
     }{
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
 
-        
 
         
         Actions: []Cardaction{{}},
         
 
-        
         Alias: (*Alias)(u),
     })
 }

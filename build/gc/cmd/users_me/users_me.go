@@ -29,7 +29,7 @@ func init() {
 
 func Cmdusers_me() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture")
-	utils.AddFlag(getCmd.Flags(), "string", "integrationPresenceSource", "", "Get your presence for a given integration. This parameter will only be used when presence is provided as an expand. Valid values: MicrosoftTeams, ZoomPhone, RingCentral")
+	utils.AddFlag(getCmd.Flags(), "string", "integrationPresenceSource", "", "Get your presence for a given integration. This parameter will only be used when presence is provided as an expand. Valid values: MicrosoftTeams, ZoomPhone")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/me")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -94,6 +94,11 @@ var getCmd = &cobra.Command{
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
 			logger.Fatal(err)
 		}
 

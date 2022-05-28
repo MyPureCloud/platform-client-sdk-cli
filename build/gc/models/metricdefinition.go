@@ -35,6 +35,12 @@ type MetricdefinitionDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -72,6 +78,14 @@ type Metricdefinition struct {
     LockTemplateId string `json:"lockTemplateId"`
 
 
+    // MediaTypeFilteringAllowed - Flag to indicate if this metricDefinition allows filter based on media types
+    MediaTypeFilteringAllowed bool `json:"mediaTypeFilteringAllowed"`
+
+
+    // QueueFilteringAllowed - Flag to indicate if this metricDefinition allows filter based on queues
+    QueueFilteringAllowed bool `json:"queueFilteringAllowed"`
+
+
     
 
 }
@@ -83,6 +97,8 @@ func (o *Metricdefinition) String() string {
     
      o.DividendMetrics = []string{""} 
      o.DivisorMetrics = []string{""} 
+    
+    
     
     
 
@@ -115,6 +131,10 @@ func (u *Metricdefinition) MarshalJSON() ([]byte, error) {
         DefaultObjective Defaultobjective `json:"defaultObjective"`
         
         LockTemplateId string `json:"lockTemplateId"`
+        
+        MediaTypeFilteringAllowed bool `json:"mediaTypeFilteringAllowed"`
+        
+        QueueFilteringAllowed bool `json:"queueFilteringAllowed"`
         *Alias
     }{
 
@@ -137,6 +157,12 @@ func (u *Metricdefinition) MarshalJSON() ([]byte, error) {
 
         
         DivisorMetrics: []string{""},
+        
+
+
+        
+
+
         
 
 

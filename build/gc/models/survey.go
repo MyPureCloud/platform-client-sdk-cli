@@ -56,7 +56,7 @@ type Survey struct {
 
 
     // Conversation
-    Conversation Conversation `json:"conversation"`
+    Conversation Conversationreference `json:"conversation"`
 
 
     // SurveyForm - Survey form used for this survey.
@@ -121,7 +121,7 @@ func (u *Survey) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
-        Conversation Conversation `json:"conversation"`
+        Conversation Conversationreference `json:"conversation"`
         
         SurveyForm Surveyform `json:"surveyForm"`
         

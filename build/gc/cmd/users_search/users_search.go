@@ -55,7 +55,7 @@ func Cmdusers_search() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "string", "q64", "", "q64 - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "expand")
-	utils.AddFlag(listCmd.Flags(), "string", "integrationPresenceSource", "", "integrationPresenceSource Valid values: MicrosoftTeams, ZoomPhone, RingCentral")
+	utils.AddFlag(listCmd.Flags(), "string", "integrationPresenceSource", "", "integrationPresenceSource Valid values: MicrosoftTeams, ZoomPhone")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/search", utils.FormatPermissions([]string{ "directory:user:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/search")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("q64")
@@ -116,6 +116,11 @@ var createCmd = &cobra.Command{
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
 			logger.Fatal(err)
 		}
 
@@ -173,6 +178,11 @@ var listCmd = &cobra.Command{
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
 			logger.Fatal(err)
 		}
 

@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdlicense_definitions() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/license/definitions/{licenseId}", utils.FormatPermissions([]string{ "authorization:grant:add",  }), utils.GenerateDevCentreLink("GET", "License", "/api/v2/license/definitions/{licenseId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/license/definitions/{licenseId}", utils.FormatPermissions([]string{ "authorization:grant:add", "authorization:license:view",  }), utils.GenerateDevCentreLink("GET", "License", "/api/v2/license/definitions/{licenseId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -43,7 +43,7 @@ func Cmdlicense_definitions() *cobra.Command {
 }`)
 	license_definitionsCmd.AddCommand(getCmd)
 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/license/definitions", utils.FormatPermissions([]string{ "authorization:grant:add",  }), utils.GenerateDevCentreLink("GET", "License", "/api/v2/license/definitions")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/license/definitions", utils.FormatPermissions([]string{ "authorization:grant:add", "authorization:license:view",  }), utils.GenerateDevCentreLink("GET", "License", "/api/v2/license/definitions")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -104,6 +104,11 @@ var getCmd = &cobra.Command{
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
 			logger.Fatal(err)
 		}
 
@@ -149,6 +154,11 @@ var listCmd = &cobra.Command{
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
 			logger.Fatal(err)
 		}
 

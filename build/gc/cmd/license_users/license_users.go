@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdlicense_users() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/license/users", utils.FormatPermissions([]string{ "authorization:grant:add",  }), utils.GenerateDevCentreLink("POST", "License", "/api/v2/license/users")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/license/users", utils.FormatPermissions([]string{ "authorization:grant:add", "authorization:license:view",  }), utils.GenerateDevCentreLink("POST", "License", "/api/v2/license/users")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "The user IDs to fetch.",
   "content" : {
@@ -60,7 +60,7 @@ func Cmdlicense_users() *cobra.Command {
 }`)
 	license_usersCmd.AddCommand(createCmd)
 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/license/users/{userId}", utils.FormatPermissions([]string{ "authorization:grant:add",  }), utils.GenerateDevCentreLink("GET", "License", "/api/v2/license/users/{userId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/license/users/{userId}", utils.FormatPermissions([]string{ "authorization:grant:add", "authorization:license:view",  }), utils.GenerateDevCentreLink("GET", "License", "/api/v2/license/users/{userId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -136,6 +136,11 @@ var createCmd = &cobra.Command{
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
 			logger.Fatal(err)
 		}
 
@@ -183,6 +188,11 @@ var getCmd = &cobra.Command{
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
 			logger.Fatal(err)
 		}
 
@@ -236,6 +246,11 @@ var listCmd = &cobra.Command{
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
 			logger.Fatal(err)
 		}
 

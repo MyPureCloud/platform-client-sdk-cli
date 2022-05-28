@@ -16,10 +16,16 @@ type KeyperformanceindicatorDud struct {
 
     Name string `json:"name"`
 
+
+    OptimizationType string `json:"optimizationType"`
+
 }
 
 // Keyperformanceindicator
 type Keyperformanceindicator struct { 
+    
+
+
     
 
 
@@ -47,6 +53,9 @@ func (u *Keyperformanceindicator) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

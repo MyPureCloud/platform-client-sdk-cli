@@ -49,6 +49,11 @@ func (r *RESTClient) Get(uri string) (string, error) {
 	return r.callAPI(http.MethodGet, uri, "")
 }
 
+//Head executes an HTTP Head
+func (r *RESTClient) Head(uri string) (string, error) {
+	return r.callAPI(http.MethodHead, uri, "")
+}
+
 //Put executes an HTTP Put
 func (r *RESTClient) Put(uri string, data string) (string, error) {
 	return r.callAPI(http.MethodPut, uri, data)
@@ -98,7 +103,7 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
 	//User-Agent and SDK version headers
 	request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-	request.Header.Set("purecloud-sdk", "37.0.0")
+	request.Header.Set("purecloud-sdk", "38.0.0")
 
 	if data != "" {
 		request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
@@ -230,7 +235,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
 	//User-Agent and SDK version headers
 	request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-	request.Header.Set("purecloud-sdk", "37.0.0")
+	request.Header.Set("purecloud-sdk", "38.0.0")
 
 	//Setting up the form data
 	form := url.Values{}

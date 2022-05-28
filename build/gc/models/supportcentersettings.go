@@ -31,6 +31,9 @@ type SupportcentersettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Supportcentersettings - Settings concerning support center
@@ -62,6 +65,10 @@ type Supportcentersettings struct {
     // StyleSetting - Style attributes for support center
     StyleSetting Supportcenterstylesetting `json:"styleSetting"`
 
+
+    // Feedback - Customer feedback settings
+    Feedback Supportcenterfeedbacksettings `json:"feedback"`
+
 }
 
 // String returns a JSON representation of the model
@@ -72,6 +79,7 @@ func (o *Supportcentersettings) String() string {
     
      o.Screens = []Supportcenterscreen{{}} 
      o.EnabledCategories = []Addressableentityref{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -103,6 +111,8 @@ func (u *Supportcentersettings) MarshalJSON() ([]byte, error) {
         EnabledCategories []Addressableentityref `json:"enabledCategories"`
         
         StyleSetting Supportcenterstylesetting `json:"styleSetting"`
+        
+        Feedback Supportcenterfeedbacksettings `json:"feedback"`
         *Alias
     }{
 
@@ -127,6 +137,9 @@ func (u *Supportcentersettings) MarshalJSON() ([]byte, error) {
 
         
         EnabledCategories: []Addressableentityref{{}},
+        
+
+
         
 
 

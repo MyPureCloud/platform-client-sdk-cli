@@ -60,10 +60,6 @@ type Domainentitylistingevaluationform struct {
     Total int `json:"total"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
     // FirstUri
     FirstUri string `json:"firstUri"`
 
@@ -72,12 +68,16 @@ type Domainentitylistingevaluationform struct {
     SelfUri string `json:"selfUri"`
 
 
+    // NextUri
+    NextUri string `json:"nextUri"`
+
+
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
+    // LastUri
+    LastUri string `json:"lastUri"`
 
 
     // PageCount
@@ -122,15 +122,15 @@ func (u *Domainentitylistingevaluationform) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        LastUri string `json:"lastUri"`
-        
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         
+        NextUri string `json:"nextUri"`
+        
         PreviousUri string `json:"previousUri"`
         
-        NextUri string `json:"nextUri"`
+        LastUri string `json:"lastUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

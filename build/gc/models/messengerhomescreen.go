@@ -13,6 +13,9 @@ var (
 type MessengerhomescreenDud struct { 
     
 
+
+    
+
 }
 
 // Messengerhomescreen
@@ -20,10 +23,15 @@ type Messengerhomescreen struct {
     // Enabled - whether or not homescreen is enabled
     Enabled bool `json:"enabled"`
 
+
+    // LogoUrl - to capture uploaded company logoUrl
+    LogoUrl string `json:"logoUrl"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Messengerhomescreen) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Messengerhomescreen) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Enabled bool `json:"enabled"`
+        
+        LogoUrl string `json:"logoUrl"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -28,9 +28,9 @@ func init() {
 }
 
 func Cmdscripts_published_variables() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "input", "", "input")
-	utils.AddFlag(getCmd.Flags(), "string", "output", "", "output")
-	utils.AddFlag(getCmd.Flags(), "string", "varType", "", "type")
+	utils.AddFlag(getCmd.Flags(), "string", "input", "", "input Valid values: true, false")
+	utils.AddFlag(getCmd.Flags(), "string", "output", "", "output Valid values: true, false")
+	utils.AddFlag(getCmd.Flags(), "string", "varType", "", "type Valid values: string, number, boolean")
 	utils.AddFlag(getCmd.Flags(), "string", "scriptDataVersion", "", "Advanced usage - controls the data version of the script")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/scripts/published/{scriptId}/variables", utils.FormatPermissions([]string{ "scripter:publishedScript:view",  }), utils.GenerateDevCentreLink("GET", "Scripts", "/api/v2/scripts/published/{scriptId}/variables")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -106,6 +106,11 @@ var getCmd = &cobra.Command{
 		}
 		results, err := retryFunc(retryConfig)
 		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
 			logger.Fatal(err)
 		}
 

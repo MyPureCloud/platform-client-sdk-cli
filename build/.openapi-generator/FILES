@@ -4248,6 +4248,7 @@ gc/models/expirededgelisting.go
 gc/models/exportscriptrequest.go
 gc/models/exportscriptresponse.go
 gc/models/exporturi.go
+gc/models/extendedwrapup.go
 gc/models/extension.go
 gc/models/extensionentitylisting.go
 gc/models/extensionpool.go
@@ -4510,6 +4511,7 @@ gc/models/learningassignmentupdate.go
 gc/models/learningassignmentuser.go
 gc/models/learningassignmentuserlisting.go
 gc/models/learningassignmentuserquery.go
+gc/models/learningcoverartthumbnail.go
 gc/models/learningmodule.go
 gc/models/learningmodulecoverartrequest.go
 gc/models/learningmodulecoverartresponse.go
@@ -5180,6 +5182,7 @@ gc/models/subscriptionoverviewusage.go
 gc/models/suggestsearchcriteria.go
 gc/models/suggestsearchrequest.go
 gc/models/supportcentercustommessage.go
+gc/models/supportcenterfeedbacksettings.go
 gc/models/supportcenterglobalstyle.go
 gc/models/supportcenterherostyle.go
 gc/models/supportcentermodulesetting.go

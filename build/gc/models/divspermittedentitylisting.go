@@ -67,10 +67,6 @@ type Divspermittedentitylisting struct {
     AllDivsPermitted bool `json:"allDivsPermitted"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
     // FirstUri
     FirstUri string `json:"firstUri"`
 
@@ -79,12 +75,16 @@ type Divspermittedentitylisting struct {
     SelfUri string `json:"selfUri"`
 
 
+    // NextUri
+    NextUri string `json:"nextUri"`
+
+
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
+    // LastUri
+    LastUri string `json:"lastUri"`
 
 
     // PageCount
@@ -132,15 +132,15 @@ func (u *Divspermittedentitylisting) MarshalJSON() ([]byte, error) {
         
         AllDivsPermitted bool `json:"allDivsPermitted"`
         
-        LastUri string `json:"lastUri"`
-        
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         
+        NextUri string `json:"nextUri"`
+        
         PreviousUri string `json:"previousUri"`
         
-        NextUri string `json:"nextUri"`
+        LastUri string `json:"lastUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

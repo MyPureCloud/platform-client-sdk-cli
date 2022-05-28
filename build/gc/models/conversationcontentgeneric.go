@@ -30,7 +30,7 @@ type ConversationcontentgenericDud struct {
 
 }
 
-// Conversationcontentgeneric - Generic content object.
+// Conversationcontentgeneric - Generic content object (Deprecated).
 type Conversationcontentgeneric struct { 
     // Title - Text to show in the title.
     Title string `json:"title"`

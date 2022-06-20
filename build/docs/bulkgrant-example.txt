@@ -1,1 +1,0 @@
-gc bulkgrant(roleId, body, subjectType)

@@ -71,6 +71,7 @@ func Cmdgamification_profiles_metrics() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: objective")
 	utils.AddFlag(listCmd.Flags(), "time.Time", "workday", "", "The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+	utils.AddFlag(listCmd.Flags(), "string", "metricIds", "", "List of metric ids to filter the response (Optional, comma-separated).")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/gamification/profiles/{profileId}/metrics", utils.FormatPermissions([]string{ "gamification:profile:view", "gamification:leaderboard:view", "gamification:scorecard:view",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/profiles/{profileId}/metrics")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -254,6 +255,10 @@ var listCmd = &cobra.Command{
 		workday := utils.GetFlag(cmd.Flags(), "time.Time", "workday")
 		if workday != "" {
 			queryParams["workday"] = workday
+		}
+		metricIds := utils.GetFlag(cmd.Flags(), "string", "metricIds")
+		if metricIds != "" {
+			queryParams["metricIds"] = metricIds
 		}
 		urlString := path
 		if len(queryParams) > 0 {

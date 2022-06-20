@@ -1,1 +1,0 @@
-gc getschemametadata(schemaCategory, schemaType, schemaId, extensionType, metadataId, varType)

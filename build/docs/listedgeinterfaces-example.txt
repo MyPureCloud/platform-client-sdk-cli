@@ -1,1 +1,0 @@
-gc listedgeinterfaces(edgeId)

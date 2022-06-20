@@ -92,6 +92,9 @@ type CallbackDud struct {
 
     
 
+
+    
+
 }
 
 // Callback
@@ -203,6 +206,10 @@ type Callback struct {
     // CallerIdName - The name displayed to recipients of the phone call.
     CallerIdName string `json:"callerIdName"`
 
+
+    // InitialState - The initial connection state of this communication.
+    InitialState string `json:"initialState"`
+
 }
 
 // String returns a JSON representation of the model
@@ -217,6 +224,7 @@ func (o *Callback) String() string {
     
     
      o.CallbackNumbers = []string{""} 
+    
     
     
     
@@ -304,6 +312,8 @@ func (u *Callback) MarshalJSON() ([]byte, error) {
         CallerId string `json:"callerId"`
         
         CallerIdName string `json:"callerIdName"`
+        
+        InitialState string `json:"initialState"`
         *Alias
     }{
 
@@ -338,6 +348,9 @@ func (u *Callback) MarshalJSON() ([]byte, error) {
 
         
         CallbackNumbers: []string{""},
+        
+
+
         
 
 

@@ -29,6 +29,9 @@ type UcintegrationDud struct {
     Icon Ucicon `json:"icon"`
 
 
+    BadgeIcons map[string]Ucicon `json:"badgeIcons"`
+
+
     I10n map[string]Uci10n `json:"i10n"`
 
 
@@ -43,6 +46,9 @@ type Ucintegration struct {
 
     // Name
     Name string `json:"name"`
+
+
+    
 
 
     
@@ -87,6 +93,9 @@ func (u *Ucintegration) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         *Alias
     }{
+
+        
+
 
         
 

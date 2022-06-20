@@ -84,7 +84,7 @@ func Cmdknowledge_knowledgebases_languages_documents() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.")
+	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "categories", "", "Filter by categories ids, comma separated values expected.")
 	utils.AddFlag(listCmd.Flags(), "string", "title", "", "Filter by document title.")

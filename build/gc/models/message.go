@@ -92,6 +92,9 @@ type MessageDud struct {
 
     
 
+
+    
+
 }
 
 // Message
@@ -203,6 +206,10 @@ type Message struct {
     // AgentAssistantId - UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
     AgentAssistantId string `json:"agentAssistantId"`
 
+
+    // InitialState - The initial connection state of this communication.
+    InitialState string `json:"initialState"`
+
 }
 
 // String returns a JSON representation of the model
@@ -229,6 +236,7 @@ func (o *Message) String() string {
     
     
      o.Messages = []Messagedetails{{}} 
+    
     
     
     
@@ -304,6 +312,8 @@ func (u *Message) MarshalJSON() ([]byte, error) {
         AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
         
         AgentAssistantId string `json:"agentAssistantId"`
+        
+        InitialState string `json:"initialState"`
         *Alias
     }{
 
@@ -374,6 +384,9 @@ func (u *Message) MarshalJSON() ([]byte, error) {
 
         
         Messages: []Messagedetails{{}},
+        
+
+
         
 
 

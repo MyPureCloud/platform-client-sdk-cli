@@ -1,1 +1,0 @@
-gc move(queueId, body, delete)

@@ -56,6 +56,9 @@ type ScreenshareDud struct {
 
     
 
+
+    
+
 }
 
 // Screenshare
@@ -119,6 +122,10 @@ type Screenshare struct {
     // AfterCallWorkRequired - Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
     AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
 
+
+    // InitialState - The initial connection state of this communication.
+    InitialState string `json:"initialState"`
+
 }
 
 // String returns a JSON representation of the model
@@ -135,6 +142,7 @@ func (o *Screenshare) String() string {
     
     
      o.Segments = []Segment{{}} 
+    
     
     
     
@@ -184,6 +192,8 @@ func (u *Screenshare) MarshalJSON() ([]byte, error) {
         AfterCallWork Aftercallwork `json:"afterCallWork"`
         
         AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
+        
+        InitialState string `json:"initialState"`
         *Alias
     }{
 
@@ -222,6 +232,9 @@ func (u *Screenshare) MarshalJSON() ([]byte, error) {
 
         
         Segments: []Segment{{}},
+        
+
+
         
 
 

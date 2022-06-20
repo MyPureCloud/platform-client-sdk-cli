@@ -1,1 +1,0 @@
-gc getedgeline(edgeId, lineId)

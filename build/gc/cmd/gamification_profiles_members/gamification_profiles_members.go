@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("gamification_profiles_members", "SWAGGER_OVERRIDE_/api/v2/gamification/profiles/{performanceProfileId}/members", "SWAGGER_OVERRIDE_/api/v2/gamification/profiles/{performanceProfileId}/members", )
+	Description = utils.FormatUsageDescription("gamification_profiles_members", "SWAGGER_OVERRIDE_/api/v2/gamification/profiles/{profileId}/members", "SWAGGER_OVERRIDE_/api/v2/gamification/profiles/{profileId}/members", )
 	gamification_profiles_membersCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("gamification_profiles_members"),
 		Short: Description,
@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdgamification_profiles_members() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/gamification/profiles/{performanceProfileId}/members", utils.FormatPermissions([]string{ "gamification:profile:update",  }), utils.GenerateDevCentreLink("POST", "Gamification", "/api/v2/gamification/profiles/{performanceProfileId}/members")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/gamification/profiles/{profileId}/members", utils.FormatPermissions([]string{ "gamification:profile:update",  }), utils.GenerateDevCentreLink("POST", "Gamification", "/api/v2/gamification/profiles/{profileId}/members")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "assignUsers",
   "content" : {
@@ -53,7 +53,7 @@ func Cmdgamification_profiles_members() *cobra.Command {
 }`)
 	gamification_profiles_membersCmd.AddCommand(createCmd)
 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/gamification/profiles/{performanceProfileId}/members", utils.FormatPermissions([]string{ "gamification:profile:view",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/profiles/{performanceProfileId}/members")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/gamification/profiles/{profileId}/members", utils.FormatPermissions([]string{ "gamification:profile:view",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/profiles/{profileId}/members")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -71,10 +71,10 @@ func Cmdgamification_profiles_members() *cobra.Command {
 }
 
 var createCmd = &cobra.Command{
-	Use:   "create [performanceProfileId]",
+	Use:   "create [profileId]",
 	Short: "Assign members to a given performance profile",
 	Long:  "Assign members to a given performance profile",
-	Args:  utils.DetermineArgs([]string{ "performanceProfileId", }),
+	Args:  utils.DetermineArgs([]string{ "profileId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -90,9 +90,9 @@ var createCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/gamification/profiles/{performanceProfileId}/members"
-		performanceProfileId, args := args[0], args[1:]
-		path = strings.Replace(path, "{performanceProfileId}", fmt.Sprintf("%v", performanceProfileId), -1)
+		path := "/api/v2/gamification/profiles/{profileId}/members"
+		profileId, args := args[0], args[1:]
+		path = strings.Replace(path, "{profileId}", fmt.Sprintf("%v", profileId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -126,10 +126,10 @@ var createCmd = &cobra.Command{
 	},
 }
 var listCmd = &cobra.Command{
-	Use:   "list [performanceProfileId]",
+	Use:   "list [profileId]",
 	Short: "Members of a given performance profile",
 	Long:  "Members of a given performance profile",
-	Args:  utils.DetermineArgs([]string{ "performanceProfileId", }),
+	Args:  utils.DetermineArgs([]string{ "profileId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -142,9 +142,9 @@ var listCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/gamification/profiles/{performanceProfileId}/members"
-		performanceProfileId, args := args[0], args[1:]
-		path = strings.Replace(path, "{performanceProfileId}", fmt.Sprintf("%v", performanceProfileId), -1)
+		path := "/api/v2/gamification/profiles/{profileId}/members"
+		profileId, args := args[0], args[1:]
+		path = strings.Replace(path, "{profileId}", fmt.Sprintf("%v", profileId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {

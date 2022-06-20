@@ -21,13 +21,13 @@ type UserscheduleadherenceDud struct {
     User Userreference `json:"user"`
 
 
-    BusinessUnit Businessunit `json:"businessUnit"`
+    BusinessUnit Businessunitreference `json:"businessUnit"`
 
 
-    ManagementUnit Managementunit `json:"managementUnit"`
+    ManagementUnit Managementunitreference `json:"managementUnit"`
 
 
-    Team Team `json:"team"`
+    Team Teamreference `json:"team"`
 
 
     ScheduledActivityCategory string `json:"scheduledActivityCategory"`

@@ -19,6 +19,9 @@ type TranscriptionsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Transcriptionsettings
@@ -31,6 +34,10 @@ type Transcriptionsettings struct {
     TranscriptionConfidenceThreshold int `json:"transcriptionConfidenceThreshold"`
 
 
+    // LowLatencyTranscriptionEnabled - Boolean flag indicating whether low latency transcription via Notification API is enabled
+    LowLatencyTranscriptionEnabled bool `json:"lowLatencyTranscriptionEnabled"`
+
+
     // ContentSearchEnabled - Setting to enable/disable content search
     ContentSearchEnabled bool `json:"contentSearchEnabled"`
 
@@ -38,6 +45,7 @@ type Transcriptionsettings struct {
 
 // String returns a JSON representation of the model
 func (o *Transcriptionsettings) String() string {
+    
     
     
     
@@ -62,9 +70,14 @@ func (u *Transcriptionsettings) MarshalJSON() ([]byte, error) {
         
         TranscriptionConfidenceThreshold int `json:"transcriptionConfidenceThreshold"`
         
+        LowLatencyTranscriptionEnabled bool `json:"lowLatencyTranscriptionEnabled"`
+        
         ContentSearchEnabled bool `json:"contentSearchEnabled"`
         *Alias
     }{
+
+        
+
 
         
 

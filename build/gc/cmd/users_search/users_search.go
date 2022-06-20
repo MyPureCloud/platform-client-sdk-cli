@@ -55,7 +55,7 @@ func Cmdusers_search() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "string", "q64", "", "q64 - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "expand")
-	utils.AddFlag(listCmd.Flags(), "string", "integrationPresenceSource", "", "integrationPresenceSource Valid values: MicrosoftTeams, ZoomPhone")
+	utils.AddFlag(listCmd.Flags(), "string", "integrationPresenceSource", "", "integrationPresenceSource Valid values: MicrosoftTeams, ZoomPhone, EightByEight")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/search", utils.FormatPermissions([]string{ "directory:user:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/search")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("q64")

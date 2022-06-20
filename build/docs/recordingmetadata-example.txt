@@ -1,1 +1,0 @@
-gc recordingmetadata(conversationId, recordingId)

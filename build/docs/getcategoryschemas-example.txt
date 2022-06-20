@@ -1,1 +1,0 @@
-gc getcategoryschemas(schemaCategory, schemaType, pageSize, pageNumber)

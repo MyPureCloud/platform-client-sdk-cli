@@ -65,6 +65,9 @@ type VideoDud struct {
 
     
 
+
+    
+
 }
 
 // Video
@@ -140,6 +143,10 @@ type Video struct {
     // AfterCallWorkRequired - Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
     AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
 
+
+    // InitialState - The initial connection state of this communication.
+    InitialState string `json:"initialState"`
+
 }
 
 // String returns a JSON representation of the model
@@ -158,6 +165,7 @@ func (o *Video) String() string {
     
     
      o.Msids = []string{""} 
+    
     
     
     
@@ -214,6 +222,8 @@ func (u *Video) MarshalJSON() ([]byte, error) {
         AfterCallWork Aftercallwork `json:"afterCallWork"`
         
         AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
+        
+        InitialState string `json:"initialState"`
         *Alias
     }{
 
@@ -258,6 +268,9 @@ func (u *Video) MarshalJSON() ([]byte, error) {
 
         
         Msids: []string{""},
+        
+
+
         
 
 

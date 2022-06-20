@@ -28,7 +28,6 @@ func init() {
 }
 
 func Cmdrouting_sms_phonenumbers() *cobra.Command { 
-	utils.AddFlag(createCmd.Flags(), "bool", "async", "false", "Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber`s provisioningStatus for completion of this request.")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/sms/phonenumbers", utils.FormatPermissions([]string{ "sms:phoneNumber:add",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/sms/phonenumbers")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "SmsPhoneNumber",
@@ -54,12 +53,11 @@ func Cmdrouting_sms_phonenumbers() *cobra.Command {
 }`)
 	routing_sms_phonenumbersCmd.AddCommand(createCmd)
 
-	utils.AddFlag(deleteCmd.Flags(), "bool", "async", "false", "Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number. ")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/sms/phonenumbers/{addressId}", utils.FormatPermissions([]string{ "sms:phoneNumber:delete",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/sms/phonenumbers/{addressId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Accepted - If async is true, the phone number delete is in progress.",
+  "description" : "Accepted -The phone number delete is in progress.",
   "content" : { }
 }`)
 	routing_sms_phonenumbersCmd.AddCommand(deleteCmd)
@@ -85,7 +83,7 @@ func Cmdrouting_sms_phonenumbers() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "countryCode", "", "Filter on country code")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Optional field to sort results Valid values: phoneNumber, countryCode, country, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Optional field to sort results Valid values: phoneNumber, countryCode, country, dateCreated, dateModified, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Sort order Valid values: ascending, descending")
 	utils.AddFlag(listCmd.Flags(), "string", "language", "en-US", "A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/sms/phonenumbers", utils.FormatPermissions([]string{ "sms:phoneNumber:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/sms/phonenumbers")))
@@ -103,7 +101,6 @@ func Cmdrouting_sms_phonenumbers() *cobra.Command {
 }`)
 	routing_sms_phonenumbersCmd.AddCommand(listCmd)
 
-	utils.AddFlag(updateCmd.Flags(), "bool", "async", "false", "Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber`s provisioningStatus for the progress of this request.")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/sms/phonenumbers/{addressId}", utils.FormatPermissions([]string{ "sms:phoneNumber:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/sms/phonenumbers/{addressId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "SmsPhoneNumber",
@@ -153,10 +150,6 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/routing/sms/phonenumbers"
 
-		async := utils.GetFlag(cmd.Flags(), "bool", "async")
-		if async != "" {
-			queryParams["async"] = async
-		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -209,10 +202,6 @@ var deleteCmd = &cobra.Command{
 		addressId, args := args[0], args[1:]
 		path = strings.Replace(path, "{addressId}", fmt.Sprintf("%v", addressId), -1)
 
-		async := utils.GetFlag(cmd.Flags(), "bool", "async")
-		if async != "" {
-			queryParams["async"] = async
-		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -406,10 +395,6 @@ var updateCmd = &cobra.Command{
 		addressId, args := args[0], args[1:]
 		path = strings.Replace(path, "{addressId}", fmt.Sprintf("%v", addressId), -1)
 
-		async := utils.GetFlag(cmd.Flags(), "bool", "async")
-		if async != "" {
-			queryParams["async"] = async
-		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

@@ -35,6 +35,9 @@ type MessagedetailsDud struct {
 
     
 
+
+    
+
 }
 
 // Messagedetails
@@ -67,6 +70,10 @@ type Messagedetails struct {
     Stickers []Messagesticker `json:"stickers"`
 
 
+    // MessageMetadata - Information that describes the content of the message, if any
+    MessageMetadata Conversationmessagemetadata `json:"messageMetadata"`
+
+
     // ErrorInfo - Provider specific error information for a communication.
     ErrorInfo Errorbody `json:"errorInfo"`
 
@@ -81,6 +88,7 @@ func (o *Messagedetails) String() string {
     
      o.Media = []Messagemedia{{}} 
      o.Stickers = []Messagesticker{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -113,6 +121,8 @@ func (u *Messagedetails) MarshalJSON() ([]byte, error) {
         
         Stickers []Messagesticker `json:"stickers"`
         
+        MessageMetadata Conversationmessagemetadata `json:"messageMetadata"`
+        
         ErrorInfo Errorbody `json:"errorInfo"`
         *Alias
     }{
@@ -139,6 +149,9 @@ func (u *Messagedetails) MarshalJSON() ([]byte, error) {
 
         
         Stickers: []Messagesticker{{}},
+        
+
+
         
 
 

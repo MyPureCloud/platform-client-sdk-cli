@@ -439,6 +439,27 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1014,6 +1035,34 @@ type Viewfilter struct {
     // IsAcdInteraction - Filter to indicate if interaction was ACD or non-ACD
     IsAcdInteraction bool `json:"isAcdInteraction"`
 
+
+    // HasFax - Filters to indicate if interaction has FAX
+    HasFax bool `json:"hasFax"`
+
+
+    // DataActionIds - The list of Data Action IDs 
+    DataActionIds []string `json:"dataActionIds"`
+
+
+    // ActionCategoryName - Action Category Name
+    ActionCategoryName string `json:"actionCategoryName"`
+
+
+    // ResponseStatuses - The list of Response codes for Data Action
+    ResponseStatuses []string `json:"responseStatuses"`
+
+
+    // AvailableDashboard - Filter to indicate the availability of the dashboard is public or private.
+    AvailableDashboard string `json:"availableDashboard"`
+
+
+    // FavouriteDashboard - Filter to indicate whether the dashboard is favorite or unfavorite.
+    FavouriteDashboard bool `json:"favouriteDashboard"`
+
+
+    // MyDashboard - Filter to indicate the dashboard owned by the user.
+    MyDashboard bool `json:"myDashboard"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1159,6 +1208,13 @@ func (o *Viewfilter) String() string {
      o.FlowMilestoneIds = []string{""} 
     
      o.ConversationInitiators = []string{""} 
+    
+    
+    
+     o.DataActionIds = []string{""} 
+    
+     o.ResponseStatuses = []string{""} 
+    
     
     
 
@@ -1463,6 +1519,20 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         HasCustomerParticipated bool `json:"hasCustomerParticipated"`
         
         IsAcdInteraction bool `json:"isAcdInteraction"`
+        
+        HasFax bool `json:"hasFax"`
+        
+        DataActionIds []string `json:"dataActionIds"`
+        
+        ActionCategoryName string `json:"actionCategoryName"`
+        
+        ResponseStatuses []string `json:"responseStatuses"`
+        
+        AvailableDashboard string `json:"availableDashboard"`
+        
+        FavouriteDashboard bool `json:"favouriteDashboard"`
+        
+        MyDashboard bool `json:"myDashboard"`
         *Alias
     }{
 
@@ -2098,6 +2168,31 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         ConversationInitiators: []string{""},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+        DataActionIds: []string{""},
+        
+
+
+        
+
+
+        
+        ResponseStatuses: []string{""},
+        
+
+
         
 
 

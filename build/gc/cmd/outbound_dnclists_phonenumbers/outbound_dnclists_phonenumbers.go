@@ -59,6 +59,7 @@ func Cmdoutbound_dnclists_phonenumbers() *cobra.Command {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
     "invalid.property" : "Value [%s] is not a valid property for object [%s]",
     "dnc.records.per.list.limit.exceeded" : "The DNC list has reached the limit on total records. See details",
+    "invalid.date.value" : "The date was invalid.",
     "constraint.validation" : "%s",
     "dnc.phone.numbers.per.list.limit.exceeded" : "The DNC list has reached the limit on total records. See details",
     "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable",

@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("users_roles", "SWAGGER_OVERRIDE_/api/v2/users/{userId}/roles", "SWAGGER_OVERRIDE_/api/v2/users/{userId}/roles", )
+	Description = utils.FormatUsageDescription("users_roles", "SWAGGER_OVERRIDE_/api/v2/users/{subjectId}/roles", "SWAGGER_OVERRIDE_/api/v2/users/{subjectId}/roles", )
 	users_rolesCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("users_roles"),
 		Short: Description,
@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdusers_roles() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/roles", utils.FormatPermissions([]string{ "authorization:grant:view",  }), utils.GenerateDevCentreLink("GET", "Authorization", "/api/v2/users/{userId}/roles")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{subjectId}/roles", utils.FormatPermissions([]string{ "authorization:grant:view",  }), utils.GenerateDevCentreLink("GET", "Authorization", "/api/v2/users/{subjectId}/roles")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -43,7 +43,7 @@ func Cmdusers_roles() *cobra.Command {
 }`)
 	users_rolesCmd.AddCommand(getCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{userId}/roles", utils.FormatPermissions([]string{ "authorization:grant:add",  }), utils.GenerateDevCentreLink("PUT", "Authorization", "/api/v2/users/{userId}/roles")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/users/{subjectId}/roles", utils.FormatPermissions([]string{ "authorization:grant:add",  }), utils.GenerateDevCentreLink("PUT", "Authorization", "/api/v2/users/{subjectId}/roles")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "List of roles",
   "content" : {
@@ -74,10 +74,10 @@ func Cmdusers_roles() *cobra.Command {
 }
 
 var getCmd = &cobra.Command{
-	Use:   "get [userId]",
+	Use:   "get [subjectId]",
 	Short: "Returns a listing of roles and permissions for a user.",
 	Long:  "Returns a listing of roles and permissions for a user.",
-	Args:  utils.DetermineArgs([]string{ "userId", }),
+	Args:  utils.DetermineArgs([]string{ "subjectId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -90,9 +90,9 @@ var getCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/users/{userId}/roles"
-		userId, args := args[0], args[1:]
-		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+		path := "/api/v2/users/{subjectId}/roles"
+		subjectId, args := args[0], args[1:]
+		path = strings.Replace(path, "{subjectId}", fmt.Sprintf("%v", subjectId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -126,10 +126,10 @@ var getCmd = &cobra.Command{
 	},
 }
 var updateCmd = &cobra.Command{
-	Use:   "update [userId]",
+	Use:   "update [subjectId]",
 	Short: "Sets the user`s roles",
 	Long:  "Sets the user`s roles",
-	Args:  utils.DetermineArgs([]string{ "userId", }),
+	Args:  utils.DetermineArgs([]string{ "subjectId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -145,9 +145,9 @@ var updateCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/users/{userId}/roles"
-		userId, args := args[0], args[1:]
-		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+		path := "/api/v2/users/{subjectId}/roles"
+		subjectId, args := args[0], args[1:]
+		path = strings.Replace(path, "{subjectId}", fmt.Sprintf("%v", subjectId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {

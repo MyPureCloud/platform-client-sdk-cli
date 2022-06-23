@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -19,10 +20,64 @@ type KeyperformanceindicatorDud struct {
 
     OptimizationType string `json:"optimizationType"`
 
+
+    DateCreated time.Time `json:"dateCreated"`
+
+
+    DateModified time.Time `json:"dateModified"`
+
+
+    Description string `json:"description"`
+
+
+    KpiType string `json:"kpiType"`
+
+
+    Source string `json:"source"`
+
+
+    WrapUpCodeConfig Wrapupcodeconfig `json:"wrapUpCodeConfig"`
+
+
+    Status string `json:"status"`
+
+
+    KpiGroup string `json:"kpiGroup"`
+
+
+    SelfUri string `json:"selfUri"`
+
 }
 
 // Keyperformanceindicator
 type Keyperformanceindicator struct { 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     
 
 
@@ -53,6 +108,33 @@ func (u *Keyperformanceindicator) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

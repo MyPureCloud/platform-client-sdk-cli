@@ -419,7 +419,10 @@ gc/cmd/learning_assignments_aggregates_query/learning_assignments_aggregates_que
 gc/cmd/learning_assignments_bulkadd/learning_assignments_bulkadd.go
 gc/cmd/learning_assignments_bulkremove/learning_assignments_bulkremove.go
 gc/cmd/learning_assignments_me/learning_assignments_me.go
+gc/cmd/learning_assignments_reassign/learning_assignments_reassign.go
+gc/cmd/learning_assignments_reset/learning_assignments_reset.go
 gc/cmd/learning_modules/learning_modules.go
+gc/cmd/learning_modules_jobs/learning_modules_jobs.go
 gc/cmd/learning_modules_publish/learning_modules_publish.go
 gc/cmd/learning_modules_rule/learning_modules_rule.go
 gc/cmd/learning_modules_versions/learning_modules_versions.go
@@ -1968,6 +1971,8 @@ gc/models/learningmodulecoverartrequest.go
 gc/models/learningmodulecoverartresponse.go
 gc/models/learningmoduleinformstep.go
 gc/models/learningmoduleinformsteprequest.go
+gc/models/learningmodulejobrequest.go
+gc/models/learningmodulejobresponse.go
 gc/models/learningmodulepublishresponse.go
 gc/models/learningmodulereassignsummary.go
 gc/models/learningmodulerequest.go
@@ -3032,6 +3037,7 @@ gc/models/workspacememberentitylisting.go
 gc/models/workspacesummary.go
 gc/models/wrapup.go
 gc/models/wrapupcode.go
+gc/models/wrapupcodeconfig.go
 gc/models/wrapupcodeentitylisting.go
 gc/models/wrapupcodemapping.go
 gc/models/wrapupcodereference.go

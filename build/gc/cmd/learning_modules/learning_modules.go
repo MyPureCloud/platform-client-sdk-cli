@@ -83,7 +83,7 @@ func Cmdlearning_modules() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ascending", "Sort order Valid values: ascending, descending")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by Valid values: name")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by Valid values: name, createddate, percentpassed, averagescore")
 	utils.AddFlag(listCmd.Flags(), "string", "searchTerm", "", "Search Term (searchable by name)")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in response(case insensitive) Valid values: rule, summaryData")
 	utils.AddFlag(listCmd.Flags(), "string", "isPublished", "Any", "Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned Valid values: True, False, Any")

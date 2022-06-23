@@ -87,7 +87,7 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by Name.")
-	utils.AddFlag(listCmd.Flags(), "string", "coreLanguage", "", "Filter by core language. Valid values: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT")
+	utils.AddFlag(listCmd.Flags(), "string", "coreLanguage", "", "Filter by core language. Valid values: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA")
 	utils.AddFlag(listCmd.Flags(), "bool", "published", "", "Filter by published status.")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by. Valid values: Name, Date")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Sort Order. Valid values: ASC, ascending, DESC, descending")

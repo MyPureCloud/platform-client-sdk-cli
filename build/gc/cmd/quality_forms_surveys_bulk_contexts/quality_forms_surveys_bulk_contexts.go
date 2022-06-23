@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdquality_forms_surveys_bulk_contexts() *cobra.Command { 
-	utils.AddFlag(listCmd.Flags(), "[]string", "contextId", "", "A comma-delimited list of valid survey form context ids - REQUIRED")
+	utils.AddFlag(listCmd.Flags(), "[]string", "contextId", "", "A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100. - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "bool", "published", "true", "If true, the latest published version will be included. If false, only the unpublished version will be included.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/forms/surveys/bulk/contexts", utils.FormatPermissions([]string{ "quality:surveyForm:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/forms/surveys/bulk/contexts")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)

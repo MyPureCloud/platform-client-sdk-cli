@@ -34,6 +34,9 @@ type WebmessagingmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Webmessagingmessage - A web messaging message
@@ -69,6 +72,10 @@ type Webmessagingmessage struct {
     // OriginatingEntity - Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies.
     OriginatingEntity string `json:"originatingEntity"`
 
+
+    // Metadata - Additional metadata about this message.
+    Metadata map[string]string `json:"metadata"`
+
 }
 
 // String returns a JSON representation of the model
@@ -81,6 +88,7 @@ func (o *Webmessagingmessage) String() string {
      o.Events = []Webmessagingevent{{}} 
     
     
+     o.Metadata = map[string]string{"": ""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -113,6 +121,8 @@ func (u *Webmessagingmessage) MarshalJSON() ([]byte, error) {
         Direction string `json:"direction"`
         
         OriginatingEntity string `json:"originatingEntity"`
+        
+        Metadata map[string]string `json:"metadata"`
         *Alias
     }{
 
@@ -141,6 +151,11 @@ func (u *Webmessagingmessage) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Metadata: map[string]string{"": ""},
         
 
         Alias: (*Alias)(u),

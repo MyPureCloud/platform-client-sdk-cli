@@ -77,7 +77,7 @@ type Ivr struct {
 
 
     // Division - The division to which this entity belongs.
-    Division Division `json:"division"`
+    Division Writabledivision `json:"division"`
 
 
     // Description - The resource's description.
@@ -175,7 +175,7 @@ func (u *Ivr) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
-        Division Division `json:"division"`
+        Division Writabledivision `json:"division"`
         
         Description string `json:"description"`
         

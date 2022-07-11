@@ -99,6 +99,9 @@ type UserqueueDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -213,6 +216,10 @@ type Userqueue struct {
     OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
 
 
+    // PeerId - The ID of the external Queue
+    PeerId string `json:"peerId"`
+
+
     // Joined
     Joined bool `json:"joined"`
 
@@ -245,6 +252,7 @@ func (o *Userqueue) String() string {
     
     
      o.DefaultScripts = map[string]Script{"": {}} 
+    
     
     
     
@@ -312,6 +320,8 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
         OutboundMessagingAddresses Queuemessagingaddresses `json:"outboundMessagingAddresses"`
         
         OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
+        
+        PeerId string `json:"peerId"`
         
         Joined bool `json:"joined"`
         *Alias
@@ -398,6 +408,9 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
 
         
         DefaultScripts: map[string]Script{"": {}},
+        
+
+
         
 
 

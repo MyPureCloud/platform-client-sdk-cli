@@ -15,7 +15,7 @@ type ValuewrapperstringDud struct {
 
 }
 
-// Valuewrapperstring - An object to provide context to nullable fields in PATCH requests
+// Valuewrapperstring
 type Valuewrapperstring struct { 
     // Value - The value for the associated field
     Value string `json:"value"`

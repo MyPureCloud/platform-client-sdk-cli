@@ -27,7 +27,7 @@ type UserscheduleDud struct {
 
 }
 
-// Userschedule - A schedule for a single user over a given time range
+// Userschedule
 type Userschedule struct { 
     // Shifts - The shifts that belong to this schedule
     Shifts []Userscheduleshift `json:"shifts"`

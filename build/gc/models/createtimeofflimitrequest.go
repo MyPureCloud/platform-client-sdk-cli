@@ -18,13 +18,13 @@ type CreatetimeofflimitrequestDud struct {
 
 }
 
-// Createtimeofflimitrequest - Contains property values of time off limit to be created
+// Createtimeofflimitrequest
 type Createtimeofflimitrequest struct { 
     // Granularity - Granularity choice for time off limit. If not specified, 'Daily' is assumed
     Granularity string `json:"granularity"`
 
 
-    // DefaultLimitMinutes - The default limit value in minutes per granularity.If not specified, then 0 is assumed, which means there are no time off minutes available
+    // DefaultLimitMinutes - The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available
     DefaultLimitMinutes int `json:"defaultLimitMinutes"`
 
 }

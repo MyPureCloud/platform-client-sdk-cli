@@ -111,7 +111,7 @@ type WorkplanlistitemresponseDud struct {
 
 }
 
-// Workplanlistitemresponse - Work plan information
+// Workplanlistitemresponse
 type Workplanlistitemresponse struct { 
     
 

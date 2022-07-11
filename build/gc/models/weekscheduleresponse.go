@@ -18,7 +18,7 @@ type WeekscheduleresponseDud struct {
 
 }
 
-// Weekscheduleresponse - Response for query for week schedule for a given week in management unit
+// Weekscheduleresponse
 type Weekscheduleresponse struct { 
     // Result - The result of the request. The value will be null if response is large
     Result Weekschedule `json:"result"`

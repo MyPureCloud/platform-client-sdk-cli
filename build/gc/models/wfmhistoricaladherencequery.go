@@ -26,6 +26,9 @@ type WfmhistoricaladherencequeryDud struct {
 
     
 
+
+    
+
 }
 
 // Wfmhistoricaladherencequery
@@ -49,6 +52,10 @@ type Wfmhistoricaladherencequery struct {
     // IncludeExceptions - Whether user exceptions should be returned as part of the results
     IncludeExceptions bool `json:"includeExceptions"`
 
+
+    // TeamIds - The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: If teamIds is also specified, only adherence for users in the requested teams will be returned
+    TeamIds []string `json:"teamIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -58,6 +65,7 @@ func (o *Wfmhistoricaladherencequery) String() string {
     
      o.UserIds = []string{""} 
     
+     o.TeamIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -84,6 +92,8 @@ func (u *Wfmhistoricaladherencequery) MarshalJSON() ([]byte, error) {
         UserIds []string `json:"userIds"`
         
         IncludeExceptions bool `json:"includeExceptions"`
+        
+        TeamIds []string `json:"teamIds"`
         *Alias
     }{
 
@@ -101,6 +111,11 @@ func (u *Wfmhistoricaladherencequery) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        TeamIds: []string{""},
         
 
         Alias: (*Alias)(u),

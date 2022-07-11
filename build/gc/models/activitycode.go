@@ -45,7 +45,7 @@ type ActivitycodeDud struct {
 
 }
 
-// Activitycode - Activity code data
+// Activitycode
 type Activitycode struct { 
     
 

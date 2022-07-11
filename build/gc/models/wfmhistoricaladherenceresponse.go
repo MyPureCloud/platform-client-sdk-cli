@@ -27,7 +27,7 @@ type WfmhistoricaladherenceresponseDud struct {
 
 }
 
-// Wfmhistoricaladherenceresponse - Response for Historical Adherence Query, intended to tell the client what to listen for on a notification topic
+// Wfmhistoricaladherenceresponse
 type Wfmhistoricaladherenceresponse struct { 
     // Id - The query ID to listen for
     Id string `json:"id"`

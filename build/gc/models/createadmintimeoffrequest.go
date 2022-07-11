@@ -32,6 +32,9 @@ type CreateadmintimeoffrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createadmintimeoffrequest
@@ -63,6 +66,10 @@ type Createadmintimeoffrequest struct {
     // DailyDurationMinutes - The daily duration of this time off request in minutes
     DailyDurationMinutes int `json:"dailyDurationMinutes"`
 
+
+    // Paid - Whether this is a paid time off request
+    Paid bool `json:"paid"`
+
 }
 
 // String returns a JSON representation of the model
@@ -73,6 +80,7 @@ func (o *Createadmintimeoffrequest) String() string {
     
      o.FullDayManagementUnitDates = []string{""} 
      o.PartialDayStartDateTimes = []time.Time{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -104,6 +112,8 @@ func (u *Createadmintimeoffrequest) MarshalJSON() ([]byte, error) {
         PartialDayStartDateTimes []time.Time `json:"partialDayStartDateTimes"`
         
         DailyDurationMinutes int `json:"dailyDurationMinutes"`
+        
+        Paid bool `json:"paid"`
         *Alias
     }{
 
@@ -128,6 +138,9 @@ func (u *Createadmintimeoffrequest) MarshalJSON() ([]byte, error) {
 
         
         PartialDayStartDateTimes: []time.Time{{}},
+        
+
+
         
 
 

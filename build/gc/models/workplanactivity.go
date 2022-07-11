@@ -60,7 +60,7 @@ type WorkplanactivityDud struct {
 
 }
 
-// Workplanactivity - Activity configured for shift in work plan
+// Workplanactivity
 type Workplanactivity struct { 
     // ActivityCodeId - ID of the activity code associated with this activity
     ActivityCodeId string `json:"activityCodeId"`

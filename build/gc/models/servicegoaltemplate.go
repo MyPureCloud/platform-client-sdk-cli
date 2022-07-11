@@ -33,7 +33,7 @@ type ServicegoaltemplateDud struct {
 
 }
 
-// Servicegoaltemplate - Service Goal Template
+// Servicegoaltemplate
 type Servicegoaltemplate struct { 
     
 

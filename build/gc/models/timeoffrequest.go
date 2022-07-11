@@ -57,6 +57,12 @@ type TimeoffrequestDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -83,8 +89,16 @@ type Timeoffrequest struct {
     ActivityCodeId string `json:"activityCodeId"`
 
 
+    // Paid - Whether this is a paid time off request
+    Paid bool `json:"paid"`
+
+
     // Status - The status of this time off request
     Status string `json:"status"`
+
+
+    // Substatus - The substatus of this time off request
+    Substatus string `json:"substatus"`
 
 
     // PartialDayStartDateTimes - A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest == false
@@ -135,6 +149,8 @@ func (o *Timeoffrequest) String() string {
     
     
     
+    
+    
      o.PartialDayStartDateTimes = []time.Time{{}} 
      o.FullDayManagementUnitDates = []string{""} 
     
@@ -171,7 +187,11 @@ func (u *Timeoffrequest) MarshalJSON() ([]byte, error) {
         
         ActivityCodeId string `json:"activityCodeId"`
         
+        Paid bool `json:"paid"`
+        
         Status string `json:"status"`
+        
+        Substatus string `json:"substatus"`
         
         PartialDayStartDateTimes []time.Time `json:"partialDayStartDateTimes"`
         
@@ -192,6 +212,12 @@ func (u *Timeoffrequest) MarshalJSON() ([]byte, error) {
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

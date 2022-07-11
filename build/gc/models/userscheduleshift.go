@@ -34,7 +34,7 @@ type UserscheduleshiftDud struct {
 
 }
 
-// Userscheduleshift - Single shift in a user's schedule
+// Userscheduleshift
 type Userscheduleshift struct { 
     
 

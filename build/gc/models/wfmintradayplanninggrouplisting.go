@@ -18,7 +18,7 @@ type WfmintradayplanninggrouplistingDud struct {
 
 }
 
-// Wfmintradayplanninggrouplisting - A list of IntradayPlanningGroup objects
+// Wfmintradayplanninggrouplisting
 type Wfmintradayplanninggrouplisting struct { 
     // Entities
     Entities []Forecastplanninggroupresponse `json:"entities"`

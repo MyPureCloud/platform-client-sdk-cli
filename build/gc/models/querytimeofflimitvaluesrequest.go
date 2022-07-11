@@ -21,7 +21,7 @@ type QuerytimeofflimitvaluesrequestDud struct {
 
 }
 
-// Querytimeofflimitvaluesrequest - This sets up a filter to request date ranges of time off limit, allocated and waitlisted minutes
+// Querytimeofflimitvaluesrequest
 type Querytimeofflimitvaluesrequest struct { 
     // TimeOffLimitId - The time off limit object id to retrieve values for. Required if activityCodeId is not specified
     TimeOffLimitId string `json:"timeOffLimitId"`
@@ -31,7 +31,7 @@ type Querytimeofflimitvaluesrequest struct {
     ActivityCodeId string `json:"activityCodeId"`
 
 
-    // DateRanges - The list of the date ranges to return time off limit, allocated and waitlisted minutes.
+    // DateRanges - The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.
     DateRanges []Localdaterange `json:"dateRanges"`
 
 }

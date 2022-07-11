@@ -15,7 +15,7 @@ type BusinessunitactivitycodelistingDud struct {
 
 }
 
-// Businessunitactivitycodelisting - List of BusinessUnitActivityCode
+// Businessunitactivitycodelisting
 type Businessunitactivitycodelisting struct { 
     // Entities
     Entities []Businessunitactivitycode `json:"entities"`

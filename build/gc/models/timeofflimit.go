@@ -27,7 +27,7 @@ type TimeofflimitDud struct {
 
 }
 
-// Timeofflimit - Time Off Limit
+// Timeofflimit
 type Timeofflimit struct { 
     
 

@@ -79,9 +79,15 @@ type WorkplanshiftDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
-// Workplanshift - Shift in a work plan
+// Workplanshift
 type Workplanshift struct { 
     // Name - Name of the shift
     Name string `json:"name"`
@@ -159,6 +165,14 @@ type Workplanshift struct {
     MaximumContiguousWorkTimeMinutes int `json:"maximumContiguousWorkTimeMinutes"`
 
 
+    // ConstrainDayOff - Whether day off rule is enabled
+    ConstrainDayOff bool `json:"constrainDayOff"`
+
+
+    // DayOffRule - The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true
+    DayOffRule string `json:"dayOffRule"`
+
+
     // Activities - Activities configured for this shift
     Activities []Workplanactivity `json:"activities"`
 
@@ -178,6 +192,8 @@ type Workplanshift struct {
 
 // String returns a JSON representation of the model
 func (o *Workplanshift) String() string {
+    
+    
     
     
     
@@ -256,6 +272,10 @@ func (u *Workplanshift) MarshalJSON() ([]byte, error) {
         
         MaximumContiguousWorkTimeMinutes int `json:"maximumContiguousWorkTimeMinutes"`
         
+        ConstrainDayOff bool `json:"constrainDayOff"`
+        
+        DayOffRule string `json:"dayOffRule"`
+        
         Activities []Workplanactivity `json:"activities"`
         
         Id string `json:"id"`
@@ -265,6 +285,12 @@ func (u *Workplanshift) MarshalJSON() ([]byte, error) {
         ValidationId string `json:"validationId"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

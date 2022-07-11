@@ -19,16 +19,30 @@ type TimeoffrequestquerybodyDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Timeoffrequestquerybody
 type Timeoffrequestquerybody struct { 
+    // Ids - The set of ids to filter time off requests
+    Ids []string `json:"ids"`
+
+
     // UserIds - The set of user ids to filter time off requests
     UserIds []string `json:"userIds"`
 
 
     // Statuses - The set of statuses to filter time off requests
     Statuses []string `json:"statuses"`
+
+
+    // Substatuses - The set of substatuses to filter time off requests
+    Substatuses []string `json:"substatuses"`
 
 
     // DateRange - The inclusive range of dates to filter time off requests
@@ -38,8 +52,10 @@ type Timeoffrequestquerybody struct {
 
 // String returns a JSON representation of the model
 func (o *Timeoffrequestquerybody) String() string {
+     o.Ids = []string{""} 
      o.UserIds = []string{""} 
      o.Statuses = []string{""} 
+     o.Substatuses = []string{""} 
     
 
     j, _ := json.Marshal(o)
@@ -58,13 +74,22 @@ func (u *Timeoffrequestquerybody) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Ids []string `json:"ids"`
+        
         UserIds []string `json:"userIds"`
         
         Statuses []string `json:"statuses"`
         
+        Substatuses []string `json:"substatuses"`
+        
         DateRange Daterange `json:"dateRange"`
         *Alias
     }{
+
+        
+        Ids: []string{""},
+        
+
 
         
         UserIds: []string{""},
@@ -73,6 +98,11 @@ func (u *Timeoffrequestquerybody) MarshalJSON() ([]byte, error) {
 
         
         Statuses: []string{""},
+        
+
+
+        
+        Substatuses: []string{""},
         
 
 

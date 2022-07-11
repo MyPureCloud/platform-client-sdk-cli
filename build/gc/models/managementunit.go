@@ -49,7 +49,7 @@ type ManagementunitDud struct {
 
 }
 
-// Managementunit - Management Unit object for Workforce Management
+// Managementunit
 type Managementunit struct { 
     
 

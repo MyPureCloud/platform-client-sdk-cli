@@ -16,9 +16,6 @@ type RecordingsettingsDud struct {
 
     
 
-
-    
-
 }
 
 // Recordingsettings
@@ -30,15 +27,10 @@ type Recordingsettings struct {
     // MaxConfigurableScreenRecordingStreams - Upper limit that maxSimultaneousStreams can be configured
     MaxConfigurableScreenRecordingStreams int `json:"maxConfigurableScreenRecordingStreams"`
 
-
-    // RegionalRecordingStorageEnabled - Store call recordings in the region where they are intended to be recorded, otherwise in the organization's home region
-    RegionalRecordingStorageEnabled bool `json:"regionalRecordingStorageEnabled"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Recordingsettings) String() string {
-    
     
     
 
@@ -61,13 +53,8 @@ func (u *Recordingsettings) MarshalJSON() ([]byte, error) {
         MaxSimultaneousStreams int `json:"maxSimultaneousStreams"`
         
         MaxConfigurableScreenRecordingStreams int `json:"maxConfigurableScreenRecordingStreams"`
-        
-        RegionalRecordingStorageEnabled bool `json:"regionalRecordingStorageEnabled"`
         *Alias
     }{
-
-        
-
 
         
 

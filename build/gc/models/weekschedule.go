@@ -45,7 +45,7 @@ type WeekscheduleDud struct {
 
 }
 
-// Weekschedule - Week schedule information
+// Weekschedule
 type Weekschedule struct { 
     
 

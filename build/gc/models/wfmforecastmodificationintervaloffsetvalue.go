@@ -18,7 +18,7 @@ type WfmforecastmodificationintervaloffsetvalueDud struct {
 
 }
 
-// Wfmforecastmodificationintervaloffsetvalue - Override the value of a single interval in a forecast
+// Wfmforecastmodificationintervaloffsetvalue
 type Wfmforecastmodificationintervaloffsetvalue struct { 
     // IntervalIndex - The number of 15 minute intervals past referenceStartDate to which to apply this modification
     IntervalIndex int `json:"intervalIndex"`

@@ -99,6 +99,9 @@ type QueuerequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -217,6 +220,10 @@ type Queuerequest struct {
     OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
 
 
+    // PeerId - The ID of the external Queue
+    PeerId string `json:"peerId"`
+
+
     
 
 }
@@ -246,6 +253,7 @@ func (o *Queuerequest) String() string {
     
     
      o.DefaultScripts = map[string]Script{"": {}} 
+    
     
     
 
@@ -314,6 +322,8 @@ func (u *Queuerequest) MarshalJSON() ([]byte, error) {
         OutboundMessagingAddresses Queuemessagingaddresses `json:"outboundMessagingAddresses"`
         
         OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
+        
+        PeerId string `json:"peerId"`
         *Alias
     }{
 
@@ -401,6 +411,9 @@ func (u *Queuerequest) MarshalJSON() ([]byte, error) {
 
         
         DefaultScripts: map[string]Script{"": {}},
+        
+
+
         
 
 

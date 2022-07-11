@@ -18,7 +18,7 @@ type ManagementunitreferenceDud struct {
 
 }
 
-// Managementunitreference - Management unit reference object for Workforce Management (ID/selfUri only)
+// Managementunitreference
 type Managementunitreference struct { 
     
 

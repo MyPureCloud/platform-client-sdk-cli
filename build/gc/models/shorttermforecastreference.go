@@ -24,7 +24,7 @@ type ShorttermforecastreferenceDud struct {
 
 }
 
-// Shorttermforecastreference - A pointer to a short term forecast
+// Shorttermforecastreference
 type Shorttermforecastreference struct { 
     
 

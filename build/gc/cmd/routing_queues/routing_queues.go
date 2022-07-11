@@ -84,6 +84,8 @@ func Cmdrouting_queues() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by queue name")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Filter by queue ID(s)")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Filter by queue division ID(s)")
+	utils.AddFlag(listCmd.Flags(), "[]string", "peerId", "", "Filter by queue peer ID(s)")
+	utils.AddFlag(listCmd.Flags(), "bool", "hasPeer", "", "Filter by queues associated with peer")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues", utils.FormatPermissions([]string{ "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -329,6 +331,14 @@ var listCmd = &cobra.Command{
 		divisionId := utils.GetFlag(cmd.Flags(), "[]string", "divisionId")
 		if divisionId != "" {
 			queryParams["divisionId"] = divisionId
+		}
+		peerId := utils.GetFlag(cmd.Flags(), "[]string", "peerId")
+		if peerId != "" {
+			queryParams["peerId"] = peerId
+		}
+		hasPeer := utils.GetFlag(cmd.Flags(), "bool", "hasPeer")
+		if hasPeer != "" {
+			queryParams["hasPeer"] = hasPeer
 		}
 		urlString := path
 		if len(queryParams) > 0 {

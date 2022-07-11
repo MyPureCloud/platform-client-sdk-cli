@@ -18,7 +18,7 @@ type BuaveragespeedofanswerDud struct {
 
 }
 
-// Buaveragespeedofanswer - Service goal average speed of answer configuration
+// Buaveragespeedofanswer
 type Buaveragespeedofanswer struct { 
     // Include - Whether to include average speed of answer (ASA) in the associated configuration
     Include bool `json:"include"`

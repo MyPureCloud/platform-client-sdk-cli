@@ -21,7 +21,7 @@ type WorkplanreferenceDud struct {
 
 }
 
-// Workplanreference - Work plan information
+// Workplanreference
 type Workplanreference struct { 
     
 

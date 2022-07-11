@@ -28,9 +28,21 @@ type CreateactivitycoderequestDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
-// Createactivitycoderequest - Activity Code
+// Createactivitycoderequest
 type Createactivitycoderequest struct { 
     // Name - The name of the activity code
     Name string `json:"name"`
@@ -55,6 +67,22 @@ type Createactivitycoderequest struct {
     // AgentTimeOffSelectable - Whether an agent can select this activity code when creating or editing a time off request
     AgentTimeOffSelectable bool `json:"agentTimeOffSelectable"`
 
+
+    // CountsTowardShrinkage - Whether or not this activity code counts toward shrinkage calculations
+    CountsTowardShrinkage bool `json:"countsTowardShrinkage"`
+
+
+    // PlannedShrinkage - Whether this activity code is considered planned or unplanned shrinkage
+    PlannedShrinkage bool `json:"plannedShrinkage"`
+
+
+    // Interruptible - Whether this activity code is considered interruptible
+    Interruptible bool `json:"interruptible"`
+
+
+    // SecondaryPresences - The secondary presences of this activity code
+    SecondaryPresences []Secondarypresence `json:"secondaryPresences"`
+
 }
 
 // String returns a JSON representation of the model
@@ -65,6 +93,10 @@ func (o *Createactivitycoderequest) String() string {
     
     
     
+    
+    
+    
+     o.SecondaryPresences = []Secondarypresence{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -93,6 +125,14 @@ func (u *Createactivitycoderequest) MarshalJSON() ([]byte, error) {
         CountsAsWorkTime bool `json:"countsAsWorkTime"`
         
         AgentTimeOffSelectable bool `json:"agentTimeOffSelectable"`
+        
+        CountsTowardShrinkage bool `json:"countsTowardShrinkage"`
+        
+        PlannedShrinkage bool `json:"plannedShrinkage"`
+        
+        Interruptible bool `json:"interruptible"`
+        
+        SecondaryPresences []Secondarypresence `json:"secondaryPresences"`
         *Alias
     }{
 
@@ -111,6 +151,20 @@ func (u *Createactivitycoderequest) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+        SecondaryPresences: []Secondarypresence{{}},
         
 
         Alias: (*Alias)(u),

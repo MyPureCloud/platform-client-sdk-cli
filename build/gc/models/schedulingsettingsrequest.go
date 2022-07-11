@@ -27,7 +27,7 @@ type SchedulingsettingsrequestDud struct {
 
 }
 
-// Schedulingsettingsrequest - Scheduling Settings
+// Schedulingsettingsrequest
 type Schedulingsettingsrequest struct { 
     // MaxOccupancyPercentForDeferredWork - Max occupancy percent for deferred work
     MaxOccupancyPercentForDeferredWork int `json:"maxOccupancyPercentForDeferredWork"`

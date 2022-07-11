@@ -33,6 +33,9 @@ type UserscheduleadherenceDud struct {
     ScheduledActivityCategory string `json:"scheduledActivityCategory"`
 
 
+    ScheduledActivityCode Activitycodereference `json:"scheduledActivityCode"`
+
+
     SystemPresence string `json:"systemPresence"`
 
 
@@ -135,6 +138,9 @@ type Userscheduleadherence struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -160,6 +166,9 @@ func (u *Userscheduleadherence) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         *Alias
     }{
+
+        
+
 
         
 

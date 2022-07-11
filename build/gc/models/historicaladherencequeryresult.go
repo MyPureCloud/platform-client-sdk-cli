@@ -38,6 +38,9 @@ type HistoricaladherencequeryresultDud struct {
 
     
 
+
+    
+
 }
 
 // Historicaladherencequeryresult
@@ -77,6 +80,10 @@ type Historicaladherencequeryresult struct {
     // Actuals - List of actual activity with offset for this user
     Actuals []Historicaladherenceactuals `json:"actuals"`
 
+
+    // ActualsEndsDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ActualsEndsDate time.Time `json:"actualsEndsDate"`
+
 }
 
 // String returns a JSON representation of the model
@@ -90,6 +97,7 @@ func (o *Historicaladherencequeryresult) String() string {
      o.ExceptionInfo = []Historicaladherenceexceptioninfo{{}} 
      o.DayMetrics = []Historicaladherencedaymetrics{{}} 
      o.Actuals = []Historicaladherenceactuals{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -124,6 +132,8 @@ func (u *Historicaladherencequeryresult) MarshalJSON() ([]byte, error) {
         DayMetrics []Historicaladherencedaymetrics `json:"dayMetrics"`
         
         Actuals []Historicaladherenceactuals `json:"actuals"`
+        
+        ActualsEndsDate time.Time `json:"actualsEndsDate"`
         *Alias
     }{
 
@@ -157,6 +167,9 @@ func (u *Historicaladherencequeryresult) MarshalJSON() ([]byte, error) {
 
         
         Actuals: []Historicaladherenceactuals{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

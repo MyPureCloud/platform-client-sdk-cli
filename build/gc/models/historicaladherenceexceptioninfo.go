@@ -37,6 +37,12 @@ type HistoricaladherenceexceptioninfoDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Historicaladherenceexceptioninfo
@@ -55,6 +61,14 @@ type Historicaladherenceexceptioninfo struct {
 
     // ScheduledActivityCategory - Activity for which the user is scheduled
     ScheduledActivityCategory string `json:"scheduledActivityCategory"`
+
+
+    // ScheduledSecondaryPresenceLookupIds - The lookup IDs used to retrieve the scheduled secondary statuses from map of lookup ID to corresponding secondary presence ID
+    ScheduledSecondaryPresenceLookupIds []string `json:"scheduledSecondaryPresenceLookupIds"`
+
+
+    // ActualActivityCodeId - The ID of the actual activity code for this user
+    ActualActivityCodeId string `json:"actualActivityCodeId"`
 
 
     // ActualActivityCategory - Activity for which the user is actually engaged
@@ -83,6 +97,8 @@ func (o *Historicaladherenceexceptioninfo) String() string {
     
     
     
+    
+     o.ScheduledSecondaryPresenceLookupIds = []string{""} 
     
     
     
@@ -114,6 +130,10 @@ func (u *Historicaladherenceexceptioninfo) MarshalJSON() ([]byte, error) {
         
         ScheduledActivityCategory string `json:"scheduledActivityCategory"`
         
+        ScheduledSecondaryPresenceLookupIds []string `json:"scheduledSecondaryPresenceLookupIds"`
+        
+        ActualActivityCodeId string `json:"actualActivityCodeId"`
+        
         ActualActivityCategory string `json:"actualActivityCategory"`
         
         SystemPresence string `json:"systemPresence"`
@@ -132,6 +152,14 @@ func (u *Historicaladherenceexceptioninfo) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+        ScheduledSecondaryPresenceLookupIds: []string{""},
         
 
 

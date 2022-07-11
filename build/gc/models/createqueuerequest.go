@@ -102,6 +102,9 @@ type CreatequeuerequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -220,6 +223,10 @@ type Createqueuerequest struct {
     OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
 
 
+    // PeerId - The ID of the external Queue
+    PeerId string `json:"peerId"`
+
+
     // SourceQueueId - The id of an existing queue to copy the settings (does not include GPR settings) from when creating a new queue.
     SourceQueueId string `json:"sourceQueueId"`
 
@@ -253,6 +260,7 @@ func (o *Createqueuerequest) String() string {
     
     
      o.DefaultScripts = map[string]Script{"": {}} 
+    
     
     
     
@@ -322,6 +330,8 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
         OutboundMessagingAddresses Queuemessagingaddresses `json:"outboundMessagingAddresses"`
         
         OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
+        
+        PeerId string `json:"peerId"`
         
         SourceQueueId string `json:"sourceQueueId"`
         *Alias
@@ -411,6 +421,9 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
 
         
         DefaultScripts: map[string]Script{"": {}},
+        
+
+
         
 
 

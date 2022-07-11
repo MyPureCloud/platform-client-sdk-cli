@@ -108,7 +108,7 @@ type WorkplanvalidationrequestDud struct {
 
 }
 
-// Workplanvalidationrequest - Work plan information
+// Workplanvalidationrequest
 type Workplanvalidationrequest struct { 
     
 

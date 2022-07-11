@@ -18,7 +18,7 @@ type HeadcountforecastDud struct {
 
 }
 
-// Headcountforecast - Headcount interval information for schedule
+// Headcountforecast
 type Headcountforecast struct { 
     // Required - Headcount information with shrinkage
     Required []Headcountinterval `json:"required"`

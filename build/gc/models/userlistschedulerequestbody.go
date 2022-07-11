@@ -25,7 +25,7 @@ type UserlistschedulerequestbodyDud struct {
 
 }
 
-// Userlistschedulerequestbody - Request body for fetching the schedule for a group of users over a given time range
+// Userlistschedulerequestbody
 type Userlistschedulerequestbody struct { 
     // UserIds - The user ids for which to fetch schedules
     UserIds []string `json:"userIds"`

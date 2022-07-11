@@ -15,7 +15,7 @@ type TimeofflimitlistingDud struct {
 
 }
 
-// Timeofflimitlisting - The list of time off limit objects
+// Timeofflimitlisting
 type Timeofflimitlisting struct { 
     // Entities
     Entities []Timeofflimit `json:"entities"`

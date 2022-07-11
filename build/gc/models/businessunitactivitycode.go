@@ -41,11 +41,23 @@ type BusinessunitactivitycodeDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
 
-// Businessunitactivitycode - Activity code data
+// Businessunitactivitycode
 type Businessunitactivitycode struct { 
     
 
@@ -82,6 +94,22 @@ type Businessunitactivitycode struct {
     AgentTimeOffSelectable bool `json:"agentTimeOffSelectable"`
 
 
+    // CountsTowardShrinkage - Whether or not this activity code counts toward shrinkage calculations
+    CountsTowardShrinkage bool `json:"countsTowardShrinkage"`
+
+
+    // PlannedShrinkage - Whether this activity code is considered planned or unplanned shrinkage
+    PlannedShrinkage bool `json:"plannedShrinkage"`
+
+
+    // Interruptible - Whether this activity code is considered interruptible
+    Interruptible bool `json:"interruptible"`
+
+
+    // SecondaryPresences - The secondary presences of this activity code
+    SecondaryPresences []Secondarypresence `json:"secondaryPresences"`
+
+
     // Metadata - Version metadata of this activity code
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
@@ -100,6 +128,10 @@ func (o *Businessunitactivitycode) String() string {
     
     
     
+    
+    
+    
+     o.SecondaryPresences = []Secondarypresence{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -134,6 +166,14 @@ func (u *Businessunitactivitycode) MarshalJSON() ([]byte, error) {
         
         AgentTimeOffSelectable bool `json:"agentTimeOffSelectable"`
         
+        CountsTowardShrinkage bool `json:"countsTowardShrinkage"`
+        
+        PlannedShrinkage bool `json:"plannedShrinkage"`
+        
+        Interruptible bool `json:"interruptible"`
+        
+        SecondaryPresences []Secondarypresence `json:"secondaryPresences"`
+        
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
@@ -162,6 +202,20 @@ func (u *Businessunitactivitycode) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+        SecondaryPresences: []Secondarypresence{{}},
         
 
 

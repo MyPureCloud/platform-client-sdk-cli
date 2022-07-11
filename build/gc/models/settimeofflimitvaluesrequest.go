@@ -18,7 +18,7 @@ type SettimeofflimitvaluesrequestDud struct {
 
 }
 
-// Settimeofflimitvaluesrequest - The non-empty list of the time off limit value intervals
+// Settimeofflimitvaluesrequest
 type Settimeofflimitvaluesrequest struct { 
     // Values
     Values []Timeofflimitrange `json:"values"`

@@ -309,6 +309,8 @@ gc/cmd/gamification_scorecards_bestpoints/gamification_scorecards_bestpoints.go
 gc/cmd/gamification_scorecards_points_alltime/gamification_scorecards_points_alltime.go
 gc/cmd/gamification_scorecards_points_average/gamification_scorecards_points_average.go
 gc/cmd/gamification_scorecards_points_trends/gamification_scorecards_points_trends.go
+gc/cmd/gamification_scorecards_profiles_metrics_users_values_trends/gamification_scorecards_profiles_metrics_users_values_trends.go
+gc/cmd/gamification_scorecards_profiles_metrics_values_trends/gamification_scorecards_profiles_metrics_values_trends.go
 gc/cmd/gamification_scorecards_users/gamification_scorecards_users.go
 gc/cmd/gamification_scorecards_users_attendance/gamification_scorecards_users_attendance.go
 gc/cmd/gamification_scorecards_users_bestpoints/gamification_scorecards_users_bestpoints.go
@@ -422,6 +424,7 @@ gc/cmd/learning_assignments_me/learning_assignments_me.go
 gc/cmd/learning_assignments_reassign/learning_assignments_reassign.go
 gc/cmd/learning_assignments_reset/learning_assignments_reset.go
 gc/cmd/learning_modules/learning_modules.go
+gc/cmd/learning_modules_assignments/learning_modules_assignments.go
 gc/cmd/learning_modules_jobs/learning_modules_jobs.go
 gc/cmd/learning_modules_publish/learning_modules_publish.go
 gc/cmd/learning_modules_rule/learning_modules_rule.go
@@ -959,6 +962,8 @@ gc/models/assessmentlisting.go
 gc/models/assessmentquestiongroupscore.go
 gc/models/assessmentquestionscore.go
 gc/models/assessmentscoringset.go
+gc/models/assignedlearningmodule.go
+gc/models/assignedlearningmoduledomainentitylisting.go
 gc/models/assignedsegment.go
 gc/models/assignedwrapupcode.go
 gc/models/assignment.go
@@ -1020,6 +1025,7 @@ gc/models/availabletimeoffresponse.go
 gc/models/availabletopic.go
 gc/models/availabletopicentitylisting.go
 gc/models/availabletranslations.go
+gc/models/basemediasettings.go
 gc/models/baseprogramentity.go
 gc/models/basetopicentitiy.go
 gc/models/batchdownloadjobresult.go
@@ -2106,6 +2112,7 @@ gc/models/meteredevaluationassignment.go
 gc/models/metric.go
 gc/models/metricdefinition.go
 gc/models/metrics.go
+gc/models/metricvaluetrendaverage.go
 gc/models/minedintentslisting.go
 gc/models/miner.go
 gc/models/minerexecuterequest.go
@@ -2566,6 +2573,7 @@ gc/models/servicegoaltemplatelist.go
 gc/models/servicegoaltemplatereference.go
 gc/models/servicelevel.go
 gc/models/session.go
+gc/models/sessionenddetails.go
 gc/models/sessionlastevent.go
 gc/models/sessionsegmentassignment.go
 gc/models/setrecordingstate.go

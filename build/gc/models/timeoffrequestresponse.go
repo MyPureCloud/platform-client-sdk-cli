@@ -63,6 +63,12 @@ type TimeoffrequestresponseDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -88,15 +94,23 @@ type Timeoffrequestresponse struct {
     ActivityCodeId string `json:"activityCodeId"`
 
 
+    // Paid - Whether this is a paid time off request
+    Paid bool `json:"paid"`
+
+
     // Status - The status of this time off request
     Status string `json:"status"`
 
 
-    // PartialDayStartDateTimes - A set of start date-times in ISO-8601 format for partial day requests.  Will be not empty if isFullDayRequest == false
+    // Substatus - The substatus of this time off request
+    Substatus string `json:"substatus"`
+
+
+    // PartialDayStartDateTimes - A set of start date-times in ISO-8601 format for partial day requests. Will be not empty if isFullDayRequest == false
     PartialDayStartDateTimes []time.Time `json:"partialDayStartDateTimes"`
 
 
-    // FullDayManagementUnitDates - A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.  Will be not empty if isFullDayRequest == true
+    // FullDayManagementUnitDates - A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone. Will be not empty if isFullDayRequest == true
     FullDayManagementUnitDates []string `json:"fullDayManagementUnitDates"`
 
 
@@ -147,6 +161,8 @@ func (o *Timeoffrequestresponse) String() string {
     
     
     
+    
+    
      o.PartialDayStartDateTimes = []time.Time{{}} 
      o.FullDayManagementUnitDates = []string{""} 
     
@@ -183,7 +199,11 @@ func (u *Timeoffrequestresponse) MarshalJSON() ([]byte, error) {
         
         ActivityCodeId string `json:"activityCodeId"`
         
+        Paid bool `json:"paid"`
+        
         Status string `json:"status"`
+        
+        Substatus string `json:"substatus"`
         
         PartialDayStartDateTimes []time.Time `json:"partialDayStartDateTimes"`
         
@@ -208,6 +228,12 @@ func (u *Timeoffrequestresponse) MarshalJSON() ([]byte, error) {
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

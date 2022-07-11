@@ -22,6 +22,9 @@ type UploadurlrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Uploadurlrequest
@@ -38,6 +41,10 @@ type Uploadurlrequest struct {
     SignedUrlTimeoutSeconds int `json:"signedUrlTimeoutSeconds"`
 
 
+    // ContentType - The content type of the file to upload. Allows all MIME types
+    ContentType string `json:"contentType"`
+
+
     // ServerSideEncryption
     ServerSideEncryption string `json:"serverSideEncryption"`
 
@@ -45,6 +52,7 @@ type Uploadurlrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Uploadurlrequest) String() string {
+    
     
     
     
@@ -72,9 +80,14 @@ func (u *Uploadurlrequest) MarshalJSON() ([]byte, error) {
         
         SignedUrlTimeoutSeconds int `json:"signedUrlTimeoutSeconds"`
         
+        ContentType string `json:"contentType"`
+        
         ServerSideEncryption string `json:"serverSideEncryption"`
         *Alias
     }{
+
+        
+
 
         
 

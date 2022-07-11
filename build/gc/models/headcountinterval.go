@@ -19,7 +19,7 @@ type HeadcountintervalDud struct {
 
 }
 
-// Headcountinterval - Headcount interval information for schedule
+// Headcountinterval
 type Headcountinterval struct { 
     // Interval - The start date-time for this headcount interval in ISO-8601 format, must be within the 8 day schedule
     Interval time.Time `json:"interval"`

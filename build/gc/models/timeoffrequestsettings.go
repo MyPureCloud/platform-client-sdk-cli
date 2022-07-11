@@ -21,7 +21,7 @@ type TimeoffrequestsettingsDud struct {
 
 }
 
-// Timeoffrequestsettings - Time Off Request Settings
+// Timeoffrequestsettings
 type Timeoffrequestsettings struct { 
     // SubmissionRangeEnforced - Whether to enforce a submission range for agent time off requests
     SubmissionRangeEnforced bool `json:"submissionRangeEnforced"`

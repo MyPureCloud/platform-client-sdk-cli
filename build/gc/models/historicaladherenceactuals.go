@@ -19,12 +19,19 @@ type HistoricaladherenceactualsDud struct {
 
     
 
+
+    
+
 }
 
 // Historicaladherenceactuals
 type Historicaladherenceactuals struct { 
     // ActualActivityCategory - Activity in which the user is actually engaged
     ActualActivityCategory string `json:"actualActivityCategory"`
+
+
+    // ActualSecondaryPresenceLookupId - The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID
+    ActualSecondaryPresenceLookupId string `json:"actualSecondaryPresenceLookupId"`
 
 
     // StartOffsetSeconds - Actual start offset in seconds relative to query start time
@@ -38,6 +45,7 @@ type Historicaladherenceactuals struct {
 
 // String returns a JSON representation of the model
 func (o *Historicaladherenceactuals) String() string {
+    
     
     
     
@@ -60,11 +68,16 @@ func (u *Historicaladherenceactuals) MarshalJSON() ([]byte, error) {
         
         ActualActivityCategory string `json:"actualActivityCategory"`
         
+        ActualSecondaryPresenceLookupId string `json:"actualSecondaryPresenceLookupId"`
+        
         StartOffsetSeconds int `json:"startOffsetSeconds"`
         
         EndOffsetSeconds int `json:"endOffsetSeconds"`
         *Alias
     }{
+
+        
+
 
         
 

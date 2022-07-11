@@ -31,9 +31,21 @@ type UpdateactivitycoderequestDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
-// Updateactivitycoderequest - Activity Code
+// Updateactivitycoderequest
 type Updateactivitycoderequest struct { 
     // Name - The name of the activity code
     Name string `json:"name"`
@@ -59,6 +71,22 @@ type Updateactivitycoderequest struct {
     AgentTimeOffSelectable bool `json:"agentTimeOffSelectable"`
 
 
+    // CountsTowardShrinkage - Whether or not this activity code counts toward shrinkage calculations
+    CountsTowardShrinkage bool `json:"countsTowardShrinkage"`
+
+
+    // PlannedShrinkage - Whether this activity code is considered planned or unplanned shrinkage
+    PlannedShrinkage bool `json:"plannedShrinkage"`
+
+
+    // Interruptible - Whether this activity code is considered interruptible
+    Interruptible bool `json:"interruptible"`
+
+
+    // SecondaryPresences - The secondary presences of this activity code
+    SecondaryPresences Listwrappersecondarypresence `json:"secondaryPresences"`
+
+
     // Metadata - Version metadata for the associated business unit's list of activity codes
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
@@ -66,6 +94,10 @@ type Updateactivitycoderequest struct {
 
 // String returns a JSON representation of the model
 func (o *Updateactivitycoderequest) String() string {
+    
+    
+    
+    
     
     
     
@@ -102,9 +134,29 @@ func (u *Updateactivitycoderequest) MarshalJSON() ([]byte, error) {
         
         AgentTimeOffSelectable bool `json:"agentTimeOffSelectable"`
         
+        CountsTowardShrinkage bool `json:"countsTowardShrinkage"`
+        
+        PlannedShrinkage bool `json:"plannedShrinkage"`
+        
+        Interruptible bool `json:"interruptible"`
+        
+        SecondaryPresences Listwrappersecondarypresence `json:"secondaryPresences"`
+        
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

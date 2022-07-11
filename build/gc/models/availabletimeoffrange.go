@@ -31,7 +31,7 @@ type AvailabletimeoffrangeDud struct {
 
 }
 
-// Availabletimeoffrange - A list of available time off values in minutes and a number of time off requests currently in waitlist for each interval in requested date range, according to granularity.
+// Availabletimeoffrange
 type Availabletimeoffrange struct { 
     // TimeOffLimit - The time off limit
     TimeOffLimit Timeofflimitreference `json:"timeOffLimit"`

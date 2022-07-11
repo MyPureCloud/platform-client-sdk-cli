@@ -27,7 +27,7 @@ type CreatemanagementunitsettingsrequestDud struct {
 
 }
 
-// Createmanagementunitsettingsrequest - Management Unit Settings
+// Createmanagementunitsettingsrequest
 type Createmanagementunitsettingsrequest struct { 
     // Adherence - Adherence settings for this management unit
     Adherence Adherencesettings `json:"adherence"`

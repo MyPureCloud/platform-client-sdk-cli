@@ -36,6 +36,9 @@ type ReportingturnDud struct {
     
 
 
+    
+
+
     Conversation Addressableentityref `json:"conversation"`
 
 }
@@ -74,6 +77,10 @@ type Reportingturn struct {
     AskActionResult string `json:"askActionResult"`
 
 
+    // SessionEndDetails - The details related to end of bot flow session.
+    SessionEndDetails Sessionenddetails `json:"sessionEndDetails"`
+
+
     
 
 }
@@ -82,6 +89,7 @@ type Reportingturn struct {
 func (o *Reportingturn) String() string {
     
      o.BotPrompts = []string{""} 
+    
     
     
     
@@ -120,6 +128,8 @@ func (u *Reportingturn) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         
         AskActionResult string `json:"askActionResult"`
+        
+        SessionEndDetails Sessionenddetails `json:"sessionEndDetails"`
         *Alias
     }{
 
@@ -128,6 +138,9 @@ func (u *Reportingturn) MarshalJSON() ([]byte, error) {
 
         
         BotPrompts: []string{""},
+        
+
+
         
 
 

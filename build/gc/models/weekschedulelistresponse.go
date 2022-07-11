@@ -15,7 +15,7 @@ type WeekschedulelistresponseDud struct {
 
 }
 
-// Weekschedulelistresponse - Week schedule list
+// Weekschedulelistresponse
 type Weekschedulelistresponse struct { 
     // Entities
     Entities []Weekschedulelistitemresponse `json:"entities"`

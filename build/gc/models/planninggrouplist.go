@@ -15,7 +15,7 @@ type PlanninggrouplistDud struct {
 
 }
 
-// Planninggrouplist - List of planning groups
+// Planninggrouplist
 type Planninggrouplist struct { 
     // Entities
     Entities []Planninggroup `json:"entities"`

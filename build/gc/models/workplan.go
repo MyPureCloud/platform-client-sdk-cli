@@ -111,7 +111,7 @@ type WorkplanDud struct {
 
 }
 
-// Workplan - Work plan information
+// Workplan
 type Workplan struct { 
     
 

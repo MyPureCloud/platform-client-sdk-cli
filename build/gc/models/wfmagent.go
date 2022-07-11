@@ -45,7 +45,7 @@ type WfmagentDud struct {
 
 }
 
-// Wfmagent - Workforce management agent data
+// Wfmagent
 type Wfmagent struct { 
     
 

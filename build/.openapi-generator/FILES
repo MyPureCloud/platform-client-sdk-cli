@@ -642,6 +642,8 @@ gc/cmd/stations/stations.go
 gc/cmd/stations_associateduser/stations_associateduser.go
 gc/cmd/stations_settings/stations_settings.go
 gc/cmd/systempresences/systempresences.go
+gc/cmd/teams/teams.go
+gc/cmd/teams_search/teams_search.go
 gc/cmd/telephony_providers_edges/telephony_providers_edges.go
 gc/cmd/telephony_providers_edges_addressvalidation/telephony_providers_edges_addressvalidation.go
 gc/cmd/telephony_providers_edges_availablelanguages/telephony_providers_edges_availablelanguages.go
@@ -775,6 +777,7 @@ gc/cmd/webmessaging_messages/webmessaging_messages.go
 gc/cmd/widgets_deployments/widgets_deployments.go
 gc/cmd/workforcemanagement_adherence/workforcemanagement_adherence.go
 gc/cmd/workforcemanagement_adherence_historical/workforcemanagement_adherence_historical.go
+gc/cmd/workforcemanagement_adherence_historical_jobs/workforcemanagement_adherence_historical_jobs.go
 gc/cmd/workforcemanagement_adhocmodelingjobs/workforcemanagement_adhocmodelingjobs.go
 gc/cmd/workforcemanagement_agents_managementunit/workforcemanagement_agents_managementunit.go
 gc/cmd/workforcemanagement_agents_me_managementunit/workforcemanagement_agents_me_managementunit.go
@@ -916,6 +919,7 @@ gc/models/aggregationresult.go
 gc/models/aggregationresultentry.go
 gc/models/alltimepoints.go
 gc/models/amazonlexrequest.go
+gc/models/analyticsagentgroup.go
 gc/models/analyticsconversation.go
 gc/models/analyticsconversationasyncqueryresponse.go
 gc/models/analyticsconversationqueryresponse.go
@@ -1482,6 +1486,7 @@ gc/models/cursors.go
 gc/models/customerinteractioncenter.go
 gc/models/customeventattribute.go
 gc/models/customeventattributelist.go
+gc/models/customi18nlabels.go
 gc/models/dataactionconditionpredicate.go
 gc/models/dataavailabilityresponse.go
 gc/models/dataschema.go
@@ -2025,6 +2030,7 @@ gc/models/localdaterange.go
 gc/models/localencryptionconfiguration.go
 gc/models/localencryptionconfigurationlisting.go
 gc/models/localencryptionkeyrequest.go
+gc/models/localizedlabels.go
 gc/models/location.go
 gc/models/locationaddress.go
 gc/models/locationaddressverificationdetails.go
@@ -2689,7 +2695,11 @@ gc/models/tagvalue.go
 gc/models/tagvalueentitylisting.go
 gc/models/targetperformanceprofile.go
 gc/models/team.go
+gc/models/teamentitylisting.go
 gc/models/teamreference.go
+gc/models/teamsearchcriteria.go
+gc/models/teamsearchrequest.go
+gc/models/teamssearchresponse.go
 gc/models/templateparameter.go
 gc/models/termattribute.go
 gc/models/testexecutionoperationresult.go

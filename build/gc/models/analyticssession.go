@@ -233,6 +233,9 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticssession
@@ -345,7 +348,7 @@ type Analyticssession struct {
     EligibleAgentCounts []int `json:"eligibleAgentCounts"`
 
 
-    // ExtendedDeliveryStatus - Extended email delivery status
+    // ExtendedDeliveryStatus - Extended delivery status
     ExtendedDeliveryStatus string `json:"extendedDeliveryStatus"`
 
 
@@ -517,6 +520,10 @@ type Analyticssession struct {
     ProposedAgents []Analyticsproposedagent `json:"proposedAgents"`
 
 
+    // AgentGroups - Conditional group routing agent groups
+    AgentGroups []Analyticsagentgroup `json:"agentGroups"`
+
+
     // MediaEndpointStats - MediaEndpointStats associated with this session
     MediaEndpointStats []Analyticsmediaendpointstat `json:"mediaEndpointStats"`
 
@@ -606,6 +613,7 @@ func (o *Analyticssession) String() string {
     
      o.WaitingInteractionCounts = []int{0} 
      o.ProposedAgents = []Analyticsproposedagent{{}} 
+     o.AgentGroups = []Analyticsagentgroup{{}} 
      o.MediaEndpointStats = []Analyticsmediaendpointstat{{}} 
     
      o.Metrics = []Analyticssessionmetric{{}} 
@@ -766,6 +774,8 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         WaitingInteractionCounts []int `json:"waitingInteractionCounts"`
         
         ProposedAgents []Analyticsproposedagent `json:"proposedAgents"`
+        
+        AgentGroups []Analyticsagentgroup `json:"agentGroups"`
         
         MediaEndpointStats []Analyticsmediaendpointstat `json:"mediaEndpointStats"`
         
@@ -1000,6 +1010,11 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
         
         ProposedAgents: []Analyticsproposedagent{{}},
+        
+
+
+        
+        AgentGroups: []Analyticsagentgroup{{}},
         
 
 

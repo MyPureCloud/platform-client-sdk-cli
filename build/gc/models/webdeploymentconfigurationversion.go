@@ -48,6 +48,9 @@ type WebdeploymentconfigurationversionDud struct {
     
 
 
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -95,6 +98,10 @@ type Webdeploymentconfigurationversion struct {
 
     // DefaultLanguage - The default language to use for the configuration required if the messenger is enabled
     DefaultLanguage string `json:"defaultLanguage"`
+
+
+    // CustomI18nLabels - The localization settings for homescreen app
+    CustomI18nLabels []Customi18nlabels `json:"customI18nLabels"`
 
 
     // Messenger - The settings for messenger
@@ -153,6 +160,7 @@ func (o *Webdeploymentconfigurationversion) String() string {
     
      o.Languages = []string{""} 
     
+     o.CustomI18nLabels = []Customi18nlabels{{}} 
     
     
     
@@ -184,6 +192,8 @@ func (u *Webdeploymentconfigurationversion) MarshalJSON() ([]byte, error) {
         Languages []string `json:"languages"`
         
         DefaultLanguage string `json:"defaultLanguage"`
+        
+        CustomI18nLabels []Customi18nlabels `json:"customI18nLabels"`
         
         Messenger Messengersettings `json:"messenger"`
         
@@ -218,6 +228,11 @@ func (u *Webdeploymentconfigurationversion) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        CustomI18nLabels: []Customi18nlabels{{}},
         
 
 

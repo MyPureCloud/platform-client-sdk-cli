@@ -39,11 +39,11 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/search"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/systempresences"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/teams"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/timezones"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
@@ -55,6 +55,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/audits"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/billing"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/certificate"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recording"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/contentmanagement"
@@ -121,7 +122,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 41.0.0")
+		fmt.Println("Current version: 41.1.0")
 		checkForNewVersion()
 	},
 }
@@ -140,7 +141,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("41.0.0", latestVersion) {
+	if versionsAreEqual("41.1.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -249,11 +250,11 @@ func init() {
 	rootCmd.AddCommand(search.Cmdsearch())
 	rootCmd.AddCommand(stations.Cmdstations())
 	rootCmd.AddCommand(systempresences.Cmdsystempresences())
+	rootCmd.AddCommand(teams.Cmdteams())
 	rootCmd.AddCommand(timezones.Cmdtimezones())
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
-	rootCmd.AddCommand(chat.Cmdchat())
 	rootCmd.AddCommand(autopagination.Cmdautopagination())
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())
@@ -265,6 +266,7 @@ func init() {
 	rootCmd.AddCommand(audits.Cmdaudits())
 	rootCmd.AddCommand(billing.Cmdbilling())
 	rootCmd.AddCommand(certificate.Cmdcertificate())
+	rootCmd.AddCommand(chat.Cmdchat())
 	rootCmd.AddCommand(recording.Cmdrecording())
 	rootCmd.AddCommand(externalcontacts.Cmdexternalcontacts())
 	rootCmd.AddCommand(contentmanagement.Cmdcontentmanagement())

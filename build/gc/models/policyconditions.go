@@ -34,6 +34,9 @@ type PolicyconditionsDud struct {
 
     
 
+
+    
+
 }
 
 // Policyconditions
@@ -69,6 +72,10 @@ type Policyconditions struct {
     // TimeAllowed
     TimeAllowed Timeallowed `json:"timeAllowed"`
 
+
+    // CustomerParticipation - This condition is to filter out conversation with and without customer participation.
+    CustomerParticipation string `json:"customerParticipation"`
+
 }
 
 // String returns a JSON representation of the model
@@ -80,6 +87,7 @@ func (o *Policyconditions) String() string {
      o.ForQueues = []Queue{{}} 
     
      o.WrapupCodes = []Wrapupcode{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -113,6 +121,8 @@ func (u *Policyconditions) MarshalJSON() ([]byte, error) {
         WrapupCodes []Wrapupcode `json:"wrapupCodes"`
         
         TimeAllowed Timeallowed `json:"timeAllowed"`
+        
+        CustomerParticipation string `json:"customerParticipation"`
         *Alias
     }{
 
@@ -146,6 +156,9 @@ func (u *Policyconditions) MarshalJSON() ([]byte, error) {
 
         
         WrapupCodes: []Wrapupcode{{}},
+        
+
+
         
 
 

@@ -30,6 +30,9 @@ type PunctualityeventDud struct {
     ActivityCode string `json:"activityCode"`
 
 
+    ActivityName string `json:"activityName"`
+
+
     Category string `json:"category"`
 
 
@@ -45,6 +48,9 @@ type PunctualityeventDud struct {
 
 // Punctualityevent
 type Punctualityevent struct { 
+    
+
+
     
 
 
@@ -100,6 +106,9 @@ func (u *Punctualityevent) MarshalJSON() ([]byte, error) {
         Bullseye bool `json:"bullseye"`
         *Alias
     }{
+
+        
+
 
         
 

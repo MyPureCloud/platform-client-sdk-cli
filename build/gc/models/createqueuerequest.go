@@ -105,6 +105,12 @@ type CreatequeuerequestDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -171,6 +177,10 @@ type Createqueuerequest struct {
     SkillEvaluationMethod string `json:"skillEvaluationMethod"`
 
 
+    // MemberGroups - The groups of agents associated with the queue, if any.  Queue membership will update to match group membership changes.
+    MemberGroups []Membergroup `json:"memberGroups"`
+
+
     // QueueFlow - The in-queue flow to use for call conversations waiting in queue.
     QueueFlow Domainentityref `json:"queueFlow"`
 
@@ -203,6 +213,10 @@ type Createqueuerequest struct {
     EnableManualAssignment bool `json:"enableManualAssignment"`
 
 
+    // AgentOwnedRouting - The Agent Owned Routing settings for the queue
+    AgentOwnedRouting Agentownedrouting `json:"agentOwnedRouting"`
+
+
     // CallingPartyName - The name to use for caller identification for outbound calls from this queue.
     CallingPartyName string `json:"callingPartyName"`
 
@@ -223,7 +237,7 @@ type Createqueuerequest struct {
     OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
 
 
-    // PeerId - The ID of the external Queue
+    // PeerId - The ID of an associated external queue.
     PeerId string `json:"peerId"`
 
 
@@ -248,6 +262,8 @@ func (o *Createqueuerequest) String() string {
      o.RoutingRules = []Routingrule{{}} 
     
     
+    
+     o.MemberGroups = []Membergroup{{}} 
     
     
     
@@ -305,6 +321,8 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
         
         SkillEvaluationMethod string `json:"skillEvaluationMethod"`
         
+        MemberGroups []Membergroup `json:"memberGroups"`
+        
         QueueFlow Domainentityref `json:"queueFlow"`
         
         EmailInQueueFlow Domainentityref `json:"emailInQueueFlow"`
@@ -320,6 +338,8 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
         EnableTranscription bool `json:"enableTranscription"`
         
         EnableManualAssignment bool `json:"enableManualAssignment"`
+        
+        AgentOwnedRouting Agentownedrouting `json:"agentOwnedRouting"`
         
         CallingPartyName string `json:"callingPartyName"`
         
@@ -383,6 +403,14 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+        MemberGroups: []Membergroup{{}},
         
 
 

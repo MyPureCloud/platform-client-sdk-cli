@@ -16,6 +16,9 @@ type RingDud struct {
 
     
 
+
+    
+
 }
 
 // Ring
@@ -27,12 +30,17 @@ type Ring struct {
     // Actions - The actions that will be performed just before moving conversations to the next bullseye ring.
     Actions Actions `json:"actions"`
 
+
+    // MemberGroups - The groups of agents associated with the ring, if any.  Ring membership will update to match group membership changes.
+    MemberGroups []Membergroup `json:"memberGroups"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Ring) String() string {
      o.ExpansionCriteria = []Expansioncriterium{{}} 
     
+     o.MemberGroups = []Membergroup{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,6 +61,8 @@ func (u *Ring) MarshalJSON() ([]byte, error) {
         ExpansionCriteria []Expansioncriterium `json:"expansionCriteria"`
         
         Actions Actions `json:"actions"`
+        
+        MemberGroups []Membergroup `json:"memberGroups"`
         *Alias
     }{
 
@@ -61,6 +71,11 @@ func (u *Ring) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        MemberGroups: []Membergroup{{}},
         
 
         Alias: (*Alias)(u),

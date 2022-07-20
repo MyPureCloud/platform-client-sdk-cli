@@ -77,12 +77,12 @@ type Historicaladherencequeryresult struct {
     DayMetrics []Historicaladherencedaymetrics `json:"dayMetrics"`
 
 
+    // ActualsEndDate - The end date of the actual activities in ISO-8601 format.
+    ActualsEndDate time.Time `json:"actualsEndDate"`
+
+
     // Actuals - List of actual activity with offset for this user
     Actuals []Historicaladherenceactuals `json:"actuals"`
-
-
-    // ActualsEndsDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    ActualsEndsDate time.Time `json:"actualsEndsDate"`
 
 }
 
@@ -96,8 +96,8 @@ func (o *Historicaladherencequeryresult) String() string {
     
      o.ExceptionInfo = []Historicaladherenceexceptioninfo{{}} 
      o.DayMetrics = []Historicaladherencedaymetrics{{}} 
-     o.Actuals = []Historicaladherenceactuals{{}} 
     
+     o.Actuals = []Historicaladherenceactuals{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -131,9 +131,9 @@ func (u *Historicaladherencequeryresult) MarshalJSON() ([]byte, error) {
         
         DayMetrics []Historicaladherencedaymetrics `json:"dayMetrics"`
         
-        Actuals []Historicaladherenceactuals `json:"actuals"`
+        ActualsEndDate time.Time `json:"actualsEndDate"`
         
-        ActualsEndsDate time.Time `json:"actualsEndsDate"`
+        Actuals []Historicaladherenceactuals `json:"actuals"`
         *Alias
     }{
 
@@ -166,10 +166,10 @@ func (u *Historicaladherencequeryresult) MarshalJSON() ([]byte, error) {
 
 
         
-        Actuals: []Historicaladherenceactuals{{}},
+
+
         
-
-
+        Actuals: []Historicaladherenceactuals{{}},
         
 
         Alias: (*Alias)(u),

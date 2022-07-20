@@ -32,7 +32,7 @@ type ConditionalgrouproutingruleDud struct {
 
 // Conditionalgrouproutingrule
 type Conditionalgrouproutingrule struct { 
-    // Queue - The queue being evaluated for this rule.  For rule 1, this is always the current queue.
+    // Queue - The queue being evaluated for this rule.  For rule 1, this is always the current queue, so should not be specified.
     Queue Domainentityref `json:"queue"`
 
 
@@ -52,7 +52,7 @@ type Conditionalgrouproutingrule struct {
     Groups []Membergroup `json:"groups"`
 
 
-    // WaitSeconds - The number of seconds to wait in this rule, if it evaluates as true, before evaluating the next rule
+    // WaitSeconds - The number of seconds to wait in this rule, if it evaluates as true, before evaluating the next rule.  For the final rule, this is ignored, so need not be specified.
     WaitSeconds int `json:"waitSeconds"`
 
 }

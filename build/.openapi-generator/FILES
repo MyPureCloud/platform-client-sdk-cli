@@ -226,6 +226,8 @@ gc/cmd/dataextensions_limits/dataextensions_limits.go
 gc/cmd/date/date.go
 gc/cmd/documentationfile_gkn_search/documentationfile_gkn_search.go
 gc/cmd/documentationfile_search/documentationfile_search.go
+gc/cmd/employeeperformance_externalmetrics_data/employeeperformance_externalmetrics_data.go
+gc/cmd/employeeperformance_externalmetrics_definitions/employeeperformance_externalmetrics_definitions.go
 gc/cmd/externalcontacts_bulk_contacts/externalcontacts_bulk_contacts.go
 gc/cmd/externalcontacts_bulk_contacts_add/externalcontacts_bulk_contacts_add.go
 gc/cmd/externalcontacts_bulk_contacts_remove/externalcontacts_bulk_contacts_remove.go
@@ -1720,6 +1722,14 @@ gc/models/extensionpool.go
 gc/models/extensionpoolentitylisting.go
 gc/models/externalcontact.go
 gc/models/externaldatasource.go
+gc/models/externalmetricdataitem.go
+gc/models/externalmetricdataunprocesseditem.go
+gc/models/externalmetricdatawriterequest.go
+gc/models/externalmetricdatawriteresponse.go
+gc/models/externalmetricdefinition.go
+gc/models/externalmetricdefinitioncreaterequest.go
+gc/models/externalmetricdefinitionlisting.go
+gc/models/externalmetricdefinitionupdaterequest.go
 gc/models/externalorganization.go
 gc/models/externalorganizationlisting.go
 gc/models/externalorganizationtrustorlink.go

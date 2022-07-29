@@ -57,6 +57,7 @@ var (
 		"eu-west-2":      "euw2.pure.cloud",
 		"ap-south-1":     "aps1.pure.cloud",
 		"us-east-2":      "use2.us-gov-pure.cloud",
+		"sa-east-1":      "sae1.pure.cloud",
 	}
 )
 

@@ -29,7 +29,7 @@ func init() {
 
 func Cmdgamification_scorecards_profiles_metrics_users_values_trends() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "filterType", "", "Filter type for the query request. - REQUIRED Valid values: PerformanceProfile, Division")
-	utils.AddFlag(getCmd.Flags(), "string", "filterId", "", "ID for the filter type. For example, division Id - REQUIRED")
+	utils.AddFlag(getCmd.Flags(), "string", "filterId", "", "ID for the filter type. Only required when filterType is Division.")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "startWorkday", "", "Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "endWorkday", "", "End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
 	utils.AddFlag(getCmd.Flags(), "time.Time", "referenceWorkday", "", "Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
@@ -37,7 +37,6 @@ func Cmdgamification_scorecards_profiles_metrics_users_values_trends() *cobra.Co
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends", utils.FormatPermissions([]string{ "gamification:scorecard:viewAll",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("filterType")
-	getCmd.MarkFlagRequired("filterId")
 	getCmd.MarkFlagRequired("startWorkday")
 	getCmd.MarkFlagRequired("endWorkday")
 	

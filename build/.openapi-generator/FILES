@@ -427,6 +427,7 @@ gc/cmd/learning_assignments_reassign/learning_assignments_reassign.go
 gc/cmd/learning_assignments_reset/learning_assignments_reset.go
 gc/cmd/learning_modules/learning_modules.go
 gc/cmd/learning_modules_assignments/learning_modules_assignments.go
+gc/cmd/learning_modules_coverart/learning_modules_coverart.go
 gc/cmd/learning_modules_jobs/learning_modules_jobs.go
 gc/cmd/learning_modules_publish/learning_modules_publish.go
 gc/cmd/learning_modules_rule/learning_modules_rule.go
@@ -705,6 +706,7 @@ gc/cmd/textbots_bots_search/textbots_bots_search.go
 gc/cmd/timezones/timezones.go
 gc/cmd/tokens/tokens.go
 gc/cmd/tokens_me/tokens_me.go
+gc/cmd/uploads_learning_coverart/uploads_learning_coverart.go
 gc/cmd/uploads_publicassets_images/uploads_publicassets_images.go
 gc/cmd/uploads_recordings/uploads_recordings.go
 gc/cmd/uploads_workforcemanagement_historicaldata_csv/uploads_workforcemanagement_historicaldata_csv.go
@@ -1987,6 +1989,7 @@ gc/models/learningassignmentuser.go
 gc/models/learningassignmentuserlisting.go
 gc/models/learningassignmentuserquery.go
 gc/models/learningcoverartthumbnail.go
+gc/models/learningcoverartuploadurlrequest.go
 gc/models/learningmodule.go
 gc/models/learningmodulecoverartrequest.go
 gc/models/learningmodulecoverartresponse.go

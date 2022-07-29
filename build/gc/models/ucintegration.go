@@ -35,6 +35,12 @@ type UcintegrationDud struct {
     I10n map[string]Uci10n `json:"i10n"`
 
 
+    PolledPresence bool `json:"polledPresence"`
+
+
+    UserPermissions []string `json:"userPermissions"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -46,6 +52,12 @@ type Ucintegration struct {
 
     // Name
     Name string `json:"name"`
+
+
+    
+
+
+    
 
 
     
@@ -93,6 +105,12 @@ func (u *Ucintegration) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

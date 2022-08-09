@@ -18,13 +18,13 @@ type BulkidsrequestDud struct {
 // Bulkidsrequest
 type Bulkidsrequest struct { 
     // Entities
-    Entities []Entity `json:"entities"`
+    Entities []Writableentity `json:"entities"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Bulkidsrequest) String() string {
-     o.Entities = []Entity{{}} 
+     o.Entities = []Writableentity{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -42,12 +42,12 @@ func (u *Bulkidsrequest) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Entities []Entity `json:"entities"`
+        Entities []Writableentity `json:"entities"`
         *Alias
     }{
 
         
-        Entities: []Entity{{}},
+        Entities: []Writableentity{{}},
         
 
         Alias: (*Alias)(u),

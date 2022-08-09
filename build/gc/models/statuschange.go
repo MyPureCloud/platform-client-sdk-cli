@@ -21,10 +21,10 @@ type StatuschangeDud struct {
     PreviousStatus string `json:"previousStatus"`
 
 
+    Namespace string `json:"namespace"`
+
+
     Message string `json:"message"`
-
-
-    ChangedBy string `json:"changedBy"`
 
 
     RejectReason string `json:"rejectReason"`

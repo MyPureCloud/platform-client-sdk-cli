@@ -27,25 +27,25 @@ type EdgeDud struct {
     
 
 
-    
+    DateCreated time.Time `json:"dateCreated"`
 
 
-    
+    DateModified time.Time `json:"dateModified"`
 
 
-    
+    ModifiedBy string `json:"modifiedBy"`
 
 
-    
+    CreatedBy string `json:"createdBy"`
 
 
     State string `json:"state"`
 
 
-    
+    ModifiedByApp string `json:"modifiedByApp"`
 
 
-    
+    CreatedByApp string `json:"createdByApp"`
 
 
     
@@ -160,31 +160,25 @@ type Edge struct {
     Version int `json:"version"`
 
 
-    // DateCreated - The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    DateCreated time.Time `json:"dateCreated"`
-
-
-    // DateModified - The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    DateModified time.Time `json:"dateModified"`
-
-
-    // ModifiedBy - The ID of the user that last modified the resource.
-    ModifiedBy string `json:"modifiedBy"`
-
-
-    // CreatedBy - The ID of the user that created the resource.
-    CreatedBy string `json:"createdBy"`
+    
 
 
     
 
 
-    // ModifiedByApp - The application that last modified the resource.
-    ModifiedByApp string `json:"modifiedByApp"`
+    
 
 
-    // CreatedByApp - The application that created the resource.
-    CreatedByApp string `json:"createdByApp"`
+    
+
+
+    
+
+
+    
+
+
+    
 
 
     // Interfaces - The list of interfaces for the edge. (Deprecated) Replaced by configuring trunks/ip info on the logical interface instead
@@ -309,12 +303,6 @@ func (o *Edge) String() string {
     
     
     
-    
-    
-    
-    
-    
-    
      o.Interfaces = []Edgeinterface{{}} 
     
     
@@ -364,18 +352,6 @@ func (u *Edge) MarshalJSON() ([]byte, error) {
         Description string `json:"description"`
         
         Version int `json:"version"`
-        
-        DateCreated time.Time `json:"dateCreated"`
-        
-        DateModified time.Time `json:"dateModified"`
-        
-        ModifiedBy string `json:"modifiedBy"`
-        
-        CreatedBy string `json:"createdBy"`
-        
-        ModifiedByApp string `json:"modifiedByApp"`
-        
-        CreatedByApp string `json:"createdByApp"`
         
         Interfaces []Edgeinterface `json:"interfaces"`
         

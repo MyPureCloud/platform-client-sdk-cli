@@ -22,6 +22,9 @@ type CursororganizationlistingDud struct {
 
     
 
+
+    
+
 }
 
 // Cursororganizationlisting
@@ -41,11 +44,16 @@ type Cursororganizationlisting struct {
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
+
+    // Cursors - The cursor that points to the next set of entities being returned.
+    Cursors Cursors `json:"cursors"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Cursororganizationlisting) String() string {
      o.Entities = []Externalorganization{{}} 
+    
     
     
     
@@ -73,11 +81,16 @@ func (u *Cursororganizationlisting) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         PreviousUri string `json:"previousUri"`
+        
+        Cursors Cursors `json:"cursors"`
         *Alias
     }{
 
         
         Entities: []Externalorganization{{}},
+        
+
+
         
 
 

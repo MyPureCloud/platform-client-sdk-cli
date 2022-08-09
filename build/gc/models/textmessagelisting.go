@@ -60,6 +60,10 @@ type Textmessagelisting struct {
     Total int `json:"total"`
 
 
+    // LastUri
+    LastUri string `json:"lastUri"`
+
+
     // FirstUri
     FirstUri string `json:"firstUri"`
 
@@ -68,20 +72,16 @@ type Textmessagelisting struct {
     SelfUri string `json:"selfUri"`
 
 
+    // PageCount
+    PageCount int `json:"pageCount"`
+
+
     // NextUri
     NextUri string `json:"nextUri"`
 
 
     // PreviousUri
     PreviousUri string `json:"previousUri"`
-
-
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
-    // PageCount
-    PageCount int `json:"pageCount"`
 
 }
 
@@ -122,17 +122,17 @@ func (u *Textmessagelisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
+        LastUri string `json:"lastUri"`
+        
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         
+        PageCount int `json:"pageCount"`
+        
         NextUri string `json:"nextUri"`
         
         PreviousUri string `json:"previousUri"`
-        
-        LastUri string `json:"lastUri"`
-        
-        PageCount int `json:"pageCount"`
         *Alias
     }{
 

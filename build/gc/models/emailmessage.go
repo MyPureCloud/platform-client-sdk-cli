@@ -51,6 +51,12 @@ type EmailmessageDud struct {
     
 
 
+    EmailSizeBytes int `json:"emailSizeBytes"`
+
+
+    MaxEmailSizeBytes int `json:"maxEmailSizeBytes"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -106,6 +112,12 @@ type Emailmessage struct {
 
     // HistoryIncluded - Indicates whether the history of previous emails of the conversation is included within the email bodies of this message.
     HistoryIncluded bool `json:"historyIncluded"`
+
+
+    
+
+
+    
 
 
     
@@ -201,6 +213,12 @@ func (u *Emailmessage) MarshalJSON() ([]byte, error) {
 
         
         Attachments: []Attachment{{}},
+        
+
+
+        
+
+
         
 
 

@@ -63,7 +63,7 @@ func Cmdquality_conversations_evaluations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/Evaluation"
+        "$ref" : "#/components/schemas/EvaluationResponse"
       }
     }
   }
@@ -79,7 +79,7 @@ func Cmdquality_conversations_evaluations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/Evaluation"
+        "$ref" : "#/components/schemas/EvaluationResponse"
       }
     }
   }
@@ -105,7 +105,7 @@ func Cmdquality_conversations_evaluations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/Evaluation"
+        "$ref" : "#/components/schemas/EvaluationResponse"
       }
     }
   }

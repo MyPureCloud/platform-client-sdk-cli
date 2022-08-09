@@ -45,7 +45,7 @@ func Cmdorganizations_limits_changerequests() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "int", "after", "", "Timestamp indicating the date to begin after when searching for requests.")
 	utils.AddFlag(listCmd.Flags(), "int", "before", "", "Timestamp indicating the date to end before when searching for requests.")
-	utils.AddFlag(listCmd.Flags(), "string", "status", "", "Status of the request to be filtered by Valid values: Open, Approved, ImplementingChange, ChangeImplemented, Rejected, Rollback, ImplementingRollback, RollbackImplemented")
+	utils.AddFlag(listCmd.Flags(), "string", "status", "", "Status of the request to be filtered by Valid values: Approved, Rejected, Rollback, Pending, Open, SecondaryApprovalNamespacesAdded, ReviewerApproved, ReviewerRejected, ReviewerRollback, ImplementingChange, ChangeImplemented, ImplementingRollback, RollbackImplemented")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page Size")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: statusHistory")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/organizations/limits/changerequests", utils.FormatPermissions([]string{ "limits:organization:view",  }), utils.GenerateDevCentreLink("GET", "Organization", "/api/v2/organizations/limits/changerequests")))

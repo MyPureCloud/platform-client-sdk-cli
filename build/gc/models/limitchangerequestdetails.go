@@ -30,9 +30,6 @@ type LimitchangerequestdetailsDud struct {
     
 
 
-    CreatedBy string `json:"createdBy"`
-
-
     Status string `json:"status"`
 
 
@@ -46,9 +43,6 @@ type LimitchangerequestdetailsDud struct {
 
 
     DateCompleted time.Time `json:"dateCompleted"`
-
-
-    LastChangedBy string `json:"lastChangedBy"`
 
 
     RejectReason string `json:"rejectReason"`
@@ -81,12 +75,6 @@ type Limitchangerequestdetails struct {
 
     // SupportCaseUrl - The support case url created by Care
     SupportCaseUrl string `json:"supportCaseUrl"`
-
-
-    
-
-
-    
 
 
     
@@ -146,12 +134,6 @@ func (u *Limitchangerequestdetails) MarshalJSON() ([]byte, error) {
         SupportCaseUrl string `json:"supportCaseUrl"`
         *Alias
     }{
-
-        
-
-
-        
-
 
         
 

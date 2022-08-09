@@ -27,25 +27,25 @@ type SchemacategoryDud struct {
     
 
 
-    
+    DateCreated time.Time `json:"dateCreated"`
 
 
-    
+    DateModified time.Time `json:"dateModified"`
 
 
-    
+    ModifiedBy string `json:"modifiedBy"`
 
 
-    
+    CreatedBy string `json:"createdBy"`
 
 
     State string `json:"state"`
 
 
-    
+    ModifiedByApp string `json:"modifiedByApp"`
 
 
-    
+    CreatedByApp string `json:"createdByApp"`
 
 
     SelfUri string `json:"selfUri"`
@@ -73,31 +73,25 @@ type Schemacategory struct {
     Version int `json:"version"`
 
 
-    // DateCreated - The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    DateCreated time.Time `json:"dateCreated"`
-
-
-    // DateModified - The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    DateModified time.Time `json:"dateModified"`
-
-
-    // ModifiedBy - The ID of the user that last modified the resource.
-    ModifiedBy string `json:"modifiedBy"`
-
-
-    // CreatedBy - The ID of the user that created the resource.
-    CreatedBy string `json:"createdBy"`
+    
 
 
     
 
 
-    // ModifiedByApp - The application that last modified the resource.
-    ModifiedByApp string `json:"modifiedByApp"`
+    
 
 
-    // CreatedByApp - The application that created the resource.
-    CreatedByApp string `json:"createdByApp"`
+    
+
+
+    
+
+
+    
+
+
+    
 
 
     
@@ -106,12 +100,6 @@ type Schemacategory struct {
 
 // String returns a JSON representation of the model
 func (o *Schemacategory) String() string {
-    
-    
-    
-    
-    
-    
     
     
     
@@ -140,18 +128,6 @@ func (u *Schemacategory) MarshalJSON() ([]byte, error) {
         Description string `json:"description"`
         
         Version int `json:"version"`
-        
-        DateCreated time.Time `json:"dateCreated"`
-        
-        DateModified time.Time `json:"dateModified"`
-        
-        ModifiedBy string `json:"modifiedBy"`
-        
-        CreatedBy string `json:"createdBy"`
-        
-        ModifiedByApp string `json:"modifiedByApp"`
-        
-        CreatedByApp string `json:"createdByApp"`
         *Alias
     }{
 

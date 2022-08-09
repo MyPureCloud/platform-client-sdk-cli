@@ -178,6 +178,8 @@ gc/cmd/conversations_emails_participants_wrapupcodes/conversations_emails_partic
 gc/cmd/conversations_emails_recordingstate/conversations_emails_recordingstate.go
 gc/cmd/conversations_emails_settings/conversations_emails_settings.go
 gc/cmd/conversations_faxes/conversations_faxes.go
+gc/cmd/conversations_keyconfigurations/conversations_keyconfigurations.go
+gc/cmd/conversations_keyconfigurations_validate/conversations_keyconfigurations_validate.go
 gc/cmd/conversations_messages/conversations_messages.go
 gc/cmd/conversations_messages_agentless/conversations_messages_agentless.go
 gc/cmd/conversations_messages_communications_messages/conversations_messages_communications_messages.go
@@ -218,6 +220,7 @@ gc/cmd/conversations_recordingmetadata/conversations_recordingmetadata.go
 gc/cmd/conversations_recordings/conversations_recordings.go
 gc/cmd/conversations_recordings_annotations/conversations_recordings_annotations.go
 gc/cmd/conversations_screenshares_recordingstate/conversations_screenshares_recordingstate.go
+gc/cmd/conversations_secureattributes/conversations_secureattributes.go
 gc/cmd/conversations_socials_recordingstate/conversations_socials_recordingstate.go
 gc/cmd/conversations_tags/conversations_tags.go
 gc/cmd/conversations_videos_recordingstate/conversations_videos_recordingstate.go
@@ -575,6 +578,7 @@ gc/cmd/responsemanagement_responses_query/responsemanagement_responses_query.go
 gc/cmd/root.go
 gc/cmd/routing_assessments/routing_assessments.go
 gc/cmd/routing_assessments_jobs/routing_assessments_jobs.go
+gc/cmd/routing_availablemediatypes/routing_availablemediatypes.go
 gc/cmd/routing_conversations/routing_conversations.go
 gc/cmd/routing_email_domains/routing_email_domains.go
 gc/cmd/routing_email_domains_routes/routing_email_domains_routes.go
@@ -1026,6 +1030,8 @@ gc/models/authzsubject.go
 gc/models/automatictimezonemappingsettings.go
 gc/models/autostart.go
 gc/models/availablelanguagelist.go
+gc/models/availablemediatype.go
+gc/models/availablemediatypeentitylisting.go
 gc/models/availabletime.go
 gc/models/availabletimeoffrange.go
 gc/models/availabletimeoffrequest.go
@@ -1385,6 +1391,8 @@ gc/models/conversationdetailqueryclause.go
 gc/models/conversationdetailqueryfilter.go
 gc/models/conversationdetailquerypredicate.go
 gc/models/conversationdivisionmembership.go
+gc/models/conversationencryptionconfiguration.go
+gc/models/conversationencryptionconfigurationlisting.go
 gc/models/conversationentitylisting.go
 gc/models/conversationeventcobrowse.go
 gc/models/conversationeventpresence.go
@@ -1410,6 +1418,7 @@ gc/models/conversationreason.go
 gc/models/conversationrecipientadditionalidentifier.go
 gc/models/conversationreference.go
 gc/models/conversationroutingdata.go
+gc/models/conversationsecureattributes.go
 gc/models/conversationtagsupdate.go
 gc/models/conversationthreadingwindow.go
 gc/models/conversationthreadingwindowsetting.go
@@ -1699,10 +1708,12 @@ gc/models/evaluationentitylisting.go
 gc/models/evaluationform.go
 gc/models/evaluationformandscoringset.go
 gc/models/evaluationformentitylisting.go
+gc/models/evaluationformresponse.go
 gc/models/evaluationquestion.go
 gc/models/evaluationquestiongroup.go
 gc/models/evaluationquestiongroupscore.go
 gc/models/evaluationquestionscore.go
+gc/models/evaluationresponse.go
 gc/models/evaluationscoringset.go
 gc/models/evaluatoractivity.go
 gc/models/evaluatoractivityentitylisting.go

@@ -23,6 +23,9 @@ type DialogflowagentsummaryDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -36,12 +39,16 @@ type Dialogflowagentsummary struct {
     Name string `json:"name"`
 
 
-    // Project - The project this Dialogflow agent belongs to
+    // Project - The project this Dialogflow agent belongs to.
     Project Dialogflowproject `json:"project"`
 
 
-    // Description - A description of the Dialogflow agent
+    // Description - A description of the Dialogflow agent.
     Description string `json:"description"`
+
+
+    // Integration - The Integration this Dialogflow agent was referenced from.
+    Integration Domainentityref `json:"integration"`
 
 
     
@@ -50,6 +57,7 @@ type Dialogflowagentsummary struct {
 
 // String returns a JSON representation of the model
 func (o *Dialogflowagentsummary) String() string {
+    
     
     
     
@@ -75,8 +83,13 @@ func (u *Dialogflowagentsummary) MarshalJSON() ([]byte, error) {
         Project Dialogflowproject `json:"project"`
         
         Description string `json:"description"`
+        
+        Integration Domainentityref `json:"integration"`
         *Alias
     }{
+
+        
+
 
         
 

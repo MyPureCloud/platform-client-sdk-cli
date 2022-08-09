@@ -27,25 +27,25 @@ type IvrDud struct {
     
 
 
-    
+    DateCreated time.Time `json:"dateCreated"`
 
 
-    
+    DateModified time.Time `json:"dateModified"`
 
 
-    
+    ModifiedBy string `json:"modifiedBy"`
 
 
-    
+    CreatedBy string `json:"createdBy"`
 
 
     State string `json:"state"`
 
 
-    
+    ModifiedByApp string `json:"modifiedByApp"`
 
 
-    
+    CreatedByApp string `json:"createdByApp"`
 
 
     
@@ -88,31 +88,25 @@ type Ivr struct {
     Version int `json:"version"`
 
 
-    // DateCreated - The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    DateCreated time.Time `json:"dateCreated"`
-
-
-    // DateModified - The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    DateModified time.Time `json:"dateModified"`
-
-
-    // ModifiedBy - The ID of the user that last modified the resource.
-    ModifiedBy string `json:"modifiedBy"`
-
-
-    // CreatedBy - The ID of the user that created the resource.
-    CreatedBy string `json:"createdBy"`
+    
 
 
     
 
 
-    // ModifiedByApp - The application that last modified the resource.
-    ModifiedByApp string `json:"modifiedByApp"`
+    
 
 
-    // CreatedByApp - The application that created the resource.
-    CreatedByApp string `json:"createdByApp"`
+    
+
+
+    
+
+
+    
+
+
+    
 
 
     // Dnis - The phone number(s) to contact the IVR by.  Each phone number must be unique and not in use by another resource.  For example, a user and an iVR cannot have the same phone number.
@@ -141,12 +135,6 @@ type Ivr struct {
 
 // String returns a JSON representation of the model
 func (o *Ivr) String() string {
-    
-    
-    
-    
-    
-    
     
     
     
@@ -180,18 +168,6 @@ func (u *Ivr) MarshalJSON() ([]byte, error) {
         Description string `json:"description"`
         
         Version int `json:"version"`
-        
-        DateCreated time.Time `json:"dateCreated"`
-        
-        DateModified time.Time `json:"dateModified"`
-        
-        ModifiedBy string `json:"modifiedBy"`
-        
-        CreatedBy string `json:"createdBy"`
-        
-        ModifiedByApp string `json:"modifiedByApp"`
-        
-        CreatedByApp string `json:"createdByApp"`
         
         Dnis []string `json:"dnis"`
         

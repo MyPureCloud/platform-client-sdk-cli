@@ -48,6 +48,9 @@ type OrphanrecordingDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -101,12 +104,17 @@ type Orphanrecording struct {
     SourceOrphaningId string `json:"sourceOrphaningId"`
 
 
+    // Region
+    Region string `json:"region"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Orphanrecording) String() string {
+    
     
     
     
@@ -156,8 +164,13 @@ func (u *Orphanrecording) MarshalJSON() ([]byte, error) {
         OrphanStatus string `json:"orphanStatus"`
         
         SourceOrphaningId string `json:"sourceOrphaningId"`
+        
+        Region string `json:"region"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -51,6 +51,9 @@ type DnclistcreateDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -92,6 +95,10 @@ type Dnclistcreate struct {
     LoginId string `json:"loginId"`
 
 
+    // CampaignId - A dnc.com campaignId. Optional if the dncSourceType is dnc.com.
+    CampaignId string `json:"campaignId"`
+
+
     // DncCodes - The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com.
     DncCodes []string `json:"dncCodes"`
 
@@ -110,6 +117,7 @@ type Dnclistcreate struct {
 
 // String returns a JSON representation of the model
 func (o *Dnclistcreate) String() string {
+    
     
     
     
@@ -145,6 +153,8 @@ func (u *Dnclistcreate) MarshalJSON() ([]byte, error) {
         
         LoginId string `json:"loginId"`
         
+        CampaignId string `json:"campaignId"`
+        
         DncCodes []string `json:"dncCodes"`
         
         LicenseId string `json:"licenseId"`
@@ -152,6 +162,9 @@ func (u *Dnclistcreate) MarshalJSON() ([]byte, error) {
         Division Domainentityref `json:"division"`
         *Alias
     }{
+
+        
+
 
         
 

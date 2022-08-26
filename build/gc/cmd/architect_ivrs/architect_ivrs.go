@@ -81,6 +81,7 @@ func Cmdarchitect_ivrs() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Sort order")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name of the IVR to filter by.")
+	utils.AddFlag(listCmd.Flags(), "string", "dnis", "", "The phone number of the IVR to filter by.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/ivrs", utils.FormatPermissions([]string{ "routing:callRoute:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/ivrs")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -317,6 +318,10 @@ var listCmd = &cobra.Command{
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {
 			queryParams["name"] = name
+		}
+		dnis := utils.GetFlag(cmd.Flags(), "string", "dnis")
+		if dnis != "" {
+			queryParams["dnis"] = dnis
 		}
 		urlString := path
 		if len(queryParams) > 0 {

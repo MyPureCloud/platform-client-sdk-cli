@@ -25,6 +25,15 @@ type PatchactionDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Patchaction
@@ -37,12 +46,24 @@ type Patchaction struct {
     ActionTemplate Actionmapactiontemplate `json:"actionTemplate"`
 
 
+    // ActionTargetId - Action target ID.
+    ActionTargetId string `json:"actionTargetId"`
+
+
+    // IsPacingEnabled - Whether this action should be throttled.
+    IsPacingEnabled bool `json:"isPacingEnabled"`
+
+
+    // Props - Additional properties.
+    Props Patchactionproperties `json:"props"`
+
+
     // ArchitectFlowFields - Architect Flow Id and input contract.
     ArchitectFlowFields Architectflowfields `json:"architectFlowFields"`
 
 
     // WebMessagingOfferFields - Admin-configurable fields of a web messaging offer action.
-    WebMessagingOfferFields Webmessagingofferfields `json:"webMessagingOfferFields"`
+    WebMessagingOfferFields Patchwebmessagingofferfields `json:"webMessagingOfferFields"`
 
 
     // OpenActionFields - Admin-configurable fields of an open action.
@@ -52,6 +73,9 @@ type Patchaction struct {
 
 // String returns a JSON representation of the model
 func (o *Patchaction) String() string {
+    
+    
+    
     
     
     
@@ -78,13 +102,28 @@ func (u *Patchaction) MarshalJSON() ([]byte, error) {
         
         ActionTemplate Actionmapactiontemplate `json:"actionTemplate"`
         
+        ActionTargetId string `json:"actionTargetId"`
+        
+        IsPacingEnabled bool `json:"isPacingEnabled"`
+        
+        Props Patchactionproperties `json:"props"`
+        
         ArchitectFlowFields Architectflowfields `json:"architectFlowFields"`
         
-        WebMessagingOfferFields Webmessagingofferfields `json:"webMessagingOfferFields"`
+        WebMessagingOfferFields Patchwebmessagingofferfields `json:"webMessagingOfferFields"`
         
         OpenActionFields Openactionfields `json:"openActionFields"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

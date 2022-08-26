@@ -29,6 +29,9 @@ type DialogflowagentDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -58,6 +61,10 @@ type Dialogflowagent struct {
     Environments []string `json:"environments"`
 
 
+    // Integration - The Integration this Dialogflow agent was referenced from.
+    Integration Domainentityref `json:"integration"`
+
+
     
 
 }
@@ -69,6 +76,7 @@ func (o *Dialogflowagent) String() string {
      o.Languages = []string{""} 
      o.Intents = []Dialogflowintent{{}} 
      o.Environments = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -95,6 +103,8 @@ func (u *Dialogflowagent) MarshalJSON() ([]byte, error) {
         Intents []Dialogflowintent `json:"intents"`
         
         Environments []string `json:"environments"`
+        
+        Integration Domainentityref `json:"integration"`
         *Alias
     }{
 
@@ -119,6 +129,9 @@ func (u *Dialogflowagent) MarshalJSON() ([]byte, error) {
 
         
         Environments: []string{""},
+        
+
+
         
 
 

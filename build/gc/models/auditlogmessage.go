@@ -53,6 +53,9 @@ type AuditlogmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Auditlogmessage
@@ -79,6 +82,10 @@ type Auditlogmessage struct {
 
     // ServiceName - Name of the service that logged this audit message.
     ServiceName string `json:"serviceName"`
+
+
+    // Level - Level of this audit message, USER or SYSTEM.
+    Level string `json:"level"`
 
 
     // EventDate - Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -128,6 +135,7 @@ func (o *Auditlogmessage) String() string {
     
     
     
+    
      o.PropertyChanges = []Propertychange{{}} 
      o.Context = map[string]string{"": ""} 
 
@@ -158,6 +166,8 @@ func (u *Auditlogmessage) MarshalJSON() ([]byte, error) {
         RemoteIp []string `json:"remoteIp"`
         
         ServiceName string `json:"serviceName"`
+        
+        Level string `json:"level"`
         
         EventDate time.Time `json:"eventDate"`
         
@@ -191,6 +201,9 @@ func (u *Auditlogmessage) MarshalJSON() ([]byte, error) {
 
         
         RemoteIp: []string{""},
+        
+
+
         
 
 

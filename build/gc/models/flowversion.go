@@ -56,6 +56,12 @@ type FlowversionDud struct {
     
 
 
+    
+
+
+    
+
+
     NluInfo Nluinfo `json:"nluInfo"`
 
 
@@ -115,6 +121,14 @@ type Flowversion struct {
     DateCreated int `json:"dateCreated"`
 
 
+    // DateCheckedIn
+    DateCheckedIn int `json:"dateCheckedIn"`
+
+
+    // DateSaved
+    DateSaved int `json:"dateSaved"`
+
+
     // GenerationId
     GenerationId string `json:"generationId"`
 
@@ -146,6 +160,8 @@ type Flowversion struct {
 
 // String returns a JSON representation of the model
 func (o *Flowversion) String() string {
+    
+    
     
     
     
@@ -200,6 +216,10 @@ func (u *Flowversion) MarshalJSON() ([]byte, error) {
         
         DateCreated int `json:"dateCreated"`
         
+        DateCheckedIn int `json:"dateCheckedIn"`
+        
+        DateSaved int `json:"dateSaved"`
+        
         GenerationId string `json:"generationId"`
         
         PublishResultUri string `json:"publishResultUri"`
@@ -209,6 +229,12 @@ func (u *Flowversion) MarshalJSON() ([]byte, error) {
         OutputSchema Jsonschemadocument `json:"outputSchema"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

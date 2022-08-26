@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("conversations_messages_communications", "SWAGGER_OVERRIDE_/api/v2/conversations/messages/{conversationId}/communications")
+	Description = utils.FormatUsageDescription("conversations_messages_communications", "SWAGGER_OVERRIDE_/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages")
 	conversations_messages_communicationsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("conversations_messages_communications"),
 		Short: Description,

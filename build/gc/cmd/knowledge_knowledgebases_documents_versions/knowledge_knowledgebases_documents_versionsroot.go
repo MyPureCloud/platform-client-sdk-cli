@@ -1,0 +1,12 @@
+package knowledge_knowledgebases_documents_versions
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_documents_versions_variations"
+)
+
+func init() {
+	knowledge_knowledgebases_documents_versionsCmd.AddCommand(knowledge_knowledgebases_documents_versions_variations.Cmdknowledge_knowledgebases_documents_versions_variations())
+	knowledge_knowledgebases_documents_versionsCmd.Short = utils.GenerateCustomDescription(knowledge_knowledgebases_documents_versionsCmd.Short, knowledge_knowledgebases_documents_versions_variations.Description, )
+	knowledge_knowledgebases_documents_versionsCmd.Long = knowledge_knowledgebases_documents_versionsCmd.Short
+}

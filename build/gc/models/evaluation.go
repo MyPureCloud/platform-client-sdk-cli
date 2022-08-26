@@ -84,6 +84,9 @@ type EvaluationDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -185,6 +188,10 @@ type Evaluation struct {
     AuthorizedActions []string `json:"authorizedActions"`
 
 
+    // HasAssistanceFailed - Is true when evaluation assistance didn't execute successfully
+    HasAssistanceFailed bool `json:"hasAssistanceFailed"`
+
+
     
 
 }
@@ -214,6 +221,7 @@ func (o *Evaluation) String() string {
     
     
      o.AuthorizedActions = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -276,6 +284,8 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
         IsScoringIndex bool `json:"isScoringIndex"`
         
         AuthorizedActions []string `json:"authorizedActions"`
+        
+        HasAssistanceFailed bool `json:"hasAssistanceFailed"`
         *Alias
     }{
 
@@ -352,6 +362,9 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
 
         
         AuthorizedActions: []string{""},
+        
+
+
         
 
 

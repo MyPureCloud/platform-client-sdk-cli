@@ -25,6 +25,15 @@ type ActionmapactionDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Actionmapaction
@@ -35,6 +44,18 @@ type Actionmapaction struct {
 
     // MediaType - Media type of action.
     MediaType string `json:"mediaType"`
+
+
+    // ActionTargetId - Action target ID.
+    ActionTargetId string `json:"actionTargetId"`
+
+
+    // IsPacingEnabled - Whether this action should be throttled.
+    IsPacingEnabled bool `json:"isPacingEnabled"`
+
+
+    // Props - Additional properties.
+    Props Actionproperties `json:"props"`
 
 
     // ArchitectFlowFields - Architect Flow Id and input contract.
@@ -52,6 +73,9 @@ type Actionmapaction struct {
 
 // String returns a JSON representation of the model
 func (o *Actionmapaction) String() string {
+    
+    
+    
     
     
     
@@ -78,6 +102,12 @@ func (u *Actionmapaction) MarshalJSON() ([]byte, error) {
         
         MediaType string `json:"mediaType"`
         
+        ActionTargetId string `json:"actionTargetId"`
+        
+        IsPacingEnabled bool `json:"isPacingEnabled"`
+        
+        Props Actionproperties `json:"props"`
+        
         ArchitectFlowFields Architectflowfields `json:"architectFlowFields"`
         
         WebMessagingOfferFields Webmessagingofferfields `json:"webMessagingOfferFields"`
@@ -85,6 +115,15 @@ func (u *Actionmapaction) MarshalJSON() ([]byte, error) {
         OpenActionFields Openactionfields `json:"openActionFields"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

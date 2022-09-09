@@ -34,6 +34,33 @@ type KnowledgeimportjobstatisticsDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Knowledgeimportjobstatistics
@@ -69,10 +96,55 @@ type Knowledgeimportjobstatistics struct {
     // CountDocumentImportFailure - Number of documents failed to import.
     CountDocumentImportFailure int `json:"countDocumentImportFailure"`
 
+
+    // CountCategoryValidationSuccess - Number of categories that validated successfully for import.
+    CountCategoryValidationSuccess int `json:"countCategoryValidationSuccess"`
+
+
+    // CountCategoryValidationFailure - Number of categories that failed validation for import.
+    CountCategoryValidationFailure int `json:"countCategoryValidationFailure"`
+
+
+    // CountCategoryImportSuccess - Number of imported categories.
+    CountCategoryImportSuccess int `json:"countCategoryImportSuccess"`
+
+
+    // CountCategoryImportFailure - Number of categories failed to import.
+    CountCategoryImportFailure int `json:"countCategoryImportFailure"`
+
+
+    // CountLabelValidationSuccess - Number of labels that validated successfully for import.
+    CountLabelValidationSuccess int `json:"countLabelValidationSuccess"`
+
+
+    // CountLabelValidationFailure - Number of labels that failed validation for import.
+    CountLabelValidationFailure int `json:"countLabelValidationFailure"`
+
+
+    // CountLabelImportSuccess - Number of imported labels.
+    CountLabelImportSuccess int `json:"countLabelImportSuccess"`
+
+
+    // CountLabelImportFailure - Number of labels failed to import.
+    CountLabelImportFailure int `json:"countLabelImportFailure"`
+
+
+    // MigrationDetected - Shows whether the import treated as migration or not.
+    MigrationDetected bool `json:"migrationDetected"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgeimportjobstatistics) String() string {
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -113,8 +185,53 @@ func (u *Knowledgeimportjobstatistics) MarshalJSON() ([]byte, error) {
         CountDocumentImportSuccess int `json:"countDocumentImportSuccess"`
         
         CountDocumentImportFailure int `json:"countDocumentImportFailure"`
+        
+        CountCategoryValidationSuccess int `json:"countCategoryValidationSuccess"`
+        
+        CountCategoryValidationFailure int `json:"countCategoryValidationFailure"`
+        
+        CountCategoryImportSuccess int `json:"countCategoryImportSuccess"`
+        
+        CountCategoryImportFailure int `json:"countCategoryImportFailure"`
+        
+        CountLabelValidationSuccess int `json:"countLabelValidationSuccess"`
+        
+        CountLabelValidationFailure int `json:"countLabelValidationFailure"`
+        
+        CountLabelImportSuccess int `json:"countLabelImportSuccess"`
+        
+        CountLabelImportFailure int `json:"countLabelImportFailure"`
+        
+        MigrationDetected bool `json:"migrationDetected"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

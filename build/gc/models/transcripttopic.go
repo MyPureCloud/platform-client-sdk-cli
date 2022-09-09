@@ -31,6 +31,12 @@ type TranscripttopicDud struct {
 
     
 
+
+    Offset Topicoffset `json:"offset"`
+
+
+    RecordingLocation int `json:"recordingLocation"`
+
 }
 
 // Transcripttopic
@@ -55,6 +61,12 @@ type Transcripttopic struct {
 
     // Duration
     Duration Topicduration `json:"duration"`
+
+
+    
+
+
+    
 
 }
 
@@ -81,6 +93,12 @@ func (u *Transcripttopic) MarshalJSON() ([]byte, error) {
         Duration Topicduration `json:"duration"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

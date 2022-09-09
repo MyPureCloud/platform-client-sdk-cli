@@ -37,23 +37,16 @@ type ConversationmessagecontentDud struct {
 
     
 
-
-    
-
 }
 
-// Conversationmessagecontent - Message content element.
+// Conversationmessagecontent - Message content element. If contentType = \"Attachment\" only one item is allowed.
 type Conversationmessagecontent struct { 
-    // ContentType - Type of this content element. If contentType = \"Attachment\" only one item is allowed.
+    // ContentType - Type of this content element.
     ContentType string `json:"contentType"`
 
 
     // Location - Location content.
     Location Conversationcontentlocation `json:"location"`
-
-
-    // Story - Ephemeral story content.
-    Story Conversationcontentstory `json:"story"`
 
 
     // Attachment - Attachment content.
@@ -64,30 +57,29 @@ type Conversationmessagecontent struct {
     QuickReply Conversationcontentquickreply `json:"quickReply"`
 
 
-    // Template - Template notification content.
-    Template Conversationcontentnotificationtemplate `json:"template"`
-
-
     // ButtonResponse - Button response content.
     ButtonResponse Conversationcontentbuttonresponse `json:"buttonResponse"`
 
 
-    // Generic - Generic Template Object (Deprecated).
-    Generic Conversationcontentgeneric `json:"generic"`
+    // Template - Template notification content.
+    Template Conversationcontentnotificationtemplate `json:"template"`
 
 
-    // Card - Card (Generic Template) Object
+    // Story - Ephemeral story content.
+    Story Conversationcontentstory `json:"story"`
+
+
+    // Card - Card content
     Card Conversationcontentcard `json:"card"`
 
 
-    // Carousel - Carousel (Multiple Generic Template) Object
+    // Carousel - Carousel content
     Carousel Conversationcontentcarousel `json:"carousel"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationmessagecontent) String() string {
-    
     
     
     
@@ -118,26 +110,21 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
         
         Location Conversationcontentlocation `json:"location"`
         
-        Story Conversationcontentstory `json:"story"`
-        
         Attachment Conversationcontentattachment `json:"attachment"`
         
         QuickReply Conversationcontentquickreply `json:"quickReply"`
         
-        Template Conversationcontentnotificationtemplate `json:"template"`
-        
         ButtonResponse Conversationcontentbuttonresponse `json:"buttonResponse"`
         
-        Generic Conversationcontentgeneric `json:"generic"`
+        Template Conversationcontentnotificationtemplate `json:"template"`
+        
+        Story Conversationcontentstory `json:"story"`
         
         Card Conversationcontentcard `json:"card"`
         
         Carousel Conversationcontentcarousel `json:"carousel"`
         *Alias
     }{
-
-        
-
 
         
 

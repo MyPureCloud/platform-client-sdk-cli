@@ -52,8 +52,8 @@ type Lineintegrationrequest struct {
     SupportedContent Supportedcontentreference `json:"supportedContent"`
 
 
-    // MessagingSetting
-    MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+    // MessagingSetting - Defines the message settings to be applied for this integration
+    MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
 
 
     // ChannelId - The Channel Id from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Id is mandatory. (NOTE: ChannelId can only be updated if the integration is set to inactive)
@@ -106,7 +106,7 @@ func (u *Lineintegrationrequest) MarshalJSON() ([]byte, error) {
         
         SupportedContent Supportedcontentreference `json:"supportedContent"`
         
-        MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+        MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
         
         ChannelId string `json:"channelId"`
         

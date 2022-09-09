@@ -21,7 +21,7 @@ type ExternalmetricdatawriteresponseDud struct {
 // Externalmetricdatawriteresponse - External metric data write response
 type Externalmetricdatawriteresponse struct { 
     // ProcessedEntities - The list of processed entities
-    ProcessedEntities []Externalmetricdataitem `json:"processedEntities"`
+    ProcessedEntities []Externalmetricdataprocesseditem `json:"processedEntities"`
 
 
     // UnprocessedEntities - The list of unprocessed entities
@@ -31,7 +31,7 @@ type Externalmetricdatawriteresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Externalmetricdatawriteresponse) String() string {
-     o.ProcessedEntities = []Externalmetricdataitem{{}} 
+     o.ProcessedEntities = []Externalmetricdataprocesseditem{{}} 
      o.UnprocessedEntities = []Externalmetricdataunprocesseditem{{}} 
 
     j, _ := json.Marshal(o)
@@ -50,14 +50,14 @@ func (u *Externalmetricdatawriteresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        ProcessedEntities []Externalmetricdataitem `json:"processedEntities"`
+        ProcessedEntities []Externalmetricdataprocesseditem `json:"processedEntities"`
         
         UnprocessedEntities []Externalmetricdataunprocesseditem `json:"unprocessedEntities"`
         *Alias
     }{
 
         
-        ProcessedEntities: []Externalmetricdataitem{{}},
+        ProcessedEntities: []Externalmetricdataprocesseditem{{}},
         
 
 

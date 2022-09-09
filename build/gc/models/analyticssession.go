@@ -236,6 +236,9 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticssession
@@ -286,6 +289,10 @@ type Analyticssession struct {
 
     // Authenticated - Flag that indicates that the identity of the customer has been asserted as verified by the provider.
     Authenticated bool `json:"authenticated"`
+
+
+    // BargedParticipantId - The participantId being barged in on (if someone (e.g. an agent) is being barged in on, this would correspond to one of the other participantIds present in the conversation)
+    BargedParticipantId string `json:"bargedParticipantId"`
 
 
     // CallbackNumbers - Callback phone number(s)
@@ -555,6 +562,7 @@ func (o *Analyticssession) String() string {
     
     
     
+    
      o.CallbackNumbers = []string{""} 
     
     
@@ -658,6 +666,8 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         AssignerId string `json:"assignerId"`
         
         Authenticated bool `json:"authenticated"`
+        
+        BargedParticipantId string `json:"bargedParticipantId"`
         
         CallbackNumbers []string `json:"callbackNumbers"`
         
@@ -789,6 +799,9 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
         
         ActiveSkillIds: []string{""},
+        
+
+
         
 
 

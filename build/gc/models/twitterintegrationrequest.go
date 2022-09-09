@@ -58,8 +58,8 @@ type Twitterintegrationrequest struct {
     SupportedContent Supportedcontentreference `json:"supportedContent"`
 
 
-    // MessagingSetting
-    MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+    // MessagingSetting - Defines the message settings to be applied for this integration
+    MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
 
 
     // AccessTokenKey - The Access Token Key from Twitter messenger
@@ -122,7 +122,7 @@ func (u *Twitterintegrationrequest) MarshalJSON() ([]byte, error) {
         
         SupportedContent Supportedcontentreference `json:"supportedContent"`
         
-        MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+        MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
         
         AccessTokenKey string `json:"accessTokenKey"`
         

@@ -82,6 +82,7 @@ func Cmdknowledge_knowledgebases_documents() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "interval", "", "Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ")
+	utils.AddFlag(listCmd.Flags(), "[]string", "documentId", "", "Retrieves the specified documents, comma separated values expected.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "categoryId", "", "If specified, retrieves documents associated with category ids, comma separated values expected.")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeSubcategories", "", "Works along with `categoryId` query parameter. If specified, retrieves documents associated with category ids and its children categories.")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeDrafts", "", "If includeDrafts is true, Documents in the draft state are also returned in the response.")
@@ -335,6 +336,10 @@ var listCmd = &cobra.Command{
 		interval := utils.GetFlag(cmd.Flags(), "string", "interval")
 		if interval != "" {
 			queryParams["interval"] = interval
+		}
+		documentId := utils.GetFlag(cmd.Flags(), "[]string", "documentId")
+		if documentId != "" {
+			queryParams["documentId"] = documentId
 		}
 		categoryId := utils.GetFlag(cmd.Flags(), "[]string", "categoryId")
 		if categoryId != "" {

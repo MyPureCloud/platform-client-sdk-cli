@@ -29,7 +29,7 @@ func init() {
 
 func Cmdresponsemanagement_responses() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: substitutionsSchema")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/responsemanagement/responses", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Response Management", "/api/v2/responsemanagement/responses")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/responsemanagement/responses", utils.FormatPermissions([]string{ "responses:response:add",  }), utils.GenerateDevCentreLink("POST", "Response Management", "/api/v2/responsemanagement/responses")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Response",
   "content" : {
@@ -54,7 +54,7 @@ func Cmdresponsemanagement_responses() *cobra.Command {
 }`)
 	responsemanagement_responsesCmd.AddCommand(createCmd)
 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/responsemanagement/responses/{responseId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Response Management", "/api/v2/responsemanagement/responses/{responseId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/responsemanagement/responses/{responseId}", utils.FormatPermissions([]string{ "responses:response:delete",  }), utils.GenerateDevCentreLink("DELETE", "Response Management", "/api/v2/responsemanagement/responses/{responseId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -74,7 +74,7 @@ func Cmdresponsemanagement_responses() *cobra.Command {
 	responsemanagement_responsesCmd.AddCommand(deleteCmd)
 
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: substitutionsSchema")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/responsemanagement/responses/{responseId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Response Management", "/api/v2/responsemanagement/responses/{responseId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/responsemanagement/responses/{responseId}", utils.FormatPermissions([]string{ "responses:response:view",  }), utils.GenerateDevCentreLink("GET", "Response Management", "/api/v2/responsemanagement/responses/{responseId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -93,7 +93,7 @@ func Cmdresponsemanagement_responses() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: substitutionsSchema")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/responsemanagement/responses", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Response Management", "/api/v2/responsemanagement/responses")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/responsemanagement/responses", utils.FormatPermissions([]string{ "responses:response:view",  }), utils.GenerateDevCentreLink("GET", "Response Management", "/api/v2/responsemanagement/responses")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("libraryId")
 	
@@ -110,7 +110,7 @@ func Cmdresponsemanagement_responses() *cobra.Command {
 	responsemanagement_responsesCmd.AddCommand(listCmd)
 
 	utils.AddFlag(updateCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: substitutionsSchema")
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/responsemanagement/responses/{responseId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Response Management", "/api/v2/responsemanagement/responses/{responseId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/responsemanagement/responses/{responseId}", utils.FormatPermissions([]string{ "responses:response:edit",  }), utils.GenerateDevCentreLink("PUT", "Response Management", "/api/v2/responsemanagement/responses/{responseId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "Response",
   "content" : {

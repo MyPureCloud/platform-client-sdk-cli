@@ -46,8 +46,8 @@ type Whatsappintegrationrequest struct {
     SupportedContent Supportedcontentreference `json:"supportedContent"`
 
 
-    // MessagingSetting
-    MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+    // MessagingSetting - Defines the message settings to be applied for this integration
+    MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
 
 
     // PhoneNumber - The phone number associated to the whatsApp integration
@@ -90,7 +90,7 @@ func (u *Whatsappintegrationrequest) MarshalJSON() ([]byte, error) {
         
         SupportedContent Supportedcontentreference `json:"supportedContent"`
         
-        MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+        MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
         
         PhoneNumber string `json:"phoneNumber"`
         

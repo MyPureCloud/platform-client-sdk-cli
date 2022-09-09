@@ -49,8 +49,8 @@ type Openintegrationupdaterequest struct {
     SupportedContent Supportedcontentreference `json:"supportedContent"`
 
 
-    // MessagingSetting
-    MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+    // MessagingSetting - Defines the message settings to be applied for this integration
+    MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
 
 
     // OutboundNotificationWebhookUrl - The outbound notification webhook URL for the Open messaging integration.
@@ -98,7 +98,7 @@ func (u *Openintegrationupdaterequest) MarshalJSON() ([]byte, error) {
         
         SupportedContent Supportedcontentreference `json:"supportedContent"`
         
-        MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+        MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
         
         OutboundNotificationWebhookUrl string `json:"outboundNotificationWebhookUrl"`
         

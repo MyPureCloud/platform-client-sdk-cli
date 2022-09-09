@@ -82,7 +82,7 @@ func Cmdquality_forms_evaluations() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "next page token")
 	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
-	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Expand")
+	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "If `expand=publishHistory`, then each unpublished evaluation form includes a listing of its published versions Valid values: publishHistory")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Order to sort results, either asc or desc")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/forms/evaluations", utils.FormatPermissions([]string{ "quality:evaluationForm:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/forms/evaluations")))

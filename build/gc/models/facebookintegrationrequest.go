@@ -55,8 +55,8 @@ type Facebookintegrationrequest struct {
     SupportedContent Supportedcontentreference `json:"supportedContent"`
 
 
-    // MessagingSetting
-    MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+    // MessagingSetting - Defines the message settings to be applied for this integration
+    MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
 
 
     // PageAccessToken - The long-lived Page Access Token of Facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When a pageAccessToken is provided, pageId and userAccessToken are not required.
@@ -114,7 +114,7 @@ func (u *Facebookintegrationrequest) MarshalJSON() ([]byte, error) {
         
         SupportedContent Supportedcontentreference `json:"supportedContent"`
         
-        MessagingSetting Messagingsettingreference `json:"messagingSetting"`
+        MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
         
         PageAccessToken string `json:"pageAccessToken"`
         

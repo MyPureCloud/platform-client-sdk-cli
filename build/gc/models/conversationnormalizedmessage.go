@@ -64,7 +64,7 @@ type Conversationnormalizedmessage struct {
     Text string `json:"text"`
 
 
-    // Content - List of content elements
+    // Content - List of content elements.
     Content []Conversationmessagecontent `json:"content"`
 
 

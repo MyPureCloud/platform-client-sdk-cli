@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdresponsemanagement_responses_query() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/responsemanagement/responses/query", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Response Management", "/api/v2/responsemanagement/responses/query")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/responsemanagement/responses/query", utils.FormatPermissions([]string{ "responses:response:view",  }), utils.GenerateDevCentreLink("POST", "Response Management", "/api/v2/responsemanagement/responses/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Response",
   "content" : {

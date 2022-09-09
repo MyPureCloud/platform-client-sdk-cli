@@ -19,6 +19,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_rulesets"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_sequences"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_wrapupcodemappings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_digitalrulesets"
 )
 
 func init() {
@@ -39,6 +40,7 @@ func init() {
 	outboundCmd.AddCommand(outbound_rulesets.Cmdoutbound_rulesets())
 	outboundCmd.AddCommand(outbound_sequences.Cmdoutbound_sequences())
 	outboundCmd.AddCommand(outbound_wrapupcodemappings.Cmdoutbound_wrapupcodemappings())
-	outboundCmd.Short = utils.GenerateCustomDescription(outboundCmd.Short, outbound_campaigns.Description, outbound_attemptlimits.Description, outbound_callanalysisresponsesets.Description, outbound_callabletimesets.Description, outbound_campaignrules.Description, outbound_schedules.Description, outbound_contactlists.Description, outbound_contactlistfilters.Description, outbound_audits.Description, outbound_conversations.Description, outbound_dnclists.Description, outbound_events.Description, outbound_messagingcampaigns.Description, outbound_settings.Description, outbound_rulesets.Description, outbound_sequences.Description, outbound_wrapupcodemappings.Description, )
+	outboundCmd.AddCommand(outbound_digitalrulesets.Cmdoutbound_digitalrulesets())
+	outboundCmd.Short = utils.GenerateCustomDescription(outboundCmd.Short, outbound_campaigns.Description, outbound_attemptlimits.Description, outbound_callanalysisresponsesets.Description, outbound_callabletimesets.Description, outbound_campaignrules.Description, outbound_schedules.Description, outbound_contactlists.Description, outbound_contactlistfilters.Description, outbound_audits.Description, outbound_conversations.Description, outbound_dnclists.Description, outbound_events.Description, outbound_messagingcampaigns.Description, outbound_settings.Description, outbound_rulesets.Description, outbound_sequences.Description, outbound_wrapupcodemappings.Description, outbound_digitalrulesets.Description, )
 	outboundCmd.Long = outboundCmd.Short
 }

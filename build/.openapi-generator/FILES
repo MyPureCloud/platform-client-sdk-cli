@@ -16,6 +16,7 @@ gc/cmd/analytics_conversations_details_jobs_results/analytics_conversations_deta
 gc/cmd/analytics_conversations_details_properties/analytics_conversations_details_properties.go
 gc/cmd/analytics_conversations_details_query/analytics_conversations_details_query.go
 gc/cmd/analytics_conversations_transcripts_query/analytics_conversations_transcripts_query.go
+gc/cmd/analytics_dataretention_settings/analytics_dataretention_settings.go
 gc/cmd/analytics_evaluations_aggregates_query/analytics_evaluations_aggregates_query.go
 gc/cmd/analytics_flows_aggregates_query/analytics_flows_aggregates_query.go
 gc/cmd/analytics_flows_observations_query/analytics_flows_observations_query.go
@@ -524,6 +525,7 @@ gc/cmd/outbound_contactlists_export/outbound_contactlists_export.go
 gc/cmd/outbound_contactlists_importstatus/outbound_contactlists_importstatus.go
 gc/cmd/outbound_contactlists_timezonemappingpreview/outbound_contactlists_timezonemappingpreview.go
 gc/cmd/outbound_conversations_dnc/outbound_conversations_dnc.go
+gc/cmd/outbound_digitalrulesets/outbound_digitalrulesets.go
 gc/cmd/outbound_dnclists/outbound_dnclists.go
 gc/cmd/outbound_dnclists_divisionviews/outbound_dnclists_divisionviews.go
 gc/cmd/outbound_dnclists_export/outbound_dnclists_export.go
@@ -582,6 +584,7 @@ gc/cmd/recording_recordingkeys/recording_recordingkeys.go
 gc/cmd/recording_recordingkeys_rotationschedule/recording_recordingkeys_rotationschedule.go
 gc/cmd/recording_settings/recording_settings.go
 gc/cmd/recordings_deletionprotection/recordings_deletionprotection.go
+gc/cmd/recordings_retention_query/recordings_retention_query.go
 gc/cmd/recordings_screensessions/recordings_screensessions.go
 gc/cmd/recordings_screensessions_acknowledge/recordings_screensessions_acknowledge.go
 gc/cmd/recordings_screensessions_metadata/recordings_screensessions_metadata.go
@@ -744,6 +747,7 @@ gc/cmd/users_development_activities/users_development_activities.go
 gc/cmd/users_development_activities_aggregates_query/users_development_activities_aggregates_query.go
 gc/cmd/users_development_activities_me/users_development_activities_me.go
 gc/cmd/users_directreports/users_directreports.go
+gc/cmd/users_externalid/users_externalid.go
 gc/cmd/users_favorites/users_favorites.go
 gc/cmd/users_geolocations/users_geolocations.go
 gc/cmd/users_greetings/users_greetings.go
@@ -798,6 +802,7 @@ gc/cmd/webdeployments_configurations_versions/webdeployments_configurations_vers
 gc/cmd/webdeployments_configurations_versions_draft/webdeployments_configurations_versions_draft.go
 gc/cmd/webdeployments_configurations_versions_draft_publish/webdeployments_configurations_versions_draft_publish.go
 gc/cmd/webdeployments_deployments/webdeployments_deployments.go
+gc/cmd/webdeployments_deployments_configurations/webdeployments_deployments_configurations.go
 gc/cmd/webmessaging_messages/webmessaging_messages.go
 gc/cmd/widgets_deployments/widgets_deployments.go
 gc/cmd/workforcemanagement_adherence/workforcemanagement_adherence.go
@@ -951,6 +956,7 @@ gc/models/analyticsconversationqueryresponse.go
 gc/models/analyticsconversationsegment.go
 gc/models/analyticsconversationwithoutattributes.go
 gc/models/analyticsconversationwithoutattributesmultigetresponse.go
+gc/models/analyticsdataretentionresponse.go
 gc/models/analyticsevaluation.go
 gc/models/analyticsflow.go
 gc/models/analyticsflowoutcome.go
@@ -976,6 +982,7 @@ gc/models/answeroption.go
 gc/models/apiusagequery.go
 gc/models/apiusagequeryresult.go
 gc/models/apiusagerow.go
+gc/models/appendtodncactionsettings.go
 gc/models/architectflowfields.go
 gc/models/architectjobmessage.go
 gc/models/architectjobstateresponse.go
@@ -1338,8 +1345,11 @@ gc/models/contact.go
 gc/models/contactablestatus.go
 gc/models/contactaddress.go
 gc/models/contactaddressableentityref.go
+gc/models/contactaddressconditionsettings.go
+gc/models/contactaddresstypeconditionsettings.go
 gc/models/contactcallbackrequest.go
 gc/models/contactcentersettings.go
+gc/models/contactcolumnconditionsettings.go
 gc/models/contactcolumntimezone.go
 gc/models/contactcolumntodataactionfieldmapping.go
 gc/models/contactlist.go
@@ -1393,16 +1403,14 @@ gc/models/conversationaggregationview.go
 gc/models/conversationappsettings.go
 gc/models/conversationassociation.go
 gc/models/conversationbasic.go
-gc/models/conversationbuttoncomponent.go
 gc/models/conversationchannel.go
+gc/models/conversationchannelmetadata.go
 gc/models/conversationchat.go
-gc/models/conversationcontentactions.go
 gc/models/conversationcontentattachment.go
 gc/models/conversationcontentbuttonresponse.go
 gc/models/conversationcontentcard.go
 gc/models/conversationcontentcardaction.go
 gc/models/conversationcontentcarousel.go
-gc/models/conversationcontentgeneric.go
 gc/models/conversationcontentlocation.go
 gc/models/conversationcontentnotificationtemplate.go
 gc/models/conversationcontentquickreply.go
@@ -1425,7 +1433,6 @@ gc/models/conversationmessagemetadata.go
 gc/models/conversationmessagemetadatacontent.go
 gc/models/conversationmessagemetadataevent.go
 gc/models/conversationmessagingchannel.go
-gc/models/conversationmessagingchannelmetadata.go
 gc/models/conversationmessagingfromrecipient.go
 gc/models/conversationmessagingtorecipient.go
 gc/models/conversationmetrics.go
@@ -1581,6 +1588,11 @@ gc/models/didnumber.go
 gc/models/didnumberentitylisting.go
 gc/models/didpool.go
 gc/models/didpoolentitylisting.go
+gc/models/digitalaction.go
+gc/models/digitalcondition.go
+gc/models/digitalrule.go
+gc/models/digitalruleset.go
+gc/models/digitalrulesetentitylisting.go
 gc/models/digitlength.go
 gc/models/digits.go
 gc/models/directoryuserdeviceslisting.go
@@ -1653,6 +1665,7 @@ gc/models/domainresourceconditionnode.go
 gc/models/domainresourceconditionvalue.go
 gc/models/domainrole.go
 gc/models/domainschemareference.go
+gc/models/donotsendactionsettings.go
 gc/models/downloadresponse.go
 gc/models/draft.go
 gc/models/draftintents.go
@@ -1773,6 +1786,7 @@ gc/models/extensionpoolentitylisting.go
 gc/models/externalcontact.go
 gc/models/externaldatasource.go
 gc/models/externalmetricdataitem.go
+gc/models/externalmetricdataprocesseditem.go
 gc/models/externalmetricdataunprocesseditem.go
 gc/models/externalmetricdatawriterequest.go
 gc/models/externalmetricdatawriteresponse.go
@@ -2059,6 +2073,10 @@ gc/models/language.go
 gc/models/languageentitylisting.go
 gc/models/languageoverride.go
 gc/models/languagereference.go
+gc/models/lastattemptbycolumnconditionsettings.go
+gc/models/lastattemptoverallconditionsettings.go
+gc/models/lastresultbycolumnconditionsettings.go
+gc/models/lastresultoverallconditionsettings.go
 gc/models/launcherbuttonsettings.go
 gc/models/leaderboard.go
 gc/models/leaderboarditem.go
@@ -2166,6 +2184,8 @@ gc/models/managementunitreference.go
 gc/models/managementunitsettingsrequest.go
 gc/models/managementunitsettingsresponse.go
 gc/models/manager.go
+gc/models/markcontactaddressuncontactableactionsettings.go
+gc/models/markcontactuncontactableactionsettings.go
 gc/models/markdown.go
 gc/models/matchshifttraderequest.go
 gc/models/matchshifttraderesponse.go
@@ -2214,6 +2234,7 @@ gc/models/messagingintegration.go
 gc/models/messagingintegrationentitylisting.go
 gc/models/messagingrecipient.go
 gc/models/messagingsettingreference.go
+gc/models/messagingsettingrequestreference.go
 gc/models/messagingsticker.go
 gc/models/messagingstickerentitylisting.go
 gc/models/messagingtemplate.go
@@ -2508,6 +2529,8 @@ gc/models/recordingjobfailedrecording.go
 gc/models/recordingjobsquery.go
 gc/models/recordingmessagingmessage.go
 gc/models/recordingmetadata.go
+gc/models/recordingretention.go
+gc/models/recordingretentioncursorentitylisting.go
 gc/models/recordingsettings.go
 gc/models/referrer.go
 gc/models/regiontimezone.go
@@ -2697,6 +2720,7 @@ gc/models/session.go
 gc/models/sessionenddetails.go
 gc/models/sessionlastevent.go
 gc/models/sessionsegmentassignment.go
+gc/models/setcontenttemplateactionsettings.go
 gc/models/setrecordingstate.go
 gc/models/settimeofflimitvaluesrequest.go
 gc/models/settingdirection.go
@@ -2873,6 +2897,7 @@ gc/models/topic.go
 gc/models/topicduration.go
 gc/models/topicjob.go
 gc/models/topicjobrequest.go
+gc/models/topicoffset.go
 gc/models/topicrequest.go
 gc/models/topicsentitylisting.go
 gc/models/traininglisting.go
@@ -2952,9 +2977,11 @@ gc/models/unreadmetric.go
 gc/models/unreadstatus.go
 gc/models/updateactioninput.go
 gc/models/updateactivitycoderequest.go
+gc/models/updateanalyticsdataretentionrequest.go
 gc/models/updatebusinessunitrequest.go
 gc/models/updatebusinessunitsettings.go
 gc/models/updatecoachingappointmentrequest.go
+gc/models/updatecontactcolumnactionsettings.go
 gc/models/updatedraftinput.go
 gc/models/updatemanagementunitrequest.go
 gc/models/updatenotificationresponse.go
@@ -3003,6 +3030,7 @@ gc/models/userdetailsquery.go
 gc/models/userdevice.go
 gc/models/userentitylisting.go
 gc/models/userexpands.go
+gc/models/userexternalidentifier.go
 gc/models/userimage.go
 gc/models/userlanguageentitylisting.go
 gc/models/userlicenses.go
@@ -3090,6 +3118,7 @@ gc/models/webchatroutingtarget.go
 gc/models/webchatsettings.go
 gc/models/webchattyping.go
 gc/models/webdeployment.go
+gc/models/webdeploymentactiveconfigurationondeployment.go
 gc/models/webdeploymentconfigurationversion.go
 gc/models/webdeploymentconfigurationversionentitylisting.go
 gc/models/webdeploymentconfigurationversionentityref.go

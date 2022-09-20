@@ -53,10 +53,6 @@ type Usersearchcriteria struct {
     StartValue string `json:"startValue"`
 
 
-    // Fields - Field names to search against
-    Fields []string `json:"fields"`
-
-
     // Value - A value for the search to match against
     Value string `json:"value"`
 
@@ -73,6 +69,10 @@ type Usersearchcriteria struct {
     DateFormat string `json:"dateFormat"`
 
 
+    // Fields - Field names to search against
+    Fields []string `json:"fields"`
+
+
     // VarType - Search Type
     VarType string `json:"type"`
 
@@ -83,11 +83,11 @@ func (o *Usersearchcriteria) String() string {
     
      o.Values = []string{""} 
     
-     o.Fields = []string{""} 
     
     
      o.Group = []Usersearchcriteria{{}} 
     
+     o.Fields = []string{""} 
     
 
     j, _ := json.Marshal(o)
@@ -112,8 +112,6 @@ func (u *Usersearchcriteria) MarshalJSON() ([]byte, error) {
         
         StartValue string `json:"startValue"`
         
-        Fields []string `json:"fields"`
-        
         Value string `json:"value"`
         
         Operator string `json:"operator"`
@@ -121,6 +119,8 @@ func (u *Usersearchcriteria) MarshalJSON() ([]byte, error) {
         Group []Usersearchcriteria `json:"group"`
         
         DateFormat string `json:"dateFormat"`
+        
+        Fields []string `json:"fields"`
         
         VarType string `json:"type"`
         *Alias
@@ -138,11 +138,6 @@ func (u *Usersearchcriteria) MarshalJSON() ([]byte, error) {
 
 
         
-        Fields: []string{""},
-        
-
-
-        
 
 
         
@@ -153,6 +148,11 @@ func (u *Usersearchcriteria) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Fields: []string{""},
         
 
 

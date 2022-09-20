@@ -50,7 +50,7 @@ type Externalmetricdataitem struct {
 
 
     // Value - The value of the metric data. When value is null, the metric data will be deleted.
-    Value float64 `json:"value"`
+    Value float32 `json:"value"`
 
 
     // Count - The number of data points. The default value is 1.
@@ -91,7 +91,7 @@ func (u *Externalmetricdataitem) MarshalJSON() ([]byte, error) {
         
         DateOccurred time.Time `json:"dateOccurred"`
         
-        Value float64 `json:"value"`
+        Value float32 `json:"value"`
         
         Count int `json:"count"`
         *Alias

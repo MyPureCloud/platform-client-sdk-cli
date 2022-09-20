@@ -6,24 +6,24 @@ import (
 )
 
 var (
-    BuschedulingsettingsMarshalled = false
+    BuschedulingsettingsrequestMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type BuschedulingsettingsDud struct { 
+type BuschedulingsettingsrequestDud struct { 
     
 
 }
 
-// Buschedulingsettings
-type Buschedulingsettings struct { 
+// Buschedulingsettingsrequest
+type Buschedulingsettingsrequest struct { 
     // MessageSeverities - Schedule generation message severity configuration
     MessageSeverities []Schedulermessagetypeseverity `json:"messageSeverities"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Buschedulingsettings) String() string {
+func (o *Buschedulingsettingsrequest) String() string {
      o.MessageSeverities = []Schedulermessagetypeseverity{{}} 
 
     j, _ := json.Marshal(o)
@@ -32,13 +32,13 @@ func (o *Buschedulingsettings) String() string {
     return str
 }
 
-func (u *Buschedulingsettings) MarshalJSON() ([]byte, error) {
-    type Alias Buschedulingsettings
+func (u *Buschedulingsettingsrequest) MarshalJSON() ([]byte, error) {
+    type Alias Buschedulingsettingsrequest
 
-    if BuschedulingsettingsMarshalled {
+    if BuschedulingsettingsrequestMarshalled {
         return []byte("{}"), nil
     }
-    BuschedulingsettingsMarshalled = true
+    BuschedulingsettingsrequestMarshalled = true
 
     return json.Marshal(&struct {
         

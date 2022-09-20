@@ -50,10 +50,6 @@ type Suggestsearchcriteria struct {
     StartValue string `json:"startValue"`
 
 
-    // Fields - Field names to search against
-    Fields []string `json:"fields"`
-
-
     // Value - A value for the search to match against
     Value string `json:"value"`
 
@@ -69,6 +65,10 @@ type Suggestsearchcriteria struct {
     // DateFormat - Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.
     DateFormat string `json:"dateFormat"`
 
+
+    // Fields - Field names to search against
+    Fields []string `json:"fields"`
+
 }
 
 // String returns a JSON representation of the model
@@ -76,11 +76,11 @@ func (o *Suggestsearchcriteria) String() string {
     
      o.Values = []string{""} 
     
-     o.Fields = []string{""} 
     
     
      o.Group = []Suggestsearchcriteria{{}} 
     
+     o.Fields = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -104,8 +104,6 @@ func (u *Suggestsearchcriteria) MarshalJSON() ([]byte, error) {
         
         StartValue string `json:"startValue"`
         
-        Fields []string `json:"fields"`
-        
         Value string `json:"value"`
         
         Operator string `json:"operator"`
@@ -113,6 +111,8 @@ func (u *Suggestsearchcriteria) MarshalJSON() ([]byte, error) {
         Group []Suggestsearchcriteria `json:"group"`
         
         DateFormat string `json:"dateFormat"`
+        
+        Fields []string `json:"fields"`
         *Alias
     }{
 
@@ -128,11 +128,6 @@ func (u *Suggestsearchcriteria) MarshalJSON() ([]byte, error) {
 
 
         
-        Fields: []string{""},
-        
-
-
-        
 
 
         
@@ -143,6 +138,11 @@ func (u *Suggestsearchcriteria) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Fields: []string{""},
         
 
         Alias: (*Alias)(u),

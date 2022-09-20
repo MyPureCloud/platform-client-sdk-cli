@@ -74,6 +74,9 @@ type AssignedlearningmoduleDud struct {
 
     
 
+
+    
+
 }
 
 // Assignedlearningmodule - Learning module response
@@ -149,6 +152,10 @@ type Assignedlearningmodule struct {
     // CoverArt - The cover art for the learning module
     CoverArt Learningmodulecoverartresponse `json:"coverArt"`
 
+
+    // ArchivalMode - The mode of archival for learning module
+    ArchivalMode string `json:"archivalMode"`
+
 }
 
 // String returns a JSON representation of the model
@@ -159,6 +166,7 @@ func (o *Assignedlearningmodule) String() string {
     
     
      o.InformSteps = []Learningmoduleinformstep{{}} 
+    
     
     
     
@@ -196,6 +204,8 @@ func (u *Assignedlearningmodule) MarshalJSON() ([]byte, error) {
         SummaryData Learningmodulesummary `json:"summaryData"`
         
         CoverArt Learningmodulecoverartresponse `json:"coverArt"`
+        
+        ArchivalMode string `json:"archivalMode"`
         *Alias
     }{
 
@@ -254,6 +264,9 @@ func (u *Assignedlearningmodule) MarshalJSON() ([]byte, error) {
 
         
         InformSteps: []Learningmoduleinformstep{{}},
+        
+
+
         
 
 

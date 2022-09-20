@@ -28,6 +28,9 @@ type WritabledialercontactDud struct {
 
     
 
+
+    
+
 }
 
 // Writabledialercontact
@@ -54,6 +57,10 @@ type Writabledialercontact struct {
     // PhoneNumberStatus - A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not.
     PhoneNumberStatus map[string]Phonenumberstatus `json:"phoneNumberStatus"`
 
+
+    // ContactableStatus - A map of media types(voice, sms and email) to ContactableStatus, which indicates where or not the contact can be contacted using the specified media type.
+    ContactableStatus map[string]Contactablestatus `json:"contactableStatus"`
+
 }
 
 // String returns a JSON representation of the model
@@ -63,6 +70,7 @@ func (o *Writabledialercontact) String() string {
      o.Data = map[string]interface{}{"": Interface{}} 
     
      o.PhoneNumberStatus = map[string]Phonenumberstatus{"": {}} 
+     o.ContactableStatus = map[string]Contactablestatus{"": {}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,6 +97,8 @@ func (u *Writabledialercontact) MarshalJSON() ([]byte, error) {
         Callable bool `json:"callable"`
         
         PhoneNumberStatus map[string]Phonenumberstatus `json:"phoneNumberStatus"`
+        
+        ContactableStatus map[string]Contactablestatus `json:"contactableStatus"`
         *Alias
     }{
 
@@ -111,6 +121,11 @@ func (u *Writabledialercontact) MarshalJSON() ([]byte, error) {
 
         
         PhoneNumberStatus: map[string]Phonenumberstatus{"": {}},
+        
+
+
+        
+        ContactableStatus: map[string]Contactablestatus{"": {}},
         
 
         Alias: (*Alias)(u),

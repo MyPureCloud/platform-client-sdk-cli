@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    BusinessunitMarshalled = false
+    BusinessunitresponseMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type BusinessunitDud struct { 
+type BusinessunitresponseDud struct { 
     Id string `json:"id"`
 
 
@@ -27,8 +27,8 @@ type BusinessunitDud struct {
 
 }
 
-// Businessunit
-type Businessunit struct { 
+// Businessunitresponse
+type Businessunitresponse struct { 
     
 
 
@@ -37,7 +37,7 @@ type Businessunit struct {
 
 
     // Settings - Settings for this business unit
-    Settings Businessunitsettings `json:"settings"`
+    Settings Businessunitsettingsresponse `json:"settings"`
 
 
     // Division - The division to which this entity belongs.
@@ -49,7 +49,7 @@ type Businessunit struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Businessunit) String() string {
+func (o *Businessunitresponse) String() string {
     
     
     
@@ -60,19 +60,19 @@ func (o *Businessunit) String() string {
     return str
 }
 
-func (u *Businessunit) MarshalJSON() ([]byte, error) {
-    type Alias Businessunit
+func (u *Businessunitresponse) MarshalJSON() ([]byte, error) {
+    type Alias Businessunitresponse
 
-    if BusinessunitMarshalled {
+    if BusinessunitresponseMarshalled {
         return []byte("{}"), nil
     }
-    BusinessunitMarshalled = true
+    BusinessunitresponseMarshalled = true
 
     return json.Marshal(&struct {
         
         Name string `json:"name"`
         
-        Settings Businessunitsettings `json:"settings"`
+        Settings Businessunitsettingsresponse `json:"settings"`
         
         Division Divisionreference `json:"division"`
         *Alias

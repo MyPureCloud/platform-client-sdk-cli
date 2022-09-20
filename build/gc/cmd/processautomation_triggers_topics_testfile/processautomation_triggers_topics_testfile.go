@@ -1,4 +1,4 @@
-package integrations_workforcemanagement_vendorconnection
+package processautomation_triggers_topics_testfile
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("integrations_workforcemanagement_vendorconnection", "SWAGGER_OVERRIDE_/api/v2/integrations/workforcemanagement/vendorconnection", )
-	integrations_workforcemanagement_vendorconnectionCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("integrations_workforcemanagement_vendorconnection"),
+	Description = utils.FormatUsageDescription("processautomation_triggers_topics_testfile", "SWAGGER_OVERRIDE_/api/v2/processautomation/triggers/topics/{topicName}/test", )
+	processautomation_triggers_topics_testfileCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("processautomation_triggers_topics_testfile"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,16 +24,17 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(integrations_workforcemanagement_vendorconnectionCmd)
+	CommandService = services.NewCommandService(processautomation_triggers_topics_testfileCmd)
 }
 
-func Cmdintegrations_workforcemanagement_vendorconnection() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/integrations/workforcemanagement/vendorconnection", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Integrations", "/api/v2/integrations/workforcemanagement/vendorconnection")))
+func Cmdprocessautomation_triggers_topics_testfile() *cobra.Command { 
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/processautomation/triggers/topics/{topicName}/test", utils.FormatPermissions([]string{ "processautomation:trigger:test",  }), utils.GenerateDevCentreLink("POST", "Process Automation", "/api/v2/processautomation/triggers/topics/{topicName}/test")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "description" : "eventBody",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/VendorConnectionRequest"
+        "type" : "string"
       }
     }
   },
@@ -45,20 +46,20 @@ func Cmdintegrations_workforcemanagement_vendorconnection() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/UserActionCategoryEntityListing"
+        "$ref" : "#/components/schemas/TestModeEventResults"
       }
     }
   }
 }`)
-	integrations_workforcemanagement_vendorconnectionCmd.AddCommand(createCmd)
-	return integrations_workforcemanagement_vendorconnectionCmd
+	processautomation_triggers_topics_testfileCmd.AddCommand(createCmd)
+	return processautomation_triggers_topics_testfileCmd
 }
 
 var createCmd = &cobra.Command{
-	Use:   "create",
-	Short: "Add a vendor connection",
-	Long:  "Add a vendor connection",
-	Args:  utils.DetermineArgs([]string{ }),
+	Use:   "create [topicName]",
+	Short: "Test the matching of all organization Triggers on given topic using provided event body",
+	Long:  "Test the matching of all organization Triggers on given topic using provided event body",
+	Args:  utils.DetermineArgs([]string{ "topicName", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -66,7 +67,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Vendorconnectionrequest{}
+			reqModel := models.String{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -74,7 +75,9 @@ var createCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/integrations/workforcemanagement/vendorconnection"
+		path := "/api/v2/processautomation/triggers/topics/{topicName}/test"
+		topicName, args := args[0], args[1:]
+		path = strings.Replace(path, "{topicName}", fmt.Sprintf("%v", topicName), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {

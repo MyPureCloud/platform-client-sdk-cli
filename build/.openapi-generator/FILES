@@ -376,7 +376,6 @@ gc/cmd/integrations_clientapps_unifiedcommunications/integrations_clientapps_uni
 gc/cmd/integrations_config_current/integrations_config_current.go
 gc/cmd/integrations_credentials/integrations_credentials.go
 gc/cmd/integrations_credentials_types/integrations_credentials_types.go
-gc/cmd/integrations_eventlog/integrations_eventlog.go
 gc/cmd/integrations_speech_dialogflow_agents/integrations_speech_dialogflow_agents.go
 gc/cmd/integrations_speech_lex_bot_alias/integrations_speech_lex_bot_alias.go
 gc/cmd/integrations_speech_lex_bot_aliases/integrations_speech_lex_bot_aliases.go
@@ -387,9 +386,10 @@ gc/cmd/integrations_speech_tts_settings/integrations_speech_tts_settings.go
 gc/cmd/integrations_types/integrations_types.go
 gc/cmd/integrations_types_configschemas/integrations_types_configschemas.go
 gc/cmd/integrations_userapps/integrations_userapps.go
-gc/cmd/integrations_workforcemanagement_vendorconnection/integrations_workforcemanagement_vendorconnection.go
 gc/cmd/ipranges/ipranges.go
 gc/cmd/journey_actionmaps/journey_actionmaps.go
+gc/cmd/journey_actionmaps_estimates_jobs/journey_actionmaps_estimates_jobs.go
+gc/cmd/journey_actionmaps_estimates_jobs_results/journey_actionmaps_estimates_jobs_results.go
 gc/cmd/journey_actiontargets/journey_actiontargets.go
 gc/cmd/journey_actiontemplates/journey_actiontemplates.go
 gc/cmd/journey_outcomes/journey_outcomes.go
@@ -544,6 +544,10 @@ gc/cmd/outbound_sequences/outbound_sequences.go
 gc/cmd/outbound_settings/outbound_settings.go
 gc/cmd/outbound_wrapupcodemappings/outbound_wrapupcodemappings.go
 gc/cmd/presencedefinitions/presencedefinitions.go
+gc/cmd/processautomation_triggers/processautomation_triggers.go
+gc/cmd/processautomation_triggers_testfile/processautomation_triggers_testfile.go
+gc/cmd/processautomation_triggers_topics/processautomation_triggers_topics.go
+gc/cmd/processautomation_triggers_topics_testfile/processautomation_triggers_topics_testfile.go
 gc/cmd/profile_groups/profile_groups.go
 gc/cmd/profile_users/profile_users.go
 gc/cmd/quality_agents_activity/quality_agents_activity.go
@@ -900,6 +904,9 @@ gc/models/actioninput.go
 gc/models/actionmap.go
 gc/models/actionmapaction.go
 gc/models/actionmapactiontemplate.go
+gc/models/actionmapestimateoutcomecriteria.go
+gc/models/actionmapestimaterequest.go
+gc/models/actionmapestimateresult.go
 gc/models/actionmaplisting.go
 gc/models/actionmapschedulegroup.go
 gc/models/actionmapschedulegroups.go
@@ -1189,7 +1196,8 @@ gc/models/buschedulereference.go
 gc/models/buschedulereferenceformuroute.go
 gc/models/buschedulerun.go
 gc/models/buschedulerunlisting.go
-gc/models/buschedulingsettings.go
+gc/models/buschedulingsettingsrequest.go
+gc/models/buschedulingsettingsresponse.go
 gc/models/busearchagentschedulesrequest.go
 gc/models/buservicelevel.go
 gc/models/bushorttermforecast.go
@@ -1197,13 +1205,13 @@ gc/models/bushorttermforecastingsettings.go
 gc/models/bushorttermforecastlisting.go
 gc/models/bushorttermforecastlistitem.go
 gc/models/bushorttermforecastreference.go
-gc/models/businessunit.go
 gc/models/businessunitactivitycode.go
 gc/models/businessunitactivitycodelisting.go
 gc/models/businessunitlisting.go
 gc/models/businessunitlistitem.go
 gc/models/businessunitreference.go
-gc/models/businessunitsettings.go
+gc/models/businessunitresponse.go
+gc/models/businessunitsettingsresponse.go
 gc/models/buttoncomponent.go
 gc/models/buttonresponse.go
 gc/models/buupdateagentscheduleuploadschema.go
@@ -1467,7 +1475,7 @@ gc/models/createagenttimeoffrequest.go
 gc/models/createbenefitassessmentjobrequest.go
 gc/models/createbenefitassessmentrequest.go
 gc/models/createbusinessunitrequest.go
-gc/models/createbusinessunitsettings.go
+gc/models/createbusinessunitsettingsrequest.go
 gc/models/createcallbackcommand.go
 gc/models/createcallbackonconversationcommand.go
 gc/models/createcallbackresponse.go
@@ -1494,6 +1502,7 @@ gc/models/createsharerequestmember.go
 gc/models/createshareresponse.go
 gc/models/createtimeofflimitrequest.go
 gc/models/createtimeoffplanrequest.go
+gc/models/createtriggerrequest.go
 gc/models/createuser.go
 gc/models/createwebchatconversationrequest.go
 gc/models/createwebchatconversationresponse.go
@@ -1738,6 +1747,7 @@ gc/models/errorbody.go
 gc/models/errordetails.go
 gc/models/errorinfo.go
 gc/models/estimatedwaittimepredictions.go
+gc/models/estimatejobasyncresponse.go
 gc/models/evaluation.go
 gc/models/evaluationaggregatedatacontainer.go
 gc/models/evaluationaggregatequeryclause.go
@@ -1766,7 +1776,6 @@ gc/models/evaluatoractivity.go
 gc/models/evaluatoractivityentitylisting.go
 gc/models/eventcobrowse.go
 gc/models/eventcondition.go
-gc/models/evententity.go
 gc/models/eventlog.go
 gc/models/eventmessage.go
 gc/models/eventpresence.go
@@ -1957,8 +1966,6 @@ gc/models/integrationactionfields.go
 gc/models/integrationconfiguration.go
 gc/models/integrationconfigurationinfo.go
 gc/models/integrationentitylisting.go
-gc/models/integrationevent.go
-gc/models/integrationevententitylisting.go
 gc/models/integrationexport.go
 gc/models/integrationstatusinfo.go
 gc/models/integrationtype.go
@@ -2097,6 +2104,7 @@ gc/models/learningassignmentbulkremoveresponse.go
 gc/models/learningassignmentcreate.go
 gc/models/learningassignmententity.go
 gc/models/learningassignmentitem.go
+gc/models/learningassignmentreassign.go
 gc/models/learningassignmentreference.go
 gc/models/learningassignmentsdomainentity.go
 gc/models/learningassignmentupdate.go
@@ -2187,8 +2195,11 @@ gc/models/manager.go
 gc/models/markcontactaddressuncontactableactionsettings.go
 gc/models/markcontactuncontactableactionsettings.go
 gc/models/markdown.go
+gc/models/matchcriteria.go
+gc/models/matchcriteriatestresult.go
 gc/models/matchshifttraderequest.go
 gc/models/matchshifttraderesponse.go
+gc/models/matchtestresult.go
 gc/models/maxlength.go
 gc/models/maxparticipants.go
 gc/models/mediaparticipantrequest.go
@@ -2701,6 +2712,7 @@ gc/models/segment.go
 gc/models/segmentdetailqueryclause.go
 gc/models/segmentdetailqueryfilter.go
 gc/models/segmentdetailquerypredicate.go
+gc/models/segmentestimatecount.go
 gc/models/segmentlisting.go
 gc/models/selectedanswer.go
 gc/models/selectedcolumns.go
@@ -2728,6 +2740,7 @@ gc/models/setuuidatarequest.go
 gc/models/setwrapperdayofweek.go
 gc/models/setwrapperroutepathrequest.go
 gc/models/setwrapperstring.go
+gc/models/setwrappersynctimeoffproperty.go
 gc/models/share.go
 gc/models/sharedentity.go
 gc/models/sharedresponse.go
@@ -2843,7 +2856,14 @@ gc/models/templateparameter.go
 gc/models/termattribute.go
 gc/models/testexecutionoperationresult.go
 gc/models/testexecutionresult.go
+gc/models/testmatcheseventoperation.go
+gc/models/testmatchesoperation.go
 gc/models/testmessage.go
+gc/models/testmodeeventresults.go
+gc/models/testmoderesults.go
+gc/models/testmodetrigger.go
+gc/models/testschemaoperation.go
+gc/models/testtargetoperation.go
 gc/models/textbotchannel.go
 gc/models/textbotdisconnectaction.go
 gc/models/textboterrorinputevent.go
@@ -2894,6 +2914,7 @@ gc/models/timezonemappingpreview.go
 gc/models/tokeninfo.go
 gc/models/tokeninfocloneduser.go
 gc/models/topic.go
+gc/models/topiccursorentitylisting.go
 gc/models/topicduration.go
 gc/models/topicjob.go
 gc/models/topicjobrequest.go
@@ -2918,6 +2939,9 @@ gc/models/transcripttopic.go
 gc/models/transcripttopics.go
 gc/models/transcripturl.go
 gc/models/transferrequest.go
+gc/models/trigger.go
+gc/models/triggerentitylisting.go
+gc/models/triggertarget.go
 gc/models/trunk.go
 gc/models/trunkbase.go
 gc/models/trunkbaseassignment.go
@@ -2979,7 +3003,7 @@ gc/models/updateactioninput.go
 gc/models/updateactivitycoderequest.go
 gc/models/updateanalyticsdataretentionrequest.go
 gc/models/updatebusinessunitrequest.go
-gc/models/updatebusinessunitsettings.go
+gc/models/updatebusinessunitsettingsrequest.go
 gc/models/updatecoachingappointmentrequest.go
 gc/models/updatecontactcolumnactionsettings.go
 gc/models/updatedraftinput.go
@@ -2993,6 +3017,7 @@ gc/models/updatescheduleuploadschema.go
 gc/models/updateservicegoaltemplate.go
 gc/models/updatetimeofflimitrequest.go
 gc/models/updatetimeoffplanrequest.go
+gc/models/updatetriggerrequest.go
 gc/models/updateuser.go
 gc/models/updateworkplanrotationagentrequest.go
 gc/models/updateworkplanrotationrequest.go
@@ -3005,8 +3030,6 @@ gc/models/usage.go
 gc/models/usageexecutionresult.go
 gc/models/usageitem.go
 gc/models/user.go
-gc/models/useractioncategory.go
-gc/models/useractioncategoryentitylisting.go
 gc/models/useragentinfo.go
 gc/models/useraggregatedatacontainer.go
 gc/models/useraggregatequeryclause.go
@@ -3083,7 +3106,6 @@ gc/models/validationservicerequest.go
 gc/models/valuewrapperdate.go
 gc/models/valuewrapperplanningperiodsettings.go
 gc/models/valuewrapperstring.go
-gc/models/vendorconnectionrequest.go
 gc/models/video.go
 gc/models/viewfilter.go
 gc/models/visibilitycondition.go

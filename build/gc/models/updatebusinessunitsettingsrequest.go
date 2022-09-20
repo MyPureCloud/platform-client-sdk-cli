@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    UpdatebusinessunitsettingsMarshalled = false
+    UpdatebusinessunitsettingsrequestMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type UpdatebusinessunitsettingsDud struct { 
+type UpdatebusinessunitsettingsrequestDud struct { 
     StartDayOfWeek string `json:"startDayOfWeek"`
 
 
@@ -27,8 +27,8 @@ type UpdatebusinessunitsettingsDud struct {
 
 }
 
-// Updatebusinessunitsettings
-type Updatebusinessunitsettings struct { 
+// Updatebusinessunitsettingsrequest
+type Updatebusinessunitsettingsrequest struct { 
     
 
 
@@ -40,7 +40,7 @@ type Updatebusinessunitsettings struct {
 
 
     // Scheduling - Scheduling settings
-    Scheduling Buschedulingsettings `json:"scheduling"`
+    Scheduling Buschedulingsettingsrequest `json:"scheduling"`
 
 
     // Metadata - Version metadata for this business unit
@@ -49,7 +49,7 @@ type Updatebusinessunitsettings struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Updatebusinessunitsettings) String() string {
+func (o *Updatebusinessunitsettingsrequest) String() string {
     
     
     
@@ -60,19 +60,19 @@ func (o *Updatebusinessunitsettings) String() string {
     return str
 }
 
-func (u *Updatebusinessunitsettings) MarshalJSON() ([]byte, error) {
-    type Alias Updatebusinessunitsettings
+func (u *Updatebusinessunitsettingsrequest) MarshalJSON() ([]byte, error) {
+    type Alias Updatebusinessunitsettingsrequest
 
-    if UpdatebusinessunitsettingsMarshalled {
+    if UpdatebusinessunitsettingsrequestMarshalled {
         return []byte("{}"), nil
     }
-    UpdatebusinessunitsettingsMarshalled = true
+    UpdatebusinessunitsettingsrequestMarshalled = true
 
     return json.Marshal(&struct {
         
         ShortTermForecasting Bushorttermforecastingsettings `json:"shortTermForecasting"`
         
-        Scheduling Buschedulingsettings `json:"scheduling"`
+        Scheduling Buschedulingsettingsrequest `json:"scheduling"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias

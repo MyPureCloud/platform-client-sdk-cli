@@ -21,6 +21,9 @@ type ActiontemplateDud struct {
     
 
 
+    Version int `json:"version"`
+
+
     
 
 
@@ -51,6 +54,9 @@ type Actiontemplate struct {
 
     // Description - Description of the action template's functionality.
     Description string `json:"description"`
+
+
+    
 
 
     // MediaType - Media type of action described by the action template.
@@ -110,6 +116,9 @@ func (u *Actiontemplate) MarshalJSON() ([]byte, error) {
         ContentOffer Contentoffer `json:"contentOffer"`
         *Alias
     }{
+
+        
+
 
         
 

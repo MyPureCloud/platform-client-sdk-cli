@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    CreatebusinessunitsettingsMarshalled = false
+    CreatebusinessunitsettingsrequestMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type CreatebusinessunitsettingsDud struct { 
+type CreatebusinessunitsettingsrequestDud struct { 
     
 
 
@@ -24,8 +24,8 @@ type CreatebusinessunitsettingsDud struct {
 
 }
 
-// Createbusinessunitsettings
-type Createbusinessunitsettings struct { 
+// Createbusinessunitsettingsrequest
+type Createbusinessunitsettingsrequest struct { 
     // StartDayOfWeek - The start day of week for this business unit
     StartDayOfWeek string `json:"startDayOfWeek"`
 
@@ -39,12 +39,12 @@ type Createbusinessunitsettings struct {
 
 
     // Scheduling - Scheduling settings
-    Scheduling Buschedulingsettings `json:"scheduling"`
+    Scheduling Buschedulingsettingsrequest `json:"scheduling"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Createbusinessunitsettings) String() string {
+func (o *Createbusinessunitsettingsrequest) String() string {
     
     
     
@@ -56,13 +56,13 @@ func (o *Createbusinessunitsettings) String() string {
     return str
 }
 
-func (u *Createbusinessunitsettings) MarshalJSON() ([]byte, error) {
-    type Alias Createbusinessunitsettings
+func (u *Createbusinessunitsettingsrequest) MarshalJSON() ([]byte, error) {
+    type Alias Createbusinessunitsettingsrequest
 
-    if CreatebusinessunitsettingsMarshalled {
+    if CreatebusinessunitsettingsrequestMarshalled {
         return []byte("{}"), nil
     }
-    CreatebusinessunitsettingsMarshalled = true
+    CreatebusinessunitsettingsrequestMarshalled = true
 
     return json.Marshal(&struct {
         
@@ -72,7 +72,7 @@ func (u *Createbusinessunitsettings) MarshalJSON() ([]byte, error) {
         
         ShortTermForecasting Bushorttermforecastingsettings `json:"shortTermForecasting"`
         
-        Scheduling Buschedulingsettings `json:"scheduling"`
+        Scheduling Buschedulingsettingsrequest `json:"scheduling"`
         *Alias
     }{
 

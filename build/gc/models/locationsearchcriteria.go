@@ -53,10 +53,6 @@ type Locationsearchcriteria struct {
     StartValue string `json:"startValue"`
 
 
-    // Fields - Field names to search against
-    Fields []string `json:"fields"`
-
-
     // Value - A value for the search to match against
     Value string `json:"value"`
 
@@ -76,6 +72,10 @@ type Locationsearchcriteria struct {
     // VarType - Search Type
     VarType string `json:"type"`
 
+
+    // Fields - Field names to search against
+    Fields []string `json:"fields"`
+
 }
 
 // String returns a JSON representation of the model
@@ -83,12 +83,12 @@ func (o *Locationsearchcriteria) String() string {
     
      o.Values = []string{""} 
     
-     o.Fields = []string{""} 
     
     
      o.Group = []Locationsearchcriteria{{}} 
     
     
+     o.Fields = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -112,8 +112,6 @@ func (u *Locationsearchcriteria) MarshalJSON() ([]byte, error) {
         
         StartValue string `json:"startValue"`
         
-        Fields []string `json:"fields"`
-        
         Value string `json:"value"`
         
         Operator string `json:"operator"`
@@ -123,6 +121,8 @@ func (u *Locationsearchcriteria) MarshalJSON() ([]byte, error) {
         DateFormat string `json:"dateFormat"`
         
         VarType string `json:"type"`
+        
+        Fields []string `json:"fields"`
         *Alias
     }{
 
@@ -134,11 +134,6 @@ func (u *Locationsearchcriteria) MarshalJSON() ([]byte, error) {
         
 
 
-        
-
-
-        
-        Fields: []string{""},
         
 
 
@@ -156,6 +151,11 @@ func (u *Locationsearchcriteria) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Fields: []string{""},
         
 
         Alias: (*Alias)(u),

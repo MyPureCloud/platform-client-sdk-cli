@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    BusinessunitsettingsMarshalled = false
+    BusinessunitsettingsresponseMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type BusinessunitsettingsDud struct { 
+type BusinessunitsettingsresponseDud struct { 
     
 
 
@@ -27,8 +27,8 @@ type BusinessunitsettingsDud struct {
 
 }
 
-// Businessunitsettings
-type Businessunitsettings struct { 
+// Businessunitsettingsresponse
+type Businessunitsettingsresponse struct { 
     // StartDayOfWeek - The start day of week for this business unit
     StartDayOfWeek string `json:"startDayOfWeek"`
 
@@ -42,7 +42,7 @@ type Businessunitsettings struct {
 
 
     // Scheduling - Scheduling settings
-    Scheduling Buschedulingsettings `json:"scheduling"`
+    Scheduling Buschedulingsettingsresponse `json:"scheduling"`
 
 
     // Metadata - Version metadata for this business unit
@@ -51,7 +51,7 @@ type Businessunitsettings struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Businessunitsettings) String() string {
+func (o *Businessunitsettingsresponse) String() string {
     
     
     
@@ -64,13 +64,13 @@ func (o *Businessunitsettings) String() string {
     return str
 }
 
-func (u *Businessunitsettings) MarshalJSON() ([]byte, error) {
-    type Alias Businessunitsettings
+func (u *Businessunitsettingsresponse) MarshalJSON() ([]byte, error) {
+    type Alias Businessunitsettingsresponse
 
-    if BusinessunitsettingsMarshalled {
+    if BusinessunitsettingsresponseMarshalled {
         return []byte("{}"), nil
     }
-    BusinessunitsettingsMarshalled = true
+    BusinessunitsettingsresponseMarshalled = true
 
     return json.Marshal(&struct {
         
@@ -80,7 +80,7 @@ func (u *Businessunitsettings) MarshalJSON() ([]byte, error) {
         
         ShortTermForecasting Bushorttermforecastingsettings `json:"shortTermForecasting"`
         
-        Scheduling Buschedulingsettings `json:"scheduling"`
+        Scheduling Buschedulingsettingsresponse `json:"scheduling"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias

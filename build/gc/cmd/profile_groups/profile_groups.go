@@ -31,6 +31,7 @@ func Cmdprofile_groups() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
+	utils.AddFlag(listCmd.Flags(), "[]string", "jabberId", "", "A list of jabberIds to fetch by bulk (cannot be used with the id parameter)")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Ascending or descending sort order Valid values: ascending, descending")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/profiles/groups", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Groups", "/api/v2/profiles/groups")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -79,6 +80,10 @@ var listCmd = &cobra.Command{
 		id := utils.GetFlag(cmd.Flags(), "[]string", "id")
 		if id != "" {
 			queryParams["id"] = id
+		}
+		jabberId := utils.GetFlag(cmd.Flags(), "[]string", "jabberId")
+		if jabberId != "" {
+			queryParams["jabberId"] = jabberId
 		}
 		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
 		if sortOrder != "" {

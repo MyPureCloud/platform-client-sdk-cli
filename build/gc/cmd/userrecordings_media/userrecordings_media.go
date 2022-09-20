@@ -29,11 +29,12 @@ func init() {
 
 func Cmduserrecordings_media() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "formatId", "WEBM", "The desired media format. Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE")
+	utils.AddFlag(getCmd.Flags(), "bool", "async", "", "When set to true, api will return 202 response until the recording is ready for download")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/userrecordings/{recordingId}/media", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "User Recordings", "/api/v2/userrecordings/{recordingId}/media")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  "description" : "successful operation",
+  "description" : "Operation was successful",
   "content" : {
     "application/json" : {
       "schema" : {
@@ -70,6 +71,10 @@ var getCmd = &cobra.Command{
 		formatId := utils.GetFlag(cmd.Flags(), "string", "formatId")
 		if formatId != "" {
 			queryParams["formatId"] = formatId
+		}
+		async := utils.GetFlag(cmd.Flags(), "bool", "async")
+		if async != "" {
+			queryParams["async"] = async
 		}
 		urlString := path
 		if len(queryParams) > 0 {

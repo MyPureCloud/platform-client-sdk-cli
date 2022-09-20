@@ -32,7 +32,7 @@ type Updatebusinessunitrequest struct {
 
 
     // Settings - Configuration for the business unit
-    Settings Updatebusinessunitsettings `json:"settings"`
+    Settings Updatebusinessunitsettingsrequest `json:"settings"`
 
 }
 
@@ -62,7 +62,7 @@ func (u *Updatebusinessunitrequest) MarshalJSON() ([]byte, error) {
         
         DivisionId string `json:"divisionId"`
         
-        Settings Updatebusinessunitsettings `json:"settings"`
+        Settings Updatebusinessunitsettingsrequest `json:"settings"`
         *Alias
     }{
 

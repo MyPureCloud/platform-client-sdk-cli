@@ -25,6 +25,9 @@ type PatchactiontemplateDud struct {
 
     
 
+
+    
+
 }
 
 // Patchactiontemplate
@@ -35,6 +38,10 @@ type Patchactiontemplate struct {
 
     // Description - Description of the action template's functionality.
     Description string `json:"description"`
+
+
+    // Version - The version of the action template.
+    Version int `json:"version"`
 
 
     // MediaType - Media type of action described by the action template.
@@ -52,6 +59,7 @@ type Patchactiontemplate struct {
 
 // String returns a JSON representation of the model
 func (o *Patchactiontemplate) String() string {
+    
     
     
     
@@ -78,6 +86,8 @@ func (u *Patchactiontemplate) MarshalJSON() ([]byte, error) {
         
         Description string `json:"description"`
         
+        Version int `json:"version"`
+        
         MediaType string `json:"mediaType"`
         
         State string `json:"state"`
@@ -85,6 +95,9 @@ func (u *Patchactiontemplate) MarshalJSON() ([]byte, error) {
         ContentOffer Patchcontentoffer `json:"contentOffer"`
         *Alias
     }{
+
+        
+
 
         
 

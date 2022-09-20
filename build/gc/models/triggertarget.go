@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    EvententityMarshalled = false
+    TriggertargetMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type EvententityDud struct { 
+type TriggertargetDud struct { 
     
 
 
@@ -18,19 +18,19 @@ type EvententityDud struct {
 
 }
 
-// Evententity
-type Evententity struct { 
-    // EntityType - Type of entity the event pertains to. e.g. integration
-    EntityType string `json:"entityType"`
+// Triggertarget - The target of a trigger invocation
+type Triggertarget struct { 
+    // VarType - The entity type to target
+    VarType string `json:"type"`
 
 
-    // Id - ID of the entity the event pertains to.
+    // Id - The ID of the entity to target
     Id string `json:"id"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Evententity) String() string {
+func (o *Triggertarget) String() string {
     
     
 
@@ -40,17 +40,17 @@ func (o *Evententity) String() string {
     return str
 }
 
-func (u *Evententity) MarshalJSON() ([]byte, error) {
-    type Alias Evententity
+func (u *Triggertarget) MarshalJSON() ([]byte, error) {
+    type Alias Triggertarget
 
-    if EvententityMarshalled {
+    if TriggertargetMarshalled {
         return []byte("{}"), nil
     }
-    EvententityMarshalled = true
+    TriggertargetMarshalled = true
 
     return json.Marshal(&struct {
         
-        EntityType string `json:"entityType"`
+        VarType string `json:"type"`
         
         Id string `json:"id"`
         *Alias

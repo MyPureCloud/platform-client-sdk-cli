@@ -6,12 +6,15 @@ import (
 )
 
 var (
-    UseractioncategoryMarshalled = false
+    TestmodetriggerMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type UseractioncategoryDud struct { 
+type TestmodetriggerDud struct { 
     Id string `json:"id"`
+
+
+    
 
 
     
@@ -21,13 +24,17 @@ type UseractioncategoryDud struct {
 
 }
 
-// Useractioncategory
-type Useractioncategory struct { 
+// Testmodetrigger - Basic identifying information about a trigger
+type Testmodetrigger struct { 
     
 
 
-    // Name
+    // Name - The name of the trigger
     Name string `json:"name"`
+
+
+    // Enabled - Whether or not the trigger is enabled
+    Enabled bool `json:"enabled"`
 
 
     
@@ -35,7 +42,8 @@ type Useractioncategory struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Useractioncategory) String() string {
+func (o *Testmodetrigger) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -44,19 +52,24 @@ func (o *Useractioncategory) String() string {
     return str
 }
 
-func (u *Useractioncategory) MarshalJSON() ([]byte, error) {
-    type Alias Useractioncategory
+func (u *Testmodetrigger) MarshalJSON() ([]byte, error) {
+    type Alias Testmodetrigger
 
-    if UseractioncategoryMarshalled {
+    if TestmodetriggerMarshalled {
         return []byte("{}"), nil
     }
-    UseractioncategoryMarshalled = true
+    TestmodetriggerMarshalled = true
 
     return json.Marshal(&struct {
         
         Name string `json:"name"`
+        
+        Enabled bool `json:"enabled"`
         *Alias
     }{
+
+        
+
 
         
 

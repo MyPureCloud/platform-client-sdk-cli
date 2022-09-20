@@ -46,7 +46,7 @@ func Cmdworkforcemanagement_businessunits() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/BusinessUnit"
+        "$ref" : "#/components/schemas/BusinessUnitResponse"
       }
     }
   }
@@ -71,7 +71,7 @@ func Cmdworkforcemanagement_businessunits() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/BusinessUnit"
+        "$ref" : "#/components/schemas/BusinessUnitResponse"
       }
     }
   }
@@ -113,7 +113,7 @@ func Cmdworkforcemanagement_businessunits() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/BusinessUnit"
+        "$ref" : "#/components/schemas/BusinessUnitResponse"
       }
     }
   }

@@ -35,6 +35,9 @@ type DialercontactDud struct {
     
 
 
+    
+
+
     ContactColumnTimeZones map[string]Contactcolumntimezone `json:"contactColumnTimeZones"`
 
 
@@ -76,6 +79,10 @@ type Dialercontact struct {
     PhoneNumberStatus map[string]Phonenumberstatus `json:"phoneNumberStatus"`
 
 
+    // ContactableStatus - A map of media types(voice, sms and email) to ContactableStatus, which indicates where or not the contact can be contacted using the specified media type.
+    ContactableStatus map[string]Contactablestatus `json:"contactableStatus"`
+
+
     
 
 
@@ -93,6 +100,7 @@ func (o *Dialercontact) String() string {
      o.Data = map[string]interface{}{"": Interface{}} 
     
      o.PhoneNumberStatus = map[string]Phonenumberstatus{"": {}} 
+     o.ContactableStatus = map[string]Contactablestatus{"": {}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -119,6 +127,8 @@ func (u *Dialercontact) MarshalJSON() ([]byte, error) {
         Callable bool `json:"callable"`
         
         PhoneNumberStatus map[string]Phonenumberstatus `json:"phoneNumberStatus"`
+        
+        ContactableStatus map[string]Contactablestatus `json:"contactableStatus"`
         *Alias
     }{
 
@@ -147,6 +157,11 @@ func (u *Dialercontact) MarshalJSON() ([]byte, error) {
 
         
         PhoneNumberStatus: map[string]Phonenumberstatus{"": {}},
+        
+
+
+        
+        ContactableStatus: map[string]Contactablestatus{"": {}},
         
 
 

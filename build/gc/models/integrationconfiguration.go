@@ -62,7 +62,7 @@ type Integrationconfiguration struct {
 
 
     // Credentials - Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type
-    Credentials map[string]Credentialinfo `json:"credentials"`
+    Credentials map[string]Integrationconfigurationcredential `json:"credentials"`
 
 
     
@@ -76,7 +76,7 @@ func (o *Integrationconfiguration) String() string {
      o.Properties = Interface{} 
      o.Advanced = Interface{} 
     
-     o.Credentials = map[string]Credentialinfo{"": {}} 
+     o.Credentials = map[string]Integrationconfigurationcredential{"": {}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -104,7 +104,7 @@ func (u *Integrationconfiguration) MarshalJSON() ([]byte, error) {
         
         Notes string `json:"notes"`
         
-        Credentials map[string]Credentialinfo `json:"credentials"`
+        Credentials map[string]Integrationconfigurationcredential `json:"credentials"`
         *Alias
     }{
 
@@ -131,7 +131,7 @@ func (u *Integrationconfiguration) MarshalJSON() ([]byte, error) {
 
 
         
-        Credentials: map[string]Credentialinfo{"": {}},
+        Credentials: map[string]Integrationconfigurationcredential{"": {}},
         
 
 

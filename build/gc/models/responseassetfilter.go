@@ -52,7 +52,7 @@ type Responseassetfilter struct {
     Value string `json:"value"`
 
 
-    // VarType - How to apply this search criteria against other criteria
+    // VarType - How to apply this search criteria against other criteria. Filter type supported for each field:- name:[STARTS_WITH, TERM], divisionId:[TERM, TERMS], contentLength:[RANGE, GREATER_THAN_EQUAL_TO, LESS_THAN_EQUAL_TO], contentType:[STARTS_WITH, TERM] dateCreated:[DATE_RANGE]
     VarType string `json:"type"`
 
 }

@@ -108,6 +108,9 @@ type UserqueueDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -210,6 +213,10 @@ type Userqueue struct {
     AgentOwnedRouting Agentownedrouting `json:"agentOwnedRouting"`
 
 
+    // VipRouting - The VIP Routing settings for the queue
+    VipRouting Viprouting `json:"vipRouting"`
+
+
     // CallingPartyName - The name to use for caller identification for outbound calls from this queue.
     CallingPartyName string `json:"callingPartyName"`
 
@@ -257,6 +264,7 @@ func (o *Userqueue) String() string {
     
     
      o.MemberGroups = []Membergroup{{}} 
+    
     
     
     
@@ -331,6 +339,8 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
         
         AgentOwnedRouting Agentownedrouting `json:"agentOwnedRouting"`
         
+        VipRouting Viprouting `json:"vipRouting"`
+        
         CallingPartyName string `json:"callingPartyName"`
         
         CallingPartyNumber string `json:"callingPartyNumber"`
@@ -401,6 +411,9 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
 
         
         MemberGroups: []Membergroup{{}},
+        
+
+
         
 
 

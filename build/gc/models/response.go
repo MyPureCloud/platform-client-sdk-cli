@@ -51,6 +51,9 @@ type ResponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -106,6 +109,10 @@ type Response struct {
     Assets []Addressableentityref `json:"assets"`
 
 
+    // Footer - Footer template definition for responseType.Footer.
+    Footer Footertemplate `json:"footer"`
+
+
     
 
 }
@@ -122,6 +129,7 @@ func (o *Response) String() string {
     
     
      o.Assets = []Addressableentityref{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -158,6 +166,8 @@ func (u *Response) MarshalJSON() ([]byte, error) {
         MessagingTemplate Messagingtemplate `json:"messagingTemplate"`
         
         Assets []Addressableentityref `json:"assets"`
+        
+        Footer Footertemplate `json:"footer"`
         *Alias
     }{
 
@@ -205,6 +215,9 @@ func (u *Response) MarshalJSON() ([]byte, error) {
 
         
         Assets: []Addressableentityref{{}},
+        
+
+
         
 
 

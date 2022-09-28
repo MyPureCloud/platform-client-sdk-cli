@@ -613,6 +613,8 @@ gc/cmd/routing_languages/routing_languages.go
 gc/cmd/routing_message_recipients/routing_message_recipients.go
 gc/cmd/routing_predictors/routing_predictors.go
 gc/cmd/routing_predictors_keyperformanceindicators/routing_predictors_keyperformanceindicators.go
+gc/cmd/routing_predictors_models/routing_predictors_models.go
+gc/cmd/routing_predictors_models_features/routing_predictors_models_features.go
 gc/cmd/routing_queues/routing_queues.go
 gc/cmd/routing_queues_comparisonperiods/routing_queues_comparisonperiods.go
 gc/cmd/routing_queues_divisionviews/routing_queues_divisionviews.go
@@ -1097,6 +1099,7 @@ gc/models/botconnectorbotversion.go
 gc/models/botconnectorbotversionsummaryentitylisting.go
 gc/models/botintent.go
 gc/models/botlist.go
+gc/models/botmessengerprofile.go
 gc/models/botsearchresponse.go
 gc/models/botsearchresponseentitylisting.go
 gc/models/botslot.go
@@ -1867,6 +1870,7 @@ gc/models/flowoutcomelisting.go
 gc/models/flowruntimeexecution.go
 gc/models/flowversion.go
 gc/models/flowversionentitylisting.go
+gc/models/footertemplate.go
 gc/models/forecastabandonrateresponse.go
 gc/models/forecastaveragespeedofanswerresponse.go
 gc/models/forecastplanninggroupdata.go
@@ -1940,6 +1944,7 @@ gc/models/historicalimportstatuslisting.go
 gc/models/historyentry.go
 gc/models/historylisting.go
 gc/models/homerrecord.go
+gc/models/humanize.go
 gc/models/identitynow.go
 gc/models/idleeventtrigger.go
 gc/models/ignoredactivitycategories.go
@@ -1964,6 +1969,7 @@ gc/models/integration.go
 gc/models/integrationaction.go
 gc/models/integrationactionfields.go
 gc/models/integrationconfiguration.go
+gc/models/integrationconfigurationcredential.go
 gc/models/integrationconfigurationinfo.go
 gc/models/integrationentitylisting.go
 gc/models/integrationexport.go
@@ -2337,6 +2343,7 @@ gc/models/openintegrationentitylisting.go
 gc/models/openintegrationrequest.go
 gc/models/openintegrationupdaterequest.go
 gc/models/openmessagecontent.go
+gc/models/openmessageevent.go
 gc/models/openmessagingchannel.go
 gc/models/openmessagingfromrecipient.go
 gc/models/openmessagingtorecipient.go
@@ -2452,6 +2459,10 @@ gc/models/predictionresults.go
 gc/models/predictiverouting.go
 gc/models/predictor.go
 gc/models/predictorlisting.go
+gc/models/predictormodel.go
+gc/models/predictormodelfeature.go
+gc/models/predictormodelfeaturelisting.go
+gc/models/predictormodels.go
 gc/models/predictorschedule.go
 gc/models/predictorworkloadbalancing.go
 gc/models/presencedefinition.go
@@ -3108,6 +3119,10 @@ gc/models/valuewrapperplanningperiodsettings.go
 gc/models/valuewrapperstring.go
 gc/models/video.go
 gc/models/viewfilter.go
+gc/models/vipbackup.go
+gc/models/vipcallmediasettings.go
+gc/models/vipmediasettings.go
+gc/models/viprouting.go
 gc/models/visibilitycondition.go
 gc/models/vmpairinginfo.go
 gc/models/voicemail.go
@@ -3143,7 +3158,6 @@ gc/models/webdeployment.go
 gc/models/webdeploymentactiveconfigurationondeployment.go
 gc/models/webdeploymentconfigurationversion.go
 gc/models/webdeploymentconfigurationversionentitylisting.go
-gc/models/webdeploymentconfigurationversionentityref.go
 gc/models/webdeploymententitylisting.go
 gc/models/webmessagingattachment.go
 gc/models/webmessagingbuttonresponse.go

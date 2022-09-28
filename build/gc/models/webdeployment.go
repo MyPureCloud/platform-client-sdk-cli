@@ -66,7 +66,7 @@ type Webdeployment struct {
 
 
     // Configuration - The config version this deployment uses
-    Configuration Webdeploymentconfigurationversionentityref `json:"configuration"`
+    Configuration Webdeploymentconfigurationversion `json:"configuration"`
 
 
     // AllowAllDomains - Property indicates whether all domains are allowed or not. allowedDomains must be empty when this is set as true.
@@ -131,7 +131,7 @@ func (u *Webdeployment) MarshalJSON() ([]byte, error) {
         
         Description string `json:"description"`
         
-        Configuration Webdeploymentconfigurationversionentityref `json:"configuration"`
+        Configuration Webdeploymentconfigurationversion `json:"configuration"`
         
         AllowAllDomains bool `json:"allowAllDomains"`
         

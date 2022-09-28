@@ -72,6 +72,7 @@ func Cmdconversations_recordings() *cobra.Command {
 }`)
 	conversations_recordingsCmd.AddCommand(listCmd)
 
+	utils.AddFlag(updateCmd.Flags(), "bool", "clearExport", "", "Whether to clear the pending export for the recording")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recording:editRetention", "recording:screenRecording:editRetention",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "recording",
@@ -275,6 +276,10 @@ var updateCmd = &cobra.Command{
 		recordingId, args := args[0], args[1:]
 		path = strings.Replace(path, "{recordingId}", fmt.Sprintf("%v", recordingId), -1)
 
+		clearExport := utils.GetFlag(cmd.Flags(), "bool", "clearExport")
+		if clearExport != "" {
+			queryParams["clearExport"] = clearExport
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

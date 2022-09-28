@@ -111,6 +111,9 @@ type CreatequeuerequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -217,6 +220,10 @@ type Createqueuerequest struct {
     AgentOwnedRouting Agentownedrouting `json:"agentOwnedRouting"`
 
 
+    // VipRouting - The VIP Routing settings for the queue
+    VipRouting Viprouting `json:"vipRouting"`
+
+
     // CallingPartyName - The name to use for caller identification for outbound calls from this queue.
     CallingPartyName string `json:"callingPartyName"`
 
@@ -264,6 +271,7 @@ func (o *Createqueuerequest) String() string {
     
     
      o.MemberGroups = []Membergroup{{}} 
+    
     
     
     
@@ -341,6 +349,8 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
         
         AgentOwnedRouting Agentownedrouting `json:"agentOwnedRouting"`
         
+        VipRouting Viprouting `json:"vipRouting"`
+        
         CallingPartyName string `json:"callingPartyName"`
         
         CallingPartyNumber string `json:"callingPartyNumber"`
@@ -411,6 +421,9 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
 
         
         MemberGroups: []Membergroup{{}},
+        
+
+
         
 
 

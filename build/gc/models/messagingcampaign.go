@@ -60,6 +60,9 @@ type MessagingcampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -123,6 +126,10 @@ type Messagingcampaign struct {
     Errors []Resterrordetail `json:"errors"`
 
 
+    // EmailConfig - Configuration for this messaging campaign to send Email messages.
+    EmailConfig Emailconfig `json:"emailConfig"`
+
+
     // SmsConfig - Configuration for this messaging campaign to send SMS messages.
     SmsConfig Smsconfig `json:"smsConfig"`
 
@@ -145,6 +152,7 @@ func (o *Messagingcampaign) String() string {
     
      o.ContactListFilters = []Domainentityref{{}} 
      o.Errors = []Resterrordetail{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -186,6 +194,8 @@ func (u *Messagingcampaign) MarshalJSON() ([]byte, error) {
         ContactListFilters []Domainentityref `json:"contactListFilters"`
         
         Errors []Resterrordetail `json:"errors"`
+        
+        EmailConfig Emailconfig `json:"emailConfig"`
         
         SmsConfig Smsconfig `json:"smsConfig"`
         *Alias
@@ -241,6 +251,9 @@ func (u *Messagingcampaign) MarshalJSON() ([]byte, error) {
 
         
         Errors: []Resterrordetail{{}},
+        
+
+
         
 
 

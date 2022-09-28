@@ -1,0 +1,111 @@
+package models
+import (
+    "time"
+    "encoding/json"
+    "strconv"
+    "strings"
+)
+
+var (
+    PredictormodelMarshalled = false
+)
+
+// This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
+type PredictormodelDud struct { 
+    Id string `json:"id"`
+
+
+    Kpi string `json:"kpi"`
+
+
+    Queues []Addressableentityref `json:"queues"`
+
+
+    DateCreated time.Time `json:"dateCreated"`
+
+
+    DateTrained time.Time `json:"dateTrained"`
+
+
+    MediaType string `json:"mediaType"`
+
+
+    
+
+}
+
+// Predictormodel
+type Predictormodel struct { 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    // Features
+    Features []Predictormodelfeature `json:"features"`
+
+}
+
+// String returns a JSON representation of the model
+func (o *Predictormodel) String() string {
+     o.Features = []Predictormodelfeature{{}} 
+
+    j, _ := json.Marshal(o)
+    str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
+
+    return str
+}
+
+func (u *Predictormodel) MarshalJSON() ([]byte, error) {
+    type Alias Predictormodel
+
+    if PredictormodelMarshalled {
+        return []byte("{}"), nil
+    }
+    PredictormodelMarshalled = true
+
+    return json.Marshal(&struct {
+        
+        Features []Predictormodelfeature `json:"features"`
+        *Alias
+    }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+        Features: []Predictormodelfeature{{}},
+        
+
+        Alias: (*Alias)(u),
+    })
+}
+

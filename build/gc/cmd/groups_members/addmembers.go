@@ -1,8 +1,6 @@
 package groups_members
 
 import (
-	"bytes"
-	"encoding/gob"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -50,6 +48,14 @@ var AddCmd = &cobra.Command{
 	Args:  utils.DetermineArgs([]string{"groupId"}),
 
 	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+		printRequestBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printRequestBody {
+			requestModel := models.Groupmembersupdate{}
+			utils.Render(requestModel.String())
+			return
+		}
+
 		groupId, args := args[0], args[1:]
 		path := strings.Replace(getMembersOperation.Path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
 
@@ -57,13 +63,8 @@ var AddCmd = &cobra.Command{
 
 		inputData := utils.ResolveInputData(cmd)
 
-		// convert inputData to []byte for unmarshalling
-		buffer := &bytes.Buffer{}
-		gob.NewEncoder(buffer).Encode(inputData)
-		byteSlice := buffer.Bytes()
-
 		body := &addGroupMembersBody{}
-		err := json.Unmarshal([]byte(byteSlice), body)
+		err := json.Unmarshal([]byte(inputData[0]), body)
 		if err != nil {
 			logger.Fatal(err)
 		}

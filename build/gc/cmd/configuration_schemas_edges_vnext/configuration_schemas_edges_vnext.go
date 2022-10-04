@@ -171,6 +171,15 @@ var getcategoryschemasCmd = &cobra.Command{
 			logger.Fatal(err)
 		}
 
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
 		utils.Render(results)
 	},
 }
@@ -225,6 +234,15 @@ var getjsonschemaCmd = &cobra.Command{
 				}
 			}
 			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
 		}
 
 		utils.Render(results)
@@ -291,6 +309,15 @@ var getschemametadataCmd = &cobra.Command{
 			logger.Fatal(err)
 		}
 
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
 		utils.Render(results)
 	},
 }
@@ -351,6 +378,15 @@ var listcategoryschemasCmd = &cobra.Command{
 			logger.Fatal(err)
 		}
 
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
 		utils.Render(results)
 	},
 }
@@ -407,6 +443,15 @@ var listschemacategoriesCmd = &cobra.Command{
 				}
 			}
 			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
 		}
 
 		utils.Render(results)

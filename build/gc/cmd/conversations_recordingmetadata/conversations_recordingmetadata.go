@@ -112,6 +112,15 @@ var conversationmetadataCmd = &cobra.Command{
 			logger.Fatal(err)
 		}
 
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
 		utils.Render(results)
 	},
 }
@@ -164,6 +173,15 @@ var recordingmetadataCmd = &cobra.Command{
 				}
 			}
 			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
 		}
 
 		utils.Render(results)

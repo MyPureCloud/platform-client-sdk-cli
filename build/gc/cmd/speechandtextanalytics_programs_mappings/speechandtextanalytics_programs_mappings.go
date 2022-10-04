@@ -136,6 +136,15 @@ var getCmd = &cobra.Command{
 			logger.Fatal(err)
 		}
 
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
 		utils.Render(results)
 	},
 }
@@ -194,6 +203,15 @@ var listCmd = &cobra.Command{
 			logger.Fatal(err)
 		}
 
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
 		utils.Render(results)
 	},
 }
@@ -247,6 +265,15 @@ var updateCmd = &cobra.Command{
 				}
 			}
 			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
 		}
 
 		utils.Render(results)

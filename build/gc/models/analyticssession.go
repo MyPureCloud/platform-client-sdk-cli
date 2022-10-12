@@ -239,6 +239,12 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Analyticssession
@@ -295,6 +301,10 @@ type Analyticssession struct {
     BargedParticipantId string `json:"bargedParticipantId"`
 
 
+    // Bcc - Blind carbon copy email address(es)
+    Bcc []string `json:"bcc"`
+
+
     // CallbackNumbers - Callback phone number(s)
     CallbackNumbers []string `json:"callbackNumbers"`
 
@@ -305,6 +315,10 @@ type Analyticssession struct {
 
     // CallbackUserName - The name of the user requesting a call back
     CallbackUserName string `json:"callbackUserName"`
+
+
+    // Cc - Carbon copy email address(es)
+    Cc []string `json:"cc"`
 
 
     // CoachedParticipantId - The participantId being coached (if someone (e.g. an agent) is being coached, this would correspond to one of the other participantIds present in the conversation)
@@ -563,9 +577,11 @@ func (o *Analyticssession) String() string {
     
     
     
+     o.Bcc = []string{""} 
      o.CallbackNumbers = []string{""} 
     
     
+     o.Cc = []string{""} 
     
     
     
@@ -669,11 +685,15 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         
         BargedParticipantId string `json:"bargedParticipantId"`
         
+        Bcc []string `json:"bcc"`
+        
         CallbackNumbers []string `json:"callbackNumbers"`
         
         CallbackScheduledTime time.Time `json:"callbackScheduledTime"`
         
         CallbackUserName string `json:"callbackUserName"`
+        
+        Cc []string `json:"cc"`
         
         CoachedParticipantId string `json:"coachedParticipantId"`
         
@@ -839,6 +859,11 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
 
         
+        Bcc: []string{""},
+        
+
+
+        
         CallbackNumbers: []string{""},
         
 
@@ -846,6 +871,11 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Cc: []string{""},
         
 
 

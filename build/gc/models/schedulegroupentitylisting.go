@@ -64,16 +64,16 @@ type Schedulegroupentitylisting struct {
     FirstUri string `json:"firstUri"`
 
 
+    // NextUri
+    NextUri string `json:"nextUri"`
+
+
     // LastUri
     LastUri string `json:"lastUri"`
 
 
     // SelfUri
     SelfUri string `json:"selfUri"`
-
-
-    // NextUri
-    NextUri string `json:"nextUri"`
 
 
     // PreviousUri
@@ -124,11 +124,11 @@ func (u *Schedulegroupentitylisting) MarshalJSON() ([]byte, error) {
         
         FirstUri string `json:"firstUri"`
         
+        NextUri string `json:"nextUri"`
+        
         LastUri string `json:"lastUri"`
         
         SelfUri string `json:"selfUri"`
-        
-        NextUri string `json:"nextUri"`
         
         PreviousUri string `json:"previousUri"`
         

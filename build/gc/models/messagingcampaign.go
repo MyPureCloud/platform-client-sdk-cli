@@ -63,6 +63,9 @@ type MessagingcampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -118,6 +121,10 @@ type Messagingcampaign struct {
     MessagesPerMinute int `json:"messagesPerMinute"`
 
 
+    // RuleSets - Rule Sets to be applied while this campaign is sending messages
+    RuleSets []Domainentityref `json:"ruleSets"`
+
+
     // ContactListFilters - The contact list filter to check before sending a message for this messaging campaign.
     ContactListFilters []Domainentityref `json:"contactListFilters"`
 
@@ -150,6 +157,7 @@ func (o *Messagingcampaign) String() string {
     
      o.ContactSorts = []Contactsort{{}} 
     
+     o.RuleSets = []Domainentityref{{}} 
      o.ContactListFilters = []Domainentityref{{}} 
      o.Errors = []Resterrordetail{{}} 
     
@@ -190,6 +198,8 @@ func (u *Messagingcampaign) MarshalJSON() ([]byte, error) {
         ContactSorts []Contactsort `json:"contactSorts"`
         
         MessagesPerMinute int `json:"messagesPerMinute"`
+        
+        RuleSets []Domainentityref `json:"ruleSets"`
         
         ContactListFilters []Domainentityref `json:"contactListFilters"`
         
@@ -241,6 +251,11 @@ func (u *Messagingcampaign) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        RuleSets: []Domainentityref{{}},
         
 
 

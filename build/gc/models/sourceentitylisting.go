@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    WebdeploymententitylistingMarshalled = false
+    SourceentitylistingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type WebdeploymententitylistingDud struct { 
+type SourceentitylistingDud struct { 
     
 
 
@@ -21,14 +21,14 @@ type WebdeploymententitylistingDud struct {
 
 }
 
-// Webdeploymententitylisting
-type Webdeploymententitylisting struct { 
+// Sourceentitylisting
+type Sourceentitylisting struct { 
     // Total
     Total int `json:"total"`
 
 
     // Entities
-    Entities []Webdeployment `json:"entities"`
+    Entities []Source `json:"entities"`
 
 
     // SelfUri
@@ -37,9 +37,9 @@ type Webdeploymententitylisting struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Webdeploymententitylisting) String() string {
+func (o *Sourceentitylisting) String() string {
     
-     o.Entities = []Webdeployment{{}} 
+     o.Entities = []Source{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -48,19 +48,19 @@ func (o *Webdeploymententitylisting) String() string {
     return str
 }
 
-func (u *Webdeploymententitylisting) MarshalJSON() ([]byte, error) {
-    type Alias Webdeploymententitylisting
+func (u *Sourceentitylisting) MarshalJSON() ([]byte, error) {
+    type Alias Sourceentitylisting
 
-    if WebdeploymententitylistingMarshalled {
+    if SourceentitylistingMarshalled {
         return []byte("{}"), nil
     }
-    WebdeploymententitylistingMarshalled = true
+    SourceentitylistingMarshalled = true
 
     return json.Marshal(&struct {
         
         Total int `json:"total"`
         
-        Entities []Webdeployment `json:"entities"`
+        Entities []Source `json:"entities"`
         
         SelfUri string `json:"selfUri"`
         *Alias
@@ -70,7 +70,7 @@ func (u *Webdeploymententitylisting) MarshalJSON() ([]byte, error) {
 
 
         
-        Entities: []Webdeployment{{}},
+        Entities: []Source{{}},
         
 
 

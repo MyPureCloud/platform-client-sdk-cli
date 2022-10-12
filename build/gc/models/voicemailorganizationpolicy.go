@@ -36,6 +36,9 @@ type VoicemailorganizationpolicyDud struct {
     
 
 
+    
+
+
     ModifiedDate time.Time `json:"modifiedDate"`
 
 }
@@ -69,6 +72,10 @@ type Voicemailorganizationpolicy struct {
     SendEmailNotifications bool `json:"sendEmailNotifications"`
 
 
+    // IncludeEmailTranscriptions - Whether to include the voicemail transcription in the notification email
+    IncludeEmailTranscriptions bool `json:"includeEmailTranscriptions"`
+
+
     // DisableEmailPii - Removes any PII from emails. This overrides any analogous group configuration value. This is always true if HIPAA is enabled or unknown for an organization.
     DisableEmailPii bool `json:"disableEmailPii"`
 
@@ -79,6 +86,7 @@ type Voicemailorganizationpolicy struct {
 
 // String returns a JSON representation of the model
 func (o *Voicemailorganizationpolicy) String() string {
+    
     
     
     
@@ -115,9 +123,14 @@ func (u *Voicemailorganizationpolicy) MarshalJSON() ([]byte, error) {
         
         SendEmailNotifications bool `json:"sendEmailNotifications"`
         
+        IncludeEmailTranscriptions bool `json:"includeEmailTranscriptions"`
+        
         DisableEmailPii bool `json:"disableEmailPii"`
         *Alias
     }{
+
+        
+
 
         
 

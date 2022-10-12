@@ -31,6 +31,18 @@ type KnowledgedocumentsearchrequestDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Knowledgedocumentsearchrequest
@@ -59,10 +71,30 @@ type Knowledgedocumentsearchrequest struct {
     // IncludeDraftDocuments - Indicates whether the search results would also include draft documents.
     IncludeDraftDocuments bool `json:"includeDraftDocuments"`
 
+
+    // Interval - Retrieves the documents created/modified/published in specified date and time range.
+    Interval Documentqueryinterval `json:"interval"`
+
+
+    // Filter - Filter for the document search.
+    Filter Documentquery `json:"filter"`
+
+
+    // SortOrder - The sort order for search results.
+    SortOrder string `json:"sortOrder"`
+
+
+    // SortBy - The field in the documents that you want to sort the search results by.
+    SortBy string `json:"sortBy"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentsearchrequest) String() string {
+    
+    
+    
+    
     
     
     
@@ -91,8 +123,28 @@ func (u *Knowledgedocumentsearchrequest) MarshalJSON() ([]byte, error) {
         PageNumber int `json:"pageNumber"`
         
         IncludeDraftDocuments bool `json:"includeDraftDocuments"`
+        
+        Interval Documentqueryinterval `json:"interval"`
+        
+        Filter Documentquery `json:"filter"`
+        
+        SortOrder string `json:"sortOrder"`
+        
+        SortBy string `json:"sortBy"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

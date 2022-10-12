@@ -33,7 +33,7 @@ func Cmdknowledge_guest_sessions_documents_search_suggestions() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/KnowledgeDocumentSuggestionRequest"
+        "$ref" : "#/components/schemas/KnowledgeGuestDocumentSuggestionRequest"
       }
     }
   },
@@ -66,7 +66,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Knowledgedocumentsuggestionrequest{}
+			reqModel := models.Knowledgeguestdocumentsuggestionrequest{}
 			utils.Render(reqModel.String())
 			
 			return

@@ -76,6 +76,10 @@ type Cobrowsesession struct {
     State string `json:"state"`
 
 
+    // InitialState - The initial connection state of this communication.
+    InitialState string `json:"initialState"`
+
+
     // Id - A globally unique identifier for this communication.
     Id string `json:"id"`
 
@@ -143,14 +147,11 @@ type Cobrowsesession struct {
     // AfterCallWorkRequired - Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
     AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
 
-
-    // InitialState - The initial connection state of this communication.
-    InitialState string `json:"initialState"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Cobrowsesession) String() string {
+    
     
     
     
@@ -166,7 +167,6 @@ func (o *Cobrowsesession) String() string {
     
     
      o.Segments = []Segment{{}} 
-    
     
     
     
@@ -188,6 +188,8 @@ func (u *Cobrowsesession) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         State string `json:"state"`
+        
+        InitialState string `json:"initialState"`
         
         Id string `json:"id"`
         
@@ -222,10 +224,11 @@ func (u *Cobrowsesession) MarshalJSON() ([]byte, error) {
         AfterCallWork Aftercallwork `json:"afterCallWork"`
         
         AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
-        
-        InitialState string `json:"initialState"`
         *Alias
     }{
+
+        
+
 
         
 
@@ -273,9 +276,6 @@ func (u *Cobrowsesession) MarshalJSON() ([]byte, error) {
 
         
         Segments: []Segment{{}},
-        
-
-
         
 
 

@@ -109,6 +109,10 @@ type Callbasic struct {
     State string `json:"state"`
 
 
+    // InitialState - The initial connection state of this communication.
+    InitialState string `json:"initialState"`
+
+
     // Id - A globally unique identifier for this communication.
     Id string `json:"id"`
 
@@ -220,14 +224,11 @@ type Callbasic struct {
     // AgentAssistantId - UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
     AgentAssistantId string `json:"agentAssistantId"`
 
-
-    // InitialState - The initial connection state of this communication.
-    InitialState string `json:"initialState"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Callbasic) String() string {
+    
     
     
     
@@ -257,7 +258,6 @@ func (o *Callbasic) String() string {
     
     
     
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -276,6 +276,8 @@ func (u *Callbasic) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         State string `json:"state"`
+        
+        InitialState string `json:"initialState"`
         
         Id string `json:"id"`
         
@@ -332,10 +334,11 @@ func (u *Callbasic) MarshalJSON() ([]byte, error) {
         AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
         
         AgentAssistantId string `json:"agentAssistantId"`
-        
-        InitialState string `json:"initialState"`
         *Alias
     }{
+
+        
+
 
         
 
@@ -392,9 +395,6 @@ func (u *Callbasic) MarshalJSON() ([]byte, error) {
 
         
         DisconnectReasons: []Disconnectreason{{}},
-        
-
-
         
 
 

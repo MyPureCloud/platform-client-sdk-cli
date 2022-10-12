@@ -56,6 +56,18 @@ type AuditlogmessageDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Auditlogmessage
@@ -112,12 +124,28 @@ type Auditlogmessage struct {
     Status string `json:"status"`
 
 
+    // Application - Name of the application used to perform the audit's action
+    Application string `json:"application"`
+
+
+    // InitiatingAction - Id and action of the audit initiating the transaction
+    InitiatingAction Initiatingaction `json:"initiatingAction"`
+
+
+    // TransactionInitiator - Whether the current audit is the initiator of the transaction
+    TransactionInitiator bool `json:"transactionInitiator"`
+
+
     // PropertyChanges - List of properties that were changed and changes made to those properties.
     PropertyChanges []Propertychange `json:"propertyChanges"`
 
 
     // Context - Additional context for this message.
     Context map[string]string `json:"context"`
+
+
+    // EntityChanges - List of entities that were changed and changes made to those entities.
+    EntityChanges []Entitychange `json:"entityChanges"`
 
 }
 
@@ -136,8 +164,12 @@ func (o *Auditlogmessage) String() string {
     
     
     
+    
+    
+    
      o.PropertyChanges = []Propertychange{{}} 
      o.Context = map[string]string{"": ""} 
+     o.EntityChanges = []Entitychange{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -181,9 +213,17 @@ func (u *Auditlogmessage) MarshalJSON() ([]byte, error) {
         
         Status string `json:"status"`
         
+        Application string `json:"application"`
+        
+        InitiatingAction Initiatingaction `json:"initiatingAction"`
+        
+        TransactionInitiator bool `json:"transactionInitiator"`
+        
         PropertyChanges []Propertychange `json:"propertyChanges"`
         
         Context map[string]string `json:"context"`
+        
+        EntityChanges []Entitychange `json:"entityChanges"`
         *Alias
     }{
 
@@ -229,12 +269,26 @@ func (u *Auditlogmessage) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
+
+
+        
+
+
+        
         PropertyChanges: []Propertychange{{}},
         
 
 
         
         Context: map[string]string{"": ""},
+        
+
+
+        
+        EntityChanges: []Entitychange{{}},
         
 
         Alias: (*Alias)(u),

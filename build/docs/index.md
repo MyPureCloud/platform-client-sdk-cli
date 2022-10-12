@@ -421,6 +421,39 @@ So to get a list of users and transform the output to `CSV` format, run the foll
 gc users list -a --transform=./tmpl.gotmpl
 ```
 
+
+## List Filtering
+
+The `filtercondition` flag allows you to filter the output of a list command to include only objects that match a given condition. For example, if you wish to list only users with the name Foo Bar, you could run the following command:
+
+```bash
+gc users list --autopaginate --filtercondition="name==Foo Bar"
+```
+
+To filter based on a nested attribute, separate each key with a full stop. 
+
+```bash
+gc users list --autopaginate --filtercondition="division.name==Home"
+```
+
+Other examples:
+
+* Integers: 
+  * `gc outbound dnclists list --autopaginate --filtercondition="version==5"`
+  * `gc outbound dnclists list --autopaginate --filtercondition="version<5"`
+* Booleans:
+  * `gc routing queues list --filtercondition="autoAnswerOnly==true"`
+* String/Array contains:
+  * `gc users list --autopaginate --filtercondition="name contains Foo"`
+  * `gc outbound contactlists list --autopaginate --filtercondition="columnNames contains Cell"`
+* Regex (the expression to the right of the match operator is passed directly to the Match function is the regexp package. See the documentation for this function [here](https://pkg.go.dev/regexp#Match)):
+  * `gc users list --autopaginate --filtercondition="name match ^Foo (.{3})$"`
+
+A few things to note: 
+* AND/OR operators are not yet supported. 
+* When no matching records are found, the string value "null" is returned. 
+* This feature is available as of version 49.2.0
+
 ## Additional Resources
 
 1. Experimental CLI feature: Alternative Formats: [Introducing Alternative Formats - blog post](https://developer.genesys.cloud/blog/2021-08-31-new-experimental-cli-feature-alternative-formats/).

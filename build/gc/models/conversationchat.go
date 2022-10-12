@@ -82,6 +82,10 @@ type Conversationchat struct {
     State string `json:"state"`
 
 
+    // InitialState - The initial connection state of this communication.
+    InitialState string `json:"initialState"`
+
+
     // Id - A globally unique identifier for this communication.
     Id string `json:"id"`
 
@@ -157,10 +161,6 @@ type Conversationchat struct {
     // AfterCallWorkRequired - Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
     AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
 
-
-    // InitialState - The initial connection state of this communication.
-    InitialState string `json:"initialState"`
-
 }
 
 // String returns a JSON representation of the model
@@ -169,8 +169,8 @@ func (o *Conversationchat) String() string {
     
     
     
-     o.Segments = []Segment{{}} 
     
+     o.Segments = []Segment{{}} 
     
     
     
@@ -204,6 +204,8 @@ func (u *Conversationchat) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         State string `json:"state"`
+        
+        InitialState string `json:"initialState"`
         
         Id string `json:"id"`
         
@@ -242,8 +244,6 @@ func (u *Conversationchat) MarshalJSON() ([]byte, error) {
         AfterCallWork Aftercallwork `json:"afterCallWork"`
         
         AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
-        
-        InitialState string `json:"initialState"`
         *Alias
     }{
 
@@ -260,10 +260,10 @@ func (u *Conversationchat) MarshalJSON() ([]byte, error) {
 
 
         
-        Segments: []Segment{{}},
+
+
         
-
-
+        Segments: []Segment{{}},
         
 
 

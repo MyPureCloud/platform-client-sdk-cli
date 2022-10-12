@@ -51,6 +51,9 @@ type WebdeploymentconfigurationversionDud struct {
     
 
 
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -86,6 +89,10 @@ type Webdeploymentconfigurationversion struct {
 
 
     
+
+
+    // HeadlessMode - Headless Mode Support which Controls UI components. When enabled, native UI components will be disabled and allows for custom-built UI.
+    HeadlessMode Webdeploymentheadlessmode `json:"headlessMode"`
 
 
     // Description - The description of the configuration
@@ -158,6 +165,7 @@ type Webdeploymentconfigurationversion struct {
 func (o *Webdeploymentconfigurationversion) String() string {
     
     
+    
      o.Languages = []string{""} 
     
      o.CustomI18nLabels = []Customi18nlabels{{}} 
@@ -187,6 +195,8 @@ func (u *Webdeploymentconfigurationversion) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        HeadlessMode Webdeploymentheadlessmode `json:"headlessMode"`
+        
         Description string `json:"description"`
         
         Languages []string `json:"languages"`
@@ -210,6 +220,9 @@ func (u *Webdeploymentconfigurationversion) MarshalJSON() ([]byte, error) {
         Status string `json:"status"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -52,6 +52,12 @@ type MessagecontentDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Messagecontent - Message content element. If contentType = \"Attachment\" only one item is allowed.
@@ -111,6 +117,14 @@ type Messagecontent struct {
     // Carousel - Carousel content
     Carousel Contentcarousel `json:"carousel"`
 
+
+    // Text - Text content.
+    Text Contenttext `json:"text"`
+
+
+    // QuickReplyV2 - Quick reply V2 content.
+    QuickReplyV2 Contentquickreplyv2 `json:"quickReplyV2"`
+
 }
 
 // String returns a JSON representation of the model
@@ -124,6 +138,8 @@ func (o *Messagecontent) String() string {
     
     
      o.Reactions = []Contentreaction{{}} 
+    
+    
     
     
     
@@ -173,6 +189,10 @@ func (u *Messagecontent) MarshalJSON() ([]byte, error) {
         Card Contentcard `json:"card"`
         
         Carousel Contentcarousel `json:"carousel"`
+        
+        Text Contenttext `json:"text"`
+        
+        QuickReplyV2 Contentquickreplyv2 `json:"quickReplyV2"`
         *Alias
     }{
 
@@ -202,6 +222,12 @@ func (u *Messagecontent) MarshalJSON() ([]byte, error) {
 
         
         Reactions: []Contentreaction{{}},
+        
+
+
+        
+
+
         
 
 

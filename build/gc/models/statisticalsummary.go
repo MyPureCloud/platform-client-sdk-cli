@@ -43,6 +43,12 @@ type StatisticalsummaryDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Statisticalsummary
@@ -90,10 +96,20 @@ type Statisticalsummary struct {
     // Target
     Target float32 `json:"target"`
 
+
+    // P95
+    P95 int `json:"p95"`
+
+
+    // P99
+    P99 int `json:"p99"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Statisticalsummary) String() string {
+    
+    
     
     
     
@@ -143,8 +159,18 @@ func (u *Statisticalsummary) MarshalJSON() ([]byte, error) {
         Denominator float32 `json:"denominator"`
         
         Target float32 `json:"target"`
+        
+        P95 int `json:"p95"`
+        
+        P99 int `json:"p99"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

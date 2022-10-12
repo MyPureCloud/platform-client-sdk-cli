@@ -6,12 +6,21 @@ import (
 )
 
 var (
-    IntegrationconfigurationcredentialMarshalled = false
+    SourceMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type IntegrationconfigurationcredentialDud struct { 
+type SourceDud struct { 
     Id string `json:"id"`
+
+
+    
+
+
+    
+
+
+    
 
 
     
@@ -21,13 +30,25 @@ type IntegrationconfigurationcredentialDud struct {
 
 }
 
-// Integrationconfigurationcredential - Configuration credential for the integration
-type Integrationconfigurationcredential struct { 
+// Source
+type Source struct { 
     
 
 
-    // Name
+    // Name - The name of the source
     Name string `json:"name"`
+
+
+    // Description - The description of the source
+    Description string `json:"description"`
+
+
+    // VarType - The type of source
+    VarType string `json:"type"`
+
+
+    // Deactivated
+    Deactivated bool `json:"deactivated"`
 
 
     
@@ -35,7 +56,10 @@ type Integrationconfigurationcredential struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Integrationconfigurationcredential) String() string {
+func (o *Source) String() string {
+    
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -44,19 +68,34 @@ func (o *Integrationconfigurationcredential) String() string {
     return str
 }
 
-func (u *Integrationconfigurationcredential) MarshalJSON() ([]byte, error) {
-    type Alias Integrationconfigurationcredential
+func (u *Source) MarshalJSON() ([]byte, error) {
+    type Alias Source
 
-    if IntegrationconfigurationcredentialMarshalled {
+    if SourceMarshalled {
         return []byte("{}"), nil
     }
-    IntegrationconfigurationcredentialMarshalled = true
+    SourceMarshalled = true
 
     return json.Marshal(&struct {
         
         Name string `json:"name"`
+        
+        Description string `json:"description"`
+        
+        VarType string `json:"type"`
+        
+        Deactivated bool `json:"deactivated"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

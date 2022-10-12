@@ -37,6 +37,12 @@ type ConversationmessagecontentDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Conversationmessagecontent - Message content element. If contentType = \"Attachment\" only one item is allowed.
@@ -76,10 +82,20 @@ type Conversationmessagecontent struct {
     // Carousel - Carousel content
     Carousel Conversationcontentcarousel `json:"carousel"`
 
+
+    // Text - Text content.
+    Text Conversationcontenttext `json:"text"`
+
+
+    // QuickReplyV2 - Quick reply V2 content.
+    QuickReplyV2 Conversationcontentquickreplyv2 `json:"quickReplyV2"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationmessagecontent) String() string {
+    
+    
     
     
     
@@ -123,8 +139,18 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
         Card Conversationcontentcard `json:"card"`
         
         Carousel Conversationcontentcarousel `json:"carousel"`
+        
+        Text Conversationcontenttext `json:"text"`
+        
+        QuickReplyV2 Conversationcontentquickreplyv2 `json:"quickReplyV2"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

@@ -50,6 +50,9 @@ type InboundrouteDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -99,12 +102,16 @@ type Inboundroute struct {
     ReplyEmailAddress *Queueemailaddress `json:"replyEmailAddress"`
 
 
-    // AutoBcc - The recipients that should be  automatically blind copied on outbound emails associated with this InboundRoute.
+    // AutoBcc - The recipients that should be automatically blind copied on outbound emails associated with this InboundRoute.
     AutoBcc []Emailaddress `json:"autoBcc"`
 
 
     // SpamFlow - The flow to use for processing inbound emails that have been marked as spam.
     SpamFlow Domainentityref `json:"spamFlow"`
+
+
+    // Signature - The configuration for the canned response signature that will be appended to outbound emails sent via this route
+    Signature Signature `json:"signature"`
 
 
     
@@ -124,6 +131,7 @@ func (o *Inboundroute) String() string {
     
     
      o.AutoBcc = []Emailaddress{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -165,6 +173,8 @@ func (u *Inboundroute) MarshalJSON() ([]byte, error) {
         AutoBcc []Emailaddress `json:"autoBcc"`
         
         SpamFlow Domainentityref `json:"spamFlow"`
+        
+        Signature Signature `json:"signature"`
         *Alias
     }{
 
@@ -205,6 +215,9 @@ func (u *Inboundroute) MarshalJSON() ([]byte, error) {
 
         
         AutoBcc: []Emailaddress{{}},
+        
+
+
         
 
 

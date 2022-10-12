@@ -20,12 +20,18 @@ type WebmessagingrecipientDud struct {
     Nickname string `json:"nickname"`
 
 
+    Image string `json:"image"`
+
+
     AdditionalIds []Recipientadditionalidentifier `json:"additionalIds"`
 
 }
 
 // Webmessagingrecipient - Information about the recipient the message is sent to or received from.
 type Webmessagingrecipient struct { 
+    
+
+
     
 
 
@@ -59,6 +65,9 @@ func (u *Webmessagingrecipient) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

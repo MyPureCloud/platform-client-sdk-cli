@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdconversations_messages_messages_bulk() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "useNormalizedMessage", "false", "If true, response removes deprecated fields (textBody, media, stickers)")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/messages/{conversationId}/messages/bulk", utils.FormatPermissions([]string{ "conversation:message:view", "conversation:webmessaging:view",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/messages/{conversationId}/messages/bulk")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "messageIds",
@@ -82,6 +83,10 @@ var createCmd = &cobra.Command{
 		conversationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 
+		useNormalizedMessage := utils.GetFlag(cmd.Flags(), "bool", "useNormalizedMessage")
+		if useNormalizedMessage != "" {
+			queryParams["useNormalizedMessage"] = useNormalizedMessage
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

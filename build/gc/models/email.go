@@ -94,6 +94,10 @@ type Email struct {
     State string `json:"state"`
 
 
+    // InitialState - The initial connection state of this communication.
+    InitialState string `json:"initialState"`
+
+
     // Id - A globally unique identifier for this communication.
     Id string `json:"id"`
 
@@ -185,14 +189,11 @@ type Email struct {
     // AfterCallWorkRequired - Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
     AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
 
-
-    // InitialState - The initial connection state of this communication.
-    InitialState string `json:"initialState"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Email) String() string {
+    
     
     
     
@@ -217,7 +218,6 @@ func (o *Email) String() string {
     
     
     
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -236,6 +236,8 @@ func (u *Email) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         State string `json:"state"`
+        
+        InitialState string `json:"initialState"`
         
         Id string `json:"id"`
         
@@ -282,10 +284,11 @@ func (u *Email) MarshalJSON() ([]byte, error) {
         AfterCallWork Aftercallwork `json:"afterCallWork"`
         
         AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
-        
-        InitialState string `json:"initialState"`
         *Alias
     }{
+
+        
+
 
         
 
@@ -348,9 +351,6 @@ func (u *Email) MarshalJSON() ([]byte, error) {
 
         
         DraftAttachments: []Attachment{{}},
-        
-
-
         
 
 

@@ -16,6 +16,9 @@ type EmailcolumnDud struct {
 
     
 
+
+    
+
 }
 
 // Emailcolumn
@@ -27,10 +30,15 @@ type Emailcolumn struct {
     // VarType - Indicates the type of the email column. For example, 'work' or 'personal'.
     VarType string `json:"type"`
 
+
+    // ContactableTimeColumn - A column that indicates the timezone to use for a given contact when checking contactable times.
+    ContactableTimeColumn string `json:"contactableTimeColumn"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Emailcolumn) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Emailcolumn) MarshalJSON() ([]byte, error) {
         ColumnName string `json:"columnName"`
         
         VarType string `json:"type"`
+        
+        ContactableTimeColumn string `json:"contactableTimeColumn"`
         *Alias
     }{
+
+        
+
 
         
 

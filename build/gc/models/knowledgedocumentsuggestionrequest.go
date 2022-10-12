@@ -19,6 +19,12 @@ type KnowledgedocumentsuggestionrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Knowledgedocumentsuggestionrequest
@@ -34,10 +40,20 @@ type Knowledgedocumentsuggestionrequest struct {
     // IncludeDraftDocuments - Indicates whether the suggestion results would also include draft documents.
     IncludeDraftDocuments bool `json:"includeDraftDocuments"`
 
+
+    // Interval - Retrieves the documents created/modified/published in specified date and time range.
+    Interval Documentqueryinterval `json:"interval"`
+
+
+    // Filter - Filter for the document suggestions.
+    Filter Documentquery `json:"filter"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentsuggestionrequest) String() string {
+    
+    
     
     
     
@@ -63,8 +79,18 @@ func (u *Knowledgedocumentsuggestionrequest) MarshalJSON() ([]byte, error) {
         PageSize int `json:"pageSize"`
         
         IncludeDraftDocuments bool `json:"includeDraftDocuments"`
+        
+        Interval Documentqueryinterval `json:"interval"`
+        
+        Filter Documentquery `json:"filter"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

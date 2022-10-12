@@ -165,6 +165,7 @@ gc/cmd/conversations_cobrowsesessions_participants_wrapupcodes/conversations_cob
 gc/cmd/conversations_cobrowsesessions_recordingstate/conversations_cobrowsesessions_recordingstate.go
 gc/cmd/conversations_disconnect/conversations_disconnect.go
 gc/cmd/conversations_emails/conversations_emails.go
+gc/cmd/conversations_emails_agentless/conversations_emails_agentless.go
 gc/cmd/conversations_emails_inboundmessages/conversations_emails_inboundmessages.go
 gc/cmd/conversations_emails_messages/conversations_emails_messages.go
 gc/cmd/conversations_emails_messages_draft/conversations_emails_messages_draft.go
@@ -230,11 +231,16 @@ gc/cmd/dataextensions_limits/dataextensions_limits.go
 gc/cmd/date/date.go
 gc/cmd/documentationfile_gkn_search/documentationfile_gkn_search.go
 gc/cmd/documentationfile_search/documentationfile_search.go
+gc/cmd/downloads/downloads.go
 gc/cmd/employeeperformance_externalmetrics_data/employeeperformance_externalmetrics_data.go
 gc/cmd/employeeperformance_externalmetrics_definitions/employeeperformance_externalmetrics_definitions.go
+gc/cmd/events_conversations/events_conversations.go
+gc/cmd/events_users_presence/events_users_presence.go
+gc/cmd/events_users_routingstatus/events_users_routingstatus.go
 gc/cmd/externalcontacts_bulk_contacts/externalcontacts_bulk_contacts.go
 gc/cmd/externalcontacts_bulk_contacts_add/externalcontacts_bulk_contacts_add.go
 gc/cmd/externalcontacts_bulk_contacts_remove/externalcontacts_bulk_contacts_remove.go
+gc/cmd/externalcontacts_bulk_contacts_unresolved/externalcontacts_bulk_contacts_unresolved.go
 gc/cmd/externalcontacts_bulk_contacts_update/externalcontacts_bulk_contacts_update.go
 gc/cmd/externalcontacts_bulk_notes/externalcontacts_bulk_notes.go
 gc/cmd/externalcontacts_bulk_notes_add/externalcontacts_bulk_notes_add.go
@@ -249,10 +255,15 @@ gc/cmd/externalcontacts_bulk_relationships_add/externalcontacts_bulk_relationshi
 gc/cmd/externalcontacts_bulk_relationships_remove/externalcontacts_bulk_relationships_remove.go
 gc/cmd/externalcontacts_bulk_relationships_update/externalcontacts_bulk_relationships_update.go
 gc/cmd/externalcontacts_contacts/externalcontacts_contacts.go
+gc/cmd/externalcontacts_contacts_identifiers/externalcontacts_contacts_identifiers.go
 gc/cmd/externalcontacts_contacts_notes/externalcontacts_contacts_notes.go
+gc/cmd/externalcontacts_contacts_promotion/externalcontacts_contacts_promotion.go
 gc/cmd/externalcontacts_contacts_schemas/externalcontacts_contacts_schemas.go
 gc/cmd/externalcontacts_contacts_schemas_versions/externalcontacts_contacts_schemas_versions.go
+gc/cmd/externalcontacts_contacts_unresolved/externalcontacts_contacts_unresolved.go
 gc/cmd/externalcontacts_conversations/externalcontacts_conversations.go
+gc/cmd/externalcontacts_identifierlookup/externalcontacts_identifierlookup.go
+gc/cmd/externalcontacts_merge_contacts/externalcontacts_merge_contacts.go
 gc/cmd/externalcontacts_organizations/externalcontacts_organizations.go
 gc/cmd/externalcontacts_organizations_contacts/externalcontacts_organizations_contacts.go
 gc/cmd/externalcontacts_organizations_notes/externalcontacts_organizations_notes.go
@@ -543,6 +554,8 @@ gc/cmd/outbound_schedules_sequences/outbound_schedules_sequences.go
 gc/cmd/outbound_sequences/outbound_sequences.go
 gc/cmd/outbound_settings/outbound_settings.go
 gc/cmd/outbound_wrapupcodemappings/outbound_wrapupcodemappings.go
+gc/cmd/presence_sources/presence_sources.go
+gc/cmd/presence_users_primarysource/presence_users_primarysource.go
 gc/cmd/presencedefinitions/presencedefinitions.go
 gc/cmd/processautomation_triggers/processautomation_triggers.go
 gc/cmd/processautomation_triggers_testfile/processautomation_triggers_testfile.go
@@ -608,6 +621,10 @@ gc/cmd/routing_email_domains/routing_email_domains.go
 gc/cmd/routing_email_domains_routes/routing_email_domains_routes.go
 gc/cmd/routing_email_domains_testconnection/routing_email_domains_testconnection.go
 gc/cmd/routing_email_domains_validate/routing_email_domains_validate.go
+gc/cmd/routing_email_outbound_domains/routing_email_outbound_domains.go
+gc/cmd/routing_email_outbound_domains_activation/routing_email_outbound_domains_activation.go
+gc/cmd/routing_email_outbound_domains_search/routing_email_outbound_domains_search.go
+gc/cmd/routing_email_outbound_domains_simulated/routing_email_outbound_domains_simulated.go
 gc/cmd/routing_email_setup/routing_email_setup.go
 gc/cmd/routing_languages/routing_languages.go
 gc/cmd/routing_message_recipients/routing_message_recipients.go
@@ -945,6 +962,8 @@ gc/models/agent.go
 gc/models/agentactivity.go
 gc/models/agentactivityentitylisting.go
 gc/models/agentevaluatoractivity.go
+gc/models/agentlessemailsendrequestdto.go
+gc/models/agentlessemailsendresponsedto.go
 gc/models/agentmanagementunitreference.go
 gc/models/agentmaxutilization.go
 gc/models/agentownedmappingpreview.go
@@ -1032,6 +1051,8 @@ gc/models/attribute.go
 gc/models/attributefilteritem.go
 gc/models/atzmtimeslot.go
 gc/models/atzmtimeslotwithtimezone.go
+gc/models/audiostate.go
+gc/models/audioupdatedevent.go
 gc/models/auditchange.go
 gc/models/auditentity.go
 gc/models/auditentityreference.go
@@ -1075,11 +1096,15 @@ gc/models/availabletranslations.go
 gc/models/basemediasettings.go
 gc/models/baseprogramentity.go
 gc/models/basetopicentitiy.go
+gc/models/batchconversationeventrequest.go
 gc/models/batchdownloadjobresult.go
 gc/models/batchdownloadjobstatusresult.go
 gc/models/batchdownloadjobsubmission.go
 gc/models/batchdownloadjobsubmissionresult.go
 gc/models/batchdownloadrequest.go
+gc/models/batcheventresponse.go
+gc/models/batchuserpresenceeventrequest.go
+gc/models/batchuserroutingstatuseventrequest.go
 gc/models/benefitassessment.go
 gc/models/benefitassessmentjob.go
 gc/models/billingusage.go
@@ -1336,6 +1361,9 @@ gc/models/commoncampaign.go
 gc/models/commoncampaigndivisionview.go
 gc/models/commoncampaigndivisionviewentitylisting.go
 gc/models/commoncampaignentitylisting.go
+gc/models/communicationansweredevent.go
+gc/models/communicationdispositionappliedevent.go
+gc/models/communicationendedevent.go
 gc/models/comparisonperiod.go
 gc/models/comparisonperiodlisting.go
 gc/models/condition.go
@@ -1348,6 +1376,7 @@ gc/models/connecteduser.go
 gc/models/connectrate.go
 gc/models/constraintconflictmessage.go
 gc/models/consulttransfer.go
+gc/models/consulttransferevent.go
 gc/models/consulttransferresponse.go
 gc/models/consulttransferupdate.go
 gc/models/consumedresourcesentitylisting.go
@@ -1363,6 +1392,7 @@ gc/models/contactcentersettings.go
 gc/models/contactcolumnconditionsettings.go
 gc/models/contactcolumntimezone.go
 gc/models/contactcolumntodataactionfieldmapping.go
+gc/models/contactidentifier.go
 gc/models/contactlist.go
 gc/models/contactlistdivisionview.go
 gc/models/contactlistdivisionviewlisting.go
@@ -1395,10 +1425,12 @@ gc/models/contentpositionproperties.go
 gc/models/contentpostback.go
 gc/models/contentqueryrequest.go
 gc/models/contentquickreply.go
+gc/models/contentquickreplyv2.go
 gc/models/contentreaction.go
 gc/models/contentsetting.go
 gc/models/contentsortitem.go
 gc/models/contentstory.go
+gc/models/contenttext.go
 gc/models/context.go
 gc/models/contextentity.go
 gc/models/contextintent.go
@@ -1425,7 +1457,9 @@ gc/models/conversationcontentcarousel.go
 gc/models/conversationcontentlocation.go
 gc/models/conversationcontentnotificationtemplate.go
 gc/models/conversationcontentquickreply.go
+gc/models/conversationcontentquickreplyv2.go
 gc/models/conversationcontentstory.go
+gc/models/conversationcontenttext.go
 gc/models/conversationdeletionprotectionquery.go
 gc/models/conversationdetailqueryclause.go
 gc/models/conversationdetailqueryfilter.go
@@ -1619,6 +1653,7 @@ gc/models/dnclistcreate.go
 gc/models/dnclistdivisionview.go
 gc/models/dnclistdivisionviewlisting.go
 gc/models/dnclistentitylisting.go
+gc/models/dnsrecordentry.go
 gc/models/document.go
 gc/models/documentarticle.go
 gc/models/documentationresult.go
@@ -1640,6 +1675,10 @@ gc/models/documentcontentblock.go
 gc/models/documententitylisting.go
 gc/models/documentfaq.go
 gc/models/documentlisting.go
+gc/models/documentquery.go
+gc/models/documentqueryclause.go
+gc/models/documentqueryinterval.go
+gc/models/documentquerypredicate.go
 gc/models/documentreference.go
 gc/models/documenttext.go
 gc/models/documentthumbnail.go
@@ -1731,6 +1770,7 @@ gc/models/emailmediapolicy.go
 gc/models/emailmediapolicyconditions.go
 gc/models/emailmessage.go
 gc/models/emailmessagelisting.go
+gc/models/emailoutbounddomainresult.go
 gc/models/emailsetup.go
 gc/models/emailssettings.go
 gc/models/embeddedintegration.go
@@ -1741,8 +1781,11 @@ gc/models/employerinfo.go
 gc/models/empty.go
 gc/models/encryptionkey.go
 gc/models/encryptionkeyentitylisting.go
+gc/models/endconsulttransferevent.go
 gc/models/endpoint.go
+gc/models/endtransferevent.go
 gc/models/entity.go
+gc/models/entitychange.go
 gc/models/entitylisting.go
 gc/models/entitytypecriteria.go
 gc/models/entry.go
@@ -1779,12 +1822,15 @@ gc/models/evaluatoractivity.go
 gc/models/evaluatoractivityentitylisting.go
 gc/models/eventcobrowse.go
 gc/models/eventcondition.go
+gc/models/eventerror.go
 gc/models/eventlog.go
 gc/models/eventmessage.go
 gc/models/eventpresence.go
 gc/models/eventsetting.go
 gc/models/eventtyping.go
 gc/models/executerecordingjobsquery.go
+gc/models/expandablewebdeployment.go
+gc/models/expandablewebdeploymententitylisting.go
 gc/models/expansioncriterium.go
 gc/models/expirededgelisting.go
 gc/models/exportscriptrequest.go
@@ -1797,6 +1843,7 @@ gc/models/extensionpool.go
 gc/models/extensionpoolentitylisting.go
 gc/models/externalcontact.go
 gc/models/externaldatasource.go
+gc/models/externalestablishedevent.go
 gc/models/externalmetricdataitem.go
 gc/models/externalmetricdataprocesseditem.go
 gc/models/externalmetricdataunprocesseditem.go
@@ -1943,8 +1990,10 @@ gc/models/historicalimportstatus.go
 gc/models/historicalimportstatuslisting.go
 gc/models/historyentry.go
 gc/models/historylisting.go
+gc/models/holdupdatedevent.go
 gc/models/homerrecord.go
 gc/models/humanize.go
+gc/models/identifierclaimrequest.go
 gc/models/identitynow.go
 gc/models/idleeventtrigger.go
 gc/models/ignoredactivitycategories.go
@@ -1964,12 +2013,13 @@ gc/models/inboundmessagerequest.go
 gc/models/inboundonlysetting.go
 gc/models/inboundroute.go
 gc/models/inboundrouteentitylisting.go
+gc/models/initialconfiguration.go
 gc/models/initiatescreenrecording.go
+gc/models/initiatingaction.go
 gc/models/integration.go
 gc/models/integrationaction.go
 gc/models/integrationactionfields.go
 gc/models/integrationconfiguration.go
-gc/models/integrationconfigurationcredential.go
 gc/models/integrationconfigurationinfo.go
 gc/models/integrationentitylisting.go
 gc/models/integrationexport.go
@@ -1993,6 +2043,7 @@ gc/models/items.go
 gc/models/itemvalidationlimits.go
 gc/models/ivr.go
 gc/models/ivrentitylisting.go
+gc/models/ivrestablishedevent.go
 gc/models/journey.go
 gc/models/journeyaction.go
 gc/models/journeyactionmap.go
@@ -2060,6 +2111,7 @@ gc/models/knowledgegroupstatistics.go
 gc/models/knowledgeguestdocument.go
 gc/models/knowledgeguestdocumentresponselisting.go
 gc/models/knowledgeguestdocumentsuggestion.go
+gc/models/knowledgeguestdocumentsuggestionrequest.go
 gc/models/knowledgeguestdocumentsuggestionresult.go
 gc/models/knowledgeguestdocumentvariation.go
 gc/models/knowledgeguestdocumentvariationcontext.go
@@ -2224,6 +2276,7 @@ gc/models/memberentity.go
 gc/models/membergroup.go
 gc/models/memberlisting.go
 gc/models/mergeoperation.go
+gc/models/mergerequest.go
 gc/models/message.go
 gc/models/messagecontent.go
 gc/models/messageconversation.go
@@ -2362,6 +2415,8 @@ gc/models/orphanrecording.go
 gc/models/orphanrecordinglisting.go
 gc/models/orphanupdaterequest.go
 gc/models/otherprofileassignment.go
+gc/models/outbounddomain.go
+gc/models/outbounddomainentitylisting.go
 gc/models/outboundroute.go
 gc/models/outboundroutebase.go
 gc/models/outboundroutebaseentitylisting.go
@@ -2425,12 +2480,14 @@ gc/models/phonebaseentitylisting.go
 gc/models/phonecapabilities.go
 gc/models/phonecolumn.go
 gc/models/phoneentitylisting.go
+gc/models/phoneestablishedevent.go
 gc/models/phonemetabaseentitylisting.go
 gc/models/phonenumber.go
 gc/models/phonenumbercolumn.go
 gc/models/phonenumberstatus.go
 gc/models/phonesreboot.go
 gc/models/phonestatus.go
+gc/models/phonetransferevent.go
 gc/models/phrase.go
 gc/models/phraseassociations.go
 gc/models/physicalinterfaceentitylisting.go
@@ -2479,6 +2536,8 @@ gc/models/programmappingsrequest.go
 gc/models/programrequest.go
 gc/models/programsentitylisting.go
 gc/models/programsmappingsentitylisting.go
+gc/models/progressconsulttransferevent.go
+gc/models/progresstransferevent.go
 gc/models/prompt.go
 gc/models/promptasset.go
 gc/models/promptassetcreate.go
@@ -2625,6 +2684,7 @@ gc/models/routepathresponse.go
 gc/models/routingconversationattributesrequest.go
 gc/models/routingconversationattributesresponse.go
 gc/models/routingdata.go
+gc/models/routingestablishedevent.go
 gc/models/routingrule.go
 gc/models/routingsettings.go
 gc/models/routingskill.go
@@ -2633,6 +2693,7 @@ gc/models/routingstatus.go
 gc/models/routingstatusdetailqueryclause.go
 gc/models/routingstatusdetailqueryfilter.go
 gc/models/routingstatusdetailquerypredicate.go
+gc/models/routingtransferevent.go
 gc/models/ruleset.go
 gc/models/rulesetdiagnostic.go
 gc/models/rulesetentitylisting.go
@@ -2772,6 +2833,7 @@ gc/models/shorttermforecastingsettings.go
 gc/models/shorttermforecastreference.go
 gc/models/shrinkageoverride.go
 gc/models/shrinkageoverrides.go
+gc/models/signature.go
 gc/models/signedurlresponse.go
 gc/models/singleworkdayaveragepoints.go
 gc/models/singleworkdayaveragevalues.go
@@ -2797,6 +2859,9 @@ gc/models/smsprovisioningstatus.go
 gc/models/socialexpression.go
 gc/models/socialhandle.go
 gc/models/sortitem.go
+gc/models/source.go
+gc/models/sourceconfiguration.go
+gc/models/sourceentitylisting.go
 gc/models/sourceplanninggrouprequest.go
 gc/models/speechtextanalyticssettingsrequest.go
 gc/models/speechtextanalyticssettingsresponse.go
@@ -3063,6 +3128,7 @@ gc/models/userdetailquerypredicate.go
 gc/models/userdetailsquery.go
 gc/models/userdevice.go
 gc/models/userentitylisting.go
+gc/models/userestablishedevent.go
 gc/models/userexpands.go
 gc/models/userexternalidentifier.go
 gc/models/userimage.go
@@ -3079,6 +3145,8 @@ gc/models/userobservationquerypredicate.go
 gc/models/userobservationqueryresponse.go
 gc/models/userparam.go
 gc/models/userpresence.go
+gc/models/userpresenceevent.go
+gc/models/userprimarysource.go
 gc/models/userprofile.go
 gc/models/userprofileentitylisting.go
 gc/models/userqueue.go
@@ -3090,6 +3158,7 @@ gc/models/userroutinglanguage.go
 gc/models/userroutinglanguagepost.go
 gc/models/userroutingskill.go
 gc/models/userroutingskillpost.go
+gc/models/userroutingstatusevent.go
 gc/models/userschedule.go
 gc/models/userscheduleactivity.go
 gc/models/userscheduleadherence.go
@@ -3105,6 +3174,7 @@ gc/models/userstate.go
 gc/models/userstation.go
 gc/models/userstations.go
 gc/models/usertimeoffrequestreference.go
+gc/models/usertransferevent.go
 gc/models/utilization.go
 gc/models/utterance.go
 gc/models/validateaddressrequest.go
@@ -3117,6 +3187,7 @@ gc/models/validationservicerequest.go
 gc/models/valuewrapperdate.go
 gc/models/valuewrapperplanningperiodsettings.go
 gc/models/valuewrapperstring.go
+gc/models/verificationresult.go
 gc/models/video.go
 gc/models/viewfilter.go
 gc/models/vipbackup.go
@@ -3158,7 +3229,9 @@ gc/models/webdeployment.go
 gc/models/webdeploymentactiveconfigurationondeployment.go
 gc/models/webdeploymentconfigurationversion.go
 gc/models/webdeploymentconfigurationversionentitylisting.go
-gc/models/webdeploymententitylisting.go
+gc/models/webdeploymentconfigurationversionentityref.go
+gc/models/webdeploymentconfigurationversionresponse.go
+gc/models/webdeploymentheadlessmode.go
 gc/models/webmessagingattachment.go
 gc/models/webmessagingbuttonresponse.go
 gc/models/webmessagingchannel.go

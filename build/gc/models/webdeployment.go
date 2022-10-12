@@ -27,9 +27,6 @@ type WebdeploymentDud struct {
     
 
 
-    
-
-
     Snippet string `json:"snippet"`
 
 
@@ -40,6 +37,9 @@ type WebdeploymentDud struct {
 
 
     LastModifiedUser Addressableentityref `json:"lastModifiedUser"`
+
+
+    
 
 
     
@@ -63,10 +63,6 @@ type Webdeployment struct {
 
     // Description - The description of the config
     Description string `json:"description"`
-
-
-    // Configuration - The config version this deployment uses
-    Configuration Webdeploymentconfigurationversion `json:"configuration"`
 
 
     // AllowAllDomains - Property indicates whether all domains are allowed or not. allowedDomains must be empty when this is set as true.
@@ -97,6 +93,10 @@ type Webdeployment struct {
     Status string `json:"status"`
 
 
+    // Configuration - The config version this deployment uses
+    Configuration Webdeploymentconfigurationversionentityref `json:"configuration"`
+
+
     
 
 }
@@ -106,8 +106,8 @@ func (o *Webdeployment) String() string {
     
     
     
-    
      o.AllowedDomains = []string{""} 
+    
     
     
 
@@ -131,8 +131,6 @@ func (u *Webdeployment) MarshalJSON() ([]byte, error) {
         
         Description string `json:"description"`
         
-        Configuration Webdeploymentconfigurationversion `json:"configuration"`
-        
         AllowAllDomains bool `json:"allowAllDomains"`
         
         AllowedDomains []string `json:"allowedDomains"`
@@ -140,6 +138,8 @@ func (u *Webdeployment) MarshalJSON() ([]byte, error) {
         Flow Domainentityref `json:"flow"`
         
         Status string `json:"status"`
+        
+        Configuration Webdeploymentconfigurationversionentityref `json:"configuration"`
         *Alias
     }{
 
@@ -156,10 +156,10 @@ func (u *Webdeployment) MarshalJSON() ([]byte, error) {
 
 
         
-
-
-        
         AllowedDomains: []string{""},
+        
+
+
         
 
 

@@ -94,6 +94,10 @@ var updateCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
 		const opId = "update"
 		const httpMethod = "PUT"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)

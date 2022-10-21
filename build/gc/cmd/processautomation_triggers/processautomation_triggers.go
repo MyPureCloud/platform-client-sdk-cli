@@ -80,7 +80,7 @@ func Cmdprocessautomation_triggers() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
-	utils.AddFlag(listCmd.Flags(), "string", "topicName", "", "Topic name")
+	utils.AddFlag(listCmd.Flags(), "string", "topicName", "", "Topic name(s). Separated by commas")
 	utils.AddFlag(listCmd.Flags(), "bool", "enabled", "", "Boolean indicating desired enabled state of triggers")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/processautomation/triggers", utils.FormatPermissions([]string{ "processautomation:trigger:edit", "processautomation:trigger:view",  }), utils.GenerateDevCentreLink("GET", "Process Automation", "/api/v2/processautomation/triggers")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -155,6 +155,10 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
 		const opId = "create"
 		const httpMethod = "POST"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
@@ -216,6 +220,10 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
 		const opId = "delete"
 		const httpMethod = "DELETE"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
@@ -249,8 +257,8 @@ var deleteCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [triggerId]",
-	Short: "Retrieve a single Trigger matching id.",
-	Long:  "Retrieve a single Trigger matching id.",
+	Short: "Retrieve a single Trigger matching id",
+	Long:  "Retrieve a single Trigger matching id",
 	Args:  utils.DetermineArgs([]string{ "triggerId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -275,6 +283,10 @@ var getCmd = &cobra.Command{
 				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
 		const opId = "get"
@@ -310,8 +322,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Retrieves all triggers",
-	Long:  "Retrieves all triggers",
+	Short: "Retrieves all triggers, optionally filtered by query parameters.",
+	Long:  "Retrieves all triggers, optionally filtered by query parameters.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -354,6 +366,10 @@ var listCmd = &cobra.Command{
 				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
 		const opId = "list"
@@ -418,6 +434,10 @@ var updateCmd = &cobra.Command{
 				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
 		const opId = "update"

@@ -97,6 +97,10 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
 		const opId = "get"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
@@ -182,6 +186,10 @@ var listCmd = &cobra.Command{
 				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
 		const opId = "list"

@@ -35,19 +35,17 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/locations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/mobiledevices"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presencedefinitions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scripts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/search"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/systempresences"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/teams"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/timezones"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chat"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
@@ -69,7 +67,9 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profile"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/organizations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeperformance"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gamification"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge"
@@ -80,8 +80,8 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/documentationfile"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webchat"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/oauth"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/oauth"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orgauthorization"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presence"
@@ -127,7 +127,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 50.0.0")
+		fmt.Println("Current version: 51.0.0")
 		checkForNewVersion()
 	},
 }
@@ -146,7 +146,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("50.0.0", latestVersion) {
+	if versionsAreEqual("51.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -251,19 +251,17 @@ func init() {
 	rootCmd.AddCommand(locations.Cmdlocations())
 	rootCmd.AddCommand(mobiledevices.Cmdmobiledevices())
 	rootCmd.AddCommand(orphanrecordings.Cmdorphanrecordings())
-	rootCmd.AddCommand(chat.Cmdchat())
 	rootCmd.AddCommand(presencedefinitions.Cmdpresencedefinitions())
 	rootCmd.AddCommand(scripts.Cmdscripts())
 	rootCmd.AddCommand(search.Cmdsearch())
 	rootCmd.AddCommand(stations.Cmdstations())
 	rootCmd.AddCommand(systempresences.Cmdsystempresences())
 	rootCmd.AddCommand(teams.Cmdteams())
-	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(timezones.Cmdtimezones())
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
-	rootCmd.AddCommand(gdpr.Cmdgdpr())
+	rootCmd.AddCommand(chat.Cmdchat())
 	rootCmd.AddCommand(autopagination.Cmdautopagination())
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())
@@ -285,7 +283,9 @@ func init() {
 	rootCmd.AddCommand(profile.Cmdprofile())
 	rootCmd.AddCommand(organizations.Cmdorganizations())
 	rootCmd.AddCommand(employeeperformance.Cmdemployeeperformance())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(gamification.Cmdgamification())
+	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(geolocations.Cmdgeolocations())
 	rootCmd.AddCommand(journey.Cmdjourney())
 	rootCmd.AddCommand(knowledge.Cmdknowledge())
@@ -296,8 +296,8 @@ func init() {
 	rootCmd.AddCommand(documentationfile.Cmddocumentationfile())
 	rootCmd.AddCommand(webchat.Cmdwebchat())
 	rootCmd.AddCommand(workforcemanagement.Cmdworkforcemanagement())
-	rootCmd.AddCommand(oauth.Cmdoauth())
 	rootCmd.AddCommand(notifications.Cmdnotifications())
+	rootCmd.AddCommand(oauth.Cmdoauth())
 	rootCmd.AddCommand(orgauthorization.Cmdorgauthorization())
 	rootCmd.AddCommand(routing.Cmdrouting())
 	rootCmd.AddCommand(presence.Cmdpresence())

@@ -152,6 +152,10 @@ var getcategoryschemasCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
 		const opId = "getcategoryschemas"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
@@ -215,6 +219,10 @@ var getjsonschemaCmd = &cobra.Command{
 				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
 		const opId = "getjsonschema"
@@ -290,6 +298,10 @@ var getschemametadataCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
 		const opId = "getschemametadata"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
@@ -359,6 +371,10 @@ var listcategoryschemasCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
 		const opId = "listcategoryschemas"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
@@ -424,6 +440,10 @@ var listschemacategoriesCmd = &cobra.Command{
 				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
 		const opId = "listschemacategories"

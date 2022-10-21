@@ -186,6 +186,7 @@ gc/cmd/conversations_messages/conversations_messages.go
 gc/cmd/conversations_messages_agentless/conversations_messages_agentless.go
 gc/cmd/conversations_messages_communications_messages/conversations_messages_communications_messages.go
 gc/cmd/conversations_messages_communications_messages_media/conversations_messages_communications_messages_media.go
+gc/cmd/conversations_messages_communications_typing/conversations_messages_communications_typing.go
 gc/cmd/conversations_messages_details/conversations_messages_details.go
 gc/cmd/conversations_messages_inbound_open/conversations_messages_inbound_open.go
 gc/cmd/conversations_messages_messages/conversations_messages_messages.go
@@ -256,6 +257,7 @@ gc/cmd/externalcontacts_bulk_relationships_remove/externalcontacts_bulk_relation
 gc/cmd/externalcontacts_bulk_relationships_update/externalcontacts_bulk_relationships_update.go
 gc/cmd/externalcontacts_contacts/externalcontacts_contacts.go
 gc/cmd/externalcontacts_contacts_identifiers/externalcontacts_contacts_identifiers.go
+gc/cmd/externalcontacts_contacts_journey_sessions/externalcontacts_contacts_journey_sessions.go
 gc/cmd/externalcontacts_contacts_notes/externalcontacts_contacts_notes.go
 gc/cmd/externalcontacts_contacts_promotion/externalcontacts_contacts_promotion.go
 gc/cmd/externalcontacts_contacts_schemas/externalcontacts_contacts_schemas.go
@@ -693,6 +695,7 @@ gc/cmd/stations_associateduser/stations_associateduser.go
 gc/cmd/stations_settings/stations_settings.go
 gc/cmd/systempresences/systempresences.go
 gc/cmd/teams/teams.go
+gc/cmd/teams_members/teams_members.go
 gc/cmd/teams_search/teams_search.go
 gc/cmd/telephony_providers_edges/telephony_providers_edges.go
 gc/cmd/telephony_providers_edges_addressvalidation/telephony_providers_edges_addressvalidation.go
@@ -793,6 +796,7 @@ gc/cmd/users_routingskills/users_routingskills.go
 gc/cmd/users_routingskills_bulk/users_routingskills_bulk.go
 gc/cmd/users_routingstatus/users_routingstatus.go
 gc/cmd/users_search/users_search.go
+gc/cmd/users_search_teams_assign/users_search_teams_assign.go
 gc/cmd/users_state/users_state.go
 gc/cmd/users_station/users_station.go
 gc/cmd/users_station_associatedstation/users_station_associatedstation.go
@@ -892,7 +896,9 @@ gc/cmd/workforcemanagement_managementunits_timeoffrequests/workforcemanagement_m
 gc/cmd/workforcemanagement_managementunits_timeoffrequests_query/workforcemanagement_managementunits_timeoffrequests_query.go
 gc/cmd/workforcemanagement_managementunits_timeoffrequests_waitlistpositions_query/workforcemanagement_managementunits_timeoffrequests_waitlistpositions_query.go
 gc/cmd/workforcemanagement_managementunits_users/workforcemanagement_managementunits_users.go
+gc/cmd/workforcemanagement_managementunits_users_timeoffbalance_jobs/workforcemanagement_managementunits_users_timeoffbalance_jobs.go
 gc/cmd/workforcemanagement_managementunits_users_timeoffrequests/workforcemanagement_managementunits_users_timeoffrequests.go
+gc/cmd/workforcemanagement_managementunits_users_timeoffrequests_timeoffbalance_jobs/workforcemanagement_managementunits_users_timeoffrequests_timeoffbalance_jobs.go
 gc/cmd/workforcemanagement_managementunits_users_timeoffrequests_timeofflimits/workforcemanagement_managementunits_users_timeoffrequests_timeofflimits.go
 gc/cmd/workforcemanagement_managementunits_weeks_schedules/workforcemanagement_managementunits_weeks_schedules.go
 gc/cmd/workforcemanagement_managementunits_weeks_shifttrades/workforcemanagement_managementunits_weeks_shifttrades.go
@@ -1992,6 +1998,7 @@ gc/models/historyentry.go
 gc/models/historylisting.go
 gc/models/holdupdatedevent.go
 gc/models/homerrecord.go
+gc/models/hristimeofftype.go
 gc/models/humanize.go
 gc/models/identifierclaimrequest.go
 gc/models/identitynow.go
@@ -2125,6 +2132,7 @@ gc/models/knowledgeimportjobrequest.go
 gc/models/knowledgeimportjobresponse.go
 gc/models/knowledgeimportjobsettings.go
 gc/models/knowledgeimportjobstatistics.go
+gc/models/knowledgesearchclientapplication.go
 gc/models/knowledgesearchdocument.go
 gc/models/knowledgesearchrequest.go
 gc/models/knowledgesearchresponse.go
@@ -2294,6 +2302,7 @@ gc/models/messagemediapolicy.go
 gc/models/messagemediapolicyconditions.go
 gc/models/messagesticker.go
 gc/models/messagestickerattachment.go
+gc/models/messagetypingeventrequest.go
 gc/models/messagingcampaign.go
 gc/models/messagingcampaigndivisionview.go
 gc/models/messagingcampaigndivisionviewentitylisting.go
@@ -2803,6 +2812,7 @@ gc/models/servicelevel.go
 gc/models/session.go
 gc/models/sessionenddetails.go
 gc/models/sessionlastevent.go
+gc/models/sessionlisting.go
 gc/models/sessionsegmentassignment.go
 gc/models/setcontenttemplateactionsettings.go
 gc/models/setrecordingstate.go
@@ -2923,7 +2933,11 @@ gc/models/tagvalue.go
 gc/models/tagvalueentitylisting.go
 gc/models/targetperformanceprofile.go
 gc/models/team.go
+gc/models/teamaddmemberfailure.go
 gc/models/teamentitylisting.go
+gc/models/teammemberaddlistingresponse.go
+gc/models/teammemberentitylisting.go
+gc/models/teammembers.go
 gc/models/teamreference.go
 gc/models/teamsearchcriteria.go
 gc/models/teamsearchrequest.go
@@ -2969,6 +2983,10 @@ gc/models/textstyleproperties.go
 gc/models/ticker.go
 gc/models/timeallowed.go
 gc/models/timeinterval.go
+gc/models/timeoffbalancejobreference.go
+gc/models/timeoffbalancerequest.go
+gc/models/timeoffbalanceresponse.go
+gc/models/timeoffbalancesresponse.go
 gc/models/timeofflimit.go
 gc/models/timeofflimitlisting.go
 gc/models/timeofflimitrange.go
@@ -3154,6 +3172,7 @@ gc/models/userqueueentitylisting.go
 gc/models/userrecording.go
 gc/models/userrecordingentitylisting.go
 gc/models/userreference.go
+gc/models/userreferencewithname.go
 gc/models/userroutinglanguage.go
 gc/models/userroutinglanguagepost.go
 gc/models/userroutingskill.go

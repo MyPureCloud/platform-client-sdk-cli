@@ -77,7 +77,7 @@ func Cmdpresence_sources() *cobra.Command {
 }`)
 	presence_sourcesCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "string", "deleted", "false", "Deleted query can be TRUE or FALSE")
+	utils.AddFlag(listCmd.Flags(), "string", "deactivated", "false", "Deactivated query can be TRUE or FALSE")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/presence/sources", utils.FormatPermissions([]string{ "presence:source:view",  }), utils.GenerateDevCentreLink("GET", "Presence", "/api/v2/presence/sources")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -151,6 +151,10 @@ var createCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
 		const opId = "create"
 		const httpMethod = "POST"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
@@ -210,6 +214,10 @@ var deleteCmd = &cobra.Command{
 				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
 		const opId = "delete"
@@ -273,6 +281,10 @@ var getCmd = &cobra.Command{
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
 
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
 		const opId = "get"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
@@ -323,9 +335,9 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/presence/sources"
 
-		deleted := utils.GetFlag(cmd.Flags(), "string", "deleted")
-		if deleted != "" {
-			queryParams["deleted"] = deleted
+		deactivated := utils.GetFlag(cmd.Flags(), "string", "deactivated")
+		if deactivated != "" {
+			queryParams["deactivated"] = deactivated
 		}
 		urlString := path
 		if len(queryParams) > 0 {
@@ -334,6 +346,10 @@ var listCmd = &cobra.Command{
 				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
 		const opId = "list"
@@ -398,6 +414,10 @@ var updateCmd = &cobra.Command{
 				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
 		const opId = "update"

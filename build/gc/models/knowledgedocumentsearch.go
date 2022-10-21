@@ -31,6 +31,9 @@ type KnowledgedocumentsearchDud struct {
 
     Results []Knowledgedocumentsearchresult `json:"results"`
 
+
+    
+
 }
 
 // Knowledgedocumentsearch
@@ -58,10 +61,15 @@ type Knowledgedocumentsearch struct {
 
     
 
+
+    // Application - The client application details from which search happened.
+    Application Knowledgesearchclientapplication `json:"application"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentsearch) String() string {
+    
     
     
     
@@ -87,8 +95,13 @@ func (u *Knowledgedocumentsearch) MarshalJSON() ([]byte, error) {
         PageSize int `json:"pageSize"`
         
         PageNumber int `json:"pageNumber"`
+        
+        Application Knowledgesearchclientapplication `json:"application"`
         *Alias
     }{
+
+        
+
 
         
 

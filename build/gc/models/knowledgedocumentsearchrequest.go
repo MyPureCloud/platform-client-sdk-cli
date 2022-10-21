@@ -43,6 +43,9 @@ type KnowledgedocumentsearchrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgedocumentsearchrequest
@@ -87,10 +90,15 @@ type Knowledgedocumentsearchrequest struct {
     // SortBy - The field in the documents that you want to sort the search results by.
     SortBy string `json:"sortBy"`
 
+
+    // Application - The client application details from which search request was sent.
+    Application Knowledgesearchclientapplication `json:"application"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentsearchrequest) String() string {
+    
     
     
     
@@ -131,8 +139,13 @@ func (u *Knowledgedocumentsearchrequest) MarshalJSON() ([]byte, error) {
         SortOrder string `json:"sortOrder"`
         
         SortBy string `json:"sortBy"`
+        
+        Application Knowledgesearchclientapplication `json:"application"`
         *Alias
     }{
+
+        
+
 
         
 

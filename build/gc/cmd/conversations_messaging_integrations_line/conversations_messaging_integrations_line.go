@@ -62,7 +62,7 @@ func Cmdconversations_messaging_integrations_line() *cobra.Command {
 }`)
 	conversations_messaging_integrations_lineCmd.AddCommand(deleteCmd)
 
-	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: supportedContent")
+	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: supportedContent, messagingSetting")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/messaging/integrations/line/{integrationId}", utils.FormatPermissions([]string{ "messaging:integration:view",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/messaging/integrations/line/{integrationId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -80,8 +80,9 @@ func Cmdconversations_messaging_integrations_line() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: supportedContent")
+	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: supportedContent, messagingSetting")
 	utils.AddFlag(listCmd.Flags(), "string", "supportedContentId", "", "Filter integrations returned based on the supported content ID")
+	utils.AddFlag(listCmd.Flags(), "string", "messagingSettingId", "", "Filter integrations returned based on the setting ID")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/messaging/integrations/line", utils.FormatPermissions([]string{ "messaging:integration:view",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/messaging/integrations/line")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -358,6 +359,10 @@ var listCmd = &cobra.Command{
 		supportedContentId := utils.GetFlag(cmd.Flags(), "string", "supportedContentId")
 		if supportedContentId != "" {
 			queryParams["supportedContentId"] = supportedContentId
+		}
+		messagingSettingId := utils.GetFlag(cmd.Flags(), "string", "messagingSettingId")
+		if messagingSettingId != "" {
+			queryParams["messagingSettingId"] = messagingSettingId
 		}
 		urlString := path
 		if len(queryParams) > 0 {

@@ -13,6 +13,9 @@ var (
 type KnowledgeexportjobrequestDud struct { 
     
 
+
+    
+
 }
 
 // Knowledgeexportjobrequest
@@ -20,10 +23,15 @@ type Knowledgeexportjobrequest struct {
     // ExportFilter - What to export.
     ExportFilter Knowledgeexportjobfilter `json:"exportFilter"`
 
+
+    // FileType - File type of the document
+    FileType string `json:"fileType"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgeexportjobrequest) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Knowledgeexportjobrequest) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         ExportFilter Knowledgeexportjobfilter `json:"exportFilter"`
+        
+        FileType string `json:"fileType"`
         *Alias
     }{
+
+        
+
 
         
 

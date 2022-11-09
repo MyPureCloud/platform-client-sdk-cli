@@ -32,6 +32,7 @@ func Cmdanalytics_botflows_reportingturns() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "50", "Max number of entities to return. Maximum of 250")
 	utils.AddFlag(listCmd.Flags(), "string", "actionId", "", "Optional action ID to get the reporting turns associated to a particular flow action")
 	utils.AddFlag(listCmd.Flags(), "string", "sessionId", "", "Optional session ID to get the reporting turns for a particular session")
+	utils.AddFlag(listCmd.Flags(), "string", "language", "", "Optional language code to get the reporting turns for a particular language")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/botflows/{botFlowId}/reportingturns", utils.FormatPermissions([]string{ "analytics:botFlowReportingTurn:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/botflows/{botFlowId}/reportingturns")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -85,6 +86,10 @@ var listCmd = &cobra.Command{
 		sessionId := utils.GetFlag(cmd.Flags(), "string", "sessionId")
 		if sessionId != "" {
 			queryParams["sessionId"] = sessionId
+		}
+		language := utils.GetFlag(cmd.Flags(), "string", "language")
+		if language != "" {
+			queryParams["language"] = language
 		}
 		urlString := path
 		if len(queryParams) > 0 {

@@ -29,6 +29,9 @@ type ExternalmetricdataitemDud struct {
 
     
 
+
+    
+
 }
 
 // Externalmetricdataitem
@@ -53,13 +56,18 @@ type Externalmetricdataitem struct {
     Value float32 `json:"value"`
 
 
-    // Count - The number of data points. The default value is 1.
+    // Count - The number of data points. The default value is 0 when type is Cumulative and the metric data already exists, otherwise 1. When total count reaches 0, the metric data will be deleted.
     Count int `json:"count"`
+
+
+    // VarType - The type of the metric data. The default value is Total.
+    VarType string `json:"type"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Externalmetricdataitem) String() string {
+    
     
     
     
@@ -94,8 +102,13 @@ func (u *Externalmetricdataitem) MarshalJSON() ([]byte, error) {
         Value float32 `json:"value"`
         
         Count int `json:"count"`
+        
+        VarType string `json:"type"`
         *Alias
     }{
+
+        
+
 
         
 

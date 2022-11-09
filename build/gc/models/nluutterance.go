@@ -11,12 +11,18 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type NluutteranceDud struct { 
+    Id string `json:"id"`
+
+
     
 
 }
 
 // Nluutterance
 type Nluutterance struct { 
+    
+
+
     // Segments - The list of segments that that constitute this utterance for the given intent.
     Segments []Nluutterancesegment `json:"segments"`
 
@@ -45,6 +51,9 @@ func (u *Nluutterance) MarshalJSON() ([]byte, error) {
         Segments []Nluutterancesegment `json:"segments"`
         *Alias
     }{
+
+        
+
 
         
         Segments: []Nluutterancesegment{{}},

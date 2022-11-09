@@ -30,8 +30,9 @@ func init() {
 func Cmdconversations_messaging_integrations() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Expand instructions for the return value. Valid values: supportedContent")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Expand instructions for the return value. Valid values: supportedContent, messagingSetting")
 	utils.AddFlag(listCmd.Flags(), "string", "supportedContentId", "", "Filter integrations returned based on the supported content ID")
+	utils.AddFlag(listCmd.Flags(), "string", "messagingSettingId", "", "Filter integrations returned based on the setting ID")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/messaging/integrations", utils.FormatPermissions([]string{ "messaging:integration:view",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/messaging/integrations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -76,13 +77,17 @@ var listCmd = &cobra.Command{
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
 		}
-		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
 		}
 		supportedContentId := utils.GetFlag(cmd.Flags(), "string", "supportedContentId")
 		if supportedContentId != "" {
 			queryParams["supportedContentId"] = supportedContentId
+		}
+		messagingSettingId := utils.GetFlag(cmd.Flags(), "string", "messagingSettingId")
+		if messagingSettingId != "" {
+			queryParams["messagingSettingId"] = messagingSettingId
 		}
 		urlString := path
 		if len(queryParams) > 0 {

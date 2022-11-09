@@ -43,6 +43,9 @@ type VoicemailgrouppolicyDud struct {
 
     
 
+
+    
+
 }
 
 // Voicemailgrouppolicy
@@ -64,6 +67,10 @@ type Voicemailgrouppolicy struct {
 
     // DisableEmailPii - Removes any PII from group emails. This is overridden by the analogous organization configuration value. This is always true if HIPAA is enabled or unknown for an organization.
     DisableEmailPii bool `json:"disableEmailPii"`
+
+
+    // IncludeEmailTranscriptions - Whether to include the voicemail transcription in a group notification email
+    IncludeEmailTranscriptions bool `json:"includeEmailTranscriptions"`
 
 
     // LanguagePreference - The language preference for the group.  Used for group voicemail transcription
@@ -103,6 +110,7 @@ func (o *Voicemailgrouppolicy) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -128,6 +136,8 @@ func (u *Voicemailgrouppolicy) MarshalJSON() ([]byte, error) {
         
         DisableEmailPii bool `json:"disableEmailPii"`
         
+        IncludeEmailTranscriptions bool `json:"includeEmailTranscriptions"`
+        
         LanguagePreference string `json:"languagePreference"`
         
         RotateCallsSecs int `json:"rotateCallsSecs"`
@@ -141,6 +151,9 @@ func (u *Voicemailgrouppolicy) MarshalJSON() ([]byte, error) {
         InteractiveResponsePromptId string `json:"interactiveResponsePromptId"`
         *Alias
     }{
+
+        
+
 
         
 

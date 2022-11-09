@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdexternalcontacts_merge_contacts() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/merge/contacts", utils.FormatPermissions([]string{ "externalContacts:contact:edit", "externalContacts:identity:merge",  }), utils.GenerateDevCentreLink("POST", "External Contacts", "/api/v2/externalcontacts/merge/contacts")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/merge/contacts", utils.FormatPermissions([]string{ "externalContacts:identity:merge",  }), utils.GenerateDevCentreLink("POST", "External Contacts", "/api/v2/externalcontacts/merge/contacts")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "MergeRequest",
   "content" : {

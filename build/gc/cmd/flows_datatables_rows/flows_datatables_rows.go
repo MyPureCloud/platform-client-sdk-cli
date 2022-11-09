@@ -92,6 +92,7 @@ func Cmdflows_datatables_rows() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "bool", "showbrief", "true", "If true returns just the key value of the row")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ascending", "Sort order Valid values: ascending, descending")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/{datatableId}/rows", utils.FormatPermissions([]string{ "architect:datatable:view", "architect:datatableRow:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/datatables/{datatableId}/rows")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -380,6 +381,10 @@ var listCmd = &cobra.Command{
 		showbrief := utils.GetFlag(cmd.Flags(), "bool", "showbrief")
 		if showbrief != "" {
 			queryParams["showbrief"] = showbrief
+		}
+		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
+		if sortOrder != "" {
+			queryParams["sortOrder"] = sortOrder
 		}
 		urlString := path
 		if len(queryParams) > 0 {

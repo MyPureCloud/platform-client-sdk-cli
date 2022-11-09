@@ -72,12 +72,12 @@ type Managementunitlisting struct {
     PageCount int `json:"pageCount"`
 
 
-    // PreviousUri - Deprecated, paging is not supported
-    PreviousUri string `json:"previousUri"`
-
-
     // LastUri - Deprecated, paging is not supported
     LastUri string `json:"lastUri"`
+
+
+    // PreviousUri - Deprecated, paging is not supported
+    PreviousUri string `json:"previousUri"`
 
 
     // SelfUri
@@ -128,9 +128,9 @@ func (u *Managementunitlisting) MarshalJSON() ([]byte, error) {
         
         PageCount int `json:"pageCount"`
         
-        PreviousUri string `json:"previousUri"`
-        
         LastUri string `json:"lastUri"`
+        
+        PreviousUri string `json:"previousUri"`
         
         SelfUri string `json:"selfUri"`
         *Alias

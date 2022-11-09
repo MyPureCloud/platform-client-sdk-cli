@@ -6,6 +6,7 @@ gc/cmd/alerting_alerts_active/alerting_alerts_active.go
 gc/cmd/alerting_interactionstats_alerts/alerting_interactionstats_alerts.go
 gc/cmd/alerting_interactionstats_alerts_unread/alerting_interactionstats_alerts_unread.go
 gc/cmd/alerting_interactionstats_rules/alerting_interactionstats_rules.go
+gc/cmd/analytics_actions_aggregates_query/analytics_actions_aggregates_query.go
 gc/cmd/analytics_botflows_reportingturns/analytics_botflows_reportingturns.go
 gc/cmd/analytics_bots_aggregates_query/analytics_bots_aggregates_query.go
 gc/cmd/analytics_conversations_aggregates_query/analytics_conversations_aggregates_query.go
@@ -311,7 +312,6 @@ gc/cmd/gamification_leaderboard_all/gamification_leaderboard_all.go
 gc/cmd/gamification_leaderboard_all_bestpoints/gamification_leaderboard_all_bestpoints.go
 gc/cmd/gamification_leaderboard_bestpoints/gamification_leaderboard_bestpoints.go
 gc/cmd/gamification_metricdefinitions/gamification_metricdefinitions.go
-gc/cmd/gamification_metrics/gamification_metrics.go
 gc/cmd/gamification_profiles/gamification_profiles.go
 gc/cmd/gamification_profiles_activate/gamification_profiles_activate.go
 gc/cmd/gamification_profiles_deactivate/gamification_profiles_deactivate.go
@@ -647,6 +647,9 @@ gc/cmd/routing_queues_wrapupcodes/routing_queues_wrapupcodes.go
 gc/cmd/routing_settings/routing_settings.go
 gc/cmd/routing_settings_contactcenter/routing_settings_contactcenter.go
 gc/cmd/routing_settings_transcription/routing_settings_transcription.go
+gc/cmd/routing_skillgroups/routing_skillgroups.go
+gc/cmd/routing_skillgroups_members/routing_skillgroups_members.go
+gc/cmd/routing_skillgroups_members_divisions/routing_skillgroups_members_divisions.go
 gc/cmd/routing_skills/routing_skills.go
 gc/cmd/routing_sms_addresses/routing_sms_addresses.go
 gc/cmd/routing_sms_availablephonenumbers/routing_sms_availablephonenumbers.go
@@ -921,6 +924,13 @@ gc/cmd/workforcemanagement_timeoffrequests_waitlistpositions/workforcemanagement
 gc/models/achievedoutcome.go
 gc/models/acknowledgescreenrecordingrequest.go
 gc/models/action.go
+gc/models/actionaggregatedatacontainer.go
+gc/models/actionaggregatequeryclause.go
+gc/models/actionaggregatequeryfilter.go
+gc/models/actionaggregatequerypredicate.go
+gc/models/actionaggregatequeryresponse.go
+gc/models/actionaggregationquery.go
+gc/models/actionaggregationview.go
 gc/models/actionconfig.go
 gc/models/actioncontract.go
 gc/models/actioncontractinput.go
@@ -2526,8 +2536,10 @@ gc/models/predictiverouting.go
 gc/models/predictor.go
 gc/models/predictorlisting.go
 gc/models/predictormodel.go
+gc/models/predictormodelbrief.go
 gc/models/predictormodelfeature.go
 gc/models/predictormodelfeaturelisting.go
+gc/models/predictormodelretrainingerror.go
 gc/models/predictormodels.go
 gc/models/predictorschedule.go
 gc/models/predictorworkloadbalancing.go
@@ -2854,6 +2866,14 @@ gc/models/site.go
 gc/models/siteconnection.go
 gc/models/siteentitylisting.go
 gc/models/skillentitylisting.go
+gc/models/skillgroup.go
+gc/models/skillgroupcondition.go
+gc/models/skillgroupentitylisting.go
+gc/models/skillgrouplanguagecondition.go
+gc/models/skillgroupmemberdivisionlist.go
+gc/models/skillgroupmemberdivisions.go
+gc/models/skillgroupmemberentitylisting.go
+gc/models/skillgrouproutingcondition.go
 gc/models/skillstoremove.go
 gc/models/smsaddress.go
 gc/models/smsaddressentitylisting.go

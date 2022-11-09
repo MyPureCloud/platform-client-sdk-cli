@@ -42,6 +42,9 @@ type PredictorDud struct {
     ErrorCode string `json:"errorCode"`
 
 
+    Models []Predictormodelbrief `json:"models"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -78,6 +81,9 @@ type Predictor struct {
 
     // WorkloadBalancingConfig - The predictor balancing configuration to enable workload balancing.
     WorkloadBalancingConfig Predictorworkloadbalancing `json:"workloadBalancingConfig"`
+
+
+    
 
 
     
@@ -128,6 +134,9 @@ func (u *Predictor) MarshalJSON() ([]byte, error) {
 
         
         Queues: []Addressableentityref{{}},
+        
+
+
         
 
 

@@ -25,6 +25,9 @@ type TextbotflowlaunchrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Textbotflowlaunchrequest - Settings for launching an instance of a bot flow.
@@ -48,10 +51,15 @@ type Textbotflowlaunchrequest struct {
     // Channel - Channel information relevant to the bot flow.
     Channel Textbotchannel `json:"channel"`
 
+
+    // Language - The language that the bot will use in the session. Validated against list of supported languages and if the value is omitted or is invalid, the default language will be used.
+    Language string `json:"language"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Textbotflowlaunchrequest) String() string {
+    
     
     
     
@@ -83,8 +91,13 @@ func (u *Textbotflowlaunchrequest) MarshalJSON() ([]byte, error) {
         InputData Textbotinputoutputdata `json:"inputData"`
         
         Channel Textbotchannel `json:"channel"`
+        
+        Language string `json:"language"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -52,7 +52,7 @@ type Knowledgeimportjobresponse struct {
     UploadKey string `json:"uploadKey"`
 
 
-    // FileType - file type of the document
+    // FileType - File type of the document
     FileType string `json:"fileType"`
 
 

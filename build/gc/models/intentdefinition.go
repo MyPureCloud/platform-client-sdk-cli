@@ -11,6 +11,9 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type IntentdefinitionDud struct { 
+    Id string `json:"id"`
+
+
     
 
 
@@ -26,6 +29,9 @@ type IntentdefinitionDud struct {
 
 // Intentdefinition
 type Intentdefinition struct { 
+    
+
+
     // Name - The name of the intent.
     Name string `json:"name"`
 
@@ -71,6 +77,9 @@ func (u *Intentdefinition) MarshalJSON() ([]byte, error) {
         Utterances []Nluutterance `json:"utterances"`
         *Alias
     }{
+
+        
+
 
         
 

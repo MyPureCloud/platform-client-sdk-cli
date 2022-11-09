@@ -39,6 +39,9 @@ type KnowledgeexportjobresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -51,6 +54,10 @@ type Knowledgeexportjobresponse struct {
 
     // DownloadURL - The URL of the location at which the caller can download the export file, when available.
     DownloadURL string `json:"downloadURL"`
+
+
+    // FileType - File type of the document
+    FileType string `json:"fileType"`
 
 
     // CountDocumentProcessed - The current count of the number of records processed.
@@ -96,6 +103,7 @@ func (o *Knowledgeexportjobresponse) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -117,6 +125,8 @@ func (u *Knowledgeexportjobresponse) MarshalJSON() ([]byte, error) {
         
         DownloadURL string `json:"downloadURL"`
         
+        FileType string `json:"fileType"`
+        
         CountDocumentProcessed int `json:"countDocumentProcessed"`
         
         ExportFilter Knowledgeexportjobfilter `json:"exportFilter"`
@@ -132,6 +142,9 @@ func (u *Knowledgeexportjobresponse) MarshalJSON() ([]byte, error) {
         ErrorInformation Errorbody `json:"errorInformation"`
         *Alias
     }{
+
+        
+
 
         
 

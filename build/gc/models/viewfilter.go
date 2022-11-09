@@ -460,6 +460,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1048,6 +1051,10 @@ type Viewfilter struct {
     ActionCategoryName string `json:"actionCategoryName"`
 
 
+    // IntegrationIds - The list of integration IDs for Data Action
+    IntegrationIds []string `json:"integrationIds"`
+
+
     // ResponseStatuses - The list of Response codes for Data Action
     ResponseStatuses []string `json:"responseStatuses"`
 
@@ -1213,6 +1220,7 @@ func (o *Viewfilter) String() string {
     
      o.DataActionIds = []string{""} 
     
+     o.IntegrationIds = []string{""} 
      o.ResponseStatuses = []string{""} 
     
     
@@ -1525,6 +1533,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         DataActionIds []string `json:"dataActionIds"`
         
         ActionCategoryName string `json:"actionCategoryName"`
+        
+        IntegrationIds []string `json:"integrationIds"`
         
         ResponseStatuses []string `json:"responseStatuses"`
         
@@ -2185,6 +2195,11 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        IntegrationIds: []string{""},
         
 
 

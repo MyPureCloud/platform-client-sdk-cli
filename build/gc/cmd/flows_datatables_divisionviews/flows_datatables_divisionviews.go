@@ -50,7 +50,7 @@ func Cmdflows_datatables_divisionviews() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "id", "Sort by Valid values: id, name")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ascending", "Sort order")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "division ID(s)")
-	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name to filter by")
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/flows/datatables/divisionviews", utils.FormatPermissions([]string{ "architect:datatable:search",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/datatables/divisionviews")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

@@ -41,12 +41,19 @@ type HistoricaladherencequeryresultDud struct {
 
     
 
+
+    
+
 }
 
 // Historicaladherencequeryresult
 type Historicaladherencequeryresult struct { 
     // UserId - The ID of the user for whom the adherence is queried
     UserId string `json:"userId"`
+
+
+    // ManagementUnitId - The ID of the management unit of the user for whom the adherence is queried
+    ManagementUnitId string `json:"managementUnitId"`
 
 
     // StartDate - Beginning of the date range that was queried, in ISO-8601 format
@@ -94,6 +101,7 @@ func (o *Historicaladherencequeryresult) String() string {
     
     
     
+    
      o.ExceptionInfo = []Historicaladherenceexceptioninfo{{}} 
      o.DayMetrics = []Historicaladherencedaymetrics{{}} 
     
@@ -117,6 +125,8 @@ func (u *Historicaladherencequeryresult) MarshalJSON() ([]byte, error) {
         
         UserId string `json:"userId"`
         
+        ManagementUnitId string `json:"managementUnitId"`
+        
         StartDate time.Time `json:"startDate"`
         
         EndDate time.Time `json:"endDate"`
@@ -136,6 +146,9 @@ func (u *Historicaladherencequeryresult) MarshalJSON() ([]byte, error) {
         Actuals []Historicaladherenceactuals `json:"actuals"`
         *Alias
     }{
+
+        
+
 
         
 

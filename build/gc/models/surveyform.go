@@ -21,7 +21,7 @@ type SurveyformDud struct {
     ModifiedDate time.Time `json:"modifiedDate"`
 
 
-    Published bool `json:"published"`
+    
 
 
     
@@ -61,7 +61,8 @@ type Surveyform struct {
     
 
 
-    
+    // Published - Is this form published
+    Published bool `json:"published"`
 
 
     // Disabled - Is this form disabled
@@ -101,6 +102,7 @@ func (o *Surveyform) String() string {
     
     
     
+    
      o.QuestionGroups = []Surveyquestiongroup{{}} 
 
     j, _ := json.Marshal(o)
@@ -120,6 +122,8 @@ func (u *Surveyform) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Name string `json:"name"`
+        
+        Published bool `json:"published"`
         
         Disabled bool `json:"disabled"`
         

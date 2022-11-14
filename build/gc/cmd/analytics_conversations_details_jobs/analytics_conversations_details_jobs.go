@@ -147,8 +147,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [jobId]",
-	Short: "Delete/cancel an async request",
-	Long:  "Delete/cancel an async request",
+	Short: "Delete/cancel an async details job",
+	Long:  "Delete/cancel an async details job",
 	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

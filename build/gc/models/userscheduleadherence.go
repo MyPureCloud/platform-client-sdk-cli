@@ -57,6 +57,9 @@ type UserscheduleadherenceDud struct {
     Impact string `json:"impact"`
 
 
+    AdherenceExplanation Realtimeadherenceexplanation `json:"adherenceExplanation"`
+
+
     TimeOfAdherenceChange time.Time `json:"timeOfAdherenceChange"`
 
 
@@ -141,6 +144,9 @@ type Userscheduleadherence struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -166,6 +172,9 @@ func (u *Userscheduleadherence) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         *Alias
     }{
+
+        
+
 
         
 

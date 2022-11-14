@@ -49,8 +49,8 @@ func Cmdanalytics_conversations_details_jobs_results() *cobra.Command {
 
 var listCmd = &cobra.Command{
 	Use:   "list [jobId]",
-	Short: "Fetch a page of results for an async query",
-	Long:  "Fetch a page of results for an async query",
+	Short: "Fetch a page of results for an async details job",
+	Long:  "Fetch a page of results for an async details job",
 	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -86,7 +86,7 @@ func Cmdoutbound_dnclists() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "allowEmptyResult", "false", "Whether to return an empty page when there are no results for that page")
 	utils.AddFlag(listCmd.Flags(), "string", "filterType", "Prefix", "Filter type Valid values: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
-	utils.AddFlag(listCmd.Flags(), "string", "dncSourceType", "", "DncSourceType Valid values: rds, dnc.com, gryphon")
+	utils.AddFlag(listCmd.Flags(), "string", "dncSourceType", "", "DncSourceType Valid values: rds, rds_custom, dnc.com, gryphon")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Sort order Valid values: ascending, descending")

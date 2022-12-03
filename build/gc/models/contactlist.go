@@ -36,6 +36,9 @@ type ContactlistDud struct {
     
 
 
+    
+
+
     ImportStatus Importstatus `json:"importStatus"`
 
 
@@ -92,6 +95,10 @@ type Contactlist struct {
     PhoneColumns []Contactphonenumbercolumn `json:"phoneColumns"`
 
 
+    // EmailColumns - Indicates which columns are email addresses
+    EmailColumns []Emailcolumn `json:"emailColumns"`
+
+
     
 
 
@@ -129,6 +136,7 @@ func (o *Contactlist) String() string {
     
      o.ColumnNames = []string{""} 
      o.PhoneColumns = []Contactphonenumbercolumn{{}} 
+     o.EmailColumns = []Emailcolumn{{}} 
     
      o.PreviewModeAcceptedValues = []string{""} 
     
@@ -160,6 +168,8 @@ func (u *Contactlist) MarshalJSON() ([]byte, error) {
         ColumnNames []string `json:"columnNames"`
         
         PhoneColumns []Contactphonenumbercolumn `json:"phoneColumns"`
+        
+        EmailColumns []Emailcolumn `json:"emailColumns"`
         
         PreviewModeColumnName string `json:"previewModeColumnName"`
         
@@ -198,6 +208,11 @@ func (u *Contactlist) MarshalJSON() ([]byte, error) {
 
         
         PhoneColumns: []Contactphonenumbercolumn{{}},
+        
+
+
+        
+        EmailColumns: []Emailcolumn{{}},
         
 
 

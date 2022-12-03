@@ -40,9 +40,6 @@ type OpennormalizedmessageDud struct {
 
     
 
-
-    
-
 }
 
 // Opennormalizedmessage - Open Messaging rich media message structure
@@ -65,10 +62,6 @@ type Opennormalizedmessage struct {
 
     // Content - List of content elements.
     Content []Openmessagecontent `json:"content"`
-
-
-    // Events - List of event elements.
-    Events []Openmessageevent `json:"events"`
 
 
     // Status - Message receipt status, only used with type Receipt.
@@ -99,7 +92,6 @@ func (o *Opennormalizedmessage) String() string {
     
     
      o.Content = []Openmessagecontent{{}} 
-     o.Events = []Openmessageevent{{}} 
     
      o.Reasons = []Reason{{}} 
     
@@ -132,8 +124,6 @@ func (u *Opennormalizedmessage) MarshalJSON() ([]byte, error) {
         
         Content []Openmessagecontent `json:"content"`
         
-        Events []Openmessageevent `json:"events"`
-        
         Status string `json:"status"`
         
         Reasons []Reason `json:"reasons"`
@@ -160,11 +150,6 @@ func (u *Opennormalizedmessage) MarshalJSON() ([]byte, error) {
 
         
         Content: []Openmessagecontent{{}},
-        
-
-
-        
-        Events: []Openmessageevent{{}},
         
 
 

@@ -44,6 +44,12 @@ type UserestablishedeventDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Userestablishedevent
@@ -76,6 +82,14 @@ type Userestablishedevent struct {
     StationId string `json:"stationId"`
 
 
+    // Ani - The automatic number identification if it is available for this conversation.
+    Ani string `json:"ani"`
+
+
+    // Dnis - The dialed number identification if it is available for this conversation.
+    Dnis string `json:"dnis"`
+
+
     // AfterCallWorkRequired - Indicates whether or not this user will be required to complete after call work.
     AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
 
@@ -95,6 +109,8 @@ type Userestablishedevent struct {
 
 // String returns a JSON representation of the model
 func (o *Userestablishedevent) String() string {
+    
+    
     
     
     
@@ -137,6 +153,10 @@ func (u *Userestablishedevent) MarshalJSON() ([]byte, error) {
         
         StationId string `json:"stationId"`
         
+        Ani string `json:"ani"`
+        
+        Dnis string `json:"dnis"`
+        
         AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
         
         QueueId string `json:"queueId"`
@@ -146,6 +166,12 @@ func (u *Userestablishedevent) MarshalJSON() ([]byte, error) {
         SourceConfiguration Sourceconfiguration `json:"sourceConfiguration"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

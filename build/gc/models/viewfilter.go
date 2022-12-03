@@ -1047,7 +1047,7 @@ type Viewfilter struct {
     DataActionIds []string `json:"dataActionIds"`
 
 
-    // ActionCategoryName - Action Category Name
+    // ActionCategoryName - Deprecated - Please use integrationIds instead
     ActionCategoryName string `json:"actionCategoryName"`
 
 

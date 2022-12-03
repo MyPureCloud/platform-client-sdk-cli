@@ -30,6 +30,9 @@ type DevelopmentactivityDud struct {
     IsPassed bool `json:"isPassed"`
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -75,6 +78,10 @@ type Developmentactivity struct {
     
 
 
+    // IsLatest - True if this is the latest version of assignment assigned to the user
+    IsLatest bool `json:"isLatest"`
+
+
     
 
 
@@ -114,6 +121,7 @@ func (o *Developmentactivity) String() string {
     
     
     
+    
      o.Attendees = []Userreference{{}} 
     
 
@@ -133,6 +141,8 @@ func (u *Developmentactivity) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        IsLatest bool `json:"isLatest"`
+        
         Name string `json:"name"`
         
         VarType string `json:"type"`
@@ -148,6 +158,9 @@ func (u *Developmentactivity) MarshalJSON() ([]byte, error) {
         IsOverdue bool `json:"isOverdue"`
         *Alias
     }{
+
+        
+
 
         
 

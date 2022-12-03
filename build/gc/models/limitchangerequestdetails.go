@@ -48,6 +48,9 @@ type LimitchangerequestdetailsDud struct {
     RejectReason string `json:"rejectReason"`
 
 
+    ApprovalNamespaces []Approvalnamespace `json:"approvalNamespaces"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -75,6 +78,9 @@ type Limitchangerequestdetails struct {
 
     // SupportCaseUrl - The support case url created by Care
     SupportCaseUrl string `json:"supportCaseUrl"`
+
+
+    
 
 
     
@@ -134,6 +140,9 @@ func (u *Limitchangerequestdetails) MarshalJSON() ([]byte, error) {
         SupportCaseUrl string `json:"supportCaseUrl"`
         *Alias
     }{
+
+        
+
 
         
 

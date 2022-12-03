@@ -35,6 +35,12 @@ type IvrestablishedeventDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Ivrestablishedevent
@@ -63,6 +69,14 @@ type Ivrestablishedevent struct {
     IvrName string `json:"ivrName"`
 
 
+    // Ani - The automatic number identification if it is available for this conversation.
+    Ani string `json:"ani"`
+
+
+    // Dnis - The dialed number identification if it is available for this conversation.
+    Dnis string `json:"dnis"`
+
+
     // InitialConfiguration - Metadata about this communication.
     InitialConfiguration Initialconfiguration `json:"initialConfiguration"`
 
@@ -74,6 +88,8 @@ type Ivrestablishedevent struct {
 
 // String returns a JSON representation of the model
 func (o *Ivrestablishedevent) String() string {
+    
+    
     
     
     
@@ -111,11 +127,21 @@ func (u *Ivrestablishedevent) MarshalJSON() ([]byte, error) {
         
         IvrName string `json:"ivrName"`
         
+        Ani string `json:"ani"`
+        
+        Dnis string `json:"dnis"`
+        
         InitialConfiguration Initialconfiguration `json:"initialConfiguration"`
         
         SourceConfiguration Sourceconfiguration `json:"sourceConfiguration"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

@@ -20,10 +20,16 @@ type PredictormodelbriefDud struct {
 
     RetrainingErrors []Predictormodelretrainingerror `json:"retrainingErrors"`
 
+
+    State string `json:"state"`
+
 }
 
 // Predictormodelbrief
 type Predictormodelbrief struct { 
+    
+
+
     
 
 
@@ -54,6 +60,9 @@ func (u *Predictormodelbrief) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

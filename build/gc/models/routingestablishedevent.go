@@ -41,6 +41,12 @@ type RoutingestablishedeventDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Routingestablishedevent
@@ -69,6 +75,14 @@ type Routingestablishedevent struct {
     QueueId string `json:"queueId"`
 
 
+    // Ani - The automatic number identification if it is available for this conversation.
+    Ani string `json:"ani"`
+
+
+    // Dnis - The dialed number identification if it is available for this conversation.
+    Dnis string `json:"dnis"`
+
+
     // SkillIds - The unique identifiers (V4 UUID) for the skills that should be used to determine the destination for the conversation.
     SkillIds []string `json:"skillIds"`
 
@@ -88,6 +102,8 @@ type Routingestablishedevent struct {
 
 // String returns a JSON representation of the model
 func (o *Routingestablishedevent) String() string {
+    
+    
     
     
     
@@ -127,6 +143,10 @@ func (u *Routingestablishedevent) MarshalJSON() ([]byte, error) {
         
         QueueId string `json:"queueId"`
         
+        Ani string `json:"ani"`
+        
+        Dnis string `json:"dnis"`
+        
         SkillIds []string `json:"skillIds"`
         
         LanguageId string `json:"languageId"`
@@ -136,6 +156,12 @@ func (u *Routingestablishedevent) MarshalJSON() ([]byte, error) {
         SourceConfiguration Sourceconfiguration `json:"sourceConfiguration"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

@@ -542,6 +542,7 @@ gc/cmd/outbound_conversations_dnc/outbound_conversations_dnc.go
 gc/cmd/outbound_digitalrulesets/outbound_digitalrulesets.go
 gc/cmd/outbound_dnclists/outbound_dnclists.go
 gc/cmd/outbound_dnclists_divisionviews/outbound_dnclists_divisionviews.go
+gc/cmd/outbound_dnclists_emailaddresses/outbound_dnclists_emailaddresses.go
 gc/cmd/outbound_dnclists_export/outbound_dnclists_export.go
 gc/cmd/outbound_dnclists_importstatus/outbound_dnclists_importstatus.go
 gc/cmd/outbound_dnclists_phonenumbers/outbound_dnclists_phonenumbers.go
@@ -1047,6 +1048,7 @@ gc/models/apiusagequery.go
 gc/models/apiusagequeryresult.go
 gc/models/apiusagerow.go
 gc/models/appendtodncactionsettings.go
+gc/models/approvalnamespace.go
 gc/models/architectflowfields.go
 gc/models/architectjobmessage.go
 gc/models/architectjobstateresponse.go
@@ -2446,7 +2448,6 @@ gc/models/openintegrationentitylisting.go
 gc/models/openintegrationrequest.go
 gc/models/openintegrationupdaterequest.go
 gc/models/openmessagecontent.go
-gc/models/openmessageevent.go
 gc/models/openmessagingchannel.go
 gc/models/openmessagingfromrecipient.go
 gc/models/openmessagingtorecipient.go

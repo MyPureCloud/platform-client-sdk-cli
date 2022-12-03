@@ -19,6 +19,12 @@ type OutcomeeventscoreDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Outcomeeventscore
@@ -34,10 +40,20 @@ type Outcomeeventscore struct {
     // Probability - Represents the likelihood of a customer reaching or achieving a given outcome.
     Probability float32 `json:"probability"`
 
+
+    // Percentile - Represents the predicted probability's percentile score when compared with all other generated probabilities for a given outcome.
+    Percentile int `json:"percentile"`
+
+
+    // SessionMaxPercentile - Represents the maximum likelihood percentile score reached for a given outcome by the current session.
+    SessionMaxPercentile int `json:"sessionMaxPercentile"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Outcomeeventscore) String() string {
+    
+    
     
     
     
@@ -63,8 +79,18 @@ func (u *Outcomeeventscore) MarshalJSON() ([]byte, error) {
         SessionMaxProbability float32 `json:"sessionMaxProbability"`
         
         Probability float32 `json:"probability"`
+        
+        Percentile int `json:"percentile"`
+        
+        SessionMaxPercentile int `json:"sessionMaxPercentile"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

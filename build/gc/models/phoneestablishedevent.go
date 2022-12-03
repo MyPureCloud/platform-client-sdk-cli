@@ -32,6 +32,12 @@ type PhoneestablishedeventDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Phoneestablishedevent
@@ -56,6 +62,14 @@ type Phoneestablishedevent struct {
     PhoneNumber string `json:"phoneNumber"`
 
 
+    // Ani - The automatic number identification if it is available for this conversation.
+    Ani string `json:"ani"`
+
+
+    // Dnis - The dialed number identification if it is available for this conversation.
+    Dnis string `json:"dnis"`
+
+
     // InitialConfiguration - Metadata about this communication.
     InitialConfiguration Initialconfiguration `json:"initialConfiguration"`
 
@@ -67,6 +81,8 @@ type Phoneestablishedevent struct {
 
 // String returns a JSON representation of the model
 func (o *Phoneestablishedevent) String() string {
+    
+    
     
     
     
@@ -101,11 +117,21 @@ func (u *Phoneestablishedevent) MarshalJSON() ([]byte, error) {
         
         PhoneNumber string `json:"phoneNumber"`
         
+        Ani string `json:"ani"`
+        
+        Dnis string `json:"dnis"`
+        
         InitialConfiguration Initialconfiguration `json:"initialConfiguration"`
         
         SourceConfiguration Sourceconfiguration `json:"sourceConfiguration"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

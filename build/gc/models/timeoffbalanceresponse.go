@@ -23,6 +23,9 @@ type TimeoffbalanceresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Timeoffbalanceresponse
@@ -33,6 +36,10 @@ type Timeoffbalanceresponse struct {
 
     // HrisTimeOffTypeId - The ID of the time off type configured in HRIS integration
     HrisTimeOffTypeId string `json:"hrisTimeOffTypeId"`
+
+
+    // HrisTimeOffTypeSecondaryId - The secondary ID of the time off type configured in HRIS integration
+    HrisTimeOffTypeSecondaryId string `json:"hrisTimeOffTypeSecondaryId"`
 
 
     // StartDate - The Start date of the requested date range. The end date is determined by the size of interval list. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
@@ -46,6 +53,7 @@ type Timeoffbalanceresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Timeoffbalanceresponse) String() string {
+    
     
     
     
@@ -71,11 +79,16 @@ func (u *Timeoffbalanceresponse) MarshalJSON() ([]byte, error) {
         
         HrisTimeOffTypeId string `json:"hrisTimeOffTypeId"`
         
+        HrisTimeOffTypeSecondaryId string `json:"hrisTimeOffTypeSecondaryId"`
+        
         StartDate time.Time `json:"startDate"`
         
         BalanceMinutesPerDay []int `json:"balanceMinutesPerDay"`
         *Alias
     }{
+
+        
+
 
         
 

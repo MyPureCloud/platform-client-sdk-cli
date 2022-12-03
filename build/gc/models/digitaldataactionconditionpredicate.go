@@ -25,9 +25,6 @@ type DigitaldataactionconditionpredicateDud struct {
 
     
 
-
-    
-
 }
 
 // Digitaldataactionconditionpredicate
@@ -51,15 +48,10 @@ type Digitaldataactionconditionpredicate struct {
     // OutputFieldMissingResolution - The result of this predicate if the requested output field is missing from the data action's result
     OutputFieldMissingResolution bool `json:"outputFieldMissingResolution"`
 
-
-    // ValueType - The data type the value should be treated as.
-    ValueType string `json:"valueType"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Digitaldataactionconditionpredicate) String() string {
-    
     
     
     
@@ -91,13 +83,8 @@ func (u *Digitaldataactionconditionpredicate) MarshalJSON() ([]byte, error) {
         Inverted bool `json:"inverted"`
         
         OutputFieldMissingResolution bool `json:"outputFieldMissingResolution"`
-        
-        ValueType string `json:"valueType"`
         *Alias
     }{
-
-        
-
 
         
 

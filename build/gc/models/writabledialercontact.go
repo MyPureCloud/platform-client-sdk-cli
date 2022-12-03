@@ -23,6 +23,9 @@ type WritabledialercontactDud struct {
     LatestSmsEvaluations map[string]Messageevaluation `json:"latestSmsEvaluations"`
 
 
+    LatestEmailEvaluations map[string]Messageevaluation `json:"latestEmailEvaluations"`
+
+
     
 
 
@@ -45,6 +48,9 @@ type Writabledialercontact struct {
 
     // Data - An ordered map of the contact's columns and corresponding values.
     Data map[string]interface{} `json:"data"`
+
+
+    
 
 
     
@@ -110,6 +116,9 @@ func (u *Writabledialercontact) MarshalJSON() ([]byte, error) {
 
         
         Data: map[string]interface{}{"": Interface{}},
+        
+
+
         
 
 

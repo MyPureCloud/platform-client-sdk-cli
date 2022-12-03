@@ -112,8 +112,8 @@ func Cmdrecording_localkeys_settings() *cobra.Command {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "create settings for local key creation",
-	Long:  "create settings for local key creation",
+	Short: "create settings for local key creation. Replaced by API recording/keyconfigurations",
+	Long:  "create settings for local key creation. Replaced by API recording/keyconfigurations",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -178,8 +178,8 @@ var createCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [settingsId]",
-	Short: "Get the local encryption settings",
-	Long:  "Get the local encryption settings",
+	Short: "Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}",
+	Long:  "Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}",
 	Args:  utils.DetermineArgs([]string{ "settingsId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -243,8 +243,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "gets a list local key settings data",
-	Long:  "gets a list local key settings data",
+	Short: "gets a list local key settings data. Replaced by API recording/keyconfigurations",
+	Long:  "gets a list local key settings data. Replaced by API recording/keyconfigurations",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -306,8 +306,8 @@ var listCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [settingsId]",
-	Short: "Update the local encryption settings",
-	Long:  "Update the local encryption settings",
+	Short: "Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}",
+	Long:  "Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}",
 	Args:  utils.DetermineArgs([]string{ "settingsId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

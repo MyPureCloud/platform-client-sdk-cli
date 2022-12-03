@@ -87,6 +87,7 @@ func Cmdlearning_modules() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "searchTerm", "", "Search Term (searchable by name)")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in response(case insensitive) Valid values: rule, summaryData")
 	utils.AddFlag(listCmd.Flags(), "string", "isPublished", "Any", "Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned Valid values: True, False, Any")
+	utils.AddFlag(listCmd.Flags(), "[]string", "statuses", "", "Specifies the module statuses to filter by Valid values: Unpublished, Published, Archived")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/learning/modules", utils.FormatPermissions([]string{ "learning:module:view",  }), utils.GenerateDevCentreLink("GET", "Learning", "/api/v2/learning/modules")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -383,6 +384,10 @@ var listCmd = &cobra.Command{
 		isPublished := utils.GetFlag(cmd.Flags(), "string", "isPublished")
 		if isPublished != "" {
 			queryParams["isPublished"] = isPublished
+		}
+		statuses := utils.GetFlag(cmd.Flags(), "[]string", "statuses")
+		if statuses != "" {
+			queryParams["statuses"] = statuses
 		}
 		urlString := path
 		if len(queryParams) > 0 {

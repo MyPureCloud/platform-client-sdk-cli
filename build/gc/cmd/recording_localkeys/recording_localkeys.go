@@ -57,8 +57,8 @@ func Cmdrecording_localkeys() *cobra.Command {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "create a local recording key",
-	Long:  "create a local recording key",
+	Short: "create a local key management recording key",
+	Long:  "create a local key management recording key",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

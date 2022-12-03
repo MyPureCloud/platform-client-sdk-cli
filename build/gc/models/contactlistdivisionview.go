@@ -26,6 +26,9 @@ type ContactlistdivisionviewDud struct {
     
 
 
+    
+
+
     ImportStatus Importstatus `json:"importStatus"`
 
 
@@ -57,6 +60,10 @@ type Contactlistdivisionview struct {
     PhoneColumns []Contactphonenumbercolumn `json:"phoneColumns"`
 
 
+    // EmailColumns - Indicates which columns are email addresses.
+    EmailColumns []Emailcolumn `json:"emailColumns"`
+
+
     
 
 
@@ -73,6 +80,7 @@ func (o *Contactlistdivisionview) String() string {
     
      o.ColumnNames = []string{""} 
      o.PhoneColumns = []Contactphonenumbercolumn{{}} 
+     o.EmailColumns = []Emailcolumn{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -97,6 +105,8 @@ func (u *Contactlistdivisionview) MarshalJSON() ([]byte, error) {
         ColumnNames []string `json:"columnNames"`
         
         PhoneColumns []Contactphonenumbercolumn `json:"phoneColumns"`
+        
+        EmailColumns []Emailcolumn `json:"emailColumns"`
         *Alias
     }{
 
@@ -116,6 +126,11 @@ func (u *Contactlistdivisionview) MarshalJSON() ([]byte, error) {
 
         
         PhoneColumns: []Contactphonenumbercolumn{{}},
+        
+
+
+        
+        EmailColumns: []Emailcolumn{{}},
         
 
 

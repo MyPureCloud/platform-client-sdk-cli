@@ -33,6 +33,7 @@ func Cmdanalytics_botflows_reportingturns() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "actionId", "", "Optional action ID to get the reporting turns associated to a particular flow action")
 	utils.AddFlag(listCmd.Flags(), "string", "sessionId", "", "Optional session ID to get the reporting turns for a particular session")
 	utils.AddFlag(listCmd.Flags(), "string", "language", "", "Optional language code to get the reporting turns for a particular language")
+	utils.AddFlag(listCmd.Flags(), "string", "askActionResults", "", "Optional case-insensitive comma separated list of ask action results to filter the reporting turns. Valid values: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/botflows/{botFlowId}/reportingturns", utils.FormatPermissions([]string{ "analytics:botFlowReportingTurn:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/botflows/{botFlowId}/reportingturns")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -90,6 +91,10 @@ var listCmd = &cobra.Command{
 		language := utils.GetFlag(cmd.Flags(), "string", "language")
 		if language != "" {
 			queryParams["language"] = language
+		}
+		askActionResults := utils.GetFlag(cmd.Flags(), "string", "askActionResults")
+		if askActionResults != "" {
+			queryParams["askActionResults"] = askActionResults
 		}
 		urlString := path
 		if len(queryParams) > 0 {

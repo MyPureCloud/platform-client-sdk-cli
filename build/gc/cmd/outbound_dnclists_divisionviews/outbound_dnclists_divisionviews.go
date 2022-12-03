@@ -51,7 +51,7 @@ func Cmdoutbound_dnclists_divisionviews() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "filterType", "Prefix", "Filter type Valid values: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
-	utils.AddFlag(listCmd.Flags(), "string", "dncSourceType", "", "DncSourceType Valid values: rds, dnc.com, gryphon")
+	utils.AddFlag(listCmd.Flags(), "string", "dncSourceType", "", "DncSourceType Valid values: rds, rds_custom, dnc.com, gryphon")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "Sort order Valid values: ascending, descending")

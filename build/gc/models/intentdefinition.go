@@ -25,6 +25,9 @@ type IntentdefinitionDud struct {
 
     
 
+
+    
+
 }
 
 // Intentdefinition
@@ -46,6 +49,10 @@ type Intentdefinition struct {
     // Utterances - The utterances that act as training phrases for the intent.
     Utterances []Nluutterance `json:"utterances"`
 
+
+    // AdditionalLanguages - Additional languages for intents
+    AdditionalLanguages map[string]Additionallanguagesintent `json:"additionalLanguages"`
+
 }
 
 // String returns a JSON representation of the model
@@ -53,6 +60,7 @@ func (o *Intentdefinition) String() string {
     
      o.EntityTypeBindings = []Namedentitytypebinding{{}} 
      o.Utterances = []Nluutterance{{}} 
+     o.AdditionalLanguages = map[string]Additionallanguagesintent{"": {}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -75,6 +83,8 @@ func (u *Intentdefinition) MarshalJSON() ([]byte, error) {
         EntityTypeBindings []Namedentitytypebinding `json:"entityTypeBindings"`
         
         Utterances []Nluutterance `json:"utterances"`
+        
+        AdditionalLanguages map[string]Additionallanguagesintent `json:"additionalLanguages"`
         *Alias
     }{
 
@@ -94,6 +104,11 @@ func (u *Intentdefinition) MarshalJSON() ([]byte, error) {
 
         
         Utterances: []Nluutterance{{}},
+        
+
+
+        
+        AdditionalLanguages: map[string]Additionallanguagesintent{"": {}},
         
 
         Alias: (*Alias)(u),

@@ -83,6 +83,7 @@ func Cmdlanguageunderstanding_domains_feedback() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "time.Time", "dateStart", "", "Begin of time window as ISO-8601 date.")
 	utils.AddFlag(listCmd.Flags(), "time.Time", "dateEnd", "", "End of time window as ISO-8601 date.")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeDeleted", "", "Whether to include soft-deleted items in the result.")
+	utils.AddFlag(listCmd.Flags(), "string", "language", "", "Whether to filter response based on the language, e.g. en-us, pt-br.")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "bool", "enableCursorPagination", "false", "Enable Cursor Pagination")
@@ -351,6 +352,10 @@ var listCmd = &cobra.Command{
 		includeDeleted := utils.GetFlag(cmd.Flags(), "bool", "includeDeleted")
 		if includeDeleted != "" {
 			queryParams["includeDeleted"] = includeDeleted
+		}
+		language := utils.GetFlag(cmd.Flags(), "string", "language")
+		if language != "" {
+			queryParams["language"] = language
 		}
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {

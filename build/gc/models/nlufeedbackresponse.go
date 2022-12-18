@@ -27,6 +27,9 @@ type NlufeedbackresponseDud struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -50,6 +53,10 @@ type Nlufeedbackresponse struct {
     
 
 
+    // Language - The language of the version to which feedback is linked, e.g. en-us, de-de
+    Language string `json:"language"`
+
+
     
 
 }
@@ -58,6 +65,7 @@ type Nlufeedbackresponse struct {
 func (o *Nlufeedbackresponse) String() string {
     
      o.Intents = []Intentfeedback{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,6 +86,8 @@ func (u *Nlufeedbackresponse) MarshalJSON() ([]byte, error) {
         Text string `json:"text"`
         
         Intents []Intentfeedback `json:"intents"`
+        
+        Language string `json:"language"`
         *Alias
     }{
 
@@ -89,6 +99,9 @@ func (u *Nlufeedbackresponse) MarshalJSON() ([]byte, error) {
 
         
         Intents: []Intentfeedback{{}},
+        
+
+
         
 
 

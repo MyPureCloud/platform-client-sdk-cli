@@ -53,6 +53,9 @@ type InboundrouteDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -114,6 +117,10 @@ type Inboundroute struct {
     Signature Signature `json:"signature"`
 
 
+    // HistoryInclusion - The configuration to indicate how the history of a conversation has to be included in a draft
+    HistoryInclusion string `json:"historyInclusion"`
+
+
     
 
 }
@@ -131,6 +138,7 @@ func (o *Inboundroute) String() string {
     
     
      o.AutoBcc = []Emailaddress{{}} 
+    
     
     
 
@@ -175,6 +183,8 @@ func (u *Inboundroute) MarshalJSON() ([]byte, error) {
         SpamFlow Domainentityref `json:"spamFlow"`
         
         Signature Signature `json:"signature"`
+        
+        HistoryInclusion string `json:"historyInclusion"`
         *Alias
     }{
 
@@ -215,6 +225,9 @@ func (u *Inboundroute) MarshalJSON() ([]byte, error) {
 
         
         AutoBcc: []Emailaddress{{}},
+        
+
+
         
 
 

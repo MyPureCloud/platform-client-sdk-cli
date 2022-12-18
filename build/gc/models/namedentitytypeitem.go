@@ -16,6 +16,9 @@ type NamedentitytypeitemDud struct {
 
     
 
+
+    
+
 }
 
 // Namedentitytypeitem
@@ -27,12 +30,17 @@ type Namedentitytypeitem struct {
     // Synonyms - Synonyms for the given named entity value.
     Synonyms []string `json:"synonyms"`
 
+
+    // AdditionalLanguages - Additional Language Synonyms for the given named entity value.
+    AdditionalLanguages map[string]Additionallanguagessynonyms `json:"additionalLanguages"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Namedentitytypeitem) String() string {
     
      o.Synonyms = []string{""} 
+     o.AdditionalLanguages = map[string]Additionallanguagessynonyms{"": {}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,6 +61,8 @@ func (u *Namedentitytypeitem) MarshalJSON() ([]byte, error) {
         Value string `json:"value"`
         
         Synonyms []string `json:"synonyms"`
+        
+        AdditionalLanguages map[string]Additionallanguagessynonyms `json:"additionalLanguages"`
         *Alias
     }{
 
@@ -61,6 +71,11 @@ func (u *Namedentitytypeitem) MarshalJSON() ([]byte, error) {
 
         
         Synonyms: []string{""},
+        
+
+
+        
+        AdditionalLanguages: map[string]Additionallanguagessynonyms{"": {}},
         
 
         Alias: (*Alias)(u),

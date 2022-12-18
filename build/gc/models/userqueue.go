@@ -213,8 +213,8 @@ type Userqueue struct {
     AgentOwnedRouting Agentownedrouting `json:"agentOwnedRouting"`
 
 
-    // VipRouting - The VIP Routing settings for the queue
-    VipRouting Viprouting `json:"vipRouting"`
+    // DirectRouting - The Direct Routing settings for the queue
+    DirectRouting Directrouting `json:"directRouting"`
 
 
     // CallingPartyName - The name to use for caller identification for outbound calls from this queue.
@@ -339,7 +339,7 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
         
         AgentOwnedRouting Agentownedrouting `json:"agentOwnedRouting"`
         
-        VipRouting Viprouting `json:"vipRouting"`
+        DirectRouting Directrouting `json:"directRouting"`
         
         CallingPartyName string `json:"callingPartyName"`
         

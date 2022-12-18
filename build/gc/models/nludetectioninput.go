@@ -13,6 +13,9 @@ var (
 type NludetectioninputDud struct { 
     
 
+
+    
+
 }
 
 // Nludetectioninput
@@ -20,10 +23,15 @@ type Nludetectioninput struct {
     // Text - The text to perform NLU detection on.
     Text string `json:"text"`
 
+
+    // Language - Language of the version for multilingual detection, e.g. `en-us`, `de-de`
+    Language string `json:"language"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Nludetectioninput) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Nludetectioninput) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Text string `json:"text"`
+        
+        Language string `json:"language"`
         *Alias
     }{
+
+        
+
 
         
 

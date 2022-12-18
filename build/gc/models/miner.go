@@ -21,6 +21,9 @@ type MinerDud struct {
     
 
 
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -39,10 +42,19 @@ type MinerDud struct {
     Message string `json:"message"`
 
 
+    ErrorInfo Errorinfo `json:"errorInfo"`
+
+
+    WarningInfo Errorinfo `json:"warningInfo"`
+
+
     ConversationDataUploaded bool `json:"conversationDataUploaded"`
 
 
     MediaType string `json:"mediaType"`
+
+
+    ParticipantType string `json:"participantType"`
 
 
     QueueIds []string `json:"queueIds"`
@@ -55,6 +67,15 @@ type MinerDud struct {
 
 
     LatestDraftVersion *Draft `json:"latestDraftVersion"`
+
+
+    ConversationsFetchedCount int `json:"conversationsFetchedCount"`
+
+
+    ConversationsValidCount int `json:"conversationsValidCount"`
+
+
+    GetminedItemCount int `json:"getminedItemCount"`
 
 
     SelfUri string `json:"selfUri"`
@@ -72,6 +93,28 @@ type Miner struct {
 
     // Language - Language Localization code.
     Language string `json:"language"`
+
+
+    // MinerType - Type of the miner, intent or topic.
+    MinerType string `json:"minerType"`
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
 
 
     
@@ -118,6 +161,7 @@ type Miner struct {
 func (o *Miner) String() string {
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -138,8 +182,31 @@ func (u *Miner) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         Language string `json:"language"`
+        
+        MinerType string `json:"minerType"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

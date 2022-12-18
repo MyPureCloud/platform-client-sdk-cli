@@ -60,6 +60,9 @@ type ContactlistDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -125,6 +128,10 @@ type Contactlist struct {
     ZipCodeColumnName string `json:"zipCodeColumnName"`
 
 
+    // ColumnDataTypeSpecifications - The settings of the columns selected for dynamic queueing
+    ColumnDataTypeSpecifications []Columndatatypespecification `json:"columnDataTypeSpecifications"`
+
+
     
 
 }
@@ -142,6 +149,7 @@ func (o *Contactlist) String() string {
     
     
     
+     o.ColumnDataTypeSpecifications = []Columndatatypespecification{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -180,6 +188,8 @@ func (u *Contactlist) MarshalJSON() ([]byte, error) {
         AutomaticTimeZoneMapping bool `json:"automaticTimeZoneMapping"`
         
         ZipCodeColumnName string `json:"zipCodeColumnName"`
+        
+        ColumnDataTypeSpecifications []Columndatatypespecification `json:"columnDataTypeSpecifications"`
         *Alias
     }{
 
@@ -236,6 +246,11 @@ func (u *Contactlist) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        ColumnDataTypeSpecifications: []Columndatatypespecification{{}},
         
 
 

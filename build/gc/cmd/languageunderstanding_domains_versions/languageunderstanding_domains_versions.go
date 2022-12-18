@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdlanguageunderstanding_domains_versions() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "includeUtterances", "", "Whether utterances for intent definition should be included when marshalling response.")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/languageunderstanding/domains/{domainId}/versions", utils.FormatPermissions([]string{ "languageUnderstanding:nluDomainVersion:add", "dialog:botVersion:add",  }), utils.GenerateDevCentreLink("POST", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/versions")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "The NLU Domain Version to create.",
@@ -147,6 +148,10 @@ var createCmd = &cobra.Command{
 		domainId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
 
+		includeUtterances := utils.GetFlag(cmd.Flags(), "bool", "includeUtterances")
+		if includeUtterances != "" {
+			queryParams["includeUtterances"] = includeUtterances
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

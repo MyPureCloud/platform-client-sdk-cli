@@ -451,6 +451,8 @@ gc/cmd/languageunderstanding_miners/languageunderstanding_miners.go
 gc/cmd/languageunderstanding_miners_drafts/languageunderstanding_miners_drafts.go
 gc/cmd/languageunderstanding_miners_execute/languageunderstanding_miners_execute.go
 gc/cmd/languageunderstanding_miners_intents/languageunderstanding_miners_intents.go
+gc/cmd/languageunderstanding_miners_topics/languageunderstanding_miners_topics.go
+gc/cmd/languageunderstanding_miners_topics_phrases/languageunderstanding_miners_topics_phrases.go
 gc/cmd/languageunderstanding_miners_uploads/languageunderstanding_miners_uploads.go
 gc/cmd/learning_assessments_scoring/learning_assessments_scoring.go
 gc/cmd/learning_assignments/learning_assignments.go
@@ -702,6 +704,7 @@ gc/cmd/systempresences/systempresences.go
 gc/cmd/teams/teams.go
 gc/cmd/teams_members/teams_members.go
 gc/cmd/teams_search/teams_search.go
+gc/cmd/telephony_mediaregions/telephony_mediaregions.go
 gc/cmd/telephony_providers_edges/telephony_providers_edges.go
 gc/cmd/telephony_providers_edges_addressvalidation/telephony_providers_edges_addressvalidation.go
 gc/cmd/telephony_providers_edges_availablelanguages/telephony_providers_edges_availablelanguages.go
@@ -973,6 +976,8 @@ gc/models/addadherenceexplanationadminrequest.go
 gc/models/addadherenceexplanationagentrequest.go
 gc/models/addconversationrequest.go
 gc/models/addconversationresponse.go
+gc/models/additionallanguagesintent.go
+gc/models/additionallanguagessynonyms.go
 gc/models/additionalmessage.go
 gc/models/address.go
 gc/models/addressableentityref.go
@@ -1686,6 +1691,9 @@ gc/models/digitalrulesetentitylisting.go
 gc/models/digitlength.go
 gc/models/digits.go
 gc/models/directoryuserdeviceslisting.go
+gc/models/directrouting.go
+gc/models/directroutingcallmediasettings.go
+gc/models/directroutingmediasettings.go
 gc/models/disallowedentitylearningassignmentitem.go
 gc/models/disallowedentitylearningassignmentreference.go
 gc/models/disconnectreason.go
@@ -1697,6 +1705,8 @@ gc/models/dnclistcreate.go
 gc/models/dnclistdivisionview.go
 gc/models/dnclistdivisionviewlisting.go
 gc/models/dnclistentitylisting.go
+gc/models/dncpatchemailsrequest.go
+gc/models/dncpatchphonenumbersrequest.go
 gc/models/dnsrecordentry.go
 gc/models/document.go
 gc/models/documentarticle.go
@@ -2104,6 +2114,7 @@ gc/models/journeyaggregatequerypredicate.go
 gc/models/journeyaggregatequeryresponse.go
 gc/models/journeyaggregationquery.go
 gc/models/journeyaggregationview.go
+gc/models/journeyapp.go
 gc/models/journeycampaign.go
 gc/models/journeycontext.go
 gc/models/journeycustomer.go
@@ -2313,6 +2324,7 @@ gc/models/maxlength.go
 gc/models/maxparticipants.go
 gc/models/mediaparticipantrequest.go
 gc/models/mediapolicies.go
+gc/models/mediaregions.go
 gc/models/mediaresult.go
 gc/models/mediasetting.go
 gc/models/mediasummary.go
@@ -2378,6 +2390,9 @@ gc/models/miner.go
 gc/models/minerexecuterequest.go
 gc/models/minerintent.go
 gc/models/minerlisting.go
+gc/models/minertopic.go
+gc/models/minertopicphrase.go
+gc/models/minertopicslisting.go
 gc/models/minlength.go
 gc/models/modelingprocessingerror.go
 gc/models/modelingstatusresponse.go
@@ -2391,6 +2406,7 @@ gc/models/namedentitytypebinding.go
 gc/models/namedentitytypedefinition.go
 gc/models/namedentitytypeitem.go
 gc/models/namedentitytypemechanism.go
+gc/models/networkconnectivity.go
 gc/models/nluconfusionmatrixcolumn.go
 gc/models/nluconfusionmatrixrow.go
 gc/models/nludetectioncontext.go
@@ -2652,6 +2668,8 @@ gc/models/recipientadditionalidentifier.go
 gc/models/recipientlisting.go
 gc/models/record.go
 gc/models/recording.go
+gc/models/recordingannotationflow.go
+gc/models/recordingannotationqueue.go
 gc/models/recordingbuttoncomponent.go
 gc/models/recordingcontentactions.go
 gc/models/recordingcontentstory.go
@@ -2820,6 +2838,7 @@ gc/models/screenshare.go
 gc/models/script.go
 gc/models/scriptentitylisting.go
 gc/models/scrollpercentageeventtrigger.go
+gc/models/sdklibrary.go
 gc/models/searchaggregation.go
 gc/models/searchcriteria.go
 gc/models/searchrequest.go
@@ -3066,6 +3085,7 @@ gc/models/topicduration.go
 gc/models/topicjob.go
 gc/models/topicjobrequest.go
 gc/models/topicoffset.go
+gc/models/topicphrase.go
 gc/models/topicrequest.go
 gc/models/topicsentitylisting.go
 gc/models/traininglisting.go
@@ -3263,10 +3283,6 @@ gc/models/valuewrapperstring.go
 gc/models/verificationresult.go
 gc/models/video.go
 gc/models/viewfilter.go
-gc/models/vipbackup.go
-gc/models/vipcallmediasettings.go
-gc/models/vipmediasettings.go
-gc/models/viprouting.go
 gc/models/visibilitycondition.go
 gc/models/vmpairinginfo.go
 gc/models/voicemail.go

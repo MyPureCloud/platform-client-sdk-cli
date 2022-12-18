@@ -463,6 +463,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1070,6 +1073,10 @@ type Viewfilter struct {
     // MyDashboard - Filter to indicate the dashboard owned by the user.
     MyDashboard bool `json:"myDashboard"`
 
+
+    // StationErrors - The list of agent errors that are related to station
+    StationErrors []string `json:"stationErrors"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1225,6 +1232,7 @@ func (o *Viewfilter) String() string {
     
     
     
+     o.StationErrors = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1543,6 +1551,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         FavouriteDashboard bool `json:"favouriteDashboard"`
         
         MyDashboard bool `json:"myDashboard"`
+        
+        StationErrors []string `json:"stationErrors"`
         *Alias
     }{
 
@@ -2214,6 +2224,11 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        StationErrors: []string{""},
         
 
         Alias: (*Alias)(u),

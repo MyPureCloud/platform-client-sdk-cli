@@ -77,6 +77,7 @@ func Cmdlanguageunderstanding_miners() *cobra.Command {
 }`)
 	languageunderstanding_minersCmd.AddCommand(getCmd)
 
+	utils.AddFlag(listCmd.Flags(), "string", "minerType", "", "Type of miner, either intent or topic")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/languageunderstanding/miners", utils.FormatPermissions([]string{ "languageUnderstanding:miner:view",  }), utils.GenerateDevCentreLink("GET", "Language Understanding", "/api/v2/languageunderstanding/miners")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -309,6 +310,10 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/languageunderstanding/miners"
 
+		minerType := utils.GetFlag(cmd.Flags(), "string", "minerType")
+		if minerType != "" {
+			queryParams["minerType"] = minerType
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

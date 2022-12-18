@@ -66,6 +66,9 @@ type MessagingcampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -133,6 +136,10 @@ type Messagingcampaign struct {
     Errors []Resterrordetail `json:"errors"`
 
 
+    // DynamicContactQueueingSettings - Indicates (when true) that the campaign supports dynamic queueing of the contact list at the time of a request for contacts.
+    DynamicContactQueueingSettings Dynamiccontactqueueingsettings `json:"dynamicContactQueueingSettings"`
+
+
     // EmailConfig - Configuration for this messaging campaign to send Email messages.
     EmailConfig Emailconfig `json:"emailConfig"`
 
@@ -160,6 +167,7 @@ func (o *Messagingcampaign) String() string {
      o.RuleSets = []Domainentityref{{}} 
      o.ContactListFilters = []Domainentityref{{}} 
      o.Errors = []Resterrordetail{{}} 
+    
     
     
 
@@ -204,6 +212,8 @@ func (u *Messagingcampaign) MarshalJSON() ([]byte, error) {
         ContactListFilters []Domainentityref `json:"contactListFilters"`
         
         Errors []Resterrordetail `json:"errors"`
+        
+        DynamicContactQueueingSettings Dynamiccontactqueueingsettings `json:"dynamicContactQueueingSettings"`
         
         EmailConfig Emailconfig `json:"emailConfig"`
         
@@ -266,6 +276,9 @@ func (u *Messagingcampaign) MarshalJSON() ([]byte, error) {
 
         
         Errors: []Resterrordetail{{}},
+        
+
+
         
 
 

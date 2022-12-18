@@ -39,6 +39,9 @@ type VoicemailorganizationpolicyDud struct {
     
 
 
+    
+
+
     ModifiedDate time.Time `json:"modifiedDate"`
 
 }
@@ -80,12 +83,17 @@ type Voicemailorganizationpolicy struct {
     DisableEmailPii bool `json:"disableEmailPii"`
 
 
+    // MaximumRecordingTimeSeconds - Default value for the maximum length of time in seconds of a recorded voicemail
+    MaximumRecordingTimeSeconds int `json:"maximumRecordingTimeSeconds"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Voicemailorganizationpolicy) String() string {
+    
     
     
     
@@ -126,8 +134,13 @@ func (u *Voicemailorganizationpolicy) MarshalJSON() ([]byte, error) {
         IncludeEmailTranscriptions bool `json:"includeEmailTranscriptions"`
         
         DisableEmailPii bool `json:"disableEmailPii"`
+        
+        MaximumRecordingTimeSeconds int `json:"maximumRecordingTimeSeconds"`
         *Alias
     }{
+
+        
+
 
         
 

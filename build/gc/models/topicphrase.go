@@ -6,11 +6,14 @@ import (
 )
 
 var (
-    VipbackupMarshalled = false
+    TopicphraseMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type VipbackupDud struct { 
+type TopicphraseDud struct { 
+    
+
+
     
 
 
@@ -18,19 +21,24 @@ type VipbackupDud struct {
 
 }
 
-// Vipbackup
-type Vipbackup struct { 
-    // Id - Unique ID for the selected VIP Backup option. For QUEUE this is the queueId and for USER this is the userId.
+// Topicphrase
+type Topicphrase struct { 
+    // Id
     Id string `json:"id"`
 
 
-    // VarType - The type of VIP Backup to use.
-    VarType string `json:"type"`
+    // Text
+    Text string `json:"text"`
+
+
+    // UtteranceCount
+    UtteranceCount int `json:"utteranceCount"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Vipbackup) String() string {
+func (o *Topicphrase) String() string {
+    
     
     
 
@@ -40,21 +48,26 @@ func (o *Vipbackup) String() string {
     return str
 }
 
-func (u *Vipbackup) MarshalJSON() ([]byte, error) {
-    type Alias Vipbackup
+func (u *Topicphrase) MarshalJSON() ([]byte, error) {
+    type Alias Topicphrase
 
-    if VipbackupMarshalled {
+    if TopicphraseMarshalled {
         return []byte("{}"), nil
     }
-    VipbackupMarshalled = true
+    TopicphraseMarshalled = true
 
     return json.Marshal(&struct {
         
         Id string `json:"id"`
         
-        VarType string `json:"type"`
+        Text string `json:"text"`
+        
+        UtteranceCount int `json:"utteranceCount"`
         *Alias
     }{
+
+        
+
 
         
 

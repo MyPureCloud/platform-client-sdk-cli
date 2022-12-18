@@ -40,6 +40,9 @@ type ExternalorganizationlistingDud struct {
 
     
 
+
+    
+
 }
 
 // Externalorganizationlisting
@@ -60,6 +63,10 @@ type Externalorganizationlisting struct {
     Total int `json:"total"`
 
 
+    // PartialResults
+    PartialResults bool `json:"partialResults"`
+
+
     // FirstUri
     FirstUri string `json:"firstUri"`
 
@@ -68,12 +75,12 @@ type Externalorganizationlisting struct {
     NextUri string `json:"nextUri"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
-
     // LastUri
     LastUri string `json:"lastUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // SelfUri
@@ -88,6 +95,7 @@ type Externalorganizationlisting struct {
 // String returns a JSON representation of the model
 func (o *Externalorganizationlisting) String() string {
      o.Entities = []Externalorganization{{}} 
+    
     
     
     
@@ -122,13 +130,15 @@ func (u *Externalorganizationlisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
+        PartialResults bool `json:"partialResults"`
+        
         FirstUri string `json:"firstUri"`
         
         NextUri string `json:"nextUri"`
         
-        PreviousUri string `json:"previousUri"`
-        
         LastUri string `json:"lastUri"`
+        
+        PreviousUri string `json:"previousUri"`
         
         SelfUri string `json:"selfUri"`
         
@@ -138,6 +148,9 @@ func (u *Externalorganizationlisting) MarshalJSON() ([]byte, error) {
 
         
         Entities: []Externalorganization{{}},
+        
+
+
         
 
 

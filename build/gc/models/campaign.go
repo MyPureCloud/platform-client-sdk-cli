@@ -108,6 +108,9 @@ type CampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -238,6 +241,10 @@ type Campaign struct {
     Division Domainentityref `json:"division"`
 
 
+    // DynamicContactQueueingSettings - Settings for dynamic queueing of contacts.
+    DynamicContactQueueingSettings Dynamiccontactqueueingsettings `json:"dynamicContactQueueingSettings"`
+
+
     
 
 }
@@ -271,6 +278,7 @@ func (o *Campaign) String() string {
     
     
      o.ContactListFilters = []Domainentityref{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -344,6 +352,8 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
         ContactListFilters []Domainentityref `json:"contactListFilters"`
         
         Division Domainentityref `json:"division"`
+        
+        DynamicContactQueueingSettings Dynamiccontactqueueingsettings `json:"dynamicContactQueueingSettings"`
         *Alias
     }{
 
@@ -447,6 +457,9 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
 
         
         ContactListFilters: []Domainentityref{{}},
+        
+
+
         
 
 

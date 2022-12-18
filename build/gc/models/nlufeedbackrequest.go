@@ -19,6 +19,9 @@ type NlufeedbackrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Nlufeedbackrequest
@@ -34,12 +37,17 @@ type Nlufeedbackrequest struct {
     // VersionId - The domain version ID of the feedback.
     VersionId string `json:"versionId"`
 
+
+    // Language - The language of the version to which feedback is linked, e.g. en-us, de-de
+    Language string `json:"language"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Nlufeedbackrequest) String() string {
     
      o.Intents = []Intentfeedback{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -63,6 +71,8 @@ func (u *Nlufeedbackrequest) MarshalJSON() ([]byte, error) {
         Intents []Intentfeedback `json:"intents"`
         
         VersionId string `json:"versionId"`
+        
+        Language string `json:"language"`
         *Alias
     }{
 
@@ -71,6 +81,9 @@ func (u *Nlufeedbackrequest) MarshalJSON() ([]byte, error) {
 
         
         Intents: []Intentfeedback{{}},
+        
+
+
         
 
 

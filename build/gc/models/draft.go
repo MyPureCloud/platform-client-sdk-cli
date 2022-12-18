@@ -24,6 +24,9 @@ type DraftDud struct {
     Intents []Draftintents `json:"intents"`
 
 
+    Topics []Drafttopics `json:"topics"`
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -41,6 +44,9 @@ type Draft struct {
 
     // Name - Draft name
     Name string `json:"name"`
+
+
+    
 
 
     
@@ -82,6 +88,9 @@ func (u *Draft) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         *Alias
     }{
+
+        
+
 
         
 

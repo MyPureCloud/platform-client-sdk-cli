@@ -26,6 +26,9 @@ type MinerexecuterequestDud struct {
 
     
 
+
+    
+
 }
 
 // Minerexecuterequest
@@ -46,6 +49,10 @@ type Minerexecuterequest struct {
     MediaType string `json:"mediaType"`
 
 
+    // ParticipantType - Type of the participant, either agent, customer or both.
+    ParticipantType string `json:"participantType"`
+
+
     // QueueIds - List of queue IDs for filtering conversations.
     QueueIds []string `json:"queueIds"`
 
@@ -53,6 +60,7 @@ type Minerexecuterequest struct {
 
 // String returns a JSON representation of the model
 func (o *Minerexecuterequest) String() string {
+    
     
     
     
@@ -83,9 +91,14 @@ func (u *Minerexecuterequest) MarshalJSON() ([]byte, error) {
         
         MediaType string `json:"mediaType"`
         
+        ParticipantType string `json:"participantType"`
+        
         QueueIds []string `json:"queueIds"`
         *Alias
     }{
+
+        
+
 
         
 

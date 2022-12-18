@@ -62,6 +62,8 @@ func Cmdlanguageunderstanding_miners_drafts() *cobra.Command {
 }`)
 	languageunderstanding_miners_draftsCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "string", "draftIntentId", "", "Parameter to filter a specific intent.")
+	utils.AddFlag(getCmd.Flags(), "string", "draftTopicId", "", "Parameter to filter a specific topic.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}", utils.FormatPermissions([]string{ "languageUnderstanding:draft:view",  }), utils.GenerateDevCentreLink("GET", "Language Understanding", "/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -276,6 +278,14 @@ var getCmd = &cobra.Command{
 		draftId, args := args[0], args[1:]
 		path = strings.Replace(path, "{draftId}", fmt.Sprintf("%v", draftId), -1)
 
+		draftIntentId := utils.GetFlag(cmd.Flags(), "string", "draftIntentId")
+		if draftIntentId != "" {
+			queryParams["draftIntentId"] = draftIntentId
+		}
+		draftTopicId := utils.GetFlag(cmd.Flags(), "string", "draftTopicId")
+		if draftTopicId != "" {
+			queryParams["draftTopicId"] = draftTopicId
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

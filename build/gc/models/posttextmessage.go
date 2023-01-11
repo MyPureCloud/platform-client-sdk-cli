@@ -32,7 +32,7 @@ type Posttextmessage struct {
 
 
     // Content - A list of content elements in message
-    Content []Messagecontent `json:"content"`
+    Content []Conversationmessagecontent `json:"content"`
 
 }
 
@@ -40,7 +40,7 @@ type Posttextmessage struct {
 func (o *Posttextmessage) String() string {
     
     
-     o.Content = []Messagecontent{{}} 
+     o.Content = []Conversationmessagecontent{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -62,7 +62,7 @@ func (u *Posttextmessage) MarshalJSON() ([]byte, error) {
         
         Text string `json:"text"`
         
-        Content []Messagecontent `json:"content"`
+        Content []Conversationmessagecontent `json:"content"`
         *Alias
     }{
 
@@ -73,7 +73,7 @@ func (u *Posttextmessage) MarshalJSON() ([]byte, error) {
 
 
         
-        Content: []Messagecontent{{}},
+        Content: []Conversationmessagecontent{{}},
         
 
         Alias: (*Alias)(u),

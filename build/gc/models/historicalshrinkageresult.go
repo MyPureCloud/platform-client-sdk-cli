@@ -29,6 +29,9 @@ type HistoricalshrinkageresultDud struct {
 
     
 
+
+    
+
 }
 
 // Historicalshrinkageresult
@@ -56,6 +59,10 @@ type Historicalshrinkageresult struct {
     // ShrinkageForActivityCategories - Shrinkage for activity categories
     ShrinkageForActivityCategories []Historicalshrinkageactivitycategoryresponse `json:"shrinkageForActivityCategories"`
 
+
+    // BusinessUnitIds - List of all business units of all the agents in response
+    BusinessUnitIds []string `json:"businessUnitIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -66,6 +73,7 @@ func (o *Historicalshrinkageresult) String() string {
     
     
      o.ShrinkageForActivityCategories = []Historicalshrinkageactivitycategoryresponse{{}} 
+     o.BusinessUnitIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -94,6 +102,8 @@ func (u *Historicalshrinkageresult) MarshalJSON() ([]byte, error) {
         AggregatedShrinkage Historicalshrinkageaggregateresponse `json:"aggregatedShrinkage"`
         
         ShrinkageForActivityCategories []Historicalshrinkageactivitycategoryresponse `json:"shrinkageForActivityCategories"`
+        
+        BusinessUnitIds []string `json:"businessUnitIds"`
         *Alias
     }{
 
@@ -114,6 +124,11 @@ func (u *Historicalshrinkageresult) MarshalJSON() ([]byte, error) {
 
         
         ShrinkageForActivityCategories: []Historicalshrinkageactivitycategoryresponse{{}},
+        
+
+
+        
+        BusinessUnitIds: []string{""},
         
 
         Alias: (*Alias)(u),

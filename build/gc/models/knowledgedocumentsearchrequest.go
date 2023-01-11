@@ -46,6 +46,12 @@ type KnowledgedocumentsearchrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Knowledgedocumentsearchrequest
@@ -71,6 +77,10 @@ type Knowledgedocumentsearchrequest struct {
     
 
 
+    // QueryType - The type of the query that initiates the search.
+    QueryType string `json:"queryType"`
+
+
     // IncludeDraftDocuments - Indicates whether the search results would also include draft documents.
     IncludeDraftDocuments bool `json:"includeDraftDocuments"`
 
@@ -94,10 +104,16 @@ type Knowledgedocumentsearchrequest struct {
     // Application - The client application details from which search request was sent.
     Application Knowledgesearchclientapplication `json:"application"`
 
+
+    // ConversationContext - Conversation context information if the search is initiated in the context of a conversation.
+    ConversationContext Knowledgeconversationcontext `json:"conversationContext"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentsearchrequest) String() string {
+    
+    
     
     
     
@@ -130,6 +146,8 @@ func (u *Knowledgedocumentsearchrequest) MarshalJSON() ([]byte, error) {
         
         PageNumber int `json:"pageNumber"`
         
+        QueryType string `json:"queryType"`
+        
         IncludeDraftDocuments bool `json:"includeDraftDocuments"`
         
         Interval Documentqueryinterval `json:"interval"`
@@ -141,8 +159,16 @@ func (u *Knowledgedocumentsearchrequest) MarshalJSON() ([]byte, error) {
         SortBy string `json:"sortBy"`
         
         Application Knowledgesearchclientapplication `json:"application"`
+        
+        ConversationContext Knowledgeconversationcontext `json:"conversationContext"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

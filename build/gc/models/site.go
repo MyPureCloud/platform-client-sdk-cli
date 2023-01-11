@@ -90,6 +90,18 @@ type SiteDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -192,6 +204,22 @@ type Site struct {
     SiteConnections []Siteconnection `json:"siteConnections"`
 
 
+    // MediaRegions - The ordered list of AWS regions through which media can stream.
+    MediaRegions []string `json:"mediaRegions"`
+
+
+    // CallerId - The caller ID value for the site.
+    CallerId string `json:"callerId"`
+
+
+    // CallerName - The caller name for the site.
+    CallerName string `json:"callerName"`
+
+
+    // CloudProxyForceTurn - Enables premises Edge Force Turn 
+    CloudProxyForceTurn bool `json:"cloudProxyForceTurn"`
+
+
     
 
 }
@@ -216,6 +244,10 @@ func (o *Site) String() string {
     
     
      o.SiteConnections = []Siteconnection{{}} 
+     o.MediaRegions = []string{""} 
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -268,6 +300,14 @@ func (u *Site) MarshalJSON() ([]byte, error) {
         CoreSite bool `json:"coreSite"`
         
         SiteConnections []Siteconnection `json:"siteConnections"`
+        
+        MediaRegions []string `json:"mediaRegions"`
+        
+        CallerId string `json:"callerId"`
+        
+        CallerName string `json:"callerName"`
+        
+        CloudProxyForceTurn bool `json:"cloudProxyForceTurn"`
         *Alias
     }{
 
@@ -360,6 +400,20 @@ func (u *Site) MarshalJSON() ([]byte, error) {
 
         
         SiteConnections: []Siteconnection{{}},
+        
+
+
+        
+        MediaRegions: []string{""},
+        
+
+
+        
+
+
+        
+
+
         
 
 

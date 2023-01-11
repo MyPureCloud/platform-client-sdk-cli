@@ -29,6 +29,9 @@ type KnowledgedocumentguestsearchDud struct {
     PageCount int `json:"pageCount"`
 
 
+    
+
+
     SessionId string `json:"sessionId"`
 
 
@@ -59,6 +62,10 @@ type Knowledgedocumentguestsearch struct {
     
 
 
+    // QueryType - The type of the query that initiates the search.
+    QueryType string `json:"queryType"`
+
+
     
 
 
@@ -68,6 +75,7 @@ type Knowledgedocumentguestsearch struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentguestsearch) String() string {
+    
     
     
     
@@ -93,8 +101,13 @@ func (u *Knowledgedocumentguestsearch) MarshalJSON() ([]byte, error) {
         PageSize int `json:"pageSize"`
         
         PageNumber int `json:"pageNumber"`
+        
+        QueryType string `json:"queryType"`
         *Alias
     }{
+
+        
+
 
         
 

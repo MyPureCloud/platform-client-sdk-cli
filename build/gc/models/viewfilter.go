@@ -466,6 +466,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1077,6 +1080,10 @@ type Viewfilter struct {
     // StationErrors - The list of agent errors that are related to station
     StationErrors []string `json:"stationErrors"`
 
+
+    // CanonicalContactIds - The canonical contact ids are used to filter the view
+    CanonicalContactIds []string `json:"canonicalContactIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1233,6 +1240,7 @@ func (o *Viewfilter) String() string {
     
     
      o.StationErrors = []string{""} 
+     o.CanonicalContactIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1553,6 +1561,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         MyDashboard bool `json:"myDashboard"`
         
         StationErrors []string `json:"stationErrors"`
+        
+        CanonicalContactIds []string `json:"canonicalContactIds"`
         *Alias
     }{
 
@@ -2229,6 +2239,11 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         StationErrors: []string{""},
+        
+
+
+        
+        CanonicalContactIds: []string{""},
         
 
         Alias: (*Alias)(u),

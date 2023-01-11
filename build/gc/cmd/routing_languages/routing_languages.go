@@ -53,7 +53,7 @@ func Cmdrouting_languages() *cobra.Command {
 }`)
 	routing_languagesCmd.AddCommand(createCmd)
 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/languages/{languageId}", utils.FormatPermissions([]string{ "routing:skill:manage",  }), utils.GenerateDevCentreLink("DELETE", "Languages", "/api/v2/routing/languages/{languageId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/languages/{languageId}", utils.FormatPermissions([]string{ "routing:skill:manage",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/languages/{languageId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -72,7 +72,7 @@ func Cmdrouting_languages() *cobra.Command {
 }`)
 	routing_languagesCmd.AddCommand(deleteCmd)
 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/languages/{languageId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Languages", "/api/v2/routing/languages/{languageId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/languages/{languageId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/languages/{languageId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -177,8 +177,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [languageId]",
-	Short: "Delete Language",
-	Long:  "Delete Language",
+	Short: "Delete a routing language",
+	Long:  "Delete a routing language",
 	Args:  utils.DetermineArgs([]string{ "languageId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -242,8 +242,8 @@ var deleteCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [languageId]",
-	Short: "Get language",
-	Long:  "Get language",
+	Short: "Get a routing language",
+	Long:  "Get a routing language",
 	Args:  utils.DetermineArgs([]string{ "languageId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

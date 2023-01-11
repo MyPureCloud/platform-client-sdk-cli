@@ -46,6 +46,9 @@ type VoicemailgrouppolicyDud struct {
 
     
 
+
+    
+
 }
 
 // Voicemailgrouppolicy
@@ -96,10 +99,15 @@ type Voicemailgrouppolicy struct {
     // InteractiveResponsePromptId - The prompt to use when connecting a user to a Group Ring call
     InteractiveResponsePromptId string `json:"interactiveResponsePromptId"`
 
+
+    // InteractiveResponseRequired - Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call
+    InteractiveResponseRequired bool `json:"interactiveResponseRequired"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Voicemailgrouppolicy) String() string {
+    
     
     
     
@@ -149,8 +157,13 @@ func (u *Voicemailgrouppolicy) MarshalJSON() ([]byte, error) {
         GroupAlertType string `json:"groupAlertType"`
         
         InteractiveResponsePromptId string `json:"interactiveResponsePromptId"`
+        
+        InteractiveResponseRequired bool `json:"interactiveResponseRequired"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -38,6 +38,9 @@ type TriggerDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -71,8 +74,12 @@ type Trigger struct {
     MatchCriteria []Matchcriteria `json:"matchCriteria"`
 
 
-    // EventTTLSeconds - How long each event is meaningful after origination, in seconds. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely.
+    // EventTTLSeconds - Optional length of time that events are meaningful after origination. Events older than this threshold may be dropped if the platform is delayed in processing events. Unset means events are valid indefinitely, otherwise must be set to at least 10 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
     EventTTLSeconds int `json:"eventTTLSeconds"`
+
+
+    // DelayBySeconds - Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.
+    DelayBySeconds int `json:"delayBySeconds"`
 
 
     // Description - Description of the trigger. Can be up to 512 characters in length.
@@ -91,6 +98,7 @@ func (o *Trigger) String() string {
     
     
      o.MatchCriteria = []Matchcriteria{{}} 
+    
     
     
 
@@ -124,6 +132,8 @@ func (u *Trigger) MarshalJSON() ([]byte, error) {
         
         EventTTLSeconds int `json:"eventTTLSeconds"`
         
+        DelayBySeconds int `json:"delayBySeconds"`
+        
         Description string `json:"description"`
         *Alias
     }{
@@ -148,6 +158,9 @@ func (u *Trigger) MarshalJSON() ([]byte, error) {
 
         
         MatchCriteria: []Matchcriteria{{}},
+        
+
+
         
 
 

@@ -241,8 +241,8 @@ var deleteCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [languageId]",
-	Short: "Get language (Deprecated)",
-	Long:  "Get language (Deprecated)",
+	Short: "Get Language (Deprecated)",
+	Long:  "Get Language (Deprecated)",
 	Args:  utils.DetermineArgs([]string{ "languageId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -606,6 +606,7 @@ gc/cmd/recording_mediaretentionpolicies/recording_mediaretentionpolicies.go
 gc/cmd/recording_recordingkeys/recording_recordingkeys.go
 gc/cmd/recording_recordingkeys_rotationschedule/recording_recordingkeys_rotationschedule.go
 gc/cmd/recording_settings/recording_settings.go
+gc/cmd/recording_uploads_reports/recording_uploads_reports.go
 gc/cmd/recordings_deletionprotection/recordings_deletionprotection.go
 gc/cmd/recordings_retention_query/recordings_retention_query.go
 gc/cmd/recordings_screensessions/recordings_screensessions.go
@@ -2141,6 +2142,8 @@ gc/models/knowledgecategory.go
 gc/models/knowledgecategoryrequest.go
 gc/models/knowledgecontextreference.go
 gc/models/knowledgecontextvaluereference.go
+gc/models/knowledgeconversationcontext.go
+gc/models/knowledgeconversationcontextresponse.go
 gc/models/knowledgedocument.go
 gc/models/knowledgedocumentalternative.go
 gc/models/knowledgedocumentbulkrequest.go
@@ -2685,6 +2688,8 @@ gc/models/recordingmetadata.go
 gc/models/recordingretention.go
 gc/models/recordingretentioncursorentitylisting.go
 gc/models/recordingsettings.go
+gc/models/recordinguploadreport.go
+gc/models/recordinguploadreportrequest.go
 gc/models/referrer.go
 gc/models/regiontimezone.go
 gc/models/registerarchitectjobresponse.go
@@ -3278,6 +3283,7 @@ gc/models/validateworkplanresponse.go
 gc/models/validationlimits.go
 gc/models/validationservicerequest.go
 gc/models/valuewrapperdate.go
+gc/models/valuewrapperhristimeofftype.go
 gc/models/valuewrapperplanningperiodsettings.go
 gc/models/valuewrapperstring.go
 gc/models/verificationresult.go

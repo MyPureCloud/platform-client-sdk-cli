@@ -29,7 +29,13 @@ type KnowledgedocumentsearchDud struct {
     PageCount int `json:"pageCount"`
 
 
+    
+
+
     Results []Knowledgedocumentsearchresult `json:"results"`
+
+
+    
 
 
     
@@ -59,16 +65,26 @@ type Knowledgedocumentsearch struct {
     
 
 
+    // QueryType - The type of the query that initiates the search.
+    QueryType string `json:"queryType"`
+
+
     
 
 
     // Application - The client application details from which search happened.
     Application Knowledgesearchclientapplication `json:"application"`
 
+
+    // ConversationContext - Conversation context information if the search is initiated in the context of a conversation.
+    ConversationContext Knowledgeconversationcontextresponse `json:"conversationContext"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentsearch) String() string {
+    
+    
     
     
     
@@ -96,9 +112,19 @@ func (u *Knowledgedocumentsearch) MarshalJSON() ([]byte, error) {
         
         PageNumber int `json:"pageNumber"`
         
+        QueryType string `json:"queryType"`
+        
         Application Knowledgesearchclientapplication `json:"application"`
+        
+        ConversationContext Knowledgeconversationcontextresponse `json:"conversationContext"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

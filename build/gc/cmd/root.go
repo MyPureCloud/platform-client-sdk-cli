@@ -42,11 +42,11 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/systempresences"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/teams"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/timezones"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
@@ -127,7 +127,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 55.0.1")
+		fmt.Println("Current version: 56.0.0")
 		checkForNewVersion()
 	},
 }
@@ -146,7 +146,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("55.0.1", latestVersion) {
+	if versionsAreEqual("56.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -258,11 +258,11 @@ func init() {
 	rootCmd.AddCommand(stations.Cmdstations())
 	rootCmd.AddCommand(systempresences.Cmdsystempresences())
 	rootCmd.AddCommand(teams.Cmdteams())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(timezones.Cmdtimezones())
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
-	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(autopagination.Cmdautopagination())
 	rootCmd.AddCommand(completion.Cmdcompletion())

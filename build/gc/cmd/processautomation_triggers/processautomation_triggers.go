@@ -82,6 +82,7 @@ func Cmdprocessautomation_triggers() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "topicName", "", "Topic name(s). Separated by commas")
 	utils.AddFlag(listCmd.Flags(), "bool", "enabled", "", "Boolean indicating desired enabled state of triggers")
+	utils.AddFlag(listCmd.Flags(), "bool", "hasDelayBy", "", "Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/processautomation/triggers", utils.FormatPermissions([]string{ "processautomation:trigger:edit", "processautomation:trigger:view",  }), utils.GenerateDevCentreLink("GET", "Process Automation", "/api/v2/processautomation/triggers")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -358,6 +359,10 @@ var listCmd = &cobra.Command{
 		enabled := utils.GetFlag(cmd.Flags(), "bool", "enabled")
 		if enabled != "" {
 			queryParams["enabled"] = enabled
+		}
+		hasDelayBy := utils.GetFlag(cmd.Flags(), "bool", "hasDelayBy")
+		if hasDelayBy != "" {
+			queryParams["hasDelayBy"] = hasDelayBy
 		}
 		urlString := path
 		if len(queryParams) > 0 {

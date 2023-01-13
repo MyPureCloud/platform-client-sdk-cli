@@ -138,7 +138,7 @@ type Phone struct {
 
 
     // PhoneBaseSettings - Phone Base Settings
-    PhoneBaseSettings Domainentityref `json:"phoneBaseSettings"`
+    PhoneBaseSettings Phonebasesettings `json:"phoneBaseSettings"`
 
 
     // LineBaseSettings
@@ -233,7 +233,7 @@ func (u *Phone) MarshalJSON() ([]byte, error) {
         
         Site Domainentityref `json:"site"`
         
-        PhoneBaseSettings Domainentityref `json:"phoneBaseSettings"`
+        PhoneBaseSettings Phonebasesettings `json:"phoneBaseSettings"`
         
         LineBaseSettings Domainentityref `json:"lineBaseSettings"`
         

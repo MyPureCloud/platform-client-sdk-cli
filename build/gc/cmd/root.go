@@ -47,7 +47,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
@@ -70,6 +69,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/organizations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeperformance"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gamification"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge"
@@ -79,6 +79,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/quality"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/documentationfile"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webchat"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webdeployments"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/oauth"
@@ -96,7 +97,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/usage"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/voicemail"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/architect"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webdeployments"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webmessaging"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/coaching"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning"
@@ -127,7 +127,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 56.0.0")
+		fmt.Println("Current version: 57.0.0")
 		checkForNewVersion()
 	},
 }
@@ -146,7 +146,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("56.0.0", latestVersion) {
+	if versionsAreEqual("57.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -263,7 +263,6 @@ func init() {
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
-	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(autopagination.Cmdautopagination())
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())
@@ -286,6 +285,7 @@ func init() {
 	rootCmd.AddCommand(organizations.Cmdorganizations())
 	rootCmd.AddCommand(employeeperformance.Cmdemployeeperformance())
 	rootCmd.AddCommand(gamification.Cmdgamification())
+	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(geolocations.Cmdgeolocations())
 	rootCmd.AddCommand(journey.Cmdjourney())
 	rootCmd.AddCommand(knowledge.Cmdknowledge())
@@ -295,6 +295,7 @@ func init() {
 	rootCmd.AddCommand(quality.Cmdquality())
 	rootCmd.AddCommand(documentationfile.Cmddocumentationfile())
 	rootCmd.AddCommand(webchat.Cmdwebchat())
+	rootCmd.AddCommand(webdeployments.Cmdwebdeployments())
 	rootCmd.AddCommand(workforcemanagement.Cmdworkforcemanagement())
 	rootCmd.AddCommand(notifications.Cmdnotifications())
 	rootCmd.AddCommand(oauth.Cmdoauth())
@@ -312,7 +313,6 @@ func init() {
 	rootCmd.AddCommand(usage.Cmdusage())
 	rootCmd.AddCommand(voicemail.Cmdvoicemail())
 	rootCmd.AddCommand(architect.Cmdarchitect())
-	rootCmd.AddCommand(webdeployments.Cmdwebdeployments())
 	rootCmd.AddCommand(webmessaging.Cmdwebmessaging())
 	rootCmd.AddCommand(coaching.Cmdcoaching())
 	rootCmd.AddCommand(learning.Cmdlearning())

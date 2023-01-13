@@ -839,6 +839,9 @@ gc/cmd/webdeployments_configurations_versions_draft/webdeployments_configuration
 gc/cmd/webdeployments_configurations_versions_draft_publish/webdeployments_configurations_versions_draft_publish.go
 gc/cmd/webdeployments_deployments/webdeployments_deployments.go
 gc/cmd/webdeployments_deployments_configurations/webdeployments_deployments_configurations.go
+gc/cmd/webdeployments_token_oauthcodegrantjwtexchange/webdeployments_token_oauthcodegrantjwtexchange.go
+gc/cmd/webdeployments_token_refresh/webdeployments_token_refresh.go
+gc/cmd/webdeployments_token_revoke/webdeployments_token_revoke.go
 gc/cmd/webmessaging_messages/webmessaging_messages.go
 gc/cmd/widgets_deployments/widgets_deployments.go
 gc/cmd/workforcemanagement_adherence/workforcemanagement_adherence.go
@@ -846,6 +849,8 @@ gc/cmd/workforcemanagement_adherence_explanations/workforcemanagement_adherence_
 gc/cmd/workforcemanagement_adherence_explanations_jobs/workforcemanagement_adherence_explanations_jobs.go
 gc/cmd/workforcemanagement_adherence_explanations_query/workforcemanagement_adherence_explanations_query.go
 gc/cmd/workforcemanagement_adherence_historical/workforcemanagement_adherence_historical.go
+gc/cmd/workforcemanagement_adherence_historical_bulk/workforcemanagement_adherence_historical_bulk.go
+gc/cmd/workforcemanagement_adherence_historical_bulk_jobs/workforcemanagement_adherence_historical_bulk_jobs.go
 gc/cmd/workforcemanagement_adherence_historical_jobs/workforcemanagement_adherence_historical_jobs.go
 gc/cmd/workforcemanagement_adhocmodelingjobs/workforcemanagement_adhocmodelingjobs.go
 gc/cmd/workforcemanagement_agents_adherence_explanations/workforcemanagement_agents_adherence_explanations.go
@@ -2547,6 +2552,7 @@ gc/models/permissions.go
 gc/models/phone.go
 gc/models/phonebase.go
 gc/models/phonebaseentitylisting.go
+gc/models/phonebasesettings.go
 gc/models/phonecapabilities.go
 gc/models/phonecolumn.go
 gc/models/phoneentitylisting.go
@@ -2913,6 +2919,7 @@ gc/models/shorttermforecastreference.go
 gc/models/shrinkageoverride.go
 gc/models/shrinkageoverrides.go
 gc/models/signature.go
+gc/models/signeddata.go
 gc/models/signedurlresponse.go
 gc/models/singleworkdayaveragepoints.go
 gc/models/singleworkdayaveragevalues.go
@@ -3327,6 +3334,11 @@ gc/models/webdeploymentconfigurationversionentitylisting.go
 gc/models/webdeploymentconfigurationversionentityref.go
 gc/models/webdeploymentconfigurationversionresponse.go
 gc/models/webdeploymentheadlessmode.go
+gc/models/webdeploymentsauthorizationresponse.go
+gc/models/webdeploymentsjourneycontext.go
+gc/models/webdeploymentsoauthexchangerequest.go
+gc/models/webdeploymentsoauthrequestparameters.go
+gc/models/webdeploymentsrefreshjwtrequest.go
 gc/models/webmessagingattachment.go
 gc/models/webmessagingbuttonresponse.go
 gc/models/webmessagingchannel.go
@@ -3352,6 +3364,13 @@ gc/models/weekshifttraderesponse.go
 gc/models/wfmagent.go
 gc/models/wfmbusinessunitreference.go
 gc/models/wfmforecastmodificationintervaloffsetvalue.go
+gc/models/wfmhistoricaladherencebulkitem.go
+gc/models/wfmhistoricaladherencebulkjobreference.go
+gc/models/wfmhistoricaladherencebulkquery.go
+gc/models/wfmhistoricaladherencebulkresponse.go
+gc/models/wfmhistoricaladherencebulkresult.go
+gc/models/wfmhistoricaladherencebulkuserdaymetrics.go
+gc/models/wfmhistoricaladherencebulkuserresult.go
 gc/models/wfmhistoricaladherencequery.go
 gc/models/wfmhistoricaladherencequeryforusers.go
 gc/models/wfmhistoricaladherenceresponse.go

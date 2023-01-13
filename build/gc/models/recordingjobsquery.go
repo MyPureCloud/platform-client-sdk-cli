@@ -32,6 +32,15 @@ type RecordingjobsqueryDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Recordingjobsquery
@@ -40,8 +49,20 @@ type Recordingjobsquery struct {
     Action string `json:"action"`
 
 
-    // ActionDate - The date when the action will be performed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    // ActionDate - The date when the action will be performed. If screenRecordingActionDate is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     ActionDate time.Time `json:"actionDate"`
+
+
+    // ActionAge - The number of days after each recording's creation date when the action will be performed. If screenRecordingActionAge is also provided, this value is only used for non-screen recordings. Otherwise this value is used for all recordings.
+    ActionAge int `json:"actionAge"`
+
+
+    // ScreenRecordingActionDate - The date when the action will be performed for screen recordings. If this is provided then includeScreenRecordings must be true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ScreenRecordingActionDate time.Time `json:"screenRecordingActionDate"`
+
+
+    // ScreenRecordingActionAge - The number of days after each screen recording's creation date when the action will be performed. If this is provided then includeScreenRecordings must be true.
+    ScreenRecordingActionAge int `json:"screenRecordingActionAge"`
 
 
     // IntegrationId - IntegrationId to Access AWS S3 bucket for bulk recording exports. This field is required and used only for EXPORT action.
@@ -74,6 +95,9 @@ func (o *Recordingjobsquery) String() string {
     
     
     
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -95,6 +119,12 @@ func (u *Recordingjobsquery) MarshalJSON() ([]byte, error) {
         
         ActionDate time.Time `json:"actionDate"`
         
+        ActionAge int `json:"actionAge"`
+        
+        ScreenRecordingActionDate time.Time `json:"screenRecordingActionDate"`
+        
+        ScreenRecordingActionAge int `json:"screenRecordingActionAge"`
+        
         IntegrationId string `json:"integrationId"`
         
         IncludeRecordingsWithSensitiveData bool `json:"includeRecordingsWithSensitiveData"`
@@ -106,6 +136,15 @@ func (u *Recordingjobsquery) MarshalJSON() ([]byte, error) {
         ConversationQuery Asyncconversationquery `json:"conversationQuery"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

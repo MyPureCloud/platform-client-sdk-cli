@@ -84,6 +84,12 @@ type SmsphonenumberDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -183,12 +189,22 @@ type Smsphonenumber struct {
     SupportsVoice bool `json:"supportsVoice"`
 
 
+    // Integration - The Genesys Cloud integration this phone number belongs to.
+    Integration Domainentityref `json:"integration"`
+
+
+    // Compliance - Compliance configuration for short codes, including help, stop and opt in.
+    Compliance Compliance `json:"compliance"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Smsphonenumber) String() string {
+    
+    
     
     
     
@@ -268,8 +284,18 @@ func (u *Smsphonenumber) MarshalJSON() ([]byte, error) {
         SupportsMms bool `json:"supportsMms"`
         
         SupportsVoice bool `json:"supportsVoice"`
+        
+        Integration Domainentityref `json:"integration"`
+        
+        Compliance Compliance `json:"compliance"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

@@ -39,6 +39,12 @@ type MetricDud struct {
     DateUnlinked time.Time `json:"dateUnlinked"`
 
 
+    Precision int `json:"precision"`
+
+
+    
+
+
     SourcePerformanceProfile Performanceprofile `json:"sourcePerformanceProfile"`
 
 
@@ -83,12 +89,20 @@ type Metric struct {
     
 
 
+    // TimeDisplayUnit - The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+    TimeDisplayUnit string `json:"timeDisplayUnit"`
+
+
+    
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Metric) String() string {
+    
     
     
     
@@ -120,8 +134,16 @@ func (u *Metric) MarshalJSON() ([]byte, error) {
         Objective Objective `json:"objective"`
         
         PerformanceProfileId string `json:"performanceProfileId"`
+        
+        TimeDisplayUnit string `json:"timeDisplayUnit"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

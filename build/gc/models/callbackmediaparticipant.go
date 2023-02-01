@@ -137,6 +137,9 @@ type CallbackmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Callbackmediaparticipant
@@ -195,6 +198,10 @@ type Callbackmediaparticipant struct {
 
     // WrapupPrompt - The wrap-up prompt indicating the type of wrap-up to be performed.
     WrapupPrompt string `json:"wrapupPrompt"`
+
+
+    // MediaRoles - List of roles this participant's media has had on the conversation, ie monitor, coach, etc
+    MediaRoles []string `json:"mediaRoles"`
 
 
     // User - The PureCloud user for this participant.
@@ -326,6 +333,7 @@ func (o *Callbackmediaparticipant) String() string {
     
     
     
+     o.MediaRoles = []string{""} 
     
     
     
@@ -398,6 +406,8 @@ func (u *Callbackmediaparticipant) MarshalJSON() ([]byte, error) {
         WrapupRequired bool `json:"wrapupRequired"`
         
         WrapupPrompt string `json:"wrapupPrompt"`
+        
+        MediaRoles []string `json:"mediaRoles"`
         
         User Domainentityref `json:"user"`
         
@@ -496,6 +506,11 @@ func (u *Callbackmediaparticipant) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        MediaRoles: []string{""},
         
 
 

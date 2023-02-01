@@ -87,6 +87,7 @@ func Cmdlanguageunderstanding_domains_feedback() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "bool", "enableCursorPagination", "false", "Enable Cursor Pagination")
+	utils.AddFlag(listCmd.Flags(), "bool", "includeTrainingUtterances", "true", "Include Training Utterances. By default they`re included.")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true")
 	utils.AddFlag(listCmd.Flags(), "[]string", "fields", "", "Fields and properties to get, comma-separated Valid values: version, dateCreated, text, intents")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/languageunderstanding/domains/{domainId}/feedback", utils.FormatPermissions([]string{ "languageUnderstanding:feedback:view", "dialog:bot:view",  }), utils.GenerateDevCentreLink("GET", "Language Understanding", "/api/v2/languageunderstanding/domains/{domainId}/feedback")))
@@ -368,6 +369,10 @@ var listCmd = &cobra.Command{
 		enableCursorPagination := utils.GetFlag(cmd.Flags(), "bool", "enableCursorPagination")
 		if enableCursorPagination != "" {
 			queryParams["enableCursorPagination"] = enableCursorPagination
+		}
+		includeTrainingUtterances := utils.GetFlag(cmd.Flags(), "bool", "includeTrainingUtterances")
+		if includeTrainingUtterances != "" {
+			queryParams["includeTrainingUtterances"] = includeTrainingUtterances
 		}
 		after := utils.GetFlag(cmd.Flags(), "string", "after")
 		if after != "" {

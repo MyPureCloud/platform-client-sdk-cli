@@ -25,6 +25,12 @@ type CreatemetricDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Createmetric
@@ -48,10 +54,20 @@ type Createmetric struct {
     // Name - The name of this metric
     Name string `json:"name"`
 
+
+    // Precision - The precision of the metric, must be between 0 and 5
+    Precision int `json:"precision"`
+
+
+    // TimeDisplayUnit - The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+    TimeDisplayUnit string `json:"timeDisplayUnit"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Createmetric) String() string {
+    
+    
     
     
     
@@ -83,8 +99,18 @@ func (u *Createmetric) MarshalJSON() ([]byte, error) {
         PerformanceProfileId string `json:"performanceProfileId"`
         
         Name string `json:"name"`
+        
+        Precision int `json:"precision"`
+        
+        TimeDisplayUnit string `json:"timeDisplayUnit"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

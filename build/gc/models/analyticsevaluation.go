@@ -53,6 +53,9 @@ type AnalyticsevaluationDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticsevaluation
@@ -71,6 +74,10 @@ type Analyticsevaluation struct {
 
     // EvaluationId - Unique identifier for the evaluation
     EvaluationId string `json:"evaluationId"`
+
+
+    // EvaluationStatus - Status of evaluation
+    EvaluationStatus string `json:"evaluationStatus"`
 
 
     // EvaluatorId - A unique identifier of the user who evaluated the interaction
@@ -130,6 +137,7 @@ func (o *Analyticsevaluation) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -155,6 +163,8 @@ func (u *Analyticsevaluation) MarshalJSON() ([]byte, error) {
         
         EvaluationId string `json:"evaluationId"`
         
+        EvaluationStatus string `json:"evaluationStatus"`
+        
         EvaluatorId string `json:"evaluatorId"`
         
         EventTime time.Time `json:"eventTime"`
@@ -176,6 +186,9 @@ func (u *Analyticsevaluation) MarshalJSON() ([]byte, error) {
         OTotalScore int `json:"oTotalScore"`
         *Alias
     }{
+
+        
+
 
         
 

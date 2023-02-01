@@ -125,6 +125,9 @@ type CobrowsemediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Cobrowsemediaparticipant
@@ -183,6 +186,10 @@ type Cobrowsemediaparticipant struct {
 
     // WrapupPrompt - The wrap-up prompt indicating the type of wrap-up to be performed.
     WrapupPrompt string `json:"wrapupPrompt"`
+
+
+    // MediaRoles - List of roles this participant's media has had on the conversation, ie monitor, coach, etc
+    MediaRoles []string `json:"mediaRoles"`
 
 
     // User - The PureCloud user for this participant.
@@ -298,6 +305,7 @@ func (o *Cobrowsemediaparticipant) String() string {
     
     
     
+     o.MediaRoles = []string{""} 
     
     
     
@@ -366,6 +374,8 @@ func (u *Cobrowsemediaparticipant) MarshalJSON() ([]byte, error) {
         WrapupRequired bool `json:"wrapupRequired"`
         
         WrapupPrompt string `json:"wrapupPrompt"`
+        
+        MediaRoles []string `json:"mediaRoles"`
         
         User Domainentityref `json:"user"`
         
@@ -456,6 +466,11 @@ func (u *Cobrowsemediaparticipant) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        MediaRoles: []string{""},
         
 
 

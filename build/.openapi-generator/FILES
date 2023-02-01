@@ -157,6 +157,7 @@ gc/cmd/conversations_chats_participants_replace/conversations_chats_participants
 gc/cmd/conversations_chats_participants_wrapup/conversations_chats_participants_wrapup.go
 gc/cmd/conversations_chats_participants_wrapupcodes/conversations_chats_participants_wrapupcodes.go
 gc/cmd/conversations_chats_recordingstate/conversations_chats_recordingstate.go
+gc/cmd/conversations_cobrowse/conversations_cobrowse.go
 gc/cmd/conversations_cobrowsesessions/conversations_cobrowsesessions.go
 gc/cmd/conversations_cobrowsesessions_participants/conversations_cobrowsesessions_participants.go
 gc/cmd/conversations_cobrowsesessions_participants_attributes/conversations_cobrowsesessions_participants_attributes.go
@@ -504,12 +505,16 @@ gc/cmd/orgauthorization_trustees/orgauthorization_trustees.go
 gc/cmd/orgauthorization_trustees_audits/orgauthorization_trustees_audits.go
 gc/cmd/orgauthorization_trustees_clonedusers/orgauthorization_trustees_clonedusers.go
 gc/cmd/orgauthorization_trustees_default/orgauthorization_trustees_default.go
+gc/cmd/orgauthorization_trustees_groups/orgauthorization_trustees_groups.go
+gc/cmd/orgauthorization_trustees_groups_roledivisions/orgauthorization_trustees_groups_roledivisions.go
+gc/cmd/orgauthorization_trustees_groups_roles/orgauthorization_trustees_groups_roles.go
 gc/cmd/orgauthorization_trustees_users/orgauthorization_trustees_users.go
 gc/cmd/orgauthorization_trustees_users_roledivisions/orgauthorization_trustees_users_roledivisions.go
 gc/cmd/orgauthorization_trustees_users_roles/orgauthorization_trustees_users_roles.go
 gc/cmd/orgauthorization_trustor_audits/orgauthorization_trustor_audits.go
 gc/cmd/orgauthorization_trustors/orgauthorization_trustors.go
 gc/cmd/orgauthorization_trustors_clonedusers/orgauthorization_trustors_clonedusers.go
+gc/cmd/orgauthorization_trustors_groups/orgauthorization_trustors_groups.go
 gc/cmd/orgauthorization_trustors_users/orgauthorization_trustors_users.go
 gc/cmd/orphanrecordings/orphanrecordings.go
 gc/cmd/orphanrecordings_media/orphanrecordings_media.go
@@ -838,6 +843,7 @@ gc/cmd/webdeployments_configurations_versions/webdeployments_configurations_vers
 gc/cmd/webdeployments_configurations_versions_draft/webdeployments_configurations_versions_draft.go
 gc/cmd/webdeployments_configurations_versions_draft_publish/webdeployments_configurations_versions_draft_publish.go
 gc/cmd/webdeployments_deployments/webdeployments_deployments.go
+gc/cmd/webdeployments_deployments_cobrowse/webdeployments_deployments_cobrowse.go
 gc/cmd/webdeployments_deployments_configurations/webdeployments_deployments_configurations.go
 gc/cmd/webdeployments_token_oauthcodegrantjwtexchange/webdeployments_token_oauthcodegrantjwtexchange.go
 gc/cmd/webdeployments_token_refresh/webdeployments_token_refresh.go
@@ -1405,6 +1411,7 @@ gc/models/cobrowseconversationentitylisting.go
 gc/models/cobrowsemediaparticipant.go
 gc/models/cobrowsesession.go
 gc/models/cobrowsesettings.go
+gc/models/cobrowsewebmessagingsession.go
 gc/models/columndatatypespecification.go
 gc/models/columnstatus.go
 gc/models/commandstatus.go
@@ -1418,6 +1425,8 @@ gc/models/communicationdispositionappliedevent.go
 gc/models/communicationendedevent.go
 gc/models/comparisonperiod.go
 gc/models/comparisonperiodlisting.go
+gc/models/compliance.go
+gc/models/complianceresponse.go
 gc/models/condition.go
 gc/models/conditionalgrouprouting.go
 gc/models/conditionalgrouproutingrule.go
@@ -1830,6 +1839,7 @@ gc/models/emailmediapolicy.go
 gc/models/emailmediapolicyconditions.go
 gc/models/emailmessage.go
 gc/models/emailmessagelisting.go
+gc/models/emailmessagereply.go
 gc/models/emailoutbounddomainresult.go
 gc/models/emailsetup.go
 gc/models/emailssettings.go
@@ -2041,6 +2051,7 @@ gc/models/guestmemberinfo.go
 gc/models/headcountforecast.go
 gc/models/headcountinterval.go
 gc/models/helplink.go
+gc/models/helpsettings.go
 gc/models/historicaladherenceactuals.go
 gc/models/historicaladherencedaymetrics.go
 gc/models/historicaladherenceexceptioninfo.go
@@ -2477,6 +2488,7 @@ gc/models/openmessagingfromrecipient.go
 gc/models/openmessagingtorecipient.go
 gc/models/opennormalizedmessage.go
 gc/models/operation.go
+gc/models/optinsettings.go
 gc/models/organization.go
 gc/models/organizationfeatures.go
 gc/models/organizationpresence.go
@@ -2499,6 +2511,7 @@ gc/models/outboundrouteentitylisting.go
 gc/models/outboundsettings.go
 gc/models/outcome.go
 gc/models/outcomeachievement.go
+gc/models/outcomeconfig.go
 gc/models/outcomeeventscore.go
 gc/models/outcomelisting.go
 gc/models/outcomeprobabilitycondition.go
@@ -2965,6 +2978,7 @@ gc/models/stationsettings.go
 gc/models/statisticalresponse.go
 gc/models/statisticalsummary.go
 gc/models/statuschange.go
+gc/models/stopsettings.go
 gc/models/storysetting.go
 gc/models/streetaddress.go
 gc/models/subjectdivisiongrants.go
@@ -3144,6 +3158,7 @@ gc/models/trusteeauthorization.go
 gc/models/trusteebillingoverview.go
 gc/models/trustentitylisting.go
 gc/models/trustgroup.go
+gc/models/trustgroupentitylisting.go
 gc/models/trustmembercreate.go
 gc/models/trustor.go
 gc/models/trustorauditqueryrequest.go

@@ -46,7 +46,7 @@ func Cmdconversations_emails_messages() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/EmailMessage"
+        "$ref" : "#/components/schemas/EmailMessageReply"
       }
     }
   }

@@ -51,6 +51,9 @@ type EmailmessageDud struct {
     
 
 
+    
+
+
     EmailSizeBytes int `json:"emailSizeBytes"`
 
 
@@ -114,6 +117,10 @@ type Emailmessage struct {
     HistoryIncluded bool `json:"historyIncluded"`
 
 
+    // State
+    State string `json:"state"`
+
+
     
 
 
@@ -134,6 +141,7 @@ func (o *Emailmessage) String() string {
     
     
      o.Attachments = []Attachment{{}} 
+    
     
     
     
@@ -178,6 +186,8 @@ func (u *Emailmessage) MarshalJSON() ([]byte, error) {
         Time time.Time `json:"time"`
         
         HistoryIncluded bool `json:"historyIncluded"`
+        
+        State string `json:"state"`
         *Alias
     }{
 
@@ -213,6 +223,9 @@ func (u *Emailmessage) MarshalJSON() ([]byte, error) {
 
         
         Attachments: []Attachment{{}},
+        
+
+
         
 
 

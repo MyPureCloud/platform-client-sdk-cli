@@ -100,7 +100,7 @@ type Reportingexportjobrequest struct {
     Read bool `json:"read"`
 
 
-    // Locale - The locale use for localization of the exported data, i.e. en-us, es-mx  
+    // Locale - The locale used for localization of the exported data, i.e. en-US, es
     Locale string `json:"locale"`
 
 

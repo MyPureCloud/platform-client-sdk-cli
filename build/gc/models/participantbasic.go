@@ -149,6 +149,9 @@ type ParticipantbasicDud struct {
 
     
 
+
+    
+
 }
 
 // Participantbasic
@@ -255,6 +258,10 @@ type Participantbasic struct {
 
     // Wrapup - Call wrap up or disposition data.
     Wrapup Wrapup `json:"wrapup"`
+
+
+    // MediaRoles - List of roles this participant's media has had on the conversation, ie monitor, coach, etc.
+    MediaRoles []string `json:"mediaRoles"`
 
 
     // ConversationRoutingData - Information on how a communication should be routed to an agent.
@@ -366,6 +373,7 @@ func (o *Participantbasic) String() string {
     
     
     
+     o.MediaRoles = []string{""} 
     
     
     
@@ -454,6 +462,8 @@ func (u *Participantbasic) MarshalJSON() ([]byte, error) {
         WrapupSkipped bool `json:"wrapupSkipped"`
         
         Wrapup Wrapup `json:"wrapup"`
+        
+        MediaRoles []string `json:"mediaRoles"`
         
         ConversationRoutingData Conversationroutingdata `json:"conversationRoutingData"`
         
@@ -572,6 +582,11 @@ func (u *Participantbasic) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        MediaRoles: []string{""},
         
 
 

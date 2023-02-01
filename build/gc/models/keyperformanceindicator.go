@@ -39,6 +39,9 @@ type KeyperformanceindicatorDud struct {
     WrapUpCodeConfig Wrapupcodeconfig `json:"wrapUpCodeConfig"`
 
 
+    OutcomeConfig Outcomeconfig `json:"outcomeConfig"`
+
+
     Status string `json:"status"`
 
 
@@ -51,6 +54,9 @@ type KeyperformanceindicatorDud struct {
 
 // Keyperformanceindicator
 type Keyperformanceindicator struct { 
+    
+
+
     
 
 
@@ -108,6 +114,9 @@ func (u *Keyperformanceindicator) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

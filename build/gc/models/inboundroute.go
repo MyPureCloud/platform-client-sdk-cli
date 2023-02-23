@@ -56,6 +56,9 @@ type InboundrouteDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -121,6 +124,10 @@ type Inboundroute struct {
     HistoryInclusion string `json:"historyInclusion"`
 
 
+    // AllowMultipleActions - Control if multiple actions are allowed on this route. When true the disconnect has to be done manually. When false a conversation will be disconnected by the system after every action
+    AllowMultipleActions bool `json:"allowMultipleActions"`
+
+
     
 
 }
@@ -138,6 +145,7 @@ func (o *Inboundroute) String() string {
     
     
      o.AutoBcc = []Emailaddress{{}} 
+    
     
     
     
@@ -185,6 +193,8 @@ func (u *Inboundroute) MarshalJSON() ([]byte, error) {
         Signature Signature `json:"signature"`
         
         HistoryInclusion string `json:"historyInclusion"`
+        
+        AllowMultipleActions bool `json:"allowMultipleActions"`
         *Alias
     }{
 
@@ -225,6 +235,9 @@ func (u *Inboundroute) MarshalJSON() ([]byte, error) {
 
         
         AutoBcc: []Emailaddress{{}},
+        
+
+
         
 
 

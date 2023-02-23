@@ -87,6 +87,12 @@ type EvaluationDud struct {
     
 
 
+    
+
+
+    EvaluationSource Evaluationsource `json:"evaluationSource"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -130,6 +136,10 @@ type Evaluation struct {
 
     // AgentHasRead
     AgentHasRead bool `json:"agentHasRead"`
+
+
+    // Assignee
+    Assignee User `json:"assignee"`
 
 
     // ReleaseDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -184,7 +194,7 @@ type Evaluation struct {
     IsScoringIndex bool `json:"isScoringIndex"`
 
 
-    // AuthorizedActions - List of user authorized actions on evaluation. Possible values: edit, editScore, editAgentSignoff, delete, viewAudit
+    // AuthorizedActions - List of user authorized actions on evaluation. Possible values: assign, edit, editScore, editAgentSignoff, delete, release, viewAudit
     AuthorizedActions []string `json:"authorizedActions"`
 
 
@@ -194,10 +204,14 @@ type Evaluation struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Evaluation) String() string {
+    
     
     
     
@@ -256,6 +270,8 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
         Answers Evaluationscoringset `json:"answers"`
         
         AgentHasRead bool `json:"agentHasRead"`
+        
+        Assignee User `json:"assignee"`
         
         ReleaseDate time.Time `json:"releaseDate"`
         
@@ -332,6 +348,9 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
         MediaType: []string{""},
         
 
@@ -362,6 +381,9 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
 
         
         AuthorizedActions: []string{""},
+        
+
+
         
 
 

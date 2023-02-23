@@ -70,8 +70,8 @@ func Cmdquality_conversations_evaluations() *cobra.Command {
 }`)
 	quality_conversations_evaluationsCmd.AddCommand(deleteCmd)
 
-	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "agent, evaluator, evaluationForm")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}", utils.FormatPermissions([]string{ "quality:evaluation:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}")))
+	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "agent, assignee, evaluator, evaluationForm")
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}", utils.FormatPermissions([]string{ "quality:evaluation:view", "quality:evaluation:assign", "quality:evaluation:release",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

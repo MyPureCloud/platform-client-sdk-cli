@@ -85,6 +85,7 @@ func Cmdtelephony_providers_edges() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "edgeGroupId", "", "Filter by edgeGroup.id")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "bool", "managed", "", "Filter by managed")
+	utils.AddFlag(listCmd.Flags(), "bool", "showCloudMedia", "true", "True to show the cloud media devices in the result.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -373,6 +374,10 @@ var listCmd = &cobra.Command{
 		managed := utils.GetFlag(cmd.Flags(), "bool", "managed")
 		if managed != "" {
 			queryParams["managed"] = managed
+		}
+		showCloudMedia := utils.GetFlag(cmd.Flags(), "bool", "showCloudMedia")
+		if showCloudMedia != "" {
+			queryParams["showCloudMedia"] = showCloudMedia
 		}
 		urlString := path
 		if len(queryParams) > 0 {

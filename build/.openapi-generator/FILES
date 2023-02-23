@@ -408,6 +408,7 @@ gc/cmd/journey_actionmaps_estimates_jobs_results/journey_actionmaps_estimates_jo
 gc/cmd/journey_actiontargets/journey_actiontargets.go
 gc/cmd/journey_actiontemplates/journey_actiontemplates.go
 gc/cmd/journey_outcomes/journey_outcomes.go
+gc/cmd/journey_outcomes_predictors/journey_outcomes_predictors.go
 gc/cmd/journey_segments/journey_segments.go
 gc/cmd/journey_sessions/journey_sessions.go
 gc/cmd/journey_sessions_outcomescores/journey_sessions_outcomescores.go
@@ -1888,6 +1889,7 @@ gc/models/evaluationquestiongroupscore.go
 gc/models/evaluationquestionscore.go
 gc/models/evaluationresponse.go
 gc/models/evaluationscoringset.go
+gc/models/evaluationsource.go
 gc/models/evaluatoractivity.go
 gc/models/evaluatoractivityentitylisting.go
 gc/models/eventcobrowse.go
@@ -2514,7 +2516,12 @@ gc/models/outcomeachievement.go
 gc/models/outcomeconfig.go
 gc/models/outcomeeventscore.go
 gc/models/outcomelisting.go
+gc/models/outcomepredictor.go
+gc/models/outcomepredictorlisting.go
+gc/models/outcomepredictorrequest.go
 gc/models/outcomeprobabilitycondition.go
+gc/models/outcomeref.go
+gc/models/outcomerefrequest.go
 gc/models/outcomescoresresult.go
 gc/models/outofoffice.go
 gc/models/overallbestpoints.go
@@ -3131,7 +3138,10 @@ gc/models/transcriptsearchrequest.go
 gc/models/transcripttopic.go
 gc/models/transcripttopics.go
 gc/models/transcripturl.go
+gc/models/transferdestination.go
+gc/models/transferinitiator.go
 gc/models/transferrequest.go
+gc/models/transferresponse.go
 gc/models/trigger.go
 gc/models/triggerentitylisting.go
 gc/models/triggertarget.go

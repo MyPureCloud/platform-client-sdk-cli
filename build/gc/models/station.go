@@ -53,6 +53,9 @@ type StationDud struct {
     WebRtcCallAppearances int `json:"webRtcCallAppearances"`
 
 
+    WebRtcRequireMediaHelper bool `json:"webRtcRequireMediaHelper"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -96,6 +99,9 @@ type Station struct {
 
     // LineAppearanceId
     LineAppearanceId string `json:"lineAppearanceId"`
+
+
+    
 
 
     
@@ -161,6 +167,9 @@ func (u *Station) MarshalJSON() ([]byte, error) {
         LineAppearanceId string `json:"lineAppearanceId"`
         *Alias
     }{
+
+        
+
 
         
 

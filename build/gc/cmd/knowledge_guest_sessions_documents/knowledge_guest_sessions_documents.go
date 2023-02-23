@@ -44,7 +44,6 @@ func Cmdknowledge_guest_sessions_documents() *cobra.Command {
 	knowledge_guest_sessions_documentsCmd.AddCommand(getCmd)
 
 	utils.AddFlag(listCmd.Flags(), "[]string", "categoryId", "", "If specified, retrieves documents associated with category ids, comma separated values expected.")
-	utils.AddFlag(listCmd.Flags(), "bool", "includeSubcategories", "", "Deprecated - Do Not Use. Works along with `categoryId` query parameter. If specified, retrieves documents associated with category ids and its children categories.")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "10", "Number of entities to return. Maximum of 200.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/guest/sessions/{sessionId}/documents", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/guest/sessions/{sessionId}/documents")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -154,10 +153,6 @@ var listCmd = &cobra.Command{
 		categoryId := utils.GetFlag(cmd.Flags(), "[]string", "categoryId")
 		if categoryId != "" {
 			queryParams["categoryId"] = categoryId
-		}
-		includeSubcategories := utils.GetFlag(cmd.Flags(), "bool", "includeSubcategories")
-		if includeSubcategories != "" {
-			queryParams["includeSubcategories"] = includeSubcategories
 		}
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

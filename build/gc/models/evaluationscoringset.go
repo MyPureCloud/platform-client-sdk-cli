@@ -34,6 +34,9 @@ type EvaluationscoringsetDud struct {
 
     
 
+
+    
+
 }
 
 // Evaluationscoringset
@@ -62,6 +65,10 @@ type Evaluationscoringset struct {
     Comments string `json:"comments"`
 
 
+    // PrivateComments - Overall private comments from the evaluator
+    PrivateComments string `json:"privateComments"`
+
+
     // AgentComments - Comments from the agent while reviewing evaluation results
     AgentComments string `json:"agentComments"`
 
@@ -77,6 +84,7 @@ func (o *Evaluationscoringset) String() string {
     
     
      o.QuestionGroupScores = []Evaluationquestiongroupscore{{}} 
+    
     
     
     
@@ -110,6 +118,8 @@ func (u *Evaluationscoringset) MarshalJSON() ([]byte, error) {
         
         Comments string `json:"comments"`
         
+        PrivateComments string `json:"privateComments"`
+        
         AgentComments string `json:"agentComments"`
         
         TranscriptTopics []Transcripttopic `json:"transcriptTopics"`
@@ -127,6 +137,9 @@ func (u *Evaluationscoringset) MarshalJSON() ([]byte, error) {
 
         
         QuestionGroupScores: []Evaluationquestiongroupscore{{}},
+        
+
+
         
 
 

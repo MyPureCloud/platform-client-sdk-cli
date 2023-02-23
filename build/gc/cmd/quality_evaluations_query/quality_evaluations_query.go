@@ -37,6 +37,7 @@ func Cmdquality_evaluations_query() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "conversationId", "", "conversationId specified")
 	utils.AddFlag(listCmd.Flags(), "string", "agentUserId", "", "user id of the agent")
 	utils.AddFlag(listCmd.Flags(), "string", "evaluatorUserId", "", "evaluator user id")
+	utils.AddFlag(listCmd.Flags(), "string", "assigneeUserId", "", "assignee user id")
 	utils.AddFlag(listCmd.Flags(), "string", "queueId", "", "queue id")
 	utils.AddFlag(listCmd.Flags(), "string", "startTime", "", "start time of the evaluation query")
 	utils.AddFlag(listCmd.Flags(), "string", "endTime", "", "end time of the evaluation query")
@@ -117,6 +118,10 @@ var listCmd = &cobra.Command{
 		evaluatorUserId := utils.GetFlag(cmd.Flags(), "string", "evaluatorUserId")
 		if evaluatorUserId != "" {
 			queryParams["evaluatorUserId"] = evaluatorUserId
+		}
+		assigneeUserId := utils.GetFlag(cmd.Flags(), "string", "assigneeUserId")
+		if assigneeUserId != "" {
+			queryParams["assigneeUserId"] = assigneeUserId
 		}
 		queueId := utils.GetFlag(cmd.Flags(), "string", "queueId")
 		if queueId != "" {

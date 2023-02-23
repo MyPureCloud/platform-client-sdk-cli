@@ -54,6 +54,9 @@ type EmailmessageDud struct {
     
 
 
+    
+
+
     EmailSizeBytes int `json:"emailSizeBytes"`
 
 
@@ -117,8 +120,12 @@ type Emailmessage struct {
     HistoryIncluded bool `json:"historyIncluded"`
 
 
-    // State
+    // State - The state of the current draft.
     State string `json:"state"`
+
+
+    // DraftType - The type of draft that need to be treated.
+    DraftType string `json:"draftType"`
 
 
     
@@ -141,6 +148,7 @@ func (o *Emailmessage) String() string {
     
     
      o.Attachments = []Attachment{{}} 
+    
     
     
     
@@ -188,6 +196,8 @@ func (u *Emailmessage) MarshalJSON() ([]byte, error) {
         HistoryIncluded bool `json:"historyIncluded"`
         
         State string `json:"state"`
+        
+        DraftType string `json:"draftType"`
         *Alias
     }{
 
@@ -223,6 +233,9 @@ func (u *Emailmessage) MarshalJSON() ([]byte, error) {
 
         
         Attachments: []Attachment{{}},
+        
+
+
         
 
 

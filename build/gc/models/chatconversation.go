@@ -23,6 +23,9 @@ type ChatconversationDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -44,6 +47,10 @@ type Chatconversation struct {
     OtherMediaUris []string `json:"otherMediaUris"`
 
 
+    // RecentTransfers - The list of the most recent 20 transfer commands applied to this conversation.
+    RecentTransfers []Transferresponse `json:"recentTransfers"`
+
+
     
 
 }
@@ -53,6 +60,7 @@ func (o *Chatconversation) String() string {
     
      o.Participants = []Chatmediaparticipant{{}} 
      o.OtherMediaUris = []string{""} 
+     o.RecentTransfers = []Transferresponse{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -75,6 +83,8 @@ func (u *Chatconversation) MarshalJSON() ([]byte, error) {
         Participants []Chatmediaparticipant `json:"participants"`
         
         OtherMediaUris []string `json:"otherMediaUris"`
+        
+        RecentTransfers []Transferresponse `json:"recentTransfers"`
         *Alias
     }{
 
@@ -91,6 +101,11 @@ func (u *Chatconversation) MarshalJSON() ([]byte, error) {
 
         
         OtherMediaUris: []string{""},
+        
+
+
+        
+        RecentTransfers: []Transferresponse{{}},
         
 
 

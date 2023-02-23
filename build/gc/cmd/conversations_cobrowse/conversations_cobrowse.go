@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdconversations_cobrowse() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/cobrowse", utils.FormatPermissions([]string{ "conversation:cobrowse:add",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/{conversationId}/cobrowse")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/cobrowse", utils.FormatPermissions([]string{ "conversation:cobrowse:add", "conversation:cobrowseVoice:add",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/{conversationId}/cobrowse")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -47,8 +47,8 @@ func Cmdconversations_cobrowse() *cobra.Command {
 
 var createCmd = &cobra.Command{
 	Use:   "create [conversationId]",
-	Short: "Creates a cobrowse session",
-	Long:  "Creates a cobrowse session",
+	Short: "Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.",
+	Long:  "Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.",
 	Args:  utils.DetermineArgs([]string{ "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

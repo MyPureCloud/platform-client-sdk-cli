@@ -29,6 +29,9 @@ type CallconversationDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -50,6 +53,10 @@ type Callconversation struct {
     OtherMediaUris []string `json:"otherMediaUris"`
 
 
+    // RecentTransfers - The list of the most recent 20 transfer commands applied to this conversation.
+    RecentTransfers []Transferresponse `json:"recentTransfers"`
+
+
     // RecordingState
     RecordingState string `json:"recordingState"`
 
@@ -67,6 +74,7 @@ func (o *Callconversation) String() string {
     
      o.Participants = []Callmediaparticipant{{}} 
      o.OtherMediaUris = []string{""} 
+     o.RecentTransfers = []Transferresponse{{}} 
     
     
 
@@ -92,6 +100,8 @@ func (u *Callconversation) MarshalJSON() ([]byte, error) {
         
         OtherMediaUris []string `json:"otherMediaUris"`
         
+        RecentTransfers []Transferresponse `json:"recentTransfers"`
+        
         RecordingState string `json:"recordingState"`
         
         MaxParticipants int `json:"maxParticipants"`
@@ -111,6 +121,11 @@ func (u *Callconversation) MarshalJSON() ([]byte, error) {
 
         
         OtherMediaUris: []string{""},
+        
+
+
+        
+        RecentTransfers: []Transferresponse{{}},
         
 
 

@@ -48,6 +48,9 @@ type ConversationDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -101,6 +104,10 @@ type Conversation struct {
     Divisions []Conversationdivisionmembership `json:"divisions"`
 
 
+    // RecentTransfers - The list of the most recent 20 transfer commands applied to this conversation.
+    RecentTransfers []Transferresponse `json:"recentTransfers"`
+
+
     
 
 }
@@ -118,6 +125,7 @@ func (o *Conversation) String() string {
     
     
      o.Divisions = []Conversationdivisionmembership{{}} 
+     o.RecentTransfers = []Transferresponse{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -156,6 +164,8 @@ func (u *Conversation) MarshalJSON() ([]byte, error) {
         State string `json:"state"`
         
         Divisions []Conversationdivisionmembership `json:"divisions"`
+        
+        RecentTransfers []Transferresponse `json:"recentTransfers"`
         *Alias
     }{
 
@@ -198,6 +208,11 @@ func (u *Conversation) MarshalJSON() ([]byte, error) {
 
         
         Divisions: []Conversationdivisionmembership{{}},
+        
+
+
+        
+        RecentTransfers: []Transferresponse{{}},
         
 
 

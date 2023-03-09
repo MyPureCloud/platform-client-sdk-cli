@@ -62,6 +62,7 @@ func Cmdnotifications_channels_subscriptions() *cobra.Command {
 }`)
 	notifications_channels_subscriptionsCmd.AddCommand(listCmd)
 
+	utils.AddFlag(subscribeCmd.Flags(), "bool", "ignoreErrors", "false", "Optionally prevent throwing of errors for failed permissions checks.")
 	subscribeCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", subscribeCmd.UsageTemplate(), "POST", "/api/v2/notifications/channels/{channelId}/subscriptions", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Notifications", "/api/v2/notifications/channels/{channelId}/subscriptions")))
 	utils.AddFileFlagIfUpsert(subscribeCmd.Flags(), "POST", `{
   "description" : "Body",
@@ -90,6 +91,7 @@ func Cmdnotifications_channels_subscriptions() *cobra.Command {
 }`)
 	notifications_channels_subscriptionsCmd.AddCommand(subscribeCmd)
 
+	utils.AddFlag(updateCmd.Flags(), "bool", "ignoreErrors", "false", "Optionally prevent throwing of errors for failed permissions checks.")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/notifications/channels/{channelId}/subscriptions", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PUT", "Notifications", "/api/v2/notifications/channels/{channelId}/subscriptions")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "Body",
@@ -274,6 +276,10 @@ var subscribeCmd = &cobra.Command{
 		channelId, args := args[0], args[1:]
 		path = strings.Replace(path, "{channelId}", fmt.Sprintf("%v", channelId), -1)
 
+		ignoreErrors := utils.GetFlag(cmd.Flags(), "bool", "ignoreErrors")
+		if ignoreErrors != "" {
+			queryParams["ignoreErrors"] = ignoreErrors
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -342,6 +348,10 @@ var updateCmd = &cobra.Command{
 		channelId, args := args[0], args[1:]
 		path = strings.Replace(path, "{channelId}", fmt.Sprintf("%v", channelId), -1)
 
+		ignoreErrors := utils.GetFlag(cmd.Flags(), "bool", "ignoreErrors")
+		if ignoreErrors != "" {
+			queryParams["ignoreErrors"] = ignoreErrors
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

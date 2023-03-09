@@ -16,6 +16,9 @@ type AppendtodncactionsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Appendtodncactionsettings
@@ -27,10 +30,15 @@ type Appendtodncactionsettings struct {
     // ExpirationDuration - If 'expire' is set to true, how long to keep the record.
     ExpirationDuration string `json:"expirationDuration"`
 
+
+    // ListType - The Dnc List Type to append entries to
+    ListType string `json:"listType"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Appendtodncactionsettings) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Appendtodncactionsettings) MarshalJSON() ([]byte, error) {
         Expire bool `json:"expire"`
         
         ExpirationDuration string `json:"expirationDuration"`
+        
+        ListType string `json:"listType"`
         *Alias
     }{
+
+        
+
 
         
 

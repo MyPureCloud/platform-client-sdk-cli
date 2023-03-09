@@ -25,7 +25,7 @@ type Openmessagecontent struct {
 
 
     // Attachment - Attachment content.
-    Attachment Contentattachment `json:"attachment"`
+    Attachment Conversationcontentattachment `json:"attachment"`
 
 }
 
@@ -52,7 +52,7 @@ func (u *Openmessagecontent) MarshalJSON() ([]byte, error) {
         
         ContentType string `json:"contentType"`
         
-        Attachment Contentattachment `json:"attachment"`
+        Attachment Conversationcontentattachment `json:"attachment"`
         *Alias
     }{
 

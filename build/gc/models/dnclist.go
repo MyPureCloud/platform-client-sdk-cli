@@ -54,6 +54,9 @@ type DnclistDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -110,6 +113,10 @@ type Dnclist struct {
     Division Domainentityref `json:"division"`
 
 
+    // CustomExclusionColumn - The column to evaluate exclusion against. Required if the dncSourceType is rds_custom.
+    CustomExclusionColumn string `json:"customExclusionColumn"`
+
+
     
 
 }
@@ -122,6 +129,7 @@ func (o *Dnclist) String() string {
     
     
      o.DncCodes = []string{""} 
+    
     
     
 
@@ -156,6 +164,8 @@ func (u *Dnclist) MarshalJSON() ([]byte, error) {
         LicenseId string `json:"licenseId"`
         
         Division Domainentityref `json:"division"`
+        
+        CustomExclusionColumn string `json:"customExclusionColumn"`
         *Alias
     }{
 
@@ -194,6 +204,9 @@ func (u *Dnclist) MarshalJSON() ([]byte, error) {
 
         
         DncCodes: []string{""},
+        
+
+
         
 
 

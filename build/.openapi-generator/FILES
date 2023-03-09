@@ -214,6 +214,7 @@ gc/cmd/conversations_messaging_supportedcontent_default/conversations_messaging_
 gc/cmd/conversations_messaging_threadingtimeline/conversations_messaging_threadingtimeline.go
 gc/cmd/conversations_participants/conversations_participants.go
 gc/cmd/conversations_participants_attributes/conversations_participants_attributes.go
+gc/cmd/conversations_participants_attributes_search/conversations_participants_attributes_search.go
 gc/cmd/conversations_participants_callbacks/conversations_participants_callbacks.go
 gc/cmd/conversations_participants_codes/conversations_participants_codes.go
 gc/cmd/conversations_participants_digits/conversations_participants_digits.go
@@ -369,6 +370,7 @@ gc/cmd/identityproviders_ping/identityproviders_ping.go
 gc/cmd/identityproviders_purecloud/identityproviders_purecloud.go
 gc/cmd/identityproviders_pureengage/identityproviders_pureengage.go
 gc/cmd/identityproviders_salesforce/identityproviders_salesforce.go
+gc/cmd/infrastructureascode_jobs/infrastructureascode_jobs.go
 gc/cmd/integrations/integrations.go
 gc/cmd/integrations_actions/integrations_actions.go
 gc/cmd/integrations_actions_categories/integrations_actions_categories.go
@@ -463,6 +465,7 @@ gc/cmd/learning_assignments_bulkadd/learning_assignments_bulkadd.go
 gc/cmd/learning_assignments_bulkremove/learning_assignments_bulkremove.go
 gc/cmd/learning_assignments_me/learning_assignments_me.go
 gc/cmd/learning_assignments_reassign/learning_assignments_reassign.go
+gc/cmd/learning_assignments_reschedule/learning_assignments_reschedule.go
 gc/cmd/learning_assignments_reset/learning_assignments_reset.go
 gc/cmd/learning_modules/learning_modules.go
 gc/cmd/learning_modules_assignments/learning_modules_assignments.go
@@ -472,6 +475,7 @@ gc/cmd/learning_modules_publish/learning_modules_publish.go
 gc/cmd/learning_modules_rule/learning_modules_rule.go
 gc/cmd/learning_modules_versions/learning_modules_versions.go
 gc/cmd/learning_rules_query/learning_rules_query.go
+gc/cmd/learning_scheduleslots_query/learning_scheduleslots_query.go
 gc/cmd/license_definitions/license_definitions.go
 gc/cmd/license_infer/license_infer.go
 gc/cmd/license_organization/license_organization.go
@@ -549,6 +553,7 @@ gc/cmd/outbound_contactlists_timezonemappingpreview/outbound_contactlists_timezo
 gc/cmd/outbound_conversations_dnc/outbound_conversations_dnc.go
 gc/cmd/outbound_digitalrulesets/outbound_digitalrulesets.go
 gc/cmd/outbound_dnclists/outbound_dnclists.go
+gc/cmd/outbound_dnclists_customexclusioncolumns/outbound_dnclists_customexclusioncolumns.go
 gc/cmd/outbound_dnclists_divisionviews/outbound_dnclists_divisionviews.go
 gc/cmd/outbound_dnclists_emailaddresses/outbound_dnclists_emailaddresses.go
 gc/cmd/outbound_dnclists_export/outbound_dnclists_export.go
@@ -607,7 +612,6 @@ gc/cmd/recording_jobs_failedrecordings/recording_jobs_failedrecordings.go
 gc/cmd/recording_keyconfigurations/recording_keyconfigurations.go
 gc/cmd/recording_keyconfigurations_validate/recording_keyconfigurations_validate.go
 gc/cmd/recording_localkeys/recording_localkeys.go
-gc/cmd/recording_localkeys_settings/recording_localkeys_settings.go
 gc/cmd/recording_mediaretentionpolicies/recording_mediaretentionpolicies.go
 gc/cmd/recording_recordingkeys/recording_recordingkeys.go
 gc/cmd/recording_recordingkeys_rotationschedule/recording_recordingkeys_rotationschedule.go
@@ -695,6 +699,8 @@ gc/cmd/speechandtextanalytics_programs/speechandtextanalytics_programs.go
 gc/cmd/speechandtextanalytics_programs_general_jobs/speechandtextanalytics_programs_general_jobs.go
 gc/cmd/speechandtextanalytics_programs_mappings/speechandtextanalytics_programs_mappings.go
 gc/cmd/speechandtextanalytics_programs_publishjobs/speechandtextanalytics_programs_publishjobs.go
+gc/cmd/speechandtextanalytics_programs_transcriptionengines/speechandtextanalytics_programs_transcriptionengines.go
+gc/cmd/speechandtextanalytics_programs_transcriptionengines_dialects/speechandtextanalytics_programs_transcriptionengines_dialects.go
 gc/cmd/speechandtextanalytics_programs_unpublished/speechandtextanalytics_programs_unpublished.go
 gc/cmd/speechandtextanalytics_sentiment_dialects/speechandtextanalytics_sentiment_dialects.go
 gc/cmd/speechandtextanalytics_sentimentfeedback/speechandtextanalytics_sentimentfeedback.go
@@ -812,6 +818,7 @@ gc/cmd/users_routingskills_bulk/users_routingskills_bulk.go
 gc/cmd/users_routingstatus/users_routingstatus.go
 gc/cmd/users_search/users_search.go
 gc/cmd/users_search_teams_assign/users_search_teams_assign.go
+gc/cmd/users_skillgroups/users_skillgroups.go
 gc/cmd/users_state/users_state.go
 gc/cmd/users_station/users_station.go
 gc/cmd/users_station_associatedstation/users_station_associatedstation.go
@@ -864,6 +871,7 @@ gc/cmd/workforcemanagement_agents_adherence_explanations/workforcemanagement_age
 gc/cmd/workforcemanagement_agents_adherence_explanations_query/workforcemanagement_agents_adherence_explanations_query.go
 gc/cmd/workforcemanagement_agents_managementunit/workforcemanagement_agents_managementunit.go
 gc/cmd/workforcemanagement_agents_me_managementunit/workforcemanagement_agents_me_managementunit.go
+gc/cmd/workforcemanagement_agents_me_possibleworkshifts/workforcemanagement_agents_me_possibleworkshifts.go
 gc/cmd/workforcemanagement_agentschedules_mine/workforcemanagement_agentschedules_mine.go
 gc/cmd/workforcemanagement_businessunits/workforcemanagement_businessunits.go
 gc/cmd/workforcemanagement_businessunits_activitycodes/workforcemanagement_businessunits_activitycodes.go
@@ -947,6 +955,8 @@ gc/cmd/workforcemanagement_shrinkage_jobs/workforcemanagement_shrinkage_jobs.go
 gc/cmd/workforcemanagement_timeofflimits_available_query/workforcemanagement_timeofflimits_available_query.go
 gc/cmd/workforcemanagement_timeoffrequests/workforcemanagement_timeoffrequests.go
 gc/cmd/workforcemanagement_timeoffrequests_waitlistpositions/workforcemanagement_timeoffrequests_waitlistpositions.go
+gc/models/acceleratorinput.go
+gc/models/acceleratorparameter.go
 gc/models/achievedoutcome.go
 gc/models/acknowledgescreenrecordingrequest.go
 gc/models/action.go
@@ -1022,6 +1032,8 @@ gc/models/agentmaxutilization.go
 gc/models/agentownedmappingpreview.go
 gc/models/agentownedmappingpreviewlisting.go
 gc/models/agentownedrouting.go
+gc/models/agentpossibleworkshiftsrequest.go
+gc/models/agentpossibleworkshiftsresponse.go
 gc/models/agentqueryadherenceexplanationsrequest.go
 gc/models/agentqueryadherenceexplanationsresponse.go
 gc/models/agenttimeoffrequestpatch.go
@@ -1372,7 +1384,6 @@ gc/models/changemypasswordrequest.go
 gc/models/changepasswordrequest.go
 gc/models/channel.go
 gc/models/channelentitylisting.go
-gc/models/channelmetadata.go
 gc/models/channeltopic.go
 gc/models/channeltopicentitylisting.go
 gc/models/chat.go
@@ -1548,6 +1559,8 @@ gc/models/conversationnotificationtemplatebody.go
 gc/models/conversationnotificationtemplatefooter.go
 gc/models/conversationnotificationtemplateheader.go
 gc/models/conversationnotificationtemplateparameter.go
+gc/models/conversationparticipantsearchcriteria.go
+gc/models/conversationparticipantsearchrequest.go
 gc/models/conversationproperties.go
 gc/models/conversationquery.go
 gc/models/conversationreason.go
@@ -1637,6 +1650,7 @@ gc/models/customerinteractioncenter.go
 gc/models/customeventattribute.go
 gc/models/customeventattributelist.go
 gc/models/customi18nlabels.go
+gc/models/dailypossibleshift.go
 gc/models/dataactionconditionpredicate.go
 gc/models/dataactionconditionsettings.go
 gc/models/dataactioncontactcolumnfieldmapping.go
@@ -1721,6 +1735,7 @@ gc/models/dnclistcreate.go
 gc/models/dnclistdivisionview.go
 gc/models/dnclistdivisionviewlisting.go
 gc/models/dnclistentitylisting.go
+gc/models/dncpatchcustomexclusioncolumnsrequest.go
 gc/models/dncpatchemailsrequest.go
 gc/models/dncpatchphonenumbersrequest.go
 gc/models/dnsrecordentry.go
@@ -2092,9 +2107,12 @@ gc/models/inboundmessagerequest.go
 gc/models/inboundonlysetting.go
 gc/models/inboundroute.go
 gc/models/inboundrouteentitylisting.go
+gc/models/infrastructureascodejob.go
 gc/models/initialconfiguration.go
 gc/models/initiatescreenrecording.go
 gc/models/initiatingaction.go
+gc/models/instagramid.go
+gc/models/instagramscopedid.go
 gc/models/integration.go
 gc/models/integrationaction.go
 gc/models/integrationactionfields.go
@@ -2144,6 +2162,7 @@ gc/models/journeypage.go
 gc/models/journeypattern.go
 gc/models/journeysegment.go
 gc/models/journeysurveyquestion.go
+gc/models/jsoncursorsearchresponse.go
 gc/models/jsonnode.go
 gc/models/jsonnodesearchresponse.go
 gc/models/jsonschemadocument.go
@@ -2247,6 +2266,7 @@ gc/models/learningassignmententity.go
 gc/models/learningassignmentitem.go
 gc/models/learningassignmentreassign.go
 gc/models/learningassignmentreference.go
+gc/models/learningassignmentreschedule.go
 gc/models/learningassignmentsdomainentity.go
 gc/models/learningassignmentupdate.go
 gc/models/learningassignmentuser.go
@@ -2268,6 +2288,12 @@ gc/models/learningmodulerule.go
 gc/models/learningmoduleruleparts.go
 gc/models/learningmodulesdomainentitylisting.go
 gc/models/learningmodulesummary.go
+gc/models/learningscheduleslotsqueryrequest.go
+gc/models/learningscheduleslotsqueryresponse.go
+gc/models/learningslot.go
+gc/models/learningslotfulldaytimeoffmarker.go
+gc/models/learningslotscheduleactivity.go
+gc/models/learningslotwfmscheduleactivity.go
 gc/models/lexbot.go
 gc/models/lexbotalias.go
 gc/models/lexbotaliasentitylisting.go
@@ -2305,7 +2331,6 @@ gc/models/listwrappershiftstartvariance.go
 gc/models/listwrapperstring.go
 gc/models/localdaterange.go
 gc/models/localencryptionconfiguration.go
-gc/models/localencryptionconfigurationlisting.go
 gc/models/localencryptionkeyrequest.go
 gc/models/localizedlabels.go
 gc/models/location.go
@@ -2602,6 +2627,7 @@ gc/models/policyerrormessage.go
 gc/models/policyerrors.go
 gc/models/policyupdate.go
 gc/models/positionsettings.go
+gc/models/possibleworkshiftsforweek.go
 gc/models/postactioninput.go
 gc/models/postinputcontract.go
 gc/models/postoutputcontract.go
@@ -2624,7 +2650,6 @@ gc/models/presencedefinition.go
 gc/models/presencedetailqueryclause.go
 gc/models/presencedetailqueryfilter.go
 gc/models/presencedetailquerypredicate.go
-gc/models/presencesetting.go
 gc/models/processscheduleupdateuploadrequest.go
 gc/models/program.go
 gc/models/programjob.go
@@ -2634,6 +2659,7 @@ gc/models/programmappingsrequest.go
 gc/models/programrequest.go
 gc/models/programsentitylisting.go
 gc/models/programsmappingsentitylisting.go
+gc/models/programtranscriptionengines.go
 gc/models/progressconsulttransferevent.go
 gc/models/progresstransferevent.go
 gc/models/prompt.go
@@ -2690,7 +2716,6 @@ gc/models/queueutilizationdiagnostic.go
 gc/models/quickreply.go
 gc/models/reaction.go
 gc/models/realtimeadherenceexplanation.go
-gc/models/reason.go
 gc/models/recallentry.go
 gc/models/recipient.go
 gc/models/recipientadditionalidentifier.go
@@ -3006,6 +3031,7 @@ gc/models/supportcenterstylesetting.go
 gc/models/supportedcontent.go
 gc/models/supportedcontentlisting.go
 gc/models/supportedcontentreference.go
+gc/models/supporteddialectsentitylisting.go
 gc/models/supportedlanguage.go
 gc/models/survey.go
 gc/models/surveyaggregatedatacontainer.go
@@ -3131,6 +3157,8 @@ gc/models/transcriptaggregationquery.go
 gc/models/transcriptaggregationview.go
 gc/models/transcriptconversationdetailsearchcriteria.go
 gc/models/transcriptconversationdetailsearchrequest.go
+gc/models/transcriptionengines.go
+gc/models/transcriptionenginesrequest.go
 gc/models/transcriptionsettings.go
 gc/models/transcripts.go
 gc/models/transcriptsearchcriteria.go
@@ -3299,6 +3327,7 @@ gc/models/userscheduleshift.go
 gc/models/usersearchcriteria.go
 gc/models/usersearchrequest.go
 gc/models/userskillentitylisting.go
+gc/models/userskillgroupentitylisting.go
 gc/models/userssearchresponse.go
 gc/models/userstate.go
 gc/models/userstation.go
@@ -3406,6 +3435,8 @@ gc/models/wfmintradayplanninggrouplisting.go
 gc/models/wfmprocessuploadrequest.go
 gc/models/wfmscheduleactivity.go
 gc/models/wfmschedulereference.go
+gc/models/wfmservicegoalimpact.go
+gc/models/wfmservicegoalimpactsettings.go
 gc/models/wfmuserentitylisting.go
 gc/models/wfmusernotification.go
 gc/models/wfmversionedentitymetadata.go

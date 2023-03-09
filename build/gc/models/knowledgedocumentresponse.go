@@ -69,7 +69,7 @@ type Knowledgedocumentresponse struct {
     
 
 
-    // Title - Document title.
+    // Title - Document title, having a limit of 500 words.
     Title string `json:"title"`
 
 

@@ -13,9 +13,6 @@ var (
 type EventsettingDud struct { 
     
 
-
-    
-
 }
 
 // Eventsetting
@@ -23,15 +20,10 @@ type Eventsetting struct {
     // Typing - Settings regarding typing events
     Typing Typingsetting `json:"typing"`
 
-
-    // Presence - Settings regarding presence events
-    Presence Presencesetting `json:"presence"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Eventsetting) String() string {
-    
     
 
     j, _ := json.Marshal(o)
@@ -51,13 +43,8 @@ func (u *Eventsetting) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Typing Typingsetting `json:"typing"`
-        
-        Presence Presencesetting `json:"presence"`
         *Alias
     }{
-
-        
-
 
         
 

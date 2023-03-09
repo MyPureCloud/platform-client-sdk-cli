@@ -14,6 +14,12 @@ type ChanneltopicDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -24,12 +30,22 @@ type Channeltopic struct {
     Id string `json:"id"`
 
 
+    // State
+    State string `json:"state"`
+
+
+    // RejectionReason
+    RejectionReason string `json:"rejectionReason"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Channeltopic) String() string {
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -49,8 +65,18 @@ func (u *Channeltopic) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Id string `json:"id"`
+        
+        State string `json:"state"`
+        
+        RejectionReason string `json:"rejectionReason"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

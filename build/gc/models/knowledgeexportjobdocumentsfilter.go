@@ -13,18 +13,26 @@ var (
 type KnowledgeexportjobdocumentsfilterDud struct { 
     
 
+
+    
+
 }
 
 // Knowledgeexportjobdocumentsfilter
 type Knowledgeexportjobdocumentsfilter struct { 
-    // Interval - Retrieves the documents modified in specified date and time range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+    // Interval - Retrieves the documents modified in specified date and time range. Cannot be used together with entities filter. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     Interval string `json:"interval"`
+
+
+    // Entities - Retrieves the documents with the given ids. Cannot be used together with internal filter.
+    Entities []Entity `json:"entities"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgeexportjobdocumentsfilter) String() string {
     
+     o.Entities = []Entity{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -43,9 +51,16 @@ func (u *Knowledgeexportjobdocumentsfilter) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Interval string `json:"interval"`
+        
+        Entities []Entity `json:"entities"`
         *Alias
     }{
 
+        
+
+
+        
+        Entities: []Entity{{}},
         
 
         Alias: (*Alias)(u),

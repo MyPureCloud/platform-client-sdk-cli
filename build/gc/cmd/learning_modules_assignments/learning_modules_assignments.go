@@ -33,7 +33,7 @@ func Cmdlearning_modules_assignments() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "searchTerm", "", "Search Term (searches by name and description)")
 	utils.AddFlag(listCmd.Flags(), "string", "overdue", "Any", "Specifies if only modules with overdue/not overdue (overdue is True or False) assignments are returned. If overdue is Any or omitted, both are returned and can including modules that are unassigned. Valid values: True, False, Any")
-	utils.AddFlag(listCmd.Flags(), "[]string", "assignmentStates", "", "Specifies the assignment states to return. Valid values: NotAssigned, Assigned, InProgress, Completed")
+	utils.AddFlag(listCmd.Flags(), "[]string", "assignmentStates", "", "Specifies the assignment states to return. Valid values: NotAssigned, Assigned, InProgress, Completed, InvalidSchedule")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in response(case insensitive) Valid values: coverArt")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/learning/modules/assignments", utils.FormatPermissions([]string{ "learning:module:view", "learning:assignment:view",  }), utils.GenerateDevCentreLink("GET", "Learning", "/api/v2/learning/modules/assignments")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)

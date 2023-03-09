@@ -100,11 +100,11 @@ type Extensionpool struct {
     
 
 
-    // StartNumber - The starting phone number for the range of this Extension pool. Must be in E.164 format
+    // StartNumber - The starting phone number for the range of this Extension pool. The number must be between 3 and 9 digits in length and the same length as the endNumber.
     StartNumber string `json:"startNumber"`
 
 
-    // EndNumber - The ending phone number for the range of this Extension pool. Must be in E.164 format
+    // EndNumber - The ending phone number for the range of this Extension pool. The number must be between 3 and 9 digits in length and the same length as the startNumber.
     EndNumber string `json:"endNumber"`
 
 

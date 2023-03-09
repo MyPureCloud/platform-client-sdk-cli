@@ -20,7 +20,7 @@ type KnowledgedocumentalternativeDud struct {
 
 // Knowledgedocumentalternative
 type Knowledgedocumentalternative struct { 
-    // Phrase - Alternate phrasing to the document title.
+    // Phrase - Alternate phrasing to the document title, having a limit of 500 words.
     Phrase string `json:"phrase"`
 
 

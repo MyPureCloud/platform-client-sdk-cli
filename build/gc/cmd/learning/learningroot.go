@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning_assignments"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning_rules"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning_modules"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning_scheduleslots"
 )
 
 func init() {
@@ -13,6 +14,7 @@ func init() {
 	learningCmd.AddCommand(learning_assignments.Cmdlearning_assignments())
 	learningCmd.AddCommand(learning_rules.Cmdlearning_rules())
 	learningCmd.AddCommand(learning_modules.Cmdlearning_modules())
-	learningCmd.Short = utils.GenerateCustomDescription(learningCmd.Short, learning_assessments.Description, learning_assignments.Description, learning_rules.Description, learning_modules.Description, )
+	learningCmd.AddCommand(learning_scheduleslots.Cmdlearning_scheduleslots())
+	learningCmd.Short = utils.GenerateCustomDescription(learningCmd.Short, learning_assessments.Description, learning_assignments.Description, learning_rules.Description, learning_modules.Description, learning_scheduleslots.Description, )
 	learningCmd.Long = learningCmd.Short
 }

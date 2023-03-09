@@ -469,6 +469,15 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1084,6 +1093,18 @@ type Viewfilter struct {
     // CanonicalContactIds - The canonical contact ids are used to filter the view
     CanonicalContactIds []string `json:"canonicalContactIds"`
 
+
+    // AlertRuleIds - The list of Alert Rule IDs
+    AlertRuleIds []string `json:"alertRuleIds"`
+
+
+    // EvaluationFormContextIds - The list of Evaluation Form Context IDs
+    EvaluationFormContextIds []string `json:"evaluationFormContextIds"`
+
+
+    // EvaluationStatuses - The evaluation statuses that are used to filter the view
+    EvaluationStatuses []string `json:"evaluationStatuses"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1241,6 +1262,9 @@ func (o *Viewfilter) String() string {
     
      o.StationErrors = []string{""} 
      o.CanonicalContactIds = []string{""} 
+     o.AlertRuleIds = []string{""} 
+     o.EvaluationFormContextIds = []string{""} 
+     o.EvaluationStatuses = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1563,6 +1587,12 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         StationErrors []string `json:"stationErrors"`
         
         CanonicalContactIds []string `json:"canonicalContactIds"`
+        
+        AlertRuleIds []string `json:"alertRuleIds"`
+        
+        EvaluationFormContextIds []string `json:"evaluationFormContextIds"`
+        
+        EvaluationStatuses []string `json:"evaluationStatuses"`
         *Alias
     }{
 
@@ -2244,6 +2274,21 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         CanonicalContactIds: []string{""},
+        
+
+
+        
+        AlertRuleIds: []string{""},
+        
+
+
+        
+        EvaluationFormContextIds: []string{""},
+        
+
+
+        
+        EvaluationStatuses: []string{""},
         
 
         Alias: (*Alias)(u),

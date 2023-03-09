@@ -33,7 +33,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/ipranges"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languages"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/locations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/mobiledevices"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
@@ -45,6 +44,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/teams"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/timezones"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
@@ -93,6 +93,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/configuration"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/infrastructureascode"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/textbots"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/usage"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/voicemail"
@@ -127,7 +128,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 59.0.0")
+		fmt.Println("Current version: 60.0.0")
 		checkForNewVersion()
 	},
 }
@@ -146,7 +147,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("59.0.0", latestVersion) {
+	if versionsAreEqual("60.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -249,7 +250,6 @@ func init() {
 	rootCmd.AddCommand(integrations.Cmdintegrations())
 	rootCmd.AddCommand(ipranges.Cmdipranges())
 	rootCmd.AddCommand(languages.Cmdlanguages())
-	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(locations.Cmdlocations())
 	rootCmd.AddCommand(mobiledevices.Cmdmobiledevices())
 	rootCmd.AddCommand(orphanrecordings.Cmdorphanrecordings())
@@ -261,6 +261,7 @@ func init() {
 	rootCmd.AddCommand(teams.Cmdteams())
 	rootCmd.AddCommand(timezones.Cmdtimezones())
 	rootCmd.AddCommand(tokens.Cmdtokens())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
 	rootCmd.AddCommand(autopagination.Cmdautopagination())
@@ -309,6 +310,7 @@ func init() {
 	rootCmd.AddCommand(speechandtextanalytics.Cmdspeechandtextanalytics())
 	rootCmd.AddCommand(telephony.Cmdtelephony())
 	rootCmd.AddCommand(configuration.Cmdconfiguration())
+	rootCmd.AddCommand(infrastructureascode.Cmdinfrastructureascode())
 	rootCmd.AddCommand(textbots.Cmdtextbots())
 	rootCmd.AddCommand(usage.Cmdusage())
 	rootCmd.AddCommand(voicemail.Cmdvoicemail())

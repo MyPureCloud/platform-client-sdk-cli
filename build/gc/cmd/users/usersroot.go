@@ -22,6 +22,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_routinglanguages"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_routingskills"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_routingstatus"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_skillgroups"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_state"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_station"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_trustors"
@@ -51,12 +52,13 @@ func init() {
 	usersCmd.AddCommand(users_routinglanguages.Cmdusers_routinglanguages())
 	usersCmd.AddCommand(users_routingskills.Cmdusers_routingskills())
 	usersCmd.AddCommand(users_routingstatus.Cmdusers_routingstatus())
+	usersCmd.AddCommand(users_skillgroups.Cmdusers_skillgroups())
 	usersCmd.AddCommand(users_state.Cmdusers_state())
 	usersCmd.AddCommand(users_station.Cmdusers_station())
 	usersCmd.AddCommand(users_trustors.Cmdusers_trustors())
 	usersCmd.AddCommand(users_bulk.Cmdusers_bulk())
 	usersCmd.AddCommand(users_search.Cmdusers_search())
 	usersCmd.AddCommand(users_development.Cmdusers_development())
-	usersCmd.Short = utils.GenerateCustomDescription(usersCmd.Short, users_roles.Description, users_callforwarding.Description, users_favorites.Description, users_adjacents.Description, users_superiors.Description, users_directreports.Description, users_profile.Description, users_geolocations.Description, users_greetings.Description, users_outofoffice.Description, users_presences.Description, users_externalid.Description, users_me.Description, users_password.Description, users_profileskills.Description, users_queues.Description, users_invite.Description, users_routinglanguages.Description, users_routingskills.Description, users_routingstatus.Description, users_state.Description, users_station.Description, users_trustors.Description, users_bulk.Description, users_search.Description, users_development.Description, )
+	usersCmd.Short = utils.GenerateCustomDescription(usersCmd.Short, users_roles.Description, users_callforwarding.Description, users_favorites.Description, users_adjacents.Description, users_superiors.Description, users_directreports.Description, users_profile.Description, users_geolocations.Description, users_greetings.Description, users_outofoffice.Description, users_presences.Description, users_externalid.Description, users_me.Description, users_password.Description, users_profileskills.Description, users_queues.Description, users_invite.Description, users_routinglanguages.Description, users_routingskills.Description, users_routingstatus.Description, users_skillgroups.Description, users_state.Description, users_station.Description, users_trustors.Description, users_bulk.Description, users_search.Description, users_development.Description, )
 	usersCmd.Long = usersCmd.Short
 }

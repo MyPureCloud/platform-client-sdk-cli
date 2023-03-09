@@ -73,7 +73,7 @@ func Cmdpresencedefinitions() *cobra.Command {
 	presencedefinitionsCmd.AddCommand(deleteCmd)
 
 	utils.AddFlag(getCmd.Flags(), "string", "localeCode", "", "The locale code to fetch for the presence definition. Use ALL to fetch everything.")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/presencedefinitions/{presenceId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Presence", "/api/v2/presencedefinitions/{presenceId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/presencedefinitions/{presenceId}", utils.FormatPermissions([]string{ "presence:presenceDefinition:view",  }), utils.GenerateDevCentreLink("GET", "Presence", "/api/v2/presencedefinitions/{presenceId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

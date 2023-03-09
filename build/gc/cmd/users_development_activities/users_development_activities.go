@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdusers_development_activities() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "varType", "", "Specifies the activity type. - REQUIRED Valid values: Informational, Coaching, AssessedContent, Assessment")
+	utils.AddFlag(getCmd.Flags(), "string", "varType", "", "Specifies the activity type. - REQUIRED Valid values: Informational, Coaching, AssessedContent, Assessment, External")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/development/activities/{activityId}", utils.FormatPermissions([]string{ "learning:assignment:view", "coaching:appointment:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/development/activities/{activityId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("varType")

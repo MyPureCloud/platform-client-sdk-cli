@@ -16,10 +16,17 @@ type ActionconfigDud struct {
 
     
 
+
+    
+
 }
 
 // Actionconfig - Defines components of the Action Config.
 type Actionconfig struct { 
+    // TimeoutSeconds - Optional 1-60 second timeout enforced on the execution or test of this action. This setting is invalid for Custom Authentication Actions.
+    TimeoutSeconds int `json:"timeoutSeconds"`
+
+
     // Request - Configuration of outbound request.
     Request Requestconfig `json:"request"`
 
@@ -31,6 +38,7 @@ type Actionconfig struct {
 
 // String returns a JSON representation of the model
 func (o *Actionconfig) String() string {
+    
     
     
 
@@ -50,11 +58,16 @@ func (u *Actionconfig) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        TimeoutSeconds int `json:"timeoutSeconds"`
+        
         Request Requestconfig `json:"request"`
         
         Response Responseconfig `json:"response"`
         *Alias
     }{
+
+        
+
 
         
 

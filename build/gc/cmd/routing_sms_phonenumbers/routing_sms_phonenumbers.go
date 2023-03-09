@@ -62,6 +62,7 @@ func Cmdrouting_sms_phonenumbers() *cobra.Command {
 }`)
 	routing_sms_phonenumbersCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand response with additional information Valid values: compliance")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/sms/phonenumbers/{addressId}", utils.FormatPermissions([]string{ "sms:phoneNumber:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/sms/phonenumbers/{addressId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -280,6 +281,10 @@ var getCmd = &cobra.Command{
 		addressId, args := args[0], args[1:]
 		path = strings.Replace(path, "{addressId}", fmt.Sprintf("%v", addressId), -1)
 
+		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

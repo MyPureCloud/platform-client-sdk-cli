@@ -52,22 +52,6 @@ func Cmdinfrastructureascode_jobs() *cobra.Command {
 }`)
 	infrastructureascode_jobsCmd.AddCommand(createCmd)
 
-	utils.AddFlag(getCmd.Flags(), "bool", "details", "false", "Include details of execution, including job results or error information")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/infrastructureascode/jobs/{jobId}", utils.FormatPermissions([]string{ "infrastructureascode:job:view",  }), utils.GenerateDevCentreLink("GET", "Infrastructure as Code", "/api/v2/infrastructureascode/jobs/{jobId}")))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
-	
-	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  "description" : "successful operation",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/InfrastructureascodeJob"
-      }
-    }
-  }
-}`)
-	infrastructureascode_jobsCmd.AddCommand(getCmd)
-
 	utils.AddFlag(getCmd.Flags(), "int", "maxResults", "1", "Number of jobs to show")
 	utils.AddFlag(getCmd.Flags(), "bool", "includeErrors", "false", "Include error messages")
 	utils.AddFlag(getCmd.Flags(), "string", "sortBy", "id", "Sort by Valid values: id, dateSubmitted, submittedBy, status")
@@ -86,6 +70,22 @@ func Cmdinfrastructureascode_jobs() *cobra.Command {
   }
 }`)
 	infrastructureascode_jobsCmd.AddCommand(getCmd)
+
+	utils.AddFlag(getjobCmd.Flags(), "bool", "details", "false", "Include details of execution, including job results or error information")
+	getjobCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getjobCmd.UsageTemplate(), "GET", "/api/v2/infrastructureascode/jobs/{jobId}", utils.FormatPermissions([]string{ "infrastructureascode:job:view",  }), utils.GenerateDevCentreLink("GET", "Infrastructure as Code", "/api/v2/infrastructureascode/jobs/{jobId}")))
+	utils.AddFileFlagIfUpsert(getjobCmd.Flags(), "GET", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(getjobCmd.Flags(), "GET", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/InfrastructureascodeJob"
+      }
+    }
+  }
+}`)
+	infrastructureascode_jobsCmd.AddCommand(getjobCmd)
 	return infrastructureascode_jobsCmd
 }
 
@@ -126,75 +126,6 @@ var createCmd = &cobra.Command{
 
 		const opId = "create"
 		const httpMethod = "POST"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
-		// TODO read from config file
-		retryConfig := &retry.RetryConfiguration{
-			RetryWaitMin: 5 * time.Second,
-			RetryWaitMax: 60 * time.Second,
-			RetryMax:     20,
-		}
-		results, err := retryFunc(retryConfig)
-		if err != nil {
-			if httpMethod == "HEAD" {
-				if httpErr, ok := err.(models.HttpStatusError); ok {
-					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
-				}
-			}
-			logger.Fatal(err)
-		}
-
-		filterCondition, _ := cmd.Flags().GetString("filtercondition")
-		if filterCondition != "" {
-			filteredResults, err := utils.FilterByCondition(results, filterCondition)
-			if err != nil {
-				logger.Fatal(err)
-			}
-			results = filteredResults
-		}
-
-		utils.Render(results)
-	},
-}
-var getCmd = &cobra.Command{
-	Use:   "get [jobId]",
-	Short: "Get job status and results",
-	Long:  "Get job status and results",
-	Args:  utils.DetermineArgs([]string{ "jobId", }),
-
-	Run: func(cmd *cobra.Command, args []string) {
-		_ = models.Entities{}
-
-		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
-		if printReqBody {
-			
-			return
-		}
-
-		queryParams := make(map[string]string)
-
-		path := "/api/v2/infrastructureascode/jobs/{jobId}"
-		jobId, args := args[0], args[1:]
-		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
-
-		details := utils.GetFlag(cmd.Flags(), "bool", "details")
-		if details != "" {
-			queryParams["details"] = details
-		}
-		urlString := path
-		if len(queryParams) > 0 {
-			urlString = fmt.Sprintf("%v?", path)
-			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
-			}
-			urlString = strings.TrimSuffix(urlString, "&")
-		}
-
-		if strings.Contains(urlString, "varType") {
-			urlString = strings.Replace(urlString, "varType", "type", -1)
-		}
-
-		const opId = "get"
-		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
@@ -273,6 +204,75 @@ var getCmd = &cobra.Command{
 		}
 
 		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var getjobCmd = &cobra.Command{
+	Use:   "getjob [jobId]",
+	Short: "Get job status and results",
+	Long:  "Get job status and results",
+	Args:  utils.DetermineArgs([]string{ "jobId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/infrastructureascode/jobs/{jobId}"
+		jobId, args := args[0], args[1:]
+		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
+
+		details := utils.GetFlag(cmd.Flags(), "bool", "details")
+		if details != "" {
+			queryParams["details"] = details
+		}
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		const opId = "getjob"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file

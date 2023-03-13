@@ -1,0 +1,12 @@
+package conversations_chats_participants_communications
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_chats_participants_communications_wrapup"
+)
+
+func init() {
+	conversations_chats_participants_communicationsCmd.AddCommand(conversations_chats_participants_communications_wrapup.Cmdconversations_chats_participants_communications_wrapup())
+	conversations_chats_participants_communicationsCmd.Short = utils.GenerateCustomDescription(conversations_chats_participants_communicationsCmd.Short, conversations_chats_participants_communications_wrapup.Description, )
+	conversations_chats_participants_communicationsCmd.Long = conversations_chats_participants_communicationsCmd.Short
+}

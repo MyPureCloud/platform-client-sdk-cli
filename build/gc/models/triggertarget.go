@@ -16,6 +16,9 @@ type TriggertargetDud struct {
 
     
 
+
+    
+
 }
 
 // Triggertarget - The target of a trigger invocation
@@ -27,10 +30,15 @@ type Triggertarget struct {
     // Id - The ID of the entity to target
     Id string `json:"id"`
 
+
+    // WorkflowTargetSettings - Optional config for the target. Until the feature gets enabled will always operate in TopLevelPrimitives mode.
+    WorkflowTargetSettings Workflowtargetsettings `json:"workflowTargetSettings"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Triggertarget) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Triggertarget) MarshalJSON() ([]byte, error) {
         VarType string `json:"type"`
         
         Id string `json:"id"`
+        
+        WorkflowTargetSettings Workflowtargetsettings `json:"workflowTargetSettings"`
         *Alias
     }{
+
+        
+
 
         
 

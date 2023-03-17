@@ -34,7 +34,7 @@ func Cmdrouting_wrapupcodes() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/WrapupCode"
+        "$ref" : "#/components/schemas/WrapupCodeRequest"
       }
     }
   },
@@ -82,6 +82,7 @@ func Cmdrouting_wrapupcodes() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by Valid values: name, id")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ascending", "Sort order Valid values: ascending, descending")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Wrapup code`s name (`Sort by` param is ignored unless this field is provided)")
+	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Filter by division ID(s)")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/wrapupcodes", utils.FormatPermissions([]string{ "routing:wrapupCode:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/wrapupcodes")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -103,7 +104,7 @@ func Cmdrouting_wrapupcodes() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/WrapupCode"
+        "$ref" : "#/components/schemas/WrapupCodeRequest"
       }
     }
   },
@@ -136,7 +137,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Wrapupcode{}
+			reqModel := models.Wrapupcoderequest{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -359,6 +360,10 @@ var listCmd = &cobra.Command{
 		if name != "" {
 			queryParams["name"] = name
 		}
+		divisionId := utils.GetFlag(cmd.Flags(), "[]string", "divisionId")
+		if divisionId != "" {
+			queryParams["divisionId"] = divisionId
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -415,7 +420,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Wrapupcode{}
+			reqModel := models.Wrapupcoderequest{}
 			utils.Render(reqModel.String())
 			
 			return

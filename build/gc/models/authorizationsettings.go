@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -20,12 +21,24 @@ type AuthorizationsettingsDud struct {
     AnalysisDays int `json:"analysisDays"`
 
 
+    DateLastCalculated time.Time `json:"dateLastCalculated"`
+
+
+    DateLastActive time.Time `json:"dateLastActive"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
 
 // Authorizationsettings
 type Authorizationsettings struct { 
+    
+
+
+    
+
+
     
 
 
@@ -59,6 +72,12 @@ func (u *Authorizationsettings) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

@@ -19,6 +19,9 @@ type SignatureDud struct {
 
     
 
+
+    
+
 }
 
 // Signature
@@ -34,10 +37,15 @@ type Signature struct {
     // AlwaysIncluded - A toggle that defines if a signature is always included or only set on the first email in an email chain.
     AlwaysIncluded bool `json:"alwaysIncluded"`
 
+
+    // InclusionType - The configuration to indicate when the signature of a conversation has to be included
+    InclusionType string `json:"inclusionType"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Signature) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Signature) MarshalJSON() ([]byte, error) {
         CannedResponseId string `json:"cannedResponseId"`
         
         AlwaysIncluded bool `json:"alwaysIncluded"`
+        
+        InclusionType string `json:"inclusionType"`
         *Alias
     }{
+
+        
+
 
         
 

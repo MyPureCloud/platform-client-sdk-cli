@@ -30,6 +30,9 @@ type WrapupcodeDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -43,20 +46,24 @@ type Wrapupcode struct {
     Name string `json:"name"`
 
 
-    // DateCreated - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    // Division - The division to which this entity belongs.
+    Division Starrabledivision `json:"division"`
+
+
+    // DateCreated - Date when the assistant wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateCreated time.Time `json:"dateCreated"`
 
 
-    // DateModified - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    // DateModified - Date when the wrapup-code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateModified time.Time `json:"dateModified"`
+
+
+    // CreatedBy - The wrap-up code name.
+    CreatedBy string `json:"createdBy"`
 
 
     // ModifiedBy
     ModifiedBy string `json:"modifiedBy"`
-
-
-    // CreatedBy
-    CreatedBy string `json:"createdBy"`
 
 
     
@@ -65,6 +72,7 @@ type Wrapupcode struct {
 
 // String returns a JSON representation of the model
 func (o *Wrapupcode) String() string {
+    
     
     
     
@@ -89,15 +97,20 @@ func (u *Wrapupcode) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Division Starrabledivision `json:"division"`
+        
         DateCreated time.Time `json:"dateCreated"`
         
         DateModified time.Time `json:"dateModified"`
         
-        ModifiedBy string `json:"modifiedBy"`
-        
         CreatedBy string `json:"createdBy"`
+        
+        ModifiedBy string `json:"modifiedBy"`
         *Alias
     }{
+
+        
+
 
         
 

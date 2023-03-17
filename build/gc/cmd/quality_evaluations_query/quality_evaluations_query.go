@@ -46,7 +46,7 @@ func Cmdquality_evaluations_query() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "agentHasRead", "", "agent has the evaluation")
 	utils.AddFlag(listCmd.Flags(), "bool", "expandAnswerTotalScores", "", "get the total scores for evaluations")
 	utils.AddFlag(listCmd.Flags(), "int", "maximum", "", "maximum")
-	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "sort order options for agentUserId or evaluatorUserId query. Valid options are `a`, `asc`, `ascending`, `d`, `desc`, `descending`")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "sort order options for agentUserId or evaluatorUserId query. Valid options are `a`, `asc`, `ascending`, `d`, `desc`, `descending`. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/evaluations/query", utils.FormatPermissions([]string{ "quality:evaluation:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/evaluations/query")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

@@ -581,6 +581,7 @@ gc/cmd/outbound_schedules_sequences/outbound_schedules_sequences.go
 gc/cmd/outbound_sequences/outbound_sequences.go
 gc/cmd/outbound_settings/outbound_settings.go
 gc/cmd/outbound_wrapupcodemappings/outbound_wrapupcodemappings.go
+gc/cmd/presence_settings/presence_settings.go
 gc/cmd/presence_sources/presence_sources.go
 gc/cmd/presence_users_primarysource/presence_users_primarysource.go
 gc/cmd/presencedefinitions/presencedefinitions.go
@@ -766,7 +767,6 @@ gc/cmd/telephony_providers_edges_sites/telephony_providers_edges_sites.go
 gc/cmd/telephony_providers_edges_sites_numberplans/telephony_providers_edges_sites_numberplans.go
 gc/cmd/telephony_providers_edges_sites_numberplans_classifications/telephony_providers_edges_sites_numberplans_classifications.go
 gc/cmd/telephony_providers_edges_sites_outboundroutes/telephony_providers_edges_sites_outboundroutes.go
-gc/cmd/telephony_providers_edges_sites_rebalance/telephony_providers_edges_sites_rebalance.go
 gc/cmd/telephony_providers_edges_softwareupdate/telephony_providers_edges_softwareupdate.go
 gc/cmd/telephony_providers_edges_softwareversions/telephony_providers_edges_softwareversions.go
 gc/cmd/telephony_providers_edges_statuscode/telephony_providers_edges_statuscode.go
@@ -1914,7 +1914,10 @@ gc/models/evaluationquestiongroupscore.go
 gc/models/evaluationquestionscore.go
 gc/models/evaluationresponse.go
 gc/models/evaluationscoringset.go
+gc/models/evaluationsettings.go
+gc/models/evaluationsettingsassignee.go
 gc/models/evaluationsource.go
+gc/models/evaluationversion.go
 gc/models/evaluatoractivity.go
 gc/models/evaluatoractivityentitylisting.go
 gc/models/eventcobrowse.go
@@ -2563,6 +2566,7 @@ gc/models/overallbestpoints.go
 gc/models/overallbestpointsitem.go
 gc/models/page.go
 gc/models/pagednamespacelisting.go
+gc/models/pagelessdomainentitylistingevaluationversion.go
 gc/models/pagingspec.go
 gc/models/parameter.go
 gc/models/parsedcertificate.go
@@ -2660,6 +2664,7 @@ gc/models/presencedefinition.go
 gc/models/presencedetailqueryclause.go
 gc/models/presencedetailqueryfilter.go
 gc/models/presencedetailquerypredicate.go
+gc/models/presencesettings.go
 gc/models/processscheduleupdateuploadrequest.go
 gc/models/program.go
 gc/models/programjob.go
@@ -2810,6 +2815,7 @@ gc/models/responsesetentitylisting.go
 gc/models/responsesubstitution.go
 gc/models/responsetext.go
 gc/models/resterrordetail.go
+gc/models/restorepresencesettings.go
 gc/models/resultcounters.go
 gc/models/retentionduration.go
 gc/models/reversewhitepageslookupresult.go
@@ -2946,6 +2952,7 @@ gc/models/sessionlisting.go
 gc/models/sessionsegmentassignment.go
 gc/models/setcontenttemplateactionsettings.go
 gc/models/setrecordingstate.go
+gc/models/setsmsphonenumberactionsettings.go
 gc/models/settimeofflimitvaluesrequest.go
 gc/models/settingdirection.go
 gc/models/settings.go
@@ -3015,6 +3022,7 @@ gc/models/sourceentitylisting.go
 gc/models/sourceplanninggrouprequest.go
 gc/models/speechtextanalyticssettingsrequest.go
 gc/models/speechtextanalyticssettingsresponse.go
+gc/models/starrabledivision.go
 gc/models/station.go
 gc/models/stationentitylisting.go
 gc/models/stationsettings.go
@@ -3503,7 +3511,9 @@ gc/models/wrapupcodeconfig.go
 gc/models/wrapupcodeentitylisting.go
 gc/models/wrapupcodemapping.go
 gc/models/wrapupcodereference.go
+gc/models/wrapupcoderequest.go
 gc/models/writabledialercontact.go
 gc/models/writabledivision.go
 gc/models/writableentity.go
+gc/models/writablestarrabledivision.go
 gc/restclient/restclient.go

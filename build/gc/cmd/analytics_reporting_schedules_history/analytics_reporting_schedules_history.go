@@ -62,6 +62,11 @@ func Cmdanalytics_reporting_schedules_history() *cobra.Command {
 	return analytics_reporting_schedules_historyCmd
 }
 
+/* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
+func queryEscape(value string) string {
+   return url.QueryEscape(value)
+}
+
 var getCmd = &cobra.Command{
 	Use:   "get [runId] [scheduleId]",
 	Short: "A completed scheduled report job",
@@ -89,7 +94,7 @@ var getCmd = &cobra.Command{
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
 			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
@@ -162,7 +167,7 @@ var listCmd = &cobra.Command{
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
 			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
 		}

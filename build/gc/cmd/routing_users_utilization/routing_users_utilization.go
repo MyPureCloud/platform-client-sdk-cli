@@ -79,6 +79,11 @@ func Cmdrouting_users_utilization() *cobra.Command {
 	return routing_users_utilizationCmd
 }
 
+/* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
+func queryEscape(value string) string {
+   return url.QueryEscape(value)
+}
+
 var deleteCmd = &cobra.Command{
 	Use:   "delete [userId]",
 	Short: "Delete the user`s max utilization settings and revert to the organization-wide default.",
@@ -104,7 +109,7 @@ var deleteCmd = &cobra.Command{
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
 			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
@@ -169,7 +174,7 @@ var getCmd = &cobra.Command{
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
 			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
@@ -237,7 +242,7 @@ var updateCmd = &cobra.Command{
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
 			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
 		}

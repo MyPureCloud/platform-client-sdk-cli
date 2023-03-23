@@ -45,6 +45,11 @@ func Cmdconversations_disconnect() *cobra.Command {
 	return conversations_disconnectCmd
 }
 
+/* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
+func queryEscape(value string) string {
+   return url.QueryEscape(value)
+}
+
 var createCmd = &cobra.Command{
 	Use:   "create [conversationId]",
 	Short: "Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.",
@@ -70,7 +75,7 @@ var createCmd = &cobra.Command{
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
 			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
 		}

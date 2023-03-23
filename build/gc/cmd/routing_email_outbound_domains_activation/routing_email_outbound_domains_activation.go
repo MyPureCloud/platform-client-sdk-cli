@@ -60,6 +60,11 @@ func Cmdrouting_email_outbound_domains_activation() *cobra.Command {
 	return routing_email_outbound_domains_activationCmd
 }
 
+/* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
+func queryEscape(value string) string {
+   return url.QueryEscape(value)
+}
+
 var getCmd = &cobra.Command{
 	Use:   "get [domainId]",
 	Short: "Get activation status (cname + dkim) of an outbound domain",
@@ -85,7 +90,7 @@ var getCmd = &cobra.Command{
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
 			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
 		}
@@ -150,7 +155,7 @@ var updateCmd = &cobra.Command{
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
 			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
 		}

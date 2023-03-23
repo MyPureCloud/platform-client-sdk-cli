@@ -39,6 +39,11 @@ func Cmdconversations_emails_messages_draft_attachments() *cobra.Command {
 	return conversations_emails_messages_draft_attachmentsCmd
 }
 
+/* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
+func queryEscape(value string) string {
+   return url.QueryEscape(value)
+}
+
 var deleteCmd = &cobra.Command{
 	Use:   "delete [conversationId] [attachmentId]",
 	Short: "Delete attachment from draft",
@@ -66,7 +71,7 @@ var deleteCmd = &cobra.Command{
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
 			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
 		}

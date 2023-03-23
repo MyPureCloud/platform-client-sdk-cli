@@ -115,7 +115,11 @@ func (c *commandService) Stream(uri string) (string, error) {
 
 			utils.Render(data)
 			cursor = getCursor(pageData)
-			pagedURI = updateCursorPagingURI(pagedURI, cursor)
+			if pageData.NextUri != "" {
+				pagedURI = pageData.NextUri
+			} else {
+				pagedURI = updateCursorPagingURI(pagedURI, cursor)
+			}
 		}
 		break
 	case entityPagination:
@@ -248,7 +252,11 @@ func (c *commandService) List(uri string) (string, error) {
 				totalResults = append(totalResults, string(val))
 			}
 			cursor = getCursor(pageData)
-			pagedURI = updateCursorPagingURI(pagedURI, cursor)
+			if pageData.NextUri != "" {
+				pagedURI = pageData.NextUri
+			} else {
+				pagedURI = updateCursorPagingURI(pagedURI, cursor)
+			}
 		}
 		break
 	case entityPagination:
@@ -333,6 +341,12 @@ func getCursor(entities *models.Entities) string {
 		return entities.Cursor
 	}
 
+	if entities.NextUri != "" {
+		u, _ := url.Parse(entities.NextUri)
+		m, _ := url.ParseQuery(u.RawQuery)
+		return m["cursor"][0]
+	}
+
 	return entities.Cursors.After
 }
 
@@ -365,7 +379,7 @@ func updateCursorPagingURI(pagedURI, cursor string) string {
 }
 
 func determinePaginationStyle(entities *models.Entities) paginationStyle {
-	if entities.Cursor != "" || entities.Cursors.After != "" {
+	if entities.Cursor != "" || entities.Cursors.After != "" || entities.NextUri != "" {
 		return cursorPagination
 	}
 

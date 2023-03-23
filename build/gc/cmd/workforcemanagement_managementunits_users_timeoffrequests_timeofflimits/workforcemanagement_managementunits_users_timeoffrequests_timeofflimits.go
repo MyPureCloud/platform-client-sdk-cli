@@ -45,6 +45,11 @@ func Cmdworkforcemanagement_managementunits_users_timeoffrequests_timeofflimits(
 	return workforcemanagement_managementunits_users_timeoffrequests_timeofflimitsCmd
 }
 
+/* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
+func queryEscape(value string) string {
+   return url.QueryEscape(value)
+}
+
 var getCmd = &cobra.Command{
 	Use:   "get [managementUnitId] [userId] [timeOffRequestId]",
 	Short: "Retrieves time off limit, allocated and waitlisted values according to specific time off request",
@@ -74,7 +79,7 @@ var getCmd = &cobra.Command{
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
 			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
 		}

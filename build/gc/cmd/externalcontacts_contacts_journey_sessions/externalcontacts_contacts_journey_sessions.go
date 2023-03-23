@@ -48,6 +48,11 @@ func Cmdexternalcontacts_contacts_journey_sessions() *cobra.Command {
 	return externalcontacts_contacts_journey_sessionsCmd
 }
 
+/* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
+func queryEscape(value string) string {
+   return url.QueryEscape(value)
+}
+
 var listCmd = &cobra.Command{
 	Use:   "list [contactId]",
 	Short: "Retrieve all sessions for a given external contact.",
@@ -85,7 +90,7 @@ var listCmd = &cobra.Command{
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
 			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", url.QueryEscape(strings.TrimSpace(k)), url.QueryEscape(strings.TrimSpace(v)))
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
 			}
 			urlString = strings.TrimSuffix(urlString, "&")
 		}

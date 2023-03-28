@@ -23,6 +23,9 @@ type FaxsendresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -44,6 +47,10 @@ type Faxsendresponse struct {
     UploadMethodType string `json:"uploadMethodType"`
 
 
+    // Headers
+    Headers map[string]string `json:"headers"`
+
+
     
 
 }
@@ -53,6 +60,7 @@ func (o *Faxsendresponse) String() string {
     
     
     
+     o.Headers = map[string]string{"": ""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -75,6 +83,8 @@ func (u *Faxsendresponse) MarshalJSON() ([]byte, error) {
         UploadDestinationUri string `json:"uploadDestinationUri"`
         
         UploadMethodType string `json:"uploadMethodType"`
+        
+        Headers map[string]string `json:"headers"`
         *Alias
     }{
 
@@ -87,6 +97,11 @@ func (u *Faxsendresponse) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Headers: map[string]string{"": ""},
         
 
 

@@ -92,6 +92,7 @@ func Cmdauthorization_roles() *cobra.Command {
 }`)
 	authorization_rolesCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "bool", "userCount", "true", "Fetch the count of users who have this role granted in at least one division Valid values: true, false")
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role Valid values: unusedPermissions")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/roles/{roleId}", utils.FormatPermissions([]string{ "authorization:role:view",  }), utils.GenerateDevCentreLink("GET", "Authorization", "/api/v2/authorization/roles/{roleId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -415,6 +416,10 @@ var getCmd = &cobra.Command{
 		roleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{roleId}", fmt.Sprintf("%v", roleId), -1)
 
+		userCount := utils.GetFlag(cmd.Flags(), "bool", "userCount")
+		if userCount != "" {
+			queryParams["userCount"] = userCount
+		}
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand

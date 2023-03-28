@@ -95,6 +95,7 @@ gc/cmd/billing_reports_billableusage/billing_reports_billableusage.go
 gc/cmd/billing_trusteebillingoverview/billing_trusteebillingoverview.go
 gc/cmd/certificate_details/certificate_details.go
 gc/cmd/chat_settings/chat_settings.go
+gc/cmd/chats_settings/chats_settings.go
 gc/cmd/coaching_appointments/coaching_appointments.go
 gc/cmd/coaching_appointments_aggregates_query/coaching_appointments_aggregates_query.go
 gc/cmd/coaching_appointments_annotations/coaching_appointments_annotations.go
@@ -1342,6 +1343,7 @@ gc/models/callbackconversationentitylisting.go
 gc/models/callbackdisconnectidentifier.go
 gc/models/callbackidentifier.go
 gc/models/callbackmediaparticipant.go
+gc/models/callbackmediasettings.go
 gc/models/callbasic.go
 gc/models/callcommand.go
 gc/models/callconversation.go
@@ -2385,7 +2387,7 @@ gc/models/mediaparticipantrequest.go
 gc/models/mediapolicies.go
 gc/models/mediaregions.go
 gc/models/mediaresult.go
-gc/models/mediasetting.go
+gc/models/mediasettings.go
 gc/models/mediasummary.go
 gc/models/mediasummarydetail.go
 gc/models/mediatranscription.go
@@ -2715,6 +2717,7 @@ gc/models/querywaitlistpositionsrequest.go
 gc/models/queue.go
 gc/models/queueemailaddress.go
 gc/models/queueentitylisting.go
+gc/models/queuemediasettings.go
 gc/models/queuemember.go
 gc/models/queuememberentitylisting.go
 gc/models/queuememberentitylistingv1.go
@@ -2942,6 +2945,7 @@ gc/models/sequenceschedule.go
 gc/models/serverdate.go
 gc/models/servicecontext.go
 gc/models/servicegoaltemplate.go
+gc/models/servicegoaltemplateimpactoverride.go
 gc/models/servicegoaltemplatelist.go
 gc/models/servicegoaltemplatereference.go
 gc/models/servicelevel.go

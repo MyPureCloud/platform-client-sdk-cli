@@ -80,6 +80,7 @@ func Cmdrouting_email_domains() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "bool", "excludeStatus", "false", "Exclude MX record data")
+	utils.AddFlag(listCmd.Flags(), "string", "filter", "", "Optional search filter")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/email/domains", utils.FormatPermissions([]string{ "routing:email:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/email/domains")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -353,6 +354,10 @@ var listCmd = &cobra.Command{
 		excludeStatus := utils.GetFlag(cmd.Flags(), "bool", "excludeStatus")
 		if excludeStatus != "" {
 			queryParams["excludeStatus"] = excludeStatus
+		}
+		filter := utils.GetFlag(cmd.Flags(), "string", "filter")
+		if filter != "" {
+			queryParams["filter"] = filter
 		}
 		urlString := path
 		if len(queryParams) > 0 {

@@ -157,8 +157,8 @@ type Queuerequest struct {
     
 
 
-    // MediaSettings - The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM
-    MediaSettings map[string]Mediasetting `json:"mediaSettings"`
+    // MediaSettings - The media settings for the queue.
+    MediaSettings Queuemediasettings `json:"mediaSettings"`
 
 
     // RoutingRules - The routing rules for the queue, used for Preferred Agent Routing.
@@ -258,7 +258,7 @@ func (o *Queuerequest) String() string {
     
     
     
-     o.MediaSettings = map[string]Mediasetting{"": {}} 
+    
      o.RoutingRules = []Routingrule{{}} 
     
     
@@ -311,7 +311,7 @@ func (u *Queuerequest) MarshalJSON() ([]byte, error) {
         
         CreatedBy string `json:"createdBy"`
         
-        MediaSettings map[string]Mediasetting `json:"mediaSettings"`
+        MediaSettings Queuemediasettings `json:"mediaSettings"`
         
         RoutingRules []Routingrule `json:"routingRules"`
         
@@ -390,8 +390,6 @@ func (u *Queuerequest) MarshalJSON() ([]byte, error) {
         
 
 
-        
-        MediaSettings: map[string]Mediasetting{"": {}},
         
 
 

@@ -95,6 +95,9 @@ type MessageDud struct {
 
     
 
+
+    
+
 }
 
 // Message
@@ -210,6 +213,10 @@ type Message struct {
     // AgentAssistantId - UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
     AgentAssistantId string `json:"agentAssistantId"`
 
+
+    // ByoSmsIntegrationId - The internal id representing the customer supplied sms integration message.
+    ByoSmsIntegrationId string `json:"byoSmsIntegrationId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -237,6 +244,7 @@ func (o *Message) String() string {
     
     
      o.Messages = []Messagedetails{{}} 
+    
     
     
     
@@ -314,6 +322,8 @@ func (u *Message) MarshalJSON() ([]byte, error) {
         AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
         
         AgentAssistantId string `json:"agentAssistantId"`
+        
+        ByoSmsIntegrationId string `json:"byoSmsIntegrationId"`
         *Alias
     }{
 
@@ -387,6 +397,9 @@ func (u *Message) MarshalJSON() ([]byte, error) {
 
         
         Messages: []Messagedetails{{}},
+        
+
+
         
 
 

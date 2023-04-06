@@ -46,6 +46,9 @@ type ConversationnormalizedmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationnormalizedmessage - General rich media message structure with normalized feature support across many messaging channels.
@@ -91,6 +94,10 @@ type Conversationnormalizedmessage struct {
     // Metadata - Additional metadata about this message.
     Metadata map[string]string `json:"metadata"`
 
+
+    // ByoSmsIntegrationId - The internal id representing the customer supplied sms integration message.
+    ByoSmsIntegrationId string `json:"byoSmsIntegrationId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -101,6 +108,7 @@ func (o *Conversationnormalizedmessage) String() string {
      o.Events = []Conversationmessageevent{{}} 
     
      o.Metadata = map[string]string{"": ""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -129,6 +137,8 @@ func (u *Conversationnormalizedmessage) MarshalJSON() ([]byte, error) {
         OriginatingEntity string `json:"originatingEntity"`
         
         Metadata map[string]string `json:"metadata"`
+        
+        ByoSmsIntegrationId string `json:"byoSmsIntegrationId"`
         *Alias
     }{
 
@@ -171,6 +181,9 @@ func (u *Conversationnormalizedmessage) MarshalJSON() ([]byte, error) {
 
         
         Metadata: map[string]string{"": ""},
+        
+
+
         
 
         Alias: (*Alias)(u),

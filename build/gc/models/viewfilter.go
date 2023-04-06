@@ -478,6 +478,18 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1105,6 +1117,22 @@ type Viewfilter struct {
     // EvaluationStatuses - The evaluation statuses that are used to filter the view
     EvaluationStatuses []string `json:"evaluationStatuses"`
 
+
+    // IsAnalyzedForSensitiveData - Filter to indicate the transcript has been analyzed for sensitive data.
+    IsAnalyzedForSensitiveData bool `json:"isAnalyzedForSensitiveData"`
+
+
+    // HasSensitiveData - Filter to indicate the transcript contains sensitive data.
+    HasSensitiveData bool `json:"hasSensitiveData"`
+
+
+    // SubPath - Filter for Sub Path
+    SubPath string `json:"subPath"`
+
+
+    // UserState - The user supplied state value in the view
+    UserState string `json:"userState"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1265,6 +1293,10 @@ func (o *Viewfilter) String() string {
      o.AlertRuleIds = []string{""} 
      o.EvaluationFormContextIds = []string{""} 
      o.EvaluationStatuses = []string{""} 
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1593,6 +1625,14 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         EvaluationFormContextIds []string `json:"evaluationFormContextIds"`
         
         EvaluationStatuses []string `json:"evaluationStatuses"`
+        
+        IsAnalyzedForSensitiveData bool `json:"isAnalyzedForSensitiveData"`
+        
+        HasSensitiveData bool `json:"hasSensitiveData"`
+        
+        SubPath string `json:"subPath"`
+        
+        UserState string `json:"userState"`
         *Alias
     }{
 
@@ -2289,6 +2329,18 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         EvaluationStatuses: []string{""},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

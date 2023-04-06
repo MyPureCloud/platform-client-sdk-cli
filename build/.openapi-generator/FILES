@@ -122,6 +122,7 @@ gc/cmd/contentmanagement_workspaces_members/contentmanagement_workspaces_members
 gc/cmd/contentmanagement_workspaces_tagvalues/contentmanagement_workspaces_tagvalues.go
 gc/cmd/contentmanagement_workspaces_tagvalues_query/contentmanagement_workspaces_tagvalues_query.go
 gc/cmd/conversations/conversations.go
+gc/cmd/conversations_aftercallwork_participants_communications/conversations_aftercallwork_participants_communications.go
 gc/cmd/conversations_assign/conversations_assign.go
 gc/cmd/conversations_callbacks/conversations_callbacks.go
 gc/cmd/conversations_callbacks_bulk_disconnect/conversations_callbacks_bulk_disconnect.go
@@ -1032,6 +1033,7 @@ gc/models/adherencesettings.go
 gc/models/adjacents.go
 gc/models/admintimeoffrequestpatch.go
 gc/models/aftercallwork.go
+gc/models/aftercallworkupdate.go
 gc/models/agent.go
 gc/models/agentactivity.go
 gc/models/agentactivityentitylisting.go
@@ -1914,6 +1916,7 @@ gc/models/evaluationquestion.go
 gc/models/evaluationquestiongroup.go
 gc/models/evaluationquestiongroupscore.go
 gc/models/evaluationquestionscore.go
+gc/models/evaluationreference.go
 gc/models/evaluationresponse.go
 gc/models/evaluationscoringset.go
 gc/models/evaluationsettings.go
@@ -1938,7 +1941,6 @@ gc/models/expirededgelisting.go
 gc/models/exportscriptrequest.go
 gc/models/exportscriptresponse.go
 gc/models/exporturi.go
-gc/models/extendedwrapup.go
 gc/models/extension.go
 gc/models/extensionentitylisting.go
 gc/models/extensionpool.go
@@ -2534,6 +2536,7 @@ gc/models/optinsettings.go
 gc/models/organization.go
 gc/models/organizationfeatures.go
 gc/models/organizationpresence.go
+gc/models/organizationpresencedefinition.go
 gc/models/organizationpresenceentitylisting.go
 gc/models/organizationproductentitylisting.go
 gc/models/organizationroleentitylisting.go
@@ -3053,6 +3056,7 @@ gc/models/supportcentersettings.go
 gc/models/supportcenterstylesetting.go
 gc/models/supportedcontent.go
 gc/models/supportedcontentlisting.go
+gc/models/supportedcontentprofile.go
 gc/models/supportedcontentreference.go
 gc/models/supporteddialectsentitylisting.go
 gc/models/supportedlanguage.go
@@ -3516,6 +3520,7 @@ gc/models/wrapupcodeentitylisting.go
 gc/models/wrapupcodemapping.go
 gc/models/wrapupcodereference.go
 gc/models/wrapupcoderequest.go
+gc/models/wrapupinput.go
 gc/models/writabledialercontact.go
 gc/models/writabledivision.go
 gc/models/writableentity.go

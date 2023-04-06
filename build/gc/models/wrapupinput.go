@@ -7,11 +7,11 @@ import (
 )
 
 var (
-    ExtendedwrapupMarshalled = false
+    WrapupinputMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ExtendedwrapupDud struct { 
+type WrapupinputDud struct { 
     
 
 
@@ -37,8 +37,8 @@ type ExtendedwrapupDud struct {
 
 }
 
-// Extendedwrapup
-type Extendedwrapup struct { 
+// Wrapupinput
+type Wrapupinput struct { 
     // Code - The user configured wrap up code id.
     Code string `json:"code"`
 
@@ -73,7 +73,7 @@ type Extendedwrapup struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Extendedwrapup) String() string {
+func (o *Wrapupinput) String() string {
     
     
     
@@ -89,13 +89,13 @@ func (o *Extendedwrapup) String() string {
     return str
 }
 
-func (u *Extendedwrapup) MarshalJSON() ([]byte, error) {
-    type Alias Extendedwrapup
+func (u *Wrapupinput) MarshalJSON() ([]byte, error) {
+    type Alias Wrapupinput
 
-    if ExtendedwrapupMarshalled {
+    if WrapupinputMarshalled {
         return []byte("{}"), nil
     }
-    ExtendedwrapupMarshalled = true
+    WrapupinputMarshalled = true
 
     return json.Marshal(&struct {
         

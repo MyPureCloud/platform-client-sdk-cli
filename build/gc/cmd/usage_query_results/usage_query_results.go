@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdusage_query_results() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/usage/query/{executionId}/results", utils.FormatPermissions([]string{ "oauth:client:view",  }), utils.GenerateDevCentreLink("GET", "Usage", "/api/v2/usage/query/{executionId}/results")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/usage/query/{executionId}/results", utils.FormatPermissions([]string{ "oauth:client:view", "usage:organization:view",  }), utils.GenerateDevCentreLink("GET", "Usage", "/api/v2/usage/query/{executionId}/results")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

@@ -36,7 +36,7 @@ type Transferrequest struct {
     UserId string `json:"userId"`
 
 
-    // Address - The phone number or address of the transfer target.
+    // Address - The address of the transfer target which can be user ID, queue ID or queue name
     Address string `json:"address"`
 
 

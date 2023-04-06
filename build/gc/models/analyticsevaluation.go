@@ -56,10 +56,17 @@ type AnalyticsevaluationDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticsevaluation
 type Analyticsevaluation struct { 
+    // AssigneeId - UserId of the assignee
+    AssigneeId string `json:"assigneeId"`
+
+
     // CalibrationId - The calibration ID used for the purpose of training evaluators
     CalibrationId string `json:"calibrationId"`
 
@@ -138,6 +145,7 @@ func (o *Analyticsevaluation) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -154,6 +162,8 @@ func (u *Analyticsevaluation) MarshalJSON() ([]byte, error) {
     AnalyticsevaluationMarshalled = true
 
     return json.Marshal(&struct {
+        
+        AssigneeId string `json:"assigneeId"`
         
         CalibrationId string `json:"calibrationId"`
         
@@ -186,6 +196,9 @@ func (u *Analyticsevaluation) MarshalJSON() ([]byte, error) {
         OTotalScore int `json:"oTotalScore"`
         *Alias
     }{
+
+        
+
 
         
 

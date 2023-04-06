@@ -34,7 +34,7 @@ func Cmdconversations_cobrowsesessions_participants_communications_wrapup() *cob
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ExtendedWrapup"
+        "$ref" : "#/components/schemas/WrapupInput"
       }
     }
   },
@@ -82,7 +82,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Extendedwrapup{}
+			reqModel := models.Wrapupinput{}
 			utils.Render(reqModel.String())
 			
 			return

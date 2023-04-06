@@ -31,7 +31,7 @@ type Phrase struct {
     Strictness string `json:"strictness"`
 
 
-    // Sentiment - The phrase sentiment, default value is Unspecified.
+    // Sentiment - The phrase sentiment, default value is Unspecified. Note: Sentiment value for phrases is currently not in use and has no impact to the system.
     Sentiment string `json:"sentiment"`
 
 }

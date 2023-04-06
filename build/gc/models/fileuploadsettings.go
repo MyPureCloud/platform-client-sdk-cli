@@ -13,10 +13,24 @@ var (
 type FileuploadsettingsDud struct { 
     
 
+
+    
+
+
+    
+
 }
 
 // Fileuploadsettings - File upload settings for messenger
 type Fileuploadsettings struct { 
+    // EnableAttachments - whether or not attachments is enabled
+    EnableAttachments bool `json:"enableAttachments"`
+
+
+    // UseSupportedContentProfile - whether or not supported content profile is enabled
+    UseSupportedContentProfile bool `json:"useSupportedContentProfile"`
+
+
     // Modes - The list of supported file upload modes
     Modes []Fileuploadmode `json:"modes"`
 
@@ -24,6 +38,8 @@ type Fileuploadsettings struct {
 
 // String returns a JSON representation of the model
 func (o *Fileuploadsettings) String() string {
+    
+    
      o.Modes = []Fileuploadmode{{}} 
 
     j, _ := json.Marshal(o)
@@ -42,9 +58,19 @@ func (u *Fileuploadsettings) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        EnableAttachments bool `json:"enableAttachments"`
+        
+        UseSupportedContentProfile bool `json:"useSupportedContentProfile"`
+        
         Modes []Fileuploadmode `json:"modes"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
         Modes: []Fileuploadmode{{}},

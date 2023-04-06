@@ -90,6 +90,9 @@ type EvaluationresponseDud struct {
     
 
 
+    
+
+
     EvaluationSource Evaluationsource `json:"evaluationSource"`
 
 
@@ -178,6 +181,10 @@ type Evaluationresponse struct {
     NeverRelease bool `json:"neverRelease"`
 
 
+    // Assigned - Set to false to unassign the evaluation. This cannot be set to false when assignee is also set.
+    Assigned bool `json:"assigned"`
+
+
     // ResourceId - Only used for email evaluations. Will be null for all other evaluations.
     ResourceId string `json:"resourceId"`
 
@@ -226,6 +233,7 @@ func (o *Evaluationresponse) String() string {
     
     
      o.MediaType = []string{""} 
+    
     
     
     
@@ -291,6 +299,8 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
         
         NeverRelease bool `json:"neverRelease"`
         
+        Assigned bool `json:"assigned"`
+        
         ResourceId string `json:"resourceId"`
         
         ResourceType string `json:"resourceType"`
@@ -352,6 +362,9 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
 
         
         MediaType: []string{""},
+        
+
+
         
 
 

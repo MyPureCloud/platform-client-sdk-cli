@@ -129,6 +129,9 @@ type UsermeDud struct {
     PresenceDefinitions []Organizationpresence `json:"presenceDefinitions"`
 
 
+    DivisionedPresenceDefinitions []Organizationpresencedefinition `json:"divisionedPresenceDefinitions"`
+
+
     LocationDefinitions []Locationdefinition `json:"locationDefinitions"`
 
 
@@ -336,6 +339,9 @@ type Userme struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -455,6 +461,9 @@ func (u *Userme) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+
         
 
 

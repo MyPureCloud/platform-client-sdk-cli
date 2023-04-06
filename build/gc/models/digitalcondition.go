@@ -34,6 +34,9 @@ type DigitalconditionDud struct {
 
     
 
+
+    
+
 }
 
 // Digitalcondition
@@ -69,10 +72,15 @@ type Digitalcondition struct {
     // LastResultOverallConditionSettings - The settings for a 'last result overall' condition.
     LastResultOverallConditionSettings Lastresultoverallconditionsettings `json:"lastResultOverallConditionSettings"`
 
+
+    // DataActionConditionSettings - The settings for a 'data action' condition.
+    DataActionConditionSettings Dataactionconditionsettings `json:"dataActionConditionSettings"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Digitalcondition) String() string {
+    
     
     
     
@@ -113,8 +121,13 @@ func (u *Digitalcondition) MarshalJSON() ([]byte, error) {
         LastResultByColumnConditionSettings Lastresultbycolumnconditionsettings `json:"lastResultByColumnConditionSettings"`
         
         LastResultOverallConditionSettings Lastresultoverallconditionsettings `json:"lastResultOverallConditionSettings"`
+        
+        DataActionConditionSettings Dataactionconditionsettings `json:"dataActionConditionSettings"`
         *Alias
     }{
+
+        
+
 
         
 

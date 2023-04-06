@@ -36,7 +36,7 @@ type MediaparticipantrequestDud struct {
 // Mediaparticipantrequest
 type Mediaparticipantrequest struct { 
     // Wrapup - Wrap-up to assign to this participant.
-    Wrapup Extendedwrapup `json:"wrapup"`
+    Wrapup Wrapupinput `json:"wrapup"`
 
 
     // State - The state to update to set for this participant's communications.  Possible values are: 'connected' and 'disconnected'.
@@ -90,7 +90,7 @@ func (u *Mediaparticipantrequest) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Wrapup Extendedwrapup `json:"wrapup"`
+        Wrapup Wrapupinput `json:"wrapup"`
         
         State string `json:"state"`
         

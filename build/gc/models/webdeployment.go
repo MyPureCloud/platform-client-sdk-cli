@@ -27,6 +27,9 @@ type WebdeploymentDud struct {
     
 
 
+    
+
+
     Snippet string `json:"snippet"`
 
 
@@ -73,6 +76,10 @@ type Webdeployment struct {
     AllowedDomains []string `json:"allowedDomains"`
 
 
+    // SupportedContentProfile - The supported content profile for a deployment
+    SupportedContentProfile Supportedcontentprofile `json:"supportedContentProfile"`
+
+
     
 
 
@@ -110,6 +117,7 @@ func (o *Webdeployment) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -135,6 +143,8 @@ func (u *Webdeployment) MarshalJSON() ([]byte, error) {
         
         AllowedDomains []string `json:"allowedDomains"`
         
+        SupportedContentProfile Supportedcontentprofile `json:"supportedContentProfile"`
+        
         Flow Domainentityref `json:"flow"`
         
         Status string `json:"status"`
@@ -157,6 +167,9 @@ func (u *Webdeployment) MarshalJSON() ([]byte, error) {
 
         
         AllowedDomains: []string{""},
+        
+
+
         
 
 

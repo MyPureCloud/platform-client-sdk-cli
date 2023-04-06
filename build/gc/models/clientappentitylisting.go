@@ -60,10 +60,6 @@ type Clientappentitylisting struct {
     Total int `json:"total"`
 
 
-    // FirstUri
-    FirstUri string `json:"firstUri"`
-
-
     // NextUri
     NextUri string `json:"nextUri"`
 
@@ -74,6 +70,10 @@ type Clientappentitylisting struct {
 
     // LastUri
     LastUri string `json:"lastUri"`
+
+
+    // FirstUri
+    FirstUri string `json:"firstUri"`
 
 
     // SelfUri
@@ -122,13 +122,13 @@ func (u *Clientappentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        FirstUri string `json:"firstUri"`
-        
         NextUri string `json:"nextUri"`
         
         PreviousUri string `json:"previousUri"`
         
         LastUri string `json:"lastUri"`
+        
+        FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         

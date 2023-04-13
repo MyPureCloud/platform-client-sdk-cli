@@ -125,7 +125,7 @@ type Line struct {
     Properties map[string]interface{} `json:"properties"`
 
 
-    // EdgeGroup
+    // EdgeGroup - The edge group associated with the line. (Deprecated)
     EdgeGroup Domainentityref `json:"edgeGroup"`
 
 

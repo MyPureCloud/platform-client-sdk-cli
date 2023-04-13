@@ -33,6 +33,12 @@ type DevelopmentactivityDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -82,6 +88,14 @@ type Developmentactivity struct {
     IsLatest bool `json:"isLatest"`
 
 
+    // IsModuleArchived - True if the associated module is archived
+    IsModuleArchived bool `json:"isModuleArchived"`
+
+
+    // ArchivalMode - Module archive type
+    ArchivalMode string `json:"archivalMode"`
+
+
     
 
 
@@ -122,6 +136,8 @@ func (o *Developmentactivity) String() string {
     
     
     
+    
+    
      o.Attendees = []Userreference{{}} 
     
 
@@ -143,6 +159,10 @@ func (u *Developmentactivity) MarshalJSON() ([]byte, error) {
         
         IsLatest bool `json:"isLatest"`
         
+        IsModuleArchived bool `json:"isModuleArchived"`
+        
+        ArchivalMode string `json:"archivalMode"`
+        
         Name string `json:"name"`
         
         VarType string `json:"type"`
@@ -158,6 +178,12 @@ func (u *Developmentactivity) MarshalJSON() ([]byte, error) {
         IsOverdue bool `json:"isOverdue"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

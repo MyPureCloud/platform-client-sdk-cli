@@ -50,6 +50,7 @@ func Cmdusers_development_activities() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "interval", "", "Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
 	utils.AddFlag(listCmd.Flags(), "string", "completionInterval", "", "Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
 	utils.AddFlag(listCmd.Flags(), "string", "overdue", "Any", "Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned Valid values: True, False, Any")
+	utils.AddFlag(listCmd.Flags(), "string", "pass", "Any", "Specifies if only the failed (pass is False) or passed (pass is True) activities are returned. If pass is Any or if the pass parameter is not supplied, all activities are returned Valid values: True, False, Any")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "Desc", "Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) Valid values: Asc, Desc")
@@ -185,6 +186,10 @@ var listCmd = &cobra.Command{
 		overdue := utils.GetFlag(cmd.Flags(), "string", "overdue")
 		if overdue != "" {
 			queryParams["overdue"] = overdue
+		}
+		pass := utils.GetFlag(cmd.Flags(), "string", "pass")
+		if pass != "" {
+			queryParams["pass"] = pass
 		}
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

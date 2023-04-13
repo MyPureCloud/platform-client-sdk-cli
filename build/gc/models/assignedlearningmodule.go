@@ -77,6 +77,9 @@ type AssignedlearningmoduleDud struct {
 
     
 
+
+    
+
 }
 
 // Assignedlearningmodule - Learning module response
@@ -149,6 +152,10 @@ type Assignedlearningmodule struct {
     SummaryData Learningmodulesummary `json:"summaryData"`
 
 
+    // ReassignSummaryData - The learning module reassign summary data
+    ReassignSummaryData Learningmodulereassignsummary `json:"reassignSummaryData"`
+
+
     // CoverArt - The cover art for the learning module
     CoverArt Learningmodulecoverartresponse `json:"coverArt"`
 
@@ -166,6 +173,7 @@ func (o *Assignedlearningmodule) String() string {
     
     
      o.InformSteps = []Learningmoduleinformstep{{}} 
+    
     
     
     
@@ -202,6 +210,8 @@ func (u *Assignedlearningmodule) MarshalJSON() ([]byte, error) {
         AssessmentForm Assessmentform `json:"assessmentForm"`
         
         SummaryData Learningmodulesummary `json:"summaryData"`
+        
+        ReassignSummaryData Learningmodulereassignsummary `json:"reassignSummaryData"`
         
         CoverArt Learningmodulecoverartresponse `json:"coverArt"`
         
@@ -264,6 +274,9 @@ func (u *Assignedlearningmodule) MarshalJSON() ([]byte, error) {
 
         
         InformSteps: []Learningmoduleinformstep{{}},
+        
+
+
         
 
 

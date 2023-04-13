@@ -45,6 +45,9 @@ type LearningassignmentDud struct {
     IsPassed bool `json:"isPassed"`
 
 
+    IsLatest bool `json:"isLatest"`
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -74,6 +77,9 @@ type Learningassignment struct {
 
     // Assessment - The assessment associated with this assignment
     Assessment Learningassessment `json:"assessment"`
+
+
+    
 
 
     
@@ -172,6 +178,9 @@ func (u *Learningassignment) MarshalJSON() ([]byte, error) {
         AssessmentForm Assessmentform `json:"assessmentForm"`
         *Alias
     }{
+
+        
+
 
         
 

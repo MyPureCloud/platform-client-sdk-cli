@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("telephony_providers_edges_lines", "SWAGGER_OVERRIDE_/api/v2/telephony/providers/edges/lines", "SWAGGER_OVERRIDE_/api/v2/telephony/providers/edges/{edgeId}/lines", "SWAGGER_OVERRIDE_/api/v2/telephony/providers/edges/lines", "SWAGGER_OVERRIDE_/api/v2/telephony/providers/edges/{edgeId}/lines", "SWAGGER_OVERRIDE_/api/v2/telephony/providers/edges/{edgeId}/lines", )
+	Description = utils.FormatUsageDescription("telephony_providers_edges_lines", "SWAGGER_OVERRIDE_/api/v2/telephony/providers/edges/lines", "SWAGGER_OVERRIDE_/api/v2/telephony/providers/edges/lines", )
 	telephony_providers_edges_linesCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("telephony_providers_edges_lines"),
 		Short: Description,
@@ -43,26 +43,11 @@ func Cmdtelephony_providers_edges_lines() *cobra.Command {
 }`)
 	telephony_providers_edges_linesCmd.AddCommand(getCmd)
 
-	getedgelineCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getedgelineCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}")))
-	utils.AddFileFlagIfUpsert(getedgelineCmd.Flags(), "GET", ``)
-	
-	utils.AddPaginateFlagsIfListingResponse(getedgelineCmd.Flags(), "GET", `{
-  "description" : "successful operation",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/EdgeLine"
-      }
-    }
-  }
-}`)
-	telephony_providers_edges_linesCmd.AddCommand(getedgelineCmd)
-
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Value by which to sort")
-	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in the response, comma-separated Valid values: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in the response, comma-separated. The edgeGroup value is deprecated. Valid values: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/lines", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/lines")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -77,48 +62,6 @@ func Cmdtelephony_providers_edges_lines() *cobra.Command {
   }
 }`)
 	telephony_providers_edges_linesCmd.AddCommand(listCmd)
-
-	utils.AddFlag(listedgelinesCmd.Flags(), "int", "pageSize", "25", "Page size")
-	utils.AddFlag(listedgelinesCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	listedgelinesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listedgelinesCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/{edgeId}/lines", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/lines")))
-	utils.AddFileFlagIfUpsert(listedgelinesCmd.Flags(), "GET", ``)
-	
-	utils.AddPaginateFlagsIfListingResponse(listedgelinesCmd.Flags(), "GET", `{
-  "description" : "successful operation",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
-      }
-    }
-  }
-}`)
-	telephony_providers_edges_linesCmd.AddCommand(listedgelinesCmd)
-
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}")))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "description" : "Line",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/EdgeLine"
-      }
-    }
-  },
-  "required" : true
-}`)
-	
-	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  "description" : "successful operation",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/EdgeLine"
-      }
-    }
-  }
-}`)
-	telephony_providers_edges_linesCmd.AddCommand(updateCmd)
 	return telephony_providers_edges_linesCmd
 }
 
@@ -162,73 +105,6 @@ var getCmd = &cobra.Command{
 		}
 
 		const opId = "get"
-		const httpMethod = "GET"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
-		// TODO read from config file
-		retryConfig := &retry.RetryConfiguration{
-			RetryWaitMin: 5 * time.Second,
-			RetryWaitMax: 60 * time.Second,
-			RetryMax:     20,
-		}
-		results, err := retryFunc(retryConfig)
-		if err != nil {
-			if httpMethod == "HEAD" {
-				if httpErr, ok := err.(models.HttpStatusError); ok {
-					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
-				}
-			}
-			logger.Fatal(err)
-		}
-
-		filterCondition, _ := cmd.Flags().GetString("filtercondition")
-		if filterCondition != "" {
-			filteredResults, err := utils.FilterByCondition(results, filterCondition)
-			if err != nil {
-				logger.Fatal(err)
-			}
-			results = filteredResults
-		}
-
-		utils.Render(results)
-	},
-}
-var getedgelineCmd = &cobra.Command{
-	Use:   "getedgeline [edgeId] [lineId]",
-	Short: "Get line",
-	Long:  "Get line",
-	Args:  utils.DetermineArgs([]string{ "edgeId", "lineId", }),
-
-	Run: func(cmd *cobra.Command, args []string) {
-		_ = models.Entities{}
-
-		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
-		if printReqBody {
-			
-			return
-		}
-
-		queryParams := make(map[string]string)
-
-		path := "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}"
-		edgeId, args := args[0], args[1:]
-		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
-		lineId, args := args[0], args[1:]
-		path = strings.Replace(path, "{lineId}", fmt.Sprintf("%v", lineId), -1)
-
-		urlString := path
-		if len(queryParams) > 0 {
-			urlString = fmt.Sprintf("%v?", path)
-			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
-			}
-			urlString = strings.TrimSuffix(urlString, "&")
-		}
-
-		if strings.Contains(urlString, "varType") {
-			urlString = strings.Replace(urlString, "varType", "type", -1)
-		}
-
-		const opId = "getedgeline"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
@@ -313,149 +189,6 @@ var listCmd = &cobra.Command{
 
 		const opId = "list"
 		const httpMethod = "GET"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
-		// TODO read from config file
-		retryConfig := &retry.RetryConfiguration{
-			RetryWaitMin: 5 * time.Second,
-			RetryWaitMax: 60 * time.Second,
-			RetryMax:     20,
-		}
-		results, err := retryFunc(retryConfig)
-		if err != nil {
-			if httpMethod == "HEAD" {
-				if httpErr, ok := err.(models.HttpStatusError); ok {
-					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
-				}
-			}
-			logger.Fatal(err)
-		}
-
-		filterCondition, _ := cmd.Flags().GetString("filtercondition")
-		if filterCondition != "" {
-			filteredResults, err := utils.FilterByCondition(results, filterCondition)
-			if err != nil {
-				logger.Fatal(err)
-			}
-			results = filteredResults
-		}
-
-		utils.Render(results)
-	},
-}
-var listedgelinesCmd = &cobra.Command{
-	Use:   "listedgelines [edgeId]",
-	Short: "Get the list of lines.",
-	Long:  "Get the list of lines.",
-	Args:  utils.DetermineArgs([]string{ "edgeId", }),
-
-	Run: func(cmd *cobra.Command, args []string) {
-		_ = models.Entities{}
-
-		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
-		if printReqBody {
-			
-			return
-		}
-
-		queryParams := make(map[string]string)
-
-		path := "/api/v2/telephony/providers/edges/{edgeId}/lines"
-		edgeId, args := args[0], args[1:]
-		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
-
-		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
-		if pageSize != "" {
-			queryParams["pageSize"] = pageSize
-		}
-		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
-		if pageNumber != "" {
-			queryParams["pageNumber"] = pageNumber
-		}
-		urlString := path
-		if len(queryParams) > 0 {
-			urlString = fmt.Sprintf("%v?", path)
-			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
-			}
-			urlString = strings.TrimSuffix(urlString, "&")
-		}
-
-		if strings.Contains(urlString, "varType") {
-			urlString = strings.Replace(urlString, "varType", "type", -1)
-		}
-
-		const opId = "listedgelines"
-		const httpMethod = "GET"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
-		// TODO read from config file
-		retryConfig := &retry.RetryConfiguration{
-			RetryWaitMin: 5 * time.Second,
-			RetryWaitMax: 60 * time.Second,
-			RetryMax:     20,
-		}
-		results, err := retryFunc(retryConfig)
-		if err != nil {
-			if httpMethod == "HEAD" {
-				if httpErr, ok := err.(models.HttpStatusError); ok {
-					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
-				}
-			}
-			logger.Fatal(err)
-		}
-
-		filterCondition, _ := cmd.Flags().GetString("filtercondition")
-		if filterCondition != "" {
-			filteredResults, err := utils.FilterByCondition(results, filterCondition)
-			if err != nil {
-				logger.Fatal(err)
-			}
-			results = filteredResults
-		}
-
-		utils.Render(results)
-	},
-}
-var updateCmd = &cobra.Command{
-	Use:   "update [edgeId] [lineId]",
-	Short: "Update a line.",
-	Long:  "Update a line.",
-	Args:  utils.DetermineArgs([]string{ "edgeId", "lineId", }),
-
-	Run: func(cmd *cobra.Command, args []string) {
-		_ = models.Entities{}
-
-		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
-		if printReqBody {
-			
-			reqModel := models.Edgeline{}
-			utils.Render(reqModel.String())
-			
-			return
-		}
-
-		queryParams := make(map[string]string)
-
-		path := "/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}"
-		edgeId, args := args[0], args[1:]
-		path = strings.Replace(path, "{edgeId}", fmt.Sprintf("%v", edgeId), -1)
-		lineId, args := args[0], args[1:]
-		path = strings.Replace(path, "{lineId}", fmt.Sprintf("%v", lineId), -1)
-
-		urlString := path
-		if len(queryParams) > 0 {
-			urlString = fmt.Sprintf("%v?", path)
-			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
-			}
-			urlString = strings.TrimSuffix(urlString, "&")
-		}
-
-		if strings.Contains(urlString, "varType") {
-			urlString = strings.Replace(urlString, "varType", "type", -1)
-		}
-
-		const opId = "update"
-		const httpMethod = "PUT"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

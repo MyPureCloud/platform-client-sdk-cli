@@ -245,6 +245,9 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticssession
@@ -319,6 +322,10 @@ type Analyticssession struct {
 
     // Cc - Carbon copy email address(es)
     Cc []string `json:"cc"`
+
+
+    // Cleared - Flag that indicates that the conversation has been cleared by the customer
+    Cleared bool `json:"cleared"`
 
 
     // CoachedParticipantId - The participantId being coached (if someone (e.g. an agent) is being coached, this would correspond to one of the other participantIds present in the conversation)
@@ -537,12 +544,12 @@ type Analyticssession struct {
     WaitingInteractionCounts []int `json:"waitingInteractionCounts"`
 
 
-    // AgentGroups - Conditional group routing agent groups
-    AgentGroups []Analyticsagentgroup `json:"agentGroups"`
-
-
     // ProposedAgents - Proposed agents
     ProposedAgents []Analyticsproposedagent `json:"proposedAgents"`
+
+
+    // AgentGroups - Conditional group routing agent groups
+    AgentGroups []Analyticsagentgroup `json:"agentGroups"`
 
 
     // MediaEndpointStats - MediaEndpointStats associated with this session
@@ -582,6 +589,7 @@ func (o *Analyticssession) String() string {
     
     
      o.Cc = []string{""} 
+    
     
     
     
@@ -636,8 +644,8 @@ func (o *Analyticssession) String() string {
     
     
      o.WaitingInteractionCounts = []int{0} 
-     o.AgentGroups = []Analyticsagentgroup{{}} 
      o.ProposedAgents = []Analyticsproposedagent{{}} 
+     o.AgentGroups = []Analyticsagentgroup{{}} 
      o.MediaEndpointStats = []Analyticsmediaendpointstat{{}} 
     
      o.Metrics = []Analyticssessionmetric{{}} 
@@ -694,6 +702,8 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         CallbackUserName string `json:"callbackUserName"`
         
         Cc []string `json:"cc"`
+        
+        Cleared bool `json:"cleared"`
         
         CoachedParticipantId string `json:"coachedParticipantId"`
         
@@ -803,9 +813,9 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         
         WaitingInteractionCounts []int `json:"waitingInteractionCounts"`
         
-        AgentGroups []Analyticsagentgroup `json:"agentGroups"`
-        
         ProposedAgents []Analyticsproposedagent `json:"proposedAgents"`
+        
+        AgentGroups []Analyticsagentgroup `json:"agentGroups"`
         
         MediaEndpointStats []Analyticsmediaendpointstat `json:"mediaEndpointStats"`
         
@@ -876,6 +886,9 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
         
         Cc: []string{""},
+        
+
+
         
 
 
@@ -1052,12 +1065,12 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
 
         
-        AgentGroups: []Analyticsagentgroup{{}},
-        
-
-
-        
         ProposedAgents: []Analyticsproposedagent{{}},
+        
+
+
+        
+        AgentGroups: []Analyticsagentgroup{{}},
         
 
 

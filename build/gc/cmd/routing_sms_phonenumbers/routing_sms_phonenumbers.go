@@ -87,6 +87,7 @@ func Cmdrouting_sms_phonenumbers() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Optional field to sort results Valid values: phoneNumber, countryCode, country, dateCreated, dateModified, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Sort order Valid values: ascending, descending")
 	utils.AddFlag(listCmd.Flags(), "string", "language", "en-US", "A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations")
+	utils.AddFlag(listCmd.Flags(), "string", "integrationId", "", "Filter on the Genesys Cloud integration id to which the phone number belongs to")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/sms/phonenumbers", utils.FormatPermissions([]string{ "sms:phoneNumber:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/sms/phonenumbers")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -388,6 +389,10 @@ var listCmd = &cobra.Command{
 		language := utils.GetFlag(cmd.Flags(), "string", "language")
 		if language != "" {
 			queryParams["language"] = language
+		}
+		integrationId := utils.GetFlag(cmd.Flags(), "string", "integrationId")
+		if integrationId != "" {
+			queryParams["integrationId"] = integrationId
 		}
 		urlString := path
 		if len(queryParams) > 0 {

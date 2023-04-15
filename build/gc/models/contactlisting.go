@@ -67,12 +67,12 @@ type Contactlisting struct {
     PartialResults bool `json:"partialResults"`
 
 
-    // FirstUri
-    FirstUri string `json:"firstUri"`
-
-
     // NextUri
     NextUri string `json:"nextUri"`
+
+
+    // FirstUri
+    FirstUri string `json:"firstUri"`
 
 
     // SelfUri
@@ -132,9 +132,9 @@ func (u *Contactlisting) MarshalJSON() ([]byte, error) {
         
         PartialResults bool `json:"partialResults"`
         
-        FirstUri string `json:"firstUri"`
-        
         NextUri string `json:"nextUri"`
+        
+        FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         

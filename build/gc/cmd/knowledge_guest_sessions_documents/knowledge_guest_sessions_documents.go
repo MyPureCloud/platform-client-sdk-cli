@@ -44,7 +44,7 @@ func Cmdknowledge_guest_sessions_documents() *cobra.Command {
 	knowledge_guest_sessions_documentsCmd.AddCommand(getCmd)
 
 	utils.AddFlag(listCmd.Flags(), "[]string", "categoryId", "", "If specified, retrieves documents associated with category ids, comma separated values expected.")
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "10", "Number of entities to return. Maximum of 200.")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/guest/sessions/{sessionId}/documents", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/guest/sessions/{sessionId}/documents")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

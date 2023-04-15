@@ -105,7 +105,6 @@ gc/cmd/coaching_appointments_status/coaching_appointments_status.go
 gc/cmd/coaching_appointments_statuses/coaching_appointments_statuses.go
 gc/cmd/coaching_notifications/coaching_notifications.go
 gc/cmd/coaching_scheduleslots_query/coaching_scheduleslots_query.go
-gc/cmd/configuration_schemas_edges_vnext/configuration_schemas_edges_vnext.go
 gc/cmd/contentmanagement_auditquery/contentmanagement_auditquery.go
 gc/cmd/contentmanagement_documents/contentmanagement_documents.go
 gc/cmd/contentmanagement_documents_audits/contentmanagement_documents_audits.go
@@ -1814,7 +1813,6 @@ gc/models/domainphysicalinterface.go
 gc/models/domainresourceconditionnode.go
 gc/models/domainresourceconditionvalue.go
 gc/models/domainrole.go
-gc/models/domainschemareference.go
 gc/models/donotsendactionsettings.go
 gc/models/downloadresponse.go
 gc/models/draft.go
@@ -2823,6 +2821,7 @@ gc/models/restorepresencesettings.go
 gc/models/resultcounters.go
 gc/models/retentionduration.go
 gc/models/reversewhitepageslookupresult.go
+gc/models/reviewassessmentresults.go
 gc/models/ring.go
 gc/models/roledivision.go
 gc/models/roledivisiongrants.go
@@ -2869,10 +2868,7 @@ gc/models/schedulingsettingsresponse.go
 gc/models/schedulingstatusresponse.go
 gc/models/schedulingtestingoptionsrequest.go
 gc/models/schema.go
-gc/models/schemacategory.go
-gc/models/schemacategoryentitylisting.go
 gc/models/schemaquantitylimits.go
-gc/models/schemareferenceentitylisting.go
 gc/models/scimconfigresourcetype.go
 gc/models/scimconfigresourcetypeschemaextension.go
 gc/models/scimconfigresourcetypeslistresponse.go

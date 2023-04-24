@@ -344,7 +344,9 @@ func getCursor(entities *models.Entities) string {
 	if entities.NextUri != "" {
 		u, _ := url.Parse(entities.NextUri)
 		m, _ := url.ParseQuery(u.RawQuery)
-		return m["cursor"][0]
+		if cursorArray, ok := m["cursor"]; ok && len(cursorArray) > 0 {
+			return cursorArray[0]
+		}
 	}
 
 	return entities.Cursors.After
@@ -379,7 +381,9 @@ func updateCursorPagingURI(pagedURI, cursor string) string {
 }
 
 func determinePaginationStyle(entities *models.Entities) paginationStyle {
-	if entities.Cursor != "" || entities.Cursors.After != "" || entities.NextUri != "" {
+	if entities.Cursor != "" ||
+		entities.Cursors.After != "" ||
+		(entities.NextUri != "" && strings.Contains(entities.NextUri, "cursor")) {
 		return cursorPagination
 	}
 

@@ -29,8 +29,8 @@ type apiClientTest struct {
 }
 
 func TestRetryWithData(t *testing.T) {
-	restclientNewRESTClient = mockNewRESTClient
 	configGetConfig = mockGetConfig
+	restclientNewRESTClient = mockNewRESTClient
 	restclient.UpdateOAuthToken = mocks.UpdateOAuthToken
 
 	c := commandService{
@@ -258,7 +258,9 @@ func setRestClientDoMockForReAuthenticate(tc apiClientTest) {
 
 //mockNewRESTClient returns a mock RESTClient object for the commandservice tests and sets the object in the restclient package
 func mockNewRESTClient(_ config.Configuration) *restclient.RESTClient {
+	c,_ := mockGetConfig("")
 	restclient.RestClient = &restclient.RESTClient{}
+	restclient.RestClient.SetConfig(c)
 	return restclient.RestClient
 }
 
@@ -304,6 +306,10 @@ func mockGetConfig(profileName string) (config.Configuration, error) {
 
 	mockConfig.AccessTokenFunc = func() string {
 		return ""
+	}
+
+	mockConfig.ProxyConfigurationFunc = func() *config.ProxyConfiguration {
+		return &config.ProxyConfiguration{}
 	}
 
 	return mockConfig, nil

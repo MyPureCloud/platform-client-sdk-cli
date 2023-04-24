@@ -29,7 +29,7 @@ func isValidGrantType(t GrantType) bool {
 	return t == None || t == ClientCredentials || t == ImplicitGrant
 }
 
-func constructConfig(profileName string, environment string, clientID string, clientSecret string, redirectURI string, secureLoginEnabled bool, accessToken string) config.Configuration {
+func constructConfig(profileName string, environment string, clientID string, clientSecret string, redirectURI string, secureLoginEnabled bool, accessToken string, proxyConf *config.ProxyConfiguration) config.Configuration {
 	c := &mocks.MockClientConfig{}
 
 	c.ProfileNameFunc = func() string {
@@ -76,6 +76,10 @@ func constructConfig(profileName string, environment string, clientID string, cl
 		return accessToken
 	}
 
+	c.ProxyConfigurationFunc = func() *config.ProxyConfiguration {
+		return proxyConf
+	}
+
 	return c
 }
 
@@ -90,6 +94,7 @@ func requestUserInput() config.Configuration {
 		grantType          GrantType
 		redirectURL        url.URL
 		secureLoginEnabled = false
+		proxyChoice        string
 	)
 
 	fmt.Print("Profile Name [DEFAULT]: ")
@@ -144,7 +149,24 @@ func requestUserInput() config.Configuration {
 		fmt.Printf("Redirect URI: %s\n", redirectURL.String())
 	}
 
-	return constructConfig(name, environment, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken)
+
+	for true {
+		fmt.Print("Would you like to use a proxy server? [Y/N]: ")
+		fmt.Scanln(&proxyChoice)
+		if strings.ToUpper(proxyChoice) == "Y" {
+				proxyConf := requestProxyDetails()
+				return constructConfig(name, environment, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, proxyConf)
+				break
+		} else if strings.ToUpper(proxyChoice) == "N" {
+				return constructConfig(name, environment, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, nil)
+				break
+		} else {
+				fmt.Print("Provide valid option.\n")
+				continue
+		}
+	}
+
+	return constructConfig(name, environment, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, nil)
 }
 
 func requestClientCreds(accessToken string, grantType GrantType) (string, string) {
@@ -180,6 +202,60 @@ func requestClientCreds(accessToken string, grantType GrantType) (string, string
 	}
 
 	return id, secret
+}
+
+func requestProxyDetails() *config.ProxyConfiguration {
+	protocol := ""
+	host := ""
+	port := ""
+	isAuthRequired := ""
+	username := ""
+	password := ""
+
+	for protocol == "" {
+			fmt.Print("Protocol (http/https): ")
+			fmt.Scanln(&protocol)
+	}
+	for port == "" {
+			fmt.Print("Port for the Proxy: ")
+			fmt.Scanln(&port)
+	}
+	for host == "" {
+			fmt.Print("Host name for the Proxy server: ")
+			fmt.Scanln(&host)
+	}
+
+	for true {
+			fmt.Print("Do we require Authorisation to use the proxy server? [Y/N]: ")
+			fmt.Scanln(&isAuthRequired)
+			if strings.ToUpper(isAuthRequired) == "Y" {
+					for username == "" {
+							fmt.Print("username for the Proxy: ")
+							fmt.Scanln(&username)
+					}
+					for host == "" {
+							fmt.Print("Password for the Proxy server: ")
+							password = readSensitiveInput()
+					}
+					break
+			} else if strings.ToUpper(isAuthRequired) == "N" {
+					break
+			} else {
+					fmt.Print("Provide valid option.\n")
+					continue
+			}
+	}
+
+	proxyconf := config.ProxyConfiguration{}
+	proxyconf.Port = port
+	proxyconf.Protocol = protocol
+	proxyconf.Host = host
+	if username != "" {
+			proxyconf.UserName = username
+			proxyconf.Password = password
+	}
+	return &proxyconf
+
 }
 
 func readSensitiveInput() string {

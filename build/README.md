@@ -153,6 +153,35 @@ gc autopagination status
 ```
 In addition, there is a new `--stream` or `-s` flag for paginatable resources. This will paginate through the results and print them one page at a time leaving the page information intact.
 
+# Proxy Configuration
+
+To add a proxy configuration for the CLI , you can pass file parameter with proxy configuration
+in it.
+
+The `ProxyConfiguration` object has 3 properties that determine the URL for proxying.
+Port - Port of the Proxy server
+Host - Host Ip or DNS of the proxy server
+Protocol - Protocol required to connect to the Proxy (http or https)
+
+The 'ProxyConfiguration' has another section which is an optional section. If the proxy requires authentication to connect to
+'userName' and 'password' needs to be mentioned under the 'ProxyConfiguration'. This section can be removed from the JSON file if no authentication is required.
+
+JSON configuration file:
+
+{
+        "host": "hostname",
+        "protocol": "http",
+        "port": "8888",
+        "userName": "username",
+        "password": "password"
+}
+
+Command to Enable Proxy:
+gc proxy --file=proxy.json
+
+To disable this Proxy Configuration, run the following command.
+gc proxy disable
+
 # Autocompletion
 
 See below for instructions on how to enable autocompletion for supported shells:

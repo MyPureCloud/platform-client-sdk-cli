@@ -51,6 +51,9 @@ type ConversationDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -108,6 +111,10 @@ type Conversation struct {
     RecentTransfers []Transferresponse `json:"recentTransfers"`
 
 
+    // SecurePause - True when the recording of this conversation is in secure pause status.
+    SecurePause bool `json:"securePause"`
+
+
     
 
 }
@@ -126,6 +133,7 @@ func (o *Conversation) String() string {
     
      o.Divisions = []Conversationdivisionmembership{{}} 
      o.RecentTransfers = []Transferresponse{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -166,6 +174,8 @@ func (u *Conversation) MarshalJSON() ([]byte, error) {
         Divisions []Conversationdivisionmembership `json:"divisions"`
         
         RecentTransfers []Transferresponse `json:"recentTransfers"`
+        
+        SecurePause bool `json:"securePause"`
         *Alias
     }{
 
@@ -213,6 +223,9 @@ func (u *Conversation) MarshalJSON() ([]byte, error) {
 
         
         RecentTransfers: []Transferresponse{{}},
+        
+
+
         
 
 

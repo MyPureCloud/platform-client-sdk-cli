@@ -13,6 +13,9 @@ var (
 type PredictiveroutingDud struct { 
     
 
+
+    
+
 }
 
 // Predictiverouting
@@ -20,10 +23,15 @@ type Predictiverouting struct {
     // RespectSkills - A switch used to determine if agent skills will be considered.
     RespectSkills bool `json:"respectSkills"`
 
+
+    // EnableConversationScoreBiasing - A switch used to determine if conversations are weighted by conversation score when the system attempts to assign an agent a new conversation.
+    EnableConversationScoreBiasing bool `json:"enableConversationScoreBiasing"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Predictiverouting) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Predictiverouting) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         RespectSkills bool `json:"respectSkills"`
+        
+        EnableConversationScoreBiasing bool `json:"enableConversationScoreBiasing"`
         *Alias
     }{
+
+        
+
 
         
 

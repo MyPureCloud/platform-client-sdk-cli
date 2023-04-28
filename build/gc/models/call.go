@@ -101,6 +101,9 @@ type CallDud struct {
 
     
 
+
+    
+
 }
 
 // Call
@@ -139,6 +142,10 @@ type Call struct {
 
     // Held - True if this call is held and the person on this side hears silence.
     Held bool `json:"held"`
+
+
+    // SecurePause - True when the recording of this call is in secure pause status.
+    SecurePause bool `json:"securePause"`
 
 
     // RecordingId - A globally unique identifier for the recording associated with this call.
@@ -238,6 +245,7 @@ func (o *Call) String() string {
     
     
     
+    
      o.Segments = []Segment{{}} 
     
     
@@ -293,6 +301,8 @@ func (u *Call) MarshalJSON() ([]byte, error) {
         
         Held bool `json:"held"`
         
+        SecurePause bool `json:"securePause"`
+        
         RecordingId string `json:"recordingId"`
         
         Segments []Segment `json:"segments"`
@@ -336,6 +346,9 @@ func (u *Call) MarshalJSON() ([]byte, error) {
         AgentAssistantId string `json:"agentAssistantId"`
         *Alias
     }{
+
+        
+
 
         
 

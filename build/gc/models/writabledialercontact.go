@@ -47,7 +47,7 @@ type Writabledialercontact struct {
 
 
     // Data - An ordered map of the contact's columns and corresponding values.
-    Data map[string]interface{} `json:"data"`
+    Data map[string]string `json:"data"`
 
 
     
@@ -73,7 +73,7 @@ type Writabledialercontact struct {
 func (o *Writabledialercontact) String() string {
     
     
-     o.Data = map[string]interface{}{"": Interface{}} 
+     o.Data = map[string]string{"": ""} 
     
      o.PhoneNumberStatus = map[string]Phonenumberstatus{"": {}} 
      o.ContactableStatus = map[string]Contactablestatus{"": {}} 
@@ -98,7 +98,7 @@ func (u *Writabledialercontact) MarshalJSON() ([]byte, error) {
         
         ContactListId string `json:"contactListId"`
         
-        Data map[string]interface{} `json:"data"`
+        Data map[string]string `json:"data"`
         
         Callable bool `json:"callable"`
         
@@ -115,7 +115,7 @@ func (u *Writabledialercontact) MarshalJSON() ([]byte, error) {
 
 
         
-        Data: map[string]interface{}{"": Interface{}},
+        Data: map[string]string{"": ""},
         
 
 

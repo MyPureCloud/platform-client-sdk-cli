@@ -62,8 +62,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Request a historical adherence report for users across management units",
-	Long:  "Request a historical adherence report for users across management units",
+	Short: "Deprecated. Use bulk routes instead (/adherence/historical/bulk)",
+	Long:  "Deprecated. Use bulk routes instead (/adherence/historical/bulk)",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

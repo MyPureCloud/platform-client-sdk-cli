@@ -321,6 +321,14 @@ gc/cmd/flows_outcomes/flows_outcomes.go
 gc/cmd/flows_outcomes_divisionviews/flows_outcomes_divisionviews.go
 gc/cmd/flows_versions/flows_versions.go
 gc/cmd/flows_versions_configuration/flows_versions_configuration.go
+gc/cmd/gamification_insights/gamification_insights.go
+gc/cmd/gamification_insights_details/gamification_insights_details.go
+gc/cmd/gamification_insights_groups_trends/gamification_insights_groups_trends.go
+gc/cmd/gamification_insights_groups_trends_all/gamification_insights_groups_trends_all.go
+gc/cmd/gamification_insights_members/gamification_insights_members.go
+gc/cmd/gamification_insights_trends/gamification_insights_trends.go
+gc/cmd/gamification_insights_users_details/gamification_insights_users_details.go
+gc/cmd/gamification_insights_users_trends/gamification_insights_users_trends.go
 gc/cmd/gamification_leaderboard/gamification_leaderboard.go
 gc/cmd/gamification_leaderboard_all/gamification_leaderboard_all.go
 gc/cmd/gamification_leaderboard_all_bestpoints/gamification_leaderboard_all_bestpoints.go
@@ -336,6 +344,8 @@ gc/cmd/gamification_profiles_metrics_link/gamification_profiles_metrics_link.go
 gc/cmd/gamification_profiles_metrics_objectivedetails/gamification_profiles_metrics_objectivedetails.go
 gc/cmd/gamification_profiles_users/gamification_profiles_users.go
 gc/cmd/gamification_profiles_users_me/gamification_profiles_users_me.go
+gc/cmd/gamification_profiles_users_me_query/gamification_profiles_users_me_query.go
+gc/cmd/gamification_profiles_users_query/gamification_profiles_users_query.go
 gc/cmd/gamification_scorecards/gamification_scorecards.go
 gc/cmd/gamification_scorecards_attendance/gamification_scorecards_attendance.go
 gc/cmd/gamification_scorecards_bestpoints/gamification_scorecards_bestpoints.go
@@ -2124,6 +2134,23 @@ gc/models/infrastructureascodejob.go
 gc/models/initialconfiguration.go
 gc/models/initiatescreenrecording.go
 gc/models/initiatingaction.go
+gc/models/insightsagentitem.go
+gc/models/insightsagents.go
+gc/models/insightsdetails.go
+gc/models/insightsdetailsmetricitem.go
+gc/models/insightsdetailsmetricperiodpoints.go
+gc/models/insightsdetailsoverallitem.go
+gc/models/insightsdetailsoverallperiodpoints.go
+gc/models/insightssummary.go
+gc/models/insightssummarymetricitem.go
+gc/models/insightssummarymetricperiodpoints.go
+gc/models/insightssummaryoverallitem.go
+gc/models/insightssummaryoverallperiodpoints.go
+gc/models/insightssummaryuseritem.go
+gc/models/insightstrend.go
+gc/models/insightstrendmetricitem.go
+gc/models/insightstrends.go
+gc/models/insightstrendtotalitem.go
 gc/models/instagramid.go
 gc/models/instagramscopedid.go
 gc/models/integration.go
@@ -2667,6 +2694,7 @@ gc/models/presencedetailqueryfilter.go
 gc/models/presencedetailquerypredicate.go
 gc/models/presencesettings.go
 gc/models/processscheduleupdateuploadrequest.go
+gc/models/profilewithdaterange.go
 gc/models/program.go
 gc/models/programjob.go
 gc/models/programjobrequest.go
@@ -2697,6 +2725,7 @@ gc/models/qualityauditlogmessage.go
 gc/models/qualityauditqueryexecutionresultsresponse.go
 gc/models/qualityauditqueryexecutionstatusresponse.go
 gc/models/qualityauditqueryfilter.go
+gc/models/qualityevaluationscoreitem.go
 gc/models/queryadherenceexplanationsresponse.go
 gc/models/querydivision.go
 gc/models/queryfacetinfo.go
@@ -2996,6 +3025,7 @@ gc/models/siteentitylisting.go
 gc/models/skillentitylisting.go
 gc/models/skillgroup.go
 gc/models/skillgroupcondition.go
+gc/models/skillgroupdefinition.go
 gc/models/skillgroupentitylisting.go
 gc/models/skillgrouplanguagecondition.go
 gc/models/skillgroupmemberdivisionlist.go
@@ -3191,6 +3221,7 @@ gc/models/transferdestination.go
 gc/models/transferinitiator.go
 gc/models/transferrequest.go
 gc/models/transferresponse.go
+gc/models/trenddata.go
 gc/models/trigger.go
 gc/models/triggerentitylisting.go
 gc/models/triggertarget.go
@@ -3310,6 +3341,7 @@ gc/models/userestablishedevent.go
 gc/models/userexpands.go
 gc/models/userexternalidentifier.go
 gc/models/userimage.go
+gc/models/userinsightstrend.go
 gc/models/userlanguageentitylisting.go
 gc/models/userlicenses.go
 gc/models/userlicensesentitylisting.go
@@ -3327,6 +3359,8 @@ gc/models/userpresenceevent.go
 gc/models/userprimarysource.go
 gc/models/userprofile.go
 gc/models/userprofileentitylisting.go
+gc/models/userprofilesindaterange.go
+gc/models/userprofilesindaterangerequest.go
 gc/models/userqueue.go
 gc/models/userqueueentitylisting.go
 gc/models/userrecording.go
@@ -3478,6 +3512,7 @@ gc/models/widgetdeployment.go
 gc/models/widgetdeploymententitylisting.go
 gc/models/workdaymetric.go
 gc/models/workdaymetriclisting.go
+gc/models/workdayperiod.go
 gc/models/workdaypointstrend.go
 gc/models/workdaypointstrenditem.go
 gc/models/workdayvaluesmetricitem.go

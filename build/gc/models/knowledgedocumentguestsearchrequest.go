@@ -37,9 +37,6 @@ type KnowledgedocumentguestsearchrequestDud struct {
 
     
 
-
-    App Knowledgeguestsessionapp `json:"app"`
-
 }
 
 // Knowledgedocumentguestsearchrequest
@@ -74,9 +71,6 @@ type Knowledgedocumentguestsearchrequest struct {
 
     // IncludeDraftDocuments - Indicates whether the search results would also include draft documents.
     IncludeDraftDocuments bool `json:"includeDraftDocuments"`
-
-
-    
 
 }
 
@@ -115,9 +109,6 @@ func (u *Knowledgedocumentguestsearchrequest) MarshalJSON() ([]byte, error) {
         IncludeDraftDocuments bool `json:"includeDraftDocuments"`
         *Alias
     }{
-
-        
-
 
         
 

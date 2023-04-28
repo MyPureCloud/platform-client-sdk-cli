@@ -39,6 +39,9 @@ type KnowledgeguestdocumentDud struct {
     
 
 
+    
+
+
     CreatedBy Userreference `json:"createdBy"`
 
 
@@ -90,6 +93,10 @@ type Knowledgeguestdocument struct {
     DateModified time.Time `json:"dateModified"`
 
 
+    // DateImported - Document import date-time, or null if was not imported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateImported time.Time `json:"dateImported"`
+
+
     // LastPublishedVersionNumber - The last published version number of the document.
     LastPublishedVersionNumber int `json:"lastPublishedVersionNumber"`
 
@@ -133,6 +140,7 @@ func (o *Knowledgeguestdocument) String() string {
     
     
     
+    
      o.Variations = []Knowledgeguestdocumentvariation{{}} 
 
     j, _ := json.Marshal(o)
@@ -163,6 +171,8 @@ func (u *Knowledgeguestdocument) MarshalJSON() ([]byte, error) {
         
         DateModified time.Time `json:"dateModified"`
         
+        DateImported time.Time `json:"dateImported"`
+        
         LastPublishedVersionNumber int `json:"lastPublishedVersionNumber"`
         
         DatePublished time.Time `json:"datePublished"`
@@ -184,6 +194,9 @@ func (u *Knowledgeguestdocument) MarshalJSON() ([]byte, error) {
 
         
         Alternatives: []Knowledgedocumentalternative{{}},
+        
+
+
         
 
 

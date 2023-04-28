@@ -490,6 +490,21 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1118,6 +1133,26 @@ type Viewfilter struct {
     EvaluationStatuses []string `json:"evaluationStatuses"`
 
 
+    // WorkbinIds - The list of Workbin IDs
+    WorkbinIds []string `json:"workbinIds"`
+
+
+    // WorktypeIds - The list of Worktype IDs
+    WorktypeIds []string `json:"worktypeIds"`
+
+
+    // WorkitemIds - The list of Workitem IDs
+    WorkitemIds []string `json:"workitemIds"`
+
+
+    // WorkitemAssigneeIds - The list of Workitem Assignee IDs
+    WorkitemAssigneeIds []string `json:"workitemAssigneeIds"`
+
+
+    // WorkitemStatuses - The list of Workitem Statuses IDs
+    WorkitemStatuses []string `json:"workitemStatuses"`
+
+
     // IsAnalyzedForSensitiveData - Filter to indicate the transcript has been analyzed for sensitive data.
     IsAnalyzedForSensitiveData bool `json:"isAnalyzedForSensitiveData"`
 
@@ -1293,6 +1328,11 @@ func (o *Viewfilter) String() string {
      o.AlertRuleIds = []string{""} 
      o.EvaluationFormContextIds = []string{""} 
      o.EvaluationStatuses = []string{""} 
+     o.WorkbinIds = []string{""} 
+     o.WorktypeIds = []string{""} 
+     o.WorkitemIds = []string{""} 
+     o.WorkitemAssigneeIds = []string{""} 
+     o.WorkitemStatuses = []string{""} 
     
     
     
@@ -1625,6 +1665,16 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         EvaluationFormContextIds []string `json:"evaluationFormContextIds"`
         
         EvaluationStatuses []string `json:"evaluationStatuses"`
+        
+        WorkbinIds []string `json:"workbinIds"`
+        
+        WorktypeIds []string `json:"worktypeIds"`
+        
+        WorkitemIds []string `json:"workitemIds"`
+        
+        WorkitemAssigneeIds []string `json:"workitemAssigneeIds"`
+        
+        WorkitemStatuses []string `json:"workitemStatuses"`
         
         IsAnalyzedForSensitiveData bool `json:"isAnalyzedForSensitiveData"`
         
@@ -2329,6 +2379,31 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         EvaluationStatuses: []string{""},
+        
+
+
+        
+        WorkbinIds: []string{""},
+        
+
+
+        
+        WorktypeIds: []string{""},
+        
+
+
+        
+        WorkitemIds: []string{""},
+        
+
+
+        
+        WorkitemAssigneeIds: []string{""},
+        
+
+
+        
+        WorkitemStatuses: []string{""},
         
 
 

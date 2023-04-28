@@ -30,6 +30,9 @@ type ConversationbasicDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -62,6 +65,10 @@ type Conversationbasic struct {
     Divisions []Conversationdivisionmembership `json:"divisions"`
 
 
+    // SecurePause - True when the recording of this conversation is in secure pause status.
+    SecurePause bool `json:"securePause"`
+
+
     
 
 
@@ -76,6 +83,7 @@ func (o *Conversationbasic) String() string {
     
     
      o.Divisions = []Conversationdivisionmembership{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -102,6 +110,8 @@ func (u *Conversationbasic) MarshalJSON() ([]byte, error) {
         EndTime time.Time `json:"endTime"`
         
         Divisions []Conversationdivisionmembership `json:"divisions"`
+        
+        SecurePause bool `json:"securePause"`
         *Alias
     }{
 
@@ -122,6 +132,9 @@ func (u *Conversationbasic) MarshalJSON() ([]byte, error) {
 
         
         Divisions: []Conversationdivisionmembership{{}},
+        
+
+
         
 
 

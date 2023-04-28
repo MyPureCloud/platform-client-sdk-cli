@@ -48,12 +48,18 @@ type KeyperformanceindicatorDud struct {
     KpiGroup string `json:"kpiGroup"`
 
 
+    Queues []string `json:"queues"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
 
 // Keyperformanceindicator
 type Keyperformanceindicator struct { 
+    
+
+
     
 
 
@@ -114,6 +120,9 @@ func (u *Keyperformanceindicator) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

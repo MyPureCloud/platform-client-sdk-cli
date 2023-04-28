@@ -158,6 +158,9 @@ type CallmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Callmediaparticipant
@@ -357,6 +360,10 @@ type Callmediaparticipant struct {
     // BargedTime - The timestamp when this participant was connected to the barge conference in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     BargedTime time.Time `json:"bargedTime"`
 
+
+    // SecurePause - True when the recording of this call is in secure pause status.
+    SecurePause bool `json:"securePause"`
+
 }
 
 // String returns a JSON representation of the model
@@ -380,6 +387,7 @@ func (o *Callmediaparticipant) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
     
     
     
@@ -524,6 +532,8 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
         UuiData string `json:"uuiData"`
         
         BargedTime time.Time `json:"bargedTime"`
+        
+        SecurePause bool `json:"securePause"`
         *Alias
     }{
 
@@ -585,6 +595,9 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

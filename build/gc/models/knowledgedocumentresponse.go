@@ -39,6 +39,9 @@ type KnowledgedocumentresponseDud struct {
     
 
 
+    
+
+
     CreatedBy Userreference `json:"createdBy"`
 
 
@@ -93,6 +96,10 @@ type Knowledgedocumentresponse struct {
     DateModified time.Time `json:"dateModified"`
 
 
+    // DateImported - Document import date-time, or null if was not imported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateImported time.Time `json:"dateImported"`
+
+
     // LastPublishedVersionNumber - The last published version number of the document.
     LastPublishedVersionNumber int `json:"lastPublishedVersionNumber"`
 
@@ -143,6 +150,7 @@ func (o *Knowledgedocumentresponse) String() string {
     
     
     
+    
      o.Labels = []Labelresponse{{}} 
     
      o.Variations = []Documentvariation{{}} 
@@ -175,6 +183,8 @@ func (u *Knowledgedocumentresponse) MarshalJSON() ([]byte, error) {
         
         DateModified time.Time `json:"dateModified"`
         
+        DateImported time.Time `json:"dateImported"`
+        
         LastPublishedVersionNumber int `json:"lastPublishedVersionNumber"`
         
         DatePublished time.Time `json:"datePublished"`
@@ -202,6 +212,9 @@ func (u *Knowledgedocumentresponse) MarshalJSON() ([]byte, error) {
 
         
         Alternatives: []Knowledgedocumentalternative{{}},
+        
+
+
         
 
 

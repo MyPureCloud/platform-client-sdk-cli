@@ -29,6 +29,7 @@ func init() {
 
 func Cmdrouting_predictors_keyperformanceindicators() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "string", "kpiGroup", "", "The Group of Key Performance Indicators to return Valid values: Standard, Custom")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Parameter to request additional data to return in KPI payload Valid values: queues")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/predictors/keyperformanceindicators", utils.FormatPermissions([]string{ "routing:keyPerformanceIndicator:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/predictors/keyperformanceindicators")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -76,6 +77,10 @@ var listCmd = &cobra.Command{
 		kpiGroup := utils.GetFlag(cmd.Flags(), "string", "kpiGroup")
 		if kpiGroup != "" {
 			queryParams["kpiGroup"] = kpiGroup
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
 		}
 		urlString := path
 		if len(queryParams) > 0 {

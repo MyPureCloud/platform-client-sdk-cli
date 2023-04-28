@@ -27,7 +27,7 @@ type SkillgroupentitylistingDud struct {
 // Skillgroupentitylisting
 type Skillgroupentitylisting struct { 
     // Entities
-    Entities []Skillgroup `json:"entities"`
+    Entities []Skillgroupdefinition `json:"entities"`
 
 
     // NextUri
@@ -45,7 +45,7 @@ type Skillgroupentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Skillgroupentitylisting) String() string {
-     o.Entities = []Skillgroup{{}} 
+     o.Entities = []Skillgroupdefinition{{}} 
     
     
     
@@ -66,7 +66,7 @@ func (u *Skillgroupentitylisting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Entities []Skillgroup `json:"entities"`
+        Entities []Skillgroupdefinition `json:"entities"`
         
         NextUri string `json:"nextUri"`
         
@@ -77,7 +77,7 @@ func (u *Skillgroupentitylisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Skillgroup{{}},
+        Entities: []Skillgroupdefinition{{}},
         
 
 

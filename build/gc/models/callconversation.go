@@ -32,6 +32,9 @@ type CallconversationDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -65,6 +68,10 @@ type Callconversation struct {
     MaxParticipants int `json:"maxParticipants"`
 
 
+    // SecurePause - True when the recording of this conversation is in secure pause status.
+    SecurePause bool `json:"securePause"`
+
+
     
 
 }
@@ -75,6 +82,7 @@ func (o *Callconversation) String() string {
      o.Participants = []Callmediaparticipant{{}} 
      o.OtherMediaUris = []string{""} 
      o.RecentTransfers = []Transferresponse{{}} 
+    
     
     
 
@@ -105,6 +113,8 @@ func (u *Callconversation) MarshalJSON() ([]byte, error) {
         RecordingState string `json:"recordingState"`
         
         MaxParticipants int `json:"maxParticipants"`
+        
+        SecurePause bool `json:"securePause"`
         *Alias
     }{
 
@@ -126,6 +136,9 @@ func (u *Callconversation) MarshalJSON() ([]byte, error) {
 
         
         RecentTransfers: []Transferresponse{{}},
+        
+
+
         
 
 

@@ -93,6 +93,9 @@ type EvaluationresponseDud struct {
     
 
 
+    
+
+
     EvaluationSource Evaluationsource `json:"evaluationSource"`
 
 
@@ -185,6 +188,10 @@ type Evaluationresponse struct {
     Assigned bool `json:"assigned"`
 
 
+    // DateAssigneeChanged - Date when the assignee was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateAssigneeChanged time.Time `json:"dateAssigneeChanged"`
+
+
     // ResourceId - Only used for email evaluations. Will be null for all other evaluations.
     ResourceId string `json:"resourceId"`
 
@@ -233,6 +240,7 @@ func (o *Evaluationresponse) String() string {
     
     
      o.MediaType = []string{""} 
+    
     
     
     
@@ -301,6 +309,8 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
         
         Assigned bool `json:"assigned"`
         
+        DateAssigneeChanged time.Time `json:"dateAssigneeChanged"`
+        
         ResourceId string `json:"resourceId"`
         
         ResourceType string `json:"resourceType"`
@@ -362,6 +372,9 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
 
         
         MediaType: []string{""},
+        
+
+
         
 
 

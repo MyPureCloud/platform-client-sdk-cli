@@ -90,6 +90,7 @@ func Cmdresponsemanagement_libraries() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "messagingTemplateFilter", "", "Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel Valid values: whatsapp")
+	utils.AddFlag(listCmd.Flags(), "string", "libraryPrefix", "", "Returns a list of libraries that contain the prefix provided")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/responsemanagement/libraries", utils.FormatPermissions([]string{ "responses:library:view",  }), utils.GenerateDevCentreLink("GET", "Response Management", "/api/v2/responsemanagement/libraries")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -363,6 +364,10 @@ var listCmd = &cobra.Command{
 		messagingTemplateFilter := utils.GetFlag(cmd.Flags(), "string", "messagingTemplateFilter")
 		if messagingTemplateFilter != "" {
 			queryParams["messagingTemplateFilter"] = messagingTemplateFilter
+		}
+		libraryPrefix := utils.GetFlag(cmd.Flags(), "string", "libraryPrefix")
+		if libraryPrefix != "" {
+			queryParams["libraryPrefix"] = libraryPrefix
 		}
 		urlString := path
 		if len(queryParams) > 0 {

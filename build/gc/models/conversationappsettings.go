@@ -31,6 +31,9 @@ type ConversationappsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationappsettings - Conversation settings that handles chats within the messenger
@@ -59,6 +62,10 @@ type Conversationappsettings struct {
     ConversationDisconnect Conversationdisconnectsettings `json:"conversationDisconnect"`
 
 
+    // ConversationClear - The conversation clear settings for the messenger app
+    ConversationClear Conversationclearsettings `json:"conversationClear"`
+
+
     // Humanize - The humanize conversations settings for the messenger app
     Humanize Humanize `json:"humanize"`
 
@@ -66,6 +73,7 @@ type Conversationappsettings struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationappsettings) String() string {
+    
     
     
     
@@ -102,9 +110,14 @@ func (u *Conversationappsettings) MarshalJSON() ([]byte, error) {
         
         ConversationDisconnect Conversationdisconnectsettings `json:"conversationDisconnect"`
         
+        ConversationClear Conversationclearsettings `json:"conversationClear"`
+        
         Humanize Humanize `json:"humanize"`
         *Alias
     }{
+
+        
+
 
         
 

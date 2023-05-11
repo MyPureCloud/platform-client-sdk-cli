@@ -18,6 +18,9 @@ type InfrastructureascodejobDud struct {
     
 
 
+    AcceleratorId string `json:"acceleratorId"`
+
+
     DateSubmitted time.Time `json:"dateSubmitted"`
 
 
@@ -63,6 +66,9 @@ type Infrastructureascodejob struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -88,6 +94,9 @@ func (u *Infrastructureascodejob) MarshalJSON() ([]byte, error) {
         DryRun bool `json:"dryRun"`
         *Alias
     }{
+
+        
+
 
         
 

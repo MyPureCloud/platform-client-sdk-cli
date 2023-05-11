@@ -45,6 +45,9 @@ type OutboundsettingsDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -91,12 +94,17 @@ type Outboundsettings struct {
     AutomaticTimeZoneMapping Automatictimezonemappingsettings `json:"automaticTimeZoneMapping"`
 
 
+    // RescheduleTimeZoneSkippedContacts - Whether or not to reschedule time-zone blocked contacts
+    RescheduleTimeZoneSkippedContacts bool `json:"rescheduleTimeZoneSkippedContacts"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Outboundsettings) String() string {
+    
     
     
     
@@ -134,8 +142,13 @@ func (u *Outboundsettings) MarshalJSON() ([]byte, error) {
         ComplianceAbandonRateDenominator string `json:"complianceAbandonRateDenominator"`
         
         AutomaticTimeZoneMapping Automatictimezonemappingsettings `json:"automaticTimeZoneMapping"`
+        
+        RescheduleTimeZoneSkippedContacts bool `json:"rescheduleTimeZoneSkippedContacts"`
         *Alias
     }{
+
+        
+
 
         
 

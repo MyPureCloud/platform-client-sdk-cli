@@ -68,12 +68,12 @@ type Greetinglisting struct {
     NextUri string `json:"nextUri"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
-
     // LastUri
     LastUri string `json:"lastUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // SelfUri
@@ -126,9 +126,9 @@ func (u *Greetinglisting) MarshalJSON() ([]byte, error) {
         
         NextUri string `json:"nextUri"`
         
-        PreviousUri string `json:"previousUri"`
-        
         LastUri string `json:"lastUri"`
+        
+        PreviousUri string `json:"previousUri"`
         
         SelfUri string `json:"selfUri"`
         

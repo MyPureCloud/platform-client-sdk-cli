@@ -93,6 +93,7 @@ gc/cmd/authorization_subjects_me/authorization_subjects_me.go
 gc/cmd/authorization_subjects_rolecounts/authorization_subjects_rolecounts.go
 gc/cmd/billing_reports_billableusage/billing_reports_billableusage.go
 gc/cmd/billing_trusteebillingoverview/billing_trusteebillingoverview.go
+gc/cmd/carrierservices_integrations_emergencylocations_me/carrierservices_integrations_emergencylocations_me.go
 gc/cmd/certificate_details/certificate_details.go
 gc/cmd/chat_settings/chat_settings.go
 gc/cmd/chats_settings/chats_settings.go
@@ -391,6 +392,7 @@ gc/cmd/identityproviders_ping/identityproviders_ping.go
 gc/cmd/identityproviders_purecloud/identityproviders_purecloud.go
 gc/cmd/identityproviders_pureengage/identityproviders_pureengage.go
 gc/cmd/identityproviders_salesforce/identityproviders_salesforce.go
+gc/cmd/infrastructureascode_accelerators/infrastructureascode_accelerators.go
 gc/cmd/infrastructureascode_jobs/infrastructureascode_jobs.go
 gc/cmd/integrations/integrations.go
 gc/cmd/integrations_actions/integrations_actions.go
@@ -582,6 +584,7 @@ gc/cmd/outbound_dnclists_importstatus/outbound_dnclists_importstatus.go
 gc/cmd/outbound_dnclists_phonenumbers/outbound_dnclists_phonenumbers.go
 gc/cmd/outbound_events/outbound_events.go
 gc/cmd/outbound_messagingcampaigns/outbound_messagingcampaigns.go
+gc/cmd/outbound_messagingcampaigns_diagnostics/outbound_messagingcampaigns_diagnostics.go
 gc/cmd/outbound_messagingcampaigns_divisionviews/outbound_messagingcampaigns_divisionviews.go
 gc/cmd/outbound_messagingcampaigns_progress/outbound_messagingcampaigns_progress.go
 gc/cmd/outbound_rulesets/outbound_rulesets.go
@@ -734,7 +737,6 @@ gc/cmd/speechandtextanalytics_topics_publishjobs/speechandtextanalytics_topics_p
 gc/cmd/speechandtextanalytics_transcripts_search/speechandtextanalytics_transcripts_search.go
 gc/cmd/stations/stations.go
 gc/cmd/stations_associateduser/stations_associateduser.go
-gc/cmd/stations_settings/stations_settings.go
 gc/cmd/systempresences/systempresences.go
 gc/cmd/teams/teams.go
 gc/cmd/teams_members/teams_members.go
@@ -977,7 +979,10 @@ gc/cmd/workforcemanagement_timeofflimits_available_query/workforcemanagement_tim
 gc/cmd/workforcemanagement_timeoffrequests/workforcemanagement_timeoffrequests.go
 gc/cmd/workforcemanagement_timeoffrequests_waitlistpositions/workforcemanagement_timeoffrequests_waitlistpositions.go
 gc/models/acceleratorinput.go
+gc/models/acceleratorlist.go
+gc/models/acceleratormetadata.go
 gc/models/acceleratorparameter.go
+gc/models/acceleratorspecification.go
 gc/models/achievedoutcome.go
 gc/models/acknowledgescreenrecordingrequest.go
 gc/models/action.go
@@ -1545,6 +1550,7 @@ gc/models/conversationbasic.go
 gc/models/conversationchannel.go
 gc/models/conversationchannelmetadata.go
 gc/models/conversationchat.go
+gc/models/conversationclearsettings.go
 gc/models/conversationcontentattachment.go
 gc/models/conversationcontentbuttonresponse.go
 gc/models/conversationcontentcard.go
@@ -1828,6 +1834,7 @@ gc/models/downloadresponse.go
 gc/models/draft.go
 gc/models/draftintents.go
 gc/models/draftlisting.go
+gc/models/draftmanipulationrequest.go
 gc/models/draftrequest.go
 gc/models/drafttopicrequest.go
 gc/models/drafttopics.go
@@ -1883,6 +1890,7 @@ gc/models/embeddedintegration.go
 gc/models/emergencycallflow.go
 gc/models/emergencygroup.go
 gc/models/emergencygrouplisting.go
+gc/models/emergencylocation.go
 gc/models/employerinfo.go
 gc/models/empty.go
 gc/models/encryptionkey.go
@@ -2038,7 +2046,6 @@ gc/models/forecastservicelevelresponse.go
 gc/models/forecastsourcedaypointer.go
 gc/models/format.go
 gc/models/formstracktrigger.go
-gc/models/freeseatingconfiguration.go
 gc/models/fromemailaddress.go
 gc/models/fulldaytimeoffmarker.go
 gc/models/gamificationstatus.go
@@ -2105,6 +2112,7 @@ gc/models/historicalshrinkageaggregateresponse.go
 gc/models/historicalshrinkageresult.go
 gc/models/historicalshrinkageresultlisting.go
 gc/models/historyentry.go
+gc/models/historyheaderstranslation.go
 gc/models/historylisting.go
 gc/models/holdupdatedevent.go
 gc/models/homerrecord.go
@@ -2445,6 +2453,7 @@ gc/models/messagesticker.go
 gc/models/messagestickerattachment.go
 gc/models/messagetypingeventrequest.go
 gc/models/messagingcampaign.go
+gc/models/messagingcampaigndiagnostics.go
 gc/models/messagingcampaigndivisionview.go
 gc/models/messagingcampaigndivisionviewentitylisting.go
 gc/models/messagingcampaignentitylisting.go
@@ -2465,6 +2474,12 @@ gc/models/messengersettings.go
 gc/models/messengerstyles.go
 gc/models/metabase.go
 gc/models/metadata.go
+gc/models/metadatadocumentation.go
+gc/models/metadatapresentation.go
+gc/models/metadataproperty.go
+gc/models/metadataresultentity.go
+gc/models/metadataresults.go
+gc/models/metadataschema.go
 gc/models/meteredassignmentbyagent.go
 gc/models/meteredevaluationassignment.go
 gc/models/metric.go
@@ -2582,6 +2597,7 @@ gc/models/outcomeachievement.go
 gc/models/outcomeconfig.go
 gc/models/outcomeeventscore.go
 gc/models/outcomelisting.go
+gc/models/outcomepercentilecondition.go
 gc/models/outcomepredictor.go
 gc/models/outcomepredictorlisting.go
 gc/models/outcomepredictorrequest.go
@@ -3056,7 +3072,6 @@ gc/models/speechtextanalyticssettingsresponse.go
 gc/models/starrabledivision.go
 gc/models/station.go
 gc/models/stationentitylisting.go
-gc/models/stationsettings.go
 gc/models/statisticalresponse.go
 gc/models/statisticalsummary.go
 gc/models/statuschange.go
@@ -3221,6 +3236,7 @@ gc/models/transferdestination.go
 gc/models/transferinitiator.go
 gc/models/transferrequest.go
 gc/models/transferresponse.go
+gc/models/transferresponsemodifiedby.go
 gc/models/trenddata.go
 gc/models/trigger.go
 gc/models/triggerentitylisting.go

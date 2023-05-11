@@ -29,6 +29,9 @@ type TransferresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Transferresponse
@@ -49,6 +52,10 @@ type Transferresponse struct {
     Initiator Transferinitiator `json:"initiator"`
 
 
+    // ModifiedBy - The user or entity that modified the command.
+    ModifiedBy Transferresponsemodifiedby `json:"modifiedBy"`
+
+
     // Destination - The destination of the command.
     Destination Transferdestination `json:"destination"`
 
@@ -60,6 +67,7 @@ type Transferresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Transferresponse) String() string {
+    
     
     
     
@@ -91,11 +99,16 @@ func (u *Transferresponse) MarshalJSON() ([]byte, error) {
         
         Initiator Transferinitiator `json:"initiator"`
         
+        ModifiedBy Transferresponsemodifiedby `json:"modifiedBy"`
+        
         Destination Transferdestination `json:"destination"`
         
         TransferType string `json:"transferType"`
         *Alias
     }{
+
+        
+
 
         
 

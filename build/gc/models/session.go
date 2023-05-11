@@ -152,7 +152,7 @@ type Session struct {
     CustomerIdType string `json:"customerIdType"`
 
 
-    // VarType - Session types indicate the type or category of sessions (e.g. web, ticket, delivery, atm).
+    // VarType - Session types indicate the type or category of sessions (e.g. web, app).
     VarType string `json:"type"`
 
 

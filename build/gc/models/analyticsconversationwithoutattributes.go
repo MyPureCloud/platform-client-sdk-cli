@@ -59,10 +59,17 @@ type AnalyticsconversationwithoutattributesDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticsconversationwithoutattributes
 type Analyticsconversationwithoutattributes struct { 
+    // ConferenceStart - The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ConferenceStart time.Time `json:"conferenceStart"`
+
+
     // ConversationEnd - The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     ConversationEnd time.Time `json:"conversationEnd"`
 
@@ -135,6 +142,7 @@ func (o *Analyticsconversationwithoutattributes) String() string {
     
     
     
+    
      o.DivisionIds = []string{""} 
     
      o.KnowledgeBaseIds = []string{""} 
@@ -162,6 +170,8 @@ func (u *Analyticsconversationwithoutattributes) MarshalJSON() ([]byte, error) {
     AnalyticsconversationwithoutattributesMarshalled = true
 
     return json.Marshal(&struct {
+        
+        ConferenceStart time.Time `json:"conferenceStart"`
         
         ConversationEnd time.Time `json:"conversationEnd"`
         
@@ -196,6 +206,9 @@ func (u *Analyticsconversationwithoutattributes) MarshalJSON() ([]byte, error) {
         Participants []Analyticsparticipantwithoutattributes `json:"participants"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -505,6 +505,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1168,6 +1171,10 @@ type Viewfilter struct {
     // UserState - The user supplied state value in the view
     UserState string `json:"userState"`
 
+
+    // IsClearedByCustomer - Filter to indicate if the customer cleared the conversation.
+    IsClearedByCustomer bool `json:"isClearedByCustomer"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1333,6 +1340,7 @@ func (o *Viewfilter) String() string {
      o.WorkitemIds = []string{""} 
      o.WorkitemAssigneeIds = []string{""} 
      o.WorkitemStatuses = []string{""} 
+    
     
     
     
@@ -1683,6 +1691,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         SubPath string `json:"subPath"`
         
         UserState string `json:"userState"`
+        
+        IsClearedByCustomer bool `json:"isClearedByCustomer"`
         *Alias
     }{
 
@@ -2404,6 +2414,9 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         WorkitemStatuses: []string{""},
+        
+
+
         
 
 

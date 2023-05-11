@@ -28,6 +28,12 @@ type LearningmoduleinformsteprequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Learningmoduleinformsteprequest - Learning module inform steps request
@@ -55,10 +61,20 @@ type Learningmoduleinformsteprequest struct {
     // Order - The order of inform step in a learning module
     Order int `json:"order"`
 
+
+    // DisplayName - The display name for the inform step
+    DisplayName string `json:"displayName"`
+
+
+    // Description - The description for the inform step
+    Description string `json:"description"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Learningmoduleinformsteprequest) String() string {
+    
+    
     
     
     
@@ -93,8 +109,18 @@ func (u *Learningmoduleinformsteprequest) MarshalJSON() ([]byte, error) {
         ContentType string `json:"contentType"`
         
         Order int `json:"order"`
+        
+        DisplayName string `json:"displayName"`
+        
+        Description string `json:"description"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

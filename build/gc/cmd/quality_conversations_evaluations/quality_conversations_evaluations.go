@@ -86,7 +86,7 @@ func Cmdquality_conversations_evaluations() *cobra.Command {
 }`)
 	quality_conversations_evaluationsCmd.AddCommand(getCmd)
 
-	utils.AddFlag(updateCmd.Flags(), "string", "expand", "", "evaluatorId, evaluationForm")
+	utils.AddFlag(updateCmd.Flags(), "string", "expand", "", "evaluatorId, evaluationForm, assignee")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}", utils.FormatPermissions([]string{ "quality:evaluation:edit", "quality:evaluation:editScore", "quality:evaluation:editAgentSignoff",  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "evaluation",

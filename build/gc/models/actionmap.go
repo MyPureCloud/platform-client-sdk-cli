@@ -51,6 +51,9 @@ type ActionmapDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -94,6 +97,10 @@ type Actionmap struct {
 
     // TriggerWithOutcomeProbabilityConditions - Probability conditions for outcomes that must be satisfied to trigger the action map.
     TriggerWithOutcomeProbabilityConditions []Outcomeprobabilitycondition `json:"triggerWithOutcomeProbabilityConditions"`
+
+
+    // TriggerWithOutcomePercentileConditions - Percentile conditions for outcomes that must be satisfied to trigger the action map.
+    TriggerWithOutcomePercentileConditions []Outcomepercentilecondition `json:"triggerWithOutcomePercentileConditions"`
 
 
     // PageUrlConditions - URL conditions that a page must match for web actions to be displayable.
@@ -148,6 +155,7 @@ func (o *Actionmap) String() string {
      o.TriggerWithSegments = []string{""} 
      o.TriggerWithEventConditions = []Eventcondition{{}} 
      o.TriggerWithOutcomeProbabilityConditions = []Outcomeprobabilitycondition{{}} 
+     o.TriggerWithOutcomePercentileConditions = []Outcomepercentilecondition{{}} 
      o.PageUrlConditions = []Urlcondition{{}} 
     
     
@@ -186,6 +194,8 @@ func (u *Actionmap) MarshalJSON() ([]byte, error) {
         TriggerWithEventConditions []Eventcondition `json:"triggerWithEventConditions"`
         
         TriggerWithOutcomeProbabilityConditions []Outcomeprobabilitycondition `json:"triggerWithOutcomeProbabilityConditions"`
+        
+        TriggerWithOutcomePercentileConditions []Outcomepercentilecondition `json:"triggerWithOutcomePercentileConditions"`
         
         PageUrlConditions []Urlcondition `json:"pageUrlConditions"`
         
@@ -233,6 +243,11 @@ func (u *Actionmap) MarshalJSON() ([]byte, error) {
 
         
         TriggerWithOutcomeProbabilityConditions: []Outcomeprobabilitycondition{{}},
+        
+
+
+        
+        TriggerWithOutcomePercentileConditions: []Outcomepercentilecondition{{}},
         
 
 

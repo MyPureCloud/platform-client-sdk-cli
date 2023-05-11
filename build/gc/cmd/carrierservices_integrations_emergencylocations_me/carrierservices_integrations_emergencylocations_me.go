@@ -1,4 +1,4 @@
-package stations_settings
+package carrierservices_integrations_emergencylocations_me
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("stations_settings", "SWAGGER_OVERRIDE_/api/v2/stations/settings", "SWAGGER_OVERRIDE_/api/v2/stations/settings", )
-	stations_settingsCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("stations_settings"),
+	Description = utils.FormatUsageDescription("carrierservices_integrations_emergencylocations_me", "SWAGGER_OVERRIDE_/api/v2/carrierservices/integrations/emergencylocations/me", "SWAGGER_OVERRIDE_/api/v2/carrierservices/integrations/emergencylocations/me", )
+	carrierservices_integrations_emergencylocations_meCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("carrierservices_integrations_emergencylocations_me"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,50 +24,51 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(stations_settingsCmd)
+	CommandService = services.NewCommandService(carrierservices_integrations_emergencylocations_meCmd)
 }
 
-func Cmdstations_settings() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/stations/settings", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Stations", "/api/v2/stations/settings")))
+func Cmdcarrierservices_integrations_emergencylocations_me() *cobra.Command { 
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/carrierservices/integrations/emergencylocations/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Carrier Services", "/api/v2/carrierservices/integrations/emergencylocations/me")))
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EmergencyLocation"
+      }
+    }
+  },
+  "required" : false
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/EmergencyLocation"
+      }
+    }
+  }
+}`)
+	carrierservices_integrations_emergencylocations_meCmd.AddCommand(createCmd)
+
+	utils.AddFlag(getCmd.Flags(), "string", "phoneNumber", "", "Phone number in E164 format - REQUIRED")
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/carrierservices/integrations/emergencylocations/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Carrier Services", "/api/v2/carrierservices/integrations/emergencylocations/me")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+	getCmd.MarkFlagRequired("phoneNumber")
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/StationSettings"
+        "$ref" : "#/components/schemas/EmergencyLocation"
       }
     }
   }
 }`)
-	stations_settingsCmd.AddCommand(getCmd)
-
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/stations/settings", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PATCH", "Stations", "/api/v2/stations/settings")))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "description" : "Station settings",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/StationSettings"
-      }
-    }
-  },
-  "required" : true
-}`)
-	
-	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  "description" : "successful operation",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/StationSettings"
-      }
-    }
-  }
-}`)
-	stations_settingsCmd.AddCommand(updateCmd)
-	return stations_settingsCmd
+	carrierservices_integrations_emergencylocations_meCmd.AddCommand(getCmd)
+	return carrierservices_integrations_emergencylocations_meCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -75,10 +76,10 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
-var getCmd = &cobra.Command{
-	Use:   "get",
-	Short: "Get an organization`s StationSettings",
-	Long:  "Get an organization`s StationSettings",
+var createCmd = &cobra.Command{
+	Use:   "create",
+	Short: "Set current location for the logged in user",
+	Long:  "Set current location for the logged in user",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -87,12 +88,15 @@ var getCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
+			reqModel := models.Emergencylocation{}
+			utils.Render(reqModel.String())
+			
 			return
 		}
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/stations/settings"
+		path := "/api/v2/carrierservices/integrations/emergencylocations/me"
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -107,8 +111,8 @@ var getCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "get"
-		const httpMethod = "GET"
+		const opId = "create"
+		const httpMethod = "POST"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
@@ -138,10 +142,10 @@ var getCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var updateCmd = &cobra.Command{
-	Use:   "update",
-	Short: "Patch an organization`s StationSettings",
-	Long:  "Patch an organization`s StationSettings",
+var getCmd = &cobra.Command{
+	Use:   "get",
+	Short: "Get location for the logged in user",
+	Long:  "Get location for the logged in user",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -150,16 +154,17 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Stationsettings{}
-			utils.Render(reqModel.String())
-			
 			return
 		}
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/stations/settings"
+		path := "/api/v2/carrierservices/integrations/emergencylocations/me"
 
+		phoneNumber := utils.GetFlag(cmd.Flags(), "string", "phoneNumber")
+		if phoneNumber != "" {
+			queryParams["phoneNumber"] = phoneNumber
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -173,8 +178,8 @@ var updateCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "update"
-		const httpMethod = "PATCH"
+		const opId = "get"
+		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

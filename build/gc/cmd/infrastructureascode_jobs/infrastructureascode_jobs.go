@@ -54,8 +54,11 @@ func Cmdinfrastructureascode_jobs() *cobra.Command {
 
 	utils.AddFlag(getCmd.Flags(), "int", "maxResults", "1", "Number of jobs to show")
 	utils.AddFlag(getCmd.Flags(), "bool", "includeErrors", "false", "Include error messages")
-	utils.AddFlag(getCmd.Flags(), "string", "sortBy", "id", "Sort by Valid values: id, dateSubmitted, submittedBy, status")
-	utils.AddFlag(getCmd.Flags(), "string", "sortOrder", "asc", "Sort order Valid values: asc, desc")
+	utils.AddFlag(getCmd.Flags(), "string", "sortBy", "dateSubmitted", "Sort by Valid values: id, dateSubmitted, submittedBy, acceleratorId, status")
+	utils.AddFlag(getCmd.Flags(), "string", "sortOrder", "desc", "Sort order Valid values: asc, desc")
+	utils.AddFlag(getCmd.Flags(), "string", "acceleratorId", "", "Find only jobs associated with this accelerator")
+	utils.AddFlag(getCmd.Flags(), "string", "submittedBy", "", "Find only jobs submitted by this user")
+	utils.AddFlag(getCmd.Flags(), "string", "status", "", "Find only jobs in this state Valid values: Created, Queued, Running, Complete, Failed, Incomplete")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/infrastructureascode/jobs", utils.FormatPermissions([]string{ "infrastructureascode:job:view",  }), utils.GenerateDevCentreLink("GET", "Infrastructure as Code", "/api/v2/infrastructureascode/jobs")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -194,6 +197,18 @@ var getCmd = &cobra.Command{
 		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
 		if sortOrder != "" {
 			queryParams["sortOrder"] = sortOrder
+		}
+		acceleratorId := utils.GetFlag(cmd.Flags(), "string", "acceleratorId")
+		if acceleratorId != "" {
+			queryParams["acceleratorId"] = acceleratorId
+		}
+		submittedBy := utils.GetFlag(cmd.Flags(), "string", "submittedBy")
+		if submittedBy != "" {
+			queryParams["submittedBy"] = submittedBy
+		}
+		status := utils.GetFlag(cmd.Flags(), "string", "status")
+		if status != "" {
+			queryParams["status"] = status
 		}
 		urlString := path
 		if len(queryParams) > 0 {

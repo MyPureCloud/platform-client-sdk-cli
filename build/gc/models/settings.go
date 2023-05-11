@@ -16,6 +16,9 @@ type SettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Settings
@@ -27,10 +30,15 @@ type Settings struct {
     // IncludeNonAgentConversationSummary - Display communication summary
     IncludeNonAgentConversationSummary bool `json:"includeNonAgentConversationSummary"`
 
+
+    // AllowCallbackQueueSelection - Allow Callback Queue Selection
+    AllowCallbackQueueSelection bool `json:"allowCallbackQueueSelection"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Settings) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Settings) MarshalJSON() ([]byte, error) {
         CommunicationBasedACW bool `json:"communicationBasedACW"`
         
         IncludeNonAgentConversationSummary bool `json:"includeNonAgentConversationSummary"`
+        
+        AllowCallbackQueueSelection bool `json:"allowCallbackQueueSelection"`
         *Alias
     }{
+
+        
+
 
         
 

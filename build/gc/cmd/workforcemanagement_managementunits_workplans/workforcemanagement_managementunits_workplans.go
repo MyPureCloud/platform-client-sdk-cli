@@ -79,7 +79,7 @@ func Cmdworkforcemanagement_managementunits_workplans() *cobra.Command {
 }`)
 	workforcemanagement_managementunits_workplansCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", " Valid values: agentCount, agents, optionalDays, shifts, shiftStartVariances, details")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Include to access additional data on the work plans Valid values: agentCount, agents, optionalDays, shifts, shiftStartVariances, details")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans", utils.FormatPermissions([]string{ "wfm:agent:view", "wfm:publishedSchedule:view", "wfm:schedule:view", "wfm:workPlanRotation:view", "wfm:workPlan:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

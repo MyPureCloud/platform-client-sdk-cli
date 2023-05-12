@@ -53,7 +53,7 @@ func Cmdusers() *cobra.Command {
 }`)
 	usersCmd.AddCommand(createCmd)
 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}", utils.FormatPermissions([]string{ "directory:user:delete",  }), utils.GenerateDevCentreLink("DELETE", "Users", "/api/v2/users/{userId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}", utils.FormatPermissions([]string{ "directory:user:delete", "directory:organization:admin",  }), utils.GenerateDevCentreLink("DELETE", "Users", "/api/v2/users/{userId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{

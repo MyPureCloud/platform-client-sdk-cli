@@ -28,6 +28,9 @@ type DigitalactionDud struct {
 
     
 
+
+    
+
 }
 
 // Digitalaction
@@ -55,6 +58,10 @@ type Digitalaction struct {
     // SetContentTemplateActionSettings - The settings for a 'Set content template' action.
     SetContentTemplateActionSettings Setcontenttemplateactionsettings `json:"setContentTemplateActionSettings"`
 
+
+    // SetSmsPhoneNumberActionSettings - The settings for a 'set sms phone number' action.
+    SetSmsPhoneNumberActionSettings Setsmsphonenumberactionsettings `json:"setSmsPhoneNumberActionSettings"`
+
 }
 
 // String returns a JSON representation of the model
@@ -64,6 +71,7 @@ func (o *Digitalaction) String() string {
     
     
      o.MarkContactAddressUncontactableActionSettings = Interface{} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -93,6 +101,8 @@ func (u *Digitalaction) MarshalJSON() ([]byte, error) {
         MarkContactAddressUncontactableActionSettings interface{} `json:"markContactAddressUncontactableActionSettings"`
         
         SetContentTemplateActionSettings Setcontenttemplateactionsettings `json:"setContentTemplateActionSettings"`
+        
+        SetSmsPhoneNumberActionSettings Setsmsphonenumberactionsettings `json:"setSmsPhoneNumberActionSettings"`
         *Alias
     }{
 
@@ -112,6 +122,9 @@ func (u *Digitalaction) MarshalJSON() ([]byte, error) {
 
         
         MarkContactAddressUncontactableActionSettings: Interface{},
+        
+
+
         
 
 

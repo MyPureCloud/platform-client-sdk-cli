@@ -508,6 +508,12 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1175,6 +1181,14 @@ type Viewfilter struct {
     // IsClearedByCustomer - Filter to indicate if the customer cleared the conversation.
     IsClearedByCustomer bool `json:"isClearedByCustomer"`
 
+
+    // EvaluationAssigneeIds - The evaluation assignee ids that are used to filter the view.
+    EvaluationAssigneeIds []string `json:"evaluationAssigneeIds"`
+
+
+    // EvaluationAssigned - Filter to indicate that the user has no assigned evaluation.
+    EvaluationAssigned bool `json:"evaluationAssigned"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1344,6 +1358,8 @@ func (o *Viewfilter) String() string {
     
     
     
+    
+     o.EvaluationAssigneeIds = []string{""} 
     
 
     j, _ := json.Marshal(o)
@@ -1693,6 +1709,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         UserState string `json:"userState"`
         
         IsClearedByCustomer bool `json:"isClearedByCustomer"`
+        
+        EvaluationAssigneeIds []string `json:"evaluationAssigneeIds"`
+        
+        EvaluationAssigned bool `json:"evaluationAssigned"`
         *Alias
     }{
 
@@ -2426,6 +2446,14 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+        EvaluationAssigneeIds: []string{""},
         
 
 

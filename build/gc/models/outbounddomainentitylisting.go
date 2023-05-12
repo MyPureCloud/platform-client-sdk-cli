@@ -68,12 +68,12 @@ type Outbounddomainentitylisting struct {
     NextUri string `json:"nextUri"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
     // PreviousUri
     PreviousUri string `json:"previousUri"`
+
+
+    // LastUri
+    LastUri string `json:"lastUri"`
 
 
     // SelfUri
@@ -126,9 +126,9 @@ func (u *Outbounddomainentitylisting) MarshalJSON() ([]byte, error) {
         
         NextUri string `json:"nextUri"`
         
-        LastUri string `json:"lastUri"`
-        
         PreviousUri string `json:"previousUri"`
+        
+        LastUri string `json:"lastUri"`
         
         SelfUri string `json:"selfUri"`
         

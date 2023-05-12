@@ -30,6 +30,7 @@ func init() {
 func Cmdworkforcemanagement_businessunits_weeks_shorttermforecasts_import() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import", utils.FormatPermissions([]string{ "wfm:shortTermForecast:add",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "description" : "body",
   "content" : {
     "application/json" : {
       "schema" : {

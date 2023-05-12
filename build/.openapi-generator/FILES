@@ -975,6 +975,8 @@ gc/cmd/workforcemanagement_schedules/workforcemanagement_schedules.go
 gc/cmd/workforcemanagement_schedulingjobs/workforcemanagement_schedulingjobs.go
 gc/cmd/workforcemanagement_shifttrades/workforcemanagement_shifttrades.go
 gc/cmd/workforcemanagement_shrinkage_jobs/workforcemanagement_shrinkage_jobs.go
+gc/cmd/workforcemanagement_teams_adherence_historical/workforcemanagement_teams_adherence_historical.go
+gc/cmd/workforcemanagement_teams_shrinkage_jobs/workforcemanagement_teams_shrinkage_jobs.go
 gc/cmd/workforcemanagement_timeofflimits_available_query/workforcemanagement_timeofflimits_available_query.go
 gc/cmd/workforcemanagement_timeoffrequests/workforcemanagement_timeoffrequests.go
 gc/cmd/workforcemanagement_timeoffrequests_waitlistpositions/workforcemanagement_timeoffrequests_waitlistpositions.go
@@ -2041,6 +2043,7 @@ gc/models/forecastaveragespeedofanswerresponse.go
 gc/models/forecastplanninggroupdata.go
 gc/models/forecastplanninggroupresponse.go
 gc/models/forecastplanninggroupsresponse.go
+gc/models/forecastservicegoaltemplateimpactoverrideresponse.go
 gc/models/forecastservicegoaltemplateresponse.go
 gc/models/forecastservicelevelresponse.go
 gc/models/forecastsourcedaypointer.go
@@ -3497,11 +3500,13 @@ gc/models/wfmhistoricaladherencebulkresult.go
 gc/models/wfmhistoricaladherencebulkuserdaymetrics.go
 gc/models/wfmhistoricaladherencebulkuserresult.go
 gc/models/wfmhistoricaladherencequery.go
+gc/models/wfmhistoricaladherencequeryforteams.go
 gc/models/wfmhistoricaladherencequeryforusers.go
 gc/models/wfmhistoricaladherenceresponse.go
 gc/models/wfmhistoricaladherenceresultwrapper.go
 gc/models/wfmhistoricalshrinkagerequest.go
 gc/models/wfmhistoricalshrinkageresponse.go
+gc/models/wfmhistoricalshrinkageteamsrequest.go
 gc/models/wfmintradayplanninggrouplisting.go
 gc/models/wfmprocessuploadrequest.go
 gc/models/wfmscheduleactivity.go

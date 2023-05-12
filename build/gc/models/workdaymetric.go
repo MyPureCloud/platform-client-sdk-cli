@@ -20,6 +20,9 @@ type WorkdaymetricDud struct {
     Points int `json:"points"`
 
 
+    MaxPoints int `json:"maxPoints"`
+
+
     Value float64 `json:"value"`
 
 
@@ -29,6 +32,9 @@ type WorkdaymetricDud struct {
 
 // Workdaymetric
 type Workdaymetric struct { 
+    
+
+
     
 
 
@@ -65,6 +71,9 @@ func (u *Workdaymetric) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

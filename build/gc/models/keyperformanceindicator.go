@@ -21,6 +21,9 @@ type KeyperformanceindicatorDud struct {
     OptimizationType string `json:"optimizationType"`
 
 
+    ProblemType string `json:"problemType"`
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -98,6 +101,9 @@ type Keyperformanceindicator struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -120,6 +126,9 @@ func (u *Keyperformanceindicator) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

@@ -7,6 +7,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_agents"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_adherence"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_teams"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_timeofflimits"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_timeoffrequests"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_agentschedules"
@@ -25,6 +26,7 @@ func init() {
 	workforcemanagementCmd.AddCommand(workforcemanagement_businessunits.Cmdworkforcemanagement_businessunits())
 	workforcemanagementCmd.AddCommand(workforcemanagement_agents.Cmdworkforcemanagement_agents())
 	workforcemanagementCmd.AddCommand(workforcemanagement_adherence.Cmdworkforcemanagement_adherence())
+	workforcemanagementCmd.AddCommand(workforcemanagement_teams.Cmdworkforcemanagement_teams())
 	workforcemanagementCmd.AddCommand(workforcemanagement_timeofflimits.Cmdworkforcemanagement_timeofflimits())
 	workforcemanagementCmd.AddCommand(workforcemanagement_timeoffrequests.Cmdworkforcemanagement_timeoffrequests())
 	workforcemanagementCmd.AddCommand(workforcemanagement_agentschedules.Cmdworkforcemanagement_agentschedules())
@@ -35,6 +37,6 @@ func init() {
 	workforcemanagementCmd.AddCommand(workforcemanagement_adhocmodelingjobs.Cmdworkforcemanagement_adhocmodelingjobs())
 	workforcemanagementCmd.AddCommand(workforcemanagement_schedulingjobs.Cmdworkforcemanagement_schedulingjobs())
 	workforcemanagementCmd.AddCommand(workforcemanagement_shrinkage.Cmdworkforcemanagement_shrinkage())
-	workforcemanagementCmd.Short = utils.GenerateCustomDescription(workforcemanagementCmd.Short, workforcemanagement_calendar.Description, workforcemanagement_managementunits.Description, workforcemanagement_businessunits.Description, workforcemanagement_agents.Description, workforcemanagement_adherence.Description, workforcemanagement_timeofflimits.Description, workforcemanagement_timeoffrequests.Description, workforcemanagement_agentschedules.Description, workforcemanagement_schedules.Description, workforcemanagement_shifttrades.Description, workforcemanagement_notifications.Description, workforcemanagement_historicaldata.Description, workforcemanagement_adhocmodelingjobs.Description, workforcemanagement_schedulingjobs.Description, workforcemanagement_shrinkage.Description, )
+	workforcemanagementCmd.Short = utils.GenerateCustomDescription(workforcemanagementCmd.Short, workforcemanagement_calendar.Description, workforcemanagement_managementunits.Description, workforcemanagement_businessunits.Description, workforcemanagement_agents.Description, workforcemanagement_adherence.Description, workforcemanagement_teams.Description, workforcemanagement_timeofflimits.Description, workforcemanagement_timeoffrequests.Description, workforcemanagement_agentschedules.Description, workforcemanagement_schedules.Description, workforcemanagement_shifttrades.Description, workforcemanagement_notifications.Description, workforcemanagement_historicaldata.Description, workforcemanagement_adhocmodelingjobs.Description, workforcemanagement_schedulingjobs.Description, workforcemanagement_shrinkage.Description, )
 	workforcemanagementCmd.Long = workforcemanagementCmd.Short
 }

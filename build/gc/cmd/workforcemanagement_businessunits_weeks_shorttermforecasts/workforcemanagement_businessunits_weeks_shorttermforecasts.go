@@ -37,7 +37,7 @@ func Cmdworkforcemanagement_businessunits_weeks_shorttermforecasts() *cobra.Comm
 }`)
 	workforcemanagement_businessunits_weeks_shorttermforecastsCmd.AddCommand(deleteCmd)
 
-	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", " Valid values: planningGroups, generationResults")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Include to access additional data on the forecast Valid values: planningGroups, generationResults")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}", utils.FormatPermissions([]string{ "wfm:shortTermForecast:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	

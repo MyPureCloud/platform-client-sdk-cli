@@ -34,6 +34,9 @@ type HistoryheaderstranslationDud struct {
 
     
 
+
+    
+
 }
 
 // Historyheaderstranslation
@@ -69,10 +72,15 @@ type Historyheaderstranslation struct {
     // Language - The code of the expected language
     Language string `json:"language"`
 
+
+    // TimeZone - Timezone used by the agent, used to format the sent email date and time. If not defined, will default to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+    TimeZone string `json:"timeZone"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Historyheaderstranslation) String() string {
+    
     
     
     
@@ -113,8 +121,13 @@ func (u *Historyheaderstranslation) MarshalJSON() ([]byte, error) {
         Sent string `json:"sent"`
         
         Language string `json:"language"`
+        
+        TimeZone string `json:"timeZone"`
         *Alias
     }{
+
+        
+
 
         
 

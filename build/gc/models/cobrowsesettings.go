@@ -19,6 +19,12 @@ type CobrowsesettingsDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Cobrowsesettings - Settings concerning cobrowse
@@ -34,6 +40,14 @@ type Cobrowsesettings struct {
     // MaskSelectors - Mask patterns that will apply to pages being shared
     MaskSelectors []string `json:"maskSelectors"`
 
+
+    // Channels - Cobrowse channels for web messenger
+    Channels []string `json:"channels"`
+
+
+    // ReadonlySelectors - Readonly patterns that will apply to pages being shared
+    ReadonlySelectors []string `json:"readonlySelectors"`
+
 }
 
 // String returns a JSON representation of the model
@@ -41,6 +55,8 @@ func (o *Cobrowsesettings) String() string {
     
     
      o.MaskSelectors = []string{""} 
+     o.Channels = []string{""} 
+     o.ReadonlySelectors = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,6 +79,10 @@ func (u *Cobrowsesettings) MarshalJSON() ([]byte, error) {
         AllowAgentControl bool `json:"allowAgentControl"`
         
         MaskSelectors []string `json:"maskSelectors"`
+        
+        Channels []string `json:"channels"`
+        
+        ReadonlySelectors []string `json:"readonlySelectors"`
         *Alias
     }{
 
@@ -74,6 +94,16 @@ func (u *Cobrowsesettings) MarshalJSON() ([]byte, error) {
 
         
         MaskSelectors: []string{""},
+        
+
+
+        
+        Channels: []string{""},
+        
+
+
+        
+        ReadonlySelectors: []string{""},
         
 
         Alias: (*Alias)(u),

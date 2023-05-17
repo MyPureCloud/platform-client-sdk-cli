@@ -63,6 +63,9 @@ type MetricsDud struct {
     Precision int `json:"precision"`
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -130,12 +133,17 @@ type Metrics struct {
     
 
 
+    // TimeDisplayUnit - The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+    TimeDisplayUnit string `json:"timeDisplayUnit"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Metrics) String() string {
+    
     
     
     
@@ -182,8 +190,13 @@ func (u *Metrics) MarshalJSON() ([]byte, error) {
         MaxPoints int `json:"maxPoints"`
         
         PerformanceProfileId string `json:"performanceProfileId"`
+        
+        TimeDisplayUnit string `json:"timeDisplayUnit"`
         *Alias
     }{
+
+        
+
 
         
 

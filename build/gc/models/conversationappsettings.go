@@ -34,10 +34,17 @@ type ConversationappsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationappsettings - Conversation settings that handles chats within the messenger
 type Conversationappsettings struct { 
+    // Enabled - The toggle to enable or disable conversations
+    Enabled bool `json:"enabled"`
+
+
     // ShowAgentTypingIndicator - The toggle to enable or disable typing indicator for messenger
     ShowAgentTypingIndicator bool `json:"showAgentTypingIndicator"`
 
@@ -81,6 +88,7 @@ func (o *Conversationappsettings) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -97,6 +105,8 @@ func (u *Conversationappsettings) MarshalJSON() ([]byte, error) {
     ConversationappsettingsMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Enabled bool `json:"enabled"`
         
         ShowAgentTypingIndicator bool `json:"showAgentTypingIndicator"`
         
@@ -115,6 +125,9 @@ func (u *Conversationappsettings) MarshalJSON() ([]byte, error) {
         Humanize Humanize `json:"humanize"`
         *Alias
     }{
+
+        
+
 
         
 

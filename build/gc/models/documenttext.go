@@ -19,6 +19,9 @@ type DocumenttextDud struct {
 
     
 
+
+    
+
 }
 
 // Documenttext
@@ -34,12 +37,17 @@ type Documenttext struct {
     // Hyperlink - The URL of the page that the hyperlink goes to.
     Hyperlink string `json:"hyperlink"`
 
+
+    // Properties - The properties for the text.
+    Properties Documenttextproperties `json:"properties"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Documenttext) String() string {
     
      o.Marks = []string{""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -63,6 +71,8 @@ func (u *Documenttext) MarshalJSON() ([]byte, error) {
         Marks []string `json:"marks"`
         
         Hyperlink string `json:"hyperlink"`
+        
+        Properties Documenttextproperties `json:"properties"`
         *Alias
     }{
 
@@ -71,6 +81,9 @@ func (u *Documenttext) MarshalJSON() ([]byte, error) {
 
         
         Marks: []string{""},
+        
+
+
         
 
 

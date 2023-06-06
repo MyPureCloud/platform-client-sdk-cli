@@ -13,6 +13,9 @@ var (
 type DocumentbodyvideoDud struct { 
     
 
+
+    
+
 }
 
 // Documentbodyvideo
@@ -20,10 +23,15 @@ type Documentbodyvideo struct {
     // Url - The URL for the video.
     Url string `json:"url"`
 
+
+    // Properties - The properties for the video.
+    Properties Documentbodyvideoproperties `json:"properties"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Documentbodyvideo) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Documentbodyvideo) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Url string `json:"url"`
+        
+        Properties Documentbodyvideoproperties `json:"properties"`
         *Alias
     }{
+
+        
+
 
         
 

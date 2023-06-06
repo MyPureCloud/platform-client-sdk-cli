@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdworkforcemanagement_agents_managementunit() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/agents/{agentId}/managementunit", utils.FormatPermissions([]string{ "wfm:agent:view", "wfm:publishedSchedule:view", "wfm:schedule:view", "coaching:appointment:add", "coaching:appointment:edit",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/agents/{agentId}/managementunit")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/agents/{agentId}/managementunit", utils.FormatPermissions([]string{ "wfm:agent:view", "wfm:publishedSchedule:view", "wfm:schedule:view", "coaching:appointment:add", "coaching:appointment:edit", "learning:assignment:add", "learning:assignment:reschedule",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/agents/{agentId}/managementunit")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

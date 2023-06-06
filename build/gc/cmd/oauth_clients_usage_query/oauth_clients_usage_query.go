@@ -34,7 +34,7 @@ func Cmdoauth_clients_usage_query() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ApiUsageQuery"
+        "$ref" : "#/components/schemas/ApiUsageClientQuery"
       }
     }
   },
@@ -72,7 +72,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Apiusagequery{}
+			reqModel := models.Apiusageclientquery{}
 			utils.Render(reqModel.String())
 			
 			return

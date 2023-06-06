@@ -15,10 +15,10 @@ type AuthorizationsettingsDud struct {
     Id string `json:"id"`
 
 
-    AnalysisEnabled bool `json:"analysisEnabled"`
+    
 
 
-    AnalysisDays int `json:"analysisDays"`
+    
 
 
     DateLastCalculated time.Time `json:"dateLastCalculated"`
@@ -36,10 +36,12 @@ type Authorizationsettings struct {
     
 
 
-    
+    // AnalysisEnabled - Boolean showing if organization is opted in or not to unused role/perm analysis
+    AnalysisEnabled bool `json:"analysisEnabled"`
 
 
-    
+    // AnalysisDays - Integer number of days to analyze user usage
+    AnalysisDays int `json:"analysisDays"`
 
 
     
@@ -54,6 +56,8 @@ type Authorizationsettings struct {
 
 // String returns a JSON representation of the model
 func (o *Authorizationsettings) String() string {
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -70,6 +74,10 @@ func (u *Authorizationsettings) MarshalJSON() ([]byte, error) {
     AuthorizationsettingsMarshalled = true
 
     return json.Marshal(&struct {
+        
+        AnalysisEnabled bool `json:"analysisEnabled"`
+        
+        AnalysisDays int `json:"analysisDays"`
         *Alias
     }{
 

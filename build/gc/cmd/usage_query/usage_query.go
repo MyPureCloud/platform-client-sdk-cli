@@ -34,7 +34,7 @@ func Cmdusage_query() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ApiUsageQuery"
+        "$ref" : "#/components/schemas/ApiUsageOrganizationQuery"
       }
     }
   },
@@ -72,7 +72,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Apiusagequery{}
+			reqModel := models.Apiusageorganizationquery{}
 			utils.Render(reqModel.String())
 			
 			return

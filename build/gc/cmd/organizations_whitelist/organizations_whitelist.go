@@ -77,8 +77,8 @@ func queryEscape(value string) string {
 
 var getCmd = &cobra.Command{
 	Use:   "get",
-	Short: "Use PUT /api/v2/organizations/embeddedintegration instead",
-	Long:  "Use PUT /api/v2/organizations/embeddedintegration instead",
+	Short: "This route is deprecated, please use /api/v2/organizations/authentication/settings instead",
+	Long:  "This route is deprecated, please use /api/v2/organizations/authentication/settings instead",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -140,8 +140,8 @@ var getCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update",
-	Short: "Use PUT /api/v2/organizations/embeddedintegration instead",
-	Long:  "Use PUT /api/v2/organizations/embeddedintegration instead",
+	Short: "This route is deprecated, please use /api/v2/organizations/authentication/settings instead",
+	Long:  "This route is deprecated, please use /api/v2/organizations/authentication/settings instead",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -60,6 +61,12 @@ type FlowversionDud struct {
 
 
     
+
+
+    DatePublished time.Time `json:"datePublished"`
+
+
+    DatePublishedEnd time.Time `json:"datePublishedEnd"`
 
 
     NluInfo Nluinfo `json:"nluInfo"`
@@ -156,6 +163,12 @@ type Flowversion struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -229,6 +242,12 @@ func (u *Flowversion) MarshalJSON() ([]byte, error) {
         OutputSchema Jsonschemadocument `json:"outputSchema"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

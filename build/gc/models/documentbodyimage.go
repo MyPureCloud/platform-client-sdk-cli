@@ -16,6 +16,9 @@ type DocumentbodyimageDud struct {
 
     
 
+
+    
+
 }
 
 // Documentbodyimage
@@ -27,10 +30,15 @@ type Documentbodyimage struct {
     // Hyperlink - The URL of the page that the hyperlink goes to.
     Hyperlink string `json:"hyperlink"`
 
+
+    // Properties - The properties for the image.
+    Properties Documentbodyimageproperties `json:"properties"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Documentbodyimage) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Documentbodyimage) MarshalJSON() ([]byte, error) {
         Url string `json:"url"`
         
         Hyperlink string `json:"hyperlink"`
+        
+        Properties Documentbodyimageproperties `json:"properties"`
         *Alias
     }{
+
+        
+
 
         
 

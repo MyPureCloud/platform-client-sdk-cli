@@ -24,6 +24,9 @@ type ComparisonperiodDud struct {
     DateEnded time.Time `json:"dateEnded"`
 
 
+    PercentageBenefit float64 `json:"percentageBenefit"`
+
+
     KpiResults []Kpiresult `json:"kpiResults"`
 
 
@@ -33,6 +36,9 @@ type ComparisonperiodDud struct {
 
 // Comparisonperiod
 type Comparisonperiod struct { 
+    
+
+
     
 
 
@@ -72,6 +78,9 @@ func (u *Comparisonperiod) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

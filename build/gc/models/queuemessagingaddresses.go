@@ -13,6 +13,9 @@ var (
 type QueuemessagingaddressesDud struct { 
     
 
+
+    
+
 }
 
 // Queuemessagingaddresses
@@ -20,10 +23,15 @@ type Queuemessagingaddresses struct {
     // SmsAddress
     SmsAddress Domainentityref `json:"smsAddress"`
 
+
+    // OpenMessagingRecipient
+    OpenMessagingRecipient Domainentityref `json:"openMessagingRecipient"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Queuemessagingaddresses) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Queuemessagingaddresses) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         SmsAddress Domainentityref `json:"smsAddress"`
+        
+        OpenMessagingRecipient Domainentityref `json:"openMessagingRecipient"`
         *Alias
     }{
+
+        
+
 
         
 

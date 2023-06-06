@@ -67,6 +67,9 @@ type ReportingexportjobrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Reportingexportjobrequest
@@ -146,6 +149,10 @@ type Reportingexportjobrequest struct {
     // IncludeDurationFormatInHeader - Indicates whether to include selected duration format to the column headers
     IncludeDurationFormatInHeader bool `json:"includeDurationFormatInHeader"`
 
+
+    // DurationFormat - Indicates the duration format for the exports
+    DurationFormat string `json:"durationFormat"`
+
 }
 
 // String returns a JSON representation of the model
@@ -168,6 +175,7 @@ func (o *Reportingexportjobrequest) String() string {
      o.SelectedColumns = []Selectedcolumns{{}} 
     
      o.RecipientEmails = []string{""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -223,6 +231,8 @@ func (u *Reportingexportjobrequest) MarshalJSON() ([]byte, error) {
         RecipientEmails []string `json:"recipientEmails"`
         
         IncludeDurationFormatInHeader bool `json:"includeDurationFormatInHeader"`
+        
+        DurationFormat string `json:"durationFormat"`
         *Alias
     }{
 
@@ -281,6 +291,9 @@ func (u *Reportingexportjobrequest) MarshalJSON() ([]byte, error) {
 
         
         RecipientEmails: []string{""},
+        
+
+
         
 
 

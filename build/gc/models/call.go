@@ -104,6 +104,9 @@ type CallDud struct {
 
     
 
+
+    
+
 }
 
 // Call
@@ -231,6 +234,10 @@ type Call struct {
     // AgentAssistantId - UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
     AgentAssistantId string `json:"agentAssistantId"`
 
+
+    // Disposition - Call resolution data for Dialer bulk make calls commands.
+    Disposition Disposition `json:"disposition"`
+
 }
 
 // String returns a JSON representation of the model
@@ -255,6 +262,7 @@ func (o *Call) String() string {
     
     
      o.DisconnectReasons = []Disconnectreason{{}} 
+    
     
     
     
@@ -344,6 +352,8 @@ func (u *Call) MarshalJSON() ([]byte, error) {
         AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
         
         AgentAssistantId string `json:"agentAssistantId"`
+        
+        Disposition Disposition `json:"disposition"`
         *Alias
     }{
 
@@ -408,6 +418,9 @@ func (u *Call) MarshalJSON() ([]byte, error) {
 
         
         DisconnectReasons: []Disconnectreason{{}},
+        
+
+
         
 
 

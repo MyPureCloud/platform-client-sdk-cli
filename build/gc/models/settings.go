@@ -19,6 +19,12 @@ type SettingsDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Settings
@@ -34,10 +40,20 @@ type Settings struct {
     // AllowCallbackQueueSelection - Allow Callback Queue Selection
     AllowCallbackQueueSelection bool `json:"allowCallbackQueueSelection"`
 
+
+    // CompleteAcwWhenAgentTransitionsOffline - Complete ACW When Agent Transitions Offline
+    CompleteAcwWhenAgentTransitionsOffline bool `json:"completeAcwWhenAgentTransitionsOffline"`
+
+
+    // TotalActiveCallback - Exclude the 'interacting' duration from the handle calculations of callbacks
+    TotalActiveCallback bool `json:"totalActiveCallback"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Settings) String() string {
+    
+    
     
     
     
@@ -63,8 +79,18 @@ func (u *Settings) MarshalJSON() ([]byte, error) {
         IncludeNonAgentConversationSummary bool `json:"includeNonAgentConversationSummary"`
         
         AllowCallbackQueueSelection bool `json:"allowCallbackQueueSelection"`
+        
+        CompleteAcwWhenAgentTransitionsOffline bool `json:"completeAcwWhenAgentTransitionsOffline"`
+        
+        TotalActiveCallback bool `json:"totalActiveCallback"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

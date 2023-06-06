@@ -519,6 +519,7 @@ gc/cmd/oauth_clients_usage_query/oauth_clients_usage_query.go
 gc/cmd/oauth_clients_usage_query_results/oauth_clients_usage_query_results.go
 gc/cmd/oauth_clients_usage_summary/oauth_clients_usage_summary.go
 gc/cmd/oauth_scopes/oauth_scopes.go
+gc/cmd/organizations_authentication_settings/organizations_authentication_settings.go
 gc/cmd/organizations_embeddedintegration/organizations_embeddedintegration.go
 gc/cmd/organizations_features/organizations_features.go
 gc/cmd/organizations_ipaddressauthentication/organizations_ipaddressauthentication.go
@@ -733,6 +734,7 @@ gc/cmd/speechandtextanalytics_settings/speechandtextanalytics_settings.go
 gc/cmd/speechandtextanalytics_topics/speechandtextanalytics_topics.go
 gc/cmd/speechandtextanalytics_topics_dialects/speechandtextanalytics_topics_dialects.go
 gc/cmd/speechandtextanalytics_topics_general/speechandtextanalytics_topics_general.go
+gc/cmd/speechandtextanalytics_topics_general_status/speechandtextanalytics_topics_general_status.go
 gc/cmd/speechandtextanalytics_topics_publishjobs/speechandtextanalytics_topics_publishjobs.go
 gc/cmd/speechandtextanalytics_transcripts_search/speechandtextanalytics_transcripts_search.go
 gc/cmd/stations/stations.go
@@ -806,6 +808,8 @@ gc/cmd/uploads_recordings/uploads_recordings.go
 gc/cmd/uploads_workforcemanagement_historicaldata_csv/uploads_workforcemanagement_historicaldata_csv.go
 gc/cmd/usage_query/usage_query.go
 gc/cmd/usage_query_results/usage_query_results.go
+gc/cmd/usage_simplesearch/usage_simplesearch.go
+gc/cmd/usage_simplesearch_results/usage_simplesearch_results.go
 gc/cmd/userrecordings/userrecordings.go
 gc/cmd/userrecordings_media/userrecordings_media.go
 gc/cmd/userrecordings_summary/userrecordings_summary.go
@@ -1047,6 +1051,7 @@ gc/models/adherenceexplanationnotification.go
 gc/models/adherenceexplanationresponse.go
 gc/models/adherencesettings.go
 gc/models/adjacents.go
+gc/models/adjustablelivespeakerdetection.go
 gc/models/admintimeoffrequestpatch.go
 gc/models/aftercallwork.go
 gc/models/aftercallworkupdate.go
@@ -1103,9 +1108,11 @@ gc/models/analyticsuserdetailsqueryresponse.go
 gc/models/analyticsuserpresencerecord.go
 gc/models/annotation.go
 gc/models/answeroption.go
-gc/models/apiusagequery.go
+gc/models/apiusageclientquery.go
+gc/models/apiusageorganizationquery.go
 gc/models/apiusagequeryresult.go
 gc/models/apiusagerow.go
+gc/models/apiusagesimplesearch.go
 gc/models/appendtodncactionsettings.go
 gc/models/approvalnamespace.go
 gc/models/architectflowfields.go
@@ -1758,6 +1765,8 @@ gc/models/directroutingmediasettings.go
 gc/models/disallowedentitylearningassignmentitem.go
 gc/models/disallowedentitylearningassignmentreference.go
 gc/models/disconnectreason.go
+gc/models/disposition.go
+gc/models/dispositionparameters.go
 gc/models/division.go
 gc/models/divisionreference.go
 gc/models/divspermittedentitylisting.go
@@ -1782,14 +1791,20 @@ gc/models/documentauditentitylisting.go
 gc/models/documentbody.go
 gc/models/documentbodyblock.go
 gc/models/documentbodyimage.go
+gc/models/documentbodyimageproperties.go
 gc/models/documentbodylist.go
 gc/models/documentbodylistblock.go
+gc/models/documentbodylistblockproperties.go
+gc/models/documentbodylistitemproperties.go
 gc/models/documentbodyparagraph.go
+gc/models/documentbodyparagraphproperties.go
 gc/models/documentbodyvideo.go
+gc/models/documentbodyvideoproperties.go
 gc/models/documentcategoryinput.go
 gc/models/documentcontentblock.go
 gc/models/documententitylisting.go
 gc/models/documentfaq.go
+gc/models/documentlistcontentblock.go
 gc/models/documentlisting.go
 gc/models/documentquery.go
 gc/models/documentqueryclause.go
@@ -1797,6 +1812,7 @@ gc/models/documentqueryinterval.go
 gc/models/documentquerypredicate.go
 gc/models/documentreference.go
 gc/models/documenttext.go
+gc/models/documenttextproperties.go
 gc/models/documentthumbnail.go
 gc/models/documentupdate.go
 gc/models/documentupload.go
@@ -2581,6 +2597,7 @@ gc/models/organizationpresencedefinition.go
 gc/models/organizationpresenceentitylisting.go
 gc/models/organizationproductentitylisting.go
 gc/models/organizationroleentitylisting.go
+gc/models/orgauthsettings.go
 gc/models/orgoauthclient.go
 gc/models/orguser.go
 gc/models/orgwhitelistsettings.go
@@ -2621,6 +2638,7 @@ gc/models/participant.go
 gc/models/participantattributes.go
 gc/models/participantbasic.go
 gc/models/participantmetrics.go
+gc/models/passwordrequirements.go
 gc/models/patchaction.go
 gc/models/patchactionmap.go
 gc/models/patchactionmapschedulegroups.go
@@ -3299,6 +3317,8 @@ gc/models/unansweredphrase.go
 gc/models/unansweredphrasegroup.go
 gc/models/unansweredphrasegrouppatchrequestbody.go
 gc/models/unansweredphrasegroupupdateresponse.go
+gc/models/unifiedgeneraltopic.go
+gc/models/unifiedgeneraltopicentitylisting.go
 gc/models/unpublishedprogramsentitylisting.go
 gc/models/unreadmetric.go
 gc/models/unreadstatus.go

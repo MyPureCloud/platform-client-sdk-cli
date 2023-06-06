@@ -25,10 +25,16 @@ type KpiresultDud struct {
 
     MediaType string `json:"mediaType"`
 
+
+    PercentageBenefit float64 `json:"percentageBenefit"`
+
 }
 
 // Kpiresult
 type Kpiresult struct { 
+    
+
+
     
 
 
@@ -65,6 +71,9 @@ func (u *Kpiresult) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

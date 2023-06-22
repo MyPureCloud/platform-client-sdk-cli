@@ -43,6 +43,9 @@ type KnowledgeimportjoberrorDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgeimportjoberror
@@ -87,6 +90,10 @@ type Knowledgeimportjoberror struct {
     Errors []Errorbody `json:"errors"`
 
 
+    // Limit
+    Limit Limit `json:"limit"`
+
+
     // DocumentIndex - Index of the faulty document.
     DocumentIndex int `json:"documentIndex"`
 
@@ -104,6 +111,7 @@ func (o *Knowledgeimportjoberror) String() string {
     
      o.Details = []Detail{{}} 
      o.Errors = []Errorbody{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -142,6 +150,8 @@ func (u *Knowledgeimportjoberror) MarshalJSON() ([]byte, error) {
         
         Errors []Errorbody `json:"errors"`
         
+        Limit Limit `json:"limit"`
+        
         DocumentIndex int `json:"documentIndex"`
         *Alias
     }{
@@ -179,6 +189,9 @@ func (u *Knowledgeimportjoberror) MarshalJSON() ([]byte, error) {
 
         
         Errors: []Errorbody{{}},
+        
+
+
         
 
 

@@ -1,0 +1,16 @@
+package conversations_participants_replace
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_participants_replace_agent"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_participants_replace_queue"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_participants_replace_external"
+)
+
+func init() {
+	conversations_participants_replaceCmd.AddCommand(conversations_participants_replace_agent.Cmdconversations_participants_replace_agent())
+	conversations_participants_replaceCmd.AddCommand(conversations_participants_replace_queue.Cmdconversations_participants_replace_queue())
+	conversations_participants_replaceCmd.AddCommand(conversations_participants_replace_external.Cmdconversations_participants_replace_external())
+	conversations_participants_replaceCmd.Short = utils.GenerateCustomDescription(conversations_participants_replaceCmd.Short, conversations_participants_replace_agent.Description, conversations_participants_replace_queue.Description, conversations_participants_replace_external.Description, )
+	conversations_participants_replaceCmd.Long = conversations_participants_replaceCmd.Short
+}

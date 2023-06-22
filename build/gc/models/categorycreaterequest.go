@@ -6,12 +6,15 @@ import (
 )
 
 var (
-    CategoryrequestMarshalled = false
+    CategorycreaterequestMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type CategoryrequestDud struct { 
+type CategorycreaterequestDud struct { 
     Id string `json:"id"`
+
+
+    
 
 
     
@@ -27,8 +30,8 @@ type CategoryrequestDud struct {
 
 }
 
-// Categoryrequest
-type Categoryrequest struct { 
+// Categorycreaterequest
+type Categorycreaterequest struct { 
     
 
 
@@ -36,12 +39,16 @@ type Categoryrequest struct {
     Name string `json:"name"`
 
 
+    // ParentCategoryId
+    ParentCategoryId string `json:"parentCategoryId"`
+
+
     // Description - The description for the category.
     Description string `json:"description"`
 
 
-    // ParentCategoryId - The category to which this category belongs.
-    ParentCategoryId string `json:"parentCategoryId"`
+    // ExternalId - The external id associated with the category.
+    ExternalId string `json:"externalId"`
 
 
     
@@ -49,7 +56,8 @@ type Categoryrequest struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Categoryrequest) String() string {
+func (o *Categorycreaterequest) String() string {
+    
     
     
     
@@ -60,23 +68,28 @@ func (o *Categoryrequest) String() string {
     return str
 }
 
-func (u *Categoryrequest) MarshalJSON() ([]byte, error) {
-    type Alias Categoryrequest
+func (u *Categorycreaterequest) MarshalJSON() ([]byte, error) {
+    type Alias Categorycreaterequest
 
-    if CategoryrequestMarshalled {
+    if CategorycreaterequestMarshalled {
         return []byte("{}"), nil
     }
-    CategoryrequestMarshalled = true
+    CategorycreaterequestMarshalled = true
 
     return json.Marshal(&struct {
         
         Name string `json:"name"`
         
+        ParentCategoryId string `json:"parentCategoryId"`
+        
         Description string `json:"description"`
         
-        ParentCategoryId string `json:"parentCategoryId"`
+        ExternalId string `json:"externalId"`
         *Alias
     }{
+
+        
+
 
         
 

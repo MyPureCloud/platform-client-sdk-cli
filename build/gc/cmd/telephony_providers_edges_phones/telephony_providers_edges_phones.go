@@ -89,7 +89,7 @@ func Cmdtelephony_providers_edges_phones() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "phoneHardwareId", "", "Filter by phone_hardwareId")
 	utils.AddFlag(listCmd.Flags(), "string", "linesId", "", "Filter by lines.id")
 	utils.AddFlag(listCmd.Flags(), "string", "linesName", "", "Filter by lines.name")
-	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name of the Phone to filter by")
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name of the Phone to filter by, comma-separated")
 	utils.AddFlag(listCmd.Flags(), "string", "statusOperationalStatus", "", "The primary status to filter by")
 	utils.AddFlag(listCmd.Flags(), "string", "secondaryStatusOperationalStatus", "", "The secondary status to filter by")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in the response, comma-separated Valid values: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines")

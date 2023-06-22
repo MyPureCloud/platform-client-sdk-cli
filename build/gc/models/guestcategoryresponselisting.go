@@ -30,7 +30,7 @@ type GuestcategoryresponselistingDud struct {
 // Guestcategoryresponselisting
 type Guestcategoryresponselisting struct { 
     // Entities
-    Entities []Guestcategoryresponse `json:"entities"`
+    Entities []Guestresponsecategory `json:"entities"`
 
 
     // NextUri
@@ -52,7 +52,7 @@ type Guestcategoryresponselisting struct {
 
 // String returns a JSON representation of the model
 func (o *Guestcategoryresponselisting) String() string {
-     o.Entities = []Guestcategoryresponse{{}} 
+     o.Entities = []Guestresponsecategory{{}} 
     
     
     
@@ -74,7 +74,7 @@ func (u *Guestcategoryresponselisting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Entities []Guestcategoryresponse `json:"entities"`
+        Entities []Guestresponsecategory `json:"entities"`
         
         NextUri string `json:"nextUri"`
         
@@ -87,7 +87,7 @@ func (u *Guestcategoryresponselisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Guestcategoryresponse{{}},
+        Entities: []Guestresponsecategory{{}},
         
 
 

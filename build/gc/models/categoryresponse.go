@@ -21,19 +21,22 @@ type CategoryresponseDud struct {
     
 
 
-    DateCreated time.Time `json:"dateCreated"`
+    
 
 
-    DateModified time.Time `json:"dateModified"`
+    
 
 
-    ParentCategory *Categoryreference `json:"parentCategory"`
+    
 
 
-    DocumentCount int `json:"documentCount"`
+    
 
 
-    KnowledgeBase Knowledgebasereference `json:"knowledgeBase"`
+    
+
+
+    
 
 
     SelfUri string `json:"selfUri"`
@@ -49,23 +52,32 @@ type Categoryresponse struct {
     Name string `json:"name"`
 
 
-    // Description - The description for the category.
+    // Description
     Description string `json:"description"`
 
 
-    
+    // ExternalId
+    ExternalId string `json:"externalId"`
 
 
-    
+    // DateCreated - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateCreated time.Time `json:"dateCreated"`
 
 
-    
+    // DateModified - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateModified time.Time `json:"dateModified"`
 
 
-    
+    // ParentCategory - The reference to category to which this category belongs to.
+    ParentCategory *Categoryreference `json:"parentCategory"`
 
 
-    
+    // DocumentCount - Number of documents assigned to this category.
+    DocumentCount int `json:"documentCount"`
+
+
+    // KnowledgeBase - The reference to knowledge base to which the category belongs to.
+    KnowledgeBase Knowledgebasereference `json:"knowledgeBase"`
 
 
     
@@ -74,6 +86,12 @@ type Categoryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Categoryresponse) String() string {
+    
+    
+    
+    
+    
+    
     
     
 
@@ -96,8 +114,23 @@ func (u *Categoryresponse) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         Description string `json:"description"`
+        
+        ExternalId string `json:"externalId"`
+        
+        DateCreated time.Time `json:"dateCreated"`
+        
+        DateModified time.Time `json:"dateModified"`
+        
+        ParentCategory *Categoryreference `json:"parentCategory"`
+        
+        DocumentCount int `json:"documentCount"`
+        
+        KnowledgeBase Knowledgebasereference `json:"knowledgeBase"`
         *Alias
     }{
+
+        
+
 
         
 

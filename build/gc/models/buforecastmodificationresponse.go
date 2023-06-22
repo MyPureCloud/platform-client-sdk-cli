@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    BuforecastmodificationMarshalled = false
+    BuforecastmodificationresponseMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type BuforecastmodificationDud struct { 
+type BuforecastmodificationresponseDud struct { 
     
 
 
@@ -23,7 +23,7 @@ type BuforecastmodificationDud struct {
     
 
 
-    LegacyMetric string `json:"legacyMetric"`
+    
 
 
     
@@ -45,17 +45,17 @@ type BuforecastmodificationDud struct {
 
 }
 
-// Buforecastmodification
-type Buforecastmodification struct { 
+// Buforecastmodificationresponse
+type Buforecastmodificationresponse struct { 
     // VarType - The type of the modification
     VarType string `json:"type"`
 
 
-    // StartIntervalIndex - The number of 15 minute intervals past referenceStartDate representing the first interval to which to apply this modification. Must be null if values is populated
+    // StartIntervalIndex - The number of intervals past referenceStartDate representing the first interval to which this modification applies
     StartIntervalIndex int `json:"startIntervalIndex"`
 
 
-    // EndIntervalIndex - The number of 15 minute intervals past referenceStartDate representing the last interval to which to apply this modification.  Must be null if values is populated
+    // EndIntervalIndex - The number of intervals past referenceStartDate representing the last interval to which this modification applies
     EndIntervalIndex int `json:"endIntervalIndex"`
 
 
@@ -63,14 +63,15 @@ type Buforecastmodification struct {
     Metric string `json:"metric"`
 
 
-    
+    // LegacyMetric - The legacy metric to which this modification applies if applicable
+    LegacyMetric string `json:"legacyMetric"`
 
 
-    // Value - The value of the modification.  Must be null if \"values\" is populated
+    // Value - The value of the modification
     Value float64 `json:"value"`
 
 
-    // Values - The list of values to update.  Only applicable for grid-type modifications. Must be null if \"value\" is populated
+    // Values - The list of modification values. Only applicable for grid-type modifications
     Values []Wfmforecastmodificationintervaloffsetvalue `json:"values"`
 
 
@@ -86,13 +87,14 @@ type Buforecastmodification struct {
     Enabled bool `json:"enabled"`
 
 
-    // PlanningGroupIds - The IDs of the planning groups to which this forecast modification applies.  Leave empty to apply to all
+    // PlanningGroupIds - The IDs of the planning groups to which this forecast modification applies
     PlanningGroupIds []string `json:"planningGroupIds"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Buforecastmodification) String() string {
+func (o *Buforecastmodificationresponse) String() string {
+    
     
     
     
@@ -110,13 +112,13 @@ func (o *Buforecastmodification) String() string {
     return str
 }
 
-func (u *Buforecastmodification) MarshalJSON() ([]byte, error) {
-    type Alias Buforecastmodification
+func (u *Buforecastmodificationresponse) MarshalJSON() ([]byte, error) {
+    type Alias Buforecastmodificationresponse
 
-    if BuforecastmodificationMarshalled {
+    if BuforecastmodificationresponseMarshalled {
         return []byte("{}"), nil
     }
-    BuforecastmodificationMarshalled = true
+    BuforecastmodificationresponseMarshalled = true
 
     return json.Marshal(&struct {
         
@@ -127,6 +129,8 @@ func (u *Buforecastmodification) MarshalJSON() ([]byte, error) {
         EndIntervalIndex int `json:"endIntervalIndex"`
         
         Metric string `json:"metric"`
+        
+        LegacyMetric string `json:"legacyMetric"`
         
         Value float64 `json:"value"`
         

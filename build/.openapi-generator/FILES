@@ -145,6 +145,9 @@ gc/cmd/conversations_calls_participants_communications/conversations_calls_parti
 gc/cmd/conversations_calls_participants_communications_uuidata/conversations_calls_participants_communications_uuidata.go
 gc/cmd/conversations_calls_participants_communications_wrapup/conversations_calls_participants_communications_wrapup.go
 gc/cmd/conversations_calls_participants_consult/conversations_calls_participants_consult.go
+gc/cmd/conversations_calls_participants_consult_agent/conversations_calls_participants_consult_agent.go
+gc/cmd/conversations_calls_participants_consult_external/conversations_calls_participants_consult_external.go
+gc/cmd/conversations_calls_participants_consult_queue/conversations_calls_participants_consult_queue.go
 gc/cmd/conversations_calls_participants_monitor/conversations_calls_participants_monitor.go
 gc/cmd/conversations_calls_participants_replace/conversations_calls_participants_replace.go
 gc/cmd/conversations_calls_participants_wrapup/conversations_calls_participants_wrapup.go
@@ -212,6 +215,7 @@ gc/cmd/conversations_messages_recordingstate/conversations_messages_recordingsta
 gc/cmd/conversations_messaging_facebook_app/conversations_messaging_facebook_app.go
 gc/cmd/conversations_messaging_integrations/conversations_messaging_integrations.go
 gc/cmd/conversations_messaging_integrations_facebook/conversations_messaging_integrations_facebook.go
+gc/cmd/conversations_messaging_integrations_instagram/conversations_messaging_integrations_instagram.go
 gc/cmd/conversations_messaging_integrations_line/conversations_messaging_integrations_line.go
 gc/cmd/conversations_messaging_integrations_open/conversations_messaging_integrations_open.go
 gc/cmd/conversations_messaging_integrations_twitter/conversations_messaging_integrations_twitter.go
@@ -228,6 +232,9 @@ gc/cmd/conversations_participants_codes/conversations_participants_codes.go
 gc/cmd/conversations_participants_digits/conversations_participants_digits.go
 gc/cmd/conversations_participants_flaggedreason/conversations_participants_flaggedreason.go
 gc/cmd/conversations_participants_replace/conversations_participants_replace.go
+gc/cmd/conversations_participants_replace_agent/conversations_participants_replace_agent.go
+gc/cmd/conversations_participants_replace_external/conversations_participants_replace_external.go
+gc/cmd/conversations_participants_replace_queue/conversations_participants_replace_queue.go
 gc/cmd/conversations_participants_secureivrsessions/conversations_participants_secureivrsessions.go
 gc/cmd/conversations_participants_wrapup/conversations_participants_wrapup.go
 gc/cmd/conversations_participants_wrapupcodes/conversations_participants_wrapupcodes.go
@@ -425,6 +432,7 @@ gc/cmd/integrations_speech_tts_engines_voices/integrations_speech_tts_engines_vo
 gc/cmd/integrations_speech_tts_settings/integrations_speech_tts_settings.go
 gc/cmd/integrations_types/integrations_types.go
 gc/cmd/integrations_types_configschemas/integrations_types_configschemas.go
+gc/cmd/integrations_unifiedcommunications_thirdpartypresences/integrations_unifiedcommunications_thirdpartypresences.go
 gc/cmd/integrations_userapps/integrations_userapps.go
 gc/cmd/ipranges/ipranges.go
 gc/cmd/journey_actionmaps/journey_actionmaps.go
@@ -834,6 +842,7 @@ gc/cmd/users_password/users_password.go
 gc/cmd/users_presences/users_presences.go
 gc/cmd/users_presences_bulk/users_presences_bulk.go
 gc/cmd/users_presences_purecloud/users_presences_purecloud.go
+gc/cmd/users_presences_purecloud_bulk/users_presences_purecloud_bulk.go
 gc/cmd/users_profile/users_profile.go
 gc/cmd/users_profileskills/users_profileskills.go
 gc/cmd/users_queues/users_queues.go
@@ -1261,7 +1270,7 @@ gc/models/bucreateblankschedulerequest.go
 gc/models/bucurrentagentschedulesearchresponse.go
 gc/models/buforecastgenerationplanninggroupresult.go
 gc/models/buforecastgenerationresult.go
-gc/models/buforecastmodification.go
+gc/models/buforecastmodificationresponse.go
 gc/models/buforecastresult.go
 gc/models/buforecastresultresponse.go
 gc/models/buforecasttimeseriesresult.go
@@ -1407,12 +1416,13 @@ gc/models/campaigntimeslot.go
 gc/models/card.go
 gc/models/cardaction.go
 gc/models/category.go
+gc/models/categorycreaterequest.go
 gc/models/categoryentitylisting.go
 gc/models/categorylisting.go
 gc/models/categoryreference.go
-gc/models/categoryrequest.go
 gc/models/categoryresponse.go
 gc/models/categoryresponselisting.go
+gc/models/categoryupdaterequest.go
 gc/models/certificate.go
 gc/models/certificateauthorityentitylisting.go
 gc/models/certificatedetails.go
@@ -1488,6 +1498,9 @@ gc/models/constraintconflictmessage.go
 gc/models/consulttransfer.go
 gc/models/consulttransferevent.go
 gc/models/consulttransferresponse.go
+gc/models/consulttransfertoagent.go
+gc/models/consulttransfertoexternal.go
+gc/models/consulttransfertoqueue.go
 gc/models/consulttransferupdate.go
 gc/models/consumedresourcesentitylisting.go
 gc/models/consumingresourcesentitylisting.go
@@ -2111,9 +2124,9 @@ gc/models/groupssearchresponse.go
 gc/models/groupupdate.go
 gc/models/gsuite.go
 gc/models/guestcategoryreference.go
-gc/models/guestcategoryresponse.go
 gc/models/guestcategoryresponselisting.go
 gc/models/guestmemberinfo.go
+gc/models/guestresponsecategory.go
 gc/models/headcountforecast.go
 gc/models/headcountinterval.go
 gc/models/helplink.go
@@ -2179,6 +2192,10 @@ gc/models/insightstrendmetricitem.go
 gc/models/insightstrends.go
 gc/models/insightstrendtotalitem.go
 gc/models/instagramid.go
+gc/models/instagramintegration.go
+gc/models/instagramintegrationentitylisting.go
+gc/models/instagramintegrationrequest.go
+gc/models/instagramintegrationupdaterequest.go
 gc/models/instagramscopedid.go
 gc/models/integration.go
 gc/models/integrationaction.go
@@ -3258,6 +3275,9 @@ gc/models/transferinitiator.go
 gc/models/transferrequest.go
 gc/models/transferresponse.go
 gc/models/transferresponsemodifiedby.go
+gc/models/transfertoagentrequest.go
+gc/models/transfertoexternalrequest.go
+gc/models/transfertoqueuerequest.go
 gc/models/trenddata.go
 gc/models/trigger.go
 gc/models/triggerentitylisting.go
@@ -3310,6 +3330,8 @@ gc/models/uci10n.go
 gc/models/ucicon.go
 gc/models/ucintegration.go
 gc/models/ucintegrationlisting.go
+gc/models/ucthirdpartypresence.go
+gc/models/ucuserpresence.go
 gc/models/unansweredgroup.go
 gc/models/unansweredgroups.go
 gc/models/unansweredgroupsuggesteddocument.go

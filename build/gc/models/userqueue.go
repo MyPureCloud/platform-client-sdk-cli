@@ -111,6 +111,9 @@ type UserqueueDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -163,6 +166,10 @@ type Userqueue struct {
 
     // RoutingRules - The routing rules for the queue, used for Preferred Agent Routing.
     RoutingRules []Routingrule `json:"routingRules"`
+
+
+    // ConditionalGroupRouting - The Conditional Group Routing settings for the queue.
+    ConditionalGroupRouting Conditionalgrouprouting `json:"conditionalGroupRouting"`
 
 
     // Bullseye - The bullseye settings for the queue.
@@ -263,6 +270,7 @@ func (o *Userqueue) String() string {
     
     
     
+    
      o.MemberGroups = []Membergroup{{}} 
     
     
@@ -314,6 +322,8 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
         MediaSettings Queuemediasettings `json:"mediaSettings"`
         
         RoutingRules []Routingrule `json:"routingRules"`
+        
+        ConditionalGroupRouting Conditionalgrouprouting `json:"conditionalGroupRouting"`
         
         Bullseye Bullseye `json:"bullseye"`
         
@@ -395,6 +405,9 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
 
         
         RoutingRules: []Routingrule{{}},
+        
+
+
         
 
 

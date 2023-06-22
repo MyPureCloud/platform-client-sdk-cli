@@ -514,6 +514,12 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1189,6 +1195,14 @@ type Viewfilter struct {
     // EvaluationAssigned - Filter to indicate that the user has no assigned evaluation.
     EvaluationAssigned bool `json:"evaluationAssigned"`
 
+
+    // AssistantIds - The assistant ids that are used to filter the view.
+    AssistantIds []string `json:"assistantIds"`
+
+
+    // KnowledgeBaseIds - The knowledge base ids that are used to filter the view.
+    KnowledgeBaseIds []string `json:"knowledgeBaseIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1361,6 +1375,8 @@ func (o *Viewfilter) String() string {
     
      o.EvaluationAssigneeIds = []string{""} 
     
+     o.AssistantIds = []string{""} 
+     o.KnowledgeBaseIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1713,6 +1729,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         EvaluationAssigneeIds []string `json:"evaluationAssigneeIds"`
         
         EvaluationAssigned bool `json:"evaluationAssigned"`
+        
+        AssistantIds []string `json:"assistantIds"`
+        
+        KnowledgeBaseIds []string `json:"knowledgeBaseIds"`
         *Alias
     }{
 
@@ -2457,6 +2477,16 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        AssistantIds: []string{""},
+        
+
+
+        
+        KnowledgeBaseIds: []string{""},
         
 
         Alias: (*Alias)(u),

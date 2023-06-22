@@ -1,17 +1,16 @@
 package models
 import (
-    "time"
     "encoding/json"
     "strconv"
     "strings"
 )
 
 var (
-    GuestcategoryresponseMarshalled = false
+    CategoryupdaterequestMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type GuestcategoryresponseDud struct { 
+type CategoryupdaterequestDud struct { 
     Id string `json:"id"`
 
 
@@ -21,21 +20,18 @@ type GuestcategoryresponseDud struct {
     
 
 
-    DateCreated time.Time `json:"dateCreated"`
+    
 
 
-    DateModified time.Time `json:"dateModified"`
-
-
-    ParentCategory Guestcategoryreference `json:"parentCategory"`
+    
 
 
     SelfUri string `json:"selfUri"`
 
 }
 
-// Guestcategoryresponse
-type Guestcategoryresponse struct { 
+// Categoryupdaterequest
+type Categoryupdaterequest struct { 
     
 
 
@@ -43,17 +39,16 @@ type Guestcategoryresponse struct {
     Name string `json:"name"`
 
 
-    // Description - The description for the category.
+    // ParentCategoryId - The category to which this category belongs.
+    ParentCategoryId string `json:"parentCategoryId"`
+
+
+    // Description
     Description string `json:"description"`
 
 
-    
-
-
-    
-
-
-    
+    // ExternalId - The external id associated with the category.
+    ExternalId string `json:"externalId"`
 
 
     
@@ -61,7 +56,9 @@ type Guestcategoryresponse struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Guestcategoryresponse) String() string {
+func (o *Categoryupdaterequest) String() string {
+    
+    
     
     
 
@@ -71,24 +68,25 @@ func (o *Guestcategoryresponse) String() string {
     return str
 }
 
-func (u *Guestcategoryresponse) MarshalJSON() ([]byte, error) {
-    type Alias Guestcategoryresponse
+func (u *Categoryupdaterequest) MarshalJSON() ([]byte, error) {
+    type Alias Categoryupdaterequest
 
-    if GuestcategoryresponseMarshalled {
+    if CategoryupdaterequestMarshalled {
         return []byte("{}"), nil
     }
-    GuestcategoryresponseMarshalled = true
+    CategoryupdaterequestMarshalled = true
 
     return json.Marshal(&struct {
         
         Name string `json:"name"`
         
+        ParentCategoryId string `json:"parentCategoryId"`
+        
         Description string `json:"description"`
+        
+        ExternalId string `json:"externalId"`
         *Alias
     }{
-
-        
-
 
         
 

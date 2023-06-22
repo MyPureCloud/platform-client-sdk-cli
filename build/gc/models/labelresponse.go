@@ -30,6 +30,9 @@ type LabelresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -59,12 +62,17 @@ type Labelresponse struct {
     DocumentCount int `json:"documentCount"`
 
 
+    // ExternalId - The external id associated with the label.
+    ExternalId string `json:"externalId"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Labelresponse) String() string {
+    
     
     
     
@@ -96,8 +104,13 @@ func (u *Labelresponse) MarshalJSON() ([]byte, error) {
         DateModified time.Time `json:"dateModified"`
         
         DocumentCount int `json:"documentCount"`
+        
+        ExternalId string `json:"externalId"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -161,6 +161,9 @@ type CallmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Callmediaparticipant
@@ -364,6 +367,10 @@ type Callmediaparticipant struct {
     // SecurePause - True when the recording of this call is in secure pause status.
     SecurePause bool `json:"securePause"`
 
+
+    // Disposition - Call resolution data for Dialer bulk make calls commands.
+    Disposition Disposition `json:"disposition"`
+
 }
 
 // String returns a JSON representation of the model
@@ -387,6 +394,7 @@ func (o *Callmediaparticipant) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
     
     
     
@@ -534,6 +542,8 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
         BargedTime time.Time `json:"bargedTime"`
         
         SecurePause bool `json:"securePause"`
+        
+        Disposition Disposition `json:"disposition"`
         *Alias
     }{
 
@@ -595,6 +605,9 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

@@ -102,7 +102,7 @@ type Bushorttermforecast struct {
 
 
     // Modifications - Any manual modifications applied to this forecast
-    Modifications []Buforecastmodification `json:"modifications"`
+    Modifications []Buforecastmodificationresponse `json:"modifications"`
 
 
     // GenerationResults - Generation result metadata
@@ -135,7 +135,7 @@ func (o *Bushorttermforecast) String() string {
     
     
      o.SourceDays = []Forecastsourcedaypointer{{}} 
-     o.Modifications = []Buforecastmodification{{}} 
+     o.Modifications = []Buforecastmodificationresponse{{}} 
     
     
     
@@ -173,7 +173,7 @@ func (u *Bushorttermforecast) MarshalJSON() ([]byte, error) {
         
         SourceDays []Forecastsourcedaypointer `json:"sourceDays"`
         
-        Modifications []Buforecastmodification `json:"modifications"`
+        Modifications []Buforecastmodificationresponse `json:"modifications"`
         
         GenerationResults Buforecastgenerationresult `json:"generationResults"`
         
@@ -218,7 +218,7 @@ func (u *Bushorttermforecast) MarshalJSON() ([]byte, error) {
 
 
         
-        Modifications: []Buforecastmodification{{}},
+        Modifications: []Buforecastmodificationresponse{{}},
         
 
 

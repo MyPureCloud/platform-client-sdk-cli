@@ -88,6 +88,7 @@ func Cmdknowledge_knowledgebases_documents() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "includeDrafts", "", "If includeDrafts is true, Documents in the draft state are also returned in the response.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "labelIds", "", "If specified, retrieves documents associated with label ids, comma separated values expected.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "The specified entity attributes will be filled. Comma separated values expected. Valid values: category, labels, variations")
+	utils.AddFlag(listCmd.Flags(), "[]string", "externalIds", "", "If specified, retrieves documents associated with external ids, comma separated values expected.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents", utils.FormatPermissions([]string{ "knowledge:document:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -404,6 +405,10 @@ var listCmd = &cobra.Command{
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
+		}
+		externalIds := utils.GetFlag(cmd.Flags(), "[]string", "externalIds")
+		if externalIds != "" {
+			queryParams["externalIds"] = externalIds
 		}
 		urlString := path
 		if len(queryParams) > 0 {

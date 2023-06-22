@@ -13,6 +13,9 @@ var (
 type ConsulttransferupdateDud struct { 
     
 
+
+    
+
 }
 
 // Consulttransferupdate
@@ -20,10 +23,15 @@ type Consulttransferupdate struct {
     // SpeakTo - Determines to whom the initiating participant is speaking.
     SpeakTo string `json:"speakTo"`
 
+
+    // ConsultingUserId - The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
+    ConsultingUserId string `json:"consultingUserId"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Consulttransferupdate) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Consulttransferupdate) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         SpeakTo string `json:"speakTo"`
+        
+        ConsultingUserId string `json:"consultingUserId"`
         *Alias
     }{
+
+        
+
 
         
 

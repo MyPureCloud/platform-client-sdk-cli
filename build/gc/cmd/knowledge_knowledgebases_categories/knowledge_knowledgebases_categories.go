@@ -33,7 +33,7 @@ func Cmdknowledge_knowledgebases_categories() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/CategoryRequest"
+        "$ref" : "#/components/schemas/CategoryCreateRequest"
       }
     }
   },
@@ -111,7 +111,7 @@ func Cmdknowledge_knowledgebases_categories() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/CategoryRequest"
+        "$ref" : "#/components/schemas/CategoryUpdateRequest"
       }
     }
   },
@@ -149,7 +149,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Categoryrequest{}
+			reqModel := models.Categorycreaterequest{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -452,7 +452,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Categoryrequest{}
+			reqModel := models.Categoryupdaterequest{}
 			utils.Render(reqModel.String())
 			
 			return

@@ -20,6 +20,9 @@ type LabelupdaterequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -37,12 +40,17 @@ type Labelupdaterequest struct {
     Color string `json:"color"`
 
 
+    // ExternalId - The external id associated with the label.
+    ExternalId string `json:"externalId"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Labelupdaterequest) String() string {
+    
     
     
 
@@ -65,8 +73,13 @@ func (u *Labelupdaterequest) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         Color string `json:"color"`
+        
+        ExternalId string `json:"externalId"`
         *Alias
     }{
+
+        
+
 
         
 

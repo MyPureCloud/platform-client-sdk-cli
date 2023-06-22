@@ -16,12 +16,19 @@ type ConsulttransferDud struct {
 
     
 
+
+    
+
 }
 
 // Consulttransfer
 type Consulttransfer struct { 
     // SpeakTo - Determines to whom the initiating participant is speaking. Defaults to DESTINATION
     SpeakTo string `json:"speakTo"`
+
+
+    // ConsultingUserId - The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
+    ConsultingUserId string `json:"consultingUserId"`
 
 
     // Destination - Destination phone number and name.
@@ -31,6 +38,7 @@ type Consulttransfer struct {
 
 // String returns a JSON representation of the model
 func (o *Consulttransfer) String() string {
+    
     
     
 
@@ -52,9 +60,14 @@ func (u *Consulttransfer) MarshalJSON() ([]byte, error) {
         
         SpeakTo string `json:"speakTo"`
         
+        ConsultingUserId string `json:"consultingUserId"`
+        
         Destination Destination `json:"destination"`
         *Alias
     }{
+
+        
+
 
         
 

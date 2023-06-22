@@ -32,6 +32,10 @@ type TransferrequestDud struct {
 
 // Transferrequest
 type Transferrequest struct { 
+    // TransferType
+    TransferType string `json:"transferType"`
+
+
     // UserId - The user ID of the transfer target.
     UserId string `json:"userId"`
 
@@ -50,10 +54,6 @@ type Transferrequest struct {
 
     // Voicemail - If true, transfer to the voicemail inbox of the participant that is being replaced.
     Voicemail bool `json:"voicemail"`
-
-
-    // TransferType - The type of transfer to perform.
-    TransferType string `json:"transferType"`
 
 }
 
@@ -82,6 +82,8 @@ func (u *Transferrequest) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        TransferType string `json:"transferType"`
+        
         UserId string `json:"userId"`
         
         Address string `json:"address"`
@@ -91,8 +93,6 @@ func (u *Transferrequest) MarshalJSON() ([]byte, error) {
         QueueId string `json:"queueId"`
         
         Voicemail bool `json:"voicemail"`
-        
-        TransferType string `json:"transferType"`
         *Alias
     }{
 

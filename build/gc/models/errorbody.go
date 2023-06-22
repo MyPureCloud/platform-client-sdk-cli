@@ -40,6 +40,9 @@ type ErrorbodyDud struct {
 
     
 
+
+    
+
 }
 
 // Errorbody
@@ -83,6 +86,10 @@ type Errorbody struct {
     // Errors
     Errors []Errorbody `json:"errors"`
 
+
+    // Limit
+    Limit Limit `json:"limit"`
+
 }
 
 // String returns a JSON representation of the model
@@ -97,6 +104,7 @@ func (o *Errorbody) String() string {
     
      o.Details = []Detail{{}} 
      o.Errors = []Errorbody{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -133,6 +141,8 @@ func (u *Errorbody) MarshalJSON() ([]byte, error) {
         Details []Detail `json:"details"`
         
         Errors []Errorbody `json:"errors"`
+        
+        Limit Limit `json:"limit"`
         *Alias
     }{
 
@@ -169,6 +179,9 @@ func (u *Errorbody) MarshalJSON() ([]byte, error) {
 
         
         Errors: []Errorbody{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

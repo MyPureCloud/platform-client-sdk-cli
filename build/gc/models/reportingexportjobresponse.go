@@ -105,6 +105,9 @@ type ReportingexportjobresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -230,6 +233,10 @@ type Reportingexportjobresponse struct {
     DurationFormat string `json:"durationFormat"`
 
 
+    // ExportAllowedToRerun - Indicates whether the export run is allowed to rerun
+    ExportAllowedToRerun bool `json:"exportAllowedToRerun"`
+
+
     // Enabled
     Enabled bool `json:"enabled"`
 
@@ -266,6 +273,7 @@ func (o *Reportingexportjobresponse) String() string {
     
      o.RecipientEmails = []string{""} 
      o.EmailStatuses = map[string]string{"": ""} 
+    
     
     
     
@@ -344,6 +352,8 @@ func (u *Reportingexportjobresponse) MarshalJSON() ([]byte, error) {
         IncludeDurationFormatInHeader bool `json:"includeDurationFormatInHeader"`
         
         DurationFormat string `json:"durationFormat"`
+        
+        ExportAllowedToRerun bool `json:"exportAllowedToRerun"`
         
         Enabled bool `json:"enabled"`
         *Alias
@@ -433,6 +443,9 @@ func (u *Reportingexportjobresponse) MarshalJSON() ([]byte, error) {
 
         
         EmailStatuses: map[string]string{"": ""},
+        
+
+
         
 
 

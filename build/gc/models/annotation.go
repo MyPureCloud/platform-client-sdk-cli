@@ -44,6 +44,15 @@ type AnnotationDud struct {
     
 
 
+    Reason string `json:"reason"`
+
+
+    Annotations []Annotation `json:"annotations"`
+
+
+    RealtimeLocation int `json:"realtimeLocation"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -91,6 +100,15 @@ type Annotation struct {
 
     // Description - Text of annotation. Maximum character limit is 500.
     Description string `json:"description"`
+
+
+    
+
+
+    
+
+
+    
 
 
     
@@ -147,6 +165,15 @@ func (u *Annotation) MarshalJSON() ([]byte, error) {
         Description string `json:"description"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

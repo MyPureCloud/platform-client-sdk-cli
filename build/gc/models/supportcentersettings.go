@@ -59,7 +59,7 @@ type Supportcentersettings struct {
 
 
     // EnabledCategories - Enabled article categories for support center
-    EnabledCategories []Addressableentityref `json:"enabledCategories"`
+    EnabledCategories []Supportcentercategory `json:"enabledCategories"`
 
 
     // StyleSetting - Style attributes for support center
@@ -78,7 +78,7 @@ func (o *Supportcentersettings) String() string {
      o.CustomMessages = []Supportcentercustommessage{{}} 
     
      o.Screens = []Supportcenterscreen{{}} 
-     o.EnabledCategories = []Addressableentityref{{}} 
+     o.EnabledCategories = []Supportcentercategory{{}} 
     
     
 
@@ -108,7 +108,7 @@ func (u *Supportcentersettings) MarshalJSON() ([]byte, error) {
         
         Screens []Supportcenterscreen `json:"screens"`
         
-        EnabledCategories []Addressableentityref `json:"enabledCategories"`
+        EnabledCategories []Supportcentercategory `json:"enabledCategories"`
         
         StyleSetting Supportcenterstylesetting `json:"styleSetting"`
         
@@ -136,7 +136,7 @@ func (u *Supportcentersettings) MarshalJSON() ([]byte, error) {
 
 
         
-        EnabledCategories: []Addressableentityref{{}},
+        EnabledCategories: []Supportcentercategory{{}},
         
 
 

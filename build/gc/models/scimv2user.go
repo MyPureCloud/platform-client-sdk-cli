@@ -41,7 +41,7 @@ type Scimv2userDud struct {
     
 
 
-    
+    Groups []Scimv2groupreference `json:"groups"`
 
 
     
@@ -97,8 +97,7 @@ type Scimv2user struct {
     ExternalId string `json:"externalId"`
 
 
-    // Groups - The list of groups that the user is a member of.
-    Groups []Scimv2groupreference `json:"groups"`
+    
 
 
     // Roles - The list of roles assigned to the user.
@@ -127,7 +126,6 @@ func (o *Scimv2user) String() string {
      o.PhoneNumbers = []Scimphonenumber{{}} 
      o.Emails = []Scimemail{{}} 
     
-     o.Groups = []Scimv2groupreference{{}} 
      o.Roles = []Scimuserrole{{}} 
     
     
@@ -163,8 +161,6 @@ func (u *Scimv2user) MarshalJSON() ([]byte, error) {
         Emails []Scimemail `json:"emails"`
         
         ExternalId string `json:"externalId"`
-        
-        Groups []Scimv2groupreference `json:"groups"`
         
         Roles []Scimuserrole `json:"roles"`
         
@@ -208,8 +204,6 @@ func (u *Scimv2user) MarshalJSON() ([]byte, error) {
         
 
 
-        
-        Groups: []Scimv2groupreference{{}},
         
 
 

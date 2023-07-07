@@ -16,6 +16,9 @@ type SupportcenterherostyleDud struct {
 
     
 
+
+    
+
 }
 
 // Supportcenterherostyle
@@ -27,10 +30,15 @@ type Supportcenterherostyle struct {
     // TextColor - Text color for hero section, in hexadecimal format, eg #ffffff
     TextColor string `json:"textColor"`
 
+
+    // Image - Background image for hero section
+    Image Supportcenterimage `json:"image"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Supportcenterherostyle) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Supportcenterherostyle) MarshalJSON() ([]byte, error) {
         BackgroundColor string `json:"backgroundColor"`
         
         TextColor string `json:"textColor"`
+        
+        Image Supportcenterimage `json:"image"`
         *Alias
     }{
+
+        
+
 
         
 

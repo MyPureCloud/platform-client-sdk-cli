@@ -25,11 +25,14 @@ type DocumentbodyblockDud struct {
 
     
 
+
+    
+
 }
 
 // Documentbodyblock
 type Documentbodyblock struct { 
-    // VarType - The type of the block for the body. This determines which body block object (paragraph, list, video or image) would have a value.
+    // VarType - The type of the block for the body. This determines which body block object (paragraph, list, video, image or table) would have a value.
     VarType string `json:"type"`
 
 
@@ -48,10 +51,15 @@ type Documentbodyblock struct {
     // List - List. It must contain a value if the type of the block is UnorderedList or OrderedList.
     List Documentbodylist `json:"list"`
 
+
+    // Table - Table. It must contain a value if type of the block is Table.
+    Table Documentbodytable `json:"table"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Documentbodyblock) String() string {
+    
     
     
     
@@ -83,8 +91,13 @@ func (u *Documentbodyblock) MarshalJSON() ([]byte, error) {
         Video Documentbodyvideo `json:"video"`
         
         List Documentbodylist `json:"list"`
+        
+        Table Documentbodytable `json:"table"`
         *Alias
     }{
+
+        
+
 
         
 

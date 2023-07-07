@@ -1811,6 +1811,14 @@ gc/models/documentbodylistblockproperties.go
 gc/models/documentbodylistitemproperties.go
 gc/models/documentbodyparagraph.go
 gc/models/documentbodyparagraphproperties.go
+gc/models/documentbodytable.go
+gc/models/documentbodytablecaptionblock.go
+gc/models/documentbodytablecaptionitem.go
+gc/models/documentbodytablecellblock.go
+gc/models/documentbodytablecellblockproperties.go
+gc/models/documentbodytableproperties.go
+gc/models/documentbodytablerowblock.go
+gc/models/documentbodytablerowblockproperties.go
 gc/models/documentbodyvideo.go
 gc/models/documentbodyvideoproperties.go
 gc/models/documentcategoryinput.go
@@ -1824,6 +1832,7 @@ gc/models/documentqueryclause.go
 gc/models/documentqueryinterval.go
 gc/models/documentquerypredicate.go
 gc/models/documentreference.go
+gc/models/documenttablecontentblock.go
 gc/models/documenttext.go
 gc/models/documenttextproperties.go
 gc/models/documentthumbnail.go
@@ -1912,7 +1921,8 @@ gc/models/emailmediaparticipant.go
 gc/models/emailmediapolicy.go
 gc/models/emailmediapolicyconditions.go
 gc/models/emailmessage.go
-gc/models/emailmessagelisting.go
+gc/models/emailmessagepreview.go
+gc/models/emailmessagepreviewlisting.go
 gc/models/emailmessagereply.go
 gc/models/emailoutbounddomainresult.go
 gc/models/emailsetup.go
@@ -1970,14 +1980,11 @@ gc/models/evaluationsource.go
 gc/models/evaluationversion.go
 gc/models/evaluatoractivity.go
 gc/models/evaluatoractivityentitylisting.go
-gc/models/eventcobrowse.go
 gc/models/eventcondition.go
 gc/models/eventerror.go
 gc/models/eventlog.go
 gc/models/eventmessage.go
-gc/models/eventpresence.go
 gc/models/eventsetting.go
-gc/models/eventtyping.go
 gc/models/executerecordingjobsquery.go
 gc/models/expandablewebdeployment.go
 gc/models/expandablewebdeploymententitylisting.go
@@ -2477,7 +2484,6 @@ gc/models/messageconversationentitylisting.go
 gc/models/messagedata.go
 gc/models/messagedetails.go
 gc/models/messageevaluation.go
-gc/models/messageevent.go
 gc/models/messageinfo.go
 gc/models/messagemedia.go
 gc/models/messagemediaattachment.go
@@ -2771,6 +2777,7 @@ gc/models/provisioninfo.go
 gc/models/publishdraftinput.go
 gc/models/publishedsurveyformreference.go
 gc/models/publishform.go
+gc/models/publishscriptrequestdata.go
 gc/models/punctualityevent.go
 gc/models/purecloud.go
 gc/models/pureengage.go
@@ -3123,10 +3130,13 @@ gc/models/subscriberresponse.go
 gc/models/subscriptionoverviewusage.go
 gc/models/suggestsearchcriteria.go
 gc/models/suggestsearchrequest.go
+gc/models/supportcentercategory.go
 gc/models/supportcentercustommessage.go
 gc/models/supportcenterfeedbacksettings.go
 gc/models/supportcenterglobalstyle.go
 gc/models/supportcenterherostyle.go
+gc/models/supportcenterimage.go
+gc/models/supportcenterimagesource.go
 gc/models/supportcentermodulesetting.go
 gc/models/supportcenterscreen.go
 gc/models/supportcentersettings.go

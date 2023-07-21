@@ -91,8 +91,8 @@ func (c *commandService) Stream(uri string) (string, error) {
 
 	switch determinePaginationStyle(firstPage) {
 	case cursorPagination:
-		cursor := getCursor(firstPage)
-		pagedURI := updateCursorPagingURI(uri, cursor)
+		cursor, cursorQueryParamName := getCursorAndQueryParamName(firstPage)
+		pagedURI := updateCursorPagingURI(uri, cursorQueryParamName, cursor)
 		for ok := true; ok; ok = cursor != "" {
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
@@ -114,11 +114,11 @@ func (c *commandService) Stream(uri string) (string, error) {
 			pageDataMap[data] = true
 
 			utils.Render(data)
-			cursor = getCursor(pageData)
+			cursor, _ = getCursorAndQueryParamName(pageData)
 			if pageData.NextUri != "" {
 				pagedURI = pageData.NextUri
 			} else {
-				pagedURI = updateCursorPagingURI(pagedURI, cursor)
+				pagedURI = updateCursorPagingURI(pagedURI, cursorQueryParamName, cursor)
 			}
 		}
 		break
@@ -227,8 +227,8 @@ func (c *commandService) List(uri string) (string, error) {
 	//Looks up the rest of the pages
 	switch determinePaginationStyle(firstPage) {
 	case cursorPagination:
-		cursor := getCursor(firstPage)
-		pagedURI := updateCursorPagingURI(uri, cursor)
+		cursor, cursorQueryParamName := getCursorAndQueryParamName(firstPage)
+		pagedURI := updateCursorPagingURI(uri, cursorQueryParamName, cursor)
 		for ok := true; ok; ok = cursor != "" {
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
@@ -251,11 +251,11 @@ func (c *commandService) List(uri string) (string, error) {
 			for _, val := range getPageObjects(pageData) {
 				totalResults = append(totalResults, string(val))
 			}
-			cursor = getCursor(pageData)
+			cursor, _ = getCursorAndQueryParamName(pageData)
 			if pageData.NextUri != "" {
 				pagedURI = pageData.NextUri
 			} else {
-				pagedURI = updateCursorPagingURI(pagedURI, cursor)
+				pagedURI = updateCursorPagingURI(pagedURI, cursorQueryParamName, cursor)
 			}
 		}
 		break
@@ -336,20 +336,28 @@ func (c *commandService) List(uri string) (string, error) {
 	return finalJSONString, nil
 }
 
-func getCursor(entities *models.Entities) string {
+/* Get the cursor that points to the next item and the query param name (could be 'cursor' or 'after') */
+func getCursorAndQueryParamName(entities *models.Entities) (string, string) {
+	var (
+		cursor = "cursor"
+		after  = "after"
+	)
 	if entities.Cursor != "" {
-		return entities.Cursor
+		return entities.Cursor, cursor
 	}
 
 	if entities.NextUri != "" {
 		u, _ := url.Parse(entities.NextUri)
 		m, _ := url.ParseQuery(u.RawQuery)
-		if cursorArray, ok := m["cursor"]; ok && len(cursorArray) > 0 {
-			return cursorArray[0]
+		if cursorArray, ok := m[cursor]; ok && len(cursorArray) > 0 {
+			return cursorArray[0], cursor
+		}
+		if afterArray, ok := m[after]; ok && len(afterArray) > 0 {
+			return afterArray[0], after
 		}
 	}
 
-	return entities.Cursors.After
+	return entities.Cursors.After, after
 }
 
 func getPageObjects(entities *models.Entities) []json.RawMessage {
@@ -364,16 +372,16 @@ func getPageObjects(entities *models.Entities) []json.RawMessage {
 	return entities.Conversations
 }
 
-func updateCursorPagingURI(pagedURI, cursor string) string {
-	if strings.Contains(pagedURI, "cursor=") {
-		re := regexp.MustCompile("cursor=([^&]*)")
+func updateCursorPagingURI(pagedURI, paramName, cursor string) string {
+	if strings.Contains(pagedURI, paramName+"=") {
+		re := regexp.MustCompile(paramName + "=([^&]*)")
 		result := re.FindStringSubmatch(pagedURI)
-		pagedURI = strings.Replace(pagedURI, result[0], fmt.Sprintf("cursor=%v", url.QueryEscape(cursor)), 1)
+		pagedURI = strings.Replace(pagedURI, result[0], fmt.Sprintf("%s=%v", paramName, url.QueryEscape(cursor)), 1)
 	} else {
 		if strings.Contains(pagedURI, "?") {
-			pagedURI = fmt.Sprintf("%s&cursor=%s", pagedURI, url.QueryEscape(cursor))
+			pagedURI = fmt.Sprintf("%s&%s=%s", pagedURI, paramName, url.QueryEscape(cursor))
 		} else {
-			pagedURI = fmt.Sprintf("%s?cursor=%s", pagedURI, url.QueryEscape(cursor))
+			pagedURI = fmt.Sprintf("%s?%s=%s", pagedURI, paramName, url.QueryEscape(cursor))
 		}
 	}
 
@@ -383,7 +391,7 @@ func updateCursorPagingURI(pagedURI, cursor string) string {
 func determinePaginationStyle(entities *models.Entities) paginationStyle {
 	if entities.Cursor != "" ||
 		entities.Cursors.After != "" ||
-		(entities.NextUri != "" && strings.Contains(entities.NextUri, "cursor")) {
+		(entities.NextUri != "" && (strings.Contains(entities.NextUri, "cursor") || strings.Contains(entities.NextUri, "after"))) {
 		return cursorPagination
 	}
 

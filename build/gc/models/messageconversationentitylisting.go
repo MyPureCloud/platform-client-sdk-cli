@@ -45,7 +45,7 @@ type MessageconversationentitylistingDud struct {
 // Messageconversationentitylisting
 type Messageconversationentitylisting struct { 
     // Entities
-    Entities []Emailconversation `json:"entities"`
+    Entities []Messageconversation `json:"entities"`
 
 
     // PageSize
@@ -87,7 +87,7 @@ type Messageconversationentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Messageconversationentitylisting) String() string {
-     o.Entities = []Emailconversation{{}} 
+     o.Entities = []Messageconversation{{}} 
     
     
     
@@ -114,7 +114,7 @@ func (u *Messageconversationentitylisting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Entities []Emailconversation `json:"entities"`
+        Entities []Messageconversation `json:"entities"`
         
         PageSize int `json:"pageSize"`
         
@@ -137,7 +137,7 @@ func (u *Messageconversationentitylisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Emailconversation{{}},
+        Entities: []Messageconversation{{}},
         
 
 

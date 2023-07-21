@@ -117,6 +117,9 @@ type CreatequeuerequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -255,6 +258,10 @@ type Createqueuerequest struct {
     PeerId string `json:"peerId"`
 
 
+    // SuppressInQueueCallRecording - Indicates whether recording in-queue calls is suppressed for this queue.
+    SuppressInQueueCallRecording bool `json:"suppressInQueueCallRecording"`
+
+
     // SourceQueueId - The id of an existing queue to copy the settings (does not include GPR settings) from when creating a new queue.
     SourceQueueId string `json:"sourceQueueId"`
 
@@ -292,6 +299,7 @@ func (o *Createqueuerequest) String() string {
     
     
      o.DefaultScripts = map[string]Script{"": {}} 
+    
     
     
     
@@ -372,6 +380,8 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
         OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
         
         PeerId string `json:"peerId"`
+        
+        SuppressInQueueCallRecording bool `json:"suppressInQueueCallRecording"`
         
         SourceQueueId string `json:"sourceQueueId"`
         *Alias
@@ -473,6 +483,9 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
 
         
         DefaultScripts: map[string]Script{"": {}},
+        
+
+
         
 
 

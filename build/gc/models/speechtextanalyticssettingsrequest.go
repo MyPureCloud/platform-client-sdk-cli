@@ -16,6 +16,9 @@ type SpeechtextanalyticssettingsrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Speechtextanalyticssettingsrequest
@@ -27,12 +30,17 @@ type Speechtextanalyticssettingsrequest struct {
     // ExpectedDialects - Setting to choose expected dialects
     ExpectedDialects []string `json:"expectedDialects"`
 
+
+    // TextAnalyticsEnabled - Setting to enable/disable text analytics
+    TextAnalyticsEnabled bool `json:"textAnalyticsEnabled"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Speechtextanalyticssettingsrequest) String() string {
     
      o.ExpectedDialects = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,6 +61,8 @@ func (u *Speechtextanalyticssettingsrequest) MarshalJSON() ([]byte, error) {
         DefaultProgramId string `json:"defaultProgramId"`
         
         ExpectedDialects []string `json:"expectedDialects"`
+        
+        TextAnalyticsEnabled bool `json:"textAnalyticsEnabled"`
         *Alias
     }{
 
@@ -61,6 +71,9 @@ func (u *Speechtextanalyticssettingsrequest) MarshalJSON() ([]byte, error) {
 
         
         ExpectedDialects: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

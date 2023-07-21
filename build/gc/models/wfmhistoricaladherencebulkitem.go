@@ -46,7 +46,7 @@ type Wfmhistoricaladherencebulkitem struct {
     UserIds []string `json:"userIds"`
 
 
-    // IncludeExceptions - Whether user exceptions should be returned as part of the results. If not included, will default to false
+    // IncludeExceptions - Whether user exceptions should be returned as part of the results. Defaults to false if not specified.
     IncludeExceptions bool `json:"includeExceptions"`
 
 }

@@ -248,6 +248,12 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Analyticssession
@@ -488,6 +494,14 @@ type Analyticssession struct {
     RoutingRing int `json:"routingRing"`
 
 
+    // RoutingRule - Routing rule for preferred, conditional and predictive routing type
+    RoutingRule string `json:"routingRule"`
+
+
+    // RoutingRuleType - Routing rule type
+    RoutingRuleType string `json:"routingRuleType"`
+
+
     // ScreenShareAddressSelf - Direct ScreenShare address
     ScreenShareAddressSelf string `json:"screenShareAddressSelf"`
 
@@ -544,12 +558,12 @@ type Analyticssession struct {
     WaitingInteractionCounts []int `json:"waitingInteractionCounts"`
 
 
-    // ProposedAgents - Proposed agents
-    ProposedAgents []Analyticsproposedagent `json:"proposedAgents"`
-
-
     // AgentGroups - Conditional group routing agent groups
     AgentGroups []Analyticsagentgroup `json:"agentGroups"`
+
+
+    // ProposedAgents - Proposed agents
+    ProposedAgents []Analyticsproposedagent `json:"proposedAgents"`
 
 
     // MediaEndpointStats - MediaEndpointStats associated with this session
@@ -643,9 +657,11 @@ func (o *Analyticssession) String() string {
     
     
     
+    
+    
      o.WaitingInteractionCounts = []int{0} 
-     o.ProposedAgents = []Analyticsproposedagent{{}} 
      o.AgentGroups = []Analyticsagentgroup{{}} 
+     o.ProposedAgents = []Analyticsproposedagent{{}} 
      o.MediaEndpointStats = []Analyticsmediaendpointstat{{}} 
     
      o.Metrics = []Analyticssessionmetric{{}} 
@@ -785,6 +801,10 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         
         RoutingRing int `json:"routingRing"`
         
+        RoutingRule string `json:"routingRule"`
+        
+        RoutingRuleType string `json:"routingRuleType"`
+        
         ScreenShareAddressSelf string `json:"screenShareAddressSelf"`
         
         ScreenShareRoomId string `json:"screenShareRoomId"`
@@ -813,9 +833,9 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         
         WaitingInteractionCounts []int `json:"waitingInteractionCounts"`
         
-        ProposedAgents []Analyticsproposedagent `json:"proposedAgents"`
-        
         AgentGroups []Analyticsagentgroup `json:"agentGroups"`
+        
+        ProposedAgents []Analyticsproposedagent `json:"proposedAgents"`
         
         MediaEndpointStats []Analyticsmediaendpointstat `json:"mediaEndpointStats"`
         
@@ -1060,17 +1080,23 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
+
+
+        
         WaitingInteractionCounts: []int{0},
         
 
 
         
-        ProposedAgents: []Analyticsproposedagent{{}},
-        
-
-
-        
         AgentGroups: []Analyticsagentgroup{{}},
+        
+
+
+        
+        ProposedAgents: []Analyticsproposedagent{{}},
         
 
 

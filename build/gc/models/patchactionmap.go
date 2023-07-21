@@ -54,6 +54,9 @@ type PatchactionmapDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -99,8 +102,12 @@ type Patchactionmap struct {
     TriggerWithOutcomeProbabilityConditions []Outcomeprobabilitycondition `json:"triggerWithOutcomeProbabilityConditions"`
 
 
-    // TriggerWithOutcomePercentileConditions - Percentile conditions for outcomes that must be satisfied to trigger the action map.
+    // TriggerWithOutcomePercentileConditions - (deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.
     TriggerWithOutcomePercentileConditions []Outcomepercentilecondition `json:"triggerWithOutcomePercentileConditions"`
+
+
+    // TriggerWithOutcomeQuantileConditions - Quantile conditions for outcomes that must be satisfied to trigger the action map.
+    TriggerWithOutcomeQuantileConditions []Outcomequantilecondition `json:"triggerWithOutcomeQuantileConditions"`
 
 
     // PageUrlConditions - URL conditions that a page must match for web actions to be displayable.
@@ -156,6 +163,7 @@ func (o *Patchactionmap) String() string {
      o.TriggerWithEventConditions = []Eventcondition{{}} 
      o.TriggerWithOutcomeProbabilityConditions = []Outcomeprobabilitycondition{{}} 
      o.TriggerWithOutcomePercentileConditions = []Outcomepercentilecondition{{}} 
+     o.TriggerWithOutcomeQuantileConditions = []Outcomequantilecondition{{}} 
      o.PageUrlConditions = []Urlcondition{{}} 
     
     
@@ -196,6 +204,8 @@ func (u *Patchactionmap) MarshalJSON() ([]byte, error) {
         TriggerWithOutcomeProbabilityConditions []Outcomeprobabilitycondition `json:"triggerWithOutcomeProbabilityConditions"`
         
         TriggerWithOutcomePercentileConditions []Outcomepercentilecondition `json:"triggerWithOutcomePercentileConditions"`
+        
+        TriggerWithOutcomeQuantileConditions []Outcomequantilecondition `json:"triggerWithOutcomeQuantileConditions"`
         
         PageUrlConditions []Urlcondition `json:"pageUrlConditions"`
         
@@ -248,6 +258,11 @@ func (u *Patchactionmap) MarshalJSON() ([]byte, error) {
 
         
         TriggerWithOutcomePercentileConditions: []Outcomepercentilecondition{{}},
+        
+
+
+        
+        TriggerWithOutcomeQuantileConditions: []Outcomequantilecondition{{}},
         
 
 

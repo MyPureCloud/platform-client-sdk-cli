@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdlicense_toggles() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/license/toggles/{featureName}", utils.FormatPermissions([]string{ "authorization:grant:add",  }), utils.GenerateDevCentreLink("POST", "License", "/api/v2/license/toggles/{featureName}")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/license/toggles/{featureName}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "License", "/api/v2/license/toggles/{featureName}")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -43,7 +43,7 @@ func Cmdlicense_toggles() *cobra.Command {
 }`)
 	license_togglesCmd.AddCommand(createCmd)
 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/license/toggles/{featureName}", utils.FormatPermissions([]string{ "authorization:grant:add",  }), utils.GenerateDevCentreLink("GET", "License", "/api/v2/license/toggles/{featureName}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/license/toggles/{featureName}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "License", "/api/v2/license/toggles/{featureName}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -67,8 +67,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create [featureName]",
-	Short: "Switch PureCloud license feature toggle value.",
-	Long:  "Switch PureCloud license feature toggle value.",
+	Short: "Deprecated. No alternative required - this endpoint has no effect",
+	Long:  "Deprecated. No alternative required - this endpoint has no effect",
 	Args:  utils.DetermineArgs([]string{ "featureName", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -132,8 +132,8 @@ var createCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [featureName]",
-	Short: "Get PureCloud license feature toggle value.",
-	Long:  "Get PureCloud license feature toggle value.",
+	Short: "Deprecated - no alternative required. This operation will always return `true` for requested toggles",
+	Long:  "Deprecated - no alternative required. This operation will always return `true` for requested toggles",
 	Args:  utils.DetermineArgs([]string{ "featureName", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

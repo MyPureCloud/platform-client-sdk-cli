@@ -43,7 +43,7 @@ func Cmdtelephony_providers_edges_metrics() *cobra.Command {
 }`)
 	telephony_providers_edges_metricsCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "string", "edgeIds", "", "Comma separated list of Edge Id`s - REQUIRED")
+	utils.AddFlag(listCmd.Flags(), "string", "edgeIds", "", "Comma separated list of Edge Id`s. Maximum of 100 edge ids allowed. - REQUIRED")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/metrics", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/metrics")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("edgeIds")

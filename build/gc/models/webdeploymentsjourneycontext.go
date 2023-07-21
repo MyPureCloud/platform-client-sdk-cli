@@ -16,10 +16,17 @@ type WebdeploymentsjourneycontextDud struct {
 
     
 
+
+    
+
 }
 
 // Webdeploymentsjourneycontext
 type Webdeploymentsjourneycontext struct { 
+    // JourneyAction - A subset of the Journey System's action data relevant to a part of a conversation (for external linkage and internal usage/context)
+    JourneyAction Journeyaction `json:"journeyAction"`
+
+
     // Customer - Journey customer information. Used for linking the authenticated customer with the journey. 
     Customer Journeycustomer `json:"customer"`
 
@@ -31,6 +38,7 @@ type Webdeploymentsjourneycontext struct {
 
 // String returns a JSON representation of the model
 func (o *Webdeploymentsjourneycontext) String() string {
+    
     
     
 
@@ -50,11 +58,16 @@ func (u *Webdeploymentsjourneycontext) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        JourneyAction Journeyaction `json:"journeyAction"`
+        
         Customer Journeycustomer `json:"customer"`
         
         CustomerSession Journeycustomersession `json:"customerSession"`
         *Alias
     }{
+
+        
+
 
         
 

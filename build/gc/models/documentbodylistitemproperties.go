@@ -28,6 +28,12 @@ type DocumentbodylistitempropertiesDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Documentbodylistitemproperties
@@ -55,10 +61,20 @@ type Documentbodylistitemproperties struct {
     // TextColor - The text color for the list item. The valid values in hex color code representation. For example black color - #000000
     TextColor string `json:"textColor"`
 
+
+    // UnorderedType - The type of icon for the unordered list.
+    UnorderedType string `json:"unorderedType"`
+
+
+    // OrderedType - The type of icon for the ordered list.
+    OrderedType string `json:"orderedType"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Documentbodylistitemproperties) String() string {
+    
+    
     
     
     
@@ -93,8 +109,18 @@ func (u *Documentbodylistitemproperties) MarshalJSON() ([]byte, error) {
         FontType string `json:"fontType"`
         
         TextColor string `json:"textColor"`
+        
+        UnorderedType string `json:"unorderedType"`
+        
+        OrderedType string `json:"orderedType"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

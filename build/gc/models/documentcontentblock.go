@@ -19,6 +19,9 @@ type DocumentcontentblockDud struct {
 
     
 
+
+    
+
 }
 
 // Documentcontentblock
@@ -34,10 +37,15 @@ type Documentcontentblock struct {
     // Image - Image. It must contain a value if the type of the block is Image.
     Image Documentbodyimage `json:"image"`
 
+
+    // Video - Video. It must contain a value if the type of the block is Video.
+    Video Documentbodyvideo `json:"video"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Documentcontentblock) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Documentcontentblock) MarshalJSON() ([]byte, error) {
         Text Documenttext `json:"text"`
         
         Image Documentbodyimage `json:"image"`
+        
+        Video Documentbodyvideo `json:"video"`
         *Alias
     }{
+
+        
+
 
         
 

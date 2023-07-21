@@ -114,6 +114,9 @@ type QueuerequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -252,6 +255,10 @@ type Queuerequest struct {
     PeerId string `json:"peerId"`
 
 
+    // SuppressInQueueCallRecording - Indicates whether recording in-queue calls is suppressed for this queue.
+    SuppressInQueueCallRecording bool `json:"suppressInQueueCallRecording"`
+
+
     
 
 }
@@ -285,6 +292,7 @@ func (o *Queuerequest) String() string {
     
     
      o.DefaultScripts = map[string]Script{"": {}} 
+    
     
     
     
@@ -364,6 +372,8 @@ func (u *Queuerequest) MarshalJSON() ([]byte, error) {
         OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
         
         PeerId string `json:"peerId"`
+        
+        SuppressInQueueCallRecording bool `json:"suppressInQueueCallRecording"`
         *Alias
     }{
 
@@ -463,6 +473,9 @@ func (u *Queuerequest) MarshalJSON() ([]byte, error) {
 
         
         DefaultScripts: map[string]Script{"": {}},
+        
+
+
         
 
 

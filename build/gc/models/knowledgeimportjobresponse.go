@@ -39,6 +39,9 @@ type KnowledgeimportjobresponseDud struct {
     DateModified time.Time `json:"dateModified"`
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -75,12 +78,17 @@ type Knowledgeimportjobresponse struct {
     
 
 
+    // SkipConfirmationStep - If enabled pre-validation step will be skipped.
+    SkipConfirmationStep bool `json:"skipConfirmationStep"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgeimportjobresponse) String() string {
+    
     
     
     
@@ -106,8 +114,13 @@ func (u *Knowledgeimportjobresponse) MarshalJSON() ([]byte, error) {
         FileType string `json:"fileType"`
         
         Settings Knowledgeimportjobsettings `json:"settings"`
+        
+        SkipConfirmationStep bool `json:"skipConfirmationStep"`
         *Alias
     }{
+
+        
+
 
         
 

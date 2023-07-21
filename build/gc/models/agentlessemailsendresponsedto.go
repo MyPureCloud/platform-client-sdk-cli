@@ -57,7 +57,7 @@ type Agentlessemailsendresponsedto struct {
     FromAddress Emailaddress `json:"fromAddress"`
 
 
-    // ToAddresses - The recipient(s) of the message.
+    // ToAddresses - The recipient of the message. So far, only one recipient is allowed. This is a list, only for future usage.
     ToAddresses []Emailaddress `json:"toAddresses"`
 
 

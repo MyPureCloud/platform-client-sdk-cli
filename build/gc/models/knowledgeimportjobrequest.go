@@ -19,6 +19,9 @@ type KnowledgeimportjobrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgeimportjobrequest
@@ -34,10 +37,15 @@ type Knowledgeimportjobrequest struct {
     // Settings - Additional optional settings
     Settings Knowledgeimportjobsettings `json:"settings"`
 
+
+    // SkipConfirmationStep - If enabled pre-validation step will be skipped.
+    SkipConfirmationStep bool `json:"skipConfirmationStep"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgeimportjobrequest) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Knowledgeimportjobrequest) MarshalJSON() ([]byte, error) {
         FileType string `json:"fileType"`
         
         Settings Knowledgeimportjobsettings `json:"settings"`
+        
+        SkipConfirmationStep bool `json:"skipConfirmationStep"`
         *Alias
     }{
+
+        
+
 
         
 

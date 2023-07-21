@@ -25,6 +25,9 @@ type DocumentbodytablecaptionitemDud struct {
 
     
 
+
+    
+
 }
 
 // Documentbodytablecaptionitem
@@ -35,6 +38,10 @@ type Documentbodytablecaptionitem struct {
 
     // Text - Text. It must contain a value if the type of the block is Text.
     Text Documenttext `json:"text"`
+
+
+    // Paragraph - Paragraph. It must contain a value if the type of the block is Paragraph.
+    Paragraph Documentbodyparagraph `json:"paragraph"`
 
 
     // Image - Image. It must contain a value if the type of the block is Image.
@@ -52,6 +59,7 @@ type Documentbodytablecaptionitem struct {
 
 // String returns a JSON representation of the model
 func (o *Documentbodytablecaptionitem) String() string {
+    
     
     
     
@@ -78,6 +86,8 @@ func (u *Documentbodytablecaptionitem) MarshalJSON() ([]byte, error) {
         
         Text Documenttext `json:"text"`
         
+        Paragraph Documentbodyparagraph `json:"paragraph"`
+        
         Image Documentbodyimage `json:"image"`
         
         Video Documentbodyvideo `json:"video"`
@@ -85,6 +95,9 @@ func (u *Documentbodytablecaptionitem) MarshalJSON() ([]byte, error) {
         List Documentbodylist `json:"list"`
         *Alias
     }{
+
+        
+
 
         
 

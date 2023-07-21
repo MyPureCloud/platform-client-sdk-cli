@@ -16,6 +16,12 @@ type SupportcentermodulesettingDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Supportcentermodulesetting
@@ -27,10 +33,20 @@ type Supportcentermodulesetting struct {
     // Enabled - Whether or not support center screen module is enabled
     Enabled bool `json:"enabled"`
 
+
+    // CompactCategoryModuleTemplate - Compact category module template
+    CompactCategoryModuleTemplate Supportcentercompactcategorymoduletemplate `json:"compactCategoryModuleTemplate"`
+
+
+    // DetailedCategoryModuleTemplate - Detailed category module template
+    DetailedCategoryModuleTemplate Supportcenterdetailedcategorymoduletemplate `json:"detailedCategoryModuleTemplate"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Supportcentermodulesetting) String() string {
+    
+    
     
     
 
@@ -53,8 +69,18 @@ func (u *Supportcentermodulesetting) MarshalJSON() ([]byte, error) {
         VarType string `json:"type"`
         
         Enabled bool `json:"enabled"`
+        
+        CompactCategoryModuleTemplate Supportcentercompactcategorymoduletemplate `json:"compactCategoryModuleTemplate"`
+        
+        DetailedCategoryModuleTemplate Supportcenterdetailedcategorymoduletemplate `json:"detailedCategoryModuleTemplate"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

@@ -29,6 +29,8 @@ func init() {
 
 func Cmdknowledge_knowledgebases_unanswered_groups() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "app", "", "The app value to be used for filtering phrases. Valid values: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor")
+	utils.AddFlag(getCmd.Flags(), "time.Time", "dateStart", "", "The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+	utils.AddFlag(getCmd.Flags(), "time.Time", "dateEnd", "", "The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}", utils.FormatPermissions([]string{ "knowledge:groups:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -45,6 +47,8 @@ func Cmdknowledge_knowledgebases_unanswered_groups() *cobra.Command {
 	knowledge_knowledgebases_unanswered_groupsCmd.AddCommand(getCmd)
 
 	utils.AddFlag(listCmd.Flags(), "string", "app", "", "The app value to be used for filtering phrases. Valid values: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor")
+	utils.AddFlag(listCmd.Flags(), "time.Time", "dateStart", "", "The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+	utils.AddFlag(listCmd.Flags(), "time.Time", "dateEnd", "", "The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups", utils.FormatPermissions([]string{ "knowledge:groups:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -93,6 +97,14 @@ var getCmd = &cobra.Command{
 		app := utils.GetFlag(cmd.Flags(), "string", "app")
 		if app != "" {
 			queryParams["app"] = app
+		}
+		dateStart := utils.GetFlag(cmd.Flags(), "time.Time", "dateStart")
+		if dateStart != "" {
+			queryParams["dateStart"] = dateStart
+		}
+		dateEnd := utils.GetFlag(cmd.Flags(), "time.Time", "dateEnd")
+		if dateEnd != "" {
+			queryParams["dateEnd"] = dateEnd
 		}
 		urlString := path
 		if len(queryParams) > 0 {
@@ -162,6 +174,14 @@ var listCmd = &cobra.Command{
 		app := utils.GetFlag(cmd.Flags(), "string", "app")
 		if app != "" {
 			queryParams["app"] = app
+		}
+		dateStart := utils.GetFlag(cmd.Flags(), "time.Time", "dateStart")
+		if dateStart != "" {
+			queryParams["dateStart"] = dateStart
+		}
+		dateEnd := utils.GetFlag(cmd.Flags(), "time.Time", "dateEnd")
+		if dateEnd != "" {
+			queryParams["dateEnd"] = dateEnd
 		}
 		urlString := path
 		if len(queryParams) > 0 {

@@ -125,6 +125,7 @@ func Cmdrouting_queues_users() *cobra.Command {
     "client.failed.request" : "The client did not produce a request with valid end of stream signaling. This can be caused by poor network connection and/or client behavior.",
     "invalid.property" : "Value [%s] is not a valid property for object [%s]",
     "queue.size.limit" : "Adding all requested members would exceed queue member limit.",
+    "invalid.id" : "A non-UUID value was specified for an ID field.",
     "constraint.validation" : "%s",
     "invalid.value" : "Value [%s] is not valid for field type [%s]. Allowable values are: %s"
   }

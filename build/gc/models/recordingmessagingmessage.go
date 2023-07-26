@@ -47,6 +47,12 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Recordingmessagingmessage
@@ -98,6 +104,14 @@ type Recordingmessagingmessage struct {
     // Story - Ephemeral story content.
     Story Recordingcontentstory `json:"story"`
 
+
+    // Cards - List of cards offered for this message
+    Cards []Card `json:"cards"`
+
+
+    // ContentType - Indicates the content type for this message
+    ContentType string `json:"contentType"`
+
 }
 
 // String returns a JSON representation of the model
@@ -113,6 +127,8 @@ func (o *Recordingmessagingmessage) String() string {
      o.MessageStickerAttachments = []Messagestickerattachment{{}} 
      o.QuickReplies = []Quickreply{{}} 
     
+    
+     o.Cards = []Card{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -154,6 +170,10 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         ButtonResponse Buttonresponse `json:"buttonResponse"`
         
         Story Recordingcontentstory `json:"story"`
+        
+        Cards []Card `json:"cards"`
+        
+        ContentType string `json:"contentType"`
         *Alias
     }{
 
@@ -193,6 +213,14 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+        Cards: []Card{{}},
         
 
 

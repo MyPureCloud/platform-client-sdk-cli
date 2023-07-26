@@ -2382,6 +2382,9 @@ gc/models/learningassignmentreassign.go
 gc/models/learningassignmentreference.go
 gc/models/learningassignmentreschedule.go
 gc/models/learningassignmentsdomainentity.go
+gc/models/learningassignmentstep.go
+gc/models/learningassignmentstepscostructure.go
+gc/models/learningassignmentstepsignedcookie.go
 gc/models/learningassignmentupdate.go
 gc/models/learningassignmentuser.go
 gc/models/learningassignmentuserlisting.go
@@ -2404,6 +2407,7 @@ gc/models/learningmodulesdomainentitylisting.go
 gc/models/learningmodulesummary.go
 gc/models/learningscheduleslotsqueryrequest.go
 gc/models/learningscheduleslotsqueryresponse.go
+gc/models/learningshareablecontentobject.go
 gc/models/learningslot.go
 gc/models/learningslotfulldaytimeoffmarker.go
 gc/models/learningslotscheduleactivity.go
@@ -3178,7 +3182,6 @@ gc/models/supportcentersettings.go
 gc/models/supportcenterstylesetting.go
 gc/models/supportedcontent.go
 gc/models/supportedcontentlisting.go
-gc/models/supportedcontentprofile.go
 gc/models/supportedcontentreference.go
 gc/models/supporteddialectsentitylisting.go
 gc/models/supportedlanguage.go

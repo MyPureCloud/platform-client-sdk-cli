@@ -523,6 +523,12 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1171,12 +1177,20 @@ type Viewfilter struct {
     WorkitemStatuses []string `json:"workitemStatuses"`
 
 
-    // IsAnalyzedForSensitiveData - Filter to indicate the transcript has been analyzed for sensitive data.
+    // IsAnalyzedForSensitiveData - Deprecated - Use hasPciData or hasPiiData instead.
     IsAnalyzedForSensitiveData bool `json:"isAnalyzedForSensitiveData"`
 
 
-    // HasSensitiveData - Filter to indicate the transcript contains sensitive data.
+    // HasSensitiveData - Deprecated. Use hasPciData or hasPiiData instead.
     HasSensitiveData bool `json:"hasSensitiveData"`
+
+
+    // HasPciData - Filter to indicate the transcript contains Pci data.
+    HasPciData bool `json:"hasPciData"`
+
+
+    // HasPiiData - Filter to indicate the transcript contains Pii data.
+    HasPiiData bool `json:"hasPiiData"`
 
 
     // SubPath - Filter for Sub Path
@@ -1375,6 +1389,8 @@ func (o *Viewfilter) String() string {
      o.WorkitemIds = []string{""} 
      o.WorkitemAssigneeIds = []string{""} 
      o.WorkitemStatuses = []string{""} 
+    
+    
     
     
     
@@ -1727,6 +1743,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         IsAnalyzedForSensitiveData bool `json:"isAnalyzedForSensitiveData"`
         
         HasSensitiveData bool `json:"hasSensitiveData"`
+        
+        HasPciData bool `json:"hasPciData"`
+        
+        HasPiiData bool `json:"hasPiiData"`
         
         SubPath string `json:"subPath"`
         
@@ -2464,6 +2484,12 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         WorkitemStatuses: []string{""},
+        
+
+
+        
+
+
         
 
 

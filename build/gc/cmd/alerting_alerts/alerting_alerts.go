@@ -52,6 +52,30 @@ func Cmdalerting_alerts() *cobra.Command {
 }`)
 	alerting_alertsCmd.AddCommand(getCmd)
 
+	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/alerting/alerts/{alertId}", utils.FormatPermissions([]string{ "alerting:alert:edit",  }), utils.GenerateDevCentreLink("PATCH", "Alerting", "/api/v2/alerting/alerts/{alertId}")))
+	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AlertRequest"
+      }
+    }
+  },
+  "required" : false
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(patchCmd.Flags(), "PATCH", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CommonAlert"
+      }
+    }
+  }
+}`)
+	alerting_alertsCmd.AddCommand(patchCmd)
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/alerting/alerts/{alertId}", utils.FormatPermissions([]string{ "alerting:alert:edit",  }), utils.GenerateDevCentreLink("PUT", "Alerting", "/api/v2/alerting/alerts/{alertId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "content" : {
@@ -70,30 +94,6 @@ func Cmdalerting_alerts() *cobra.Command {
     "application/json" : {
       "schema" : {
         "$ref" : "#/components/schemas/UnreadStatus"
-      }
-    }
-  }
-}`)
-	alerting_alertsCmd.AddCommand(updateCmd)
-
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/alerting/alerts/{alertId}", utils.FormatPermissions([]string{ "alerting:alert:edit",  }), utils.GenerateDevCentreLink("PATCH", "Alerting", "/api/v2/alerting/alerts/{alertId}")))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/AlertRequest"
-      }
-    }
-  },
-  "required" : false
-}`)
-	
-	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  "description" : "successful operation",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/CommonAlert"
       }
     }
   }
@@ -237,6 +237,74 @@ var getCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
+var patchCmd = &cobra.Command{
+	Use:   "patch [alertId]",
+	Short: "Allows an entity to mute/snooze an alert or update the unread status of the alert.",
+	Long:  "Allows an entity to mute/snooze an alert or update the unread status of the alert.",
+	Args:  utils.DetermineArgs([]string{ "alertId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Alertrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/alerting/alerts/{alertId}"
+		alertId, args := args[0], args[1:]
+		path = strings.Replace(path, "{alertId}", fmt.Sprintf("%v", alertId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		const opId = "patch"
+		const httpMethod = "PATCH"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
 var updateCmd = &cobra.Command{
 	Use:   "update [alertId]",
 	Short: "Update an alert read status",
@@ -276,74 +344,6 @@ var updateCmd = &cobra.Command{
 
 		const opId = "update"
 		const httpMethod = "PUT"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
-		// TODO read from config file
-		retryConfig := &retry.RetryConfiguration{
-			RetryWaitMin: 5 * time.Second,
-			RetryWaitMax: 60 * time.Second,
-			RetryMax:     20,
-		}
-		results, err := retryFunc(retryConfig)
-		if err != nil {
-			if httpMethod == "HEAD" {
-				if httpErr, ok := err.(models.HttpStatusError); ok {
-					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
-				}
-			}
-			logger.Fatal(err)
-		}
-
-		filterCondition, _ := cmd.Flags().GetString("filtercondition")
-		if filterCondition != "" {
-			filteredResults, err := utils.FilterByCondition(results, filterCondition)
-			if err != nil {
-				logger.Fatal(err)
-			}
-			results = filteredResults
-		}
-
-		utils.Render(results)
-	},
-}
-var updateCmd = &cobra.Command{
-	Use:   "update [alertId]",
-	Short: "Allows an entity to mute/snooze an alert or update the unread status of the alert.",
-	Long:  "Allows an entity to mute/snooze an alert or update the unread status of the alert.",
-	Args:  utils.DetermineArgs([]string{ "alertId", }),
-
-	Run: func(cmd *cobra.Command, args []string) {
-		_ = models.Entities{}
-
-		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
-		if printReqBody {
-			
-			reqModel := models.Alertrequest{}
-			utils.Render(reqModel.String())
-			
-			return
-		}
-
-		queryParams := make(map[string]string)
-
-		path := "/api/v2/alerting/alerts/{alertId}"
-		alertId, args := args[0], args[1:]
-		path = strings.Replace(path, "{alertId}", fmt.Sprintf("%v", alertId), -1)
-
-		urlString := path
-		if len(queryParams) > 0 {
-			urlString = fmt.Sprintf("%v?", path)
-			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
-			}
-			urlString = strings.TrimSuffix(urlString, "&")
-		}
-
-		if strings.Contains(urlString, "varType") {
-			urlString = strings.Replace(urlString, "varType", "type", -1)
-		}
-
-		const opId = "update"
-		const httpMethod = "PATCH"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

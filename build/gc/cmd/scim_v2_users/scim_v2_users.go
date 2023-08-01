@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdscim_v2_users() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/scim/v2/users", utils.FormatPermissions([]string{ "directory:user:add", "authorization:grant:add", "authorization:grant:delete", "routing:skill:assign", "routing:language:assign",  }), utils.GenerateDevCentreLink("POST", "SCIM", "/api/v2/scim/v2/users")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/scim/v2/users", utils.FormatPermissions([]string{ "directory:user:add", "authorization:grant:add", "authorization:grant:delete", "routing:skill:assign", "routing:language:assign", "telephony:extension:assign",  }), utils.GenerateDevCentreLink("POST", "SCIM", "/api/v2/scim/v2/users")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "The information used to create a user.",
   "content" : {
@@ -130,7 +130,7 @@ func Cmdscim_v2_users() *cobra.Command {
 }`)
 	scim_v2_usersCmd.AddCommand(listCmd)
 
-	modifyCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", modifyCmd.UsageTemplate(), "PATCH", "/api/v2/scim/v2/users/{userId}", utils.FormatPermissions([]string{ "directory:user:edit", "directory:user:setPassword", "authorization:grant:add", "authorization:grant:delete", "routing:skill:assign", "routing:language:assign",  }), utils.GenerateDevCentreLink("PATCH", "SCIM", "/api/v2/scim/v2/users/{userId}")))
+	modifyCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", modifyCmd.UsageTemplate(), "PATCH", "/api/v2/scim/v2/users/{userId}", utils.FormatPermissions([]string{ "directory:user:edit", "directory:user:setPassword", "authorization:grant:add", "authorization:grant:delete", "routing:skill:assign", "routing:language:assign", "telephony:extension:assign",  }), utils.GenerateDevCentreLink("PATCH", "SCIM", "/api/v2/scim/v2/users/{userId}")))
 	utils.AddFileFlagIfUpsert(modifyCmd.Flags(), "PATCH", `{
   "description" : "The information used to modify a user.",
   "content" : {
@@ -165,7 +165,7 @@ func Cmdscim_v2_users() *cobra.Command {
 }`)
 	scim_v2_usersCmd.AddCommand(modifyCmd)
 
-	replaceCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", replaceCmd.UsageTemplate(), "PUT", "/api/v2/scim/v2/users/{userId}", utils.FormatPermissions([]string{ "directory:user:edit", "directory:user:setPassword", "authorization:grant:add", "authorization:grant:delete", "routing:skill:assign", "routing:language:assign",  }), utils.GenerateDevCentreLink("PUT", "SCIM", "/api/v2/scim/v2/users/{userId}")))
+	replaceCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", replaceCmd.UsageTemplate(), "PUT", "/api/v2/scim/v2/users/{userId}", utils.FormatPermissions([]string{ "directory:user:edit", "directory:user:setPassword", "authorization:grant:add", "authorization:grant:delete", "routing:skill:assign", "routing:language:assign", "telephony:extension:assign",  }), utils.GenerateDevCentreLink("PUT", "SCIM", "/api/v2/scim/v2/users/{userId}")))
 	utils.AddFileFlagIfUpsert(replaceCmd.Flags(), "PUT", `{
   "description" : "The information used to replace a user.",
   "content" : {

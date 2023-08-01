@@ -52,8 +52,8 @@ func queryEscape(value string) string {
 
 var getCmd = &cobra.Command{
 	Use:   "get [managementUnitId]",
-	Short: "Get activity codes",
-	Long:  "Get activity codes",
+	Short: "Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes",
+	Long:  "Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes",
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

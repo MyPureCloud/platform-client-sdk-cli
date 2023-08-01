@@ -96,6 +96,9 @@ type EvaluationresponseDud struct {
     
 
 
+    
+
+
     EvaluationSource Evaluationsource `json:"evaluationSource"`
 
 
@@ -146,6 +149,10 @@ type Evaluationresponse struct {
 
     // Assignee
     Assignee User `json:"assignee"`
+
+
+    // AssigneeApplicable - Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable.
+    AssigneeApplicable bool `json:"assigneeApplicable"`
 
 
     // ReleaseDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -239,6 +246,7 @@ func (o *Evaluationresponse) String() string {
     
     
     
+    
      o.MediaType = []string{""} 
     
     
@@ -289,6 +297,8 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
         
         Assignee User `json:"assignee"`
         
+        AssigneeApplicable bool `json:"assigneeApplicable"`
+        
         ReleaseDate time.Time `json:"releaseDate"`
         
         AssignedDate time.Time `json:"assignedDate"`
@@ -324,6 +334,9 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
         HasAssistanceFailed bool `json:"hasAssistanceFailed"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -28,6 +28,9 @@ type CampaignprogressDud struct {
 
     Percentage int `json:"percentage"`
 
+
+    NumberOfContactsSkipped map[string]int `json:"numberOfContactsSkipped"`
+
 }
 
 // Campaignprogress
@@ -38,6 +41,9 @@ type Campaignprogress struct {
 
     // ContactList - Identifier of the contact list
     ContactList Domainentityref `json:"contactList"`
+
+
+    
 
 
     
@@ -79,6 +85,9 @@ func (u *Campaignprogress) MarshalJSON() ([]byte, error) {
         ContactList Domainentityref `json:"contactList"`
         *Alias
     }{
+
+        
+
 
         
 

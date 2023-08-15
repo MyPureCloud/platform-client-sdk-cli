@@ -109,7 +109,7 @@ func Cmdusers() *cobra.Command {
 }`)
 	usersCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}", utils.FormatPermissions([]string{ "directory:user:edit",  }), utils.GenerateDevCentreLink("PATCH", "Users", "/api/v2/users/{userId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}", utils.FormatPermissions([]string{ "directory:user:edit", "directory:organization:admin",  }), utils.GenerateDevCentreLink("PATCH", "Users", "/api/v2/users/{userId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "User",
   "content" : {

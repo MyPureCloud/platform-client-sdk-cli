@@ -42,7 +42,13 @@ func Cmdconversations_cobrowsesessions_participants_attributes() *cobra.Command 
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "Accepted",
-  "content" : { }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ParticipantAttributes"
+      }
+    }
+  }
 }`)
 	conversations_cobrowsesessions_participants_attributesCmd.AddCommand(updateCmd)
 	return conversations_cobrowsesessions_participants_attributesCmd

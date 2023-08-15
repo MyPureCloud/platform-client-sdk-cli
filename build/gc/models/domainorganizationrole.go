@@ -84,12 +84,12 @@ type Domainorganizationrole struct {
     RoleNeedsUpdate bool `json:"roleNeedsUpdate"`
 
 
-    // Base
-    Base bool `json:"base"`
-
-
     // VarDefault
     VarDefault bool `json:"default"`
+
+
+    // Base
+    Base bool `json:"base"`
 
 
     
@@ -138,9 +138,9 @@ func (u *Domainorganizationrole) MarshalJSON() ([]byte, error) {
         
         RoleNeedsUpdate bool `json:"roleNeedsUpdate"`
         
-        Base bool `json:"base"`
-        
         VarDefault bool `json:"default"`
+        
+        Base bool `json:"base"`
         *Alias
     }{
 

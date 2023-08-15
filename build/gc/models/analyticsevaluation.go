@@ -66,12 +66,12 @@ type AnalyticsevaluationDud struct {
 
 // Analyticsevaluation
 type Analyticsevaluation struct { 
-    // AssigneeId - UserId of the assignee
-    AssigneeId string `json:"assigneeId"`
-
-
     // AssigneeApplicable - Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable
     AssigneeApplicable bool `json:"assigneeApplicable"`
+
+
+    // AssigneeId - UserId of the assignee
+    AssigneeId string `json:"assigneeId"`
 
 
     // CalibrationId - The calibration ID used for the purpose of training evaluators
@@ -171,9 +171,9 @@ func (u *Analyticsevaluation) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        AssigneeId string `json:"assigneeId"`
-        
         AssigneeApplicable bool `json:"assigneeApplicable"`
+        
+        AssigneeId string `json:"assigneeId"`
         
         CalibrationId string `json:"calibrationId"`
         

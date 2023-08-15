@@ -24,15 +24,15 @@ type Labelutilization struct {
     MaximumCapacity int `json:"maximumCapacity"`
 
 
-    // InterruptingLabels - Defines the list of other labels that can interrupt an interaction with this label.
-    InterruptingLabels []string `json:"interruptingLabels"`
+    // InterruptingLabelIds - Defines other labels that can interrupt an interaction with this label.
+    InterruptingLabelIds []string `json:"interruptingLabelIds"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Labelutilization) String() string {
     
-     o.InterruptingLabels = []string{""} 
+     o.InterruptingLabelIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -52,7 +52,7 @@ func (u *Labelutilization) MarshalJSON() ([]byte, error) {
         
         MaximumCapacity int `json:"maximumCapacity"`
         
-        InterruptingLabels []string `json:"interruptingLabels"`
+        InterruptingLabelIds []string `json:"interruptingLabelIds"`
         *Alias
     }{
 
@@ -60,7 +60,7 @@ func (u *Labelutilization) MarshalJSON() ([]byte, error) {
 
 
         
-        InterruptingLabels: []string{""},
+        InterruptingLabelIds: []string{""},
         
 
         Alias: (*Alias)(u),

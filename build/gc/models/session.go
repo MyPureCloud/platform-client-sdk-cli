@@ -117,6 +117,15 @@ type SessionDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -214,6 +223,18 @@ type Session struct {
 
     // Referrer - Identifies the page URL that originally generated the request for the current page being viewed.
     Referrer Referrer `json:"referrer"`
+
+
+    // App - Application that the customer is interacting with (for app sessions).
+    App Journeyapp `json:"app"`
+
+
+    // SdkLibrary - SDK library used to generate the events for the session (for app and web sessions).
+    SdkLibrary Sdklibrary `json:"sdkLibrary"`
+
+
+    // NetworkConnectivity - Information relating to the device's network connectivity (for app sessions).
+    NetworkConnectivity Networkconnectivity `json:"networkConnectivity"`
 
 
     // SearchTerms - Search terms associated with the session.
@@ -326,6 +347,9 @@ func (o *Session) String() string {
     
     
     
+    
+    
+    
      o.SearchTerms = []string{""} 
     
     
@@ -398,6 +422,12 @@ func (u *Session) MarshalJSON() ([]byte, error) {
         MktCampaign Journeycampaign `json:"mktCampaign"`
         
         Referrer Referrer `json:"referrer"`
+        
+        App Journeyapp `json:"app"`
+        
+        SdkLibrary Sdklibrary `json:"sdkLibrary"`
+        
+        NetworkConnectivity Networkconnectivity `json:"networkConnectivity"`
         
         SearchTerms []string `json:"searchTerms"`
         
@@ -479,6 +509,15 @@ func (u *Session) MarshalJSON() ([]byte, error) {
 
         
         AttributeLists: map[string]Customeventattributelist{"": {}},
+        
+
+
+        
+
+
+        
+
+
         
 
 

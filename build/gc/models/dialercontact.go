@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -47,6 +48,9 @@ type DialercontactDud struct {
     ConfigurationOverrides Configurationoverrides `json:"configurationOverrides"`
 
 
+    DateCreated time.Time `json:"dateCreated"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -87,6 +91,9 @@ type Dialercontact struct {
 
     // ContactableStatus - A map of media types (Voice, SMS and Email) to ContactableStatus, which indicates if the contact can be contacted using the specified media type.
     ContactableStatus map[string]Contactablestatus `json:"contactableStatus"`
+
+
+    
 
 
     
@@ -171,6 +178,9 @@ func (u *Dialercontact) MarshalJSON() ([]byte, error) {
 
         
         ContactableStatus: map[string]Contactablestatus{"": {}},
+        
+
+
         
 
 

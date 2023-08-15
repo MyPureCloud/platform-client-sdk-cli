@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -34,6 +35,9 @@ type WritabledialercontactDud struct {
 
     
 
+
+    DateCreated time.Time `json:"dateCreated"`
+
 }
 
 // Writabledialercontact
@@ -66,6 +70,9 @@ type Writabledialercontact struct {
 
     // ContactableStatus - A map of media types (Voice, SMS and Email) to ContactableStatus, which indicates if the contact can be contacted using the specified media type.
     ContactableStatus map[string]Contactablestatus `json:"contactableStatus"`
+
+
+    
 
 }
 
@@ -135,6 +142,9 @@ func (u *Writabledialercontact) MarshalJSON() ([]byte, error) {
 
         
         ContactableStatus: map[string]Contactablestatus{"": {}},
+        
+
+
         
 
         Alias: (*Alias)(u),

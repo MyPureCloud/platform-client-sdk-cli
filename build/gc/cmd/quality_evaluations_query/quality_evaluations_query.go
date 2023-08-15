@@ -30,9 +30,9 @@ func init() {
 func Cmdquality_evaluations_query() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "NOTE: Does not work when querying evaluations")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "variable name requested by expand list")
-	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "next page token")
+	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "NOTE: Does not work when querying evaluations")
 	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
 	utils.AddFlag(listCmd.Flags(), "string", "conversationId", "", "conversationId specified")
 	utils.AddFlag(listCmd.Flags(), "string", "agentUserId", "", "user id of the agent")
@@ -45,8 +45,8 @@ func Cmdquality_evaluations_query() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "isReleased", "", "the evaluation has been released")
 	utils.AddFlag(listCmd.Flags(), "bool", "agentHasRead", "", "agent has the evaluation")
 	utils.AddFlag(listCmd.Flags(), "bool", "expandAnswerTotalScores", "", "get the total scores for evaluations")
-	utils.AddFlag(listCmd.Flags(), "int", "maximum", "", "maximum")
-	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "sort order options for agentUserId or evaluatorUserId query. Valid options are `a`, `asc`, `ascending`, `d`, `desc`, `descending`. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId")
+	utils.AddFlag(listCmd.Flags(), "int", "maximum", "", "the maximum number of results to return")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "NOTE: Does not work when conversationId is supplied.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/evaluations/query", utils.FormatPermissions([]string{ "quality:evaluation:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/evaluations/query")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

@@ -37,15 +37,15 @@ type Apiusagesimplesearch struct {
     Metrics []string `json:"metrics"`
 
 
-    // OauthClientNames - Behaves like a SQL WHERE with multiple AND operators. Specifies a list of OAuth client names to be queried.
+    // OauthClientNames - Behaves like a SQL WHERE with multiple IN operators. Specifies a list of OAuth client names to be queried.
     OauthClientNames []string `json:"oauthClientNames"`
 
 
-    // HttpMethods - Behaves like a SQL WHERE with multiple AND operators. Specifies a list of HTTP methods to be queried.
+    // HttpMethods - Behaves like a SQL WHERE with multiple IN operators. Specifies a list of HTTP methods to be queried.
     HttpMethods []string `json:"httpMethods"`
 
 
-    // TemplateUris - Behaves like a SQL WHERE with multiple AND operators. Specifies a list of Template Uris to be queried.
+    // TemplateUris - Behaves like a SQL WHERE with multiple IN operators. Specifies a list of Template Uris to be queried.
     TemplateUris []string `json:"templateUris"`
 
 }

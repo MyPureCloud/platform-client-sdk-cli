@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdworkforcemanagement_managementunits_users() *cobra.Command { 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users", utils.FormatPermissions([]string{ "wfm:agent:view", "wfm:historicalAdherence:view", "wfm:publishedSchedule:view", "wfm:realtimeAdherence:view", "wfm:schedule:view", "wfm:timeOffRequest:view", "wfm:workPlanRotation:view", "wfm:workPlan:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users", utils.FormatPermissions([]string{ "wfm:agent:view", "wfm:historicalAdherence:view", "wfm:publishedSchedule:view", "wfm:realtimeAdherence:view", "wfm:schedule:view", "wfm:staffingGroup:view", "wfm:timeOffRequest:view", "wfm:workPlanRotation:view", "wfm:workPlan:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

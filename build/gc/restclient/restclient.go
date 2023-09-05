@@ -112,7 +112,7 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "80.0.0")
+        request.Header.Set("purecloud-sdk", "80.1.0")
 
         if data != "" {
                 request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
@@ -139,31 +139,7 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
                 }
         }
 
-        if r.configuration != nil {
-                proxyConfiguration := r.configuration.ProxyConfiguration()
-                if proxyConfiguration != nil && proxyConfiguration.Protocol != "" {
-                        var proxyUrl *url.URL
-                        if proxyConfiguration.UserName != "" && proxyConfiguration.Password != "" {
-                                proxyUrl = &url.URL{
-                                        Scheme: proxyConfiguration.Protocol,
-                                        User: url.UserPassword(proxyConfiguration.UserName,
-                                                proxyConfiguration.Password),
-                                        Host: proxyConfiguration.Host + ":" + proxyConfiguration.Port,
-                                }
-                        } else {
-                                urlString := proxyConfiguration.Protocol + "://" +
-                                        proxyConfiguration.Host + ":" +
-                                        proxyConfiguration.Port
-                                proxyUrl, _ = url.Parse(urlString)
-                        }
-
-                        tr := &http.Transport{
-                                Proxy: http.ProxyURL(proxyUrl),
-                        }
-
-                        Client.HTTPClient.Transport = tr
-                }
-        }
+        setProxyConf(r.configuration)
 
         //Executing the request
         resp, err := ClientDo(request)
@@ -269,12 +245,14 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "80.0.0")
+        request.Header.Set("purecloud-sdk", "80.1.0")
 
         //Setting up the form data
         form := url.Values{}
         form["grant_type"] = []string{"client_credentials"}
         request.Body = ioutil.NopCloser(strings.NewReader(form.Encode()))
+
+        setProxyConf(c)
 
         //Executing the request
         resp, err := ClientDo(request)
@@ -302,6 +280,33 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
                 return *oAuthTokenResponse, err
         }
         return createOAuthTokenResponse(c, *oAuthToken)
+}
+
+func setProxyConf(c config.Configuration) {
+
+        proxyConfiguration := c.ProxyConfiguration()
+                if proxyConfiguration != nil && proxyConfiguration.Protocol != "" {
+                        var proxyUrl *url.URL
+                        if proxyConfiguration.UserName != "" && proxyConfiguration.Password != "" {
+                                proxyUrl = &url.URL{
+                                        Scheme: proxyConfiguration.Protocol,
+                                        User: url.UserPassword(proxyConfiguration.UserName,
+                                                proxyConfiguration.Password),
+                                        Host: proxyConfiguration.Host + ":" + proxyConfiguration.Port,
+                                }
+                        } else {
+                                urlString := proxyConfiguration.Protocol + "://" +
+                                        proxyConfiguration.Host + ":" +
+                                        proxyConfiguration.Port
+                                proxyUrl, _ = url.Parse(urlString)
+                        }
+
+                        tr := &http.Transport{
+                                Proxy: http.ProxyURL(proxyUrl),
+                        }
+
+                        Client.HTTPClient.Transport = tr
+                }
 }
 
 func createOAuthTokenResponse(c config.Configuration, oAuthToken models.OAuthToken) (models.OAuthTokenData, error) {

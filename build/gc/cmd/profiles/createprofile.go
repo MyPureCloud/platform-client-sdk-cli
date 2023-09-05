@@ -149,20 +149,19 @@ func requestUserInput() config.Configuration {
 		fmt.Printf("Redirect URI: %s\n", redirectURL.String())
 	}
 
-
 	for true {
 		fmt.Print("Would you like to use a proxy server? [Y/N]: ")
 		fmt.Scanln(&proxyChoice)
 		if strings.ToUpper(proxyChoice) == "Y" {
-				proxyConf := requestProxyDetails()
-				return constructConfig(name, environment, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, proxyConf)
-				break
+			proxyConf := requestProxyDetails()
+			return constructConfig(name, environment, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, proxyConf)
+			break
 		} else if strings.ToUpper(proxyChoice) == "N" {
-				return constructConfig(name, environment, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, nil)
-				break
+			return constructConfig(name, environment, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, nil)
+			break
 		} else {
-				fmt.Print("Provide valid option.\n")
-				continue
+			fmt.Print("Provide valid option.\n")
+			continue
 		}
 	}
 
@@ -213,37 +212,37 @@ func requestProxyDetails() *config.ProxyConfiguration {
 	password := ""
 
 	for protocol == "" {
-			fmt.Print("Protocol (http/https): ")
-			fmt.Scanln(&protocol)
+		fmt.Print("Protocol (http/https): ")
+		fmt.Scanln(&protocol)
 	}
 	for port == "" {
-			fmt.Print("Port for the Proxy: ")
-			fmt.Scanln(&port)
+		fmt.Print("Port for the Proxy: ")
+		fmt.Scanln(&port)
 	}
 	for host == "" {
-			fmt.Print("Host name for the Proxy server: ")
-			fmt.Scanln(&host)
+		fmt.Print("Host name for the Proxy server: ")
+		fmt.Scanln(&host)
 	}
 
 	for true {
-			fmt.Print("Do we require Authorisation to use the proxy server? [Y/N]: ")
-			fmt.Scanln(&isAuthRequired)
-			if strings.ToUpper(isAuthRequired) == "Y" {
-					for username == "" {
-							fmt.Print("username for the Proxy: ")
-							fmt.Scanln(&username)
-					}
-					for host == "" {
-							fmt.Print("Password for the Proxy server: ")
-							password = readSensitiveInput()
-					}
-					break
-			} else if strings.ToUpper(isAuthRequired) == "N" {
-					break
-			} else {
-					fmt.Print("Provide valid option.\n")
-					continue
+		fmt.Print("Do we require Authorisation to use the proxy server? [Y/N]: ")
+		fmt.Scanln(&isAuthRequired)
+		if strings.ToUpper(isAuthRequired) == "Y" {
+			for username == "" {
+				fmt.Print("username for the Proxy: ")
+				fmt.Scanln(&username)
 			}
+			for password == "" {
+				fmt.Print("Password for the Proxy server: ")
+				password = readSensitiveInput()
+			}
+			break
+		} else if strings.ToUpper(isAuthRequired) == "N" {
+			break
+		} else {
+			fmt.Print("Provide valid option.\n")
+			continue
+		}
 	}
 
 	proxyconf := config.ProxyConfiguration{}
@@ -251,8 +250,8 @@ func requestProxyDetails() *config.ProxyConfiguration {
 	proxyconf.Protocol = protocol
 	proxyconf.Host = host
 	if username != "" {
-			proxyconf.UserName = username
-			proxyconf.Password = password
+		proxyconf.UserName = username
+		proxyconf.Password = password
 	}
 	return &proxyconf
 

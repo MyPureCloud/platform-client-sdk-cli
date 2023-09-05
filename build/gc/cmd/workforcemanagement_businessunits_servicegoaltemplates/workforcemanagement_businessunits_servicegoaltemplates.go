@@ -62,6 +62,7 @@ func Cmdworkforcemanagement_businessunits_servicegoaltemplates() *cobra.Command 
 }`)
 	workforcemanagement_businessunits_servicegoaltemplatesCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Include to access additional data on the service goal template Valid values: impactOverride")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}", utils.FormatPermissions([]string{ "wfm:serviceGoalTemplate:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -77,6 +78,7 @@ func Cmdworkforcemanagement_businessunits_servicegoaltemplates() *cobra.Command 
 }`)
 	workforcemanagement_businessunits_servicegoaltemplatesCmd.AddCommand(getCmd)
 
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Include to access additional data on the service goal template Valid values: impactOverride")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates", utils.FormatPermissions([]string{ "wfm:serviceGoalTemplate:view", "wfm:planningGroup:view", "wfm:shortTermForecast:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -282,6 +284,10 @@ var getCmd = &cobra.Command{
 		serviceGoalTemplateId, args := args[0], args[1:]
 		path = strings.Replace(path, "{serviceGoalTemplateId}", fmt.Sprintf("%v", serviceGoalTemplateId), -1)
 
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -347,6 +353,10 @@ var listCmd = &cobra.Command{
 		businessUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

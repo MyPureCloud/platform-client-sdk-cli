@@ -29,6 +29,12 @@ type BufulldaytimeoffmarkerDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Bufulldaytimeoffmarker
@@ -53,13 +59,23 @@ type Bufulldaytimeoffmarker struct {
     Paid bool `json:"paid"`
 
 
+    // PayableMinutes - Payable minutes for the time off marker
+    PayableMinutes int `json:"payableMinutes"`
+
+
     // TimeOffRequestId - The ID of the time off request
     TimeOffRequestId string `json:"timeOffRequestId"`
+
+
+    // TimeOffRequestSyncVersion - The sync version of the full day time off request for which the scheduled activity is associated
+    TimeOffRequestSyncVersion int `json:"timeOffRequestSyncVersion"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Bufulldaytimeoffmarker) String() string {
+    
+    
     
     
     
@@ -93,9 +109,19 @@ func (u *Bufulldaytimeoffmarker) MarshalJSON() ([]byte, error) {
         
         Paid bool `json:"paid"`
         
+        PayableMinutes int `json:"payableMinutes"`
+        
         TimeOffRequestId string `json:"timeOffRequestId"`
+        
+        TimeOffRequestSyncVersion int `json:"timeOffRequestSyncVersion"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

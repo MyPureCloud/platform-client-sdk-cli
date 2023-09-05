@@ -28,6 +28,9 @@ type CreatetimeoffplanrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createtimeoffplanrequest
@@ -52,6 +55,10 @@ type Createtimeoffplanrequest struct {
     DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
 
 
+    // HrisTimeOffType - Time off type, if this time off plan is associated with the integration.
+    HrisTimeOffType Hristimeofftype `json:"hrisTimeOffType"`
+
+
     // Active - Whether this time off plan should be used by agents.
     Active bool `json:"active"`
 
@@ -62,6 +69,7 @@ func (o *Createtimeoffplanrequest) String() string {
     
      o.ActivityCodeIds = []string{""} 
      o.TimeOffLimitIds = []string{""} 
+    
     
     
     
@@ -92,6 +100,8 @@ func (u *Createtimeoffplanrequest) MarshalJSON() ([]byte, error) {
         
         DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
         
+        HrisTimeOffType Hristimeofftype `json:"hrisTimeOffType"`
+        
         Active bool `json:"active"`
         *Alias
     }{
@@ -106,6 +116,9 @@ func (u *Createtimeoffplanrequest) MarshalJSON() ([]byte, error) {
 
         
         TimeOffLimitIds: []string{""},
+        
+
+
         
 
 

@@ -22,6 +22,9 @@ type CreateservicegoaltemplateDud struct {
 
     
 
+
+    
+
 }
 
 // Createservicegoaltemplate
@@ -41,10 +44,15 @@ type Createservicegoaltemplate struct {
     // AbandonRate - Abandon rate targets for this service goal template
     AbandonRate Buabandonrate `json:"abandonRate"`
 
+
+    // ImpactOverride - Settings controlling max percent increase and decrease of service goals for this service goal template
+    ImpactOverride Servicegoaltemplateimpactoverride `json:"impactOverride"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Createservicegoaltemplate) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Createservicegoaltemplate) MarshalJSON() ([]byte, error) {
         AverageSpeedOfAnswer Buaveragespeedofanswer `json:"averageSpeedOfAnswer"`
         
         AbandonRate Buabandonrate `json:"abandonRate"`
+        
+        ImpactOverride Servicegoaltemplateimpactoverride `json:"impactOverride"`
         *Alias
     }{
+
+        
+
 
         
 

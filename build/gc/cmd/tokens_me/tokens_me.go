@@ -37,6 +37,7 @@ func Cmdtokens_me() *cobra.Command {
 }`)
 	tokens_meCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "bool", "preserveIdleTTL", "", "preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/tokens/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Tokens", "/api/v2/tokens/me")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -160,6 +161,10 @@ var getCmd = &cobra.Command{
 
 		path := "/api/v2/tokens/me"
 
+		preserveIdleTTL := utils.GetFlag(cmd.Flags(), "bool", "preserveIdleTTL")
+		if preserveIdleTTL != "" {
+			queryParams["preserveIdleTTL"] = preserveIdleTTL
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

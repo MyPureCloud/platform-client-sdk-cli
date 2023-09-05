@@ -41,6 +41,7 @@ func Cmdquality_evaluations_query() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "queueId", "", "queue id")
 	utils.AddFlag(listCmd.Flags(), "string", "startTime", "", "start time of the evaluation query")
 	utils.AddFlag(listCmd.Flags(), "string", "endTime", "", "end time of the evaluation query")
+	utils.AddFlag(listCmd.Flags(), "string", "formContextId", "", "shared id between form versions")
 	utils.AddFlag(listCmd.Flags(), "[]string", "evaluationState", "", "")
 	utils.AddFlag(listCmd.Flags(), "bool", "isReleased", "", "the evaluation has been released")
 	utils.AddFlag(listCmd.Flags(), "bool", "agentHasRead", "", "agent has the evaluation")
@@ -139,6 +140,10 @@ var listCmd = &cobra.Command{
 		endTime := utils.GetFlag(cmd.Flags(), "string", "endTime")
 		if endTime != "" {
 			queryParams["endTime"] = endTime
+		}
+		formContextId := utils.GetFlag(cmd.Flags(), "string", "formContextId")
+		if formContextId != "" {
+			queryParams["formContextId"] = formContextId
 		}
 		evaluationState := utils.GetFlag(cmd.Flags(), "[]string", "evaluationState")
 		if evaluationState != "" {

@@ -120,6 +120,9 @@ type CreatequeuerequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -180,6 +183,10 @@ type Createqueuerequest struct {
 
     // Bullseye - The bullseye settings for the queue.
     Bullseye Bullseye `json:"bullseye"`
+
+
+    // ScoringMethod - The Scoring Method for the queue
+    ScoringMethod string `json:"scoringMethod"`
 
 
     // AcwSettings - The ACW settings for the queue.
@@ -285,6 +292,7 @@ func (o *Createqueuerequest) String() string {
     
     
     
+    
      o.MemberGroups = []Membergroup{{}} 
     
     
@@ -342,6 +350,8 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
         ConditionalGroupRouting Conditionalgrouprouting `json:"conditionalGroupRouting"`
         
         Bullseye Bullseye `json:"bullseye"`
+        
+        ScoringMethod string `json:"scoringMethod"`
         
         AcwSettings Acwsettings `json:"acwSettings"`
         
@@ -425,6 +435,9 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
 
         
         RoutingRules: []Routingrule{{}},
+        
+
+
         
 
 

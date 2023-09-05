@@ -13,6 +13,9 @@ var (
 type ForecastplanninggroupsresponseDud struct { 
     
 
+
+    
+
 }
 
 // Forecastplanninggroupsresponse
@@ -20,11 +23,16 @@ type Forecastplanninggroupsresponse struct {
     // Entities
     Entities []Forecastplanninggroupresponse `json:"entities"`
 
+
+    // BusinessUnitServiceGoalImpact - A snapshot of a business unit’s service goal impact settings taken at forecast generation time.
+    BusinessUnitServiceGoalImpact Wfmservicegoalimpactsettings `json:"businessUnitServiceGoalImpact"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Forecastplanninggroupsresponse) String() string {
      o.Entities = []Forecastplanninggroupresponse{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -43,11 +51,16 @@ func (u *Forecastplanninggroupsresponse) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Entities []Forecastplanninggroupresponse `json:"entities"`
+        
+        BusinessUnitServiceGoalImpact Wfmservicegoalimpactsettings `json:"businessUnitServiceGoalImpact"`
         *Alias
     }{
 
         
         Entities: []Forecastplanninggroupresponse{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

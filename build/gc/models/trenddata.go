@@ -20,6 +20,9 @@ type TrenddataDud struct {
 
     
 
+
+    
+
 }
 
 // Trenddata
@@ -35,10 +38,15 @@ type Trenddata struct {
     // PercentOfGoal - Percent of goal
     PercentOfGoal float64 `json:"percentOfGoal"`
 
+
+    // AverageValue - Average metric value
+    AverageValue float64 `json:"averageValue"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Trenddata) String() string {
+    
     
     
     
@@ -64,8 +72,13 @@ func (u *Trenddata) MarshalJSON() ([]byte, error) {
         DateEndWorkday time.Time `json:"dateEndWorkday"`
         
         PercentOfGoal float64 `json:"percentOfGoal"`
+        
+        AverageValue float64 `json:"averageValue"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -34,7 +34,7 @@ func Cmdrouting_skillgroups() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/SkillGroup"
+        "$ref" : "#/components/schemas/SkillGroupWithMemberDivisions"
       }
     }
   },
@@ -46,7 +46,7 @@ func Cmdrouting_skillgroups() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/SkillGroup"
+        "$ref" : "#/components/schemas/SkillGroupWithMemberDivisions"
       }
     }
   }
@@ -140,7 +140,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Skillgroup{}
+			reqModel := models.Skillgroupwithmemberdivisions{}
 			utils.Render(reqModel.String())
 			
 			return

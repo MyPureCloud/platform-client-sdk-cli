@@ -42,6 +42,9 @@ type KnowledgeexportjobresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -76,6 +79,10 @@ type Knowledgeexportjobresponse struct {
     KnowledgeBase Knowledgebase `json:"knowledgeBase"`
 
 
+    // CreatedBy - The user who created the operation
+    CreatedBy Userreference `json:"createdBy"`
+
+
     // DateCreated - The timestamp of when the export began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateCreated time.Time `json:"dateCreated"`
 
@@ -94,6 +101,7 @@ type Knowledgeexportjobresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgeexportjobresponse) String() string {
+    
     
     
     
@@ -135,6 +143,8 @@ func (u *Knowledgeexportjobresponse) MarshalJSON() ([]byte, error) {
         
         KnowledgeBase Knowledgebase `json:"knowledgeBase"`
         
+        CreatedBy Userreference `json:"createdBy"`
+        
         DateCreated time.Time `json:"dateCreated"`
         
         DateModified time.Time `json:"dateModified"`
@@ -142,6 +152,9 @@ func (u *Knowledgeexportjobresponse) MarshalJSON() ([]byte, error) {
         ErrorInformation Errorbody `json:"errorInformation"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -28,6 +28,9 @@ type WfmhistoricaladherencebulkuserresultDud struct {
 
     
 
+
+    
+
 }
 
 // Wfmhistoricaladherencebulkuserresult
@@ -52,6 +55,10 @@ type Wfmhistoricaladherencebulkuserresult struct {
     ExceptionInfo []Historicaladherenceexceptioninfo `json:"exceptionInfo"`
 
 
+    // Actuals - List of adherence actuals for this user
+    Actuals []Historicaladherenceactuals `json:"actuals"`
+
+
     // DayMetrics - Adherence and conformance metrics for days in query range
     DayMetrics []Wfmhistoricaladherencebulkuserdaymetrics `json:"dayMetrics"`
 
@@ -64,6 +71,7 @@ func (o *Wfmhistoricaladherencebulkuserresult) String() string {
     
     
      o.ExceptionInfo = []Historicaladherenceexceptioninfo{{}} 
+     o.Actuals = []Historicaladherenceactuals{{}} 
      o.DayMetrics = []Wfmhistoricaladherencebulkuserdaymetrics{{}} 
 
     j, _ := json.Marshal(o)
@@ -92,6 +100,8 @@ func (u *Wfmhistoricaladherencebulkuserresult) MarshalJSON() ([]byte, error) {
         
         ExceptionInfo []Historicaladherenceexceptioninfo `json:"exceptionInfo"`
         
+        Actuals []Historicaladherenceactuals `json:"actuals"`
+        
         DayMetrics []Wfmhistoricaladherencebulkuserdaymetrics `json:"dayMetrics"`
         *Alias
     }{
@@ -110,6 +120,11 @@ func (u *Wfmhistoricaladherencebulkuserresult) MarshalJSON() ([]byte, error) {
 
         
         ExceptionInfo: []Historicaladherenceexceptioninfo{{}},
+        
+
+
+        
+        Actuals: []Historicaladherenceactuals{{}},
         
 
 

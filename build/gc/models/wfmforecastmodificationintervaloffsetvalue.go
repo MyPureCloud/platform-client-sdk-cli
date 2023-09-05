@@ -20,7 +20,7 @@ type WfmforecastmodificationintervaloffsetvalueDud struct {
 
 // Wfmforecastmodificationintervaloffsetvalue
 type Wfmforecastmodificationintervaloffsetvalue struct { 
-    // IntervalIndex - The number of 15 minute intervals past referenceStartDate to which to apply this modification
+    // IntervalIndex - The number of intervals past referenceStartDate to which to apply this modification
     IntervalIndex int `json:"intervalIndex"`
 
 

@@ -61,6 +61,7 @@ func Cmdknowledge_knowledgebases_import_jobs() *cobra.Command {
 }`)
 	knowledge_knowledgebases_import_jobsCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "If expand contains `urls` downloadURL and failedEntitiesURL will be filled. Valid values: urls")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}", utils.FormatPermissions([]string{ "knowledge:importJob:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -265,6 +266,10 @@ var getCmd = &cobra.Command{
 		importJobId, args := args[0], args[1:]
 		path = strings.Replace(path, "{importJobId}", fmt.Sprintf("%v", importJobId), -1)
 
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

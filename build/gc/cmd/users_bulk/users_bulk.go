@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdusers_bulk() *cobra.Command { 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/users/bulk", utils.FormatPermissions([]string{ "directory:user:add", "directory:user:edit",  }), utils.GenerateDevCentreLink("PATCH", "Users", "/api/v2/users/bulk")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/users/bulk", utils.FormatPermissions([]string{ "directory:user:edit", "directory:organization:admin",  }), utils.GenerateDevCentreLink("PATCH", "Users", "/api/v2/users/bulk")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "Users",
   "content" : {

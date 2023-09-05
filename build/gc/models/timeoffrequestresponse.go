@@ -69,6 +69,15 @@ type TimeoffrequestresponseDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -118,6 +127,14 @@ type Timeoffrequestresponse struct {
     DailyDurationMinutes int `json:"dailyDurationMinutes"`
 
 
+    // DurationMinutes - Daily durations for each day of this time off request in minutes
+    DurationMinutes []int `json:"durationMinutes"`
+
+
+    // PayableMinutes - Payable minutes for each day of this time off request
+    PayableMinutes []int `json:"payableMinutes"`
+
+
     // Notes - Notes about the time off request
     Notes string `json:"notes"`
 
@@ -146,6 +163,10 @@ type Timeoffrequestresponse struct {
     ModifiedDate time.Time `json:"modifiedDate"`
 
 
+    // SyncVersion - The sync version of this time off request for which the scheduled activity is associated
+    SyncVersion int `json:"syncVersion"`
+
+
     // Metadata - The version metadata of the time off request
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
@@ -165,6 +186,9 @@ func (o *Timeoffrequestresponse) String() string {
     
      o.PartialDayStartDateTimes = []time.Time{{}} 
      o.FullDayManagementUnitDates = []string{""} 
+    
+     o.DurationMinutes = []int{0} 
+     o.PayableMinutes = []int{0} 
     
     
     
@@ -211,6 +235,10 @@ func (u *Timeoffrequestresponse) MarshalJSON() ([]byte, error) {
         
         DailyDurationMinutes int `json:"dailyDurationMinutes"`
         
+        DurationMinutes []int `json:"durationMinutes"`
+        
+        PayableMinutes []int `json:"payableMinutes"`
+        
         Notes string `json:"notes"`
         
         SubmittedBy Userreference `json:"submittedBy"`
@@ -224,6 +252,8 @@ func (u *Timeoffrequestresponse) MarshalJSON() ([]byte, error) {
         ModifiedBy Userreference `json:"modifiedBy"`
         
         ModifiedDate time.Time `json:"modifiedDate"`
+        
+        SyncVersion int `json:"syncVersion"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
@@ -260,6 +290,19 @@ func (u *Timeoffrequestresponse) MarshalJSON() ([]byte, error) {
 
         
         FullDayManagementUnitDates: []string{""},
+        
+
+
+        
+
+
+        
+        DurationMinutes: []int{0},
+        
+
+
+        
+        PayableMinutes: []int{0},
         
 
 

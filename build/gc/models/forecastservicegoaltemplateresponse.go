@@ -19,6 +19,9 @@ type ForecastservicegoaltemplateresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Forecastservicegoaltemplateresponse
@@ -34,10 +37,15 @@ type Forecastservicegoaltemplateresponse struct {
     // AbandonRate - The abandon rate goal for this forecast
     AbandonRate Forecastabandonrateresponse `json:"abandonRate"`
 
+
+    // ImpactOverride - The service goal impact overrides for this forecast
+    ImpactOverride Forecastservicegoaltemplateimpactoverrideresponse `json:"impactOverride"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Forecastservicegoaltemplateresponse) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Forecastservicegoaltemplateresponse) MarshalJSON() ([]byte, error) {
         AverageSpeedOfAnswer Forecastaveragespeedofanswerresponse `json:"averageSpeedOfAnswer"`
         
         AbandonRate Forecastabandonrateresponse `json:"abandonRate"`
+        
+        ImpactOverride Forecastservicegoaltemplateimpactoverrideresponse `json:"impactOverride"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -32,6 +32,12 @@ type AdmintimeoffrequestpatchDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Admintimeoffrequestpatch
@@ -60,6 +66,14 @@ type Admintimeoffrequestpatch struct {
     DailyDurationMinutes int `json:"dailyDurationMinutes"`
 
 
+    // DurationMinutes - Daily durations for each day of this time off request in minutes
+    DurationMinutes []int `json:"durationMinutes"`
+
+
+    // PayableMinutes - Payable minutes for each day of this time off request
+    PayableMinutes []int `json:"payableMinutes"`
+
+
     // Metadata - Version metadata for the time off request
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
@@ -73,6 +87,8 @@ func (o *Admintimeoffrequestpatch) String() string {
      o.FullDayManagementUnitDates = []string{""} 
      o.PartialDayStartDateTimes = []time.Time{{}} 
     
+     o.DurationMinutes = []int{0} 
+     o.PayableMinutes = []int{0} 
     
 
     j, _ := json.Marshal(o)
@@ -103,6 +119,10 @@ func (u *Admintimeoffrequestpatch) MarshalJSON() ([]byte, error) {
         
         DailyDurationMinutes int `json:"dailyDurationMinutes"`
         
+        DurationMinutes []int `json:"durationMinutes"`
+        
+        PayableMinutes []int `json:"payableMinutes"`
+        
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
@@ -126,6 +146,16 @@ func (u *Admintimeoffrequestpatch) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        DurationMinutes: []int{0},
+        
+
+
+        
+        PayableMinutes: []int{0},
         
 
 

@@ -26,6 +26,9 @@ type WfmhistoricaladherencebulkitemDud struct {
 
     
 
+
+    
+
 }
 
 // Wfmhistoricaladherencebulkitem
@@ -49,6 +52,10 @@ type Wfmhistoricaladherencebulkitem struct {
     // IncludeExceptions - Whether user exceptions should be returned as part of the results. Defaults to false if not specified.
     IncludeExceptions bool `json:"includeExceptions"`
 
+
+    // IncludeActuals - Whether user actual activities should be returned as part of the results. Defaults to false if not specified.
+    IncludeActuals bool `json:"includeActuals"`
+
 }
 
 // String returns a JSON representation of the model
@@ -57,6 +64,7 @@ func (o *Wfmhistoricaladherencebulkitem) String() string {
     
     
      o.UserIds = []string{""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -84,6 +92,8 @@ func (u *Wfmhistoricaladherencebulkitem) MarshalJSON() ([]byte, error) {
         UserIds []string `json:"userIds"`
         
         IncludeExceptions bool `json:"includeExceptions"`
+        
+        IncludeActuals bool `json:"includeActuals"`
         *Alias
     }{
 
@@ -98,6 +108,9 @@ func (u *Wfmhistoricaladherencebulkitem) MarshalJSON() ([]byte, error) {
 
         
         UserIds: []string{""},
+        
+
+
         
 
 

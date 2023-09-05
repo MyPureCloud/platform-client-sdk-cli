@@ -33,7 +33,7 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/KnowledgeBase"
+        "$ref" : "#/components/schemas/KnowledgeBaseCreateRequest"
       }
     }
   },
@@ -111,7 +111,7 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/KnowledgeBase"
+        "$ref" : "#/components/schemas/KnowledgeBaseUpdateRequest"
       }
     }
   },
@@ -149,7 +149,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Knowledgebase{}
+			reqModel := models.Knowledgebasecreaterequest{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -444,7 +444,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Knowledgebase{}
+			reqModel := models.Knowledgebaseupdaterequest{}
 			utils.Render(reqModel.String())
 			
 			return

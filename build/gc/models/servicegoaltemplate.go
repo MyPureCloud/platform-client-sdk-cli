@@ -29,6 +29,9 @@ type ServicegoaltemplateDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -58,12 +61,17 @@ type Servicegoaltemplate struct {
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
 
+    // ImpactOverride - Settings controlling max percent increase and decrease of service goals for this service goal template
+    ImpactOverride Servicegoaltemplateimpactoverride `json:"impactOverride"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Servicegoaltemplate) String() string {
+    
     
     
     
@@ -95,8 +103,13 @@ func (u *Servicegoaltemplate) MarshalJSON() ([]byte, error) {
         AbandonRate Buabandonrate `json:"abandonRate"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
+        
+        ImpactOverride Servicegoaltemplateimpactoverride `json:"impactOverride"`
         *Alias
     }{
+
+        
+
 
         
 

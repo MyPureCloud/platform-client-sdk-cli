@@ -23,6 +23,9 @@ type ShifttradeactivitypreviewresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Shifttradeactivitypreviewresponse
@@ -42,10 +45,15 @@ type Shifttradeactivitypreviewresponse struct {
     // CountsAsPaidTime - Whether this activity counts as paid time
     CountsAsPaidTime bool `json:"countsAsPaidTime"`
 
+
+    // PayableMinutes - Payable minutes for this activity
+    PayableMinutes int `json:"payableMinutes"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Shifttradeactivitypreviewresponse) String() string {
+    
     
     
     
@@ -74,8 +82,13 @@ func (u *Shifttradeactivitypreviewresponse) MarshalJSON() ([]byte, error) {
         ActivityCodeId string `json:"activityCodeId"`
         
         CountsAsPaidTime bool `json:"countsAsPaidTime"`
+        
+        PayableMinutes int `json:"payableMinutes"`
         *Alias
     }{
+
+        
+
 
         
 

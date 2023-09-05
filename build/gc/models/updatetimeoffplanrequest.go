@@ -31,6 +31,9 @@ type UpdatetimeoffplanrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Updatetimeoffplanrequest
@@ -55,6 +58,10 @@ type Updatetimeoffplanrequest struct {
     DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
 
 
+    // HrisTimeOffType - Time off type, if this time off plan is associated with the integration.
+    HrisTimeOffType Valuewrapperhristimeofftype `json:"hrisTimeOffType"`
+
+
     // Active - Whether this time off plan should be used by agents.
     Active bool `json:"active"`
 
@@ -66,6 +73,7 @@ type Updatetimeoffplanrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Updatetimeoffplanrequest) String() string {
+    
     
     
     
@@ -100,11 +108,16 @@ func (u *Updatetimeoffplanrequest) MarshalJSON() ([]byte, error) {
         
         DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
         
+        HrisTimeOffType Valuewrapperhristimeofftype `json:"hrisTimeOffType"`
+        
         Active bool `json:"active"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
 
         
 

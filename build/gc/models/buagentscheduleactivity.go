@@ -35,6 +35,12 @@ type BuagentscheduleactivityDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Buagentscheduleactivity
@@ -59,8 +65,16 @@ type Buagentscheduleactivity struct {
     Paid bool `json:"paid"`
 
 
+    // PayableMinutes - Payable minutes for this activity
+    PayableMinutes int `json:"payableMinutes"`
+
+
     // TimeOffRequestId - The ID of the time off request associated with this activity, if applicable
     TimeOffRequestId string `json:"timeOffRequestId"`
+
+
+    // TimeOffRequestSyncVersion - The sync version of the partial day time off request for which the scheduled activity is associated, if applicable
+    TimeOffRequestSyncVersion int `json:"timeOffRequestSyncVersion"`
 
 
     // ExternalActivityId - The ID of the external activity associated with this activity, if applicable
@@ -74,6 +88,8 @@ type Buagentscheduleactivity struct {
 
 // String returns a JSON representation of the model
 func (o *Buagentscheduleactivity) String() string {
+    
+    
     
     
     
@@ -109,13 +125,23 @@ func (u *Buagentscheduleactivity) MarshalJSON() ([]byte, error) {
         
         Paid bool `json:"paid"`
         
+        PayableMinutes int `json:"payableMinutes"`
+        
         TimeOffRequestId string `json:"timeOffRequestId"`
+        
+        TimeOffRequestSyncVersion int `json:"timeOffRequestSyncVersion"`
         
         ExternalActivityId string `json:"externalActivityId"`
         
         ExternalActivityType string `json:"externalActivityType"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

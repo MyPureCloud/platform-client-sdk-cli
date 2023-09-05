@@ -26,6 +26,12 @@ type CreateagenttimeoffrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Createagenttimeoffrequest
@@ -49,6 +55,14 @@ type Createagenttimeoffrequest struct {
     // DailyDurationMinutes - The daily duration of this time off request in minutes
     DailyDurationMinutes int `json:"dailyDurationMinutes"`
 
+
+    // DurationMinutes - Daily durations for each day of this time off request in minutes
+    DurationMinutes []int `json:"durationMinutes"`
+
+
+    // PayableMinutes - Payable minutes for each day of this time off request
+    PayableMinutes []int `json:"payableMinutes"`
+
 }
 
 // String returns a JSON representation of the model
@@ -58,6 +72,8 @@ func (o *Createagenttimeoffrequest) String() string {
      o.FullDayManagementUnitDates = []string{""} 
      o.PartialDayStartDateTimes = []time.Time{{}} 
     
+     o.DurationMinutes = []int{0} 
+     o.PayableMinutes = []int{0} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -84,6 +100,10 @@ func (u *Createagenttimeoffrequest) MarshalJSON() ([]byte, error) {
         PartialDayStartDateTimes []time.Time `json:"partialDayStartDateTimes"`
         
         DailyDurationMinutes int `json:"dailyDurationMinutes"`
+        
+        DurationMinutes []int `json:"durationMinutes"`
+        
+        PayableMinutes []int `json:"payableMinutes"`
         *Alias
     }{
 
@@ -103,6 +123,16 @@ func (u *Createagenttimeoffrequest) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        DurationMinutes: []int{0},
+        
+
+
+        
+        PayableMinutes: []int{0},
         
 
         Alias: (*Alias)(u),

@@ -29,6 +29,7 @@ func init() {
 
 func Cmdwebdeployments_deployments_configurations() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "varType", "", "Get active configuration on a deployment")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Expand instructions for the return value Valid values: supportedContent")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/webdeployments/deployments/{deploymentId}/configurations", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Web Deployments", "/api/v2/webdeployments/deployments/{deploymentId}/configurations")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -75,6 +76,10 @@ var getCmd = &cobra.Command{
 		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
 		if varType != "" {
 			queryParams["varType"] = varType
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
 		}
 		urlString := path
 		if len(queryParams) > 0 {

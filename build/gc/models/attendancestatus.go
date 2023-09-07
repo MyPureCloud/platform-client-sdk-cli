@@ -17,10 +17,16 @@ type AttendancestatusDud struct {
 
     AttendanceStatusType string `json:"attendanceStatusType"`
 
+
+    HasEvaluation string `json:"hasEvaluation"`
+
 }
 
 // Attendancestatus
 type Attendancestatus struct { 
+    
+
+
     
 
 
@@ -48,6 +54,9 @@ func (u *Attendancestatus) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

@@ -38,6 +38,9 @@ type CreateobjectiveDud struct {
 
     
 
+
+    
+
 }
 
 // Createobjective
@@ -73,6 +76,10 @@ type Createobjective struct {
     TopicIdsFilterType string `json:"topicIdsFilterType"`
 
 
+    // EvaluationFormContextIds - The ids of associated evaluation form context, for Quality Evaluation Score metrics
+    EvaluationFormContextIds []string `json:"evaluationFormContextIds"`
+
+
     // DateStart - start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     DateStart time.Time `json:"dateStart"`
 
@@ -87,6 +94,7 @@ func (o *Createobjective) String() string {
      o.MediaTypes = []string{""} 
      o.QueueIds = []string{""} 
     
+     o.EvaluationFormContextIds = []string{""} 
     
 
     j, _ := json.Marshal(o)
@@ -118,6 +126,8 @@ func (u *Createobjective) MarshalJSON() ([]byte, error) {
         QueueIds []string `json:"queueIds"`
         
         TopicIdsFilterType string `json:"topicIdsFilterType"`
+        
+        EvaluationFormContextIds []string `json:"evaluationFormContextIds"`
         
         DateStart time.Time `json:"dateStart"`
         *Alias
@@ -152,6 +162,11 @@ func (u *Createobjective) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        EvaluationFormContextIds: []string{""},
         
 
 

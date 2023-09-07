@@ -28,10 +28,16 @@ type WorkdaymetricDud struct {
 
     PunctualityEvents []Punctualityevent `json:"punctualityEvents"`
 
+
+    EvaluationDetails []Qualityevaluationscoreitem `json:"evaluationDetails"`
+
 }
 
 // Workdaymetric
 type Workdaymetric struct { 
+    
+
+
     
 
 
@@ -71,6 +77,9 @@ func (u *Workdaymetric) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

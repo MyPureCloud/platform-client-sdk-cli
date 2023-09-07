@@ -34,6 +34,9 @@ type DefaultobjectiveDud struct {
 
     
 
+
+    
+
 }
 
 // Defaultobjective
@@ -68,6 +71,10 @@ type Defaultobjective struct {
     // TopicIdsFilterType - A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
     TopicIdsFilterType string `json:"topicIdsFilterType"`
 
+
+    // EvaluationFormContextIds - The ids of associated evaluation form context, for Quality Evaluation Score metrics
+    EvaluationFormContextIds []string `json:"evaluationFormContextIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -79,6 +86,7 @@ func (o *Defaultobjective) String() string {
      o.Queues = []Addressableentityref{{}} 
      o.Topics = []Addressableentityref{{}} 
     
+     o.EvaluationFormContextIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -109,6 +117,8 @@ func (u *Defaultobjective) MarshalJSON() ([]byte, error) {
         Topics []Addressableentityref `json:"topics"`
         
         TopicIdsFilterType string `json:"topicIdsFilterType"`
+        
+        EvaluationFormContextIds []string `json:"evaluationFormContextIds"`
         *Alias
     }{
 
@@ -141,6 +151,11 @@ func (u *Defaultobjective) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        EvaluationFormContextIds: []string{""},
         
 
         Alias: (*Alias)(u),

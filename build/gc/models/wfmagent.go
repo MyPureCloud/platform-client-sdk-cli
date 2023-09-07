@@ -78,7 +78,7 @@ type Wfmagent struct {
     Skills []Routingskillreference `json:"skills"`
 
 
-    // Schedulable - Whether the agent has the permission to be included in schedule generation
+    // Schedulable - Whether the agent can be included in schedule generation
     Schedulable bool `json:"schedulable"`
 
 

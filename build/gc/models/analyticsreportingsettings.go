@@ -16,6 +16,9 @@ type AnalyticsreportingsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticsreportingsettings
@@ -27,10 +30,15 @@ type Analyticsreportingsettings struct {
     // QueueAgentAccessObfuscation - Indication of whether or not to obfuscate export data from the Queue Agent Details view based on User ACL
     QueueAgentAccessObfuscation bool `json:"queueAgentAccessObfuscation"`
 
+
+    // MyInteractionsPiiMaskingEnabled - Indicates whether PII data is masked in My Interaction export and the Analytics/Reporting UI
+    MyInteractionsPiiMaskingEnabled bool `json:"myInteractionsPiiMaskingEnabled"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Analyticsreportingsettings) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Analyticsreportingsettings) MarshalJSON() ([]byte, error) {
         PiiMaskingEnabled bool `json:"piiMaskingEnabled"`
         
         QueueAgentAccessObfuscation bool `json:"queueAgentAccessObfuscation"`
+        
+        MyInteractionsPiiMaskingEnabled bool `json:"myInteractionsPiiMaskingEnabled"`
         *Alias
     }{
+
+        
+
 
         
 

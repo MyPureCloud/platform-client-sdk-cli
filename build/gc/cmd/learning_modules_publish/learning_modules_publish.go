@@ -29,7 +29,17 @@ func init() {
 
 func Cmdlearning_modules_publish() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/modules/{moduleId}/publish", utils.FormatPermissions([]string{ "learning:module:publish",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/modules/{moduleId}/publish")))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "description" : "The request body",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningModulePublishRequest"
+      }
+    }
+  },
+  "required" : false
+}`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
@@ -61,6 +71,9 @@ var createCmd = &cobra.Command{
 
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
+			
+			reqModel := models.Learningmodulepublishrequest{}
+			utils.Render(reqModel.String())
 			
 			return
 		}

@@ -63,6 +63,9 @@ type ContactlistDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -132,6 +135,10 @@ type Contactlist struct {
     ColumnDataTypeSpecifications []Columndatatypespecification `json:"columnDataTypeSpecifications"`
 
 
+    // TrimWhitespace - Whether to trim white space when importing a contactlist csv file, default value = true
+    TrimWhitespace bool `json:"trimWhitespace"`
+
+
     
 
 }
@@ -150,6 +157,7 @@ func (o *Contactlist) String() string {
     
     
      o.ColumnDataTypeSpecifications = []Columndatatypespecification{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -190,6 +198,8 @@ func (u *Contactlist) MarshalJSON() ([]byte, error) {
         ZipCodeColumnName string `json:"zipCodeColumnName"`
         
         ColumnDataTypeSpecifications []Columndatatypespecification `json:"columnDataTypeSpecifications"`
+        
+        TrimWhitespace bool `json:"trimWhitespace"`
         *Alias
     }{
 
@@ -251,6 +261,9 @@ func (u *Contactlist) MarshalJSON() ([]byte, error) {
 
         
         ColumnDataTypeSpecifications: []Columndatatypespecification{{}},
+        
+
+
         
 
 

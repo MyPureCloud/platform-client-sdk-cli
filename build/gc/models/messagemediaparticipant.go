@@ -137,6 +137,9 @@ type MessagemediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Messagemediaparticipant
@@ -308,6 +311,10 @@ type Messagemediaparticipant struct {
     // MonitoredParticipantId - The ID of the participant being monitored when performing a message monitor.
     MonitoredParticipantId string `json:"monitoredParticipantId"`
 
+
+    // MonitoredParticipant - The participant being monitored when performing a message monitor.
+    MonitoredParticipant Addressableentityref `json:"monitoredParticipant"`
+
 }
 
 // String returns a JSON representation of the model
@@ -349,6 +356,7 @@ func (o *Messagemediaparticipant) String() string {
     
     
      o.Messages = []Messagedetails{{}} 
+    
     
     
     
@@ -454,6 +462,8 @@ func (u *Messagemediaparticipant) MarshalJSON() ([]byte, error) {
         Authenticated bool `json:"authenticated"`
         
         MonitoredParticipantId string `json:"monitoredParticipantId"`
+        
+        MonitoredParticipant Addressableentityref `json:"monitoredParticipant"`
         *Alias
     }{
 
@@ -571,6 +581,9 @@ func (u *Messagemediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Messages: []Messagedetails{{}},
+        
+
+
         
 
 

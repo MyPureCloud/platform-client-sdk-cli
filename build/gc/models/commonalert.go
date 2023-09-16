@@ -63,6 +63,9 @@ type CommonalertDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -132,6 +135,10 @@ type Commonalert struct {
     ConversationId string `json:"conversationId"`
 
 
+    // AlertSummary - Summary of the alert status of the entities defined in the conditions.  Is set when rule has instance-based or team member based rule predicates
+    AlertSummary Alertsummary `json:"alertSummary"`
+
+
     // RuleUri
     RuleUri string `json:"ruleUri"`
 
@@ -146,6 +153,7 @@ func (o *Commonalert) String() string {
     
     
      o.Notifications = []Alertnotification{{}} 
+    
     
     
     
@@ -205,6 +213,8 @@ func (u *Commonalert) MarshalJSON() ([]byte, error) {
         
         ConversationId string `json:"conversationId"`
         
+        AlertSummary Alertsummary `json:"alertSummary"`
+        
         RuleUri string `json:"ruleUri"`
         *Alias
     }{
@@ -223,6 +233,9 @@ func (u *Commonalert) MarshalJSON() ([]byte, error) {
 
         
         Notifications: []Alertnotification{{}},
+        
+
+
         
 
 

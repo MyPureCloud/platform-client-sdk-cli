@@ -1127,6 +1127,8 @@ gc/models/alertlisting.go
 gc/models/alertnotification.go
 gc/models/alertrequest.go
 gc/models/alertruleproperties.go
+gc/models/alertsummary.go
+gc/models/alertsummaryentity.go
 gc/models/alltimepoints.go
 gc/models/amazonlexrequest.go
 gc/models/analyticsagentgroup.go
@@ -1457,6 +1459,7 @@ gc/models/campaignruleparameters.go
 gc/models/campaignschedule.go
 gc/models/campaignsequence.go
 gc/models/campaignsequenceentitylisting.go
+gc/models/campaignskillstatistics.go
 gc/models/campaignstats.go
 gc/models/campaigntimeslot.go
 gc/models/card.go

@@ -45,7 +45,7 @@ type RecordingjobsqueryDud struct {
 
 // Recordingjobsquery
 type Recordingjobsquery struct { 
-    // Action - Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
+    // Action - Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Archive action is currently not supported
     Action string `json:"action"`
 
 
@@ -77,7 +77,7 @@ type Recordingjobsquery struct {
     IncludeScreenRecordings bool `json:"includeScreenRecordings"`
 
 
-    // ClearExport - For DELETE action, setting this to true will clear any pending exports for recordings. This field is not used for EXPORT action. Default value = false
+    // ClearExport - For DELETE action, setting this to true will clear any pending exports for recordings. This field is only used for DELETE action. Default value = false
     ClearExport bool `json:"clearExport"`
 
 

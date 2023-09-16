@@ -16,10 +16,16 @@ type DetectednamedentityvalueDud struct {
 
     Resolved string `json:"resolved"`
 
+
+    Unit string `json:"unit"`
+
 }
 
 // Detectednamedentityvalue
 type Detectednamedentityvalue struct { 
+    
+
+
     
 
 
@@ -47,6 +53,9 @@ func (u *Detectednamedentityvalue) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

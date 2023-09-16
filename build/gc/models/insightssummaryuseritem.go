@@ -19,6 +19,9 @@ type InsightssummaryuseritemDud struct {
 
     
 
+
+    
+
 }
 
 // Insightssummaryuseritem
@@ -34,12 +37,17 @@ type Insightssummaryuseritem struct {
     // OverallData - Overall insights data of the user
     OverallData Insightssummaryoverallitem `json:"overallData"`
 
+
+    // Ranking - Ranking of the user
+    Ranking int `json:"ranking"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Insightssummaryuseritem) String() string {
     
      o.MetricData = []Insightssummarymetricitem{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -63,6 +71,8 @@ func (u *Insightssummaryuseritem) MarshalJSON() ([]byte, error) {
         MetricData []Insightssummarymetricitem `json:"metricData"`
         
         OverallData Insightssummaryoverallitem `json:"overallData"`
+        
+        Ranking int `json:"ranking"`
         *Alias
     }{
 
@@ -71,6 +81,9 @@ func (u *Insightssummaryuseritem) MarshalJSON() ([]byte, error) {
 
         
         MetricData: []Insightssummarymetricitem{{}},
+        
+
+
         
 
 

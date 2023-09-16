@@ -81,8 +81,8 @@ func Cmdrouting_wrapupcodes() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by Valid values: name, id")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ascending", "Sort order Valid values: ascending, descending")
-	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Filter by wrapup code ID(s)")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Wrapup code`s name (`Sort by` param is ignored unless this field is provided)")
+	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Filter by wrapup code ID(s)")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Filter by division ID(s)")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/wrapupcodes", utils.FormatPermissions([]string{ "routing:wrapupCode:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/wrapupcodes")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -362,13 +362,13 @@ var listCmd = &cobra.Command{
 		if sortOrder != "" {
 			queryParams["sortOrder"] = sortOrder
 		}
-		id := utils.GetFlag(cmd.Flags(), "[]string", "id")
-		if id != "" {
-			queryParams["id"] = id
-		}
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {
 			queryParams["name"] = name
+		}
+		id := utils.GetFlag(cmd.Flags(), "[]string", "id")
+		if id != "" {
+			queryParams["id"] = id
 		}
 		divisionId := utils.GetFlag(cmd.Flags(), "[]string", "divisionId")
 		if divisionId != "" {

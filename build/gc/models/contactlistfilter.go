@@ -59,7 +59,7 @@ type Contactlistfilter struct {
     Version int `json:"version"`
 
 
-    // ContactList - The contact list the filter is based on.
+    // ContactList - The contact list the filter is based on. Required if sourceType is ContactList
     ContactList Domainentityref `json:"contactList"`
 
 

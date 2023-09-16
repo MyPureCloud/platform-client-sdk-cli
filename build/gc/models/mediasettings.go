@@ -22,6 +22,12 @@ type MediasettingsDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Mediasettings
@@ -38,6 +44,14 @@ type Mediasettings struct {
     ServiceLevel Servicelevel `json:"serviceLevel"`
 
 
+    // AutoAnswerAlertToneSeconds
+    AutoAnswerAlertToneSeconds float64 `json:"autoAnswerAlertToneSeconds"`
+
+
+    // ManualAnswerAlertToneSeconds
+    ManualAnswerAlertToneSeconds float64 `json:"manualAnswerAlertToneSeconds"`
+
+
     // SubTypeSettings - Map of media subtype to media subtype specific settings.
     SubTypeSettings map[string]Basemediasettings `json:"subTypeSettings"`
 
@@ -45,6 +59,8 @@ type Mediasettings struct {
 
 // String returns a JSON representation of the model
 func (o *Mediasettings) String() string {
+    
+    
     
     
     
@@ -72,9 +88,19 @@ func (u *Mediasettings) MarshalJSON() ([]byte, error) {
         
         ServiceLevel Servicelevel `json:"serviceLevel"`
         
+        AutoAnswerAlertToneSeconds float64 `json:"autoAnswerAlertToneSeconds"`
+        
+        ManualAnswerAlertToneSeconds float64 `json:"manualAnswerAlertToneSeconds"`
+        
         SubTypeSettings map[string]Basemediasettings `json:"subTypeSettings"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

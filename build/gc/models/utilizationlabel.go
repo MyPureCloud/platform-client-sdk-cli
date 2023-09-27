@@ -6,15 +6,12 @@ import (
 )
 
 var (
-    InsightsagentitemMarshalled = false
+    UtilizationlabelMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type InsightsagentitemDud struct { 
+type UtilizationlabelDud struct { 
     Id string `json:"id"`
-
-
-    
 
 
     
@@ -24,8 +21,8 @@ type InsightsagentitemDud struct {
 
 }
 
-// Insightsagentitem
-type Insightsagentitem struct { 
+// Utilizationlabel
+type Utilizationlabel struct { 
     
 
 
@@ -33,17 +30,12 @@ type Insightsagentitem struct {
     Name string `json:"name"`
 
 
-    // Manager - This user's manager.
-    Manager Domainentityref `json:"manager"`
-
-
     
 
 }
 
 // String returns a JSON representation of the model
-func (o *Insightsagentitem) String() string {
-    
+func (o *Utilizationlabel) String() string {
     
 
     j, _ := json.Marshal(o)
@@ -52,24 +44,19 @@ func (o *Insightsagentitem) String() string {
     return str
 }
 
-func (u *Insightsagentitem) MarshalJSON() ([]byte, error) {
-    type Alias Insightsagentitem
+func (u *Utilizationlabel) MarshalJSON() ([]byte, error) {
+    type Alias Utilizationlabel
 
-    if InsightsagentitemMarshalled {
+    if UtilizationlabelMarshalled {
         return []byte("{}"), nil
     }
-    InsightsagentitemMarshalled = true
+    UtilizationlabelMarshalled = true
 
     return json.Marshal(&struct {
         
         Name string `json:"name"`
-        
-        Manager Domainentityref `json:"manager"`
         *Alias
     }{
-
-        
-
 
         
 

@@ -72,12 +72,12 @@ type Directoryuserdeviceslisting struct {
     PreviousUri string `json:"previousUri"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
     // SelfUri
     SelfUri string `json:"selfUri"`
+
+
+    // LastUri
+    LastUri string `json:"lastUri"`
 
 
     // PageCount
@@ -128,9 +128,9 @@ func (u *Directoryuserdeviceslisting) MarshalJSON() ([]byte, error) {
         
         PreviousUri string `json:"previousUri"`
         
-        LastUri string `json:"lastUri"`
-        
         SelfUri string `json:"selfUri"`
+        
+        LastUri string `json:"lastUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

@@ -23,12 +23,12 @@ type AnalyticsconversationqueryresponseDud struct {
 
 // Analyticsconversationqueryresponse
 type Analyticsconversationqueryresponse struct { 
-    // Aggregations
-    Aggregations []Aggregationresult `json:"aggregations"`
-
-
     // Conversations
     Conversations []Analyticsconversationwithoutattributes `json:"conversations"`
+
+
+    // Aggregations
+    Aggregations []Aggregationresult `json:"aggregations"`
 
 
     // TotalHits
@@ -38,8 +38,8 @@ type Analyticsconversationqueryresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticsconversationqueryresponse) String() string {
-     o.Aggregations = []Aggregationresult{{}} 
      o.Conversations = []Analyticsconversationwithoutattributes{{}} 
+     o.Aggregations = []Aggregationresult{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -58,21 +58,21 @@ func (u *Analyticsconversationqueryresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Aggregations []Aggregationresult `json:"aggregations"`
-        
         Conversations []Analyticsconversationwithoutattributes `json:"conversations"`
+        
+        Aggregations []Aggregationresult `json:"aggregations"`
         
         TotalHits int `json:"totalHits"`
         *Alias
     }{
 
         
-        Aggregations: []Aggregationresult{{}},
-        
-
-
-        
         Conversations: []Analyticsconversationwithoutattributes{{}},
+        
+
+
+        
+        Aggregations: []Aggregationresult{{}},
         
 
 

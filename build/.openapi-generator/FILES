@@ -3612,6 +3612,7 @@ gc/models/usertimeoffintegrationstatusresponselisting.go
 gc/models/usertimeoffrequestreference.go
 gc/models/usertransferevent.go
 gc/models/utilization.go
+gc/models/utilizationlabel.go
 gc/models/utterance.go
 gc/models/validateaddressrequest.go
 gc/models/validateaddressresponse.go

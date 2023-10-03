@@ -72,12 +72,12 @@ type Userentitylisting struct {
     PreviousUri string `json:"previousUri"`
 
 
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
     // LastUri
     LastUri string `json:"lastUri"`
+
+
+    // SelfUri
+    SelfUri string `json:"selfUri"`
 
 
     // PageCount
@@ -128,9 +128,9 @@ func (u *Userentitylisting) MarshalJSON() ([]byte, error) {
         
         PreviousUri string `json:"previousUri"`
         
-        SelfUri string `json:"selfUri"`
-        
         LastUri string `json:"lastUri"`
+        
+        SelfUri string `json:"selfUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

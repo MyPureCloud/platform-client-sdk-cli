@@ -22,7 +22,7 @@ type OutcomescoresresultDud struct {
 // Outcomescoresresult
 type Outcomescoresresult struct { 
     // OutcomeScores - List of scored outcomes in the session.
-    OutcomeScores []Outcomeeventscore `json:"outcomeScores"`
+    OutcomeScores []Outcomescore `json:"outcomeScores"`
 
 
     
@@ -31,7 +31,7 @@ type Outcomescoresresult struct {
 
 // String returns a JSON representation of the model
 func (o *Outcomescoresresult) String() string {
-     o.OutcomeScores = []Outcomeeventscore{{}} 
+     o.OutcomeScores = []Outcomescore{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -49,12 +49,12 @@ func (u *Outcomescoresresult) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        OutcomeScores []Outcomeeventscore `json:"outcomeScores"`
+        OutcomeScores []Outcomescore `json:"outcomeScores"`
         *Alias
     }{
 
         
-        OutcomeScores: []Outcomeeventscore{{}},
+        OutcomeScores: []Outcomescore{{}},
         
 
 

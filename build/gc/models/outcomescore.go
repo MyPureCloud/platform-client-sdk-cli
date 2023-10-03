@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    OutcomeeventscoreMarshalled = false
+    OutcomescoreMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type OutcomeeventscoreDud struct { 
+type OutcomescoreDud struct { 
     
 
 
@@ -33,8 +33,8 @@ type OutcomeeventscoreDud struct {
 
 }
 
-// Outcomeeventscore
-type Outcomeeventscore struct { 
+// Outcomescore
+type Outcomescore struct { 
     // Outcome - The outcome that the score was calculated for.
     Outcome Addressableentityref `json:"outcome"`
 
@@ -65,7 +65,7 @@ type Outcomeeventscore struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Outcomeeventscore) String() string {
+func (o *Outcomescore) String() string {
     
     
     
@@ -80,13 +80,13 @@ func (o *Outcomeeventscore) String() string {
     return str
 }
 
-func (u *Outcomeeventscore) MarshalJSON() ([]byte, error) {
-    type Alias Outcomeeventscore
+func (u *Outcomescore) MarshalJSON() ([]byte, error) {
+    type Alias Outcomescore
 
-    if OutcomeeventscoreMarshalled {
+    if OutcomescoreMarshalled {
         return []byte("{}"), nil
     }
-    OutcomeeventscoreMarshalled = true
+    OutcomescoreMarshalled = true
 
     return json.Marshal(&struct {
         

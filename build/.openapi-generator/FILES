@@ -750,6 +750,7 @@ gc/cmd/search_suggest/search_suggest.go
 gc/cmd/speechandtextanalytics_conversations/speechandtextanalytics_conversations.go
 gc/cmd/speechandtextanalytics_conversations_communications_transcripturl/speechandtextanalytics_conversations_communications_transcripturl.go
 gc/cmd/speechandtextanalytics_conversations_communications_transcripturls/speechandtextanalytics_conversations_communications_transcripturls.go
+gc/cmd/speechandtextanalytics_dictionaryfeedback/speechandtextanalytics_dictionaryfeedback.go
 gc/cmd/speechandtextanalytics_programs/speechandtextanalytics_programs.go
 gc/cmd/speechandtextanalytics_programs_general_jobs/speechandtextanalytics_programs_general_jobs.go
 gc/cmd/speechandtextanalytics_programs_mappings/speechandtextanalytics_programs_mappings.go
@@ -1818,6 +1819,9 @@ gc/models/dialogflowagentsummaryentitylisting.go
 gc/models/dialogflowintent.go
 gc/models/dialogflowparameter.go
 gc/models/dialogflowproject.go
+gc/models/dictionaryfeedback.go
+gc/models/dictionaryfeedbackentitylisting.go
+gc/models/dictionaryfeedbackexamplephrase.go
 gc/models/did.go
 gc/models/didentitylisting.go
 gc/models/didnumber.go
@@ -2518,6 +2522,7 @@ gc/models/lineintegrationentitylisting.go
 gc/models/lineintegrationrequest.go
 gc/models/linestatus.go
 gc/models/lineuserid.go
+gc/models/listeddictionaryfeedback.go
 gc/models/listedprogram.go
 gc/models/listedtopic.go
 gc/models/listitemcomponent.go
@@ -2769,7 +2774,6 @@ gc/models/outboundsettings.go
 gc/models/outcome.go
 gc/models/outcomeachievement.go
 gc/models/outcomeconfig.go
-gc/models/outcomeeventscore.go
 gc/models/outcomelisting.go
 gc/models/outcomepercentilecondition.go
 gc/models/outcomepredictor.go
@@ -2779,6 +2783,7 @@ gc/models/outcomeprobabilitycondition.go
 gc/models/outcomequantilecondition.go
 gc/models/outcomeref.go
 gc/models/outcomerefrequest.go
+gc/models/outcomescore.go
 gc/models/outcomescoresresult.go
 gc/models/outlierinfo.go
 gc/models/outofoffice.go

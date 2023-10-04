@@ -1,12 +1,20 @@
 {
   "notifications": [
     {
+      "topic": "v2.analytics.conversation.{id}.metrics",
+      "class": "ConversationMetricsTopicConversationMetricRecord"
+    },
+    {
       "topic": "v2.analytics.conversations.details.jobs.availability",
       "class": "ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification"
     },
     {
       "topic": "v2.analytics.flow.{id}.aggregates",
       "class": "StatEventFlowTopicStatsNotification"
+    },
+    {
+      "topic": "v2.analytics.flow.{id}.metrics",
+      "class": "FlowMetricsTopicFlowMetricRecord"
     },
     {
       "topic": "v2.analytics.flowoutcome.{id}.aggregates",
@@ -45,6 +53,10 @@
       "class": "ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification"
     },
     {
+      "topic": "v2.audits.entitytype.{id}.entityid.{id}",
+      "class": "AuditTopicAuditLogMessage"
+    },
+    {
       "topic": "v2.businessunits.{id}.workforcemanagement.intraday",
       "class": "WfmBuIntradayDataUpdateTopicBuIntradayNotification"
     },
@@ -57,6 +69,82 @@
       "class": "ContentManagementWorkspaceDocumentsTopicDocumentDataV2"
     },
     {
+      "topic": "v2.conversations.{id}.transcription",
+      "class": "TranscriptionTopicTranscriptionMessage"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.acd.end",
+      "class": "AcdEndDetailEventTopicAcdEndEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.acd.start",
+      "class": "AcdStartDetailEventTopicAcdStartEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.acw",
+      "class": "AcwDetailEventTopicAfterCallWorkEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.attributes",
+      "class": "AttributeDetailEventTopicAttributeUpdateEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.contact",
+      "class": "ContactDetailEventTopicContactUpdateEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.customer.end",
+      "class": "CustomerEndDetailEventTopicCustomerEndEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.customer.start",
+      "class": "CustomerStartDetailEventTopicCustomerStartEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.flow.end",
+      "class": "FlowEndDetailEventTopicFlowEndEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.flow.start",
+      "class": "FlowStartDetailEventTopicFlowStartEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.outbound",
+      "class": "OutboundDetailEventTopicOutboundInitEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.user.end",
+      "class": "UserEndDetailEventTopicUserEndEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.user.start",
+      "class": "UserStartDetailEventTopicUserStartEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.voicemail.end",
+      "class": "VoicemailEndDetailEventTopicVoicemailEndEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.voicemail.start",
+      "class": "VoicemailStartDetailEventTopicVoicemailStartEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.wrapup",
+      "class": "WrapupDetailEventTopicWrapupEvent"
+    },
+    {
+      "topic": "v2.externalcontacts.contacts.{id}",
+      "class": "ExternalContactsContactChangedTopicContact"
+    },
+    {
+      "topic": "v2.externalcontacts.contacts.{id}.journey.sessions",
+      "class": "JourneySessionEventsNotificationSessionEvent"
+    },
+    {
+      "topic": "v2.externalcontacts.contacts.{id}.unresolved",
+      "class": "ExternalContactsUnresolvedContactChangedTopicContact"
+    },
+    {
       "topic": "v2.flows.outcomes.{id}",
       "class": "ArchitectFlowOutcomeNotificationFlowOutcomeNotification"
     },
@@ -65,12 +153,36 @@
       "class": "ArchitectFlowNotificationFlowNotification"
     },
     {
+      "topic": "v2.gamification.scorecards.users.{id}",
+      "class": "GamificationScorecardChangeTopicScorecardChange"
+    },
+    {
       "topic": "v2.groups.{id}.greetings",
       "class": "GroupGreetingEventGreeting"
     },
     {
+      "topic": "v2.journey.sessions.{id}.action.events",
+      "class": "JourneyWebActionEventsNotificationWebActionEventsNotification"
+    },
+    {
+      "topic": "v2.journey.sessions.{id}.app.events",
+      "class": "JourneyAppEventsNotificationAppEventsNotification"
+    },
+    {
+      "topic": "v2.journey.sessions.{id}.outcome.events",
+      "class": "JourneyOutcomeEventsNotificationOutcomeEventsNotification"
+    },
+    {
+      "topic": "v2.journey.sessions.{id}.web.events",
+      "class": "JourneyWebEventsNotificationWebEventsNotification"
+    },
+    {
       "topic": "v2.managementunits.{id}.workforcemanagement.intraday",
       "class": "WfmIntradayDataUpdateTopicIntradayDataUpdate"
+    },
+    {
+      "topic": "v2.operations.events.{id}",
+      "class": "OperationalEventNotificationTopicOperationalEventNotification"
     },
     {
       "topic": "v2.outbound.attemptlimits.{id}",
@@ -201,12 +313,16 @@
       "class": "QueueUserEventTopicQueueMember"
     },
     {
+      "topic": "v2.speechandtextanalytics.programs.general.jobs.{id}",
+      "class": "CreateGeneralProgramTopicsDefinitionsJob"
+    },
+    {
       "topic": "v2.speechandtextanalytics.programs.publishjobs.{id}",
-      "class": "PublishProgramPublishJob"
+      "class": "PublishProgramTopicsDefinitionsJob"
     },
     {
       "topic": "v2.speechandtextanalytics.topics.publishjobs.{id}",
-      "class": "PublishTopicPublishJob"
+      "class": "PublishTopicTopicsDefinitionsJob"
     },
     {
       "topic": "v2.system.no_longer_subscribed.{id}",
@@ -223,6 +339,18 @@
     {
       "topic": "v2.system.{id}.{id}",
       "class": "SystemMessageSystemMessage"
+    },
+    {
+      "topic": "v2.taskmanagement.workitems.queues.{id}",
+      "class": "WorkitemsQueueEventsNotificationWorkitem"
+    },
+    {
+      "topic": "v2.taskmanagement.workitems.users.{id}",
+      "class": "WorkitemsUserEventsNotificationWorkitem"
+    },
+    {
+      "topic": "v2.taskmanagement.workitems.{id}",
+      "class": "WorkitemsEventsNotificationWorkitem"
     },
     {
       "topic": "v2.telephony.providers.edges.phones.{id}",
@@ -257,6 +385,10 @@
       "class": "AgentActivityChangedTopicAgentActivity"
     },
     {
+      "topic": "v2.users.{id}.alerting.alerts",
+      "class": "V2MobiusAlertsTopicAlert"
+    },
+    {
       "topic": "v2.users.{id}.alerting.heartbeat.alerts",
       "class": "KlaxonHeartBeatAlertsTopicHeartBeatAlert"
     },
@@ -271,6 +403,10 @@
     {
       "topic": "v2.users.{id}.alerting.interactionstats.rules",
       "class": "KlaxonInteractionStatsRulesTopicInteractionStatRule"
+    },
+    {
+      "topic": "v2.users.{id}.alerting.rules",
+      "class": "V2MobiusRulesTopicRule"
     },
     {
       "topic": "v2.users.{id}.analytics.reporting.exports",
@@ -307,6 +443,10 @@
     {
       "topic": "v2.users.{id}.conversations.emails",
       "class": "ConversationEmailEventTopicEmailConversation"
+    },
+    {
+      "topic": "v2.users.{id}.conversations.inbound.typing.event",
+      "class": "V2ConversationMessageTypingEventForUserTopicMessageData"
     },
     {
       "topic": "v2.users.{id}.conversations.messages",
@@ -389,20 +529,28 @@
       "class": "VoicemailMessagesTopicVoicemailMessage"
     },
     {
-      "topic": "v2.users.{id}.wem.coaching.appointment",
-      "class": "WemCoachingAppointmentTopicCoachingAppointmentNotification"
+      "topic": "v2.users.{id}.wem.coaching.notification",
+      "class": "WemCoachingUserNotificationTopicCoachingUserNotification"
     },
     {
       "topic": "v2.users.{id}.wem.learning.assignment",
-      "class": "WemLearningAssignmentTopicLearningAssignmentNotification"
+      "class": "LearningAssignmentTopicLearningAssignmentNotification"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.adherence",
       "class": "WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.adherence.historical.bulk",
+      "class": "WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.historicaladherencequery",
       "class": "WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.integrations.hris.timeofftypes.jobs",
+      "class": "WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.notifications",
@@ -410,11 +558,23 @@
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.schedules",
-      "class": "WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification"
+      "class": "WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shrinkage.jobs",
+      "class": "WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculationsCompleteNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.timeoffbalance.jobs",
+      "class": "WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.timeoffrequests",
       "class": "WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate"
+    },
+    {
+      "topic": "v2.video.conferences.{id}",
+      "class": "VideoConferenceUpdateTopicVideoConference"
     },
     {
       "topic": "v2.webdeployments.configurations.{id}",
@@ -426,7 +586,11 @@
     },
     {
       "topic": "v2.wem.learning.assignments.modules.{id}",
-      "class": "WemLearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification"
+      "class": "LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification"
+    },
+    {
+      "topic": "v2.workflows.{id}.conversations.inbound.typing.event",
+      "class": "V2ConversationMessageTypingEventForWorkflowTopicMessageData"
     },
     {
       "topic": "v2.workforcemanagement.agents",

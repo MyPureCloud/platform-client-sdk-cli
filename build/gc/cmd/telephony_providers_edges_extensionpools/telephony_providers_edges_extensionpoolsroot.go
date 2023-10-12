@@ -1,0 +1,12 @@
+package telephony_providers_edges_extensionpools
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_extensionpools_divisionviews"
+)
+
+func init() {
+	telephony_providers_edges_extensionpoolsCmd.AddCommand(telephony_providers_edges_extensionpools_divisionviews.Cmdtelephony_providers_edges_extensionpools_divisionviews())
+	telephony_providers_edges_extensionpoolsCmd.Short = utils.GenerateCustomDescription(telephony_providers_edges_extensionpoolsCmd.Short, telephony_providers_edges_extensionpools_divisionviews.Description, )
+	telephony_providers_edges_extensionpoolsCmd.Long = telephony_providers_edges_extensionpoolsCmd.Short
+}

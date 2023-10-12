@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("orgauthorization_trustors", "SWAGGER_OVERRIDE_/api/v2/orgauthorization/trustors", "SWAGGER_OVERRIDE_/api/v2/orgauthorization/trustors", "SWAGGER_OVERRIDE_/api/v2/orgauthorization/trustors", )
+	Description = utils.FormatUsageDescription("orgauthorization_trustors", "SWAGGER_OVERRIDE_/api/v2/orgauthorization/trustors", "SWAGGER_OVERRIDE_/api/v2/orgauthorization/trustors", "SWAGGER_OVERRIDE_/api/v2/orgauthorization/trustors", "SWAGGER_OVERRIDE_/api/v2/orgauthorization/trustors", )
 	orgauthorization_trustorsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("orgauthorization_trustors"),
 		Short: Description,
@@ -28,6 +28,17 @@ func init() {
 }
 
 func Cmdorgauthorization_trustors() *cobra.Command { 
+	utils.AddFlag(bulkdeleteCmd.Flags(), "[]string", "id", "", "Comma separated list of trustor ids to remove - REQUIRED")
+	bulkdeleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", bulkdeleteCmd.UsageTemplate(), "DELETE", "/api/v2/orgauthorization/trustors", utils.FormatPermissions([]string{ "authorization:orgTrustor:delete",  }), utils.GenerateDevCentreLink("DELETE", "Organization Authorization", "/api/v2/orgauthorization/trustors")))
+	utils.AddFileFlagIfUpsert(bulkdeleteCmd.Flags(), "DELETE", ``)
+	bulkdeleteCmd.MarkFlagRequired("id")
+	
+	utils.AddPaginateFlagsIfListingResponse(bulkdeleteCmd.Flags(), "DELETE", `{
+  "description" : "Trustors deleted successfully",
+  "content" : { }
+}`)
+	orgauthorization_trustorsCmd.AddCommand(bulkdeleteCmd)
+
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/orgauthorization/trustors/{trustorOrgId}", utils.FormatPermissions([]string{ "authorization:orgTrustor:delete",  }), utils.GenerateDevCentreLink("DELETE", "Organization Authorization", "/api/v2/orgauthorization/trustors/{trustorOrgId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
@@ -76,6 +87,73 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
+var bulkdeleteCmd = &cobra.Command{
+	Use:   "bulkdelete",
+	Short: "Delete Bulk Org Trustors",
+	Long:  "Delete Bulk Org Trustors",
+	Args:  utils.DetermineArgs([]string{ }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/orgauthorization/trustors"
+
+		id := utils.GetFlag(cmd.Flags(), "[]string", "id")
+		if id != "" {
+			queryParams["id"] = id
+		}
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		const opId = "bulkdelete"
+		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
 var deleteCmd = &cobra.Command{
 	Use:   "delete [trustorOrgId]",
 	Short: "Delete Org Trust",

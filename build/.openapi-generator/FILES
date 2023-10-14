@@ -926,6 +926,8 @@ gc/cmd/telephony_providers_edges_trunks/telephony_providers_edges_trunks.go
 gc/cmd/telephony_providers_edges_trunks_metrics/telephony_providers_edges_trunks_metrics.go
 gc/cmd/telephony_providers_edges_trunkswithrecording/telephony_providers_edges_trunkswithrecording.go
 gc/cmd/telephony_providers_edges_unpair/telephony_providers_edges_unpair.go
+gc/cmd/telephony_sipmessages_conversations/telephony_sipmessages_conversations.go
+gc/cmd/telephony_sipmessages_conversations_headers/telephony_sipmessages_conversations_headers.go
 gc/cmd/telephony_siptraces/telephony_siptraces.go
 gc/cmd/telephony_siptraces_download/telephony_siptraces_download.go
 gc/cmd/textbots_botflows_sessions/textbots_botflows_sessions.go
@@ -1551,12 +1553,14 @@ gc/models/callcommand.go
 gc/models/callconversation.go
 gc/models/callconversationentitylisting.go
 gc/models/callforwarding.go
+gc/models/callheader.go
 gc/models/callhistoryconversation.go
 gc/models/callhistoryconversationentitylisting.go
 gc/models/callhistoryparticipant.go
 gc/models/callmediaparticipant.go
 gc/models/callmediapolicy.go
 gc/models/callmediapolicyconditions.go
+gc/models/callmessage.go
 gc/models/callrecord.go
 gc/models/callroute.go
 gc/models/calltarget.go
@@ -1983,7 +1987,6 @@ gc/models/digitlength.go
 gc/models/digits.go
 gc/models/directoryuserdeviceslisting.go
 gc/models/directrouting.go
-gc/models/directroutingcallmediasettings.go
 gc/models/directroutingmediasettings.go
 gc/models/disallowedentitylearningassignmentitem.go
 gc/models/disallowedentitylearningassignmentreference.go
@@ -2793,6 +2796,7 @@ gc/models/mediartpstatistics.go
 gc/models/mediasettings.go
 gc/models/mediastatistics.go
 gc/models/mediastatisticslisting.go
+gc/models/mediastatisticstrunkinfo.go
 gc/models/mediasummary.go
 gc/models/mediasummarydetail.go
 gc/models/mediatranscription.go

@@ -96,8 +96,8 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/infrastructureascode"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/textbots"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/infrastructureascode"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/usage"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/voicemail"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/architect"
@@ -132,7 +132,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 84.3.0")
+		fmt.Println("Current version: 85.0.0")
 		checkForNewVersion()
 	},
 }
@@ -151,7 +151,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("84.3.0", latestVersion) {
+	if versionsAreEqual("85.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -317,8 +317,8 @@ func init() {
 	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(speechandtextanalytics.Cmdspeechandtextanalytics())
 	rootCmd.AddCommand(telephony.Cmdtelephony())
-	rootCmd.AddCommand(infrastructureascode.Cmdinfrastructureascode())
 	rootCmd.AddCommand(textbots.Cmdtextbots())
+	rootCmd.AddCommand(infrastructureascode.Cmdinfrastructureascode())
 	rootCmd.AddCommand(usage.Cmdusage())
 	rootCmd.AddCommand(voicemail.Cmdvoicemail())
 	rootCmd.AddCommand(architect.Cmdarchitect())

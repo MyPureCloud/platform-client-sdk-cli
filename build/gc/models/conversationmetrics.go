@@ -25,6 +25,9 @@ type ConversationmetricsDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationmetrics
@@ -45,6 +48,10 @@ type Conversationmetrics struct {
     SentimentTrendClass string `json:"sentimentTrendClass"`
 
 
+    // EmpathyScores - The Empathy Scores
+    EmpathyScores []Empathyscore `json:"empathyScores"`
+
+
     // ParticipantMetrics - The Participant Metrics
     ParticipantMetrics Participantmetrics `json:"participantMetrics"`
 
@@ -56,6 +63,7 @@ func (o *Conversationmetrics) String() string {
     
     
     
+     o.EmpathyScores = []Empathyscore{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -82,6 +90,8 @@ func (u *Conversationmetrics) MarshalJSON() ([]byte, error) {
         
         SentimentTrendClass string `json:"sentimentTrendClass"`
         
+        EmpathyScores []Empathyscore `json:"empathyScores"`
+        
         ParticipantMetrics Participantmetrics `json:"participantMetrics"`
         *Alias
     }{
@@ -95,6 +105,11 @@ func (u *Conversationmetrics) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        EmpathyScores: []Empathyscore{{}},
         
 
 

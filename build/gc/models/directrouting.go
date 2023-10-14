@@ -33,7 +33,7 @@ type DirectroutingDud struct {
 // Directrouting
 type Directrouting struct { 
     // CallMediaSettings - Direct Routing Settings specific to Call media.
-    CallMediaSettings Directroutingcallmediasettings `json:"callMediaSettings"`
+    CallMediaSettings Directroutingmediasettings `json:"callMediaSettings"`
 
 
     // EmailMediaSettings - Direct Routing Settings specific to Email media.
@@ -82,7 +82,7 @@ func (u *Directrouting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        CallMediaSettings Directroutingcallmediasettings `json:"callMediaSettings"`
+        CallMediaSettings Directroutingmediasettings `json:"callMediaSettings"`
         
         EmailMediaSettings Directroutingmediasettings `json:"emailMediaSettings"`
         

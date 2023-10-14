@@ -30,7 +30,7 @@ type MediaendpointstatisticsDud struct {
 // Mediaendpointstatistics
 type Mediaendpointstatistics struct { 
     // Trunk - Trunk information utilized when creating the media endpoint
-    Trunk Namedentity `json:"trunk"`
+    Trunk Mediastatisticstrunkinfo `json:"trunk"`
 
 
     // Station - Station information associated with media endpoint
@@ -74,7 +74,7 @@ func (u *Mediaendpointstatistics) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Trunk Namedentity `json:"trunk"`
+        Trunk Mediastatisticstrunkinfo `json:"trunk"`
         
         Station Namedentity `json:"station"`
         

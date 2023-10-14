@@ -19,6 +19,12 @@ type ActionmapestimateoutcomecriteriaDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Actionmapestimateoutcomecriteria
@@ -34,10 +40,20 @@ type Actionmapestimateoutcomecriteria struct {
     // Probability - Additional probability condition, where if set, the action map will trigger if the current outcome probability is lower or equal to the value.
     Probability float32 `json:"probability"`
 
+
+    // Quantile - Represents the quantity of sessions that have a maximum probability less than the predicted probability.
+    Quantile float32 `json:"quantile"`
+
+
+    // MaxQuantile - Represents the quantity of sessions that have a maximum probability less than the predicted session max probability.
+    MaxQuantile float32 `json:"maxQuantile"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Actionmapestimateoutcomecriteria) String() string {
+    
+    
     
     
     
@@ -63,8 +79,18 @@ func (u *Actionmapestimateoutcomecriteria) MarshalJSON() ([]byte, error) {
         MaxProbability float32 `json:"maxProbability"`
         
         Probability float32 `json:"probability"`
+        
+        Quantile float32 `json:"quantile"`
+        
+        MaxQuantile float32 `json:"maxQuantile"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

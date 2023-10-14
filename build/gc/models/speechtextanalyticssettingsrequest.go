@@ -19,6 +19,9 @@ type SpeechtextanalyticssettingsrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Speechtextanalyticssettingsrequest
@@ -34,12 +37,17 @@ type Speechtextanalyticssettingsrequest struct {
     // TextAnalyticsEnabled - Setting to enable/disable text analytics
     TextAnalyticsEnabled bool `json:"textAnalyticsEnabled"`
 
+
+    // AgentEmpathyEnabled - Setting to enable/disable Agent Empathy setting
+    AgentEmpathyEnabled bool `json:"agentEmpathyEnabled"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Speechtextanalyticssettingsrequest) String() string {
     
      o.ExpectedDialects = []string{""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -63,6 +71,8 @@ func (u *Speechtextanalyticssettingsrequest) MarshalJSON() ([]byte, error) {
         ExpectedDialects []string `json:"expectedDialects"`
         
         TextAnalyticsEnabled bool `json:"textAnalyticsEnabled"`
+        
+        AgentEmpathyEnabled bool `json:"agentEmpathyEnabled"`
         *Alias
     }{
 
@@ -71,6 +81,9 @@ func (u *Speechtextanalyticssettingsrequest) MarshalJSON() ([]byte, error) {
 
         
         ExpectedDialects: []string{""},
+        
+
+
         
 
 

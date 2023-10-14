@@ -33,6 +33,9 @@ type SkillgroupwithmemberdivisionsDud struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    Status string `json:"status"`
+
+
     
 
 
@@ -58,6 +61,9 @@ type Skillgroupwithmemberdivisions struct {
 
     // Description - Group description
     Description string `json:"description"`
+
+
+    
 
 
     
@@ -116,6 +122,9 @@ func (u *Skillgroupwithmemberdivisions) MarshalJSON() ([]byte, error) {
         MemberDivisions []string `json:"memberDivisions"`
         *Alias
     }{
+
+        
+
 
         
 

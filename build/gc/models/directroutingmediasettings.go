@@ -13,25 +13,17 @@ var (
 type DirectroutingmediasettingsDud struct { 
     
 
-
-    
-
 }
 
 // Directroutingmediasettings
 type Directroutingmediasettings struct { 
-    // Enabled - Toggle that enables Direct Routing for this media type.
-    Enabled bool `json:"enabled"`
-
-
-    // InboundFlow - The Direct Routing inbound flow id for this media type.
-    InboundFlow Addressableentityref `json:"inboundFlow"`
+    // UseAgentAddressOutbound - Toggle that enables using an agent's Direct Routing address outbound on behalf of queue for this media type.
+    UseAgentAddressOutbound bool `json:"useAgentAddressOutbound"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Directroutingmediasettings) String() string {
-    
     
 
     j, _ := json.Marshal(o)
@@ -50,14 +42,9 @@ func (u *Directroutingmediasettings) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Enabled bool `json:"enabled"`
-        
-        InboundFlow Addressableentityref `json:"inboundFlow"`
+        UseAgentAddressOutbound bool `json:"useAgentAddressOutbound"`
         *Alias
     }{
-
-        
-
 
         
 

@@ -13,6 +13,9 @@ var (
 type PlanninggrouplistDud struct { 
     
 
+
+    
+
 }
 
 // Planninggrouplist
@@ -20,11 +23,16 @@ type Planninggrouplist struct {
     // Entities
     Entities []Planninggroup `json:"entities"`
 
+
+    // Metadata - Version metadata for the planning groups
+    Metadata Wfmversionedentitymetadata `json:"metadata"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Planninggrouplist) String() string {
      o.Entities = []Planninggroup{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -43,11 +51,16 @@ func (u *Planninggrouplist) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Entities []Planninggroup `json:"entities"`
+        
+        Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
 
         
         Entities: []Planninggroup{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

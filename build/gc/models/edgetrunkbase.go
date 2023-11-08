@@ -57,6 +57,12 @@ type EdgetrunkbaseDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -115,6 +121,14 @@ type Edgetrunkbase struct {
     TrunkType string `json:"trunkType"`
 
 
+    // Site - Used to determine the media regions for inbound and outbound calls through a trunk. Also determines the dial plan to use for calls that came in on a trunk and have to be sent out on it as well.
+    Site Domainentityref `json:"site"`
+
+
+    // InboundSite - Allows a customer to set the site to which inbound calls will be routed
+    InboundSite Domainentityref `json:"inboundSite"`
+
+
     
 
 }
@@ -127,6 +141,8 @@ func (o *Edgetrunkbase) String() string {
     
     
      o.Properties = map[string]interface{}{"": Interface{}} 
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -158,6 +174,10 @@ func (u *Edgetrunkbase) MarshalJSON() ([]byte, error) {
         Properties map[string]interface{} `json:"properties"`
         
         TrunkType string `json:"trunkType"`
+        
+        Site Domainentityref `json:"site"`
+        
+        InboundSite Domainentityref `json:"inboundSite"`
         *Alias
     }{
 
@@ -202,6 +222,12 @@ func (u *Edgetrunkbase) MarshalJSON() ([]byte, error) {
 
         
         Properties: map[string]interface{}{"": Interface{}},
+        
+
+
+        
+
+
         
 
 

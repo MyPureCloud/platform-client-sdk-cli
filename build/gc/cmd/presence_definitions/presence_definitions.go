@@ -62,6 +62,7 @@ func Cmdpresence_definitions() *cobra.Command {
 }`)
 	presence_definitionsCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "string", "localeCode", "", "The locale code to fetch for the presence definition. Use ALL to fetch everything. Valid values: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/presence/definitions/{definitionId}", utils.FormatPermissions([]string{ "presence:presenceDefinition:view",  }), utils.GenerateDevCentreLink("GET", "Presence", "/api/v2/presence/definitions/{definitionId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -79,6 +80,7 @@ func Cmdpresence_definitions() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "string", "deactivated", "false", "Deactivated query can be TRUE or FALSE")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.")
+	utils.AddFlag(listCmd.Flags(), "string", "localeCode", "", "The locale code to fetch for the presence definition. Use ALL to fetch everything. Valid values: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/presence/definitions", utils.FormatPermissions([]string{ "presence:presenceDefinition:view",  }), utils.GenerateDevCentreLink("GET", "Presence", "/api/v2/presence/definitions")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -278,6 +280,10 @@ var getCmd = &cobra.Command{
 		definitionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{definitionId}", fmt.Sprintf("%v", definitionId), -1)
 
+		localeCode := utils.GetFlag(cmd.Flags(), "string", "localeCode")
+		if localeCode != "" {
+			queryParams["localeCode"] = localeCode
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -348,6 +354,10 @@ var listCmd = &cobra.Command{
 		divisionId := utils.GetFlag(cmd.Flags(), "[]string", "divisionId")
 		if divisionId != "" {
 			queryParams["divisionId"] = divisionId
+		}
+		localeCode := utils.GetFlag(cmd.Flags(), "string", "localeCode")
+		if localeCode != "" {
+			queryParams["localeCode"] = localeCode
 		}
 		urlString := path
 		if len(queryParams) > 0 {

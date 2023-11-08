@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdflows_instances_jobs() *cobra.Command { 
-	utils.AddFlag(createCmd.Flags(), "string", "expand", "", "Expand various query types. Valid values: bots, data")
+	utils.AddFlag(createCmd.Flags(), "string", "expand", "", "Expand various query types. Valid values: bots, dataActions")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/instances/jobs", utils.FormatPermissions([]string{ "architect:flowInstance:view",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/instances/jobs")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Requested Flow Ids",

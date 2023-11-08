@@ -60,6 +60,12 @@ type TrunkbaseDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -122,6 +128,14 @@ type Trunkbase struct {
     Managed bool `json:"managed"`
 
 
+    // Site - Used to determine the media regions for inbound and outbound calls through a trunk. Also determines the dial plan to use for calls that came in on a trunk and have to be sent out on it as well.
+    Site Domainentityref `json:"site"`
+
+
+    // InboundSite - Allows a customer to set the site to which inbound calls will be routed
+    InboundSite Domainentityref `json:"inboundSite"`
+
+
     
 
 }
@@ -134,6 +148,8 @@ func (o *Trunkbase) String() string {
     
     
      o.Properties = map[string]interface{}{"": Interface{}} 
+    
+    
     
     
 
@@ -168,6 +184,10 @@ func (u *Trunkbase) MarshalJSON() ([]byte, error) {
         TrunkType string `json:"trunkType"`
         
         Managed bool `json:"managed"`
+        
+        Site Domainentityref `json:"site"`
+        
+        InboundSite Domainentityref `json:"inboundSite"`
         *Alias
     }{
 
@@ -212,6 +232,12 @@ func (u *Trunkbase) MarshalJSON() ([]byte, error) {
 
         
         Properties: map[string]interface{}{"": Interface{}},
+        
+
+
+        
+
+
         
 
 

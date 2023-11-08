@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdflows_instances() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand various details. Valid values: bots, data")
+	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand various details. Valid values: bots, dataActions")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/instances/{instanceId}", utils.FormatPermissions([]string{ "architect:flowInstance:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/instances/{instanceId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	

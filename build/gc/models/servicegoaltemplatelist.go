@@ -13,6 +13,9 @@ var (
 type ServicegoaltemplatelistDud struct { 
     
 
+
+    
+
 }
 
 // Servicegoaltemplatelist
@@ -20,11 +23,16 @@ type Servicegoaltemplatelist struct {
     // Entities
     Entities []Servicegoaltemplate `json:"entities"`
 
+
+    // Metadata - Version metadata for the service goal templates
+    Metadata Wfmversionedentitymetadata `json:"metadata"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Servicegoaltemplatelist) String() string {
      o.Entities = []Servicegoaltemplate{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -43,11 +51,16 @@ func (u *Servicegoaltemplatelist) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Entities []Servicegoaltemplate `json:"entities"`
+        
+        Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
 
         
         Entities: []Servicegoaltemplate{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

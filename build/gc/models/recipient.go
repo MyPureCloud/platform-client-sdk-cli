@@ -49,7 +49,7 @@ type Recipient struct {
     Name string `json:"name"`
 
 
-    // Flow - An automate flow object which defines the set of actions to be taken, when a message is received by this provisioned phone number.
+    // Flow - An automate flow object which defines the set of actions to be taken, when a message is received by this recipient.
     Flow Flow `json:"flow"`
 
 

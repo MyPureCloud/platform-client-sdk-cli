@@ -36,7 +36,7 @@ type Sendagentlessoutboundmessagerequest struct {
     FromAddress string `json:"fromAddress"`
 
 
-    // ToAddress - The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.
+    // ToAddress - The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a WhatsApp ID would be 13175555555
     ToAddress string `json:"toAddress"`
 
 

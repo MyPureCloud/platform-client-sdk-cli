@@ -42,7 +42,7 @@ type Agentlessemailsendrequestdto struct {
     SenderType string `json:"senderType"`
 
 
-    // ConversationId - The identifier of the conversation.
+    // ConversationId - The identifier of the conversation. This must be an email interaction.
     ConversationId string `json:"conversationId"`
 
 

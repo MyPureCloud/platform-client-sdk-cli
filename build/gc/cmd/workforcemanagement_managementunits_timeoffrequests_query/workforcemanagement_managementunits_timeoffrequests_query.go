@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdworkforcemanagement_managementunits_timeoffrequests_query() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "forceDownloadService", "", "Force the result of this operation to be sent via download service. For testing/app development purposes")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query", utils.FormatPermissions([]string{ "wfm:timeOffRequest:view",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "body",
@@ -84,6 +85,10 @@ var createCmd = &cobra.Command{
 		managementUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{managementUnitId}", fmt.Sprintf("%v", managementUnitId), -1)
 
+		forceDownloadService := utils.GetFlag(cmd.Flags(), "bool", "forceDownloadService")
+		if forceDownloadService != "" {
+			queryParams["forceDownloadService"] = forceDownloadService
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

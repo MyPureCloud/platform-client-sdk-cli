@@ -141,7 +141,6 @@ gc/cmd/billing_reports_billableusage/billing_reports_billableusage.go
 gc/cmd/billing_trusteebillingoverview/billing_trusteebillingoverview.go
 gc/cmd/carrierservices_integrations_emergencylocations_me/carrierservices_integrations_emergencylocations_me.go
 gc/cmd/certificate_details/certificate_details.go
-gc/cmd/chat_settings/chat_settings.go
 gc/cmd/chats_messages/chats_messages.go
 gc/cmd/chats_rooms/chats_rooms.go
 gc/cmd/chats_rooms_messages/chats_rooms_messages.go
@@ -280,6 +279,7 @@ gc/cmd/conversations_messaging_integrations_line/conversations_messaging_integra
 gc/cmd/conversations_messaging_integrations_open/conversations_messaging_integrations_open.go
 gc/cmd/conversations_messaging_integrations_twitter/conversations_messaging_integrations_twitter.go
 gc/cmd/conversations_messaging_integrations_whatsapp/conversations_messaging_integrations_whatsapp.go
+gc/cmd/conversations_messaging_integrations_whatsapp_embeddedsignup/conversations_messaging_integrations_whatsapp_embeddedsignup.go
 gc/cmd/conversations_messaging_settings/conversations_messaging_settings.go
 gc/cmd/conversations_messaging_settings_default/conversations_messaging_settings_default.go
 gc/cmd/conversations_messaging_stickers/conversations_messaging_stickers.go
@@ -520,7 +520,9 @@ gc/cmd/journey_actionmaps_estimates_jobs/journey_actionmaps_estimates_jobs.go
 gc/cmd/journey_actionmaps_estimates_jobs_results/journey_actionmaps_estimates_jobs_results.go
 gc/cmd/journey_actiontargets/journey_actiontargets.go
 gc/cmd/journey_actiontemplates/journey_actiontemplates.go
+gc/cmd/journey_deployments_actionevent/journey_deployments_actionevent.go
 gc/cmd/journey_deployments_appevents/journey_deployments_appevents.go
+gc/cmd/journey_deployments_customers_ping/journey_deployments_customers_ping.go
 gc/cmd/journey_outcomes/journey_outcomes.go
 gc/cmd/journey_outcomes_attributions_jobs/journey_outcomes_attributions_jobs.go
 gc/cmd/journey_outcomes_attributions_jobs_results/journey_outcomes_attributions_jobs_results.go
@@ -915,6 +917,7 @@ gc/cmd/telephony_providers_edges_sites/telephony_providers_edges_sites.go
 gc/cmd/telephony_providers_edges_sites_numberplans/telephony_providers_edges_sites_numberplans.go
 gc/cmd/telephony_providers_edges_sites_numberplans_classifications/telephony_providers_edges_sites_numberplans_classifications.go
 gc/cmd/telephony_providers_edges_sites_outboundroutes/telephony_providers_edges_sites_outboundroutes.go
+gc/cmd/telephony_providers_edges_sites_siteconnections/telephony_providers_edges_sites_siteconnections.go
 gc/cmd/telephony_providers_edges_softwareupdate/telephony_providers_edges_softwareupdate.go
 gc/cmd/telephony_providers_edges_softwareversions/telephony_providers_edges_softwareversions.go
 gc/cmd/telephony_providers_edges_statuscode/telephony_providers_edges_statuscode.go
@@ -942,6 +945,7 @@ gc/cmd/uploads_learning_coverart/uploads_learning_coverart.go
 gc/cmd/uploads_publicassets_images/uploads_publicassets_images.go
 gc/cmd/uploads_recordings/uploads_recordings.go
 gc/cmd/uploads_workforcemanagement_historicaldata_csv/uploads_workforcemanagement_historicaldata_csv.go
+gc/cmd/usage_events_definitions/usage_events_definitions.go
 gc/cmd/usage_query/usage_query.go
 gc/cmd/usage_query_results/usage_query_results.go
 gc/cmd/usage_simplesearch/usage_simplesearch.go
@@ -991,6 +995,7 @@ gc/cmd/users_station_associatedstation/users_station_associatedstation.go
 gc/cmd/users_station_defaultstation/users_station_defaultstation.go
 gc/cmd/users_superiors/users_superiors.go
 gc/cmd/users_trustors/users_trustors.go
+gc/cmd/users_verifiers/users_verifiers.go
 gc/cmd/voicemail_groups_mailbox/voicemail_groups_mailbox.go
 gc/cmd/voicemail_groups_messages/voicemail_groups_messages.go
 gc/cmd/voicemail_groups_policy/voicemail_groups_policy.go
@@ -1156,6 +1161,7 @@ gc/models/actioncontract.go
 gc/models/actioncontractinput.go
 gc/models/actionentitylisting.go
 gc/models/actioneventactionmap.go
+gc/models/actioneventrequest.go
 gc/models/actioninput.go
 gc/models/actionmap.go
 gc/models/actionmapaction.go
@@ -1281,7 +1287,6 @@ gc/models/apiusagesimplesearch.go
 gc/models/appendtodncactionsettings.go
 gc/models/appevent.go
 gc/models/appeventrequest.go
-gc/models/appeventrequestsession.go
 gc/models/appeventresponse.go
 gc/models/appeventresponsesession.go
 gc/models/approvalnamespace.go
@@ -1937,6 +1942,8 @@ gc/models/dependencyobjectentitylisting.go
 gc/models/dependencystatus.go
 gc/models/dependencytype.go
 gc/models/dependencytypeentitylisting.go
+gc/models/deploymentping.go
+gc/models/deploymentwebaction.go
 gc/models/destination.go
 gc/models/detail.go
 gc/models/detecteddialogact.go
@@ -1988,6 +1995,7 @@ gc/models/digits.go
 gc/models/directoryuserdeviceslisting.go
 gc/models/directrouting.go
 gc/models/directroutingmediasettings.go
+gc/models/disablesiteconnectionsrequest.go
 gc/models/disallowedentitylearningassignmentitem.go
 gc/models/disallowedentitylearningassignmentreference.go
 gc/models/disconnectreason.go
@@ -2218,6 +2226,8 @@ gc/models/evaluatoractivityentitylisting.go
 gc/models/event.go
 gc/models/eventaction.go
 gc/models/eventcondition.go
+gc/models/eventdefinition.go
+gc/models/eventdefinitionlisting.go
 gc/models/eventerror.go
 gc/models/eventlisting.go
 gc/models/eventlog.go
@@ -2885,6 +2895,7 @@ gc/models/moveagentsresponse.go
 gc/models/movemanagementunitrequest.go
 gc/models/movemanagementunitresponse.go
 gc/models/murescheduleresultwrapper.go
+gc/models/mutableuserpresence.go
 gc/models/mutesnoozefields.go
 gc/models/namedentity.go
 gc/models/namedentityannotation.go
@@ -2957,6 +2968,7 @@ gc/models/observationvalue.go
 gc/models/okta.go
 gc/models/onelogin.go
 gc/models/openactionfields.go
+gc/models/openactionproperties.go
 gc/models/opencontentattachment.go
 gc/models/openevent.go
 gc/models/openeventnormalizedmessage.go
@@ -3500,6 +3512,7 @@ gc/models/sipsearchpublicrequest.go
 gc/models/sipsearchresult.go
 gc/models/site.go
 gc/models/siteconnection.go
+gc/models/siteconnections.go
 gc/models/siteentitylisting.go
 gc/models/skillentitylisting.go
 gc/models/skillgroup.go
@@ -3828,6 +3841,7 @@ gc/models/updatetimeofflimitrequest.go
 gc/models/updatetimeoffplanrequest.go
 gc/models/updatetriggerrequest.go
 gc/models/updateuser.go
+gc/models/updateverifierrequest.go
 gc/models/updateworkplanrotationagentrequest.go
 gc/models/updateworkplanrotationrequest.go
 gc/models/uploadurlrequest.go
@@ -3943,6 +3957,8 @@ gc/models/valuewrapperhristimeofftype.go
 gc/models/valuewrapperplanningperiodsettings.go
 gc/models/valuewrapperstring.go
 gc/models/verificationresult.go
+gc/models/verifier.go
+gc/models/verifierentitylisting.go
 gc/models/video.go
 gc/models/videoconferencedetails.go
 gc/models/viewfilter.go
@@ -4002,6 +4018,7 @@ gc/models/webmessaginggeneric.go
 gc/models/webmessagingmessage.go
 gc/models/webmessagingmessageentitylist.go
 gc/models/webmessagingofferfields.go
+gc/models/webmessagingofferproperties.go
 gc/models/webmessagingquickreply.go
 gc/models/webmessagingrecipient.go
 gc/models/weekschedule.go
@@ -4046,6 +4063,8 @@ gc/models/wfmversionedentitymetadata.go
 gc/models/whatsappavailablephonenumberdetails.go
 gc/models/whatsappavailablephonenumberdetailslisting.go
 gc/models/whatsappdefinition.go
+gc/models/whatsappembeddedsignupintegrationactivationrequest.go
+gc/models/whatsappembeddedsignupintegrationrequest.go
 gc/models/whatsappid.go
 gc/models/whatsappintegration.go
 gc/models/whatsappintegrationentitylisting.go

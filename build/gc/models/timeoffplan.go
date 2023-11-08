@@ -35,6 +35,9 @@ type TimeoffplanDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -64,6 +67,10 @@ type Timeoffplan struct {
     DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
 
 
+    // HrisTimeOffType - Time off type, if this time off plan is associated with the integration.
+    HrisTimeOffType Hristimeofftype `json:"hrisTimeOffType"`
+
+
     // Active - Whether this time off plan is currently being used by agents.
     Active bool `json:"active"`
 
@@ -81,6 +88,7 @@ func (o *Timeoffplan) String() string {
     
      o.ActivityCodeIds = []string{""} 
      o.TimeOffLimits = []Timeofflimitreference{{}} 
+    
     
     
     
@@ -112,6 +120,8 @@ func (u *Timeoffplan) MarshalJSON() ([]byte, error) {
         
         DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
         
+        HrisTimeOffType Hristimeofftype `json:"hrisTimeOffType"`
+        
         Active bool `json:"active"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
@@ -131,6 +141,9 @@ func (u *Timeoffplan) MarshalJSON() ([]byte, error) {
 
         
         TimeOffLimits: []Timeofflimitreference{{}},
+        
+
+
         
 
 

@@ -1,4 +1,4 @@
-package chat_settings
+package telephony_providers_edges_sites_siteconnections
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("chat_settings", "SWAGGER_OVERRIDE_/api/v2/chat/settings", "SWAGGER_OVERRIDE_/api/v2/chat/settings", "SWAGGER_OVERRIDE_/api/v2/chat/settings", )
-	chat_settingsCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("chat_settings"),
+	Description = utils.FormatUsageDescription("telephony_providers_edges_sites_siteconnections", "SWAGGER_OVERRIDE_/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections", "SWAGGER_OVERRIDE_/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections", "SWAGGER_OVERRIDE_/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections", )
+	telephony_providers_edges_sites_siteconnectionsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("telephony_providers_edges_sites_siteconnections"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,11 +24,11 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(chat_settingsCmd)
+	CommandService = services.NewCommandService(telephony_providers_edges_sites_siteconnectionsCmd)
 }
 
-func Cmdchat_settings() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/chat/settings", utils.FormatPermissions([]string{ "chat:setting:view", "chat:setting:edit",  }), utils.GenerateDevCentreLink("GET", "Chat", "/api/v2/chat/settings")))
+func Cmdtelephony_providers_edges_sites_siteconnections() *cobra.Command { 
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections", utils.FormatPermissions([]string{ "telephony:plugin:all", "telephony:sites:view",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -36,45 +36,20 @@ func Cmdchat_settings() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ChatSettings"
+        "$ref" : "#/components/schemas/SiteConnections"
       }
     }
   }
 }`)
-	chat_settingsCmd.AddCommand(getCmd)
+	telephony_providers_edges_sites_siteconnectionsCmd.AddCommand(getCmd)
 
-	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/chat/settings", utils.FormatPermissions([]string{ "chat:setting:edit",  }), utils.GenerateDevCentreLink("PATCH", "Chat", "/api/v2/chat/settings")))
-	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
-  "description" : "Chat",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/ChatSettings"
-      }
-    }
-  },
-  "required" : true
-}`)
-	
-	utils.AddPaginateFlagsIfListingResponse(patchCmd.Flags(), "PATCH", `{
-  "description" : "successful operation",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/ChatSettings"
-      }
-    }
-  }
-}`)
-	chat_settingsCmd.AddCommand(patchCmd)
-
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/chat/settings", utils.FormatPermissions([]string{ "chat:setting:edit",  }), utils.GenerateDevCentreLink("PUT", "Chat", "/api/v2/chat/settings")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "description" : "Chat",
+  "description" : "Site",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ChatSettings"
+        "$ref" : "#/components/schemas/SiteConnections"
       }
     }
   },
@@ -86,13 +61,38 @@ func Cmdchat_settings() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ChatSettings"
+        "$ref" : "#/components/schemas/SiteConnections"
       }
     }
   }
 }`)
-	chat_settingsCmd.AddCommand(updateCmd)
-	return chat_settingsCmd
+	telephony_providers_edges_sites_siteconnectionsCmd.AddCommand(updateCmd)
+
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PATCH", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections")))
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
+  "description" : "Site",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DisableSiteConnectionsRequest"
+      }
+    }
+  },
+  "required" : true
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SiteConnections"
+      }
+    }
+  }
+}`)
+	telephony_providers_edges_sites_siteconnectionsCmd.AddCommand(updateCmd)
+	return telephony_providers_edges_sites_siteconnectionsCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -101,10 +101,10 @@ func queryEscape(value string) string {
 }
 
 var getCmd = &cobra.Command{
-	Use:   "get",
-	Short: "Get Chat Settings.",
-	Long:  "Get Chat Settings.",
-	Args:  utils.DetermineArgs([]string{ }),
+	Use:   "get [siteId]",
+	Short: "Get site connections for a site.",
+	Long:  "Get site connections for a site.",
+	Args:  utils.DetermineArgs([]string{ "siteId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -117,7 +117,9 @@ var getCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/chat/settings"
+		path := "/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections"
+		siteId, args := args[0], args[1:]
+		path = strings.Replace(path, "{siteId}", fmt.Sprintf("%v", siteId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -163,11 +165,11 @@ var getCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var patchCmd = &cobra.Command{
-	Use:   "patch",
-	Short: "Patch Chat Settings.",
-	Long:  "Patch Chat Settings.",
-	Args:  utils.DetermineArgs([]string{ }),
+var updateCmd = &cobra.Command{
+	Use:   "update [siteId]",
+	Short: "Update site connections for a site.",
+	Long:  "Update site connections for a site.",
+	Args:  utils.DetermineArgs([]string{ "siteId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -175,7 +177,7 @@ var patchCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Chatsettings{}
+			reqModel := models.Siteconnections{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -183,7 +185,9 @@ var patchCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/chat/settings"
+		path := "/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections"
+		siteId, args := args[0], args[1:]
+		path = strings.Replace(path, "{siteId}", fmt.Sprintf("%v", siteId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -198,8 +202,8 @@ var patchCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "patch"
-		const httpMethod = "PATCH"
+		const opId = "update"
+		const httpMethod = "PUT"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
@@ -230,10 +234,10 @@ var patchCmd = &cobra.Command{
 	},
 }
 var updateCmd = &cobra.Command{
-	Use:   "update",
-	Short: "Update Chat Settings.",
-	Long:  "Update Chat Settings.",
-	Args:  utils.DetermineArgs([]string{ }),
+	Use:   "update [siteId]",
+	Short: "Disable site connections for a site.",
+	Long:  "Disable site connections for a site.",
+	Args:  utils.DetermineArgs([]string{ "siteId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -241,7 +245,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Chatsettings{}
+			reqModel := models.Disablesiteconnectionsrequest{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -249,7 +253,9 @@ var updateCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/chat/settings"
+		path := "/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections"
+		siteId, args := args[0], args[1:]
+		path = strings.Replace(path, "{siteId}", fmt.Sprintf("%v", siteId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -265,7 +271,7 @@ var updateCmd = &cobra.Command{
 		}
 
 		const opId = "update"
-		const httpMethod = "PUT"
+		const httpMethod = "PATCH"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdworkforcemanagement_managementunits_weeks_shifttrades_search() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "forceDownloadService", "", "Force the result of this operation to be sent via download service. For testing/app development purposes")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search", utils.FormatPermissions([]string{ "wfm:agentShiftTradeRequest:participate",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "body",
@@ -86,6 +87,10 @@ var createCmd = &cobra.Command{
 		weekDateId, args := args[0], args[1:]
 		path = strings.Replace(path, "{weekDateId}", fmt.Sprintf("%v", weekDateId), -1)
 
+		forceDownloadService := utils.GetFlag(cmd.Flags(), "bool", "forceDownloadService")
+		if forceDownloadService != "" {
+			queryParams["forceDownloadService"] = forceDownloadService
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

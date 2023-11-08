@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type DomainorganizationroleupdateDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -50,7 +50,8 @@ type DomainorganizationroleupdateDud struct {
 
 // Domainorganizationroleupdate
 type Domainorganizationroleupdate struct { 
-    
+    // Id - role id
+    Id string `json:"id"`
 
 
     // Name - The name of the role
@@ -101,6 +102,7 @@ func (o *Domainorganizationroleupdate) String() string {
     
     
     
+    
      o.Permissions = []string{""} 
      o.PermissionPolicies = []Domainpermissionpolicy{{}} 
     
@@ -123,6 +125,8 @@ func (u *Domainorganizationroleupdate) MarshalJSON() ([]byte, error) {
     DomainorganizationroleupdateMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Name string `json:"name"`
         

@@ -17,7 +17,7 @@ type RecipientrequestDud struct {
 
 // Recipientrequest
 type Recipientrequest struct { 
-    // Flow - An automate flow object which defines the set of actions to be taken, when a message is received by this provisioned phone number.
+    // Flow - An automate flow object which defines the set of actions to be taken, when a message is received by this recipient.
     Flow Recipientflow `json:"flow"`
 
 }

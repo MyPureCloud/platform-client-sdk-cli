@@ -36,19 +36,19 @@ type Callbackmediasettings struct {
     EnableAutoAnswer bool `json:"enableAutoAnswer"`
 
 
-    // AlertingTimeoutSeconds
+    // AlertingTimeoutSeconds - The alerting timeout for the media type, in seconds
     AlertingTimeoutSeconds int `json:"alertingTimeoutSeconds"`
 
 
-    // ServiceLevel
+    // ServiceLevel - The targeted service level for the media type
     ServiceLevel Servicelevel `json:"serviceLevel"`
 
 
-    // AutoAnswerAlertToneSeconds
+    // AutoAnswerAlertToneSeconds - How long to play the alerting tone for an auto-answer interaction
     AutoAnswerAlertToneSeconds float64 `json:"autoAnswerAlertToneSeconds"`
 
 
-    // ManualAnswerAlertToneSeconds
+    // ManualAnswerAlertToneSeconds - How long to play the alerting tone for a manual-answer interaction
     ManualAnswerAlertToneSeconds float64 `json:"manualAnswerAlertToneSeconds"`
 
 

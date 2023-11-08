@@ -27,7 +27,7 @@ type Buqueryagentschedulesrequest struct {
     ManagementUnitId string `json:"managementUnitId"`
 
 
-    // UserIds - The IDs of the users to query.  Omit to query all user schedules in the management unit. 
+    // UserIds - The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned
     UserIds []string `json:"userIds"`
 
 

@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdspeechandtextanalytics_conversations_communications_transcripturl() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl", utils.FormatPermissions([]string{ "recording:recording:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl", utils.FormatPermissions([]string{ "recording:recording:view", "speechAndTextAnalytics:data:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

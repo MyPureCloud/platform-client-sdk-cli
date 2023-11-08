@@ -65,8 +65,8 @@ func queryEscape(value string) string {
 
 var updateCmd = &cobra.Command{
 	Use:   "update",
-	Short: "Update bulk acd autoanswer on users",
-	Long:  "Update bulk acd autoanswer on users",
+	Short: "Update bulk acd autoanswer on users. Max 50 users can be updated at a time.",
+	Long:  "Update bulk acd autoanswer on users. Max 50 users can be updated at a time.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

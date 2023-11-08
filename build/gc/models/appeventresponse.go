@@ -140,7 +140,7 @@ type Appeventresponse struct {
     Traits map[string]Customeventattribute `json:"traits"`
 
 
-    // CreatedDate - Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    // CreatedDate - UTC timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     CreatedDate time.Time `json:"createdDate"`
 
 

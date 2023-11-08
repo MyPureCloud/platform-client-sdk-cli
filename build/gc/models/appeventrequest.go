@@ -47,9 +47,6 @@ type AppeventrequestDud struct {
 
     
 
-
-    
-
 }
 
 // Appeventrequest
@@ -82,10 +79,6 @@ type Appeventrequest struct {
     ReferrerUrl string `json:"referrerUrl"`
 
 
-    // Session - Contains information about the app session the event belongs to. A session is expected to end once the application is closed or a customer has been idle for more than 30 minutes. Each session is tied to a single customer and a customer can be linked to multiple unique sessions.
-    Session Appeventrequestsession `json:"session"`
-
-
     // SearchQuery - Represents the keywords in a customer search query.
     SearchQuery string `json:"searchQuery"`
 
@@ -102,14 +95,13 @@ type Appeventrequest struct {
     CustomerCookieId string `json:"customerCookieId"`
 
 
-    // CreatedDate - Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    // CreatedDate - UTC timestamp indicating when the event actually took place, events older than an hour will be rejected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     CreatedDate time.Time `json:"createdDate"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Appeventrequest) String() string {
-    
     
     
     
@@ -153,8 +145,6 @@ func (u *Appeventrequest) MarshalJSON() ([]byte, error) {
         
         ReferrerUrl string `json:"referrerUrl"`
         
-        Session Appeventrequestsession `json:"session"`
-        
         SearchQuery string `json:"searchQuery"`
         
         Attributes map[string]Customeventattribute `json:"attributes"`
@@ -166,9 +156,6 @@ func (u *Appeventrequest) MarshalJSON() ([]byte, error) {
         CreatedDate time.Time `json:"createdDate"`
         *Alias
     }{
-
-        
-
 
         
 

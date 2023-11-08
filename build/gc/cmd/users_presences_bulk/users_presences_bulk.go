@@ -55,7 +55,7 @@ func Cmdusers_presences_bulk() *cobra.Command {
       "schema" : {
         "type" : "array",
         "items" : {
-          "$ref" : "#/components/schemas/UserPresence"
+          "$ref" : "#/components/schemas/MutableUserPresence"
         }
       }
     }
@@ -166,7 +166,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Userpresence{}
+			reqModel := models.Mutableuserpresence{}
 			utils.Render(reqModel.String())
 			
 			return

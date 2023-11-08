@@ -1,0 +1,12 @@
+package conversations_messaging_integrations_whatsapp
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messaging_integrations_whatsapp_embeddedsignup"
+)
+
+func init() {
+	conversations_messaging_integrations_whatsappCmd.AddCommand(conversations_messaging_integrations_whatsapp_embeddedsignup.Cmdconversations_messaging_integrations_whatsapp_embeddedsignup())
+	conversations_messaging_integrations_whatsappCmd.Short = utils.GenerateCustomDescription(conversations_messaging_integrations_whatsappCmd.Short, conversations_messaging_integrations_whatsapp_embeddedsignup.Description, )
+	conversations_messaging_integrations_whatsappCmd.Long = conversations_messaging_integrations_whatsappCmd.Short
+}

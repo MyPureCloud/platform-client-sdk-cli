@@ -99,6 +99,9 @@ type EvaluationDud struct {
     
 
 
+    
+
+
     EvaluationSource Evaluationsource `json:"evaluationSource"`
 
 
@@ -165,6 +168,10 @@ type Evaluation struct {
 
     // ChangedDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     ChangedDate time.Time `json:"changedDate"`
+
+
+    // RevisionCreatedDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    RevisionCreatedDate time.Time `json:"revisionCreatedDate"`
 
 
     // Queue
@@ -247,6 +254,7 @@ func (o *Evaluation) String() string {
     
     
     
+    
      o.MediaType = []string{""} 
     
     
@@ -305,6 +313,8 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
         
         ChangedDate time.Time `json:"changedDate"`
         
+        RevisionCreatedDate time.Time `json:"revisionCreatedDate"`
+        
         Queue Queue `json:"queue"`
         
         MediaType []string `json:"mediaType"`
@@ -334,6 +344,9 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
         HasAssistanceFailed bool `json:"hasAssistanceFailed"`
         *Alias
     }{
+
+        
+
 
         
 

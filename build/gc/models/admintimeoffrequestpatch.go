@@ -38,6 +38,9 @@ type AdmintimeoffrequestpatchDud struct {
 
     
 
+
+    
+
 }
 
 // Admintimeoffrequestpatch
@@ -50,11 +53,15 @@ type Admintimeoffrequestpatch struct {
     ActivityCodeId string `json:"activityCodeId"`
 
 
+    // Paid - Whether this is a paid time off request
+    Paid bool `json:"paid"`
+
+
     // Notes - Notes about the time off request
     Notes string `json:"notes"`
 
 
-    // FullDayManagementUnitDates - A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.
+    // FullDayManagementUnitDates - A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone.
     FullDayManagementUnitDates []string `json:"fullDayManagementUnitDates"`
 
 
@@ -81,6 +88,7 @@ type Admintimeoffrequestpatch struct {
 
 // String returns a JSON representation of the model
 func (o *Admintimeoffrequestpatch) String() string {
+    
     
     
     
@@ -111,6 +119,8 @@ func (u *Admintimeoffrequestpatch) MarshalJSON() ([]byte, error) {
         
         ActivityCodeId string `json:"activityCodeId"`
         
+        Paid bool `json:"paid"`
+        
         Notes string `json:"notes"`
         
         FullDayManagementUnitDates []string `json:"fullDayManagementUnitDates"`
@@ -126,6 +136,9 @@ func (u *Admintimeoffrequestpatch) MarshalJSON() ([]byte, error) {
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
 
         
 

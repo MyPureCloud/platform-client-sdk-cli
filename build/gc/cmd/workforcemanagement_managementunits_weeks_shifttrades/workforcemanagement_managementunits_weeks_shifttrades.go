@@ -54,6 +54,7 @@ func Cmdworkforcemanagement_managementunits_weeks_shifttrades() *cobra.Command {
 	workforcemanagement_managementunits_weeks_shifttradesCmd.AddCommand(createCmd)
 
 	utils.AddFlag(listCmd.Flags(), "bool", "evaluateMatches", "true", "Whether to evaluate the matches for violations")
+	utils.AddFlag(listCmd.Flags(), "bool", "forceDownloadService", "", "Force the result of this operation to be sent via download service. For testing/app development purposes")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades", utils.FormatPermissions([]string{ "wfm:shiftTradeRequest:view", "wfm:shiftTradeRequest:edit",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -197,6 +198,10 @@ var listCmd = &cobra.Command{
 		evaluateMatches := utils.GetFlag(cmd.Flags(), "bool", "evaluateMatches")
 		if evaluateMatches != "" {
 			queryParams["evaluateMatches"] = evaluateMatches
+		}
+		forceDownloadService := utils.GetFlag(cmd.Flags(), "bool", "forceDownloadService")
+		if forceDownloadService != "" {
+			queryParams["forceDownloadService"] = forceDownloadService
 		}
 		urlString := path
 		if len(queryParams) > 0 {

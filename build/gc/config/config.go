@@ -184,6 +184,9 @@ func (c *configuration) String() string {
 }
 
 func (a *ProxyConfiguration) String() string {
+	if a == nil {
+		return ""
+	}
         return fmt.Sprintf(`{protocol: %s, host: %s,  port: %s, userName: %v, password: %s}`, a.Protocol, a.Port, a.Host, a.UserName, a.Password)
 }
 

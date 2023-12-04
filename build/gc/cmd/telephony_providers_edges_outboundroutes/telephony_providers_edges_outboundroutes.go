@@ -167,13 +167,13 @@ var listCmd = &cobra.Command{
 		if name != "" {
 			queryParams["name"] = name
 		}
-		siteId := utils.GetFlag(cmd.Flags(), "string", "site.id")
+		siteId := utils.GetFlag(cmd.Flags(), "string", "siteId")
 		if siteId != "" {
-			queryParams["siteId"] = siteId
+			queryParams["site.id"] = siteId
 		}
-		externalTrunkBasesIds := utils.GetFlag(cmd.Flags(), "string", "externalTrunkBases.ids")
+		externalTrunkBasesIds := utils.GetFlag(cmd.Flags(), "string", "externalTrunkBasesIds")
 		if externalTrunkBasesIds != "" {
-			queryParams["externalTrunkBasesIds"] = externalTrunkBasesIds
+			queryParams["externalTrunkBases.ids"] = externalTrunkBasesIds
 		}
 		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
 		if sortBy != "" {

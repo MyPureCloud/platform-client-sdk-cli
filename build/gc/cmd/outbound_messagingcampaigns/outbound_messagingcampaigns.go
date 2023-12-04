@@ -383,9 +383,9 @@ var listCmd = &cobra.Command{
 		if divisionId != "" {
 			queryParams["divisionId"] = divisionId
 		}
-		varType := utils.GetFlag(cmd.Flags(), "string", "type")
+		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
 		if varType != "" {
-			queryParams["varType"] = varType
+			queryParams["type"] = varType
 		}
 		senderSmsPhoneNumber := utils.GetFlag(cmd.Flags(), "string", "senderSmsPhoneNumber")
 		if senderSmsPhoneNumber != "" {

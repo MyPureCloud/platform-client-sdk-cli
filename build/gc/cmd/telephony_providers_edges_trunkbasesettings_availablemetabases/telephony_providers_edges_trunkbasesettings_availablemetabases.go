@@ -72,9 +72,9 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases"
 
-		varType := utils.GetFlag(cmd.Flags(), "string", "type")
+		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
 		if varType != "" {
-			queryParams["varType"] = varType
+			queryParams["type"] = varType
 		}
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

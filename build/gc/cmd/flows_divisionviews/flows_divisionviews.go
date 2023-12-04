@@ -81,9 +81,9 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/flows/divisionviews"
 
-		varType := utils.GetFlag(cmd.Flags(), "[]string", "type")
+		varType := utils.GetFlag(cmd.Flags(), "[]string", "varType")
 		if varType != "" {
-			queryParams["varType"] = varType
+			queryParams["type"] = varType
 		}
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {

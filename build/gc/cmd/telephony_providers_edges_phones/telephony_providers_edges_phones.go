@@ -372,49 +372,49 @@ var listCmd = &cobra.Command{
 		if sortOrder != "" {
 			queryParams["sortOrder"] = sortOrder
 		}
-		siteId := utils.GetFlag(cmd.Flags(), "string", "site.id")
+		siteId := utils.GetFlag(cmd.Flags(), "string", "siteId")
 		if siteId != "" {
-			queryParams["siteId"] = siteId
+			queryParams["site.id"] = siteId
 		}
-		webRtcUserId := utils.GetFlag(cmd.Flags(), "string", "webRtcUser.id")
+		webRtcUserId := utils.GetFlag(cmd.Flags(), "string", "webRtcUserId")
 		if webRtcUserId != "" {
-			queryParams["webRtcUserId"] = webRtcUserId
+			queryParams["webRtcUser.id"] = webRtcUserId
 		}
-		phoneBaseSettingsId := utils.GetFlag(cmd.Flags(), "string", "phoneBaseSettings.id")
+		phoneBaseSettingsId := utils.GetFlag(cmd.Flags(), "string", "phoneBaseSettingsId")
 		if phoneBaseSettingsId != "" {
-			queryParams["phoneBaseSettingsId"] = phoneBaseSettingsId
+			queryParams["phoneBaseSettings.id"] = phoneBaseSettingsId
 		}
-		linesLoggedInUserId := utils.GetFlag(cmd.Flags(), "string", "lines.loggedInUser.id")
+		linesLoggedInUserId := utils.GetFlag(cmd.Flags(), "string", "linesLoggedInUserId")
 		if linesLoggedInUserId != "" {
-			queryParams["linesLoggedInUserId"] = linesLoggedInUserId
+			queryParams["lines.loggedInUser.id"] = linesLoggedInUserId
 		}
-		linesDefaultForUserId := utils.GetFlag(cmd.Flags(), "string", "lines.defaultForUser.id")
+		linesDefaultForUserId := utils.GetFlag(cmd.Flags(), "string", "linesDefaultForUserId")
 		if linesDefaultForUserId != "" {
-			queryParams["linesDefaultForUserId"] = linesDefaultForUserId
+			queryParams["lines.defaultForUser.id"] = linesDefaultForUserId
 		}
-		phoneHardwareId := utils.GetFlag(cmd.Flags(), "string", "phone_hardwareId")
+		phoneHardwareId := utils.GetFlag(cmd.Flags(), "string", "phoneHardwareId")
 		if phoneHardwareId != "" {
-			queryParams["phoneHardwareId"] = phoneHardwareId
+			queryParams["phone_hardwareId"] = phoneHardwareId
 		}
-		linesId := utils.GetFlag(cmd.Flags(), "string", "lines.id")
+		linesId := utils.GetFlag(cmd.Flags(), "string", "linesId")
 		if linesId != "" {
-			queryParams["linesId"] = linesId
+			queryParams["lines.id"] = linesId
 		}
-		linesName := utils.GetFlag(cmd.Flags(), "string", "lines.name")
+		linesName := utils.GetFlag(cmd.Flags(), "string", "linesName")
 		if linesName != "" {
-			queryParams["linesName"] = linesName
+			queryParams["lines.name"] = linesName
 		}
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {
 			queryParams["name"] = name
 		}
-		statusOperationalStatus := utils.GetFlag(cmd.Flags(), "string", "status.operationalStatus")
+		statusOperationalStatus := utils.GetFlag(cmd.Flags(), "string", "statusOperationalStatus")
 		if statusOperationalStatus != "" {
-			queryParams["statusOperationalStatus"] = statusOperationalStatus
+			queryParams["status.operationalStatus"] = statusOperationalStatus
 		}
-		secondaryStatusOperationalStatus := utils.GetFlag(cmd.Flags(), "string", "secondaryStatus.operationalStatus")
+		secondaryStatusOperationalStatus := utils.GetFlag(cmd.Flags(), "string", "secondaryStatusOperationalStatus")
 		if secondaryStatusOperationalStatus != "" {
-			queryParams["secondaryStatusOperationalStatus"] = secondaryStatusOperationalStatus
+			queryParams["secondaryStatus.operationalStatus"] = secondaryStatusOperationalStatus
 		}
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {

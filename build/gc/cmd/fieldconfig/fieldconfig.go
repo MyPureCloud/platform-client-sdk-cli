@@ -71,9 +71,9 @@ var getCmd = &cobra.Command{
 
 		path := "/api/v2/fieldconfig"
 
-		varType := utils.GetFlag(cmd.Flags(), "string", "type")
+		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
 		if varType != "" {
-			queryParams["varType"] = varType
+			queryParams["type"] = varType
 		}
 		urlString := path
 		if len(queryParams) > 0 {

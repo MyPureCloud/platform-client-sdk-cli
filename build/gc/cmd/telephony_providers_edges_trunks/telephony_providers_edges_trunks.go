@@ -193,13 +193,13 @@ var listCmd = &cobra.Command{
 		if sortOrder != "" {
 			queryParams["sortOrder"] = sortOrder
 		}
-		edgeId := utils.GetFlag(cmd.Flags(), "string", "edge.id")
+		edgeId := utils.GetFlag(cmd.Flags(), "string", "edgeId")
 		if edgeId != "" {
-			queryParams["edgeId"] = edgeId
+			queryParams["edge.id"] = edgeId
 		}
-		trunkBaseId := utils.GetFlag(cmd.Flags(), "string", "trunkBase.id")
+		trunkBaseId := utils.GetFlag(cmd.Flags(), "string", "trunkBaseId")
 		if trunkBaseId != "" {
-			queryParams["trunkBaseId"] = trunkBaseId
+			queryParams["trunkBase.id"] = trunkBaseId
 		}
 		trunkType := utils.GetFlag(cmd.Flags(), "string", "trunkType")
 		if trunkType != "" {
@@ -286,9 +286,9 @@ var listedgetrunksCmd = &cobra.Command{
 		if sortOrder != "" {
 			queryParams["sortOrder"] = sortOrder
 		}
-		trunkBaseId := utils.GetFlag(cmd.Flags(), "string", "trunkBase.id")
+		trunkBaseId := utils.GetFlag(cmd.Flags(), "string", "trunkBaseId")
 		if trunkBaseId != "" {
-			queryParams["trunkBaseId"] = trunkBaseId
+			queryParams["trunkBase.id"] = trunkBaseId
 		}
 		trunkType := utils.GetFlag(cmd.Flags(), "string", "trunkType")
 		if trunkType != "" {

@@ -364,13 +364,13 @@ var listCmd = &cobra.Command{
 		if name != "" {
 			queryParams["name"] = name
 		}
-		siteId := utils.GetFlag(cmd.Flags(), "string", "site.id")
+		siteId := utils.GetFlag(cmd.Flags(), "string", "siteId")
 		if siteId != "" {
-			queryParams["siteId"] = siteId
+			queryParams["site.id"] = siteId
 		}
-		edgeGroupId := utils.GetFlag(cmd.Flags(), "string", "edgeGroup.id")
+		edgeGroupId := utils.GetFlag(cmd.Flags(), "string", "edgeGroupId")
 		if edgeGroupId != "" {
-			queryParams["edgeGroupId"] = edgeGroupId
+			queryParams["edgeGroup.id"] = edgeGroupId
 		}
 		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
 		if sortBy != "" {

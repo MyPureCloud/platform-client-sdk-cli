@@ -361,13 +361,13 @@ var listCmd = &cobra.Command{
 		if expand != "" {
 			queryParams["expand"] = expand
 		}
-		supportedContentId := utils.GetFlag(cmd.Flags(), "string", "supportedContent.id")
+		supportedContentId := utils.GetFlag(cmd.Flags(), "string", "supportedContentId")
 		if supportedContentId != "" {
-			queryParams["supportedContentId"] = supportedContentId
+			queryParams["supportedContent.id"] = supportedContentId
 		}
-		messagingSettingId := utils.GetFlag(cmd.Flags(), "string", "messagingSetting.id")
+		messagingSettingId := utils.GetFlag(cmd.Flags(), "string", "messagingSettingId")
 		if messagingSettingId != "" {
-			queryParams["messagingSettingId"] = messagingSettingId
+			queryParams["messagingSetting.id"] = messagingSettingId
 		}
 		urlString := path
 		if len(queryParams) > 0 {

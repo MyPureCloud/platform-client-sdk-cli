@@ -76,9 +76,9 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/telephony/providers/edges/didpools/dids"
 
-		varType := utils.GetFlag(cmd.Flags(), "string", "type")
+		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
 		if varType != "" {
-			queryParams["varType"] = varType
+			queryParams["type"] = varType
 		}
 		id := utils.GetFlag(cmd.Flags(), "[]string", "id")
 		if id != "" {

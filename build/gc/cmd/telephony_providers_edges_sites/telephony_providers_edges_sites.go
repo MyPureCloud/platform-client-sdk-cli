@@ -366,9 +366,9 @@ var listCmd = &cobra.Command{
 		if name != "" {
 			queryParams["name"] = name
 		}
-		locationId := utils.GetFlag(cmd.Flags(), "string", "location.id")
+		locationId := utils.GetFlag(cmd.Flags(), "string", "locationId")
 		if locationId != "" {
-			queryParams["locationId"] = locationId
+			queryParams["location.id"] = locationId
 		}
 		managed := utils.GetFlag(cmd.Flags(), "bool", "managed")
 		if managed != "" {

@@ -83,7 +83,7 @@ var getCmd = &cobra.Command{
 		if output != "" {
 			queryParams["output"] = output
 		}
-		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
+		varType := utils.GetFlag(cmd.Flags(), "string", "type")
 		if varType != "" {
 			queryParams["varType"] = varType
 		}

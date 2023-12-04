@@ -177,11 +177,11 @@ var listCmd = &cobra.Command{
 		if phoneNumber != "" {
 			queryParams["phoneNumber"] = phoneNumber
 		}
-		ownerId := utils.GetFlag(cmd.Flags(), "string", "ownerId")
+		ownerId := utils.GetFlag(cmd.Flags(), "string", "owner.id")
 		if ownerId != "" {
 			queryParams["ownerId"] = ownerId
 		}
-		didPoolId := utils.GetFlag(cmd.Flags(), "string", "didPoolId")
+		didPoolId := utils.GetFlag(cmd.Flags(), "string", "didPool.id")
 		if didPoolId != "" {
 			queryParams["didPoolId"] = didPoolId
 		}

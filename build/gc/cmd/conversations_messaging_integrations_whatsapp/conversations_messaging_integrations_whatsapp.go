@@ -367,11 +367,11 @@ var listCmd = &cobra.Command{
 		if expand != "" {
 			queryParams["expand"] = expand
 		}
-		supportedContentId := utils.GetFlag(cmd.Flags(), "string", "supportedContentId")
+		supportedContentId := utils.GetFlag(cmd.Flags(), "string", "supportedContent.id")
 		if supportedContentId != "" {
 			queryParams["supportedContentId"] = supportedContentId
 		}
-		messagingSettingId := utils.GetFlag(cmd.Flags(), "string", "messagingSettingId")
+		messagingSettingId := utils.GetFlag(cmd.Flags(), "string", "messagingSetting.id")
 		if messagingSettingId != "" {
 			queryParams["messagingSettingId"] = messagingSettingId
 		}

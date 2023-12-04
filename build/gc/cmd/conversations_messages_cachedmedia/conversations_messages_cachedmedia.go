@@ -234,7 +234,7 @@ var listCmd = &cobra.Command{
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
 		}
-		urlParam := utils.GetFlag(cmd.Flags(), "string", "urlParam")
+		urlParam := utils.GetFlag(cmd.Flags(), "string", "url")
 		if urlParam != "" {
 			queryParams["urlParam"] = urlParam
 		}

@@ -73,7 +73,7 @@ var getCmd = &cobra.Command{
 		deploymentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{deploymentId}", fmt.Sprintf("%v", deploymentId), -1)
 
-		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
+		varType := utils.GetFlag(cmd.Flags(), "string", "type")
 		if varType != "" {
 			queryParams["varType"] = varType
 		}

@@ -390,7 +390,7 @@ var listCmd = &cobra.Command{
 		if language != "" {
 			queryParams["language"] = language
 		}
-		integrationId := utils.GetFlag(cmd.Flags(), "string", "integrationId")
+		integrationId := utils.GetFlag(cmd.Flags(), "string", "integration.id")
 		if integrationId != "" {
 			queryParams["integrationId"] = integrationId
 		}

@@ -192,7 +192,7 @@ var listCmd = &cobra.Command{
 		if origin != "" {
 			queryParams["origin"] = origin
 		}
-		varType := utils.GetFlag(cmd.Flags(), "string", "varType")
+		varType := utils.GetFlag(cmd.Flags(), "string", "type")
 		if varType != "" {
 			queryParams["varType"] = varType
 		}

@@ -12,6 +12,9 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ExternalorganizationtrustorlinkDud struct { 
+    Id string `json:"id"`
+
+
     
 
 
@@ -23,10 +26,16 @@ type ExternalorganizationtrustorlinkDud struct {
 
     ExternalOrganizationUri string `json:"externalOrganizationUri"`
 
+
+    SelfUri string `json:"selfUri"`
+
 }
 
 // Externalorganizationtrustorlink
 type Externalorganizationtrustorlink struct { 
+    
+
+
     // ExternalOrganizationId - The id of a PureCloud External Organization entity in the External Contacts system that will be used to represent the trustor org
     ExternalOrganizationId string `json:"externalOrganizationId"`
 
@@ -37,6 +46,9 @@ type Externalorganizationtrustorlink struct {
 
     // DateCreated - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateCreated time.Time `json:"dateCreated"`
+
+
+    
 
 
     
@@ -72,6 +84,12 @@ func (u *Externalorganizationtrustorlink) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

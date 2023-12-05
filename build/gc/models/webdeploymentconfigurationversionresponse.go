@@ -121,7 +121,7 @@ type Webdeploymentconfigurationversionresponse struct {
     Position Positionsettings `json:"position"`
 
 
-    // SupportCenter - The settings for support center
+    // SupportCenter - The settings for knowledge portal (previously support center)
     SupportCenter Supportcentersettings `json:"supportCenter"`
 
 

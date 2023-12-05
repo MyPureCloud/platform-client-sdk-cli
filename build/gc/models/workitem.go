@@ -212,7 +212,7 @@ type Workitem struct {
 
 
     // Queue - The Workitems queue.
-    Queue Queuereference `json:"queue"`
+    Queue Workitemqueuereference `json:"queue"`
 
 
     // AssignmentState - The assignment state of the workitem.
@@ -355,7 +355,7 @@ func (u *Workitem) MarshalJSON() ([]byte, error) {
         
         ModifiedBy Userreference `json:"modifiedBy"`
         
-        Queue Queuereference `json:"queue"`
+        Queue Workitemqueuereference `json:"queue"`
         
         AssignmentState string `json:"assignmentState"`
         

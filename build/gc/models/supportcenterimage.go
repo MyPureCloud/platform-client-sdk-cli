@@ -17,7 +17,7 @@ type SupportcenterimageDud struct {
 
 // Supportcenterimage
 type Supportcenterimage struct { 
-    // Source
+    // Source - Source URLs for image
     Source Supportcenterimagesource `json:"source"`
 
 }

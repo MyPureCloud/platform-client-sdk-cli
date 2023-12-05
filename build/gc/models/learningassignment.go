@@ -68,6 +68,9 @@ type LearningassignmentDud struct {
 
     
 
+
+    
+
 }
 
 // Learningassignment - Learning module assignment with user information
@@ -135,10 +138,15 @@ type Learningassignment struct {
     // AssessmentForm - The assessment form associated with this assignment
     AssessmentForm Assessmentform `json:"assessmentForm"`
 
+
+    // LengthInMinutes - The length in minutes of the assignment
+    LengthInMinutes int `json:"lengthInMinutes"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Learningassignment) String() string {
+    
     
     
     
@@ -176,8 +184,13 @@ func (u *Learningassignment) MarshalJSON() ([]byte, error) {
         User Userreference `json:"user"`
         
         AssessmentForm Assessmentform `json:"assessmentForm"`
+        
+        LengthInMinutes int `json:"lengthInMinutes"`
         *Alias
     }{
+
+        
+
 
         
 

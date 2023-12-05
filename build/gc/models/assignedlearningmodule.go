@@ -18,6 +18,9 @@ type AssignedlearningmoduleDud struct {
     
 
 
+    
+
+
     CreatedBy Userreference `json:"createdBy"`
 
 
@@ -80,6 +83,9 @@ type AssignedlearningmoduleDud struct {
 
     
 
+
+    
+
 }
 
 // Assignedlearningmodule - Learning module response
@@ -89,6 +95,10 @@ type Assignedlearningmodule struct {
 
     // Name - The name of learning module
     Name string `json:"name"`
+
+
+    // ExcludedFromCatalog - If true, learning module is excluded when retrieving modules for manual assignment
+    ExcludedFromCatalog bool `json:"excludedFromCatalog"`
 
 
     
@@ -160,6 +170,10 @@ type Assignedlearningmodule struct {
     CoverArt Learningmodulecoverartresponse `json:"coverArt"`
 
 
+    // LengthInMinutes - The recommended time in minutes to complete the module
+    LengthInMinutes int `json:"lengthInMinutes"`
+
+
     // ArchivalMode - The mode of archival for learning module
     ArchivalMode string `json:"archivalMode"`
 
@@ -168,11 +182,13 @@ type Assignedlearningmodule struct {
 // String returns a JSON representation of the model
 func (o *Assignedlearningmodule) String() string {
     
+    
      o.CurrentAssignments = []Learningassignment{{}} 
     
     
     
      o.InformSteps = []Learningmoduleinformstep{{}} 
+    
     
     
     
@@ -197,6 +213,8 @@ func (u *Assignedlearningmodule) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        ExcludedFromCatalog bool `json:"excludedFromCatalog"`
+        
         CurrentAssignments []Learningassignment `json:"currentAssignments"`
         
         Description string `json:"description"`
@@ -215,9 +233,14 @@ func (u *Assignedlearningmodule) MarshalJSON() ([]byte, error) {
         
         CoverArt Learningmodulecoverartresponse `json:"coverArt"`
         
+        LengthInMinutes int `json:"lengthInMinutes"`
+        
         ArchivalMode string `json:"archivalMode"`
         *Alias
     }{
+
+        
+
 
         
 
@@ -274,6 +297,9 @@ func (u *Assignedlearningmodule) MarshalJSON() ([]byte, error) {
 
         
         InformSteps: []Learningmoduleinformstep{{}},
+        
+
+
         
 
 

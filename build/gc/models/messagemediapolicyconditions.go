@@ -31,6 +31,9 @@ type MessagemediapolicyconditionsDud struct {
 
     
 
+
+    
+
 }
 
 // Messagemediapolicyconditions
@@ -59,6 +62,10 @@ type Messagemediapolicyconditions struct {
     TimeAllowed Timeallowed `json:"timeAllowed"`
 
 
+    // Teams - Teams to match conversations against
+    Teams []Team `json:"teams"`
+
+
     // CustomerParticipation
     CustomerParticipation string `json:"customerParticipation"`
 
@@ -72,6 +79,7 @@ func (o *Messagemediapolicyconditions) String() string {
      o.WrapupCodes = []Wrapupcode{{}} 
      o.Languages = []Language{{}} 
     
+     o.Teams = []Team{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -102,6 +110,8 @@ func (u *Messagemediapolicyconditions) MarshalJSON() ([]byte, error) {
         
         TimeAllowed Timeallowed `json:"timeAllowed"`
         
+        Teams []Team `json:"teams"`
+        
         CustomerParticipation string `json:"customerParticipation"`
         *Alias
     }{
@@ -131,6 +141,11 @@ func (u *Messagemediapolicyconditions) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Teams: []Team{{}},
         
 
 

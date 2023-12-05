@@ -52,8 +52,8 @@ func queryEscape(value string) string {
 
 var getCmd = &cobra.Command{
 	Use:   "get",
-	Short: "Gets active alert count for a user.",
-	Long:  "Gets active alert count for a user.",
+	Short: "Gets active alert count for a user",
+	Long:  "Gets active alert count for a user",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

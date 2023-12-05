@@ -17,7 +17,7 @@ type SetrecordingstateDud struct {
 
 // Setrecordingstate
 type Setrecordingstate struct { 
-    // RecordingState - The value of the recordingState to set.
+    // RecordingState - On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.
     RecordingState string `json:"recordingState"`
 
 }

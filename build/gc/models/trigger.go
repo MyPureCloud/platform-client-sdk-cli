@@ -78,7 +78,7 @@ type Trigger struct {
     EventTTLSeconds int `json:"eventTTLSeconds"`
 
 
-    // DelayBySeconds - Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.
+    // DelayBySeconds - Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
     DelayBySeconds int `json:"delayBySeconds"`
 
 

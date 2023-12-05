@@ -238,8 +238,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get interaction stats alert list.",
-	Long:  "Get interaction stats alert list.",
+	Short: "Get interaction stats alert list",
+	Long:  "Get interaction stats alert list",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

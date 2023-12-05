@@ -20,6 +20,9 @@ type LearningassignmentcreateDud struct {
 
     
 
+
+    
+
 }
 
 // Learningassignmentcreate
@@ -35,10 +38,15 @@ type Learningassignmentcreate struct {
     // RecommendedCompletionDate - The recommended completion date of assignment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     RecommendedCompletionDate time.Time `json:"recommendedCompletionDate"`
 
+
+    // LengthInMinutes - The length in minutes of assignment
+    LengthInMinutes int `json:"lengthInMinutes"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Learningassignmentcreate) String() string {
+    
     
     
     
@@ -64,8 +72,13 @@ func (u *Learningassignmentcreate) MarshalJSON() ([]byte, error) {
         UserId string `json:"userId"`
         
         RecommendedCompletionDate time.Time `json:"recommendedCompletionDate"`
+        
+        LengthInMinutes int `json:"lengthInMinutes"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -102,6 +102,9 @@ type EvaluationDud struct {
     
 
 
+    
+
+
     EvaluationSource Evaluationsource `json:"evaluationSource"`
 
 
@@ -218,6 +221,10 @@ type Evaluation struct {
     Redacted bool `json:"redacted"`
 
 
+    // AgentTeam - Team of the evaluation agent
+    AgentTeam Team `json:"agentTeam"`
+
+
     // IsScoringIndex
     IsScoringIndex bool `json:"isScoringIndex"`
 
@@ -256,6 +263,7 @@ func (o *Evaluation) String() string {
     
     
      o.MediaType = []string{""} 
+    
     
     
     
@@ -337,6 +345,8 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
         
         Redacted bool `json:"redacted"`
         
+        AgentTeam Team `json:"agentTeam"`
+        
         IsScoringIndex bool `json:"isScoringIndex"`
         
         AuthorizedActions []string `json:"authorizedActions"`
@@ -398,6 +408,9 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
 
         
         MediaType: []string{""},
+        
+
+
         
 
 

@@ -20,11 +20,11 @@ type SupportcenterstylesettingDud struct {
 
 // Supportcenterstylesetting
 type Supportcenterstylesetting struct { 
-    // HeroStyle - Support center hero customizations
+    // HeroStyle - Knowledge portal (previously support center) hero customizations
     HeroStyle Supportcenterherostyle `json:"heroStyle"`
 
 
-    // GlobalStyle - Support center global customizations
+    // GlobalStyle - Knowledge portal (previously support center) global customizations
     GlobalStyle Supportcenterglobalstyle `json:"globalStyle"`
 
 }

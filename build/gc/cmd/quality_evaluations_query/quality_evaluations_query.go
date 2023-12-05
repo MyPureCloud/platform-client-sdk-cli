@@ -36,6 +36,7 @@ func Cmdquality_evaluations_query() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
 	utils.AddFlag(listCmd.Flags(), "string", "conversationId", "", "conversationId specified")
 	utils.AddFlag(listCmd.Flags(), "string", "agentUserId", "", "user id of the agent")
+	utils.AddFlag(listCmd.Flags(), "string", "agentTeamId", "", "team id of the agent")
 	utils.AddFlag(listCmd.Flags(), "string", "evaluatorUserId", "", "evaluator user id")
 	utils.AddFlag(listCmd.Flags(), "string", "assigneeUserId", "", "assignee user id")
 	utils.AddFlag(listCmd.Flags(), "string", "queueId", "", "queue id")
@@ -120,6 +121,10 @@ var listCmd = &cobra.Command{
 		agentUserId := utils.GetFlag(cmd.Flags(), "string", "agentUserId")
 		if agentUserId != "" {
 			queryParams["agentUserId"] = agentUserId
+		}
+		agentTeamId := utils.GetFlag(cmd.Flags(), "string", "agentTeamId")
+		if agentTeamId != "" {
+			queryParams["agentTeamId"] = agentTeamId
 		}
 		evaluatorUserId := utils.GetFlag(cmd.Flags(), "string", "evaluatorUserId")
 		if evaluatorUserId != "" {

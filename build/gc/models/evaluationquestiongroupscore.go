@@ -55,6 +55,9 @@ type EvaluationquestiongroupscoreDud struct {
 
     
 
+
+    
+
 }
 
 // Evaluationquestiongroupscore
@@ -71,8 +74,12 @@ type Evaluationquestiongroupscore struct {
     MaxTotalScore float32 `json:"maxTotalScore"`
 
 
-    // MarkedNA
+    // MarkedNA - True when the evaluation is submitted with a question group that does not have any answers. Only allowed when naEnabled is true or if set by the system
     MarkedNA bool `json:"markedNA"`
+
+
+    // SystemMarkedNA - If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
+    SystemMarkedNA bool `json:"systemMarkedNA"`
 
 
     // TotalCriticalScore - Score of only the critical questions in the group
@@ -136,6 +143,7 @@ func (o *Evaluationquestiongroupscore) String() string {
     
     
     
+    
      o.QuestionScores = []Evaluationquestionscore{{}} 
 
     j, _ := json.Marshal(o)
@@ -162,6 +170,8 @@ func (u *Evaluationquestiongroupscore) MarshalJSON() ([]byte, error) {
         
         MarkedNA bool `json:"markedNA"`
         
+        SystemMarkedNA bool `json:"systemMarkedNA"`
+        
         TotalCriticalScore float32 `json:"totalCriticalScore"`
         
         MaxTotalCriticalScore float32 `json:"maxTotalCriticalScore"`
@@ -185,6 +195,9 @@ func (u *Evaluationquestiongroupscore) MarshalJSON() ([]byte, error) {
         QuestionScores []Evaluationquestionscore `json:"questionScores"`
         *Alias
     }{
+
+        
+
 
         
 

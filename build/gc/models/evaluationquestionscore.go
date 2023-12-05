@@ -31,6 +31,9 @@ type EvaluationquestionscoreDud struct {
 
     
 
+
+    
+
 }
 
 // Evaluationquestionscore
@@ -47,8 +50,12 @@ type Evaluationquestionscore struct {
     Score int `json:"score"`
 
 
-    // MarkedNA
+    // MarkedNA - True when the evaluation is submitted with a question that does not have an answer. Only allowed when naEnabled is true or if set by the system
     MarkedNA bool `json:"markedNA"`
+
+
+    // SystemMarkedNA - If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
+    SystemMarkedNA bool `json:"systemMarkedNA"`
 
 
     // AssistedAnswerId - AnswerId found with evaluation assistance conditions
@@ -66,6 +73,7 @@ type Evaluationquestionscore struct {
 
 // String returns a JSON representation of the model
 func (o *Evaluationquestionscore) String() string {
+    
     
     
     
@@ -98,6 +106,8 @@ func (u *Evaluationquestionscore) MarshalJSON() ([]byte, error) {
         
         MarkedNA bool `json:"markedNA"`
         
+        SystemMarkedNA bool `json:"systemMarkedNA"`
+        
         AssistedAnswerId string `json:"assistedAnswerId"`
         
         FailedKillQuestion bool `json:"failedKillQuestion"`
@@ -105,6 +115,9 @@ func (u *Evaluationquestionscore) MarshalJSON() ([]byte, error) {
         Comments string `json:"comments"`
         *Alias
     }{
+
+        
+
 
         
 

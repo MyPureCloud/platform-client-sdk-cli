@@ -40,6 +40,7 @@ func Cmdquality_agents_activity() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "evaluatorUserId", "", "user id of the evaluator")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "name")
 	utils.AddFlag(listCmd.Flags(), "string", "group", "", "group id")
+	utils.AddFlag(listCmd.Flags(), "string", "agentTeamId", "", "team id of agents requested")
 	utils.AddFlag(listCmd.Flags(), "string", "formContextId", "", "shared id between form versions")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/agents/activity", utils.FormatPermissions([]string{ "quality:evaluation:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/agents/activity")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -129,6 +130,10 @@ var listCmd = &cobra.Command{
 		group := utils.GetFlag(cmd.Flags(), "string", "group")
 		if group != "" {
 			queryParams["group"] = group
+		}
+		agentTeamId := utils.GetFlag(cmd.Flags(), "string", "agentTeamId")
+		if agentTeamId != "" {
+			queryParams["agentTeamId"] = agentTeamId
 		}
 		formContextId := utils.GetFlag(cmd.Flags(), "string", "formContextId")
 		if formContextId != "" {

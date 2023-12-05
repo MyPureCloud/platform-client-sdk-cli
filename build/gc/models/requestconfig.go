@@ -29,7 +29,7 @@ type RequestconfigDud struct {
 
 // Requestconfig - Defines response components of the Action Request.
 type Requestconfig struct { 
-    // RequestUrlTemplate - URL that may include placeholders for requests to 3rd party service
+    // RequestUrlTemplate - URL that may include placeholders for requests to 3rd party service. This value is read only for Function Integrations and will be set when a draft is created.
     RequestUrlTemplate string `json:"requestUrlTemplate"`
 
 

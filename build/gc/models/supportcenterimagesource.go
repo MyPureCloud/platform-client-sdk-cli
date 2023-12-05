@@ -17,7 +17,7 @@ type SupportcenterimagesourceDud struct {
 
 // Supportcenterimagesource
 type Supportcenterimagesource struct { 
-    // DefaultUrl
+    // DefaultUrl - Default URL for image
     DefaultUrl string `json:"defaultUrl"`
 
 }

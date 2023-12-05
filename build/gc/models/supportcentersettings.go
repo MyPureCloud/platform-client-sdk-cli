@@ -36,33 +36,33 @@ type SupportcentersettingsDud struct {
 
 }
 
-// Supportcentersettings - Settings concerning support center
+// Supportcentersettings - Settings concerning knowledge portal (previously support center)
 type Supportcentersettings struct { 
-    // Enabled - Whether or not support center is enabled
+    // Enabled - Whether or not knowledge portal (previously support center) is enabled
     Enabled bool `json:"enabled"`
 
 
-    // KnowledgeBase - The knowledge base for support center
+    // KnowledgeBase - The knowledge base for knowledge portal (previously support center)
     KnowledgeBase Addressableentityref `json:"knowledgeBase"`
 
 
-    // CustomMessages - Customizable display texts for support center
+    // CustomMessages - Customizable display texts for knowledge portal (previously support center)
     CustomMessages []Supportcentercustommessage `json:"customMessages"`
 
 
-    // RouterType - Router type for support center
+    // RouterType - Router type for knowledge portal (previously support center)
     RouterType string `json:"routerType"`
 
 
-    // Screens - Available screens for the support center with its modules
+    // Screens - Available screens for the knowledge portal (previously support center) with its modules
     Screens []Supportcenterscreen `json:"screens"`
 
 
-    // EnabledCategories - Enabled article categories for support center
+    // EnabledCategories - Featured categories for knowledge portal (previously support center) home screen
     EnabledCategories []Supportcentercategory `json:"enabledCategories"`
 
 
-    // StyleSetting - Style attributes for support center
+    // StyleSetting - Style attributes for knowledge portal (previously support center)
     StyleSetting Supportcenterstylesetting `json:"styleSetting"`
 
 

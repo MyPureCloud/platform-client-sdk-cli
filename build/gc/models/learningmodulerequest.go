@@ -31,6 +31,15 @@ type LearningmodulerequestDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Learningmodulerequest - Learning module request
@@ -62,6 +71,18 @@ type Learningmodulerequest struct {
     // CoverArt - The cover art for the learning module
     CoverArt Learningmodulecoverartrequest `json:"coverArt"`
 
+
+    // LengthInMinutes - The recommended time in minutes to complete the module
+    LengthInMinutes int `json:"lengthInMinutes"`
+
+
+    // ExcludedFromCatalog - If true, learning module is excluded when retrieving modules for manual assignment
+    ExcludedFromCatalog bool `json:"excludedFromCatalog"`
+
+
+    // ExternalId - The external ID of the learning module. Maximum length: 50 characters.
+    ExternalId string `json:"externalId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -70,6 +91,9 @@ func (o *Learningmodulerequest) String() string {
     
     
      o.InformSteps = []Learningmoduleinformsteprequest{{}} 
+    
+    
+    
     
     
     
@@ -103,6 +127,12 @@ func (u *Learningmodulerequest) MarshalJSON() ([]byte, error) {
         AssessmentForm Assessmentform `json:"assessmentForm"`
         
         CoverArt Learningmodulecoverartrequest `json:"coverArt"`
+        
+        LengthInMinutes int `json:"lengthInMinutes"`
+        
+        ExcludedFromCatalog bool `json:"excludedFromCatalog"`
+        
+        ExternalId string `json:"externalId"`
         *Alias
     }{
 
@@ -117,6 +147,15 @@ func (u *Learningmodulerequest) MarshalJSON() ([]byte, error) {
 
         
         InformSteps: []Learningmoduleinformsteprequest{{}},
+        
+
+
+        
+
+
+        
+
+
         
 
 

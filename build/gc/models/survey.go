@@ -42,6 +42,9 @@ type SurveyDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -87,12 +90,17 @@ type Survey struct {
     SurveyErrorDetails Surveyerrordetails `json:"surveyErrorDetails"`
 
 
+    // AgentTeam - The team that the agent belongs to
+    AgentTeam Team `json:"agentTeam"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Survey) String() string {
+    
     
     
     
@@ -136,8 +144,13 @@ func (u *Survey) MarshalJSON() ([]byte, error) {
         CompletedDate time.Time `json:"completedDate"`
         
         SurveyErrorDetails Surveyerrordetails `json:"surveyErrorDetails"`
+        
+        AgentTeam Team `json:"agentTeam"`
         *Alias
     }{
+
+        
+
 
         
 

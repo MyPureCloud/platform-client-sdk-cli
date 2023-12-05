@@ -120,6 +120,9 @@ type QueuerequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -226,6 +229,10 @@ type Queuerequest struct {
     EnableTranscription bool `json:"enableTranscription"`
 
 
+    // EnableAudioMonitoring - Indicates whether audio monitoring is enabled for this queue.
+    EnableAudioMonitoring bool `json:"enableAudioMonitoring"`
+
+
     // EnableManualAssignment - Indicates whether manual assignment is enabled for this queue.
     EnableManualAssignment bool `json:"enableManualAssignment"`
 
@@ -287,6 +294,7 @@ func (o *Queuerequest) String() string {
     
     
      o.MemberGroups = []Membergroup{{}} 
+    
     
     
     
@@ -364,6 +372,8 @@ func (u *Queuerequest) MarshalJSON() ([]byte, error) {
         AutoAnswerOnly bool `json:"autoAnswerOnly"`
         
         EnableTranscription bool `json:"enableTranscription"`
+        
+        EnableAudioMonitoring bool `json:"enableAudioMonitoring"`
         
         EnableManualAssignment bool `json:"enableManualAssignment"`
         
@@ -445,6 +455,9 @@ func (u *Queuerequest) MarshalJSON() ([]byte, error) {
 
         
         MemberGroups: []Membergroup{{}},
+        
+
+
         
 
 

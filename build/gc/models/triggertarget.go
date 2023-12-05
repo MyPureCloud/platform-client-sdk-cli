@@ -31,7 +31,7 @@ type Triggertarget struct {
     Id string `json:"id"`
 
 
-    // WorkflowTargetSettings - Optional config for the target. Until the feature gets enabled will always operate in TopLevelPrimitives mode.
+    // WorkflowTargetSettings - Optional config for the target.
     WorkflowTargetSettings Workflowtargetsettings `json:"workflowTargetSettings"`
 
 }

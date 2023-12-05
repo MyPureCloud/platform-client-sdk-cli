@@ -30,7 +30,7 @@ type Supportcentermodulesetting struct {
     VarType string `json:"type"`
 
 
-    // Enabled - Whether or not support center screen module is enabled
+    // Enabled - Whether or not knowledge portal (previously support center) screen module is enabled
     Enabled bool `json:"enabled"`
 
 

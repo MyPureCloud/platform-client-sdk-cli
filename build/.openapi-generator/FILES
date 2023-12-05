@@ -17,6 +17,7 @@ gc/cmd/analytics_actions_aggregates_jobs/analytics_actions_aggregates_jobs.go
 gc/cmd/analytics_actions_aggregates_jobs_results/analytics_actions_aggregates_jobs_results.go
 gc/cmd/analytics_actions_aggregates_query/analytics_actions_aggregates_query.go
 gc/cmd/analytics_botflows_reportingturns/analytics_botflows_reportingturns.go
+gc/cmd/analytics_botflows_sessions/analytics_botflows_sessions.go
 gc/cmd/analytics_bots_aggregates_jobs/analytics_bots_aggregates_jobs.go
 gc/cmd/analytics_bots_aggregates_jobs_results/analytics_bots_aggregates_jobs_results.go
 gc/cmd/analytics_bots_aggregates_query/analytics_bots_aggregates_query.go
@@ -598,6 +599,7 @@ gc/cmd/learning_modules_coverart/learning_modules_coverart.go
 gc/cmd/learning_modules_jobs/learning_modules_jobs.go
 gc/cmd/learning_modules_publish/learning_modules_publish.go
 gc/cmd/learning_modules_rule/learning_modules_rule.go
+gc/cmd/learning_modules_users_assignments/learning_modules_users_assignments.go
 gc/cmd/learning_modules_versions/learning_modules_versions.go
 gc/cmd/learning_rules_query/learning_rules_query.go
 gc/cmd/learning_scheduleslots_query/learning_scheduleslots_query.go
@@ -1402,11 +1404,13 @@ gc/models/botaggregationquery.go
 gc/models/botaggregationview.go
 gc/models/botasyncaggregatequeryresponse.go
 gc/models/botasyncaggregationquery.go
+gc/models/botchannel.go
 gc/models/botconnectorbot.go
 gc/models/botconnectorbotsummaryentitylisting.go
 gc/models/botconnectorbotversion.go
 gc/models/botconnectorbotversionsummaryentitylisting.go
 gc/models/botexecutionconfiguration.go
+gc/models/botflowsession.go
 gc/models/botintent.go
 gc/models/botlist.go
 gc/models/botmessengerprofile.go
@@ -2679,6 +2683,7 @@ gc/models/learningassignmentbulkaddresponse.go
 gc/models/learningassignmentbulkremoveresponse.go
 gc/models/learningassignmentcreate.go
 gc/models/learningassignmententity.go
+gc/models/learningassignmentexternalupdate.go
 gc/models/learningassignmentitem.go
 gc/models/learningassignmentreassign.go
 gc/models/learningassignmentreference.go
@@ -3470,6 +3475,7 @@ gc/models/sessionenddetails.go
 gc/models/sessionlastevent.go
 gc/models/sessionlisting.go
 gc/models/sessionsegmentassignment.go
+gc/models/sessionsresponse.go
 gc/models/setcontenttemplateactionsettings.go
 gc/models/setrecordingstate.go
 gc/models/setsmsphonenumberactionsettings.go
@@ -4106,6 +4112,7 @@ gc/models/workitemmanualassign.go
 gc/models/workitempostqueryentitylisting.go
 gc/models/workitemquerypostrequest.go
 gc/models/workitemquerysort.go
+gc/models/workitemqueuereference.go
 gc/models/workitemreference.go
 gc/models/workitemsattributechangeboolean.go
 gc/models/workitemsattributechangeinstant.go

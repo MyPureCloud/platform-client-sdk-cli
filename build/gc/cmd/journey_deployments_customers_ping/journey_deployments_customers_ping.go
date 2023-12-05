@@ -31,11 +31,10 @@ func Cmdjourney_deployments_customers_ping() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "string", "dl", "", "Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. `home` or `help. Pings without this parameter will not return actions.")
 	utils.AddFlag(getCmd.Flags(), "string", "dt", "", "Document Title.  A human readable name for the page or screen")
 	utils.AddFlag(getCmd.Flags(), "string", "appNamespace", "", "Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions")
-	utils.AddFlag(getCmd.Flags(), "string", "sessionId", "", "UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session - REQUIRED")
+	utils.AddFlag(getCmd.Flags(), "string", "sessionId", "", "UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session")
 	utils.AddFlag(getCmd.Flags(), "int", "sinceLastBeaconMilliseconds", "", "How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
-	getCmd.MarkFlagRequired("sessionId")
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",

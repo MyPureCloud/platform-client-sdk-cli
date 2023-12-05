@@ -130,8 +130,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Create an interaction stats rule.",
-	Long:  "Create an interaction stats rule.",
+	Short: "Create an interaction stats rule",
+	Long:  "Create an interaction stats rule",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -200,8 +200,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [ruleId]",
-	Short: "Delete an interaction stats rule.",
-	Long:  "Delete an interaction stats rule.",
+	Short: "Delete an interaction stats rule",
+	Long:  "Delete an interaction stats rule",
 	Args:  utils.DetermineArgs([]string{ "ruleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -265,8 +265,8 @@ var deleteCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [ruleId]",
-	Short: "Get an interaction stats rule.",
-	Long:  "Get an interaction stats rule.",
+	Short: "Get an interaction stats rule",
+	Long:  "Get an interaction stats rule",
 	Args:  utils.DetermineArgs([]string{ "ruleId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -334,8 +334,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get an interaction stats rule list.",
-	Long:  "Get an interaction stats rule list.",
+	Short: "Get an interaction stats rule list",
+	Long:  "Get an interaction stats rule list",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -37,6 +37,9 @@ type PolicyconditionsDud struct {
 
     
 
+
+    
+
 }
 
 // Policyconditions
@@ -73,6 +76,10 @@ type Policyconditions struct {
     TimeAllowed Timeallowed `json:"timeAllowed"`
 
 
+    // Teams - Teams to match conversations against
+    Teams []Team `json:"teams"`
+
+
     // CustomerParticipation - This condition is to filter out conversation with and without customer participation.
     CustomerParticipation string `json:"customerParticipation"`
 
@@ -88,6 +95,7 @@ func (o *Policyconditions) String() string {
     
      o.WrapupCodes = []Wrapupcode{{}} 
     
+     o.Teams = []Team{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -121,6 +129,8 @@ func (u *Policyconditions) MarshalJSON() ([]byte, error) {
         WrapupCodes []Wrapupcode `json:"wrapupCodes"`
         
         TimeAllowed Timeallowed `json:"timeAllowed"`
+        
+        Teams []Team `json:"teams"`
         
         CustomerParticipation string `json:"customerParticipation"`
         *Alias
@@ -159,6 +169,11 @@ func (u *Policyconditions) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Teams: []Team{{}},
         
 
 

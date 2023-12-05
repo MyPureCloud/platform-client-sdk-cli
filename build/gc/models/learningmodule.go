@@ -18,6 +18,9 @@ type LearningmoduleDud struct {
     
 
 
+    
+
+
     CreatedBy Userreference `json:"createdBy"`
 
 
@@ -77,6 +80,9 @@ type LearningmoduleDud struct {
 
     
 
+
+    
+
 }
 
 // Learningmodule - Learning module response
@@ -86,6 +92,10 @@ type Learningmodule struct {
 
     // Name - The name of learning module
     Name string `json:"name"`
+
+
+    // ExcludedFromCatalog - If true, learning module is excluded when retrieving modules for manual assignment
+    ExcludedFromCatalog bool `json:"excludedFromCatalog"`
 
 
     
@@ -153,6 +163,10 @@ type Learningmodule struct {
     CoverArt Learningmodulecoverartresponse `json:"coverArt"`
 
 
+    // LengthInMinutes - The recommended time in minutes to complete the module
+    LengthInMinutes int `json:"lengthInMinutes"`
+
+
     // ArchivalMode - The mode of archival for learning module
     ArchivalMode string `json:"archivalMode"`
 
@@ -164,7 +178,9 @@ func (o *Learningmodule) String() string {
     
     
     
+    
      o.InformSteps = []Learningmoduleinformstep{{}} 
+    
     
     
     
@@ -189,6 +205,8 @@ func (u *Learningmodule) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        ExcludedFromCatalog bool `json:"excludedFromCatalog"`
+        
         Description string `json:"description"`
         
         CompletionTimeInDays int `json:"completionTimeInDays"`
@@ -204,6 +222,8 @@ func (u *Learningmodule) MarshalJSON() ([]byte, error) {
         ReassignSummaryData Learningmodulereassignsummary `json:"reassignSummaryData"`
         
         CoverArt Learningmodulecoverartresponse `json:"coverArt"`
+        
+        LengthInMinutes int `json:"lengthInMinutes"`
         
         ArchivalMode string `json:"archivalMode"`
         *Alias
@@ -258,7 +278,13 @@ func (u *Learningmodule) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
         InformSteps: []Learningmoduleinformstep{{}},
+        
+
+
         
 
 

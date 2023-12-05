@@ -120,6 +120,9 @@ type UserqueueDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -222,6 +225,10 @@ type Userqueue struct {
     EnableTranscription bool `json:"enableTranscription"`
 
 
+    // EnableAudioMonitoring - Indicates whether audio monitoring is enabled for this queue.
+    EnableAudioMonitoring bool `json:"enableAudioMonitoring"`
+
+
     // EnableManualAssignment - Indicates whether manual assignment is enabled for this queue.
     EnableManualAssignment bool `json:"enableManualAssignment"`
 
@@ -298,6 +305,7 @@ func (o *Userqueue) String() string {
     
     
     
+    
      o.DefaultScripts = map[string]Script{"": {}} 
     
     
@@ -362,6 +370,8 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
         OnHoldPrompt Domainentityref `json:"onHoldPrompt"`
         
         EnableTranscription bool `json:"enableTranscription"`
+        
+        EnableAudioMonitoring bool `json:"enableAudioMonitoring"`
         
         EnableManualAssignment bool `json:"enableManualAssignment"`
         
@@ -445,6 +455,9 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
 
         
         MemberGroups: []Membergroup{{}},
+        
+
+
         
 
 

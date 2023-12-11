@@ -62,12 +62,6 @@ type AppeventresponseDud struct {
 
     
 
-
-    
-
-
-    ExternalContact Addressableentityref `json:"externalContact"`
-
 }
 
 // Appeventresponse
@@ -98,10 +92,6 @@ type Appeventresponse struct {
 
     // Device - Customer's device.
     Device Device `json:"device"`
-
-
-    // IpAddress - Customer's IP address. May be null if the business configures the tracker to not collect IP addresses.
-    IpAddress string `json:"ipAddress"`
 
 
     // IpOrganization - Customer's IP-based organization or ISP name.
@@ -143,14 +133,10 @@ type Appeventresponse struct {
     // CreatedDate - UTC timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     CreatedDate time.Time `json:"createdDate"`
 
-
-    
-
 }
 
 // String returns a JSON representation of the model
 func (o *Appeventresponse) String() string {
-    
     
     
     
@@ -198,8 +184,6 @@ func (u *Appeventresponse) MarshalJSON() ([]byte, error) {
         App Journeyapp `json:"app"`
         
         Device Device `json:"device"`
-        
-        IpAddress string `json:"ipAddress"`
         
         IpOrganization string `json:"ipOrganization"`
         
@@ -266,18 +250,12 @@ func (u *Appeventresponse) MarshalJSON() ([]byte, error) {
 
 
         
-
-
-        
         Attributes: map[string]Customeventattribute{"": {}},
         
 
 
         
         Traits: map[string]Customeventattribute{"": {}},
-        
-
-
         
 
 

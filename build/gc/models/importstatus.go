@@ -25,10 +25,22 @@ type ImportstatusDud struct {
 
     FailureReason string `json:"failureReason"`
 
+
+    TargetContactListIds []string `json:"targetContactListIds"`
+
+
+    ListNamePrefix string `json:"listNamePrefix"`
+
 }
 
 // Importstatus
 type Importstatus struct { 
+    
+
+
+    
+
+
     
 
 
@@ -65,6 +77,12 @@ func (u *Importstatus) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

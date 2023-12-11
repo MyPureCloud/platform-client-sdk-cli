@@ -58,16 +58,16 @@ type Userinsightstrend struct {
     PrimaryPeriod Workdayperiod `json:"primaryPeriod"`
 
 
+    // User - The query user
+    User Userreference `json:"user"`
+
+
     // Entities - The list of insights trend for each metric
-    Entities []Insightstrendmetricitem `json:"entities"`
+    Entities []Userinsightstrendmetricitem `json:"entities"`
 
 
     // Total - The insights trend in total
-    Total Insightstrendtotalitem `json:"total"`
-
-
-    // User - The query user
-    User Userreference `json:"user"`
+    Total Userinsightstrendtotalitem `json:"total"`
 
 }
 
@@ -78,8 +78,8 @@ func (o *Userinsightstrend) String() string {
     
     
     
-     o.Entities = []Insightstrendmetricitem{{}} 
     
+     o.Entities = []Userinsightstrendmetricitem{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -108,11 +108,11 @@ func (u *Userinsightstrend) MarshalJSON() ([]byte, error) {
         
         PrimaryPeriod Workdayperiod `json:"primaryPeriod"`
         
-        Entities []Insightstrendmetricitem `json:"entities"`
-        
-        Total Insightstrendtotalitem `json:"total"`
-        
         User Userreference `json:"user"`
+        
+        Entities []Userinsightstrendmetricitem `json:"entities"`
+        
+        Total Userinsightstrendtotalitem `json:"total"`
         *Alias
     }{
 
@@ -132,10 +132,10 @@ func (u *Userinsightstrend) MarshalJSON() ([]byte, error) {
 
 
         
-        Entities: []Insightstrendmetricitem{{}},
+
+
         
-
-
+        Entities: []Userinsightstrendmetricitem{{}},
         
 
 

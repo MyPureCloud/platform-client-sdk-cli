@@ -19,6 +19,9 @@ type ExecutiondataentityDud struct {
 
     
 
+
+    
+
 }
 
 // Executiondataentity - Represents an individual result of an execution data lookup
@@ -34,10 +37,15 @@ type Executiondataentity struct {
     // Failed - If the retrieval failed (not found, no permission, etc;), this will be set true.
     Failed bool `json:"failed"`
 
+
+    // StatusCode - This will contain the http status code for the failure
+    StatusCode string `json:"statusCode"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Executiondataentity) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Executiondataentity) MarshalJSON() ([]byte, error) {
         DownloadUri string `json:"downloadUri"`
         
         Failed bool `json:"failed"`
+        
+        StatusCode string `json:"statusCode"`
         *Alias
     }{
+
+        
+
 
         
 

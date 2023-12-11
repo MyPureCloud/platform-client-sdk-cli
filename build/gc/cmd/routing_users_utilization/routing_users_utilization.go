@@ -45,7 +45,7 @@ func Cmdrouting_users_utilization() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/AgentMaxUtilization"
+        "$ref" : "#/components/schemas/AgentMaxUtilizationResponse"
       }
     }
   }
@@ -58,7 +58,7 @@ func Cmdrouting_users_utilization() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/Utilization"
+        "$ref" : "#/components/schemas/UtilizationRequest"
       }
     }
   },
@@ -70,7 +70,7 @@ func Cmdrouting_users_utilization() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/AgentMaxUtilization"
+        "$ref" : "#/components/schemas/AgentMaxUtilizationResponse"
       }
     }
   }
@@ -226,7 +226,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Utilization{}
+			reqModel := models.Utilizationrequest{}
 			utils.Render(reqModel.String())
 			
 			return

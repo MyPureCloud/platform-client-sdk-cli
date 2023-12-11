@@ -6,33 +6,25 @@ import (
 )
 
 var (
-    AgentmaxutilizationMarshalled = false
+    UtilizationrequestMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type AgentmaxutilizationDud struct { 
-    
-
-
+type UtilizationrequestDud struct { 
     
 
 }
 
-// Agentmaxutilization
-type Agentmaxutilization struct { 
-    // Utilization - Map of media type to utilization settings.  Valid media types include call, callback, chat, email, and message.
+// Utilizationrequest
+type Utilizationrequest struct { 
+    // Utilization - Map of media type to utilization settings.
     Utilization map[string]Mediautilization `json:"utilization"`
-
-
-    // Level
-    Level string `json:"level"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Agentmaxutilization) String() string {
+func (o *Utilizationrequest) String() string {
      o.Utilization = map[string]Mediautilization{"": {}} 
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -40,27 +32,22 @@ func (o *Agentmaxutilization) String() string {
     return str
 }
 
-func (u *Agentmaxutilization) MarshalJSON() ([]byte, error) {
-    type Alias Agentmaxutilization
+func (u *Utilizationrequest) MarshalJSON() ([]byte, error) {
+    type Alias Utilizationrequest
 
-    if AgentmaxutilizationMarshalled {
+    if UtilizationrequestMarshalled {
         return []byte("{}"), nil
     }
-    AgentmaxutilizationMarshalled = true
+    UtilizationrequestMarshalled = true
 
     return json.Marshal(&struct {
         
         Utilization map[string]Mediautilization `json:"utilization"`
-        
-        Level string `json:"level"`
         *Alias
     }{
 
         
         Utilization: map[string]Mediautilization{"": {}},
-        
-
-
         
 
         Alias: (*Alias)(u),

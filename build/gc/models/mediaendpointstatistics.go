@@ -25,6 +25,9 @@ type MediaendpointstatisticsDud struct {
 
     
 
+
+    
+
 }
 
 // Mediaendpointstatistics
@@ -48,10 +51,15 @@ type Mediaendpointstatistics struct {
     // Rtp - Statistics of sent and received RTP. Reference: https://www.rfc-editor.org/rfc/rfc3550
     Rtp Mediartpstatistics `json:"rtp"`
 
+
+    // ReconnectAttemptCount - Media reconnect attempt count
+    ReconnectAttemptCount int `json:"reconnectAttemptCount"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Mediaendpointstatistics) String() string {
+    
     
     
     
@@ -83,8 +91,13 @@ func (u *Mediaendpointstatistics) MarshalJSON() ([]byte, error) {
         Ice Mediaicestatistics `json:"ice"`
         
         Rtp Mediartpstatistics `json:"rtp"`
+        
+        ReconnectAttemptCount int `json:"reconnectAttemptCount"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -36,6 +36,12 @@ type ContactlistfilterDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -63,6 +69,14 @@ type Contactlistfilter struct {
     ContactList Domainentityref `json:"contactList"`
 
 
+    // ContactListTemplate - The contact list template the filter is based on. Required if sourceType is ContactListTemplate
+    ContactListTemplate Domainentityref `json:"contactListTemplate"`
+
+
+    // SourceType - The source type the filter is based on.
+    SourceType string `json:"sourceType"`
+
+
     // Clauses - Groups of conditions to filter the contacts by.
     Clauses []Contactlistfilterclause `json:"clauses"`
 
@@ -77,6 +91,8 @@ type Contactlistfilter struct {
 
 // String returns a JSON representation of the model
 func (o *Contactlistfilter) String() string {
+    
+    
     
     
     
@@ -105,11 +121,21 @@ func (u *Contactlistfilter) MarshalJSON() ([]byte, error) {
         
         ContactList Domainentityref `json:"contactList"`
         
+        ContactListTemplate Domainentityref `json:"contactListTemplate"`
+        
+        SourceType string `json:"sourceType"`
+        
         Clauses []Contactlistfilterclause `json:"clauses"`
         
         FilterType string `json:"filterType"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

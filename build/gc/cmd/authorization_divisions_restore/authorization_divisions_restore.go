@@ -38,7 +38,7 @@ func Cmdauthorization_divisions_restore() *cobra.Command {
       }
     }
   },
-  "required" : true
+  "required" : false
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

@@ -46,7 +46,7 @@ func Cmdquality_publishedforms() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/EvaluationForm"
+        "$ref" : "#/components/schemas/EvaluationFormResponse"
       }
     }
   }
@@ -61,7 +61,7 @@ func Cmdquality_publishedforms() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/EvaluationForm"
+        "$ref" : "#/components/schemas/EvaluationFormResponse"
       }
     }
   }

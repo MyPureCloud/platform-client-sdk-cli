@@ -40,7 +40,7 @@ func Cmdquality_forms_evaluations_bulk_contexts() *cobra.Command {
       "schema" : {
         "type" : "array",
         "items" : {
-          "$ref" : "#/components/schemas/EvaluationForm"
+          "$ref" : "#/components/schemas/EvaluationFormResponse"
         }
       }
     }

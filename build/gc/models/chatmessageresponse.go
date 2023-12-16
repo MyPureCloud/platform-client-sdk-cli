@@ -50,6 +50,9 @@ type ChatmessageresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Chatmessageresponse
@@ -105,6 +108,10 @@ type Chatmessageresponse struct {
     // ToUser - The receiving user of the message
     ToUser Addressableentityref `json:"toUser"`
 
+
+    // Reactions - The emoji reactions to this message
+    Reactions []Chatreaction `json:"reactions"`
+
 }
 
 // String returns a JSON representation of the model
@@ -122,6 +129,7 @@ func (o *Chatmessageresponse) String() string {
     
     
     
+     o.Reactions = []Chatreaction{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -164,6 +172,8 @@ func (u *Chatmessageresponse) MarshalJSON() ([]byte, error) {
         User Addressableentityref `json:"user"`
         
         ToUser Addressableentityref `json:"toUser"`
+        
+        Reactions []Chatreaction `json:"reactions"`
         *Alias
     }{
 
@@ -205,6 +215,11 @@ func (u *Chatmessageresponse) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Reactions: []Chatreaction{{}},
         
 
         Alias: (*Alias)(u),

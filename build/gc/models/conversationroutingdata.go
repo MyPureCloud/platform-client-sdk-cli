@@ -25,6 +25,9 @@ type ConversationroutingdataDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationroutingdata
@@ -48,6 +51,10 @@ type Conversationroutingdata struct {
     // ScoredAgents - A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
     ScoredAgents []Scoredagent `json:"scoredAgents"`
 
+
+    // Label - An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+    Label string `json:"label"`
+
 }
 
 // String returns a JSON representation of the model
@@ -57,6 +64,7 @@ func (o *Conversationroutingdata) String() string {
     
      o.Skills = []Addressableentityref{{}} 
      o.ScoredAgents = []Scoredagent{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -83,6 +91,8 @@ func (u *Conversationroutingdata) MarshalJSON() ([]byte, error) {
         Skills []Addressableentityref `json:"skills"`
         
         ScoredAgents []Scoredagent `json:"scoredAgents"`
+        
+        Label string `json:"label"`
         *Alias
     }{
 
@@ -102,6 +112,9 @@ func (u *Conversationroutingdata) MarshalJSON() ([]byte, error) {
 
         
         ScoredAgents: []Scoredagent{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

@@ -46,7 +46,7 @@ func Cmdquality_forms_evaluations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/EvaluationForm"
+        "$ref" : "#/components/schemas/EvaluationFormResponse"
       }
     }
   }
@@ -70,7 +70,7 @@ func Cmdquality_forms_evaluations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/EvaluationForm"
+        "$ref" : "#/components/schemas/EvaluationFormResponse"
       }
     }
   }
@@ -118,7 +118,7 @@ func Cmdquality_forms_evaluations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/EvaluationForm"
+        "$ref" : "#/components/schemas/EvaluationFormResponse"
       }
     }
   }

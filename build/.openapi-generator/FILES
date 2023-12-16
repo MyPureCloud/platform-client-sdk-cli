@@ -814,6 +814,8 @@ gc/cmd/routing_sms_phonenumbers/routing_sms_phonenumbers.go
 gc/cmd/routing_sms_phonenumbers_import/routing_sms_phonenumbers_import.go
 gc/cmd/routing_users_utilization/routing_users_utilization.go
 gc/cmd/routing_utilization/routing_utilization.go
+gc/cmd/routing_utilization_labels/routing_utilization_labels.go
+gc/cmd/routing_utilization_labels_agents/routing_utilization_labels_agents.go
 gc/cmd/routing_utilization_tags/routing_utilization_tags.go
 gc/cmd/routing_utilization_tags_agents/routing_utilization_tags_agents.go
 gc/cmd/routing_wrapupcodes/routing_wrapupcodes.go
@@ -1079,6 +1081,9 @@ gc/cmd/workforcemanagement_businessunits_weeks_schedules_headcountforecast/workf
 gc/cmd/workforcemanagement_businessunits_weeks_schedules_history_agents/workforcemanagement_businessunits_weeks_schedules_history_agents.go
 gc/cmd/workforcemanagement_businessunits_weeks_schedules_import/workforcemanagement_businessunits_weeks_schedules_import.go
 gc/cmd/workforcemanagement_businessunits_weeks_schedules_import_uploadurl/workforcemanagement_businessunits_weeks_schedules_import_uploadurl.go
+gc/cmd/workforcemanagement_businessunits_weeks_schedules_performancepredictions/workforcemanagement_businessunits_weeks_schedules_performancepredictions.go
+gc/cmd/workforcemanagement_businessunits_weeks_schedules_performancepredictions_recalculations/workforcemanagement_businessunits_weeks_schedules_performancepredictions_recalculations.go
+gc/cmd/workforcemanagement_businessunits_weeks_schedules_performancepredictions_recalculations_uploadurl/workforcemanagement_businessunits_weeks_schedules_performancepredictions_recalculations_uploadurl.go
 gc/cmd/workforcemanagement_businessunits_weeks_schedules_reschedule/workforcemanagement_businessunits_weeks_schedules_reschedule.go
 gc/cmd/workforcemanagement_businessunits_weeks_schedules_update/workforcemanagement_businessunits_weeks_schedules_update.go
 gc/cmd/workforcemanagement_businessunits_weeks_schedules_update_uploadurl/workforcemanagement_businessunits_weeks_schedules_update_uploadurl.go
@@ -1091,6 +1096,7 @@ gc/cmd/workforcemanagement_businessunits_weeks_shorttermforecasts_import/workfor
 gc/cmd/workforcemanagement_businessunits_weeks_shorttermforecasts_import_uploadurl/workforcemanagement_businessunits_weeks_shorttermforecasts_import_uploadurl.go
 gc/cmd/workforcemanagement_businessunits_weeks_shorttermforecasts_longtermforecastdata/workforcemanagement_businessunits_weeks_shorttermforecasts_longtermforecastdata.go
 gc/cmd/workforcemanagement_businessunits_weeks_shorttermforecasts_planninggroups/workforcemanagement_businessunits_weeks_shorttermforecasts_planninggroups.go
+gc/cmd/workforcemanagement_businessunits_weeks_shorttermforecasts_staffingrequirement/workforcemanagement_businessunits_weeks_shorttermforecasts_staffingrequirement.go
 gc/cmd/workforcemanagement_calendar_data_ics/workforcemanagement_calendar_data_ics.go
 gc/cmd/workforcemanagement_calendar_url_ics/workforcemanagement_calendar_url_ics.go
 gc/cmd/workforcemanagement_historicaldata_deletejob/workforcemanagement_historicaldata_deletejob.go
@@ -1244,6 +1250,7 @@ gc/models/agentpossibleworkshiftsrequest.go
 gc/models/agentpossibleworkshiftsresponse.go
 gc/models/agentqueryadherenceexplanationsrequest.go
 gc/models/agentqueryadherenceexplanationsresponse.go
+gc/models/agentqueuetimerequest.go
 gc/models/agentsintegrationslisting.go
 gc/models/agenttimeoffrequestpatch.go
 gc/models/aggregatemetricdata.go
@@ -1457,6 +1464,8 @@ gc/models/buforecastgenerationresult.go
 gc/models/buforecastmodificationresponse.go
 gc/models/buforecastresult.go
 gc/models/buforecastresultresponse.go
+gc/models/buforecaststaffingrequirementsresult.go
+gc/models/buforecaststaffingrequirementsresultresponse.go
 gc/models/buforecasttimeseriesresult.go
 gc/models/bufulldaytimeoffmarker.go
 gc/models/bugenerateschedulerequest.go
@@ -1634,6 +1643,7 @@ gc/models/chatmessage.go
 gc/models/chatmessageentitylisting.go
 gc/models/chatmessageresponse.go
 gc/models/chatmessageuser.go
+gc/models/chatreaction.go
 gc/models/chatsendmessageresponse.go
 gc/models/chatsettings.go
 gc/models/check.go
@@ -1837,6 +1847,7 @@ gc/models/conversationparticipantsearchcriteria.go
 gc/models/conversationparticipantsearchrequest.go
 gc/models/conversationproperties.go
 gc/models/conversationquery.go
+gc/models/conversationqueuemediasettings.go
 gc/models/conversationreason.go
 gc/models/conversationrecipientadditionalidentifier.go
 gc/models/conversationreference.go
@@ -1892,6 +1903,7 @@ gc/models/createtimeofflimitrequest.go
 gc/models/createtimeoffplanrequest.go
 gc/models/createtriggerrequest.go
 gc/models/createuser.go
+gc/models/createutilizationlabelrequest.go
 gc/models/createutilizationtagrequest.go
 gc/models/createwebchatconversationrequest.go
 gc/models/createwebchatconversationresponse.go
@@ -2223,8 +2235,8 @@ gc/models/evaluationdetailquerypredicate.go
 gc/models/evaluationentitylisting.go
 gc/models/evaluationform.go
 gc/models/evaluationformandscoringset.go
-gc/models/evaluationformentitylisting.go
 gc/models/evaluationformresponse.go
+gc/models/evaluationformresponseentitylisting.go
 gc/models/evaluationquestion.go
 gc/models/evaluationquestiongroup.go
 gc/models/evaluationquestiongroupscore.go
@@ -2924,6 +2936,7 @@ gc/models/moveagentsrequest.go
 gc/models/moveagentsresponse.go
 gc/models/movemanagementunitrequest.go
 gc/models/movemanagementunitresponse.go
+gc/models/muagentqueuetimerequest.go
 gc/models/murescheduleresultwrapper.go
 gc/models/mutableuserpresence.go
 gc/models/mutesnoozefields.go
@@ -3114,6 +3127,11 @@ gc/models/patchsurveyquestion.go
 gc/models/patchtextstyleproperties.go
 gc/models/patchuser.go
 gc/models/patchwebmessagingofferfields.go
+gc/models/performancepredictionoutputs.go
+gc/models/performancepredictionrecalculationresponse.go
+gc/models/performancepredictionrecalculationuploadresponse.go
+gc/models/performancepredictionresponse.go
+gc/models/performancepredictionuploadschema.go
 gc/models/performanceprofile.go
 gc/models/permissioncollectionentitylisting.go
 gc/models/permissiondetails.go
@@ -3141,6 +3159,7 @@ gc/models/pingidentity.go
 gc/models/pinnedmessagerequest.go
 gc/models/planninggroup.go
 gc/models/planninggrouplist.go
+gc/models/planninggroupoutputs.go
 gc/models/planninggroupreference.go
 gc/models/planningperiodsettings.go
 gc/models/policy.go
@@ -3579,6 +3598,7 @@ gc/models/sourceplanninggrouprequest.go
 gc/models/speechtextanalyticssettingsrequest.go
 gc/models/speechtextanalyticssettingsresponse.go
 gc/models/splittinginformation.go
+gc/models/staffingrequirementsplanninggroupdata.go
 gc/models/starrabledivision.go
 gc/models/station.go
 gc/models/stationentitylisting.go
@@ -3862,6 +3882,8 @@ gc/models/updatecoachingappointmentrequest.go
 gc/models/updatecontactcolumnactionsettings.go
 gc/models/updatedraftinput.go
 gc/models/updatemanagementunitrequest.go
+gc/models/updatemuagentrequest.go
+gc/models/updatemuagentsrequest.go
 gc/models/updatenotificationresponse.go
 gc/models/updatenotificationsrequest.go
 gc/models/updatenotificationsresponse.go
@@ -3873,6 +3895,7 @@ gc/models/updatetimeofflimitrequest.go
 gc/models/updatetimeoffplanrequest.go
 gc/models/updatetriggerrequest.go
 gc/models/updateuser.go
+gc/models/updateutilizationlabelrequest.go
 gc/models/updateverifierrequest.go
 gc/models/updateworkplanrotationagentrequest.go
 gc/models/updateworkplanrotationrequest.go
@@ -3977,6 +4000,7 @@ gc/models/usertimeoffrequestreference.go
 gc/models/usertransferevent.go
 gc/models/usertrenddata.go
 gc/models/utilizationlabel.go
+gc/models/utilizationlabelentitylisting.go
 gc/models/utilizationrequest.go
 gc/models/utilizationresponse.go
 gc/models/utilizationtag.go

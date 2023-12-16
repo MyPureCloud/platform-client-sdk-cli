@@ -120,6 +120,9 @@ type EdgeDud struct {
     
 
 
+    
+
+
     CallDrainingState string `json:"callDrainingState"`
 
 
@@ -277,6 +280,10 @@ type Edge struct {
     EdgeDeploymentType string `json:"edgeDeploymentType"`
 
 
+    // CertType - The type of certificate used to communicate with edge-proxy.
+    CertType string `json:"certType"`
+
+
     
 
 
@@ -304,6 +311,7 @@ func (o *Edge) String() string {
     
     
      o.Interfaces = []Edgeinterface{{}} 
+    
     
     
     
@@ -401,6 +409,8 @@ func (u *Edge) MarshalJSON() ([]byte, error) {
         
         EdgeDeploymentType string `json:"edgeDeploymentType"`
         
+        CertType string `json:"certType"`
+        
         Proxy string `json:"proxy"`
         *Alias
     }{
@@ -443,6 +453,9 @@ func (u *Edge) MarshalJSON() ([]byte, error) {
 
         
         Interfaces: []Edgeinterface{{}},
+        
+
+
         
 
 

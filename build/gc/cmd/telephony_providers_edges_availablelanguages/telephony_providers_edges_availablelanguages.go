@@ -52,8 +52,8 @@ func queryEscape(value string) string {
 
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get the list of available languages.",
-	Long:  "Get the list of available languages.",
+	Short: "Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.",
+	Long:  "Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

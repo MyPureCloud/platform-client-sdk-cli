@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    EvaluationformentitylistingMarshalled = false
+    UtilizationlabelentitylistingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type EvaluationformentitylistingDud struct { 
+type UtilizationlabelentitylistingDud struct { 
     
 
 
@@ -42,10 +42,10 @@ type EvaluationformentitylistingDud struct {
 
 }
 
-// Evaluationformentitylisting
-type Evaluationformentitylisting struct { 
+// Utilizationlabelentitylisting
+type Utilizationlabelentitylisting struct { 
     // Entities
-    Entities []Evaluationform `json:"entities"`
+    Entities []Utilizationlabel `json:"entities"`
 
 
     // PageSize
@@ -86,8 +86,8 @@ type Evaluationformentitylisting struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Evaluationformentitylisting) String() string {
-     o.Entities = []Evaluationform{{}} 
+func (o *Utilizationlabelentitylisting) String() string {
+     o.Entities = []Utilizationlabel{{}} 
     
     
     
@@ -104,17 +104,17 @@ func (o *Evaluationformentitylisting) String() string {
     return str
 }
 
-func (u *Evaluationformentitylisting) MarshalJSON() ([]byte, error) {
-    type Alias Evaluationformentitylisting
+func (u *Utilizationlabelentitylisting) MarshalJSON() ([]byte, error) {
+    type Alias Utilizationlabelentitylisting
 
-    if EvaluationformentitylistingMarshalled {
+    if UtilizationlabelentitylistingMarshalled {
         return []byte("{}"), nil
     }
-    EvaluationformentitylistingMarshalled = true
+    UtilizationlabelentitylistingMarshalled = true
 
     return json.Marshal(&struct {
         
-        Entities []Evaluationform `json:"entities"`
+        Entities []Utilizationlabel `json:"entities"`
         
         PageSize int `json:"pageSize"`
         
@@ -137,7 +137,7 @@ func (u *Evaluationformentitylisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Evaluationform{{}},
+        Entities: []Utilizationlabel{{}},
         
 
 

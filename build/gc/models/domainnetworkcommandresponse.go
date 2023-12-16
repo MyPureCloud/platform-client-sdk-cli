@@ -39,7 +39,7 @@ type Domainnetworkcommandresponse struct {
 
 
     // ErrorInfo
-    ErrorInfo *Errordetails `json:"errorInfo"`
+    ErrorInfo Errordetails `json:"errorInfo"`
 
 }
 
@@ -72,7 +72,7 @@ func (u *Domainnetworkcommandresponse) MarshalJSON() ([]byte, error) {
         
         Acknowledged bool `json:"acknowledged"`
         
-        ErrorInfo *Errordetails `json:"errorInfo"`
+        ErrorInfo Errordetails `json:"errorInfo"`
         *Alias
     }{
 

@@ -98,6 +98,9 @@ type MessageDud struct {
 
     
 
+
+    
+
 }
 
 // Message
@@ -217,6 +220,10 @@ type Message struct {
     // ByoSmsIntegrationId - The internal id representing the customer supplied sms integration message.
     ByoSmsIntegrationId string `json:"byoSmsIntegrationId"`
 
+
+    // QueueMediaSettings - Represents the queue settings for this media type.
+    QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
+
 }
 
 // String returns a JSON representation of the model
@@ -244,6 +251,7 @@ func (o *Message) String() string {
     
     
      o.Messages = []Messagedetails{{}} 
+    
     
     
     
@@ -324,6 +332,8 @@ func (u *Message) MarshalJSON() ([]byte, error) {
         AgentAssistantId string `json:"agentAssistantId"`
         
         ByoSmsIntegrationId string `json:"byoSmsIntegrationId"`
+        
+        QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
         *Alias
     }{
 
@@ -397,6 +407,9 @@ func (u *Message) MarshalJSON() ([]byte, error) {
 
         
         Messages: []Messagedetails{{}},
+        
+
+
         
 
 

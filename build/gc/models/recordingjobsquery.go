@@ -45,7 +45,7 @@ type RecordingjobsqueryDud struct {
 
 // Recordingjobsquery
 type Recordingjobsquery struct { 
-    // Action - Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Archive action is currently not supported
+    // Action - Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
     Action string `json:"action"`
 
 
@@ -81,7 +81,7 @@ type Recordingjobsquery struct {
     ClearExport bool `json:"clearExport"`
 
 
-    // ConversationQuery - Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability
+    // ConversationQuery - Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is required only when querying for conversations lesser than 5 years.
     ConversationQuery Asyncconversationquery `json:"conversationQuery"`
 
 }

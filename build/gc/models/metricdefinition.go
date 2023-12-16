@@ -41,6 +41,9 @@ type MetricdefinitionDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -82,6 +85,10 @@ type Metricdefinition struct {
     MediaTypeFilteringAllowed bool `json:"mediaTypeFilteringAllowed"`
 
 
+    // InitialDirectionFilteringAllowed - Flag to indicate if this metricDefinition allows filter based on initial direction
+    InitialDirectionFilteringAllowed bool `json:"initialDirectionFilteringAllowed"`
+
+
     // QueueFilteringAllowed - Flag to indicate if this metricDefinition allows filter based on queues
     QueueFilteringAllowed bool `json:"queueFilteringAllowed"`
 
@@ -97,6 +104,7 @@ func (o *Metricdefinition) String() string {
     
      o.DividendMetrics = []string{""} 
      o.DivisorMetrics = []string{""} 
+    
     
     
     
@@ -134,6 +142,8 @@ func (u *Metricdefinition) MarshalJSON() ([]byte, error) {
         
         MediaTypeFilteringAllowed bool `json:"mediaTypeFilteringAllowed"`
         
+        InitialDirectionFilteringAllowed bool `json:"initialDirectionFilteringAllowed"`
+        
         QueueFilteringAllowed bool `json:"queueFilteringAllowed"`
         *Alias
     }{
@@ -157,6 +167,9 @@ func (u *Metricdefinition) MarshalJSON() ([]byte, error) {
 
         
         DivisorMetrics: []string{""},
+        
+
+
         
 
 

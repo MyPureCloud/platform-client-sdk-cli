@@ -17,7 +17,7 @@ type MinertopicDud struct {
     
 
 
-    Miner Miner `json:"miner"`
+    Miner *Miner `json:"miner"`
 
 
     ConversationCount int `json:"conversationCount"`

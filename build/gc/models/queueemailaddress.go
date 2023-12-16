@@ -25,7 +25,7 @@ type Queueemailaddress struct {
 
 
     // Route
-    Route Inboundroute `json:"route"`
+    Route *Inboundroute `json:"route"`
 
 }
 
@@ -52,7 +52,7 @@ func (u *Queueemailaddress) MarshalJSON() ([]byte, error) {
         
         Domain Domainentityref `json:"domain"`
         
-        Route Inboundroute `json:"route"`
+        Route *Inboundroute `json:"route"`
         *Alias
     }{
 

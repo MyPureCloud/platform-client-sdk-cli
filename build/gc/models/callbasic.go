@@ -107,6 +107,9 @@ type CallbasicDud struct {
 
     
 
+
+    
+
 }
 
 // Callbasic
@@ -235,6 +238,10 @@ type Callbasic struct {
     AgentAssistantId string `json:"agentAssistantId"`
 
 
+    // QueueMediaSettings - Represents the queue settings for this media type.
+    QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
+
+
     // Disposition - Call resolution data for Dialer bulk make calls commands.
     Disposition Disposition `json:"disposition"`
 
@@ -262,6 +269,7 @@ func (o *Callbasic) String() string {
     
     
      o.DisconnectReasons = []Disconnectreason{{}} 
+    
     
     
     
@@ -353,6 +361,8 @@ func (u *Callbasic) MarshalJSON() ([]byte, error) {
         
         AgentAssistantId string `json:"agentAssistantId"`
         
+        QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
+        
         Disposition Disposition `json:"disposition"`
         *Alias
     }{
@@ -418,6 +428,9 @@ func (u *Callbasic) MarshalJSON() ([]byte, error) {
 
         
         DisconnectReasons: []Disconnectreason{{}},
+        
+
+
         
 
 

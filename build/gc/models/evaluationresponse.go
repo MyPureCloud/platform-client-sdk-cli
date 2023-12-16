@@ -99,12 +99,6 @@ type EvaluationresponseDud struct {
     
 
 
-    
-
-
-    
-
-
     EvaluationSource Evaluationsource `json:"evaluationSource"`
 
 
@@ -173,10 +167,6 @@ type Evaluationresponse struct {
     ChangedDate time.Time `json:"changedDate"`
 
 
-    // RevisionCreatedDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    RevisionCreatedDate time.Time `json:"revisionCreatedDate"`
-
-
     // Queue
     Queue Queue `json:"queue"`
 
@@ -221,10 +211,6 @@ type Evaluationresponse struct {
     Redacted bool `json:"redacted"`
 
 
-    // AgentTeam - Team of the evaluation agent
-    AgentTeam Team `json:"agentTeam"`
-
-
     // IsScoringIndex
     IsScoringIndex bool `json:"isScoringIndex"`
 
@@ -261,9 +247,7 @@ func (o *Evaluationresponse) String() string {
     
     
     
-    
      o.MediaType = []string{""} 
-    
     
     
     
@@ -321,8 +305,6 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
         
         ChangedDate time.Time `json:"changedDate"`
         
-        RevisionCreatedDate time.Time `json:"revisionCreatedDate"`
-        
         Queue Queue `json:"queue"`
         
         MediaType []string `json:"mediaType"`
@@ -344,8 +326,6 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
         ResourceType string `json:"resourceType"`
         
         Redacted bool `json:"redacted"`
-        
-        AgentTeam Team `json:"agentTeam"`
         
         IsScoringIndex bool `json:"isScoringIndex"`
         
@@ -404,13 +384,7 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
 
 
         
-
-
-        
         MediaType: []string{""},
-        
-
-
         
 
 

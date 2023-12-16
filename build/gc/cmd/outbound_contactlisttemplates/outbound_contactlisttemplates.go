@@ -62,16 +62,16 @@ func Cmdoutbound_contactlisttemplates() *cobra.Command {
 }`)
 	outbound_contactlisttemplatesCmd.AddCommand(deleteCmd)
 
-	utils.AddFlag(deleteCmd.Flags(), "[]string", "id", "", "contact list template id(s) to delete - REQUIRED")
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/contactlisttemplates", utils.FormatPermissions([]string{ "outbound:contactListTemplate:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/contactlisttemplates")))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
-	deleteCmd.MarkFlagRequired("id")
+	utils.AddFlag(deleteallCmd.Flags(), "[]string", "id", "", "contact list template id(s) to delete - REQUIRED")
+	deleteallCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteallCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/contactlisttemplates", utils.FormatPermissions([]string{ "outbound:contactListTemplate:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/contactlisttemplates")))
+	utils.AddFileFlagIfUpsert(deleteallCmd.Flags(), "DELETE", ``)
+	deleteallCmd.MarkFlagRequired("id")
 	
-	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+	utils.AddPaginateFlagsIfListingResponse(deleteallCmd.Flags(), "DELETE", `{
   "description" : "Contact list templates accepted for delete.",
   "content" : { }
 }`)
-	outbound_contactlisttemplatesCmd.AddCommand(deleteCmd)
+	outbound_contactlisttemplatesCmd.AddCommand(deleteallCmd)
 
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/contactlisttemplates/{contactListTemplateId}", utils.FormatPermissions([]string{ "outbound:contactListTemplate:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/contactlisttemplates/{contactListTemplateId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -273,8 +273,8 @@ var deleteCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var deleteCmd = &cobra.Command{
-	Use:   "delete",
+var deleteallCmd = &cobra.Command{
+	Use:   "deleteall",
 	Short: "Delete multiple contact list templates.",
 	Long:  "Delete multiple contact list templates.",
 	Args:  utils.DetermineArgs([]string{ }),
@@ -309,7 +309,7 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "delete"
+		const opId = "deleteall"
 		const httpMethod = "DELETE"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file

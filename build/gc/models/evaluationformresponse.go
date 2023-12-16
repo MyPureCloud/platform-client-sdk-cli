@@ -62,8 +62,8 @@ type Evaluationformresponse struct {
     QuestionGroups []Evaluationquestiongroup `json:"questionGroups"`
 
 
-    // PublishedVersions
-    PublishedVersions Domainentitylistingevaluationform `json:"publishedVersions"`
+    // WeightMode - Mode for evaluation form weight
+    WeightMode string `json:"weightMode"`
 
 
     
@@ -105,7 +105,7 @@ func (u *Evaluationformresponse) MarshalJSON() ([]byte, error) {
         
         QuestionGroups []Evaluationquestiongroup `json:"questionGroups"`
         
-        PublishedVersions Domainentitylistingevaluationform `json:"publishedVersions"`
+        WeightMode string `json:"weightMode"`
         *Alias
     }{
 

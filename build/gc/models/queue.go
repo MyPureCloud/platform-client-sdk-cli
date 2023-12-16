@@ -262,7 +262,7 @@ type Queue struct {
 
 
     // OutboundEmailAddress
-    OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
+    OutboundEmailAddress *Queueemailaddress `json:"outboundEmailAddress"`
 
 
     // PeerId - The ID of an associated external queue.
@@ -389,7 +389,7 @@ func (u *Queue) MarshalJSON() ([]byte, error) {
         
         OutboundMessagingAddresses Queuemessagingaddresses `json:"outboundMessagingAddresses"`
         
-        OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
+        OutboundEmailAddress *Queueemailaddress `json:"outboundEmailAddress"`
         
         PeerId string `json:"peerId"`
         

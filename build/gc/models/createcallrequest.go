@@ -49,6 +49,9 @@ type CreatecallrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createcallrequest
@@ -104,6 +107,10 @@ type Createcallrequest struct {
     // ExternalContactId - The external contact with which to associate the call.
     ExternalContactId string `json:"externalContactId"`
 
+
+    // Label - An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+    Label string `json:"label"`
+
 }
 
 // String returns a JSON representation of the model
@@ -119,6 +126,7 @@ func (o *Createcallrequest) String() string {
      o.RoutingSkillsIds = []string{""} 
      o.ConversationIds = []string{""} 
      o.Participants = []Destination{{}} 
+    
     
     
 
@@ -163,6 +171,8 @@ func (u *Createcallrequest) MarshalJSON() ([]byte, error) {
         UuiData string `json:"uuiData"`
         
         ExternalContactId string `json:"externalContactId"`
+        
+        Label string `json:"label"`
         *Alias
     }{
 
@@ -202,6 +212,9 @@ func (u *Createcallrequest) MarshalJSON() ([]byte, error) {
 
         
         Participants: []Destination{{}},
+        
+
+
         
 
 

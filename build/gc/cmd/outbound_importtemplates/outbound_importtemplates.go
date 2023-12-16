@@ -62,16 +62,16 @@ func Cmdoutbound_importtemplates() *cobra.Command {
 }`)
 	outbound_importtemplatesCmd.AddCommand(deleteCmd)
 
-	utils.AddFlag(deleteCmd.Flags(), "[]string", "id", "", "import template id(s) to delete - REQUIRED")
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/importtemplates", utils.FormatPermissions([]string{ "outbound:importTemplate:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/importtemplates")))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
-	deleteCmd.MarkFlagRequired("id")
+	utils.AddFlag(deleteallCmd.Flags(), "[]string", "id", "", "import template id(s) to delete - REQUIRED")
+	deleteallCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteallCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/importtemplates", utils.FormatPermissions([]string{ "outbound:importTemplate:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/importtemplates")))
+	utils.AddFileFlagIfUpsert(deleteallCmd.Flags(), "DELETE", ``)
+	deleteallCmd.MarkFlagRequired("id")
 	
-	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+	utils.AddPaginateFlagsIfListingResponse(deleteallCmd.Flags(), "DELETE", `{
   "description" : "Import templates accepted for delete.",
   "content" : { }
 }`)
-	outbound_importtemplatesCmd.AddCommand(deleteCmd)
+	outbound_importtemplatesCmd.AddCommand(deleteallCmd)
 
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/importtemplates/{importTemplateId}", utils.FormatPermissions([]string{ "outbound:importTemplate:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/importtemplates/{importTemplateId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -274,8 +274,8 @@ var deleteCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var deleteCmd = &cobra.Command{
-	Use:   "delete",
+var deleteallCmd = &cobra.Command{
+	Use:   "deleteall",
 	Short: "Delete multiple import templates.",
 	Long:  "Delete multiple import templates.",
 	Args:  utils.DetermineArgs([]string{ }),
@@ -310,7 +310,7 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "delete"
+		const opId = "deleteall"
 		const httpMethod = "DELETE"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file

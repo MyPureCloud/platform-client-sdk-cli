@@ -31,6 +31,9 @@ type RoutingdataDud struct {
 
     
 
+
+    
+
 }
 
 // Routingdata
@@ -41,6 +44,10 @@ type Routingdata struct {
 
     // LanguageId - The identifier of a language to be considered in routing
     LanguageId string `json:"languageId"`
+
+
+    // Label - An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+    Label string `json:"label"`
 
 
     // Priority - The priority for routing
@@ -69,6 +76,7 @@ func (o *Routingdata) String() string {
     
     
     
+    
      o.SkillIds = []string{""} 
      o.PreferredAgentIds = []string{""} 
      o.ScoredAgents = []Scoredagent{{}} 
@@ -94,6 +102,8 @@ func (u *Routingdata) MarshalJSON() ([]byte, error) {
         
         LanguageId string `json:"languageId"`
         
+        Label string `json:"label"`
+        
         Priority int `json:"priority"`
         
         SkillIds []string `json:"skillIds"`
@@ -105,6 +115,9 @@ func (u *Routingdata) MarshalJSON() ([]byte, error) {
         RoutingFlags []string `json:"routingFlags"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -84,6 +84,7 @@ func Cmdtelephony_providers_edges_sites() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "string", "locationId", "", "Location Id")
 	utils.AddFlag(listCmd.Flags(), "bool", "managed", "", "Filter by managed")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in the response, comma-separated Valid values: edges, location, primarySites, secondarySites")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/sites", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/sites")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -373,6 +374,10 @@ var listCmd = &cobra.Command{
 		managed := utils.GetFlag(cmd.Flags(), "bool", "managed")
 		if managed != "" {
 			queryParams["managed"] = managed
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
 		}
 		urlString := path
 		if len(queryParams) > 0 {

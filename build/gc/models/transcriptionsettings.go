@@ -22,6 +22,12 @@ type TranscriptionsettingsDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Transcriptionsettings
@@ -41,10 +47,20 @@ type Transcriptionsettings struct {
     // ContentSearchEnabled - Setting to enable/disable content search
     ContentSearchEnabled bool `json:"contentSearchEnabled"`
 
+
+    // PciDssRedactionEnabled - Setting to enable/disable PCI DSS Redaction
+    PciDssRedactionEnabled bool `json:"pciDssRedactionEnabled"`
+
+
+    // PiiRedactionEnabled - Setting to enable/disable PII Redaction
+    PiiRedactionEnabled bool `json:"piiRedactionEnabled"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Transcriptionsettings) String() string {
+    
+    
     
     
     
@@ -73,8 +89,18 @@ func (u *Transcriptionsettings) MarshalJSON() ([]byte, error) {
         LowLatencyTranscriptionEnabled bool `json:"lowLatencyTranscriptionEnabled"`
         
         ContentSearchEnabled bool `json:"contentSearchEnabled"`
+        
+        PciDssRedactionEnabled bool `json:"pciDssRedactionEnabled"`
+        
+        PiiRedactionEnabled bool `json:"piiRedactionEnabled"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

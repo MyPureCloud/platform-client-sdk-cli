@@ -23,6 +23,9 @@ type AssessmentquestiongroupscoreDud struct {
     
 
 
+    
+
+
     TotalCriticalScore float32 `json:"totalCriticalScore"`
 
 
@@ -73,6 +76,10 @@ type Assessmentquestiongroupscore struct {
     MarkedNA bool `json:"markedNA"`
 
 
+    // SystemMarkedNA - If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
+    SystemMarkedNA bool `json:"systemMarkedNA"`
+
+
     
 
 
@@ -112,6 +119,7 @@ type Assessmentquestiongroupscore struct {
 func (o *Assessmentquestiongroupscore) String() string {
     
     
+    
      o.QuestionScores = []Assessmentquestionscore{{}} 
 
     j, _ := json.Marshal(o)
@@ -134,9 +142,14 @@ func (u *Assessmentquestiongroupscore) MarshalJSON() ([]byte, error) {
         
         MarkedNA bool `json:"markedNA"`
         
+        SystemMarkedNA bool `json:"systemMarkedNA"`
+        
         QuestionScores []Assessmentquestionscore `json:"questionScores"`
         *Alias
     }{
+
+        
+
 
         
 

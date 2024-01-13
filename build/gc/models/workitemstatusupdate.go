@@ -52,8 +52,8 @@ type Workitemstatusupdate struct {
     StatusTransitionDelaySeconds int `json:"statusTransitionDelaySeconds"`
 
 
-    // StatusTransitionTime - Time in HH:MM:SS format at which auto status transition will occur after statusTransitionDelaySeconds delay. To set Time, the statusTransitionDelaySeconds must be equal to or greater than 86400 i.e. a day
-    StatusTransitionTime Localtime `json:"statusTransitionTime"`
+    // StatusTransitionTime - Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS
+    StatusTransitionTime string `json:"statusTransitionTime"`
 
 }
 
@@ -92,7 +92,7 @@ func (u *Workitemstatusupdate) MarshalJSON() ([]byte, error) {
         
         StatusTransitionDelaySeconds int `json:"statusTransitionDelaySeconds"`
         
-        StatusTransitionTime Localtime `json:"statusTransitionTime"`
+        StatusTransitionTime string `json:"statusTransitionTime"`
         *Alias
     }{
 

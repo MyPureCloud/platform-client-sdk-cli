@@ -31,6 +31,9 @@ type AssessmentquestionscoreDud struct {
 
     
 
+
+    
+
 }
 
 // Assessmentquestionscore
@@ -57,6 +60,10 @@ type Assessmentquestionscore struct {
     MarkedNA bool `json:"markedNA"`
 
 
+    // SystemMarkedNA - If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
+    SystemMarkedNA bool `json:"systemMarkedNA"`
+
+
     // FreeTextAnswer - Answer for free text answer type
     FreeTextAnswer string `json:"freeTextAnswer"`
 
@@ -64,6 +71,7 @@ type Assessmentquestionscore struct {
 
 // String returns a JSON representation of the model
 func (o *Assessmentquestionscore) String() string {
+    
     
     
     
@@ -94,9 +102,14 @@ func (u *Assessmentquestionscore) MarshalJSON() ([]byte, error) {
         
         MarkedNA bool `json:"markedNA"`
         
+        SystemMarkedNA bool `json:"systemMarkedNA"`
+        
         FreeTextAnswer string `json:"freeTextAnswer"`
         *Alias
     }{
+
+        
+
 
         
 

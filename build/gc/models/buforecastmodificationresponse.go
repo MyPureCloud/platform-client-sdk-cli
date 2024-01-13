@@ -43,6 +43,12 @@ type BuforecastmodificationresponseDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Buforecastmodificationresponse
@@ -75,12 +81,20 @@ type Buforecastmodificationresponse struct {
     Values []Wfmforecastmodificationintervaloffsetvalue `json:"values"`
 
 
+    // SecondaryValues - The list of modification secondary values. Only applicable for multi granularity modifications
+    SecondaryValues []Wfmforecastmodificationintervaloffsetvalue `json:"secondaryValues"`
+
+
     // DisplayGranularity - The client side display granularity of the modification, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
     DisplayGranularity string `json:"displayGranularity"`
 
 
     // Granularity - The actual granularity of the modification as stored behind the scenes, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
     Granularity string `json:"granularity"`
+
+
+    // SecondaryGranularity - The granularity of the 'secondaryValues' modification as stored behind the scenes, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
+    SecondaryGranularity string `json:"secondaryGranularity"`
 
 
     // Enabled - Whether the modification is enabled for the forecast
@@ -101,6 +115,8 @@ func (o *Buforecastmodificationresponse) String() string {
     
     
      o.Values = []Wfmforecastmodificationintervaloffsetvalue{{}} 
+     o.SecondaryValues = []Wfmforecastmodificationintervaloffsetvalue{{}} 
+    
     
     
     
@@ -136,9 +152,13 @@ func (u *Buforecastmodificationresponse) MarshalJSON() ([]byte, error) {
         
         Values []Wfmforecastmodificationintervaloffsetvalue `json:"values"`
         
+        SecondaryValues []Wfmforecastmodificationintervaloffsetvalue `json:"secondaryValues"`
+        
         DisplayGranularity string `json:"displayGranularity"`
         
         Granularity string `json:"granularity"`
+        
+        SecondaryGranularity string `json:"secondaryGranularity"`
         
         Enabled bool `json:"enabled"`
         
@@ -166,6 +186,14 @@ func (u *Buforecastmodificationresponse) MarshalJSON() ([]byte, error) {
 
         
         Values: []Wfmforecastmodificationintervaloffsetvalue{{}},
+        
+
+
+        
+        SecondaryValues: []Wfmforecastmodificationintervaloffsetvalue{{}},
+        
+
+
         
 
 

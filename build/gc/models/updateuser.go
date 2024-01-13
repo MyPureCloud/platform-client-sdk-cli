@@ -71,6 +71,9 @@ type UpdateuserDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -109,6 +112,10 @@ type Updateuser struct {
 
     // Username
     Username string `json:"username"`
+
+
+    // PreferredName - Preferred full name of agent
+    PreferredName string `json:"preferredName"`
 
 
     // Manager
@@ -169,6 +176,7 @@ func (o *Updateuser) String() string {
     
     
     
+    
      o.Images = []Userimage{{}} 
     
      o.ProfileSkills = []string{""} 
@@ -209,6 +217,8 @@ func (u *Updateuser) MarshalJSON() ([]byte, error) {
         Title string `json:"title"`
         
         Username string `json:"username"`
+        
+        PreferredName string `json:"preferredName"`
         
         Manager string `json:"manager"`
         
@@ -254,6 +264,9 @@ func (u *Updateuser) MarshalJSON() ([]byte, error) {
 
         
         Addresses: []Contact{{}},
+        
+
+
         
 
 

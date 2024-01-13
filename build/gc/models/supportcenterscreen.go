@@ -24,7 +24,7 @@ type Supportcenterscreen struct {
     VarType string `json:"type"`
 
 
-    // ModuleSettings - Module settings for the screen
+    // ModuleSettings - Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article;
     ModuleSettings []Supportcentermodulesetting `json:"moduleSettings"`
 
 }

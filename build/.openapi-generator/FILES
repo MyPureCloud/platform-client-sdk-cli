@@ -153,6 +153,7 @@ gc/cmd/chats_rooms_pinnedmessages/chats_rooms_pinnedmessages.go
 gc/cmd/chats_settings/chats_settings.go
 gc/cmd/chats_threads_messages/chats_threads_messages.go
 gc/cmd/chats_users_messages/chats_users_messages.go
+gc/cmd/chats_users_settings/chats_users_settings.go
 gc/cmd/coaching_appointments/coaching_appointments.go
 gc/cmd/coaching_appointments_aggregates_query/coaching_appointments_aggregates_query.go
 gc/cmd/coaching_appointments_annotations/coaching_appointments_annotations.go
@@ -162,9 +163,7 @@ gc/cmd/coaching_appointments_status/coaching_appointments_status.go
 gc/cmd/coaching_appointments_statuses/coaching_appointments_statuses.go
 gc/cmd/coaching_notifications/coaching_notifications.go
 gc/cmd/coaching_scheduleslots_query/coaching_scheduleslots_query.go
-gc/cmd/contentmanagement_auditquery/contentmanagement_auditquery.go
 gc/cmd/contentmanagement_documents/contentmanagement_documents.go
-gc/cmd/contentmanagement_documents_audits/contentmanagement_documents_audits.go
 gc/cmd/contentmanagement_documents_content/contentmanagement_documents_content.go
 gc/cmd/contentmanagement_query/contentmanagement_query.go
 gc/cmd/contentmanagement_securityprofiles/contentmanagement_securityprofiles.go
@@ -322,6 +321,8 @@ gc/cmd/dataextensions_coretypes/dataextensions_coretypes.go
 gc/cmd/dataextensions_limits/dataextensions_limits.go
 gc/cmd/date/date.go
 gc/cmd/diagnostics_logcapture_browser_entries_download_jobs/diagnostics_logcapture_browser_entries_download_jobs.go
+gc/cmd/diagnostics_logcapture_browser_entries_query/diagnostics_logcapture_browser_entries_query.go
+gc/cmd/diagnostics_logcapture_browser_users/diagnostics_logcapture_browser_users.go
 gc/cmd/documentationfile_all_search/documentationfile_all_search.go
 gc/cmd/documentationfile_gkn_search/documentationfile_gkn_search.go
 gc/cmd/documentationfile_search/documentationfile_search.go
@@ -484,6 +485,7 @@ gc/cmd/infrastructureascode_jobs/infrastructureascode_jobs.go
 gc/cmd/integrations/integrations.go
 gc/cmd/integrations_actions/integrations_actions.go
 gc/cmd/integrations_actions_categories/integrations_actions_categories.go
+gc/cmd/integrations_actions_certificates/integrations_actions_certificates.go
 gc/cmd/integrations_actions_draft/integrations_actions_draft.go
 gc/cmd/integrations_actions_draft_publish/integrations_actions_draft_publish.go
 gc/cmd/integrations_actions_draft_schemas/integrations_actions_draft_schemas.go
@@ -819,6 +821,7 @@ gc/cmd/routing_utilization_labels_agents/routing_utilization_labels_agents.go
 gc/cmd/routing_utilization_tags/routing_utilization_tags.go
 gc/cmd/routing_utilization_tags_agents/routing_utilization_tags_agents.go
 gc/cmd/routing_wrapupcodes/routing_wrapupcodes.go
+gc/cmd/routing_wrapupcodes_divisionviews/routing_wrapupcodes_divisionviews.go
 gc/cmd/scim_groups/scim_groups.go
 gc/cmd/scim_resourcetypes/scim_resourcetypes.go
 gc/cmd/scim_schemas/scim_schemas.go
@@ -1173,6 +1176,8 @@ gc/models/actionaggregationquery.go
 gc/models/actionaggregationview.go
 gc/models/actionasyncaggregatequeryresponse.go
 gc/models/actionasyncaggregationquery.go
+gc/models/actioncertificate.go
+gc/models/actioncertificatelisting.go
 gc/models/actionconfig.go
 gc/models/actioncontract.go
 gc/models/actioncontractinput.go
@@ -1211,6 +1216,7 @@ gc/models/additionallanguagesintent.go
 gc/models/additionallanguagessynonyms.go
 gc/models/additionalmessage.go
 gc/models/address.go
+gc/models/addressableentity.go
 gc/models/addressableentityref.go
 gc/models/addressablelicensedefinition.go
 gc/models/addshifttraderequest.go
@@ -1351,9 +1357,7 @@ gc/models/atzmtimeslot.go
 gc/models/atzmtimeslotwithtimezone.go
 gc/models/audiostate.go
 gc/models/audioupdatedevent.go
-gc/models/auditchange.go
 gc/models/auditentity.go
-gc/models/auditentityreference.go
 gc/models/auditfacet.go
 gc/models/auditfilter.go
 gc/models/auditlogmessage.go
@@ -1646,6 +1650,7 @@ gc/models/chatmessageuser.go
 gc/models/chatreaction.go
 gc/models/chatsendmessageresponse.go
 gc/models/chatsettings.go
+gc/models/chatusersettings.go
 gc/models/check.go
 gc/models/clientapp.go
 gc/models/clientappconfigurationinfo.go
@@ -1751,12 +1756,10 @@ gc/models/contactphonenumbercolumn.go
 gc/models/contactsort.go
 gc/models/contentactions.go
 gc/models/contentattachment.go
-gc/models/contentattributefilteritem.go
 gc/models/contentbuttonresponse.go
 gc/models/contentcard.go
 gc/models/contentcardaction.go
 gc/models/contentcarousel.go
-gc/models/contentfacetfilteritem.go
 gc/models/contentfilteritem.go
 gc/models/contentgeneric.go
 gc/models/contentlist.go
@@ -1767,12 +1770,10 @@ gc/models/contentofferstyleproperties.go
 gc/models/contentofferstylingconfiguration.go
 gc/models/contentpositionproperties.go
 gc/models/contentpostback.go
-gc/models/contentqueryrequest.go
 gc/models/contentquickreply.go
 gc/models/contentquickreplyv2.go
 gc/models/contentreaction.go
 gc/models/contentsetting.go
-gc/models/contentsortitem.go
 gc/models/contentstory.go
 gc/models/contenttext.go
 gc/models/context.go
@@ -2050,8 +2051,6 @@ gc/models/documentationv2searchaggregation.go
 gc/models/documentationv2searchcriteria.go
 gc/models/documentationv2searchrequest.go
 gc/models/documentattribute.go
-gc/models/documentaudit.go
-gc/models/documentauditentitylisting.go
 gc/models/documentbody.go
 gc/models/documentbodyblock.go
 gc/models/documentbodyimage.go
@@ -2798,7 +2797,6 @@ gc/models/localeinfo.go
 gc/models/localencryptionconfiguration.go
 gc/models/localencryptionkeyrequest.go
 gc/models/localizedlabels.go
-gc/models/localtime.go
 gc/models/location.go
 gc/models/locationaddress.go
 gc/models/locationaddressverificationdetails.go
@@ -2814,7 +2812,9 @@ gc/models/locationupdatedefinition.go
 gc/models/lockinfo.go
 gc/models/logcapturedownloadexecutionresponse.go
 gc/models/logcapturequeryrequest.go
+gc/models/logcapturequeryresponse.go
 gc/models/logcaptureuserconfiguration.go
+gc/models/logentry.go
 gc/models/logicalinterfaceentitylisting.go
 gc/models/longtermforecastplanninggroupdata.go
 gc/models/longtermforecastresult.go
@@ -2928,6 +2928,8 @@ gc/models/minertopic.go
 gc/models/minertopicphrase.go
 gc/models/minertopicslisting.go
 gc/models/minlength.go
+gc/models/mobilenotificationsettings.go
+gc/models/mobilesettings.go
 gc/models/modelingprocessingerror.go
 gc/models/modelingstatusresponse.go
 gc/models/modifiableruleproperties.go
@@ -3088,6 +3090,7 @@ gc/models/overallbestpointsitem.go
 gc/models/page.go
 gc/models/pagednamespacelisting.go
 gc/models/pagelessdomainentitylistingevaluationversion.go
+gc/models/pagelessentitylisting.go
 gc/models/pagingspec.go
 gc/models/parameter.go
 gc/models/parsedcertificate.go

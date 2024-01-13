@@ -63,6 +63,9 @@ type TrustuserDud struct {
     
 
 
+    
+
+
     RoutingStatus Routingstatus `json:"routingStatus"`
 
 
@@ -188,6 +191,10 @@ type Trustuser struct {
     EmployerInfo Employerinfo `json:"employerInfo"`
 
 
+    // PreferredName - Preferred full name of the agent
+    PreferredName string `json:"preferredName"`
+
+
     
 
 
@@ -268,6 +275,7 @@ func (o *Trustuser) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -312,6 +320,8 @@ func (u *Trustuser) MarshalJSON() ([]byte, error) {
         Biography Biography `json:"biography"`
         
         EmployerInfo Employerinfo `json:"employerInfo"`
+        
+        PreferredName string `json:"preferredName"`
         
         AcdAutoAnswer bool `json:"acdAutoAnswer"`
         
@@ -369,6 +379,9 @@ func (u *Trustuser) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+
         
 
 

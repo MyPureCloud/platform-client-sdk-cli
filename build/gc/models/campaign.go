@@ -166,7 +166,7 @@ type Campaign struct {
     PhoneColumns []Phonecolumn `json:"phoneColumns"`
 
 
-    // AbandonRate - The targeted abandon rate percentage. Required for progressive, power, and predictive campaigns.
+    // AbandonRate - The targeted compliance abandon rate percentage. Required for power and predictive campaigns.
     AbandonRate float64 `json:"abandonRate"`
 
 

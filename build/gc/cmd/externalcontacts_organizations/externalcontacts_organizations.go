@@ -89,7 +89,7 @@ func Cmdexternalcontacts_organizations() *cobra.Command {
 	utils.AddFlag(searchCmd.Flags(), "int", "pageNumber", "1", "Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)")
 	utils.AddFlag(searchCmd.Flags(), "string", "q", "", "Search query")
 	utils.AddFlag(searchCmd.Flags(), "[]string", "trustorId", "", "Search for external organizations by trustorIds (limit 25). If supplied, the `q` parameters is ignored. Items are returned in the order requested")
-	utils.AddFlag(searchCmd.Flags(), "string", "sortOrder", "", "Sort order")
+	utils.AddFlag(searchCmd.Flags(), "string", "sortOrder", "", "The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc")
 	utils.AddFlag(searchCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: externalDataSources")
 	utils.AddFlag(searchCmd.Flags(), "bool", "includeTrustors", "", "(true or false) whether or not to include trustor information embedded in the externalOrganization")
 	searchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", searchCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/organizations", utils.FormatPermissions([]string{ "relate:externalOrganization:view", "externalContacts:externalOrganization:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/organizations")))

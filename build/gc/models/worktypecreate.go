@@ -102,7 +102,7 @@ type Worktypecreate struct {
     Description string `json:"description"`
 
 
-    // DivisionId - The ID of the division the Worktype belongs to. Defaults to home division ID. The Worktype must be in the same division as its default Workbin.
+    // DivisionId - The ID of the division the Worktype belongs to. Defaults to the default Workbin division ID. The Worktype must be in the same division as its default Workbin.
     DivisionId string `json:"divisionId"`
 
 

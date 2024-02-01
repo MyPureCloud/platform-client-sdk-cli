@@ -141,8 +141,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Create a Presence Definition",
-	Long:  "Create a Presence Definition",
+	Short: "Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead",
+	Long:  "Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -207,8 +207,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [presenceId]",
-	Short: "Delete a Presence Definition",
-	Long:  "Delete a Presence Definition",
+	Short: "Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead",
+	Long:  "Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead",
 	Args:  utils.DetermineArgs([]string{ "presenceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -272,8 +272,8 @@ var deleteCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [presenceId]",
-	Short: "Get a Presence Definition",
-	Long:  "Get a Presence Definition",
+	Short: "Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead",
+	Long:  "Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead",
 	Args:  utils.DetermineArgs([]string{ "presenceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -341,8 +341,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get an Organization`s list of Presence Definitions",
-	Long:  "Get an Organization`s list of Presence Definitions",
+	Short: "Get an Organization`s list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead",
+	Long:  "Get an Organization`s list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -420,8 +420,8 @@ var listCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [presenceId]",
-	Short: "Update a Presence Definition",
-	Long:  "Update a Presence Definition",
+	Short: "Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)",
+	Long:  "Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)",
 	Args:  utils.DetermineArgs([]string{ "presenceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

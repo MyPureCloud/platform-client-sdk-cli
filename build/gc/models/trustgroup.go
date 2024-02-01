@@ -51,6 +51,9 @@ type TrustgroupDud struct {
     
 
 
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -103,6 +106,10 @@ type Trustgroup struct {
     Visibility string `json:"visibility"`
 
 
+    // RolesEnabled - Allow roles to be assigned to this group
+    RolesEnabled bool `json:"rolesEnabled"`
+
+
     // Owners - Owners of the group
     Owners []User `json:"owners"`
 
@@ -121,6 +128,7 @@ func (o *Trustgroup) String() string {
     
      o.Images = []Userimage{{}} 
      o.Addresses = []Groupcontact{{}} 
+    
     
     
      o.Owners = []User{{}} 
@@ -154,6 +162,8 @@ func (u *Trustgroup) MarshalJSON() ([]byte, error) {
         RulesVisible bool `json:"rulesVisible"`
         
         Visibility string `json:"visibility"`
+        
+        RolesEnabled bool `json:"rolesEnabled"`
         
         Owners []User `json:"owners"`
         *Alias
@@ -190,6 +200,9 @@ func (u *Trustgroup) MarshalJSON() ([]byte, error) {
 
         
         Addresses: []Groupcontact{{}},
+        
+
+
         
 
 

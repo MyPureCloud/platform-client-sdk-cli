@@ -14,6 +14,9 @@ type MetadatapropertyDud struct {
     VarType string `json:"type"`
 
 
+    Displayname string `json:"displayname"`
+
+
     Description string `json:"description"`
 
 
@@ -32,6 +35,9 @@ type MetadatapropertyDud struct {
 
 // Metadataproperty - Data property required as input for installing an accelerator
 type Metadataproperty struct { 
+    
+
+
     
 
 
@@ -71,6 +77,9 @@ func (u *Metadataproperty) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

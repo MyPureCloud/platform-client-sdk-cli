@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    OauthproviderentitylistingMarshalled = false
+    FilespecificationtemplateentitylistingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type OauthproviderentitylistingDud struct { 
+type FilespecificationtemplateentitylistingDud struct { 
     
 
 
@@ -42,10 +42,10 @@ type OauthproviderentitylistingDud struct {
 
 }
 
-// Oauthproviderentitylisting
-type Oauthproviderentitylisting struct { 
+// Filespecificationtemplateentitylisting
+type Filespecificationtemplateentitylisting struct { 
     // Entities
-    Entities []Oauthprovider `json:"entities"`
+    Entities []Filespecificationtemplate `json:"entities"`
 
 
     // PageSize
@@ -86,8 +86,8 @@ type Oauthproviderentitylisting struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Oauthproviderentitylisting) String() string {
-     o.Entities = []Oauthprovider{{}} 
+func (o *Filespecificationtemplateentitylisting) String() string {
+     o.Entities = []Filespecificationtemplate{{}} 
     
     
     
@@ -104,17 +104,17 @@ func (o *Oauthproviderentitylisting) String() string {
     return str
 }
 
-func (u *Oauthproviderentitylisting) MarshalJSON() ([]byte, error) {
-    type Alias Oauthproviderentitylisting
+func (u *Filespecificationtemplateentitylisting) MarshalJSON() ([]byte, error) {
+    type Alias Filespecificationtemplateentitylisting
 
-    if OauthproviderentitylistingMarshalled {
+    if FilespecificationtemplateentitylistingMarshalled {
         return []byte("{}"), nil
     }
-    OauthproviderentitylistingMarshalled = true
+    FilespecificationtemplateentitylistingMarshalled = true
 
     return json.Marshal(&struct {
         
-        Entities []Oauthprovider `json:"entities"`
+        Entities []Filespecificationtemplate `json:"entities"`
         
         PageSize int `json:"pageSize"`
         
@@ -137,7 +137,7 @@ func (u *Oauthproviderentitylisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Oauthprovider{{}},
+        Entities: []Filespecificationtemplate{{}},
         
 
 

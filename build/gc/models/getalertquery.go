@@ -46,8 +46,8 @@ type Getalertquery struct {
     QueryType string `json:"queryType"`
 
 
-    // ActiveStatus - The status of the alerts the query will return.
-    ActiveStatus string `json:"activeStatus"`
+    // AlertStatus - The status of the alerts the query will return.
+    AlertStatus string `json:"alertStatus"`
 
 
     // ViewedStatus - The view status of the alerts the query will return.
@@ -102,7 +102,7 @@ func (u *Getalertquery) MarshalJSON() ([]byte, error) {
         
         QueryType string `json:"queryType"`
         
-        ActiveStatus string `json:"activeStatus"`
+        AlertStatus string `json:"alertStatus"`
         
         ViewedStatus string `json:"viewedStatus"`
         

@@ -76,7 +76,7 @@ func Cmdidentityproviders_cic() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/OAuthProvider"
+        "$ref" : "#/components/schemas/IdentityProvider"
       }
     }
   }

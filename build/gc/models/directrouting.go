@@ -44,7 +44,7 @@ type Directrouting struct {
     MessageMediaSettings Directroutingmediasettings `json:"messageMediaSettings"`
 
 
-    // BackupQueueId - ID of queue to be used as the default backup if an agent does not have their Backup Settings configured.
+    // BackupQueueId - ID of another queue to be used as the default backup if an agent does not have their Backup Settings configured. If not set, the current queue will be used as backup, but with Direct Routing criteria removed from the conversation.
     BackupQueueId string `json:"backupQueueId"`
 
 

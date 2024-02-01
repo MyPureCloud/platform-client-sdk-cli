@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("taskmanagement_workitems_users", "SWAGGER_OVERRIDE_/api/v2/taskmanagement/workitems/{workitemId}/users/me")
+	Description = utils.FormatUsageDescription("taskmanagement_workitems_users", "SWAGGER_OVERRIDE_/api/v2/taskmanagement/workitems/{workitemId}/users")
 	taskmanagement_workitems_usersCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("taskmanagement_workitems_users"),
 		Short: Description,

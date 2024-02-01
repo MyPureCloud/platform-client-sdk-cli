@@ -85,6 +85,9 @@ type WorkitemdeltaDud struct {
 
     
 
+
+    
+
 }
 
 // Workitemdelta
@@ -99,6 +102,10 @@ type Workitemdelta struct {
 
     // LanguageId
     LanguageId Workitemsattributechangestring `json:"languageId"`
+
+
+    // UtilizationLabelId
+    UtilizationLabelId Workitemsattributechangestring `json:"utilizationLabelId"`
 
 
     // Priority
@@ -217,6 +224,7 @@ func (o *Workitemdelta) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -239,6 +247,8 @@ func (u *Workitemdelta) MarshalJSON() ([]byte, error) {
         Description Workitemsattributechangestring `json:"description"`
         
         LanguageId Workitemsattributechangestring `json:"languageId"`
+        
+        UtilizationLabelId Workitemsattributechangestring `json:"utilizationLabelId"`
         
         Priority Workitemsattributechangeinteger `json:"priority"`
         
@@ -285,6 +295,9 @@ func (u *Workitemdelta) MarshalJSON() ([]byte, error) {
         StatusCategory Workitemsattributechangeworkitemstatuscategory `json:"statusCategory"`
         *Alias
     }{
+
+        
+
 
         
 

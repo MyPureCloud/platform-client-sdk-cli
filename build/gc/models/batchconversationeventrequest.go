@@ -68,75 +68,75 @@ type BatchconversationeventrequestDud struct {
 
 // Batchconversationeventrequest - A maximum of 100 events are allowed per request
 type Batchconversationeventrequest struct { 
-    // EndTransferEvents - EndTransfer events for this batch
+    // EndTransferEvents - Voice - EndTransfer events for this batch
     EndTransferEvents []Endtransferevent `json:"endTransferEvents"`
 
 
-    // PhoneTransferEvents - PhoneTransfer events for this batch
+    // PhoneTransferEvents - Voice - PhoneTransfer events for this batch
     PhoneTransferEvents []Phonetransferevent `json:"phoneTransferEvents"`
 
 
-    // ProgressTransferEvents - ProgressTransfer events for this batch
+    // ProgressTransferEvents - Voice - ProgressTransfer events for this batch
     ProgressTransferEvents []Progresstransferevent `json:"progressTransferEvents"`
 
 
-    // RoutingTransferEvents - RoutingTransfer events for this batch
+    // RoutingTransferEvents - Voice - RoutingTransfer events for this batch
     RoutingTransferEvents []Routingtransferevent `json:"routingTransferEvents"`
 
 
-    // UserTransferEvents - UserTransfer events for this batch
+    // UserTransferEvents - Voice - UserTransfer events for this batch
     UserTransferEvents []Usertransferevent `json:"userTransferEvents"`
 
 
-    // CommunicationAnsweredEvents - CommunicationAnswered events for this batch
+    // CommunicationAnsweredEvents - Voice - CommunicationAnswered events for this batch
     CommunicationAnsweredEvents []Communicationansweredevent `json:"communicationAnsweredEvents"`
 
 
-    // CommunicationDispositionAppliedEvents - CommunicationDispositionApplied events for this batch
+    // CommunicationDispositionAppliedEvents - Voice - CommunicationDispositionApplied events for this batch
     CommunicationDispositionAppliedEvents []Communicationdispositionappliedevent `json:"communicationDispositionAppliedEvents"`
 
 
-    // HoldUpdatedEvents - HoldUpdated events for this batch
+    // HoldUpdatedEvents - Voice - HoldUpdated events for this batch
     HoldUpdatedEvents []Holdupdatedevent `json:"holdUpdatedEvents"`
 
 
-    // ExternalEstablishedEvents - ExternalEstablished events for this batch
+    // ExternalEstablishedEvents - Voice - ExternalEstablished events for this batch
     ExternalEstablishedEvents []Externalestablishedevent `json:"externalEstablishedEvents"`
 
 
-    // IvrEstablishedEvents - IvrEstablished events for this batch
+    // IvrEstablishedEvents - Voice - IvrEstablished events for this batch
     IvrEstablishedEvents []Ivrestablishedevent `json:"ivrEstablishedEvents"`
 
 
-    // PhoneEstablishedEvents - PhoneEstablished events for this batch
+    // PhoneEstablishedEvents - Voice - PhoneEstablished events for this batch
     PhoneEstablishedEvents []Phoneestablishedevent `json:"phoneEstablishedEvents"`
 
 
-    // RoutingEstablishedEvents - RoutingEstablished events for this batch
+    // RoutingEstablishedEvents - Voice - RoutingEstablished events for this batch
     RoutingEstablishedEvents []Routingestablishedevent `json:"routingEstablishedEvents"`
 
 
-    // UserEstablishedEvents - UserEstablished events for this batch
+    // UserEstablishedEvents - Voice - UserEstablished events for this batch
     UserEstablishedEvents []Userestablishedevent `json:"userEstablishedEvents"`
 
 
-    // AudioUpdatedEvents - AudioUpdated events for this batch
+    // AudioUpdatedEvents - Voice - AudioUpdated events for this batch
     AudioUpdatedEvents []Audioupdatedevent `json:"audioUpdatedEvents"`
 
 
-    // CommunicationEndedEvents - CommunicationEnded events for this batch
+    // CommunicationEndedEvents - Voice - CommunicationEnded events for this batch
     CommunicationEndedEvents []Communicationendedevent `json:"communicationEndedEvents"`
 
 
-    // ConsultTransferEvents - ConsultTransfer events for this batch
+    // ConsultTransferEvents - Voice - ConsultTransfer events for this batch
     ConsultTransferEvents []Consulttransferevent `json:"consultTransferEvents"`
 
 
-    // ProgressConsultTransferEvents - ProgressConsultTransfer events for this batch
+    // ProgressConsultTransferEvents - Voice - ProgressConsultTransfer events for this batch
     ProgressConsultTransferEvents []Progressconsulttransferevent `json:"progressConsultTransferEvents"`
 
 
-    // EndConsultTransferEvents - EndConsultTransfer events for this batch
+    // EndConsultTransferEvents - Voice - EndConsultTransfer events for this batch
     EndConsultTransferEvents []Endconsulttransferevent `json:"endConsultTransferEvents"`
 
 }

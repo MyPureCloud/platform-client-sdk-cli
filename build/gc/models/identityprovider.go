@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    OauthproviderMarshalled = false
+    IdentityproviderMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type OauthproviderDud struct { 
+type IdentityproviderDud struct { 
     Id string `json:"id"`
 
 
@@ -24,8 +24,8 @@ type OauthproviderDud struct {
 
 }
 
-// Oauthprovider
-type Oauthprovider struct { 
+// Identityprovider
+type Identityprovider struct { 
     
 
 
@@ -42,7 +42,7 @@ type Oauthprovider struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Oauthprovider) String() string {
+func (o *Identityprovider) String() string {
     
     
 
@@ -52,13 +52,13 @@ func (o *Oauthprovider) String() string {
     return str
 }
 
-func (u *Oauthprovider) MarshalJSON() ([]byte, error) {
-    type Alias Oauthprovider
+func (u *Identityprovider) MarshalJSON() ([]byte, error) {
+    type Alias Identityprovider
 
-    if OauthproviderMarshalled {
+    if IdentityproviderMarshalled {
         return []byte("{}"), nil
     }
-    OauthproviderMarshalled = true
+    IdentityproviderMarshalled = true
 
     return json.Marshal(&struct {
         

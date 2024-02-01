@@ -33,6 +33,9 @@ type MutableuserpresenceDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -47,8 +50,12 @@ type Mutableuserpresence struct {
     Name string `json:"name"`
 
 
-    // Source - Represents the source where the Presence was set. Some examples are: PURECLOUD, LYNC, OUTLOOK, etc.
+    // Source - Deprecated - The sourceID field should be used as a replacement.
     Source string `json:"source"`
+
+
+    // SourceId - Represents the ID of a registered source
+    SourceId string `json:"sourceId"`
 
 
     // Primary - A boolean used to tell whether or not to set this presence source as the primary on a PATCH
@@ -80,6 +87,7 @@ func (o *Mutableuserpresence) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -103,6 +111,8 @@ func (u *Mutableuserpresence) MarshalJSON() ([]byte, error) {
         
         Source string `json:"source"`
         
+        SourceId string `json:"sourceId"`
+        
         Primary bool `json:"primary"`
         
         PresenceDefinition Presencedefinition `json:"presenceDefinition"`
@@ -112,6 +122,9 @@ func (u *Mutableuserpresence) MarshalJSON() ([]byte, error) {
         ModifiedDate time.Time `json:"modifiedDate"`
         *Alias
     }{
+
+        
+
 
         
 

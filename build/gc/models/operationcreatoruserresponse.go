@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    SegmentassignmentsessionMarshalled = false
+    OperationcreatoruserresponseMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type SegmentassignmentsessionDud struct { 
+type OperationcreatoruserresponseDud struct { 
     Id string `json:"id"`
 
 
@@ -21,12 +21,12 @@ type SegmentassignmentsessionDud struct {
 
 }
 
-// Segmentassignmentsession
-type Segmentassignmentsession struct { 
+// Operationcreatoruserresponse
+type Operationcreatoruserresponse struct { 
     
 
 
-    // VarType - The type or category of session (e.g. web, app).
+    // VarType - Type of the operation creator entity: User or OAuthClient
     VarType string `json:"type"`
 
 
@@ -35,7 +35,7 @@ type Segmentassignmentsession struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Segmentassignmentsession) String() string {
+func (o *Operationcreatoruserresponse) String() string {
     
 
     j, _ := json.Marshal(o)
@@ -44,13 +44,13 @@ func (o *Segmentassignmentsession) String() string {
     return str
 }
 
-func (u *Segmentassignmentsession) MarshalJSON() ([]byte, error) {
-    type Alias Segmentassignmentsession
+func (u *Operationcreatoruserresponse) MarshalJSON() ([]byte, error) {
+    type Alias Operationcreatoruserresponse
 
-    if SegmentassignmentsessionMarshalled {
+    if OperationcreatoruserresponseMarshalled {
         return []byte("{}"), nil
     }
-    SegmentassignmentsessionMarshalled = true
+    OperationcreatoruserresponseMarshalled = true
 
     return json.Marshal(&struct {
         

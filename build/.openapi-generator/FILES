@@ -312,6 +312,7 @@ gc/cmd/conversations_secureattributes/conversations_secureattributes.go
 gc/cmd/conversations_settings/conversations_settings.go
 gc/cmd/conversations_socials_participants_communications_wrapup/conversations_socials_participants_communications_wrapup.go
 gc/cmd/conversations_socials_recordingstate/conversations_socials_recordingstate.go
+gc/cmd/conversations_summaries_feedback/conversations_summaries_feedback.go
 gc/cmd/conversations_tags/conversations_tags.go
 gc/cmd/conversations_videos_details/conversations_videos_details.go
 gc/cmd/conversations_videos_meetings/conversations_videos_meetings.go
@@ -487,6 +488,8 @@ gc/cmd/integrations_actions/integrations_actions.go
 gc/cmd/integrations_actions_categories/integrations_actions_categories.go
 gc/cmd/integrations_actions_certificates/integrations_actions_certificates.go
 gc/cmd/integrations_actions_draft/integrations_actions_draft.go
+gc/cmd/integrations_actions_draft_function/integrations_actions_draft_function.go
+gc/cmd/integrations_actions_draft_function_upload/integrations_actions_draft_function_upload.go
 gc/cmd/integrations_actions_draft_publish/integrations_actions_draft_publish.go
 gc/cmd/integrations_actions_draft_schemas/integrations_actions_draft_schemas.go
 gc/cmd/integrations_actions_draft_templates/integrations_actions_draft_templates.go
@@ -494,6 +497,8 @@ gc/cmd/integrations_actions_draft_testfile/integrations_actions_draft_testfile.g
 gc/cmd/integrations_actions_draft_validation/integrations_actions_draft_validation.go
 gc/cmd/integrations_actions_drafts/integrations_actions_drafts.go
 gc/cmd/integrations_actions_execute/integrations_actions_execute.go
+gc/cmd/integrations_actions_function/integrations_actions_function.go
+gc/cmd/integrations_actions_functions_runtimes/integrations_actions_functions_runtimes.go
 gc/cmd/integrations_actions_schemas/integrations_actions_schemas.go
 gc/cmd/integrations_actions_templates/integrations_actions_templates.go
 gc/cmd/integrations_actions_testfile/integrations_actions_testfile.go
@@ -538,7 +543,6 @@ gc/cmd/journey_segments/journey_segments.go
 gc/cmd/journey_sessions/journey_sessions.go
 gc/cmd/journey_sessions_events/journey_sessions_events.go
 gc/cmd/journey_sessions_outcomescores/journey_sessions_outcomescores.go
-gc/cmd/journey_sessions_segments/journey_sessions_segments.go
 gc/cmd/knowledge_documentuploads/knowledge_documentuploads.go
 gc/cmd/knowledge_guest_sessions/knowledge_guest_sessions.go
 gc/cmd/knowledge_guest_sessions_categories/knowledge_guest_sessions_categories.go
@@ -568,6 +572,8 @@ gc/cmd/knowledge_knowledgebases_languages_documents_imports/knowledge_knowledgeb
 gc/cmd/knowledge_knowledgebases_languages_documents_uploads/knowledge_knowledgebases_languages_documents_uploads.go
 gc/cmd/knowledge_knowledgebases_languages_trainings/knowledge_knowledgebases_languages_trainings.go
 gc/cmd/knowledge_knowledgebases_languages_trainings_promote/knowledge_knowledgebases_languages_trainings_promote.go
+gc/cmd/knowledge_knowledgebases_operations/knowledge_knowledgebases_operations.go
+gc/cmd/knowledge_knowledgebases_operations_users_query/knowledge_knowledgebases_operations_users_query.go
 gc/cmd/knowledge_knowledgebases_search/knowledge_knowledgebases_search.go
 gc/cmd/knowledge_knowledgebases_unanswered_groups/knowledge_knowledgebases_unanswered_groups.go
 gc/cmd/knowledge_knowledgebases_unanswered_groups_phrasegroups/knowledge_knowledgebases_unanswered_groups_phrasegroups.go
@@ -688,6 +694,7 @@ gc/cmd/outbound_contactlists_importstatus/outbound_contactlists_importstatus.go
 gc/cmd/outbound_contactlists_timezonemappingpreview/outbound_contactlists_timezonemappingpreview.go
 gc/cmd/outbound_contactlisttemplates/outbound_contactlisttemplates.go
 gc/cmd/outbound_contactlisttemplates_bulk_add/outbound_contactlisttemplates_bulk_add.go
+gc/cmd/outbound_contactlisttemplates_bulk_retrieve/outbound_contactlisttemplates_bulk_retrieve.go
 gc/cmd/outbound_conversations_dnc/outbound_conversations_dnc.go
 gc/cmd/outbound_digitalrulesets/outbound_digitalrulesets.go
 gc/cmd/outbound_dnclists/outbound_dnclists.go
@@ -698,6 +705,8 @@ gc/cmd/outbound_dnclists_export/outbound_dnclists_export.go
 gc/cmd/outbound_dnclists_importstatus/outbound_dnclists_importstatus.go
 gc/cmd/outbound_dnclists_phonenumbers/outbound_dnclists_phonenumbers.go
 gc/cmd/outbound_events/outbound_events.go
+gc/cmd/outbound_filespecificationtemplates/outbound_filespecificationtemplates.go
+gc/cmd/outbound_filespecificationtemplates_bulk/outbound_filespecificationtemplates_bulk.go
 gc/cmd/outbound_importtemplates/outbound_importtemplates.go
 gc/cmd/outbound_importtemplates_bulk_add/outbound_importtemplates_bulk_add.go
 gc/cmd/outbound_importtemplates_importstatus/outbound_importtemplates_importstatus.go
@@ -832,6 +841,7 @@ gc/cmd/scim_v2_resourcetypes/scim_v2_resourcetypes.go
 gc/cmd/scim_v2_schemas/scim_v2_schemas.go
 gc/cmd/scim_v2_serviceproviderconfig/scim_v2_serviceproviderconfig.go
 gc/cmd/scim_v2_users/scim_v2_users.go
+gc/cmd/screenrecording_token/screenrecording_token.go
 gc/cmd/scripts/scripts.go
 gc/cmd/scripts_divisionviews/scripts_divisionviews.go
 gc/cmd/scripts_export/scripts_export.go
@@ -1680,6 +1690,7 @@ gc/models/cobrowsemediaparticipant.go
 gc/models/cobrowsesession.go
 gc/models/cobrowsesettings.go
 gc/models/cobrowsewebmessagingsession.go
+gc/models/column.go
 gc/models/columndatatypespecification.go
 gc/models/columnstatus.go
 gc/models/commandstatus.go
@@ -1751,6 +1762,7 @@ gc/models/contactlistfilterpredicate.go
 gc/models/contactlistfilterrange.go
 gc/models/contactlisting.go
 gc/models/contactlisttemplate.go
+gc/models/contactlisttemplatebulkretrievebody.go
 gc/models/contactlisttemplateentitylisting.go
 gc/models/contactphonenumbercolumn.go
 gc/models/contactsort.go
@@ -1945,6 +1957,7 @@ gc/models/customerinteractioncenter.go
 gc/models/customeventattribute.go
 gc/models/customeventattributelist.go
 gc/models/customi18nlabels.go
+gc/models/customprovider.go
 gc/models/dailypossibleshift.go
 gc/models/dataactionconditionpredicate.go
 gc/models/dataactionconditionsettings.go
@@ -2168,11 +2181,21 @@ gc/models/effectiveconfiguration.go
 gc/models/email.go
 gc/models/emailaddress.go
 gc/models/emailattachment.go
+gc/models/emailbegintransmittingevent.go
 gc/models/emailcampaignschedule.go
 gc/models/emailcolumn.go
+gc/models/emailcommunicationansweredevent.go
+gc/models/emailcommunicationdispositionappliedevent.go
+gc/models/emailcommunicationendedevent.go
+gc/models/emailcommunicationrepliedevent.go
 gc/models/emailconfig.go
 gc/models/emailconversation.go
 gc/models/emailconversationentitylisting.go
+gc/models/emailendtransferevent.go
+gc/models/emailexternalestablishedevent.go
+gc/models/emailflowestablishedevent.go
+gc/models/emailholdupdatedevent.go
+gc/models/emailinitialconfiguration.go
 gc/models/emailmediaparticipant.go
 gc/models/emailmediapolicy.go
 gc/models/emailmediapolicyconditions.go
@@ -2181,9 +2204,14 @@ gc/models/emailmessagepreview.go
 gc/models/emailmessagepreviewlisting.go
 gc/models/emailmessagereply.go
 gc/models/emailoutbounddomainresult.go
+gc/models/emailprogresstransferevent.go
+gc/models/emailroutingestablishedevent.go
+gc/models/emailroutingtransferevent.go
 gc/models/emailsettings.go
 gc/models/emailsetup.go
 gc/models/emailssettings.go
+gc/models/emailuserestablishedevent.go
+gc/models/emailusertransferevent.go
 gc/models/embeddedintegration.go
 gc/models/emergencycallflow.go
 gc/models/emergencygroup.go
@@ -2315,9 +2343,12 @@ gc/models/faxsendresponse.go
 gc/models/faxstatus.go
 gc/models/faxsummary.go
 gc/models/featurestate.go
+gc/models/feedbackaddrequest.go
 gc/models/fieldconfig.go
 gc/models/fieldconfigs.go
 gc/models/fieldlist.go
+gc/models/filespecificationtemplate.go
+gc/models/filespecificationtemplateentitylisting.go
 gc/models/fileuploadmode.go
 gc/models/fileuploadsettings.go
 gc/models/filter.go
@@ -2399,6 +2430,12 @@ gc/models/format.go
 gc/models/formstracktrigger.go
 gc/models/fromemailaddress.go
 gc/models/fulldaytimeoffmarker.go
+gc/models/function.go
+gc/models/functionconfig.go
+gc/models/functionruntime.go
+gc/models/functionuploadrequest.go
+gc/models/functionuploadresponse.go
+gc/models/functionzipconfig.go
 gc/models/gamificationstatus.go
 gc/models/gdprjourneycustomer.go
 gc/models/gdprrequest.go
@@ -2488,6 +2525,8 @@ gc/models/hristimeofftypesresponse.go
 gc/models/humanize.go
 gc/models/identifierclaimrequest.go
 gc/models/identitynow.go
+gc/models/identityprovider.go
+gc/models/identityproviderentitylisting.go
 gc/models/idleeventtrigger.go
 gc/models/idletokentimeout.go
 gc/models/ignoredactivitycategories.go
@@ -3001,8 +3040,6 @@ gc/models/oauthcliententitylisting.go
 gc/models/oauthclientlisting.go
 gc/models/oauthclientrequest.go
 gc/models/oauthlasttokenissued.go
-gc/models/oauthprovider.go
-gc/models/oauthproviderentitylisting.go
 gc/models/oauthscope.go
 gc/models/oauthscopelisting.go
 gc/models/objective.go
@@ -3037,6 +3074,9 @@ gc/models/openmessagingtorecipient.go
 gc/models/opennormalizedmessage.go
 gc/models/openreceiptnormalizedmessage.go
 gc/models/operation.go
+gc/models/operationcreatoruserresponse.go
+gc/models/operationlisting.go
+gc/models/operationresponse.go
 gc/models/optinsettings.go
 gc/models/organization.go
 gc/models/organizationfeatures.go
@@ -3193,6 +3233,7 @@ gc/models/predictormodelretrainingerror.go
 gc/models/predictormodels.go
 gc/models/predictorschedule.go
 gc/models/predictorworkloadbalancing.go
+gc/models/preprocessingrule.go
 gc/models/presencedefinition.go
 gc/models/presencedetailqueryclause.go
 gc/models/presencedetailqueryfilter.go
@@ -3468,6 +3509,7 @@ gc/models/screenrecordingmetadatarequest.go
 gc/models/screenrecordingsession.go
 gc/models/screenrecordingsessionlisting.go
 gc/models/screenrecordingsessionrequest.go
+gc/models/screenrecordinguserauthenticatedinfo.go
 gc/models/screenshare.go
 gc/models/script.go
 gc/models/scriptentitylisting.go
@@ -3490,11 +3532,7 @@ gc/models/securityprofileentitylisting.go
 gc/models/segment.go
 gc/models/segmentassignedevent.go
 gc/models/segmentassignedeventsegment.go
-gc/models/segmentassignment.go
 gc/models/segmentassignmentevent.go
-gc/models/segmentassignmentlisting.go
-gc/models/segmentassignmentsegment.go
-gc/models/segmentassignmentsession.go
 gc/models/segmentdetailqueryclause.go
 gc/models/segmentdetailqueryfilter.go
 gc/models/segmentdetailquerypredicate.go
@@ -4191,6 +4229,7 @@ gc/models/workitemstatusreference.go
 gc/models/workitemstatusupdate.go
 gc/models/workitemterminate.go
 gc/models/workitemupdate.go
+gc/models/workitemutilizationlabelreference.go
 gc/models/workitemversion.go
 gc/models/workitemversionlisting.go
 gc/models/workitemwrapup.go
@@ -4198,6 +4237,7 @@ gc/models/workitemwrapupentitylisting.go
 gc/models/workitemwrapupupdate.go
 gc/models/workplan.go
 gc/models/workplanactivity.go
+gc/models/workplanbidranks.go
 gc/models/workplanconfigurationviolationmessage.go
 gc/models/workplanconstraintconflictmessage.go
 gc/models/workplanconstraintmessage.go

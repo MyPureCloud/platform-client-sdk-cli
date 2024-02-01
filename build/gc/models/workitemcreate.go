@@ -74,6 +74,9 @@ type WorkitemcreateDud struct {
 
     
 
+
+    
+
 }
 
 // Workitemcreate
@@ -146,6 +149,10 @@ type Workitemcreate struct {
     LanguageId string `json:"languageId"`
 
 
+    // UtilizationLabelId - The ID of utilization label of the Workitem. Must be a valid UUID.
+    UtilizationLabelId string `json:"utilizationLabelId"`
+
+
     // ExternalContactId - The ID of the external contact of the Workitem. Must be a valid UUID.
     ExternalContactId string `json:"externalContactId"`
 
@@ -181,6 +188,7 @@ func (o *Workitemcreate) String() string {
     
     
      o.ScoredAgents = []Workitemscoredagentrequest{{}} 
+    
     
     
     
@@ -236,6 +244,8 @@ func (u *Workitemcreate) MarshalJSON() ([]byte, error) {
         ScoredAgents []Workitemscoredagentrequest `json:"scoredAgents"`
         
         LanguageId string `json:"languageId"`
+        
+        UtilizationLabelId string `json:"utilizationLabelId"`
         
         ExternalContactId string `json:"externalContactId"`
         
@@ -296,6 +306,9 @@ func (u *Workitemcreate) MarshalJSON() ([]byte, error) {
 
         
         ScoredAgents: []Workitemscoredagentrequest{{}},
+        
+
+
         
 
 

@@ -33,6 +33,9 @@ type UcuserpresenceDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -50,8 +53,12 @@ type Ucuserpresence struct {
     UserId string `json:"userId"`
 
 
-    // Source - Represents the source where the Presence was set. Some examples are: PURECLOUD, MICROSOFTTEAMS, ZOOMPHONE, etc.
+    // Source - Deprecated - The sourceID field should be used as a replacement.
     Source string `json:"source"`
+
+
+    // SourceId - The registered source ID from where the presence was set
+    SourceId string `json:"sourceId"`
 
 
     // PresenceDefinition
@@ -72,6 +79,7 @@ type Ucuserpresence struct {
 
 // String returns a JSON representation of the model
 func (o *Ucuserpresence) String() string {
+    
     
     
     
@@ -101,6 +109,8 @@ func (u *Ucuserpresence) MarshalJSON() ([]byte, error) {
         
         Source string `json:"source"`
         
+        SourceId string `json:"sourceId"`
+        
         PresenceDefinition Presencedefinition `json:"presenceDefinition"`
         
         Message string `json:"message"`
@@ -108,6 +118,9 @@ func (u *Ucuserpresence) MarshalJSON() ([]byte, error) {
         ModifiedDate time.Time `json:"modifiedDate"`
         *Alias
     }{
+
+        
+
 
         
 

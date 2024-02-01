@@ -38,7 +38,7 @@ type PhonestatusDud struct {
     
 
 
-    SelfUri string `json:"selfUri"`
+    
 
 }
 
@@ -79,7 +79,8 @@ type Phonestatus struct {
     Edge Domainentityref `json:"edge"`
 
 
-    
+    // SelfUri - The URI for this object. Deprecated. Do not use.
+    SelfUri string `json:"selfUri"`
 
 }
 
@@ -91,6 +92,7 @@ func (o *Phonestatus) String() string {
     
     
      o.LineStatuses = []Linestatus{{}} 
+    
     
     
 
@@ -125,6 +127,8 @@ func (u *Phonestatus) MarshalJSON() ([]byte, error) {
         PhoneAssignmentToEdgeType string `json:"phoneAssignmentToEdgeType"`
         
         Edge Domainentityref `json:"edge"`
+        
+        SelfUri string `json:"selfUri"`
         *Alias
     }{
 

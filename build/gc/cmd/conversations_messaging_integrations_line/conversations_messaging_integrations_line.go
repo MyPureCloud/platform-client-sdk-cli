@@ -132,8 +132,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Create a LINE messenger Integration",
-	Long:  "Create a LINE messenger Integration",
+	Short: "Create a LINE messenger Integration (Deprecated)",
+	Long:  "Create a LINE messenger Integration (Deprecated)",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

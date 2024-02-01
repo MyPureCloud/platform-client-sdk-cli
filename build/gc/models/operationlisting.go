@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    SegmentassignmentlistingMarshalled = false
+    OperationlistingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type SegmentassignmentlistingDud struct { 
+type OperationlistingDud struct { 
     
 
 
@@ -24,10 +24,10 @@ type SegmentassignmentlistingDud struct {
 
 }
 
-// Segmentassignmentlisting
-type Segmentassignmentlisting struct { 
+// Operationlisting
+type Operationlisting struct { 
     // Entities
-    Entities []Segmentassignment `json:"entities"`
+    Entities []Operationresponse `json:"entities"`
 
 
     // NextUri
@@ -44,8 +44,8 @@ type Segmentassignmentlisting struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Segmentassignmentlisting) String() string {
-     o.Entities = []Segmentassignment{{}} 
+func (o *Operationlisting) String() string {
+     o.Entities = []Operationresponse{{}} 
     
     
     
@@ -56,17 +56,17 @@ func (o *Segmentassignmentlisting) String() string {
     return str
 }
 
-func (u *Segmentassignmentlisting) MarshalJSON() ([]byte, error) {
-    type Alias Segmentassignmentlisting
+func (u *Operationlisting) MarshalJSON() ([]byte, error) {
+    type Alias Operationlisting
 
-    if SegmentassignmentlistingMarshalled {
+    if OperationlistingMarshalled {
         return []byte("{}"), nil
     }
-    SegmentassignmentlistingMarshalled = true
+    OperationlistingMarshalled = true
 
     return json.Marshal(&struct {
         
-        Entities []Segmentassignment `json:"entities"`
+        Entities []Operationresponse `json:"entities"`
         
         NextUri string `json:"nextUri"`
         
@@ -77,7 +77,7 @@ func (u *Segmentassignmentlisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Segmentassignment{{}},
+        Entities: []Operationresponse{{}},
         
 
 

@@ -10,6 +10,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_documents"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_export"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_import"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_operations"
 )
 
 func init() {
@@ -21,6 +22,7 @@ func init() {
 	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_documents.Cmdknowledge_knowledgebases_documents())
 	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_export.Cmdknowledge_knowledgebases_export())
 	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_import.Cmdknowledge_knowledgebases_import())
-	knowledge_knowledgebasesCmd.Short = utils.GenerateCustomDescription(knowledge_knowledgebasesCmd.Short, knowledge_knowledgebases_categories.Description, knowledge_knowledgebases_search.Description, knowledge_knowledgebases_languages.Description, knowledge_knowledgebases_unanswered.Description, knowledge_knowledgebases_labels.Description, knowledge_knowledgebases_documents.Description, knowledge_knowledgebases_export.Description, knowledge_knowledgebases_import.Description, )
+	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_operations.Cmdknowledge_knowledgebases_operations())
+	knowledge_knowledgebasesCmd.Short = utils.GenerateCustomDescription(knowledge_knowledgebasesCmd.Short, knowledge_knowledgebases_categories.Description, knowledge_knowledgebases_search.Description, knowledge_knowledgebases_languages.Description, knowledge_knowledgebases_unanswered.Description, knowledge_knowledgebases_labels.Description, knowledge_knowledgebases_documents.Description, knowledge_knowledgebases_export.Description, knowledge_knowledgebases_import.Description, knowledge_knowledgebases_operations.Description, )
 	knowledge_knowledgebasesCmd.Long = knowledge_knowledgebasesCmd.Short
 }

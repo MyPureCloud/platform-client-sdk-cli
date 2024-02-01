@@ -40,6 +40,9 @@ type PhonemetabaseentitylistingDud struct {
 
     
 
+
+    
+
 }
 
 // Phonemetabaseentitylisting
@@ -58,6 +61,10 @@ type Phonemetabaseentitylisting struct {
 
     // Total
     Total int `json:"total"`
+
+
+    // TotalNumberOfEntities - The total organization-wide number of entities.
+    TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
     // FirstUri
@@ -97,6 +104,7 @@ func (o *Phonemetabaseentitylisting) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -122,6 +130,8 @@ func (u *Phonemetabaseentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
+        TotalNumberOfEntities int `json:"totalNumberOfEntities"`
+        
         FirstUri string `json:"firstUri"`
         
         NextUri string `json:"nextUri"`
@@ -138,6 +148,9 @@ func (u *Phonemetabaseentitylisting) MarshalJSON() ([]byte, error) {
 
         
         Entities: []Metabase{{}},
+        
+
+
         
 
 

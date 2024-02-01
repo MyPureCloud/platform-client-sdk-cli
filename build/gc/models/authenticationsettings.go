@@ -16,6 +16,9 @@ type AuthenticationsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Authenticationsettings - Settings for authenticated webdeployments.
@@ -27,10 +30,15 @@ type Authenticationsettings struct {
     // IntegrationId - The integration identifier which contains the auth settings required on the deployment.
     IntegrationId string `json:"integrationId"`
 
+
+    // AllowSessionUpgrade - Allow end-users to upgrade an anonymous session to authenticated conversation.
+    AllowSessionUpgrade bool `json:"allowSessionUpgrade"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Authenticationsettings) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Authenticationsettings) MarshalJSON() ([]byte, error) {
         Enabled bool `json:"enabled"`
         
         IntegrationId string `json:"integrationId"`
+        
+        AllowSessionUpgrade bool `json:"allowSessionUpgrade"`
         *Alias
     }{
+
+        
+
 
         
 

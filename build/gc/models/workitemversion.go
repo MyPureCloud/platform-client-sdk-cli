@@ -117,6 +117,9 @@ type WorkitemversionDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -144,6 +147,10 @@ type Workitemversion struct {
 
     // Language - The language of the Workitem.
     Language Languagereference `json:"language"`
+
+
+    // UtilizationLabel - The utilization label of the Workitem.
+    UtilizationLabel Workitemutilizationlabelreference `json:"utilizationLabel"`
 
 
     // Priority - The priority of the Workitem. The valid range is between -25,000,000 and 25,000,000.
@@ -294,6 +301,7 @@ func (o *Workitemversion) String() string {
     
     
     
+    
      o.Skills = []Routingskillreference{{}} 
      o.PreferredAgents = []Userreference{{}} 
     
@@ -328,6 +336,8 @@ func (u *Workitemversion) MarshalJSON() ([]byte, error) {
         Description string `json:"description"`
         
         Language Languagereference `json:"language"`
+        
+        UtilizationLabel Workitemutilizationlabelreference `json:"utilizationLabel"`
         
         Priority int `json:"priority"`
         
@@ -388,6 +398,9 @@ func (u *Workitemversion) MarshalJSON() ([]byte, error) {
         Version int `json:"version"`
         *Alias
     }{
+
+        
+
 
         
 

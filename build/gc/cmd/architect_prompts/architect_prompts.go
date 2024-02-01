@@ -89,6 +89,9 @@ func Cmdarchitect_prompts() *cobra.Command {
 }`)
 	architect_promptsCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "bool", "includeMediaUris", "true", "Include the media URIs for each resource")
+	utils.AddFlag(getCmd.Flags(), "bool", "includeResources", "true", "Include the resources for each system prompt")
+	utils.AddFlag(getCmd.Flags(), "[]string", "language", "", "Filter the resources down to the provided languages")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/prompts/{promptId}", utils.FormatPermissions([]string{ "architect:userPrompt:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/prompts/{promptId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -111,6 +114,9 @@ func Cmdarchitect_prompts() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "nameOrDescription", "", "Name or description")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "id", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Sort order")
+	utils.AddFlag(listCmd.Flags(), "bool", "includeMediaUris", "true", "Include the media URIs for each resource")
+	utils.AddFlag(listCmd.Flags(), "bool", "includeResources", "true", "Include the resources for each system prompt")
+	utils.AddFlag(listCmd.Flags(), "[]string", "language", "", "Filter the resources down to the provided languages")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/prompts", utils.FormatPermissions([]string{ "architect:userPrompt:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/prompts")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -380,6 +386,18 @@ var getCmd = &cobra.Command{
 		promptId, args := args[0], args[1:]
 		path = strings.Replace(path, "{promptId}", fmt.Sprintf("%v", promptId), -1)
 
+		includeMediaUris := utils.GetFlag(cmd.Flags(), "bool", "includeMediaUris")
+		if includeMediaUris != "" {
+			queryParams["includeMediaUris"] = includeMediaUris
+		}
+		includeResources := utils.GetFlag(cmd.Flags(), "bool", "includeResources")
+		if includeResources != "" {
+			queryParams["includeResources"] = includeResources
+		}
+		language := utils.GetFlag(cmd.Flags(), "[]string", "language")
+		if language != "" {
+			queryParams["language"] = language
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -470,6 +488,18 @@ var listCmd = &cobra.Command{
 		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
 		if sortOrder != "" {
 			queryParams["sortOrder"] = sortOrder
+		}
+		includeMediaUris := utils.GetFlag(cmd.Flags(), "bool", "includeMediaUris")
+		if includeMediaUris != "" {
+			queryParams["includeMediaUris"] = includeMediaUris
+		}
+		includeResources := utils.GetFlag(cmd.Flags(), "bool", "includeResources")
+		if includeResources != "" {
+			queryParams["includeResources"] = includeResources
+		}
+		language := utils.GetFlag(cmd.Flags(), "[]string", "language")
+		if language != "" {
+			queryParams["language"] = language
 		}
 		urlString := path
 		if len(queryParams) > 0 {

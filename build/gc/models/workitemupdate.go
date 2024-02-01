@@ -77,6 +77,9 @@ type WorkitemupdateDud struct {
 
     
 
+
+    
+
 }
 
 // Workitemupdate
@@ -165,6 +168,10 @@ type Workitemupdate struct {
     LanguageId string `json:"languageId"`
 
 
+    // UtilizationLabelId - The ID of the utilization label of the Workitem. Must be a valid UUID.
+    UtilizationLabelId string `json:"utilizationLabelId"`
+
+
     // PreferredAgentIds - The preferred agent IDs of the Workitem. Must be valid UUIDs.
     PreferredAgentIds []string `json:"preferredAgentIds"`
 
@@ -192,6 +199,7 @@ func (o *Workitemupdate) String() string {
     
     
      o.SkillIds = []string{""} 
+    
     
      o.PreferredAgentIds = []string{""} 
 
@@ -252,6 +260,8 @@ func (u *Workitemupdate) MarshalJSON() ([]byte, error) {
         SkillIds []string `json:"skillIds"`
         
         LanguageId string `json:"languageId"`
+        
+        UtilizationLabelId string `json:"utilizationLabelId"`
         
         PreferredAgentIds []string `json:"preferredAgentIds"`
         *Alias
@@ -320,6 +330,9 @@ func (u *Workitemupdate) MarshalJSON() ([]byte, error) {
 
         
         SkillIds: []string{""},
+        
+
+
         
 
 

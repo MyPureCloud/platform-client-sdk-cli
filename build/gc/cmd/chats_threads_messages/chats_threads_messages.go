@@ -28,12 +28,6 @@ func init() {
 }
 
 func Cmdchats_threads_messages() *cobra.Command { 
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
-	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
-	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "variable name requested by expand list")
-	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "next page token")
-	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
 	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "The maximum number of messages to retrieve")
 	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cutoff date for messages to retrieve")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The beginning date for messages to retrieve")
@@ -80,30 +74,6 @@ var listCmd = &cobra.Command{
 		threadId, args := args[0], args[1:]
 		path = strings.Replace(path, "{threadId}", fmt.Sprintf("%v", threadId), -1)
 
-		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
-		if pageSize != "" {
-			queryParams["pageSize"] = pageSize
-		}
-		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
-		if pageNumber != "" {
-			queryParams["pageNumber"] = pageNumber
-		}
-		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
-		if sortBy != "" {
-			queryParams["sortBy"] = sortBy
-		}
-		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
-		if expand != "" {
-			queryParams["expand"] = expand
-		}
-		nextPage := utils.GetFlag(cmd.Flags(), "string", "nextPage")
-		if nextPage != "" {
-			queryParams["nextPage"] = nextPage
-		}
-		previousPage := utils.GetFlag(cmd.Flags(), "string", "previousPage")
-		if previousPage != "" {
-			queryParams["previousPage"] = previousPage
-		}
 		limit := utils.GetFlag(cmd.Flags(), "string", "limit")
 		if limit != "" {
 			queryParams["limit"] = limit

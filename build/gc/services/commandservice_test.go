@@ -288,6 +288,10 @@ func mockGetConfig(profileName string) (config.Configuration, error) {
 		return false
 	}
 
+	mockConfig.GrantTypeFunc = func() string {
+		return "1"
+	}
+
 	mockConfig.ClientIDFunc = func() string {
 		return utils.GenerateGuid()
 	}
@@ -337,6 +341,10 @@ func mockGetConfigWithAccessToken(profileName string) (config.Configuration, err
 
 	mockConfig.AutoPaginationEnabledFunc = func() bool {
 		return false
+	}
+
+	mockConfig.GrantTypeFunc = func() string {
+		return "0"
 	}
 
 	mockConfig.ClientIDFunc = func() string {

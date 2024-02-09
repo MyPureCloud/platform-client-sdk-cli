@@ -16,6 +16,7 @@ import (
 type Configuration interface {
 	ProfileName() string
 	Environment() string
+	GrantType() string
 	ClientID() string
 	ClientSecret() string
 	RedirectURI() string
@@ -32,6 +33,7 @@ type Configuration interface {
 type configuration struct {
 	profileName           string
 	environment           string
+	grantType             string
 	clientID              string
 	clientSecret          string
 	secureLoginEnabled    bool
@@ -80,6 +82,11 @@ var (
 // ProfileName is the name of the profile being used to run the CLI
 func (c *configuration) ProfileName() string {
 	return c.profileName
+}
+
+// GrantType is the OAuth grant type used by the OAuth Client
+func (c *configuration) GrantType() string {
+	return viper.GetString(fmt.Sprintf("%s.grant_type", c.profileName))
 }
 
 // ClientID is the OAuth client id used by the OAuth Client
@@ -183,7 +190,7 @@ func getProxyConfig(profileName string) *ProxyConfiguration {
 }
 
 func (c *configuration) String() string {
-	return fmt.Sprintf(`{"profileName": "%s", "environment": "%s", "logFilePath": "%s", "loggingEnabled": "%v", "clientName": "%s", "clientSecret": "%s", "secureLoginEnabled": "%v", "redirectURI": "%s", "accessToken": "%s", "autoPaginationEnabled": "%v","proxyConfiguration": "%s"}`, c.ProfileName(), c.Environment(), c.LogFilePath(), c.LoggingEnabled(), c.ClientID(), c.ClientSecret(), c.SecureLoginEnabled(), c.RedirectURI(), c.AccessToken(), c.AutoPaginationEnabled(), getProxyConfig(c.ProfileName()).String())
+	return fmt.Sprintf(`{"profileName": "%s", "environment": "%s", "logFilePath": "%s", "loggingEnabled": "%v", "grantType": "%s", "clientName": "%s", "clientSecret": "%s", "secureLoginEnabled": "%v", "redirectURI": "%s", "accessToken": "%s", "autoPaginationEnabled": "%v","proxyConfiguration": "%s"}`, c.ProfileName(), c.Environment(), c.LogFilePath(), c.LoggingEnabled(), c.GrantType(), c.ClientID(), c.ClientSecret(), c.SecureLoginEnabled(), c.RedirectURI(), c.AccessToken(), c.AutoPaginationEnabled(), getProxyConfig(c.ProfileName()).String())
 }
 
 func (a *ProxyConfiguration) String() string {
@@ -256,6 +263,7 @@ func GetConfig(profileName string) (Configuration, error) {
 	}
 
 	return &configuration{profileName: profileName,
+		grantType:             viper.GetString(fmt.Sprintf("%s.grant_type", profileName)),
 		clientID:              viper.GetString(fmt.Sprintf("%s.client_credentials", profileName)),
 		clientSecret:          viper.GetString(fmt.Sprintf("%s.client_secret", profileName)),
 		redirectURI:           viper.GetString(fmt.Sprintf("%s.redirect_uri", profileName)),
@@ -290,6 +298,7 @@ func ListConfigs() ([]configuration, error) {
 	for profileName, _ := range settings {
 		configurations = append(configurations, configuration{
 			profileName:           profileName,
+			grantType:             viper.GetString(fmt.Sprintf("%s.grant_type", profileName)),
 			clientID:              viper.GetString(fmt.Sprintf("%s.client_credentials", profileName)),
 			clientSecret:          viper.GetString(fmt.Sprintf("%s.client_secret", profileName)),
 			redirectURI:           viper.GetString(fmt.Sprintf("%s.redirect_uri", profileName)),
@@ -315,6 +324,13 @@ func UpdateOAuthToken(c Configuration, data *models.OAuthTokenData) error {
 	return updateConfig(configuration{
 		profileName:    c.ProfileName(),
 		oAuthTokenData: data.String(),
+	}, nil, nil, nil)
+}
+
+func UpdateGrantType(c Configuration, grantType string) error {
+	return updateConfig(configuration{
+			profileName: c.ProfileName(),
+			grantType: grantType,
 	}, nil, nil, nil)
 }
 
@@ -397,6 +413,9 @@ func OverridesApplied() bool {
 }
 
 func updateConfig(c configuration, loggingEnabled *bool, autoPaginationEnabled *bool, secureLoginEnabled *bool) error {
+	if c.grantType != "" {
+		viper.Set(fmt.Sprintf("%s.grant_type", c.profileName), c.grantType)
+	}
 	if c.clientID != "" {
 		viper.Set(fmt.Sprintf("%s.client_credentials", c.profileName), c.clientID)
 	}
@@ -455,6 +474,7 @@ func updateConfig(c configuration, loggingEnabled *bool, autoPaginationEnabled *
 }
 
 func writeConfig(c Configuration, data *models.OAuthTokenData, logFilePath string, loggingEnabled *bool, autoPaginationEnabled *bool) error {
+	viper.Set(fmt.Sprintf("%s.grant_type", c.ProfileName()), c.GrantType())
 	viper.Set(fmt.Sprintf("%s.client_credentials", c.ProfileName()), c.ClientID())
 	viper.Set(fmt.Sprintf("%s.client_secret", c.ProfileName()), c.ClientSecret())
 	viper.Set(fmt.Sprintf("%s.redirect_uri", c.ProfileName()), c.RedirectURI())

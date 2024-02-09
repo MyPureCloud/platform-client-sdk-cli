@@ -13,6 +13,9 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"crypto/sha256"
+	"encoding/base64"
+	"math/big"
 
 	"sigs.k8s.io/yaml"
 
@@ -323,6 +326,39 @@ func ResolveInputData(cmd *cobra.Command) []string {
 	}
 
 	return []string{ConvertStdInString()}
+}
+
+// Generate a random string used as PKCE Code Verifier - length = 43 to 128
+func GeneratePKCECodeVerifier(n int) (string, error) {
+	if n < 43 || n > 128 {
+		return "", fmt.Errorf("Error: PKCE Code Verifier (length) must be between 43 and 128 characters")
+	}
+	const unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~"
+	ret := make([]byte, n)
+	for i := 0; i < n; i++ {
+		num, err := rand.Int(rand.Reader, big.NewInt(int64(len(unreservedCharacters))))
+		if err != nil {
+			return "", err
+		}
+		ret[i] = unreservedCharacters[num.Int64()]
+	}
+	
+	return string(ret), nil
+}
+
+// Compute Base64Url PKCE Code Challenge from Code Verifier
+func ComputePKCECodeChallenge(codeVerifier string) (string, error) {
+	if len(codeVerifier) < 43 || len(codeVerifier) > 128 {
+		return "", fmt.Errorf("Error: PKCE Code Verifier (length) must be between 43 and 128 characters")
+	}
+	h := sha256.New()
+	h.Write([]byte(codeVerifier))
+	codeVerifierHash := h.Sum(nil)
+	codeChallenge := base64.StdEncoding.EncodeToString([]byte(codeVerifierHash))
+	codeChallenge = strings.Replace(codeChallenge, "+", "-", -1) // 62nd char of encoding
+	codeChallenge = strings.Replace(codeChallenge, "/", "_", -1) // 63rd char of encoding
+	codeChallenge = (strings.Split(codeChallenge, "="))[0]
+	return codeChallenge, nil
 }
 
 func GenerateGuid() string {

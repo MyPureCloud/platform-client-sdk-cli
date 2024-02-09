@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type SessionDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -150,7 +150,8 @@ type SessionDud struct {
 
 // Session
 type Session struct { 
-    
+    // Id - The ID of the session.
+    Id string `json:"id"`
 
 
     // CustomerId - Primary identifier of the customer in the source where the events for the session originate from.
@@ -335,6 +336,7 @@ func (o *Session) String() string {
     
     
     
+    
      o.OutcomeAchievements = []Outcomeachievement{{}} 
      o.SegmentAssignments = []Sessionsegmentassignment{{}} 
      o.Attributes = map[string]Customeventattribute{"": {}} 
@@ -386,6 +388,8 @@ func (u *Session) MarshalJSON() ([]byte, error) {
     SessionMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         CustomerId string `json:"customerId"`
         

@@ -15,9 +15,6 @@ type EventDud struct {
     
 
 
-    CorrelationId string `json:"correlationId"`
-
-
     
 
 
@@ -61,7 +58,8 @@ type Event struct {
     Id string `json:"id"`
 
 
-    
+    // CorrelationId - UUID corresponding to triggering action that caused this event (e.g. HTTP POST, SIP invite, another event).
+    CorrelationId string `json:"correlationId"`
 
 
     // CustomerId - Primary identifier of the customer in the source of the events.
@@ -86,10 +84,6 @@ type Event struct {
 
     // OutcomeAchievedEvent - Event where a customer has achieved a specific outcome or goal.
     OutcomeAchievedEvent Outcomeachievedevent `json:"outcomeAchievedEvent"`
-
-
-    // SegmentAssignedEvent - Event that represents a segment being assigned (deprecated).
-    SegmentAssignedEvent Segmentassignedevent `json:"segmentAssignedEvent"`
 
 
     // SegmentAssignmentEvent - Event that represents a segment being assigned.
@@ -147,6 +141,8 @@ func (u *Event) MarshalJSON() ([]byte, error) {
         
         Id string `json:"id"`
         
+        CorrelationId string `json:"correlationId"`
+        
         CustomerId string `json:"customerId"`
         
         CustomerIdType string `json:"customerIdType"`
@@ -159,8 +155,6 @@ func (u *Event) MarshalJSON() ([]byte, error) {
         
         OutcomeAchievedEvent Outcomeachievedevent `json:"outcomeAchievedEvent"`
         
-        SegmentAssignedEvent Segmentassignedevent `json:"segmentAssignedEvent"`
-        
         SegmentAssignmentEvent Segmentassignmentevent `json:"segmentAssignmentEvent"`
         
         WebActionEvent Webactionevent `json:"webActionEvent"`
@@ -172,9 +166,6 @@ func (u *Event) MarshalJSON() ([]byte, error) {
         CreatedDate time.Time `json:"createdDate"`
         *Alias
     }{
-
-        
-
 
         
 

@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-type ImplicitWebpage struct {}
+type OAuthWebpage struct {}
 
 type AuthResponse struct {
 	Title   string
@@ -13,11 +13,15 @@ type AuthResponse struct {
 
 var responses = initResponseMessages()
 
-func (w ImplicitWebpage) GetImplicitWebpage(clientID string, environment string, redirectURI string) string {
-	return fmt.Sprintf(AuthWebpage, styles, clientID, redirectURI, environment, yetiImage)
+func (w OAuthWebpage) GetImplicitWebpage(clientID string, environment string, redirectURI string) string {
+	return fmt.Sprintf(ImplicitAuthWebpage, styles, clientID, redirectURI, environment, yetiImage)
 }
 
-func (w ImplicitWebpage) GetResponsePage(result string) string {
+func (w OAuthWebpage) GetPKCEWebpage(clientID string, environment string, redirectURI string, codeChallenge string) string {
+	return fmt.Sprintf(PKCEAuthWebpage, styles, clientID, redirectURI, codeChallenge, environment, yetiImage)
+}
+
+func (w OAuthWebpage) GetResponsePage(result string) string {
 	if res, ok := responses[result]; ok {
 		return fmt.Sprintf(ResponsePage, res.Title, styles, res.Title, yetiImage, res.Message)
 	} else {
@@ -60,10 +64,14 @@ func initResponseMessages() map[string]AuthResponse {
 		"503 Service Unavailable", "The authorization server is currently unable to handle the request due to a temporary overloading or maintenance of the server.",
 	}
 
+	r["invalid_pkce_package"] = AuthResponse{
+		"Invalid PKCE", "Invalid PKCE.",
+	}
+
 	return r
 }
 
-const AuthWebpage = `
+const ImplicitAuthWebpage = `
 <html>
 <meta http-equiv="refresh" content="2"/>
 <head>
@@ -106,6 +114,45 @@ const AuthWebpage = `
 </html>
 `
 
+const PKCEAuthWebpage = `
+<html>
+<meta http-equiv="refresh" content="2"/>
+<head>
+	<title>PKCE Login</title>
+	<script src="https://sdk-cdn.mypurecloud.com/external/go-cli/axios/0.23.0/axios.min.js"></script> 
+	%s
+	<script>
+		if(window.location.search) {
+			let urlParams = new URLSearchParams(window.location.search);
+			if (urlParams.get("error")) {
+				axios.get("/error/" + urlParams.get('error'));
+			} else {
+				let code = urlParams.get('code');
+				axios.get("/code/" + urlParams.get('code'));
+			}
+		} else {
+			var queryStringData = {
+				response_type : "code",
+				client_id : "%s",
+				redirect_uri : "%s",
+				code_challenge : "%s",
+				code_challenge_method: "S256"
+			}
+			let encodedURL = new URLSearchParams(queryStringData);
+			window.location.replace("https://login.%s/oauth/authorize?" + encodedURL.toString());
+		}
+	</script>
+
+	</head>
+	<body>
+		<p><span id="title">Loading...</span></p>
+		<p>
+		%s
+		</p>	
+	</body>
+</html>
+`
+
 const ResponsePage = `
 <html>
 	<head>
@@ -113,6 +160,7 @@ const ResponsePage = `
 		%s
 		<script>
 			window.location.hash = '';
+			window.history.pushState('Response', 'Response', '/');
 		</script>
 	</head>
 	<body>

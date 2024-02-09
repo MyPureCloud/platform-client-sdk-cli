@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type JourneysegmentDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -60,7 +60,8 @@ type JourneysegmentDud struct {
 
 // Journeysegment
 type Journeysegment struct { 
-    
+    // Id - The ID of the segment.
+    Id string `json:"id"`
 
 
     // IsActive - Whether or not the segment is active.
@@ -134,6 +135,7 @@ func (o *Journeysegment) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -150,6 +152,8 @@ func (u *Journeysegment) MarshalJSON() ([]byte, error) {
     JourneysegmentMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         IsActive bool `json:"isActive"`
         

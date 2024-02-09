@@ -16,6 +16,9 @@ type KnowledgeexportjobrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgeexportjobrequest
@@ -27,10 +30,15 @@ type Knowledgeexportjobrequest struct {
     // FileType - File type of the document
     FileType string `json:"fileType"`
 
+
+    // JsonFileVersion - Requested version of the exported json file. Available versions are 2 and 3, default is 2
+    JsonFileVersion int `json:"jsonFileVersion"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgeexportjobrequest) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Knowledgeexportjobrequest) MarshalJSON() ([]byte, error) {
         ExportFilter Knowledgeexportjobfilter `json:"exportFilter"`
         
         FileType string `json:"fileType"`
+        
+        JsonFileVersion int `json:"jsonFileVersion"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type AppeventresponsesessionDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -36,7 +36,8 @@ type AppeventresponsesessionDud struct {
 
 // Appeventresponsesession
 type Appeventresponsesession struct { 
-    
+    // Id - ID of the app session.
+    Id string `json:"id"`
 
 
     // DurationInSeconds - Indicates how long the customer has been in the app within this session.
@@ -70,6 +71,7 @@ func (o *Appeventresponsesession) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -86,6 +88,8 @@ func (u *Appeventresponsesession) MarshalJSON() ([]byte, error) {
     AppeventresponsesessionMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         DurationInSeconds int `json:"durationInSeconds"`
         

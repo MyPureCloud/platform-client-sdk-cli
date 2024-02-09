@@ -26,7 +26,7 @@ type ActioneventactionmapDud struct {
 
 // Actioneventactionmap
 type Actioneventactionmap struct { 
-    // Id
+    // Id - The ID of the action map.
     Id string `json:"id"`
 
 

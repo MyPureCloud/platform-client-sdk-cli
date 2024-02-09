@@ -112,7 +112,7 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "93.0.0")
+        request.Header.Set("purecloud-sdk", "94.0.0")
 
         if data != "" {
                 request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
@@ -201,10 +201,72 @@ func ReAuthenticate(c config.Configuration) (models.OAuthTokenData, error) {
         return oAuthToken, err
 }
 
+func authorizePKCEGrant(c config.Configuration, code string, codeVerifier string) (models.OAuthTokenData, error) {
+        loginURI, _ := url.Parse(fmt.Sprintf("https://login.%s/oauth/token", c.Environment()))
+
+        request := &retryablehttp.Request{
+                Request: &http.Request{
+                        URL:    loginURI,
+                        Close:  true,
+                        Method: http.MethodPost,
+                        Header: make(map[string][]string),
+                },
+        }
+
+        //Setting up the basic auth headers for the call
+        authHeaderString := fmt.Sprintf("%s:%s", c.ClientID(), c.ClientSecret())
+        authHeader := base64.StdEncoding.EncodeToString([]byte(authHeaderString))
+        request.Header.Set("Authorization", fmt.Sprintf("Basic %s", authHeader))
+        
+        request.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
+        //User-Agent and SDK version headers
+        request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
+        request.Header.Set("purecloud-sdk", "94.0.0")
+
+        //Setting up the form data
+        form := url.Values{}
+        form["grant_type"] = []string{"authorization_code"}
+        form["client_id"] = []string{c.ClientID()}
+        form["code"] = []string{code}
+        form["redirect_uri"] = []string{c.RedirectURI()}
+        form["code_verifier"] = []string{codeVerifier}
+        request.Body = ioutil.NopCloser(strings.NewReader(form.Encode()))
+
+        setProxyConf(c)
+
+        //Executing the request
+        resp, err := ClientDo(request)
+        if err != nil {
+                logger.Fatal(err)
+        }
+
+        defer resp.Body.Close()
+
+        oAuthTokenResponse := &models.OAuthTokenData{}
+        // Read Response Body
+        responseData, err := ioutil.ReadAll(resp.Body)
+        if err != nil {
+                return *oAuthTokenResponse, err
+        }
+
+        if resp.StatusCode < http.StatusOK || resp.StatusCode >= http.StatusMultipleChoices {
+                httpError := models.HttpStatusError{Verb: http.MethodPost, Path: loginURI.Path, StatusCode: resp.StatusCode, Headers: resp.Header, Body: fmt.Sprintf("%s", pretty.Pretty(responseData))}
+                return *oAuthTokenResponse, httpError
+        }
+
+        oAuthToken := &models.OAuthToken{}
+        err = json.Unmarshal(responseData, &oAuthToken)
+        if err != nil {
+                return *oAuthTokenResponse, err
+        }
+        return createOAuthTokenResponse(c, *oAuthToken)
+}
+
 func authorize(c config.Configuration) (models.OAuthTokenData, error) {
         authChannel := make(chan models.OAuthToken)
-        // Using implicit grant
-        if c.RedirectURI() != "" {
+        // Using implicit grant or pkce grant
+        if c.GrantType() == "2" || c.GrantType() == "3" || c.RedirectURI() != "" {
                 if c.SecureLoginEnabled() {
                         // Generate a self-signed X.509 certificate for a TLS server
                         err := tls.GenerateCerts()
@@ -244,7 +306,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "93.0.0")
+        request.Header.Set("purecloud-sdk", "94.0.0")
 
         //Setting up the form data
         form := url.Values{}
@@ -339,9 +401,19 @@ func startLocalServerFunc(c config.Configuration, authChannel chan models.OAuthT
         }
 
         var oAuthToken models.OAuthToken
-        implicitWebpage := models.ImplicitWebpage{}
-        // Set initial web page as one containing the javascript to perform implicit login
-        initialPage := implicitWebpage.GetImplicitWebpage(c.ClientID(), c.Environment(), c.RedirectURI())
+        var initialPage string
+        oauthWebpage := models.OAuthWebpage{}
+        codeVerifier, _ := utils.GeneratePKCECodeVerifier(128)
+        if c.GrantType() == "3" {
+                // Use PKCE Grant
+                codeChallenge, _ := utils.ComputePKCECodeChallenge(codeVerifier)
+                // Set initial web page as one containing the javascript to perform implicit login
+                initialPage = oauthWebpage.GetPKCEWebpage(c.ClientID(), c.Environment(), c.RedirectURI(), codeChallenge)
+        } else {
+                // Otherwise use Implicit Grant (== "2") - no GrantType test for backward compatibility
+                // Set initial web page as one containing the javascript to perform implicit login
+                initialPage = oauthWebpage.GetImplicitWebpage(c.ClientID(), c.Environment(), c.RedirectURI())
+        }
         activePage := initialPage
 
         http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
@@ -360,9 +432,9 @@ func startLocalServerFunc(c config.Configuration, authChannel chan models.OAuthT
                         return
                 }
 
-                if strings.Contains(r.URL.String(), "/error/") || strings.Contains(r.URL.String(), "/access_token/") {
-                        oAuthToken = getImplicitResponseDataFromURL(r.URL.String())
-                        activePage = implicitWebpage.GetResponsePage(oAuthToken.Error)
+                if strings.Contains(r.URL.String(), "/error/") || strings.Contains(r.URL.String(), "/access_token/") || strings.Contains(r.URL.String(), "/code/") {
+                        oAuthToken = getOAuthResponseDataFromURL(c, r.URL.String(), codeVerifier)
+                        activePage = oauthWebpage.GetResponsePage(oAuthToken.Error)
                 }
         })
 
@@ -374,8 +446,8 @@ func startLocalServerFunc(c config.Configuration, authChannel chan models.OAuthT
         }
 }
 
-// parse data from url in the format '/access_token/12345/expires_in/299/token_type/bearer'
-func getImplicitResponseDataFromURL(url string) models.OAuthToken {
+// parse data from url in the format '/code/access_token/12345/expires_in/299/token_type/bearer'
+func getOAuthResponseDataFromURL(c config.Configuration, url string, codeVerifier string) models.OAuthToken {
         var response models.OAuthToken
         splitURL := strings.Split(url, "/")
         for i, v := range splitURL {
@@ -389,6 +461,17 @@ func getImplicitResponseDataFromURL(url string) models.OAuthToken {
                         response.ExpiresIn, _ = strconv.Atoi(splitURL[i+1])
                 } else if v == "token_type" {
                         response.TokenType = splitURL[i+1]
+                } else if v == "code" {
+                        code := splitURL[i+1]
+                        oAuthTokenData, err := authorizePKCEGrant(c, code, codeVerifier)
+                        if err != nil {
+                                response.Error = "PKCEGrantError"
+                                break
+                        }
+                        response.AccessToken = oAuthTokenData.AccessToken
+                        response.TokenType = oAuthTokenData.TokenType
+                        response.ExpiresIn = oAuthTokenData.ExpiresIn
+                        break
                 }
         }
         return response

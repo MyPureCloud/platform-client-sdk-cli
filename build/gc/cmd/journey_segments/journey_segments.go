@@ -33,7 +33,7 @@ func Cmdjourney_segments() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/JourneySegment"
+        "$ref" : "#/components/schemas/JourneySegmentRequest"
       }
     }
   },
@@ -141,7 +141,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Journeysegment{}
+			reqModel := models.Journeysegmentrequest{}
 			utils.Render(reqModel.String())
 			
 			return

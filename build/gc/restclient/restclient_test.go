@@ -34,7 +34,7 @@ type apiClientTest struct {
 func TestAuthorize(t *testing.T) {
 	UpdateOAuthToken = mocks.UpdateOAuthToken
 
-	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, utils.GenerateGuid(), utils.GenerateGuid(), "")
+	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, "1", utils.GenerateGuid(), utils.GenerateGuid(), "")
 	accessToken := "aJdvugb8k1kwnOovm2qX6LXTctJksYvdzcoXPrRDi-nL1phQhcKRN-bjcflq7CUDOmUCQv5OWuBSkPQr0peWhw"
 	setRestClientDoMockForAuthorize(t, *mockConfig, accessToken)
 
@@ -47,7 +47,7 @@ func TestAuthorize(t *testing.T) {
 	}
 
 	// Check that the same token is returned when the expiry time stamp is in the future
-	mockConfig = buildMockConfig(mockConfig.ProfileName(), mockConfig.Environment(), mockConfig.RedirectURI(), false, mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
+	mockConfig = buildMockConfig(mockConfig.ProfileName(), mockConfig.Environment(), mockConfig.RedirectURI(), false, "1", mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
 	oauthData, err = Authorize(mockConfig)
 	if err != nil {
 		t.Fatalf("err should be nil, got: %s", err)
@@ -59,7 +59,7 @@ func TestAuthorize(t *testing.T) {
 	// Check that a new token is retrieved when the expiry time stamp is in the past
 	oauthData.OAuthTokenExpiry = time.Now().AddDate(0, 0, -1).Format(time.RFC3339)
 	accessToken = "aJdvugb8k1kwnOovm2qX6LXTctJksYvdzcoXPrRDi-nL1phQhcKRN-bjcflq7CUDOmUCQv5OWuBSkPQr0peWhw"
-	mockConfig = buildMockConfig(mockConfig.ProfileName(), mockConfig.Environment(), mockConfig.RedirectURI(), false, mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
+	mockConfig = buildMockConfig(mockConfig.ProfileName(), mockConfig.Environment(), mockConfig.RedirectURI(), false, "1", mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
 	oauthData, err = Authorize(mockConfig)
 	if err != nil {
 		t.Fatalf("err should be nil, got: %s", err)
@@ -72,7 +72,7 @@ func TestAuthorize(t *testing.T) {
 func TestAuthorizeWithImplicitLogin(t *testing.T) {
 	UpdateOAuthToken = mocks.UpdateOAuthToken
 
-	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "http://localhost:8080", false, utils.GenerateGuid(), utils.GenerateGuid(), "")
+	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "http://localhost:8080", false, "2", utils.GenerateGuid(), utils.GenerateGuid(), "")
 	accessToken := "aJdvugb8k1kwnOovm2qX6LXTctJksYvdzcoXPrRDi-nL1phQhcKRN-bjcflq7CUDOmUCQv5OWuBSkPQr0peWhw"
 	setRestClientDoMockForAuthorize(t, *mockConfig, accessToken)
 
@@ -94,7 +94,7 @@ func TestAuthorizeWithImplicitLogin(t *testing.T) {
 	}
 
 	// testing with secure http enabled
-	mockConfig = buildMockConfig("DEFAULT", "mypurecloud.com", "http://localhost:8080", true, utils.GenerateGuid(), utils.GenerateGuid(), "")
+	mockConfig = buildMockConfig("DEFAULT", "mypurecloud.com", "http://localhost:8080", true, "2", utils.GenerateGuid(), utils.GenerateGuid(), "")
 
 	oauthData, err = Authorize(mockConfig)
 	if err != nil {
@@ -112,7 +112,7 @@ func TestAuthorizeWithImplicitLogin(t *testing.T) {
 
 func TestLowLevelRestClient(t *testing.T) {
 	tests := buildTestCaseTable()
-	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, utils.GenerateGuid(), utils.GenerateGuid(), "")
+	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, "0", utils.GenerateGuid(), utils.GenerateGuid(), "")
 	
 	for _, tc := range tests {
 		restClient := &RESTClient{
@@ -143,7 +143,7 @@ func TestLowLevelRestClient(t *testing.T) {
 
 func TestHighLevelRestClient(t *testing.T) {
 	tests := buildTestCaseTable()
-	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, utils.GenerateGuid(), utils.GenerateGuid(), "")
+	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, "0", utils.GenerateGuid(), utils.GenerateGuid(), "")
 	
 	for _, tc := range tests {
 		restClient := &RESTClient{
@@ -184,7 +184,7 @@ func TestHighLevelRestClient(t *testing.T) {
 	}
 }
 
-func buildMockConfig(profileName string, environment string, redirectURI string, secureLoginEnabled bool, clientID string, clientSecret string, oauthTokenData string) *mocks.MockClientConfig {
+func buildMockConfig(profileName string, environment string, redirectURI string, secureLoginEnabled bool, grantType string, clientID string, clientSecret string, oauthTokenData string) *mocks.MockClientConfig {
 	mockConfig := &mocks.MockClientConfig{}
 
 	mockConfig.ProfileNameFunc = func() string {
@@ -213,6 +213,10 @@ func buildMockConfig(profileName string, environment string, redirectURI string,
 
 	mockConfig.SecureLoginEnabledFunc = func() bool {
 		return secureLoginEnabled
+	}
+
+	mockConfig.GrantTypeFunc = func() string {
+		return grantType
 	}
 
 	mockConfig.ClientIDFunc = func() string {

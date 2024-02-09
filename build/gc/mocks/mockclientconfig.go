@@ -10,6 +10,7 @@ import (
 type MockClientConfig struct {
 	ProfileNameFunc           func() string
 	EnvironmentFunc           func() string
+	GrantTypeFunc             func() string
 	ClientIDFunc              func() string
 	ClientSecretFunc          func() string
 	RedirectURIFunc           func() string
@@ -30,6 +31,10 @@ func (m *MockClientConfig) ProfileName() string {
 
 func (m *MockClientConfig) Environment() string {
 	return m.EnvironmentFunc()
+}
+
+func (m *MockClientConfig) GrantType() string {
+	return m.GrantTypeFunc()
 }
 
 func (m *MockClientConfig) ClientID() string {

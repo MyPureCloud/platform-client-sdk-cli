@@ -73,6 +73,7 @@ func Cmdoutbound_importtemplates() *cobra.Command {
 }`)
 	outbound_importtemplatesCmd.AddCommand(deleteallCmd)
 
+	utils.AddFlag(getCmd.Flags(), "bool", "includeImportStatus", "false", "Import status")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/importtemplates/{importTemplateId}", utils.FormatPermissions([]string{ "outbound:importTemplate:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/importtemplates/{importTemplateId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -88,6 +89,7 @@ func Cmdoutbound_importtemplates() *cobra.Command {
 }`)
 	outbound_importtemplatesCmd.AddCommand(getCmd)
 
+	utils.AddFlag(listCmd.Flags(), "bool", "includeImportStatus", "false", "Import status")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size. The max that will be returned is 100.")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "bool", "allowEmptyResult", "false", "Whether to return an empty page when there are no results for that page")
@@ -362,6 +364,10 @@ var getCmd = &cobra.Command{
 		importTemplateId, args := args[0], args[1:]
 		path = strings.Replace(path, "{importTemplateId}", fmt.Sprintf("%v", importTemplateId), -1)
 
+		includeImportStatus := utils.GetFlag(cmd.Flags(), "bool", "includeImportStatus")
+		if includeImportStatus != "" {
+			queryParams["includeImportStatus"] = includeImportStatus
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -425,6 +431,10 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/outbound/importtemplates"
 
+		includeImportStatus := utils.GetFlag(cmd.Flags(), "bool", "includeImportStatus")
+		if includeImportStatus != "" {
+			queryParams["includeImportStatus"] = includeImportStatus
+		}
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
 			queryParams["pageSize"] = pageSize

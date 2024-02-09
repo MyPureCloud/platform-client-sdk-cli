@@ -29,6 +29,7 @@ func init() {
 
 func Cmdflows_instances_query() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "bool", "indexOnly", "", "indexes only")
+	utils.AddFlag(createCmd.Flags(), "int", "pageSize", "50", "number of results to return")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/instances/query", utils.FormatPermissions([]string{ "architect:flowInstance:search",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/instances/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "query",
@@ -86,6 +87,10 @@ var createCmd = &cobra.Command{
 		indexOnly := utils.GetFlag(cmd.Flags(), "bool", "indexOnly")
 		if indexOnly != "" {
 			queryParams["indexOnly"] = indexOnly
+		}
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
 		}
 		urlString := path
 		if len(queryParams) > 0 {

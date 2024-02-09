@@ -28,6 +28,15 @@ type CallbackmediasettingsDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Callbackmediasettings
@@ -55,6 +64,18 @@ type Callbackmediasettings struct {
     // SubTypeSettings - Map of media subtype to media subtype specific settings.
     SubTypeSettings map[string]Basemediasettings `json:"subTypeSettings"`
 
+
+    // EnableAutoDialAndEnd - Flag to enable Auto-Dial and Auto-End automation for callbacks on this queue.
+    EnableAutoDialAndEnd bool `json:"enableAutoDialAndEnd"`
+
+
+    // AutoDialDelaySeconds - Time in seconds after agent connects to callback before outgoing call is auto-dialed. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds.
+    AutoDialDelaySeconds int `json:"autoDialDelaySeconds"`
+
+
+    // AutoEndDelaySeconds - Time in seconds after agent disconnects from the outgoing call before the encasing callback is auto-ended. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds.
+    AutoEndDelaySeconds int `json:"autoEndDelaySeconds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -65,6 +86,9 @@ func (o *Callbackmediasettings) String() string {
     
     
      o.SubTypeSettings = map[string]Basemediasettings{"": {}} 
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -93,6 +117,12 @@ func (u *Callbackmediasettings) MarshalJSON() ([]byte, error) {
         ManualAnswerAlertToneSeconds float64 `json:"manualAnswerAlertToneSeconds"`
         
         SubTypeSettings map[string]Basemediasettings `json:"subTypeSettings"`
+        
+        EnableAutoDialAndEnd bool `json:"enableAutoDialAndEnd"`
+        
+        AutoDialDelaySeconds int `json:"autoDialDelaySeconds"`
+        
+        AutoEndDelaySeconds int `json:"autoEndDelaySeconds"`
         *Alias
     }{
 
@@ -113,6 +143,15 @@ func (u *Callbackmediasettings) MarshalJSON() ([]byte, error) {
 
         
         SubTypeSettings: map[string]Basemediasettings{"": {}},
+        
+
+
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

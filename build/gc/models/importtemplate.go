@@ -45,6 +45,9 @@ type ImporttemplateDud struct {
     
 
 
+    ImportStatus Importstatus `json:"importStatus"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -90,6 +93,9 @@ type Importtemplate struct {
 
     // CustomListNameFormatValue - Custom value for the list name format, at least %N is required. Any character other than the specified tokens will be used as is. Available tokens: %N: ListNamePrefix; %P: Part number; %F: Filter name; %C: Column value; YYYY: year; MM: month; DD: day; hh: hour; mm: minute; ss: second.
     CustomListNameFormatValue string `json:"customListNameFormatValue"`
+
+
+    
 
 
     
@@ -140,6 +146,9 @@ func (u *Importtemplate) MarshalJSON() ([]byte, error) {
         CustomListNameFormatValue string `json:"customListNameFormatValue"`
         *Alias
     }{
+
+        
+
 
         
 

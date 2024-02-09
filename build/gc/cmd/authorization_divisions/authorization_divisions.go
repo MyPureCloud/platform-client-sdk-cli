@@ -86,6 +86,7 @@ func Cmdauthorization_divisions() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "next page token")
 	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
 	utils.AddFlag(listCmd.Flags(), "bool", "objectCount", "false", "Include the count of objects contained in the division")
+	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Optionally request specific divisions by their IDs")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Search term to filter by division name")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/authorization/divisions", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Authorization", "/api/v2/authorization/divisions")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -384,6 +385,10 @@ var listCmd = &cobra.Command{
 		objectCount := utils.GetFlag(cmd.Flags(), "bool", "objectCount")
 		if objectCount != "" {
 			queryParams["objectCount"] = objectCount
+		}
+		id := utils.GetFlag(cmd.Flags(), "[]string", "id")
+		if id != "" {
+			queryParams["id"] = id
 		}
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {

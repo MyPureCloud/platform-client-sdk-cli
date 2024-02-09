@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type OutcomeDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -51,7 +51,8 @@ type OutcomeDud struct {
 
 // Outcome
 type Outcome struct { 
-    
+    // Id - ID of the outcome.
+    Id string `json:"id"`
 
 
     // IsActive - Whether or not the outcome is active.
@@ -110,6 +111,7 @@ func (o *Outcome) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -126,6 +128,8 @@ func (u *Outcome) MarshalJSON() ([]byte, error) {
     OutcomeMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         IsActive bool `json:"isActive"`
         

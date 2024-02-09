@@ -23,18 +23,6 @@ type WhatsappintegrationupdaterequestDud struct {
     
 
 
-    
-
-
-    
-
-
-    
-
-
-    
-
-
     SelfUri string `json:"selfUri"`
 
 }
@@ -56,32 +44,12 @@ type Whatsappintegrationupdaterequest struct {
     MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
 
 
-    // Action - The action used to activate and then confirm a WhatsApp Integration.
-    Action string `json:"action"`
-
-
-    // AuthenticationMethod - The authentication method used to confirm a WhatsApp Integration activation. If action is set to Activate, then authenticationMethod is a required field. 
-    AuthenticationMethod string `json:"authenticationMethod"`
-
-
-    // ConfirmationCode - The confirmation code sent by Whatsapp to you during the activation step. If action is set to Confirm, then confirmationCode is a required field.
-    ConfirmationCode string `json:"confirmationCode"`
-
-
-    // PhoneNumber - Phone number to associate with the WhatsApp integration
-    PhoneNumber string `json:"phoneNumber"`
-
-
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Whatsappintegrationupdaterequest) String() string {
-    
-    
-    
-    
     
     
     
@@ -107,28 +75,8 @@ func (u *Whatsappintegrationupdaterequest) MarshalJSON() ([]byte, error) {
         SupportedContent Supportedcontentreference `json:"supportedContent"`
         
         MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
-        
-        Action string `json:"action"`
-        
-        AuthenticationMethod string `json:"authenticationMethod"`
-        
-        ConfirmationCode string `json:"confirmationCode"`
-        
-        PhoneNumber string `json:"phoneNumber"`
         *Alias
     }{
-
-        
-
-
-        
-
-
-        
-
-
-        
-
 
         
 

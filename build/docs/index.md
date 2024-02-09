@@ -265,13 +265,23 @@ Running any API operation command followed by '--help' will print out the follow
 
 # OAuth Implicit Grant
 
-When creating a profile with the `gc profiles new` command, you may choose between using a Client Credential Grant, or an Implicit Grant. During the Implicit Login process, the user is redirected to their browser where they can authenticate themselves by logging into their Genesys Cloud org. This method can be preferable as it provides context about the user to which the access token was distributed. Unlike the Client Credential Grant, which is a general grant.
+When creating a profile with the `gc profiles new` command, you may choose between using a Client Credential Grant, an Implicit Grant or a PKCE Grant. During the Implicit Login process, the user is redirected to their browser where they can authenticate themselves by logging into their Genesys Cloud org. This method can be preferable as it provides context about the user to which the access token was distributed. Unlike the Client Credential Grant, which is a general grant.
 
 To perform an implicit login, the OAuth Client under **`Admin > Integrations > OAuth`** needs to be configured properly by setting the **Grant Types** property to "Token Implicit Grant (Browser)", and by adding the permissible redirect URIs (e.g. `http://localhost:8080`).
 
 Optionally, and for added security, you can choose to open an HTTPS connection for this procedure. In this case, a self-signed certificate is generated locally, and you will need to select **Advanced > Proceed to 127.0.0.1** in the browser window as this certificate is not recognized by an official Certificate Authority. For secure HTTP connections, be sure to prepend the Client's redirect URI with "https://" instead of "http://" in your Genesys Cloud org.
 
-For more information about the Implicit Grant login process, check out [this article](https://developer.genesys.cloud/api/rest/authorization/use-implicit-grant "Goes to developer.genesys.cloud") on our Developer Center.
+For more information about the Implicit Grant login process, check out [this article](https://developer.genesys.cloud/api/rest/authorization/use-implicit-grant) on our Developer Center.
+
+# OAuth PKCE Grant
+
+When creating a profile with the `gc profiles new` command, you may choose between using a Client Credential Grant, an Implicit Grant or a PKCE Grant. During the PKCE Login process, the user is redirected to their browser where they can authenticate themselves by logging into their Genesys Cloud org. This method can be preferable as it provides context about the user to which the access token was distributed. Unlike the Client Credential Grant, which is a general grant.
+
+To perform a PKCE login, the OAuth Client under **`Admin > Integrations > OAuth`** needs to be configured properly by setting the **Grant Types** property to "Code Authorization", and by adding the permissible redirect URIs (e.g. `http://localhost:8080`).
+
+Optionally, and for added security, you can choose to open an HTTPS connection for this procedure. In this case, a self-signed certificate is generated locally, and you will need to select **Advanced > Proceed to 127.0.0.1** in the browser window as this certificate is not recognized by an official Certificate Authority. For secure HTTP connections, be sure to prepend the Client's redirect URI with "https://" instead of "http://" in your Genesys Cloud org.
+
+For more information about the PKCE Grant login process, check out [this article](https://developer.genesys.cloud/api/rest/authorization/use-pkce) on our Developer Center.
 
 # Experimental Features
 

@@ -23,13 +23,14 @@ const (
 	None              GrantType = "0"
 	ClientCredentials           = "1"
 	ImplicitGrant               = "2"
+	PKCEGrant               	= "3"
 )
 
 func isValidGrantType(t GrantType) bool {
-	return t == None || t == ClientCredentials || t == ImplicitGrant
+	return t == None || t == ClientCredentials || t == ImplicitGrant || t == PKCEGrant
 }
 
-func constructConfig(profileName string, environment string, clientID string, clientSecret string, redirectURI string, secureLoginEnabled bool, accessToken string, proxyConf *config.ProxyConfiguration) config.Configuration {
+func constructConfig(profileName string, environment string, grantType GrantType, clientID string, clientSecret string, redirectURI string, secureLoginEnabled bool, accessToken string, proxyConf *config.ProxyConfiguration) config.Configuration {
 	c := &mocks.MockClientConfig{}
 
 	c.ProfileNameFunc = func() string {
@@ -50,6 +51,10 @@ func constructConfig(profileName string, environment string, clientID string, cl
 
 	c.AutoPaginationEnabledFunc = func() bool {
 		return false
+	}
+
+	c.GrantTypeFunc = func() string {
+		return fmt.Sprintf("%s", grantType)
 	}
 
 	c.ClientIDFunc = func() string {
@@ -117,7 +122,7 @@ func requestUserInput() config.Configuration {
 
 	for true {
 		fmt.Print("Select your authorization grant type.\n")
-		fmt.Print("\t0. None\n\t1. Client Credentials\n\t2. Implicit Grant\nGrant Type: ")
+		fmt.Print("\t0. None\n\t1. Client Credentials\n\t2. Implicit Grant\n\t3. PKCE Grant\nGrant Type: ")
 		fmt.Scanln(&grantType)
 
 		if accessToken == "" && grantType == None {
@@ -131,7 +136,7 @@ func requestUserInput() config.Configuration {
 
 	clientID, clientSecret = requestClientCreds(accessToken, grantType)
 
-	if grantType == ImplicitGrant {
+	if (grantType == ImplicitGrant) || (grantType == PKCEGrant) {
 		redirectURL.Host = "localhost:" + requestRedirectURIPort()
 		for true {
 			fmt.Print("Would you like to use a secure HTTP connection? [Y/N]: ")
@@ -154,10 +159,10 @@ func requestUserInput() config.Configuration {
 		fmt.Scanln(&proxyChoice)
 		if strings.ToUpper(proxyChoice) == "Y" {
 			proxyConf := requestProxyDetails()
-			return constructConfig(name, environment, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, proxyConf)
+			return constructConfig(name, environment, grantType, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, proxyConf)
 			break
 		} else if strings.ToUpper(proxyChoice) == "N" {
-			return constructConfig(name, environment, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, nil)
+			return constructConfig(name, environment, grantType, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, nil)
 			break
 		} else {
 			fmt.Print("Provide valid option.\n")
@@ -165,7 +170,7 @@ func requestUserInput() config.Configuration {
 		}
 	}
 
-	return constructConfig(name, environment, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, nil)
+	return constructConfig(name, environment, grantType, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, nil)
 }
 
 func requestClientCreds(accessToken string, grantType GrantType) (string, string) {
@@ -198,6 +203,12 @@ func requestClientCreds(accessToken string, grantType GrantType) (string, string
 
 		fmt.Print("Client Secret (Optional): ")
 		secret = readSensitiveInput()
+	} else if grantType == PKCEGrant {
+		// PKCE Grant
+		for id == "" {
+			fmt.Print("Client ID: ")
+			fmt.Scanln(&id)
+		}
 	}
 
 	return id, secret

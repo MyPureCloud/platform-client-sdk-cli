@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type AssignedsegmentDud struct { 
-    Id string `json:"id"`
+    
 
 
     SelfUri string `json:"selfUri"`
@@ -20,7 +20,8 @@ type AssignedsegmentDud struct {
 
 // Assignedsegment
 type Assignedsegment struct { 
-    
+    // Id - The ID of the segment assigned.
+    Id string `json:"id"`
 
 
     
@@ -29,6 +30,7 @@ type Assignedsegment struct {
 
 // String returns a JSON representation of the model
 func (o *Assignedsegment) String() string {
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -45,6 +47,8 @@ func (u *Assignedsegment) MarshalJSON() ([]byte, error) {
     AssignedsegmentMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         *Alias
     }{
 

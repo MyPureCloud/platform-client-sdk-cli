@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type SessionlasteventDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -24,7 +24,8 @@ type SessionlasteventDud struct {
 
 // Sessionlastevent
 type Sessionlastevent struct { 
-    
+    // Id - The ID of the last event.
+    Id string `json:"id"`
 
 
     // EventName - The name of the event.
@@ -38,6 +39,7 @@ type Sessionlastevent struct {
 
 // String returns a JSON representation of the model
 func (o *Sessionlastevent) String() string {
+    
     
     
 
@@ -56,6 +58,8 @@ func (u *Sessionlastevent) MarshalJSON() ([]byte, error) {
     SessionlasteventMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         EventName string `json:"eventName"`
         

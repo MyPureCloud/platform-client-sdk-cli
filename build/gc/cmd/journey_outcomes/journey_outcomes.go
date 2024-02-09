@@ -33,7 +33,7 @@ func Cmdjourney_outcomes() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/Outcome"
+        "$ref" : "#/components/schemas/OutcomeRequest"
       }
     }
   },
@@ -140,7 +140,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Outcome{}
+			reqModel := models.Outcomerequest{}
 			utils.Render(reqModel.String())
 			
 			return

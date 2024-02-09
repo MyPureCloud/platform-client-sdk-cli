@@ -1,6 +1,5 @@
 package models
 import (
-    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -12,9 +11,6 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type PatchsegmentDud struct { 
-    Id string `json:"id"`
-
-
     
 
 
@@ -37,15 +33,6 @@ type PatchsegmentDud struct {
 
 
     
-
-
-    
-
-
-    
-
-
-    SelfUri string `json:"selfUri"`
 
 
     
@@ -57,9 +44,6 @@ type PatchsegmentDud struct {
 
 // Patchsegment
 type Patchsegment struct { 
-    
-
-
     // IsActive - Whether or not the segment is active.
     IsActive bool `json:"isActive"`
 
@@ -85,11 +69,11 @@ type Patchsegment struct {
 
 
     // Context - The context of the segment.
-    Context Context `json:"context"`
+    Context Patchcontext `json:"context"`
 
 
     // Journey - The pattern of rules defining the segment.
-    Journey Journey `json:"journey"`
+    Journey Patchjourney `json:"journey"`
 
 
     // ExternalSegment - Details of an entity corresponding to this segment in an external system.
@@ -99,23 +83,10 @@ type Patchsegment struct {
     // AssignmentExpirationDays - Time, in days, from when the segment is assigned until it is automatically unassigned.
     AssignmentExpirationDays int `json:"assignmentExpirationDays"`
 
-
-    
-
-
-    // CreatedDate - Timestamp indicating when the segment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    CreatedDate time.Time `json:"createdDate"`
-
-
-    // ModifiedDate - Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    ModifiedDate time.Time `json:"modifiedDate"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Patchsegment) String() string {
-    
-    
     
     
     
@@ -155,31 +126,15 @@ func (u *Patchsegment) MarshalJSON() ([]byte, error) {
         
         ShouldDisplayToAgent bool `json:"shouldDisplayToAgent"`
         
-        Context Context `json:"context"`
+        Context Patchcontext `json:"context"`
         
-        Journey Journey `json:"journey"`
+        Journey Patchjourney `json:"journey"`
         
         ExternalSegment Patchexternalsegment `json:"externalSegment"`
         
         AssignmentExpirationDays int `json:"assignmentExpirationDays"`
-        
-        CreatedDate time.Time `json:"createdDate"`
-        
-        ModifiedDate time.Time `json:"modifiedDate"`
         *Alias
     }{
-
-        
-
-
-        
-
-
-        
-
-
-        
-
 
         
 

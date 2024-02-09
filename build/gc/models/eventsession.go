@@ -23,7 +23,7 @@ type EventsessionDud struct {
 
 // Eventsession
 type Eventsession struct { 
-    // Id
+    // Id - The ID of the session.
     Id string `json:"id"`
 
 

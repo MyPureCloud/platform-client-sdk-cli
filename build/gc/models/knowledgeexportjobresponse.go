@@ -45,6 +45,9 @@ type KnowledgeexportjobresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -61,6 +64,10 @@ type Knowledgeexportjobresponse struct {
 
     // FileType - File type of the document
     FileType string `json:"fileType"`
+
+
+    // JsonFileVersion - Requested version of the exported json file.
+    JsonFileVersion int `json:"jsonFileVersion"`
 
 
     // CountDocumentProcessed - The current count of the number of records processed.
@@ -112,6 +119,7 @@ func (o *Knowledgeexportjobresponse) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -135,6 +143,8 @@ func (u *Knowledgeexportjobresponse) MarshalJSON() ([]byte, error) {
         
         FileType string `json:"fileType"`
         
+        JsonFileVersion int `json:"jsonFileVersion"`
+        
         CountDocumentProcessed int `json:"countDocumentProcessed"`
         
         ExportFilter Knowledgeexportjobfilter `json:"exportFilter"`
@@ -152,6 +162,9 @@ func (u *Knowledgeexportjobresponse) MarshalJSON() ([]byte, error) {
         ErrorInformation Errorbody `json:"errorInformation"`
         *Alias
     }{
+
+        
+
 
         
 

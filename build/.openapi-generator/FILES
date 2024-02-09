@@ -51,6 +51,7 @@ gc/cmd/analytics_knowledge_aggregates_jobs/analytics_knowledge_aggregates_jobs.g
 gc/cmd/analytics_knowledge_aggregates_jobs_results/analytics_knowledge_aggregates_jobs_results.go
 gc/cmd/analytics_knowledge_aggregates_query/analytics_knowledge_aggregates_query.go
 gc/cmd/analytics_queues_observations_query/analytics_queues_observations_query.go
+gc/cmd/analytics_ratelimits_aggregates_query/analytics_ratelimits_aggregates_query.go
 gc/cmd/analytics_reporting_exports/analytics_reporting_exports.go
 gc/cmd/analytics_reporting_exports_metadata/analytics_reporting_exports_metadata.go
 gc/cmd/analytics_reporting_metadata/analytics_reporting_metadata.go
@@ -574,9 +575,12 @@ gc/cmd/knowledge_knowledgebases_languages_trainings/knowledge_knowledgebases_lan
 gc/cmd/knowledge_knowledgebases_languages_trainings_promote/knowledge_knowledgebases_languages_trainings_promote.go
 gc/cmd/knowledge_knowledgebases_operations/knowledge_knowledgebases_operations.go
 gc/cmd/knowledge_knowledgebases_operations_users_query/knowledge_knowledgebases_operations_users_query.go
+gc/cmd/knowledge_knowledgebases_parse_jobs/knowledge_knowledgebases_parse_jobs.go
+gc/cmd/knowledge_knowledgebases_parse_jobs_import/knowledge_knowledgebases_parse_jobs_import.go
 gc/cmd/knowledge_knowledgebases_search/knowledge_knowledgebases_search.go
 gc/cmd/knowledge_knowledgebases_unanswered_groups/knowledge_knowledgebases_unanswered_groups.go
 gc/cmd/knowledge_knowledgebases_unanswered_groups_phrasegroups/knowledge_knowledgebases_unanswered_groups_phrasegroups.go
+gc/cmd/knowledge_knowledgebases_uploads_urls_jobs/knowledge_knowledgebases_uploads_urls_jobs.go
 gc/cmd/languages/languages.go
 gc/cmd/languages_translations/languages_translations.go
 gc/cmd/languages_translations_builtin/languages_translations_builtin.go
@@ -683,6 +687,7 @@ gc/cmd/outbound_campaigns_interactions/outbound_campaigns_interactions.go
 gc/cmd/outbound_campaigns_progress/outbound_campaigns_progress.go
 gc/cmd/outbound_campaigns_stats/outbound_campaigns_stats.go
 gc/cmd/outbound_contactlistfilters/outbound_contactlistfilters.go
+gc/cmd/outbound_contactlistfilters_bulk_retrieve/outbound_contactlistfilters_bulk_retrieve.go
 gc/cmd/outbound_contactlistfilters_preview/outbound_contactlistfilters_preview.go
 gc/cmd/outbound_contactlists/outbound_contactlists.go
 gc/cmd/outbound_contactlists_clear/outbound_contactlists_clear.go
@@ -1756,6 +1761,7 @@ gc/models/contactlistdivisionview.go
 gc/models/contactlistdivisionviewlisting.go
 gc/models/contactlistentitylisting.go
 gc/models/contactlistfilter.go
+gc/models/contactlistfilterbulkretrievebody.go
 gc/models/contactlistfilterclause.go
 gc/models/contactlistfilterentitylisting.go
 gc/models/contactlistfilterpredicate.go
@@ -1915,6 +1921,8 @@ gc/models/createshareresponse.go
 gc/models/createtimeofflimitrequest.go
 gc/models/createtimeoffplanrequest.go
 gc/models/createtriggerrequest.go
+gc/models/createuploadsourceurljobrequest.go
+gc/models/createuploadsourceurljobresponse.go
 gc/models/createuser.go
 gc/models/createutilizationlabelrequest.go
 gc/models/createutilizationtagrequest.go
@@ -2183,6 +2191,7 @@ gc/models/emailaddress.go
 gc/models/emailattachment.go
 gc/models/emailbegintransmittingevent.go
 gc/models/emailcampaignschedule.go
+gc/models/emailcampaignscheduleentitylisting.go
 gc/models/emailcolumn.go
 gc/models/emailcommunicationansweredevent.go
 gc/models/emailcommunicationdispositionappliedevent.go
@@ -2463,6 +2472,7 @@ gc/models/getmetricsresponse.go
 gc/models/getprofilesresponse.go
 gc/models/getrulesquery.go
 gc/models/gettemplatesresponse.go
+gc/models/getuploadsourceurljobstatusresponse.go
 gc/models/gkndocumentationresult.go
 gc/models/gkndocumentationsearchcriteria.go
 gc/models/gkndocumentationsearchrequest.go
@@ -2627,6 +2637,7 @@ gc/models/journeygeolocation.go
 gc/models/journeypage.go
 gc/models/journeypattern.go
 gc/models/journeysegment.go
+gc/models/journeysegmentrequest.go
 gc/models/journeysurveyquestion.go
 gc/models/jsoncursorsearchresponse.go
 gc/models/jsonnode.go
@@ -2717,6 +2728,12 @@ gc/models/knowledgeimportjobrequest.go
 gc/models/knowledgeimportjobresponse.go
 gc/models/knowledgeimportjobsettings.go
 gc/models/knowledgeimportjobstatistics.go
+gc/models/knowledgeparseimportresult.go
+gc/models/knowledgeparsejobrequest.go
+gc/models/knowledgeparsejobrequestimport.go
+gc/models/knowledgeparsejobrequestpatch.go
+gc/models/knowledgeparsejobresponse.go
+gc/models/knowledgeparserecord.go
 gc/models/knowledgesearchclientapplication.go
 gc/models/knowledgesearchdocument.go
 gc/models/knowledgesearchrequest.go
@@ -3121,6 +3138,7 @@ gc/models/outcomeprobabilitycondition.go
 gc/models/outcomequantilecondition.go
 gc/models/outcomeref.go
 gc/models/outcomerefrequest.go
+gc/models/outcomerequest.go
 gc/models/outcomescore.go
 gc/models/outcomescoresresult.go
 gc/models/outlierinfo.go
@@ -3147,6 +3165,7 @@ gc/models/patchactionproperties.go
 gc/models/patchactionsurvey.go
 gc/models/patchactiontarget.go
 gc/models/patchactiontemplate.go
+gc/models/patchassociatedvaluefield.go
 gc/models/patchbureschedulingoptionsmanagementunitrequest.go
 gc/models/patchbureschedulingoptionsrequest.go
 gc/models/patchbuschedulerunrequest.go
@@ -3158,10 +3177,16 @@ gc/models/patchcontentoffer.go
 gc/models/patchcontentofferstyleproperties.go
 gc/models/patchcontentofferstylingconfiguration.go
 gc/models/patchcontentpositionproperties.go
+gc/models/patchcontext.go
+gc/models/patchcontextpattern.go
+gc/models/patchcriteria.go
 gc/models/patchctabuttonstyleproperties.go
+gc/models/patchentitytypecriteria.go
 gc/models/patchexternalsegment.go
 gc/models/patchintegrationaction.go
 gc/models/patchintegrationactionfields.go
+gc/models/patchjourney.go
+gc/models/patchjourneypattern.go
 gc/models/patchoutcome.go
 gc/models/patchpredictorrequest.go
 gc/models/patchsegment.go
@@ -3310,6 +3335,13 @@ gc/models/queuereference.go
 gc/models/queuerequest.go
 gc/models/queueutilizationdiagnostic.go
 gc/models/quickreply.go
+gc/models/ratelimitaggregatedatacontainer.go
+gc/models/ratelimitaggregatequeryclause.go
+gc/models/ratelimitaggregatequeryfilter.go
+gc/models/ratelimitaggregatequerypredicate.go
+gc/models/ratelimitaggregatequeryresponse.go
+gc/models/ratelimitaggregationquery.go
+gc/models/ratelimitaggregationview.go
 gc/models/reaction.go
 gc/models/realtimeadherenceexplanation.go
 gc/models/recallentry.go
@@ -3370,6 +3402,14 @@ gc/models/reportrunentryentitydomainlisting.go
 gc/models/reportschedule.go
 gc/models/reportscheduleentitylisting.go
 gc/models/requestconfig.go
+gc/models/requestcontext.go
+gc/models/requestcontextpattern.go
+gc/models/requestcriteria.go
+gc/models/requestdevice.go
+gc/models/requestentitytypecriteria.go
+gc/models/requestexternalsegment.go
+gc/models/requestjourney.go
+gc/models/requestjourneypattern.go
 gc/models/requestmapping.go
 gc/models/requestscoredagent.go
 gc/models/reschedulingmanagementunitresponse.go
@@ -3530,8 +3570,6 @@ gc/models/securesessionentitylisting.go
 gc/models/securityprofile.go
 gc/models/securityprofileentitylisting.go
 gc/models/segment.go
-gc/models/segmentassignedevent.go
-gc/models/segmentassignedeventsegment.go
 gc/models/segmentassignmentevent.go
 gc/models/segmentdetailqueryclause.go
 gc/models/segmentdetailqueryfilter.go

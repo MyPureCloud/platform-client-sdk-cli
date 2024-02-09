@@ -26,7 +26,7 @@ type OutcomeachievedeventoutcomeDud struct {
 
 // Outcomeachievedeventoutcome
 type Outcomeachievedeventoutcome struct { 
-    // Id
+    // Id - ID of the outcome.
     Id string `json:"id"`
 
 

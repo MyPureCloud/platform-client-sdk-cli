@@ -1,6 +1,5 @@
 package models
 import (
-    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -12,9 +11,6 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type PatchoutcomeDud struct { 
-    Id string `json:"id"`
-
-
     
 
 
@@ -31,15 +27,6 @@ type PatchoutcomeDud struct {
 
 
     
-
-
-    
-
-
-    
-
-
-    SelfUri string `json:"selfUri"`
 
 
     
@@ -51,9 +38,6 @@ type PatchoutcomeDud struct {
 
 // Patchoutcome
 type Patchoutcome struct { 
-    
-
-
     // IsActive - Whether or not the outcome is active.
     IsActive bool `json:"isActive"`
 
@@ -75,33 +59,20 @@ type Patchoutcome struct {
 
 
     // Context - The context of the outcome.
-    Context Context `json:"context"`
+    Context Patchcontext `json:"context"`
 
 
     // Journey - The pattern of rules defining the filter of the outcome.
-    Journey Journey `json:"journey"`
+    Journey Patchjourney `json:"journey"`
 
 
     // AssociatedValueField - The field from the event indicating the associated value.
-    AssociatedValueField Associatedvaluefield `json:"associatedValueField"`
-
-
-    
-
-
-    // CreatedDate - Timestamp indicating when the outcome was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    CreatedDate time.Time `json:"createdDate"`
-
-
-    // ModifiedDate - Timestamp indicating when the outcome was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    ModifiedDate time.Time `json:"modifiedDate"`
+    AssociatedValueField Patchassociatedvaluefield `json:"associatedValueField"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Patchoutcome) String() string {
-    
-    
     
     
     
@@ -137,29 +108,13 @@ func (u *Patchoutcome) MarshalJSON() ([]byte, error) {
         
         IsPositive bool `json:"isPositive"`
         
-        Context Context `json:"context"`
+        Context Patchcontext `json:"context"`
         
-        Journey Journey `json:"journey"`
+        Journey Patchjourney `json:"journey"`
         
-        AssociatedValueField Associatedvaluefield `json:"associatedValueField"`
-        
-        CreatedDate time.Time `json:"createdDate"`
-        
-        ModifiedDate time.Time `json:"modifiedDate"`
+        AssociatedValueField Patchassociatedvaluefield `json:"associatedValueField"`
         *Alias
     }{
-
-        
-
-
-        
-
-
-        
-
-
-        
-
 
         
 

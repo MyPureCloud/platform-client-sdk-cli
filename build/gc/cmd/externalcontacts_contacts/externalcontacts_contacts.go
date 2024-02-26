@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdexternalcontacts_contacts() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/contacts", utils.FormatPermissions([]string{ "externalContacts:contact:add",  }), utils.GenerateDevCentreLink("POST", "External Contacts", "/api/v2/externalcontacts/contacts")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/contacts", utils.FormatPermissions([]string{ "relate:contact:add", "externalContacts:contact:add",  }), utils.GenerateDevCentreLink("POST", "External Contacts", "/api/v2/externalcontacts/contacts")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "ExternalContact",
   "content" : {
@@ -53,7 +53,7 @@ func Cmdexternalcontacts_contacts() *cobra.Command {
 }`)
 	externalcontacts_contactsCmd.AddCommand(createCmd)
 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/externalcontacts/contacts/{contactId}", utils.FormatPermissions([]string{ "externalContacts:contact:delete",  }), utils.GenerateDevCentreLink("DELETE", "External Contacts", "/api/v2/externalcontacts/contacts/{contactId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/externalcontacts/contacts/{contactId}", utils.FormatPermissions([]string{ "relate:contact:delete", "externalContacts:contact:delete",  }), utils.GenerateDevCentreLink("DELETE", "External Contacts", "/api/v2/externalcontacts/contacts/{contactId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -69,7 +69,7 @@ func Cmdexternalcontacts_contacts() *cobra.Command {
 	externalcontacts_contactsCmd.AddCommand(deleteCmd)
 
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand (externalOrganization,externalDataSources) Valid values: externalOrganization, externalDataSources")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/contacts/{contactId}", utils.FormatPermissions([]string{ "externalContacts:contact:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/contacts/{contactId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/contacts/{contactId}", utils.FormatPermissions([]string{ "relate:contact:view", "externalContacts:contact:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/contacts/{contactId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -89,7 +89,7 @@ func Cmdexternalcontacts_contacts() *cobra.Command {
 	utils.AddFlag(searchCmd.Flags(), "string", "q", "", "User supplied search keywords (no special syntax is currently supported)")
 	utils.AddFlag(searchCmd.Flags(), "string", "sortOrder", "", "The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc")
 	utils.AddFlag(searchCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: externalOrganization, externalDataSources")
-	searchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", searchCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/contacts", utils.FormatPermissions([]string{ "externalContacts:contact:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/contacts")))
+	searchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", searchCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/contacts", utils.FormatPermissions([]string{ "relate:contact:view", "externalContacts:contact:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/contacts")))
 	utils.AddFileFlagIfUpsert(searchCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(searchCmd.Flags(), "GET", `{
@@ -104,7 +104,7 @@ func Cmdexternalcontacts_contacts() *cobra.Command {
 }`)
 	externalcontacts_contactsCmd.AddCommand(searchCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/externalcontacts/contacts/{contactId}", utils.FormatPermissions([]string{ "externalContacts:contact:edit",  }), utils.GenerateDevCentreLink("PUT", "External Contacts", "/api/v2/externalcontacts/contacts/{contactId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/externalcontacts/contacts/{contactId}", utils.FormatPermissions([]string{ "relate:contact:edit", "externalContacts:contact:edit",  }), utils.GenerateDevCentreLink("PUT", "External Contacts", "/api/v2/externalcontacts/contacts/{contactId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "ExternalContact",
   "content" : {

@@ -52,6 +52,9 @@ type KnowledgedocumentsearchrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgedocumentsearchrequest
@@ -108,10 +111,15 @@ type Knowledgedocumentsearchrequest struct {
     // ConversationContext - Conversation context information if the search is initiated in the context of a conversation.
     ConversationContext Knowledgeconversationcontext `json:"conversationContext"`
 
+
+    // ConfidenceThreshold - The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. The value should be between 0 to 1.
+    ConfidenceThreshold float32 `json:"confidenceThreshold"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentsearchrequest) String() string {
+    
     
     
     
@@ -161,8 +169,13 @@ func (u *Knowledgedocumentsearchrequest) MarshalJSON() ([]byte, error) {
         Application Knowledgesearchclientapplication `json:"application"`
         
         ConversationContext Knowledgeconversationcontext `json:"conversationContext"`
+        
+        ConfidenceThreshold float32 `json:"confidenceThreshold"`
         *Alias
     }{
+
+        
+
 
         
 

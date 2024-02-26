@@ -24,6 +24,9 @@ type BenefitassessmentDud struct {
     State string `json:"state"`
 
 
+    JobId string `json:"jobId"`
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -36,6 +39,9 @@ type BenefitassessmentDud struct {
 
 // Benefitassessment
 type Benefitassessment struct { 
+    
+
+
     
 
 
@@ -78,6 +84,9 @@ func (u *Benefitassessment) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

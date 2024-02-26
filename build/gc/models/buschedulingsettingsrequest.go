@@ -19,6 +19,9 @@ type BuschedulingsettingsrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Buschedulingsettingsrequest
@@ -34,11 +37,16 @@ type Buschedulingsettingsrequest struct {
     // ServiceGoalImpact - Configures the max percent increase and decrease of service goals for this business unit
     ServiceGoalImpact Wfmservicegoalimpactsettings `json:"serviceGoalImpact"`
 
+
+    // AllowWorkPlanPerMinuteGranularity - Indicates whether or not per minute granularity for scheduling will be enabled for this business unit
+    AllowWorkPlanPerMinuteGranularity bool `json:"allowWorkPlanPerMinuteGranularity"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Buschedulingsettingsrequest) String() string {
      o.MessageSeverities = []Schedulermessagetypeseverity{{}} 
+    
     
     
 
@@ -63,11 +71,16 @@ func (u *Buschedulingsettingsrequest) MarshalJSON() ([]byte, error) {
         SyncTimeOffProperties Setwrappersynctimeoffproperty `json:"syncTimeOffProperties"`
         
         ServiceGoalImpact Wfmservicegoalimpactsettings `json:"serviceGoalImpact"`
+        
+        AllowWorkPlanPerMinuteGranularity bool `json:"allowWorkPlanPerMinuteGranularity"`
         *Alias
     }{
 
         
         MessageSeverities: []Schedulermessagetypeseverity{{}},
+        
+
+
         
 
 

@@ -58,6 +58,9 @@ type WorktypecreateDud struct {
 
     
 
+
+    
+
 }
 
 // Worktypecreate
@@ -98,6 +101,10 @@ type Worktypecreate struct {
     SchemaId string `json:"schemaId"`
 
 
+    // ServiceLevelTarget - The target service level for Workitems created from the Worktype. The default value is 100.
+    ServiceLevelTarget int `json:"serviceLevelTarget"`
+
+
     // Description - The description of the Worktype. Maximum length of 4096 characters.
     Description string `json:"description"`
 
@@ -129,6 +136,7 @@ type Worktypecreate struct {
 
 // String returns a JSON representation of the model
 func (o *Worktypecreate) String() string {
+    
     
     
     
@@ -180,6 +188,8 @@ func (u *Worktypecreate) MarshalJSON() ([]byte, error) {
         
         SchemaId string `json:"schemaId"`
         
+        ServiceLevelTarget int `json:"serviceLevelTarget"`
+        
         Description string `json:"description"`
         
         DivisionId string `json:"divisionId"`
@@ -195,6 +205,9 @@ func (u *Worktypecreate) MarshalJSON() ([]byte, error) {
         DefaultSkillIds []string `json:"defaultSkillIds"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -53,6 +53,9 @@ type ChatmessageresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Chatmessageresponse
@@ -101,6 +104,10 @@ type Chatmessageresponse struct {
     Thread Entity `json:"thread"`
 
 
+    // ParentThread - Parent thread id for thread replies
+    ParentThread Entity `json:"parentThread"`
+
+
     // User - The user who sent the message
     User Addressableentityref `json:"user"`
 
@@ -123,6 +130,7 @@ func (o *Chatmessageresponse) String() string {
     
     
      o.Mentions = map[string]string{"": ""} 
+    
     
     
     
@@ -169,6 +177,8 @@ func (u *Chatmessageresponse) MarshalJSON() ([]byte, error) {
         
         Thread Entity `json:"thread"`
         
+        ParentThread Entity `json:"parentThread"`
+        
         User Addressableentityref `json:"user"`
         
         ToUser Addressableentityref `json:"toUser"`
@@ -197,6 +207,9 @@ func (u *Chatmessageresponse) MarshalJSON() ([]byte, error) {
 
         
         Mentions: map[string]string{"": ""},
+        
+
+
         
 
 

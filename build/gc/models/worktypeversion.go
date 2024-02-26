@@ -75,6 +75,9 @@ type WorktypeversionDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -160,6 +163,10 @@ type Worktypeversion struct {
     Schema Workitemschema `json:"schema"`
 
 
+    // ServiceLevelTarget - The target service level for Workitems created from the Worktype. The default value is 100.
+    ServiceLevelTarget int `json:"serviceLevelTarget"`
+
+
     // Version - Version
     Version int `json:"version"`
 
@@ -187,6 +194,7 @@ func (o *Worktypeversion) String() string {
     
     
      o.DefaultSkills = []Routingskillreference{{}} 
+    
     
     
     
@@ -244,6 +252,8 @@ func (u *Worktypeversion) MarshalJSON() ([]byte, error) {
         AssignmentEnabled bool `json:"assignmentEnabled"`
         
         Schema Workitemschema `json:"schema"`
+        
+        ServiceLevelTarget int `json:"serviceLevelTarget"`
         
         Version int `json:"version"`
         *Alias
@@ -304,6 +314,9 @@ func (u *Worktypeversion) MarshalJSON() ([]byte, error) {
 
         
         DefaultSkills: []Routingskillreference{{}},
+        
+
+
         
 
 

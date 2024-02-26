@@ -55,6 +55,9 @@ type WorktypeupdateDud struct {
 
     
 
+
+    
+
 }
 
 // Worktypeupdate
@@ -95,6 +98,10 @@ type Worktypeupdate struct {
     SchemaId string `json:"schemaId"`
 
 
+    // ServiceLevelTarget - The target service level for Workitems created from the Worktype. The default value is 100.
+    ServiceLevelTarget int `json:"serviceLevelTarget"`
+
+
     // Description - The description of the Worktype. Maximum length of 4096 characters.
     Description string `json:"description"`
 
@@ -122,6 +129,7 @@ type Worktypeupdate struct {
 
 // String returns a JSON representation of the model
 func (o *Worktypeupdate) String() string {
+    
     
     
     
@@ -172,6 +180,8 @@ func (u *Worktypeupdate) MarshalJSON() ([]byte, error) {
         
         SchemaId string `json:"schemaId"`
         
+        ServiceLevelTarget int `json:"serviceLevelTarget"`
+        
         Description string `json:"description"`
         
         DefaultStatusId string `json:"defaultStatusId"`
@@ -185,6 +195,9 @@ func (u *Worktypeupdate) MarshalJSON() ([]byte, error) {
         DefaultQueueId string `json:"defaultQueueId"`
         *Alias
     }{
+
+        
+
 
         
 

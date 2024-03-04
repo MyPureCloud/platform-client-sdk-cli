@@ -42,10 +42,10 @@ type MinerDud struct {
     Message string `json:"message"`
 
 
-    ErrorInfo Errorinfo `json:"errorInfo"`
+    ErrorInfo Minererrorinfo `json:"errorInfo"`
 
 
-    WarningInfo Errorinfo `json:"warningInfo"`
+    WarningInfo Minererrorinfo `json:"warningInfo"`
 
 
     ConversationDataUploaded bool `json:"conversationDataUploaded"`

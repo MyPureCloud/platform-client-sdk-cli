@@ -529,6 +529,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1224,6 +1227,10 @@ type Viewfilter struct {
     // IsParked - Filter to indicate if the interactions are parked.
     IsParked bool `json:"isParked"`
 
+
+    // AgentEmpathyScore - The agentEmpathyScore is used to filter the view
+    AgentEmpathyScore Numericrange `json:"agentEmpathyScore"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1400,6 +1407,7 @@ func (o *Viewfilter) String() string {
     
      o.AssistantIds = []string{""} 
      o.KnowledgeBaseIds = []string{""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -1763,6 +1771,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         KnowledgeBaseIds []string `json:"knowledgeBaseIds"`
         
         IsParked bool `json:"isParked"`
+        
+        AgentEmpathyScore Numericrange `json:"agentEmpathyScore"`
         *Alias
     }{
 
@@ -2523,6 +2533,9 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         KnowledgeBaseIds: []string{""},
+        
+
+
         
 
 

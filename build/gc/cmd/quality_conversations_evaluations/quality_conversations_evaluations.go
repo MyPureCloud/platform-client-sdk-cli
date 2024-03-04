@@ -35,7 +35,7 @@ func Cmdquality_conversations_evaluations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/Evaluation"
+        "$ref" : "#/components/schemas/EvaluationCreateBody"
       }
     }
   },
@@ -131,7 +131,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Evaluation{}
+			reqModel := models.Evaluationcreatebody{}
 			utils.Render(reqModel.String())
 			
 			return

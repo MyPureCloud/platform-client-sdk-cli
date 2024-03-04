@@ -16,6 +16,12 @@ type CommonrulebulkupdatenotificationsrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Commonrulebulkupdatenotificationsrequest
@@ -27,12 +33,22 @@ type Commonrulebulkupdatenotificationsrequest struct {
     // Properties - The rule properties to be updated
     Properties Modifiableruleproperties `json:"properties"`
 
+
+    // TypesToAdd - Collection of alerting notification types to add for all entities in the rules
+    TypesToAdd []string `json:"typesToAdd"`
+
+
+    // TypesToRemove - Collection of alerting notification types to remove for all entities in the rules
+    TypesToRemove []string `json:"typesToRemove"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Commonrulebulkupdatenotificationsrequest) String() string {
      o.RuleIds = []string{""} 
     
+     o.TypesToAdd = []string{""} 
+     o.TypesToRemove = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,6 +69,10 @@ func (u *Commonrulebulkupdatenotificationsrequest) MarshalJSON() ([]byte, error)
         RuleIds []string `json:"ruleIds"`
         
         Properties Modifiableruleproperties `json:"properties"`
+        
+        TypesToAdd []string `json:"typesToAdd"`
+        
+        TypesToRemove []string `json:"typesToRemove"`
         *Alias
     }{
 
@@ -61,6 +81,16 @@ func (u *Commonrulebulkupdatenotificationsrequest) MarshalJSON() ([]byte, error)
         
 
 
+        
+
+
+        
+        TypesToAdd: []string{""},
+        
+
+
+        
+        TypesToRemove: []string{""},
         
 
         Alias: (*Alias)(u),

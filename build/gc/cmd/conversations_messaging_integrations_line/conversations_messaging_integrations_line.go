@@ -198,8 +198,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [integrationId]",
-	Short: "Delete a LINE messenger integration",
-	Long:  "Delete a LINE messenger integration",
+	Short: "Delete a LINE messenger integration (Deprecated)",
+	Long:  "Delete a LINE messenger integration (Deprecated)",
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -263,8 +263,8 @@ var deleteCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [integrationId]",
-	Short: "Get a LINE messenger integration",
-	Long:  "Get a LINE messenger integration",
+	Short: "Get a LINE messenger integration (Deprecated)",
+	Long:  "Get a LINE messenger integration (Deprecated)",
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -332,8 +332,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get a list of LINE messenger Integrations",
-	Long:  "Get a list of LINE messenger Integrations",
+	Short: "Get a list of LINE messenger Integrations (Deprecated)",
+	Long:  "Get a list of LINE messenger Integrations (Deprecated)",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -415,8 +415,8 @@ var listCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [integrationId]",
-	Short: "Update a LINE messenger integration",
-	Long:  "Update a LINE messenger integration",
+	Short: "Update a LINE messenger integration (Deprecated)",
+	Long:  "Update a LINE messenger integration (Deprecated)",
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

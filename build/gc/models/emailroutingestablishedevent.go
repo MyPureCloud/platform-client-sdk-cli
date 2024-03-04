@@ -73,7 +73,7 @@ type Emailroutingestablishedevent struct {
     LanguageId string `json:"languageId"`
 
 
-    // Label - An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level.
+    // Label - An optional label that categorizes the conversation. Max-utilization settings can be configured at a per-label level.
     Label string `json:"label"`
 
 

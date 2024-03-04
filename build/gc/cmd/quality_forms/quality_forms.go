@@ -330,8 +330,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get the list of evaluation forms",
-	Long:  "Get the list of evaluation forms",
+	Short: "Get the list of evaluation forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding evaluation form.",
+	Long:  "Get the list of evaluation forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding evaluation form.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

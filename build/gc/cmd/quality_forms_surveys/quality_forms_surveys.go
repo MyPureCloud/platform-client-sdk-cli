@@ -423,8 +423,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get the list of survey forms",
-	Long:  "Get the list of survey forms",
+	Short: "Get the list of survey forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding survey form.",
+	Long:  "Get the list of survey forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding survey form.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

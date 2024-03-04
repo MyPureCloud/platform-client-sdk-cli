@@ -38,7 +38,7 @@ type Buschedulingsettingsresponse struct {
     ServiceGoalImpact Wfmservicegoalimpactsettings `json:"serviceGoalImpact"`
 
 
-    // AllowWorkPlanPerMinuteGranularity - Indicates whether or not per minute granularity for scheduling will be enabled for this business unit
+    // AllowWorkPlanPerMinuteGranularity - Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
     AllowWorkPlanPerMinuteGranularity bool `json:"allowWorkPlanPerMinuteGranularity"`
 
 }

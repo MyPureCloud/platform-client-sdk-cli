@@ -29,7 +29,17 @@ func init() {
 
 func Cmdoutbound_contactlists_export() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/contactlists/{contactListId}/export", utils.FormatPermissions([]string{ "outbound:contact:view", "outbound:contactList:view",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/contactlists/{contactListId}/export")))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "description" : "Export information to get",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ContactsExportRequest"
+      }
+    }
+  },
+  "required" : false
+}`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
@@ -77,6 +87,9 @@ var createCmd = &cobra.Command{
 
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
+			
+			reqModel := models.Contactsexportrequest{}
+			utils.Render(reqModel.String())
 			
 			return
 		}

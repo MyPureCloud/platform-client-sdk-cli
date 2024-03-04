@@ -111,6 +111,9 @@ type CampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -245,6 +248,10 @@ type Campaign struct {
     DynamicContactQueueingSettings Dynamiccontactqueueingsettings `json:"dynamicContactQueueingSettings"`
 
 
+    // MaxCallsPerAgent - The maximum number of calls that can be placed per agent on this campaign
+    MaxCallsPerAgent int `json:"maxCallsPerAgent"`
+
+
     
 
 }
@@ -278,6 +285,7 @@ func (o *Campaign) String() string {
     
     
      o.ContactListFilters = []Domainentityref{{}} 
+    
     
     
 
@@ -354,6 +362,8 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
         Division Domainentityref `json:"division"`
         
         DynamicContactQueueingSettings Dynamiccontactqueueingsettings `json:"dynamicContactQueueingSettings"`
+        
+        MaxCallsPerAgent int `json:"maxCallsPerAgent"`
         *Alias
     }{
 
@@ -457,6 +467,9 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
 
         
         ContactListFilters: []Domainentityref{{}},
+        
+
+
         
 
 

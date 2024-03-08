@@ -12,18 +12,27 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ContactidentifierDud struct { 
-    
+    Id string `json:"id"`
 
 
     
 
 
     
+
+
+    
+
+
+    SelfUri string `json:"selfUri"`
 
 }
 
 // Contactidentifier
 type Contactidentifier struct { 
+    
+
+
     // VarType - The type of this identifier
     VarType string `json:"type"`
 
@@ -34,6 +43,9 @@ type Contactidentifier struct {
 
     // DateCreated - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateCreated time.Time `json:"dateCreated"`
+
+
+    
 
 }
 
@@ -66,6 +78,12 @@ func (u *Contactidentifier) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

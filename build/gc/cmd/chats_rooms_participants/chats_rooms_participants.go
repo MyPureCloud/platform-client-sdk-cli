@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("chats_rooms_participants", "SWAGGER_OVERRIDE_/api/v2/chats/rooms/{roomJid}/participants", "SWAGGER_OVERRIDE_/api/v2/chats/rooms/{roomJid}/participants", )
+	Description = utils.FormatUsageDescription("chats_rooms_participants", "SWAGGER_OVERRIDE_/api/v2/chats/rooms/{roomJid}/participants", "SWAGGER_OVERRIDE_/api/v2/chats/rooms/{roomJid}/participants", "SWAGGER_OVERRIDE_/api/v2/chats/rooms/{roomJid}/participants", "SWAGGER_OVERRIDE_/api/v2/chats/rooms/{roomJid}/participants", )
 	chats_rooms_participantsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("chats_rooms_participants"),
 		Short: Description,
@@ -45,6 +45,36 @@ func Cmdchats_rooms_participants() *cobra.Command {
   "content" : { }
 }`)
 	chats_rooms_participantsCmd.AddCommand(deleteCmd)
+
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/chats/rooms/{roomJid}/participants/{participantJid}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Chat", "/api/v2/chats/rooms/{roomJid}/participants/{participantJid}")))
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RoomParticipant"
+      }
+    }
+  }
+}`)
+	chats_rooms_participantsCmd.AddCommand(getCmd)
+
+	getRoomParticipantsCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getRoomParticipantsCmd.UsageTemplate(), "GET", "/api/v2/chats/rooms/{roomJid}/participants", utils.FormatPermissions([]string{ "chat:chat:access", "chat:room:view",  }), utils.GenerateDevCentreLink("GET", "Chat", "/api/v2/chats/rooms/{roomJid}/participants")))
+	utils.AddFileFlagIfUpsert(getRoomParticipantsCmd.Flags(), "GET", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(getRoomParticipantsCmd.Flags(), "GET", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RoomParticipantsResponse"
+      }
+    }
+  }
+}`)
+	chats_rooms_participantsCmd.AddCommand(getRoomParticipantsCmd)
 	return chats_rooms_participantsCmd
 }
 
@@ -158,6 +188,138 @@ var deleteCmd = &cobra.Command{
 
 		const opId = "delete"
 		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var getCmd = &cobra.Command{
+	Use:   "get [roomJid] [participantJid]",
+	Short: "Get a room participant",
+	Long:  "Get a room participant",
+	Args:  utils.DetermineArgs([]string{ "roomJid", "participantJid", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/chats/rooms/{roomJid}/participants/{participantJid}"
+		roomJid, args := args[0], args[1:]
+		path = strings.Replace(path, "{roomJid}", fmt.Sprintf("%v", roomJid), -1)
+		participantJid, args := args[0], args[1:]
+		path = strings.Replace(path, "{participantJid}", fmt.Sprintf("%v", participantJid), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var getRoomParticipantsCmd = &cobra.Command{
+	Use:   "getRoomParticipants [roomJid]",
+	Short: "Get room participants in a room",
+	Long:  "Get room participants in a room",
+	Args:  utils.DetermineArgs([]string{ "roomJid", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/chats/rooms/{roomJid}/participants"
+		roomJid, args := args[0], args[1:]
+		path = strings.Replace(path, "{roomJid}", fmt.Sprintf("%v", roomJid), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		const opId = "getRoomParticipants"
+		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

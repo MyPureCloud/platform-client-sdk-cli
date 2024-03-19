@@ -36,10 +36,6 @@ type Documentbodyblock struct {
     VarType string `json:"type"`
 
 
-    // Paragraph - Paragraph. It must contain a value if the type of the block is Paragraph.
-    Paragraph Documentbodyparagraph `json:"paragraph"`
-
-
     // Image - Image. It must contain a value if the type of the block is Image.
     Image Documentbodyimage `json:"image"`
 
@@ -54,6 +50,10 @@ type Documentbodyblock struct {
 
     // Table - Table. It must contain a value if type of the block is Table.
     Table Documentbodytable `json:"table"`
+
+
+    // Paragraph - Paragraph. It must contain a value if the type of the block is Paragraph.
+    Paragraph Documentbodyparagraph `json:"paragraph"`
 
 }
 
@@ -84,8 +84,6 @@ func (u *Documentbodyblock) MarshalJSON() ([]byte, error) {
         
         VarType string `json:"type"`
         
-        Paragraph Documentbodyparagraph `json:"paragraph"`
-        
         Image Documentbodyimage `json:"image"`
         
         Video Documentbodyvideo `json:"video"`
@@ -93,6 +91,8 @@ func (u *Documentbodyblock) MarshalJSON() ([]byte, error) {
         List Documentbodylist `json:"list"`
         
         Table Documentbodytable `json:"table"`
+        
+        Paragraph Documentbodyparagraph `json:"paragraph"`
         *Alias
     }{
 

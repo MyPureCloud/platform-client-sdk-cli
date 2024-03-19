@@ -147,6 +147,7 @@ gc/cmd/billing_trusteebillingoverview/billing_trusteebillingoverview.go
 gc/cmd/carrierservices_integrations_emergencylocations_me/carrierservices_integrations_emergencylocations_me.go
 gc/cmd/certificate_details/certificate_details.go
 gc/cmd/chats_messages/chats_messages.go
+gc/cmd/chats_messages_reactions/chats_messages_reactions.go
 gc/cmd/chats_rooms/chats_rooms.go
 gc/cmd/chats_rooms_messages/chats_rooms_messages.go
 gc/cmd/chats_rooms_participants/chats_rooms_participants.go
@@ -556,7 +557,12 @@ gc/cmd/journey_sessions/journey_sessions.go
 gc/cmd/journey_sessions_events/journey_sessions_events.go
 gc/cmd/journey_sessions_outcomescores/journey_sessions_outcomescores.go
 gc/cmd/journey_views/journey_views.go
+gc/cmd/journey_views_encodings_validate/journey_views_encodings_validate.go
+gc/cmd/journey_views_eventdefinitions/journey_views_eventdefinitions.go
 gc/cmd/journey_views_versions/journey_views_versions.go
+gc/cmd/journey_views_versions_jobs/journey_views_versions_jobs.go
+gc/cmd/journey_views_versions_jobs_latest/journey_views_versions_jobs_latest.go
+gc/cmd/journey_views_versions_jobs_results/journey_views_versions_jobs_results.go
 gc/cmd/knowledge_documentuploads/knowledge_documentuploads.go
 gc/cmd/knowledge_guest_sessions/knowledge_guest_sessions.go
 gc/cmd/knowledge_guest_sessions_categories/knowledge_guest_sessions_categories.go
@@ -797,6 +803,7 @@ gc/cmd/recordings_deletionprotection/recordings_deletionprotection.go
 gc/cmd/recordings_retention_query/recordings_retention_query.go
 gc/cmd/recordings_screensessions/recordings_screensessions.go
 gc/cmd/recordings_screensessions_acknowledge/recordings_screensessions_acknowledge.go
+gc/cmd/recordings_screensessions_details/recordings_screensessions_details.go
 gc/cmd/recordings_screensessions_metadata/recordings_screensessions_metadata.go
 gc/cmd/responsemanagement_libraries/responsemanagement_libraries.go
 gc/cmd/responsemanagement_responseassets/responsemanagement_responseassets.go
@@ -1109,6 +1116,12 @@ gc/cmd/workforcemanagement_businessunits_planninggroups/workforcemanagement_busi
 gc/cmd/workforcemanagement_businessunits_scheduling_runs/workforcemanagement_businessunits_scheduling_runs.go
 gc/cmd/workforcemanagement_businessunits_scheduling_runs_result/workforcemanagement_businessunits_scheduling_runs_result.go
 gc/cmd/workforcemanagement_businessunits_servicegoaltemplates/workforcemanagement_businessunits_servicegoaltemplates.go
+gc/cmd/workforcemanagement_businessunits_staffinggroups/workforcemanagement_businessunits_staffinggroups.go
+gc/cmd/workforcemanagement_businessunits_staffinggroups_query/workforcemanagement_businessunits_staffinggroups_query.go
+gc/cmd/workforcemanagement_businessunits_timeofflimits/workforcemanagement_businessunits_timeofflimits.go
+gc/cmd/workforcemanagement_businessunits_timeofflimits_values/workforcemanagement_businessunits_timeofflimits_values.go
+gc/cmd/workforcemanagement_businessunits_timeofflimits_values_query/workforcemanagement_businessunits_timeofflimits_values_query.go
+gc/cmd/workforcemanagement_businessunits_timeoffplans/workforcemanagement_businessunits_timeoffplans.go
 gc/cmd/workforcemanagement_businessunits_weeks_schedules/workforcemanagement_businessunits_weeks_schedules.go
 gc/cmd/workforcemanagement_businessunits_weeks_schedules_agentschedules_query/workforcemanagement_businessunits_weeks_schedules_agentschedules_query.go
 gc/cmd/workforcemanagement_businessunits_weeks_schedules_copy/workforcemanagement_businessunits_weeks_schedules_copy.go
@@ -1307,6 +1320,7 @@ gc/models/alertruleproperties.go
 gc/models/alertsummary.go
 gc/models/alertsummaryentity.go
 gc/models/alltimepoints.go
+gc/models/alteration.go
 gc/models/amazonlexrequest.go
 gc/models/analyticsagentgroup.go
 gc/models/analyticsconversation.go
@@ -1497,6 +1511,8 @@ gc/models/buasyncschedulerunresponse.go
 gc/models/buaveragespeedofanswer.go
 gc/models/bucopyschedulerequest.go
 gc/models/bucreateblankschedulerequest.go
+gc/models/bucreatetimeofflimitrequest.go
+gc/models/bucreatetimeoffplanrequest.go
 gc/models/bucurrentagentschedulesearchresponse.go
 gc/models/buforecastgenerationplanninggroupresult.go
 gc/models/buforecastgenerationresult.go
@@ -1577,6 +1593,7 @@ gc/models/buschedulingsettingsrequest.go
 gc/models/buschedulingsettingsresponse.go
 gc/models/busearchagentschedulesrequest.go
 gc/models/buservicelevel.go
+gc/models/busettimeofflimitvaluesrequest.go
 gc/models/bushorttermforecast.go
 gc/models/bushorttermforecastingsettings.go
 gc/models/bushorttermforecastlisting.go
@@ -1589,10 +1606,19 @@ gc/models/businessunitlistitem.go
 gc/models/businessunitreference.go
 gc/models/businessunitresponse.go
 gc/models/businessunitsettingsresponse.go
+gc/models/butimeofflimitlisting.go
+gc/models/butimeofflimitrange.go
+gc/models/butimeofflimitreference.go
+gc/models/butimeofflimitresponse.go
+gc/models/butimeofflimitvaluerange.go
+gc/models/butimeofflimitvaluesresponse.go
+gc/models/butimeoffplanlisting.go
+gc/models/butimeoffplanresponse.go
 gc/models/buttoncomponent.go
 gc/models/buttonresponse.go
 gc/models/buupdateagentscheduleshift.go
 gc/models/buupdateagentscheduleuploadschema.go
+gc/models/buupdatetimeoffplanrequest.go
 gc/models/cachedmediaitem.go
 gc/models/cachedmediaitementitylisting.go
 gc/models/calendarurlresponse.go
@@ -1684,6 +1710,7 @@ gc/models/chatmessageentitylisting.go
 gc/models/chatmessageresponse.go
 gc/models/chatmessageuser.go
 gc/models/chatreaction.go
+gc/models/chatreactionupdate.go
 gc/models/chatsendmessageresponse.go
 gc/models/chatsettings.go
 gc/models/chatusersettings.go
@@ -1941,7 +1968,10 @@ gc/models/createservicegoaltemplate.go
 gc/models/createsharerequest.go
 gc/models/createsharerequestmember.go
 gc/models/createshareresponse.go
+gc/models/createstaffinggrouprequest.go
 gc/models/createtimeofflimitrequest.go
+gc/models/createtimeoffplanbusinessunitassociation.go
+gc/models/createtimeoffplanmanagementunitassociation.go
 gc/models/createtimeoffplanrequest.go
 gc/models/createtriggerrequest.go
 gc/models/createuploadsourceurljobrequest.go
@@ -2681,6 +2711,8 @@ gc/models/journeycampaign.go
 gc/models/journeycontext.go
 gc/models/journeycustomer.go
 gc/models/journeycustomersession.go
+gc/models/journeyeventdefinition.go
+gc/models/journeyeventdefinitionlisting.go
 gc/models/journeyeventssettings.go
 gc/models/journeygeolocation.go
 gc/models/journeypage.go
@@ -2693,8 +2725,13 @@ gc/models/journeyviewelement.go
 gc/models/journeyviewelementattributes.go
 gc/models/journeyviewelementfilter.go
 gc/models/journeyviewelementfilterpredicate.go
+gc/models/journeyviewjob.go
 gc/models/journeyviewlink.go
 gc/models/journeyviewlinktimeconstraint.go
+gc/models/journeyviewresult.go
+gc/models/journeyviewresultelement.go
+gc/models/journeyviewresultlink.go
+gc/models/journeyviewresultmetrics.go
 gc/models/journeyviewuser.go
 gc/models/jsoncursorsearchresponse.go
 gc/models/jsonnode.go
@@ -2803,6 +2840,7 @@ gc/models/knowledgesearchrequest.go
 gc/models/knowledgesearchresponse.go
 gc/models/knowledgetraining.go
 gc/models/kpiresult.go
+gc/models/label.go
 gc/models/labelcreaterequest.go
 gc/models/labellisting.go
 gc/models/labelresponse.go
@@ -2896,6 +2934,8 @@ gc/models/licenseuser.go
 gc/models/limit.go
 gc/models/limitchangerequestdetails.go
 gc/models/limitchangerequestsentitylisting.go
+gc/models/limitdocs.go
+gc/models/limitdocumentation.go
 gc/models/limitsentitylisting.go
 gc/models/line.go
 gc/models/linebase.go
@@ -3089,6 +3129,7 @@ gc/models/namedentitytypebinding.go
 gc/models/namedentitytypedefinition.go
 gc/models/namedentitytypeitem.go
 gc/models/namedentitytypemechanism.go
+gc/models/namespacedocs.go
 gc/models/networkconnectivity.go
 gc/models/nluconfusionmatrixcolumn.go
 gc/models/nluconfusionmatrixrow.go
@@ -3279,6 +3320,7 @@ gc/models/patchsurveyquestion.go
 gc/models/patchtextstyleproperties.go
 gc/models/patchuser.go
 gc/models/patchwebmessagingofferfields.go
+gc/models/pattern.go
 gc/models/performancepredictionoutputs.go
 gc/models/performancepredictionrecalculationresponse.go
 gc/models/performancepredictionrecalculationuploadresponse.go
@@ -3400,6 +3442,7 @@ gc/models/queryresults.go
 gc/models/querytimeoffintegrationstatusrequest.go
 gc/models/querytimeofflimitvaluesrequest.go
 gc/models/querytimeofflimitvaluesresponse.go
+gc/models/queryuserstaffinggrouplistrequest.go
 gc/models/querywaitlistpositionsrequest.go
 gc/models/queue.go
 gc/models/queueemailaddress.go
@@ -3419,6 +3462,7 @@ gc/models/queuereference.go
 gc/models/queuerequest.go
 gc/models/queueutilizationdiagnostic.go
 gc/models/quickreply.go
+gc/models/range.go
 gc/models/ratelimitaggregatedatacontainer.go
 gc/models/ratelimitaggregatequeryclause.go
 gc/models/ratelimitaggregatequeryfilter.go
@@ -3460,6 +3504,7 @@ gc/models/regiontimezone.go
 gc/models/registerarchitectjobresponse.go
 gc/models/relationship.go
 gc/models/relationshiplisting.go
+gc/models/reoccurrence.go
 gc/models/replacementterm.go
 gc/models/replacerequest.go
 gc/models/replaceresponse.go
@@ -3539,6 +3584,9 @@ gc/models/roledivision.go
 gc/models/roledivisiongrants.go
 gc/models/roledivisionpair.go
 gc/models/room.go
+gc/models/roomparticipant.go
+gc/models/roomparticipantresponse.go
+gc/models/roomparticipantsresponse.go
 gc/models/roomupdaterequest.go
 gc/models/routepathrequest.go
 gc/models/routepathresponse.go
@@ -3628,6 +3676,7 @@ gc/models/scimv2schemalistresponse.go
 gc/models/scimv2user.go
 gc/models/scorablesurvey.go
 gc/models/scoredagent.go
+gc/models/screenrecordingactivesessions.go
 gc/models/screenrecordingmetadata.go
 gc/models/screenrecordingmetadatarequest.go
 gc/models/screenrecordingsession.go
@@ -3761,6 +3810,9 @@ gc/models/sourceplanninggrouprequest.go
 gc/models/speechtextanalyticssettingsrequest.go
 gc/models/speechtextanalyticssettingsresponse.go
 gc/models/splittinginformation.go
+gc/models/staffinggrouplisting.go
+gc/models/staffinggroupreference.go
+gc/models/staffinggroupresponse.go
 gc/models/staffingrequirementsplanninggroupdata.go
 gc/models/starrabledivision.go
 gc/models/station.go
@@ -3841,6 +3893,7 @@ gc/models/taskmanagementaggregationquery.go
 gc/models/taskmanagementaggregationview.go
 gc/models/taskmanagementasyncaggregatequeryresponse.go
 gc/models/taskmanagementasyncaggregationquery.go
+gc/models/taskmanagementerrordetails.go
 gc/models/team.go
 gc/models/teamactivitydata.go
 gc/models/teamactivityentitydata.go
@@ -3914,7 +3967,9 @@ gc/models/timeofflimitrange.go
 gc/models/timeofflimitreference.go
 gc/models/timeofflimitvaluerange.go
 gc/models/timeoffplan.go
+gc/models/timeoffplanbusinessunitassociation.go
 gc/models/timeoffplanlisting.go
+gc/models/timeoffplanmanagementunitassociation.go
 gc/models/timeoffrequest.go
 gc/models/timeoffrequestlist.go
 gc/models/timeoffrequestlisting.go
@@ -4058,7 +4113,10 @@ gc/models/updateplanninggrouprequest.go
 gc/models/updatescheduleuploadresponse.go
 gc/models/updatescheduleuploadschema.go
 gc/models/updateservicegoaltemplate.go
+gc/models/updatestaffinggrouprequest.go
 gc/models/updatetimeofflimitrequest.go
+gc/models/updatetimeoffplanbusinessunitassociation.go
+gc/models/updatetimeoffplanmanagementunitassociation.go
 gc/models/updatetimeoffplanrequest.go
 gc/models/updatetriggerrequest.go
 gc/models/updateuser.go
@@ -4158,6 +4216,8 @@ gc/models/usersearchrequest.go
 gc/models/userskillentitylisting.go
 gc/models/userskillgroupentitylisting.go
 gc/models/userssearchresponse.go
+gc/models/userstaffinggrouplisting.go
+gc/models/userstaffinggroupresponse.go
 gc/models/userstate.go
 gc/models/userstation.go
 gc/models/userstations.go

@@ -67,8 +67,16 @@ type Trunkmetabaseentitylisting struct {
     TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
+    // LastUri
+    LastUri string `json:"lastUri"`
+
+
     // FirstUri
     FirstUri string `json:"firstUri"`
+
+
+    // SelfUri
+    SelfUri string `json:"selfUri"`
 
 
     // NextUri
@@ -77,14 +85,6 @@ type Trunkmetabaseentitylisting struct {
 
     // PreviousUri
     PreviousUri string `json:"previousUri"`
-
-
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
 
 
     // PageCount
@@ -132,15 +132,15 @@ func (u *Trunkmetabaseentitylisting) MarshalJSON() ([]byte, error) {
         
         TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
+        LastUri string `json:"lastUri"`
+        
         FirstUri string `json:"firstUri"`
+        
+        SelfUri string `json:"selfUri"`
         
         NextUri string `json:"nextUri"`
         
         PreviousUri string `json:"previousUri"`
-        
-        LastUri string `json:"lastUri"`
-        
-        SelfUri string `json:"selfUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

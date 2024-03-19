@@ -44,6 +44,12 @@ type AnalyticssurveyDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Analyticssurvey
@@ -76,12 +82,20 @@ type Analyticssurvey struct {
     SurveyId string `json:"surveyId"`
 
 
+    // SurveyPartialResponse - Whether the survey was completed with any required questions unanswered.
+    SurveyPartialResponse bool `json:"surveyPartialResponse"`
+
+
     // SurveyPromoterScore - Score of the survey used with NPS
     SurveyPromoterScore int `json:"surveyPromoterScore"`
 
 
     // SurveyStatus - The status of the survey
     SurveyStatus string `json:"surveyStatus"`
+
+
+    // SurveyType - The type of the survey
+    SurveyType string `json:"surveyType"`
 
 
     // UserId - ID of the agent the survey was performed against
@@ -95,6 +109,8 @@ type Analyticssurvey struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticssurvey) String() string {
+    
+    
     
     
     
@@ -137,15 +153,25 @@ func (u *Analyticssurvey) MarshalJSON() ([]byte, error) {
         
         SurveyId string `json:"surveyId"`
         
+        SurveyPartialResponse bool `json:"surveyPartialResponse"`
+        
         SurveyPromoterScore int `json:"surveyPromoterScore"`
         
         SurveyStatus string `json:"surveyStatus"`
+        
+        SurveyType string `json:"surveyType"`
         
         UserId string `json:"userId"`
         
         OSurveyTotalScore int `json:"oSurveyTotalScore"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

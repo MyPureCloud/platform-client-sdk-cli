@@ -15,9 +15,6 @@ type KnowledgeguestdocumentvariationDud struct {
     Id string `json:"id"`
 
 
-    
-
-
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -33,6 +30,9 @@ type KnowledgeguestdocumentvariationDud struct {
     Document Addressableentityref `json:"document"`
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -40,10 +40,6 @@ type KnowledgeguestdocumentvariationDud struct {
 // Knowledgeguestdocumentvariation
 type Knowledgeguestdocumentvariation struct { 
     
-
-
-    // Body - The content for the variation.
-    Body Documentbody `json:"body"`
 
 
     
@@ -63,6 +59,10 @@ type Knowledgeguestdocumentvariation struct {
     
 
 
+    // Body - The content for the variation.
+    Body Documentbody `json:"body"`
+
+
     
 
 }
@@ -70,8 +70,8 @@ type Knowledgeguestdocumentvariation struct {
 // String returns a JSON representation of the model
 func (o *Knowledgeguestdocumentvariation) String() string {
     
-    
      o.Contexts = []Knowledgeguestdocumentvariationcontext{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,11 +89,11 @@ func (u *Knowledgeguestdocumentvariation) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Body Documentbody `json:"body"`
-        
         DocumentVersion Addressableentityref `json:"documentVersion"`
         
         Contexts []Knowledgeguestdocumentvariationcontext `json:"contexts"`
+        
+        Body Documentbody `json:"body"`
         *Alias
     }{
 
@@ -110,10 +110,10 @@ func (u *Knowledgeguestdocumentvariation) MarshalJSON() ([]byte, error) {
 
 
         
-
-
-        
         Contexts: []Knowledgeguestdocumentvariationcontext{{}},
+        
+
+
         
 
 

@@ -15,9 +15,6 @@ type DocumentvariationDud struct {
     Id string `json:"id"`
 
 
-    
-
-
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -33,6 +30,15 @@ type DocumentvariationDud struct {
     Document Knowledgedocumentreference `json:"document"`
 
 
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -40,10 +46,6 @@ type DocumentvariationDud struct {
 // Documentvariation
 type Documentvariation struct { 
     
-
-
-    // Body - The content for the variation.
-    Body Documentbody `json:"body"`
 
 
     
@@ -63,6 +65,18 @@ type Documentvariation struct {
     
 
 
+    // Priority - The priority of the variation.
+    Priority int `json:"priority"`
+
+
+    // Name - The name of the variation.
+    Name string `json:"name"`
+
+
+    // Body - The content for the variation.
+    Body Documentbody `json:"body"`
+
+
     
 
 }
@@ -70,8 +84,10 @@ type Documentvariation struct {
 // String returns a JSON representation of the model
 func (o *Documentvariation) String() string {
     
-    
      o.Contexts = []Documentvariationcontext{{}} 
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -89,11 +105,15 @@ func (u *Documentvariation) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Body Documentbody `json:"body"`
-        
         DocumentVersion Addressableentityref `json:"documentVersion"`
         
         Contexts []Documentvariationcontext `json:"contexts"`
+        
+        Priority int `json:"priority"`
+        
+        Name string `json:"name"`
+        
+        Body Documentbody `json:"body"`
         *Alias
     }{
 
@@ -110,10 +130,16 @@ func (u *Documentvariation) MarshalJSON() ([]byte, error) {
 
 
         
+        Contexts: []Documentvariationcontext{{}},
+        
 
 
         
-        Contexts: []Documentvariationcontext{{}},
+
+
+        
+
+
         
 
 

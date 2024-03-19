@@ -34,9 +34,6 @@ type ConversationappsettingsDud struct {
 
     
 
-
-    
-
 }
 
 // Conversationappsettings - Conversation settings that handles chats within the messenger
@@ -51,10 +48,6 @@ type Conversationappsettings struct {
 
     // ShowUserTypingIndicator - The toggle to enable or disable typing indicator for messenger
     ShowUserTypingIndicator bool `json:"showUserTypingIndicator"`
-
-
-    // AutoStartType - Deprecated. The auto start type for the messenger conversation
-    AutoStartType string `json:"autoStartType"`
 
 
     // AutoStart - The auto start for the messenger conversation
@@ -88,7 +81,6 @@ func (o *Conversationappsettings) String() string {
     
     
     
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -112,8 +104,6 @@ func (u *Conversationappsettings) MarshalJSON() ([]byte, error) {
         
         ShowUserTypingIndicator bool `json:"showUserTypingIndicator"`
         
-        AutoStartType string `json:"autoStartType"`
-        
         AutoStart Autostart `json:"autoStart"`
         
         Markdown Markdown `json:"markdown"`
@@ -125,9 +115,6 @@ func (u *Conversationappsettings) MarshalJSON() ([]byte, error) {
         Humanize Humanize `json:"humanize"`
         *Alias
     }{
-
-        
-
 
         
 

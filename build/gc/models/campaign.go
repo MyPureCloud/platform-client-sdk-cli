@@ -114,6 +114,9 @@ type CampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -252,6 +255,10 @@ type Campaign struct {
     MaxCallsPerAgent int `json:"maxCallsPerAgent"`
 
 
+    // CallbackAutoAnswer - The option manages the auto-answer callback calls
+    CallbackAutoAnswer bool `json:"callbackAutoAnswer"`
+
+
     
 
 }
@@ -285,6 +292,7 @@ func (o *Campaign) String() string {
     
     
      o.ContactListFilters = []Domainentityref{{}} 
+    
     
     
     
@@ -364,6 +372,8 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
         DynamicContactQueueingSettings Dynamiccontactqueueingsettings `json:"dynamicContactQueueingSettings"`
         
         MaxCallsPerAgent int `json:"maxCallsPerAgent"`
+        
+        CallbackAutoAnswer bool `json:"callbackAutoAnswer"`
         *Alias
     }{
 
@@ -467,6 +477,9 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
 
         
         ContactListFilters: []Domainentityref{{}},
+        
+
+
         
 
 

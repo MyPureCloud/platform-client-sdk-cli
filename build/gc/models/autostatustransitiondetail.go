@@ -17,6 +17,9 @@ type AutostatustransitiondetailDud struct {
 
     
 
+
+    
+
 }
 
 // Autostatustransitiondetail
@@ -28,10 +31,15 @@ type Autostatustransitiondetail struct {
     // DateOfTransition - Date at which auto status transition occurs. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateOfTransition time.Time `json:"dateOfTransition"`
 
+
+    // ErrorDetails - This property will be set if auto status transition is failed.
+    ErrorDetails Taskmanagementerrordetails `json:"errorDetails"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Autostatustransitiondetail) String() string {
+    
     
     
 
@@ -54,8 +62,13 @@ func (u *Autostatustransitiondetail) MarshalJSON() ([]byte, error) {
         NextStatus Workitemstatusreference `json:"nextStatus"`
         
         DateOfTransition time.Time `json:"dateOfTransition"`
+        
+        ErrorDetails Taskmanagementerrordetails `json:"errorDetails"`
         *Alias
     }{
+
+        
+
 
         
 

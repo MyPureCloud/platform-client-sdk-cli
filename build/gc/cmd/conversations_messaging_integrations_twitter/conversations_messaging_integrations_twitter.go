@@ -263,8 +263,8 @@ var deleteCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [integrationId]",
-	Short: "Get a Twitter messaging integration",
-	Long:  "Get a Twitter messaging integration",
+	Short: "Get a Twitter messaging integration (Deprecated)",
+	Long:  "Get a Twitter messaging integration (Deprecated)",
 	Args:  utils.DetermineArgs([]string{ "integrationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -332,8 +332,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get a list of Twitter Integrations",
-	Long:  "Get a list of Twitter Integrations",
+	Short: "Get a list of Twitter Integrations (Deprecated)",
+	Long:  "Get a list of Twitter Integrations (Deprecated)",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

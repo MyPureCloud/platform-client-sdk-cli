@@ -58,7 +58,7 @@ type Messaginguserestablishedevent struct {
     CommunicationId string `json:"communicationId"`
 
 
-    // UserId - A unique Id (V4 UUID) identifying this userId this communication belongs to.
+    // UserId - A unique Id (V4 UUID) identifying the user this communication belongs to.
     UserId string `json:"userId"`
 
 

@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_staffinggroups
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_staffinggroups_query"
+)
+
+func init() {
+	workforcemanagement_businessunits_staffinggroupsCmd.AddCommand(workforcemanagement_businessunits_staffinggroups_query.Cmdworkforcemanagement_businessunits_staffinggroups_query())
+	workforcemanagement_businessunits_staffinggroupsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_staffinggroupsCmd.Short, workforcemanagement_businessunits_staffinggroups_query.Description, )
+	workforcemanagement_businessunits_staffinggroupsCmd.Long = workforcemanagement_businessunits_staffinggroupsCmd.Short
+}

@@ -89,6 +89,9 @@ type EmailDud struct {
 
     
 
+
+    
+
 }
 
 // Email
@@ -196,6 +199,10 @@ type Email struct {
     // QueueMediaSettings - Represents the queue settings for this media type.
     QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
 
+
+    // ResumeTimestamp - Represents the timestamp when a parked conversation will resume.
+    ResumeTimestamp int `json:"resumeTimestamp"`
+
 }
 
 // String returns a JSON representation of the model
@@ -221,6 +228,7 @@ func (o *Email) String() string {
     
     
      o.DraftAttachments = []Attachment{{}} 
+    
     
     
     
@@ -294,6 +302,8 @@ func (u *Email) MarshalJSON() ([]byte, error) {
         AfterCallWorkRequired bool `json:"afterCallWorkRequired"`
         
         QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
+        
+        ResumeTimestamp int `json:"resumeTimestamp"`
         *Alias
     }{
 
@@ -361,6 +371,9 @@ func (u *Email) MarshalJSON() ([]byte, error) {
 
         
         DraftAttachments: []Attachment{{}},
+        
+
+
         
 
 

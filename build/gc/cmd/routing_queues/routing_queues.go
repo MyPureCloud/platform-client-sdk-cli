@@ -81,11 +81,12 @@ func Cmdrouting_queues() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Note: results are sorted by name. Valid values: asc, desc")
-	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by queue name")
-	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Filter by queue ID(s)")
-	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Filter by queue division ID(s)")
-	utils.AddFlag(listCmd.Flags(), "[]string", "peerId", "", "Filter by queue peer ID(s)")
-	utils.AddFlag(listCmd.Flags(), "bool", "hasPeer", "", "Filter by queues associated with peer")
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Include only queues with the given name (leading and trailing asterisks allowed)")
+	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Include only queues with the specified ID(s)")
+	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Include only queues in the specified division ID(s)")
+	utils.AddFlag(listCmd.Flags(), "[]string", "peerId", "", "Include only queues with the specified peer ID(s)")
+	utils.AddFlag(listCmd.Flags(), "string", "cannedResponseLibraryId", "", "Include only queues explicitly associated with the specified canned response library ID")
+	utils.AddFlag(listCmd.Flags(), "bool", "hasPeer", "", "Include only queues with a peer ID")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues", utils.FormatPermissions([]string{ "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -379,6 +380,10 @@ var listCmd = &cobra.Command{
 		peerId := utils.GetFlag(cmd.Flags(), "[]string", "peerId")
 		if peerId != "" {
 			queryParams["peerId"] = peerId
+		}
+		cannedResponseLibraryId := utils.GetFlag(cmd.Flags(), "string", "cannedResponseLibraryId")
+		if cannedResponseLibraryId != "" {
+			queryParams["cannedResponseLibraryId"] = cannedResponseLibraryId
 		}
 		hasPeer := utils.GetFlag(cmd.Flags(), "bool", "hasPeer")
 		if hasPeer != "" {

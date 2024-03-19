@@ -15,13 +15,19 @@ type KnowledgedocumentversionvariationDud struct {
     Id string `json:"id"`
 
 
-    
-
-
     DateCreated time.Time `json:"dateCreated"`
 
 
     DateModified time.Time `json:"dateModified"`
+
+
+    
+
+
+    
+
+
+    
 
 
     
@@ -39,10 +45,6 @@ type Knowledgedocumentversionvariation struct {
     
 
 
-    // Body - The content for the variation.
-    Body Documentbody `json:"body"`
-
-
     
 
 
@@ -51,6 +53,18 @@ type Knowledgedocumentversionvariation struct {
 
     // Contexts - The context values associated with the variation.
     Contexts []Documentvariationcontext `json:"contexts"`
+
+
+    // Priority - The priority of the variation.
+    Priority int `json:"priority"`
+
+
+    // Name - The name of the variation.
+    Name string `json:"name"`
+
+
+    // Body - The content for the variation.
+    Body Documentbody `json:"body"`
 
 
     
@@ -62,8 +76,10 @@ type Knowledgedocumentversionvariation struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentversionvariation) String() string {
-    
      o.Contexts = []Documentvariationcontext{{}} 
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -81,9 +97,13 @@ func (u *Knowledgedocumentversionvariation) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Body Documentbody `json:"body"`
-        
         Contexts []Documentvariationcontext `json:"contexts"`
+        
+        Priority int `json:"priority"`
+        
+        Name string `json:"name"`
+        
+        Body Documentbody `json:"body"`
         *Alias
     }{
 
@@ -97,10 +117,16 @@ func (u *Knowledgedocumentversionvariation) MarshalJSON() ([]byte, error) {
 
 
         
+        Contexts: []Documentvariationcontext{{}},
+        
 
 
         
-        Contexts: []Documentvariationcontext{{}},
+
+
+        
+
+
         
 
 

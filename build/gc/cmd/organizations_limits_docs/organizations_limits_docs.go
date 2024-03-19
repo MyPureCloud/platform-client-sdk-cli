@@ -36,7 +36,7 @@ func Cmdorganizations_limits_docs() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/UrlResponse"
+        "$ref" : "#/components/schemas/LimitDocumentation"
       }
     }
   }
@@ -52,8 +52,8 @@ func queryEscape(value string) string {
 
 var getCmd = &cobra.Command{
 	Use:   "get",
-	Short: "Get a link to the limit documentation",
-	Long:  "Get a link to the limit documentation",
+	Short: "Get limit documentation",
+	Long:  "Get limit documentation",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

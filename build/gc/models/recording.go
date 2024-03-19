@@ -134,7 +134,7 @@ type Recording struct {
     EndTime string `json:"endTime"`
 
 
-    // Media - The type of media that the recording is. At the moment that could be audio, chat, or email.
+    // Media - The media type of the recording. This could be audio, chat, messaging, email, or screen.
     Media string `json:"media"`
 
 

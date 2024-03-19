@@ -68,7 +68,7 @@ func Cmdrouting_queues_users() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Max value is 100")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Note: results are sorted by name. Valid values: asc, desc")
-	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin")
 	utils.AddFlag(listCmd.Flags(), "bool", "joined", "", "Filter by joined status")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by queue member name")
 	utils.AddFlag(listCmd.Flags(), "[]string", "profileSkills", "", "Filter by profile skill")

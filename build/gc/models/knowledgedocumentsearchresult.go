@@ -25,7 +25,7 @@ type Knowledgedocumentsearchresult struct {
 
 
     // Document - Document that matched the query.
-    Document Knowledgedocumentresponse `json:"document"`
+    Document Knowledgesearchdocumentresponse `json:"document"`
 
 }
 
@@ -52,7 +52,7 @@ func (u *Knowledgedocumentsearchresult) MarshalJSON() ([]byte, error) {
         
         Confidence float64 `json:"confidence"`
         
-        Document Knowledgedocumentresponse `json:"document"`
+        Document Knowledgesearchdocumentresponse `json:"document"`
         *Alias
     }{
 

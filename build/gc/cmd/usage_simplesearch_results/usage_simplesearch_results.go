@@ -52,8 +52,8 @@ func queryEscape(value string) string {
 
 var getCmd = &cobra.Command{
 	Use:   "get [executionId]",
-	Short: "Get the results of a usage search",
-	Long:  "Get the results of a usage search",
+	Short: "Get the results of a usage search. Number of records to be returned is limited to 20,000 results.",
+	Long:  "Get the results of a usage search. Number of records to be returned is limited to 20,000 results.",
 	Args:  utils.DetermineArgs([]string{ "executionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

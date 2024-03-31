@@ -36,7 +36,7 @@ func Cmdknowledge_guest_sessions_documents() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/KnowledgeGuestDocument"
+        "$ref" : "#/components/schemas/KnowledgeGuestDocumentResponse"
       }
     }
   }

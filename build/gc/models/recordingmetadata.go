@@ -66,6 +66,12 @@ type RecordingmetadataDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -97,6 +103,14 @@ type Recordingmetadata struct {
 
     // Media - The type of media that the recording is. At the moment that could be audio, chat, email, or message.
     Media string `json:"media"`
+
+
+    // MediaSubtype - The recording media subtype.
+    MediaSubtype string `json:"mediaSubtype"`
+
+
+    // MediaSubject - The recording media subject.
+    MediaSubject string `json:"mediaSubject"`
 
 
     // Annotations - Annotations that belong to the recording. Populated when recording filestate is AVAILABLE.
@@ -155,6 +169,8 @@ func (o *Recordingmetadata) String() string {
     
     
     
+    
+    
      o.Annotations = []Annotation{{}} 
     
     
@@ -195,6 +211,10 @@ func (u *Recordingmetadata) MarshalJSON() ([]byte, error) {
         
         Media string `json:"media"`
         
+        MediaSubtype string `json:"mediaSubtype"`
+        
+        MediaSubject string `json:"mediaSubject"`
+        
         Annotations []Annotation `json:"annotations"`
         
         FileState string `json:"fileState"`
@@ -218,6 +238,12 @@ func (u *Recordingmetadata) MarshalJSON() ([]byte, error) {
         SessionId string `json:"sessionId"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

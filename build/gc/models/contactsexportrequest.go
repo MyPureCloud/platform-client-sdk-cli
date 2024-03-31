@@ -27,8 +27,8 @@ type Contactsexportrequest struct {
     ContactListFilterId string `json:"contactListFilterId"`
 
 
-    // SearchCriteria - Criteria to filter the contacts by.
-    SearchCriteria Contactbulksearchcriteria `json:"searchCriteria"`
+    // Criteria - Criteria to filter the contacts by.
+    Criteria Contactbulksearchcriteria `json:"criteria"`
 
 
     // ContactIds - Contact IDs to be exported.
@@ -60,7 +60,7 @@ func (u *Contactsexportrequest) MarshalJSON() ([]byte, error) {
         
         ContactListFilterId string `json:"contactListFilterId"`
         
-        SearchCriteria Contactbulksearchcriteria `json:"searchCriteria"`
+        Criteria Contactbulksearchcriteria `json:"criteria"`
         
         ContactIds []string `json:"contactIds"`
         *Alias

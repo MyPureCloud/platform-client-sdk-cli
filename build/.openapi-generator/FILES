@@ -52,6 +52,8 @@ gc/cmd/analytics_knowledge_aggregates_jobs_results/analytics_knowledge_aggregate
 gc/cmd/analytics_knowledge_aggregates_query/analytics_knowledge_aggregates_query.go
 gc/cmd/analytics_queues_observations_query/analytics_queues_observations_query.go
 gc/cmd/analytics_ratelimits_aggregates_query/analytics_ratelimits_aggregates_query.go
+gc/cmd/analytics_reporting_dashboards_users/analytics_reporting_dashboards_users.go
+gc/cmd/analytics_reporting_dashboards_users_bulk_remove/analytics_reporting_dashboards_users_bulk_remove.go
 gc/cmd/analytics_reporting_exports/analytics_reporting_exports.go
 gc/cmd/analytics_reporting_exports_metadata/analytics_reporting_exports_metadata.go
 gc/cmd/analytics_reporting_metadata/analytics_reporting_metadata.go
@@ -61,6 +63,9 @@ gc/cmd/analytics_reporting_schedules_history/analytics_reporting_schedules_histo
 gc/cmd/analytics_reporting_schedules_history_latest/analytics_reporting_schedules_history_latest.go
 gc/cmd/analytics_reporting_schedules_runreport/analytics_reporting_schedules_runreport.go
 gc/cmd/analytics_reporting_settings/analytics_reporting_settings.go
+gc/cmd/analytics_reporting_settings_dashboards_bulk_remove/analytics_reporting_settings_dashboards_bulk_remove.go
+gc/cmd/analytics_reporting_settings_dashboards_query/analytics_reporting_settings_dashboards_query.go
+gc/cmd/analytics_reporting_settings_users_dashboards/analytics_reporting_settings_users_dashboards.go
 gc/cmd/analytics_reporting_timeperiods/analytics_reporting_timeperiods.go
 gc/cmd/analytics_resolutions_aggregates_jobs/analytics_resolutions_aggregates_jobs.go
 gc/cmd/analytics_resolutions_aggregates_jobs_results/analytics_resolutions_aggregates_jobs_results.go
@@ -277,6 +282,7 @@ gc/cmd/conversations_messages_participants_wrapup/conversations_messages_partici
 gc/cmd/conversations_messages_participants_wrapupcodes/conversations_messages_participants_wrapupcodes.go
 gc/cmd/conversations_messages_recordingstate/conversations_messages_recordingstate.go
 gc/cmd/conversations_messaging_facebook_app/conversations_messaging_facebook_app.go
+gc/cmd/conversations_messaging_facebook_permissions/conversations_messaging_facebook_permissions.go
 gc/cmd/conversations_messaging_integrations/conversations_messaging_integrations.go
 gc/cmd/conversations_messaging_integrations_facebook/conversations_messaging_integrations_facebook.go
 gc/cmd/conversations_messaging_integrations_instagram/conversations_messaging_integrations_instagram.go
@@ -806,6 +812,7 @@ gc/cmd/recordings_screensessions_acknowledge/recordings_screensessions_acknowled
 gc/cmd/recordings_screensessions_details/recordings_screensessions_details.go
 gc/cmd/recordings_screensessions_metadata/recordings_screensessions_metadata.go
 gc/cmd/responsemanagement_libraries/responsemanagement_libraries.go
+gc/cmd/responsemanagement_libraries_bulk/responsemanagement_libraries_bulk.go
 gc/cmd/responsemanagement_responseassets/responsemanagement_responseassets.go
 gc/cmd/responsemanagement_responseassets_search/responsemanagement_responseassets_search.go
 gc/cmd/responsemanagement_responseassets_status/responsemanagement_responseassets_status.go
@@ -852,6 +859,7 @@ gc/cmd/routing_skills/routing_skills.go
 gc/cmd/routing_sms_addresses/routing_sms_addresses.go
 gc/cmd/routing_sms_availablephonenumbers/routing_sms_availablephonenumbers.go
 gc/cmd/routing_sms_phonenumbers/routing_sms_phonenumbers.go
+gc/cmd/routing_sms_phonenumbers_alphanumeric/routing_sms_phonenumbers_alphanumeric.go
 gc/cmd/routing_sms_phonenumbers_import/routing_sms_phonenumbers_import.go
 gc/cmd/routing_users_utilization/routing_users_utilization.go
 gc/cmd/routing_utilization/routing_utilization.go
@@ -1321,6 +1329,7 @@ gc/models/alertsummary.go
 gc/models/alertsummaryentity.go
 gc/models/alltimepoints.go
 gc/models/alteration.go
+gc/models/alternativeshiftnotification.go
 gc/models/amazonlexrequest.go
 gc/models/analyticsagentgroup.go
 gc/models/analyticsconversation.go
@@ -2020,6 +2029,12 @@ gc/models/customeventattributelist.go
 gc/models/customi18nlabels.go
 gc/models/customprovider.go
 gc/models/dailypossibleshift.go
+gc/models/dashboardconfiguration.go
+gc/models/dashboardconfigurationbulkrequest.go
+gc/models/dashboardconfigurationlisting.go
+gc/models/dashboardconfigurationqueryrequest.go
+gc/models/dashboarduser.go
+gc/models/dashboarduserlisting.go
 gc/models/dataactionconditionpredicate.go
 gc/models/dataactionconditionsettings.go
 gc/models/dataactioncontactcolumnfieldmapping.go
@@ -2132,6 +2147,7 @@ gc/models/documentationv2searchrequest.go
 gc/models/documentattribute.go
 gc/models/documentbody.go
 gc/models/documentbodyblock.go
+gc/models/documentbodyblockwithhighlight.go
 gc/models/documentbodyimage.go
 gc/models/documentbodyimageproperties.go
 gc/models/documentbodylist.go
@@ -2140,6 +2156,7 @@ gc/models/documentbodylistblockproperties.go
 gc/models/documentbodylistitemproperties.go
 gc/models/documentbodyparagraph.go
 gc/models/documentbodyparagraphproperties.go
+gc/models/documentbodyparagraphwithhighlight.go
 gc/models/documentbodytable.go
 gc/models/documentbodytablecaptionblock.go
 gc/models/documentbodytablecaptionitem.go
@@ -2150,8 +2167,11 @@ gc/models/documentbodytablerowblock.go
 gc/models/documentbodytablerowblockproperties.go
 gc/models/documentbodyvideo.go
 gc/models/documentbodyvideoproperties.go
+gc/models/documentbodywithhighlight.go
 gc/models/documentcategoryinput.go
 gc/models/documentcontentblock.go
+gc/models/documentcontentblockwithhighlight.go
+gc/models/documentcontenthighlightindex.go
 gc/models/documententitylisting.go
 gc/models/documentfaq.go
 gc/models/documentlistcontentblock.go
@@ -2168,6 +2188,7 @@ gc/models/documentthumbnail.go
 gc/models/documentupdate.go
 gc/models/documentupload.go
 gc/models/documentvariation.go
+gc/models/documentvariationanswer.go
 gc/models/documentvariationcontext.go
 gc/models/documentvariationlisting.go
 gc/models/domaincapabilities.go
@@ -2216,6 +2237,7 @@ gc/models/dynamicgroupquery.go
 gc/models/dynamicgroupquerypreview.go
 gc/models/dynamicgrouproutingskillcondition.go
 gc/models/dynamicgroupskillcondition.go
+gc/models/dynamiclinebalancingsettings.go
 gc/models/edge.go
 gc/models/edgeautoupdateconfig.go
 gc/models/edgeconnectioninfo.go
@@ -2403,6 +2425,8 @@ gc/models/facebookintegration.go
 gc/models/facebookintegrationentitylisting.go
 gc/models/facebookintegrationrequest.go
 gc/models/facebookintegrationupdaterequest.go
+gc/models/facebookpermission.go
+gc/models/facebookpermissionentitylisting.go
 gc/models/facebookscopedid.go
 gc/models/facet.go
 gc/models/facetentry.go
@@ -2721,6 +2745,9 @@ gc/models/journeysegment.go
 gc/models/journeysegmentrequest.go
 gc/models/journeysurveyquestion.go
 gc/models/journeyview.go
+gc/models/journeyviewchart.go
+gc/models/journeyviewchartgroupbyattribute.go
+gc/models/journeyviewchartmetric.go
 gc/models/journeyviewelement.go
 gc/models/journeyviewelementattributes.go
 gc/models/journeyviewelementfilter.go
@@ -2805,19 +2832,21 @@ gc/models/knowledgeexportjobrequest.go
 gc/models/knowledgeexportjobresponse.go
 gc/models/knowledgeextendedcategory.go
 gc/models/knowledgegroupstatistics.go
-gc/models/knowledgeguestdocument.go
 gc/models/knowledgeguestdocumentcopy.go
 gc/models/knowledgeguestdocumentfeedback.go
 gc/models/knowledgeguestdocumentpresentation.go
+gc/models/knowledgeguestdocumentresponse.go
 gc/models/knowledgeguestdocumentresponselisting.go
 gc/models/knowledgeguestdocumentsuggestion.go
 gc/models/knowledgeguestdocumentsuggestionrequest.go
 gc/models/knowledgeguestdocumentsuggestionresult.go
 gc/models/knowledgeguestdocumentvariation.go
+gc/models/knowledgeguestdocumentvariationanswer.go
 gc/models/knowledgeguestdocumentvariationcontext.go
 gc/models/knowledgeguestdocumentversionreference.go
 gc/models/knowledgeguestdocumentview.go
 gc/models/knowledgeguestsearchclientapplication.go
+gc/models/knowledgeguestsearchdocumentresponse.go
 gc/models/knowledgeguestsession.go
 gc/models/knowledgeguestsessionapp.go
 gc/models/knowledgeguestsessioncontext.go
@@ -2835,7 +2864,8 @@ gc/models/knowledgeparsejobrequestpatch.go
 gc/models/knowledgeparsejobresponse.go
 gc/models/knowledgeparserecord.go
 gc/models/knowledgesearchclientapplication.go
-gc/models/knowledgesearchdocument.go
+gc/models/knowledgesearchdocumentresponse.go
+gc/models/knowledgesearchdocumentv1.go
 gc/models/knowledgesearchrequest.go
 gc/models/knowledgesearchresponse.go
 gc/models/knowledgetraining.go
@@ -2924,6 +2954,7 @@ gc/models/lexv2botentitylisting.go
 gc/models/lexv2intent.go
 gc/models/lexv2slot.go
 gc/models/library.go
+gc/models/librarybatchrequest.go
 gc/models/libraryentitylisting.go
 gc/models/licenseassignmentrequest.go
 gc/models/licensebatchassignmentrequest.go
@@ -3791,6 +3822,7 @@ gc/models/skillstoremove.go
 gc/models/smsaddress.go
 gc/models/smsaddressentitylisting.go
 gc/models/smsaddressprovision.go
+gc/models/smsalphanumericprovision.go
 gc/models/smsavailablephonenumber.go
 gc/models/smsavailablephonenumberentitylisting.go
 gc/models/smsconfig.go
@@ -4268,6 +4300,7 @@ gc/models/voicemailuserpolicy.go
 gc/models/void.go
 gc/models/waitlistposition.go
 gc/models/waitlistpositionlisting.go
+gc/models/warning.go
 gc/models/webactionevent.go
 gc/models/webchatconfig.go
 gc/models/webchatconversation.go
@@ -4358,6 +4391,7 @@ gc/models/whatsappintegration.go
 gc/models/whatsappintegrationentitylisting.go
 gc/models/whatsappintegrationrequest.go
 gc/models/whatsappintegrationupdaterequest.go
+gc/models/widget.go
 gc/models/widgetclientconfig.go
 gc/models/widgetclientconfigthirdparty.go
 gc/models/widgetclientconfigv1.go

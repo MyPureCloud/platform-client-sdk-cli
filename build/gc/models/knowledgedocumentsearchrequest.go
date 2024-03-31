@@ -55,6 +55,9 @@ type KnowledgedocumentsearchrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgedocumentsearchrequest
@@ -115,10 +118,15 @@ type Knowledgedocumentsearchrequest struct {
     // ConfidenceThreshold - The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. The value should be between 0 to 1.
     ConfidenceThreshold float32 `json:"confidenceThreshold"`
 
+
+    // AnswerHighlightTopResults - The number of articles to be sent for answer-highlighting. Can range from 1-5.
+    AnswerHighlightTopResults int `json:"answerHighlightTopResults"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentsearchrequest) String() string {
+    
     
     
     
@@ -171,8 +179,13 @@ func (u *Knowledgedocumentsearchrequest) MarshalJSON() ([]byte, error) {
         ConversationContext Knowledgeconversationcontext `json:"conversationContext"`
         
         ConfidenceThreshold float32 `json:"confidenceThreshold"`
+        
+        AnswerHighlightTopResults int `json:"answerHighlightTopResults"`
         *Alias
     }{
+
+        
+
 
         
 

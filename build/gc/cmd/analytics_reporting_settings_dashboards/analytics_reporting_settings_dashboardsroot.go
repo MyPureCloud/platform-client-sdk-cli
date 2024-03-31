@@ -1,0 +1,14 @@
+package analytics_reporting_settings_dashboards
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_reporting_settings_dashboards_bulk"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_reporting_settings_dashboards_query"
+)
+
+func init() {
+	analytics_reporting_settings_dashboardsCmd.AddCommand(analytics_reporting_settings_dashboards_bulk.Cmdanalytics_reporting_settings_dashboards_bulk())
+	analytics_reporting_settings_dashboardsCmd.AddCommand(analytics_reporting_settings_dashboards_query.Cmdanalytics_reporting_settings_dashboards_query())
+	analytics_reporting_settings_dashboardsCmd.Short = utils.GenerateCustomDescription(analytics_reporting_settings_dashboardsCmd.Short, analytics_reporting_settings_dashboards_bulk.Description, analytics_reporting_settings_dashboards_query.Description, )
+	analytics_reporting_settings_dashboardsCmd.Long = analytics_reporting_settings_dashboardsCmd.Short
+}

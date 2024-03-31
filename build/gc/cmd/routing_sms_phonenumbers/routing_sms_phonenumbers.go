@@ -79,7 +79,7 @@ func Cmdrouting_sms_phonenumbers() *cobra.Command {
 	routing_sms_phonenumbersCmd.AddCommand(getCmd)
 
 	utils.AddFlag(listCmd.Flags(), "string", "phoneNumber", "", "Filter on phone number address. Allowable characters are the digits `0-9` and the wild card character `\\*`. If just digits are present, a contains search is done on the address pattern. For example, `317` could be matched anywhere in the address. An `\\*` will match multiple digits. For example, to match a specific area code within the US a pattern like `1317*` could be used.")
-	utils.AddFlag(listCmd.Flags(), "[]string", "phoneNumberType", "", "Filter on phone number type Valid values: local, mobile, tollfree, shortcode")
+	utils.AddFlag(listCmd.Flags(), "[]string", "phoneNumberType", "", "Filter on phone number type Valid values: local, mobile, tollfree, shortcode, alphanumeric")
 	utils.AddFlag(listCmd.Flags(), "[]string", "phoneNumberStatus", "", "Filter on phone number status Valid values: active, invalid, initiated, porting, pending, pending-cancellation")
 	utils.AddFlag(listCmd.Flags(), "[]string", "countryCode", "", "Filter on country code")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")

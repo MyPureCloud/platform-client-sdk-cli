@@ -33,6 +33,9 @@ type WfmusernotificationDud struct {
     AdherenceExplanation Adherenceexplanationnotification `json:"adherenceExplanation"`
 
 
+    AlternativeShift Alternativeshiftnotification `json:"alternativeShift"`
+
+
     
 
 
@@ -51,6 +54,9 @@ type Wfmusernotification struct {
 
     // MutableGroupId - The group ID of the notification (mutable, may change  on update)
     MutableGroupId string `json:"mutableGroupId"`
+
+
+    
 
 
     
@@ -108,6 +114,9 @@ func (u *Wfmusernotification) MarshalJSON() ([]byte, error) {
         MarkedAsRead bool `json:"markedAsRead"`
         *Alias
     }{
+
+        
+
 
         
 

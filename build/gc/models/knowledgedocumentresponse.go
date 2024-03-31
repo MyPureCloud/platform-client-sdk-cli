@@ -133,12 +133,12 @@ type Knowledgedocumentresponse struct {
     KnowledgeBase Knowledgebasereference `json:"knowledgeBase"`
 
 
-    // Variations - Variations of the document.
-    Variations []Documentvariation `json:"variations"`
-
-
     // ExternalId - The reference to external id associated with the document.
     ExternalId string `json:"externalId"`
+
+
+    // Variations - Variations of the document.
+    Variations []Documentvariation `json:"variations"`
 
 
     
@@ -160,8 +160,8 @@ func (o *Knowledgedocumentresponse) String() string {
     
      o.Labels = []Labelresponse{{}} 
     
-     o.Variations = []Documentvariation{{}} 
     
+     o.Variations = []Documentvariation{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -205,9 +205,9 @@ func (u *Knowledgedocumentresponse) MarshalJSON() ([]byte, error) {
         
         KnowledgeBase Knowledgebasereference `json:"knowledgeBase"`
         
-        Variations []Documentvariation `json:"variations"`
-        
         ExternalId string `json:"externalId"`
+        
+        Variations []Documentvariation `json:"variations"`
         *Alias
     }{
 
@@ -264,10 +264,10 @@ func (u *Knowledgedocumentresponse) MarshalJSON() ([]byte, error) {
 
 
         
-        Variations: []Documentvariation{{}},
+
+
         
-
-
+        Variations: []Documentvariation{{}},
         
 
 

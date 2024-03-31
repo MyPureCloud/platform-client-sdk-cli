@@ -7,11 +7,11 @@ import (
 )
 
 var (
-    KnowledgeguestdocumentMarshalled = false
+    KnowledgeguestsearchdocumentresponseMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type KnowledgeguestdocumentDud struct { 
+type KnowledgeguestsearchdocumentresponseDud struct { 
     Id string `json:"id"`
 
 
@@ -51,21 +51,24 @@ type KnowledgeguestdocumentDud struct {
     
 
 
-    
-
-
     SessionId string `json:"sessionId"`
 
 
     Category Guestcategoryreference `json:"category"`
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
 
-// Knowledgeguestdocument
-type Knowledgeguestdocument struct { 
+// Knowledgeguestsearchdocumentresponse
+type Knowledgeguestsearchdocumentresponse struct { 
     
 
 
@@ -115,14 +118,18 @@ type Knowledgeguestdocument struct {
     DocumentVersion Addressableentityref `json:"documentVersion"`
 
 
+    
+
+
+    
+
+
     // Variations - Variations of the document.
-    Variations []Knowledgeguestdocumentvariation `json:"variations"`
+    Variations []Knowledgeguestdocumentvariationanswer `json:"variations"`
 
 
-    
-
-
-    
+    // Answer - The answer to the query.
+    Answer string `json:"answer"`
 
 
     
@@ -130,7 +137,7 @@ type Knowledgeguestdocument struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Knowledgeguestdocument) String() string {
+func (o *Knowledgeguestsearchdocumentresponse) String() string {
     
     
      o.Alternatives = []Knowledgedocumentalternative{{}} 
@@ -141,7 +148,8 @@ func (o *Knowledgeguestdocument) String() string {
     
     
     
-     o.Variations = []Knowledgeguestdocumentvariation{{}} 
+     o.Variations = []Knowledgeguestdocumentvariationanswer{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -149,13 +157,13 @@ func (o *Knowledgeguestdocument) String() string {
     return str
 }
 
-func (u *Knowledgeguestdocument) MarshalJSON() ([]byte, error) {
-    type Alias Knowledgeguestdocument
+func (u *Knowledgeguestsearchdocumentresponse) MarshalJSON() ([]byte, error) {
+    type Alias Knowledgeguestsearchdocumentresponse
 
-    if KnowledgeguestdocumentMarshalled {
+    if KnowledgeguestsearchdocumentresponseMarshalled {
         return []byte("{}"), nil
     }
-    KnowledgeguestdocumentMarshalled = true
+    KnowledgeguestsearchdocumentresponseMarshalled = true
 
     return json.Marshal(&struct {
         
@@ -179,7 +187,9 @@ func (u *Knowledgeguestdocument) MarshalJSON() ([]byte, error) {
         
         DocumentVersion Addressableentityref `json:"documentVersion"`
         
-        Variations []Knowledgeguestdocumentvariation `json:"variations"`
+        Variations []Knowledgeguestdocumentvariationanswer `json:"variations"`
+        
+        Answer string `json:"answer"`
         *Alias
     }{
 
@@ -225,10 +235,13 @@ func (u *Knowledgeguestdocument) MarshalJSON() ([]byte, error) {
 
 
         
-        Variations: []Knowledgeguestdocumentvariation{{}},
+
+
         
 
 
+        
+        Variations: []Knowledgeguestdocumentvariationanswer{{}},
         
 
 

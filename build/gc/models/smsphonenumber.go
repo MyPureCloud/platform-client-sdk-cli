@@ -103,7 +103,7 @@ type Smsphonenumber struct {
     Name string `json:"name"`
 
 
-    // PhoneNumber - A phone number provisioned for SMS communications in E.164 format. E.g. +13175555555 or +34234234234
+    // PhoneNumber - A phone number provisioned for SMS communications.
     PhoneNumber string `json:"phoneNumber"`
 
 

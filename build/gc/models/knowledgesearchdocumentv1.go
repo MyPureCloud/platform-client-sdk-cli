@@ -7,11 +7,11 @@ import (
 )
 
 var (
-    KnowledgesearchdocumentMarshalled = false
+    Knowledgesearchdocumentv1Marshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type KnowledgesearchdocumentDud struct { 
+type Knowledgesearchdocumentv1Dud struct { 
     Id string `json:"id"`
 
 
@@ -52,8 +52,8 @@ type KnowledgesearchdocumentDud struct {
 
 }
 
-// Knowledgesearchdocument
-type Knowledgesearchdocument struct { 
+// Knowledgesearchdocumentv1
+type Knowledgesearchdocumentv1 struct { 
     
 
 
@@ -102,7 +102,7 @@ type Knowledgesearchdocument struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Knowledgesearchdocument) String() string {
+func (o *Knowledgesearchdocumentv1) String() string {
     
     
     
@@ -117,13 +117,13 @@ func (o *Knowledgesearchdocument) String() string {
     return str
 }
 
-func (u *Knowledgesearchdocument) MarshalJSON() ([]byte, error) {
-    type Alias Knowledgesearchdocument
+func (u *Knowledgesearchdocumentv1) MarshalJSON() ([]byte, error) {
+    type Alias Knowledgesearchdocumentv1
 
-    if KnowledgesearchdocumentMarshalled {
+    if Knowledgesearchdocumentv1Marshalled {
         return []byte("{}"), nil
     }
-    KnowledgesearchdocumentMarshalled = true
+    Knowledgesearchdocumentv1Marshalled = true
 
     return json.Marshal(&struct {
         

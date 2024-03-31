@@ -26,7 +26,7 @@ type KnowledgesearchresponseDud struct {
     PageNumber int `json:"pageNumber"`
 
 
-    Results []Knowledgesearchdocument `json:"results"`
+    Results []Knowledgesearchdocumentv1 `json:"results"`
 
 }
 

@@ -11,20 +11,24 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type FlowloglevelcharacteristicsdefinitionsDud struct { 
-    
+    LogLevels []Flowloglevel `json:"logLevels"`
+
+
+    Characteristics []Flowloglevelcharacteristicsdefinition `json:"characteristics"`
 
 }
 
 // Flowloglevelcharacteristicsdefinitions - A set of available characteristic definitions
 type Flowloglevelcharacteristicsdefinitions struct { 
-    // Characteristics
-    Characteristics []Flowloglevelcharacteristicsdefinition `json:"characteristics"`
+    
+
+
+    
 
 }
 
 // String returns a JSON representation of the model
 func (o *Flowloglevelcharacteristicsdefinitions) String() string {
-     o.Characteristics = []Flowloglevelcharacteristicsdefinition{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -41,13 +45,12 @@ func (u *Flowloglevelcharacteristicsdefinitions) MarshalJSON() ([]byte, error) {
     FlowloglevelcharacteristicsdefinitionsMarshalled = true
 
     return json.Marshal(&struct {
-        
-        Characteristics []Flowloglevelcharacteristicsdefinition `json:"characteristics"`
         *Alias
     }{
 
         
-        Characteristics: []Flowloglevelcharacteristicsdefinition{{}},
+
+
         
 
         Alias: (*Alias)(u),

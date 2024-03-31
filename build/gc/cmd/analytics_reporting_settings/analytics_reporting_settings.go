@@ -43,7 +43,7 @@ func Cmdanalytics_reporting_settings() *cobra.Command {
 }`)
 	analytics_reporting_settingsCmd.AddCommand(getCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/analytics/reporting/settings", utils.FormatPermissions([]string{ "recording:recordingSegment:view", "analytics:conversationDetail:view", "analytics:conversationAggregate:view", "analytics:reportingSettings:edit", "analytics:dashboardConfigurations:view",  }), utils.GenerateDevCentreLink("PATCH", "Analytics", "/api/v2/analytics/reporting/settings")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/analytics/reporting/settings", utils.FormatPermissions([]string{ "analytics:reportingSettings:edit",  }), utils.GenerateDevCentreLink("PATCH", "Analytics", "/api/v2/analytics/reporting/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "AnalyticsReportingSettingsRequest",
   "content" : {

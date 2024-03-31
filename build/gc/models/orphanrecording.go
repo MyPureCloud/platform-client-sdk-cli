@@ -51,6 +51,12 @@ type OrphanrecordingDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -82,6 +88,14 @@ type Orphanrecording struct {
 
     // MediaType
     MediaType string `json:"mediaType"`
+
+
+    // MediaSubtype
+    MediaSubtype string `json:"mediaSubtype"`
+
+
+    // MediaSubject
+    MediaSubject string `json:"mediaSubject"`
 
 
     // FileState
@@ -126,6 +140,8 @@ func (o *Orphanrecording) String() string {
     
     
     
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -155,6 +171,10 @@ func (u *Orphanrecording) MarshalJSON() ([]byte, error) {
         
         MediaType string `json:"mediaType"`
         
+        MediaSubtype string `json:"mediaSubtype"`
+        
+        MediaSubject string `json:"mediaSubject"`
+        
         FileState string `json:"fileState"`
         
         ProviderEndpoint Endpoint `json:"providerEndpoint"`
@@ -168,6 +188,12 @@ func (u *Orphanrecording) MarshalJSON() ([]byte, error) {
         Region string `json:"region"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

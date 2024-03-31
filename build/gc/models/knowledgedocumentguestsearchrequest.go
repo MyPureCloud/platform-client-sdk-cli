@@ -37,6 +37,9 @@ type KnowledgedocumentguestsearchrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgedocumentguestsearchrequest
@@ -69,6 +72,10 @@ type Knowledgedocumentguestsearchrequest struct {
     
 
 
+    // AnswerHighlightTopResults - The number of articles to be sent for answer-highlighting. Can range from 1-5.
+    AnswerHighlightTopResults int `json:"answerHighlightTopResults"`
+
+
     // IncludeDraftDocuments - Indicates whether the search results would also include draft documents.
     IncludeDraftDocuments bool `json:"includeDraftDocuments"`
 
@@ -76,6 +83,7 @@ type Knowledgedocumentguestsearchrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentguestsearchrequest) String() string {
+    
     
     
     
@@ -106,9 +114,14 @@ func (u *Knowledgedocumentguestsearchrequest) MarshalJSON() ([]byte, error) {
         
         QueryType string `json:"queryType"`
         
+        AnswerHighlightTopResults int `json:"answerHighlightTopResults"`
+        
         IncludeDraftDocuments bool `json:"includeDraftDocuments"`
         *Alias
     }{
+
+        
+
 
         
 

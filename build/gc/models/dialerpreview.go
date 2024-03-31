@@ -25,6 +25,9 @@ type DialerpreviewDud struct {
 
     
 
+
+    
+
 }
 
 // Dialerpreview
@@ -48,6 +51,10 @@ type Dialerpreview struct {
     // PhoneNumberColumns - The phone number columns associated with this campaign
     PhoneNumberColumns []Phonenumbercolumn `json:"phoneNumberColumns"`
 
+
+    // CallbackAutoAnswer - Whether or not to auto answer the callback
+    CallbackAutoAnswer bool `json:"callbackAutoAnswer"`
+
 }
 
 // String returns a JSON representation of the model
@@ -57,6 +64,7 @@ func (o *Dialerpreview) String() string {
     
     
      o.PhoneNumberColumns = []Phonenumbercolumn{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -83,6 +91,8 @@ func (u *Dialerpreview) MarshalJSON() ([]byte, error) {
         CampaignId string `json:"campaignId"`
         
         PhoneNumberColumns []Phonenumbercolumn `json:"phoneNumberColumns"`
+        
+        CallbackAutoAnswer bool `json:"callbackAutoAnswer"`
         *Alias
     }{
 
@@ -100,6 +110,9 @@ func (u *Dialerpreview) MarshalJSON() ([]byte, error) {
 
         
         PhoneNumberColumns: []Phonenumbercolumn{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

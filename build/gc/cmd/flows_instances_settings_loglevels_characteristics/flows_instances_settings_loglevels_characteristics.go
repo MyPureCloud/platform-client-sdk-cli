@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdflows_instances_settings_loglevels_characteristics() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/instances/settings/loglevels/characteristics", utils.FormatPermissions([]string{ "architect:flowLogLevel:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/instances/settings/loglevels/characteristics")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/flows/instances/settings/loglevels/characteristics", utils.FormatPermissions([]string{ "architect:flowLogLevel:view", "architect:flowLogLevelDefault:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/flows/instances/settings/loglevels/characteristics")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

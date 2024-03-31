@@ -1,0 +1,12 @@
+package analytics_reporting_settings_dashboards_bulk
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_reporting_settings_dashboards_bulk_remove"
+)
+
+func init() {
+	analytics_reporting_settings_dashboards_bulkCmd.AddCommand(analytics_reporting_settings_dashboards_bulk_remove.Cmdanalytics_reporting_settings_dashboards_bulk_remove())
+	analytics_reporting_settings_dashboards_bulkCmd.Short = utils.GenerateCustomDescription(analytics_reporting_settings_dashboards_bulkCmd.Short, analytics_reporting_settings_dashboards_bulk_remove.Description, )
+	analytics_reporting_settings_dashboards_bulkCmd.Long = analytics_reporting_settings_dashboards_bulkCmd.Short
+}

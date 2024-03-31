@@ -105,6 +105,12 @@ type RecordingDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -136,6 +142,14 @@ type Recording struct {
 
     // Media - The media type of the recording. This could be audio, chat, messaging, email, or screen.
     Media string `json:"media"`
+
+
+    // MediaSubtype - The media subtype of the recording.
+    MediaSubtype string `json:"mediaSubtype"`
+
+
+    // MediaSubject - The media subject of the recording.
+    MediaSubject string `json:"mediaSubject"`
 
 
     // Annotations - Annotations that belong to the recording.
@@ -246,6 +260,8 @@ func (o *Recording) String() string {
     
     
     
+    
+    
      o.Annotations = []Annotation{{}} 
      o.Transcript = []Chatmessage{{}} 
      o.EmailTranscript = []Recordingemailmessage{{}} 
@@ -299,6 +315,10 @@ func (u *Recording) MarshalJSON() ([]byte, error) {
         
         Media string `json:"media"`
         
+        MediaSubtype string `json:"mediaSubtype"`
+        
+        MediaSubject string `json:"mediaSubject"`
+        
         Annotations []Annotation `json:"annotations"`
         
         Transcript []Chatmessage `json:"transcript"`
@@ -348,6 +368,12 @@ func (u *Recording) MarshalJSON() ([]byte, error) {
         CreationTime time.Time `json:"creationTime"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

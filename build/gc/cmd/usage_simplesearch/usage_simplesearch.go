@@ -62,8 +62,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Search organization API Usage - ",
-	Long:  "Search organization API Usage - ",
+	Short: "Search organization API Usage",
+	Long:  "Search organization API Usage",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

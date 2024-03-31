@@ -27,7 +27,7 @@ type KnowledgeguestdocumentresponselistingDud struct {
 // Knowledgeguestdocumentresponselisting
 type Knowledgeguestdocumentresponselisting struct { 
     // Entities
-    Entities []Knowledgeguestdocument `json:"entities"`
+    Entities []Knowledgeguestdocumentresponse `json:"entities"`
 
 
     // NextUri
@@ -45,7 +45,7 @@ type Knowledgeguestdocumentresponselisting struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgeguestdocumentresponselisting) String() string {
-     o.Entities = []Knowledgeguestdocument{{}} 
+     o.Entities = []Knowledgeguestdocumentresponse{{}} 
     
     
     
@@ -66,7 +66,7 @@ func (u *Knowledgeguestdocumentresponselisting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Entities []Knowledgeguestdocument `json:"entities"`
+        Entities []Knowledgeguestdocumentresponse `json:"entities"`
         
         NextUri string `json:"nextUri"`
         
@@ -77,7 +77,7 @@ func (u *Knowledgeguestdocumentresponselisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Knowledgeguestdocument{{}},
+        Entities: []Knowledgeguestdocumentresponse{{}},
         
 
 

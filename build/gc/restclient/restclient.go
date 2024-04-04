@@ -24,6 +24,7 @@ import (
         "io/ioutil"
         "net/url"
         "strings"
+        "path/filepath"
 
         "github.com/hashicorp/go-retryablehttp"
         "github.com/tidwall/pretty"
@@ -112,7 +113,7 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "97.0.0")
+        request.Header.Set("purecloud-sdk", "97.1.0")
 
         if data != "" {
                 request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
@@ -222,7 +223,7 @@ func authorizePKCEGrant(c config.Configuration, code string, codeVerifier string
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "97.0.0")
+        request.Header.Set("purecloud-sdk", "97.1.0")
 
         //Setting up the form data
         form := url.Values{}
@@ -306,7 +307,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "97.0.0")
+        request.Header.Set("purecloud-sdk", "97.1.0")
 
         //Setting up the form data
         form := url.Values{}
@@ -440,7 +441,7 @@ func startLocalServerFunc(c config.Configuration, authChannel chan models.OAuthT
 
         if c.SecureLoginEnabled() {
                 log.SetOutput(ioutil.Discard)
-                log.Fatal(http.ListenAndServeTLS(":"+u.Port(), os.TempDir()+"cert.pem", os.TempDir()+"key.pem", nil))
+                log.Fatal(http.ListenAndServeTLS(":"+u.Port(), filepath.Join(os.TempDir(), "cert.pem"), filepath.Join(os.TempDir(), "key.pem"), nil))
         } else {
                 log.Fatal(http.ListenAndServe(":"+u.Port(), nil))
         }
@@ -487,7 +488,7 @@ func openBrowserForLoginFunc(loginURL string) {
         case "darwin":
                 err = exec.Command("open", loginURL).Start()
         default:
-                err = fmt.Errorf("unsupported platform")
+                err = fmt.Errorf("unsupported platform '%s'", runtime.GOOS)
         }
         if err != nil {
                 logger.Fatal(err)

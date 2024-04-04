@@ -23,7 +23,7 @@ const (
 	None              GrantType = "0"
 	ClientCredentials           = "1"
 	ImplicitGrant               = "2"
-	PKCEGrant               	= "3"
+	PKCEGrant                   = "3"
 )
 
 func isValidGrantType(t GrantType) bool {
@@ -103,14 +103,14 @@ func requestUserInput() config.Configuration {
 	)
 
 	fmt.Print("Profile Name [DEFAULT]: ")
-	fmt.Scanln(&name)
+	_, _ = fmt.Scanln(&name)
 
 	if name == "" {
 		name = "DEFAULT"
 	}
 
 	fmt.Printf("Environment [mypurecloud.com]: ")
-	fmt.Scanln(&environment)
+	_, _ = fmt.Scanln(&environment)
 
 	if environment == "" {
 		environment = "mypurecloud.com"
@@ -120,10 +120,10 @@ func requestUserInput() config.Configuration {
 	fmt.Print("Access Token (Optional): ")
 	accessToken = readSensitiveInput()
 
-	for true {
+	for {
 		fmt.Print("Select your authorization grant type.\n")
 		fmt.Print("\t0. None\n\t1. Client Credentials\n\t2. Implicit Grant\n\t3. PKCE Grant\nGrant Type: ")
-		fmt.Scanln(&grantType)
+		_, _ = fmt.Scanln(&grantType)
 
 		if accessToken == "" && grantType == None {
 			fmt.Print("If you have not provided an access token, you must select a grant type.\n")
@@ -138,9 +138,9 @@ func requestUserInput() config.Configuration {
 
 	if (grantType == ImplicitGrant) || (grantType == PKCEGrant) {
 		redirectURL.Host = "localhost:" + requestRedirectURIPort()
-		for true {
+		for {
 			fmt.Print("Would you like to use a secure HTTP connection? [Y/N]: ")
-			fmt.Scanln(&authChoice)
+			_, _ = fmt.Scanln(&authChoice)
 			if strings.ToUpper(authChoice) == "Y" {
 				secureLoginEnabled = true
 				redirectURL.Scheme = "https"
@@ -154,15 +154,15 @@ func requestUserInput() config.Configuration {
 		fmt.Printf("Redirect URI: %s\n", redirectURL.String())
 	}
 
-	for true {
+	var proxyConfig *config.ProxyConfiguration
+	for {
 		fmt.Print("Would you like to use a proxy server? [Y/N]: ")
-		fmt.Scanln(&proxyChoice)
+		_, _ = fmt.Scanln(&proxyChoice)
 		if strings.ToUpper(proxyChoice) == "Y" {
-			proxyConf := requestProxyDetails()
-			return constructConfig(name, environment, grantType, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, proxyConf)
+			proxyConfig = requestProxyDetails()
 			break
 		} else if strings.ToUpper(proxyChoice) == "N" {
-			return constructConfig(name, environment, grantType, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, nil)
+			proxyConfig = nil
 			break
 		} else {
 			fmt.Print("Provide valid option.\n")
@@ -170,7 +170,7 @@ func requestUserInput() config.Configuration {
 		}
 	}
 
-	return constructConfig(name, environment, grantType, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, nil)
+	return constructConfig(name, environment, grantType, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, proxyConfig)
 }
 
 func requestClientCreds(accessToken string, grantType GrantType) (string, string) {
@@ -180,14 +180,13 @@ func requestClientCreds(accessToken string, grantType GrantType) (string, string
 	if grantType == ClientCredentials {
 		if accessToken != "" {
 			fmt.Print("Client ID: ")
-			fmt.Scanln(&id)
-
+			_, _ = fmt.Scanln(&id)
 			fmt.Print("Client Secret: ")
 			secret = readSensitiveInput()
 		} else {
 			for id == "" {
 				fmt.Print("Client ID: ")
-				fmt.Scanln(&id)
+				_, _ = fmt.Scanln(&id)
 			}
 			for secret == "" {
 				fmt.Print("Client Secret: ")
@@ -198,7 +197,7 @@ func requestClientCreds(accessToken string, grantType GrantType) (string, string
 		// Implicit Grant
 		for id == "" {
 			fmt.Print("Client ID: ")
-			fmt.Scanln(&id)
+			_, _ = fmt.Scanln(&id)
 		}
 
 		fmt.Print("Client Secret (Optional): ")
@@ -207,7 +206,7 @@ func requestClientCreds(accessToken string, grantType GrantType) (string, string
 		// PKCE Grant
 		for id == "" {
 			fmt.Print("Client ID: ")
-			fmt.Scanln(&id)
+			_, _ = fmt.Scanln(&id)
 		}
 	}
 
@@ -224,24 +223,24 @@ func requestProxyDetails() *config.ProxyConfiguration {
 
 	for protocol == "" {
 		fmt.Print("Protocol (http/https): ")
-		fmt.Scanln(&protocol)
+		_, _ = fmt.Scanln(&protocol)
 	}
 	for port == "" {
 		fmt.Print("Port for the Proxy: ")
-		fmt.Scanln(&port)
+		_, _ = fmt.Scanln(&port)
 	}
 	for host == "" {
 		fmt.Print("Host name for the Proxy server: ")
-		fmt.Scanln(&host)
+		_, _ = fmt.Scanln(&host)
 	}
 
-	for true {
+	for {
 		fmt.Print("Do we require Authorisation to use the proxy server? [Y/N]: ")
-		fmt.Scanln(&isAuthRequired)
+		_, _ = fmt.Scanln(&isAuthRequired)
 		if strings.ToUpper(isAuthRequired) == "Y" {
 			for username == "" {
 				fmt.Print("username for the Proxy: ")
-				fmt.Scanln(&username)
+				_, _ = fmt.Scanln(&username)
 			}
 			for password == "" {
 				fmt.Print("Password for the Proxy server: ")
@@ -279,7 +278,7 @@ func requestRedirectURIPort() string {
 	defaultPort := "8080"
 
 	fmt.Printf("Redirect URI port [%s]: ", defaultPort)
-	fmt.Scanln(&inputPort)
+	_, _ = fmt.Scanln(&inputPort)
 	if inputPort == "" {
 		inputPort = defaultPort
 	}
@@ -293,14 +292,14 @@ func overrideConfig(name string) bool {
 		return true
 	}
 
-	config, err := config.GetConfig(name)
+	getConfig, err := config.GetConfig(name)
 
 	//profile already exists we will get a nil back and we must resolve the results
-	if err == nil && config.ProfileName() != "" {
-		for true {
+	if err == nil && getConfig.ProfileName() != "" {
+		for {
 			var overwrite string
-			fmt.Printf("Profile name %s already exists in the config file. Overwrite (Y/N): ", name)
-			fmt.Scanln(&overwrite)
+			fmt.Printf("Profile name %s already exists in the getConfig file. Overwrite (Y/N): ", name)
+			_, _ = fmt.Scanln(&overwrite)
 
 			if strings.ToUpper(overwrite) == "N" {
 				return false
@@ -318,7 +317,7 @@ func overrideConfig(name string) bool {
 func validateCredentials(config config.Configuration) bool {
 	oauthToken, err := restclient.Authorize(config)
 	if err != nil || oauthToken.AccessToken == "" {
-		//Check to see if its an HTTP error and if its check to see if its what we are expecting
+		//Check to see if it is an HTTP error and if so, check to see if it is what we are expecting
 		if _, ok := err.(*models.HttpStatusError); ok {
 			return false
 		}
@@ -340,7 +339,6 @@ var createProfilesCmd = &cobra.Command{
 		if overrideConfig(newConfig.ProfileName()) == false {
 			logger.Fatal("Exiting profile creation process")
 		}
-
 		if newConfig.AccessToken() == "" && validateCredentials(newConfig) == false {
 			logger.Fatal("The credentials provided are not valid.")
 		}

@@ -18,7 +18,7 @@ import (
 	"encoding/pem"
 	"math/big"
 	"os"
-	"strings"
+	"path/filepath"
 	"time"
 )
 
@@ -39,15 +39,10 @@ func GenerateCerts() error {
 		err            error
 		pathToCertFile string
 		pathToKeyFile  string
-		tmpDir         = os.TempDir()
 	)
 
-	if !strings.HasSuffix(tmpDir, "/") {
-		tmpDir += "/"
-	}
-
-	pathToCertFile = tmpDir + certFileName
-	pathToKeyFile = tmpDir + keyFileName
+	pathToCertFile = filepath.Join(os.TempDir(), certFileName)
+	pathToKeyFile = filepath.Join(os.TempDir(), keyFileName)
 
 	priv, err = rsa.GenerateKey(rand.Reader, rsaBits)
 	if err != nil {

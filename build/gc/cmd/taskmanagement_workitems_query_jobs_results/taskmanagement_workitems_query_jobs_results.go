@@ -1,4 +1,4 @@
-package telephony_providers_edges_availablelanguages
+package taskmanagement_workitems_query_jobs_results
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("telephony_providers_edges_availablelanguages", "SWAGGER_OVERRIDE_/api/v2/telephony/providers/edges/availablelanguages", )
-	telephony_providers_edges_availablelanguagesCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("telephony_providers_edges_availablelanguages"),
+	Description = utils.FormatUsageDescription("taskmanagement_workitems_query_jobs_results", "SWAGGER_OVERRIDE_/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results", )
+	taskmanagement_workitems_query_jobs_resultsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("taskmanagement_workitems_query_jobs_results"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,11 +24,11 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(telephony_providers_edges_availablelanguagesCmd)
+	CommandService = services.NewCommandService(taskmanagement_workitems_query_jobs_resultsCmd)
 }
 
-func Cmdtelephony_providers_edges_availablelanguages() *cobra.Command { 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/availablelanguages", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/availablelanguages")))
+func Cmdtaskmanagement_workitems_query_jobs_results() *cobra.Command { 
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results", utils.FormatPermissions([]string{ "workitems:queryJobResults:view",  }), utils.GenerateDevCentreLink("GET", "Task Management", "/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -36,13 +36,13 @@ func Cmdtelephony_providers_edges_availablelanguages() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/AvailableLanguageList"
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
       }
     }
   }
 }`)
-	telephony_providers_edges_availablelanguagesCmd.AddCommand(listCmd)
-	return telephony_providers_edges_availablelanguagesCmd
+	taskmanagement_workitems_query_jobs_resultsCmd.AddCommand(listCmd)
+	return taskmanagement_workitems_query_jobs_resultsCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -51,10 +51,10 @@ func queryEscape(value string) string {
 }
 
 var listCmd = &cobra.Command{
-	Use:   "list",
-	Short: "Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.",
-	Long:  "Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.",
-	Args:  utils.DetermineArgs([]string{ }),
+	Use:   "list [jobId]",
+	Short: "Get results from for workitem query job ",
+	Long:  "Get results from for workitem query job ",
+	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -67,7 +67,9 @@ var listCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/telephony/providers/edges/availablelanguages"
+		path := "/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results"
+		jobId, args := args[0], args[1:]
+		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {

@@ -67,8 +67,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Retrieves audits for dialer.",
-	Long:  "Retrieves audits for dialer.",
+	Short: "Retrieves audits for dialer. (Deprecated)",
+	Long:  "Retrieves audits for dialer. (Deprecated)",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

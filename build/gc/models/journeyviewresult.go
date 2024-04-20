@@ -15,7 +15,7 @@ type JourneyviewresultDud struct {
 
 }
 
-// Journeyviewresult
+// Journeyviewresult - A journey view result
 type Journeyviewresult struct { 
     
 

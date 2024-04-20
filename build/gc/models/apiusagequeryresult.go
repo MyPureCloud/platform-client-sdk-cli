@@ -16,6 +16,9 @@ type ApiusagequeryresultDud struct {
 
     
 
+
+    
+
 }
 
 // Apiusagequeryresult
@@ -27,11 +30,16 @@ type Apiusagequeryresult struct {
     // QueryStatus - Query status
     QueryStatus string `json:"queryStatus"`
 
+
+    // Cursors - Cursor tokens to be used for navigating paginated results
+    Cursors Cursors `json:"cursors"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Apiusagequeryresult) String() string {
      o.Results = []Apiusagerow{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -53,11 +61,16 @@ func (u *Apiusagequeryresult) MarshalJSON() ([]byte, error) {
         Results []Apiusagerow `json:"results"`
         
         QueryStatus string `json:"queryStatus"`
+        
+        Cursors Cursors `json:"cursors"`
         *Alias
     }{
 
         
         Results: []Apiusagerow{{}},
+        
+
+
         
 
 

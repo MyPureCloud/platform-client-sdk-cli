@@ -46,7 +46,7 @@ type Addshifttraderequest struct {
     Expiration time.Time `json:"expiration"`
 
 
-    // AcceptableIntervals
+    // AcceptableIntervals - The acceptable intervals the initiating user is willing to accept in trade.  Empty indicates the user is giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     AcceptableIntervals []string `json:"acceptableIntervals"`
 
 }

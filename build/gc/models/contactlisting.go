@@ -79,12 +79,12 @@ type Contactlisting struct {
     NextUri string `json:"nextUri"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
     // PreviousUri
     PreviousUri string `json:"previousUri"`
+
+
+    // LastUri
+    LastUri string `json:"lastUri"`
 
 
     // PageCount
@@ -138,9 +138,9 @@ func (u *Contactlisting) MarshalJSON() ([]byte, error) {
         
         NextUri string `json:"nextUri"`
         
-        LastUri string `json:"lastUri"`
-        
         PreviousUri string `json:"previousUri"`
+        
+        LastUri string `json:"lastUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

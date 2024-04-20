@@ -41,6 +41,9 @@ type ObjectiveDud struct {
 
     
 
+
+    
+
 }
 
 // Objective
@@ -80,6 +83,10 @@ type Objective struct {
     EvaluationFormContextIds []string `json:"evaluationFormContextIds"`
 
 
+    // InitialDirection - The initial direction to filter on
+    InitialDirection string `json:"initialDirection"`
+
+
     // DateStart - start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     DateStart time.Time `json:"dateStart"`
 
@@ -95,6 +102,7 @@ func (o *Objective) String() string {
      o.Topics = []Addressableentityref{{}} 
     
      o.EvaluationFormContextIds = []string{""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -128,6 +136,8 @@ func (u *Objective) MarshalJSON() ([]byte, error) {
         TopicIdsFilterType string `json:"topicIdsFilterType"`
         
         EvaluationFormContextIds []string `json:"evaluationFormContextIds"`
+        
+        InitialDirection string `json:"initialDirection"`
         
         DateStart time.Time `json:"dateStart"`
         *Alias
@@ -167,6 +177,9 @@ func (u *Objective) MarshalJSON() ([]byte, error) {
 
         
         EvaluationFormContextIds: []string{""},
+        
+
+
         
 
 

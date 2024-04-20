@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ProgramtranscriptionenginesDud struct { 
-    
+    Id string `json:"id"`
 
 
     
@@ -22,17 +22,26 @@ type ProgramtranscriptionenginesDud struct {
 
 
     
+
+
+    
+
+
+    SelfUri string `json:"selfUri"`
 
 }
 
 // Programtranscriptionengines
 type Programtranscriptionengines struct { 
+    
+
+
     // Program - The ID of the program
     Program Baseprogramentity `json:"program"`
 
 
     // TranscriptionEngines - The program transcription engine settings
-    TranscriptionEngines []Transcriptionengines `json:"transcriptionEngines"`
+    TranscriptionEngines []Programtranscriptionengine `json:"transcriptionEngines"`
 
 
     // ModifiedBy - The user last modified the record
@@ -42,12 +51,15 @@ type Programtranscriptionengines struct {
     // DateModified - The last modified date of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateModified time.Time `json:"dateModified"`
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Programtranscriptionengines) String() string {
     
-     o.TranscriptionEngines = []Transcriptionengines{{}} 
+     o.TranscriptionEngines = []Programtranscriptionengine{{}} 
     
     
 
@@ -69,7 +81,7 @@ func (u *Programtranscriptionengines) MarshalJSON() ([]byte, error) {
         
         Program Baseprogramentity `json:"program"`
         
-        TranscriptionEngines []Transcriptionengines `json:"transcriptionEngines"`
+        TranscriptionEngines []Programtranscriptionengine `json:"transcriptionEngines"`
         
         ModifiedBy Addressableentityref `json:"modifiedBy"`
         
@@ -81,7 +93,13 @@ func (u *Programtranscriptionengines) MarshalJSON() ([]byte, error) {
 
 
         
-        TranscriptionEngines: []Transcriptionengines{{}},
+
+
+        
+        TranscriptionEngines: []Programtranscriptionengine{{}},
+        
+
+
         
 
 

@@ -54,8 +54,8 @@ func queryEscape(value string) string {
 
 var listCmd = &cobra.Command{
 	Use:   "list [messengerType]",
-	Short: "Get a list of Messaging Stickers",
-	Long:  "Get a list of Messaging Stickers",
+	Short: "Get a list of Messaging Stickers (Deprecated)",
+	Long:  "Get a list of Messaging Stickers (Deprecated)",
 	Args:  utils.DetermineArgs([]string{ "messengerType", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

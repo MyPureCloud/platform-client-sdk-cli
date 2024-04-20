@@ -155,11 +155,13 @@ gc/cmd/chats_messages/chats_messages.go
 gc/cmd/chats_messages_reactions/chats_messages_reactions.go
 gc/cmd/chats_rooms/chats_rooms.go
 gc/cmd/chats_rooms_messages/chats_rooms_messages.go
+gc/cmd/chats_rooms_messages_pins/chats_rooms_messages_pins.go
 gc/cmd/chats_rooms_participants/chats_rooms_participants.go
-gc/cmd/chats_rooms_pinnedmessages/chats_rooms_pinnedmessages.go
 gc/cmd/chats_settings/chats_settings.go
 gc/cmd/chats_threads_messages/chats_threads_messages.go
+gc/cmd/chats_users/chats_users.go
 gc/cmd/chats_users_messages/chats_users_messages.go
+gc/cmd/chats_users_messages_pins/chats_users_messages_pins.go
 gc/cmd/chats_users_settings/chats_users_settings.go
 gc/cmd/coaching_appointments/coaching_appointments.go
 gc/cmd/coaching_appointments_aggregates_query/coaching_appointments_aggregates_query.go
@@ -385,6 +387,7 @@ gc/cmd/externalcontacts_scan_organizations/externalcontacts_scan_organizations.g
 gc/cmd/externalcontacts_scan_relationships/externalcontacts_scan_relationships.go
 gc/cmd/fax_documents/fax_documents.go
 gc/cmd/fax_documents_content/fax_documents_content.go
+gc/cmd/fax_settings/fax_settings.go
 gc/cmd/fax_summary/fax_summary.go
 gc/cmd/fieldconfig/fieldconfig.go
 gc/cmd/flows/flows.go
@@ -630,6 +633,7 @@ gc/cmd/languageunderstanding_miners_intents/languageunderstanding_miners_intents
 gc/cmd/languageunderstanding_miners_topics/languageunderstanding_miners_topics.go
 gc/cmd/languageunderstanding_miners_topics_phrases/languageunderstanding_miners_topics_phrases.go
 gc/cmd/languageunderstanding_miners_uploads/languageunderstanding_miners_uploads.go
+gc/cmd/languageunderstanding_settings/languageunderstanding_settings.go
 gc/cmd/learning_assessments_scoring/learning_assessments_scoring.go
 gc/cmd/learning_assignments/learning_assignments.go
 gc/cmd/learning_assignments_aggregates_query/learning_assignments_aggregates_query.go
@@ -925,6 +929,8 @@ gc/cmd/taskmanagement_workitems_assignment/taskmanagement_workitems_assignment.g
 gc/cmd/taskmanagement_workitems_disconnect/taskmanagement_workitems_disconnect.go
 gc/cmd/taskmanagement_workitems_history/taskmanagement_workitems_history.go
 gc/cmd/taskmanagement_workitems_query/taskmanagement_workitems_query.go
+gc/cmd/taskmanagement_workitems_query_jobs/taskmanagement_workitems_query_jobs.go
+gc/cmd/taskmanagement_workitems_query_jobs_results/taskmanagement_workitems_query_jobs_results.go
 gc/cmd/taskmanagement_workitems_schemas/taskmanagement_workitems_schemas.go
 gc/cmd/taskmanagement_workitems_schemas_versions/taskmanagement_workitems_schemas_versions.go
 gc/cmd/taskmanagement_workitems_terminate/taskmanagement_workitems_terminate.go
@@ -943,7 +949,6 @@ gc/cmd/teams_search/teams_search.go
 gc/cmd/telephony_mediaregions/telephony_mediaregions.go
 gc/cmd/telephony_providers_edges/telephony_providers_edges.go
 gc/cmd/telephony_providers_edges_addressvalidation/telephony_providers_edges_addressvalidation.go
-gc/cmd/telephony_providers_edges_availablelanguages/telephony_providers_edges_availablelanguages.go
 gc/cmd/telephony_providers_edges_certificateauthorities/telephony_providers_edges_certificateauthorities.go
 gc/cmd/telephony_providers_edges_diagnostic_nslookup/telephony_providers_edges_diagnostic_nslookup.go
 gc/cmd/telephony_providers_edges_diagnostic_ping/telephony_providers_edges_diagnostic_ping.go
@@ -1315,6 +1320,7 @@ gc/models/agentqueryadherenceexplanationsresponse.go
 gc/models/agentqueuetimerequest.go
 gc/models/agentsintegrationslisting.go
 gc/models/agenttimeoffrequestpatch.go
+gc/models/agentvideosettings.go
 gc/models/aggregatemetricdata.go
 gc/models/aggregateviewdata.go
 gc/models/aggregationrange.go
@@ -1445,7 +1451,6 @@ gc/models/authzsubject.go
 gc/models/automatictimezonemappingsettings.go
 gc/models/autostart.go
 gc/models/autostatustransitiondetail.go
-gc/models/availablelanguagelist.go
 gc/models/availablemediatype.go
 gc/models/availablemediatypeentitylisting.go
 gc/models/availabletime.go
@@ -1455,6 +1460,7 @@ gc/models/availabletimeoffresponse.go
 gc/models/availabletopic.go
 gc/models/availabletopicentitylisting.go
 gc/models/availabletranslations.go
+gc/models/backgroundimagesettings.go
 gc/models/basemediasettings.go
 gc/models/baseprogramentity.go
 gc/models/basetopicentitiy.go
@@ -1673,6 +1679,7 @@ gc/models/campaigndivisionviewlisting.go
 gc/models/campaignentitylisting.go
 gc/models/campaigninteraction.go
 gc/models/campaigninteractions.go
+gc/models/campaignlinesutilization.go
 gc/models/campaignprogress.go
 gc/models/campaignrule.go
 gc/models/campaignruleaction.go
@@ -1780,6 +1787,7 @@ gc/models/compliance.go
 gc/models/complianceresponse.go
 gc/models/condition.go
 gc/models/conditionalgrouprouting.go
+gc/models/conditionalgrouproutingcondition.go
 gc/models/conditionalgrouproutingrule.go
 gc/models/configurationoverrides.go
 gc/models/confusiondetails.go
@@ -1936,6 +1944,7 @@ gc/models/conversationthreadingwindow.go
 gc/models/conversationthreadingwindowsetting.go
 gc/models/conversationuser.go
 gc/models/conversationuserdisposition.go
+gc/models/copilotscoring.go
 gc/models/copyattachmentsrequest.go
 gc/models/copybuforecastrequest.go
 gc/models/copyvoicemailmessage.go
@@ -2316,6 +2325,7 @@ gc/models/encryptionkeyentitylisting.go
 gc/models/endconsulttransferevent.go
 gc/models/endpoint.go
 gc/models/endtransferevent.go
+gc/models/engineintegration.go
 gc/models/entity.go
 gc/models/entitychange.go
 gc/models/entitylisting.go
@@ -2404,8 +2414,10 @@ gc/models/extensionpooldivisionviewentitylisting.go
 gc/models/extensionpoolentitylisting.go
 gc/models/externalcontact.go
 gc/models/externalcontactreference.go
+gc/models/externalcontactsentity.go
 gc/models/externaldatasource.go
 gc/models/externalestablishedevent.go
+gc/models/externalid.go
 gc/models/externalmetricdataitem.go
 gc/models/externalmetricdataprocesseditem.go
 gc/models/externalmetricdataunprocesseditem.go
@@ -2419,6 +2431,7 @@ gc/models/externalorganization.go
 gc/models/externalorganizationlisting.go
 gc/models/externalorganizationtrustorlink.go
 gc/models/externalsegment.go
+gc/models/externalsource.go
 gc/models/facebookappcredentials.go
 gc/models/facebookid.go
 gc/models/facebookintegration.go
@@ -2436,6 +2449,7 @@ gc/models/facetstatistics.go
 gc/models/facetterm.go
 gc/models/failedobject.go
 gc/models/failedrecordingentitylisting.go
+gc/models/faxconfig.go
 gc/models/faxdocument.go
 gc/models/faxdocumententitylisting.go
 gc/models/faxsendrequest.go
@@ -2593,6 +2607,7 @@ gc/models/greetinglisting.go
 gc/models/greetingmediainfo.go
 gc/models/greetingowner.go
 gc/models/group.go
+gc/models/groupbyattribute.go
 gc/models/groupcontact.go
 gc/models/groupcreate.go
 gc/models/groupentitylisting.go
@@ -2748,6 +2763,9 @@ gc/models/journeyview.go
 gc/models/journeyviewchart.go
 gc/models/journeyviewchartgroupbyattribute.go
 gc/models/journeyviewchartmetric.go
+gc/models/journeyviewchartmetricresult.go
+gc/models/journeyviewchartmetricresultvalue.go
+gc/models/journeyviewchartresult.go
 gc/models/journeyviewelement.go
 gc/models/journeyviewelementattributes.go
 gc/models/journeyviewelementfilter.go
@@ -2978,6 +2996,7 @@ gc/models/lineintegrationentitylisting.go
 gc/models/lineintegrationrequest.go
 gc/models/linestatus.go
 gc/models/lineuserid.go
+gc/models/linkconfiguration.go
 gc/models/listeddictionaryfeedback.go
 gc/models/listedprogram.go
 gc/models/listedtopic.go
@@ -3179,6 +3198,7 @@ gc/models/nlufeedbacklisting.go
 gc/models/nlufeedbackrequest.go
 gc/models/nlufeedbackresponse.go
 gc/models/nluinfo.go
+gc/models/nluorganization.go
 gc/models/nluqualityreportsummary.go
 gc/models/nluqualityreportsummarymetric.go
 gc/models/nluutterance.go
@@ -3222,6 +3242,7 @@ gc/models/observationmetricdata.go
 gc/models/observationvalue.go
 gc/models/okta.go
 gc/models/onelogin.go
+gc/models/oneonone.go
 gc/models/openactionfields.go
 gc/models/openactionproperties.go
 gc/models/opencontentattachment.go
@@ -3431,6 +3452,7 @@ gc/models/programmappingsrequest.go
 gc/models/programrequest.go
 gc/models/programsentitylisting.go
 gc/models/programsmappingsentitylisting.go
+gc/models/programtranscriptionengine.go
 gc/models/programtranscriptionengines.go
 gc/models/progressconsulttransferevent.go
 gc/models/progresstransferevent.go
@@ -3883,7 +3905,10 @@ gc/models/supportedcontent.go
 gc/models/supportedcontentlisting.go
 gc/models/supportedcontentreference.go
 gc/models/supporteddialectsentitylisting.go
+gc/models/supporteddialectstranscriptionengine.go
+gc/models/supportedentitytypestatus.go
 gc/models/supportedlanguage.go
+gc/models/supportedlanguagesinfodefinition.go
 gc/models/survey.go
 gc/models/surveyaggregatedatacontainer.go
 gc/models/surveyaggregatequeryclause.go
@@ -4039,7 +4064,6 @@ gc/models/transcriptasyncaggregatequeryresponse.go
 gc/models/transcriptasyncaggregationquery.go
 gc/models/transcriptconversationdetailsearchcriteria.go
 gc/models/transcriptconversationdetailsearchrequest.go
-gc/models/transcriptionengines.go
 gc/models/transcriptionenginesrequest.go
 gc/models/transcriptionsettings.go
 gc/models/transcripts.go
@@ -4258,6 +4282,7 @@ gc/models/usertimeoffintegrationstatusresponselisting.go
 gc/models/usertimeoffrequestreference.go
 gc/models/usertransferevent.go
 gc/models/usertrenddata.go
+gc/models/uservideosettings.go
 gc/models/utilizationlabel.go
 gc/models/utilizationlabelentitylisting.go
 gc/models/utilizationrequest.go
@@ -4281,6 +4306,7 @@ gc/models/verifier.go
 gc/models/verifierentitylisting.go
 gc/models/video.go
 gc/models/videoconferencedetails.go
+gc/models/videosettings.go
 gc/models/viewfilter.go
 gc/models/visibilitycondition.go
 gc/models/vmpairinginfo.go
@@ -4425,7 +4451,13 @@ gc/models/workitemcreate.go
 gc/models/workitemdelta.go
 gc/models/workitemfilter.go
 gc/models/workitemmanualassign.go
+gc/models/workitempagedentitylisting.go
 gc/models/workitempostqueryentitylisting.go
+gc/models/workitemqueryjobcreate.go
+gc/models/workitemqueryjoberror.go
+gc/models/workitemqueryjobfilter.go
+gc/models/workitemqueryjobresponse.go
+gc/models/workitemqueryjobsort.go
 gc/models/workitemquerypostrequest.go
 gc/models/workitemquerysort.go
 gc/models/workitemqueuereference.go

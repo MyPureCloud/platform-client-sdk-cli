@@ -32,7 +32,7 @@ type ConditionalgrouproutingruleDud struct {
 
 // Conditionalgrouproutingrule
 type Conditionalgrouproutingrule struct { 
-    // Queue - The queue being evaluated for this rule.  For rule 1, this is always the current queue, so should not be specified.
+    // Queue - The queue being evaluated for this rule.  If null, the current queue will be used.
     Queue Domainentityref `json:"queue"`
 
 

@@ -37,6 +37,9 @@ type DefaultobjectiveDud struct {
 
     
 
+
+    
+
 }
 
 // Defaultobjective
@@ -75,6 +78,10 @@ type Defaultobjective struct {
     // EvaluationFormContextIds - The ids of associated evaluation form context, for Quality Evaluation Score metrics
     EvaluationFormContextIds []string `json:"evaluationFormContextIds"`
 
+
+    // InitialDirection - The initial direction to filter on
+    InitialDirection string `json:"initialDirection"`
+
 }
 
 // String returns a JSON representation of the model
@@ -87,6 +94,7 @@ func (o *Defaultobjective) String() string {
      o.Topics = []Addressableentityref{{}} 
     
      o.EvaluationFormContextIds = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -119,6 +127,8 @@ func (u *Defaultobjective) MarshalJSON() ([]byte, error) {
         TopicIdsFilterType string `json:"topicIdsFilterType"`
         
         EvaluationFormContextIds []string `json:"evaluationFormContextIds"`
+        
+        InitialDirection string `json:"initialDirection"`
         *Alias
     }{
 
@@ -156,6 +166,9 @@ func (u *Defaultobjective) MarshalJSON() ([]byte, error) {
 
         
         EvaluationFormContextIds: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

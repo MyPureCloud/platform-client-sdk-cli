@@ -6,25 +6,33 @@ import (
 )
 
 var (
-    AvailablelanguagelistMarshalled = false
+    ExternalidMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type AvailablelanguagelistDud struct { 
+type ExternalidDud struct { 
+    
+
+
     
 
 }
 
-// Availablelanguagelist
-type Availablelanguagelist struct { 
-    // Languages
-    Languages []string `json:"languages"`
+// Externalid
+type Externalid struct { 
+    // ExternalSource
+    ExternalSource Externalsource `json:"externalSource"`
+
+
+    // Value
+    Value string `json:"value"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Availablelanguagelist) String() string {
-     o.Languages = []string{""} 
+func (o *Externalid) String() string {
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -32,22 +40,25 @@ func (o *Availablelanguagelist) String() string {
     return str
 }
 
-func (u *Availablelanguagelist) MarshalJSON() ([]byte, error) {
-    type Alias Availablelanguagelist
+func (u *Externalid) MarshalJSON() ([]byte, error) {
+    type Alias Externalid
 
-    if AvailablelanguagelistMarshalled {
+    if ExternalidMarshalled {
         return []byte("{}"), nil
     }
-    AvailablelanguagelistMarshalled = true
+    ExternalidMarshalled = true
 
     return json.Marshal(&struct {
         
-        Languages []string `json:"languages"`
+        ExternalSource Externalsource `json:"externalSource"`
+        
+        Value string `json:"value"`
         *Alias
     }{
 
         
-        Languages: []string{""},
+
+
         
 
         Alias: (*Alias)(u),

@@ -532,6 +532,12 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1231,6 +1237,14 @@ type Viewfilter struct {
     // AgentEmpathyScore - The agentEmpathyScore is used to filter the view
     AgentEmpathyScore Numericrange `json:"agentEmpathyScore"`
 
+
+    // SurveyTypes - The surveyTypes is used to filter the view
+    SurveyTypes []string `json:"surveyTypes"`
+
+
+    // SurveyResponseStatuses - The list of Survey Response Status
+    SurveyResponseStatuses []string `json:"surveyResponseStatuses"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1409,6 +1423,8 @@ func (o *Viewfilter) String() string {
      o.KnowledgeBaseIds = []string{""} 
     
     
+     o.SurveyTypes = []string{""} 
+     o.SurveyResponseStatuses = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1773,6 +1789,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         IsParked bool `json:"isParked"`
         
         AgentEmpathyScore Numericrange `json:"agentEmpathyScore"`
+        
+        SurveyTypes []string `json:"surveyTypes"`
+        
+        SurveyResponseStatuses []string `json:"surveyResponseStatuses"`
         *Alias
     }{
 
@@ -2539,6 +2559,16 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        SurveyTypes: []string{""},
+        
+
+
+        
+        SurveyResponseStatuses: []string{""},
         
 
         Alias: (*Alias)(u),

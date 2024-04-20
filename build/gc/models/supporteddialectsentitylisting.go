@@ -18,13 +18,13 @@ type SupporteddialectsentitylistingDud struct {
 // Supporteddialectsentitylisting
 type Supporteddialectsentitylisting struct { 
     // Entities
-    Entities []Transcriptionengines `json:"entities"`
+    Entities []Supporteddialectstranscriptionengine `json:"entities"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Supporteddialectsentitylisting) String() string {
-     o.Entities = []Transcriptionengines{{}} 
+     o.Entities = []Supporteddialectstranscriptionengine{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -42,12 +42,12 @@ func (u *Supporteddialectsentitylisting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Entities []Transcriptionengines `json:"entities"`
+        Entities []Supporteddialectstranscriptionengine `json:"entities"`
         *Alias
     }{
 
         
-        Entities: []Transcriptionengines{{}},
+        Entities: []Supporteddialectstranscriptionengine{{}},
         
 
         Alias: (*Alias)(u),

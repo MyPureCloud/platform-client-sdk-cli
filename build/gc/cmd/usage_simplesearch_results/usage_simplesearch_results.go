@@ -28,6 +28,8 @@ func init() {
 }
 
 func Cmdusage_simplesearch_results() *cobra.Command { 
+	utils.AddFlag(getCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned")
+	utils.AddFlag(getCmd.Flags(), "int", "pageSize", "", "The max number of entities to be returned per request. Maximum page size of 1000")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/usage/simplesearch/{executionId}/results", utils.FormatPermissions([]string{ "oauth:client:view", "usage:simpleSearch:view",  }), utils.GenerateDevCentreLink("GET", "Usage", "/api/v2/usage/simplesearch/{executionId}/results")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -71,6 +73,14 @@ var getCmd = &cobra.Command{
 		executionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{executionId}", fmt.Sprintf("%v", executionId), -1)
 
+		after := utils.GetFlag(cmd.Flags(), "string", "after")
+		if after != "" {
+			queryParams["after"] = after
+		}
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

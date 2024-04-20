@@ -1,4 +1,4 @@
-package chats_rooms_pinnedmessages
+package chats_rooms_messages_pins
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("chats_rooms_pinnedmessages", "SWAGGER_OVERRIDE_/api/v2/chats/rooms/{roomJid}/pinnedmessages", "SWAGGER_OVERRIDE_/api/v2/chats/rooms/{roomJid}/pinnedmessages", )
-	chats_rooms_pinnedmessagesCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("chats_rooms_pinnedmessages"),
+	Description = utils.FormatUsageDescription("chats_rooms_messages_pins", "SWAGGER_OVERRIDE_/api/v2/chats/rooms/{roomJid}/messages/pins", "SWAGGER_OVERRIDE_/api/v2/chats/rooms/{roomJid}/messages/pins", )
+	chats_rooms_messages_pinsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("chats_rooms_messages_pins"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,11 +24,11 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(chats_rooms_pinnedmessagesCmd)
+	CommandService = services.NewCommandService(chats_rooms_messages_pinsCmd)
 }
 
-func Cmdchats_rooms_pinnedmessages() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/chats/rooms/{roomJid}/pinnedmessages", utils.FormatPermissions([]string{ "chat:chat:access", "chat:room:edit",  }), utils.GenerateDevCentreLink("POST", "Chat", "/api/v2/chats/rooms/{roomJid}/pinnedmessages")))
+func Cmdchats_rooms_messages_pins() *cobra.Command { 
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/chats/rooms/{roomJid}/messages/pins", utils.FormatPermissions([]string{ "chat:chat:access", "chat:room:edit",  }), utils.GenerateDevCentreLink("POST", "Chat", "/api/v2/chats/rooms/{roomJid}/messages/pins")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Pinned Message Ids",
   "content" : {
@@ -45,17 +45,17 @@ func Cmdchats_rooms_pinnedmessages() *cobra.Command {
   "description" : "Pinned messages added successfully",
   "content" : { }
 }`)
-	chats_rooms_pinnedmessagesCmd.AddCommand(createCmd)
+	chats_rooms_messages_pinsCmd.AddCommand(createCmd)
 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId}", utils.FormatPermissions([]string{ "chat:chat:access", "chat:room:edit",  }), utils.GenerateDevCentreLink("DELETE", "Chat", "/api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId}", utils.FormatPermissions([]string{ "chat:chat:access", "chat:room:edit",  }), utils.GenerateDevCentreLink("DELETE", "Chat", "/api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "Pinned message removed successfully",
   "content" : { }
 }`)
-	chats_rooms_pinnedmessagesCmd.AddCommand(deleteCmd)
-	return chats_rooms_pinnedmessagesCmd
+	chats_rooms_messages_pinsCmd.AddCommand(deleteCmd)
+	return chats_rooms_messages_pinsCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -83,7 +83,7 @@ var createCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/chats/rooms/{roomJid}/pinnedmessages"
+		path := "/api/v2/chats/rooms/{roomJid}/messages/pins"
 		roomJid, args := args[0], args[1:]
 		path = strings.Replace(path, "{roomJid}", fmt.Sprintf("%v", roomJid), -1)
 
@@ -148,7 +148,7 @@ var deleteCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId}"
+		path := "/api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId}"
 		roomJid, args := args[0], args[1:]
 		path = strings.Replace(path, "{roomJid}", fmt.Sprintf("%v", roomJid), -1)
 		pinnedMessageId, args := args[0], args[1:]

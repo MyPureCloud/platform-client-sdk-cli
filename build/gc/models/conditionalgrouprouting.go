@@ -17,7 +17,7 @@ type ConditionalgrouproutingDud struct {
 
 // Conditionalgrouprouting
 type Conditionalgrouprouting struct { 
-    // Rules - The set of rules that defines Conditional Group Routing for this queue
+    // Rules - The set of rules to be executed for each conversation
     Rules []Conditionalgrouproutingrule `json:"rules"`
 
 }

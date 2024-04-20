@@ -23,7 +23,7 @@ type TransfertoqueuerequestDud struct {
 
 // Transfertoqueuerequest
 type Transfertoqueuerequest struct { 
-    // TransferType
+    // TransferType - The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
     TransferType string `json:"transferType"`
 
 

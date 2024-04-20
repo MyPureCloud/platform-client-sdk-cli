@@ -125,7 +125,7 @@ type Shifttraderesponse struct {
     OneSided bool `json:"oneSided"`
 
 
-    // AcceptableIntervals
+    // AcceptableIntervals - Time frames when the initiating user is willing to accept trades.  Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     AcceptableIntervals []string `json:"acceptableIntervals"`
 
 

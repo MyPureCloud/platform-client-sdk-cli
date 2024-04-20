@@ -18,13 +18,13 @@ type TranscriptionenginesrequestDud struct {
 // Transcriptionenginesrequest
 type Transcriptionenginesrequest struct { 
     // TranscriptionEngines - The transcription engine setting
-    TranscriptionEngines []Transcriptionengines `json:"transcriptionEngines"`
+    TranscriptionEngines []Programtranscriptionengine `json:"transcriptionEngines"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Transcriptionenginesrequest) String() string {
-     o.TranscriptionEngines = []Transcriptionengines{{}} 
+     o.TranscriptionEngines = []Programtranscriptionengine{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -42,12 +42,12 @@ func (u *Transcriptionenginesrequest) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        TranscriptionEngines []Transcriptionengines `json:"transcriptionEngines"`
+        TranscriptionEngines []Programtranscriptionengine `json:"transcriptionEngines"`
         *Alias
     }{
 
         
-        TranscriptionEngines: []Transcriptionengines{{}},
+        TranscriptionEngines: []Programtranscriptionengine{{}},
         
 
         Alias: (*Alias)(u),

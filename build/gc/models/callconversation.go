@@ -35,6 +35,9 @@ type CallconversationDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -60,6 +63,10 @@ type Callconversation struct {
     RecentTransfers []Transferresponse `json:"recentTransfers"`
 
 
+    // UtilizationLabelId - An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+    UtilizationLabelId string `json:"utilizationLabelId"`
+
+
     // RecordingState
     RecordingState string `json:"recordingState"`
 
@@ -82,6 +89,7 @@ func (o *Callconversation) String() string {
      o.Participants = []Callmediaparticipant{{}} 
      o.OtherMediaUris = []string{""} 
      o.RecentTransfers = []Transferresponse{{}} 
+    
     
     
     
@@ -110,6 +118,8 @@ func (u *Callconversation) MarshalJSON() ([]byte, error) {
         
         RecentTransfers []Transferresponse `json:"recentTransfers"`
         
+        UtilizationLabelId string `json:"utilizationLabelId"`
+        
         RecordingState string `json:"recordingState"`
         
         MaxParticipants int `json:"maxParticipants"`
@@ -136,6 +146,9 @@ func (u *Callconversation) MarshalJSON() ([]byte, error) {
 
         
         RecentTransfers: []Transferresponse{{}},
+        
+
+
         
 
 

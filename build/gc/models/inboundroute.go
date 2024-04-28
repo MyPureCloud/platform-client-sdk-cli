@@ -59,6 +59,9 @@ type InboundrouteDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -128,6 +131,10 @@ type Inboundroute struct {
     AllowMultipleActions bool `json:"allowMultipleActions"`
 
 
+    // ImapFolder - Imap folder routed to this route
+    ImapFolder string `json:"imapFolder"`
+
+
     
 
 }
@@ -145,6 +152,7 @@ func (o *Inboundroute) String() string {
     
     
      o.AutoBcc = []Emailaddress{{}} 
+    
     
     
     
@@ -195,6 +203,8 @@ func (u *Inboundroute) MarshalJSON() ([]byte, error) {
         HistoryInclusion string `json:"historyInclusion"`
         
         AllowMultipleActions bool `json:"allowMultipleActions"`
+        
+        ImapFolder string `json:"imapFolder"`
         *Alias
     }{
 
@@ -235,6 +245,9 @@ func (u *Inboundroute) MarshalJSON() ([]byte, error) {
 
         
         AutoBcc: []Emailaddress{{}},
+        
+
+
         
 
 

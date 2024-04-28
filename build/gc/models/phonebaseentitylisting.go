@@ -67,8 +67,8 @@ type Phonebaseentitylisting struct {
     TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // LastUri
@@ -83,8 +83,8 @@ type Phonebaseentitylisting struct {
     SelfUri string `json:"selfUri"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // PageCount
@@ -132,7 +132,7 @@ func (u *Phonebaseentitylisting) MarshalJSON() ([]byte, error) {
         
         TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
-        PreviousUri string `json:"previousUri"`
+        NextUri string `json:"nextUri"`
         
         LastUri string `json:"lastUri"`
         
@@ -140,7 +140,7 @@ func (u *Phonebaseentitylisting) MarshalJSON() ([]byte, error) {
         
         SelfUri string `json:"selfUri"`
         
-        NextUri string `json:"nextUri"`
+        PreviousUri string `json:"previousUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

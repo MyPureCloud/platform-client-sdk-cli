@@ -26,6 +26,9 @@ type CobrowseconversationDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -51,6 +54,10 @@ type Cobrowseconversation struct {
     RecentTransfers []Transferresponse `json:"recentTransfers"`
 
 
+    // UtilizationLabelId - An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+    UtilizationLabelId string `json:"utilizationLabelId"`
+
+
     
 
 }
@@ -61,6 +68,7 @@ func (o *Cobrowseconversation) String() string {
      o.Participants = []Cobrowsemediaparticipant{{}} 
      o.OtherMediaUris = []string{""} 
      o.RecentTransfers = []Transferresponse{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -85,6 +93,8 @@ func (u *Cobrowseconversation) MarshalJSON() ([]byte, error) {
         OtherMediaUris []string `json:"otherMediaUris"`
         
         RecentTransfers []Transferresponse `json:"recentTransfers"`
+        
+        UtilizationLabelId string `json:"utilizationLabelId"`
         *Alias
     }{
 
@@ -106,6 +116,9 @@ func (u *Cobrowseconversation) MarshalJSON() ([]byte, error) {
 
         
         RecentTransfers: []Transferresponse{{}},
+        
+
+
         
 
 

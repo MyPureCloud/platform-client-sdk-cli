@@ -31,6 +31,9 @@ type KnowledgedocumentviewDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgedocumentview
@@ -51,6 +54,10 @@ type Knowledgedocumentview struct {
     QueryType string `json:"queryType"`
 
 
+    // SurfacingMethod - The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+    SurfacingMethod string `json:"surfacingMethod"`
+
+
     // Application - The client application from which the document was viewed.
     Application Knowledgesearchclientapplication `json:"application"`
 
@@ -66,6 +73,7 @@ type Knowledgedocumentview struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentview) String() string {
+    
     
     
     
@@ -98,6 +106,8 @@ func (u *Knowledgedocumentview) MarshalJSON() ([]byte, error) {
         
         QueryType string `json:"queryType"`
         
+        SurfacingMethod string `json:"surfacingMethod"`
+        
         Application Knowledgesearchclientapplication `json:"application"`
         
         SessionId string `json:"sessionId"`
@@ -105,6 +115,9 @@ func (u *Knowledgedocumentview) MarshalJSON() ([]byte, error) {
         ConversationContext Knowledgeconversationcontext `json:"conversationContext"`
         *Alias
     }{
+
+        
+
 
         
 

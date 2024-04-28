@@ -60,8 +60,8 @@ type Campaignsequenceentitylisting struct {
     Total int `json:"total"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // LastUri
@@ -76,8 +76,8 @@ type Campaignsequenceentitylisting struct {
     SelfUri string `json:"selfUri"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // PageCount
@@ -122,7 +122,7 @@ func (u *Campaignsequenceentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        PreviousUri string `json:"previousUri"`
+        NextUri string `json:"nextUri"`
         
         LastUri string `json:"lastUri"`
         
@@ -130,7 +130,7 @@ func (u *Campaignsequenceentitylisting) MarshalJSON() ([]byte, error) {
         
         SelfUri string `json:"selfUri"`
         
-        NextUri string `json:"nextUri"`
+        PreviousUri string `json:"previousUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

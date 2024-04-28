@@ -324,6 +324,7 @@ gc/cmd/conversations_socials_participants_communications_wrapup/conversations_so
 gc/cmd/conversations_socials_recordingstate/conversations_socials_recordingstate.go
 gc/cmd/conversations_summaries_feedback/conversations_summaries_feedback.go
 gc/cmd/conversations_tags/conversations_tags.go
+gc/cmd/conversations_utilizationlabel/conversations_utilizationlabel.go
 gc/cmd/conversations_videos_details/conversations_videos_details.go
 gc/cmd/conversations_videos_meetings/conversations_videos_meetings.go
 gc/cmd/conversations_videos_participants_communications_wrapup/conversations_videos_participants_communications_wrapup.go
@@ -1944,6 +1945,7 @@ gc/models/conversationthreadingwindow.go
 gc/models/conversationthreadingwindowsetting.go
 gc/models/conversationuser.go
 gc/models/conversationuserdisposition.go
+gc/models/conversationutilizationlabelupdate.go
 gc/models/copilotscoring.go
 gc/models/copyattachmentsrequest.go
 gc/models/copybuforecastrequest.go
@@ -2290,6 +2292,7 @@ gc/models/emailconfig.go
 gc/models/emailconversation.go
 gc/models/emailconversationentitylisting.go
 gc/models/emailendtransferevent.go
+gc/models/emailerrorinfo.go
 gc/models/emailexternalestablishedevent.go
 gc/models/emailflowestablishedevent.go
 gc/models/emailholdupdatedevent.go
@@ -2658,6 +2661,7 @@ gc/models/identityproviderentitylisting.go
 gc/models/idleeventtrigger.go
 gc/models/idletokentimeout.go
 gc/models/ignoredactivitycategories.go
+gc/models/imapsettings.go
 gc/models/importerror.go
 gc/models/importforecastresponse.go
 gc/models/importforecastuploadresponse.go

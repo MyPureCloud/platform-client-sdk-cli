@@ -14,6 +14,9 @@ type KnowledgebasereferenceDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -24,12 +27,17 @@ type Knowledgebasereference struct {
     Id string `json:"id"`
 
 
+    // LanguageCode - Language of the knowledge base
+    LanguageCode string `json:"languageCode"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgebasereference) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -49,8 +57,13 @@ func (u *Knowledgebasereference) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Id string `json:"id"`
+        
+        LanguageCode string `json:"languageCode"`
         *Alias
     }{
+
+        
+
 
         
 

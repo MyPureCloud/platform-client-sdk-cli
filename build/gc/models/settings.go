@@ -25,6 +25,9 @@ type SettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Settings
@@ -41,6 +44,10 @@ type Settings struct {
     AllowCallbackQueueSelection bool `json:"allowCallbackQueueSelection"`
 
 
+    // CallbacksInheritRoutingFromInboundCall - Inherit callback routing data from inbound calls
+    CallbacksInheritRoutingFromInboundCall bool `json:"callbacksInheritRoutingFromInboundCall"`
+
+
     // CompleteAcwWhenAgentTransitionsOffline - Complete ACW When Agent Transitions Offline
     CompleteAcwWhenAgentTransitionsOffline bool `json:"completeAcwWhenAgentTransitionsOffline"`
 
@@ -52,6 +59,7 @@ type Settings struct {
 
 // String returns a JSON representation of the model
 func (o *Settings) String() string {
+    
     
     
     
@@ -80,11 +88,16 @@ func (u *Settings) MarshalJSON() ([]byte, error) {
         
         AllowCallbackQueueSelection bool `json:"allowCallbackQueueSelection"`
         
+        CallbacksInheritRoutingFromInboundCall bool `json:"callbacksInheritRoutingFromInboundCall"`
+        
         CompleteAcwWhenAgentTransitionsOffline bool `json:"completeAcwWhenAgentTransitionsOffline"`
         
         TotalActiveCallback bool `json:"totalActiveCallback"`
         *Alias
     }{
+
+        
+
 
         
 

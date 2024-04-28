@@ -51,6 +51,9 @@ type KnowledgedocumentfeedbackDud struct {
     
 
 
+    
+
+
     UserId string `json:"userId"`
 
 
@@ -93,6 +96,10 @@ type Knowledgedocumentfeedback struct {
     QueryType string `json:"queryType"`
 
 
+    // SurfacingMethod - The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+    SurfacingMethod string `json:"surfacingMethod"`
+
+
     // State - The state of the feedback.
     State string `json:"state"`
 
@@ -118,6 +125,7 @@ type Knowledgedocumentfeedback struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentfeedback) String() string {
+    
     
     
     
@@ -157,6 +165,8 @@ func (u *Knowledgedocumentfeedback) MarshalJSON() ([]byte, error) {
         
         QueryType string `json:"queryType"`
         
+        SurfacingMethod string `json:"surfacingMethod"`
+        
         State string `json:"state"`
         
         Document Knowledgedocumentversionreference `json:"document"`
@@ -166,6 +176,9 @@ func (u *Knowledgedocumentfeedback) MarshalJSON() ([]byte, error) {
         ConversationContext Knowledgeconversationcontext `json:"conversationContext"`
         *Alias
     }{
+
+        
+
 
         
 

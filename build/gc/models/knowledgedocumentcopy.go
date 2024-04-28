@@ -23,6 +23,9 @@ type KnowledgedocumentcopyDud struct {
     
 
 
+    
+
+
     SessionId string `json:"sessionId"`
 
 
@@ -51,6 +54,10 @@ type Knowledgedocumentcopy struct {
     QueryType string `json:"queryType"`
 
 
+    // SurfacingMethod - The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+    SurfacingMethod string `json:"surfacingMethod"`
+
+
     
 
 
@@ -65,6 +72,7 @@ type Knowledgedocumentcopy struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentcopy) String() string {
+    
     
     
     
@@ -96,11 +104,16 @@ func (u *Knowledgedocumentcopy) MarshalJSON() ([]byte, error) {
         
         QueryType string `json:"queryType"`
         
+        SurfacingMethod string `json:"surfacingMethod"`
+        
         ConversationContext Knowledgeconversationcontext `json:"conversationContext"`
         
         Application Knowledgesearchclientapplication `json:"application"`
         *Alias
     }{
+
+        
+
 
         
 

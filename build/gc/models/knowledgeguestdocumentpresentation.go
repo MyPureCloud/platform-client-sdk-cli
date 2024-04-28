@@ -20,6 +20,9 @@ type KnowledgeguestdocumentpresentationDud struct {
     
 
 
+    
+
+
     SessionId string `json:"sessionId"`
 
 
@@ -41,6 +44,10 @@ type Knowledgeguestdocumentpresentation struct {
     QueryType string `json:"queryType"`
 
 
+    // SurfacingMethod - The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+    SurfacingMethod string `json:"surfacingMethod"`
+
+
     
 
 
@@ -51,6 +58,7 @@ type Knowledgeguestdocumentpresentation struct {
 // String returns a JSON representation of the model
 func (o *Knowledgeguestdocumentpresentation) String() string {
      o.Documents = []Knowledgedocumentversionvariationreference{{}} 
+    
     
     
 
@@ -75,11 +83,16 @@ func (u *Knowledgeguestdocumentpresentation) MarshalJSON() ([]byte, error) {
         SearchId string `json:"searchId"`
         
         QueryType string `json:"queryType"`
+        
+        SurfacingMethod string `json:"surfacingMethod"`
         *Alias
     }{
 
         
         Documents: []Knowledgedocumentversionvariationreference{{}},
+        
+
+
         
 
 

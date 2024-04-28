@@ -54,6 +54,9 @@ type ConversationDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -115,6 +118,10 @@ type Conversation struct {
     SecurePause bool `json:"securePause"`
 
 
+    // UtilizationLabelId - An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+    UtilizationLabelId string `json:"utilizationLabelId"`
+
+
     
 
 }
@@ -133,6 +140,7 @@ func (o *Conversation) String() string {
     
      o.Divisions = []Conversationdivisionmembership{{}} 
      o.RecentTransfers = []Transferresponse{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -176,6 +184,8 @@ func (u *Conversation) MarshalJSON() ([]byte, error) {
         RecentTransfers []Transferresponse `json:"recentTransfers"`
         
         SecurePause bool `json:"securePause"`
+        
+        UtilizationLabelId string `json:"utilizationLabelId"`
         *Alias
     }{
 
@@ -223,6 +233,9 @@ func (u *Conversation) MarshalJSON() ([]byte, error) {
 
         
         RecentTransfers: []Transferresponse{{}},
+        
+
+
         
 
 

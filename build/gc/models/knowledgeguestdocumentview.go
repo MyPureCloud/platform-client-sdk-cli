@@ -22,6 +22,9 @@ type KnowledgeguestdocumentviewDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgeguestdocumentview
@@ -41,10 +44,15 @@ type Knowledgeguestdocumentview struct {
     // QueryType - The type of the query that surfaced the document.
     QueryType string `json:"queryType"`
 
+
+    // SurfacingMethod - The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+    SurfacingMethod string `json:"surfacingMethod"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgeguestdocumentview) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Knowledgeguestdocumentview) MarshalJSON() ([]byte, error) {
         SearchId string `json:"searchId"`
         
         QueryType string `json:"queryType"`
+        
+        SurfacingMethod string `json:"surfacingMethod"`
         *Alias
     }{
+
+        
+
 
         
 

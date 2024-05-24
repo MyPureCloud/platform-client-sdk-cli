@@ -31,6 +31,9 @@ type ReoccurrenceDud struct {
 
     
 
+
+    NextOccurrenceDetails Nextoccurrencedetails `json:"nextOccurrenceDetails"`
+
 }
 
 // Reoccurrence
@@ -61,6 +64,9 @@ type Reoccurrence struct {
 
     // Alterations - Modifications to the original recurrence schedule (Exclusions/Inclusions)
     Alterations []Alteration `json:"alterations"`
+
+
+    
 
 }
 
@@ -126,6 +132,9 @@ func (u *Reoccurrence) MarshalJSON() ([]byte, error) {
 
         
         Alterations: []Alteration{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

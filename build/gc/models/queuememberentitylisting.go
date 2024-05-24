@@ -47,8 +47,8 @@ type Queuememberentitylisting struct {
     PageSize int `json:"pageSize"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // FirstUri
@@ -59,8 +59,8 @@ type Queuememberentitylisting struct {
     SelfUri string `json:"selfUri"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 }
 
@@ -96,13 +96,13 @@ func (u *Queuememberentitylisting) MarshalJSON() ([]byte, error) {
         
         PageSize int `json:"pageSize"`
         
-        NextUri string `json:"nextUri"`
+        PreviousUri string `json:"previousUri"`
         
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         
-        PreviousUri string `json:"previousUri"`
+        NextUri string `json:"nextUri"`
         *Alias
     }{
 

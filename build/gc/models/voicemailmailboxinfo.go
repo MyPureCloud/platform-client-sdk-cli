@@ -29,10 +29,34 @@ type VoicemailmailboxinfoDud struct {
 
     ModifiedDate time.Time `json:"modifiedDate"`
 
+
+    NewestUnreadDate time.Time `json:"newestUnreadDate"`
+
+
+    OldestUnreadDate time.Time `json:"oldestUnreadDate"`
+
+
+    NewestReadDate time.Time `json:"newestReadDate"`
+
+
+    OldestReadDate time.Time `json:"oldestReadDate"`
+
 }
 
 // Voicemailmailboxinfo
 type Voicemailmailboxinfo struct { 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     
 
 
@@ -72,6 +96,18 @@ func (u *Voicemailmailboxinfo) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

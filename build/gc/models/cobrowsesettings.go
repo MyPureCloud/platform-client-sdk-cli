@@ -25,6 +25,9 @@ type CobrowsesettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Cobrowsesettings - Settings concerning cobrowse
@@ -35,6 +38,10 @@ type Cobrowsesettings struct {
 
     // AllowAgentControl - Whether the viewer should have option to request control
     AllowAgentControl bool `json:"allowAgentControl"`
+
+
+    // AllowAgentNavigation - Whether the viewer should have option to request navigation
+    AllowAgentNavigation bool `json:"allowAgentNavigation"`
 
 
     // MaskSelectors - Mask patterns that will apply to pages being shared
@@ -52,6 +59,7 @@ type Cobrowsesettings struct {
 
 // String returns a JSON representation of the model
 func (o *Cobrowsesettings) String() string {
+    
     
     
      o.MaskSelectors = []string{""} 
@@ -78,6 +86,8 @@ func (u *Cobrowsesettings) MarshalJSON() ([]byte, error) {
         
         AllowAgentControl bool `json:"allowAgentControl"`
         
+        AllowAgentNavigation bool `json:"allowAgentNavigation"`
+        
         MaskSelectors []string `json:"maskSelectors"`
         
         Channels []string `json:"channels"`
@@ -85,6 +95,9 @@ func (u *Cobrowsesettings) MarshalJSON() ([]byte, error) {
         ReadonlySelectors []string `json:"readonlySelectors"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -1,4 +1,4 @@
-package analytics_reporting_metadata
+package chats_users_me_settings
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("analytics_reporting_metadata", "SWAGGER_OVERRIDE_/api/v2/analytics/reporting/{reportId}/metadata", "SWAGGER_OVERRIDE_/api/v2/analytics/reporting/metadata", )
-	analytics_reporting_metadataCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("analytics_reporting_metadata"),
+	Description = utils.FormatUsageDescription("chats_users_me_settings", "SWAGGER_OVERRIDE_/api/v2/chats/users/me/settings", "SWAGGER_OVERRIDE_/api/v2/chats/users/me/settings", )
+	chats_users_me_settingsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("chats_users_me_settings"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,12 +24,11 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(analytics_reporting_metadataCmd)
+	CommandService = services.NewCommandService(chats_users_me_settingsCmd)
 }
 
-func Cmdanalytics_reporting_metadata() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "locale", "", "Locale")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/analytics/reporting/{reportId}/metadata", utils.FormatPermissions([]string{ "reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/reporting/{reportId}/metadata")))
+func Cmdchats_users_me_settings() *cobra.Command { 
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/chats/users/me/settings", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Chat", "/api/v2/chats/users/me/settings")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -37,31 +36,37 @@ func Cmdanalytics_reporting_metadata() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ReportMetaData"
+        "$ref" : "#/components/schemas/ChatUserSettings"
       }
     }
   }
 }`)
-	analytics_reporting_metadataCmd.AddCommand(getCmd)
+	chats_users_me_settingsCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
-	utils.AddFlag(listCmd.Flags(), "string", "locale", "", "Locale")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/reporting/metadata", utils.FormatPermissions([]string{ "reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/reporting/metadata")))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/chats/users/me/settings", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Chat", "/api/v2/chats/users/me/settings")))
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ChatUserSettings"
+      }
+    }
+  },
+  "required" : true
+}`)
 	
-	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
   "description" : "successful operation",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+        "$ref" : "#/components/schemas/ChatUserSettings"
       }
     }
   }
 }`)
-	analytics_reporting_metadataCmd.AddCommand(listCmd)
-	return analytics_reporting_metadataCmd
+	chats_users_me_settingsCmd.AddCommand(updateCmd)
+	return chats_users_me_settingsCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -70,10 +75,10 @@ func queryEscape(value string) string {
 }
 
 var getCmd = &cobra.Command{
-	Use:   "get [reportId]",
-	Short: "Get a reporting metadata.",
-	Long:  "Get a reporting metadata.",
-	Args:  utils.DetermineArgs([]string{ "reportId", }),
+	Use:   "get",
+	Short: "Get a user`s chat settings",
+	Long:  "Get a user`s chat settings",
+	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -86,14 +91,8 @@ var getCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/analytics/reporting/{reportId}/metadata"
-		reportId, args := args[0], args[1:]
-		path = strings.Replace(path, "{reportId}", fmt.Sprintf("%v", reportId), -1)
+		path := "/api/v2/chats/users/me/settings"
 
-		locale := utils.GetFlag(cmd.Flags(), "string", "locale")
-		if locale != "" {
-			queryParams["locale"] = locale
-		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -138,10 +137,10 @@ var getCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var listCmd = &cobra.Command{
-	Use:   "list",
-	Short: "Get list of reporting metadata.",
-	Long:  "Get list of reporting metadata.",
+var updateCmd = &cobra.Command{
+	Use:   "update",
+	Short: "Update a user`s chat settings",
+	Long:  "Update a user`s chat settings",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -150,25 +149,16 @@ var listCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
+			reqModel := models.Chatusersettings{}
+			utils.Render(reqModel.String())
+			
 			return
 		}
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/analytics/reporting/metadata"
+		path := "/api/v2/chats/users/me/settings"
 
-		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
-		if pageNumber != "" {
-			queryParams["pageNumber"] = pageNumber
-		}
-		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
-		if pageSize != "" {
-			queryParams["pageSize"] = pageSize
-		}
-		locale := utils.GetFlag(cmd.Flags(), "string", "locale")
-		if locale != "" {
-			queryParams["locale"] = locale
-		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -182,8 +172,8 @@ var listCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "list"
-		const httpMethod = "GET"
+		const opId = "update"
+		const httpMethod = "PATCH"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

@@ -19,6 +19,9 @@ type JourneyviewchartmetricDud struct {
 
     
 
+
+    
+
 }
 
 // Journeyviewchartmetric - A metric to measure within the chart
@@ -34,10 +37,15 @@ type Journeyviewchartmetric struct {
     // Aggregate - How to aggregate the given element, defaults to EventCount
     Aggregate string `json:"aggregate"`
 
+
+    // DisplayLabel - A display label for the metric
+    DisplayLabel string `json:"displayLabel"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Journeyviewchartmetric) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Journeyviewchartmetric) MarshalJSON() ([]byte, error) {
         ElementId string `json:"elementId"`
         
         Aggregate string `json:"aggregate"`
+        
+        DisplayLabel string `json:"displayLabel"`
         *Alias
     }{
+
+        
+
 
         
 

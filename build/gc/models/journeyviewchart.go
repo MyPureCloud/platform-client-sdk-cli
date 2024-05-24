@@ -29,6 +29,12 @@ type JourneyviewchartDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -57,6 +63,14 @@ type Journeyviewchart struct {
     Metrics []Journeyviewchartmetric `json:"metrics"`
 
 
+    // DisplayAttributes - Optional display attributes for rendering the chart
+    DisplayAttributes Journeyviewchartdisplayattributes `json:"displayAttributes"`
+
+
+    // GroupByMax - A maximum on the number of values being grouped by
+    GroupByMax int `json:"groupByMax"`
+
+
     
 
 }
@@ -67,6 +81,8 @@ func (o *Journeyviewchart) String() string {
     
      o.GroupByAttributes = []Journeyviewchartgroupbyattribute{{}} 
      o.Metrics = []Journeyviewchartmetric{{}} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -91,6 +107,10 @@ func (u *Journeyviewchart) MarshalJSON() ([]byte, error) {
         GroupByAttributes []Journeyviewchartgroupbyattribute `json:"groupByAttributes"`
         
         Metrics []Journeyviewchartmetric `json:"metrics"`
+        
+        DisplayAttributes Journeyviewchartdisplayattributes `json:"displayAttributes"`
+        
+        GroupByMax int `json:"groupByMax"`
         *Alias
     }{
 
@@ -113,6 +133,12 @@ func (u *Journeyviewchart) MarshalJSON() ([]byte, error) {
 
         
         Metrics: []Journeyviewchartmetric{{}},
+        
+
+
+        
+
+
         
 
 

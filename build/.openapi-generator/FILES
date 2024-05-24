@@ -16,6 +16,7 @@ gc/cmd/alerting_rules_query/alerting_rules_query.go
 gc/cmd/analytics_actions_aggregates_jobs/analytics_actions_aggregates_jobs.go
 gc/cmd/analytics_actions_aggregates_jobs_results/analytics_actions_aggregates_jobs_results.go
 gc/cmd/analytics_actions_aggregates_query/analytics_actions_aggregates_query.go
+gc/cmd/analytics_botflows_divisions_reportingturns/analytics_botflows_divisions_reportingturns.go
 gc/cmd/analytics_botflows_reportingturns/analytics_botflows_reportingturns.go
 gc/cmd/analytics_botflows_sessions/analytics_botflows_sessions.go
 gc/cmd/analytics_bots_aggregates_jobs/analytics_bots_aggregates_jobs.go
@@ -56,17 +57,10 @@ gc/cmd/analytics_reporting_dashboards_users/analytics_reporting_dashboards_users
 gc/cmd/analytics_reporting_dashboards_users_bulk_remove/analytics_reporting_dashboards_users_bulk_remove.go
 gc/cmd/analytics_reporting_exports/analytics_reporting_exports.go
 gc/cmd/analytics_reporting_exports_metadata/analytics_reporting_exports_metadata.go
-gc/cmd/analytics_reporting_metadata/analytics_reporting_metadata.go
-gc/cmd/analytics_reporting_reportformats/analytics_reporting_reportformats.go
-gc/cmd/analytics_reporting_schedules/analytics_reporting_schedules.go
-gc/cmd/analytics_reporting_schedules_history/analytics_reporting_schedules_history.go
-gc/cmd/analytics_reporting_schedules_history_latest/analytics_reporting_schedules_history_latest.go
-gc/cmd/analytics_reporting_schedules_runreport/analytics_reporting_schedules_runreport.go
 gc/cmd/analytics_reporting_settings/analytics_reporting_settings.go
 gc/cmd/analytics_reporting_settings_dashboards_bulk_remove/analytics_reporting_settings_dashboards_bulk_remove.go
 gc/cmd/analytics_reporting_settings_dashboards_query/analytics_reporting_settings_dashboards_query.go
 gc/cmd/analytics_reporting_settings_users_dashboards/analytics_reporting_settings_users_dashboards.go
-gc/cmd/analytics_reporting_timeperiods/analytics_reporting_timeperiods.go
 gc/cmd/analytics_resolutions_aggregates_jobs/analytics_resolutions_aggregates_jobs.go
 gc/cmd/analytics_resolutions_aggregates_jobs_results/analytics_resolutions_aggregates_jobs_results.go
 gc/cmd/analytics_routing_activity_query/analytics_routing_activity_query.go
@@ -160,6 +154,7 @@ gc/cmd/chats_rooms_participants/chats_rooms_participants.go
 gc/cmd/chats_settings/chats_settings.go
 gc/cmd/chats_threads_messages/chats_threads_messages.go
 gc/cmd/chats_users/chats_users.go
+gc/cmd/chats_users_me_settings/chats_users_me_settings.go
 gc/cmd/chats_users_messages/chats_users_messages.go
 gc/cmd/chats_users_messages_pins/chats_users_messages_pins.go
 gc/cmd/chats_users_settings/chats_users_settings.go
@@ -682,6 +677,7 @@ gc/cmd/organizations_features/organizations_features.go
 gc/cmd/organizations_ipaddressauthentication/organizations_ipaddressauthentication.go
 gc/cmd/organizations_limits_changerequests/organizations_limits_changerequests.go
 gc/cmd/organizations_limits_docs/organizations_limits_docs.go
+gc/cmd/organizations_limits_docs_freetrial/organizations_limits_docs_freetrial.go
 gc/cmd/organizations_limits_namespaces/organizations_limits_namespaces.go
 gc/cmd/organizations_limits_namespaces_defaults/organizations_limits_namespaces_defaults.go
 gc/cmd/organizations_me/organizations_me.go
@@ -1327,6 +1323,7 @@ gc/models/aggregateviewdata.go
 gc/models/aggregationrange.go
 gc/models/aggregationresult.go
 gc/models/aggregationresultentry.go
+gc/models/aiscoringsettings.go
 gc/models/alertingunreadstatus.go
 gc/models/alertlisting.go
 gc/models/alertnotification.go
@@ -1946,7 +1943,6 @@ gc/models/conversationthreadingwindowsetting.go
 gc/models/conversationuser.go
 gc/models/conversationuserdisposition.go
 gc/models/conversationutilizationlabelupdate.go
-gc/models/copilotscoring.go
 gc/models/copyattachmentsrequest.go
 gc/models/copybuforecastrequest.go
 gc/models/copyvoicemailmessage.go
@@ -2557,6 +2553,9 @@ gc/models/forecastservicelevelresponse.go
 gc/models/forecastsourcedaypointer.go
 gc/models/format.go
 gc/models/formstracktrigger.go
+gc/models/freetriallimit.go
+gc/models/freetriallimitdocs.go
+gc/models/freetrialnamespace.go
 gc/models/fromemailaddress.go
 gc/models/fulldaytimeoffmarker.go
 gc/models/function.go
@@ -2580,7 +2579,6 @@ gc/models/generatemeetingidrequest.go
 gc/models/genericactionevent.go
 gc/models/genericeventaction.go
 gc/models/genericsaml.go
-gc/models/generictemplate.go
 gc/models/genesysbotconnector.go
 gc/models/geolocation.go
 gc/models/geolocationsettings.go
@@ -2765,6 +2763,7 @@ gc/models/journeysegmentrequest.go
 gc/models/journeysurveyquestion.go
 gc/models/journeyview.go
 gc/models/journeyviewchart.go
+gc/models/journeyviewchartdisplayattributes.go
 gc/models/journeyviewchartgroupbyattribute.go
 gc/models/journeyviewchartmetric.go
 gc/models/journeyviewchartmetricresult.go
@@ -3185,6 +3184,7 @@ gc/models/namedentitytypeitem.go
 gc/models/namedentitytypemechanism.go
 gc/models/namespacedocs.go
 gc/models/networkconnectivity.go
+gc/models/nextoccurrencedetails.go
 gc/models/nluconfusionmatrixcolumn.go
 gc/models/nluconfusionmatrixrow.go
 gc/models/nludetectioncontext.go
@@ -3244,6 +3244,7 @@ gc/models/objectivetemplate.go
 gc/models/objectivezone.go
 gc/models/observationmetricdata.go
 gc/models/observationvalue.go
+gc/models/occurrencedetails.go
 gc/models/okta.go
 gc/models/onelogin.go
 gc/models/oneonone.go
@@ -3331,7 +3332,6 @@ gc/models/pagednamespacelisting.go
 gc/models/pagelessdomainentitylistingevaluationversion.go
 gc/models/pagelessentitylisting.go
 gc/models/pagingspec.go
-gc/models/parameter.go
 gc/models/parsedcertificate.go
 gc/models/participant.go
 gc/models/participantattributes.go
@@ -3377,6 +3377,7 @@ gc/models/patchtextstyleproperties.go
 gc/models/patchuser.go
 gc/models/patchwebmessagingofferfields.go
 gc/models/pattern.go
+gc/models/pausecriteria.go
 gc/models/performancepredictionoutputs.go
 gc/models/performancepredictionrecalculationresponse.go
 gc/models/performancepredictionrecalculationuploadresponse.go
@@ -3539,8 +3540,6 @@ gc/models/record.go
 gc/models/recording.go
 gc/models/recordingannotationflow.go
 gc/models/recordingannotationqueue.go
-gc/models/recordingbuttoncomponent.go
-gc/models/recordingcontentactions.go
 gc/models/recordingcontentstory.go
 gc/models/recordingemailmessage.go
 gc/models/recordingencryptionconfiguration.go
@@ -3581,12 +3580,6 @@ gc/models/reportingturnknowledgedocument.go
 gc/models/reportingturnknowledgefeedback.go
 gc/models/reportingturnknowledgesearch.go
 gc/models/reportingturnsresponse.go
-gc/models/reportmetadata.go
-gc/models/reportmetadataentitylisting.go
-gc/models/reportrunentry.go
-gc/models/reportrunentryentitydomainlisting.go
-gc/models/reportschedule.go
-gc/models/reportscheduleentitylisting.go
 gc/models/requestconfig.go
 gc/models/requestcontext.go
 gc/models/requestcontextpattern.go
@@ -3672,7 +3665,6 @@ gc/models/routingtransferevent.go
 gc/models/ruleset.go
 gc/models/rulesetdiagnostic.go
 gc/models/rulesetentitylisting.go
-gc/models/runnowresponse.go
 gc/models/salesforce.go
 gc/models/schedule.go
 gc/models/scheduleactivity.go
@@ -4500,6 +4492,7 @@ gc/models/workplanconstraintconflictmessage.go
 gc/models/workplanconstraintmessage.go
 gc/models/workplanlistitemresponse.go
 gc/models/workplanlistresponse.go
+gc/models/workplanoverride.go
 gc/models/workplanpatternrequest.go
 gc/models/workplanpatternresponse.go
 gc/models/workplanreference.go

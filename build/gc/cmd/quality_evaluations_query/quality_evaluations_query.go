@@ -46,7 +46,7 @@ func Cmdquality_evaluations_query() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "evaluationState", "", "")
 	utils.AddFlag(listCmd.Flags(), "bool", "isReleased", "", "the evaluation has been released")
 	utils.AddFlag(listCmd.Flags(), "bool", "agentHasRead", "", "agent has the evaluation")
-	utils.AddFlag(listCmd.Flags(), "bool", "expandAnswerTotalScores", "", "get the total scores for evaluations")
+	utils.AddFlag(listCmd.Flags(), "bool", "expandAnswerTotalScores", "", "get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.")
 	utils.AddFlag(listCmd.Flags(), "int", "maximum", "", "the maximum number of results to return")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "NOTE: Does not work when conversationId is supplied.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/evaluations/query", utils.FormatPermissions([]string{ "quality:evaluation:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/evaluations/query")))

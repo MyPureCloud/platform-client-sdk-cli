@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -11,6 +12,12 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type DispositionDud struct { 
+    
+
+
+    
+
+
     
 
 
@@ -34,10 +41,20 @@ type Disposition struct {
     // DispositionParameters - Contains various parameters related to call analysis.
     DispositionParameters Dispositionparameters `json:"dispositionParameters"`
 
+
+    // DetectedSpeechStart - Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DetectedSpeechStart time.Time `json:"detectedSpeechStart"`
+
+
+    // DetectedSpeechEnd - Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DetectedSpeechEnd time.Time `json:"detectedSpeechEnd"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Disposition) String() string {
+    
+    
     
     
     
@@ -63,8 +80,18 @@ func (u *Disposition) MarshalJSON() ([]byte, error) {
         Analyzer string `json:"analyzer"`
         
         DispositionParameters Dispositionparameters `json:"dispositionParameters"`
+        
+        DetectedSpeechStart time.Time `json:"detectedSpeechStart"`
+        
+        DetectedSpeechEnd time.Time `json:"detectedSpeechEnd"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

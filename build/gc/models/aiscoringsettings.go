@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    CopilotscoringMarshalled = false
+    AiscoringsettingsMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type CopilotscoringDud struct { 
+type AiscoringsettingsDud struct { 
     
 
 
@@ -18,9 +18,9 @@ type CopilotscoringDud struct {
 
 }
 
-// Copilotscoring
-type Copilotscoring struct { 
-    // Enabled - True if copilot feature is configured, false if not.
+// Aiscoringsettings
+type Aiscoringsettings struct { 
+    // Enabled - True if AI scoring feature is configured, false if not.
     Enabled bool `json:"enabled"`
 
 
@@ -30,7 +30,7 @@ type Copilotscoring struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Copilotscoring) String() string {
+func (o *Aiscoringsettings) String() string {
     
     
 
@@ -40,13 +40,13 @@ func (o *Copilotscoring) String() string {
     return str
 }
 
-func (u *Copilotscoring) MarshalJSON() ([]byte, error) {
-    type Alias Copilotscoring
+func (u *Aiscoringsettings) MarshalJSON() ([]byte, error) {
+    type Alias Aiscoringsettings
 
-    if CopilotscoringMarshalled {
+    if AiscoringsettingsMarshalled {
         return []byte("{}"), nil
     }
-    CopilotscoringMarshalled = true
+    AiscoringsettingsMarshalled = true
 
     return json.Marshal(&struct {
         

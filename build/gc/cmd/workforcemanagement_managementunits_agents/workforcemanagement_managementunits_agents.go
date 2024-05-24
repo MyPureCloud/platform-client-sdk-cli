@@ -29,6 +29,7 @@ func init() {
 
 func Cmdworkforcemanagement_managementunits_agents() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "bool", "excludeCapabilities", "", "Excludes all capabilities of the agent such as queues, languages, and skills")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", " Valid values: workPlanOverrides")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}", utils.FormatPermissions([]string{ "wfm:agent:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -96,6 +97,10 @@ var getCmd = &cobra.Command{
 		excludeCapabilities := utils.GetFlag(cmd.Flags(), "bool", "excludeCapabilities")
 		if excludeCapabilities != "" {
 			queryParams["excludeCapabilities"] = excludeCapabilities
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
 		}
 		urlString := path
 		if len(queryParams) > 0 {

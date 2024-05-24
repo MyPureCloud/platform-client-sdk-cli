@@ -538,6 +538,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1245,6 +1248,10 @@ type Viewfilter struct {
     // SurveyResponseStatuses - The list of Survey Response Status
     SurveyResponseStatuses []string `json:"surveyResponseStatuses"`
 
+
+    // BotFlowTypes - The botFlowTypes is used to filter the view
+    BotFlowTypes []string `json:"botFlowTypes"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1425,6 +1432,7 @@ func (o *Viewfilter) String() string {
     
      o.SurveyTypes = []string{""} 
      o.SurveyResponseStatuses = []string{""} 
+     o.BotFlowTypes = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1793,6 +1801,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         SurveyTypes []string `json:"surveyTypes"`
         
         SurveyResponseStatuses []string `json:"surveyResponseStatuses"`
+        
+        BotFlowTypes []string `json:"botFlowTypes"`
         *Alias
     }{
 
@@ -2569,6 +2579,11 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         SurveyResponseStatuses: []string{""},
+        
+
+
+        
+        BotFlowTypes: []string{""},
         
 
         Alias: (*Alias)(u),

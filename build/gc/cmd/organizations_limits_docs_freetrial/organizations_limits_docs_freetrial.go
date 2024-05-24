@@ -1,4 +1,4 @@
-package analytics_reporting_reportformats
+package organizations_limits_docs_freetrial
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("analytics_reporting_reportformats", "SWAGGER_OVERRIDE_/api/v2/analytics/reporting/reportformats", )
-	analytics_reporting_reportformatsCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("analytics_reporting_reportformats"),
+	Description = utils.FormatUsageDescription("organizations_limits_docs_freetrial", "SWAGGER_OVERRIDE_/api/v2/organizations/limits/docs/freetrial", )
+	organizations_limits_docs_freetrialCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("organizations_limits_docs_freetrial"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,28 +24,25 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(analytics_reporting_reportformatsCmd)
+	CommandService = services.NewCommandService(organizations_limits_docs_freetrialCmd)
 }
 
-func Cmdanalytics_reporting_reportformats() *cobra.Command { 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/reporting/reportformats", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/reporting/reportformats")))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+func Cmdorganizations_limits_docs_freetrial() *cobra.Command { 
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/organizations/limits/docs/freetrial", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Organization", "/api/v2/organizations/limits/docs/freetrial")))
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
-	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
   "content" : {
     "application/json" : {
       "schema" : {
-        "type" : "array",
-        "items" : {
-          "type" : "string"
-        }
+        "$ref" : "#/components/schemas/FreeTrialLimitDocs"
       }
     }
   }
 }`)
-	analytics_reporting_reportformatsCmd.AddCommand(listCmd)
-	return analytics_reporting_reportformatsCmd
+	organizations_limits_docs_freetrialCmd.AddCommand(getCmd)
+	return organizations_limits_docs_freetrialCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -53,10 +50,10 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
-var listCmd = &cobra.Command{
-	Use:   "list",
-	Short: "Get a list of report formats",
-	Long:  "Get a list of report formats",
+var getCmd = &cobra.Command{
+	Use:   "get",
+	Short: "Get free trial limit documentation",
+	Long:  "Get free trial limit documentation",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -70,7 +67,7 @@ var listCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/analytics/reporting/reportformats"
+		path := "/api/v2/organizations/limits/docs/freetrial"
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -85,7 +82,7 @@ var listCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "list"
+		const opId = "get"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file

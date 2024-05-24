@@ -41,6 +41,9 @@ type WfmagentDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -64,6 +67,10 @@ type Wfmagent struct {
 
     // AcceptDirectShiftTrades - Whether the agent accepts direct shift trade requests
     AcceptDirectShiftTrades bool `json:"acceptDirectShiftTrades"`
+
+
+    // WorkPlanOverrides - The work plan overrides associated with this agent. Populate with expand=workPlanOverrides
+    WorkPlanOverrides []Workplanoverride `json:"workPlanOverrides"`
 
 
     // Queues - List of queues to which this agent is capable of handling
@@ -96,6 +103,7 @@ func (o *Wfmagent) String() string {
     
     
     
+     o.WorkPlanOverrides = []Workplanoverride{{}} 
      o.Queues = []Queuereference{{}} 
      o.Languages = []Languagereference{{}} 
      o.Skills = []Routingskillreference{{}} 
@@ -126,6 +134,8 @@ func (u *Wfmagent) MarshalJSON() ([]byte, error) {
         
         AcceptDirectShiftTrades bool `json:"acceptDirectShiftTrades"`
         
+        WorkPlanOverrides []Workplanoverride `json:"workPlanOverrides"`
+        
         Queues []Queuereference `json:"queues"`
         
         Languages []Languagereference `json:"languages"`
@@ -150,6 +160,11 @@ func (u *Wfmagent) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        WorkPlanOverrides: []Workplanoverride{{}},
         
 
 

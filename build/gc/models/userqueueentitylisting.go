@@ -60,8 +60,8 @@ type Userqueueentitylisting struct {
     Total int `json:"total"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // LastUri
@@ -76,8 +76,8 @@ type Userqueueentitylisting struct {
     SelfUri string `json:"selfUri"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // PageCount
@@ -122,7 +122,7 @@ func (u *Userqueueentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        NextUri string `json:"nextUri"`
+        PreviousUri string `json:"previousUri"`
         
         LastUri string `json:"lastUri"`
         
@@ -130,7 +130,7 @@ func (u *Userqueueentitylisting) MarshalJSON() ([]byte, error) {
         
         SelfUri string `json:"selfUri"`
         
-        PreviousUri string `json:"previousUri"`
+        NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

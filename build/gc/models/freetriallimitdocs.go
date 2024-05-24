@@ -6,37 +6,25 @@ import (
 )
 
 var (
-    RunnowresponseMarshalled = false
+    FreetriallimitdocsMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type RunnowresponseDud struct { 
-    Id string `json:"id"`
-
-
+type FreetriallimitdocsDud struct { 
     
-
-
-    SelfUri string `json:"selfUri"`
 
 }
 
-// Runnowresponse
-type Runnowresponse struct { 
-    
-
-
-    // Name
-    Name string `json:"name"`
-
-
-    
+// Freetriallimitdocs
+type Freetriallimitdocs struct { 
+    // Namespaces
+    Namespaces []Freetrialnamespace `json:"namespaces"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Runnowresponse) String() string {
-    
+func (o *Freetriallimitdocs) String() string {
+     o.Namespaces = []Freetrialnamespace{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -44,26 +32,22 @@ func (o *Runnowresponse) String() string {
     return str
 }
 
-func (u *Runnowresponse) MarshalJSON() ([]byte, error) {
-    type Alias Runnowresponse
+func (u *Freetriallimitdocs) MarshalJSON() ([]byte, error) {
+    type Alias Freetriallimitdocs
 
-    if RunnowresponseMarshalled {
+    if FreetriallimitdocsMarshalled {
         return []byte("{}"), nil
     }
-    RunnowresponseMarshalled = true
+    FreetriallimitdocsMarshalled = true
 
     return json.Marshal(&struct {
         
-        Name string `json:"name"`
+        Namespaces []Freetrialnamespace `json:"namespaces"`
         *Alias
     }{
 
         
-
-
-        
-
-
+        Namespaces: []Freetrialnamespace{{}},
         
 
         Alias: (*Alias)(u),

@@ -27,7 +27,7 @@ type Range struct {
     VarType string `json:"type"`
 
 
-    // End - The end date time of the last occurrence of the range as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z, Required to set for EndDate range type.
+    // End - The end date time of the last occurrence of the range as an ISO-8601 string. Required for EndDate range type.
     End string `json:"end"`
 
 

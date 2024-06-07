@@ -11,9 +11,6 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type PhonestatusDud struct { 
-    Id string `json:"id"`
-
-
     
 
 
@@ -44,11 +41,8 @@ type PhonestatusDud struct {
 
 // Phonestatus
 type Phonestatus struct { 
-    
-
-
-    // Name
-    Name string `json:"name"`
+    // Id
+    Id string `json:"id"`
 
 
     // OperationalStatus - The Operational Status of this phone
@@ -112,7 +106,7 @@ func (u *Phonestatus) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Name string `json:"name"`
+        Id string `json:"id"`
         
         OperationalStatus string `json:"operationalStatus"`
         
@@ -131,9 +125,6 @@ func (u *Phonestatus) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         *Alias
     }{
-
-        
-
 
         
 

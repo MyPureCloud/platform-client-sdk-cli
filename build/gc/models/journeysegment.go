@@ -115,7 +115,7 @@ type Journeysegment struct {
     CreatedDate time.Time `json:"createdDate"`
 
 
-    // ModifiedDate - Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    // ModifiedDate - Timestamp indicating when the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     ModifiedDate time.Time `json:"modifiedDate"`
 
 }

@@ -541,6 +541,12 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1252,6 +1258,14 @@ type Viewfilter struct {
     // BotFlowTypes - The botFlowTypes is used to filter the view
     BotFlowTypes []string `json:"botFlowTypes"`
 
+
+    // IsScreenRecorded - Filter to indicate if the screen is recorded
+    IsScreenRecorded bool `json:"isScreenRecorded"`
+
+
+    // ScreenMonitorUserIds - The list of Screen Monitor User Ids
+    ScreenMonitorUserIds []string `json:"screenMonitorUserIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1433,6 +1447,8 @@ func (o *Viewfilter) String() string {
      o.SurveyTypes = []string{""} 
      o.SurveyResponseStatuses = []string{""} 
      o.BotFlowTypes = []string{""} 
+    
+     o.ScreenMonitorUserIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1803,6 +1819,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         SurveyResponseStatuses []string `json:"surveyResponseStatuses"`
         
         BotFlowTypes []string `json:"botFlowTypes"`
+        
+        IsScreenRecorded bool `json:"isScreenRecorded"`
+        
+        ScreenMonitorUserIds []string `json:"screenMonitorUserIds"`
         *Alias
     }{
 
@@ -2584,6 +2604,14 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         BotFlowTypes: []string{""},
+        
+
+
+        
+
+
+        
+        ScreenMonitorUserIds: []string{""},
         
 
         Alias: (*Alias)(u),

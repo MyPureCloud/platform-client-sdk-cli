@@ -42,11 +42,11 @@ type Reoccurrence struct {
     Id string `json:"id"`
 
 
-    // Start - The  start date time of the initial occurrence as an ISO-8601 string in UTC time, e.g: 2023-11-21T16:30:25.000Z
+    // Start - The start date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss
     Start string `json:"start"`
 
 
-    // End - The end date time of the initial occurrence as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z
+    // End - The end date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss
     End string `json:"end"`
 
 

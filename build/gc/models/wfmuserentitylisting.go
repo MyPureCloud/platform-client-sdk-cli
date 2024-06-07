@@ -18,13 +18,13 @@ type WfmuserentitylistingDud struct {
 // Wfmuserentitylisting
 type Wfmuserentitylisting struct { 
     // Entities
-    Entities []User `json:"entities"`
+    Entities []Userreference `json:"entities"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Wfmuserentitylisting) String() string {
-     o.Entities = []User{{}} 
+     o.Entities = []Userreference{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -42,12 +42,12 @@ func (u *Wfmuserentitylisting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Entities []User `json:"entities"`
+        Entities []Userreference `json:"entities"`
         *Alias
     }{
 
         
-        Entities: []User{{}},
+        Entities: []Userreference{{}},
         
 
         Alias: (*Alias)(u),

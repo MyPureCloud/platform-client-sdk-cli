@@ -43,6 +43,9 @@ type ConversationpropertiesDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationproperties
@@ -83,6 +86,10 @@ type Conversationproperties struct {
     IsMonitored bool `json:"isMonitored"`
 
 
+    // IsScreenMonitored - Indicates filtering for screenMonitored
+    IsScreenMonitored bool `json:"isScreenMonitored"`
+
+
     // FilterWrapUpNotes - Indicates filtering for WrapUpNotes
     FilterWrapUpNotes bool `json:"filterWrapUpNotes"`
 
@@ -94,6 +101,7 @@ type Conversationproperties struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationproperties) String() string {
+    
     
     
     
@@ -140,11 +148,16 @@ func (u *Conversationproperties) MarshalJSON() ([]byte, error) {
         
         IsMonitored bool `json:"isMonitored"`
         
+        IsScreenMonitored bool `json:"isScreenMonitored"`
+        
         FilterWrapUpNotes bool `json:"filterWrapUpNotes"`
         
         MatchAll bool `json:"matchAll"`
         *Alias
     }{
+
+        
+
 
         
 

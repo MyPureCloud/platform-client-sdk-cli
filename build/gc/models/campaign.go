@@ -117,6 +117,9 @@ type CampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -259,6 +262,10 @@ type Campaign struct {
     CallbackAutoAnswer bool `json:"callbackAutoAnswer"`
 
 
+    // DynamicLineBalancingSettings - Dynamic line balancing settings
+    DynamicLineBalancingSettings Dynamiclinebalancingsettings `json:"dynamicLineBalancingSettings"`
+
+
     
 
 }
@@ -292,6 +299,7 @@ func (o *Campaign) String() string {
     
     
      o.ContactListFilters = []Domainentityref{{}} 
+    
     
     
     
@@ -374,6 +382,8 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
         MaxCallsPerAgent int `json:"maxCallsPerAgent"`
         
         CallbackAutoAnswer bool `json:"callbackAutoAnswer"`
+        
+        DynamicLineBalancingSettings Dynamiclinebalancingsettings `json:"dynamicLineBalancingSettings"`
         *Alias
     }{
 
@@ -477,6 +487,9 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
 
         
         ContactListFilters: []Domainentityref{{}},
+        
+
+
         
 
 

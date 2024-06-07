@@ -30,7 +30,7 @@ func init() {
 func Cmdexternalcontacts_organizations_relationships() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "20", "Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)")
-	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "which fields, if any, to expand Valid values: externalDataSources")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: externalDataSources")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships", utils.FormatPermissions([]string{ "relate:externalOrganization:view", "externalContacts:externalOrganization:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -83,7 +83,7 @@ var listCmd = &cobra.Command{
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
 		}
-		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
 		}

@@ -18,7 +18,7 @@ type LibraryDud struct {
     
 
 
-    Version int `json:"version"`
+    
 
 
     CreatedBy User `json:"createdBy"`
@@ -43,7 +43,8 @@ type Library struct {
     Name string `json:"name"`
 
 
-    
+    // Version - Current version for this resource.
+    Version int `json:"version"`
 
 
     
@@ -64,6 +65,7 @@ type Library struct {
 func (o *Library) String() string {
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -82,6 +84,8 @@ func (u *Library) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Name string `json:"name"`
+        
+        Version int `json:"version"`
         
         ResponseType string `json:"responseType"`
         *Alias

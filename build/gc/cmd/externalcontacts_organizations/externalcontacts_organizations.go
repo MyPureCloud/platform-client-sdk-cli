@@ -68,7 +68,7 @@ func Cmdexternalcontacts_organizations() *cobra.Command {
 }`)
 	externalcontacts_organizationsCmd.AddCommand(deleteCmd)
 
-	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "which fields, if any, to expand (externalDataSources) Valid values: externalDataSources")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand (externalDataSources) Valid values: externalDataSources")
 	utils.AddFlag(getCmd.Flags(), "bool", "includeTrustors", "", "(true or false) whether or not to include trustor information embedded in the externalOrganization")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/organizations/{externalOrganizationId}", utils.FormatPermissions([]string{ "relate:externalOrganization:view", "externalContacts:externalOrganization:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/organizations/{externalOrganizationId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -291,7 +291,7 @@ var getCmd = &cobra.Command{
 		externalOrganizationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{externalOrganizationId}", fmt.Sprintf("%v", externalOrganizationId), -1)
 
-		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
 		}

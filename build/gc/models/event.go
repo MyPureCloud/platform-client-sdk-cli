@@ -47,9 +47,6 @@ type EventDud struct {
 
     
 
-
-    
-
 }
 
 // Event
@@ -76,10 +73,6 @@ type Event struct {
 
     // EventType - The name representing the type of event.
     EventType string `json:"eventType"`
-
-
-    // GenericActionEvent - Event triggered by generic actions.
-    GenericActionEvent Genericactionevent `json:"genericActionEvent"`
 
 
     // OutcomeAchievedEvent - Event where a customer has achieved a specific outcome or goal.
@@ -121,7 +114,6 @@ func (o *Event) String() string {
     
     
     
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -151,8 +143,6 @@ func (u *Event) MarshalJSON() ([]byte, error) {
         
         EventType string `json:"eventType"`
         
-        GenericActionEvent Genericactionevent `json:"genericActionEvent"`
-        
         OutcomeAchievedEvent Outcomeachievedevent `json:"outcomeAchievedEvent"`
         
         SegmentAssignmentEvent Segmentassignmentevent `json:"segmentAssignmentEvent"`
@@ -166,9 +156,6 @@ func (u *Event) MarshalJSON() ([]byte, error) {
         CreatedDate time.Time `json:"createdDate"`
         *Alias
     }{
-
-        
-
 
         
 

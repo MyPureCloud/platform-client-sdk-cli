@@ -27,11 +27,11 @@ type Alteration struct {
     VarType string `json:"type"`
 
 
-    // Start - The start date of an alteration range as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z
+    // Start - The start date of an alteration range as an ISO-8601 string
     Start string `json:"start"`
 
 
-    // End - The end date of an alteration range as an ISO-8601 string in UTC time, e.g: 2023-12-21T18:30:25.000Z
+    // End - The end date of an alteration range as an ISO-8601 string
     End string `json:"end"`
 
 }

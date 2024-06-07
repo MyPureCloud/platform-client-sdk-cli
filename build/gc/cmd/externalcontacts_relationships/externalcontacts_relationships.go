@@ -68,7 +68,7 @@ func Cmdexternalcontacts_relationships() *cobra.Command {
 }`)
 	externalcontacts_relationshipsCmd.AddCommand(deleteCmd)
 
-	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "which fields, if any, to expand Valid values: externalDataSources")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: externalDataSources")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/relationships/{relationshipId}", utils.FormatPermissions([]string{ "relate:externalOrganization:view", "externalContacts:externalOrganization:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/relationships/{relationshipId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -268,7 +268,7 @@ var getCmd = &cobra.Command{
 		relationshipId, args := args[0], args[1:]
 		path = strings.Replace(path, "{relationshipId}", fmt.Sprintf("%v", relationshipId), -1)
 
-		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
 		}

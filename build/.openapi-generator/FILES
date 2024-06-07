@@ -112,6 +112,7 @@ gc/cmd/architect_systemprompts_history/architect_systemprompts_history.go
 gc/cmd/architect_systemprompts_resources/architect_systemprompts_resources.go
 gc/cmd/audits_query/audits_query.go
 gc/cmd/audits_query_realtime/audits_query_realtime.go
+gc/cmd/audits_query_realtime_related/audits_query_realtime_related.go
 gc/cmd/audits_query_realtime_servicemapping/audits_query_realtime_servicemapping.go
 gc/cmd/audits_query_results/audits_query_results.go
 gc/cmd/audits_query_servicemapping/audits_query_servicemapping.go
@@ -283,9 +284,7 @@ gc/cmd/conversations_messaging_facebook_permissions/conversations_messaging_face
 gc/cmd/conversations_messaging_integrations/conversations_messaging_integrations.go
 gc/cmd/conversations_messaging_integrations_facebook/conversations_messaging_integrations_facebook.go
 gc/cmd/conversations_messaging_integrations_instagram/conversations_messaging_integrations_instagram.go
-gc/cmd/conversations_messaging_integrations_line/conversations_messaging_integrations_line.go
 gc/cmd/conversations_messaging_integrations_open/conversations_messaging_integrations_open.go
-gc/cmd/conversations_messaging_integrations_twitter/conversations_messaging_integrations_twitter.go
 gc/cmd/conversations_messaging_integrations_whatsapp/conversations_messaging_integrations_whatsapp.go
 gc/cmd/conversations_messaging_integrations_whatsapp_embeddedsignup/conversations_messaging_integrations_whatsapp_embeddedsignup.go
 gc/cmd/conversations_messaging_settings/conversations_messaging_settings.go
@@ -715,6 +714,7 @@ gc/cmd/outbound_campaigns_callback_schedule/outbound_campaigns_callback_schedule
 gc/cmd/outbound_campaigns_diagnostics/outbound_campaigns_diagnostics.go
 gc/cmd/outbound_campaigns_divisionviews/outbound_campaigns_divisionviews.go
 gc/cmd/outbound_campaigns_interactions/outbound_campaigns_interactions.go
+gc/cmd/outbound_campaigns_linedistribution/outbound_campaigns_linedistribution.go
 gc/cmd/outbound_campaigns_progress/outbound_campaigns_progress.go
 gc/cmd/outbound_campaigns_stats/outbound_campaigns_stats.go
 gc/cmd/outbound_contactlistfilters/outbound_contactlistfilters.go
@@ -724,6 +724,9 @@ gc/cmd/outbound_contactlists/outbound_contactlists.go
 gc/cmd/outbound_contactlists_clear/outbound_contactlists_clear.go
 gc/cmd/outbound_contactlists_contacts/outbound_contactlists_contacts.go
 gc/cmd/outbound_contactlists_contacts_bulk/outbound_contactlists_contacts_bulk.go
+gc/cmd/outbound_contactlists_contacts_bulk_remove/outbound_contactlists_contacts_bulk_remove.go
+gc/cmd/outbound_contactlists_contacts_bulk_update/outbound_contactlists_contacts_bulk_update.go
+gc/cmd/outbound_contactlists_contacts_search/outbound_contactlists_contacts_search.go
 gc/cmd/outbound_contactlists_divisionviews/outbound_contactlists_divisionviews.go
 gc/cmd/outbound_contactlists_export/outbound_contactlists_export.go
 gc/cmd/outbound_contactlists_importstatus/outbound_contactlists_importstatus.go
@@ -1323,6 +1326,8 @@ gc/models/aggregateviewdata.go
 gc/models/aggregationrange.go
 gc/models/aggregationresult.go
 gc/models/aggregationresultentry.go
+gc/models/aianswer.go
+gc/models/aiscoring.go
 gc/models/aiscoringsettings.go
 gc/models/alertingunreadstatus.go
 gc/models/alertlisting.go
@@ -1435,6 +1440,8 @@ gc/models/auditqueryservicemapping.go
 gc/models/auditquerysort.go
 gc/models/auditrealtimequeryrequest.go
 gc/models/auditrealtimequeryresultsresponse.go
+gc/models/auditrealtimerelatedrequest.go
+gc/models/auditrealtimerelatedresultsresponse.go
 gc/models/auditsearchresult.go
 gc/models/audituser.go
 gc/models/authenticationsettings.go
@@ -1678,6 +1685,9 @@ gc/models/campaignentitylisting.go
 gc/models/campaigninteraction.go
 gc/models/campaigninteractions.go
 gc/models/campaignlinesutilization.go
+gc/models/campaignoutboundlinesallocation.go
+gc/models/campaignoutboundlinesdistribution.go
+gc/models/campaignoutboundlinesreservation.go
 gc/models/campaignprogress.go
 gc/models/campaignrule.go
 gc/models/campaignruleaction.go
@@ -1785,7 +1795,6 @@ gc/models/compliance.go
 gc/models/complianceresponse.go
 gc/models/condition.go
 gc/models/conditionalgrouprouting.go
-gc/models/conditionalgrouproutingcondition.go
 gc/models/conditionalgrouproutingrule.go
 gc/models/configurationoverrides.go
 gc/models/confusiondetails.go
@@ -1813,7 +1822,9 @@ gc/models/contactaddress.go
 gc/models/contactaddressableentityref.go
 gc/models/contactaddressconditionsettings.go
 gc/models/contactaddresstypeconditionsettings.go
+gc/models/contactbulkeditrequest.go
 gc/models/contactbulksearchcriteria.go
+gc/models/contactbulksearchparameters.go
 gc/models/contactcallbackrequest.go
 gc/models/contactcentersettings.go
 gc/models/contactcolumnconditionsettings.go
@@ -1831,10 +1842,13 @@ gc/models/contactlistfilterentitylisting.go
 gc/models/contactlistfilterpredicate.go
 gc/models/contactlistfilterrange.go
 gc/models/contactlisting.go
+gc/models/contactlistingrequest.go
+gc/models/contactlistingresponse.go
 gc/models/contactlisttemplate.go
 gc/models/contactlisttemplatebulkretrievebody.go
 gc/models/contactlisttemplateentitylisting.go
 gc/models/contactphonenumbercolumn.go
+gc/models/contactsbulkoperationjob.go
 gc/models/contactsexportrequest.go
 gc/models/contactsort.go
 gc/models/contentactions.go
@@ -2576,8 +2590,6 @@ gc/models/generaltopic.go
 gc/models/generaltopicsentitylisting.go
 gc/models/generatebuforecastrequest.go
 gc/models/generatemeetingidrequest.go
-gc/models/genericactionevent.go
-gc/models/genericeventaction.go
 gc/models/genericsaml.go
 gc/models/genesysbotconnector.go
 gc/models/geolocation.go
@@ -2994,9 +3006,6 @@ gc/models/linebase.go
 gc/models/linebaseentitylisting.go
 gc/models/lineentitylisting.go
 gc/models/lineid.go
-gc/models/lineintegration.go
-gc/models/lineintegrationentitylisting.go
-gc/models/lineintegrationrequest.go
 gc/models/linestatus.go
 gc/models/lineuserid.go
 gc/models/linkconfiguration.go
@@ -3577,8 +3586,11 @@ gc/models/reportingturnintent.go
 gc/models/reportingturnintentslot.go
 gc/models/reportingturnknowledge.go
 gc/models/reportingturnknowledgedocument.go
+gc/models/reportingturnknowledgeevents.go
 gc/models/reportingturnknowledgefeedback.go
+gc/models/reportingturnknowledgefeedbackevent.go
 gc/models/reportingturnknowledgesearch.go
+gc/models/reportingturnknowledgesearchevent.go
 gc/models/reportingturnsresponse.go
 gc/models/requestconfig.go
 gc/models/requestcontext.go
@@ -4121,9 +4133,6 @@ gc/models/ttssettings.go
 gc/models/ttsvoiceentity.go
 gc/models/ttsvoiceentitylisting.go
 gc/models/twitterid.go
-gc/models/twitterintegration.go
-gc/models/twitterintegrationentitylisting.go
-gc/models/twitterintegrationrequest.go
 gc/models/typingsetting.go
 gc/models/uci10n.go
 gc/models/ucicon.go

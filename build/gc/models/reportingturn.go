@@ -39,6 +39,9 @@ type ReportingturnDud struct {
     
 
 
+    
+
+
     Conversation Addressableentityref `json:"conversation"`
 
 }
@@ -69,6 +72,10 @@ type Reportingturn struct {
     Knowledge Reportingturnknowledge `json:"knowledge"`
 
 
+    // KnowledgeBaseEvents - The knowledge data captured during this reporting turn.
+    KnowledgeBaseEvents Reportingturnknowledgeevents `json:"knowledgeBaseEvents"`
+
+
     // DateCreated - Timestamp indicating when the original turn was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateCreated time.Time `json:"dateCreated"`
 
@@ -89,6 +96,7 @@ type Reportingturn struct {
 func (o *Reportingturn) String() string {
     
      o.BotPrompts = []string{""} 
+    
     
     
     
@@ -125,6 +133,8 @@ func (u *Reportingturn) MarshalJSON() ([]byte, error) {
         
         Knowledge Reportingturnknowledge `json:"knowledge"`
         
+        KnowledgeBaseEvents Reportingturnknowledgeevents `json:"knowledgeBaseEvents"`
+        
         DateCreated time.Time `json:"dateCreated"`
         
         AskActionResult string `json:"askActionResult"`
@@ -138,6 +148,9 @@ func (u *Reportingturn) MarshalJSON() ([]byte, error) {
 
         
         BotPrompts: []string{""},
+        
+
+
         
 
 

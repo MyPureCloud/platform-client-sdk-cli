@@ -329,8 +329,8 @@ func UpdateOAuthToken(c Configuration, data *models.OAuthTokenData) error {
 
 func UpdateGrantType(c Configuration, grantType string) error {
 	return updateConfig(configuration{
-			profileName: c.ProfileName(),
-			grantType: grantType,
+		profileName: c.ProfileName(),
+		grantType:   grantType,
 	}, nil, nil, nil)
 }
 
@@ -447,23 +447,17 @@ func updateConfig(c configuration, loggingEnabled *bool, autoPaginationEnabled *
 		viper.Set(fmt.Sprintf("%s.secure_login_enabled", c.profileName), *secureLoginEnabled)
 	}
 
-	protocol := fmt.Sprintf("%s.proxy_protocol", c.ProfileName())
-	port := fmt.Sprintf("%s.proxy_port", c.ProfileName())
-	host := fmt.Sprintf("%s.proxy_host", c.ProfileName())
-	username := fmt.Sprintf("%s.proxy_username", c.ProfileName())
-	password := fmt.Sprintf("%s.proxy_password", c.ProfileName())
 	if c.proxyConfiguration != nil {
+		protocol := fmt.Sprintf("%s.proxy_protocol", c.ProfileName())
+		port := fmt.Sprintf("%s.proxy_port", c.ProfileName())
+		host := fmt.Sprintf("%s.proxy_host", c.ProfileName())
+		username := fmt.Sprintf("%s.proxy_username", c.ProfileName())
+		password := fmt.Sprintf("%s.proxy_password", c.ProfileName())
 		viper.Set(protocol, c.proxyConfiguration.Protocol)
 		viper.Set(port, c.proxyConfiguration.Port)
 		viper.Set(host, c.proxyConfiguration.Host)
 		viper.Set(username, c.proxyConfiguration.UserName)
 		viper.Set(password, c.proxyConfiguration.Password)
-	} else {
-		viper.Set(protocol, "")
-		viper.Set(port, "")
-		viper.Set(username, "")
-		viper.Set(host, "")
-		viper.Set(password, "")
 	}
 
 	if viper.ConfigFileUsed() == "" {

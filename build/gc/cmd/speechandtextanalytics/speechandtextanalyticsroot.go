@@ -2,6 +2,7 @@ package speechandtextanalytics
 
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_categories"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_conversations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_dictionaryfeedback"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_sentimentfeedback"
@@ -13,6 +14,7 @@ import (
 )
 
 func init() {
+	speechandtextanalyticsCmd.AddCommand(speechandtextanalytics_categories.Cmdspeechandtextanalytics_categories())
 	speechandtextanalyticsCmd.AddCommand(speechandtextanalytics_conversations.Cmdspeechandtextanalytics_conversations())
 	speechandtextanalyticsCmd.AddCommand(speechandtextanalytics_dictionaryfeedback.Cmdspeechandtextanalytics_dictionaryfeedback())
 	speechandtextanalyticsCmd.AddCommand(speechandtextanalytics_sentimentfeedback.Cmdspeechandtextanalytics_sentimentfeedback())
@@ -21,6 +23,6 @@ func init() {
 	speechandtextanalyticsCmd.AddCommand(speechandtextanalytics_settings.Cmdspeechandtextanalytics_settings())
 	speechandtextanalyticsCmd.AddCommand(speechandtextanalytics_topics.Cmdspeechandtextanalytics_topics())
 	speechandtextanalyticsCmd.AddCommand(speechandtextanalytics_transcripts.Cmdspeechandtextanalytics_transcripts())
-	speechandtextanalyticsCmd.Short = utils.GenerateCustomDescription(speechandtextanalyticsCmd.Short, speechandtextanalytics_conversations.Description, speechandtextanalytics_dictionaryfeedback.Description, speechandtextanalytics_sentimentfeedback.Description, speechandtextanalytics_programs.Description, speechandtextanalytics_sentiment.Description, speechandtextanalytics_settings.Description, speechandtextanalytics_topics.Description, speechandtextanalytics_transcripts.Description, )
+	speechandtextanalyticsCmd.Short = utils.GenerateCustomDescription(speechandtextanalyticsCmd.Short, speechandtextanalytics_categories.Description, speechandtextanalytics_conversations.Description, speechandtextanalytics_dictionaryfeedback.Description, speechandtextanalytics_sentimentfeedback.Description, speechandtextanalytics_programs.Description, speechandtextanalytics_sentiment.Description, speechandtextanalytics_settings.Description, speechandtextanalytics_topics.Description, speechandtextanalytics_transcripts.Description, )
 	speechandtextanalyticsCmd.Long = speechandtextanalyticsCmd.Short
 }

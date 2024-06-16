@@ -64,6 +64,9 @@ type WorktypedeltaDud struct {
 
     
 
+
+    
+
 }
 
 // Worktypedelta
@@ -132,6 +135,10 @@ type Worktypedelta struct {
     SchemaVersion Workitemsattributechangestring `json:"schemaVersion"`
 
 
+    // ServiceLevelTarget
+    ServiceLevelTarget Workitemsattributechangeinteger `json:"serviceLevelTarget"`
+
+
     // DateModified
     DateModified Workitemsattributechangeinstant `json:"dateModified"`
 
@@ -143,6 +150,7 @@ type Worktypedelta struct {
 
 // String returns a JSON representation of the model
 func (o *Worktypedelta) String() string {
+    
     
     
     
@@ -210,11 +218,16 @@ func (u *Worktypedelta) MarshalJSON() ([]byte, error) {
         
         SchemaVersion Workitemsattributechangestring `json:"schemaVersion"`
         
+        ServiceLevelTarget Workitemsattributechangeinteger `json:"serviceLevelTarget"`
+        
         DateModified Workitemsattributechangeinstant `json:"dateModified"`
         
         ModifiedBy Workitemsattributechangestring `json:"modifiedBy"`
         *Alias
     }{
+
+        
+
 
         
 

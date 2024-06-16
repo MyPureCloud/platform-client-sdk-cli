@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type UserqueueDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -129,7 +129,8 @@ type UserqueueDud struct {
 
 // Userqueue
 type Userqueue struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // Name
@@ -287,6 +288,7 @@ func (o *Userqueue) String() string {
     
     
     
+    
      o.RoutingRules = []Routingrule{{}} 
     
     
@@ -328,6 +330,8 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
     UserqueueMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Name string `json:"name"`
         

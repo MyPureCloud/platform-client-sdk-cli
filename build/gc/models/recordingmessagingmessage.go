@@ -53,6 +53,18 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Recordingmessagingmessage
@@ -79,6 +91,22 @@ type Recordingmessagingmessage struct {
 
     // Id - A globally unique identifier for this communication.
     Id string `json:"id"`
+
+
+    // Purpose - A well known string that specifies the purpose or type of the participant on this communication.
+    Purpose string `json:"purpose"`
+
+
+    // ParticipantId - A globally unique identifier for the participant on this communication.
+    ParticipantId string `json:"participantId"`
+
+
+    // Queue - A globally unique identifier for the queue involved in this communication.
+    Queue Addressableentityref `json:"queue"`
+
+
+    // Workflow - A globally unique identifier for the workflow involved in this communication.
+    Workflow Addressableentityref `json:"workflow"`
 
 
     // MessageText - The content of this message.
@@ -123,6 +151,10 @@ func (o *Recordingmessagingmessage) String() string {
     
     
     
+    
+    
+    
+    
      o.MessageMediaAttachments = []Messagemediaattachment{{}} 
      o.MessageStickerAttachments = []Messagestickerattachment{{}} 
      o.QuickReplies = []Quickreply{{}} 
@@ -159,6 +191,14 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         
         Id string `json:"id"`
         
+        Purpose string `json:"purpose"`
+        
+        ParticipantId string `json:"participantId"`
+        
+        Queue Addressableentityref `json:"queue"`
+        
+        Workflow Addressableentityref `json:"workflow"`
+        
         MessageText string `json:"messageText"`
         
         MessageMediaAttachments []Messagemediaattachment `json:"messageMediaAttachments"`
@@ -176,6 +216,18 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         ContentType string `json:"contentType"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

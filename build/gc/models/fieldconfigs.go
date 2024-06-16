@@ -19,9 +19,6 @@ type FieldconfigsDud struct {
 
     
 
-
-    
-
 }
 
 // Fieldconfigs
@@ -37,15 +34,10 @@ type Fieldconfigs struct {
     // Group
     Group Fieldconfig `json:"group"`
 
-
-    // ExternalContact
-    ExternalContact Fieldconfig `json:"externalContact"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Fieldconfigs) String() string {
-    
     
     
     
@@ -71,13 +63,8 @@ func (u *Fieldconfigs) MarshalJSON() ([]byte, error) {
         Person Fieldconfig `json:"person"`
         
         Group Fieldconfig `json:"group"`
-        
-        ExternalContact Fieldconfig `json:"externalContact"`
         *Alias
     }{
-
-        
-
 
         
 

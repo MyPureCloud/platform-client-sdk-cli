@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdfieldconfig() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "varType", "", "Field type - REQUIRED Valid values: person, group, org, externalContact")
+	utils.AddFlag(getCmd.Flags(), "string", "varType", "", "Field type - REQUIRED Valid values: person, group, org")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/fieldconfig", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/fieldconfig")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	getCmd.MarkFlagRequired("varType")

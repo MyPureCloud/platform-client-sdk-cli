@@ -40,6 +40,12 @@ type LearningmodulerequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Learningmodulerequest - Learning module request
@@ -83,6 +89,14 @@ type Learningmodulerequest struct {
     // ExternalId - The external ID of the learning module. Maximum length: 50 characters.
     ExternalId string `json:"externalId"`
 
+
+    // EnforceContentOrder - If true, learning module content should be viewed one by one in order
+    EnforceContentOrder bool `json:"enforceContentOrder"`
+
+
+    // ReviewAssessmentResults - Allows to view Assessment results in detail
+    ReviewAssessmentResults Reviewassessmentresults `json:"reviewAssessmentResults"`
+
 }
 
 // String returns a JSON representation of the model
@@ -91,6 +105,8 @@ func (o *Learningmodulerequest) String() string {
     
     
      o.InformSteps = []Learningmoduleinformsteprequest{{}} 
+    
+    
     
     
     
@@ -133,6 +149,10 @@ func (u *Learningmodulerequest) MarshalJSON() ([]byte, error) {
         ExcludedFromCatalog bool `json:"excludedFromCatalog"`
         
         ExternalId string `json:"externalId"`
+        
+        EnforceContentOrder bool `json:"enforceContentOrder"`
+        
+        ReviewAssessmentResults Reviewassessmentresults `json:"reviewAssessmentResults"`
         *Alias
     }{
 
@@ -147,6 +167,12 @@ func (u *Learningmodulerequest) MarshalJSON() ([]byte, error) {
 
         
         InformSteps: []Learningmoduleinformsteprequest{{}},
+        
+
+
+        
+
+
         
 
 

@@ -20,7 +20,7 @@ type FunctionuploadrequestDud struct {
 
 // Functionuploadrequest - Action function URL upload input.
 type Functionuploadrequest struct { 
-    // FileName - Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|
+    // FileName - Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . ' ( )
     FileName string `json:"fileName"`
 
 

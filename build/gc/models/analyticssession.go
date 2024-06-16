@@ -254,6 +254,12 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Analyticssession
@@ -356,6 +362,14 @@ type Analyticssession struct {
 
     // DestinationAddresses - Destination address(es) of transfers or consults
     DestinationAddresses []string `json:"destinationAddresses"`
+
+
+    // DetectedSpeechEnd - Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DetectedSpeechEnd time.Time `json:"detectedSpeechEnd"`
+
+
+    // DetectedSpeechStart - Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DetectedSpeechStart time.Time `json:"detectedSpeechStart"`
 
 
     // Direction - The direction of the communication
@@ -615,6 +629,8 @@ func (o *Analyticssession) String() string {
     
     
     
+    
+    
      o.EligibleAgentCounts = []int{0} 
     
     
@@ -732,6 +748,10 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         DeliveryStatusChangeDate time.Time `json:"deliveryStatusChangeDate"`
         
         DestinationAddresses []string `json:"destinationAddresses"`
+        
+        DetectedSpeechEnd time.Time `json:"detectedSpeechEnd"`
+        
+        DetectedSpeechStart time.Time `json:"detectedSpeechStart"`
         
         Direction string `json:"direction"`
         
@@ -929,6 +949,12 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
         
         DestinationAddresses: []string{""},
+        
+
+
+        
+
+
         
 
 

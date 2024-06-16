@@ -22,6 +22,9 @@ type ConversationmessageeventDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationmessageevent - Message event element.  Examples include: system messages, typing indicators, cobrowse offerings.
@@ -41,10 +44,15 @@ type Conversationmessageevent struct {
     // Presence - Presence event.
     Presence Conversationeventpresence `json:"presence"`
 
+
+    // Video - Video event.
+    Video Conversationeventvideo `json:"video"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationmessageevent) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Conversationmessageevent) MarshalJSON() ([]byte, error) {
         Typing Conversationeventtyping `json:"typing"`
         
         Presence Conversationeventpresence `json:"presence"`
+        
+        Video Conversationeventvideo `json:"video"`
         *Alias
     }{
+
+        
+
 
         
 

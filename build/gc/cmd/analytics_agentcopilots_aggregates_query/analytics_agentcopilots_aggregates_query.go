@@ -1,4 +1,4 @@
-package conversations_messaging_stickers
+package analytics_agentcopilots_aggregates_query
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("conversations_messaging_stickers", "SWAGGER_OVERRIDE_/api/v2/conversations/messaging/stickers", )
-	conversations_messaging_stickersCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("conversations_messaging_stickers"),
+	Description = utils.FormatUsageDescription("analytics_agentcopilots_aggregates_query", "SWAGGER_OVERRIDE_/api/v2/analytics/agentcopilots/aggregates/query", )
+	analytics_agentcopilots_aggregates_queryCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("analytics_agentcopilots_aggregates_query"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,27 +24,35 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(conversations_messaging_stickersCmd)
+	CommandService = services.NewCommandService(analytics_agentcopilots_aggregates_queryCmd)
 }
 
-func Cmdconversations_messaging_stickers() *cobra.Command { 
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
-	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/messaging/stickers/{messengerType}", utils.FormatPermissions([]string{ "conversation:message:create",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/messaging/stickers/{messengerType}")))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+func Cmdanalytics_agentcopilots_aggregates_query() *cobra.Command { 
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/agentcopilots/aggregates/query", utils.FormatPermissions([]string{ "analytics:agentCopilotAggregate:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/agentcopilots/aggregates/query")))
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "description" : "query",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AgentCopilotAggregationQuery"
+      }
+    }
+  },
+  "required" : true
+}`)
 	
-	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+        "$ref" : "#/components/schemas/AgentCopilotAggregateQueryResponse"
       }
     }
   }
 }`)
-	conversations_messaging_stickersCmd.AddCommand(listCmd)
-	return conversations_messaging_stickersCmd
+	analytics_agentcopilots_aggregates_queryCmd.AddCommand(createCmd)
+	return analytics_agentcopilots_aggregates_queryCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -52,11 +60,11 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
-var listCmd = &cobra.Command{
-	Use:   "list [messengerType]",
-	Short: "Get a list of Messaging Stickers (Deprecated)",
-	Long:  "Get a list of Messaging Stickers (Deprecated)",
-	Args:  utils.DetermineArgs([]string{ "messengerType", }),
+var createCmd = &cobra.Command{
+	Use:   "create",
+	Short: "Query for agent copilot aggregates",
+	Long:  "Query for agent copilot aggregates",
+	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -64,23 +72,16 @@ var listCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
+			reqModel := models.Agentcopilotaggregationquery{}
+			utils.Render(reqModel.String())
+			
 			return
 		}
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/conversations/messaging/stickers/{messengerType}"
-		messengerType, args := args[0], args[1:]
-		path = strings.Replace(path, "{messengerType}", fmt.Sprintf("%v", messengerType), -1)
+		path := "/api/v2/analytics/agentcopilots/aggregates/query"
 
-		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
-		if pageSize != "" {
-			queryParams["pageSize"] = pageSize
-		}
-		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
-		if pageNumber != "" {
-			queryParams["pageNumber"] = pageNumber
-		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -94,8 +95,8 @@ var listCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "list"
-		const httpMethod = "GET"
+		const opId = "create"
+		const httpMethod = "POST"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

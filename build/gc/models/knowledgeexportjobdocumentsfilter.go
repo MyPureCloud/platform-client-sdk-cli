@@ -16,6 +16,9 @@ type KnowledgeexportjobdocumentsfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgeexportjobdocumentsfilter
@@ -27,12 +30,17 @@ type Knowledgeexportjobdocumentsfilter struct {
     // Entities - Retrieves the documents with the given ids. Cannot be used together with internal filter.
     Entities []Entity `json:"entities"`
 
+
+    // SourceId
+    SourceId string `json:"sourceId"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgeexportjobdocumentsfilter) String() string {
     
      o.Entities = []Entity{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,6 +61,8 @@ func (u *Knowledgeexportjobdocumentsfilter) MarshalJSON() ([]byte, error) {
         Interval string `json:"interval"`
         
         Entities []Entity `json:"entities"`
+        
+        SourceId string `json:"sourceId"`
         *Alias
     }{
 
@@ -61,6 +71,9 @@ func (u *Knowledgeexportjobdocumentsfilter) MarshalJSON() ([]byte, error) {
 
         
         Entities: []Entity{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

@@ -91,7 +91,7 @@ type Appeventrequest struct {
     Traits map[string]Customeventattribute `json:"traits"`
 
 
-    // CustomerCookieId - Cookie ID of the customer associated with the app event. This is expected to be set per application install or device and can be used to identify a single customer across multiple sessions. This identifier, along with others passed as traits, is used for identity resolution.
+    // CustomerCookieId - A UUID representing the customer associated with the app event. This is expected to be set per application install or device and can be used to identify a single customer across multiple sessions. This identifier, along with others passed as traits, is used for identity resolution.
     CustomerCookieId string `json:"customerCookieId"`
 
 

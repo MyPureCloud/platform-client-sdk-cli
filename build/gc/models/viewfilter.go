@@ -547,6 +547,51 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1259,6 +1304,66 @@ type Viewfilter struct {
     BotFlowTypes []string `json:"botFlowTypes"`
 
 
+    // AgentTalkDurationMilliseconds - The agent talk durations in milliseconds used to filter the view
+    AgentTalkDurationMilliseconds []Numericrange `json:"agentTalkDurationMilliseconds"`
+
+
+    // CustomerTalkDurationMilliseconds - The customer talk durations in milliseconds used to filter the view
+    CustomerTalkDurationMilliseconds []Numericrange `json:"customerTalkDurationMilliseconds"`
+
+
+    // OvertalkDurationMilliseconds - The overtalk durations in milliseconds used to filter the view
+    OvertalkDurationMilliseconds []Numericrange `json:"overtalkDurationMilliseconds"`
+
+
+    // SilenceDurationMilliseconds - The silence durations in milliseconds used to filter the view
+    SilenceDurationMilliseconds []Numericrange `json:"silenceDurationMilliseconds"`
+
+
+    // AcdDurationMilliseconds - The acd durations in milliseconds used to filter the view
+    AcdDurationMilliseconds []Numericrange `json:"acdDurationMilliseconds"`
+
+
+    // IvrDurationMilliseconds - The ivr durations in milliseconds used to filter the view
+    IvrDurationMilliseconds []Numericrange `json:"ivrDurationMilliseconds"`
+
+
+    // OtherDurationMilliseconds - The other (hold/music) durations in milliseconds used to filter the view
+    OtherDurationMilliseconds []Numericrange `json:"otherDurationMilliseconds"`
+
+
+    // AgentTalkPercentage - The agent talk percentage used to filter the view
+    AgentTalkPercentage Numericrange `json:"agentTalkPercentage"`
+
+
+    // CustomerTalkPercentage - The customer talk percentage used to filter the view
+    CustomerTalkPercentage Numericrange `json:"customerTalkPercentage"`
+
+
+    // OvertalkPercentage - The overtalk percentage used to filter the view
+    OvertalkPercentage Numericrange `json:"overtalkPercentage"`
+
+
+    // SilencePercentage - The silence percentage used to filter the view
+    SilencePercentage Numericrange `json:"silencePercentage"`
+
+
+    // AcdPercentage - The acd percentage used to filter the view
+    AcdPercentage Numericrange `json:"acdPercentage"`
+
+
+    // IvrPercentage - The ivr percentage used to filter the view
+    IvrPercentage Numericrange `json:"ivrPercentage"`
+
+
+    // OtherPercentage - The other (hold/music percentage used to filter the view
+    OtherPercentage Numericrange `json:"otherPercentage"`
+
+
+    // OvertalkInstances - The overtalk instance range used to filter the view
+    OvertalkInstances Numericrange `json:"overtalkInstances"`
+
+
     // IsScreenRecorded - Filter to indicate if the screen is recorded
     IsScreenRecorded bool `json:"isScreenRecorded"`
 
@@ -1447,6 +1552,21 @@ func (o *Viewfilter) String() string {
      o.SurveyTypes = []string{""} 
      o.SurveyResponseStatuses = []string{""} 
      o.BotFlowTypes = []string{""} 
+     o.AgentTalkDurationMilliseconds = []Numericrange{{}} 
+     o.CustomerTalkDurationMilliseconds = []Numericrange{{}} 
+     o.OvertalkDurationMilliseconds = []Numericrange{{}} 
+     o.SilenceDurationMilliseconds = []Numericrange{{}} 
+     o.AcdDurationMilliseconds = []Numericrange{{}} 
+     o.IvrDurationMilliseconds = []Numericrange{{}} 
+     o.OtherDurationMilliseconds = []Numericrange{{}} 
+    
+    
+    
+    
+    
+    
+    
+    
     
      o.ScreenMonitorUserIds = []string{""} 
 
@@ -1819,6 +1939,36 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         SurveyResponseStatuses []string `json:"surveyResponseStatuses"`
         
         BotFlowTypes []string `json:"botFlowTypes"`
+        
+        AgentTalkDurationMilliseconds []Numericrange `json:"agentTalkDurationMilliseconds"`
+        
+        CustomerTalkDurationMilliseconds []Numericrange `json:"customerTalkDurationMilliseconds"`
+        
+        OvertalkDurationMilliseconds []Numericrange `json:"overtalkDurationMilliseconds"`
+        
+        SilenceDurationMilliseconds []Numericrange `json:"silenceDurationMilliseconds"`
+        
+        AcdDurationMilliseconds []Numericrange `json:"acdDurationMilliseconds"`
+        
+        IvrDurationMilliseconds []Numericrange `json:"ivrDurationMilliseconds"`
+        
+        OtherDurationMilliseconds []Numericrange `json:"otherDurationMilliseconds"`
+        
+        AgentTalkPercentage Numericrange `json:"agentTalkPercentage"`
+        
+        CustomerTalkPercentage Numericrange `json:"customerTalkPercentage"`
+        
+        OvertalkPercentage Numericrange `json:"overtalkPercentage"`
+        
+        SilencePercentage Numericrange `json:"silencePercentage"`
+        
+        AcdPercentage Numericrange `json:"acdPercentage"`
+        
+        IvrPercentage Numericrange `json:"ivrPercentage"`
+        
+        OtherPercentage Numericrange `json:"otherPercentage"`
+        
+        OvertalkInstances Numericrange `json:"overtalkInstances"`
         
         IsScreenRecorded bool `json:"isScreenRecorded"`
         
@@ -2604,6 +2754,65 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         BotFlowTypes: []string{""},
+        
+
+
+        
+        AgentTalkDurationMilliseconds: []Numericrange{{}},
+        
+
+
+        
+        CustomerTalkDurationMilliseconds: []Numericrange{{}},
+        
+
+
+        
+        OvertalkDurationMilliseconds: []Numericrange{{}},
+        
+
+
+        
+        SilenceDurationMilliseconds: []Numericrange{{}},
+        
+
+
+        
+        AcdDurationMilliseconds: []Numericrange{{}},
+        
+
+
+        
+        IvrDurationMilliseconds: []Numericrange{{}},
+        
+
+
+        
+        OtherDurationMilliseconds: []Numericrange{{}},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
 

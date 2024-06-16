@@ -85,7 +85,7 @@ func Cmdjourney_views() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+        "$ref" : "#/components/schemas/JourneyViewListing"
       }
     }
   }

@@ -36,6 +36,9 @@ type LearningassignmentDud struct {
     PercentageScore float32 `json:"percentageScore"`
 
 
+    AssessmentPercentageScore float32 `json:"assessmentPercentageScore"`
+
+
     IsRule bool `json:"isRule"`
 
 
@@ -46,6 +49,18 @@ type LearningassignmentDud struct {
 
 
     IsLatest bool `json:"isLatest"`
+
+
+    AssessmentCompletionPercentage float32 `json:"assessmentCompletionPercentage"`
+
+
+    CompletionPercentage float32 `json:"completionPercentage"`
+
+
+    Steps []Learningassignmentstep `json:"steps"`
+
+
+    NextStep Learningassignmentstep `json:"nextStep"`
 
 
     SelfUri string `json:"selfUri"`
@@ -80,6 +95,21 @@ type Learningassignment struct {
 
     // Assessment - The assessment associated with this assignment
     Assessment Learningassessment `json:"assessment"`
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
 
 
     
@@ -188,6 +218,21 @@ func (u *Learningassignment) MarshalJSON() ([]byte, error) {
         LengthInMinutes int `json:"lengthInMinutes"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

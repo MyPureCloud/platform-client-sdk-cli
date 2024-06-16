@@ -41,7 +41,7 @@ type Contactlistingrequest struct {
     PageNumber int `json:"pageNumber"`
 
 
-    // PageSize - Page size. The max that will be returned is 50.
+    // PageSize - Page size. The max that will be returned is 100.
     PageSize int `json:"pageSize"`
 
 

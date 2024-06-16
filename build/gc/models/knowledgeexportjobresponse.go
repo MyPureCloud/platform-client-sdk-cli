@@ -48,6 +48,9 @@ type KnowledgeexportjobresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -102,12 +105,17 @@ type Knowledgeexportjobresponse struct {
     ErrorInformation Errorbody `json:"errorInformation"`
 
 
+    // Source - Source of the export job.
+    Source Knowledgeoperationsource `json:"source"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgeexportjobresponse) String() string {
+    
     
     
     
@@ -160,8 +168,13 @@ func (u *Knowledgeexportjobresponse) MarshalJSON() ([]byte, error) {
         DateModified time.Time `json:"dateModified"`
         
         ErrorInformation Errorbody `json:"errorInformation"`
+        
+        Source Knowledgeoperationsource `json:"source"`
         *Alias
     }{
+
+        
+
 
         
 

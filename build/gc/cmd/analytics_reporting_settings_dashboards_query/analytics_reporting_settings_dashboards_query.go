@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("analytics_reporting_settings_dashboards_query", "SWAGGER_OVERRIDE_/api/v2/analytics/reporting/settings/dashboards/query", )
+	Description = utils.FormatUsageDescription("analytics_reporting_settings_dashboards_query", "SWAGGER_OVERRIDE_/api/v2/analytics/reporting/settings/dashboards/query", "SWAGGER_OVERRIDE_/api/v2/analytics/reporting/settings/dashboards/query", )
 	analytics_reporting_settings_dashboards_queryCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("analytics_reporting_settings_dashboards_query"),
 		Short: Description,
@@ -51,6 +51,28 @@ func Cmdanalytics_reporting_settings_dashboards_query() *cobra.Command {
   }
 }`)
 	analytics_reporting_settings_dashboards_queryCmd.AddCommand(createCmd)
+
+	utils.AddFlag(listCmd.Flags(), "string", "dashboardType", "", "List dashboard of given type - REQUIRED Valid values: All, Public, Private, Shared, Favorites")
+	utils.AddFlag(listCmd.Flags(), "string", "dashboardAccessFilter", "", "Filter dashboard based on the owner of dashboard - REQUIRED Valid values: OwnedByMe, OwnedByAnyone, NotOwnedByMe")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "desc", "")
+	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "9", "")
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/reporting/settings/dashboards/query", utils.FormatPermissions([]string{ "analytics:dashboardConfigurations:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/reporting/settings/dashboards/query")))
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+	listCmd.MarkFlagRequired("dashboardType")
+	listCmd.MarkFlagRequired("dashboardAccessFilter")
+	
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
+  }
+}`)
+	analytics_reporting_settings_dashboards_queryCmd.AddCommand(listCmd)
 	return analytics_reporting_settings_dashboards_queryCmd
 }
 
@@ -96,6 +118,89 @@ var createCmd = &cobra.Command{
 
 		const opId = "create"
 		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var listCmd = &cobra.Command{
+	Use:   "list",
+	Short: "Get list of dashboard configurations",
+	Long:  "Get list of dashboard configurations",
+	Args:  utils.DetermineArgs([]string{ }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/analytics/reporting/settings/dashboards/query"
+
+		dashboardType := utils.GetFlag(cmd.Flags(), "string", "dashboardType")
+		if dashboardType != "" {
+			queryParams["dashboardType"] = dashboardType
+		}
+		dashboardAccessFilter := utils.GetFlag(cmd.Flags(), "string", "dashboardAccessFilter")
+		if dashboardAccessFilter != "" {
+			queryParams["dashboardAccessFilter"] = dashboardAccessFilter
+		}
+		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
+		if sortBy != "" {
+			queryParams["sortBy"] = sortBy
+		}
+		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
+		if pageNumber != "" {
+			queryParams["pageNumber"] = pageNumber
+		}
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		const opId = "list"
+		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

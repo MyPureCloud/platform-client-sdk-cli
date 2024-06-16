@@ -48,6 +48,12 @@ type AssignedlearningmoduleDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -125,6 +131,14 @@ type Assignedlearningmodule struct {
     
 
 
+    // EnforceContentOrder - If true, learning module content should be viewed one by one in order
+    EnforceContentOrder bool `json:"enforceContentOrder"`
+
+
+    // ReviewAssessmentResults - Allows to view Assessment results in detail
+    ReviewAssessmentResults Reviewassessmentresults `json:"reviewAssessmentResults"`
+
+
     // CurrentAssignments - The current assignments for the requested users
     CurrentAssignments []Learningassignment `json:"currentAssignments"`
 
@@ -183,6 +197,8 @@ type Assignedlearningmodule struct {
 func (o *Assignedlearningmodule) String() string {
     
     
+    
+    
      o.CurrentAssignments = []Learningassignment{{}} 
     
     
@@ -215,6 +231,10 @@ func (u *Assignedlearningmodule) MarshalJSON() ([]byte, error) {
         
         ExcludedFromCatalog bool `json:"excludedFromCatalog"`
         
+        EnforceContentOrder bool `json:"enforceContentOrder"`
+        
+        ReviewAssessmentResults Reviewassessmentresults `json:"reviewAssessmentResults"`
+        
         CurrentAssignments []Learningassignment `json:"currentAssignments"`
         
         Description string `json:"description"`
@@ -238,6 +258,12 @@ func (u *Assignedlearningmodule) MarshalJSON() ([]byte, error) {
         ArchivalMode string `json:"archivalMode"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

@@ -19,6 +19,9 @@ type KnowledgeexportjobrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgeexportjobrequest
@@ -31,6 +34,10 @@ type Knowledgeexportjobrequest struct {
     FileType string `json:"fileType"`
 
 
+    // SourceId - Knowledge integration source id.
+    SourceId string `json:"sourceId"`
+
+
     // JsonFileVersion - Requested version of the exported json file. Available versions are 2 and 3, default is 2
     JsonFileVersion int `json:"jsonFileVersion"`
 
@@ -38,6 +45,7 @@ type Knowledgeexportjobrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgeexportjobrequest) String() string {
+    
     
     
     
@@ -62,9 +70,14 @@ func (u *Knowledgeexportjobrequest) MarshalJSON() ([]byte, error) {
         
         FileType string `json:"fileType"`
         
+        SourceId string `json:"sourceId"`
+        
         JsonFileVersion int `json:"jsonFileVersion"`
         *Alias
     }{
+
+        
+
 
         
 

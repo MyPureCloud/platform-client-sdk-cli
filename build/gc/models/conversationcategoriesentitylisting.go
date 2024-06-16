@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    AddressableentitylistingMarshalled = false
+    ConversationcategoriesentitylistingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type AddressableentitylistingDud struct { 
+type ConversationcategoriesentitylistingDud struct { 
     
 
 
@@ -42,10 +42,10 @@ type AddressableentitylistingDud struct {
 
 }
 
-// Addressableentitylisting
-type Addressableentitylisting struct { 
+// Conversationcategoriesentitylisting
+type Conversationcategoriesentitylisting struct { 
     // Entities
-    Entities []Addressableentity `json:"entities"`
+    Entities []Conversationcategory `json:"entities"`
 
 
     // PageSize
@@ -86,8 +86,8 @@ type Addressableentitylisting struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Addressableentitylisting) String() string {
-     o.Entities = []Addressableentity{{}} 
+func (o *Conversationcategoriesentitylisting) String() string {
+     o.Entities = []Conversationcategory{{}} 
     
     
     
@@ -104,17 +104,17 @@ func (o *Addressableentitylisting) String() string {
     return str
 }
 
-func (u *Addressableentitylisting) MarshalJSON() ([]byte, error) {
-    type Alias Addressableentitylisting
+func (u *Conversationcategoriesentitylisting) MarshalJSON() ([]byte, error) {
+    type Alias Conversationcategoriesentitylisting
 
-    if AddressableentitylistingMarshalled {
+    if ConversationcategoriesentitylistingMarshalled {
         return []byte("{}"), nil
     }
-    AddressableentitylistingMarshalled = true
+    ConversationcategoriesentitylistingMarshalled = true
 
     return json.Marshal(&struct {
         
-        Entities []Addressableentity `json:"entities"`
+        Entities []Conversationcategory `json:"entities"`
         
         PageSize int `json:"pageSize"`
         
@@ -137,7 +137,7 @@ func (u *Addressableentitylisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Addressableentity{{}},
+        Entities: []Conversationcategory{{}},
         
 
 

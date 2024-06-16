@@ -35,6 +35,7 @@ func Cmdknowledge_knowledgebases_operations() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "varType", "", "If specified, retrieves operations with specified operation type, comma separated values expected. Valid values: Export, Import, Parse, Sync")
 	utils.AddFlag(listCmd.Flags(), "[]string", "status", "", "If specified, retrieves operations with specified operation status, comma separated values expected.")
 	utils.AddFlag(listCmd.Flags(), "string", "interval", "", "Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ")
+	utils.AddFlag(listCmd.Flags(), "[]string", "sourceId", "", "If specified, retrieves operations associated with source ids, comma separated values expected.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations", utils.FormatPermissions([]string{ "knowledge:importExportOperationsList:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -105,6 +106,10 @@ var listCmd = &cobra.Command{
 		interval := utils.GetFlag(cmd.Flags(), "string", "interval")
 		if interval != "" {
 			queryParams["interval"] = interval
+		}
+		sourceId := utils.GetFlag(cmd.Flags(), "[]string", "sourceId")
+		if sourceId != "" {
+			queryParams["sourceId"] = sourceId
 		}
 		urlString := path
 		if len(queryParams) > 0 {

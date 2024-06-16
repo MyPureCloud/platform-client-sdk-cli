@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    MessagingstickerentitylistingMarshalled = false
+    CategoriesentitylistingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type MessagingstickerentitylistingDud struct { 
+type CategoriesentitylistingDud struct { 
     
 
 
@@ -42,10 +42,10 @@ type MessagingstickerentitylistingDud struct {
 
 }
 
-// Messagingstickerentitylisting
-type Messagingstickerentitylisting struct { 
+// Categoriesentitylisting
+type Categoriesentitylisting struct { 
     // Entities
-    Entities []Messagingsticker `json:"entities"`
+    Entities []Stacategory `json:"entities"`
 
 
     // PageSize
@@ -86,8 +86,8 @@ type Messagingstickerentitylisting struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Messagingstickerentitylisting) String() string {
-     o.Entities = []Messagingsticker{{}} 
+func (o *Categoriesentitylisting) String() string {
+     o.Entities = []Stacategory{{}} 
     
     
     
@@ -104,17 +104,17 @@ func (o *Messagingstickerentitylisting) String() string {
     return str
 }
 
-func (u *Messagingstickerentitylisting) MarshalJSON() ([]byte, error) {
-    type Alias Messagingstickerentitylisting
+func (u *Categoriesentitylisting) MarshalJSON() ([]byte, error) {
+    type Alias Categoriesentitylisting
 
-    if MessagingstickerentitylistingMarshalled {
+    if CategoriesentitylistingMarshalled {
         return []byte("{}"), nil
     }
-    MessagingstickerentitylistingMarshalled = true
+    CategoriesentitylistingMarshalled = true
 
     return json.Marshal(&struct {
         
-        Entities []Messagingsticker `json:"entities"`
+        Entities []Stacategory `json:"entities"`
         
         PageSize int `json:"pageSize"`
         
@@ -137,7 +137,7 @@ func (u *Messagingstickerentitylisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Messagingsticker{{}},
+        Entities: []Stacategory{{}},
         
 
 

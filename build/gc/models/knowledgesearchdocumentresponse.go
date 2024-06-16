@@ -69,6 +69,12 @@ type KnowledgesearchdocumentresponseDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -140,6 +146,14 @@ type Knowledgesearchdocumentresponse struct {
     ExternalId string `json:"externalId"`
 
 
+    // Source - The reference to source associated with the document.
+    Source Addressableentityref `json:"source"`
+
+
+    // Readonly - Whether the document is read-only.
+    Readonly bool `json:"readonly"`
+
+
     // Variations - Variations of the document.
     Variations []Documentvariationanswer `json:"variations"`
 
@@ -166,6 +180,8 @@ func (o *Knowledgesearchdocumentresponse) String() string {
     
     
      o.Labels = []Labelresponse{{}} 
+    
+    
     
     
      o.Variations = []Documentvariationanswer{{}} 
@@ -214,6 +230,10 @@ func (u *Knowledgesearchdocumentresponse) MarshalJSON() ([]byte, error) {
         KnowledgeBase Knowledgebasereference `json:"knowledgeBase"`
         
         ExternalId string `json:"externalId"`
+        
+        Source Addressableentityref `json:"source"`
+        
+        Readonly bool `json:"readonly"`
         
         Variations []Documentvariationanswer `json:"variations"`
         
@@ -267,6 +287,12 @@ func (u *Knowledgesearchdocumentresponse) MarshalJSON() ([]byte, error) {
 
         
         Labels: []Labelresponse{{}},
+        
+
+
+        
+
+
         
 
 

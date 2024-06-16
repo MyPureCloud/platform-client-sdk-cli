@@ -45,6 +45,12 @@ type LearningmoduleDud struct {
     Rule Learningmodulerule `json:"rule"`
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -122,6 +128,14 @@ type Learningmodule struct {
     
 
 
+    // EnforceContentOrder - If true, learning module content should be viewed one by one in order
+    EnforceContentOrder bool `json:"enforceContentOrder"`
+
+
+    // ReviewAssessmentResults - Allows to view Assessment results in detail
+    ReviewAssessmentResults Reviewassessmentresults `json:"reviewAssessmentResults"`
+
+
     
 
 
@@ -179,6 +193,8 @@ func (o *Learningmodule) String() string {
     
     
     
+    
+    
      o.InformSteps = []Learningmoduleinformstep{{}} 
     
     
@@ -207,6 +223,10 @@ func (u *Learningmodule) MarshalJSON() ([]byte, error) {
         
         ExcludedFromCatalog bool `json:"excludedFromCatalog"`
         
+        EnforceContentOrder bool `json:"enforceContentOrder"`
+        
+        ReviewAssessmentResults Reviewassessmentresults `json:"reviewAssessmentResults"`
+        
         Description string `json:"description"`
         
         CompletionTimeInDays int `json:"completionTimeInDays"`
@@ -228,6 +248,12 @@ func (u *Learningmodule) MarshalJSON() ([]byte, error) {
         ArchivalMode string `json:"archivalMode"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

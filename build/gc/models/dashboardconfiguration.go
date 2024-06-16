@@ -48,6 +48,12 @@ type DashboardconfigurationDud struct {
     CreatedBy Addressableentityref `json:"createdBy"`
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -99,6 +105,14 @@ type Dashboardconfiguration struct {
     
 
 
+    // Shared - The flag to indicate if the dashboard is shared
+    Shared bool `json:"shared"`
+
+
+    // DashboardsSharedWith - The list of users and teams the dashboard is shared with
+    DashboardsSharedWith Dashboardssharedwith `json:"dashboardsSharedWith"`
+
+
     
 
 }
@@ -109,6 +123,8 @@ func (o *Dashboardconfiguration) String() string {
     
     
      o.Widgets = []Widget{{}} 
+    
+    
     
     
     
@@ -148,6 +164,10 @@ func (u *Dashboardconfiguration) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         
         DateModified time.Time `json:"dateModified"`
+        
+        Shared bool `json:"shared"`
+        
+        DashboardsSharedWith Dashboardssharedwith `json:"dashboardsSharedWith"`
         *Alias
     }{
 
@@ -165,6 +185,12 @@ func (u *Dashboardconfiguration) MarshalJSON() ([]byte, error) {
 
         
         Widgets: []Widget{{}},
+        
+
+
+        
+
+
         
 
 

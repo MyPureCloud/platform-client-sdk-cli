@@ -30,6 +30,9 @@ type OperationresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -59,12 +62,17 @@ type Operationresponse struct {
     DateModified time.Time `json:"dateModified"`
 
 
+    // Source - Source of the operation.
+    Source Knowledgeoperationsource `json:"source"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Operationresponse) String() string {
+    
     
     
     
@@ -96,8 +104,13 @@ func (u *Operationresponse) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         
         DateModified time.Time `json:"dateModified"`
+        
+        Source Knowledgeoperationsource `json:"source"`
         *Alias
     }{
+
+        
+
 
         
 

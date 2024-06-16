@@ -28,6 +28,9 @@ type CobrowsesettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Cobrowsesettings - Settings concerning cobrowse
@@ -55,6 +58,10 @@ type Cobrowsesettings struct {
     // ReadonlySelectors - Readonly patterns that will apply to pages being shared
     ReadonlySelectors []string `json:"readonlySelectors"`
 
+
+    // PauseCriteria - Pause criteria that will pause cobrowse if some of them are met in the user's URL
+    PauseCriteria []Pausecriteria `json:"pauseCriteria"`
+
 }
 
 // String returns a JSON representation of the model
@@ -65,6 +72,7 @@ func (o *Cobrowsesettings) String() string {
      o.MaskSelectors = []string{""} 
      o.Channels = []string{""} 
      o.ReadonlySelectors = []string{""} 
+     o.PauseCriteria = []Pausecriteria{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -93,6 +101,8 @@ func (u *Cobrowsesettings) MarshalJSON() ([]byte, error) {
         Channels []string `json:"channels"`
         
         ReadonlySelectors []string `json:"readonlySelectors"`
+        
+        PauseCriteria []Pausecriteria `json:"pauseCriteria"`
         *Alias
     }{
 
@@ -117,6 +127,11 @@ func (u *Cobrowsesettings) MarshalJSON() ([]byte, error) {
 
         
         ReadonlySelectors: []string{""},
+        
+
+
+        
+        PauseCriteria: []Pausecriteria{{}},
         
 
         Alias: (*Alias)(u),

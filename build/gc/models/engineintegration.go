@@ -11,9 +11,6 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type EngineintegrationDud struct { 
-    Id string `json:"id"`
-
-
     
 
 
@@ -23,11 +20,8 @@ type EngineintegrationDud struct {
 
 // Engineintegration
 type Engineintegration struct { 
-    
-
-
-    // Name - Name of the transcription engine
-    Name string `json:"name"`
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     
@@ -54,12 +48,9 @@ func (u *Engineintegration) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Name string `json:"name"`
+        Id string `json:"id"`
         *Alias
     }{
-
-        
-
 
         
 

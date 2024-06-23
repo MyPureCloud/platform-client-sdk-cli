@@ -42,6 +42,9 @@ type FlowexecutiondataqueryresultDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -83,6 +86,10 @@ type Flowexecutiondataqueryresult struct {
     FlowErrorReason string `json:"flowErrorReason"`
 
 
+    // FlowWarningReason - If the flow had a warning, this is the reason.
+    FlowWarningReason string `json:"flowWarningReason"`
+
+
     // FlowName - The name of the flow.
     FlowName string `json:"flowName"`
 
@@ -93,6 +100,7 @@ type Flowexecutiondataqueryresult struct {
 
 // String returns a JSON representation of the model
 func (o *Flowexecutiondataqueryresult) String() string {
+    
     
     
     
@@ -135,9 +143,14 @@ func (u *Flowexecutiondataqueryresult) MarshalJSON() ([]byte, error) {
         
         FlowErrorReason string `json:"flowErrorReason"`
         
+        FlowWarningReason string `json:"flowWarningReason"`
+        
         FlowName string `json:"flowName"`
         *Alias
     }{
+
+        
+
 
         
 

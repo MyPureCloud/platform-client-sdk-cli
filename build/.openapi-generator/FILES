@@ -566,6 +566,7 @@ gc/cmd/journey_sessions_outcomescores/journey_sessions_outcomescores.go
 gc/cmd/journey_views/journey_views.go
 gc/cmd/journey_views_encodings_validate/journey_views_encodings_validate.go
 gc/cmd/journey_views_eventdefinitions/journey_views_eventdefinitions.go
+gc/cmd/journey_views_jobs/journey_views_jobs.go
 gc/cmd/journey_views_versions/journey_views_versions.go
 gc/cmd/journey_views_versions_jobs/journey_views_versions_jobs.go
 gc/cmd/journey_views_versions_jobs_latest/journey_views_versions_jobs_latest.go
@@ -1694,6 +1695,7 @@ gc/models/callroute.go
 gc/models/calltarget.go
 gc/models/calltoaction.go
 gc/models/campaign.go
+gc/models/campaignbusinesscategorymetrics.go
 gc/models/campaigndiagnostics.go
 gc/models/campaigndivisionview.go
 gc/models/campaigndivisionviewlisting.go
@@ -2809,6 +2811,7 @@ gc/models/journeyviewelementattributes.go
 gc/models/journeyviewelementfilter.go
 gc/models/journeyviewelementfilterpredicate.go
 gc/models/journeyviewjob.go
+gc/models/journeyviewjoblisting.go
 gc/models/journeyviewlink.go
 gc/models/journeyviewlinktimeconstraint.go
 gc/models/journeyviewlisting.go

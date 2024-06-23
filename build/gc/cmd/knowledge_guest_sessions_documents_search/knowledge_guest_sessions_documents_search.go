@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdknowledge_guest_sessions_documents_search() *cobra.Command { 
-	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "Fields, if any, to expand for each document in the search result matching the query. Valid values: documentVariations, documentAlternatives")
+	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "Fields, if any, to expand for each document in the search result matching the query. Valid values: documentVariations, documentAlternatives, knowledgeBaseLanguageCode")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Knowledge", "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "content" : {

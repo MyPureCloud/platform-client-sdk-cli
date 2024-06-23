@@ -39,6 +39,9 @@ type RoomDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -80,6 +83,10 @@ type Room struct {
     PinnedMessages []Addressableentityref `json:"pinnedMessages"`
 
 
+    // Jid - The jid of the room
+    Jid string `json:"jid"`
+
+
     
 
 }
@@ -94,6 +101,7 @@ func (o *Room) String() string {
     
      o.Owners = []Userreference{{}} 
      o.PinnedMessages = []Addressableentityref{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -126,6 +134,8 @@ func (u *Room) MarshalJSON() ([]byte, error) {
         Owners []Userreference `json:"owners"`
         
         PinnedMessages []Addressableentityref `json:"pinnedMessages"`
+        
+        Jid string `json:"jid"`
         *Alias
     }{
 
@@ -157,6 +167,9 @@ func (u *Room) MarshalJSON() ([]byte, error) {
 
         
         PinnedMessages: []Addressableentityref{{}},
+        
+
+
         
 
 

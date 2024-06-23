@@ -52,9 +52,6 @@ type CreatecallrequestDud struct {
 
     
 
-
-    
-
 }
 
 // Createcallrequest
@@ -85,10 +82,6 @@ type Createcallrequest struct {
 
     // Priority - The priority to assign to this call (if calling a queue).
     Priority int `json:"priority"`
-
-
-    // Attributes - The list of attributes to associate with the customer participant.
-    Attributes map[string]string `json:"attributes"`
 
 
     // LanguageId - The language skill ID to use for routing this call (if calling a queue).
@@ -129,7 +122,6 @@ func (o *Createcallrequest) String() string {
     
     
     
-     o.Attributes = map[string]string{"": ""} 
     
      o.RoutingSkillsIds = []string{""} 
      o.ConversationIds = []string{""} 
@@ -168,8 +160,6 @@ func (u *Createcallrequest) MarshalJSON() ([]byte, error) {
         
         Priority int `json:"priority"`
         
-        Attributes map[string]string `json:"attributes"`
-        
         LanguageId string `json:"languageId"`
         
         RoutingSkillsIds []string `json:"routingSkillsIds"`
@@ -204,11 +194,6 @@ func (u *Createcallrequest) MarshalJSON() ([]byte, error) {
         
 
 
-        
-
-
-        
-        Attributes: map[string]string{"": ""},
         
 
 

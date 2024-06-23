@@ -79,7 +79,7 @@ func Cmdtelephony_providers_edges_phones() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "The field to sort by Valid values: name, status.operationalStatus, secondaryStatus.operationalStatus")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "The field to sort by Valid values: id, name, status.operationalStatus, secondaryStatus.operationalStatus")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Sort order")
 	utils.AddFlag(listCmd.Flags(), "string", "siteId", "", "Filter by site.id")
 	utils.AddFlag(listCmd.Flags(), "string", "webRtcUserId", "", "Filter by webRtcUser.id")

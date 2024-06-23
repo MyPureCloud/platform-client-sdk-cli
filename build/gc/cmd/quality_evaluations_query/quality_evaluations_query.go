@@ -30,9 +30,7 @@ func init() {
 func Cmdquality_evaluations_query() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "NOTE: Does not work when querying evaluations")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "variable name requested by expand list")
-	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "NOTE: Does not work when querying evaluations")
 	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
 	utils.AddFlag(listCmd.Flags(), "string", "conversationId", "", "conversationId specified")
 	utils.AddFlag(listCmd.Flags(), "string", "agentUserId", "", "user id of the agent")
@@ -98,17 +96,9 @@ var listCmd = &cobra.Command{
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
 		}
-		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
-		if sortBy != "" {
-			queryParams["sortBy"] = sortBy
-		}
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
-		}
-		nextPage := utils.GetFlag(cmd.Flags(), "string", "nextPage")
-		if nextPage != "" {
-			queryParams["nextPage"] = nextPage
 		}
 		previousPage := utils.GetFlag(cmd.Flags(), "string", "previousPage")
 		if previousPage != "" {

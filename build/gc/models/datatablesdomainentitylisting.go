@@ -60,10 +60,6 @@ type Datatablesdomainentitylisting struct {
     Total int `json:"total"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
-
     // LastUri
     LastUri string `json:"lastUri"`
 
@@ -78,6 +74,10 @@ type Datatablesdomainentitylisting struct {
 
     // NextUri
     NextUri string `json:"nextUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // PageCount
@@ -122,8 +122,6 @@ func (u *Datatablesdomainentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        PreviousUri string `json:"previousUri"`
-        
         LastUri string `json:"lastUri"`
         
         FirstUri string `json:"firstUri"`
@@ -131,6 +129,8 @@ func (u *Datatablesdomainentitylisting) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         NextUri string `json:"nextUri"`
+        
+        PreviousUri string `json:"previousUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

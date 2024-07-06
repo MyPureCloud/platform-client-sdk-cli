@@ -26,7 +26,7 @@ type Configuration interface {
 	SecureLoginEnabled() bool
 	LoggingEnabled() bool
 	AutoPaginationEnabled() bool
-	ProxyConfiguration() *ProxyConfiguration
+	ProxyConfiguration() string
 	fmt.Stringer
 }
 
@@ -43,16 +43,16 @@ type configuration struct {
 	logFilePath           string
 	loggingEnabled        bool
 	autoPaginationEnabled bool
-	proxyConfiguration    *ProxyConfiguration
+	proxyConfiguration    string
 }
 
-// ProxyConfiguration has settings to configure the SDK Proxy logic
 type ProxyConfiguration struct {
-	Protocol string `json:"protocol,omitempty"`
-	Host     string `json:"host,omitempty"`
-	Port     string `json:"port,omitempty"`
-	UserName string `json:"userName,omitempty"`
-	Password string `json:"password,omitempty"`
+	Protocol   string
+	Host       string
+	Port       string
+	UserName   string
+	Password   string
+	PathParams map[string]string
 }
 
 var (
@@ -166,38 +166,87 @@ func (c *configuration) AutoPaginationEnabled() bool {
 }
 
 // ProfileName is the name of the profile being used to run the CLI
-func (c *configuration) ProxyConfiguration() *ProxyConfiguration {
-	return c.proxyConfiguration
+func (c *configuration) ProxyConfiguration() string {
+	return getProxyConfig(c.profileName)
 }
 
-func getProxyConfig(profileName string) *ProxyConfiguration {
+func getProxyConfig(profileName string) string {
 	// proxy
 	protocol := viper.Get(fmt.Sprintf("%s.proxy_protocol", profileName))
+
 	if protocol != nil {
 		proxyconf := ProxyConfiguration{}
 		proxyconf.Port = viper.GetString(fmt.Sprintf("%s.proxy_port", profileName))
 		proxyconf.Protocol = viper.GetString(fmt.Sprintf("%s.proxy_protocol", profileName))
 		proxyconf.Host = viper.GetString(fmt.Sprintf("%s.proxy_host", profileName))
 		userName := viper.Get(fmt.Sprintf("%s.proxy_username", profileName))
+
+		pathParams := viper.Get(fmt.Sprintf("%s.proxy_pathparams", profileName))
+
+		if pathParams != nil {
+			pathParamsMap := parsePathParams(pathParams.(string))
+			proxyconf.PathParams = pathParamsMap
+		}
+
 		if userName != nil {
 			proxyconf.UserName = viper.GetString(fmt.Sprintf("%s.proxy_username", profileName))
 			proxyconf.Password = viper.GetString(fmt.Sprintf("%s.proxy_password", profileName))
 		}
-		return &proxyconf
+		jsonData, _ := json.MarshalIndent(proxyconf, "", "")
+		return string(jsonData)
 	} else {
-		return nil
+		return ""
 	}
 }
 
 func (c *configuration) String() string {
-	return fmt.Sprintf(`{"profileName": "%s", "environment": "%s", "logFilePath": "%s", "loggingEnabled": "%v", "grantType": "%s", "clientName": "%s", "clientSecret": "%s", "secureLoginEnabled": "%v", "redirectURI": "%s", "accessToken": "%s", "autoPaginationEnabled": "%v","proxyConfiguration": "%s"}`, c.ProfileName(), c.Environment(), c.LogFilePath(), c.LoggingEnabled(), c.GrantType(), c.ClientID(), c.ClientSecret(), c.SecureLoginEnabled(), c.RedirectURI(), c.AccessToken(), c.AutoPaginationEnabled(), getProxyConfig(c.ProfileName()).String())
+	return fmt.Sprintf(`{"profileName": "%s", "environment": "%s", "logFilePath": "%s", "loggingEnabled": "%v", "grantType": "%s", "clientName": "%s", "clientSecret": "%s", "secureLoginEnabled": "%v", "redirectURI": "%s", "accessToken": "%s", "autoPaginationEnabled": "%v" , "proxyConfiguration" : "%v"}`, c.ProfileName(), c.Environment(), c.LogFilePath(), c.LoggingEnabled(), c.GrantType(), c.ClientID(),
+		c.ClientSecret(), c.SecureLoginEnabled(), c.RedirectURI(), c.AccessToken(), c.AutoPaginationEnabled(), c.proxyString())
 }
 
-func (a *ProxyConfiguration) String() string {
-	if a == nil {
+func (c *configuration) proxyString() string {
+	a := c.ProxyConfiguration()
+	var proxyConfig ProxyConfiguration
+	_ = json.Unmarshal([]byte(c.proxyConfiguration), &proxyConfig)
+
+	if a == "" {
 		return ""
 	}
-	return fmt.Sprintf(`{protocol: %s, host: %s,  port: %s, userName: %v, password: %s}`, a.Protocol, a.Port, a.Host, a.UserName, a.Password)
+	return fmt.Sprintf(`{protocol: %s, host: %s,  port: %s, userName: %v, password: %s, pathParams: %s}`,
+		proxyConfig.Protocol, proxyConfig.Host, proxyConfig.Port, proxyConfig.UserName, proxyConfig.Password, getPathParamsFromProxy(proxyConfig.PathParams))
+}
+
+func getPathParamsFromProxy(pathParms map[string]string) string {
+
+	pathParamsStr := "{"
+	for k, v := range pathParms {
+		pathParamsStr += fmt.Sprintf("%s: %s, ", k, v)
+	}
+	if len(pathParms) > 0 {
+		pathParamsStr = pathParamsStr[:len(pathParamsStr)-2] // Remove the trailing comma and space
+	}
+	pathParamsStr += "}"
+
+	return pathParamsStr
+}
+
+func parsePathParams(pathParamsStr string) map[string]string {
+	pathParamsStr = strings.Trim(pathParamsStr, "{}")
+
+	pathParams := make(map[string]string)
+
+	pairs := strings.Split(pathParamsStr, ", ")
+
+	for _, pair := range pairs {
+		kv := strings.SplitN(pair, ": ", 2)
+		if len(kv) == 2 {
+			key := strings.TrimSpace(kv[0])
+			value := strings.TrimSpace(kv[1])
+			pathParams[key] = value
+		}
+	}
+
+	return pathParams
 }
 
 func getProxyConfigString(profileName string) string {
@@ -342,9 +391,11 @@ func UpdateLogFilePath(c Configuration, filePath string) error {
 }
 
 func UpdateProxyConfiguration(c Configuration, proxyConf *ProxyConfiguration) error {
+	jsonData, _ := json.MarshalIndent(proxyConf, "", "  ")
+
 	return updateConfig(configuration{
 		profileName:        c.ProfileName(),
-		proxyConfiguration: proxyConf,
+		proxyConfiguration: string(jsonData),
 	}, nil, nil, nil)
 }
 
@@ -447,17 +498,25 @@ func updateConfig(c configuration, loggingEnabled *bool, autoPaginationEnabled *
 		viper.Set(fmt.Sprintf("%s.secure_login_enabled", c.profileName), *secureLoginEnabled)
 	}
 
-	if c.proxyConfiguration != nil {
+
+	if c.proxyConfiguration != "" {
+
+		var proxyConfig ProxyConfiguration
+		_ = json.Unmarshal([]byte(c.proxyConfiguration), &proxyConfig)
+
 		protocol := fmt.Sprintf("%s.proxy_protocol", c.ProfileName())
 		port := fmt.Sprintf("%s.proxy_port", c.ProfileName())
 		host := fmt.Sprintf("%s.proxy_host", c.ProfileName())
 		username := fmt.Sprintf("%s.proxy_username", c.ProfileName())
 		password := fmt.Sprintf("%s.proxy_password", c.ProfileName())
-		viper.Set(protocol, c.proxyConfiguration.Protocol)
-		viper.Set(port, c.proxyConfiguration.Port)
-		viper.Set(host, c.proxyConfiguration.Host)
-		viper.Set(username, c.proxyConfiguration.UserName)
-		viper.Set(password, c.proxyConfiguration.Password)
+
+		viper.Set(protocol, proxyConfig.Protocol)
+		viper.Set(port, proxyConfig.Port)
+		viper.Set(host, proxyConfig.Host)
+		viper.Set(username, proxyConfig.UserName)
+		viper.Set(password, proxyConfig.Password)
+		viper.Set(fmt.Sprintf("%s.proxy_pathparams", c.ProfileName()), getPathParamsFromProxy(proxyConfig.PathParams))
+
 	}
 
 	if viper.ConfigFileUsed() == "" {
@@ -487,12 +546,23 @@ func writeConfig(c Configuration, data *models.OAuthTokenData, logFilePath strin
 	if autoPaginationEnabled != nil {
 		viper.Set(fmt.Sprintf("%s.auto_pagination_enabled", c.ProfileName()), *autoPaginationEnabled)
 	}
-	if c.ProxyConfiguration() != nil {
-		viper.Set(fmt.Sprintf("%s.proxy_protocol", c.ProfileName()), c.ProxyConfiguration().Protocol)
-		viper.Set(fmt.Sprintf("%s.proxy_port", c.ProfileName()), c.ProxyConfiguration().Port)
-		viper.Set(fmt.Sprintf("%s.proxy_host", c.ProfileName()), c.ProxyConfiguration().Host)
-		viper.Set(fmt.Sprintf("%s.proxy_username", c.ProfileName()), c.ProxyConfiguration().UserName)
-		viper.Set(fmt.Sprintf("%s.proxy_password", c.ProfileName()), c.ProxyConfiguration().Password)
+
+	if c.ProxyConfiguration() != "" {
+
+		var proxyConfig ProxyConfiguration
+		_ = json.Unmarshal([]byte(c.ProxyConfiguration()), &proxyConfig)
+
+		protocol := fmt.Sprintf("%s.proxy_protocol", c.ProfileName())
+		port := fmt.Sprintf("%s.proxy_port", c.ProfileName())
+		host := fmt.Sprintf("%s.proxy_host", c.ProfileName())
+		username := fmt.Sprintf("%s.proxy_username", c.ProfileName())
+		password := fmt.Sprintf("%s.proxy_password", c.ProfileName())
+		viper.Set(protocol, proxyConfig.Protocol)
+		viper.Set(port, proxyConfig.Port)
+		viper.Set(host, proxyConfig.Host)
+		viper.Set(username, proxyConfig.UserName)
+		viper.Set(password, proxyConfig.Password)
+		viper.Set(fmt.Sprintf("%s.proxy_pathparams", c.ProfileName()), getPathParamsFromProxy(proxyConfig.PathParams))
 	}
 
 	//Checking to see if the file does not exist.  It it doesnt we write out the config as default config.toml

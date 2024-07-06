@@ -22,6 +22,21 @@ type CampaignruleparametersDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Campaignruleparameters
@@ -41,10 +56,35 @@ type Campaignruleparameters struct {
     // DialingMode - The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.
     DialingMode string `json:"dialingMode"`
 
+
+    // AbandonRate - The abandon rate to set a campaign to. Required for the 'setCampaignAbandonRate' action.
+    AbandonRate float32 `json:"abandonRate"`
+
+
+    // OutboundLineCount - The  number of outbound lines to set a campaign to. Required for the 'setCampaignNumberOfLines' action.
+    OutboundLineCount int `json:"outboundLineCount"`
+
+
+    // RelativeWeight - The relative weight to set a campaign to. Required for the 'setCampaignWeight' action.
+    RelativeWeight int `json:"relativeWeight"`
+
+
+    // MaxCallsPerAgent - The maximum number of calls per agent to set a campaign to. Required for the 'setCampaignMaxCallsPerAgent' action.
+    MaxCallsPerAgent float32 `json:"maxCallsPerAgent"`
+
+
+    // Queue - The queue a campaign to. Required for the 'changeCampaignQueue' action.
+    Queue Domainentityref `json:"queue"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Campaignruleparameters) String() string {
+    
+    
+    
+    
+    
     
     
     
@@ -73,8 +113,33 @@ func (u *Campaignruleparameters) MarshalJSON() ([]byte, error) {
         Priority string `json:"priority"`
         
         DialingMode string `json:"dialingMode"`
+        
+        AbandonRate float32 `json:"abandonRate"`
+        
+        OutboundLineCount int `json:"outboundLineCount"`
+        
+        RelativeWeight int `json:"relativeWeight"`
+        
+        MaxCallsPerAgent float32 `json:"maxCallsPerAgent"`
+        
+        Queue Domainentityref `json:"queue"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

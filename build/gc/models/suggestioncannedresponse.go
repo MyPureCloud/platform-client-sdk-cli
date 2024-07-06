@@ -6,33 +6,29 @@ import (
 )
 
 var (
-    EntryMarshalled = false
+    SuggestioncannedresponseMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type EntryDud struct { 
-    
+type SuggestioncannedresponseDud struct { 
+    Response Addressableentityref `json:"response"`
 
 
-    
+    Library Addressableentityref `json:"library"`
 
 }
 
-// Entry
-type Entry struct { 
-    // Value - A value included in this facet.
-    Value string `json:"value"`
+// Suggestioncannedresponse
+type Suggestioncannedresponse struct { 
+    
 
 
-    // Count - The number of results with this value.
-    Count int `json:"count"`
+    
 
 }
 
 // String returns a JSON representation of the model
-func (o *Entry) String() string {
-    
-    
+func (o *Suggestioncannedresponse) String() string {
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -40,19 +36,15 @@ func (o *Entry) String() string {
     return str
 }
 
-func (u *Entry) MarshalJSON() ([]byte, error) {
-    type Alias Entry
+func (u *Suggestioncannedresponse) MarshalJSON() ([]byte, error) {
+    type Alias Suggestioncannedresponse
 
-    if EntryMarshalled {
+    if SuggestioncannedresponseMarshalled {
         return []byte("{}"), nil
     }
-    EntryMarshalled = true
+    SuggestioncannedresponseMarshalled = true
 
     return json.Marshal(&struct {
-        
-        Value string `json:"value"`
-        
-        Count int `json:"count"`
         *Alias
     }{
 

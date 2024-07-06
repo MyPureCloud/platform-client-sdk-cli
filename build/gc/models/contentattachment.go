@@ -31,6 +31,9 @@ type ContentattachmentDud struct {
 
     
 
+
+    
+
 }
 
 // Contentattachment - Attachment object.
@@ -62,10 +65,15 @@ type Contentattachment struct {
     // Filename - Suggested file name for attachment.
     Filename string `json:"filename"`
 
+
+    // ContentSizeBytes - Size in bytes of the attachment content.
+    ContentSizeBytes int `json:"contentSizeBytes"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Contentattachment) String() string {
+    
     
     
     
@@ -103,8 +111,13 @@ func (u *Contentattachment) MarshalJSON() ([]byte, error) {
         Sha256 string `json:"sha256"`
         
         Filename string `json:"filename"`
+        
+        ContentSizeBytes int `json:"contentSizeBytes"`
         *Alias
     }{
+
+        
+
 
         
 

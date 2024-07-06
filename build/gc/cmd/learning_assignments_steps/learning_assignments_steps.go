@@ -29,6 +29,7 @@ func init() {
 
 func Cmdlearning_assignments_steps() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "shareableContentObjectId", "", "The ID of SCO to load")
+	utils.AddFlag(getCmd.Flags(), "string", "defaultShareableContentObject", "", "The default SCO to retrieve Valid values: First, Last, Next")
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Fields to expand in response Valid values: moduleStep")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/learning/assignments/{assignmentId}/steps/{stepId}", utils.FormatPermissions([]string{ "learning:assignment:viewOwn",  }), utils.GenerateDevCentreLink("GET", "Learning", "/api/v2/learning/assignments/{assignmentId}/steps/{stepId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -103,6 +104,10 @@ var getCmd = &cobra.Command{
 		shareableContentObjectId := utils.GetFlag(cmd.Flags(), "string", "shareableContentObjectId")
 		if shareableContentObjectId != "" {
 			queryParams["shareableContentObjectId"] = shareableContentObjectId
+		}
+		defaultShareableContentObject := utils.GetFlag(cmd.Flags(), "string", "defaultShareableContentObject")
+		if defaultShareableContentObject != "" {
+			queryParams["defaultShareableContentObject"] = defaultShareableContentObject
 		}
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {

@@ -170,6 +170,8 @@ Protocol - Protocol required to connect to the Proxy (http or https)
 The 'ProxyConfiguration' has another section which is an optional section. If the proxy requires authentication to connect to
 'userName' and 'password' needs to be mentioned under the 'ProxyConfiguration'. This section can be removed from the JSON file if no authentication is required.
 
+If you have different proxyParams for authorise APIs and other APIs, you can provide a new key in pathParams section with name 'login' for authorise sdk calls.
+
 JSON configuration file:
 ```
 {
@@ -177,7 +179,10 @@ JSON configuration file:
   "protocol": "http",
   "port": "8888",
   "userName": "username",
-  "password": "password"
+  "password": "password",
+  "pathParams": {
+    "login": "loginpath"
+  }
 }
 ```
 Command to Enable Proxy:

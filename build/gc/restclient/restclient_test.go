@@ -113,11 +113,11 @@ func TestAuthorizeWithImplicitLogin(t *testing.T) {
 func TestLowLevelRestClient(t *testing.T) {
 	tests := buildTestCaseTable()
 	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, "0", utils.GenerateGuid(), utils.GenerateGuid(), "")
-	
+
 	for _, tc := range tests {
 		restClient := &RESTClient{
-			environment: tc.targetEnv,
-			token:       tc.oAuthToken,
+			environment:   tc.targetEnv,
+			token:         tc.oAuthToken,
 			configuration: mockConfig,
 		}
 
@@ -144,11 +144,11 @@ func TestLowLevelRestClient(t *testing.T) {
 func TestHighLevelRestClient(t *testing.T) {
 	tests := buildTestCaseTable()
 	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, "0", utils.GenerateGuid(), utils.GenerateGuid(), "")
-	
+
 	for _, tc := range tests {
 		restClient := &RESTClient{
-			environment: tc.targetEnv,
-			token:       tc.oAuthToken,
+			environment:   tc.targetEnv,
+			token:         tc.oAuthToken,
 			configuration: mockConfig,
 		}
 
@@ -231,10 +231,10 @@ func buildMockConfig(profileName string, environment string, redirectURI string,
 		return oauthTokenData
 	}
 
-	mockConfig.ProxyConfigurationFunc = func() *config.ProxyConfiguration {
-		return &config.ProxyConfiguration{}
+	mockConfig.ProxyConfigurationFunc = func() string {
+		return ""
 	}
-	
+
 	return mockConfig
 }
 

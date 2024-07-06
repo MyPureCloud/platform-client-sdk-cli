@@ -1,4 +1,4 @@
-package outbound_audits
+package conversations_suggestions_engagement
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("outbound_audits", "SWAGGER_OVERRIDE_/api/v2/outbound/audits", )
-	outbound_auditsCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("outbound_audits"),
+	Description = utils.FormatUsageDescription("conversations_suggestions_engagement", "SWAGGER_OVERRIDE_/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement", )
+	conversations_suggestions_engagementCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("conversations_suggestions_engagement"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,22 +24,16 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(outbound_auditsCmd)
+	CommandService = services.NewCommandService(conversations_suggestions_engagementCmd)
 }
 
-func Cmdoutbound_audits() *cobra.Command { 
-	utils.AddFlag(createCmd.Flags(), "int", "pageSize", "25", "Page size")
-	utils.AddFlag(createCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(createCmd.Flags(), "string", "sortBy", "entity.name", "Sort by")
-	utils.AddFlag(createCmd.Flags(), "string", "sortOrder", "ascending", "Sort order")
-	utils.AddFlag(createCmd.Flags(), "bool", "facetsOnly", "false", "Facets only")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/audits", utils.FormatPermissions([]string{ "outbound:audit:view",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/audits")))
+func Cmdconversations_suggestions_engagement() *cobra.Command { 
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement", utils.FormatPermissions([]string{ "conversation:suggestionEngagement:add",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "description" : "AuditSearch",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DialerAuditRequest"
+        "$ref" : "#/components/schemas/SuggestionEngagement"
       }
     }
   },
@@ -51,13 +45,13 @@ func Cmdoutbound_audits() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/AuditSearchResult"
+        "$ref" : "#/components/schemas/SuggestionEngagement"
       }
     }
   }
 }`)
-	outbound_auditsCmd.AddCommand(createCmd)
-	return outbound_auditsCmd
+	conversations_suggestions_engagementCmd.AddCommand(createCmd)
+	return conversations_suggestions_engagementCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -66,10 +60,10 @@ func queryEscape(value string) string {
 }
 
 var createCmd = &cobra.Command{
-	Use:   "create",
-	Short: "Retrieves audits for dialer. (Deprecated)",
-	Long:  "Retrieves audits for dialer. (Deprecated)",
-	Args:  utils.DetermineArgs([]string{ }),
+	Use:   "create [conversationId] [suggestionId]",
+	Short: "Save an engagement on the suggestion.",
+	Long:  "Save an engagement on the suggestion.",
+	Args:  utils.DetermineArgs([]string{ "conversationId", "suggestionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -77,7 +71,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Dialerauditrequest{}
+			reqModel := models.Suggestionengagement{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -85,28 +79,12 @@ var createCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/outbound/audits"
+		path := "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement"
+		conversationId, args := args[0], args[1:]
+		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
+		suggestionId, args := args[0], args[1:]
+		path = strings.Replace(path, "{suggestionId}", fmt.Sprintf("%v", suggestionId), -1)
 
-		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
-		if pageSize != "" {
-			queryParams["pageSize"] = pageSize
-		}
-		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
-		if pageNumber != "" {
-			queryParams["pageNumber"] = pageNumber
-		}
-		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
-		if sortBy != "" {
-			queryParams["sortBy"] = sortBy
-		}
-		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
-		if sortOrder != "" {
-			queryParams["sortOrder"] = sortOrder
-		}
-		facetsOnly := utils.GetFlag(cmd.Flags(), "bool", "facetsOnly")
-		if facetsOnly != "" {
-			queryParams["facetsOnly"] = facetsOnly
-		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

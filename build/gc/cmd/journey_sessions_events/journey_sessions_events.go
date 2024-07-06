@@ -30,6 +30,7 @@ func init() {
 func Cmdjourney_sessions_events() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
+	utils.AddFlag(listCmd.Flags(), "string", "eventType", "", "A comma separated list of journey event types to include in the results. Valid values: com.genesys.journey.OutcomeAchievedEvent, com.genesys.journey.SegmentAssignmentEvent, com.genesys.journey.WebActionEvent, com.genesys.journey.WebEvent, com.genesys.journey.AppEvent")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/sessions/{sessionId}/events", utils.FormatPermissions([]string{ "journey:event:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/sessions/{sessionId}/events")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -80,6 +81,10 @@ var listCmd = &cobra.Command{
 		after := utils.GetFlag(cmd.Flags(), "string", "after")
 		if after != "" {
 			queryParams["after"] = after
+		}
+		eventType := utils.GetFlag(cmd.Flags(), "string", "eventType")
+		if eventType != "" {
+			queryParams["eventType"] = eventType
 		}
 		urlString := path
 		if len(queryParams) > 0 {

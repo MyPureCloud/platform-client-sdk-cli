@@ -6,24 +6,36 @@ import (
 )
 
 var (
-    ServicecontextMarshalled = false
+    SourceentityMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ServicecontextDud struct { 
+type SourceentityDud struct { 
+    Id string `json:"id"`
+
+
+    
+
+
+    SelfUri string `json:"selfUri"`
+
+}
+
+// Sourceentity
+type Sourceentity struct { 
+    
+
+
+    // VarType - The type of the source entity
+    VarType string `json:"type"`
+
+
     
 
 }
 
-// Servicecontext
-type Servicecontext struct { 
-    // Name - Unused field for the purpose of ensuring a Swagger definition is created for a class with only @JsonIgnore members.
-    Name string `json:"name"`
-
-}
-
 // String returns a JSON representation of the model
-func (o *Servicecontext) String() string {
+func (o *Sourceentity) String() string {
     
 
     j, _ := json.Marshal(o)
@@ -32,19 +44,25 @@ func (o *Servicecontext) String() string {
     return str
 }
 
-func (u *Servicecontext) MarshalJSON() ([]byte, error) {
-    type Alias Servicecontext
+func (u *Sourceentity) MarshalJSON() ([]byte, error) {
+    type Alias Sourceentity
 
-    if ServicecontextMarshalled {
+    if SourceentityMarshalled {
         return []byte("{}"), nil
     }
-    ServicecontextMarshalled = true
+    SourceentityMarshalled = true
 
     return json.Marshal(&struct {
         
-        Name string `json:"name"`
+        VarType string `json:"type"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

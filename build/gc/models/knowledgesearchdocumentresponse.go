@@ -75,6 +75,9 @@ type KnowledgesearchdocumentresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -146,6 +149,10 @@ type Knowledgesearchdocumentresponse struct {
     ExternalId string `json:"externalId"`
 
 
+    // ExternalUrl - The URL to external document.
+    ExternalUrl string `json:"externalUrl"`
+
+
     // Source - The reference to source associated with the document.
     Source Addressableentityref `json:"source"`
 
@@ -180,6 +187,7 @@ func (o *Knowledgesearchdocumentresponse) String() string {
     
     
      o.Labels = []Labelresponse{{}} 
+    
     
     
     
@@ -230,6 +238,8 @@ func (u *Knowledgesearchdocumentresponse) MarshalJSON() ([]byte, error) {
         KnowledgeBase Knowledgebasereference `json:"knowledgeBase"`
         
         ExternalId string `json:"externalId"`
+        
+        ExternalUrl string `json:"externalUrl"`
         
         Source Addressableentityref `json:"source"`
         
@@ -287,6 +297,9 @@ func (u *Knowledgesearchdocumentresponse) MarshalJSON() ([]byte, error) {
 
         
         Labels: []Labelresponse{{}},
+        
+
+
         
 
 

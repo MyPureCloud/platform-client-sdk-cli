@@ -1,6 +1,7 @@
 package profiles
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/url"
 	"strings"
@@ -81,8 +82,9 @@ func constructConfig(profileName string, environment string, grantType GrantType
 		return accessToken
 	}
 
-	c.ProxyConfigurationFunc = func() *config.ProxyConfiguration {
-		return proxyConf
+	c.ProxyConfigurationFunc = func() string {
+		jsonData, _ := json.MarshalIndent(proxyConf, "", "  ")
+		return string(jsonData)
 	}
 
 	return c
@@ -220,7 +222,8 @@ func requestProxyDetails() *config.ProxyConfiguration {
 	isAuthRequired := ""
 	username := ""
 	password := ""
-
+	pathParamRequired := ""
+	pathParams := make(map[string]string)
 	for protocol == "" {
 		fmt.Print("Protocol (http/https): ")
 		_, _ = fmt.Scanln(&protocol)
@@ -238,6 +241,7 @@ func requestProxyDetails() *config.ProxyConfiguration {
 		fmt.Print("Do we require Authorisation to use the proxy server? [Y/N]: ")
 		_, _ = fmt.Scanln(&isAuthRequired)
 		if strings.ToUpper(isAuthRequired) == "Y" {
+			_, _ = fmt.Scanln(&isAuthRequired)
 			for username == "" {
 				fmt.Print("username for the Proxy: ")
 				_, _ = fmt.Scanln(&username)
@@ -255,6 +259,42 @@ func requestProxyDetails() *config.ProxyConfiguration {
 		}
 	}
 
+outerLoopLabel:
+	for {
+		fmt.Print("Do we have different proxy paths for login and Others? [Y/N]: ")
+		_, _ = fmt.Scanln(&pathParamRequired)
+		if strings.ToUpper(pathParamRequired) == "Y" {
+			for {
+				pathAPI := ""
+				pathValue := ""
+				pathParamRequired = ""
+				for pathAPI == "" {
+					fmt.Print("Enter API flow for which you want to add the path? Ex [login/other] : ")
+					_, _ = fmt.Scanln(&pathAPI)
+				}
+				for pathValue == "" {
+					fmt.Print("Enter Path : ")
+					_, _ = fmt.Scanln(&pathValue)
+				}
+				pathParams[pathAPI] = pathValue
+				for pathParamRequired == "" {
+					fmt.Print("Do you want to enter more Paths? [Y/N]: ")
+					_, _ = fmt.Scanln(&pathParamRequired)
+				}
+				if strings.ToUpper(pathParamRequired) == "Y" {
+					continue
+				} else {
+					break outerLoopLabel
+				}
+			}
+		} else if strings.ToUpper(pathParamRequired) == "N" {
+			break
+		} else {
+			fmt.Print("Provide valid option.\n")
+			continue
+		}
+	}
+
 	proxyconf := config.ProxyConfiguration{}
 	proxyconf.Port = port
 	proxyconf.Protocol = protocol
@@ -263,6 +303,10 @@ func requestProxyDetails() *config.ProxyConfiguration {
 		proxyconf.UserName = username
 		proxyconf.Password = password
 	}
+	if len(pathParams) > 0 {
+		proxyconf.PathParams = pathParams
+	}
+
 	return &proxyconf
 
 }

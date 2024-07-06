@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdtextbots_bots_search() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "[]string", "botType", "", "Bot types Valid values: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow")
+	utils.AddFlag(getCmd.Flags(), "[]string", "botType", "", "Bot types Valid values: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow")
 	utils.AddFlag(getCmd.Flags(), "string", "botName", "", "Bot name")
 	utils.AddFlag(getCmd.Flags(), "[]string", "botId", "", "Bot IDs")
 	utils.AddFlag(getCmd.Flags(), "int", "pageSize", "25", "The maximum results to return")

@@ -42,6 +42,9 @@ type ProgramDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -87,6 +90,10 @@ type Program struct {
     DatePublished time.Time `json:"datePublished"`
 
 
+    // TopicLinksJob
+    TopicLinksJob Addressableentityref `json:"topicLinksJob"`
+
+
     
 
 }
@@ -98,6 +105,7 @@ func (o *Program) String() string {
     
      o.Topics = []Basetopicentitiy{{}} 
      o.Tags = []string{""} 
+    
     
     
     
@@ -136,6 +144,8 @@ func (u *Program) MarshalJSON() ([]byte, error) {
         PublishedBy Addressableentityref `json:"publishedBy"`
         
         DatePublished time.Time `json:"datePublished"`
+        
+        TopicLinksJob Addressableentityref `json:"topicLinksJob"`
         *Alias
     }{
 
@@ -158,6 +168,9 @@ func (u *Program) MarshalJSON() ([]byte, error) {
 
         
         Tags: []string{""},
+        
+
+
         
 
 

@@ -58,8 +58,14 @@ func Cmdspeechandtextanalytics_programs() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "The program was deleted successfully",
-  "content" : { }
+  "description" : "The program was deleted successfully, the topic links are being deleted",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DeleteProgramResponse"
+      }
+    }
+  }
 }`)
 	speechandtextanalytics_programsCmd.AddCommand(deleteCmd)
 

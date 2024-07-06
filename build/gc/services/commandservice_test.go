@@ -164,7 +164,7 @@ func TestReAuthentication(t *testing.T) {
 	}
 }
 
-//setRestClientDoMockForRetry sets the restclient.ClientDo method for the commandservice Retry test
+// setRestClientDoMockForRetry sets the restclient.ClientDo method for the commandservice Retry test
 func setRestClientDoMockForRetry(tc apiClientTest, numberOfFailedCalls int) {
 	numCalls := 0
 
@@ -209,7 +209,7 @@ func setRestClientDoMockForRetry(tc apiClientTest, numberOfFailedCalls int) {
 	}
 }
 
-//setRestClientDoMockForReAuthenticate sets the restclient.ClientDo method for the commandservice ReAuthenticate test
+// setRestClientDoMockForReAuthenticate sets the restclient.ClientDo method for the commandservice ReAuthenticate test
 func setRestClientDoMockForReAuthenticate(tc apiClientTest) {
 	numCalls := 0
 
@@ -256,15 +256,15 @@ func setRestClientDoMockForReAuthenticate(tc apiClientTest) {
 	}
 }
 
-//mockNewRESTClient returns a mock RESTClient object for the commandservice tests and sets the object in the restclient package
+// mockNewRESTClient returns a mock RESTClient object for the commandservice tests and sets the object in the restclient package
 func mockNewRESTClient(_ config.Configuration) *restclient.RESTClient {
-	c,_ := mockGetConfig("")
+	c, _ := mockGetConfig("")
 	restclient.RestClient = &restclient.RESTClient{}
 	restclient.RestClient.SetConfig(c)
 	return restclient.RestClient
 }
 
-//mockGetConfig returns a mock MockClientConfig object with client credentials
+// mockGetConfig returns a mock MockClientConfig object with client credentials
 func mockGetConfig(profileName string) (config.Configuration, error) {
 	mockConfig := &mocks.MockClientConfig{}
 
@@ -312,14 +312,14 @@ func mockGetConfig(profileName string) (config.Configuration, error) {
 		return ""
 	}
 
-	mockConfig.ProxyConfigurationFunc = func() *config.ProxyConfiguration {
-		return &config.ProxyConfiguration{}
+	mockConfig.ProxyConfigurationFunc = func() string {
+		return ""
 	}
 
 	return mockConfig, nil
 }
 
-//mockGetConfigWithAccessToken returns a mock MockClientConfig object with an access token
+// mockGetConfigWithAccessToken returns a mock MockClientConfig object with an access token
 func mockGetConfigWithAccessToken(profileName string) (config.Configuration, error) {
 	mockConfig := &mocks.MockClientConfig{}
 

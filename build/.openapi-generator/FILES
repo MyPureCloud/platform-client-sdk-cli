@@ -319,6 +319,9 @@ gc/cmd/conversations_secureattributes/conversations_secureattributes.go
 gc/cmd/conversations_settings/conversations_settings.go
 gc/cmd/conversations_socials_participants_communications_wrapup/conversations_socials_participants_communications_wrapup.go
 gc/cmd/conversations_socials_recordingstate/conversations_socials_recordingstate.go
+gc/cmd/conversations_suggestions/conversations_suggestions.go
+gc/cmd/conversations_suggestions_engagement/conversations_suggestions_engagement.go
+gc/cmd/conversations_suggestions_feedback/conversations_suggestions_feedback.go
 gc/cmd/conversations_summaries_feedback/conversations_summaries_feedback.go
 gc/cmd/conversations_tags/conversations_tags.go
 gc/cmd/conversations_utilizationlabel/conversations_utilizationlabel.go
@@ -337,6 +340,8 @@ gc/cmd/documentationfile_gkn_search/documentationfile_gkn_search.go
 gc/cmd/documentationfile_search/documentationfile_search.go
 gc/cmd/downloads/downloads.go
 gc/cmd/emails_settings/emails_settings.go
+gc/cmd/employeeengagement_celebrations/employeeengagement_celebrations.go
+gc/cmd/employeeengagement_recognitions/employeeengagement_recognitions.go
 gc/cmd/employeeperformance_externalmetrics_data/employeeperformance_externalmetrics_data.go
 gc/cmd/employeeperformance_externalmetrics_definitions/employeeperformance_externalmetrics_definitions.go
 gc/cmd/events_conversations/events_conversations.go
@@ -707,7 +712,6 @@ gc/cmd/orgauthorization_trustors_users/orgauthorization_trustors_users.go
 gc/cmd/orphanrecordings/orphanrecordings.go
 gc/cmd/orphanrecordings_media/orphanrecordings_media.go
 gc/cmd/outbound_attemptlimits/outbound_attemptlimits.go
-gc/cmd/outbound_audits/outbound_audits.go
 gc/cmd/outbound_callabletimesets/outbound_callabletimesets.go
 gc/cmd/outbound_callanalysisresponsesets/outbound_callanalysisresponsesets.go
 gc/cmd/outbound_campaignrules/outbound_campaignrules.go
@@ -1034,6 +1038,7 @@ gc/cmd/userrecordings_media/userrecordings_media.go
 gc/cmd/userrecordings_summary/userrecordings_summary.go
 gc/cmd/users/users.go
 gc/cmd/users_adjacents/users_adjacents.go
+gc/cmd/users_agentui_agents_autoanswer_settings/users_agentui_agents_autoanswer_settings.go
 gc/cmd/users_bulk/users_bulk.go
 gc/cmd/users_callforwarding/users_callforwarding.go
 gc/cmd/users_development_activities/users_development_activities.go
@@ -1403,6 +1408,7 @@ gc/models/architectjobmessage.go
 gc/models/architectjobstateresponse.go
 gc/models/archiveretention.go
 gc/models/arraynode.go
+gc/models/article.go
 gc/models/articlecontent.go
 gc/models/articlecontentbody.go
 gc/models/assessmentform.go
@@ -1441,11 +1447,7 @@ gc/models/atzmtimeslot.go
 gc/models/atzmtimeslotwithtimezone.go
 gc/models/audiostate.go
 gc/models/audioupdatedevent.go
-gc/models/auditentity.go
-gc/models/auditfacet.go
-gc/models/auditfilter.go
 gc/models/auditlogmessage.go
-gc/models/auditmessage.go
 gc/models/auditqueryentity.go
 gc/models/auditqueryexecutionresultsresponse.go
 gc/models/auditqueryexecutionstatusresponse.go
@@ -1459,8 +1461,6 @@ gc/models/auditrealtimequeryrequest.go
 gc/models/auditrealtimequeryresultsresponse.go
 gc/models/auditrealtimerelatedrequest.go
 gc/models/auditrealtimerelatedresultsresponse.go
-gc/models/auditsearchresult.go
-gc/models/audituser.go
 gc/models/authenticationsettings.go
 gc/models/authorizationsettings.go
 gc/models/authzdivision.go
@@ -1470,6 +1470,8 @@ gc/models/authzgrant.go
 gc/models/authzgrantpolicy.go
 gc/models/authzgrantrole.go
 gc/models/authzsubject.go
+gc/models/autoanswersetting.go
+gc/models/autoanswersettings.go
 gc/models/automatictimezonemappingsettings.go
 gc/models/autostart.go
 gc/models/autostatustransitiondetail.go
@@ -1706,6 +1708,7 @@ gc/models/campaignlinesutilization.go
 gc/models/campaignoutboundlinesallocation.go
 gc/models/campaignoutboundlinesdistribution.go
 gc/models/campaignoutboundlinesreservation.go
+gc/models/campaignpatchrequest.go
 gc/models/campaignprogress.go
 gc/models/campaignrule.go
 gc/models/campaignruleaction.go
@@ -1733,10 +1736,11 @@ gc/models/categoryrequest.go
 gc/models/categoryresponse.go
 gc/models/categoryresponselisting.go
 gc/models/categoryupdaterequest.go
+gc/models/celebration.go
+gc/models/celebrationstateparam.go
 gc/models/certificate.go
 gc/models/certificateauthorityentitylisting.go
 gc/models/certificatedetails.go
-gc/models/change.go
 gc/models/changemypasswordrequest.go
 gc/models/changepasswordrequest.go
 gc/models/channel.go
@@ -2012,6 +2016,7 @@ gc/models/createperformanceprofile.go
 gc/models/createplanninggrouprequest.go
 gc/models/createpredictorrequest.go
 gc/models/createqueuerequest.go
+gc/models/createrecognition.go
 gc/models/createresponseassetrequest.go
 gc/models/createresponseassetresponse.go
 gc/models/createroomrequest.go
@@ -2097,6 +2102,7 @@ gc/models/daterangewithoptionalend.go
 gc/models/defaultgreetinglist.go
 gc/models/defaultobjective.go
 gc/models/deletableuserreference.go
+gc/models/deleteprogramresponse.go
 gc/models/deleteretention.go
 gc/models/dependency.go
 gc/models/dependencyobject.go
@@ -2125,7 +2131,6 @@ gc/models/developmentactivityaggregateresponse.go
 gc/models/developmentactivitylisting.go
 gc/models/device.go
 gc/models/dialeraction.go
-gc/models/dialerauditrequest.go
 gc/models/dialercontact.go
 gc/models/dialercontactid.go
 gc/models/dialerevententitylisting.go
@@ -2283,6 +2288,7 @@ gc/models/dynamicgroupquerypreview.go
 gc/models/dynamicgrouproutingskillcondition.go
 gc/models/dynamicgroupskillcondition.go
 gc/models/dynamiclinebalancingsettings.go
+gc/models/dynamiclinebalancingsettingspatchrequest.go
 gc/models/edge.go
 gc/models/edgeautoupdateconfig.go
 gc/models/edgeconnectioninfo.go
@@ -2368,7 +2374,6 @@ gc/models/entitychange.go
 gc/models/entitylisting.go
 gc/models/entityreference.go
 gc/models/entitytypecriteria.go
-gc/models/entry.go
 gc/models/errorbody.go
 gc/models/errordetails.go
 gc/models/errorinfo.go
@@ -2480,12 +2485,12 @@ gc/models/facebookpermissionentitylisting.go
 gc/models/facebookscopedid.go
 gc/models/facet.go
 gc/models/facetentry.go
-gc/models/facetinfo.go
 gc/models/facetkeyattribute.go
 gc/models/facetstatistics.go
 gc/models/facetterm.go
 gc/models/failedobject.go
 gc/models/failedrecordingentitylisting.go
+gc/models/faq.go
 gc/models/faxconfig.go
 gc/models/faxdocument.go
 gc/models/faxdocumententitylisting.go
@@ -2494,6 +2499,7 @@ gc/models/faxsendresponse.go
 gc/models/faxstatus.go
 gc/models/faxsummary.go
 gc/models/featurestate.go
+gc/models/feedback.go
 gc/models/feedbackaddrequest.go
 gc/models/fieldconfig.go
 gc/models/fieldconfigs.go
@@ -2619,6 +2625,7 @@ gc/models/genesysbotconnector.go
 gc/models/geolocation.go
 gc/models/geolocationsettings.go
 gc/models/getalertquery.go
+gc/models/getcelebrationlisting.go
 gc/models/getflowexecutiondatajobresult.go
 gc/models/getmetricdefinitionsresponse.go
 gc/models/getmetricresponse.go
@@ -3187,6 +3194,7 @@ gc/models/messengersettings.go
 gc/models/messengerstyles.go
 gc/models/metabase.go
 gc/models/metadata.go
+gc/models/metadataattribute.go
 gc/models/metadatadocumentation.go
 gc/models/metadataitem.go
 gc/models/metadatapresentation.go
@@ -3588,6 +3596,8 @@ gc/models/recipientadditionalidentifier.go
 gc/models/recipientflow.go
 gc/models/recipientlisting.go
 gc/models/recipientrequest.go
+gc/models/recognition.go
+gc/models/recognitionbase.go
 gc/models/record.go
 gc/models/recording.go
 gc/models/recordingannotationflow.go
@@ -3824,7 +3834,6 @@ gc/models/sentimentfeedback.go
 gc/models/sentimentfeedbackentitylisting.go
 gc/models/sequenceschedule.go
 gc/models/serverdate.go
-gc/models/servicecontext.go
 gc/models/servicegoaltemplate.go
 gc/models/servicegoaltemplateimpactoverride.go
 gc/models/servicegoaltemplatelist.go
@@ -3910,6 +3919,7 @@ gc/models/socialhandle.go
 gc/models/sortitem.go
 gc/models/source.go
 gc/models/sourceconfiguration.go
+gc/models/sourceentity.go
 gc/models/sourceentitylisting.go
 gc/models/sourceplanninggrouprequest.go
 gc/models/speechtextanalyticssettingsrequest.go
@@ -3937,6 +3947,16 @@ gc/models/subjectdivisions.go
 gc/models/subscriberresponse.go
 gc/models/subscription.go
 gc/models/subscriptionoverviewusage.go
+gc/models/suggestion.go
+gc/models/suggestioncannedresponse.go
+gc/models/suggestioncontext.go
+gc/models/suggestionengagement.go
+gc/models/suggestionfeedback.go
+gc/models/suggestionknowledgeanswer.go
+gc/models/suggestionknowledgearticle.go
+gc/models/suggestionknowledgesearch.go
+gc/models/suggestionlisting.go
+gc/models/suggestionscript.go
 gc/models/suggestsearchcriteria.go
 gc/models/suggestsearchrequest.go
 gc/models/supportcentercategory.go

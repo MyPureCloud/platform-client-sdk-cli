@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("outbound_campaigns", "SWAGGER_OVERRIDE_/api/v2/outbound/campaigns", "SWAGGER_OVERRIDE_/api/v2/outbound/campaigns", "SWAGGER_OVERRIDE_/api/v2/outbound/campaigns", "SWAGGER_OVERRIDE_/api/v2/outbound/campaigns", "SWAGGER_OVERRIDE_/api/v2/outbound/campaigns", )
+	Description = utils.FormatUsageDescription("outbound_campaigns", "SWAGGER_OVERRIDE_/api/v2/outbound/campaigns", "SWAGGER_OVERRIDE_/api/v2/outbound/campaigns", "SWAGGER_OVERRIDE_/api/v2/outbound/campaigns", "SWAGGER_OVERRIDE_/api/v2/outbound/campaigns", "SWAGGER_OVERRIDE_/api/v2/outbound/campaigns", "SWAGGER_OVERRIDE_/api/v2/outbound/campaigns", )
 	outbound_campaignsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("outbound_campaigns"),
 		Short: Description,
@@ -110,6 +110,25 @@ func Cmdoutbound_campaigns() *cobra.Command {
   }
 }`)
 	outbound_campaignsCmd.AddCommand(listCmd)
+
+	patchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", patchCmd.UsageTemplate(), "PATCH", "/api/v2/outbound/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:edit",  }), utils.GenerateDevCentreLink("PATCH", "Outbound", "/api/v2/outbound/campaigns/{campaignId}")))
+	utils.AddFileFlagIfUpsert(patchCmd.Flags(), "PATCH", `{
+  "description" : "CampaignPatchRequest",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CampaignPatchRequest"
+      }
+    }
+  },
+  "required" : true
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(patchCmd.Flags(), "PATCH", `{
+  "description" : "The campaign was updated",
+  "content" : { }
+}`)
+	outbound_campaignsCmd.AddCommand(patchCmd)
 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/campaigns/{campaignId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
@@ -425,6 +444,74 @@ var listCmd = &cobra.Command{
 
 		const opId = "list"
 		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var patchCmd = &cobra.Command{
+	Use:   "patch [campaignId]",
+	Short: "Update a campaign.",
+	Long:  "Update a campaign.",
+	Args:  utils.DetermineArgs([]string{ "campaignId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Campaignpatchrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/outbound/campaigns/{campaignId}"
+		campaignId, args := args[0], args[1:]
+		path = strings.Replace(path, "{campaignId}", fmt.Sprintf("%v", campaignId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		const opId = "patch"
+		const httpMethod = "PATCH"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

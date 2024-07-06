@@ -11,7 +11,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_contactlists"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_contactlistfilters"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_contactlisttemplates"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_audits"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_conversations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_dnclists"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_events"
@@ -35,7 +34,6 @@ func init() {
 	outboundCmd.AddCommand(outbound_contactlists.Cmdoutbound_contactlists())
 	outboundCmd.AddCommand(outbound_contactlistfilters.Cmdoutbound_contactlistfilters())
 	outboundCmd.AddCommand(outbound_contactlisttemplates.Cmdoutbound_contactlisttemplates())
-	outboundCmd.AddCommand(outbound_audits.Cmdoutbound_audits())
 	outboundCmd.AddCommand(outbound_conversations.Cmdoutbound_conversations())
 	outboundCmd.AddCommand(outbound_dnclists.Cmdoutbound_dnclists())
 	outboundCmd.AddCommand(outbound_events.Cmdoutbound_events())
@@ -47,6 +45,6 @@ func init() {
 	outboundCmd.AddCommand(outbound_sequences.Cmdoutbound_sequences())
 	outboundCmd.AddCommand(outbound_wrapupcodemappings.Cmdoutbound_wrapupcodemappings())
 	outboundCmd.AddCommand(outbound_digitalrulesets.Cmdoutbound_digitalrulesets())
-	outboundCmd.Short = utils.GenerateCustomDescription(outboundCmd.Short, outbound_campaigns.Description, outbound_attemptlimits.Description, outbound_callanalysisresponsesets.Description, outbound_callabletimesets.Description, outbound_campaignrules.Description, outbound_schedules.Description, outbound_contactlists.Description, outbound_contactlistfilters.Description, outbound_contactlisttemplates.Description, outbound_audits.Description, outbound_conversations.Description, outbound_dnclists.Description, outbound_events.Description, outbound_filespecificationtemplates.Description, outbound_importtemplates.Description, outbound_messagingcampaigns.Description, outbound_settings.Description, outbound_rulesets.Description, outbound_sequences.Description, outbound_wrapupcodemappings.Description, outbound_digitalrulesets.Description, )
+	outboundCmd.Short = utils.GenerateCustomDescription(outboundCmd.Short, outbound_campaigns.Description, outbound_attemptlimits.Description, outbound_callanalysisresponsesets.Description, outbound_callabletimesets.Description, outbound_campaignrules.Description, outbound_schedules.Description, outbound_contactlists.Description, outbound_contactlistfilters.Description, outbound_contactlisttemplates.Description, outbound_conversations.Description, outbound_dnclists.Description, outbound_events.Description, outbound_filespecificationtemplates.Description, outbound_importtemplates.Description, outbound_messagingcampaigns.Description, outbound_settings.Description, outbound_rulesets.Description, outbound_sequences.Description, outbound_wrapupcodemappings.Description, outbound_digitalrulesets.Description, )
 	outboundCmd.Long = outboundCmd.Short
 }

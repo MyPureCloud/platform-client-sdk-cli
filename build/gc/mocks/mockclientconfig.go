@@ -20,7 +20,7 @@ type MockClientConfig struct {
 	LoggingEnabledFunc        func() bool
 	AutoPaginationEnabledFunc func() bool
 	SecureLoginEnabledFunc    func() bool
-	ProxyConfigurationFunc    func() *config.ProxyConfiguration
+	ProxyConfigurationFunc    func() string
 }
 
 var UpdatedAccessToken string
@@ -73,7 +73,7 @@ func (m *MockClientConfig) AutoPaginationEnabled() bool {
 	return m.AutoPaginationEnabledFunc()
 }
 
-func (m *MockClientConfig) ProxyConfiguration() *config.ProxyConfiguration {
+func (m *MockClientConfig) ProxyConfiguration() string {
 	return m.ProxyConfigurationFunc()
 }
 

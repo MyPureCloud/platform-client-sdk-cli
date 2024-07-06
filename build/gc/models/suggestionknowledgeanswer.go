@@ -6,33 +6,35 @@ import (
 )
 
 var (
-    AuditfacetMarshalled = false
+    SuggestionknowledgeanswerMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type AuditfacetDud struct { 
-    
+type SuggestionknowledgeanswerDud struct { 
+    Answer string `json:"answer"`
 
 
-    
+    StartIndex int `json:"startIndex"`
+
+
+    EndIndex int `json:"endIndex"`
 
 }
 
-// Auditfacet
-type Auditfacet struct { 
-    // Name - The name of the field on which to facet.
-    Name string `json:"name"`
+// Suggestionknowledgeanswer
+type Suggestionknowledgeanswer struct { 
+    
 
 
-    // VarType - The type of the facet, DATE or STRING.
-    VarType string `json:"type"`
+    
+
+
+    
 
 }
 
 // String returns a JSON representation of the model
-func (o *Auditfacet) String() string {
-    
-    
+func (o *Suggestionknowledgeanswer) String() string {
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -40,21 +42,20 @@ func (o *Auditfacet) String() string {
     return str
 }
 
-func (u *Auditfacet) MarshalJSON() ([]byte, error) {
-    type Alias Auditfacet
+func (u *Suggestionknowledgeanswer) MarshalJSON() ([]byte, error) {
+    type Alias Suggestionknowledgeanswer
 
-    if AuditfacetMarshalled {
+    if SuggestionknowledgeanswerMarshalled {
         return []byte("{}"), nil
     }
-    AuditfacetMarshalled = true
+    SuggestionknowledgeanswerMarshalled = true
 
     return json.Marshal(&struct {
-        
-        Name string `json:"name"`
-        
-        VarType string `json:"type"`
         *Alias
     }{
+
+        
+
 
         
 

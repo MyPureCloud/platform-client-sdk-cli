@@ -20,7 +20,7 @@ type FileuploadsettingsDud struct {
 
 // Fileuploadsettings - File upload settings for messenger
 type Fileuploadsettings struct { 
-    // EnableAttachments - whether or not attachments is enabled
+    // EnableAttachments - whether or not attachments are enabled
     EnableAttachments bool `json:"enableAttachments"`
 
 

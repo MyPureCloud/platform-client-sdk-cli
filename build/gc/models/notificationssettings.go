@@ -6,32 +6,24 @@ import (
 )
 
 var (
-    AiscoringsettingsMarshalled = false
+    NotificationssettingsMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type AiscoringsettingsDud struct { 
-    
-
-
+type NotificationssettingsDud struct { 
     
 
 }
 
-// Aiscoringsettings
-type Aiscoringsettings struct { 
-    // Enabled - True if AI scoring feature is configured, false if not.
+// Notificationssettings - Notification settings that handles messenger notifications
+type Notificationssettings struct { 
+    // Enabled - The toggle to enable or disable notifications
     Enabled bool `json:"enabled"`
-
-
-    // Prompt - The prompt text that would be used by a LLM.
-    Prompt string `json:"prompt"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Aiscoringsettings) String() string {
-    
+func (o *Notificationssettings) String() string {
     
 
     j, _ := json.Marshal(o)
@@ -40,24 +32,19 @@ func (o *Aiscoringsettings) String() string {
     return str
 }
 
-func (u *Aiscoringsettings) MarshalJSON() ([]byte, error) {
-    type Alias Aiscoringsettings
+func (u *Notificationssettings) MarshalJSON() ([]byte, error) {
+    type Alias Notificationssettings
 
-    if AiscoringsettingsMarshalled {
+    if NotificationssettingsMarshalled {
         return []byte("{}"), nil
     }
-    AiscoringsettingsMarshalled = true
+    NotificationssettingsMarshalled = true
 
     return json.Marshal(&struct {
         
         Enabled bool `json:"enabled"`
-        
-        Prompt string `json:"prompt"`
         *Alias
     }{
-
-        
-
 
         
 

@@ -65,7 +65,7 @@ type WorktypecreateDud struct {
 
 // Worktypecreate
 type Worktypecreate struct { 
-    // Name - The name of the Worktype. Length between 3 and 256 characters.
+    // Name - The name of the Worktype. Valid length between 3 and 256 characters.
     Name string `json:"name"`
 
 
@@ -105,7 +105,7 @@ type Worktypecreate struct {
     ServiceLevelTarget int `json:"serviceLevelTarget"`
 
 
-    // Description - The description of the Worktype. Maximum length of 4096 characters.
+    // Description - The description of the Worktype. Maximum length of 512 characters.
     Description string `json:"description"`
 
 

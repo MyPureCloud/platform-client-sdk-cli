@@ -50,7 +50,7 @@ type Reoccurrence struct {
     End string `json:"end"`
 
 
-    // TimeZone - The time zone of the schedule e.g.:  America/New_York
+    // TimeZone - The time zone for the recurrence. The time zone of the recurrence is determined by prioritizing the recurrence's time zone if specified, then the schedule's time zone if set, and finally defaulting to UTC if neither defines a time zone.
     TimeZone string `json:"timeZone"`
 
 

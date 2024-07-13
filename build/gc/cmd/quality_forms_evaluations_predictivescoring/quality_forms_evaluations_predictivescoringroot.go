@@ -1,0 +1,12 @@
+package quality_forms_evaluations_predictivescoring
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/quality_forms_evaluations_predictivescoring_settings"
+)
+
+func init() {
+	quality_forms_evaluations_predictivescoringCmd.AddCommand(quality_forms_evaluations_predictivescoring_settings.Cmdquality_forms_evaluations_predictivescoring_settings())
+	quality_forms_evaluations_predictivescoringCmd.Short = utils.GenerateCustomDescription(quality_forms_evaluations_predictivescoringCmd.Short, quality_forms_evaluations_predictivescoring_settings.Description, )
+	quality_forms_evaluations_predictivescoringCmd.Long = quality_forms_evaluations_predictivescoringCmd.Short
+}

@@ -59,7 +59,7 @@ func Cmdoutbound_campaigns_progress() *cobra.Command {
 }`)
 	outbound_campaigns_progressCmd.AddCommand(createCmd)
 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/campaigns/{campaignId}/progress", utils.FormatPermissions([]string{ "outbound:campaign:edit",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/campaigns/{campaignId}/progress")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/campaigns/{campaignId}/progress", utils.FormatPermissions([]string{ "outbound:campaign:edit", "outbound:campaign:recycle",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/campaigns/{campaignId}/progress")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{

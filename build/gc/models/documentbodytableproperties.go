@@ -44,7 +44,7 @@ type DocumentbodytablepropertiesDud struct {
 
 // Documentbodytableproperties
 type Documentbodytableproperties struct { 
-    // Width - The width for the table. The valid values in 'em'.
+    // Width - The width of the table converted to em unit.
     Width float32 `json:"width"`
 
 

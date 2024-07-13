@@ -40,6 +40,9 @@ type AnalyticsparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticsparticipant
@@ -68,6 +71,10 @@ type Analyticsparticipant struct {
     Purpose string `json:"purpose"`
 
 
+    // ScreenRecording - Flag determining if a screen recording was started or not
+    ScreenRecording bool `json:"screenRecording"`
+
+
     // TeamId - The team ID the user is a member of
     TeamId string `json:"teamId"`
 
@@ -87,6 +94,7 @@ type Analyticsparticipant struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticsparticipant) String() string {
+    
     
     
     
@@ -126,6 +134,8 @@ func (u *Analyticsparticipant) MarshalJSON() ([]byte, error) {
         
         Purpose string `json:"purpose"`
         
+        ScreenRecording bool `json:"screenRecording"`
+        
         TeamId string `json:"teamId"`
         
         UserId string `json:"userId"`
@@ -135,6 +145,9 @@ func (u *Analyticsparticipant) MarshalJSON() ([]byte, error) {
         Attributes map[string]string `json:"attributes"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -14,12 +14,6 @@ type ActivitycodereferenceDud struct {
     
 
 
-    
-
-
-    
-
-
     SelfUri string `json:"selfUri"`
 
 }
@@ -30,14 +24,6 @@ type Activitycodereference struct {
     Id string `json:"id"`
 
 
-    // Name
-    Name string `json:"name"`
-
-
-    // SecondaryPresences - The secondary presences of this activity code.
-    SecondaryPresences []Secondarypresence `json:"secondaryPresences"`
-
-
     
 
 }
@@ -45,8 +31,6 @@ type Activitycodereference struct {
 // String returns a JSON representation of the model
 func (o *Activitycodereference) String() string {
     
-    
-     o.SecondaryPresences = []Secondarypresence{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -65,21 +49,9 @@ func (u *Activitycodereference) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Id string `json:"id"`
-        
-        Name string `json:"name"`
-        
-        SecondaryPresences []Secondarypresence `json:"secondaryPresences"`
         *Alias
     }{
 
-        
-
-
-        
-
-
-        
-        SecondaryPresences: []Secondarypresence{{}},
         
 
 

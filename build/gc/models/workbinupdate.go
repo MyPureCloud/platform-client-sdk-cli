@@ -24,7 +24,7 @@ type Workbinupdate struct {
     Name string `json:"name"`
 
 
-    // Description - Workbin description. Maximum length of 4096 characters.
+    // Description - Workbin description. Maximum length of 512 characters.
     Description string `json:"description"`
 
 }

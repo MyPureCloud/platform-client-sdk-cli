@@ -42,6 +42,9 @@ type ReportingturnDud struct {
     
 
 
+    
+
+
     Conversation Addressableentityref `json:"conversation"`
 
 }
@@ -80,6 +83,10 @@ type Reportingturn struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    // DateCompleted - Timestamp indicating when the original turn was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateCompleted time.Time `json:"dateCompleted"`
+
+
     // AskActionResult - Result of the bot flow 'ask' action.
     AskActionResult string `json:"askActionResult"`
 
@@ -96,6 +103,7 @@ type Reportingturn struct {
 func (o *Reportingturn) String() string {
     
      o.BotPrompts = []string{""} 
+    
     
     
     
@@ -137,6 +145,8 @@ func (u *Reportingturn) MarshalJSON() ([]byte, error) {
         
         DateCreated time.Time `json:"dateCreated"`
         
+        DateCompleted time.Time `json:"dateCompleted"`
+        
         AskActionResult string `json:"askActionResult"`
         
         SessionEndDetails Sessionenddetails `json:"sessionEndDetails"`
@@ -148,6 +158,9 @@ func (u *Reportingturn) MarshalJSON() ([]byte, error) {
 
         
         BotPrompts: []string{""},
+        
+
+
         
 
 

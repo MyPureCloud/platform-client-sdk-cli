@@ -140,6 +140,9 @@ type MessagemediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Messagemediaparticipant
@@ -280,6 +283,10 @@ type Messagemediaparticipant struct {
     EndAcwTime time.Time `json:"endAcwTime"`
 
 
+    // ParkTime - The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ParkTime time.Time `json:"parkTime"`
+
+
     // ToAddress - Address for the participant on receiving side of the message conversation. If the address is a phone number, E.164 format is recommended.
     ToAddress Address `json:"toAddress"`
 
@@ -338,6 +345,7 @@ func (o *Messagemediaparticipant) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
     
     
     
@@ -447,6 +455,8 @@ func (u *Messagemediaparticipant) MarshalJSON() ([]byte, error) {
         
         EndAcwTime time.Time `json:"endAcwTime"`
         
+        ParkTime time.Time `json:"parkTime"`
+        
         ToAddress Address `json:"toAddress"`
         
         FromAddress Address `json:"fromAddress"`
@@ -525,6 +535,9 @@ func (u *Messagemediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

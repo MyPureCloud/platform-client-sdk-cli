@@ -31,6 +31,7 @@ func Cmdtaskmanagement_worktypes_history() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "descending", "Ascending or descending sort order Valid values: ascending, descending")
+	utils.AddFlag(listCmd.Flags(), "[]string", "fields", "", "Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields. Valid values: name, serviceLevelTarget, defaultWorkbinId, defaultDueDurationSeconds, defaultExpirationSeconds, defaultPriority, defaultLanguageId, defaultSkillIds, defaultQueueId, assignmentEnabled, defaultStatusId, statuses")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/taskmanagement/worktypes/{worktypeId}/history", utils.FormatPermissions([]string{ "workitems:worktype:view",  }), utils.GenerateDevCentreLink("GET", "Task Management", "/api/v2/taskmanagement/worktypes/{worktypeId}/history")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -85,6 +86,10 @@ var listCmd = &cobra.Command{
 		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
 		if sortOrder != "" {
 			queryParams["sortOrder"] = sortOrder
+		}
+		fields := utils.GetFlag(cmd.Flags(), "[]string", "fields")
+		if fields != "" {
+			queryParams["fields"] = fields
 		}
 		urlString := path
 		if len(queryParams) > 0 {

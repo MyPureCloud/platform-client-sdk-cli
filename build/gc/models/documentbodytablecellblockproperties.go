@@ -54,7 +54,7 @@ type Documentbodytablecellblockproperties struct {
     CellType string `json:"cellType"`
 
 
-    // Width - The width for the table cell.
+    // Width - The width of the table cell converted to em unit.
     Width float32 `json:"width"`
 
 

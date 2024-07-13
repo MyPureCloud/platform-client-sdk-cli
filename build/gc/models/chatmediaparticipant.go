@@ -119,6 +119,9 @@ type ChatmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Chatmediaparticipant
@@ -259,6 +262,10 @@ type Chatmediaparticipant struct {
     EndAcwTime time.Time `json:"endAcwTime"`
 
 
+    // ParkTime - The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ParkTime time.Time `json:"parkTime"`
+
+
     // RoomId - The ID of the chat room.
     RoomId string `json:"roomId"`
 
@@ -289,6 +296,7 @@ func (o *Chatmediaparticipant) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
     
     
     
@@ -391,6 +399,8 @@ func (u *Chatmediaparticipant) MarshalJSON() ([]byte, error) {
         
         EndAcwTime time.Time `json:"endAcwTime"`
         
+        ParkTime time.Time `json:"parkTime"`
+        
         RoomId string `json:"roomId"`
         
         AvatarImageUrl string `json:"avatarImageUrl"`
@@ -455,6 +465,9 @@ func (u *Chatmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

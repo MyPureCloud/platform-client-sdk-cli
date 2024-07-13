@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    AianswerMarshalled = false
+    PredictedanswerMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type AianswerDud struct { 
+type PredictedanswerDud struct { 
     
 
 
@@ -21,9 +21,9 @@ type AianswerDud struct {
 
 }
 
-// Aianswer
-type Aianswer struct { 
-    // AnswerId - The unique identifier of the suggested ai answer.
+// Predictedanswer
+type Predictedanswer struct { 
+    // AnswerId - The unique identifier of the suggested predicted answer.
     AnswerId string `json:"answerId"`
 
 
@@ -31,13 +31,13 @@ type Aianswer struct {
     Explanation string `json:"explanation"`
 
 
-    // FailureType - Describes the type of error associated with the AI answer.
+    // FailureType - Describes the type of error associated with the predicted answer.
     FailureType string `json:"failureType"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Aianswer) String() string {
+func (o *Predictedanswer) String() string {
     
     
     
@@ -48,13 +48,13 @@ func (o *Aianswer) String() string {
     return str
 }
 
-func (u *Aianswer) MarshalJSON() ([]byte, error) {
-    type Alias Aianswer
+func (u *Predictedanswer) MarshalJSON() ([]byte, error) {
+    type Alias Predictedanswer
 
-    if AianswerMarshalled {
+    if PredictedanswerMarshalled {
         return []byte("{}"), nil
     }
-    AianswerMarshalled = true
+    PredictedanswerMarshalled = true
 
     return json.Marshal(&struct {
         

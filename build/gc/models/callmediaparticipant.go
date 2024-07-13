@@ -164,6 +164,9 @@ type CallmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Callmediaparticipant
@@ -304,6 +307,10 @@ type Callmediaparticipant struct {
     EndAcwTime time.Time `json:"endAcwTime"`
 
 
+    // ParkTime - The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ParkTime time.Time `json:"parkTime"`
+
+
     // Muted - Value is true when the call is muted.
     Muted bool `json:"muted"`
 
@@ -426,6 +433,7 @@ func (o *Callmediaparticipant) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -510,6 +518,8 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
         StartAcwTime time.Time `json:"startAcwTime"`
         
         EndAcwTime time.Time `json:"endAcwTime"`
+        
+        ParkTime time.Time `json:"parkTime"`
         
         Muted bool `json:"muted"`
         
@@ -605,6 +615,9 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

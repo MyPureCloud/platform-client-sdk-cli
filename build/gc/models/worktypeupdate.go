@@ -102,7 +102,7 @@ type Worktypeupdate struct {
     ServiceLevelTarget int `json:"serviceLevelTarget"`
 
 
-    // Description - The description of the Worktype. Maximum length of 4096 characters.
+    // Description - The description of the Worktype. Maximum length of 512 characters.
     Description string `json:"description"`
 
 

@@ -40,7 +40,7 @@ type Workitemstatusupdate struct {
     DestinationStatusIds []string `json:"destinationStatusIds"`
 
 
-    // Description - The description of the Status. Maximum length of 4096 characters.
+    // Description - The description of the Status. Maximum length of 512 characters.
     Description string `json:"description"`
 
 

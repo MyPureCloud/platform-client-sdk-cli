@@ -46,7 +46,7 @@ func Cmdconversations_messages() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/MessageConversation"
+        "$ref" : "#/components/schemas/CreateOutboundMessagingConversationResponse"
       }
     }
   }

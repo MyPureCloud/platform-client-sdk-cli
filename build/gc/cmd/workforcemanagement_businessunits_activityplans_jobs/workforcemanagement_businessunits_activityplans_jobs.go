@@ -1,4 +1,4 @@
-package workforcemanagement_adhocmodelingjobs
+package workforcemanagement_businessunits_activityplans_jobs
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("workforcemanagement_adhocmodelingjobs", "SWAGGER_OVERRIDE_/api/v2/workforcemanagement/adhocmodelingjobs", )
-	workforcemanagement_adhocmodelingjobsCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("workforcemanagement_adhocmodelingjobs"),
+	Description = utils.FormatUsageDescription("workforcemanagement_businessunits_activityplans_jobs", "SWAGGER_OVERRIDE_/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs", )
+	workforcemanagement_businessunits_activityplans_jobsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("workforcemanagement_businessunits_activityplans_jobs"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,25 +24,25 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(workforcemanagement_adhocmodelingjobsCmd)
+	CommandService = services.NewCommandService(workforcemanagement_businessunits_activityplans_jobsCmd)
 }
 
-func Cmdworkforcemanagement_adhocmodelingjobs() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/adhocmodelingjobs/{jobId}", utils.FormatPermissions([]string{ "wfm:adhocModel:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/adhocmodelingjobs/{jobId}")))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+func Cmdworkforcemanagement_businessunits_activityplans_jobs() *cobra.Command { 
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs", utils.FormatPermissions([]string{ "wfm:activityPlan:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs")))
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
-	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
   "description" : "successful operation",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ModelingStatusResponse"
+        "$ref" : "#/components/schemas/ActivityPlanJobListing"
       }
     }
   }
 }`)
-	workforcemanagement_adhocmodelingjobsCmd.AddCommand(getCmd)
-	return workforcemanagement_adhocmodelingjobsCmd
+	workforcemanagement_businessunits_activityplans_jobsCmd.AddCommand(listCmd)
+	return workforcemanagement_businessunits_activityplans_jobsCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -50,11 +50,11 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
-var getCmd = &cobra.Command{
-	Use:   "get [jobId]",
-	Short: "To get status of the modeling job.",
-	Long:  "To get status of the modeling job.",
-	Args:  utils.DetermineArgs([]string{ "jobId", }),
+var listCmd = &cobra.Command{
+	Use:   "list [businessUnitId]",
+	Short: "Gets the latest job for all activity plans in the business unit",
+	Long:  "Gets the latest job for all activity plans in the business unit",
+	Args:  utils.DetermineArgs([]string{ "businessUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -67,9 +67,9 @@ var getCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/workforcemanagement/adhocmodelingjobs/{jobId}"
-		jobId, args := args[0], args[1:]
-		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
+		path := "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs"
+		businessUnitId, args := args[0], args[1:]
+		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -84,7 +84,7 @@ var getCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "get"
+		const opId = "list"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file

@@ -120,7 +120,7 @@ type Workitemupdate struct {
     AutoStatusTransition bool `json:"autoStatusTransition"`
 
 
-    // Description - The description of the Workitem. Maximum length of 4096 characters.
+    // Description - The description of the Workitem. Maximum length of 512 characters.
     Description string `json:"description"`
 
 

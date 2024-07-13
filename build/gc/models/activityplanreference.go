@@ -6,32 +6,20 @@ import (
 )
 
 var (
-    ModelingstatusresponseMarshalled = false
+    ActivityplanreferenceMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ModelingstatusresponseDud struct { 
+type ActivityplanreferenceDud struct { 
     Id string `json:"id"`
 
 
-    Status string `json:"status"`
-
-
-    ErrorDetails []Modelingprocessingerror `json:"errorDetails"`
-
-
-    ModelingResultUri string `json:"modelingResultUri"`
+    SelfUri string `json:"selfUri"`
 
 }
 
-// Modelingstatusresponse
-type Modelingstatusresponse struct { 
-    
-
-
-    
-
-
+// Activityplanreference
+type Activityplanreference struct { 
     
 
 
@@ -40,7 +28,7 @@ type Modelingstatusresponse struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Modelingstatusresponse) String() string {
+func (o *Activityplanreference) String() string {
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -48,23 +36,17 @@ func (o *Modelingstatusresponse) String() string {
     return str
 }
 
-func (u *Modelingstatusresponse) MarshalJSON() ([]byte, error) {
-    type Alias Modelingstatusresponse
+func (u *Activityplanreference) MarshalJSON() ([]byte, error) {
+    type Alias Activityplanreference
 
-    if ModelingstatusresponseMarshalled {
+    if ActivityplanreferenceMarshalled {
         return []byte("{}"), nil
     }
-    ModelingstatusresponseMarshalled = true
+    ActivityplanreferenceMarshalled = true
 
     return json.Marshal(&struct {
         *Alias
     }{
-
-        
-
-
-        
-
 
         
 

@@ -20,7 +20,7 @@ type FileuploadmodeDud struct {
 
 // Fileuploadmode
 type Fileuploadmode struct { 
-    // FileTypes - A list of supported content types for uploading files
+    // FileTypes - A list of supported content types for uploading files.
     FileTypes []string `json:"fileTypes"`
 
 

@@ -36,6 +36,9 @@ type BotflowsessionDud struct {
     
 
 
+    
+
+
     Conversation Addressableentityref `json:"conversation"`
 
 }
@@ -74,12 +77,17 @@ type Botflowsession struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    // DateCompleted - Timestamp indicating when the session was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateCompleted time.Time `json:"dateCompleted"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Botflowsession) String() string {
+    
     
     
     
@@ -120,8 +128,13 @@ func (u *Botflowsession) MarshalJSON() ([]byte, error) {
         BotResultCategory string `json:"botResultCategory"`
         
         DateCreated time.Time `json:"dateCreated"`
+        
+        DateCompleted time.Time `json:"dateCompleted"`
         *Alias
     }{
+
+        
+
 
         
 

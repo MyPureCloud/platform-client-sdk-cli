@@ -33,7 +33,7 @@ type UserscheduleadherenceDud struct {
     ScheduledActivityCategory string `json:"scheduledActivityCategory"`
 
 
-    ScheduledActivityCode Activitycodereference `json:"scheduledActivityCode"`
+    ScheduledActivityCode Activitycodesummary `json:"scheduledActivityCode"`
 
 
     SystemPresence string `json:"systemPresence"`

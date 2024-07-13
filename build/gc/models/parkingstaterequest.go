@@ -6,17 +6,25 @@ import (
 )
 
 var (
-    AiscoringMarshalled = false
+    ParkingstaterequestMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type AiscoringDud struct { }
+type ParkingstaterequestDud struct { 
+    
 
-// Aiscoring
-type Aiscoring struct { }
+}
+
+// Parkingstaterequest
+type Parkingstaterequest struct { 
+    // State - State to set the participant.
+    State string `json:"state"`
+
+}
 
 // String returns a JSON representation of the model
-func (o *Aiscoring) String() string {
+func (o *Parkingstaterequest) String() string {
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -24,17 +32,22 @@ func (o *Aiscoring) String() string {
     return str
 }
 
-func (u *Aiscoring) MarshalJSON() ([]byte, error) {
-    type Alias Aiscoring
+func (u *Parkingstaterequest) MarshalJSON() ([]byte, error) {
+    type Alias Parkingstaterequest
 
-    if AiscoringMarshalled {
+    if ParkingstaterequestMarshalled {
         return []byte("{}"), nil
     }
-    AiscoringMarshalled = true
+    ParkingstaterequestMarshalled = true
 
     return json.Marshal(&struct {
+        
+        State string `json:"state"`
         *Alias
     }{
+
+        
+
         Alias: (*Alias)(u),
     })
 }

@@ -7,6 +7,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_emails_participants_attributes"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_emails_participants_wrapup"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_emails_participants_communications"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_emails_participants_parkingstate"
 )
 
 func init() {
@@ -15,6 +16,7 @@ func init() {
 	conversations_emails_participantsCmd.AddCommand(conversations_emails_participants_attributes.Cmdconversations_emails_participants_attributes())
 	conversations_emails_participantsCmd.AddCommand(conversations_emails_participants_wrapup.Cmdconversations_emails_participants_wrapup())
 	conversations_emails_participantsCmd.AddCommand(conversations_emails_participants_communications.Cmdconversations_emails_participants_communications())
-	conversations_emails_participantsCmd.Short = utils.GenerateCustomDescription(conversations_emails_participantsCmd.Short, conversations_emails_participants_replace.Description, conversations_emails_participants_wrapupcodes.Description, conversations_emails_participants_attributes.Description, conversations_emails_participants_wrapup.Description, conversations_emails_participants_communications.Description, )
+	conversations_emails_participantsCmd.AddCommand(conversations_emails_participants_parkingstate.Cmdconversations_emails_participants_parkingstate())
+	conversations_emails_participantsCmd.Short = utils.GenerateCustomDescription(conversations_emails_participantsCmd.Short, conversations_emails_participants_replace.Description, conversations_emails_participants_wrapupcodes.Description, conversations_emails_participants_attributes.Description, conversations_emails_participants_wrapup.Description, conversations_emails_participants_communications.Description, conversations_emails_participants_parkingstate.Description, )
 	conversations_emails_participantsCmd.Long = conversations_emails_participantsCmd.Short
 }

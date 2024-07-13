@@ -131,6 +131,9 @@ type EmailmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Emailmediaparticipant
@@ -271,6 +274,10 @@ type Emailmediaparticipant struct {
     EndAcwTime time.Time `json:"endAcwTime"`
 
 
+    // ParkTime - The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ParkTime time.Time `json:"parkTime"`
+
+
     // Subject - The subject of the email.
     Subject string `json:"subject"`
 
@@ -317,6 +324,7 @@ func (o *Emailmediaparticipant) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
     
     
     
@@ -423,6 +431,8 @@ func (u *Emailmediaparticipant) MarshalJSON() ([]byte, error) {
         
         EndAcwTime time.Time `json:"endAcwTime"`
         
+        ParkTime time.Time `json:"parkTime"`
+        
         Subject string `json:"subject"`
         
         MessagesSent int `json:"messagesSent"`
@@ -495,6 +505,9 @@ func (u *Emailmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

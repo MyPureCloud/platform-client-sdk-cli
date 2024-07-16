@@ -91,6 +91,9 @@ type WidgetDud struct {
 
     
 
+
+    
+
 }
 
 // Widget
@@ -202,6 +205,10 @@ type Widget struct {
     // SelectedStatuses - Indicates the selected statuses used to filter the agent widget in the dashboard.
     SelectedStatuses []string `json:"selectedStatuses"`
 
+
+    // AgentInteractionSortOrder - The sort order of the interactions in the agent status widget.
+    AgentInteractionSortOrder string `json:"agentInteractionSortOrder"`
+
 }
 
 // String returns a JSON representation of the model
@@ -233,6 +240,7 @@ func (o *Widget) String() string {
     
     
      o.SelectedStatuses = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -303,6 +311,8 @@ func (u *Widget) MarshalJSON() ([]byte, error) {
         ShowOfflineAgents bool `json:"showOfflineAgents"`
         
         SelectedStatuses []string `json:"selectedStatuses"`
+        
+        AgentInteractionSortOrder string `json:"agentInteractionSortOrder"`
         *Alias
     }{
 
@@ -394,6 +404,9 @@ func (u *Widget) MarshalJSON() ([]byte, error) {
 
         
         SelectedStatuses: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

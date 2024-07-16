@@ -21,6 +21,12 @@ type TrusteeDud struct {
     
 
 
+    
+
+
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -50,6 +56,14 @@ type Trustee struct {
     UsesDefaultRole bool `json:"usesDefaultRole"`
 
 
+    // HasFullAccess - Denotes if trustee uses full access role by default.
+    HasFullAccess bool `json:"hasFullAccess"`
+
+
+    // IsTrustedUser - Denotes if trustee is given Trusted User access by default.
+    IsTrustedUser bool `json:"isTrustedUser"`
+
+
     
 
 
@@ -69,6 +83,8 @@ type Trustee struct {
 
 // String returns a JSON representation of the model
 func (o *Trustee) String() string {
+    
+    
     
     
     
@@ -93,9 +109,19 @@ func (u *Trustee) MarshalJSON() ([]byte, error) {
         
         UsesDefaultRole bool `json:"usesDefaultRole"`
         
+        HasFullAccess bool `json:"hasFullAccess"`
+        
+        IsTrustedUser bool `json:"isTrustedUser"`
+        
         DateExpired time.Time `json:"dateExpired"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

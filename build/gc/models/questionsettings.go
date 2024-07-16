@@ -25,7 +25,7 @@ type Questionsettings struct {
 
 
     // Settings
-    Settings Predictivescoringsetting `json:"settings"`
+    Settings Aiscoringsetting `json:"settings"`
 
 }
 
@@ -52,7 +52,7 @@ func (u *Questionsettings) MarshalJSON() ([]byte, error) {
         
         QuestionIndex int `json:"questionIndex"`
         
-        Settings Predictivescoringsetting `json:"settings"`
+        Settings Aiscoringsetting `json:"settings"`
         *Alias
     }{
 

@@ -6,17 +6,17 @@ import (
 )
 
 var (
-    PredictedscoringMarshalled = false
+    AiscoringMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type PredictedscoringDud struct { }
+type AiscoringDud struct { }
 
-// Predictedscoring
-type Predictedscoring struct { }
+// Aiscoring
+type Aiscoring struct { }
 
 // String returns a JSON representation of the model
-func (o *Predictedscoring) String() string {
+func (o *Aiscoring) String() string {
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -24,13 +24,13 @@ func (o *Predictedscoring) String() string {
     return str
 }
 
-func (u *Predictedscoring) MarshalJSON() ([]byte, error) {
-    type Alias Predictedscoring
+func (u *Aiscoring) MarshalJSON() ([]byte, error) {
+    type Alias Aiscoring
 
-    if PredictedscoringMarshalled {
+    if AiscoringMarshalled {
         return []byte("{}"), nil
     }
-    PredictedscoringMarshalled = true
+    AiscoringMarshalled = true
 
     return json.Marshal(&struct {
         *Alias

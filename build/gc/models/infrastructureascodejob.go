@@ -36,6 +36,9 @@ type InfrastructureascodejobDud struct {
     Results string `json:"results"`
 
 
+    RollbackResults string `json:"rollbackResults"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -45,8 +48,11 @@ type Infrastructureascodejob struct {
     
 
 
-    // DryRun - dryRun
+    // DryRun - Whether or not the job was a dry run
     DryRun bool `json:"dryRun"`
+
+
+    
 
 
     
@@ -94,6 +100,9 @@ func (u *Infrastructureascodejob) MarshalJSON() ([]byte, error) {
         DryRun bool `json:"dryRun"`
         *Alias
     }{
+
+        
+
 
         
 

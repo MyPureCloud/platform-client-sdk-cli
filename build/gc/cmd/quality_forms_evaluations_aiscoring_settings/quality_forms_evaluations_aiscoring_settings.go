@@ -1,4 +1,4 @@
-package quality_forms_evaluations_predictivescoring_settings
+package quality_forms_evaluations_aiscoring_settings
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("quality_forms_evaluations_predictivescoring_settings", "SWAGGER_OVERRIDE_/api/v2/quality/forms/evaluations/{formId}/predictivescoring/settings", )
-	quality_forms_evaluations_predictivescoring_settingsCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("quality_forms_evaluations_predictivescoring_settings"),
+	Description = utils.FormatUsageDescription("quality_forms_evaluations_aiscoring_settings", "SWAGGER_OVERRIDE_/api/v2/quality/forms/evaluations/{formId}/aiscoring/settings", )
+	quality_forms_evaluations_aiscoring_settingsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("quality_forms_evaluations_aiscoring_settings"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,17 +24,17 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(quality_forms_evaluations_predictivescoring_settingsCmd)
+	CommandService = services.NewCommandService(quality_forms_evaluations_aiscoring_settingsCmd)
 }
 
-func Cmdquality_forms_evaluations_predictivescoring_settings() *cobra.Command { 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/forms/evaluations/{formId}/predictivescoring/settings", utils.FormatPermissions([]string{ "quality:evaluationForm:predictiveScoringEdit",  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/forms/evaluations/{formId}/predictivescoring/settings")))
+func Cmdquality_forms_evaluations_aiscoring_settings() *cobra.Command { 
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/quality/forms/evaluations/{formId}/aiscoring/settings", utils.FormatPermissions([]string{ "quality:evaluationForm:aiScoringEdit",  }), utils.GenerateDevCentreLink("PUT", "Quality", "/api/v2/quality/forms/evaluations/{formId}/aiscoring/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "description" : "Predictive Scoring Settings",
+  "description" : "AI Scoring Settings",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/PredictiveScoringSettings"
+        "$ref" : "#/components/schemas/AiScoringSettings"
       }
     }
   },
@@ -46,13 +46,13 @@ func Cmdquality_forms_evaluations_predictivescoring_settings() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/PredictiveScoringSettings"
+        "$ref" : "#/components/schemas/AiScoringSettings"
       }
     }
   }
 }`)
-	quality_forms_evaluations_predictivescoring_settingsCmd.AddCommand(updateCmd)
-	return quality_forms_evaluations_predictivescoring_settingsCmd
+	quality_forms_evaluations_aiscoring_settingsCmd.AddCommand(updateCmd)
+	return quality_forms_evaluations_aiscoring_settingsCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -62,8 +62,8 @@ func queryEscape(value string) string {
 
 var updateCmd = &cobra.Command{
 	Use:   "update [formId]",
-	Short: "Update the Predictive Scoring settings of an evaluation form.",
-	Long:  "Update the Predictive Scoring settings of an evaluation form.",
+	Short: "Update the AI Scoring settings of an evaluation form.",
+	Long:  "Update the AI Scoring settings of an evaluation form.",
 	Args:  utils.DetermineArgs([]string{ "formId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -72,7 +72,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Predictivescoringsettings{}
+			reqModel := models.Aiscoringsettings{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -80,7 +80,7 @@ var updateCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/quality/forms/evaluations/{formId}/predictivescoring/settings"
+		path := "/api/v2/quality/forms/evaluations/{formId}/aiscoring/settings"
 		formId, args := args[0], args[1:]
 		path = strings.Replace(path, "{formId}", fmt.Sprintf("%v", formId), -1)
 

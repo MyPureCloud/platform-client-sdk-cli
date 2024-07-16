@@ -6,24 +6,24 @@ import (
 )
 
 var (
-    PredictivescoringsettingMarshalled = false
+    AiscoringsettingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type PredictivescoringsettingDud struct { 
+type AiscoringsettingDud struct { 
     
 
 }
 
-// Predictivescoringsetting
-type Predictivescoringsetting struct { 
-    // Enabled - True if Predictive Scoring feature is configured.
+// Aiscoringsetting
+type Aiscoringsetting struct { 
+    // Enabled - True if AI Scoring feature is configured.
     Enabled bool `json:"enabled"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Predictivescoringsetting) String() string {
+func (o *Aiscoringsetting) String() string {
     
 
     j, _ := json.Marshal(o)
@@ -32,13 +32,13 @@ func (o *Predictivescoringsetting) String() string {
     return str
 }
 
-func (u *Predictivescoringsetting) MarshalJSON() ([]byte, error) {
-    type Alias Predictivescoringsetting
+func (u *Aiscoringsetting) MarshalJSON() ([]byte, error) {
+    type Alias Aiscoringsetting
 
-    if PredictivescoringsettingMarshalled {
+    if AiscoringsettingMarshalled {
         return []byte("{}"), nil
     }
-    PredictivescoringsettingMarshalled = true
+    AiscoringsettingMarshalled = true
 
     return json.Marshal(&struct {
         

@@ -17,7 +17,7 @@ type ChatsettingsDud struct {
 
 // Chatsettings
 type Chatsettings struct { 
-    // MessageRetentionPeriodDays - Retention time for messages in days
+    // MessageRetentionPeriodDays - Retention time for messages in days, expressed as int in the range [10,3650]
     MessageRetentionPeriodDays int `json:"messageRetentionPeriodDays"`
 
 }

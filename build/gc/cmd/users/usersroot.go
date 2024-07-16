@@ -2,6 +2,7 @@ package users
 
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_verifiers"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_agentui"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_roles"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_callforwarding"
@@ -12,7 +13,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_profile"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_geolocations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_greetings"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_verifiers"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_outofoffice"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_presences"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_externalid"
@@ -34,6 +34,7 @@ import (
 )
 
 func init() {
+	usersCmd.AddCommand(users_verifiers.Cmdusers_verifiers())
 	usersCmd.AddCommand(users_agentui.Cmdusers_agentui())
 	usersCmd.AddCommand(users_roles.Cmdusers_roles())
 	usersCmd.AddCommand(users_callforwarding.Cmdusers_callforwarding())
@@ -44,7 +45,6 @@ func init() {
 	usersCmd.AddCommand(users_profile.Cmdusers_profile())
 	usersCmd.AddCommand(users_geolocations.Cmdusers_geolocations())
 	usersCmd.AddCommand(users_greetings.Cmdusers_greetings())
-	usersCmd.AddCommand(users_verifiers.Cmdusers_verifiers())
 	usersCmd.AddCommand(users_outofoffice.Cmdusers_outofoffice())
 	usersCmd.AddCommand(users_presences.Cmdusers_presences())
 	usersCmd.AddCommand(users_externalid.Cmdusers_externalid())
@@ -63,6 +63,6 @@ func init() {
 	usersCmd.AddCommand(users_bulk.Cmdusers_bulk())
 	usersCmd.AddCommand(users_search.Cmdusers_search())
 	usersCmd.AddCommand(users_development.Cmdusers_development())
-	usersCmd.Short = utils.GenerateCustomDescription(usersCmd.Short, users_agentui.Description, users_roles.Description, users_callforwarding.Description, users_favorites.Description, users_adjacents.Description, users_superiors.Description, users_directreports.Description, users_profile.Description, users_geolocations.Description, users_greetings.Description, users_verifiers.Description, users_outofoffice.Description, users_presences.Description, users_externalid.Description, users_me.Description, users_password.Description, users_profileskills.Description, users_queues.Description, users_invite.Description, users_routinglanguages.Description, users_routingskills.Description, users_routingstatus.Description, users_skillgroups.Description, users_state.Description, users_station.Description, users_trustors.Description, users_bulk.Description, users_search.Description, users_development.Description, )
+	usersCmd.Short = utils.GenerateCustomDescription(usersCmd.Short, users_verifiers.Description, users_agentui.Description, users_roles.Description, users_callforwarding.Description, users_favorites.Description, users_adjacents.Description, users_superiors.Description, users_directreports.Description, users_profile.Description, users_geolocations.Description, users_greetings.Description, users_outofoffice.Description, users_presences.Description, users_externalid.Description, users_me.Description, users_password.Description, users_profileskills.Description, users_queues.Description, users_invite.Description, users_routinglanguages.Description, users_routingskills.Description, users_routingstatus.Description, users_skillgroups.Description, users_state.Description, users_station.Description, users_trustors.Description, users_bulk.Description, users_search.Description, users_development.Description, )
 	usersCmd.Long = usersCmd.Short
 }

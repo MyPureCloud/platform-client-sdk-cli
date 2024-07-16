@@ -67,6 +67,10 @@ type Phonemetabaseentitylisting struct {
     TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
+
+
     // LastUri
     LastUri string `json:"lastUri"`
 
@@ -81,10 +85,6 @@ type Phonemetabaseentitylisting struct {
 
     // NextUri
     NextUri string `json:"nextUri"`
-
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
 
 
     // PageCount
@@ -132,6 +132,8 @@ func (u *Phonemetabaseentitylisting) MarshalJSON() ([]byte, error) {
         
         TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
+        PreviousUri string `json:"previousUri"`
+        
         LastUri string `json:"lastUri"`
         
         FirstUri string `json:"firstUri"`
@@ -139,8 +141,6 @@ func (u *Phonemetabaseentitylisting) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         
         NextUri string `json:"nextUri"`
-        
-        PreviousUri string `json:"previousUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

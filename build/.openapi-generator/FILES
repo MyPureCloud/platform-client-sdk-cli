@@ -797,8 +797,8 @@ gc/cmd/quality_evaluations_scoring/quality_evaluations_scoring.go
 gc/cmd/quality_evaluators_activity/quality_evaluators_activity.go
 gc/cmd/quality_forms/quality_forms.go
 gc/cmd/quality_forms_evaluations/quality_forms_evaluations.go
+gc/cmd/quality_forms_evaluations_aiscoring_settings/quality_forms_evaluations_aiscoring_settings.go
 gc/cmd/quality_forms_evaluations_bulk_contexts/quality_forms_evaluations_bulk_contexts.go
-gc/cmd/quality_forms_evaluations_predictivescoring_settings/quality_forms_evaluations_predictivescoring_settings.go
 gc/cmd/quality_forms_evaluations_versions/quality_forms_evaluations_versions.go
 gc/cmd/quality_forms_surveys/quality_forms_surveys.go
 gc/cmd/quality_forms_surveys_bulk/quality_forms_surveys_bulk.go
@@ -1367,6 +1367,10 @@ gc/models/aggregateviewdata.go
 gc/models/aggregationrange.go
 gc/models/aggregationresult.go
 gc/models/aggregationresultentry.go
+gc/models/aianswer.go
+gc/models/aiscoring.go
+gc/models/aiscoringsetting.go
+gc/models/aiscoringsettings.go
 gc/models/alertingunreadstatus.go
 gc/models/alertlisting.go
 gc/models/alertnotification.go
@@ -3514,12 +3518,8 @@ gc/models/postoutputcontract.go
 gc/models/posttextmessage.go
 gc/models/posttextrequest.go
 gc/models/posttextresponse.go
-gc/models/predictedanswer.go
-gc/models/predictedscoring.go
 gc/models/predictionresults.go
 gc/models/predictiverouting.go
-gc/models/predictivescoringsetting.go
-gc/models/predictivescoringsettings.go
 gc/models/predictor.go
 gc/models/predictorlisting.go
 gc/models/predictormodel.go

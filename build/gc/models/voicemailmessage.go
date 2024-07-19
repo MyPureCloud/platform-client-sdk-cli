@@ -27,6 +27,9 @@ type VoicemailmessageDud struct {
     AudioRecordingSizeBytes int `json:"audioRecordingSizeBytes"`
 
 
+    Transcription string `json:"transcription"`
+
+
     CreatedDate time.Time `json:"createdDate"`
 
 
@@ -83,6 +86,9 @@ type Voicemailmessage struct {
 
     // Read - Whether the voicemail message is marked as read
     Read bool `json:"read"`
+
+
+    
 
 
     
@@ -172,6 +178,9 @@ func (u *Voicemailmessage) MarshalJSON() ([]byte, error) {
         DeleteRetentionPolicy Voicemailretentionpolicy `json:"deleteRetentionPolicy"`
         *Alias
     }{
+
+        
+
 
         
 

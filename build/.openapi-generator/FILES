@@ -842,6 +842,7 @@ gc/cmd/routing_assessments/routing_assessments.go
 gc/cmd/routing_assessments_jobs/routing_assessments_jobs.go
 gc/cmd/routing_availablemediatypes/routing_availablemediatypes.go
 gc/cmd/routing_conversations/routing_conversations.go
+gc/cmd/routing_directroutingbackup_settings_me/routing_directroutingbackup_settings_me.go
 gc/cmd/routing_email_domains/routing_email_domains.go
 gc/cmd/routing_email_domains_routes/routing_email_domains_routes.go
 gc/cmd/routing_email_domains_testconnection/routing_email_domains_testconnection.go
@@ -879,6 +880,7 @@ gc/cmd/routing_sms_availablephonenumbers/routing_sms_availablephonenumbers.go
 gc/cmd/routing_sms_phonenumbers/routing_sms_phonenumbers.go
 gc/cmd/routing_sms_phonenumbers_alphanumeric/routing_sms_phonenumbers_alphanumeric.go
 gc/cmd/routing_sms_phonenumbers_import/routing_sms_phonenumbers_import.go
+gc/cmd/routing_users_directroutingbackup_settings/routing_users_directroutingbackup_settings.go
 gc/cmd/routing_users_utilization/routing_users_utilization.go
 gc/cmd/routing_utilization/routing_utilization.go
 gc/cmd/routing_utilization_labels/routing_utilization_labels.go
@@ -1286,6 +1288,7 @@ gc/models/activealertcount.go
 gc/models/activitycode.go
 gc/models/activitycodecontainer.go
 gc/models/activitycodereference.go
+gc/models/activitycodesreference.go
 gc/models/activitycodesummary.go
 gc/models/activityplanabandonrateimpactoverride.go
 gc/models/activityplanasaimpactoverride.go
@@ -1342,6 +1345,7 @@ gc/models/agentcopilotaggregationquery.go
 gc/models/agentcopilotaggregationview.go
 gc/models/agentcopilotasyncaggregatequeryresponse.go
 gc/models/agentcopilotasyncaggregationquery.go
+gc/models/agentdirectroutingbackupsettings.go
 gc/models/agentevaluatoractivity.go
 gc/models/agentintegrationassociationrequest.go
 gc/models/agentintegrationassociationresponse.go
@@ -1469,6 +1473,7 @@ gc/models/audiostate.go
 gc/models/audioupdatedevent.go
 gc/models/auditlogmessage.go
 gc/models/auditqueryentity.go
+gc/models/auditqueryexecutionlargeresultsresponse.go
 gc/models/auditqueryexecutionresultsresponse.go
 gc/models/auditqueryexecutionstatusresponse.go
 gc/models/auditqueryfilter.go
@@ -2727,6 +2732,7 @@ gc/models/identifierclaimrequest.go
 gc/models/identitynow.go
 gc/models/identityprovider.go
 gc/models/identityproviderentitylisting.go
+gc/models/identityresolutionconfig.go
 gc/models/idleeventtrigger.go
 gc/models/idletokentimeout.go
 gc/models/ignoredactivitycategories.go

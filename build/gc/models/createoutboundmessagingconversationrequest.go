@@ -25,11 +25,14 @@ type CreateoutboundmessagingconversationrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createoutboundmessagingconversationrequest
 type Createoutboundmessagingconversationrequest struct { 
-    // QueueId - The ID of the queue to be associated with the message. This will determine the fromAddress of the message.
+    // QueueId - The ID of the queue to be associated with the message. This will determine the fromAddress of the message, unless useUserFromAddress is true and the queue is configured to use the agent's Direct Routing address as the fromAddress.
     QueueId string `json:"queueId"`
 
 
@@ -48,10 +51,15 @@ type Createoutboundmessagingconversationrequest struct {
     // ExternalContactId - The external contact with which the message will be associated.
     ExternalContactId string `json:"externalContactId"`
 
+
+    // UseUserFromAddress - An override to attempt to use the user's configured direct routing address as the fromAddress.  If set to true, users configured address with 'directrouting' integration will be used as fromAddress.  If set to false or not set, the queueId will be used for determining fromAddress.
+    UseUserFromAddress bool `json:"useUserFromAddress"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Createoutboundmessagingconversationrequest) String() string {
+    
     
     
     
@@ -83,8 +91,13 @@ func (u *Createoutboundmessagingconversationrequest) MarshalJSON() ([]byte, erro
         UseExistingConversation bool `json:"useExistingConversation"`
         
         ExternalContactId string `json:"externalContactId"`
+        
+        UseUserFromAddress bool `json:"useUserFromAddress"`
         *Alias
     }{
+
+        
+
 
         
 

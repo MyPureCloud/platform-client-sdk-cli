@@ -77,6 +77,10 @@ func Cmdjourney_views() *cobra.Command {
 }`)
 	journey_viewsCmd.AddCommand(getCmd)
 
+	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
+	utils.AddFlag(listCmd.Flags(), "string", "nameOrCreatedBy", "", "Journey View Name or Created By")
+	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Parameter to request additional data to return in Journey payload Valid values: charts")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/views", utils.FormatPermissions([]string{ "journey:views:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/views")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -85,7 +89,7 @@ func Cmdjourney_views() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/JourneyViewListing"
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
       }
     }
   }
@@ -314,6 +318,22 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/journey/views"
 
+		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
+		if pageNumber != "" {
+			queryParams["pageNumber"] = pageNumber
+		}
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		nameOrCreatedBy := utils.GetFlag(cmd.Flags(), "string", "nameOrCreatedBy")
+		if nameOrCreatedBy != "" {
+			queryParams["nameOrCreatedBy"] = nameOrCreatedBy
+		}
+		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

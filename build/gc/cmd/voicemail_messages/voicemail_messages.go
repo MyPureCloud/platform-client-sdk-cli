@@ -70,7 +70,7 @@ func Cmdvoicemail_messages() *cobra.Command {
 }`)
 	voicemail_messagesCmd.AddCommand(deleteallCmd)
 
-	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "If the caller is a known user, which fields, if any, to expand Valid values: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "If the caller is a known user, which fields, if any, to expand Valid values: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/voicemail/messages/{messageId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Voicemail", "/api/v2/voicemail/messages/{messageId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -87,7 +87,7 @@ func Cmdvoicemail_messages() *cobra.Command {
 	voicemail_messagesCmd.AddCommand(getCmd)
 
 	utils.AddFlag(listCmd.Flags(), "string", "ids", "", "An optional comma separated list of VoicemailMessage ids")
-	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "If the caller is a known user, which fields, if any, to expand Valid values: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "If the caller is a known user, which fields, if any, to expand Valid values: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/voicemail/messages", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Voicemail", "/api/v2/voicemail/messages")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

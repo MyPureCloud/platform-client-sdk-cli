@@ -592,6 +592,12 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1371,6 +1377,14 @@ type Viewfilter struct {
     // ScreenMonitorUserIds - The list of Screen Monitor User Ids
     ScreenMonitorUserIds []string `json:"screenMonitorUserIds"`
 
+
+    // DashboardType - The type of dashboard being filtered
+    DashboardType string `json:"dashboardType"`
+
+
+    // DashboardAccessFilter - The type of dashboard access being filtered
+    DashboardAccessFilter string `json:"dashboardAccessFilter"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1569,6 +1583,8 @@ func (o *Viewfilter) String() string {
     
     
      o.ScreenMonitorUserIds = []string{""} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1973,6 +1989,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         IsScreenRecorded bool `json:"isScreenRecorded"`
         
         ScreenMonitorUserIds []string `json:"screenMonitorUserIds"`
+        
+        DashboardType string `json:"dashboardType"`
+        
+        DashboardAccessFilter string `json:"dashboardAccessFilter"`
         *Alias
     }{
 
@@ -2821,6 +2841,12 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         ScreenMonitorUserIds: []string{""},
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

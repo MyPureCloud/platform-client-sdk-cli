@@ -43,6 +43,9 @@ type KnowledgedocumentsearchDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgedocumentsearch
@@ -86,10 +89,15 @@ type Knowledgedocumentsearch struct {
     // ConfidenceThreshold - The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold.
     ConfidenceThreshold float32 `json:"confidenceThreshold"`
 
+
+    // AnswerGeneration - The results with AI-generated answer if the answerMode request property contains \"AnswerGeneration\".
+    AnswerGeneration Knowledgeanswergenerationresponse `json:"answerGeneration"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentsearch) String() string {
+    
     
     
     
@@ -127,8 +135,13 @@ func (u *Knowledgedocumentsearch) MarshalJSON() ([]byte, error) {
         ConversationContext Knowledgeconversationcontextresponse `json:"conversationContext"`
         
         ConfidenceThreshold float32 `json:"confidenceThreshold"`
+        
+        AnswerGeneration Knowledgeanswergenerationresponse `json:"answerGeneration"`
         *Alias
     }{
+
+        
+
 
         
 

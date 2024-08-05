@@ -79,7 +79,7 @@ func Cmdlearning_modules() *cobra.Command {
 	learning_modulesCmd.AddCommand(getCmd)
 
 	utils.AddFlag(listCmd.Flags(), "bool", "isArchived", "false", "Archive status")
-	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the module types. Valid values: Informational, AssessedContent, Assessment, External")
+	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the module types. Informational, AssessedContent and Assessment are deprecated Valid values: Informational, AssessedContent, Assessment, External, Native")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ascending", "Sort order Valid values: ascending, descending")

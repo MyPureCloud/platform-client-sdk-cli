@@ -58,6 +58,9 @@ type KnowledgedocumentsearchrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgedocumentsearchrequest
@@ -122,6 +125,10 @@ type Knowledgedocumentsearchrequest struct {
     // AnswerHighlightTopResults - The number of articles to be sent for answer-highlighting. Can range from 1-5.
     AnswerHighlightTopResults int `json:"answerHighlightTopResults"`
 
+
+    // AnswerMode - Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight. Use this property with answerHighlightTopResults.
+    AnswerMode []string `json:"answerMode"`
+
 }
 
 // String returns a JSON representation of the model
@@ -139,6 +146,7 @@ func (o *Knowledgedocumentsearchrequest) String() string {
     
     
     
+     o.AnswerMode = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -181,6 +189,8 @@ func (u *Knowledgedocumentsearchrequest) MarshalJSON() ([]byte, error) {
         ConfidenceThreshold float32 `json:"confidenceThreshold"`
         
         AnswerHighlightTopResults int `json:"answerHighlightTopResults"`
+        
+        AnswerMode []string `json:"answerMode"`
         *Alias
     }{
 
@@ -229,6 +239,11 @@ func (u *Knowledgedocumentsearchrequest) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        AnswerMode: []string{""},
         
 
         Alias: (*Alias)(u),

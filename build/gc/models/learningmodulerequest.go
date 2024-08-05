@@ -66,7 +66,7 @@ type Learningmodulerequest struct {
     InformSteps []Learningmoduleinformsteprequest `json:"informSteps"`
 
 
-    // VarType - The type for the learning module
+    // VarType - The type for the learning module. Informational, AssessedContent and Assessment are deprecated
     VarType string `json:"type"`
 
 

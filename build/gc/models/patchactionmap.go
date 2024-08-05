@@ -98,7 +98,7 @@ type Patchactionmap struct {
     TriggerWithEventConditions []Eventcondition `json:"triggerWithEventConditions"`
 
 
-    // TriggerWithOutcomeProbabilityConditions - Probability conditions for outcomes that must be satisfied to trigger the action map.
+    // TriggerWithOutcomeProbabilityConditions - (deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.
     TriggerWithOutcomeProbabilityConditions []Outcomeprobabilitycondition `json:"triggerWithOutcomeProbabilityConditions"`
 
 

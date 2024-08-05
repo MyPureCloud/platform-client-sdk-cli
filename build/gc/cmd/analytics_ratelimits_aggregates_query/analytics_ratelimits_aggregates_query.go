@@ -62,8 +62,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.",
-	Long:  "Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.",
+	Short: "Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.",
+	Long:  "Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

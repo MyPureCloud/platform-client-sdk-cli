@@ -30,7 +30,7 @@ func init() {
 func Cmdtaskmanagement_worktypes() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/taskmanagement/worktypes", utils.FormatPermissions([]string{ "workitems:worktype:add",  }), utils.GenerateDevCentreLink("POST", "Task Management", "/api/v2/taskmanagement/worktypes")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "description" : "body",
+  "description" : "Worktype",
   "content" : {
     "application/json" : {
       "schema" : {
@@ -38,7 +38,7 @@ func Cmdtaskmanagement_worktypes() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -80,7 +80,7 @@ func Cmdtaskmanagement_worktypes() *cobra.Command {
 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/taskmanagement/worktypes/{worktypeId}", utils.FormatPermissions([]string{ "workitems:worktype:edit",  }), utils.GenerateDevCentreLink("PATCH", "Task Management", "/api/v2/taskmanagement/worktypes/{worktypeId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "description" : "body",
+  "description" : "Worktype",
   "content" : {
     "application/json" : {
       "schema" : {
@@ -88,7 +88,7 @@ func Cmdtaskmanagement_worktypes() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{

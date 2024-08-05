@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("organizations_limits", "SWAGGER_OVERRIDE_/api/v2/organizations/limits")
+	Description = utils.FormatUsageDescription("organizations_limits", "SWAGGER_OVERRIDE_/api/v2/organizations/limits/namespaces/{namespaceName}/limits")
 	organizations_limitsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("organizations_limits"),
 		Short: Description,

@@ -102,6 +102,9 @@ type TrustuserDud struct {
     Team Team `json:"team"`
 
 
+    WorkPlanBidRanks Workplanbidranks `json:"workPlanBidRanks"`
+
+
     Skills []Userroutingskill `json:"skills"`
 
 
@@ -193,6 +196,9 @@ type Trustuser struct {
 
     // PreferredName - Preferred full name of the agent
     PreferredName string `json:"preferredName"`
+
+
+    
 
 
     
@@ -379,6 +385,9 @@ func (u *Trustuser) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+
         
 
 

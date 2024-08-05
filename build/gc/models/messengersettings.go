@@ -28,6 +28,9 @@ type MessengersettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Messengersettings - Settings concerning messenger
@@ -55,10 +58,15 @@ type Messengersettings struct {
     // HomeScreen - The homescreen settings for messenger
     HomeScreen Messengerhomescreen `json:"homeScreen"`
 
+
+    // SessionPersistenceType - The session persistence type for messenger
+    SessionPersistenceType string `json:"sessionPersistenceType"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Messengersettings) String() string {
+    
     
     
     
@@ -93,8 +101,13 @@ func (u *Messengersettings) MarshalJSON() ([]byte, error) {
         Apps Messengerapps `json:"apps"`
         
         HomeScreen Messengerhomescreen `json:"homeScreen"`
+        
+        SessionPersistenceType string `json:"sessionPersistenceType"`
         *Alias
     }{
+
+        
+
 
         
 

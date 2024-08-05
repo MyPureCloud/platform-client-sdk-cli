@@ -47,7 +47,7 @@ func Cmdconversations_suggestions() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "varType", "", "Suggestion type to filter by. Valid values: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script")
-	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Suggestion state to filter Copilot suggestions. Valid values: Suggested, Accepted, Dismissed, Failed")
+	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Suggestion state to filter Copilot suggestions. Valid values: Suggested, Accepted, Dismissed, Failed, Rated")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/suggestions", utils.FormatPermissions([]string{ "conversation:suggestion:view",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/{conversationId}/suggestions")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

@@ -30,7 +30,7 @@ func init() {
 func Cmdtaskmanagement_workbins() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/taskmanagement/workbins", utils.FormatPermissions([]string{ "workitems:workbin:add",  }), utils.GenerateDevCentreLink("POST", "Task Management", "/api/v2/taskmanagement/workbins")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "description" : "body",
+  "description" : "Workbin",
   "content" : {
     "application/json" : {
       "schema" : {
@@ -38,7 +38,7 @@ func Cmdtaskmanagement_workbins() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

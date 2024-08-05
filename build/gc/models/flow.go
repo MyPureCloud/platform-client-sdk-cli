@@ -74,6 +74,9 @@ type FlowDud struct {
     CompatibleFlowTypes []string `json:"compatibleFlowTypes"`
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -161,6 +164,10 @@ type Flow struct {
     
 
 
+    // WorktypeId
+    WorktypeId string `json:"worktypeId"`
+
+
     
 
 }
@@ -181,6 +188,7 @@ func (o *Flow) String() string {
     
      o.InputSchema = Interface{} 
      o.OutputSchema = Interface{} 
+    
     
     
     
@@ -237,6 +245,8 @@ func (u *Flow) MarshalJSON() ([]byte, error) {
         PublishedBy User `json:"publishedBy"`
         
         CurrentOperation Operation `json:"currentOperation"`
+        
+        WorktypeId string `json:"worktypeId"`
         *Alias
     }{
 
@@ -283,6 +293,9 @@ func (u *Flow) MarshalJSON() ([]byte, error) {
 
         
         OutputSchema: Interface{},
+        
+
+
         
 
 

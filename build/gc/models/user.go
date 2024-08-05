@@ -102,6 +102,9 @@ type UserDud struct {
     Team Team `json:"team"`
 
 
+    WorkPlanBidRanks Workplanbidranks `json:"workPlanBidRanks"`
+
+
     Skills []Userroutingskill `json:"skills"`
 
 
@@ -193,6 +196,9 @@ type User struct {
 
     // PreferredName - Preferred full name of the agent
     PreferredName string `json:"preferredName"`
+
+
+    
 
 
     
@@ -375,6 +381,9 @@ func (u *User) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+
         
 
 

@@ -19,10 +19,26 @@ type DownloadresponseDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Downloadresponse
 type Downloadresponse struct { 
+    // Id
+    Id string `json:"id"`
+
+
     // ContentLocationUri
     ContentLocationUri string `json:"contentLocationUri"`
 
@@ -34,13 +50,29 @@ type Downloadresponse struct {
     // Thumbnails
     Thumbnails []Documentthumbnail `json:"thumbnails"`
 
+
+    // State
+    State string `json:"state"`
+
+
+    // ResultUri
+    ResultUri string `json:"resultUri"`
+
+
+    // SelfUri
+    SelfUri string `json:"selfUri"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Downloadresponse) String() string {
     
     
+    
      o.Thumbnails = []Documentthumbnail{{}} 
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -58,11 +90,19 @@ func (u *Downloadresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Id string `json:"id"`
+        
         ContentLocationUri string `json:"contentLocationUri"`
         
         ImageUri string `json:"imageUri"`
         
         Thumbnails []Documentthumbnail `json:"thumbnails"`
+        
+        State string `json:"state"`
+        
+        ResultUri string `json:"resultUri"`
+        
+        SelfUri string `json:"selfUri"`
         *Alias
     }{
 
@@ -73,7 +113,19 @@ func (u *Downloadresponse) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
         Thumbnails: []Documentthumbnail{{}},
+        
+
+
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

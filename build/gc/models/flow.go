@@ -77,6 +77,9 @@ type FlowDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -168,6 +171,10 @@ type Flow struct {
     WorktypeId string `json:"worktypeId"`
 
 
+    // VirtualAgentEnabled
+    VirtualAgentEnabled bool `json:"virtualAgentEnabled"`
+
+
     
 
 }
@@ -188,6 +195,7 @@ func (o *Flow) String() string {
     
      o.InputSchema = Interface{} 
      o.OutputSchema = Interface{} 
+    
     
     
     
@@ -247,6 +255,8 @@ func (u *Flow) MarshalJSON() ([]byte, error) {
         CurrentOperation Operation `json:"currentOperation"`
         
         WorktypeId string `json:"worktypeId"`
+        
+        VirtualAgentEnabled bool `json:"virtualAgentEnabled"`
         *Alias
     }{
 
@@ -293,6 +303,9 @@ func (u *Flow) MarshalJSON() ([]byte, error) {
 
         
         OutputSchema: Interface{},
+        
+
+
         
 
 

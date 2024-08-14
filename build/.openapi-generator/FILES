@@ -740,6 +740,7 @@ gc/cmd/outbound_contactlists/outbound_contactlists.go
 gc/cmd/outbound_contactlists_clear/outbound_contactlists_clear.go
 gc/cmd/outbound_contactlists_contacts/outbound_contactlists_contacts.go
 gc/cmd/outbound_contactlists_contacts_bulk/outbound_contactlists_contacts_bulk.go
+gc/cmd/outbound_contactlists_contacts_bulk_jobs/outbound_contactlists_contacts_bulk_jobs.go
 gc/cmd/outbound_contactlists_contacts_bulk_remove/outbound_contactlists_contacts_bulk_remove.go
 gc/cmd/outbound_contactlists_contacts_bulk_update/outbound_contactlists_contacts_bulk_update.go
 gc/cmd/outbound_contactlists_contacts_search/outbound_contactlists_contacts_search.go
@@ -1044,6 +1045,7 @@ gc/cmd/usage_simplesearch_results/usage_simplesearch_results.go
 gc/cmd/userrecordings/userrecordings.go
 gc/cmd/userrecordings_media/userrecordings_media.go
 gc/cmd/userrecordings_summary/userrecordings_summary.go
+gc/cmd/userrecordings_transcoding/userrecordings_transcoding.go
 gc/cmd/users/users.go
 gc/cmd/users_adjacents/users_adjacents.go
 gc/cmd/users_agentui_agents_autoanswer_settings/users_agentui_agents_autoanswer_settings.go
@@ -1959,6 +1961,7 @@ gc/models/contactlisttemplatebulkretrievebody.go
 gc/models/contactlisttemplateentitylisting.go
 gc/models/contactphonenumbercolumn.go
 gc/models/contactsbulkoperationjob.go
+gc/models/contactsbulkoperationjoblisting.go
 gc/models/contactsexportrequest.go
 gc/models/contactsort.go
 gc/models/contentactions.go

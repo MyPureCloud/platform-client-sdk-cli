@@ -40,6 +40,9 @@ type TrunkentitylistingDud struct {
 
     
 
+
+    
+
 }
 
 // Trunkentitylisting
@@ -60,8 +63,8 @@ type Trunkentitylisting struct {
     Total int `json:"total"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
+    // TotalNumberOfEntities - The total organization-wide number of entities.
+    TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
     // FirstUri
@@ -70,6 +73,10 @@ type Trunkentitylisting struct {
 
     // SelfUri
     SelfUri string `json:"selfUri"`
+
+
+    // LastUri
+    LastUri string `json:"lastUri"`
 
 
     // NextUri
@@ -88,6 +95,7 @@ type Trunkentitylisting struct {
 // String returns a JSON representation of the model
 func (o *Trunkentitylisting) String() string {
      o.Entities = []Trunk{{}} 
+    
     
     
     
@@ -122,11 +130,13 @@ func (u *Trunkentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        LastUri string `json:"lastUri"`
+        TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
+        
+        LastUri string `json:"lastUri"`
         
         NextUri string `json:"nextUri"`
         
@@ -138,6 +148,9 @@ func (u *Trunkentitylisting) MarshalJSON() ([]byte, error) {
 
         
         Entities: []Trunk{{}},
+        
+
+
         
 
 

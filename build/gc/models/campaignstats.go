@@ -32,12 +32,18 @@ type CampaignstatsDud struct {
     TimeZoneRescheduledCalls int `json:"timeZoneRescheduledCalls"`
 
 
+    FilteredOutContactsCount int `json:"filteredOutContactsCount"`
+
+
     LinesUtilization Campaignlinesutilization `json:"linesUtilization"`
 
 }
 
 // Campaignstats
 type Campaignstats struct { 
+    
+
+
     
 
 
@@ -83,6 +89,9 @@ func (u *Campaignstats) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

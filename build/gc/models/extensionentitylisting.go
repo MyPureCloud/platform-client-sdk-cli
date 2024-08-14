@@ -40,6 +40,9 @@ type ExtensionentitylistingDud struct {
 
     
 
+
+    
+
 }
 
 // Extensionentitylisting
@@ -60,8 +63,8 @@ type Extensionentitylisting struct {
     Total int `json:"total"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
+    // TotalNumberOfEntities - The total organization-wide number of entities.
+    TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
     // FirstUri
@@ -70,6 +73,10 @@ type Extensionentitylisting struct {
 
     // SelfUri
     SelfUri string `json:"selfUri"`
+
+
+    // LastUri
+    LastUri string `json:"lastUri"`
 
 
     // NextUri
@@ -88,6 +95,7 @@ type Extensionentitylisting struct {
 // String returns a JSON representation of the model
 func (o *Extensionentitylisting) String() string {
      o.Entities = []Extension{{}} 
+    
     
     
     
@@ -122,11 +130,13 @@ func (u *Extensionentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        LastUri string `json:"lastUri"`
+        TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
+        
+        LastUri string `json:"lastUri"`
         
         NextUri string `json:"nextUri"`
         
@@ -138,6 +148,9 @@ func (u *Extensionentitylisting) MarshalJSON() ([]byte, error) {
 
         
         Entities: []Extension{{}},
+        
+
+
         
 
 

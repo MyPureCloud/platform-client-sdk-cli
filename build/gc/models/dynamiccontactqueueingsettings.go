@@ -13,6 +13,9 @@ var (
 type DynamiccontactqueueingsettingsDud struct { 
     
 
+
+    
+
 }
 
 // Dynamiccontactqueueingsettings
@@ -20,10 +23,15 @@ type Dynamiccontactqueueingsettings struct {
     // Sort - Whether to sort contacts dynamically
     Sort bool `json:"sort"`
 
+
+    // Filter - Whether to filter contacts dynamically
+    Filter bool `json:"filter"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Dynamiccontactqueueingsettings) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Dynamiccontactqueueingsettings) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Sort bool `json:"sort"`
+        
+        Filter bool `json:"filter"`
         *Alias
     }{
+
+        
+
 
         
 

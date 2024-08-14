@@ -143,8 +143,8 @@ var createCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [jobId]",
-	Short: "Get the status and results for a batch request job, only the user that submitted the job may retrieve results",
-	Long:  "Get the status and results for a batch request job, only the user that submitted the job may retrieve results",
+	Short: "Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.",
+	Long:  "Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.",
 	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

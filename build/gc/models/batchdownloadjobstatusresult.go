@@ -38,23 +38,23 @@ type Batchdownloadjobstatusresult struct {
     
 
 
-    // JobId - JobId returned when job was initially submitted
+    // JobId - JobId returned when job was initially submitted.
     JobId string `json:"jobId"`
 
 
-    // ExpectedResultCount - Number of results expected when job is completed
+    // ExpectedResultCount - Number of results expected when job is completed, this includes both success and error results. This number could change as recordings are being discovered and processed.
     ExpectedResultCount int `json:"expectedResultCount"`
 
 
-    // ResultCount - Current number of results available
+    // ResultCount - Current number of results available, this includes both success and error results.
     ResultCount int `json:"resultCount"`
 
 
-    // ErrorCount - Number of error results produced so far
+    // ErrorCount - Current number of error results.
     ErrorCount int `json:"errorCount"`
 
 
-    // Results - Current set of results for the job
+    // Results - Current set of results for the job.
     Results []Batchdownloadjobresult `json:"results"`
 
 

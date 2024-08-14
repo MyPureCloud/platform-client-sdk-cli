@@ -40,6 +40,9 @@ type DidentitylistingDud struct {
 
     
 
+
+    
+
 }
 
 // Didentitylisting
@@ -60,8 +63,8 @@ type Didentitylisting struct {
     Total int `json:"total"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
+    // TotalNumberOfEntities - The total organization-wide number of entities.
+    TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
     // FirstUri
@@ -70,6 +73,10 @@ type Didentitylisting struct {
 
     // SelfUri
     SelfUri string `json:"selfUri"`
+
+
+    // LastUri
+    LastUri string `json:"lastUri"`
 
 
     // NextUri
@@ -88,6 +95,7 @@ type Didentitylisting struct {
 // String returns a JSON representation of the model
 func (o *Didentitylisting) String() string {
      o.Entities = []Did{{}} 
+    
     
     
     
@@ -122,11 +130,13 @@ func (u *Didentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        LastUri string `json:"lastUri"`
+        TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
+        
+        LastUri string `json:"lastUri"`
         
         NextUri string `json:"nextUri"`
         
@@ -138,6 +148,9 @@ func (u *Didentitylisting) MarshalJSON() ([]byte, error) {
 
         
         Entities: []Did{{}},
+        
+
+
         
 
 

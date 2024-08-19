@@ -19,6 +19,9 @@ type ResponsequeryrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Responsequeryrequest - Used to query for responses
@@ -31,6 +34,10 @@ type Responsequeryrequest struct {
     PageSize int `json:"pageSize"`
 
 
+    // PageNumber - Page Number
+    PageNumber int `json:"pageNumber"`
+
+
     // Filters - Filter the query results.
     Filters []Responsefilter `json:"filters"`
 
@@ -38,6 +45,7 @@ type Responsequeryrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Responsequeryrequest) String() string {
+    
     
     
      o.Filters = []Responsefilter{{}} 
@@ -62,9 +70,14 @@ func (u *Responsequeryrequest) MarshalJSON() ([]byte, error) {
         
         PageSize int `json:"pageSize"`
         
+        PageNumber int `json:"pageNumber"`
+        
         Filters []Responsefilter `json:"filters"`
         *Alias
     }{
+
+        
+
 
         
 

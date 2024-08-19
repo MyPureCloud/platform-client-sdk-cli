@@ -2,13 +2,13 @@ package knowledge_knowledgebases_documents_bulk
 
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_documents_bulk_update"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_documents_bulk_remove"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_documents_bulk_update"
 )
 
 func init() {
-	knowledge_knowledgebases_documents_bulkCmd.AddCommand(knowledge_knowledgebases_documents_bulk_update.Cmdknowledge_knowledgebases_documents_bulk_update())
 	knowledge_knowledgebases_documents_bulkCmd.AddCommand(knowledge_knowledgebases_documents_bulk_remove.Cmdknowledge_knowledgebases_documents_bulk_remove())
-	knowledge_knowledgebases_documents_bulkCmd.Short = utils.GenerateCustomDescription(knowledge_knowledgebases_documents_bulkCmd.Short, knowledge_knowledgebases_documents_bulk_update.Description, knowledge_knowledgebases_documents_bulk_remove.Description, )
+	knowledge_knowledgebases_documents_bulkCmd.AddCommand(knowledge_knowledgebases_documents_bulk_update.Cmdknowledge_knowledgebases_documents_bulk_update())
+	knowledge_knowledgebases_documents_bulkCmd.Short = utils.GenerateCustomDescription(knowledge_knowledgebases_documents_bulkCmd.Short, knowledge_knowledgebases_documents_bulk_remove.Description, knowledge_knowledgebases_documents_bulk_update.Description, )
 	knowledge_knowledgebases_documents_bulkCmd.Long = knowledge_knowledgebases_documents_bulkCmd.Short
 }

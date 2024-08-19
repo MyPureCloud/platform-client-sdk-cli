@@ -16,9 +16,6 @@ type ContactbulksearchparametersDud struct {
 
     
 
-
-    
-
 }
 
 // Contactbulksearchparameters
@@ -30,15 +27,10 @@ type Contactbulksearchparameters struct {
     // Criteria - Criteria to filter the contacts by. Either this property or contactListFilterId is required.
     Criteria Contactbulksearchcriteria `json:"criteria"`
 
-
-    // GenerateDownloadUri
-    GenerateDownloadUri bool `json:"generateDownloadUri"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Contactbulksearchparameters) String() string {
-    
     
     
 
@@ -61,13 +53,8 @@ func (u *Contactbulksearchparameters) MarshalJSON() ([]byte, error) {
         ContactListFilterId string `json:"contactListFilterId"`
         
         Criteria Contactbulksearchcriteria `json:"criteria"`
-        
-        GenerateDownloadUri bool `json:"generateDownloadUri"`
         *Alias
     }{
-
-        
-
 
         
 

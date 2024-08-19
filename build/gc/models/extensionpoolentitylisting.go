@@ -67,16 +67,16 @@ type Extensionpoolentitylisting struct {
     TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
+    // LastUri
+    LastUri string `json:"lastUri"`
+
+
     // FirstUri
     FirstUri string `json:"firstUri"`
 
 
     // SelfUri
     SelfUri string `json:"selfUri"`
-
-
-    // LastUri
-    LastUri string `json:"lastUri"`
 
 
     // NextUri
@@ -132,11 +132,11 @@ func (u *Extensionpoolentitylisting) MarshalJSON() ([]byte, error) {
         
         TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
+        LastUri string `json:"lastUri"`
+        
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
-        
-        LastUri string `json:"lastUri"`
         
         NextUri string `json:"nextUri"`
         

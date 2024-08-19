@@ -22,9 +22,6 @@ type ContactbulkeditrequestDud struct {
 
     
 
-
-    
-
 }
 
 // Contactbulkeditrequest
@@ -44,10 +41,6 @@ type Contactbulkeditrequest struct {
     // Contact - Contact object with details of fields used for patching.
     Contact Dialercontact `json:"contact"`
 
-
-    // GenerateDownloadUri
-    GenerateDownloadUri bool `json:"generateDownloadUri"`
-
 }
 
 // String returns a JSON representation of the model
@@ -55,7 +48,6 @@ func (o *Contactbulkeditrequest) String() string {
     
     
      o.ContactIds = []string{""} 
-    
     
 
     j, _ := json.Marshal(o)
@@ -81,8 +73,6 @@ func (u *Contactbulkeditrequest) MarshalJSON() ([]byte, error) {
         ContactIds []string `json:"contactIds"`
         
         Contact Dialercontact `json:"contact"`
-        
-        GenerateDownloadUri bool `json:"generateDownloadUri"`
         *Alias
     }{
 
@@ -94,9 +84,6 @@ func (u *Contactbulkeditrequest) MarshalJSON() ([]byte, error) {
 
         
         ContactIds: []string{""},
-        
-
-
         
 
 

@@ -133,6 +133,7 @@ gc/cmd/authorization_products/authorization_products.go
 gc/cmd/authorization_roles/authorization_roles.go
 gc/cmd/authorization_roles_comparedefault/authorization_roles_comparedefault.go
 gc/cmd/authorization_roles_default/authorization_roles_default.go
+gc/cmd/authorization_roles_settings/authorization_roles_settings.go
 gc/cmd/authorization_roles_subjectgrants/authorization_roles_subjectgrants.go
 gc/cmd/authorization_roles_users/authorization_roles_users.go
 gc/cmd/authorization_roles_users_add/authorization_roles_users_add.go
@@ -597,6 +598,7 @@ gc/cmd/knowledge_knowledgebases_documents_bulk_update/knowledge_knowledgebases_d
 gc/cmd/knowledge_knowledgebases_documents_copies/knowledge_knowledgebases_documents_copies.go
 gc/cmd/knowledge_knowledgebases_documents_feedback/knowledge_knowledgebases_documents_feedback.go
 gc/cmd/knowledge_knowledgebases_documents_presentations/knowledge_knowledgebases_documents_presentations.go
+gc/cmd/knowledge_knowledgebases_documents_query/knowledge_knowledgebases_documents_query.go
 gc/cmd/knowledge_knowledgebases_documents_search/knowledge_knowledgebases_documents_search.go
 gc/cmd/knowledge_knowledgebases_documents_search_suggestions/knowledge_knowledgebases_documents_search_suggestions.go
 gc/cmd/knowledge_knowledgebases_documents_variations/knowledge_knowledgebases_documents_variations.go
@@ -2979,6 +2981,8 @@ gc/models/knowledgedocumentguestsearch.go
 gc/models/knowledgedocumentguestsearchrequest.go
 gc/models/knowledgedocumentguestsearchresult.go
 gc/models/knowledgedocumentpresentation.go
+gc/models/knowledgedocumentquery.go
+gc/models/knowledgedocumentqueryresponse.go
 gc/models/knowledgedocumentreference.go
 gc/models/knowledgedocumentreq.go
 gc/models/knowledgedocumentrequest.go
@@ -3821,6 +3825,7 @@ gc/models/ring.go
 gc/models/roledivision.go
 gc/models/roledivisiongrants.go
 gc/models/roledivisionpair.go
+gc/models/rolesettings.go
 gc/models/room.go
 gc/models/roomparticipant.go
 gc/models/roomparticipantresponse.go

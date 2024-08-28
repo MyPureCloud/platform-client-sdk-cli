@@ -1,4 +1,4 @@
-package proxy
+package gateway
 
 import (
 	"encoding/json"
@@ -11,27 +11,27 @@ import (
 	"os"
 )
 
-func Cmdproxy() *cobra.Command {
-	utils.AddFlag(setProxyFileCmd.Flags(), "string", "file", "", "proxy configuration in file")
-	setProxyFileCmd.AddCommand(disableCmd)
-	return setProxyFileCmd
+func Cmdgateway() *cobra.Command {
+	utils.AddFlag(setGatewayFileCmd.Flags(), "string", "file", "", "gateway configuration in file")
+	setGatewayFileCmd.AddCommand(disableCmd)
+	return setGatewayFileCmd
 }
 
-var setProxyFileCmd = &cobra.Command{
-	Use:   "proxy",
-	Short: "Manages the proxy for the CLI",
-	Long:  `Manages the proxy for the CLI`,
+var setGatewayFileCmd = &cobra.Command{
+	Use:   "gateway",
+	Short: "Manages the gateway for the CLI",
+	Long:  `Manages the gateway for the CLI`,
 	Args:  cobra.NoArgs,
 
 	Run: func(cmd *cobra.Command, args []string) {
 		profileName, _ := cmd.Root().Flags().GetString("profile")
 		c, err := config.GetConfig(profileName)
 
-		proxyconfig := ResolveConfigurationFlag(cmd)
+		gateWayConfig := ResolveConfigurationFlag(cmd)
 		if err != nil {
 			logger.Fatal(err)
 		}
-		err = config.UpdateProxyConfiguration(c, proxyconfig)
+		err = config.UpdateGateWayConfiguration(c, gateWayConfig)
 		if err != nil {
 			logger.Fatal(err)
 		}
@@ -40,8 +40,8 @@ var setProxyFileCmd = &cobra.Command{
 
 var disableCmd = &cobra.Command{
 	Use:   "disable",
-	Short: "disables proxy",
-	Long:  `disables proxy`,
+	Short: "disables gateway",
+	Long:  `disables gateway`,
 	Args:  cobra.NoArgs,
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -51,14 +51,14 @@ var disableCmd = &cobra.Command{
 		if err != nil {
 			logger.Fatal(err)
 		}
-		err = config.UpdateProxyConfiguration(c, nil)
+		err = config.UpdateGateWayConfiguration(c, nil)
 		if err != nil {
 			logger.Fatal(err)
 		}
 	},
 }
 
-func ResolveConfigurationFlag(cmd *cobra.Command) *(config.ProxyConfiguration) {
+func ResolveConfigurationFlag(cmd *cobra.Command) *config.GateWayConfiguration {
 	fileName, err := cmd.Flags().GetString("file")
 	if err != nil {
 		logger.Fatal(err)
@@ -77,7 +77,7 @@ func ResolveConfigurationFlag(cmd *cobra.Command) *(config.ProxyConfiguration) {
 	return nil
 }
 
-func convertToJSON(fileName string) *(config.ProxyConfiguration) {
+func convertToJSON(fileName string) *(config.GateWayConfiguration) {
 	jsonFile, err := os.Open(fileName)
 	if err != nil {
 		logger.Fatal(fmt.Sprintf("Unable to open file %s.", fileName), err)
@@ -87,9 +87,9 @@ func convertToJSON(fileName string) *(config.ProxyConfiguration) {
 	defer jsonFile.Close()
 
 	fileContent, _ := ioutil.ReadAll(jsonFile)
-	proxyconf := config.ProxyConfiguration{}
-	if err := json.Unmarshal(fileContent, &proxyconf); err != nil {
+	gconf := config.GateWayConfiguration{}
+	if err := json.Unmarshal(fileContent, &gconf); err != nil {
 		panic(err)
 	}
-	return &proxyconf
+	return &gconf
 }

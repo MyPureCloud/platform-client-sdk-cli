@@ -49,6 +49,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gateway"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/proxy"
@@ -135,7 +136,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 110.0.0")
+		fmt.Println("Current version: 110.1.0")
 		checkForNewVersion()
 	},
 }
@@ -154,7 +155,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("110.0.0", latestVersion) {
+	if versionsAreEqual("110.1.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -273,6 +274,7 @@ func init() {
 	rootCmd.AddCommand(autopagination.Cmdautopagination())
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())
+	rootCmd.AddCommand(gateway.Cmdgateway())
 	rootCmd.AddCommand(logging.Cmdlogging())
 	rootCmd.AddCommand(profiles.Cmdprofiles())
 	rootCmd.AddCommand(proxy.Cmdproxy())

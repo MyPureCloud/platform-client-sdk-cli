@@ -316,6 +316,10 @@ func mockGetConfig(profileName string) (config.Configuration, error) {
 		return ""
 	}
 
+	mockConfig.GateWayConfigurationFunc = func() string {
+		return ""
+	}
+
 	return mockConfig, nil
 }
 

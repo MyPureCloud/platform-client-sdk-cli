@@ -36,7 +36,7 @@ func TestAuthorize(t *testing.T) {
 
 	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, "1", utils.GenerateGuid(), utils.GenerateGuid(), "")
 	accessToken := "aJdvugb8k1kwnOovm2qX6LXTctJksYvdzcoXPrRDi-nL1phQhcKRN-bjcflq7CUDOmUCQv5OWuBSkPQr0peWhw"
-	setRestClientDoMockForAuthorize(t, *mockConfig, accessToken)
+	setRestClientDoMockForAuthorize(t, *mockConfig, accessToken, "", "")
 
 	oauthData, err := Authorize(mockConfig)
 	if err != nil {
@@ -69,12 +69,53 @@ func TestAuthorize(t *testing.T) {
 	}
 }
 
+func TestAuthorizeWithGateWay(t *testing.T) {
+	UpdateOAuthToken = mocks.UpdateOAuthToken
+
+	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, "1", utils.GenerateGuid(), utils.GenerateGuid(), "")
+	mockConfig = buildMockConfigForGateWay(mockConfig)
+	accessToken := "aJdvugb8k1kwnOovm2qX6LXTctJksYvdzcoXPrRDi-nL1phQhcKRN-bjcflq7CUDOmUCQv5OWuBSkPQr0peWhw"
+	setRestClientDoMockForAuthorize(t, *mockConfig, accessToken, "/nonxml/login", "serviceproxy.net")
+
+	oauthData, err := Authorize(mockConfig)
+	if err != nil {
+		t.Fatalf("err should be nil, got: %s", err)
+	}
+	if oauthData.AccessToken != accessToken {
+		t.Errorf("OAuth Access Token incorrect, got: %s, want: %s.", oauthData.AccessToken, accessToken)
+	}
+
+	// Check that the same token is returned when the expiry time stamp is in the future
+	mockConfig = buildMockConfig(mockConfig.ProfileName(), mockConfig.Environment(), mockConfig.RedirectURI(), false, "1", mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
+	mockConfig = buildMockConfigForGateWay(mockConfig)
+	oauthData, err = Authorize(mockConfig)
+	if err != nil {
+		t.Fatalf("err should be nil, got: %s", err)
+	}
+	if oauthData.AccessToken != accessToken {
+		t.Errorf("OAuth Access Token incorrect, got: %s, want: %s.", oauthData.AccessToken, accessToken)
+	}
+
+	// Check that a new token is retrieved when the expiry time stamp is in the past
+	oauthData.OAuthTokenExpiry = time.Now().AddDate(0, 0, -1).Format(time.RFC3339)
+	accessToken = "aJdvugb8k1kwnOovm2qX6LXTctJksYvdzcoXPrRDi-nL1phQhcKRN-bjcflq7CUDOmUCQv5OWuBSkPQr0peWhw"
+	mockConfig = buildMockConfig(mockConfig.ProfileName(), mockConfig.Environment(), mockConfig.RedirectURI(), false, "1", mockConfig.ClientID(), mockConfig.ClientSecret(), oauthData.String())
+	mockConfig = buildMockConfigForGateWay(mockConfig)
+	oauthData, err = Authorize(mockConfig)
+	if err != nil {
+		t.Fatalf("err should be nil, got: %s", err)
+	}
+	if oauthData.AccessToken != accessToken {
+		t.Errorf("OAuth Access Token incorrect, got: %s, want: %s.", oauthData.AccessToken, accessToken)
+	}
+}
+
 func TestAuthorizeWithImplicitLogin(t *testing.T) {
 	UpdateOAuthToken = mocks.UpdateOAuthToken
 
 	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "http://localhost:8080", false, "2", utils.GenerateGuid(), utils.GenerateGuid(), "")
 	accessToken := "aJdvugb8k1kwnOovm2qX6LXTctJksYvdzcoXPrRDi-nL1phQhcKRN-bjcflq7CUDOmUCQv5OWuBSkPQr0peWhw"
-	setRestClientDoMockForAuthorize(t, *mockConfig, accessToken)
+	setRestClientDoMockForAuthorize(t, *mockConfig, accessToken, "", "")
 
 	// mock private functions
 	openBrowserForLogin = func(url string) {}
@@ -145,6 +186,18 @@ func TestHighLevelRestClient(t *testing.T) {
 	tests := buildTestCaseTable()
 	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, "0", utils.GenerateGuid(), utils.GenerateGuid(), "")
 
+	assertResponses(t, tests, mockConfig)
+}
+
+func TestHighLevelRestClientWithGateWay(t *testing.T) {
+
+	mockConfig := buildMockConfig("DEFAULT", "mypurecloud.com", "", false, "0", utils.GenerateGuid(), utils.GenerateGuid(), "")
+	mockConfig = buildMockConfigForGateWay(mockConfig)
+	tests := buildTestCaseTableForGateWay()
+	assertResponses(t, tests, mockConfig)
+}
+
+func assertResponses(t *testing.T, tests []apiClientTest, mockConfig *mocks.MockClientConfig) {
 	for _, tc := range tests {
 		restClient := &RESTClient{
 			environment:   tc.targetEnv,
@@ -235,10 +288,32 @@ func buildMockConfig(profileName string, environment string, redirectURI string,
 		return ""
 	}
 
+	mockConfig.GateWayConfigurationFunc = func() string {
+		return ""
+	}
+
 	return mockConfig
 }
 
-func setRestClientDoMockForAuthorize(t *testing.T, mockConfig mocks.MockClientConfig, accessToken string) {
+func buildMockConfigForGateWay(mockConfig *mocks.MockClientConfig) *mocks.MockClientConfig {
+
+	mockConfig.GateWayConfigurationFunc = func() string {
+		return fmt.Sprintf(`
+		  {
+  		"host": "serviceproxy.net",
+		"protocol": "https",
+  		"port": "443",
+  		"pathParams": {
+    		"login": "nonxml/login",
+    		"api": "nonxml/apis"
+  		}
+		}`)
+	}
+
+	return mockConfig
+}
+
+func setRestClientDoMockForAuthorize(t *testing.T, mockConfig mocks.MockClientConfig, accessToken string, overrideExpectedPath string, overrideExpectedHost string) {
 	ClientDo = func(request *retryablehttp.Request) (*http.Response, error) {
 		authHeaderString := fmt.Sprintf("%s:%s", mockConfig.ClientID(), mockConfig.ClientSecret())
 		expectedAuthHeader := fmt.Sprintf("Basic %s", base64.StdEncoding.EncodeToString([]byte(authHeaderString)))
@@ -251,7 +326,11 @@ func setRestClientDoMockForAuthorize(t *testing.T, mockConfig mocks.MockClientCo
 
 		//Checking to make sure the URL is built correctly
 		expectedHost := fmt.Sprintf("login.%s", mockConfig.Environment())
-		expectedPath := "/oauth/token"
+		if overrideExpectedHost != "" {
+			expectedHost = overrideExpectedHost
+		}
+
+		expectedPath := overrideExpectedPath + "/oauth/token"
 		urlHost := request.URL.Host
 		urlPath := request.URL.Path
 
@@ -312,6 +391,30 @@ func setRestClientDoMock(t *testing.T, tc apiClientTest) {
 		}
 		return response, nil
 	}
+}
+
+func buildTestCaseTableForGateWay() []apiClientTest {
+	oAuthToken := utils.GenerateGuid()
+	skillId := utils.GenerateGuid()
+	tests := []apiClientTest{
+		{oAuthToken: oAuthToken, targetVerb: http.MethodGet, targetEnv: "mypurecloud.com", targetPath: fmt.Sprintf("api/v2/routing/skills/%s", skillId), targetStatusCode: http.StatusOK, targetBody: "", expectedHeaderToken: fmt.Sprintf("Bearer %s", oAuthToken), expectedHost: "serviceproxy.net", expectedPath: fmt.Sprintf("/nonxml/apis/api/v2/routing/skills/%s", skillId),
+			expectedResponse: fmt.Sprintf(`{"id": "%s","name":"test2","dateModified": "2016-07-27T15:57:58Z","state": "active","version": "1","selfUri": "/api/v2/routing/skills/7eba08c7-e62b-49bb-867f-ca69bbab66f0"}`, skillId)},
+		{oAuthToken: oAuthToken, targetVerb: http.MethodGet, targetEnv: "mypurecloud.de", targetPath: fmt.Sprintf("api/v2/routing/skills/%s", skillId), targetStatusCode: http.StatusOK, targetBody: "", expectedHeaderToken: fmt.Sprintf("Bearer %s", oAuthToken), expectedHost: "serviceproxy.net", expectedPath: fmt.Sprintf("/nonxml/apis/api/v2/routing/skills/%s", skillId),
+			expectedResponse: fmt.Sprintf(`{"id": "%s","name":"test2","dateModified": "2016-07-27T15:57:58Z","state": "active","version": "1","selfUri": "/api/v2/routing/skills/7eba08c7-e62b-49bb-867f-ca69bbab66f0"}`, skillId)},
+		{oAuthToken: oAuthToken, targetVerb: http.MethodPost, targetEnv: "mypurecloud.com", targetPath: fmt.Sprintf("api/v2/routing/skills/%s", skillId), targetStatusCode: http.StatusOK, targetBody: `{"id": "%s","name":"test2","state": "active""}`, expectedHeaderToken: fmt.Sprintf("Bearer %s", oAuthToken), expectedHost: "serviceproxy.net", expectedPath: fmt.Sprintf("/nonxml/apis/api/v2/routing/skills/%s", skillId),
+			expectedResponse: fmt.Sprintf(`{"id": "%s","name":"test2","dateCreated": "2016-07-27T15:57:58Z","state": "active","version": "1","selfUri": "/api/v2/routing/skills/7eba08c7-e62b-49bb-867f-ca69bbab66f0"}`, skillId)},
+		{oAuthToken: oAuthToken, targetVerb: http.MethodPut, targetEnv: "mypurecloud.com", targetPath: fmt.Sprintf("api/v2/routing/skills/%s", skillId), targetStatusCode: http.StatusOK, targetBody: `{"id": "%s","name":"test2","state": "active""}`, expectedHeaderToken: fmt.Sprintf("Bearer %s", oAuthToken), expectedHost: "serviceproxy.net", expectedPath: fmt.Sprintf("/nonxml/apis/api/v2/routing/skills/%s", skillId),
+			expectedResponse: fmt.Sprintf(`{"id": "%s","name":"test2","dateCreated": "2016-07-27T15:57:58Z","state": "active","version": "3","selfUri": "/api/v2/routing/skills/7eba08c7-e62b-49bb-867f-ca69bbab66f0"}`, skillId)},
+		{oAuthToken: oAuthToken, targetVerb: http.MethodPatch, targetEnv: "mypurecloud.com", targetPath: fmt.Sprintf("api/v2/routing/skills/%s", skillId), targetStatusCode: http.StatusOK, targetBody: `{"name":"test4"}`, expectedHeaderToken: fmt.Sprintf("Bearer %s", oAuthToken), expectedHost: "serviceproxy.net", expectedPath: fmt.Sprintf("/nonxml/apis/api/v2/routing/skills/%s", skillId),
+			expectedResponse: fmt.Sprintf(`{"id": "%s","name":"test2","dateCreated": "2016-07-27T15:57:58Z","state": "active","version": "4","selfUri": "/api/v2/routing/skills/7eba08c7-e62b-49bb-867f-ca69bbab66f0"}`, skillId)},
+		{oAuthToken: oAuthToken, targetVerb: http.MethodDelete, targetEnv: "mypurecloud.com", targetPath: fmt.Sprintf("api/v2/routing/skills/%s", skillId), targetStatusCode: http.StatusOK, targetBody: "", expectedHeaderToken: fmt.Sprintf("Bearer %s", oAuthToken), expectedHost: "serviceproxy.net", expectedPath: fmt.Sprintf("/nonxml/apis/api/v2/routing/skills/%s", skillId),
+			expectedResponse: ""},
+		//Error condition - Check to make sure we are return the httpStatusCode when there is an error
+		{oAuthToken: oAuthToken, targetVerb: http.MethodGet, targetEnv: "mypurecloud.com", targetPath: fmt.Sprintf("api/v2/routing/skills/%s", skillId), targetStatusCode: http.StatusInternalServerError, targetBody: "", expectedHeaderToken: fmt.Sprintf("Bearer %s", oAuthToken), expectedHost: "serviceproxy.net", expectedPath: fmt.Sprintf("/nonxml/apis/api/v2/routing/skills/%s", skillId),
+			expectedResponse: fmt.Sprintf(`{"id": "%s","name":"test2","dateModified": "2016-07-27T15:57:58Z","state": "active","version": "1","selfUri": "/api/v2/routing/skills/7eba08c7-e62b-49bb-867f-ca69bbab66f0"}`, skillId), expectedStatusCode: http.StatusInternalServerError},
+	}
+
+	return tests
 }
 
 func buildTestCaseTable() []apiClientTest {

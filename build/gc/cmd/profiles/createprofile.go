@@ -31,7 +31,7 @@ func isValidGrantType(t GrantType) bool {
 	return t == None || t == ClientCredentials || t == ImplicitGrant || t == PKCEGrant
 }
 
-func constructConfig(profileName string, environment string, grantType GrantType, clientID string, clientSecret string, redirectURI string, secureLoginEnabled bool, accessToken string, proxyConf *config.ProxyConfiguration) config.Configuration {
+func constructConfig(profileName string, environment string, grantType GrantType, clientID string, clientSecret string, redirectURI string, secureLoginEnabled bool, accessToken string, proxyConf *config.ProxyConfiguration, gconf *config.GateWayConfiguration) config.Configuration {
 	c := &mocks.MockClientConfig{}
 
 	c.ProfileNameFunc = func() string {
@@ -87,6 +87,11 @@ func constructConfig(profileName string, environment string, grantType GrantType
 		return string(jsonData)
 	}
 
+	c.GateWayConfigurationFunc = func() string {
+		jsonData, _ := json.MarshalIndent(gconf, "", "  ")
+		return string(jsonData)
+	}
+
 	return c
 }
 
@@ -102,6 +107,7 @@ func requestUserInput() config.Configuration {
 		redirectURL        url.URL
 		secureLoginEnabled = false
 		proxyChoice        string
+		gateWayChoice      string
 	)
 
 	fmt.Print("Profile Name [DEFAULT]: ")
@@ -172,7 +178,23 @@ func requestUserInput() config.Configuration {
 		}
 	}
 
-	return constructConfig(name, environment, grantType, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, proxyConfig)
+	var gateWayConfig *config.GateWayConfiguration
+	for {
+		fmt.Print("Would you like to use a gateway server? [Y/N]: ")
+		_, _ = fmt.Scanln(&gateWayChoice)
+		if strings.ToUpper(gateWayChoice) == "Y" {
+			gateWayConfig = requestGateWayDetails()
+			break
+		} else if strings.ToUpper(gateWayChoice) == "N" {
+			gateWayConfig = nil
+			break
+		} else {
+			fmt.Print("Provide valid option.\n")
+			continue
+		}
+	}
+
+	return constructConfig(name, environment, grantType, clientID, clientSecret, redirectURL.String(), secureLoginEnabled, accessToken, proxyConfig, gateWayConfig)
 }
 
 func requestClientCreds(accessToken string, grantType GrantType) (string, string) {
@@ -308,6 +330,102 @@ outerLoopLabel:
 	}
 
 	return &proxyconf
+
+}
+
+func requestGateWayDetails() *config.GateWayConfiguration {
+	protocol := ""
+	host := ""
+	port := ""
+	isAuthRequired := ""
+	username := ""
+	password := ""
+	pathParamRequired := ""
+	pathParams := make(map[string]string)
+	for protocol == "" {
+		fmt.Print("Protocol (http/https): ")
+		_, _ = fmt.Scanln(&protocol)
+	}
+	for port == "" {
+		fmt.Print("Port for the GateWay: ")
+		_, _ = fmt.Scanln(&port)
+	}
+	for host == "" {
+		fmt.Print("Host name for the GateWay server: ")
+		_, _ = fmt.Scanln(&host)
+	}
+
+	for {
+		fmt.Print("Do we require Authorisation to use the GateWay server? [Y/N]: ")
+		_, _ = fmt.Scanln(&isAuthRequired)
+		if strings.ToUpper(isAuthRequired) == "Y" {
+			_, _ = fmt.Scanln(&isAuthRequired)
+			for username == "" {
+				fmt.Print("username for the GateWay: ")
+				_, _ = fmt.Scanln(&username)
+			}
+			for password == "" {
+				fmt.Print("Password for the GateWay server: ")
+				password = readSensitiveInput()
+			}
+			break
+		} else if strings.ToUpper(isAuthRequired) == "N" {
+			break
+		} else {
+			fmt.Print("Provide valid option.\n")
+			continue
+		}
+	}
+
+outerLoopLabel:
+	for {
+		fmt.Print("Do we have different GateWay paths for login and api? [Y/N]: ")
+		_, _ = fmt.Scanln(&pathParamRequired)
+		if strings.ToUpper(pathParamRequired) == "Y" {
+			for {
+				pathAPI := ""
+				pathValue := ""
+				pathParamRequired = ""
+				for pathAPI == "" {
+					fmt.Print("Enter API flow for which you want to add the path? Ex [login/api] : ")
+					_, _ = fmt.Scanln(&pathAPI)
+				}
+				for pathValue == "" {
+					fmt.Print("Enter Path : ")
+					_, _ = fmt.Scanln(&pathValue)
+				}
+				pathParams[pathAPI] = pathValue
+				for pathParamRequired == "" {
+					fmt.Print("Do you want to enter more Paths? [Y/N]: ")
+					_, _ = fmt.Scanln(&pathParamRequired)
+				}
+				if strings.ToUpper(pathParamRequired) == "Y" {
+					continue
+				} else {
+					break outerLoopLabel
+				}
+			}
+		} else if strings.ToUpper(pathParamRequired) == "N" {
+			break
+		} else {
+			fmt.Print("Provide valid option.\n")
+			continue
+		}
+	}
+
+	gconf := config.GateWayConfiguration{}
+	gconf.Port = port
+	gconf.Protocol = protocol
+	gconf.Host = host
+	if username != "" {
+		gconf.UserName = username
+		gconf.Password = password
+	}
+	if len(pathParams) > 0 {
+		gconf.PathParams = pathParams
+	}
+
+	return &gconf
 
 }
 

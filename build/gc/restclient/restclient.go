@@ -97,7 +97,7 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
                 uri = fmt.Sprintf("/%v", uri)
         }
         if !strings.Contains(r.environment, "localhost") {
-                apiURI, _ = url.Parse(fmt.Sprintf("https://api.%s%s", r.environment, uri))
+                apiURI = getConfUrl(r.configuration,"api", uri, r.environment)
         } else {
                 apiURI, _ = url.Parse(fmt.Sprintf("http://%s%s", r.environment, uri))
         }
@@ -120,7 +120,7 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "110.0.0")
+        request.Header.Set("purecloud-sdk", "110.1.0")
 
         if data != "" {
                 request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
@@ -294,8 +294,7 @@ func ReAuthenticate(c config.Configuration) (models.OAuthTokenData, error) {
 }
 
 func authorizePKCEGrant(c config.Configuration, code string, codeVerifier string) (models.OAuthTokenData, error) {
-        loginURI, _ := url.Parse(fmt.Sprintf("https://login.%s/oauth/token", c.Environment()))
-
+        loginURI := getConfUrl(c,"login", "/oauth/token", "")
         request := &retryablehttp.Request{
                 Request: &http.Request{
                         URL:    loginURI,
@@ -314,7 +313,7 @@ func authorizePKCEGrant(c config.Configuration, code string, codeVerifier string
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "110.0.0")
+        request.Header.Set("purecloud-sdk", "110.1.0")
 
         //Setting up the form data
         form := url.Values{}
@@ -378,7 +377,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
                 return createOAuthTokenResponse(c, oAuthToken)
         }
 
-        loginURI, _ := url.Parse(fmt.Sprintf("https://login.%s/oauth/token", c.Environment()))
+        loginURI := getConfUrl(c,"login", "/oauth/token", "")
 
         request := &retryablehttp.Request{
                 Request: &http.Request{
@@ -397,7 +396,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "110.0.0")
+        request.Header.Set("purecloud-sdk", "110.1.0")
 
         //Setting up the form data
         form := url.Values{}
@@ -627,4 +626,37 @@ func init() {
         Client = *retryablehttp.NewClient()
         Client.Logger = nil
         ClientDo = Client.Do
+}
+
+func getConfUrl(c config.Configuration, path string, extendedPath string, overridehost string) *url.URL{
+        var gateWayConfiguration config.GateWayConfiguration
+        err := json.Unmarshal([]byte(c.GateWayConfiguration()), &gateWayConfiguration)
+        if err !=nil {
+             logger.Warnf("Error parsing GateWay URL: %v , %v", err, c.GateWayConfiguration())
+        }
+
+        uri, _ := url.Parse(fmt.Sprintf("https://api.%s%s", c.Environment(), extendedPath))
+        if overridehost != "" {
+            uri, _ = url.Parse(fmt.Sprintf("https://api.%s%s", overridehost, extendedPath))
+        }
+
+        if gateWayConfiguration.Host != "" {
+        pathValue := ""
+        if len(gateWayConfiguration.PathParams) > 0 {
+            params := gateWayConfiguration.PathParams
+           if tempValue, exists := params[path]; exists {
+                pathValue = tempValue
+           }
+         if gateWayConfiguration.Port == "80" || gateWayConfiguration.Port == "443" {
+            uri, _ = url.Parse(fmt.Sprintf("https://%s/%s%s", gateWayConfiguration.Host,pathValue, extendedPath))
+         } else {
+           uri, _ = url.Parse(fmt.Sprintf("https://%s:%s/%s%s", gateWayConfiguration.Host,gateWayConfiguration.Port, pathValue, extendedPath))
+         }
+        }
+        }  else {
+          if path == "login" {
+             uri, _ = url.Parse(fmt.Sprintf("https://login.%s/oauth/token", c.Environment()))
+          }
+        }
+     return uri
 }

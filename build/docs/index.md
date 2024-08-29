@@ -193,6 +193,43 @@ To disable this Proxy Configuration, run the following command.
 ```
 gc proxy disable
 ```
+# Gateway Configuration
+
+To add a Gateway configuration for the CLI , you can pass file parameter with Gateway configuration
+in it.
+
+The `GateWayConfiguration` object has 3 properties that determine the URL for a Gateway.
+Port - Port of the Gateway
+Host - Host Ip or DNS of the Gateway
+Protocol - Protocol required to connect to the Gateway (http or https)
+
+The 'GateWayConfiguration' has another section which is an optional section. If the Gateway requires authentication to connect to
+'userName' and 'password' needs to be mentioned under the 'GateWayConfiguration'. This section can be removed from the JSON file if no authentication is required.
+
+If you have different pathParams for authorise APIs and other APIs, you can provide a new key in pathParams section with name 'login' for authorise sdk calls and 'api' for other api calls.
+
+JSON configuration file:
+```
+{
+  "host": "hostname",
+  "protocol": "http",
+  "port": "8888",
+  "userName": "username",
+  "password": "password",
+  "pathParams": {
+    "login": "loginpath",
+    "api":"apipath"
+  }
+}
+```
+Command to Enable Gateway:
+```
+gc gateway --file=gateway.json
+```
+To disable this Gateway Configuration, run the following command.
+```
+gc gateway disable
+```
 
 # Autocompletion
 

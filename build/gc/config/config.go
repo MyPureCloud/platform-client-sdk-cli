@@ -664,7 +664,7 @@ func writeConfig(c Configuration, data *models.OAuthTokenData, logFilePath strin
 		viper.Set(host, gConfig.Host)
 		viper.Set(username, gConfig.UserName)
 		viper.Set(password, gConfig.Password)
-		viper.Set(fmt.Sprintf("%s.proxy_pathparams", c.ProfileName()), getPathParams(gConfig.PathParams))
+		viper.Set(fmt.Sprintf("%s.gateway_pathparams", c.ProfileName()), getPathParams(gConfig.PathParams))
 	}
 
 	//Checking to see if the file does not exist.  It it doesnt we write out the config as default config.toml

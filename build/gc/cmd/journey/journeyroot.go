@@ -9,8 +9,8 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey_flows"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey_outcomes"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey_segments"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey_deployments"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey_views"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey_deployments"
 )
 
 func init() {
@@ -21,8 +21,8 @@ func init() {
 	journeyCmd.AddCommand(journey_flows.Cmdjourney_flows())
 	journeyCmd.AddCommand(journey_outcomes.Cmdjourney_outcomes())
 	journeyCmd.AddCommand(journey_segments.Cmdjourney_segments())
-	journeyCmd.AddCommand(journey_deployments.Cmdjourney_deployments())
 	journeyCmd.AddCommand(journey_views.Cmdjourney_views())
-	journeyCmd.Short = utils.GenerateCustomDescription(journeyCmd.Short, journey_actionmaps.Description, journey_actiontargets.Description, journey_actiontemplates.Description, journey_sessions.Description, journey_flows.Description, journey_outcomes.Description, journey_segments.Description, journey_deployments.Description, journey_views.Description, )
+	journeyCmd.AddCommand(journey_deployments.Cmdjourney_deployments())
+	journeyCmd.Short = utils.GenerateCustomDescription(journeyCmd.Short, journey_actionmaps.Description, journey_actiontargets.Description, journey_actiontemplates.Description, journey_sessions.Description, journey_flows.Description, journey_outcomes.Description, journey_segments.Description, journey_views.Description, journey_deployments.Description, )
 	journeyCmd.Long = journeyCmd.Short
 }

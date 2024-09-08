@@ -19,12 +19,19 @@ type TransfertoqueuerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Transfertoqueuerequest
 type Transfertoqueuerequest struct { 
     // TransferType - The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
     TransferType string `json:"transferType"`
+
+
+    // KeepInternalMessageAlive - If true, the digital internal message will NOT be terminated.
+    KeepInternalMessageAlive bool `json:"keepInternalMessageAlive"`
 
 
     // QueueId - The id of the queue.
@@ -38,6 +45,7 @@ type Transfertoqueuerequest struct {
 
 // String returns a JSON representation of the model
 func (o *Transfertoqueuerequest) String() string {
+    
     
     
     
@@ -60,11 +68,16 @@ func (u *Transfertoqueuerequest) MarshalJSON() ([]byte, error) {
         
         TransferType string `json:"transferType"`
         
+        KeepInternalMessageAlive bool `json:"keepInternalMessageAlive"`
+        
         QueueId string `json:"queueId"`
         
         QueueName string `json:"queueName"`
         *Alias
     }{
+
+        
+
 
         
 

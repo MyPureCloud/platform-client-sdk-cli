@@ -52,6 +52,7 @@ func Cmdanalytics_reporting_settings_dashboards_query() *cobra.Command {
 }`)
 	analytics_reporting_settings_dashboards_queryCmd.AddCommand(createCmd)
 
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "name of the dashboard")
 	utils.AddFlag(listCmd.Flags(), "string", "dashboardType", "", "List dashboard of given type - REQUIRED Valid values: All, Public, Private, Shared, Favorites")
 	utils.AddFlag(listCmd.Flags(), "string", "dashboardAccessFilter", "", "Filter dashboard based on the owner of dashboard - REQUIRED Valid values: OwnedByMe, OwnedByAnyone, NotOwnedByMe")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "desc", "")
@@ -166,6 +167,10 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/analytics/reporting/settings/dashboards/query"
 
+		name := utils.GetFlag(cmd.Flags(), "string", "name")
+		if name != "" {
+			queryParams["name"] = name
+		}
 		dashboardType := utils.GetFlag(cmd.Flags(), "string", "dashboardType")
 		if dashboardType != "" {
 			queryParams["dashboardType"] = dashboardType

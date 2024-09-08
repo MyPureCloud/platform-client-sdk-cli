@@ -81,6 +81,7 @@ func Cmdjourney_views() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "nameOrCreatedBy", "", "Journey View Name or Created By")
 	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Parameter to request additional data to return in Journey payload Valid values: charts")
+	utils.AddFlag(listCmd.Flags(), "string", "id", "", "Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/views", utils.FormatPermissions([]string{ "journey:views:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/views")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -333,6 +334,10 @@ var listCmd = &cobra.Command{
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
+		}
+		id := utils.GetFlag(cmd.Flags(), "string", "id")
+		if id != "" {
+			queryParams["id"] = id
 		}
 		urlString := path
 		if len(queryParams) > 0 {

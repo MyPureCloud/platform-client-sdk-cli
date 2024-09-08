@@ -53,7 +53,7 @@ func Cmdusers() *cobra.Command {
 }`)
 	usersCmd.AddCommand(createCmd)
 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}", utils.FormatPermissions([]string{ "directory:user:delete", "directory:organization:admin",  }), utils.GenerateDevCentreLink("DELETE", "Users", "/api/v2/users/{userId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/{userId}", utils.FormatPermissions([]string{ "admin", "directory:user:delete", "directory:organization:admin",  }), utils.GenerateDevCentreLink("DELETE", "Users", "/api/v2/users/{userId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -109,7 +109,7 @@ func Cmdusers() *cobra.Command {
 }`)
 	usersCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}", utils.FormatPermissions([]string{ "directory:user:edit", "directory:organization:admin",  }), utils.GenerateDevCentreLink("PATCH", "Users", "/api/v2/users/{userId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/users/{userId}", utils.FormatPermissions([]string{ "admin", "directory:user:edit", "directory:organization:admin",  }), utils.GenerateDevCentreLink("PATCH", "Users", "/api/v2/users/{userId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "User",
   "content" : {

@@ -25,12 +25,19 @@ type TransfertoagentrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Transfertoagentrequest
 type Transfertoagentrequest struct { 
     // TransferType - The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
     TransferType string `json:"transferType"`
+
+
+    // KeepInternalMessageAlive - If true, the digital internal message will NOT be terminated.
+    KeepInternalMessageAlive bool `json:"keepInternalMessageAlive"`
 
 
     // UserId - The id of the internal user.
@@ -57,6 +64,7 @@ func (o *Transfertoagentrequest) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -76,6 +84,8 @@ func (u *Transfertoagentrequest) MarshalJSON() ([]byte, error) {
         
         TransferType string `json:"transferType"`
         
+        KeepInternalMessageAlive bool `json:"keepInternalMessageAlive"`
+        
         UserId string `json:"userId"`
         
         UserName string `json:"userName"`
@@ -85,6 +95,9 @@ func (u *Transfertoagentrequest) MarshalJSON() ([]byte, error) {
         Voicemail bool `json:"voicemail"`
         *Alias
     }{
+
+        
+
 
         
 

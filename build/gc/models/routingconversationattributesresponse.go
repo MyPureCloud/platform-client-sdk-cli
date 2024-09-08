@@ -22,6 +22,9 @@ type RoutingconversationattributesresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Routingconversationattributesresponse
@@ -38,6 +41,10 @@ type Routingconversationattributesresponse struct {
     Language Language `json:"language"`
 
 
+    // Label - Current label on in-queue conversation
+    Label Utilizationlabel `json:"label"`
+
+
     // ScoredAgents - Current scored agents on in-queue conversation
     ScoredAgents []Scoredagent `json:"scoredAgents"`
 
@@ -47,6 +54,7 @@ type Routingconversationattributesresponse struct {
 func (o *Routingconversationattributesresponse) String() string {
     
      o.Skills = []Routingskill{{}} 
+    
     
      o.ScoredAgents = []Scoredagent{{}} 
 
@@ -72,6 +80,8 @@ func (u *Routingconversationattributesresponse) MarshalJSON() ([]byte, error) {
         
         Language Language `json:"language"`
         
+        Label Utilizationlabel `json:"label"`
+        
         ScoredAgents []Scoredagent `json:"scoredAgents"`
         *Alias
     }{
@@ -81,6 +91,9 @@ func (u *Routingconversationattributesresponse) MarshalJSON() ([]byte, error) {
 
         
         Skills: []Routingskill{{}},
+        
+
+
         
 
 

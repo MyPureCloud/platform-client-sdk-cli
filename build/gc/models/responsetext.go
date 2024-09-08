@@ -16,6 +16,9 @@ type ResponsetextDud struct {
 
     
 
+
+    
+
 }
 
 // Responsetext - Contains information about the text associated with a response.
@@ -27,10 +30,15 @@ type Responsetext struct {
     // ContentType - Response text content type.
     ContentType string `json:"contentType"`
 
+
+    // VarType - Response text type.
+    VarType string `json:"type"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Responsetext) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Responsetext) MarshalJSON() ([]byte, error) {
         Content string `json:"content"`
         
         ContentType string `json:"contentType"`
+        
+        VarType string `json:"type"`
         *Alias
     }{
+
+        
+
 
         
 

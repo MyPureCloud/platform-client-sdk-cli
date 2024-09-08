@@ -11,9 +11,6 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ActivitycodesreferenceDud struct { 
-    Id string `json:"id"`
-
-
     
 
 
@@ -23,9 +20,6 @@ type ActivitycodesreferenceDud struct {
 
 // Activitycodesreference
 type Activitycodesreference struct { 
-    
-
-
     // Ids - The IDs of activity codes
     Ids []string `json:"ids"`
 
@@ -57,9 +51,6 @@ func (u *Activitycodesreference) MarshalJSON() ([]byte, error) {
         Ids []string `json:"ids"`
         *Alias
     }{
-
-        
-
 
         
         Ids: []string{""},

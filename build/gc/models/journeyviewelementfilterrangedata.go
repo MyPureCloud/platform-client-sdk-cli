@@ -20,12 +20,12 @@ type JourneyviewelementfilterrangedataDud struct {
 
 // Journeyviewelementfilterrangedata
 type Journeyviewelementfilterrangedata struct { 
-    // Duration - an ISO 8601 time duration.Only one of number or duration must be specified. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
+    // Duration - An ISO 8601 time duration. Only one of number or duration must be specified.
     Duration string `json:"duration"`
 
 
-    // Number - an Integer value.Only one of number or duration must be specified.
-    Number int `json:"number"`
+    // Number - A numeric value. Only one of number or duration must be specified.
+    Number float64 `json:"number"`
 
 }
 
@@ -52,7 +52,7 @@ func (u *Journeyviewelementfilterrangedata) MarshalJSON() ([]byte, error) {
         
         Duration string `json:"duration"`
         
-        Number int `json:"number"`
+        Number float64 `json:"number"`
         *Alias
     }{
 

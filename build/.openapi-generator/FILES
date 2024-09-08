@@ -113,6 +113,9 @@ gc/cmd/architect_schedules_divisionviews/architect_schedules_divisionviews.go
 gc/cmd/architect_systemprompts/architect_systemprompts.go
 gc/cmd/architect_systemprompts_history/architect_systemprompts_history.go
 gc/cmd/architect_systemprompts_resources/architect_systemprompts_resources.go
+gc/cmd/assistants/assistants.go
+gc/cmd/assistants_copilot/assistants_copilot.go
+gc/cmd/assistants_queues/assistants_queues.go
 gc/cmd/audits_query/audits_query.go
 gc/cmd/audits_query_realtime/audits_query_realtime.go
 gc/cmd/audits_query_realtime_related/audits_query_realtime_related.go
@@ -375,6 +378,7 @@ gc/cmd/externalcontacts_contacts_schemas/externalcontacts_contacts_schemas.go
 gc/cmd/externalcontacts_contacts_schemas_versions/externalcontacts_contacts_schemas_versions.go
 gc/cmd/externalcontacts_contacts_unresolved/externalcontacts_contacts_unresolved.go
 gc/cmd/externalcontacts_conversations/externalcontacts_conversations.go
+gc/cmd/externalcontacts_externalsources/externalcontacts_externalsources.go
 gc/cmd/externalcontacts_identifierlookup/externalcontacts_identifierlookup.go
 gc/cmd/externalcontacts_merge_contacts/externalcontacts_merge_contacts.go
 gc/cmd/externalcontacts_organizations/externalcontacts_organizations.go
@@ -584,6 +588,7 @@ gc/cmd/knowledge_documentuploads/knowledge_documentuploads.go
 gc/cmd/knowledge_guest_sessions/knowledge_guest_sessions.go
 gc/cmd/knowledge_guest_sessions_categories/knowledge_guest_sessions_categories.go
 gc/cmd/knowledge_guest_sessions_documents/knowledge_guest_sessions_documents.go
+gc/cmd/knowledge_guest_sessions_documents_answers/knowledge_guest_sessions_documents_answers.go
 gc/cmd/knowledge_guest_sessions_documents_copies/knowledge_guest_sessions_documents_copies.go
 gc/cmd/knowledge_guest_sessions_documents_feedback/knowledge_guest_sessions_documents_feedback.go
 gc/cmd/knowledge_guest_sessions_documents_presentations/knowledge_guest_sessions_documents_presentations.go
@@ -593,6 +598,7 @@ gc/cmd/knowledge_guest_sessions_documents_views/knowledge_guest_sessions_documen
 gc/cmd/knowledge_knowledgebases/knowledge_knowledgebases.go
 gc/cmd/knowledge_knowledgebases_categories/knowledge_knowledgebases_categories.go
 gc/cmd/knowledge_knowledgebases_documents/knowledge_knowledgebases_documents.go
+gc/cmd/knowledge_knowledgebases_documents_answers/knowledge_knowledgebases_documents_answers.go
 gc/cmd/knowledge_knowledgebases_documents_bulk_remove/knowledge_knowledgebases_documents_bulk_remove.go
 gc/cmd/knowledge_knowledgebases_documents_bulk_update/knowledge_knowledgebases_documents_bulk_update.go
 gc/cmd/knowledge_knowledgebases_documents_copies/knowledge_knowledgebases_documents_copies.go
@@ -865,6 +871,7 @@ gc/cmd/routing_predictors_keyperformanceindicators/routing_predictors_keyperform
 gc/cmd/routing_predictors_models/routing_predictors_models.go
 gc/cmd/routing_predictors_models_features/routing_predictors_models_features.go
 gc/cmd/routing_queues/routing_queues.go
+gc/cmd/routing_queues_assistant/routing_queues_assistant.go
 gc/cmd/routing_queues_comparisonperiods/routing_queues_comparisonperiods.go
 gc/cmd/routing_queues_divisionviews/routing_queues_divisionviews.go
 gc/cmd/routing_queues_divisionviews_all/routing_queues_divisionviews_all.go
@@ -1473,6 +1480,7 @@ gc/models/analyticsuserdetailsasyncqueryresponse.go
 gc/models/analyticsuserdetailsqueryresponse.go
 gc/models/analyticsuserpresencerecord.go
 gc/models/annotation.go
+gc/models/answergenerationconfig.go
 gc/models/answergenerationdocument.go
 gc/models/answeroption.go
 gc/models/apiusageclientquery.go
@@ -1511,6 +1519,10 @@ gc/models/assignmenterror.go
 gc/models/assignmentvalidation.go
 gc/models/assignusers.go
 gc/models/assistancecondition.go
+gc/models/assistant.go
+gc/models/assistantlisting.go
+gc/models/assistantqueue.go
+gc/models/assistantqueuelisting.go
 gc/models/associatedvaluefield.go
 gc/models/asyncconversationquery.go
 gc/models/asyncforecastoperationresult.go
@@ -1616,6 +1628,8 @@ gc/models/botsummary.go
 gc/models/botversionsummary.go
 gc/models/browser.go
 gc/models/buabandonrate.go
+gc/models/buactivitysettingsrequest.go
+gc/models/buactivitysettingsresponse.go
 gc/models/buagentscheduleactivity.go
 gc/models/buagentschedulehistorychange.go
 gc/models/buagentschedulehistorychangemetadata.go
@@ -1703,6 +1717,8 @@ gc/models/bulkupdateshifttradestateresult.go
 gc/models/bulkupdateshifttradestateresultitem.go
 gc/models/bullseye.go
 gc/models/bumanagementunitschedulesummary.go
+gc/models/bunotificationsettingsrequest.go
+gc/models/bunotificationsettingsresponse.go
 gc/models/buplanninggroupheadcountforecast.go
 gc/models/buqueryadherenceexplanationsrequest.go
 gc/models/buqueryadherenceexplanationsresponse.go
@@ -1713,6 +1729,9 @@ gc/models/burescheduleresult.go
 gc/models/buschedulelisting.go
 gc/models/buschedulelistitem.go
 gc/models/buschedulemetadata.go
+gc/models/buschedulenotificationscategorysettings.go
+gc/models/buschedulenotificationssettingsrequest.go
+gc/models/buschedulenotificationssettingsresponse.go
 gc/models/buschedulereference.go
 gc/models/buschedulereferenceformuroute.go
 gc/models/buschedulerun.go
@@ -1804,6 +1823,7 @@ gc/models/campaignrule.go
 gc/models/campaignruleaction.go
 gc/models/campaignruleactionentities.go
 gc/models/campaignrulecondition.go
+gc/models/campaignruleconditiongroup.go
 gc/models/campaignruleentities.go
 gc/models/campaignruleentitylisting.go
 gc/models/campaignruleparameters.go
@@ -2061,6 +2081,7 @@ gc/models/conversationnotificationtemplateheader.go
 gc/models/conversationnotificationtemplateparameter.go
 gc/models/conversationparticipantsearchcriteria.go
 gc/models/conversationparticipantsearchrequest.go
+gc/models/conversationprofile.go
 gc/models/conversationproperties.go
 gc/models/conversationpublicmetadata.go
 gc/models/conversationquery.go
@@ -2076,6 +2097,13 @@ gc/models/conversationthreadingwindowsetting.go
 gc/models/conversationuser.go
 gc/models/conversationuserdisposition.go
 gc/models/conversationutilizationlabelupdate.go
+gc/models/copilot.go
+gc/models/copilotaction.go
+gc/models/copilotcondition.go
+gc/models/copilotfallbackaction.go
+gc/models/copilotnludomain.go
+gc/models/copilotnludomainversion.go
+gc/models/copilotrule.go
 gc/models/copyattachmentsrequest.go
 gc/models/copybuforecastrequest.go
 gc/models/copyvoicemailmessage.go
@@ -2165,6 +2193,7 @@ gc/models/ctabuttonstyleproperties.go
 gc/models/currentuserschedulerequestbody.go
 gc/models/currentusertimeoffintegrationstatusrequest.go
 gc/models/cursorcontactlisting.go
+gc/models/cursorexternalsourcelisting.go
 gc/models/cursornotelisting.go
 gc/models/cursororganizationlisting.go
 gc/models/cursorrelationshiplisting.go
@@ -2588,6 +2617,7 @@ gc/models/facetstatistics.go
 gc/models/facetterm.go
 gc/models/failedobject.go
 gc/models/failedrecordingentitylisting.go
+gc/models/fallback.go
 gc/models/faq.go
 gc/models/faxconfig.go
 gc/models/faxdocument.go
@@ -2738,6 +2768,7 @@ gc/models/gkndocumentationresult.go
 gc/models/gkndocumentationsearchcriteria.go
 gc/models/gkndocumentationsearchrequest.go
 gc/models/gkndocumentationsearchresponse.go
+gc/models/googledialogflowconfig.go
 gc/models/googledialogflowcustomsettings.go
 gc/models/grammar.go
 gc/models/grammarfileuploadrequest.go
@@ -2950,6 +2981,9 @@ gc/models/knowledgeaggregatequerypredicate.go
 gc/models/knowledgeaggregatequeryresponse.go
 gc/models/knowledgeaggregationquery.go
 gc/models/knowledgeaggregationview.go
+gc/models/knowledgeanswerconfig.go
+gc/models/knowledgeanswerdocumentresponse.go
+gc/models/knowledgeanswerdocumentsresponse.go
 gc/models/knowledgeanswergenerationresponse.go
 gc/models/knowledgeasyncaggregatequeryresponse.go
 gc/models/knowledgeasyncaggregationquery.go
@@ -2958,6 +2992,7 @@ gc/models/knowledgebasecreaterequest.go
 gc/models/knowledgebaselisting.go
 gc/models/knowledgebasereference.go
 gc/models/knowledgebaseupdaterequest.go
+gc/models/knowledgebasewithdialectreference.go
 gc/models/knowledgecategory.go
 gc/models/knowledgecategoryrequest.go
 gc/models/knowledgecontextreference.go
@@ -2977,6 +3012,7 @@ gc/models/knowledgedocumentcopy.go
 gc/models/knowledgedocumentfeedback.go
 gc/models/knowledgedocumentfeedbackresponse.go
 gc/models/knowledgedocumentfeedbackresponselisting.go
+gc/models/knowledgedocumentfeedbackupdaterequest.go
 gc/models/knowledgedocumentguestsearch.go
 gc/models/knowledgedocumentguestsearchrequest.go
 gc/models/knowledgedocumentguestsearchresult.go
@@ -2988,6 +3024,7 @@ gc/models/knowledgedocumentreq.go
 gc/models/knowledgedocumentrequest.go
 gc/models/knowledgedocumentresponse.go
 gc/models/knowledgedocumentresponselisting.go
+gc/models/knowledgedocumentsanswerfilter.go
 gc/models/knowledgedocumentsearch.go
 gc/models/knowledgedocumentsearchrequest.go
 gc/models/knowledgedocumentsearchresult.go
@@ -3008,6 +3045,8 @@ gc/models/knowledgeexportjobrequest.go
 gc/models/knowledgeexportjobresponse.go
 gc/models/knowledgeextendedcategory.go
 gc/models/knowledgegroupstatistics.go
+gc/models/knowledgeguestanswerdocumentresponse.go
+gc/models/knowledgeguestanswerdocumentsresponse.go
 gc/models/knowledgeguestdocumentcopy.go
 gc/models/knowledgeguestdocumentfeedback.go
 gc/models/knowledgeguestdocumentpresentation.go
@@ -3045,6 +3084,7 @@ gc/models/knowledgesearchdocumentresponse.go
 gc/models/knowledgesearchdocumentv1.go
 gc/models/knowledgesearchrequest.go
 gc/models/knowledgesearchresponse.go
+gc/models/knowledgesuggestionconfig.go
 gc/models/knowledgetraining.go
 gc/models/kpiresult.go
 gc/models/label.go
@@ -3357,6 +3397,7 @@ gc/models/namedentitytypemechanism.go
 gc/models/namespacedocs.go
 gc/models/networkconnectivity.go
 gc/models/nextoccurrencedetails.go
+gc/models/nluconfig.go
 gc/models/nluconfusionmatrixcolumn.go
 gc/models/nluconfusionmatrixrow.go
 gc/models/nludetectioncontext.go
@@ -3855,6 +3896,8 @@ gc/models/routingstatusdetailqueryclause.go
 gc/models/routingstatusdetailqueryfilter.go
 gc/models/routingstatusdetailquerypredicate.go
 gc/models/routingtransferevent.go
+gc/models/ruleconfig.go
+gc/models/ruleengineconfig.go
 gc/models/ruleset.go
 gc/models/rulesetdiagnostic.go
 gc/models/rulesetentitylisting.go
@@ -4089,6 +4132,7 @@ gc/models/suggestionlisting.go
 gc/models/suggestionscript.go
 gc/models/suggestsearchcriteria.go
 gc/models/suggestsearchrequest.go
+gc/models/summarygenerationconfig.go
 gc/models/supportcentercategory.go
 gc/models/supportcentercompactcategorymoduletemplate.go
 gc/models/supportcentercustommessage.go
@@ -4267,6 +4311,7 @@ gc/models/transcriptasyncaggregatequeryresponse.go
 gc/models/transcriptasyncaggregationquery.go
 gc/models/transcriptconversationdetailsearchcriteria.go
 gc/models/transcriptconversationdetailsearchrequest.go
+gc/models/transcriptionconfig.go
 gc/models/transcriptionenginesrequest.go
 gc/models/transcriptionsettings.go
 gc/models/transcripts.go
@@ -4666,6 +4711,7 @@ gc/models/workitemchangelisting.go
 gc/models/workitemcreate.go
 gc/models/workitemdelta.go
 gc/models/workitemfilter.go
+gc/models/workitemflowreference.go
 gc/models/workitemmanualassign.go
 gc/models/workitempagedentitylisting.go
 gc/models/workitempostqueryentitylisting.go
@@ -4678,6 +4724,7 @@ gc/models/workitemquerypostrequest.go
 gc/models/workitemquerysort.go
 gc/models/workitemqueuereference.go
 gc/models/workitemreference.go
+gc/models/workitemrulesettings.go
 gc/models/workitemsattributechangeboolean.go
 gc/models/workitemsattributechangeinstant.go
 gc/models/workitemsattributechangeinteger.go
@@ -4754,6 +4801,7 @@ gc/models/wrapupcode.go
 gc/models/wrapupcodeconfig.go
 gc/models/wrapupcodeentitylisting.go
 gc/models/wrapupcodemapping.go
+gc/models/wrapupcodepredictionconfig.go
 gc/models/wrapupcodereference.go
 gc/models/wrapupcoderequest.go
 gc/models/wrapupidreference.go

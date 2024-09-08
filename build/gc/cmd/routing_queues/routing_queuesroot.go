@@ -9,6 +9,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing_queues_me"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing_queues_members"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing_queues_users"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing_queues_assistant"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing_queues_comparisonperiods"
 )
 
@@ -20,7 +21,8 @@ func init() {
 	routing_queuesCmd.AddCommand(routing_queues_me.Cmdrouting_queues_me())
 	routing_queuesCmd.AddCommand(routing_queues_members.Cmdrouting_queues_members())
 	routing_queuesCmd.AddCommand(routing_queues_users.Cmdrouting_queues_users())
+	routing_queuesCmd.AddCommand(routing_queues_assistant.Cmdrouting_queues_assistant())
 	routing_queuesCmd.AddCommand(routing_queues_comparisonperiods.Cmdrouting_queues_comparisonperiods())
-	routing_queuesCmd.Short = utils.GenerateCustomDescription(routing_queuesCmd.Short, routing_queues_estimatedwaittime.Description, routing_queues_mediatypes.Description, routing_queues_divisionviews.Description, routing_queues_wrapupcodes.Description, routing_queues_me.Description, routing_queues_members.Description, routing_queues_users.Description, routing_queues_comparisonperiods.Description, )
+	routing_queuesCmd.Short = utils.GenerateCustomDescription(routing_queuesCmd.Short, routing_queues_estimatedwaittime.Description, routing_queues_mediatypes.Description, routing_queues_divisionviews.Description, routing_queues_wrapupcodes.Description, routing_queues_me.Description, routing_queues_members.Description, routing_queues_users.Description, routing_queues_assistant.Description, routing_queues_comparisonperiods.Description, )
 	routing_queuesCmd.Long = routing_queuesCmd.Short
 }

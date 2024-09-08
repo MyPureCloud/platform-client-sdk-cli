@@ -20,12 +20,18 @@ type FunctionconfigDud struct {
     Zip Functionzipconfig `json:"zip"`
 
 
+    UploadExceptionHistory []Functionzipconfig `json:"uploadExceptionHistory"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
 
 // Functionconfig - Current action function configuration and zip upload configuration.
 type Functionconfig struct { 
+    
+
+
     
 
 
@@ -59,6 +65,9 @@ func (u *Functionconfig) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

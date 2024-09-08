@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdexternalcontacts_identifierlookup() *cobra.Command { 
-	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "which field, if any, to expand Valid values: externalOrganization, identifiers")
+	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "which field, if any, to expand Valid values: externalOrganization, identifiers, externalSources")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/externalcontacts/identifierlookup", utils.FormatPermissions([]string{ "externalContacts:contact:view", "relate:contact:view",  }), utils.GenerateDevCentreLink("POST", "External Contacts", "/api/v2/externalcontacts/identifierlookup")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "content" : {

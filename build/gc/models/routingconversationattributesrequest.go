@@ -22,6 +22,9 @@ type RoutingconversationattributesrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Routingconversationattributesrequest
@@ -38,6 +41,10 @@ type Routingconversationattributesrequest struct {
     LanguageId string `json:"languageId"`
 
 
+    // LabelId - Label requirement for the conversation.  To remove the label requirement (setting it to System Default Label), specify an empty string, i.e., \"\".
+    LabelId string `json:"labelId"`
+
+
     // RequestScoredAgents
     RequestScoredAgents []Requestscoredagent `json:"requestScoredAgents"`
 
@@ -47,6 +54,7 @@ type Routingconversationattributesrequest struct {
 func (o *Routingconversationattributesrequest) String() string {
     
      o.SkillIds = []string{""} 
+    
     
      o.RequestScoredAgents = []Requestscoredagent{{}} 
 
@@ -72,6 +80,8 @@ func (u *Routingconversationattributesrequest) MarshalJSON() ([]byte, error) {
         
         LanguageId string `json:"languageId"`
         
+        LabelId string `json:"labelId"`
+        
         RequestScoredAgents []Requestscoredagent `json:"requestScoredAgents"`
         *Alias
     }{
@@ -81,6 +91,9 @@ func (u *Routingconversationattributesrequest) MarshalJSON() ([]byte, error) {
 
         
         SkillIds: []string{""},
+        
+
+
         
 
 

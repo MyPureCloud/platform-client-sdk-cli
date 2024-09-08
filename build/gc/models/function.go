@@ -63,7 +63,7 @@ type Function struct {
     Runtime string `json:"runtime"`
 
 
-    // TimeoutSeconds - Execution timeout to apply to function. Value is in seconds. Range allowed 1 to 60. Default value 15 seconds.
+    // TimeoutSeconds - Execution timeout to apply to function. Value is in seconds. Range allowed 1 to 15. Default value 15 seconds.
     TimeoutSeconds int `json:"timeoutSeconds"`
 
 }

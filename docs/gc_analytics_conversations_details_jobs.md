@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc analytics conversations details](gc_analytics_conversations_details.html)	 - /api/v2/analytics/conversations/{conversationId}/details /api/v2/analytics/conversations/details
+* [gc analytics conversations details](gc_analytics_conversations_details.html)	 - /api/v2/analytics/conversations/details /api/v2/analytics/conversations/{conversationId}/details
 * [gc analytics conversations details jobs availability](gc_analytics_conversations_details_jobs_availability.html)	 - /api/v2/analytics/conversations/details/jobs/availability
 * [gc analytics conversations details jobs create](gc_analytics_conversations_details_jobs_create.html)	 - Query for conversation details asynchronously
 * [gc analytics conversations details jobs delete](gc_analytics_conversations_details_jobs_delete.html)	 - Delete/cancel an async details job

@@ -1,22 +1,24 @@
-## gc taskmanagement workitems create
+## gc integrations speech audioconnector list
 
-Create a workitem
+Get a list of Audio Connector integrations
 
 ### Synopsis
 
-Create a workitem
+Get a list of Audio Connector integrations
 
 ```
-gc taskmanagement workitems create [flags]
+gc integrations speech audioconnector list [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -a, --autopaginate             Automatically paginate through the results stripping page information
+      --filtercondition string   Filter list command output based on a given condition or regular expression
+  -h, --help                     help for list
+      --pageNumber int           Page number (default 1)
+      --pageSize int             Page size (default 25)
+  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +38,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc integrations speech audioconnector](gc_integrations_speech_audioconnector.html)	 - /api/v2/integrations/speech/audioconnector
 
 

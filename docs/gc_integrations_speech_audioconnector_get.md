@@ -1,22 +1,19 @@
-## gc taskmanagement workitems create
+## gc integrations speech audioconnector get
 
-Create a workitem
+Get an Audio Connector integration
 
 ### Synopsis
 
-Create a workitem
+Get an Audio Connector integration
 
 ```
-gc taskmanagement workitems create [flags]
+gc integrations speech audioconnector get [integrationId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc integrations speech audioconnector](gc_integrations_speech_audioconnector.html)	 - /api/v2/integrations/speech/audioconnector
 
 

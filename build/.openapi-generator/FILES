@@ -535,6 +535,7 @@ gc/cmd/integrations_clientapps_unifiedcommunications/integrations_clientapps_uni
 gc/cmd/integrations_config_current/integrations_config_current.go
 gc/cmd/integrations_credentials/integrations_credentials.go
 gc/cmd/integrations_credentials_types/integrations_credentials_types.go
+gc/cmd/integrations_speech_audioconnector/integrations_speech_audioconnector.go
 gc/cmd/integrations_speech_dialogflow_agents/integrations_speech_dialogflow_agents.go
 gc/cmd/integrations_speech_dialogflowcx_agents/integrations_speech_dialogflowcx_agents.go
 gc/cmd/integrations_speech_lex_bot_alias/integrations_speech_lex_bot_alias.go
@@ -1540,6 +1541,8 @@ gc/models/attribute.go
 gc/models/attributefilteritem.go
 gc/models/atzmtimeslot.go
 gc/models/atzmtimeslotwithtimezone.go
+gc/models/audioconnectorintegration.go
+gc/models/audioconnectorintegrationentitylisting.go
 gc/models/audiostate.go
 gc/models/audioupdatedevent.go
 gc/models/auditlogmessage.go
@@ -2050,6 +2053,7 @@ gc/models/conversationcontentlocation.go
 gc/models/conversationcontentnotificationtemplate.go
 gc/models/conversationcontentquickreply.go
 gc/models/conversationcontentquickreplyv2.go
+gc/models/conversationcontentreaction.go
 gc/models/conversationcontentstory.go
 gc/models/conversationcontenttext.go
 gc/models/conversationdeletionprotectionquery.go
@@ -2060,6 +2064,9 @@ gc/models/conversationdisconnectsettings.go
 gc/models/conversationdivisionmembership.go
 gc/models/conversationencryptionconfiguration.go
 gc/models/conversationencryptionconfigurationlisting.go
+gc/models/conversationenrichment.go
+gc/models/conversationenrichmentlanguage.go
+gc/models/conversationenrichmentsentimentv2.go
 gc/models/conversationentitylisting.go
 gc/models/conversationeventcobrowse.go
 gc/models/conversationeventpresence.go

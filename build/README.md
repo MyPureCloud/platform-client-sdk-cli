@@ -1,6 +1,4 @@
----
-title: Platform API CLI SDK
----
+# Platform API CLI SDK
 
 This CLI focuses mainly on exposing the following operations:
 
@@ -11,6 +9,8 @@ This CLI focuses mainly on exposing the following operations:
 - **delete** - Delete a Genesys Cloud object via data passed in via stdin or via file.
 
 **Note:** Most operations exposed by the `list` command and some operations exposed by the `get` command support the `pageSize` parameter. It's important to set this to an appropriate value if a large number of resources are being listed to reduce the load on the API and reduce wait times.
+
+Documentation: https://mypurecloud.github.io/platform-client-sdk-cli/
 
 # Installation
 
@@ -110,9 +110,9 @@ Logging is configured on a per-profile basis so the above commands will only con
 # Tracing progress information
 Passing the flag `-i` or `--indicateprogress` to any command will result in progress information traced to stderr and written to the application log file.  For example, to see progress information for a list operation and ignore API output, use `gc users list --autopaginate -i > /dev/null`.
 
-# Preview API's
+# Preview APIs
 
-Preview API's are included in the CLI. These resources are subject to both breaking and non-breaking changes at any time without notice. This includes, but is not limited to, changing resource names, paths, contracts, documentation, and removing resources entirely. For a full list of the preview API's see [here](https://developer.genesys.cloud/platform/preview-apis)
+Preview APIs are included in the CLI. These resources are subject to both breaking and non-breaking changes at any time without notice. This includes, but is not limited to, changing resource names, paths, contracts, documentation, and removing resources entirely. For a full list of the preview APIs see [here](https://developer.genesys.cloud/platform/preview-apis)
 
 # Notifications
 Create a channel:

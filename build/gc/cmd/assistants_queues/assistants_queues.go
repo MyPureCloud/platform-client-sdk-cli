@@ -28,14 +28,29 @@ func init() {
 }
 
 func Cmdassistants_queues() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/assistants/{assistantId}/queues/{queueId}", utils.FormatPermissions([]string{ "assistants:queue:delete",  }), utils.GenerateDevCentreLink("DELETE", "Agent Assistants", "/api/v2/assistants/{assistantId}/queues/{queueId}")))
-	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
-	
-	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Success",
-  "content" : { }
+	createAssistantQueueCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createAssistantQueueCmd.UsageTemplate(), "PUT", "/api/v2/assistants/{assistantId}/queues/{queueId}", utils.FormatPermissions([]string{ "assistants:queue:edit",  }), utils.GenerateDevCentreLink("PUT", "Agent Assistants", "/api/v2/assistants/{assistantId}/queues/{queueId}")))
+	utils.AddFileFlagIfUpsert(createAssistantQueueCmd.Flags(), "PUT", `{
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AssistantQueue"
+      }
+    }
+  },
+  "required" : true
 }`)
-	assistants_queuesCmd.AddCommand(deleteCmd)
+	
+	utils.AddPaginateFlagsIfListingResponse(createAssistantQueueCmd.Flags(), "PUT", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/AssistantQueue"
+      }
+    }
+  }
+}`)
+	assistants_queuesCmd.AddCommand(createAssistantQueueCmd)
 
 	utils.AddFlag(deleteCmd.Flags(), "string", "queueIds", "", "Comma-separated identifiers of the queues that need to be deleted.")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/assistants/{assistantId}/queues", utils.FormatPermissions([]string{ "assistants:queue:delete",  }), utils.GenerateDevCentreLink("DELETE", "Agent Assistants", "/api/v2/assistants/{assistantId}/queues")))
@@ -63,14 +78,14 @@ func Cmdassistants_queues() *cobra.Command {
 }`)
 	assistants_queuesCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
-	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Which fields, if any, to expand. Valid values: assistant")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/assistants/{assistantId}/queues", utils.FormatPermissions([]string{ "assistants:queue:view",  }), utils.GenerateDevCentreLink("GET", "Agent Assistants", "/api/v2/assistants/{assistantId}/queues")))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+	utils.AddFlag(getAssistantQueuesCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
+	utils.AddFlag(getAssistantQueuesCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
+	utils.AddFlag(getAssistantQueuesCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
+	utils.AddFlag(getAssistantQueuesCmd.Flags(), "string", "expand", "", "Which fields, if any, to expand. Valid values: assistant")
+	getAssistantQueuesCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getAssistantQueuesCmd.UsageTemplate(), "GET", "/api/v2/assistants/{assistantId}/queues", utils.FormatPermissions([]string{ "assistants:queue:view",  }), utils.GenerateDevCentreLink("GET", "Agent Assistants", "/api/v2/assistants/{assistantId}/queues")))
+	utils.AddFileFlagIfUpsert(getAssistantQueuesCmd.Flags(), "GET", ``)
 	
-	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+	utils.AddPaginateFlagsIfListingResponse(getAssistantQueuesCmd.Flags(), "GET", `{
   "description" : "successful operation",
   "content" : {
     "application/json" : {
@@ -80,7 +95,7 @@ func Cmdassistants_queues() *cobra.Command {
     }
   }
 }`)
-	assistants_queuesCmd.AddCommand(listCmd)
+	assistants_queuesCmd.AddCommand(getAssistantQueuesCmd)
 
 	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
@@ -102,29 +117,14 @@ func Cmdassistants_queues() *cobra.Command {
 }`)
 	assistants_queuesCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/assistants/{assistantId}/queues/{queueId}", utils.FormatPermissions([]string{ "assistants:queue:edit",  }), utils.GenerateDevCentreLink("PUT", "Agent Assistants", "/api/v2/assistants/{assistantId}/queues/{queueId}")))
-	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/AssistantQueue"
-      }
-    }
-  },
-  "required" : true
-}`)
+	removeQueueFromAssistantCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", removeQueueFromAssistantCmd.UsageTemplate(), "DELETE", "/api/v2/assistants/{assistantId}/queues/{queueId}", utils.FormatPermissions([]string{ "assistants:queue:delete",  }), utils.GenerateDevCentreLink("DELETE", "Agent Assistants", "/api/v2/assistants/{assistantId}/queues/{queueId}")))
+	utils.AddFileFlagIfUpsert(removeQueueFromAssistantCmd.Flags(), "DELETE", ``)
 	
-	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  "description" : "successful operation",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/AssistantQueue"
-      }
-    }
-  }
+	utils.AddPaginateFlagsIfListingResponse(removeQueueFromAssistantCmd.Flags(), "DELETE", `{
+  "description" : "Success",
+  "content" : { }
 }`)
-	assistants_queuesCmd.AddCommand(updateCmd)
+	assistants_queuesCmd.AddCommand(removeQueueFromAssistantCmd)
 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/assistants/{assistantId}/queues", utils.FormatPermissions([]string{ "assistants:queue:edit",  }), utils.GenerateDevCentreLink("PATCH", "Agent Assistants", "/api/v2/assistants/{assistantId}/queues")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
@@ -160,10 +160,10 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
-var deleteCmd = &cobra.Command{
-	Use:   "delete [assistantId] [queueId]",
-	Short: "Disassociate a queue from an assistant.",
-	Long:  "Disassociate a queue from an assistant.",
+var createAssistantQueueCmd = &cobra.Command{
+	Use:   "createAssistantQueue [assistantId] [queueId]",
+	Short: "Create a queue assistant association.",
+	Long:  "Create a queue assistant association.",
 	Args:  utils.DetermineArgs([]string{ "assistantId", "queueId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -171,6 +171,9 @@ var deleteCmd = &cobra.Command{
 
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
+			
+			reqModel := models.Assistantqueue{}
+			utils.Render(reqModel.String())
 			
 			return
 		}
@@ -196,8 +199,8 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "delete"
-		const httpMethod = "DELETE"
+		const opId = "createAssistantQueue"
+		const httpMethod = "PUT"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
@@ -367,8 +370,8 @@ var getCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var listCmd = &cobra.Command{
-	Use:   "list [assistantId]",
+var getAssistantQueuesCmd = &cobra.Command{
+	Use:   "getAssistantQueues [assistantId]",
 	Short: "Get all the queues associated with an assistant.",
 	Long:  "Get all the queues associated with an assistant.",
 	Args:  utils.DetermineArgs([]string{ "assistantId", }),
@@ -417,7 +420,7 @@ var listCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "list"
+		const opId = "getAssistantQueues"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
@@ -531,10 +534,10 @@ var listCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var updateCmd = &cobra.Command{
-	Use:   "update [assistantId] [queueId]",
-	Short: "Create a queue assistant association.",
-	Long:  "Create a queue assistant association.",
+var removeQueueFromAssistantCmd = &cobra.Command{
+	Use:   "removeQueueFromAssistant [assistantId] [queueId]",
+	Short: "Disassociate a queue from an assistant.",
+	Long:  "Disassociate a queue from an assistant.",
 	Args:  utils.DetermineArgs([]string{ "assistantId", "queueId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -542,9 +545,6 @@ var updateCmd = &cobra.Command{
 
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
-			
-			reqModel := models.Assistantqueue{}
-			utils.Render(reqModel.String())
 			
 			return
 		}
@@ -570,8 +570,8 @@ var updateCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "update"
-		const httpMethod = "PUT"
+		const opId = "removeQueueFromAssistant"
+		const httpMethod = "DELETE"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

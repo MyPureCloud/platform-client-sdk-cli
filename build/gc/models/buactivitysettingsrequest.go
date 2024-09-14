@@ -17,7 +17,7 @@ type BuactivitysettingsrequestDud struct {
 
 // Buactivitysettingsrequest
 type Buactivitysettingsrequest struct { 
-    // DefaultActivityCodeId - Default Activity Code ID settings
+    // DefaultActivityCodeId - The ID of the activity code. This is the activity code that will be used by default for agent development activities added to the schedule
     DefaultActivityCodeId string `json:"defaultActivityCodeId"`
 
 }

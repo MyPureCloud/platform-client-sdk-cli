@@ -35,6 +35,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/ipranges"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languages"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/locations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/mobiledevices"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
@@ -97,7 +98,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/processautomation"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemanagement"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/settings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony"
@@ -107,8 +107,8 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/architect"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webmessaging"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/coaching"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeengagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeengagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/widgets"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/taskmanagement"
 	"os"
@@ -137,7 +137,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 111.0.0")
+		fmt.Println("Current version: 111.1.0")
 		checkForNewVersion()
 	},
 }
@@ -156,7 +156,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("111.0.0", latestVersion) {
+	if versionsAreEqual("111.1.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -261,6 +261,7 @@ func init() {
 	rootCmd.AddCommand(integrations.Cmdintegrations())
 	rootCmd.AddCommand(ipranges.Cmdipranges())
 	rootCmd.AddCommand(languages.Cmdlanguages())
+	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(locations.Cmdlocations())
 	rootCmd.AddCommand(mobiledevices.Cmdmobiledevices())
 	rootCmd.AddCommand(orphanrecordings.Cmdorphanrecordings())
@@ -323,7 +324,6 @@ func init() {
 	rootCmd.AddCommand(processautomation.Cmdprocessautomation())
 	rootCmd.AddCommand(recordings.Cmdrecordings())
 	rootCmd.AddCommand(responsemanagement.Cmdresponsemanagement())
-	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(settings.Cmdsettings())
 	rootCmd.AddCommand(speechandtextanalytics.Cmdspeechandtextanalytics())
 	rootCmd.AddCommand(telephony.Cmdtelephony())
@@ -333,8 +333,8 @@ func init() {
 	rootCmd.AddCommand(architect.Cmdarchitect())
 	rootCmd.AddCommand(webmessaging.Cmdwebmessaging())
 	rootCmd.AddCommand(coaching.Cmdcoaching())
-	rootCmd.AddCommand(employeeengagement.Cmdemployeeengagement())
 	rootCmd.AddCommand(learning.Cmdlearning())
+	rootCmd.AddCommand(employeeengagement.Cmdemployeeengagement())
 	rootCmd.AddCommand(widgets.Cmdwidgets())
 	rootCmd.AddCommand(taskmanagement.Cmdtaskmanagement())
 

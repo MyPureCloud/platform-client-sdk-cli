@@ -57,7 +57,7 @@ func Cmdcontentmanagement_documents() *cobra.Command {
 	contentmanagement_documentsCmd.AddCommand(createCmd)
 
 	utils.AddFlag(deleteCmd.Flags(), "bool", "override", "", "Override any lock on the document")
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/contentmanagement/documents/{documentId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Content Management", "/api/v2/contentmanagement/documents/{documentId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/contentmanagement/documents/{documentId}", utils.FormatPermissions([]string{ "content_management_user",  }), utils.GenerateDevCentreLink("DELETE", "Content Management", "/api/v2/contentmanagement/documents/{documentId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -67,7 +67,7 @@ func Cmdcontentmanagement_documents() *cobra.Command {
 	contentmanagement_documentsCmd.AddCommand(deleteCmd)
 
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: lockInfo, acl, workspace")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/contentmanagement/documents/{documentId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Content Management", "/api/v2/contentmanagement/documents/{documentId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/contentmanagement/documents/{documentId}", utils.FormatPermissions([]string{ "content_management_user",  }), utils.GenerateDevCentreLink("GET", "Content Management", "/api/v2/contentmanagement/documents/{documentId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -107,7 +107,7 @@ func Cmdcontentmanagement_documents() *cobra.Command {
 
 	utils.AddFlag(updateCmd.Flags(), "string", "expand", "", "Expand some document fields Valid values: acl")
 	utils.AddFlag(updateCmd.Flags(), "bool", "override", "", "Override any lock on the document")
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "POST", "/api/v2/contentmanagement/documents/{documentId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Content Management", "/api/v2/contentmanagement/documents/{documentId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "POST", "/api/v2/contentmanagement/documents/{documentId}", utils.FormatPermissions([]string{ "content_management_user",  }), utils.GenerateDevCentreLink("POST", "Content Management", "/api/v2/contentmanagement/documents/{documentId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "POST", `{
   "description" : "Document",
   "content" : {

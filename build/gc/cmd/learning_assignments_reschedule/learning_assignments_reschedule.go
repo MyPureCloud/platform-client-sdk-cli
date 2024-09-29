@@ -42,7 +42,7 @@ func Cmdlearning_assignments_reschedule() *cobra.Command {
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  "description" : "successful operation",
+  "description" : "Assignment rescheduled",
   "content" : {
     "application/json" : {
       "schema" : {

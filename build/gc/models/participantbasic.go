@@ -152,6 +152,9 @@ type ParticipantbasicDud struct {
 
     
 
+
+    
+
 }
 
 // Participantbasic
@@ -340,6 +343,10 @@ type Participantbasic struct {
     EndAcwTime time.Time `json:"endAcwTime"`
 
 
+    // InternalMessages
+    InternalMessages []Internalmessage `json:"internalMessages"`
+
+
     // BargedParticipantId - If this participant barged in a participant's call, then this will be the id of the targeted participant.
     BargedParticipantId string `json:"bargedParticipantId"`
 
@@ -393,6 +400,7 @@ func (o *Participantbasic) String() string {
     
     
     
+     o.InternalMessages = []Internalmessage{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -502,6 +510,8 @@ func (u *Participantbasic) MarshalJSON() ([]byte, error) {
         StartAcwTime time.Time `json:"startAcwTime"`
         
         EndAcwTime time.Time `json:"endAcwTime"`
+        
+        InternalMessages []Internalmessage `json:"internalMessages"`
         
         BargedParticipantId string `json:"bargedParticipantId"`
         *Alias
@@ -666,6 +676,11 @@ func (u *Participantbasic) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        InternalMessages: []Internalmessage{{}},
         
 
 

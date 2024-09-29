@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdtokens_timeout() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/tokens/timeout", utils.FormatPermissions([]string{ "directory:organization:admin",  }), utils.GenerateDevCentreLink("GET", "Tokens", "/api/v2/tokens/timeout")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/tokens/timeout", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Tokens", "/api/v2/tokens/timeout")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

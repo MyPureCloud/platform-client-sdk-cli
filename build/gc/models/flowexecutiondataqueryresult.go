@@ -45,6 +45,9 @@ type FlowexecutiondataqueryresultDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -78,6 +81,10 @@ type Flowexecutiondataqueryresult struct {
     ConversationId string `json:"conversationId"`
 
 
+    // WorkitemId - The id of the workitem that executed this flow.
+    WorkitemId string `json:"workitemId"`
+
+
     // FlowType - The type of flow.
     FlowType string `json:"flowType"`
 
@@ -100,6 +107,7 @@ type Flowexecutiondataqueryresult struct {
 
 // String returns a JSON representation of the model
 func (o *Flowexecutiondataqueryresult) String() string {
+    
     
     
     
@@ -139,6 +147,8 @@ func (u *Flowexecutiondataqueryresult) MarshalJSON() ([]byte, error) {
         
         ConversationId string `json:"conversationId"`
         
+        WorkitemId string `json:"workitemId"`
+        
         FlowType string `json:"flowType"`
         
         FlowErrorReason string `json:"flowErrorReason"`
@@ -148,6 +158,9 @@ func (u *Flowexecutiondataqueryresult) MarshalJSON() ([]byte, error) {
         FlowName string `json:"flowName"`
         *Alias
     }{
+
+        
+
 
         
 

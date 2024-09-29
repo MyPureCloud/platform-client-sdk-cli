@@ -42,7 +42,7 @@ func Cmdlearning_assignments() *cobra.Command {
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "successful operation",
+  "description" : "Assignment created",
   "content" : {
     "application/json" : {
       "schema" : {

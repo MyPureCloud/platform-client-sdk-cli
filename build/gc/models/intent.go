@@ -13,6 +13,9 @@ var (
 type IntentDud struct { 
     
 
+
+    
+
 }
 
 // Intent
@@ -20,10 +23,15 @@ type Intent struct {
     // Name
     Name string `json:"name"`
 
+
+    // Description
+    Description string `json:"description"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Intent) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Intent) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Name string `json:"name"`
+        
+        Description string `json:"description"`
         *Alias
     }{
+
+        
+
 
         
 

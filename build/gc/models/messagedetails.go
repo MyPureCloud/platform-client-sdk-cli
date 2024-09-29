@@ -38,6 +38,9 @@ type MessagedetailsDud struct {
 
     
 
+
+    
+
 }
 
 // Messagedetails
@@ -74,6 +77,10 @@ type Messagedetails struct {
     MessageMetadata Conversationmessagemetadata `json:"messageMetadata"`
 
 
+    // SocialVisibility - For social media messages, the visibility of the message in the originating social platform
+    SocialVisibility string `json:"socialVisibility"`
+
+
     // ErrorInfo - Provider specific error information for a communication.
     ErrorInfo Errorbody `json:"errorInfo"`
 
@@ -88,6 +95,7 @@ func (o *Messagedetails) String() string {
     
      o.Media = []Messagemedia{{}} 
      o.Stickers = []Messagesticker{{}} 
+    
     
     
 
@@ -123,6 +131,8 @@ func (u *Messagedetails) MarshalJSON() ([]byte, error) {
         
         MessageMetadata Conversationmessagemetadata `json:"messageMetadata"`
         
+        SocialVisibility string `json:"socialVisibility"`
+        
         ErrorInfo Errorbody `json:"errorInfo"`
         *Alias
     }{
@@ -149,6 +159,9 @@ func (u *Messagedetails) MarshalJSON() ([]byte, error) {
 
         
         Stickers: []Messagesticker{{}},
+        
+
+
         
 
 

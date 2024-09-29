@@ -17,6 +17,9 @@ type ValidationservicerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Validationservicerequest
@@ -28,10 +31,15 @@ type Validationservicerequest struct {
     // UploadKey - S3 key for the uploaded file
     UploadKey string `json:"uploadKey"`
 
+
+    // FileName - Name of the uploaded file
+    FileName string `json:"fileName"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Validationservicerequest) String() string {
+    
     
     
 
@@ -54,8 +62,13 @@ func (u *Validationservicerequest) MarshalJSON() ([]byte, error) {
         DateImportEnded time.Time `json:"dateImportEnded"`
         
         UploadKey string `json:"uploadKey"`
+        
+        FileName string `json:"fileName"`
         *Alias
     }{
+
+        
+
 
         
 

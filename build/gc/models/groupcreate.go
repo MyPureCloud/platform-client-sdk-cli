@@ -54,6 +54,9 @@ type GroupcreateDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -107,6 +110,10 @@ type Groupcreate struct {
     RolesEnabled bool `json:"rolesEnabled"`
 
 
+    // IncludeOwners - Allow owners to be included as members of the group
+    IncludeOwners bool `json:"includeOwners"`
+
+
     // OwnerIds - Owners of the group
     OwnerIds []string `json:"ownerIds"`
 
@@ -122,6 +129,7 @@ func (o *Groupcreate) String() string {
     
      o.Images = []Userimage{{}} 
      o.Addresses = []Groupcontact{{}} 
+    
     
     
     
@@ -159,6 +167,8 @@ func (u *Groupcreate) MarshalJSON() ([]byte, error) {
         
         RolesEnabled bool `json:"rolesEnabled"`
         
+        IncludeOwners bool `json:"includeOwners"`
+        
         OwnerIds []string `json:"ownerIds"`
         *Alias
     }{
@@ -194,6 +204,9 @@ func (u *Groupcreate) MarshalJSON() ([]byte, error) {
 
         
         Addresses: []Groupcontact{{}},
+        
+
+
         
 
 

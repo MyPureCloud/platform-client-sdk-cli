@@ -123,6 +123,9 @@ type QueuerequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -225,6 +228,10 @@ type Queuerequest struct {
     AutoAnswerOnly bool `json:"autoAnswerOnly"`
 
 
+    // CannedResponseLibraries - Canned response library IDs and mode with which they are associated with the queue
+    CannedResponseLibraries Cannedresponselibraries `json:"cannedResponseLibraries"`
+
+
     // EnableTranscription - Indicates whether voice transcription is enabled for this queue.
     EnableTranscription bool `json:"enableTranscription"`
 
@@ -307,6 +314,7 @@ func (o *Queuerequest) String() string {
     
     
     
+    
      o.DefaultScripts = map[string]Script{"": {}} 
     
     
@@ -370,6 +378,8 @@ func (u *Queuerequest) MarshalJSON() ([]byte, error) {
         OnHoldPrompt Domainentityref `json:"onHoldPrompt"`
         
         AutoAnswerOnly bool `json:"autoAnswerOnly"`
+        
+        CannedResponseLibraries Cannedresponselibraries `json:"cannedResponseLibraries"`
         
         EnableTranscription bool `json:"enableTranscription"`
         
@@ -455,6 +465,9 @@ func (u *Queuerequest) MarshalJSON() ([]byte, error) {
 
         
         MemberGroups: []Membergroup{{}},
+        
+
+
         
 
 

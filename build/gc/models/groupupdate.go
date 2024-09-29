@@ -44,6 +44,9 @@ type GroupupdateDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -89,6 +92,10 @@ type Groupupdate struct {
     RolesEnabled bool `json:"rolesEnabled"`
 
 
+    // IncludeOwners - Allow owners to be included as members of the group
+    IncludeOwners bool `json:"includeOwners"`
+
+
     // OwnerIds - Owners of the group
     OwnerIds []string `json:"ownerIds"`
 
@@ -105,6 +112,7 @@ func (o *Groupupdate) String() string {
     
      o.Images = []Userimage{{}} 
      o.Addresses = []Groupcontact{{}} 
+    
     
     
     
@@ -144,6 +152,8 @@ func (u *Groupupdate) MarshalJSON() ([]byte, error) {
         
         RolesEnabled bool `json:"rolesEnabled"`
         
+        IncludeOwners bool `json:"includeOwners"`
+        
         OwnerIds []string `json:"ownerIds"`
         *Alias
     }{
@@ -170,6 +180,9 @@ func (u *Groupupdate) MarshalJSON() ([]byte, error) {
 
         
         Addresses: []Groupcontact{{}},
+        
+
+
         
 
 

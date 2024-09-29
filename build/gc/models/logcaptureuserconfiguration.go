@@ -15,6 +15,9 @@ type LogcaptureuserconfigurationDud struct {
     Id string `json:"id"`
 
 
+    DateStarted time.Time `json:"dateStarted"`
+
+
     
 
 
@@ -24,6 +27,9 @@ type LogcaptureuserconfigurationDud struct {
 
 // Logcaptureuserconfiguration
 type Logcaptureuserconfiguration struct { 
+    
+
+
     
 
 
@@ -58,6 +64,9 @@ func (u *Logcaptureuserconfiguration) MarshalJSON() ([]byte, error) {
         DateExpired time.Time `json:"dateExpired"`
         *Alias
     }{
+
+        
+
 
         
 

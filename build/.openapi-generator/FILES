@@ -327,6 +327,7 @@ gc/cmd/conversations_socials_recordingstate/conversations_socials_recordingstate
 gc/cmd/conversations_suggestions/conversations_suggestions.go
 gc/cmd/conversations_suggestions_engagement/conversations_suggestions_engagement.go
 gc/cmd/conversations_suggestions_feedback/conversations_suggestions_feedback.go
+gc/cmd/conversations_summaries/conversations_summaries.go
 gc/cmd/conversations_summaries_feedback/conversations_summaries_feedback.go
 gc/cmd/conversations_tags/conversations_tags.go
 gc/cmd/conversations_utilizationlabel/conversations_utilizationlabel.go
@@ -596,6 +597,7 @@ gc/cmd/knowledge_guest_sessions_documents_presentations/knowledge_guest_sessions
 gc/cmd/knowledge_guest_sessions_documents_search/knowledge_guest_sessions_documents_search.go
 gc/cmd/knowledge_guest_sessions_documents_search_suggestions/knowledge_guest_sessions_documents_search_suggestions.go
 gc/cmd/knowledge_guest_sessions_documents_views/knowledge_guest_sessions_documents_views.go
+gc/cmd/knowledge_integrations_options/knowledge_integrations_options.go
 gc/cmd/knowledge_knowledgebases/knowledge_knowledgebases.go
 gc/cmd/knowledge_knowledgebases_categories/knowledge_knowledgebases_categories.go
 gc/cmd/knowledge_knowledgebases_documents/knowledge_knowledgebases_documents.go
@@ -627,6 +629,12 @@ gc/cmd/knowledge_knowledgebases_operations_users_query/knowledge_knowledgebases_
 gc/cmd/knowledge_knowledgebases_parse_jobs/knowledge_knowledgebases_parse_jobs.go
 gc/cmd/knowledge_knowledgebases_parse_jobs_import/knowledge_knowledgebases_parse_jobs_import.go
 gc/cmd/knowledge_knowledgebases_search/knowledge_knowledgebases_search.go
+gc/cmd/knowledge_knowledgebases_sources/knowledge_knowledgebases_sources.go
+gc/cmd/knowledge_knowledgebases_sources_salesforce/knowledge_knowledgebases_sources_salesforce.go
+gc/cmd/knowledge_knowledgebases_sources_salesforce_sync/knowledge_knowledgebases_sources_salesforce_sync.go
+gc/cmd/knowledge_knowledgebases_sources_servicenow/knowledge_knowledgebases_sources_servicenow.go
+gc/cmd/knowledge_knowledgebases_sources_servicenow_sync/knowledge_knowledgebases_sources_servicenow_sync.go
+gc/cmd/knowledge_knowledgebases_synchronize_jobs/knowledge_knowledgebases_synchronize_jobs.go
 gc/cmd/knowledge_knowledgebases_unanswered_groups/knowledge_knowledgebases_unanswered_groups.go
 gc/cmd/knowledge_knowledgebases_unanswered_groups_phrasegroups/knowledge_knowledgebases_unanswered_groups_phrasegroups.go
 gc/cmd/knowledge_knowledgebases_uploads_urls_jobs/knowledge_knowledgebases_uploads_urls_jobs.go
@@ -741,6 +749,7 @@ gc/cmd/outbound_campaigns_divisionviews/outbound_campaigns_divisionviews.go
 gc/cmd/outbound_campaigns_interactions/outbound_campaigns_interactions.go
 gc/cmd/outbound_campaigns_linedistribution/outbound_campaigns_linedistribution.go
 gc/cmd/outbound_campaigns_progress/outbound_campaigns_progress.go
+gc/cmd/outbound_campaigns_skillcombinations/outbound_campaigns_skillcombinations.go
 gc/cmd/outbound_campaigns_stats/outbound_campaigns_stats.go
 gc/cmd/outbound_contactlistfilters/outbound_contactlistfilters.go
 gc/cmd/outbound_contactlistfilters_bulk_retrieve/outbound_contactlistfilters_bulk_retrieve.go
@@ -948,6 +957,8 @@ gc/cmd/speechandtextanalytics_topics_general/speechandtextanalytics_topics_gener
 gc/cmd/speechandtextanalytics_topics_general_status/speechandtextanalytics_topics_general_status.go
 gc/cmd/speechandtextanalytics_topics_publishjobs/speechandtextanalytics_topics_publishjobs.go
 gc/cmd/speechandtextanalytics_transcripts_search/speechandtextanalytics_transcripts_search.go
+gc/cmd/speechandtextanalytics_translations_languages/speechandtextanalytics_translations_languages.go
+gc/cmd/speechandtextanalytics_translations_languages_conversations/speechandtextanalytics_translations_languages_conversations.go
 gc/cmd/stations/stations.go
 gc/cmd/stations_associateduser/stations_associateduser.go
 gc/cmd/systempresences/systempresences.go
@@ -981,6 +992,7 @@ gc/cmd/teams_search/teams_search.go
 gc/cmd/telephony_mediaregions/telephony_mediaregions.go
 gc/cmd/telephony_providers_edges/telephony_providers_edges.go
 gc/cmd/telephony_providers_edges_addressvalidation/telephony_providers_edges_addressvalidation.go
+gc/cmd/telephony_providers_edges_alertablepresences/telephony_providers_edges_alertablepresences.go
 gc/cmd/telephony_providers_edges_certificateauthorities/telephony_providers_edges_certificateauthorities.go
 gc/cmd/telephony_providers_edges_diagnostic_nslookup/telephony_providers_edges_diagnostic_nslookup.go
 gc/cmd/telephony_providers_edges_diagnostic_ping/telephony_providers_edges_diagnostic_ping.go
@@ -1427,6 +1439,7 @@ gc/models/aianswer.go
 gc/models/aiscoring.go
 gc/models/aiscoringsetting.go
 gc/models/aiscoringsettings.go
+gc/models/alertablepresences.go
 gc/models/alertingunreadstatus.go
 gc/models/alertlisting.go
 gc/models/alertnotification.go
@@ -1829,6 +1842,7 @@ gc/models/campaignrulecondition.go
 gc/models/campaignruleconditiongroup.go
 gc/models/campaignruleentities.go
 gc/models/campaignruleentitylisting.go
+gc/models/campaignruleexecutionsettings.go
 gc/models/campaignruleparameters.go
 gc/models/campaignschedule.go
 gc/models/campaignsequence.go
@@ -1925,6 +1939,8 @@ gc/models/commonrulepredicateentity.go
 gc/models/communicationansweredevent.go
 gc/models/communicationdispositionappliedevent.go
 gc/models/communicationendedevent.go
+gc/models/communicationtranslation.go
+gc/models/communicationtranslationlist.go
 gc/models/comparisonperiod.go
 gc/models/comparisonperiodlisting.go
 gc/models/complexvariableinfo.go
@@ -2062,6 +2078,7 @@ gc/models/conversationdetailqueryfilter.go
 gc/models/conversationdetailquerypredicate.go
 gc/models/conversationdisconnectsettings.go
 gc/models/conversationdivisionmembership.go
+gc/models/conversationeditedsummary.go
 gc/models/conversationencryptionconfiguration.go
 gc/models/conversationencryptionconfigurationlisting.go
 gc/models/conversationenrichment.go
@@ -2098,6 +2115,13 @@ gc/models/conversationrecipientadditionalidentifier.go
 gc/models/conversationreference.go
 gc/models/conversationroutingdata.go
 gc/models/conversationsecureattributes.go
+gc/models/conversationsessionsummary.go
+gc/models/conversationsummariesgetresponse.go
+gc/models/conversationsummary.go
+gc/models/conversationsummaryfollowup.go
+gc/models/conversationsummaryreason.go
+gc/models/conversationsummaryresolution.go
+gc/models/conversationsummarywrapupcode.go
 gc/models/conversationtagsupdate.go
 gc/models/conversationthreadingwindow.go
 gc/models/conversationthreadingwindowsetting.go
@@ -2111,6 +2135,7 @@ gc/models/copilotfallbackaction.go
 gc/models/copilotnludomain.go
 gc/models/copilotnludomainversion.go
 gc/models/copilotrule.go
+gc/models/copilottranscriptionconfig.go
 gc/models/copyattachmentsrequest.go
 gc/models/copybuforecastrequest.go
 gc/models/copyvoicemailmessage.go
@@ -2783,6 +2808,7 @@ gc/models/grammarlanguage.go
 gc/models/grammarlanguagefilemetadata.go
 gc/models/grammarlanguageupdate.go
 gc/models/grammarlisting.go
+gc/models/graphapisettings.go
 gc/models/greeting.go
 gc/models/greetingaudiofile.go
 gc/models/greetinglisting.go
@@ -2907,6 +2933,8 @@ gc/models/interactionstatsalert.go
 gc/models/interactionstatsalertcontainer.go
 gc/models/interactionstatsrule.go
 gc/models/interactionstatsrulecontainer.go
+gc/models/internalmessage.go
+gc/models/internalmessagedetails.go
 gc/models/intradayperformancepredictiondata.go
 gc/models/intradayplanninggrouprequest.go
 gc/models/invalidassignment.go
@@ -3079,6 +3107,10 @@ gc/models/knowledgeimportjobrequest.go
 gc/models/knowledgeimportjobresponse.go
 gc/models/knowledgeimportjobsettings.go
 gc/models/knowledgeimportjobstatistics.go
+gc/models/knowledgeintegrationfilter.go
+gc/models/knowledgeintegrationfiltervalue.go
+gc/models/knowledgeintegrationoptionsresponse.go
+gc/models/knowledgeintegrationreference.go
 gc/models/knowledgeoperationsource.go
 gc/models/knowledgeparseimportresult.go
 gc/models/knowledgeparsejobrequest.go
@@ -3092,6 +3124,10 @@ gc/models/knowledgesearchdocumentv1.go
 gc/models/knowledgesearchrequest.go
 gc/models/knowledgesearchresponse.go
 gc/models/knowledgesuggestionconfig.go
+gc/models/knowledgesyncjobreport.go
+gc/models/knowledgesyncjobrequest.go
+gc/models/knowledgesyncjobresponse.go
+gc/models/knowledgesyncjobstatistics.go
 gc/models/knowledgetraining.go
 gc/models/kpiresult.go
 gc/models/label.go
@@ -3553,6 +3589,7 @@ gc/models/overallbestpoints.go
 gc/models/overallbestpointsitem.go
 gc/models/page.go
 gc/models/pagednamespacelisting.go
+gc/models/pagedskillcombinationlisting.go
 gc/models/pagelessdomainentitylistingevaluationversion.go
 gc/models/pagelessentitylisting.go
 gc/models/pagingspec.go
@@ -3629,6 +3666,7 @@ gc/models/phonestatus.go
 gc/models/phonetransferevent.go
 gc/models/phrase.go
 gc/models/phraseassociations.go
+gc/models/phrasetranslation.go
 gc/models/physicalinterfaceentitylisting.go
 gc/models/pinconfiguration.go
 gc/models/pingidentity.go
@@ -3909,6 +3947,9 @@ gc/models/ruleset.go
 gc/models/rulesetdiagnostic.go
 gc/models/rulesetentitylisting.go
 gc/models/salesforce.go
+gc/models/salesforcesettings.go
+gc/models/salesforcesourcerequest.go
+gc/models/salesforcesourceresponse.go
 gc/models/schedule.go
 gc/models/scheduleactivity.go
 gc/models/scheduledivisionviewentitylisting.go
@@ -4019,6 +4060,9 @@ gc/models/servicegoaltemplateimpactoverride.go
 gc/models/servicegoaltemplatelist.go
 gc/models/servicegoaltemplatereference.go
 gc/models/servicelevel.go
+gc/models/servicenowsettings.go
+gc/models/servicenowsourcerequest.go
+gc/models/servicenowsourceresponse.go
 gc/models/session.go
 gc/models/sessionenddetails.go
 gc/models/sessionlastevent.go
@@ -4069,6 +4113,7 @@ gc/models/site.go
 gc/models/siteconnection.go
 gc/models/siteconnections.go
 gc/models/siteentitylisting.go
+gc/models/skillcombinationinfo.go
 gc/models/skillentitylisting.go
 gc/models/skillgroup.go
 gc/models/skillgroupcondition.go
@@ -4098,10 +4143,13 @@ gc/models/socialexpression.go
 gc/models/socialhandle.go
 gc/models/sortitem.go
 gc/models/source.go
+gc/models/sourcebaseresponse.go
 gc/models/sourceconfiguration.go
 gc/models/sourceentity.go
 gc/models/sourceentitylisting.go
+gc/models/sourcelastsync.go
 gc/models/sourceplanninggrouprequest.go
+gc/models/sourcesyncresponse.go
 gc/models/speechtextanalyticssettingsrequest.go
 gc/models/speechtextanalyticssettingsresponse.go
 gc/models/splittinginformation.go
@@ -4185,6 +4233,7 @@ gc/models/surveyquestiongroup.go
 gc/models/surveyquestiongroupscore.go
 gc/models/surveyquestionscore.go
 gc/models/surveyscoringset.go
+gc/models/syncstatusrequest.go
 gc/models/systempresence.go
 gc/models/systemprompt.go
 gc/models/systempromptasset.go
@@ -4326,6 +4375,7 @@ gc/models/transcriptsearchcriteria.go
 gc/models/transcriptsearchrequest.go
 gc/models/transcripttopic.go
 gc/models/transcripttopics.go
+gc/models/transcripttranslation.go
 gc/models/transcripturl.go
 gc/models/transcripturls.go
 gc/models/transferdestination.go
@@ -4336,6 +4386,8 @@ gc/models/transferresponsemodifiedby.go
 gc/models/transfertoagentrequest.go
 gc/models/transfertoexternalrequest.go
 gc/models/transfertoqueuerequest.go
+gc/models/translatesupportedlanguage.go
+gc/models/translatesupportedlanguagelist.go
 gc/models/trenddata.go
 gc/models/trigger.go
 gc/models/triggerentitylisting.go

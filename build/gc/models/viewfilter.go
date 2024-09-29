@@ -598,6 +598,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1385,6 +1388,10 @@ type Viewfilter struct {
     // DashboardAccessFilter - The type of dashboard access being filtered
     DashboardAccessFilter string `json:"dashboardAccessFilter"`
 
+
+    // TranscriptDurationMilliseconds - The transcript durations in milliseconds used to filter the view
+    TranscriptDurationMilliseconds []Numericrange `json:"transcriptDurationMilliseconds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1585,6 +1592,7 @@ func (o *Viewfilter) String() string {
      o.ScreenMonitorUserIds = []string{""} 
     
     
+     o.TranscriptDurationMilliseconds = []Numericrange{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1993,6 +2001,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         DashboardType string `json:"dashboardType"`
         
         DashboardAccessFilter string `json:"dashboardAccessFilter"`
+        
+        TranscriptDurationMilliseconds []Numericrange `json:"transcriptDurationMilliseconds"`
         *Alias
     }{
 
@@ -2847,6 +2857,11 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        TranscriptDurationMilliseconds: []Numericrange{{}},
         
 
         Alias: (*Alias)(u),

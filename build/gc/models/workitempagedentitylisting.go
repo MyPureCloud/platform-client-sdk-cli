@@ -19,6 +19,12 @@ type WorkitempagedentitylistingDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Workitempagedentitylisting
@@ -27,18 +33,28 @@ type Workitempagedentitylisting struct {
     Entities []Workitem `json:"entities"`
 
 
-    // PageSize - The total page size requested
+    // PageSize
     PageSize int `json:"pageSize"`
 
 
-    // PageNumber - The page number requested
+    // PageNumber
     PageNumber int `json:"pageNumber"`
+
+
+    // Total
+    Total int `json:"total"`
+
+
+    // PageCount
+    PageCount int `json:"pageCount"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Workitempagedentitylisting) String() string {
      o.Entities = []Workitem{{}} 
+    
+    
     
     
 
@@ -63,11 +79,21 @@ func (u *Workitempagedentitylisting) MarshalJSON() ([]byte, error) {
         PageSize int `json:"pageSize"`
         
         PageNumber int `json:"pageNumber"`
+        
+        Total int `json:"total"`
+        
+        PageCount int `json:"pageCount"`
         *Alias
     }{
 
         
         Entities: []Workitem{{}},
+        
+
+
+        
+
+
         
 
 

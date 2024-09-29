@@ -45,7 +45,7 @@ type Recordingsettings struct {
     RecordingPlaybackUrlTtl int `json:"recordingPlaybackUrlTtl"`
 
 
-    // RecordingBatchDownloadUrlTtl - TThe duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
+    // RecordingBatchDownloadUrlTtl - The duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
     RecordingBatchDownloadUrlTtl int `json:"recordingBatchDownloadUrlTtl"`
 
 }

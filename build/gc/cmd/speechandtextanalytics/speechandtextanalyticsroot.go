@@ -11,6 +11,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_settings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_topics"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_transcripts"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_translations"
 )
 
 func init() {
@@ -23,6 +24,7 @@ func init() {
 	speechandtextanalyticsCmd.AddCommand(speechandtextanalytics_settings.Cmdspeechandtextanalytics_settings())
 	speechandtextanalyticsCmd.AddCommand(speechandtextanalytics_topics.Cmdspeechandtextanalytics_topics())
 	speechandtextanalyticsCmd.AddCommand(speechandtextanalytics_transcripts.Cmdspeechandtextanalytics_transcripts())
-	speechandtextanalyticsCmd.Short = utils.GenerateCustomDescription(speechandtextanalyticsCmd.Short, speechandtextanalytics_categories.Description, speechandtextanalytics_conversations.Description, speechandtextanalytics_dictionaryfeedback.Description, speechandtextanalytics_sentimentfeedback.Description, speechandtextanalytics_programs.Description, speechandtextanalytics_sentiment.Description, speechandtextanalytics_settings.Description, speechandtextanalytics_topics.Description, speechandtextanalytics_transcripts.Description, )
+	speechandtextanalyticsCmd.AddCommand(speechandtextanalytics_translations.Cmdspeechandtextanalytics_translations())
+	speechandtextanalyticsCmd.Short = utils.GenerateCustomDescription(speechandtextanalyticsCmd.Short, speechandtextanalytics_categories.Description, speechandtextanalytics_conversations.Description, speechandtextanalytics_dictionaryfeedback.Description, speechandtextanalytics_sentimentfeedback.Description, speechandtextanalytics_programs.Description, speechandtextanalytics_sentiment.Description, speechandtextanalytics_settings.Description, speechandtextanalytics_topics.Description, speechandtextanalytics_transcripts.Description, speechandtextanalytics_translations.Description, )
 	speechandtextanalyticsCmd.Long = speechandtextanalyticsCmd.Short
 }

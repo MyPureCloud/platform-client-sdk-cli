@@ -77,7 +77,7 @@ func Cmdwebdeployments_deployments() *cobra.Command {
 }`)
 	webdeployments_deploymentsCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "The specified entity attributes will be filled. Comma separated values expected. Valid values: Configuration, SupportedContent")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "The specified entity attributes will be filled. Comma separated values expected.  Valid values: Configuration, SupportedContent")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/webdeployments/deployments", utils.FormatPermissions([]string{ "webDeployments:deployment:view",  }), utils.GenerateDevCentreLink("GET", "Web Deployments", "/api/v2/webdeployments/deployments")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

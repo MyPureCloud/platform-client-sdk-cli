@@ -43,6 +43,8 @@
 * [gc knowledge knowledgebases operations](gc_knowledge_knowledgebases_operations.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations
 * [gc knowledge knowledgebases parse](gc_knowledge_knowledgebases_parse.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse
 * [gc knowledge knowledgebases search](gc_knowledge_knowledgebases_search.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search
+* [gc knowledge knowledgebases sources](gc_knowledge_knowledgebases_sources.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources
+* [gc knowledge knowledgebases synchronize](gc_knowledge_knowledgebases_synchronize.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize
 * [gc knowledge knowledgebases unanswered](gc_knowledge_knowledgebases_unanswered.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered
 * [gc knowledge knowledgebases update](gc_knowledge_knowledgebases_update.html)	 - Update knowledge base
 * [gc knowledge knowledgebases uploads](gc_knowledge_knowledgebases_uploads.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads

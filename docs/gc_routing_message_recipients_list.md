@@ -16,7 +16,7 @@ gc routing message recipients list [flags]
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --messengerType string     Messenger Type Valid values: sms, facebook, twitter, whatsapp, open, instagram
+      --messengerType string     Messenger Type Valid values: sms, facebook, twitter, whatsapp, open, instagram, apple
       --name string              Recipient Name
       --pageNumber int           Page number (default 1)
       --pageSize int             Page size (default 25)

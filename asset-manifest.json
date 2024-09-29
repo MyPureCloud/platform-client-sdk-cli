@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/platform-client-sdk-cli/static/css/main.12d12400.css",
-    "main.js": "/platform-client-sdk-cli/static/js/main.56c8e47c.js",
+    "main.js": "/platform-client-sdk-cli/static/js/main.19b0c3aa.js",
     "react-syntax-highlighter/refractor-import.js": "/platform-client-sdk-cli/static/js/react-syntax-highlighter/refractor-import.252e9f8b.chunk.js",
     "static/js/453.5565870f.chunk.js": "/platform-client-sdk-cli/static/js/453.5565870f.chunk.js",
     "static/media/genesys-dev-icons.eot?": "/platform-client-sdk-cli/static/media/genesys-dev-icons.ac21bc53ac924798cc2f.eot",
@@ -23,12 +23,12 @@
     "static/media/logo-dark.svg": "/platform-client-sdk-cli/static/media/logo-dark.69cd32a4484f8e0b926aba88c6200252.svg",
     "index.html": "/platform-client-sdk-cli/index.html",
     "main.12d12400.css.map": "/platform-client-sdk-cli/static/css/main.12d12400.css.map",
-    "main.56c8e47c.js.map": "/platform-client-sdk-cli/static/js/main.56c8e47c.js.map",
+    "main.19b0c3aa.js.map": "/platform-client-sdk-cli/static/js/main.19b0c3aa.js.map",
     "refractor-import.252e9f8b.chunk.js.map": "/platform-client-sdk-cli/static/js/react-syntax-highlighter/refractor-import.252e9f8b.chunk.js.map",
     "453.5565870f.chunk.js.map": "/platform-client-sdk-cli/static/js/453.5565870f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.12d12400.css",
-    "static/js/main.56c8e47c.js"
+    "static/js/main.19b0c3aa.js"
   ]
 }

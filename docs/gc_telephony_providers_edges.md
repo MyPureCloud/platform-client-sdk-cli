@@ -31,6 +31,7 @@
 
 * [gc telephony providers](gc_telephony_providers.html)	 - /api/v2/telephony/providers
 * [gc telephony providers edges addressvalidation](gc_telephony_providers_edges_addressvalidation.html)	 - /api/v2/telephony/providers/edges/addressvalidation
+* [gc telephony providers edges alertablepresences](gc_telephony_providers_edges_alertablepresences.html)	 - /api/v2/telephony/providers/edges/alertablepresences
 * [gc telephony providers edges certificateauthorities](gc_telephony_providers_edges_certificateauthorities.html)	 - /api/v2/telephony/providers/edges/certificateauthorities
 * [gc telephony providers edges create](gc_telephony_providers_edges_create.html)	 - Create an edge.
 * [gc telephony providers edges delete](gc_telephony_providers_edges_delete.html)	 - Delete a edge.

@@ -39,5 +39,6 @@
 * [gc speechandtextanalytics settings](gc_speechandtextanalytics_settings.html)	 - /api/v2/speechandtextanalytics/settings
 * [gc speechandtextanalytics topics](gc_speechandtextanalytics_topics.html)	 - /api/v2/speechandtextanalytics/topics
 * [gc speechandtextanalytics transcripts](gc_speechandtextanalytics_transcripts.html)	 - /api/v2/speechandtextanalytics/transcripts
+* [gc speechandtextanalytics translations](gc_speechandtextanalytics_translations.html)	 - /api/v2/speechandtextanalytics/translations
 
 

@@ -13,7 +13,7 @@ gc webdeployments deployments list [flags]
 ### Options
 
 ```
-      --expand strings   The specified entity attributes will be filled. Comma separated values expected. Valid values: Configuration, SupportedContent
+      --expand strings   The specified entity attributes will be filled. Comma separated values expected.  Valid values: Configuration, SupportedContent
   -h, --help             help for list
 ```
 

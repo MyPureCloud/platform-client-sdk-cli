@@ -39,6 +39,9 @@ type JourneyviewDud struct {
     
 
 
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -83,6 +86,10 @@ type Journeyview struct {
     Elements []Journeyviewelement `json:"elements"`
 
 
+    // Charts - A list of charts to measure within context of the elements of the the journey view
+    Charts []Journeyviewchart `json:"charts"`
+
+
     
 
 
@@ -100,6 +107,7 @@ func (o *Journeyview) String() string {
     
     
      o.Elements = []Journeyviewelement{{}} 
+     o.Charts = []Journeyviewchart{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -126,6 +134,8 @@ func (u *Journeyview) MarshalJSON() ([]byte, error) {
         Duration string `json:"duration"`
         
         Elements []Journeyviewelement `json:"elements"`
+        
+        Charts []Journeyviewchart `json:"charts"`
         *Alias
     }{
 
@@ -155,6 +165,11 @@ func (u *Journeyview) MarshalJSON() ([]byte, error) {
 
         
         Elements: []Journeyviewelement{{}},
+        
+
+
+        
+        Charts: []Journeyviewchart{{}},
         
 
 

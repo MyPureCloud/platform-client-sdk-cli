@@ -35,12 +35,30 @@ type CampaignstatsDud struct {
     FilteredOutContactsCount int `json:"filteredOutContactsCount"`
 
 
+    RightPartyContactsCount int `json:"rightPartyContactsCount"`
+
+
+    ValidAttempts int `json:"validAttempts"`
+
+
     LinesUtilization Campaignlinesutilization `json:"linesUtilization"`
+
+
+    BusinessCategoryMetrics Campaignbusinesscategorymetrics `json:"businessCategoryMetrics"`
 
 }
 
 // Campaignstats
 type Campaignstats struct { 
+    
+
+
+    
+
+
+    
+
+
     
 
 
@@ -89,6 +107,15 @@ func (u *Campaignstats) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

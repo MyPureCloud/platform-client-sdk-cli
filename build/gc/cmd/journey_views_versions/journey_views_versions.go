@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("journey_views_versions", "SWAGGER_OVERRIDE_/api/v2/journey/views/{viewId}/versions", "SWAGGER_OVERRIDE_/api/v2/journey/views/{viewId}/versions", )
+	Description = utils.FormatUsageDescription("journey_views_versions", "SWAGGER_OVERRIDE_/api/v2/journey/views/{viewId}/versions", "SWAGGER_OVERRIDE_/api/v2/journey/views/{viewId}/versions", "SWAGGER_OVERRIDE_/api/v2/journey/views/{viewId}/versions", )
 	journey_views_versionsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("journey_views_versions"),
 		Short: Description,
@@ -67,6 +67,31 @@ func Cmdjourney_views_versions() *cobra.Command {
   }
 }`)
 	journey_views_versionsCmd.AddCommand(getCmd)
+
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/journey/views/{viewId}/versions/{versionId}", utils.FormatPermissions([]string{ "journey:views:edit",  }), utils.GenerateDevCentreLink("PUT", "Journey", "/api/v2/journey/views/{viewId}/versions/{versionId}")))
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
+  "description" : "JourneyView",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/JourneyView"
+      }
+    }
+  },
+  "required" : true
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/JourneyView"
+      }
+    }
+  }
+}`)
+	journey_views_versionsCmd.AddCommand(updateCmd)
 	return journey_views_versionsCmd
 }
 
@@ -181,6 +206,76 @@ var getCmd = &cobra.Command{
 
 		const opId = "get"
 		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var updateCmd = &cobra.Command{
+	Use:   "update [viewId] [versionId]",
+	Short: "Update a Journey View by ID and version",
+	Long:  "Update a Journey View by ID and version",
+	Args:  utils.DetermineArgs([]string{ "viewId", "versionId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Journeyview{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/journey/views/{viewId}/versions/{versionId}"
+		viewId, args := args[0], args[1:]
+		path = strings.Replace(path, "{viewId}", fmt.Sprintf("%v", viewId), -1)
+		versionId, args := args[0], args[1:]
+		path = strings.Replace(path, "{versionId}", fmt.Sprintf("%v", versionId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		const opId = "update"
+		const httpMethod = "PUT"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

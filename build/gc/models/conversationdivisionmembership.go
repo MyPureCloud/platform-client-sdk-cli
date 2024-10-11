@@ -25,14 +25,14 @@ type Conversationdivisionmembership struct {
 
 
     // Entities - The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions.
-    Entities []Domainentityref `json:"entities"`
+    Entities []Divisionentityref `json:"entities"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationdivisionmembership) String() string {
     
-     o.Entities = []Domainentityref{{}} 
+     o.Entities = []Divisionentityref{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -52,7 +52,7 @@ func (u *Conversationdivisionmembership) MarshalJSON() ([]byte, error) {
         
         Division Domainentityref `json:"division"`
         
-        Entities []Domainentityref `json:"entities"`
+        Entities []Divisionentityref `json:"entities"`
         *Alias
     }{
 
@@ -60,7 +60,7 @@ func (u *Conversationdivisionmembership) MarshalJSON() ([]byte, error) {
 
 
         
-        Entities: []Domainentityref{{}},
+        Entities: []Divisionentityref{{}},
         
 
         Alias: (*Alias)(u),

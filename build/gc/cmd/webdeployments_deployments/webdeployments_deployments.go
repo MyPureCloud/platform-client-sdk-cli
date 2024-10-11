@@ -86,7 +86,7 @@ func Cmdwebdeployments_deployments() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ExpandableWebDeploymentEntityListing"
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
       }
     }
   }

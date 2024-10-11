@@ -41,6 +41,9 @@ type UnifiedcommunicationsintegrationDud struct {
     PollIntervalSec int `json:"pollIntervalSec"`
 
 
+    IncludeBadge bool `json:"includeBadge"`
+
+
     UserPermissions []string `json:"userPermissions"`
 
 
@@ -58,6 +61,9 @@ type Unifiedcommunicationsintegration struct {
 
     // Name
     Name string `json:"name"`
+
+
+    
 
 
     
@@ -121,6 +127,9 @@ func (u *Unifiedcommunicationsintegration) MarshalJSON() ([]byte, error) {
         OauthScopes []string `json:"oauthScopes"`
         *Alias
     }{
+
+        
+
 
         
 

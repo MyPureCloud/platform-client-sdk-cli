@@ -19,27 +19,43 @@ type ExpandablewebdeploymententitylistingDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Expandablewebdeploymententitylisting
 type Expandablewebdeploymententitylisting struct { 
-    // Total
-    Total int `json:"total"`
-
-
     // Entities
     Entities []Expandablewebdeployment `json:"entities"`
+
+
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // SelfUri
     SelfUri string `json:"selfUri"`
 
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
+
+
+    // Total
+    Total int `json:"total"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Expandablewebdeploymententitylisting) String() string {
-    
      o.Entities = []Expandablewebdeployment{{}} 
+    
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -58,19 +74,29 @@ func (u *Expandablewebdeploymententitylisting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Total int `json:"total"`
-        
         Entities []Expandablewebdeployment `json:"entities"`
         
+        NextUri string `json:"nextUri"`
+        
         SelfUri string `json:"selfUri"`
+        
+        PreviousUri string `json:"previousUri"`
+        
+        Total int `json:"total"`
         *Alias
     }{
 
         
+        Entities: []Expandablewebdeployment{{}},
+        
 
 
         
-        Entities: []Expandablewebdeployment{{}},
+
+
+        
+
+
         
 
 

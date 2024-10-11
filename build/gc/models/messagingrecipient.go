@@ -34,6 +34,9 @@ type MessagingrecipientDud struct {
 
     
 
+
+    
+
 }
 
 // Messagingrecipient - Information about the recipient the message is sent to or received from.
@@ -61,6 +64,10 @@ type Messagingrecipient struct {
     
 
 
+    // ExternalContactId - The identifier of the external contact.
+    ExternalContactId string `json:"externalContactId"`
+
+
     // AdditionalIds - List of recipient additional identifiers
     AdditionalIds []Recipientadditionalidentifier `json:"additionalIds"`
 
@@ -68,6 +75,7 @@ type Messagingrecipient struct {
 
 // String returns a JSON representation of the model
 func (o *Messagingrecipient) String() string {
+    
     
     
      o.AdditionalIds = []Recipientadditionalidentifier{{}} 
@@ -92,9 +100,14 @@ func (u *Messagingrecipient) MarshalJSON() ([]byte, error) {
         
         IdType string `json:"idType"`
         
+        ExternalContactId string `json:"externalContactId"`
+        
         AdditionalIds []Recipientadditionalidentifier `json:"additionalIds"`
         *Alias
     }{
+
+        
+
 
         
 

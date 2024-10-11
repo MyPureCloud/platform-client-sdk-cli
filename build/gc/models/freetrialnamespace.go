@@ -16,10 +16,17 @@ type FreetrialnamespaceDud struct {
 
     
 
+
+    
+
 }
 
 // Freetrialnamespace
 type Freetrialnamespace struct { 
+    // Name
+    Name string `json:"name"`
+
+
     // FriendlyName
     FriendlyName string `json:"friendlyName"`
 
@@ -31,6 +38,7 @@ type Freetrialnamespace struct {
 
 // String returns a JSON representation of the model
 func (o *Freetrialnamespace) String() string {
+    
     
      o.Limits = []Freetriallimit{{}} 
 
@@ -50,11 +58,16 @@ func (u *Freetrialnamespace) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Name string `json:"name"`
+        
         FriendlyName string `json:"friendlyName"`
         
         Limits []Freetriallimit `json:"limits"`
         *Alias
     }{
+
+        
+
 
         
 

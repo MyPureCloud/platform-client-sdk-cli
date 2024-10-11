@@ -19,27 +19,43 @@ type WebdeploymentconfigurationversionentitylistingDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Webdeploymentconfigurationversionentitylisting
 type Webdeploymentconfigurationversionentitylisting struct { 
-    // Total
-    Total int `json:"total"`
-
-
     // Entities
     Entities []Webdeploymentconfigurationversion `json:"entities"`
+
+
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // SelfUri
     SelfUri string `json:"selfUri"`
 
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
+
+
+    // Total
+    Total int `json:"total"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Webdeploymentconfigurationversionentitylisting) String() string {
-    
      o.Entities = []Webdeploymentconfigurationversion{{}} 
+    
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -58,19 +74,29 @@ func (u *Webdeploymentconfigurationversionentitylisting) MarshalJSON() ([]byte, 
 
     return json.Marshal(&struct {
         
-        Total int `json:"total"`
-        
         Entities []Webdeploymentconfigurationversion `json:"entities"`
         
+        NextUri string `json:"nextUri"`
+        
         SelfUri string `json:"selfUri"`
+        
+        PreviousUri string `json:"previousUri"`
+        
+        Total int `json:"total"`
         *Alias
     }{
 
         
+        Entities: []Webdeploymentconfigurationversion{{}},
+        
 
 
         
-        Entities: []Webdeploymentconfigurationversion{{}},
+
+
+        
+
+
         
 
 

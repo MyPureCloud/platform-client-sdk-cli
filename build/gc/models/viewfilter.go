@@ -601,6 +601,42 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1392,6 +1428,54 @@ type Viewfilter struct {
     // TranscriptDurationMilliseconds - The transcript durations in milliseconds used to filter the view
     TranscriptDurationMilliseconds []Numericrange `json:"transcriptDurationMilliseconds"`
 
+
+    // SocialCountries - List of countries for social filtering
+    SocialCountries []string `json:"socialCountries"`
+
+
+    // SocialLanguages - List of languages for social filtering
+    SocialLanguages []string `json:"socialLanguages"`
+
+
+    // SocialChannels - List of channels for social filtering
+    SocialChannels []string `json:"socialChannels"`
+
+
+    // SocialSentimentCategory - The sentiment of the social post
+    SocialSentimentCategory []string `json:"socialSentimentCategory"`
+
+
+    // SocialTopicIds - The list of topicIds for social filtering
+    SocialTopicIds []string `json:"socialTopicIds"`
+
+
+    // SocialIngestionRuleIds - The list of ingestion ruleIds for social filtering
+    SocialIngestionRuleIds []string `json:"socialIngestionRuleIds"`
+
+
+    // SocialConversationCreated - Filter to indicate if the post has created a conversation
+    SocialConversationCreated bool `json:"socialConversationCreated"`
+
+
+    // SocialContentType - The list of content Type for social filtering
+    SocialContentType []string `json:"socialContentType"`
+
+
+    // SocialKeywords - The list of keywords for social filtering
+    SocialKeywords []Socialkeyword `json:"socialKeywords"`
+
+
+    // SocialPostEscalated - Filter to indicate if the post is escalated
+    SocialPostEscalated bool `json:"socialPostEscalated"`
+
+
+    // SocialClassifications - Indicates if a social message was public or private
+    SocialClassifications []string `json:"socialClassifications"`
+
+
+    // FilterUsersByManagerIds - The manager ids used to fetch associated users for the view
+    FilterUsersByManagerIds []string `json:"filterUsersByManagerIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1593,6 +1677,18 @@ func (o *Viewfilter) String() string {
     
     
      o.TranscriptDurationMilliseconds = []Numericrange{{}} 
+     o.SocialCountries = []string{""} 
+     o.SocialLanguages = []string{""} 
+     o.SocialChannels = []string{""} 
+     o.SocialSentimentCategory = []string{""} 
+     o.SocialTopicIds = []string{""} 
+     o.SocialIngestionRuleIds = []string{""} 
+    
+     o.SocialContentType = []string{""} 
+     o.SocialKeywords = []Socialkeyword{{}} 
+    
+     o.SocialClassifications = []string{""} 
+     o.FilterUsersByManagerIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2003,6 +2099,30 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         DashboardAccessFilter string `json:"dashboardAccessFilter"`
         
         TranscriptDurationMilliseconds []Numericrange `json:"transcriptDurationMilliseconds"`
+        
+        SocialCountries []string `json:"socialCountries"`
+        
+        SocialLanguages []string `json:"socialLanguages"`
+        
+        SocialChannels []string `json:"socialChannels"`
+        
+        SocialSentimentCategory []string `json:"socialSentimentCategory"`
+        
+        SocialTopicIds []string `json:"socialTopicIds"`
+        
+        SocialIngestionRuleIds []string `json:"socialIngestionRuleIds"`
+        
+        SocialConversationCreated bool `json:"socialConversationCreated"`
+        
+        SocialContentType []string `json:"socialContentType"`
+        
+        SocialKeywords []Socialkeyword `json:"socialKeywords"`
+        
+        SocialPostEscalated bool `json:"socialPostEscalated"`
+        
+        SocialClassifications []string `json:"socialClassifications"`
+        
+        FilterUsersByManagerIds []string `json:"filterUsersByManagerIds"`
         *Alias
     }{
 
@@ -2862,6 +2982,62 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         TranscriptDurationMilliseconds: []Numericrange{{}},
+        
+
+
+        
+        SocialCountries: []string{""},
+        
+
+
+        
+        SocialLanguages: []string{""},
+        
+
+
+        
+        SocialChannels: []string{""},
+        
+
+
+        
+        SocialSentimentCategory: []string{""},
+        
+
+
+        
+        SocialTopicIds: []string{""},
+        
+
+
+        
+        SocialIngestionRuleIds: []string{""},
+        
+
+
+        
+
+
+        
+        SocialContentType: []string{""},
+        
+
+
+        
+        SocialKeywords: []Socialkeyword{{}},
+        
+
+
+        
+
+
+        
+        SocialClassifications: []string{""},
+        
+
+
+        
+        FilterUsersByManagerIds: []string{""},
         
 
         Alias: (*Alias)(u),

@@ -32,6 +32,9 @@ type ConversationmessagingfromrecipientDud struct {
     Email string `json:"email"`
 
 
+    
+
+
     AdditionalIds []Conversationrecipientadditionalidentifier `json:"additionalIds"`
 
 }
@@ -63,12 +66,17 @@ type Conversationmessagingfromrecipient struct {
     
 
 
+    // ExternalContactId - The identifier of the external contact.
+    ExternalContactId string `json:"externalContactId"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationmessagingfromrecipient) String() string {
+    
     
     
     
@@ -97,8 +105,13 @@ func (u *Conversationmessagingfromrecipient) MarshalJSON() ([]byte, error) {
         FirstName string `json:"firstName"`
         
         LastName string `json:"lastName"`
+        
+        ExternalContactId string `json:"externalContactId"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -20,6 +20,9 @@ type IntentdefinitionDud struct {
     
 
 
+    
+
+
     EntityNameReferences []string `json:"entityNameReferences"`
 
 
@@ -37,6 +40,10 @@ type Intentdefinition struct {
 
     // Name - The name of the intent.
     Name string `json:"name"`
+
+
+    // Description - The description of the intent.
+    Description string `json:"description"`
 
 
     // EntityTypeBindings - The bindings for the named entity types used in this intent.This field is mutually exclusive with entityNameReferences and entities
@@ -57,6 +64,7 @@ type Intentdefinition struct {
 
 // String returns a JSON representation of the model
 func (o *Intentdefinition) String() string {
+    
     
      o.EntityTypeBindings = []Namedentitytypebinding{{}} 
      o.Utterances = []Nluutterance{{}} 
@@ -80,6 +88,8 @@ func (u *Intentdefinition) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Description string `json:"description"`
+        
         EntityTypeBindings []Namedentitytypebinding `json:"entityTypeBindings"`
         
         Utterances []Nluutterance `json:"utterances"`
@@ -87,6 +97,9 @@ func (u *Intentdefinition) MarshalJSON() ([]byte, error) {
         AdditionalLanguages map[string]Additionallanguagesintent `json:"additionalLanguages"`
         *Alias
     }{
+
+        
+
 
         
 

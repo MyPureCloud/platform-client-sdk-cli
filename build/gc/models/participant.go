@@ -155,6 +155,9 @@ type ParticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Participant
@@ -189,6 +192,10 @@ type Participant struct {
 
     // ExternalContactId - If this participant represents an external contact, then this will be the globally unique identifier for the external contact.
     ExternalContactId string `json:"externalContactId"`
+
+
+    // ExternalContactInitialDivisionId - If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.
+    ExternalContactInitialDivisionId string `json:"externalContactInitialDivisionId"`
 
 
     // ExternalOrganizationId - If this participant represents an external org, then this will be the globally unique identifier for the external org.
@@ -380,6 +387,7 @@ func (o *Participant) String() string {
     
     
     
+    
      o.MediaRoles = []string{""} 
     
     
@@ -434,6 +442,8 @@ func (u *Participant) MarshalJSON() ([]byte, error) {
         UserId string `json:"userId"`
         
         ExternalContactId string `json:"externalContactId"`
+        
+        ExternalContactInitialDivisionId string `json:"externalContactInitialDivisionId"`
         
         ExternalOrganizationId string `json:"externalOrganizationId"`
         
@@ -516,6 +526,9 @@ func (u *Participant) MarshalJSON() ([]byte, error) {
         BargedParticipantId string `json:"bargedParticipantId"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdconversations_messages_inbound_open_message() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "prefetchConversationId", "false", "Indicates whether or not to prefetch conversationId")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/messages/{integrationId}/inbound/open/message", utils.FormatPermissions([]string{ "conversation:message:receive",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/messages/{integrationId}/inbound/open/message")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "NormalizedMessage",
@@ -84,6 +85,10 @@ var createCmd = &cobra.Command{
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
 
+		prefetchConversationId := utils.GetFlag(cmd.Flags(), "bool", "prefetchConversationId")
+		if prefetchConversationId != "" {
+			queryParams["prefetchConversationId"] = prefetchConversationId
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

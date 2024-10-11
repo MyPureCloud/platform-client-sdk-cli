@@ -42,6 +42,15 @@ type CampaignruleDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -85,6 +94,18 @@ type Campaignrule struct {
     Enabled bool `json:"enabled"`
 
 
+    // CampaignRuleProcessing - CampaignRule processing algorithm
+    CampaignRuleProcessing string `json:"campaignRuleProcessing"`
+
+
+    // ConditionGroups - List of condition groups that are evaluated, used only with campaignRuleProcessing=\"v2\"
+    ConditionGroups []Campaignruleconditiongroup `json:"conditionGroups"`
+
+
+    // ExecutionSettings - CampaignRule execution settings
+    ExecutionSettings Campaignruleexecutionsettings `json:"executionSettings"`
+
+
     
 
 }
@@ -97,6 +118,9 @@ func (o *Campaignrule) String() string {
      o.CampaignRuleConditions = []Campaignrulecondition{{}} 
      o.CampaignRuleActions = []Campaignruleaction{{}} 
     
+    
+    
+     o.ConditionGroups = []Campaignruleconditiongroup{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -128,6 +152,12 @@ func (u *Campaignrule) MarshalJSON() ([]byte, error) {
         MatchAnyConditions bool `json:"matchAnyConditions"`
         
         Enabled bool `json:"enabled"`
+        
+        CampaignRuleProcessing string `json:"campaignRuleProcessing"`
+        
+        ConditionGroups []Campaignruleconditiongroup `json:"conditionGroups"`
+        
+        ExecutionSettings Campaignruleexecutionsettings `json:"executionSettings"`
         *Alias
     }{
 
@@ -159,6 +189,17 @@ func (u *Campaignrule) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+
+
+        
+        ConditionGroups: []Campaignruleconditiongroup{{}},
         
 
 

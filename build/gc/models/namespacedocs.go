@@ -16,10 +16,17 @@ type NamespacedocsDud struct {
 
     
 
+
+    
+
 }
 
 // Namespacedocs
 type Namespacedocs struct { 
+    // Name
+    Name string `json:"name"`
+
+
     // FriendlyName
     FriendlyName string `json:"friendlyName"`
 
@@ -31,6 +38,7 @@ type Namespacedocs struct {
 
 // String returns a JSON representation of the model
 func (o *Namespacedocs) String() string {
+    
     
      o.Limits = []Limitdocs{{}} 
 
@@ -50,11 +58,16 @@ func (u *Namespacedocs) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Name string `json:"name"`
+        
         FriendlyName string `json:"friendlyName"`
         
         Limits []Limitdocs `json:"limits"`
         *Alias
     }{
+
+        
+
 
         
 

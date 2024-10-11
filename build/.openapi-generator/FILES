@@ -583,9 +583,12 @@ gc/cmd/journey_views_encodings_validate/journey_views_encodings_validate.go
 gc/cmd/journey_views_eventdefinitions/journey_views_eventdefinitions.go
 gc/cmd/journey_views_jobs/journey_views_jobs.go
 gc/cmd/journey_views_versions/journey_views_versions.go
+gc/cmd/journey_views_versions_charts/journey_views_versions_charts.go
+gc/cmd/journey_views_versions_charts_versions/journey_views_versions_charts_versions.go
 gc/cmd/journey_views_versions_jobs/journey_views_versions_jobs.go
 gc/cmd/journey_views_versions_jobs_latest/journey_views_versions_jobs_latest.go
 gc/cmd/journey_views_versions_jobs_results/journey_views_versions_jobs_results.go
+gc/cmd/journey_views_versions_jobs_results_charts/journey_views_versions_jobs_results_charts.go
 gc/cmd/knowledge_documentuploads/knowledge_documentuploads.go
 gc/cmd/knowledge_guest_sessions/knowledge_guest_sessions.go
 gc/cmd/knowledge_guest_sessions_categories/knowledge_guest_sessions_categories.go
@@ -982,6 +985,8 @@ gc/cmd/taskmanagement_workitems_users_wrapups/taskmanagement_workitems_users_wra
 gc/cmd/taskmanagement_workitems_versions/taskmanagement_workitems_versions.go
 gc/cmd/taskmanagement_workitems_wrapups/taskmanagement_workitems_wrapups.go
 gc/cmd/taskmanagement_worktypes/taskmanagement_worktypes.go
+gc/cmd/taskmanagement_worktypes_flows_onattributechange_rules/taskmanagement_worktypes_flows_onattributechange_rules.go
+gc/cmd/taskmanagement_worktypes_flows_oncreate_rules/taskmanagement_worktypes_flows_oncreate_rules.go
 gc/cmd/taskmanagement_worktypes_history/taskmanagement_worktypes_history.go
 gc/cmd/taskmanagement_worktypes_query/taskmanagement_worktypes_query.go
 gc/cmd/taskmanagement_worktypes_statuses/taskmanagement_worktypes_statuses.go
@@ -1235,6 +1240,8 @@ gc/cmd/workforcemanagement_managementunits_activitycodes/workforcemanagement_man
 gc/cmd/workforcemanagement_managementunits_adherence/workforcemanagement_managementunits_adherence.go
 gc/cmd/workforcemanagement_managementunits_agents/workforcemanagement_managementunits_agents.go
 gc/cmd/workforcemanagement_managementunits_agents_shifttrades/workforcemanagement_managementunits_agents_shifttrades.go
+gc/cmd/workforcemanagement_managementunits_agents_workplans_bulk/workforcemanagement_managementunits_agents_workplans_bulk.go
+gc/cmd/workforcemanagement_managementunits_agents_workplans_query/workforcemanagement_managementunits_agents_workplans_query.go
 gc/cmd/workforcemanagement_managementunits_agentschedules_search/workforcemanagement_managementunits_agentschedules_search.go
 gc/cmd/workforcemanagement_managementunits_divisionviews/workforcemanagement_managementunits_divisionviews.go
 gc/cmd/workforcemanagement_managementunits_historicaladherencequery/workforcemanagement_managementunits_historicaladherencequery.go
@@ -1418,6 +1425,7 @@ gc/models/agentqueryadherenceexplanationsresponse.go
 gc/models/agentqueuetimerequest.go
 gc/models/agentsbidassignedworkplanoverriderequest.go
 gc/models/agentsintegrationslisting.go
+gc/models/agentsworkplansresponse.go
 gc/models/agenttimeoffrequestpatch.go
 gc/models/agentupdatealternativeshifttraderequest.go
 gc/models/agentvideosettings.go
@@ -1429,6 +1437,7 @@ gc/models/agentworkplanbiddingpreferencerequest.go
 gc/models/agentworkplanbiddingpreferenceresponse.go
 gc/models/agentworkplanbids.go
 gc/models/agentworkplanlistresponse.go
+gc/models/agentworkplans.go
 gc/models/agentworkplanshift.go
 gc/models/aggregatemetricdata.go
 gc/models/aggregateviewdata.go
@@ -2332,6 +2341,7 @@ gc/models/disconnectreason.go
 gc/models/disposition.go
 gc/models/dispositionparameters.go
 gc/models/division.go
+gc/models/divisionentityref.go
 gc/models/divisionreference.go
 gc/models/divspermittedentitylisting.go
 gc/models/dnclist.go
@@ -2616,6 +2626,7 @@ gc/models/extensionpoolentitylisting.go
 gc/models/externalcontact.go
 gc/models/externalcontactreference.go
 gc/models/externalcontactsentity.go
+gc/models/externalcontactssettings.go
 gc/models/externaldatasource.go
 gc/models/externalestablishedevent.go
 gc/models/externalid.go
@@ -2786,6 +2797,7 @@ gc/models/generictemplate.go
 gc/models/genesysbotconnector.go
 gc/models/geolocation.go
 gc/models/geolocationsettings.go
+gc/models/getagentsworkplansrequest.go
 gc/models/getalertquery.go
 gc/models/getcelebrationlisting.go
 gc/models/getflowexecutiondatajobresult.go
@@ -2865,6 +2877,7 @@ gc/models/identitynow.go
 gc/models/identityprovider.go
 gc/models/identityproviderentitylisting.go
 gc/models/identityresolutionconfig.go
+gc/models/identityresolutionqueueconfig.go
 gc/models/idleeventtrigger.go
 gc/models/idletokentimeout.go
 gc/models/ignoredactivitycategories.go
@@ -3427,6 +3440,7 @@ gc/models/moveagentsresponse.go
 gc/models/movemanagementunitrequest.go
 gc/models/movemanagementunitresponse.go
 gc/models/muagentqueuetimerequest.go
+gc/models/muagentsworkplansresult.go
 gc/models/murescheduleresultwrapper.go
 gc/models/mutableuserpresence.go
 gc/models/mutesnoozefields.go
@@ -4141,6 +4155,7 @@ gc/models/smsphonenumberref.go
 gc/models/smsprovisioningstatus.go
 gc/models/socialexpression.go
 gc/models/socialhandle.go
+gc/models/socialkeyword.go
 gc/models/sortitem.go
 gc/models/source.go
 gc/models/sourcebaseresponse.go
@@ -4471,6 +4486,10 @@ gc/models/updatedraftinput.go
 gc/models/updatemanagementunitrequest.go
 gc/models/updatemuagentrequest.go
 gc/models/updatemuagentsrequest.go
+gc/models/updatemuagentworkplanfailureresponse.go
+gc/models/updatemuagentworkplanrequest.go
+gc/models/updatemuagentworkplansbatchrequest.go
+gc/models/updatemuagentworkplansbatchresponse.go
 gc/models/updatenotificationresponse.go
 gc/models/updatenotificationsrequest.go
 gc/models/updatenotificationsresponse.go
@@ -4545,6 +4564,7 @@ gc/models/userlicenses.go
 gc/models/userlicensesentitylisting.go
 gc/models/userlistschedulerequestbody.go
 gc/models/userme.go
+gc/models/usernextactivityreminder.go
 gc/models/userobservationdatacontainer.go
 gc/models/userobservationquery.go
 gc/models/userobservationqueryclause.go
@@ -4772,6 +4792,16 @@ gc/models/workitemdelta.go
 gc/models/workitemfilter.go
 gc/models/workitemflowreference.go
 gc/models/workitemmanualassign.go
+gc/models/workitemonattributechangecondition.go
+gc/models/workitemonattributechangeconditionupdate.go
+gc/models/workitemonattributechangerule.go
+gc/models/workitemonattributechangerulecreate.go
+gc/models/workitemonattributechangerulelisting.go
+gc/models/workitemonattributechangeruleupdate.go
+gc/models/workitemoncreaterule.go
+gc/models/workitemoncreaterulecreate.go
+gc/models/workitemoncreaterulelisting.go
+gc/models/workitemoncreateruleupdate.go
 gc/models/workitempagedentitylisting.go
 gc/models/workitempostqueryentitylisting.go
 gc/models/workitemqueryjobcreate.go
@@ -4783,6 +4813,7 @@ gc/models/workitemquerypostrequest.go
 gc/models/workitemquerysort.go
 gc/models/workitemqueuereference.go
 gc/models/workitemreference.go
+gc/models/workitemruleaction.go
 gc/models/workitemrulesettings.go
 gc/models/workitemsattributechangeboolean.go
 gc/models/workitemsattributechangeinstant.go
@@ -4828,6 +4859,8 @@ gc/models/workplanconstraintmessage.go
 gc/models/workplanlistitemresponse.go
 gc/models/workplanlistresponse.go
 gc/models/workplanoverride.go
+gc/models/workplanoverridelistwrapperworkplanoverriderequest.go
+gc/models/workplanoverriderequest.go
 gc/models/workplanpatternrequest.go
 gc/models/workplanpatternresponse.go
 gc/models/workplanreference.go

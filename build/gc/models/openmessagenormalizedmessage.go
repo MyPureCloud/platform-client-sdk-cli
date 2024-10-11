@@ -28,6 +28,9 @@ type OpenmessagenormalizedmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Openmessagenormalizedmessage - Open Messaging rich media message structure
@@ -55,6 +58,10 @@ type Openmessagenormalizedmessage struct {
     // Metadata - Additional metadata about this message.
     Metadata map[string]string `json:"metadata"`
 
+
+    // ConversationId - The conversationId context for the message
+    ConversationId string `json:"conversationId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -65,6 +72,7 @@ func (o *Openmessagenormalizedmessage) String() string {
     
      o.Content = []Openmessagecontent{{}} 
      o.Metadata = map[string]string{"": ""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -93,6 +101,8 @@ func (u *Openmessagenormalizedmessage) MarshalJSON() ([]byte, error) {
         Content []Openmessagecontent `json:"content"`
         
         Metadata map[string]string `json:"metadata"`
+        
+        ConversationId string `json:"conversationId"`
         *Alias
     }{
 
@@ -115,6 +125,9 @@ func (u *Openmessagenormalizedmessage) MarshalJSON() ([]byte, error) {
 
         
         Metadata: map[string]string{"": ""},
+        
+
+
         
 
         Alias: (*Alias)(u),

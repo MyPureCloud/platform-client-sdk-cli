@@ -61,7 +61,7 @@ func Cmdwebdeployments_configurations() *cobra.Command {
 }`)
 	webdeployments_configurationsCmd.AddCommand(deleteCmd)
 
-	utils.AddFlag(listCmd.Flags(), "bool", "showOnlyPublished", "false", "Get only configuration drafts with published versions")
+	utils.AddFlag(listCmd.Flags(), "bool", "showOnlyPublished", "", "Filter by published status.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/webdeployments/configurations", utils.FormatPermissions([]string{ "webDeployments:configuration:view",  }), utils.GenerateDevCentreLink("GET", "Web Deployments", "/api/v2/webdeployments/configurations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -70,7 +70,7 @@ func Cmdwebdeployments_configurations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/WebDeploymentConfigurationVersionEntityListing"
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
       }
     }
   }

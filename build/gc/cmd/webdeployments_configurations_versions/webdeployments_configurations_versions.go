@@ -51,7 +51,7 @@ func Cmdwebdeployments_configurations_versions() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/WebDeploymentConfigurationVersionEntityListing"
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
       }
     }
   }

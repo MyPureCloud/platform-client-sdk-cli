@@ -13,8 +13,11 @@ gc webdeployments configurations list [flags]
 ### Options
 
 ```
+  -a, --autopaginate               Automatically paginate through the results stripping page information
+      --filtercondition string     Filter list command output based on a given condition or regular expression
   -h, --help                       help for list
-      --showOnlyPublished string   Get only configuration drafts with published versions Valid values: true, false
+      --showOnlyPublished string   Filter by published status. Valid values: true, false
+  -s, --stream                     Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands

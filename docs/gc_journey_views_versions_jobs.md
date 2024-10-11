@@ -34,5 +34,6 @@
 * [gc journey views versions jobs get](gc_journey_views_versions_jobs_get.html)	 - Get the job for a journey view version.
 * [gc journey views versions jobs latest](gc_journey_views_versions_jobs_latest.html)	 - /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest
 * [gc journey views versions jobs results](gc_journey_views_versions_jobs_results.html)	 - /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results
+* [gc journey views versions jobs update](gc_journey_views_versions_jobs_update.html)	 - Update the job for a journey view version. Only the status can be changed and only to Cancelled
 
 

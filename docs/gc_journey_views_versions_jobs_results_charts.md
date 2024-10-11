@@ -1,22 +1,15 @@
-## gc webdeployments configurations versions list
+## gc journey views versions jobs results charts
 
-Get the versions of a configuration
+/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}/results/charts
 
 ### Synopsis
 
-Get the versions of a configuration
-
-```
-gc webdeployments configurations versions list [configurationId] [flags]
-```
+/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}/results/charts
 
 ### Options
 
 ```
-  -a, --autopaginate             Automatically paginate through the results stripping page information
-      --filtercondition string   Filter list command output based on a given condition or regular expression
-  -h, --help                     help for list
-  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+  -h, --help   help for charts
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc webdeployments configurations versions list [configurationId] [flags]
 
 ### SEE ALSO
 
-* [gc webdeployments configurations versions](gc_webdeployments_configurations_versions.html)	 - /api/v2/webdeployments/configurations/{configurationId}/versions
+* [gc journey views versions jobs results](gc_journey_views_versions_jobs_results.html)	 - /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results
+* [gc journey views versions jobs results charts get](gc_journey_views_versions_jobs_results_charts_get.html)	 - Get the chart result associated with a journey view job.
 
 

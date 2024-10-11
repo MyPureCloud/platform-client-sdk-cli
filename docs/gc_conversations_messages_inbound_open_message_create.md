@@ -13,10 +13,11 @@ gc conversations messages inbound open message create [integrationId] [flags]
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -d, --directory string                Directory path with files containing request bodies
+  -f, --file string                     File name containing the JSON body
+  -h, --help                            help for create
+      --prefetchConversationId string   Indicates whether or not to prefetch conversationId Valid values: true, false
+  -b, --printrequestbody                Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands

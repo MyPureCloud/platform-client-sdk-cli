@@ -1,22 +1,22 @@
-## gc webdeployments configurations versions list
+## gc journey views versions update
 
-Get the versions of a configuration
+Update a Journey View by ID and version
 
 ### Synopsis
 
-Get the versions of a configuration
+Update a Journey View by ID and version
 
 ```
-gc webdeployments configurations versions list [configurationId] [flags]
+gc journey views versions update [viewId] [versionId] [flags]
 ```
 
 ### Options
 
 ```
-  -a, --autopaginate             Automatically paginate through the results stripping page information
-      --filtercondition string   Filter list command output based on a given condition or regular expression
-  -h, --help                     help for list
-  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for update
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +36,6 @@ gc webdeployments configurations versions list [configurationId] [flags]
 
 ### SEE ALSO
 
-* [gc webdeployments configurations versions](gc_webdeployments_configurations_versions.html)	 - /api/v2/webdeployments/configurations/{configurationId}/versions
+* [gc journey views versions](gc_journey_views_versions.html)	 - /api/v2/journey/views/{viewId}/versions
 
 

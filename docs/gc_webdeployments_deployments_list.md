@@ -13,8 +13,11 @@ gc webdeployments deployments list [flags]
 ### Options
 
 ```
-      --expand strings   The specified entity attributes will be filled. Comma separated values expected.  Valid values: Configuration, SupportedContent
-  -h, --help             help for list
+  -a, --autopaginate             Automatically paginate through the results stripping page information
+      --expand strings           The specified entity attributes will be filled. Comma separated values expected.  Valid values: Configuration, SupportedContent
+      --filtercondition string   Filter list command output based on a given condition or regular expression
+  -h, --help                     help for list
+  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands

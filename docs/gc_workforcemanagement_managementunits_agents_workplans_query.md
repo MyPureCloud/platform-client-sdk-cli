@@ -1,22 +1,15 @@
-## gc webdeployments configurations versions list
+## gc workforcemanagement managementunits agents workplans query
 
-Get the versions of a configuration
+/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query
 
 ### Synopsis
 
-Get the versions of a configuration
-
-```
-gc webdeployments configurations versions list [configurationId] [flags]
-```
+/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query
 
 ### Options
 
 ```
-  -a, --autopaginate             Automatically paginate through the results stripping page information
-      --filtercondition string   Filter list command output based on a given condition or regular expression
-  -h, --help                     help for list
-  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+  -h, --help   help for query
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc webdeployments configurations versions list [configurationId] [flags]
 
 ### SEE ALSO
 
-* [gc webdeployments configurations versions](gc_webdeployments_configurations_versions.html)	 - /api/v2/webdeployments/configurations/{configurationId}/versions
+* [gc workforcemanagement managementunits agents workplans](gc_workforcemanagement_managementunits_agents_workplans.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans
+* [gc workforcemanagement managementunits agents workplans query create](gc_workforcemanagement_managementunits_agents_workplans_query_create.html)	 - Get agents work plans configuration
 
 

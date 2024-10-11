@@ -1,22 +1,15 @@
-## gc webdeployments configurations versions list
+## gc taskmanagement worktypes flows onattributechange
 
-Get the versions of a configuration
+/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange
 
 ### Synopsis
 
-Get the versions of a configuration
-
-```
-gc webdeployments configurations versions list [configurationId] [flags]
-```
+/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange
 
 ### Options
 
 ```
-  -a, --autopaginate             Automatically paginate through the results stripping page information
-      --filtercondition string   Filter list command output based on a given condition or regular expression
-  -h, --help                     help for list
-  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+  -h, --help   help for onattributechange
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc webdeployments configurations versions list [configurationId] [flags]
 
 ### SEE ALSO
 
-* [gc webdeployments configurations versions](gc_webdeployments_configurations_versions.html)	 - /api/v2/webdeployments/configurations/{configurationId}/versions
+* [gc taskmanagement worktypes flows](gc_taskmanagement_worktypes_flows.html)	 - /api/v2/taskmanagement/worktypes/{worktypeId}/flows
+* [gc taskmanagement worktypes flows onattributechange rules](gc_taskmanagement_worktypes_flows_onattributechange_rules.html)	 - /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules
 
 

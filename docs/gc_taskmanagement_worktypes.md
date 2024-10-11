@@ -32,6 +32,7 @@
 * [gc taskmanagement](gc_taskmanagement.html)	 - /api/v2/taskmanagement
 * [gc taskmanagement worktypes create](gc_taskmanagement_worktypes_create.html)	 - Create a worktype
 * [gc taskmanagement worktypes delete](gc_taskmanagement_worktypes_delete.html)	 - Delete a worktype
+* [gc taskmanagement worktypes flows](gc_taskmanagement_worktypes_flows.html)	 - /api/v2/taskmanagement/worktypes/{worktypeId}/flows
 * [gc taskmanagement worktypes get](gc_taskmanagement_worktypes_get.html)	 - Get a worktype
 * [gc taskmanagement worktypes history](gc_taskmanagement_worktypes_history.html)	 - /api/v2/taskmanagement/worktypes/{worktypeId}/history
 * [gc taskmanagement worktypes query](gc_taskmanagement_worktypes_query.html)	 - /api/v2/taskmanagement/worktypes/query

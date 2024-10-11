@@ -1,22 +1,19 @@
-## gc webdeployments configurations versions list
+## gc taskmanagement worktypes flows onattributechange rules delete
 
-Get the versions of a configuration
+Delete a rule
 
 ### Synopsis
 
-Get the versions of a configuration
+Delete a rule
 
 ```
-gc webdeployments configurations versions list [configurationId] [flags]
+gc taskmanagement worktypes flows onattributechange rules delete [worktypeId] [ruleId] [flags]
 ```
 
 ### Options
 
 ```
-  -a, --autopaginate             Automatically paginate through the results stripping page information
-      --filtercondition string   Filter list command output based on a given condition or regular expression
-  -h, --help                     help for list
-  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc webdeployments configurations versions list [configurationId] [flags]
 
 ### SEE ALSO
 
-* [gc webdeployments configurations versions](gc_webdeployments_configurations_versions.html)	 - /api/v2/webdeployments/configurations/{configurationId}/versions
+* [gc taskmanagement worktypes flows onattributechange rules](gc_taskmanagement_worktypes_flows_onattributechange_rules.html)	 - /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules
 
 

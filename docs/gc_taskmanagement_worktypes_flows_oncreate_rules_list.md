@@ -1,21 +1,23 @@
-## gc webdeployments configurations versions list
+## gc taskmanagement worktypes flows oncreate rules list
 
-Get the versions of a configuration
+Get all on-create rules for a worktype
 
 ### Synopsis
 
-Get the versions of a configuration
+Get all on-create rules for a worktype
 
 ```
-gc webdeployments configurations versions list [configurationId] [flags]
+gc taskmanagement worktypes flows oncreate rules list [worktypeId] [flags]
 ```
 
 ### Options
 
 ```
+      --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
+      --pageSize after           Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an after key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default 25)
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
@@ -36,6 +38,6 @@ gc webdeployments configurations versions list [configurationId] [flags]
 
 ### SEE ALSO
 
-* [gc webdeployments configurations versions](gc_webdeployments_configurations_versions.html)	 - /api/v2/webdeployments/configurations/{configurationId}/versions
+* [gc taskmanagement worktypes flows oncreate rules](gc_taskmanagement_worktypes_flows_oncreate_rules.html)	 - /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules
 
 

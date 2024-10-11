@@ -33,5 +33,6 @@
 * [gc workforcemanagement managementunits agents get](gc_workforcemanagement_managementunits_agents_get.html)	 - Get data for agent in the management unit
 * [gc workforcemanagement managementunits agents shifttrades](gc_workforcemanagement_managementunits_agents_shifttrades.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades
 * [gc workforcemanagement managementunits agents update](gc_workforcemanagement_managementunits_agents_update.html)	 - Update agent configurations
+* [gc workforcemanagement managementunits agents workplans](gc_workforcemanagement_managementunits_agents_workplans.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans
 
 

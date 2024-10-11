@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc journey views versions jobs](gc_journey_views_versions_jobs.html)	 - /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs
+* [gc journey views versions jobs results charts](gc_journey_views_versions_jobs_results_charts.html)	 - /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}/results/charts
 * [gc journey views versions jobs results get](gc_journey_views_versions_jobs_results_get.html)	 - Get the result of a job for a journey view version.
 
 

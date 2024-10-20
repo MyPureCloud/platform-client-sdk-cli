@@ -17,7 +17,6 @@ gc contentmanagement shared get [sharedId] [flags]
       --disposition string   Request how the share content will be downloaded: attached as a file or inline. Default is attachment. Valid values: attachment, inline, none
       --expand string        Expand some document fields Valid values: document.acl
   -h, --help                 help for get
-      --redirect string      Turn on or off redirect Valid values: true, false
 ```
 
 ### Options inherited from parent commands

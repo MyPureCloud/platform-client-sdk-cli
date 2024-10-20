@@ -32,6 +32,7 @@
 * [gc orgauthorization](gc_orgauthorization.html)	 - /api/v2/orgauthorization
 * [gc orgauthorization trustees audits](gc_orgauthorization_trustees_audits.html)	 - /api/v2/orgauthorization/trustees/audits
 * [gc orgauthorization trustees bulkdelete](gc_orgauthorization_trustees_bulkdelete.html)	 - Delete Bulk Org Trustees
+* [gc orgauthorization trustees care](gc_orgauthorization_trustees_care.html)	 - /api/v2/orgauthorization/trustees/care
 * [gc orgauthorization trustees clonedusers](gc_orgauthorization_trustees_clonedusers.html)	 - /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers
 * [gc orgauthorization trustees create](gc_orgauthorization_trustees_create.html)	 - Create a new organization authorization trust. This is required to grant other organizations access to your organization.
 * [gc orgauthorization trustees default](gc_orgauthorization_trustees_default.html)	 - /api/v2/orgauthorization/trustees/default

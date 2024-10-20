@@ -1,22 +1,19 @@
-## gc taskmanagement workitems create
+## gc externalcontacts import csv uploads details get
 
-Create a workitem
+Get details for CSV upload
 
 ### Synopsis
 
-Create a workitem
+Get details for CSV upload
 
 ```
-gc taskmanagement workitems create [flags]
+gc externalcontacts import csv uploads details get [uploadId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc externalcontacts import csv uploads details](gc_externalcontacts_import_csv_uploads_details.html)	 - /api/v2/externalcontacts/import/csv/uploads/{uploadId}/details
 
 

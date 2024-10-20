@@ -35,6 +35,7 @@
 * [gc externalcontacts conversations](gc_externalcontacts_conversations.html)	 - /api/v2/externalcontacts/conversations
 * [gc externalcontacts externalsources](gc_externalcontacts_externalsources.html)	 - /api/v2/externalcontacts/externalsources
 * [gc externalcontacts identifierlookup](gc_externalcontacts_identifierlookup.html)	 - /api/v2/externalcontacts/identifierlookup
+* [gc externalcontacts import](gc_externalcontacts_import.html)	 - /api/v2/externalcontacts/import
 * [gc externalcontacts merge](gc_externalcontacts_merge.html)	 - /api/v2/externalcontacts/merge
 * [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
 * [gc externalcontacts relationships](gc_externalcontacts_relationships.html)	 - /api/v2/externalcontacts/relationships

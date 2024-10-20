@@ -1,22 +1,19 @@
-## gc taskmanagement workitems create
+## gc externalcontacts import csv settings delete
 
-Create a workitem
+Delete settings for CSV import
 
 ### Synopsis
 
-Create a workitem
+Delete settings for CSV import
 
 ```
-gc taskmanagement workitems create [flags]
+gc externalcontacts import csv settings delete [settingsId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc externalcontacts import csv settings](gc_externalcontacts_import_csv_settings.html)	 - /api/v2/externalcontacts/import/csv/settings
 
 

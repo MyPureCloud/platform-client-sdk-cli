@@ -1,22 +1,19 @@
-## gc taskmanagement workitems create
+## gc orgauthorization trustees care get
 
-Create a workitem
+Get Customer Care organization ids.
 
 ### Synopsis
 
-Create a workitem
+Get Customer Care organization ids.
 
 ```
-gc taskmanagement workitems create [flags]
+gc orgauthorization trustees care get [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc orgauthorization trustees care](gc_orgauthorization_trustees_care.html)	 - /api/v2/orgauthorization/trustees/care
 
 

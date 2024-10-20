@@ -1,10 +1,10 @@
 ## gc flows versions configuration get
 
-Create flow version configuration
+Get flow version configuration
 
 ### Synopsis
 
-Create flow version configuration
+Get flow version configuration
 
 ```
 gc flows versions configuration get [flowId] [versionId] [flags]

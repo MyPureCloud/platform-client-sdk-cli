@@ -31,7 +31,7 @@
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
 * [gc taskmanagement workbins](gc_taskmanagement_workbins.html)	 - /api/v2/taskmanagement/workbins
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
 * [gc taskmanagement worktypes](gc_taskmanagement_worktypes.html)	 - /api/v2/taskmanagement/worktypes
 
 

@@ -1,22 +1,15 @@
-## gc taskmanagement workitems create
+## gc orgauthorization trustees care
 
-Create a workitem
+/api/v2/orgauthorization/trustees/care
 
 ### Synopsis
 
-Create a workitem
-
-```
-gc taskmanagement workitems create [flags]
-```
+/api/v2/orgauthorization/trustees/care
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for care
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,8 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc orgauthorization trustees](gc_orgauthorization_trustees.html)	 - /api/v2/orgauthorization/trustees
+* [gc orgauthorization trustees care create](gc_orgauthorization_trustees_care_create.html)	 - Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+* [gc orgauthorization trustees care get](gc_orgauthorization_trustees_care_get.html)	 - Get Customer Care organization ids.
 
 

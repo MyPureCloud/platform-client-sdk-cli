@@ -1,13 +1,13 @@
-## gc taskmanagement workitems create
+## gc externalcontacts import csv jobs create
 
-Create a workitem
+Create CSV import job
 
 ### Synopsis
 
-Create a workitem
+Create CSV import job
 
 ```
-gc taskmanagement workitems create [flags]
+gc externalcontacts import csv jobs create [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc externalcontacts import csv jobs](gc_externalcontacts_import_csv_jobs.html)	 - /api/v2/externalcontacts/import/csv/jobs
 
 

@@ -1,13 +1,13 @@
-## gc taskmanagement workitems create
+## gc externalcontacts import csv uploads create
 
-Create a workitem
+Get url for CSV upload
 
 ### Synopsis
 
-Create a workitem
+Get url for CSV upload
 
 ```
-gc taskmanagement workitems create [flags]
+gc externalcontacts import csv uploads create [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc externalcontacts import csv uploads](gc_externalcontacts_import_csv_uploads.html)	 - /api/v2/externalcontacts/import/csv/uploads
 
 

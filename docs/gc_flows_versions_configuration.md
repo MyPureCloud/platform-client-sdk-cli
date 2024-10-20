@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc flows versions](gc_flows_versions.html)	 - /api/v2/flows/{flowId}/versions
-* [gc flows versions configuration get](gc_flows_versions_configuration_get.html)	 - Create flow version configuration
+* [gc flows versions configuration get](gc_flows_versions_configuration_get.html)	 - Get flow version configuration
 
 

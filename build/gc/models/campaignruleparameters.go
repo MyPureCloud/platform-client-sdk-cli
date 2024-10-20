@@ -37,6 +37,15 @@ type CampaignruleparametersDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Campaignruleparameters
@@ -76,10 +85,25 @@ type Campaignruleparameters struct {
     // Queue - The queue a campaign to. Required for the 'changeCampaignQueue' action.
     Queue Domainentityref `json:"queue"`
 
+
+    // MessagesPerMinute - The number of messages per minute to set a messaging campaign to.
+    MessagesPerMinute int `json:"messagesPerMinute"`
+
+
+    // SmsContentTemplate - The content template to set a SMS campaign to.
+    SmsContentTemplate Domainentityref `json:"smsContentTemplate"`
+
+
+    // EmailContentTemplate - The content template to set a Email campaign to.
+    EmailContentTemplate Domainentityref `json:"emailContentTemplate"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Campaignruleparameters) String() string {
+    
+    
+    
     
     
     
@@ -123,8 +147,23 @@ func (u *Campaignruleparameters) MarshalJSON() ([]byte, error) {
         MaxCallsPerAgent float32 `json:"maxCallsPerAgent"`
         
         Queue Domainentityref `json:"queue"`
+        
+        MessagesPerMinute int `json:"messagesPerMinute"`
+        
+        SmsContentTemplate Domainentityref `json:"smsContentTemplate"`
+        
+        EmailContentTemplate Domainentityref `json:"emailContentTemplate"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

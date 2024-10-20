@@ -53,8 +53,8 @@ func queryEscape(value string) string {
 
 var getCmd = &cobra.Command{
 	Use:   "get [flowId] [versionId]",
-	Short: "Create flow version configuration",
-	Long:  "Create flow version configuration",
+	Short: "Get flow version configuration",
+	Long:  "Get flow version configuration",
 	Args:  utils.DetermineArgs([]string{ "flowId", "versionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

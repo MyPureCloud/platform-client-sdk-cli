@@ -39,10 +39,6 @@ type Documenttablecontentblock struct {
     VarType string `json:"type"`
 
 
-    // Paragraph - Paragraph. It must contain a value if the type of the block is Paragraph.
-    Paragraph Documentbodyparagraph `json:"paragraph"`
-
-
     // Text - Text. It must contain a value if the type of the block is Text.
     Text Documenttext `json:"text"`
 
@@ -53,6 +49,10 @@ type Documenttablecontentblock struct {
 
     // Video - Video. It must contain a value if the type of the block is Video.
     Video Documentbodyvideo `json:"video"`
+
+
+    // Paragraph - Paragraph. It must contain a value if the type of the block is Paragraph.
+    Paragraph Documentbodyparagraph `json:"paragraph"`
 
 
     // List - List. It must contain a value if the type of the block is UnorderedList or OrderedList.
@@ -92,13 +92,13 @@ func (u *Documenttablecontentblock) MarshalJSON() ([]byte, error) {
         
         VarType string `json:"type"`
         
-        Paragraph Documentbodyparagraph `json:"paragraph"`
-        
         Text Documenttext `json:"text"`
         
         Image Documentbodyimage `json:"image"`
         
         Video Documentbodyvideo `json:"video"`
+        
+        Paragraph Documentbodyparagraph `json:"paragraph"`
         
         List Documentbodylist `json:"list"`
         

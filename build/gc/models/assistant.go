@@ -70,7 +70,7 @@ type Assistant struct {
     
 
 
-    // GoogleDialogflowConfig - Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions.
+    // GoogleDialogflowConfig - (Deprecated: use the 'knowledgeSuggestionConfig' for genesys knowledge suggestions) Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions.
     GoogleDialogflowConfig Googledialogflowconfig `json:"googleDialogflowConfig"`
 
 

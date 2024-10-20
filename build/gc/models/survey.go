@@ -45,6 +45,15 @@ type SurveyDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -94,12 +103,27 @@ type Survey struct {
     AgentTeam Team `json:"agentTeam"`
 
 
+    // SurveyType - Type of the survey
+    SurveyType string `json:"surveyType"`
+
+
+    // MissingRequiredAnswer - True if any of the required questions for the survey form have not been answered. Null if survey is not finished.
+    MissingRequiredAnswer bool `json:"missingRequiredAnswer"`
+
+
+    // Flow - An Architect flow that executed in order to collect the answers for this survey.
+    Flow Addressableentityref `json:"flow"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Survey) String() string {
+    
+    
+    
     
     
     
@@ -146,8 +170,23 @@ func (u *Survey) MarshalJSON() ([]byte, error) {
         SurveyErrorDetails Surveyerrordetails `json:"surveyErrorDetails"`
         
         AgentTeam Team `json:"agentTeam"`
+        
+        SurveyType string `json:"surveyType"`
+        
+        MissingRequiredAnswer bool `json:"missingRequiredAnswer"`
+        
+        Flow Addressableentityref `json:"flow"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

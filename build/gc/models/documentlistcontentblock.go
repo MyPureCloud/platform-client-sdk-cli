@@ -41,12 +41,12 @@ type Documentlistcontentblock struct {
     Image Documentbodyimage `json:"image"`
 
 
-    // List - List. It must contain a value if the type of the block is UnorderedList or OrderedList.
-    List Documentbodylist `json:"list"`
-
-
     // Video - Video. It must contain a value if the type of the block is Video.
     Video Documentbodyvideo `json:"video"`
+
+
+    // List - List. It must contain a value if the type of the block is UnorderedList or OrderedList.
+    List Documentbodylist `json:"list"`
 
 }
 
@@ -80,9 +80,9 @@ func (u *Documentlistcontentblock) MarshalJSON() ([]byte, error) {
         
         Image Documentbodyimage `json:"image"`
         
-        List Documentbodylist `json:"list"`
-        
         Video Documentbodyvideo `json:"video"`
+        
+        List Documentbodylist `json:"list"`
         *Alias
     }{
 

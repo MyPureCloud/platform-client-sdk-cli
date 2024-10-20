@@ -381,6 +381,11 @@ gc/cmd/externalcontacts_contacts_unresolved/externalcontacts_contacts_unresolved
 gc/cmd/externalcontacts_conversations/externalcontacts_conversations.go
 gc/cmd/externalcontacts_externalsources/externalcontacts_externalsources.go
 gc/cmd/externalcontacts_identifierlookup/externalcontacts_identifierlookup.go
+gc/cmd/externalcontacts_import_csv_jobs/externalcontacts_import_csv_jobs.go
+gc/cmd/externalcontacts_import_csv_settings/externalcontacts_import_csv_settings.go
+gc/cmd/externalcontacts_import_csv_uploads/externalcontacts_import_csv_uploads.go
+gc/cmd/externalcontacts_import_csv_uploads_details/externalcontacts_import_csv_uploads_details.go
+gc/cmd/externalcontacts_import_csv_uploads_preview/externalcontacts_import_csv_uploads_preview.go
 gc/cmd/externalcontacts_merge_contacts/externalcontacts_merge_contacts.go
 gc/cmd/externalcontacts_organizations/externalcontacts_organizations.go
 gc/cmd/externalcontacts_organizations_contacts/externalcontacts_organizations_contacts.go
@@ -721,6 +726,7 @@ gc/cmd/organizations_whitelist/organizations_whitelist.go
 gc/cmd/orgauthorization_pairings/orgauthorization_pairings.go
 gc/cmd/orgauthorization_trustees/orgauthorization_trustees.go
 gc/cmd/orgauthorization_trustees_audits/orgauthorization_trustees_audits.go
+gc/cmd/orgauthorization_trustees_care/orgauthorization_trustees_care.go
 gc/cmd/orgauthorization_trustees_clonedusers/orgauthorization_trustees_clonedusers.go
 gc/cmd/orgauthorization_trustees_default/orgauthorization_trustees_default.go
 gc/cmd/orgauthorization_trustees_groups/orgauthorization_trustees_groups.go
@@ -1787,6 +1793,7 @@ gc/models/butimeofflimitvaluerange.go
 gc/models/butimeofflimitvaluesresponse.go
 gc/models/butimeoffplanlisting.go
 gc/models/butimeoffplanresponse.go
+gc/models/button.go
 gc/models/buttoncomponent.go
 gc/models/buttonresponse.go
 gc/models/buupdateagentscheduleshift.go
@@ -1853,6 +1860,8 @@ gc/models/campaignruleentities.go
 gc/models/campaignruleentitylisting.go
 gc/models/campaignruleexecutionsettings.go
 gc/models/campaignruleparameters.go
+gc/models/campaignrulewarning.go
+gc/models/campaignrulewarningparameters.go
 gc/models/campaignschedule.go
 gc/models/campaignsequence.go
 gc/models/campaignsequenceentitylisting.go
@@ -2230,6 +2239,14 @@ gc/models/crossplatformpolicy.go
 gc/models/crossplatformpolicyactions.go
 gc/models/crossplatformpolicycreate.go
 gc/models/crossplatformpolicyupdate.go
+gc/models/csvjobrequest.go
+gc/models/csvjobresponse.go
+gc/models/csvmappingentry.go
+gc/models/csvsettings.go
+gc/models/csvuploaddetailsresponse.go
+gc/models/csvuploadpreviewresponse.go
+gc/models/csvuploadrequest.go
+gc/models/csvuploadresponse.go
 gc/models/ctabuttonstyleproperties.go
 gc/models/currentuserschedulerequestbody.go
 gc/models/currentusertimeoffintegrationstatusrequest.go
@@ -2371,7 +2388,9 @@ gc/models/documentbodyimageproperties.go
 gc/models/documentbodylist.go
 gc/models/documentbodylistblock.go
 gc/models/documentbodylistblockproperties.go
+gc/models/documentbodylistblockwithhighlight.go
 gc/models/documentbodylistitemproperties.go
+gc/models/documentbodylistwithhighlight.go
 gc/models/documentbodyparagraph.go
 gc/models/documentbodyparagraphproperties.go
 gc/models/documentbodyparagraphwithhighlight.go
@@ -2380,9 +2399,12 @@ gc/models/documentbodytablecaptionblock.go
 gc/models/documentbodytablecaptionitem.go
 gc/models/documentbodytablecellblock.go
 gc/models/documentbodytablecellblockproperties.go
+gc/models/documentbodytablecellblockwithhighlight.go
 gc/models/documentbodytableproperties.go
 gc/models/documentbodytablerowblock.go
 gc/models/documentbodytablerowblockproperties.go
+gc/models/documentbodytablerowblockwithhighlight.go
+gc/models/documentbodytablewithhighlight.go
 gc/models/documentbodyvideo.go
 gc/models/documentbodyvideoproperties.go
 gc/models/documentbodywithhighlight.go
@@ -2394,6 +2416,7 @@ gc/models/documentelementlength.go
 gc/models/documententitylisting.go
 gc/models/documentfaq.go
 gc/models/documentlistcontentblock.go
+gc/models/documentlistcontentblockwithhighlight.go
 gc/models/documentlisting.go
 gc/models/documentquery.go
 gc/models/documentqueryclause.go
@@ -2401,6 +2424,7 @@ gc/models/documentqueryinterval.go
 gc/models/documentquerypredicate.go
 gc/models/documentreference.go
 gc/models/documenttablecontentblock.go
+gc/models/documenttablecontentblockwithhighlight.go
 gc/models/documenttext.go
 gc/models/documenttextproperties.go
 gc/models/documentthumbnail.go
@@ -2846,6 +2870,7 @@ gc/models/guestmemberinfo.go
 gc/models/guestresponsecategory.go
 gc/models/headcountforecast.go
 gc/models/headcountinterval.go
+gc/models/header.go
 gc/models/healthinfo.go
 gc/models/helplink.go
 gc/models/helpsettings.go
@@ -3269,6 +3294,7 @@ gc/models/listalternativeshifttradesresponse.go
 gc/models/listeddictionaryfeedback.go
 gc/models/listedprogram.go
 gc/models/listedtopic.go
+gc/models/listing.go
 gc/models/listitemcomponent.go
 gc/models/listwrapperagentworkplanfield.go
 gc/models/listwrapperalternativeshiftbusettingsactivitycategory.go
@@ -3359,6 +3385,8 @@ gc/models/messageconversationentitylisting.go
 gc/models/messagedata.go
 gc/models/messagedetails.go
 gc/models/messageevaluation.go
+gc/models/messagefooter.go
+gc/models/messageheader.go
 gc/models/messageinfo.go
 gc/models/messagemedia.go
 gc/models/messagemediaattachment.go
@@ -4430,6 +4458,7 @@ gc/models/trustee.go
 gc/models/trusteeauditqueryrequest.go
 gc/models/trusteeauthorization.go
 gc/models/trusteebillingoverview.go
+gc/models/trusteereferencelist.go
 gc/models/trustentitylisting.go
 gc/models/trustgroup.go
 gc/models/trustgroupentitylisting.go
@@ -4584,6 +4613,7 @@ gc/models/userqueueentitylisting.go
 gc/models/userrecording.go
 gc/models/userrecordingentitylisting.go
 gc/models/userreference.go
+gc/models/userreferenceentitylisting.go
 gc/models/userreferencewithname.go
 gc/models/userroutinglanguage.go
 gc/models/userroutinglanguagepost.go
@@ -4627,7 +4657,9 @@ gc/models/validateaddressresponse.go
 gc/models/validateassignusers.go
 gc/models/validateworkplanmessages.go
 gc/models/validateworkplanresponse.go
+gc/models/validationerror.go
 gc/models/validationlimits.go
+gc/models/validationresult.go
 gc/models/validationservicerequest.go
 gc/models/valuewrapperactivityplanservicegoalimpactoverrides.go
 gc/models/valuewrapperdate.go
@@ -4807,6 +4839,9 @@ gc/models/workitempostqueryentitylisting.go
 gc/models/workitemqueryjobcreate.go
 gc/models/workitemqueryjoberror.go
 gc/models/workitemqueryjobfilter.go
+gc/models/workitemqueryjobqueryfilters.go
+gc/models/workitemqueryjobqueryfilterscriteria.go
+gc/models/workitemqueryjobqueryfilterspredicate.go
 gc/models/workitemqueryjobresponse.go
 gc/models/workitemqueryjobsort.go
 gc/models/workitemquerypostrequest.go

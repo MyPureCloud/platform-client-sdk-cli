@@ -20,19 +20,19 @@ type DocumentbodytablerowblockDud struct {
 
 // Documentbodytablerowblock
 type Documentbodytablerowblock struct { 
-    // Cells - The list of cells for the table.
-    Cells []Documentbodytablecellblock `json:"cells"`
-
-
     // Properties - The properties for the table rows.
     Properties Documentbodytablerowblockproperties `json:"properties"`
+
+
+    // Cells - The list of cells for the table.
+    Cells []Documentbodytablecellblock `json:"cells"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Documentbodytablerowblock) String() string {
-     o.Cells = []Documentbodytablecellblock{{}} 
     
+     o.Cells = []Documentbodytablecellblock{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -50,17 +50,17 @@ func (u *Documentbodytablerowblock) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Cells []Documentbodytablecellblock `json:"cells"`
-        
         Properties Documentbodytablerowblockproperties `json:"properties"`
+        
+        Cells []Documentbodytablecellblock `json:"cells"`
         *Alias
     }{
 
         
-        Cells: []Documentbodytablecellblock{{}},
+
+
         
-
-
+        Cells: []Documentbodytablecellblock{{}},
         
 
         Alias: (*Alias)(u),

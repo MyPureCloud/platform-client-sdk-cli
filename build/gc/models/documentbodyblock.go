@@ -44,16 +44,16 @@ type Documentbodyblock struct {
     Video Documentbodyvideo `json:"video"`
 
 
+    // Paragraph - Paragraph. It must contain a value if the type of the block is Paragraph.
+    Paragraph Documentbodyparagraph `json:"paragraph"`
+
+
     // List - List. It must contain a value if the type of the block is UnorderedList or OrderedList.
     List Documentbodylist `json:"list"`
 
 
     // Table - Table. It must contain a value if type of the block is Table.
     Table Documentbodytable `json:"table"`
-
-
-    // Paragraph - Paragraph. It must contain a value if the type of the block is Paragraph.
-    Paragraph Documentbodyparagraph `json:"paragraph"`
 
 }
 
@@ -88,11 +88,11 @@ func (u *Documentbodyblock) MarshalJSON() ([]byte, error) {
         
         Video Documentbodyvideo `json:"video"`
         
+        Paragraph Documentbodyparagraph `json:"paragraph"`
+        
         List Documentbodylist `json:"list"`
         
         Table Documentbodytable `json:"table"`
-        
-        Paragraph Documentbodyparagraph `json:"paragraph"`
         *Alias
     }{
 

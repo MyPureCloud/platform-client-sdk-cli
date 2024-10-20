@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -11,6 +12,15 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type WorkitemqueryjobcreateDud struct { 
+    
+
+
+    
+
+
+    
+
+
     
 
 
@@ -44,6 +54,10 @@ type Workitemqueryjobcreate struct {
     Filters []Workitemqueryjobfilter `json:"filters"`
 
 
+    // QueryFilters - Query filters for nested attributes.
+    QueryFilters []Workitemqueryjobqueryfilters `json:"queryFilters"`
+
+
     // Expands - List of entity attributes to be expanded in the result.
     Expands []string `json:"expands"`
 
@@ -55,6 +69,14 @@ type Workitemqueryjobcreate struct {
     // Sort - Sort
     Sort Workitemqueryjobsort `json:"sort"`
 
+
+    // DateIntervalStart - Interval start date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateIntervalStart time.Time `json:"dateIntervalStart"`
+
+
+    // DateIntervalEnd - Interval end date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateIntervalEnd time.Time `json:"dateIntervalEnd"`
+
 }
 
 // String returns a JSON representation of the model
@@ -62,8 +84,11 @@ func (o *Workitemqueryjobcreate) String() string {
     
     
      o.Filters = []Workitemqueryjobfilter{{}} 
+     o.QueryFilters = []Workitemqueryjobqueryfilters{{}} 
      o.Expands = []string{""} 
      o.Attributes = []string{""} 
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -88,11 +113,17 @@ func (u *Workitemqueryjobcreate) MarshalJSON() ([]byte, error) {
         
         Filters []Workitemqueryjobfilter `json:"filters"`
         
+        QueryFilters []Workitemqueryjobqueryfilters `json:"queryFilters"`
+        
         Expands []string `json:"expands"`
         
         Attributes []string `json:"attributes"`
         
         Sort Workitemqueryjobsort `json:"sort"`
+        
+        DateIntervalStart time.Time `json:"dateIntervalStart"`
+        
+        DateIntervalEnd time.Time `json:"dateIntervalEnd"`
         *Alias
     }{
 
@@ -108,12 +139,23 @@ func (u *Workitemqueryjobcreate) MarshalJSON() ([]byte, error) {
 
 
         
+        QueryFilters: []Workitemqueryjobqueryfilters{{}},
+        
+
+
+        
         Expands: []string{""},
         
 
 
         
         Attributes: []string{""},
+        
+
+
+        
+
+
         
 
 

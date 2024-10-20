@@ -28,7 +28,6 @@ func init() {
 }
 
 func Cmdcontentmanagement_shared() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "bool", "redirect", "true", "Turn on or off redirect")
 	utils.AddFlag(getCmd.Flags(), "string", "disposition", "attachment", "Request how the share content will be downloaded: attached as a file or inline. Default is attachment. Valid values: attachment, inline, none")
 	utils.AddFlag(getCmd.Flags(), "string", "contentType", "", "The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav")
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand some document fields Valid values: document.acl")
@@ -75,10 +74,6 @@ var getCmd = &cobra.Command{
 		sharedId, args := args[0], args[1:]
 		path = strings.Replace(path, "{sharedId}", fmt.Sprintf("%v", sharedId), -1)
 
-		redirect := utils.GetFlag(cmd.Flags(), "bool", "redirect")
-		if redirect != "" {
-			queryParams["redirect"] = redirect
-		}
 		disposition := utils.GetFlag(cmd.Flags(), "string", "disposition")
 		if disposition != "" {
 			queryParams["disposition"] = disposition

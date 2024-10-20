@@ -27,20 +27,20 @@ type Documentbodylistblock struct {
     VarType string `json:"type"`
 
 
-    // Blocks - The list of items for an OrderedList or an UnorderedList.
-    Blocks []Documentlistcontentblock `json:"blocks"`
-
-
     // Properties - The properties for the list block.
     Properties Documentbodylistitemproperties `json:"properties"`
+
+
+    // Blocks - The list of items for an OrderedList or an UnorderedList.
+    Blocks []Documentlistcontentblock `json:"blocks"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Documentbodylistblock) String() string {
     
-     o.Blocks = []Documentlistcontentblock{{}} 
     
+     o.Blocks = []Documentlistcontentblock{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -60,9 +60,9 @@ func (u *Documentbodylistblock) MarshalJSON() ([]byte, error) {
         
         VarType string `json:"type"`
         
-        Blocks []Documentlistcontentblock `json:"blocks"`
-        
         Properties Documentbodylistitemproperties `json:"properties"`
+        
+        Blocks []Documentlistcontentblock `json:"blocks"`
         *Alias
     }{
 
@@ -70,10 +70,10 @@ func (u *Documentbodylistblock) MarshalJSON() ([]byte, error) {
 
 
         
-        Blocks: []Documentlistcontentblock{{}},
+
+
         
-
-
+        Blocks: []Documentlistcontentblock{{}},
         
 
         Alias: (*Alias)(u),

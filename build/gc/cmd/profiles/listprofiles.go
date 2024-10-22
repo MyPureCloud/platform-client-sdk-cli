@@ -2,10 +2,11 @@ package profiles
 
 import (
 	"fmt"
+	"strings"
+
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
-	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -39,4 +40,18 @@ var listProfilesCmd = &cobra.Command{
 
 		utils.Render(finalJSONString)
 	},
+}
+
+func ListProfileNames() []string {
+	configs, err := config.ListConfigs()
+	if err != nil {
+		logger.Fatal(err)
+	}
+
+	profileNameList := make([]string, 0)
+	for _, config := range configs {
+		profileNameList = append(profileNameList, config.ProfileName())
+	}
+
+	return profileNameList
 }

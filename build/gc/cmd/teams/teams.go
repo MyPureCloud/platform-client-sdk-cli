@@ -62,6 +62,7 @@ func Cmdteams() *cobra.Command {
 }`)
 	teamsCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand the division name Valid values: entities.division")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/teams/{teamId}", utils.FormatPermissions([]string{ "groups:team:view",  }), utils.GenerateDevCentreLink("GET", "Teams", "/api/v2/teams/{teamId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -281,6 +282,10 @@ var getCmd = &cobra.Command{
 		teamId, args := args[0], args[1:]
 		path = strings.Replace(path, "{teamId}", fmt.Sprintf("%v", teamId), -1)
 
+		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

@@ -53,7 +53,7 @@ func Cmdanalytics_reporting_settings_dashboards_query() *cobra.Command {
 	analytics_reporting_settings_dashboards_queryCmd.AddCommand(createCmd)
 
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "name of the dashboard")
-	utils.AddFlag(listCmd.Flags(), "string", "dashboardType", "", "List dashboard of given type - REQUIRED Valid values: All, Public, Private, Shared, Favorites")
+	utils.AddFlag(listCmd.Flags(), "string", "dashboardType", "", "List dashboard of given type - REQUIRED Valid values: All, Public, Private, Shared, Favorites, Deleted")
 	utils.AddFlag(listCmd.Flags(), "string", "dashboardAccessFilter", "", "Filter dashboard based on the owner of dashboard - REQUIRED Valid values: OwnedByMe, OwnedByAnyone, NotOwnedByMe")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "desc", "")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "")

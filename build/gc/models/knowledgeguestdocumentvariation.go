@@ -60,7 +60,7 @@ type Knowledgeguestdocumentvariation struct {
 
 
     // Body - The content for the variation.
-    Body Documentbody `json:"body"`
+    Body Documentbodyresponse `json:"body"`
 
 
     
@@ -93,7 +93,7 @@ func (u *Knowledgeguestdocumentvariation) MarshalJSON() ([]byte, error) {
         
         Contexts []Knowledgeguestdocumentvariationcontext `json:"contexts"`
         
-        Body Documentbody `json:"body"`
+        Body Documentbodyresponse `json:"body"`
         *Alias
     }{
 

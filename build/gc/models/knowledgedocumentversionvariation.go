@@ -64,7 +64,7 @@ type Knowledgedocumentversionvariation struct {
 
 
     // Body - The content for the variation.
-    Body Documentbody `json:"body"`
+    Body Documentbodyresponse `json:"body"`
 
 
     
@@ -103,7 +103,7 @@ func (u *Knowledgedocumentversionvariation) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
-        Body Documentbody `json:"body"`
+        Body Documentbodyresponse `json:"body"`
         *Alias
     }{
 

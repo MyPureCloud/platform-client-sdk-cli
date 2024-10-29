@@ -159,7 +159,7 @@ type Knowledgedocumentresponse struct {
 
 
     // Variations - Variations of the document.
-    Variations []Documentvariation `json:"variations"`
+    Variations []Documentvariationresponse `json:"variations"`
 
 
     
@@ -185,7 +185,7 @@ func (o *Knowledgedocumentresponse) String() string {
     
     
     
-     o.Variations = []Documentvariation{{}} 
+     o.Variations = []Documentvariationresponse{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -237,7 +237,7 @@ func (u *Knowledgedocumentresponse) MarshalJSON() ([]byte, error) {
         
         Readonly bool `json:"readonly"`
         
-        Variations []Documentvariation `json:"variations"`
+        Variations []Documentvariationresponse `json:"variations"`
         *Alias
     }{
 
@@ -306,7 +306,7 @@ func (u *Knowledgedocumentresponse) MarshalJSON() ([]byte, error) {
 
 
         
-        Variations: []Documentvariation{{}},
+        Variations: []Documentvariationresponse{{}},
         
 
 

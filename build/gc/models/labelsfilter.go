@@ -6,33 +6,25 @@ import (
 )
 
 var (
-    UserimageMarshalled = false
+    LabelsfilterMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type UserimageDud struct { 
-    
-
-
+type LabelsfilterDud struct { 
     
 
 }
 
-// Userimage
-type Userimage struct { 
-    // Resolution - Height and/or width of image. ex: 640x480 or x128
-    Resolution string `json:"resolution"`
-
-
-    // ImageUri
-    ImageUri string `json:"imageUri"`
+// Labelsfilter
+type Labelsfilter struct { 
+    // Entities - A list of labels to filter by. Articles matching any of the specified labels can be accessed.
+    Entities []Labelentity `json:"entities"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Userimage) String() string {
-    
-    
+func (o *Labelsfilter) String() string {
+     o.Entities = []Labelentity{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -40,25 +32,22 @@ func (o *Userimage) String() string {
     return str
 }
 
-func (u *Userimage) MarshalJSON() ([]byte, error) {
-    type Alias Userimage
+func (u *Labelsfilter) MarshalJSON() ([]byte, error) {
+    type Alias Labelsfilter
 
-    if UserimageMarshalled {
+    if LabelsfilterMarshalled {
         return []byte("{}"), nil
     }
-    UserimageMarshalled = true
+    LabelsfilterMarshalled = true
 
     return json.Marshal(&struct {
         
-        Resolution string `json:"resolution"`
-        
-        ImageUri string `json:"imageUri"`
+        Entities []Labelentity `json:"entities"`
         *Alias
     }{
 
         
-
-
+        Entities: []Labelentity{{}},
         
 
         Alias: (*Alias)(u),

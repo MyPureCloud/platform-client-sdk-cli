@@ -33,7 +33,7 @@ func Cmdknowledge_knowledgebases_documents_variations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DocumentVariation"
+        "$ref" : "#/components/schemas/DocumentVariationRequest"
       }
     }
   },
@@ -45,7 +45,7 @@ func Cmdknowledge_knowledgebases_documents_variations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DocumentVariation"
+        "$ref" : "#/components/schemas/DocumentVariationResponse"
       }
     }
   }
@@ -70,7 +70,7 @@ func Cmdknowledge_knowledgebases_documents_variations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DocumentVariation"
+        "$ref" : "#/components/schemas/DocumentVariationResponse"
       }
     }
   }
@@ -101,7 +101,7 @@ func Cmdknowledge_knowledgebases_documents_variations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DocumentVariation"
+        "$ref" : "#/components/schemas/DocumentVariationRequest"
       }
     }
   },
@@ -113,7 +113,7 @@ func Cmdknowledge_knowledgebases_documents_variations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DocumentVariation"
+        "$ref" : "#/components/schemas/DocumentVariationResponse"
       }
     }
   }
@@ -139,7 +139,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Documentvariation{}
+			reqModel := models.Documentvariationrequest{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -434,7 +434,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Documentvariation{}
+			reqModel := models.Documentvariationrequest{}
 			utils.Render(reqModel.String())
 			
 			return

@@ -59,8 +59,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Bulk delete dashboards owned by other user(s)",
-	Long:  "Bulk delete dashboards owned by other user(s)",
+	Short: "Bulk soft delete dashboards owned by other user(s)",
+	Long:  "Bulk soft delete dashboards owned by other user(s)",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    DocumentvariationlistingMarshalled = false
+    ChatitemcursorlistingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type DocumentvariationlistingDud struct { 
+type ChatitemcursorlistingDud struct { 
     
 
 
@@ -24,10 +24,10 @@ type DocumentvariationlistingDud struct {
 
 }
 
-// Documentvariationlisting
-type Documentvariationlisting struct { 
+// Chatitemcursorlisting
+type Chatitemcursorlisting struct { 
     // Entities
-    Entities []Documentvariation `json:"entities"`
+    Entities []Chatitem `json:"entities"`
 
 
     // NextUri
@@ -44,8 +44,8 @@ type Documentvariationlisting struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Documentvariationlisting) String() string {
-     o.Entities = []Documentvariation{{}} 
+func (o *Chatitemcursorlisting) String() string {
+     o.Entities = []Chatitem{{}} 
     
     
     
@@ -56,17 +56,17 @@ func (o *Documentvariationlisting) String() string {
     return str
 }
 
-func (u *Documentvariationlisting) MarshalJSON() ([]byte, error) {
-    type Alias Documentvariationlisting
+func (u *Chatitemcursorlisting) MarshalJSON() ([]byte, error) {
+    type Alias Chatitemcursorlisting
 
-    if DocumentvariationlistingMarshalled {
+    if ChatitemcursorlistingMarshalled {
         return []byte("{}"), nil
     }
-    DocumentvariationlistingMarshalled = true
+    ChatitemcursorlistingMarshalled = true
 
     return json.Marshal(&struct {
         
-        Entities []Documentvariation `json:"entities"`
+        Entities []Chatitem `json:"entities"`
         
         NextUri string `json:"nextUri"`
         
@@ -77,7 +77,7 @@ func (u *Documentvariationlisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Documentvariation{{}},
+        Entities: []Chatitem{{}},
         
 
 

@@ -19,6 +19,15 @@ type NamedentitytypemechanismDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Namedentitytypemechanism
@@ -34,6 +43,18 @@ type Namedentitytypemechanism struct {
     // VarType - The type of the mechanism.
     VarType string `json:"type"`
 
+
+    // SubType - Subtype of detection mechanism
+    SubType string `json:"subType"`
+
+
+    // MaxLength - The maximum length of the entity resolved value
+    MaxLength int `json:"maxLength"`
+
+
+    // Examples - Examples for entity detection
+    Examples []Namedentitytypemechanismexample `json:"examples"`
+
 }
 
 // String returns a JSON representation of the model
@@ -41,6 +62,9 @@ func (o *Namedentitytypemechanism) String() string {
      o.Items = []Namedentitytypeitem{{}} 
     
     
+    
+    
+     o.Examples = []Namedentitytypemechanismexample{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,6 +87,12 @@ func (u *Namedentitytypemechanism) MarshalJSON() ([]byte, error) {
         Restricted bool `json:"restricted"`
         
         VarType string `json:"type"`
+        
+        SubType string `json:"subType"`
+        
+        MaxLength int `json:"maxLength"`
+        
+        Examples []Namedentitytypemechanismexample `json:"examples"`
         *Alias
     }{
 
@@ -74,6 +104,17 @@ func (u *Namedentitytypemechanism) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+
+
+        
+        Examples: []Namedentitytypemechanismexample{{}},
         
 
         Alias: (*Alias)(u),

@@ -7,11 +7,11 @@ import (
 )
 
 var (
-    DocumentvariationMarshalled = false
+    DocumentvariationrequestMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type DocumentvariationDud struct { 
+type DocumentvariationrequestDud struct { 
     Id string `json:"id"`
 
 
@@ -43,8 +43,8 @@ type DocumentvariationDud struct {
 
 }
 
-// Documentvariation
-type Documentvariation struct { 
+// Documentvariationrequest
+type Documentvariationrequest struct { 
     
 
 
@@ -74,7 +74,7 @@ type Documentvariation struct {
 
 
     // Body - The content for the variation.
-    Body Documentbody `json:"body"`
+    Body Documentbodyrequest `json:"body"`
 
 
     
@@ -82,7 +82,7 @@ type Documentvariation struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Documentvariation) String() string {
+func (o *Documentvariationrequest) String() string {
     
      o.Contexts = []Documentvariationcontext{{}} 
     
@@ -95,13 +95,13 @@ func (o *Documentvariation) String() string {
     return str
 }
 
-func (u *Documentvariation) MarshalJSON() ([]byte, error) {
-    type Alias Documentvariation
+func (u *Documentvariationrequest) MarshalJSON() ([]byte, error) {
+    type Alias Documentvariationrequest
 
-    if DocumentvariationMarshalled {
+    if DocumentvariationrequestMarshalled {
         return []byte("{}"), nil
     }
-    DocumentvariationMarshalled = true
+    DocumentvariationrequestMarshalled = true
 
     return json.Marshal(&struct {
         
@@ -113,7 +113,7 @@ func (u *Documentvariation) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
-        Body Documentbody `json:"body"`
+        Body Documentbodyrequest `json:"body"`
         *Alias
     }{
 

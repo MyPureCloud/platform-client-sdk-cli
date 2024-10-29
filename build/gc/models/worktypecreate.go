@@ -61,6 +61,9 @@ type WorktypecreateDud struct {
 
     
 
+
+    
+
 }
 
 // Worktypecreate
@@ -105,6 +108,10 @@ type Worktypecreate struct {
     ServiceLevelTarget int `json:"serviceLevelTarget"`
 
 
+    // RuleSettings - Settings for the worktypes rules.
+    RuleSettings Workitemrulesettings `json:"ruleSettings"`
+
+
     // Description - The description of the Worktype. Maximum length of 512 characters.
     Description string `json:"description"`
 
@@ -136,6 +143,7 @@ type Worktypecreate struct {
 
 // String returns a JSON representation of the model
 func (o *Worktypecreate) String() string {
+    
     
     
     
@@ -190,6 +198,8 @@ func (u *Worktypecreate) MarshalJSON() ([]byte, error) {
         
         ServiceLevelTarget int `json:"serviceLevelTarget"`
         
+        RuleSettings Workitemrulesettings `json:"ruleSettings"`
+        
         Description string `json:"description"`
         
         DivisionId string `json:"divisionId"`
@@ -205,6 +215,9 @@ func (u *Worktypecreate) MarshalJSON() ([]byte, error) {
         DefaultSkillIds []string `json:"defaultSkillIds"`
         *Alias
     }{
+
+        
+
 
         
 

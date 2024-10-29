@@ -15,6 +15,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_ratelimits"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_routing"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_surveys"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_taskmanagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_teams"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_transcripts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_users"
@@ -22,7 +23,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_dataretention"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_reporting"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_resolutions"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_taskmanagement"
 )
 
 func init() {
@@ -39,6 +39,7 @@ func init() {
 	analyticsCmd.AddCommand(analytics_ratelimits.Cmdanalytics_ratelimits())
 	analyticsCmd.AddCommand(analytics_routing.Cmdanalytics_routing())
 	analyticsCmd.AddCommand(analytics_surveys.Cmdanalytics_surveys())
+	analyticsCmd.AddCommand(analytics_taskmanagement.Cmdanalytics_taskmanagement())
 	analyticsCmd.AddCommand(analytics_teams.Cmdanalytics_teams())
 	analyticsCmd.AddCommand(analytics_transcripts.Cmdanalytics_transcripts())
 	analyticsCmd.AddCommand(analytics_users.Cmdanalytics_users())
@@ -46,7 +47,6 @@ func init() {
 	analyticsCmd.AddCommand(analytics_dataretention.Cmdanalytics_dataretention())
 	analyticsCmd.AddCommand(analytics_reporting.Cmdanalytics_reporting())
 	analyticsCmd.AddCommand(analytics_resolutions.Cmdanalytics_resolutions())
-	analyticsCmd.AddCommand(analytics_taskmanagement.Cmdanalytics_taskmanagement())
-	analyticsCmd.Short = utils.GenerateCustomDescription(analyticsCmd.Short, analytics_actions.Description, analytics_agentcopilots.Description, analytics_bots.Description, analytics_conversations.Description, analytics_evaluations.Description, analytics_flowexecutions.Description, analytics_flows.Description, analytics_journeys.Description, analytics_knowledge.Description, analytics_queues.Description, analytics_ratelimits.Description, analytics_routing.Description, analytics_surveys.Description, analytics_teams.Description, analytics_transcripts.Description, analytics_users.Description, analytics_botflows.Description, analytics_dataretention.Description, analytics_reporting.Description, analytics_resolutions.Description, analytics_taskmanagement.Description, )
+	analyticsCmd.Short = utils.GenerateCustomDescription(analyticsCmd.Short, analytics_actions.Description, analytics_agentcopilots.Description, analytics_bots.Description, analytics_conversations.Description, analytics_evaluations.Description, analytics_flowexecutions.Description, analytics_flows.Description, analytics_journeys.Description, analytics_knowledge.Description, analytics_queues.Description, analytics_ratelimits.Description, analytics_routing.Description, analytics_surveys.Description, analytics_taskmanagement.Description, analytics_teams.Description, analytics_transcripts.Description, analytics_users.Description, analytics_botflows.Description, analytics_dataretention.Description, analytics_reporting.Description, analytics_resolutions.Description, )
 	analyticsCmd.Long = analyticsCmd.Short
 }

@@ -58,6 +58,9 @@ type WorktypeupdateDud struct {
 
     
 
+
+    
+
 }
 
 // Worktypeupdate
@@ -102,6 +105,10 @@ type Worktypeupdate struct {
     ServiceLevelTarget int `json:"serviceLevelTarget"`
 
 
+    // RuleSettings - Settings for the worktypes rules.
+    RuleSettings Workitemrulesettings `json:"ruleSettings"`
+
+
     // Description - The description of the Worktype. Maximum length of 512 characters.
     Description string `json:"description"`
 
@@ -129,6 +136,7 @@ type Worktypeupdate struct {
 
 // String returns a JSON representation of the model
 func (o *Worktypeupdate) String() string {
+    
     
     
     
@@ -182,6 +190,8 @@ func (u *Worktypeupdate) MarshalJSON() ([]byte, error) {
         
         ServiceLevelTarget int `json:"serviceLevelTarget"`
         
+        RuleSettings Workitemrulesettings `json:"ruleSettings"`
+        
         Description string `json:"description"`
         
         DefaultStatusId string `json:"defaultStatusId"`
@@ -195,6 +205,9 @@ func (u *Worktypeupdate) MarshalJSON() ([]byte, error) {
         DefaultQueueId string `json:"defaultQueueId"`
         *Alias
     }{
+
+        
+
 
         
 

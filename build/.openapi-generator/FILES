@@ -759,7 +759,9 @@ gc/cmd/outbound_campaigns_interactions/outbound_campaigns_interactions.go
 gc/cmd/outbound_campaigns_linedistribution/outbound_campaigns_linedistribution.go
 gc/cmd/outbound_campaigns_progress/outbound_campaigns_progress.go
 gc/cmd/outbound_campaigns_skillcombinations/outbound_campaigns_skillcombinations.go
+gc/cmd/outbound_campaigns_start/outbound_campaigns_start.go
 gc/cmd/outbound_campaigns_stats/outbound_campaigns_stats.go
+gc/cmd/outbound_campaigns_stop/outbound_campaigns_stop.go
 gc/cmd/outbound_contactlistfilters/outbound_contactlistfilters.go
 gc/cmd/outbound_contactlistfilters_bulk_retrieve/outbound_contactlistfilters_bulk_retrieve.go
 gc/cmd/outbound_contactlistfilters_preview/outbound_contactlistfilters_preview.go
@@ -797,6 +799,8 @@ gc/cmd/outbound_messagingcampaigns/outbound_messagingcampaigns.go
 gc/cmd/outbound_messagingcampaigns_diagnostics/outbound_messagingcampaigns_diagnostics.go
 gc/cmd/outbound_messagingcampaigns_divisionviews/outbound_messagingcampaigns_divisionviews.go
 gc/cmd/outbound_messagingcampaigns_progress/outbound_messagingcampaigns_progress.go
+gc/cmd/outbound_messagingcampaigns_start/outbound_messagingcampaigns_start.go
+gc/cmd/outbound_messagingcampaigns_stop/outbound_messagingcampaigns_stop.go
 gc/cmd/outbound_rulesets/outbound_rulesets.go
 gc/cmd/outbound_schedules_campaigns/outbound_schedules_campaigns.go
 gc/cmd/outbound_schedules_emailcampaigns/outbound_schedules_emailcampaigns.go
@@ -1084,6 +1088,7 @@ gc/cmd/users_adjacents/users_adjacents.go
 gc/cmd/users_agentui_agents_autoanswer_settings/users_agentui_agents_autoanswer_settings.go
 gc/cmd/users_bulk/users_bulk.go
 gc/cmd/users_callforwarding/users_callforwarding.go
+gc/cmd/users_chats_me/users_chats_me.go
 gc/cmd/users_development_activities/users_development_activities.go
 gc/cmd/users_development_activities_aggregates_query/users_development_activities_aggregates_query.go
 gc/cmd/users_development_activities_me/users_development_activities_me.go
@@ -1136,6 +1141,8 @@ gc/cmd/voicemail_policy/voicemail_policy.go
 gc/cmd/voicemail_queues_messages/voicemail_queues_messages.go
 gc/cmd/voicemail_search/voicemail_search.go
 gc/cmd/voicemail_userpolicies/voicemail_userpolicies.go
+gc/cmd/voicemail_users_mailbox/voicemail_users_mailbox.go
+gc/cmd/voicemail_users_messages/voicemail_users_messages.go
 gc/cmd/webchat_deployments/webchat_deployments.go
 gc/cmd/webchat_guest_conversations/webchat_guest_conversations.go
 gc/cmd/webchat_guest_conversations_mediarequests/webchat_guest_conversations_mediarequests.go
@@ -1531,6 +1538,7 @@ gc/models/arraynode.go
 gc/models/article.go
 gc/models/articlecontent.go
 gc/models/articlecontentbody.go
+gc/models/articlesfilter.go
 gc/models/assessmentform.go
 gc/models/assessmentformquestion.go
 gc/models/assessmentformquestiongroup.go
@@ -1872,8 +1880,10 @@ gc/models/cannedresponselibraries.go
 gc/models/card.go
 gc/models/cardaction.go
 gc/models/categoriesentitylisting.go
+gc/models/categoriesfilter.go
 gc/models/category.go
 gc/models/categorycreaterequest.go
+gc/models/categoryentity.go
 gc/models/categoryentitylisting.go
 gc/models/categorylisting.go
 gc/models/categoryreference.go
@@ -1895,6 +1905,9 @@ gc/models/channeltopicentitylisting.go
 gc/models/chat.go
 gc/models/chatconversation.go
 gc/models/chatconversationentitylisting.go
+gc/models/chatfavorite.go
+gc/models/chatitem.go
+gc/models/chatitemcursorlisting.go
 gc/models/chatmediaparticipant.go
 gc/models/chatmediapolicy.go
 gc/models/chatmediapolicyconditions.go
@@ -1902,10 +1915,12 @@ gc/models/chatmessage.go
 gc/models/chatmessageentitylisting.go
 gc/models/chatmessageresponse.go
 gc/models/chatmessageuser.go
+gc/models/chatpresence.go
 gc/models/chatreaction.go
 gc/models/chatreactionupdate.go
 gc/models/chatsendmessageresponse.go
 gc/models/chatsettings.go
+gc/models/chatuserref.go
 gc/models/chatusersettings.go
 gc/models/check.go
 gc/models/clientapp.go
@@ -2029,6 +2044,8 @@ gc/models/contentbuttonresponse.go
 gc/models/contentcard.go
 gc/models/contentcardaction.go
 gc/models/contentcarousel.go
+gc/models/contentfilerequest.go
+gc/models/contentfileresponse.go
 gc/models/contentfilteritem.go
 gc/models/contentgeneric.go
 gc/models/contentlist.go
@@ -2394,6 +2411,8 @@ gc/models/documentbodylistwithhighlight.go
 gc/models/documentbodyparagraph.go
 gc/models/documentbodyparagraphproperties.go
 gc/models/documentbodyparagraphwithhighlight.go
+gc/models/documentbodyrequest.go
+gc/models/documentbodyresponse.go
 gc/models/documentbodytable.go
 gc/models/documentbodytablecaptionblock.go
 gc/models/documentbodytablecaptionitem.go
@@ -2430,10 +2449,11 @@ gc/models/documenttextproperties.go
 gc/models/documentthumbnail.go
 gc/models/documentupdate.go
 gc/models/documentupload.go
-gc/models/documentvariation.go
 gc/models/documentvariationanswer.go
 gc/models/documentvariationcontext.go
-gc/models/documentvariationlisting.go
+gc/models/documentvariationrequest.go
+gc/models/documentvariationresponse.go
+gc/models/documentvariationresponselisting.go
 gc/models/domaincapabilities.go
 gc/models/domaincertificateauthority.go
 gc/models/domainedgesoftwareupdatedto.go
@@ -2533,6 +2553,7 @@ gc/models/emailinitialconfiguration.go
 gc/models/emailmediaparticipant.go
 gc/models/emailmediapolicy.go
 gc/models/emailmediapolicyconditions.go
+gc/models/emailmediasettings.go
 gc/models/emailmessage.go
 gc/models/emailmessagepreview.go
 gc/models/emailmessagepreviewlisting.go
@@ -2906,6 +2927,7 @@ gc/models/identityresolutionqueueconfig.go
 gc/models/idleeventtrigger.go
 gc/models/idletokentimeout.go
 gc/models/ignoredactivitycategories.go
+gc/models/image.go
 gc/models/imapsettings.go
 gc/models/importerror.go
 gc/models/importforecastresponse.go
@@ -3082,6 +3104,8 @@ gc/models/knowledgedocumentbulkversionaddentity.go
 gc/models/knowledgedocumentbulkversionaddrequest.go
 gc/models/knowledgedocumentcontentupload.go
 gc/models/knowledgedocumentcopy.go
+gc/models/knowledgedocumentcreaterequest.go
+gc/models/knowledgedocumentdescriptor.go
 gc/models/knowledgedocumentfeedback.go
 gc/models/knowledgedocumentfeedbackresponse.go
 gc/models/knowledgedocumentfeedbackresponselisting.go
@@ -3170,8 +3194,10 @@ gc/models/knowledgetraining.go
 gc/models/kpiresult.go
 gc/models/label.go
 gc/models/labelcreaterequest.go
+gc/models/labelentity.go
 gc/models/labellisting.go
 gc/models/labelresponse.go
+gc/models/labelsfilter.go
 gc/models/labelupdaterequest.go
 gc/models/labelutilizationrequest.go
 gc/models/labelutilizationresponse.go
@@ -3479,6 +3505,7 @@ gc/models/namedentitytypebinding.go
 gc/models/namedentitytypedefinition.go
 gc/models/namedentitytypeitem.go
 gc/models/namedentitytypemechanism.go
+gc/models/namedentitytypemechanismexample.go
 gc/models/namespacedocs.go
 gc/models/networkconnectivity.go
 gc/models/nextoccurrencedetails.go
@@ -3849,6 +3876,7 @@ gc/models/record.go
 gc/models/recording.go
 gc/models/recordingannotationflow.go
 gc/models/recordingannotationqueue.go
+gc/models/recordingattachment.go
 gc/models/recordingbuttoncomponent.go
 gc/models/recordingcontentactions.go
 gc/models/recordingcontentstory.go
@@ -3861,9 +3889,14 @@ gc/models/recordingjobfailedrecording.go
 gc/models/recordingjobsquery.go
 gc/models/recordingmessagingmessage.go
 gc/models/recordingmetadata.go
+gc/models/recordingnotificationtemplate.go
 gc/models/recordingretention.go
 gc/models/recordingretentioncursorentitylisting.go
 gc/models/recordingsettings.go
+gc/models/recordingtemplatebody.go
+gc/models/recordingtemplatebutton.go
+gc/models/recordingtemplatefooter.go
+gc/models/recordingtemplateheader.go
 gc/models/recordinguploadreport.go
 gc/models/recordinguploadreportrequest.go
 gc/models/recurrenceendsettings.go
@@ -4583,7 +4616,6 @@ gc/models/userentitylisting.go
 gc/models/userestablishedevent.go
 gc/models/userexpands.go
 gc/models/userexternalidentifier.go
-gc/models/userimage.go
 gc/models/userinsightstrend.go
 gc/models/userinsightstrendmetricitem.go
 gc/models/userinsightstrends.go
@@ -4714,6 +4746,7 @@ gc/models/webdeploymentconfigurationversion.go
 gc/models/webdeploymentconfigurationversionentitylisting.go
 gc/models/webdeploymentconfigurationversionentityref.go
 gc/models/webdeploymentconfigurationversionresponse.go
+gc/models/webdeploymentflowentityref.go
 gc/models/webdeploymentheadlessmode.go
 gc/models/webdeploymentsauthorizationresponse.go
 gc/models/webdeploymentsjourneycontext.go

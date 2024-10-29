@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc gamification scorecards users points](gc_gamification_scorecards_users_points.html)	 - /api/v2/gamification/scorecards/users/points /api/v2/gamification/scorecards/users/{userId}/points
+* [gc gamification scorecards users points](gc_gamification_scorecards_users_points.html)	 - /api/v2/gamification/scorecards/users/{userId}/points /api/v2/gamification/scorecards/users/points
 * [gc gamification scorecards users points alltime get](gc_gamification_scorecards_users_points_alltime_get.html)	 - All-time points for a user
 
 

@@ -45,7 +45,9 @@
 * [gc outbound campaigns patch](gc_outbound_campaigns_patch.html)	 - Update a campaign.
 * [gc outbound campaigns progress](gc_outbound_campaigns_progress.html)	 - /api/v2/outbound/campaigns/progress /api/v2/outbound/campaigns/{campaignId}/progress
 * [gc outbound campaigns skillcombinations](gc_outbound_campaigns_skillcombinations.html)	 - /api/v2/outbound/campaigns/{campaignId}/skillcombinations
+* [gc outbound campaigns start](gc_outbound_campaigns_start.html)	 - /api/v2/outbound/campaigns/{campaignId}/start
 * [gc outbound campaigns stats](gc_outbound_campaigns_stats.html)	 - /api/v2/outbound/campaigns/{campaignId}/stats
+* [gc outbound campaigns stop](gc_outbound_campaigns_stop.html)	 - /api/v2/outbound/campaigns/{campaignId}/stop
 * [gc outbound campaigns update](gc_outbound_campaigns_update.html)	 - Update a campaign.
 
 

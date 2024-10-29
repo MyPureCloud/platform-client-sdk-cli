@@ -1,22 +1,15 @@
-## gc analytics reporting dashboards users bulk remove create
+## gc voicemail users messages
 
-Bulk soft delete dashboards owned by other user(s)
+/api/v2/voicemail/users/{userId}/messages
 
 ### Synopsis
 
-Bulk soft delete dashboards owned by other user(s)
-
-```
-gc analytics reporting dashboards users bulk remove create [flags]
-```
+/api/v2/voicemail/users/{userId}/messages
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for messages
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc analytics reporting dashboards users bulk remove create [flags]
 
 ### SEE ALSO
 
-* [gc analytics reporting dashboards users bulk remove](gc_analytics_reporting_dashboards_users_bulk_remove.html)	 - /api/v2/analytics/reporting/dashboards/users/bulk/remove
+* [gc voicemail users](gc_voicemail_users.html)	 - /api/v2/voicemail/users
+* [gc voicemail users messages list](gc_voicemail_users_messages_list.html)	 - List voicemail messages
 
 

@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc analytics reporting settings dashboards bulk](gc_analytics_reporting_settings_dashboards_bulk.html)	 - /api/v2/analytics/reporting/settings/dashboards/bulk
-* [gc analytics reporting settings dashboards bulk remove create](gc_analytics_reporting_settings_dashboards_bulk_remove_create.html)	 - Bulk remove dashboard configurations
+* [gc analytics reporting settings dashboards bulk remove create](gc_analytics_reporting_settings_dashboards_bulk_remove_create.html)	 - Bulk soft delete dashboard configurations
 
 

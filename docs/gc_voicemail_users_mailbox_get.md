@@ -1,22 +1,19 @@
-## gc analytics reporting dashboards users bulk remove create
+## gc voicemail users mailbox get
 
-Bulk soft delete dashboards owned by other user(s)
+Get a user`s mailbox information
 
 ### Synopsis
 
-Bulk soft delete dashboards owned by other user(s)
+Get a user`s mailbox information
 
 ```
-gc analytics reporting dashboards users bulk remove create [flags]
+gc voicemail users mailbox get [userId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc analytics reporting dashboards users bulk remove create [flags]
 
 ### SEE ALSO
 
-* [gc analytics reporting dashboards users bulk remove](gc_analytics_reporting_dashboards_users_bulk_remove.html)	 - /api/v2/analytics/reporting/dashboards/users/bulk/remove
+* [gc voicemail users mailbox](gc_voicemail_users_mailbox.html)	 - /api/v2/voicemail/users/{userId}/mailbox
 
 

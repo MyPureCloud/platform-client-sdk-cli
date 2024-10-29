@@ -1,22 +1,15 @@
-## gc analytics reporting dashboards users bulk remove create
+## gc users chats
 
-Bulk soft delete dashboards owned by other user(s)
+/api/v2/users/chats
 
 ### Synopsis
 
-Bulk soft delete dashboards owned by other user(s)
-
-```
-gc analytics reporting dashboards users bulk remove create [flags]
-```
+/api/v2/users/chats
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for chats
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc analytics reporting dashboards users bulk remove create [flags]
 
 ### SEE ALSO
 
-* [gc analytics reporting dashboards users bulk remove](gc_analytics_reporting_dashboards_users_bulk_remove.html)	 - /api/v2/analytics/reporting/dashboards/users/bulk/remove
+* [gc users](gc_users.html)	 - /api/v2/users
+* [gc users chats me](gc_users_chats_me.html)	 - /api/v2/users/chats/me
 
 

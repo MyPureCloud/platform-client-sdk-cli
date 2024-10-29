@@ -1,10 +1,10 @@
 ## gc analytics reporting settings dashboards bulk remove create
 
-Bulk remove dashboard configurations
+Bulk soft delete dashboard configurations
 
 ### Synopsis
 
-Bulk remove dashboard configurations
+Bulk soft delete dashboard configurations
 
 ```
 gc analytics reporting settings dashboards bulk remove create [flags]

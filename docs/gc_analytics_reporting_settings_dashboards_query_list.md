@@ -15,7 +15,7 @@ gc analytics reporting settings dashboards query list [flags]
 ```
   -a, --autopaginate                   Automatically paginate through the results stripping page information
       --dashboardAccessFilter string   Filter dashboard based on the owner of dashboard - REQUIRED Valid values: OwnedByMe, OwnedByAnyone, NotOwnedByMe
-      --dashboardType string           List dashboard of given type - REQUIRED Valid values: All, Public, Private, Shared, Favorites
+      --dashboardType string           List dashboard of given type - REQUIRED Valid values: All, Public, Private, Shared, Favorites, Deleted
       --filtercondition string         Filter list command output based on a given condition or regular expression
   -h, --help                           help for list
       --name string                    name of the dashboard

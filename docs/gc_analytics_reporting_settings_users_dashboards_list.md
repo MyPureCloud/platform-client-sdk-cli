@@ -14,6 +14,7 @@ gc analytics reporting settings users dashboards list [userId] [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
+      --deletedOnly string       If true, retrieve only deleted dashboards that are still recoverable Valid values: true, false
       --favoriteOnly string      If true, retrieve only favorite dashboards Valid values: true, false
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list

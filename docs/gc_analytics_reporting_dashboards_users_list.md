@@ -14,6 +14,7 @@ gc analytics reporting dashboards users list [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
+      --deletedOnly string       Only list deleted dashboards that are still recoverable Valid values: true, false
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --id strings               A list of user IDs to fetch by bulk

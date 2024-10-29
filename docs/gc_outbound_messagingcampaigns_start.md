@@ -1,22 +1,15 @@
-## gc analytics reporting dashboards users bulk remove create
+## gc outbound messagingcampaigns start
 
-Bulk soft delete dashboards owned by other user(s)
+/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start
 
 ### Synopsis
 
-Bulk soft delete dashboards owned by other user(s)
-
-```
-gc analytics reporting dashboards users bulk remove create [flags]
-```
+/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for start
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc analytics reporting dashboards users bulk remove create [flags]
 
 ### SEE ALSO
 
-* [gc analytics reporting dashboards users bulk remove](gc_analytics_reporting_dashboards_users_bulk_remove.html)	 - /api/v2/analytics/reporting/dashboards/users/bulk/remove
+* [gc outbound messagingcampaigns](gc_outbound_messagingcampaigns.html)	 - /api/v2/outbound/messagingcampaigns
+* [gc outbound messagingcampaigns start create](gc_outbound_messagingcampaigns_start_create.html)	 - Start the campaign
 
 

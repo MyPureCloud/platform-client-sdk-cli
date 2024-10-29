@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc analytics reporting dashboards users bulk](gc_analytics_reporting_dashboards_users_bulk.html)	 - /api/v2/analytics/reporting/dashboards/users/bulk
-* [gc analytics reporting dashboards users bulk remove create](gc_analytics_reporting_dashboards_users_bulk_remove_create.html)	 - Bulk delete dashboards owned by other user(s)
+* [gc analytics reporting dashboards users bulk remove create](gc_analytics_reporting_dashboards_users_bulk_remove_create.html)	 - Bulk soft delete dashboards owned by other user(s)
 
 

@@ -38,5 +38,6 @@
 * [gc voicemail queues](gc_voicemail_queues.html)	 - /api/v2/voicemail/queues
 * [gc voicemail search](gc_voicemail_search.html)	 - /api/v2/voicemail/search
 * [gc voicemail userpolicies](gc_voicemail_userpolicies.html)	 - /api/v2/voicemail/userpolicies
+* [gc voicemail users](gc_voicemail_users.html)	 - /api/v2/voicemail/users
 
 

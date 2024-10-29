@@ -37,6 +37,8 @@
 * [gc outbound messagingcampaigns get](gc_outbound_messagingcampaigns_get.html)	 - Get an Outbound Messaging Campaign
 * [gc outbound messagingcampaigns list](gc_outbound_messagingcampaigns_list.html)	 - Query a list of Messaging Campaigns
 * [gc outbound messagingcampaigns progress](gc_outbound_messagingcampaigns_progress.html)	 - /api/v2/outbound/messagingcampaigns/progress /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress
+* [gc outbound messagingcampaigns start](gc_outbound_messagingcampaigns_start.html)	 - /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start
+* [gc outbound messagingcampaigns stop](gc_outbound_messagingcampaigns_stop.html)	 - /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop
 * [gc outbound messagingcampaigns update](gc_outbound_messagingcampaigns_update.html)	 - Update an Outbound Messaging Campaign
 
 

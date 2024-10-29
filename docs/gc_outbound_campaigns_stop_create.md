@@ -1,22 +1,19 @@
-## gc analytics reporting dashboards users bulk remove create
+## gc outbound campaigns stop create
 
-Bulk soft delete dashboards owned by other user(s)
+Stop the campaign
 
 ### Synopsis
 
-Bulk soft delete dashboards owned by other user(s)
+Stop the campaign
 
 ```
-gc analytics reporting dashboards users bulk remove create [flags]
+gc outbound campaigns stop create [campaignId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for create
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc analytics reporting dashboards users bulk remove create [flags]
 
 ### SEE ALSO
 
-* [gc analytics reporting dashboards users bulk remove](gc_analytics_reporting_dashboards_users_bulk_remove.html)	 - /api/v2/analytics/reporting/dashboards/users/bulk/remove
+* [gc outbound campaigns stop](gc_outbound_campaigns_stop.html)	 - /api/v2/outbound/campaigns/{campaignId}/stop
 
 

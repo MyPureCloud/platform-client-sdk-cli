@@ -13,7 +13,7 @@ gc webdeployments deployments get [deploymentId] [flags]
 ### Options
 
 ```
-      --expand strings   The specified entity attributes will be filled. Comma separated values expected.  Valid values: supportedContent
+      --expand strings   The specified entity attributes will be filled. Comma separated values expected.  Valid values: supportedContent, flowDetails
   -h, --help             help for get
 ```
 

@@ -34,6 +34,7 @@
 * [gc users agentui](gc_users_agentui.html)	 - /api/v2/users/agentui
 * [gc users bulk](gc_users_bulk.html)	 - /api/v2/users/bulk
 * [gc users callforwarding](gc_users_callforwarding.html)	 - /api/v2/users/{userId}/callforwarding
+* [gc users chats](gc_users_chats.html)	 - /api/v2/users/chats
 * [gc users create](gc_users_create.html)	 - Create user
 * [gc users delete](gc_users_delete.html)	 - Delete user
 * [gc users development](gc_users_development.html)	 - /api/v2/users/development

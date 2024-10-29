@@ -13,7 +13,8 @@ gc teams get [teamId] [flags]
 ### Options
 
 ```
-  -h, --help   help for get
+      --expand string   Expand the division name Valid values: entities.division
+  -h, --help            help for get
 ```
 
 ### Options inherited from parent commands

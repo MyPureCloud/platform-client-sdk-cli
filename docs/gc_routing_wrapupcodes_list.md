@@ -19,8 +19,8 @@ gc routing wrapupcodes list [flags]
   -h, --help                     help for list
       --id strings               Filter by wrapup code ID(s)
       --name s name (            Wrapup codes name (Sort by` param is ignored unless this field is provided)
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --sortBy string            Sort by Valid values: name, id
       --sortOrder string         Sort order Valid values: ascending, descending
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

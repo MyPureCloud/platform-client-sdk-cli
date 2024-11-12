@@ -14,6 +14,7 @@ gc knowledge knowledgebases documents variations get [documentVariationId] [docu
 
 ```
       --documentState string   The state of the document. Valid values: Draft, Published
+      --expand strings         The specified entity attributes will be filled. Comma separated values expected. Valid values: contentUrl
   -h, --help                   help for get
 ```
 

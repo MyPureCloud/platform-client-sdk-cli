@@ -19,8 +19,8 @@ gc routing sms phonenumbers list [flags]
   -h, --help                        help for list
       --integrationId string        Filter on the Genesys Cloud integration id to which the phone number belongs to
       --language string             A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations
-      --pageNumber int              Page number (default 1)
-      --pageSize int                Page size (default 25)
+      --pageNumber string           Page number (default "1")
+      --pageSize string             Page size (default "25")
       --phoneNumber 0-9             Filter on phone number address. Allowable characters are the digits 0-9 and the wild card character `\*`. If just digits are present, a contains search is done on the address pattern. For example, `317` could be matched anywhere in the address. An `\*` will match multiple digits. For example, to match a specific area code within the US a pattern like `1317*` could be used.
       --phoneNumberStatus strings   Filter on phone number status Valid values: active, invalid, initiated, porting, pending, pending-cancellation
       --phoneNumberType strings     Filter on phone number type Valid values: local, mobile, tollfree, shortcode, alphanumeric

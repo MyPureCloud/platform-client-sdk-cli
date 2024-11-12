@@ -26,8 +26,8 @@ gc languageunderstanding domains feedback list [domainId] [flags]
       --includeTrainingUtterances string   Include Training Utterances. By default they`re included. Valid values: true, false
       --intentName string                  The top intent name to retrieve feedback for.
       --language string                    Whether to filter response based on the language, e.g. en-us, pt-br.
-      --pageNumber int                     Page number (default 1)
-      --pageSize int                       Page size (default 25)
+      --pageNumber string                  Page number (default "1")
+      --pageSize string                    Page size (default "25")
   -s, --stream                             Paginate and stream data as it is being processed leaving page information intact
 ```
 

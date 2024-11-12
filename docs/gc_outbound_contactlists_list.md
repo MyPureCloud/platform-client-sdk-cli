@@ -23,8 +23,8 @@ gc outbound contactlists list [flags]
       --includeImportStatus string   Include import status Valid values: true, false
       --includeSize string           Include size Valid values: true, false
       --name string                  Name
-      --pageNumber int               Page number (default 1)
-      --pageSize int                 Page size. The max that will be returned is 100. (default 25)
+      --pageNumber string            Page number (default "1")
+      --pageSize string              Page size. The max that will be returned is 100. (default "25")
       --sortBy string                Sort by
       --sortOrder string             Sort order Valid values: ascending, descending
   -s, --stream                       Paginate and stream data as it is being processed leaving page information intact

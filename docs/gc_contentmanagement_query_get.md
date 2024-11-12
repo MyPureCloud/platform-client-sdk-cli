@@ -15,8 +15,8 @@ gc contentmanagement query get [flags]
 ```
       --expand strings       Which fields, if any, to expand. Valid values: acl, workspace
   -h, --help                 help for get
-      --pageNumber int       Page number (default 1)
-      --pageSize int         Page size (default 25)
+      --pageNumber string    Page number (default "1")
+      --pageSize string      Page size (default "25")
       --queryPhrase string   Phrase tokens are ANDed together over all searchable fields - REQUIRED
       --sortBy string        name or dateCreated
       --sortOrder string     ascending or descending

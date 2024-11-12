@@ -31,9 +31,9 @@
 
 * [gc users](gc_users.html)	 - /api/v2/users
 * [gc users routinglanguages bulk](gc_users_routinglanguages_bulk.html)	 - /api/v2/users/{userId}/routinglanguages/bulk
-* [gc users routinglanguages create](gc_users_routinglanguages_create.html)	 - Add routing language to user
-* [gc users routinglanguages delete](gc_users_routinglanguages_delete.html)	 - Remove routing language from user
-* [gc users routinglanguages list](gc_users_routinglanguages_list.html)	 - List routing language for user
-* [gc users routinglanguages update](gc_users_routinglanguages_update.html)	 - Update routing language proficiency or state.
+* [gc users routinglanguages create](gc_users_routinglanguages_create.html)	 - Assign a routing language to a user
+* [gc users routinglanguages delete](gc_users_routinglanguages_delete.html)	 - Remove a routing language from a user
+* [gc users routinglanguages list](gc_users_routinglanguages_list.html)	 - List routing languages assigned to a user
+* [gc users routinglanguages update](gc_users_routinglanguages_update.html)	 - Update an assigned routing language`s proficiency
 
 

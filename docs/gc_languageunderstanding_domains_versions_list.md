@@ -17,8 +17,8 @@ gc languageunderstanding domains versions list [domainId] [flags]
       --filtercondition string     Filter list command output based on a given condition or regular expression
   -h, --help                       help for list
       --includeUtterances string   Whether utterances for intent definition should be included when marshalling response. Valid values: true, false
-      --pageNumber int             Page number (default 1)
-      --pageSize int               Page size (default 25)
+      --pageNumber string          Page number (default "1")
+      --pageSize string            Page size (default "25")
   -s, --stream                     Paginate and stream data as it is being processed leaving page information intact
 ```
 

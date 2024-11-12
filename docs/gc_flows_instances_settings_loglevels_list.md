@@ -17,8 +17,8 @@ gc flows instances settings loglevels list [flags]
       --expand strings           Expand instructions for the result Valid values: name, type, logLevelCharacteristics.characteristics
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Number of entities to return. Maximum of 200. (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Number of entities to return. Maximum of 200. (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

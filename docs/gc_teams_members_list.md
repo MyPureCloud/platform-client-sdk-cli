@@ -19,7 +19,7 @@ gc teams members list [teamId] [flags]
       --expand string            Expand the name on each user Valid values: entities
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageSize int             Page size (default 25)
+      --pageSize string          Page size (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

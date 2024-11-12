@@ -22,8 +22,8 @@ gc quality evaluators activity list [flags]
   -h, --help                     help for list
       --name string              Evaluator name
       --nextPage string          next page token
-      --pageNumber int           The page number requested (default 1)
-      --pageSize int             The total page size requested (default 25)
+      --pageNumber string        The page number requested (default "1")
+      --pageSize string          The total page size requested (default "25")
       --permission strings       permission strings
       --previousPage string      Previous page token
       --sortBy string            variable name requested to sort by

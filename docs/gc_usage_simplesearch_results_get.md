@@ -13,9 +13,9 @@ gc usage simplesearch results get [executionId] [flags]
 ### Options
 
 ```
-      --after string   The cursor that points to the end of the set of entities that has been returned
-  -h, --help           help for get
-      --pageSize int   The max number of entities to be returned per request. Maximum page size of 1000
+      --after string      The cursor that points to the end of the set of entities that has been returned
+  -h, --help              help for get
+      --pageSize string   The max number of entities to be returned per request. Maximum page size of 1000
 ```
 
 ### Options inherited from parent commands

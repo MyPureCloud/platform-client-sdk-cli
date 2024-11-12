@@ -1,10 +1,10 @@
 ## gc users routinglanguages bulk update
 
-Add bulk routing language to user. Max limit 50 languages
+Assign multiple routing languages to a user. Max 50 routing languages in request body
 
 ### Synopsis
 
-Add bulk routing language to user. Max limit 50 languages
+Assign multiple routing languages to a user. Max 50 routing languages in request body
 
 ```
 gc users routinglanguages bulk update [userId] [flags]

@@ -1,10 +1,10 @@
 ## gc users routingskills create
 
-Add routing skill to user
+Assign a routing skill to a user
 
 ### Synopsis
 
-Add routing skill to user
+Assign a routing skill to a user
 
 ```
 gc users routingskills create [userId] [flags]

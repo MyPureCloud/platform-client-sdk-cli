@@ -13,21 +13,21 @@ gc recording mediaretentionpolicies list [flags]
 ### Options
 
 ```
-  -a, --autopaginate              Automatically paginate through the results stripping page information
-      --deleteDaysThreshold int   provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
-      --enabled string            checks to see if policy is enabled - use enabled = true or enabled = false Valid values: true, false
-      --expand strings            variable name requested by expand list
-      --filtercondition string    Filter list command output based on a given condition or regular expression
-      --hasErrors string          provides a way to fetch all policies with errors or policies that do not have errors Valid values: true, false
-  -h, --help                      help for list
-      --name string               the policy name - used for filtering results in searches.
-      --nextPage string           next page token
-      --pageNumber int            The page number requested (default 1)
-      --pageSize int              The total page size requested (default 25)
-      --previousPage string       Previous page token
-      --sortBy string             variable name requested to sort by
-  -s, --stream                    Paginate and stream data as it is being processed leaving page information intact
-      --summary string            provides a less verbose response of policy lists. Valid values: true, false
+  -a, --autopaginate                 Automatically paginate through the results stripping page information
+      --deleteDaysThreshold string   provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
+      --enabled string               checks to see if policy is enabled - use enabled = true or enabled = false Valid values: true, false
+      --expand strings               variable name requested by expand list
+      --filtercondition string       Filter list command output based on a given condition or regular expression
+      --hasErrors string             provides a way to fetch all policies with errors or policies that do not have errors Valid values: true, false
+  -h, --help                         help for list
+      --name string                  the policy name - used for filtering results in searches.
+      --nextPage string              next page token
+      --pageNumber string            The page number requested (default "1")
+      --pageSize string              The total page size requested (default "25")
+      --previousPage string          Previous page token
+      --sortBy string                variable name requested to sort by
+  -s, --stream                       Paginate and stream data as it is being processed leaving page information intact
+      --summary string               provides a less verbose response of policy lists. Valid values: true, false
 ```
 
 ### Options inherited from parent commands

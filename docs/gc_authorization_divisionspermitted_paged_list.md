@@ -16,8 +16,8 @@ gc authorization divisionspermitted paged list [subjectId] [flags]
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --permission string        The permission string, including the object to access, e.g. routing:queue:view - REQUIRED
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```

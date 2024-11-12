@@ -21,8 +21,8 @@ gc coaching appointments list [flags]
       --interval string             Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
       --intervalCondition string    Filter condition for interval Valid values: StartsIn, Overlaps
       --overdue string              Overdue status to filter by Valid values: True, False, Any
-      --pageNumber int              Page number (default 1)
-      --pageSize int                Page size (default 25)
+      --pageNumber string           Page number (default "1")
+      --pageSize string             Page size (default "25")
       --relationships strings       Relationships to filter by Valid values: Creator, Facilitator, Attendee
       --sortOrder string            Sort (by due date) either Asc or Desc Valid values: Desc, Asc
       --statuses strings            Appointment Statuses to filter by Valid values: Scheduled, InProgress, Completed, InvalidSchedule

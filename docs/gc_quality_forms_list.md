@@ -19,8 +19,8 @@ gc quality forms list [flags]
   -h, --help                           help for list
       --name string                    Name
       --nextPage string                next page token
-      --pageNumber int                 The page number requested (default 1)
-      --pageSize int                   The total page size requested (default 25)
+      --pageNumber string              The page number requested (default "1")
+      --pageSize string                The total page size requested (default "25")
       --previousPage string            Previous page token
       --sortBy string                  variable name requested to sort by
       --sortOrder string               Order to sort results, either asc or desc

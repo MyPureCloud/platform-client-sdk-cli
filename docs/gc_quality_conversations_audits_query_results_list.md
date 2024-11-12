@@ -18,7 +18,7 @@ gc quality conversations audits query results list [transactionId] [flags]
       --expand strings           Which fields, if any, to expand Valid values: user
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageSize int             Page size (default 25)
+      --pageSize string          Page size (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

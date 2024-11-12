@@ -18,8 +18,8 @@ gc routing skills list [flags]
   -h, --help                     help for list
       --id strings               id
       --name string              Filter for results that start with this value
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

@@ -17,8 +17,8 @@ gc webchat guest conversations members list [conversationId] [flags]
       --excludeDisconnectedMembers string   If true, the results will not contain members who have a DISCONNECTED state. Valid values: true, false
       --filtercondition string              Filter list command output based on a given condition or regular expression
   -h, --help                                help for list
-      --pageNumber int                      The page number to return, or omitted for the first page. (default 1)
-      --pageSize int                        The number of entries to return per page, or omitted for the default. (default 25)
+      --pageNumber string                   The page number to return, or omitted for the first page. (default "1")
+      --pageSize string                     The number of entries to return per page, or omitted for the default. (default "25")
   -s, --stream                              Paginate and stream data as it is being processed leaving page information intact
 ```
 

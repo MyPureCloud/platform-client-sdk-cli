@@ -14,11 +14,11 @@ gc externalcontacts contacts search [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --expand strings           which fields, if any, to expand Valid values: externalOrganization, externalDataSources, identifiers, externalSources
+      --expand strings           which fields, if any, to expand Valid values: externalOrganization, externalDataSources, identifiers, externalSources, division
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for search
-      --pageNumber int           Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default 1)
-      --pageSize int             Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default 20)
+      --pageNumber string        Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default "1")
+      --pageSize string          Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default "20")
       --q string                 User supplied search keywords (no special syntax is currently supported)
       --sortOrder string         The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

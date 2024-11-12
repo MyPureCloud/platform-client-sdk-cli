@@ -17,8 +17,8 @@ gc architect systemprompts history list [promptId] [historyId] [flags]
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --sortBy string            Sort by Valid values: action, timestamp, user
       --sortOrder string         Sort order
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

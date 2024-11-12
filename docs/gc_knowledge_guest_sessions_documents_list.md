@@ -17,7 +17,7 @@ gc knowledge guest sessions documents list [sessionId] [flags]
       --categoryId strings       If specified, retrieves documents associated with category ids, comma separated values expected.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageSize int             Number of entities to return. Maximum of 200.
+      --pageSize string          Number of entities to return. Maximum of 200.
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

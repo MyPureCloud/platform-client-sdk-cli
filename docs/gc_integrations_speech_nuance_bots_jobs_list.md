@@ -15,8 +15,8 @@ gc integrations speech nuance bots jobs list [nuanceIntegrationId] [flags]
 ```
   -h, --help                        help for list
       --onlyRegisteredBots string   Limit bots to the ones configured for Genesys Cloud usage Valid values: true, false
-      --pageNumber int              Page number (default 1)
-      --pageSize int                Page size (default 25)
+      --pageNumber string           Page number (default "1")
+      --pageSize string             Page size (default "25")
 ```
 
 ### Options inherited from parent commands

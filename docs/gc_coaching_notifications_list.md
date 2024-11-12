@@ -17,8 +17,8 @@ gc coaching notifications list [flags]
       --expand strings           Indicates a field in the response which should be expanded. Valid values: appointment
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

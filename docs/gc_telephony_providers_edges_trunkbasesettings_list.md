@@ -20,8 +20,8 @@ gc telephony providers edges trunkbasesettings list [flags]
       --ignoreHidden string       Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. Valid values: true, false
       --managed string            Filter by managed Valid values: true, false
       --name string               Name of the TrunkBase to filter by
-      --pageNumber int            Page number (default 1)
-      --pageSize int              Page size (default 25)
+      --pageNumber string         Page number (default "1")
+      --pageSize string           Page size (default "25")
       --recordingEnabled string   Filter trunks by recording enabled Valid values: true, false
       --sortBy string             Value by which to sort
       --sortOrder string          Sort order

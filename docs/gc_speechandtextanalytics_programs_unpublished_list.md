@@ -17,7 +17,7 @@ gc speechandtextanalytics programs unpublished list [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --nextPage string          The key for listing the next page
-      --pageSize int             The page size for the listing (default 20)
+      --pageSize string          The page size for the listing (default "20")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

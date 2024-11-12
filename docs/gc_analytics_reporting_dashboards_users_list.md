@@ -18,8 +18,8 @@ gc analytics reporting dashboards users list [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --id strings               A list of user IDs to fetch by bulk
-      --pageNumber int            (default 1)
-      --pageSize int              (default 25)
+      --pageNumber string         (default "1")
+      --pageSize string           (default "25")
       --sortBy string            
       --state string             Only list users of this state Valid values: active, inactive
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

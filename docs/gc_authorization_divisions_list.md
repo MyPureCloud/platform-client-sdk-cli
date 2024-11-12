@@ -21,8 +21,8 @@ gc authorization divisions list [flags]
       --name string              Search term to filter by division name
       --nextPage string          next page token
       --objectCount string       Include the count of objects contained in the division Valid values: true, false
-      --pageNumber int           The page number requested (default 1)
-      --pageSize int             The total page size requested (default 25)
+      --pageNumber string        The page number requested (default "1")
+      --pageSize string          The total page size requested (default "25")
       --previousPage string      Previous page token
       --sortBy string            variable name requested to sort by
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

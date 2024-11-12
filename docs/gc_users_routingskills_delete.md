@@ -1,10 +1,10 @@
 ## gc users routingskills delete
 
-Remove routing skill from user
+Remove a routing skill from a user
 
 ### Synopsis
 
-Remove routing skill from user
+Remove a routing skill from a user
 
 ```
 gc users routingskills delete [userId] [skillId] [flags]

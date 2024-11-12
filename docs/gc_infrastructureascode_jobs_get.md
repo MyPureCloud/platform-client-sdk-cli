@@ -16,7 +16,7 @@ gc infrastructureascode jobs get [flags]
       --acceleratorId string   Find only jobs associated with this accelerator
   -h, --help                   help for get
       --includeErrors string   Include error messages Valid values: true, false
-      --maxResults int         Number of jobs to show (default 1)
+      --maxResults string      Number of jobs to show (default "1")
       --sortBy string          Sort by Valid values: id, dateSubmitted, submittedBy, acceleratorId, status
       --sortOrder string       Sort order Valid values: asc, desc
       --status string          Find only jobs in this state Valid values: Created, Queued, Running, Complete, Failed, Incomplete

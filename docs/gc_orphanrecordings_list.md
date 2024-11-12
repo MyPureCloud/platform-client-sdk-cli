@@ -20,8 +20,8 @@ gc orphanrecordings list [flags]
   -h, --help                     help for list
       --media string             Filter resulting orphans based on their media type Valid values: Call, Screen
       --nextPage string          next page token
-      --pageNumber int           The page number requested (default 1)
-      --pageSize int             The total page size requested (default 25)
+      --pageNumber string        The page number requested (default "1")
+      --pageSize string          The total page size requested (default "25")
       --previousPage string      Previous page token
       --sortBy string            variable name requested to sort by
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

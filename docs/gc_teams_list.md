@@ -20,7 +20,7 @@ gc teams list [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --name string              Return only teams whose names start with this value (case-insensitive matching)
-      --pageSize int             Page size (default 25)
+      --pageSize string          Page size (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

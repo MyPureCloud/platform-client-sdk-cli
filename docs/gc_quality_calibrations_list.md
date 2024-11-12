@@ -21,8 +21,8 @@ gc quality calibrations list [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --nextPage string          next page token
-      --pageNumber int           The page number requested (default 1)
-      --pageSize int             The total page size requested (default 25)
+      --pageNumber string        The page number requested (default "1")
+      --pageSize string          The total page size requested (default "25")
       --previousPage string      Previous page token
       --sortBy string            variable name requested to sort by
       --startTime string         Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z

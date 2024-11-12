@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc speechandtextanalytics translations languages](gc_speechandtextanalytics_translations_languages.html)	 - /api/v2/speechandtextanalytics/translations/languages
-* [gc speechandtextanalytics translations languages conversations get](gc_speechandtextanalytics_translations_languages_conversations_get.html)	 - Translate all communication(s) for an interaction.
+* [gc speechandtextanalytics translations languages conversations get](gc_speechandtextanalytics_translations_languages_conversations_get.html)	 - Translate a single interaction recording (or an email conversation)
 
 

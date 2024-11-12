@@ -13,9 +13,9 @@ gc organizations limits namespaces list [flags]
 ### Options
 
 ```
-  -h, --help             help for list
-      --pageNumber int   Page number (default 1)
-      --pageSize int     Page size (default 100)
+  -h, --help                help for list
+      --pageNumber string   Page number (default "1")
+      --pageSize string     Page size (default "100")
 ```
 
 ### Options inherited from parent commands

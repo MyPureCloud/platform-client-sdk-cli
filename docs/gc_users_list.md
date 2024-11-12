@@ -20,8 +20,8 @@ gc users list [flags]
       --id strings                         A list of user IDs to fetch by bulk
       --integrationPresenceSource string   Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. Valid values: MicrosoftTeams, ZoomPhone, EightByEight
       --jabberId strings                   A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
-      --pageNumber int                     Page number (default 1)
-      --pageSize int                       Page size (default 25)
+      --pageNumber string                  Page number (default "1")
+      --pageSize string                    Page size (default "25")
       --sortOrder string                   Ascending or descending sort order Valid values: ascending, descending
       --state string                       Only list users of this state Valid values: active, inactive, deleted, any
   -s, --stream                             Paginate and stream data as it is being processed leaving page information intact

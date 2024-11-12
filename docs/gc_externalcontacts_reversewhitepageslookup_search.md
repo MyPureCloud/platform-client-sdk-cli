@@ -13,7 +13,7 @@ gc externalcontacts reversewhitepageslookup search [flags]
 ### Options
 
 ```
-      --expand strings     which field, if any, to expand Valid values: contacts.externalOrganization, externalDataSources
+      --expand strings     which field, if any, to expand Valid values: contacts.externalOrganization, externalDataSources, division
   -h, --help               help for search
       --lookupVal string   User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) - REQUIRED
 ```

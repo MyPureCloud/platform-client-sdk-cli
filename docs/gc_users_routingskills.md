@@ -31,9 +31,9 @@
 
 * [gc users](gc_users.html)	 - /api/v2/users
 * [gc users routingskills bulk](gc_users_routingskills_bulk.html)	 - /api/v2/users/{userId}/routingskills/bulk
-* [gc users routingskills create](gc_users_routingskills_create.html)	 - Add routing skill to user
-* [gc users routingskills delete](gc_users_routingskills_delete.html)	 - Remove routing skill from user
-* [gc users routingskills list](gc_users_routingskills_list.html)	 - List routing skills for user
-* [gc users routingskills update](gc_users_routingskills_update.html)	 - Update routing skill proficiency or state.
+* [gc users routingskills create](gc_users_routingskills_create.html)	 - Assign a routing skill to a user
+* [gc users routingskills delete](gc_users_routingskills_delete.html)	 - Remove a routing skill from a user
+* [gc users routingskills list](gc_users_routingskills_list.html)	 - List routing skills assigned to a user
+* [gc users routingskills update](gc_users_routingskills_update.html)	 - Update an assigned routing skill`s proficiency
 
 

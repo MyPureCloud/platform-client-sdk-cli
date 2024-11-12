@@ -19,8 +19,8 @@ gc telephony providers edges dids list [flags]
   -h, --help                     help for list
       --id strings               Filter by a specific list of ID`s
       --ownerId string           Filter by the owner of a phone number
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --phoneNumber string       Filter by phoneNumber
       --sortBy string            Sort by
       --sortOrder string         Sort order

@@ -19,8 +19,8 @@ gc analytics reporting settings users dashboards list [userId] [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --name string              retrieve dashboards that match with given name
-      --pageNumber int            (default 1)
-      --pageSize int              (default 50)
+      --pageNumber string         (default "1")
+      --pageSize string           (default "50")
       --publicOnly string        If true, retrieve only public dashboards Valid values: true, false
       --sortBy string            
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

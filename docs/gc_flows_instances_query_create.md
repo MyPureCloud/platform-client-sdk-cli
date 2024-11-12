@@ -17,7 +17,7 @@ gc flows instances query create [flags]
   -f, --file string        File name containing the JSON body
   -h, --help               help for create
       --indexOnly string   indexes only Valid values: true, false
-      --pageSize int       number of results to return (default 50)
+      --pageSize string    number of results to return (default "50")
   -b, --printrequestbody   Print the request body format of the API.
 ```
 

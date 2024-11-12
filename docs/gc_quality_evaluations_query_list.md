@@ -28,9 +28,9 @@ gc quality evaluations query list [flags]
       --formContextId string             shared id between form versions
   -h, --help                             help for list
       --isReleased string                the evaluation has been released Valid values: true, false
-      --maximum int                      the maximum number of results to return
-      --pageNumber int                   The page number requested (default 1)
-      --pageSize int                     The total page size requested (default 25)
+      --maximum string                   the maximum number of results to return
+      --pageNumber string                The page number requested (default "1")
+      --pageSize string                  The total page size requested (default "25")
       --previousPage string              Previous page token
       --queueId string                   queue id
       --sortOrder string                 NOTE: Does not work when conversationId is supplied.

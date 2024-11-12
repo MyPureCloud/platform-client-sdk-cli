@@ -21,8 +21,8 @@ gc routing queues list [flags]
   -h, --help                             help for list
       --id strings                       Include only queues with the specified ID(s)
       --name string                      Include only queues with the given name (leading and trailing asterisks allowed)
-      --pageNumber int                   Page number (default 1)
-      --pageSize int                     Page size (default 25)
+      --pageNumber string                Page number (default "1")
+      --pageSize string                  Page size (default "25")
       --peerId strings                   Include only queues with the specified peer ID(s)
       --sortOrder string                 Note: results are sorted by name. Valid values: asc, desc
   -s, --stream                           Paginate and stream data as it is being processed leaving page information intact

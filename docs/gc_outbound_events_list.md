@@ -19,8 +19,8 @@ gc outbound events list [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --level string             Level
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --sortBy string            Sort by
       --sortOrder string         Sort order Valid values: ascending, descending
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

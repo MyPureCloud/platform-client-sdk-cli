@@ -15,7 +15,7 @@ gc workforcemanagement businessunits weeks shorttermforecasts data get [business
 ```
       --forceDownloadService string   Force the result of this operation to be sent via download service.  For testing/app development purposes Valid values: true, false
   -h, --help                          help for get
-      --weekNumber int                The week number to fetch (for multi-week forecasts)
+      --weekNumber string             The week number to fetch (for multi-week forecasts)
 ```
 
 ### Options inherited from parent commands

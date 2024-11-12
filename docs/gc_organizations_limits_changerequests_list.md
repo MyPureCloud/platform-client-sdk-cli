@@ -13,13 +13,13 @@ gc organizations limits changerequests list [flags]
 ### Options
 
 ```
-      --after int                Timestamp indicating the date to begin after when searching for requests.
+      --after string             Timestamp indicating the date to begin after when searching for requests.
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --before int               Timestamp indicating the date to end before when searching for requests.
+      --before string            Timestamp indicating the date to end before when searching for requests.
       --expand strings           Which fields, if any, to expand. Valid values: statusHistory
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageSize int             Page Size (default 25)
+      --pageSize string          Page Size (default "25")
       --status string            Status of the request to be filtered by Valid values: Approved, Rejected, Rollback, Pending, Open, SecondaryApprovalNamespacesAdded, ReviewerApproved, ReviewerRejected, ReviewerRollback, ImplementingChange, ChangeImplemented, ImplementingRollback, RollbackImplemented
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```

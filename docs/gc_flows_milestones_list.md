@@ -21,8 +21,8 @@ gc flows milestones list [flags]
       --id strings                 ID
       --name string                Name
       --nameOrDescription string   Name or description
-      --pageNumber int             Page number (default 1)
-      --pageSize int               Page size (default 25)
+      --pageNumber string          Page number (default "1")
+      --pageSize string            Page size (default "25")
       --sortBy string              Sort by
       --sortOrder string           Sort order
   -s, --stream                     Paginate and stream data as it is being processed leaving page information intact

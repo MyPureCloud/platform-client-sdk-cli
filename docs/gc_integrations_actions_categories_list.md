@@ -17,8 +17,8 @@ gc integrations actions categories list [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --nextPage string          next page token
-      --pageNumber int           The page number requested (default 1)
-      --pageSize int             The total page size requested (default 25)
+      --pageNumber string        The page number requested (default "1")
+      --pageSize string          The total page size requested (default "25")
       --previousPage string      Previous page token
       --secure string            Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. Valid values: true, false
       --sortBy name              Root level field name to sort on.  Only name is supported on this endpoint.

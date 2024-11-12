@@ -19,8 +19,8 @@ gc recording jobs list [flags]
   -h, --help                     help for list
       --includeTotal string      If false, cursor will be used to locate the page instead of pageNumber. Valid values: true, false
       --jobType string           Job Type (Can be left empty for both) Valid values: ARCHIVE, DELETE, EXPORT
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --showOnlyMyJobs string    Show only my jobs Valid values: true, false
       --sortBy string            Sort by Valid values: userId, dateCreated
       --state string             Filter by state Valid values: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED

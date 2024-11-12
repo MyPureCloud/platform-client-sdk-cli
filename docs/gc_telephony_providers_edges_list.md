@@ -19,8 +19,8 @@ gc telephony providers edges list [flags]
   -h, --help                     help for list
       --managed string           Filter by managed Valid values: true, false
       --name string              Name
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --showCloudMedia string    True to show the cloud media devices in the result. Valid values: true, false
       --siteId string            Filter by site.id
       --sortBy string            Sort by

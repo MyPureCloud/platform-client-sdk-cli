@@ -19,7 +19,7 @@ gc audits query results list [transactionId] [flags]
       --expand strings           Which fields, if any, to expand Valid values: user
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageSize int             Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (default 25)
+      --pageSize string          Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

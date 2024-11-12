@@ -20,8 +20,8 @@ gc learning modules list [flags]
   -h, --help                     help for list
       --isArchived string        Archive status Valid values: true, false
       --isPublished string       Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned Valid values: True, False, Any
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --searchTerm string        Search Term (searchable by name)
       --sortBy string            Sort by Valid values: name, createddate, percentpassed, averagescore
       --sortOrder string         Sort order Valid values: ascending, descending

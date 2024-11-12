@@ -17,8 +17,8 @@ gc journey views jobs list [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --interval string          An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
-      --pageNumber int           The number of the page to return (default 1)
-      --pageSize int             Max number of entities to return (default 25)
+      --pageNumber string        The number of the page to return (default "1")
+      --pageSize string          Max number of entities to return (default "25")
       --statuses string          Job statuses to filter for
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```

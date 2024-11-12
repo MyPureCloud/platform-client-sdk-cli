@@ -19,8 +19,8 @@ gc flows milestones divisionviews list [flags]
   -h, --help                     help for list
       --id strings               ID
       --name string              Name
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --sortBy string            Sort by
       --sortOrder string         Sort order
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

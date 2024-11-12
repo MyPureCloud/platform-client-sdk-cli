@@ -20,8 +20,8 @@ gc infrastructureascode accelerators list [flags]
   -h, --help                     help for list
       --name string              Filter by name
       --origin string            Filter by origin Valid values: community, partner, genesys
-      --pageNumber int           The page number requested (default 1)
-      --pageSize int             The total page size requested (default 25)
+      --pageNumber string        The page number requested (default "1")
+      --pageSize string          The total page size requested (default "25")
       --sortBy string            variable name requested to sort by
       --sortOrder string         Sort order Valid values: asc, desc
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

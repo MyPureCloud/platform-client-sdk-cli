@@ -1,10 +1,10 @@
 ## gc users routingskills bulk bulkupdate
 
-Replace all routing skills assigned to a user
+Assign multiple routing skills to a user, replacing any current assignments
 
 ### Synopsis
 
-Replace all routing skills assigned to a user
+Assign multiple routing skills to a user, replacing any current assignments
 
 ```
 gc users routingskills bulk bulkupdate [userId] [flags]

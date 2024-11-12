@@ -1,10 +1,10 @@
 ## gc speechandtextanalytics translations languages conversations get
 
-Translate all communication(s) for an interaction.
+Translate a single interaction recording (or an email conversation)
 
 ### Synopsis
 
-Translate all communication(s) for an interaction.
+Translate a single interaction recording (or an email conversation)
 
 ```
 gc speechandtextanalytics translations languages conversations get [languageId] [conversationId] [flags]
@@ -13,9 +13,9 @@ gc speechandtextanalytics translations languages conversations get [languageId] 
 ### Options
 
 ```
-      --communicationId string   Communication id associated with the conversation
+      --communicationId string   Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions.
   -h, --help                     help for get
-      --recordingId string       Recording id associated with the communication
+      --recordingId string       Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions.
 ```
 
 ### Options inherited from parent commands

@@ -17,8 +17,8 @@ gc journey actiontemplates list [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --mediaType string         Media type Valid values: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --queryFields queryValue   ActionTemplate field(s) to query on. Requires queryValue to also be set.
       --queryValue queryFields   Value to query on. Requires queryFields to also be set.
       --sortBy -                 Field(s) to sort by. Prefix with - for descending (e.g. sortBy=name,-createdDate).

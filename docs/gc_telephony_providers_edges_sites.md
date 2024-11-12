@@ -36,6 +36,7 @@
 * [gc telephony providers edges sites list](gc_telephony_providers_edges_sites_list.html)	 - Get the list of Sites.
 * [gc telephony providers edges sites numberplans](gc_telephony_providers_edges_sites_numberplans.html)	 - /api/v2/telephony/providers/edges/sites/{siteId}/numberplans
 * [gc telephony providers edges sites outboundroutes](gc_telephony_providers_edges_sites_outboundroutes.html)	 - /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes
+* [gc telephony providers edges sites search](gc_telephony_providers_edges_sites_search.html)	 - /api/v2/telephony/providers/edges/sites/search
 * [gc telephony providers edges sites siteconnections](gc_telephony_providers_edges_sites_siteconnections.html)	 - /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections
 * [gc telephony providers edges sites update](gc_telephony_providers_edges_sites_update.html)	 - Update a Site by ID.
 

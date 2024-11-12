@@ -13,14 +13,14 @@ gc orgauthorization trustor audits create [flags]
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-      --pageNumber int     Page number (default 1)
-      --pageSize int       Page size (default 25)
-  -b, --printrequestbody   Print the request body format of the API.
-      --sortBy string      Sort by
-      --sortOrder string   Sort order
+  -d, --directory string    Directory path with files containing request bodies
+  -f, --file string         File name containing the JSON body
+  -h, --help                help for create
+      --pageNumber string   Page number (default "1")
+      --pageSize string     Page size (default "25")
+  -b, --printrequestbody    Print the request body format of the API.
+      --sortBy string       Sort by
+      --sortOrder string    Sort order
 ```
 
 ### Options inherited from parent commands

@@ -18,8 +18,8 @@ gc telephony providers edges didpools dids list [flags]
   -h, --help                     help for list
       --id strings               Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned.
       --numberMatch string       A number to filter the results by.
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --sortOrder string         Sort order
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
       --varType string           The type of numbers to return. - REQUIRED Valid values: ASSIGNED_AND_UNASSIGNED, UNASSIGNED

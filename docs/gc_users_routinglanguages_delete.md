@@ -1,10 +1,10 @@
 ## gc users routinglanguages delete
 
-Remove routing language from user
+Remove a routing language from a user
 
 ### Synopsis
 
-Remove routing language from user
+Remove a routing language from a user
 
 ```
 gc users routinglanguages delete [userId] [languageId] [flags]

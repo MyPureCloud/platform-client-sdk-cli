@@ -1,10 +1,10 @@
 ## gc users routingskills bulk bulkadd
 
-Bulk add routing skills to user
+Assign multiple routing skills to a user
 
 ### Synopsis
 
-Bulk add routing skills to user
+Assign multiple routing skills to a user
 
 ```
 gc users routingskills bulk bulkadd [userId] [flags]

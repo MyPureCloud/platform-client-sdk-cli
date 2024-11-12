@@ -17,8 +17,8 @@ gc journey segments list [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --isActive string          Determines whether or not to show only active segments. Valid values: true, false
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --queryFields queryValue   Segment field(s) to query on. Requires queryValue to also be set.
       --queryValue queryFields   Value to query on. Requires queryFields to also be set.
       --segmentIds strings       IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.

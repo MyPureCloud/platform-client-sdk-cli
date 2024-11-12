@@ -20,8 +20,8 @@ gc profile users list [flags]
       --id strings                         id
       --integrationPresenceSource string   Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. Valid values: MicrosoftTeams, ZoomPhone, EightByEight
       --jid strings                        jid
-      --pageNumber int                     Page number (default 1)
-      --pageSize int                       Page size (default 25)
+      --pageNumber string                  Page number (default "1")
+      --pageSize string                    Page size (default "25")
       --sortOrder string                   Ascending or descending sort order Valid values: ascending, descending
   -s, --stream                             Paginate and stream data as it is being processed leaving page information intact
 ```

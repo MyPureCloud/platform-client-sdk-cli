@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc users routinglanguages](gc_users_routinglanguages.html)	 - /api/v2/users/{userId}/routinglanguages
-* [gc users routinglanguages bulk update](gc_users_routinglanguages_bulk_update.html)	 - Add bulk routing language to user. Max limit 50 languages
+* [gc users routinglanguages bulk update](gc_users_routinglanguages_bulk_update.html)	 - Assign multiple routing languages to a user. Max 50 routing languages in request body
 
 

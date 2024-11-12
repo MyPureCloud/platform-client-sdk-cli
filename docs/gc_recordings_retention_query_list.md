@@ -13,13 +13,13 @@ gc recordings retention query list [flags]
 ### Options
 
 ```
-  -a, --autopaginate                 Automatically paginate through the results stripping page information
-      --cursor string                Indicates where to resume query results (not required for first page)
-      --filtercondition string       Filter list command output based on a given condition or regular expression
-  -h, --help                         help for list
-      --pageSize int                 Page size. Maximum is 500. (default 25)
-      --retentionThresholdDays int   Fetch retention data for recordings retained for more days than the provided value. - REQUIRED
-  -s, --stream                       Paginate and stream data as it is being processed leaving page information intact
+  -a, --autopaginate                    Automatically paginate through the results stripping page information
+      --cursor string                   Indicates where to resume query results (not required for first page)
+      --filtercondition string          Filter list command output based on a given condition or regular expression
+  -h, --help                            help for list
+      --pageSize string                 Page size. Maximum is 500. (default "25")
+      --retentionThresholdDays string   Fetch retention data for recordings retained for more days than the provided value. - REQUIRED
+  -s, --stream                          Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands

@@ -1,10 +1,10 @@
 ## gc users routinglanguages update
 
-Update routing language proficiency or state.
+Update an assigned routing language`s proficiency
 
 ### Synopsis
 
-Update routing language proficiency or state.
+Update an assigned routing language`s proficiency
 
 ```
 gc users routinglanguages update [userId] [languageId] [flags]

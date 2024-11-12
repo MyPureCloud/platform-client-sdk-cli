@@ -21,8 +21,8 @@ gc authorization roles list [flags]
       --id strings               id
       --name string              
       --nextPage string          next page token
-      --pageNumber int           The page number requested (default 1)
-      --pageSize int             The total page size requested (default 25)
+      --pageNumber string        The page number requested (default "1")
+      --pageSize string          The total page size requested (default "25")
       --permission strings       
       --previousPage string      Previous page token
       --sortBy string            variable name requested to sort by

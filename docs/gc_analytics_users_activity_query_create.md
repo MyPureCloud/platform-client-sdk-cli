@@ -13,12 +13,12 @@ gc analytics users activity query create [flags]
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-      --pageNumber int     The desired page number
-      --pageSize int       The desired page size
-  -b, --printrequestbody   Print the request body format of the API.
+  -d, --directory string    Directory path with files containing request bodies
+  -f, --file string         File name containing the JSON body
+  -h, --help                help for create
+      --pageNumber string   The desired page number
+      --pageSize string     The desired page size
+  -b, --printrequestbody    Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands

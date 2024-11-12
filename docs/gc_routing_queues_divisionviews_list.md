@@ -19,8 +19,8 @@ gc routing queues divisionviews list [flags]
   -h, --help                     help for list
       --id strings               Queue ID(s)
       --name string              Name
-      --pageNumber int           Page number [max value is 5] (default 1)
-      --pageSize int             Page size [max value is 100] (default 25)
+      --pageNumber string        Page number [max value is 5] (default "1")
+      --pageSize string          Page size [max value is 100] (default "25")
       --sortBy string            Sort by Valid values: name, id, divisionId
       --sortOrder string         Sort order Valid values: asc, desc
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

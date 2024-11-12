@@ -20,8 +20,8 @@ gc gamification insights list [flags]
       --filtercondition string                 Filter list command output based on a given condition or regular expression
       --granularity string                     Granularity - REQUIRED Valid values: Weekly, Monthly
   -h, --help                                   help for list
-      --pageNumber int                         Page number (default 1)
-      --pageSize int                           Page size (default 25)
+      --pageNumber string                      Page number (default "1")
+      --pageSize string                        Page size (default "25")
       --primaryPeriodStartWorkday string       The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED
       --sortKey string                         Sort key Valid values: percentOfGoal, percentOfGoalChange, overallPercentOfGoal, overallPercentOfGoalChange, value, valueChange
       --sortMetricId string                    Sort Metric Id

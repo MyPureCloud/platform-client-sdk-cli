@@ -23,8 +23,8 @@ gc telephony providers edges phones list [flags]
       --linesLoggedInUserId string                Filter by lines.loggedInUser.id
       --linesName string                          Filter by lines.name
       --name string                               Name of the Phone to filter by, comma-separated
-      --pageNumber int                            Page number (default 1)
-      --pageSize int                              Page size (default 25)
+      --pageNumber string                         Page number (default "1")
+      --pageSize string                           Page size (default "25")
       --phoneBaseSettingsId string                Filter by phoneBaseSettings.id
       --phoneHardwareId string                    Filter by phone_hardwareId
       --secondaryStatusOperationalStatus string   The secondary status to filter by

@@ -13,7 +13,7 @@ gc externalcontacts contacts notes get [contactId] [noteId] [flags]
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: author, externalDataSources
+      --expand strings   which fields, if any, to expand Valid values: author, externalDataSources, division
   -h, --help             help for get
 ```
 

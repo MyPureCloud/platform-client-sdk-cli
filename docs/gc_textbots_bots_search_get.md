@@ -17,7 +17,7 @@ gc textbots bots search get [flags]
       --botName string    Bot name
       --botType strings   Bot types Valid values: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow
   -h, --help              help for get
-      --pageSize int      The maximum results to return (default 25)
+      --pageSize string   The maximum results to return (default "25")
 ```
 
 ### Options inherited from parent commands

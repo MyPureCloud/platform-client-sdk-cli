@@ -20,8 +20,8 @@ gc routing wrapupcodes divisionviews list [flags]
       --id strings               Wrapup code ID(s)
       --includeState string      Wrapup code state(s) to include Valid values: Active, Deleted, ActiveAndDeleted
       --name string              Name (trailing asterisks allowed)
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

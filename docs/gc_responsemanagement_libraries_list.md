@@ -18,8 +18,8 @@ gc responsemanagement libraries list [flags]
   -h, --help                             help for list
       --libraryPrefix string             Returns a list of libraries that contain the prefix provided
       --messagingTemplateFilter string   Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel Valid values: whatsapp
-      --pageNumber int                   Page number (default 1)
-      --pageSize int                     Page size (default 25)
+      --pageNumber string                Page number (default "1")
+      --pageSize string                  Page size (default "25")
   -s, --stream                           Paginate and stream data as it is being processed leaving page information intact
 ```
 

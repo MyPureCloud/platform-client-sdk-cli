@@ -30,7 +30,7 @@
 ### SEE ALSO
 
 * [gc users routingskills](gc_users_routingskills.html)	 - /api/v2/users/{userId}/routingskills
-* [gc users routingskills bulk bulkadd](gc_users_routingskills_bulk_bulkadd.html)	 - Bulk add routing skills to user
-* [gc users routingskills bulk bulkupdate](gc_users_routingskills_bulk_bulkupdate.html)	 - Replace all routing skills assigned to a user
+* [gc users routingskills bulk bulkadd](gc_users_routingskills_bulk_bulkadd.html)	 - Assign multiple routing skills to a user
+* [gc users routingskills bulk bulkupdate](gc_users_routingskills_bulk_bulkupdate.html)	 - Assign multiple routing skills to a user, replacing any current assignments
 
 

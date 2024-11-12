@@ -17,7 +17,7 @@ gc analytics conversations details jobs results list [jobId] [flags]
       --cursor string            Indicates where to resume query results (not required for first page)
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageSize int             The desired maximum number of results
+      --pageSize string          The desired maximum number of results
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

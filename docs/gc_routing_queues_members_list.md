@@ -21,8 +21,8 @@ gc routing queues members list [queueId] [flags]
       --languages strings        Filter by language (contains-style search)
       --memberBy string          Filter by member type Valid values: user, group
       --name string              Filter by queue member name (contains-style search)
-      --pageNumber int            (default 1)
-      --pageSize int             Max value is 100 (default 25)
+      --pageNumber string         (default "1")
+      --pageSize string          Max value is 100 (default "25")
       --presence strings         Filter by presence
       --profileSkills strings    Filter by profile skill (contains-style search)
       --routingStatus strings    Filter by routing status

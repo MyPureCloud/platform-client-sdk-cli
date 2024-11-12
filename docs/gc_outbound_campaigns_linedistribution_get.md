@@ -16,8 +16,8 @@ gc outbound campaigns linedistribution get [campaignId] [flags]
       --edgeGroupId s Edge Group. Campaign   Edge group to be used in line distribution calculations instead of current Campaigns Edge Group. Campaigns Site and Edge Group are mutually exclusive.
   -h, --help                                 help for get
       --includeOnlyActiveCampaigns string    If true will return only active Campaigns Valid values: true, false
-      --outboundLineCount int                The number of outbound lines to be used in line distribution calculations, instead of current Campaign`s Outbound Lines Count
-      --relativeWeight int                   Relative weight to be used in line distribution calculations instead of current Campaign`s relative weight
+      --outboundLineCount string             The number of outbound lines to be used in line distribution calculations, instead of current Campaign`s Outbound Lines Count
+      --relativeWeight string                Relative weight to be used in line distribution calculations instead of current Campaign`s relative weight
       --siteId s Site.  Campaign             Site to be used in line distribution calculations instead of current Campaigns Site.  Campaigns Site and Edge Group are mutually exclusive.
       --useWeight string                     Enable usage of weight, this value overrides current Campaign`s setting in line distribution calculations Valid values: true, false
 ```

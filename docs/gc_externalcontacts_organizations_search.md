@@ -14,12 +14,12 @@ gc externalcontacts organizations search [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --expand strings           which fields, if any, to expand Valid values: externalDataSources
+      --expand strings           which fields, if any, to expand Valid values: externalDataSources, division
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for search
       --includeTrustors string   (true or false) whether or not to include trustor information embedded in the externalOrganization Valid values: true, false
-      --pageNumber int           Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default 1)
-      --pageSize int             Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default 20)
+      --pageNumber string        Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default "1")
+      --pageSize string          Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default "20")
       --q string                 Search query
       --sortOrder string         The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

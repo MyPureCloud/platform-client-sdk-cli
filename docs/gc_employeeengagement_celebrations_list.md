@@ -16,8 +16,8 @@ gc employeeengagement celebrations list [flags]
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageNumber int            (default 1)
-      --pageSize int              (default 25)
+      --pageNumber string         (default "1")
+      --pageSize string           (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

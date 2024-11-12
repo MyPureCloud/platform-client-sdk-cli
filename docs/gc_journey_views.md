@@ -37,6 +37,7 @@
 * [gc journey views get](gc_journey_views_get.html)	 - Get a Journey View by ID
 * [gc journey views jobs](gc_journey_views_jobs.html)	 - /api/v2/journey/views/jobs
 * [gc journey views list](gc_journey_views_list.html)	 - Get a list of Journey Views
+* [gc journey views schedules](gc_journey_views_schedules.html)	 - /api/v2/journey/views/{viewId}/schedules /api/v2/journey/views/schedules
 * [gc journey views versions](gc_journey_views_versions.html)	 - /api/v2/journey/views/{viewId}/versions
 
 

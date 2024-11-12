@@ -21,8 +21,8 @@ gc integrations actions drafts list [flags]
       --includeAuthActions string   Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. Valid values: true, false
       --name string                 Filter by partial or complete action name.
       --nextPage string             next page token
-      --pageNumber int              The page number requested (default 1)
-      --pageSize int                The total page size requested (default 25)
+      --pageNumber string           The page number requested (default "1")
+      --pageSize string             The total page size requested (default "25")
       --previousPage string         Previous page token
       --secure secure               Filter based on secure configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. Valid values: true, false
       --sortBy string               Root level field name to sort on.

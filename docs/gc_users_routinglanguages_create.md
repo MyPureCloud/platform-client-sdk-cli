@@ -1,10 +1,10 @@
 ## gc users routinglanguages create
 
-Add routing language to user
+Assign a routing language to a user
 
 ### Synopsis
 
-Add routing language to user
+Assign a routing language to a user
 
 ```
 gc users routinglanguages create [userId] [flags]

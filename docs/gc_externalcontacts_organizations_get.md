@@ -13,7 +13,7 @@ gc externalcontacts organizations get [externalOrganizationId] [flags]
 ### Options
 
 ```
-      --expand strings           which fields, if any, to expand (externalDataSources) Valid values: externalDataSources
+      --expand strings           which fields, if any, to expand Valid values: externalDataSources, division
   -h, --help                     help for get
       --includeTrustors string   (true or false) whether or not to include trustor information embedded in the externalOrganization Valid values: true, false
 ```

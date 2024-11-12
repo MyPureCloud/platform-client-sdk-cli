@@ -21,8 +21,8 @@ gc scripts divisionviews list [flags]
       --flowId string              Secure flow id filter
   -h, --help                       help for list
       --name string                Name filter
-      --pageNumber int             Page number (default 1)
-      --pageSize int               Page size (default 25)
+      --pageNumber string          Page number (default "1")
+      --pageSize string            Page size (default "25")
       --scriptDataVersion string   Advanced usage - controls the data version of the script
       --sortBy string              SortBy Valid values: modifiedDate, createdDate
       --sortOrder string           SortOrder Valid values: ascending, descending

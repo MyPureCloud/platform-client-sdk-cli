@@ -19,8 +19,8 @@ gc analytics reporting settings dashboards query list [flags]
       --filtercondition string         Filter list command output based on a given condition or regular expression
   -h, --help                           help for list
       --name string                    name of the dashboard
-      --pageNumber int                  (default 1)
-      --pageSize int                    (default 9)
+      --pageNumber string               (default "1")
+      --pageSize string                 (default "9")
       --sortBy string                  
   -s, --stream                         Paginate and stream data as it is being processed leaving page information intact
 ```

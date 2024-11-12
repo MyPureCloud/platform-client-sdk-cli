@@ -17,8 +17,8 @@ gc routing utilization tags list [flags]
       --filtercondition string                       Filter list command output based on a given condition or regular expression
   -h, --help                                         help for list
       --name s name (Wildcard is supported, e.g.,    Utilization tags name (Wildcard is supported, e.g., tag1*`)
-      --pageNumber int                               Page number (default 1)
-      --pageSize int                                 Page size (default 25)
+      --pageNumber string                            Page number (default "1")
+      --pageSize string                              Page size (default "25")
       --sortOrder string                             Sort order by name Valid values: ascending, descending
   -s, --stream                                       Paginate and stream data as it is being processed leaving page information intact
 ```

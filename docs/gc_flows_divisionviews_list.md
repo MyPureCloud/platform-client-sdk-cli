@@ -20,8 +20,8 @@ gc flows divisionviews list [flags]
       --id strings                ID
       --includeSchemas string     Include variable schemas Valid values: true, false
       --name string               Name
-      --pageNumber int            Page number (default 1)
-      --pageSize int              Page size (default 25)
+      --pageNumber string         Page number (default "1")
+      --pageSize string           Page size (default "25")
       --publishVersionId string   Publish version ID
       --publishedAfter string     Published after
       --publishedBefore string    Published before

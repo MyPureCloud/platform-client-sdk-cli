@@ -13,8 +13,8 @@ gc billing trusteebillingoverview get [trustorOrgId] [flags]
 ### Options
 
 ```
-      --billingPeriodIndex int   0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on.
-  -h, --help                     help for get
+      --billingPeriodIndex string   0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on. (default "0")
+  -h, --help                        help for get
 ```
 
 ### Options inherited from parent commands

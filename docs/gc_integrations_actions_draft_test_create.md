@@ -15,6 +15,7 @@ gc integrations actions draft test create [actionId] [flags]
 ```
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
+      --flatten string     Indicates the response should be reformatted, based on Architect`s flattening format. Valid values: true, false
   -h, --help               help for create
   -b, --printrequestbody   Print the request body format of the API.
 ```

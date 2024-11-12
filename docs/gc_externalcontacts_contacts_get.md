@@ -13,7 +13,7 @@ gc externalcontacts contacts get [contactId] [flags]
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: externalOrganization, externalDataSources, identifiers, externalSources
+      --expand strings   which fields, if any, to expand Valid values: externalOrganization, externalDataSources, identifiers, externalSources, division
   -h, --help             help for get
 ```
 

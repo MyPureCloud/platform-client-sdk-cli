@@ -17,7 +17,7 @@ gc taskmanagement workitems versions list [workitemId] [flags]
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageSize after           Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an after key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default 25)
+      --pageSize after           Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an after key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default "25")
       --sortOrder string         Ascending or descending sort order Valid values: ascending, descending
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```

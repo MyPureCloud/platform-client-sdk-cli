@@ -16,11 +16,11 @@ gc workforcemanagement managementunits list [flags]
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --divisionId string        If specified, the list of management units belonging to the specified division will be returned
       --expand string            Deprecated, expand settings on the single MU route Valid values: details
-      --feature string           If specified, the list of management units for which the user is authorized to use the requested feature will be returned Valid values: AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, ActivityCodes, ActivityPlans, Agents, BuActivityCodes, BusinessUnits, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans
+      --feature string           If specified, the list of management units for which the user is authorized to use the requested feature will be returned Valid values: AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, ActivityCodes, ActivityPlans, Agents, BuActivityCodes, BusinessUnits, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageNumber int           Deprecated, paging is not supported
-      --pageSize int             Deprecated, paging is not supported
+      --pageNumber string        Deprecated, paging is not supported
+      --pageSize string          Deprecated, paging is not supported
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

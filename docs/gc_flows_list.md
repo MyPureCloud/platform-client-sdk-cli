@@ -26,8 +26,8 @@ gc flows list [flags]
       --lockedByClientId string    Locked by client ID
       --name string                Name
       --nameOrDescription string   Name or description
-      --pageNumber int             Page number (default 1)
-      --pageSize int               Page size (default 25)
+      --pageNumber string          Page number (default "1")
+      --pageSize string            Page size (default "25")
       --publishVersionId string    Publish version ID
       --publishedAfter string      Published after
       --publishedBefore string     Published before

@@ -20,8 +20,8 @@ gc routing queues users list [queueId] [flags]
       --joined string            Filter by joined status Valid values: true, false
       --languages strings        Filter by language
       --name string              Filter by queue member name
-      --pageNumber int            (default 1)
-      --pageSize int             Max value is 100 (default 25)
+      --pageNumber string         (default "1")
+      --pageSize string          Max value is 100 (default "25")
       --presence strings         Filter by presence
       --profileSkills strings    Filter by profile skill
       --routingStatus strings    Filter by routing status

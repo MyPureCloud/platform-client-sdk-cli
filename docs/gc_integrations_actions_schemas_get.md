@@ -13,7 +13,8 @@ gc integrations actions schemas get [actionId] [fileName] [flags]
 ### Options
 
 ```
-  -h, --help   help for get
+      --flatten string   Indicates the response should be reformatted, based on Architect`s flattening format. Valid values: true, false
+  -h, --help             help for get
 ```
 
 ### Options inherited from parent commands

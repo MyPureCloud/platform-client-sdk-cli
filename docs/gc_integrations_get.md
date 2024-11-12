@@ -16,8 +16,8 @@ gc integrations get [integrationId] [flags]
       --expand strings        variable name requested by expand list
   -h, --help                  help for get
       --nextPage string       next page token
-      --pageNumber int        The page number requested (default 1)
-      --pageSize int          The total page size requested (default 25)
+      --pageNumber string     The page number requested (default "1")
+      --pageSize string       The total page size requested (default "25")
       --previousPage string   Previous page token
       --sortBy string         variable name requested to sort by
 ```

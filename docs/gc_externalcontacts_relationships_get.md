@@ -13,7 +13,7 @@ gc externalcontacts relationships get [relationshipId] [flags]
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: externalDataSources
+      --expand strings   which fields, if any, to expand Valid values: externalDataSources, division
   -h, --help             help for get
 ```
 

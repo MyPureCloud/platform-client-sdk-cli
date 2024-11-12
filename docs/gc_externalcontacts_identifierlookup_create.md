@@ -14,7 +14,7 @@ gc externalcontacts identifierlookup create [flags]
 
 ```
   -d, --directory string   Directory path with files containing request bodies
-      --expand strings     which field, if any, to expand Valid values: externalOrganization, identifiers, externalSources
+      --expand strings     which field, if any, to expand Valid values: externalOrganization, identifiers, externalSources, division
   -f, --file string        File name containing the JSON body
   -h, --help               help for create
   -b, --printrequestbody   Print the request body format of the API.

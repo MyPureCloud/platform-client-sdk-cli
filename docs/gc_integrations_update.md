@@ -18,8 +18,8 @@ gc integrations update [integrationId] [flags]
   -f, --file string           File name containing the JSON body
   -h, --help                  help for update
       --nextPage string       next page token
-      --pageNumber int        The page number requested (default 1)
-      --pageSize int          The total page size requested (default 25)
+      --pageNumber string     The page number requested (default "1")
+      --pageSize string       The total page size requested (default "25")
       --previousPage string   Previous page token
   -b, --printrequestbody      Print the request body format of the API.
       --sortBy string         variable name requested to sort by

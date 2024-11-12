@@ -16,7 +16,7 @@ gc taskmanagement workitems users wrapups get [workitemId] [userId] [flags]
       --after string       The cursor that points to the end of the set of entities that has been returned.
       --expands string     Which fields, if any, to expand. Valid values: wrapupCode
   -h, --help               help for get
-      --pageSize after     Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an after key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default 25)
+      --pageSize after     Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an after key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default "25")
       --sortOrder string   Ascending or descending sort order Valid values: ascending, descending
 ```
 

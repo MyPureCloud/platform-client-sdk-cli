@@ -18,8 +18,8 @@ gc speechandtextanalytics categories list [flags]
   -h, --help                     help for list
       --ids strings              Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
       --name string              The category name filter applied to the listing
-      --pageNumber int           The page number for the listing (default 1)
-      --pageSize int             The page size for the listing. The max that will be returned is 50. (default 25)
+      --pageNumber string        The page number for the listing (default "1")
+      --pageSize string          The page size for the listing. The max that will be returned is 50. (default "25")
       --sortBy string            The field to sort by for the listing Valid values: name, description
       --sortOrder string         The sort order for the listing Valid values: asc, desc
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

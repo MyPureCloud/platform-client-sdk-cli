@@ -18,8 +18,8 @@ gc outbound digitalrulesets list [flags]
   -h, --help                     help for list
       --id strings               A list of digital rule set ids to bulk fetch
       --name string              Name
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size. The max that will be returned is 100. (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size. The max that will be returned is 100. (default "25")
       --sortBy string            The field to sort by Valid values: name
       --sortOrder string         The direction to sort Valid values: ascending, descending
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

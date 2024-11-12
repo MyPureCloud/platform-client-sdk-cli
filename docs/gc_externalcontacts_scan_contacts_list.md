@@ -17,7 +17,7 @@ gc externalcontacts scan contacts list [flags]
       --cursor string            Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --limit int                The number of contacts per page; must be between 10 and 200, default is 100
+      --limit string             The number of contacts per page; must be between 10 and 200, default is 100
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

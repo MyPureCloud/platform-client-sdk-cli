@@ -13,11 +13,11 @@ gc webchat guest conversations messages list [conversationId] [flags]
 ### Options
 
 ```
-      --after string       If available, get the messages chronologically after the id of this message
-      --before string      If available, get the messages chronologically before the id of this message
-  -h, --help               help for list
-      --maxResults int     Limit the returned number of messages, up to a maximum of 100 (default 100)
-      --sortOrder string   Sort order Valid values: ascending, descending
+      --after string        If available, get the messages chronologically after the id of this message
+      --before string       If available, get the messages chronologically before the id of this message
+  -h, --help                help for list
+      --maxResults string   Limit the returned number of messages, up to a maximum of 100 (default "100")
+      --sortOrder string    Sort order Valid values: ascending, descending
 ```
 
 ### Options inherited from parent commands

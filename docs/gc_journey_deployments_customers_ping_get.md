@@ -13,12 +13,12 @@ gc journey deployments customers ping get [deploymentId] [customerCookieId] [fla
 ### Options
 
 ```
-      --appNamespace string               Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions
-      --dl home                           Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. home or `help. Pings without this parameter will not return actions.
-      --dt string                         Document Title.  A human readable name for the page or screen
-  -h, --help                              help for get
-      --sessionId string                  UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session
-      --sinceLastBeaconMilliseconds int   How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings.
+      --appNamespace string                  Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions
+      --dl home                              Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. home or `help. Pings without this parameter will not return actions.
+      --dt string                            Document Title.  A human readable name for the page or screen
+  -h, --help                                 help for get
+      --sessionId string                     UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session
+      --sinceLastBeaconMilliseconds string   How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings.
 ```
 
 ### Options inherited from parent commands

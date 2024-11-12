@@ -16,8 +16,8 @@ gc speechandtextanalytics conversations categories list [conversationId] [flags]
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageNumber int           The page number for the listing (default 1)
-      --pageSize int             The page size for the listing. The max that will be returned is 50. (default 25)
+      --pageNumber string        The page number for the listing (default "1")
+      --pageSize string          The page size for the listing. The max that will be returned is 50. (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

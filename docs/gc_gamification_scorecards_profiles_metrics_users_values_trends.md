@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc gamification scorecards profiles metrics users values](gc_gamification_scorecards_profiles_metrics_users_values.html)	 - /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values
+* [gc gamification scorecards profiles metrics users values](gc_gamification_scorecards_profiles_metrics_users_values.html)	 - /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values
 * [gc gamification scorecards profiles metrics users values trends get](gc_gamification_scorecards_profiles_metrics_users_values_trends_get.html)	 - Average performance values trends by metric of a division or a performance profile
 * [gc gamification scorecards profiles metrics users values trends getusertrends](gc_gamification_scorecards_profiles_metrics_users_values_trends_getusertrends.html)	 - Average performance values trends by metric of a user
 

@@ -18,8 +18,8 @@ gc profile groups list [flags]
   -h, --help                     help for list
       --id strings               id
       --jabberId strings         A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
-      --pageNumber int           Page number (default 1)
-      --pageSize int             Page size (default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
       --sortOrder string         Ascending or descending sort order Valid values: ascending, descending
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```

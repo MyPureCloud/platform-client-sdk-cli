@@ -1,10 +1,10 @@
 ## gc users routingskills update
 
-Update routing skill proficiency or state.
+Update an assigned routing skill`s proficiency
 
 ### Synopsis
 
-Update routing skill proficiency or state.
+Update an assigned routing skill`s proficiency
 
 ```
 gc users routingskills update [userId] [skillId] [flags]

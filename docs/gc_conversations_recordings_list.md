@@ -15,7 +15,7 @@ gc conversations recordings list [conversationId] [flags]
 ```
       --formatId string        The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE
   -h, --help                   help for list
-      --maxWaitMs int          The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default 5000)
+      --maxWaitMs string       The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default "5000")
       --mediaFormats strings   All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
 ```
 

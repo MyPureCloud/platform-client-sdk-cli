@@ -114,8 +114,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create [userId]",
-	Short: "Add routing skill to user",
-	Long:  "Add routing skill to user",
+	Short: "Assign a routing skill to a user",
+	Long:  "Assign a routing skill to a user",
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -182,8 +182,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [userId] [skillId]",
-	Short: "Remove routing skill from user",
-	Long:  "Remove routing skill from user",
+	Short: "Remove a routing skill from a user",
+	Long:  "Remove a routing skill from a user",
 	Args:  utils.DetermineArgs([]string{ "userId", "skillId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -249,8 +249,8 @@ var deleteCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list [userId]",
-	Short: "List routing skills for user",
-	Long:  "List routing skills for user",
+	Short: "List routing skills assigned to a user",
+	Long:  "List routing skills assigned to a user",
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -326,8 +326,8 @@ var listCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [userId] [skillId]",
-	Short: "Update routing skill proficiency or state.",
-	Long:  "Update routing skill proficiency or state.",
+	Short: "Update an assigned routing skill`s proficiency",
+	Long:  "Update an assigned routing skill`s proficiency",
 	Args:  utils.DetermineArgs([]string{ "userId", "skillId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

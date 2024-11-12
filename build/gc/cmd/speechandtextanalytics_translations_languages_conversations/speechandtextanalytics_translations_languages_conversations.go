@@ -28,8 +28,8 @@ func init() {
 }
 
 func Cmdspeechandtextanalytics_translations_languages_conversations() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "communicationId", "", "Communication id associated with the conversation")
-	utils.AddFlag(getCmd.Flags(), "string", "recordingId", "", "Recording id associated with the communication")
+	utils.AddFlag(getCmd.Flags(), "string", "communicationId", "", "Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions.")
+	utils.AddFlag(getCmd.Flags(), "string", "recordingId", "", "Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}", utils.FormatPermissions([]string{ "speechAndTextAnalytics:translation:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -54,8 +54,8 @@ func queryEscape(value string) string {
 
 var getCmd = &cobra.Command{
 	Use:   "get [languageId] [conversationId]",
-	Short: "Translate all communication(s) for an interaction.",
-	Long:  "Translate all communication(s) for an interaction.",
+	Short: "Translate a single interaction recording (or an email conversation)",
+	Long:  "Translate a single interaction recording (or an email conversation)",
 	Args:  utils.DetermineArgs([]string{ "languageId", "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

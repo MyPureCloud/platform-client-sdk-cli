@@ -123,6 +123,9 @@ type CampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -253,6 +256,10 @@ type Campaign struct {
     Division Domainentityref `json:"division"`
 
 
+    // AgentOwnedColumn - Name of the contact list column containing the id of the agent who owns the record. Only applicable to preview campaigns.
+    AgentOwnedColumn string `json:"agentOwnedColumn"`
+
+
     // DynamicContactQueueingSettings - Settings for dynamic queueing of contacts.
     DynamicContactQueueingSettings Dynamiccontactqueueingsettings `json:"dynamicContactQueueingSettings"`
 
@@ -306,6 +313,7 @@ func (o *Campaign) String() string {
     
     
      o.ContactListFilters = []Domainentityref{{}} 
+    
     
     
      o.SkillColumns = []string{""} 
@@ -384,6 +392,8 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
         ContactListFilters []Domainentityref `json:"contactListFilters"`
         
         Division Domainentityref `json:"division"`
+        
+        AgentOwnedColumn string `json:"agentOwnedColumn"`
         
         DynamicContactQueueingSettings Dynamiccontactqueueingsettings `json:"dynamicContactQueueingSettings"`
         
@@ -497,6 +507,9 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
 
         
         ContactListFilters: []Domainentityref{{}},
+        
+
+
         
 
 

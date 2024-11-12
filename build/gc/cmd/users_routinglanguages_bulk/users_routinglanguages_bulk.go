@@ -65,8 +65,8 @@ func queryEscape(value string) string {
 
 var updateCmd = &cobra.Command{
 	Use:   "update [userId]",
-	Short: "Add bulk routing language to user. Max limit 50 languages",
-	Long:  "Add bulk routing language to user. Max limit 50 languages",
+	Short: "Assign multiple routing languages to a user. Max 50 routing languages in request body",
+	Long:  "Assign multiple routing languages to a user. Max 50 routing languages in request body",
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

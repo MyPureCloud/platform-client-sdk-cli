@@ -93,8 +93,8 @@ func queryEscape(value string) string {
 
 var bulkaddCmd = &cobra.Command{
 	Use:   "bulkadd [userId]",
-	Short: "Bulk add routing skills to user",
-	Long:  "Bulk add routing skills to user",
+	Short: "Assign multiple routing skills to a user",
+	Long:  "Assign multiple routing skills to a user",
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -161,8 +161,8 @@ var bulkaddCmd = &cobra.Command{
 }
 var bulkupdateCmd = &cobra.Command{
 	Use:   "bulkupdate [userId]",
-	Short: "Replace all routing skills assigned to a user",
-	Long:  "Replace all routing skills assigned to a user",
+	Short: "Assign multiple routing skills to a user, replacing any current assignments",
+	Long:  "Assign multiple routing skills to a user, replacing any current assignments",
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

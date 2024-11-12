@@ -126,6 +126,9 @@ type SessionDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -302,6 +305,10 @@ type Session struct {
     Authenticated bool `json:"authenticated"`
 
 
+    // LastScreen - The app screen name where the customer's last app interaction occurred.
+    LastScreen string `json:"lastScreen"`
+
+
     
 
 
@@ -363,6 +370,7 @@ func (o *Session) String() string {
     
     
      o.ConversationChannels = []Conversationchannel{{}} 
+    
     
     
     
@@ -464,6 +472,8 @@ func (u *Session) MarshalJSON() ([]byte, error) {
         LastAcdOutcome string `json:"lastAcdOutcome"`
         
         Authenticated bool `json:"authenticated"`
+        
+        LastScreen string `json:"lastScreen"`
         
         CreatedDate time.Time `json:"createdDate"`
         
@@ -583,6 +593,9 @@ func (u *Session) MarshalJSON() ([]byte, error) {
 
         
         ConversationChannels: []Conversationchannel{{}},
+        
+
+
         
 
 

@@ -39,7 +39,7 @@ type Additionalmessage struct {
 
 
     // MessagingTemplate - The messaging template use to send a predefined canned response with the message
-    MessagingTemplate Messagingtemplaterequest `json:"messagingTemplate"`
+    MessagingTemplate Sendmessagingtemplaterequest `json:"messagingTemplate"`
 
 }
 
@@ -72,7 +72,7 @@ func (u *Additionalmessage) MarshalJSON() ([]byte, error) {
         
         StickerIds []string `json:"stickerIds"`
         
-        MessagingTemplate Messagingtemplaterequest `json:"messagingTemplate"`
+        MessagingTemplate Sendmessagingtemplaterequest `json:"messagingTemplate"`
         *Alias
     }{
 

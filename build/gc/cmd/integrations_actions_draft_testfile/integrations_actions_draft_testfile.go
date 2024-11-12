@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdintegrations_actions_draft_testfile() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "flatten", "false", "Indicates the response should be reformatted, based on Architect`s flattening format.")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/integrations/actions/{actionId}/draft/test", utils.FormatPermissions([]string{ "integrations:action:execute",  }), utils.GenerateDevCentreLink("POST", "Integrations", "/api/v2/integrations/actions/{actionId}/draft/test")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Map of parameters used for variable substitution.",
@@ -88,6 +89,10 @@ var createCmd = &cobra.Command{
 		actionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{actionId}", fmt.Sprintf("%v", actionId), -1)
 
+		flatten := utils.GetFlag(cmd.Flags(), "bool", "flatten")
+		if flatten != "" {
+			queryParams["flatten"] = flatten
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

@@ -29,7 +29,7 @@ func init() {
 
 func Cmdexternalcontacts_reversewhitepageslookup() *cobra.Command { 
 	utils.AddFlag(searchCmd.Flags(), "string", "lookupVal", "", "User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) - REQUIRED")
-	utils.AddFlag(searchCmd.Flags(), "[]string", "expand", "", "which field, if any, to expand Valid values: contacts.externalOrganization, externalDataSources")
+	utils.AddFlag(searchCmd.Flags(), "[]string", "expand", "", "which field, if any, to expand Valid values: contacts.externalOrganization, externalDataSources, division")
 	searchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", searchCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/reversewhitepageslookup", utils.FormatPermissions([]string{ "externalContacts:contact:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/reversewhitepageslookup")))
 	utils.AddFileFlagIfUpsert(searchCmd.Flags(), "GET", ``)
 	searchCmd.MarkFlagRequired("lookupVal")

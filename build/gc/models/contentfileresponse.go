@@ -22,6 +22,9 @@ type ContentfileresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Contentfileresponse
@@ -41,10 +44,15 @@ type Contentfileresponse struct {
     // Size - The size of the file in bytes
     Size int `json:"size"`
 
+
+    // ContentUrl - Public download url for content. Needs to be expanded
+    ContentUrl string `json:"contentUrl"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Contentfileresponse) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Contentfileresponse) MarshalJSON() ([]byte, error) {
         Checksum string `json:"checksum"`
         
         Size int `json:"size"`
+        
+        ContentUrl string `json:"contentUrl"`
         *Alias
     }{
+
+        
+
 
         
 

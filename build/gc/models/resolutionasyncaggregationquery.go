@@ -76,7 +76,7 @@ type Resolutionasyncaggregationquery struct {
     Views []Resolutionaggregationview `json:"views"`
 
 
-    // AlternateTimeDimension - Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+    // AlternateTimeDimension - Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event and choosing \"wrapUpDate\" uses the date when conversation is ended
     AlternateTimeDimension string `json:"alternateTimeDimension"`
 
 

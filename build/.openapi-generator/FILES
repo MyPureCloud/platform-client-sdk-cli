@@ -587,6 +587,7 @@ gc/cmd/journey_views/journey_views.go
 gc/cmd/journey_views_encodings_validate/journey_views_encodings_validate.go
 gc/cmd/journey_views_eventdefinitions/journey_views_eventdefinitions.go
 gc/cmd/journey_views_jobs/journey_views_jobs.go
+gc/cmd/journey_views_schedules/journey_views_schedules.go
 gc/cmd/journey_views_versions/journey_views_versions.go
 gc/cmd/journey_views_versions_charts/journey_views_versions_charts.go
 gc/cmd/journey_views_versions_charts_versions/journey_views_versions_charts_versions.go
@@ -1046,6 +1047,7 @@ gc/cmd/telephony_providers_edges_sites/telephony_providers_edges_sites.go
 gc/cmd/telephony_providers_edges_sites_numberplans/telephony_providers_edges_sites_numberplans.go
 gc/cmd/telephony_providers_edges_sites_numberplans_classifications/telephony_providers_edges_sites_numberplans_classifications.go
 gc/cmd/telephony_providers_edges_sites_outboundroutes/telephony_providers_edges_sites_outboundroutes.go
+gc/cmd/telephony_providers_edges_sites_search/telephony_providers_edges_sites_search.go
 gc/cmd/telephony_providers_edges_sites_siteconnections/telephony_providers_edges_sites_siteconnections.go
 gc/cmd/telephony_providers_edges_softwareupdate/telephony_providers_edges_softwareupdate.go
 gc/cmd/telephony_providers_edges_softwareversions/telephony_providers_edges_softwareversions.go
@@ -2135,6 +2137,7 @@ gc/models/conversationmessagingtorecipient.go
 gc/models/conversationmetrics.go
 gc/models/conversationnormalizedmessage.go
 gc/models/conversationnotificationtemplatebody.go
+gc/models/conversationnotificationtemplatebutton.go
 gc/models/conversationnotificationtemplatefooter.go
 gc/models/conversationnotificationtemplateheader.go
 gc/models/conversationnotificationtemplateparameter.go
@@ -2541,6 +2544,7 @@ gc/models/emailcommunicationansweredevent.go
 gc/models/emailcommunicationdispositionappliedevent.go
 gc/models/emailcommunicationendedevent.go
 gc/models/emailcommunicationrepliedevent.go
+gc/models/emailcommunicationsentmessageevent.go
 gc/models/emailconfig.go
 gc/models/emailconversation.go
 gc/models/emailconversationentitylisting.go
@@ -3058,6 +3062,8 @@ gc/models/journeyviewresult.go
 gc/models/journeyviewresultelement.go
 gc/models/journeyviewresultlink.go
 gc/models/journeyviewresultmetrics.go
+gc/models/journeyviewschedule.go
+gc/models/journeyviewschedulelisting.go
 gc/models/journeyviewuser.go
 gc/models/jsoncursorsearchresponse.go
 gc/models/jsonnode.go
@@ -3452,7 +3458,6 @@ gc/models/messagingsettingreference.go
 gc/models/messagingsettingrequest.go
 gc/models/messagingsettingrequestreference.go
 gc/models/messagingtemplate.go
-gc/models/messagingtemplaterequest.go
 gc/models/messaginguserestablishedevent.go
 gc/models/messagingusertransferevent.go
 gc/models/messengerapps.go
@@ -3488,6 +3493,7 @@ gc/models/minlength.go
 gc/models/mobilenotificationsettings.go
 gc/models/mobilesettings.go
 gc/models/modifiableruleproperties.go
+gc/models/monthlyplanningperiodsettings.go
 gc/models/moveagentresponse.go
 gc/models/moveagentsrequest.go
 gc/models/moveagentsresponse.go
@@ -4126,6 +4132,7 @@ gc/models/selectoreventtrigger.go
 gc/models/sendagentlessoutboundmessagerequest.go
 gc/models/sendagentlessoutboundmessageresponse.go
 gc/models/sendmessagebody.go
+gc/models/sendmessagingtemplaterequest.go
 gc/models/sentimentfeedback.go
 gc/models/sentimentfeedbackentitylisting.go
 gc/models/sequenceschedule.go
@@ -4188,6 +4195,9 @@ gc/models/site.go
 gc/models/siteconnection.go
 gc/models/siteconnections.go
 gc/models/siteentitylisting.go
+gc/models/sitesearchcriteria.go
+gc/models/sitesearchrequest.go
+gc/models/sitessearchresponse.go
 gc/models/skillcombinationinfo.go
 gc/models/skillentitylisting.go
 gc/models/skillgroup.go
@@ -4697,6 +4707,7 @@ gc/models/valuewrapperactivityplanservicegoalimpactoverrides.go
 gc/models/valuewrapperdate.go
 gc/models/valuewrappergroupsettings.go
 gc/models/valuewrapperhristimeofftype.go
+gc/models/valuewrappermonthlyplanningperiodsettings.go
 gc/models/valuewrapperplanningperiodsettings.go
 gc/models/valuewrapperstring.go
 gc/models/valuewrapperusersearchrule.go
@@ -4898,6 +4909,7 @@ gc/models/workitemscoredagent.go
 gc/models/workitemscoredagentrequest.go
 gc/models/workitemstatus.go
 gc/models/workitemstatuscreate.go
+gc/models/workitemstatusfilter.go
 gc/models/workitemstatuslisting.go
 gc/models/workitemstatusreference.go
 gc/models/workitemstatusupdate.go

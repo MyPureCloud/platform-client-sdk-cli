@@ -68,7 +68,7 @@ type Campaignschedule struct {
 
 
     // Campaign - The Campaign that this CampaignSchedule is for.
-    Campaign Domainentityref `json:"campaign"`
+    Campaign Divisioneddomainentityref `json:"campaign"`
 
 
     
@@ -107,7 +107,7 @@ func (u *Campaignschedule) MarshalJSON() ([]byte, error) {
         
         TimeZone string `json:"timeZone"`
         
-        Campaign Domainentityref `json:"campaign"`
+        Campaign Divisioneddomainentityref `json:"campaign"`
         *Alias
     }{
 

@@ -67,6 +67,10 @@ type Contactlistingresponse struct {
     ContactsCount int `json:"contactsCount"`
 
 
+    // NextUri
+    NextUri string `json:"nextUri"`
+
+
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
@@ -81,10 +85,6 @@ type Contactlistingresponse struct {
 
     // SelfUri
     SelfUri string `json:"selfUri"`
-
-
-    // NextUri
-    NextUri string `json:"nextUri"`
 
 
     // PageCount
@@ -132,6 +132,8 @@ func (u *Contactlistingresponse) MarshalJSON() ([]byte, error) {
         
         ContactsCount int `json:"contactsCount"`
         
+        NextUri string `json:"nextUri"`
+        
         PreviousUri string `json:"previousUri"`
         
         LastUri string `json:"lastUri"`
@@ -139,8 +141,6 @@ func (u *Contactlistingresponse) MarshalJSON() ([]byte, error) {
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
-        
-        NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

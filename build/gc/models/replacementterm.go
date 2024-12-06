@@ -23,7 +23,7 @@ type ReplacementtermDud struct {
 
 // Replacementterm
 type Replacementterm struct { 
-    // VarType
+    // VarType - Social Handle Type
     VarType string `json:"type"`
 
 

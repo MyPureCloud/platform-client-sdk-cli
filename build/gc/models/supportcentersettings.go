@@ -34,6 +34,9 @@ type SupportcentersettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Supportcentersettings - Settings concerning knowledge portal (previously support center)
@@ -62,6 +65,10 @@ type Supportcentersettings struct {
     EnabledCategories []Supportcentercategory `json:"enabledCategories"`
 
 
+    // LabelFilter - Document label filter. If set, only documents having at least one of the specified labels will be returned by knowledge document query operations.
+    LabelFilter Supportcenterlabelfilter `json:"labelFilter"`
+
+
     // StyleSetting - Style attributes for knowledge portal (previously support center)
     StyleSetting Supportcenterstylesetting `json:"styleSetting"`
 
@@ -79,6 +86,7 @@ func (o *Supportcentersettings) String() string {
     
      o.Screens = []Supportcenterscreen{{}} 
      o.EnabledCategories = []Supportcentercategory{{}} 
+    
     
     
 
@@ -110,6 +118,8 @@ func (u *Supportcentersettings) MarshalJSON() ([]byte, error) {
         
         EnabledCategories []Supportcentercategory `json:"enabledCategories"`
         
+        LabelFilter Supportcenterlabelfilter `json:"labelFilter"`
+        
         StyleSetting Supportcenterstylesetting `json:"styleSetting"`
         
         Feedback Supportcenterfeedbacksettings `json:"feedback"`
@@ -137,6 +147,9 @@ func (u *Supportcentersettings) MarshalJSON() ([]byte, error) {
 
         
         EnabledCategories: []Supportcentercategory{{}},
+        
+
+
         
 
 

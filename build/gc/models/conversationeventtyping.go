@@ -14,7 +14,7 @@ type ConversationeventtypingDud struct {
     
 
 
-    Duration int `json:"duration"`
+    
 
 }
 
@@ -24,12 +24,14 @@ type Conversationeventtyping struct {
     VarType string `json:"type"`
 
 
-    
+    // Duration - The duration of the Typing event in milliseconds.
+    Duration int `json:"duration"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationeventtyping) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -49,6 +51,8 @@ func (u *Conversationeventtyping) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         VarType string `json:"type"`
+        
+        Duration int `json:"duration"`
         *Alias
     }{
 

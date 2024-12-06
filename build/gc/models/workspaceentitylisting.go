@@ -60,6 +60,10 @@ type Workspaceentitylisting struct {
     Total int `json:"total"`
 
 
+    // NextUri
+    NextUri string `json:"nextUri"`
+
+
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
@@ -74,10 +78,6 @@ type Workspaceentitylisting struct {
 
     // SelfUri
     SelfUri string `json:"selfUri"`
-
-
-    // NextUri
-    NextUri string `json:"nextUri"`
 
 
     // PageCount
@@ -122,6 +122,8 @@ func (u *Workspaceentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
+        NextUri string `json:"nextUri"`
+        
         PreviousUri string `json:"previousUri"`
         
         LastUri string `json:"lastUri"`
@@ -129,8 +131,6 @@ func (u *Workspaceentitylisting) MarshalJSON() ([]byte, error) {
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
-        
-        NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

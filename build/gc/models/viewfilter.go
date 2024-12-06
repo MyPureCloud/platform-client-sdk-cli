@@ -643,6 +643,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1490,6 +1493,10 @@ type Viewfilter struct {
     // SlideshowIds - List of Dashboard slideshowIds to be filtered
     SlideshowIds []string `json:"slideshowIds"`
 
+
+    // Conferenced - Filter to indicate if the conversation has conference
+    Conferenced bool `json:"conferenced"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1705,6 +1712,7 @@ func (o *Viewfilter) String() string {
      o.SocialClassifications = []string{""} 
      o.FilterUsersByManagerIds = []string{""} 
      o.SlideshowIds = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2143,6 +2151,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         FilterUsersByManagerIds []string `json:"filterUsersByManagerIds"`
         
         SlideshowIds []string `json:"slideshowIds"`
+        
+        Conferenced bool `json:"conferenced"`
         *Alias
     }{
 
@@ -3068,6 +3078,9 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         SlideshowIds: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

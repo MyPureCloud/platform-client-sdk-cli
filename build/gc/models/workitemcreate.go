@@ -137,20 +137,12 @@ type Workitemcreate struct {
     AssigneeId string `json:"assigneeId"`
 
 
-    // WrapupCode - The ID of the wrapup. Must be a valid UUID.
-    WrapupCode string `json:"wrapupCode"`
-
-
     // ScoredAgents - A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.
     ScoredAgents []Workitemscoredagentrequest `json:"scoredAgents"`
 
 
     // LanguageId - The ID of language of the Workitem. Must be a valid UUID.
     LanguageId string `json:"languageId"`
-
-
-    // UtilizationLabelId - The ID of utilization label of the Workitem. Must be a valid UUID.
-    UtilizationLabelId string `json:"utilizationLabelId"`
 
 
     // ExternalContactId - The ID of the external contact of the Workitem. Must be a valid UUID.
@@ -167,6 +159,14 @@ type Workitemcreate struct {
 
     // PreferredAgentIds - The preferred agent IDs of the Workitem. Must be valid UUIDs.
     PreferredAgentIds []string `json:"preferredAgentIds"`
+
+
+    // WrapupCode - The ID of the wrapup. Must be a valid UUID.
+    WrapupCode string `json:"wrapupCode"`
+
+
+    // UtilizationLabelId - The ID of utilization label of the Workitem. Must be a valid UUID.
+    UtilizationLabelId string `json:"utilizationLabelId"`
 
 }
 
@@ -186,14 +186,14 @@ func (o *Workitemcreate) String() string {
      o.CustomFields = map[string]interface{}{"": Interface{}} 
     
     
-    
      o.ScoredAgents = []Workitemscoredagentrequest{{}} 
-    
     
     
     
      o.SkillIds = []string{""} 
      o.PreferredAgentIds = []string{""} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -239,13 +239,9 @@ func (u *Workitemcreate) MarshalJSON() ([]byte, error) {
         
         AssigneeId string `json:"assigneeId"`
         
-        WrapupCode string `json:"wrapupCode"`
-        
         ScoredAgents []Workitemscoredagentrequest `json:"scoredAgents"`
         
         LanguageId string `json:"languageId"`
-        
-        UtilizationLabelId string `json:"utilizationLabelId"`
         
         ExternalContactId string `json:"externalContactId"`
         
@@ -254,6 +250,10 @@ func (u *Workitemcreate) MarshalJSON() ([]byte, error) {
         SkillIds []string `json:"skillIds"`
         
         PreferredAgentIds []string `json:"preferredAgentIds"`
+        
+        WrapupCode string `json:"wrapupCode"`
+        
+        UtilizationLabelId string `json:"utilizationLabelId"`
         *Alias
     }{
 
@@ -302,13 +302,7 @@ func (u *Workitemcreate) MarshalJSON() ([]byte, error) {
 
 
         
-
-
-        
         ScoredAgents: []Workitemscoredagentrequest{{}},
-        
-
-
         
 
 
@@ -328,6 +322,12 @@ func (u *Workitemcreate) MarshalJSON() ([]byte, error) {
 
         
         PreferredAgentIds: []string{""},
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

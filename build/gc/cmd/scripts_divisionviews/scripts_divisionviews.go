@@ -34,7 +34,7 @@ func Cmdscripts_divisionviews() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name filter")
 	utils.AddFlag(listCmd.Flags(), "string", "feature", "", "Feature filter")
 	utils.AddFlag(listCmd.Flags(), "string", "flowId", "", "Secure flow id filter")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "SortBy Valid values: modifiedDate, createdDate")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "SortBy Valid values: modifiedDate, createdDate, name")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "SortOrder Valid values: ascending, descending")
 	utils.AddFlag(listCmd.Flags(), "string", "scriptDataVersion", "", "Advanced usage - controls the data version of the script")
 	utils.AddFlag(listCmd.Flags(), "string", "divisionIds", "", "Filters scripts to requested divisionIds")

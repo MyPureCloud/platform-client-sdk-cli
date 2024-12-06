@@ -67,6 +67,10 @@ type Didpoolentitylisting struct {
     TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
+    // NextUri
+    NextUri string `json:"nextUri"`
+
+
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
@@ -81,10 +85,6 @@ type Didpoolentitylisting struct {
 
     // SelfUri
     SelfUri string `json:"selfUri"`
-
-
-    // NextUri
-    NextUri string `json:"nextUri"`
 
 
     // PageCount
@@ -132,6 +132,8 @@ func (u *Didpoolentitylisting) MarshalJSON() ([]byte, error) {
         
         TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
+        NextUri string `json:"nextUri"`
+        
         PreviousUri string `json:"previousUri"`
         
         LastUri string `json:"lastUri"`
@@ -139,8 +141,6 @@ func (u *Didpoolentitylisting) MarshalJSON() ([]byte, error) {
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
-        
-        NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

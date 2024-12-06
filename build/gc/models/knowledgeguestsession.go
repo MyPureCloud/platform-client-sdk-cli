@@ -25,6 +25,9 @@ type KnowledgeguestsessionDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgeguestsession
@@ -47,6 +50,10 @@ type Knowledgeguestsession struct {
     // Contexts - The session contexts.
     Contexts []Knowledgeguestsessioncontext `json:"contexts"`
 
+
+    // JourneySessionId - Journey session ID. Used to get the segments of the customer to filter search results.
+    JourneySessionId string `json:"journeySessionId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -55,6 +62,7 @@ func (o *Knowledgeguestsession) String() string {
     
     
      o.Contexts = []Knowledgeguestsessioncontext{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -79,6 +87,8 @@ func (u *Knowledgeguestsession) MarshalJSON() ([]byte, error) {
         PageUrl string `json:"pageUrl"`
         
         Contexts []Knowledgeguestsessioncontext `json:"contexts"`
+        
+        JourneySessionId string `json:"journeySessionId"`
         *Alias
     }{
 
@@ -96,6 +106,9 @@ func (u *Knowledgeguestsession) MarshalJSON() ([]byte, error) {
 
         
         Contexts: []Knowledgeguestsessioncontext{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

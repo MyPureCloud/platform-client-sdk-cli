@@ -39,7 +39,7 @@ type ShifttradenotificationDud struct {
 
 // Shifttradenotification
 type Shifttradenotification struct { 
-    // WeekDate - The start date of the schedule with which this trade is associated
+    // WeekDate - The start week date of the initiating shift of the shift trade in yyyy-MM-dd format
     WeekDate string `json:"weekDate"`
 
 

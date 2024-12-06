@@ -64,6 +64,9 @@ func Cmdusers() *cobra.Command {
         "$ref" : "#/components/schemas/Empty"
       }
     }
+  },
+  "x-inin-error-codes" : {
+    "user.not.found.on.delete" : "User not found on delete."
   }
 }`)
 	usersCmd.AddCommand(deleteCmd)

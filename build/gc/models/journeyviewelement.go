@@ -25,6 +25,9 @@ type JourneyviewelementDud struct {
 
     
 
+
+    
+
 }
 
 // Journeyviewelement - An element within a journey view
@@ -41,6 +44,10 @@ type Journeyviewelement struct {
     Attributes Journeyviewelementattributes `json:"attributes"`
 
 
+    // DisplayAttributes - Attributes that defines the visualization of the element in the journey view
+    DisplayAttributes Journeyviewelementdisplayattributes `json:"displayAttributes"`
+
+
     // Filter - Any filters applied to this element
     Filter Journeyviewelementfilter `json:"filter"`
 
@@ -52,6 +59,7 @@ type Journeyviewelement struct {
 
 // String returns a JSON representation of the model
 func (o *Journeyviewelement) String() string {
+    
     
     
     
@@ -80,11 +88,16 @@ func (u *Journeyviewelement) MarshalJSON() ([]byte, error) {
         
         Attributes Journeyviewelementattributes `json:"attributes"`
         
+        DisplayAttributes Journeyviewelementdisplayattributes `json:"displayAttributes"`
+        
         Filter Journeyviewelementfilter `json:"filter"`
         
         FollowedBy []Journeyviewlink `json:"followedBy"`
         *Alias
     }{
+
+        
+
 
         
 

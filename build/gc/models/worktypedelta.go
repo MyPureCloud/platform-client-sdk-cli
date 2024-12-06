@@ -67,6 +67,9 @@ type WorktypedeltaDud struct {
 
     
 
+
+    
+
 }
 
 // Worktypedelta
@@ -146,10 +149,15 @@ type Worktypedelta struct {
     // ModifiedBy
     ModifiedBy Workitemsattributechangestring `json:"modifiedBy"`
 
+
+    // DefaultScriptId
+    DefaultScriptId Workitemsattributechangestring `json:"defaultScriptId"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Worktypedelta) String() string {
+    
     
     
     
@@ -223,8 +231,13 @@ func (u *Worktypedelta) MarshalJSON() ([]byte, error) {
         DateModified Workitemsattributechangeinstant `json:"dateModified"`
         
         ModifiedBy Workitemsattributechangestring `json:"modifiedBy"`
+        
+        DefaultScriptId Workitemsattributechangestring `json:"defaultScriptId"`
         *Alias
     }{
+
+        
+
 
         
 

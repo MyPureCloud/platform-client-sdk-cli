@@ -42,7 +42,7 @@ func Cmdrouting_email_domains_routes() *cobra.Command {
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "successful operation",
+  "description" : "Route create completed.",
   "content" : {
     "application/json" : {
       "schema" : {

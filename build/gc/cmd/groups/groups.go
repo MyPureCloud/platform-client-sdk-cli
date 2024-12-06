@@ -67,8 +67,7 @@ func Cmdgroups() *cobra.Command {
   },
   "x-inin-error-codes" : {
     "bad.request" : "The request could not be understood by the server due to malformed syntax.",
-    "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable",
-    "group.name.in.use" : "This group name is currently in use."
+    "response.entity.too.large" : "The response is over the size limit. Reduce pageSize or expand list to reduce response size if applicable"
   }
 }`)
 	groupsCmd.AddCommand(deleteCmd)

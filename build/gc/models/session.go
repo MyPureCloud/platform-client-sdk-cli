@@ -129,6 +129,9 @@ type SessionDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -305,6 +308,10 @@ type Session struct {
     Authenticated bool `json:"authenticated"`
 
 
+    // DivisionIds - List of division IDs associated with the session.
+    DivisionIds []string `json:"divisionIds"`
+
+
     // LastScreen - The app screen name where the customer's last app interaction occurred.
     LastScreen string `json:"lastScreen"`
 
@@ -375,6 +382,7 @@ func (o *Session) String() string {
     
     
     
+     o.DivisionIds = []string{""} 
     
     
     
@@ -472,6 +480,8 @@ func (u *Session) MarshalJSON() ([]byte, error) {
         LastAcdOutcome string `json:"lastAcdOutcome"`
         
         Authenticated bool `json:"authenticated"`
+        
+        DivisionIds []string `json:"divisionIds"`
         
         LastScreen string `json:"lastScreen"`
         
@@ -608,6 +618,11 @@ func (u *Session) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        DivisionIds: []string{""},
         
 
 

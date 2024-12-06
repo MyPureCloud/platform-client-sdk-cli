@@ -33,6 +33,9 @@ type EvaluationformDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -66,6 +69,10 @@ type Evaluationform struct {
     PublishedVersions Domainentitylistingevaluationform `json:"publishedVersions"`
 
 
+    // EvaluationSettings - Settings for evaluations associated with this form
+    EvaluationSettings Evaluationsettings `json:"evaluationSettings"`
+
+
     
 
 }
@@ -77,6 +84,7 @@ func (o *Evaluationform) String() string {
     
     
      o.QuestionGroups = []Evaluationquestiongroup{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -106,6 +114,8 @@ func (u *Evaluationform) MarshalJSON() ([]byte, error) {
         QuestionGroups []Evaluationquestiongroup `json:"questionGroups"`
         
         PublishedVersions Domainentitylistingevaluationform `json:"publishedVersions"`
+        
+        EvaluationSettings Evaluationsettings `json:"evaluationSettings"`
         *Alias
     }{
 
@@ -126,6 +136,9 @@ func (u *Evaluationform) MarshalJSON() ([]byte, error) {
 
         
         QuestionGroups: []Evaluationquestiongroup{{}},
+        
+
+
         
 
 

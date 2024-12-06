@@ -111,6 +111,9 @@ type UsermeDud struct {
     Languages []Userroutinglanguage `json:"languages"`
 
 
+    AutoAnswerSettings Autoanswersettings `json:"autoAnswerSettings"`
+
+
     
 
 
@@ -244,6 +247,9 @@ type Userme struct {
 
     // PreferredName - Preferred full name of the agent
     PreferredName string `json:"preferredName"`
+
+
+    
 
 
     
@@ -477,6 +483,9 @@ func (u *Userme) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+
         
 
 

@@ -36,6 +36,9 @@ type EvaluationformresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -69,6 +72,10 @@ type Evaluationformresponse struct {
     WeightMode string `json:"weightMode"`
 
 
+    // EvaluationSettings - Settings for evaluations associated with this form
+    EvaluationSettings Evaluationsettings `json:"evaluationSettings"`
+
+
     // PublishedVersions - A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the 'expand=publishHistory' query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable).
     PublishedVersions Domainentitylistingevaluationform `json:"publishedVersions"`
 
@@ -84,6 +91,7 @@ func (o *Evaluationformresponse) String() string {
     
     
      o.QuestionGroups = []Evaluationquestiongroup{{}} 
+    
     
     
 
@@ -115,6 +123,8 @@ func (u *Evaluationformresponse) MarshalJSON() ([]byte, error) {
         
         WeightMode string `json:"weightMode"`
         
+        EvaluationSettings Evaluationsettings `json:"evaluationSettings"`
+        
         PublishedVersions Domainentitylistingevaluationform `json:"publishedVersions"`
         *Alias
     }{
@@ -136,6 +146,9 @@ func (u *Evaluationformresponse) MarshalJSON() ([]byte, error) {
 
         
         QuestionGroups: []Evaluationquestiongroup{{}},
+        
+
+
         
 
 

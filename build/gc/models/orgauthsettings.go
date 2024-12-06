@@ -25,6 +25,9 @@ type OrgauthsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Orgauthsettings
@@ -48,6 +51,10 @@ type Orgauthsettings struct {
     // PasswordRequirements - The password requirements for the organization.
     PasswordRequirements Passwordrequirements `json:"passwordRequirements"`
 
+
+    // InactivityTimeoutExclusions - The list of exempt apis from inactivity timeout.
+    InactivityTimeoutExclusions []string `json:"inactivityTimeoutExclusions"`
+
 }
 
 // String returns a JSON representation of the model
@@ -57,6 +64,7 @@ func (o *Orgauthsettings) String() string {
      o.DomainAllowlist = []string{""} 
      o.IpAddressAllowlist = []string{""} 
     
+     o.InactivityTimeoutExclusions = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -83,6 +91,8 @@ func (u *Orgauthsettings) MarshalJSON() ([]byte, error) {
         IpAddressAllowlist []string `json:"ipAddressAllowlist"`
         
         PasswordRequirements Passwordrequirements `json:"passwordRequirements"`
+        
+        InactivityTimeoutExclusions []string `json:"inactivityTimeoutExclusions"`
         *Alias
     }{
 
@@ -102,6 +112,11 @@ func (u *Orgauthsettings) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        InactivityTimeoutExclusions: []string{""},
         
 
         Alias: (*Alias)(u),

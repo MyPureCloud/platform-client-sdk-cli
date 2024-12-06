@@ -1,15 +1,22 @@
-## gc usage events
+## gc socialmedia topics dataingestionrules facebook create
 
-/api/v2/usage/events
+Create an Facebook data ingestion rule.
 
 ### Synopsis
 
-/api/v2/usage/events
+Create an Facebook data ingestion rule.
+
+```
+gc socialmedia topics dataingestionrules facebook create [topicId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for events
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +36,6 @@
 
 ### SEE ALSO
 
-* [gc usage](gc_usage.html)	 - /api/v2/usage
-* [gc usage events aggregates](gc_usage_events_aggregates.html)	 - /api/v2/usage/events/aggregates
-* [gc usage events definitions](gc_usage_events_definitions.html)	 - /api/v2/usage/events/definitions
-* [gc usage events query](gc_usage_events_query.html)	 - /api/v2/usage/events/query
+* [gc socialmedia topics dataingestionrules facebook](gc_socialmedia_topics_dataingestionrules_facebook.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook
 
 

@@ -1,15 +1,15 @@
-## gc usage events
+## gc usage events query
 
-/api/v2/usage/events
+/api/v2/usage/events/query
 
 ### Synopsis
 
-/api/v2/usage/events
+/api/v2/usage/events/query
 
 ### Options
 
 ```
-  -h, --help   help for events
+  -h, --help   help for query
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +29,7 @@
 
 ### SEE ALSO
 
-* [gc usage](gc_usage.html)	 - /api/v2/usage
-* [gc usage events aggregates](gc_usage_events_aggregates.html)	 - /api/v2/usage/events/aggregates
-* [gc usage events definitions](gc_usage_events_definitions.html)	 - /api/v2/usage/events/definitions
-* [gc usage events query](gc_usage_events_query.html)	 - /api/v2/usage/events/query
+* [gc usage events](gc_usage_events.html)	 - /api/v2/usage/events
+* [gc usage events query create](gc_usage_events_query_create.html)	 - Query operational events in a timeframe.
 
 

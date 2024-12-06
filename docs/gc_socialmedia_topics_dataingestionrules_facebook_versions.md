@@ -1,15 +1,15 @@
-## gc usage events
+## gc socialmedia topics dataingestionrules facebook versions
 
-/api/v2/usage/events
+/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions
 
 ### Synopsis
 
-/api/v2/usage/events
+/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions
 
 ### Options
 
 ```
-  -h, --help   help for events
+  -h, --help   help for versions
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +29,8 @@
 
 ### SEE ALSO
 
-* [gc usage](gc_usage.html)	 - /api/v2/usage
-* [gc usage events aggregates](gc_usage_events_aggregates.html)	 - /api/v2/usage/events/aggregates
-* [gc usage events definitions](gc_usage_events_definitions.html)	 - /api/v2/usage/events/definitions
-* [gc usage events query](gc_usage_events_query.html)	 - /api/v2/usage/events/query
+* [gc socialmedia topics dataingestionrules facebook](gc_socialmedia_topics_dataingestionrules_facebook.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook
+* [gc socialmedia topics dataingestionrules facebook versions get](gc_socialmedia_topics_dataingestionrules_facebook_versions_get.html)	 - Get a single Facebook data ingestion rule version.
+* [gc socialmedia topics dataingestionrules facebook versions list](gc_socialmedia_topics_dataingestionrules_facebook_versions_list.html)	 - Get the Facebook data ingestion rule versions.
 
 

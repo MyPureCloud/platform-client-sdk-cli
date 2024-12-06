@@ -13,7 +13,8 @@ gc knowledge integrations options get [integrationId] [flags]
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help                       help for get
+      --knowledgeBaseIds strings   Narrowing down filtering option results by knowledge base.
 ```
 
 ### Options inherited from parent commands

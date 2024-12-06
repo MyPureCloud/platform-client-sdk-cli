@@ -13,7 +13,8 @@ gc routing queues mediatypes estimatedwaittime get [queueId] [mediaType] [flags]
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help             help for get
+      --labelId string   Unique id that represents the interaction label used with media type for EWT calculation
 ```
 
 ### Options inherited from parent commands

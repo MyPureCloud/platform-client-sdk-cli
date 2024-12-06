@@ -7,7 +7,7 @@ Update a phone number provisioned for SMS.
 Update a phone number provisioned for SMS.
 
 ```
-gc routing sms phonenumbers update [addressId] [flags]
+gc routing sms phonenumbers update [phoneNumberId] [flags]
 ```
 
 ### Options

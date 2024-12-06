@@ -24,7 +24,7 @@ gc scripts divisionviews list [flags]
       --pageNumber string          Page number (default "1")
       --pageSize string            Page size (default "25")
       --scriptDataVersion string   Advanced usage - controls the data version of the script
-      --sortBy string              SortBy Valid values: modifiedDate, createdDate
+      --sortBy string              SortBy Valid values: modifiedDate, createdDate, name
       --sortOrder string           SortOrder Valid values: ascending, descending
   -s, --stream                     Paginate and stream data as it is being processed leaving page information intact
 ```

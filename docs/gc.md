@@ -96,6 +96,7 @@ gc is a CLI for interacting with Genesys Cloud
 * [gc scripts](gc_scripts.html)	 - /api/v2/scripts
 * [gc search](gc_search.html)	 - /api/v2/search
 * [gc settings](gc_settings.html)	 - /api/v2/settings
+* [gc socialmedia](gc_socialmedia.html)	 - /api/v2/socialmedia
 * [gc speechandtextanalytics](gc_speechandtextanalytics.html)	 - /api/v2/speechandtextanalytics
 * [gc stations](gc_stations.html)	 - /api/v2/stations
 * [gc systempresences](gc_systempresences.html)	 - /api/v2/systempresences

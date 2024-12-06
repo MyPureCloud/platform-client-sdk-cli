@@ -1,15 +1,20 @@
-## gc usage events
+## gc socialmedia topics dataingestionrules twitter get
 
-/api/v2/usage/events
+Get a single X (formally Twitter) data ingestion rule.
 
 ### Synopsis
 
-/api/v2/usage/events
+Get a single X (formally Twitter) data ingestion rule.
+
+```
+gc socialmedia topics dataingestionrules twitter get [topicId] [twitterIngestionRuleId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for events
+  -h, --help                    help for get
+      --includeDeleted string   Determines whether to include soft-deleted items in the result. Valid values: true, false
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +34,6 @@
 
 ### SEE ALSO
 
-* [gc usage](gc_usage.html)	 - /api/v2/usage
-* [gc usage events aggregates](gc_usage_events_aggregates.html)	 - /api/v2/usage/events/aggregates
-* [gc usage events definitions](gc_usage_events_definitions.html)	 - /api/v2/usage/events/definitions
-* [gc usage events query](gc_usage_events_query.html)	 - /api/v2/usage/events/query
+* [gc socialmedia topics dataingestionrules twitter](gc_socialmedia_topics_dataingestionrules_twitter.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter
 
 

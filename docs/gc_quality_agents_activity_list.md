@@ -31,6 +31,7 @@ gc quality agents activity list [flags]
       --sortBy string            variable name requested to sort by
       --startTime string         Start time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+      --userState Legacy         Legacy fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  `Any` fetches users of `active`, `inactive` and `deleted` states. Valid values: Any, Legacy
 ```
 
 ### Options inherited from parent commands

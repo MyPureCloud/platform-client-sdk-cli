@@ -7,7 +7,7 @@ Delete a phone number provisioned for SMS.
 Delete a phone number provisioned for SMS.
 
 ```
-gc routing sms phonenumbers delete [addressId] [flags]
+gc routing sms phonenumbers delete [phoneNumberId] [flags]
 ```
 
 ### Options

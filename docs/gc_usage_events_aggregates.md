@@ -1,15 +1,15 @@
-## gc usage events
+## gc usage events aggregates
 
-/api/v2/usage/events
+/api/v2/usage/events/aggregates
 
 ### Synopsis
 
-/api/v2/usage/events
+/api/v2/usage/events/aggregates
 
 ### Options
 
 ```
-  -h, --help   help for events
+  -h, --help   help for aggregates
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +29,7 @@
 
 ### SEE ALSO
 
-* [gc usage](gc_usage.html)	 - /api/v2/usage
-* [gc usage events aggregates](gc_usage_events_aggregates.html)	 - /api/v2/usage/events/aggregates
-* [gc usage events definitions](gc_usage_events_definitions.html)	 - /api/v2/usage/events/definitions
-* [gc usage events query](gc_usage_events_query.html)	 - /api/v2/usage/events/query
+* [gc usage events](gc_usage_events.html)	 - /api/v2/usage/events
+* [gc usage events aggregates query](gc_usage_events_aggregates_query.html)	 - /api/v2/usage/events/aggregates/query
 
 

@@ -1,15 +1,15 @@
-## gc usage events
+## gc socialmedia topics
 
-/api/v2/usage/events
+/api/v2/socialmedia/topics
 
 ### Synopsis
 
-/api/v2/usage/events
+/api/v2/socialmedia/topics
 
 ### Options
 
 ```
-  -h, --help   help for events
+  -h, --help   help for topics
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +29,12 @@
 
 ### SEE ALSO
 
-* [gc usage](gc_usage.html)	 - /api/v2/usage
-* [gc usage events aggregates](gc_usage_events_aggregates.html)	 - /api/v2/usage/events/aggregates
-* [gc usage events definitions](gc_usage_events_definitions.html)	 - /api/v2/usage/events/definitions
-* [gc usage events query](gc_usage_events_query.html)	 - /api/v2/usage/events/query
+* [gc socialmedia](gc_socialmedia.html)	 - /api/v2/socialmedia
+* [gc socialmedia topics create](gc_socialmedia_topics_create.html)	 - Create a social topic.
+* [gc socialmedia topics dataingestionrules](gc_socialmedia_topics_dataingestionrules.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules
+* [gc socialmedia topics delete](gc_socialmedia_topics_delete.html)	 - Delete a social topic.
+* [gc socialmedia topics get](gc_socialmedia_topics_get.html)	 - Get a single social topic.
+* [gc socialmedia topics list](gc_socialmedia_topics_list.html)	 - Retrieve all social topics.
+* [gc socialmedia topics update](gc_socialmedia_topics_update.html)	 - Update a social topic.
 
 

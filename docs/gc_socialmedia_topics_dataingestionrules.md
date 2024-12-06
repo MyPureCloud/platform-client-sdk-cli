@@ -1,15 +1,15 @@
-## gc usage events
+## gc socialmedia topics dataingestionrules
 
-/api/v2/usage/events
+/api/v2/socialmedia/topics/{topicId}/dataingestionrules
 
 ### Synopsis
 
-/api/v2/usage/events
+/api/v2/socialmedia/topics/{topicId}/dataingestionrules
 
 ### Options
 
 ```
-  -h, --help   help for events
+  -h, --help   help for dataingestionrules
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +29,9 @@
 
 ### SEE ALSO
 
-* [gc usage](gc_usage.html)	 - /api/v2/usage
-* [gc usage events aggregates](gc_usage_events_aggregates.html)	 - /api/v2/usage/events/aggregates
-* [gc usage events definitions](gc_usage_events_definitions.html)	 - /api/v2/usage/events/definitions
-* [gc usage events query](gc_usage_events_query.html)	 - /api/v2/usage/events/query
+* [gc socialmedia topics](gc_socialmedia_topics.html)	 - /api/v2/socialmedia/topics
+* [gc socialmedia topics dataingestionrules facebook](gc_socialmedia_topics_dataingestionrules_facebook.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook
+* [gc socialmedia topics dataingestionrules open](gc_socialmedia_topics_dataingestionrules_open.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open
+* [gc socialmedia topics dataingestionrules twitter](gc_socialmedia_topics_dataingestionrules_twitter.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter
 
 

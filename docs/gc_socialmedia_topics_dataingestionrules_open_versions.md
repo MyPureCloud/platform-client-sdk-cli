@@ -1,15 +1,15 @@
-## gc usage events
+## gc socialmedia topics dataingestionrules open versions
 
-/api/v2/usage/events
+/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions
 
 ### Synopsis
 
-/api/v2/usage/events
+/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions
 
 ### Options
 
 ```
-  -h, --help   help for events
+  -h, --help   help for versions
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +29,8 @@
 
 ### SEE ALSO
 
-* [gc usage](gc_usage.html)	 - /api/v2/usage
-* [gc usage events aggregates](gc_usage_events_aggregates.html)	 - /api/v2/usage/events/aggregates
-* [gc usage events definitions](gc_usage_events_definitions.html)	 - /api/v2/usage/events/definitions
-* [gc usage events query](gc_usage_events_query.html)	 - /api/v2/usage/events/query
+* [gc socialmedia topics dataingestionrules open](gc_socialmedia_topics_dataingestionrules_open.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open
+* [gc socialmedia topics dataingestionrules open versions getVersion](gc_socialmedia_topics_dataingestionrules_open_versions_getVersion.html)	 - Get a single Open data ingestion rule version.
+* [gc socialmedia topics dataingestionrules open versions list](gc_socialmedia_topics_dataingestionrules_open_versions_list.html)	 - Get the Open data ingestion rule versions.
 
 

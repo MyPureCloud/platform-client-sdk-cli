@@ -7,7 +7,7 @@ Get a phone number provisioned for SMS.
 Get a phone number provisioned for SMS.
 
 ```
-gc routing sms phonenumbers get [addressId] [flags]
+gc routing sms phonenumbers get [phoneNumberId] [flags]
 ```
 
 ### Options

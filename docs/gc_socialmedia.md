@@ -1,15 +1,15 @@
-## gc usage events
+## gc socialmedia
 
-/api/v2/usage/events
+/api/v2/socialmedia
 
 ### Synopsis
 
-/api/v2/usage/events
+/api/v2/socialmedia
 
 ### Options
 
 ```
-  -h, --help   help for events
+  -h, --help   help for socialmedia
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +29,7 @@
 
 ### SEE ALSO
 
-* [gc usage](gc_usage.html)	 - /api/v2/usage
-* [gc usage events aggregates](gc_usage_events_aggregates.html)	 - /api/v2/usage/events/aggregates
-* [gc usage events definitions](gc_usage_events_definitions.html)	 - /api/v2/usage/events/definitions
-* [gc usage events query](gc_usage_events_query.html)	 - /api/v2/usage/events/query
+* [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
+* [gc socialmedia topics](gc_socialmedia_topics.html)	 - /api/v2/socialmedia/topics
 
 

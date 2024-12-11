@@ -1,20 +1,15 @@
-## gc taskmanagement worktypes get
+## gc dataprivacy
 
-Get a worktype
+/api/v2/dataprivacy
 
 ### Synopsis
 
-Get a worktype
-
-```
-gc taskmanagement worktypes get [worktypeId] [flags]
-```
+/api/v2/dataprivacy
 
 ### Options
 
 ```
-      --expands strings   Which fields, if any, to expand. Valid values: defaultQueue, defaultSkills, defaultLanguage, schema, flow, defaultScript
-  -h, --help              help for get
+  -h, --help   help for dataprivacy
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +29,7 @@ gc taskmanagement worktypes get [worktypeId] [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement worktypes](gc_taskmanagement_worktypes.html)	 - /api/v2/taskmanagement/worktypes
+* [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
+* [gc dataprivacy maskingrules](gc_dataprivacy_maskingrules.html)	 - /api/v2/dataprivacy/maskingrules
 
 

@@ -1,20 +1,19 @@
-## gc taskmanagement worktypes get
+## gc dataprivacy maskingrules delete
 
-Get a worktype
+Delete a masking rule.
 
 ### Synopsis
 
-Get a worktype
+Delete a masking rule.
 
 ```
-gc taskmanagement worktypes get [worktypeId] [flags]
+gc dataprivacy maskingrules delete [ruleId] [flags]
 ```
 
 ### Options
 
 ```
-      --expands strings   Which fields, if any, to expand. Valid values: defaultQueue, defaultSkills, defaultLanguage, schema, flow, defaultScript
-  -h, --help              help for get
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +33,6 @@ gc taskmanagement worktypes get [worktypeId] [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement worktypes](gc_taskmanagement_worktypes.html)	 - /api/v2/taskmanagement/worktypes
+* [gc dataprivacy maskingrules](gc_dataprivacy_maskingrules.html)	 - /api/v2/dataprivacy/maskingrules
 
 

@@ -1,20 +1,22 @@
-## gc taskmanagement worktypes get
+## gc dataprivacy maskingrules validate create
 
-Get a worktype
+Validate masking before creating.
 
 ### Synopsis
 
-Get a worktype
+Validate masking before creating.
 
 ```
-gc taskmanagement worktypes get [worktypeId] [flags]
+gc dataprivacy maskingrules validate create [flags]
 ```
 
 ### Options
 
 ```
-      --expands strings   Which fields, if any, to expand. Valid values: defaultQueue, defaultSkills, defaultLanguage, schema, flow, defaultScript
-  -h, --help              help for get
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +36,6 @@ gc taskmanagement worktypes get [worktypeId] [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement worktypes](gc_taskmanagement_worktypes.html)	 - /api/v2/taskmanagement/worktypes
+* [gc dataprivacy maskingrules validate](gc_dataprivacy_maskingrules_validate.html)	 - /api/v2/dataprivacy/maskingrules/validate
 
 

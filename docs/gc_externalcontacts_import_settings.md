@@ -1,20 +1,15 @@
-## gc taskmanagement worktypes get
+## gc externalcontacts import settings
 
-Get a worktype
+/api/v2/externalcontacts/import/settings
 
 ### Synopsis
 
-Get a worktype
-
-```
-gc taskmanagement worktypes get [worktypeId] [flags]
-```
+/api/v2/externalcontacts/import/settings
 
 ### Options
 
 ```
-      --expands strings   Which fields, if any, to expand. Valid values: defaultQueue, defaultSkills, defaultLanguage, schema, flow, defaultScript
-  -h, --help              help for get
+  -h, --help   help for settings
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +29,11 @@ gc taskmanagement worktypes get [worktypeId] [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement worktypes](gc_taskmanagement_worktypes.html)	 - /api/v2/taskmanagement/worktypes
+* [gc externalcontacts import](gc_externalcontacts_import.html)	 - /api/v2/externalcontacts/import
+* [gc externalcontacts import settings create](gc_externalcontacts_import_settings_create.html)	 - Create a new settings
+* [gc externalcontacts import settings delete](gc_externalcontacts_import_settings_delete.html)	 - Delete Settings
+* [gc externalcontacts import settings get](gc_externalcontacts_import_settings_get.html)	 - Get setting based on id
+* [gc externalcontacts import settings list](gc_externalcontacts_import_settings_list.html)	 - List settings for organization
+* [gc externalcontacts import settings update](gc_externalcontacts_import_settings_update.html)	 - Update settings
 
 

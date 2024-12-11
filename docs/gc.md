@@ -41,6 +41,7 @@ gc is a CLI for interacting with Genesys Cloud
 * [gc contentmanagement](gc_contentmanagement.html)	 - /api/v2/contentmanagement
 * [gc conversations](gc_conversations.html)	 - /api/v2/conversations
 * [gc dataextensions](gc_dataextensions.html)	 - /api/v2/dataextensions
+* [gc dataprivacy](gc_dataprivacy.html)	 - /api/v2/dataprivacy
 * [gc date](gc_date.html)	 - /api/v2/date
 * [gc diagnostics](gc_diagnostics.html)	 - /api/v2/diagnostics
 * [gc documentation](gc_documentation.html)	 - /api/v2/documentation

@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc gamification scorecards profiles metrics](gc_gamification_scorecards_profiles_metrics.html)	 - /api/v2/gamification/scorecards/profiles/{profileId}/metrics
-* [gc gamification scorecards profiles metrics users values](gc_gamification_scorecards_profiles_metrics_users_values.html)	 - /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values
+* [gc gamification scorecards profiles metrics users values](gc_gamification_scorecards_profiles_metrics_users_values.html)	 - /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values
 
 

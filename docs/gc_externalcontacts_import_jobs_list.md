@@ -1,15 +1,26 @@
-## gc externalcontacts import
+## gc externalcontacts import jobs list
 
-/api/v2/externalcontacts/import
+List jobs for organization
 
 ### Synopsis
 
-/api/v2/externalcontacts/import
+List jobs for organization
+
+```
+gc externalcontacts import jobs list [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for import
+      --after string             The cursor that points to the end of the set of entities that has been returned.
+  -a, --autopaginate             Automatically paginate through the results stripping page information
+      --filtercondition string   Filter list command output based on a given condition or regular expression
+  -h, --help                     help for list
+      --jobStatus string         Search term to filter by jobStatus Valid values: Created, Running, Completed, Failed, Cancelled
+      --pageSize string          Number of entities to return. Maximum of 100.
+      --sortOrder string         Direction of sorting. Valid values: Ascending, Descending
+  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +40,6 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts](gc_externalcontacts.html)	 - /api/v2/externalcontacts
-* [gc externalcontacts import csv](gc_externalcontacts_import_csv.html)	 - /api/v2/externalcontacts/import/csv
 * [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
-* [gc externalcontacts import settings](gc_externalcontacts_import_settings.html)	 - /api/v2/externalcontacts/import/settings
 
 

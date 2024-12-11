@@ -1,20 +1,19 @@
-## gc taskmanagement worktypes get
+## gc externalcontacts import jobs get
 
-Get a worktype
+Get job based on id
 
 ### Synopsis
 
-Get a worktype
+Get job based on id
 
 ```
-gc taskmanagement worktypes get [worktypeId] [flags]
+gc externalcontacts import jobs get [jobId] [flags]
 ```
 
 ### Options
 
 ```
-      --expands strings   Which fields, if any, to expand. Valid values: defaultQueue, defaultSkills, defaultLanguage, schema, flow, defaultScript
-  -h, --help              help for get
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +33,6 @@ gc taskmanagement worktypes get [worktypeId] [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement worktypes](gc_taskmanagement_worktypes.html)	 - /api/v2/taskmanagement/worktypes
+* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
 
 

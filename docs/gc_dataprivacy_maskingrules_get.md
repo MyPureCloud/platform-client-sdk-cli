@@ -1,20 +1,19 @@
-## gc taskmanagement worktypes get
+## gc dataprivacy maskingrules get
 
-Get a worktype
+Fetch details about a masking rule.
 
 ### Synopsis
 
-Get a worktype
+Fetch details about a masking rule.
 
 ```
-gc taskmanagement worktypes get [worktypeId] [flags]
+gc dataprivacy maskingrules get [ruleId] [flags]
 ```
 
 ### Options
 
 ```
-      --expands strings   Which fields, if any, to expand. Valid values: defaultQueue, defaultSkills, defaultLanguage, schema, flow, defaultScript
-  -h, --help              help for get
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +33,6 @@ gc taskmanagement worktypes get [worktypeId] [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement worktypes](gc_taskmanagement_worktypes.html)	 - /api/v2/taskmanagement/worktypes
+* [gc dataprivacy maskingrules](gc_dataprivacy_maskingrules.html)	 - /api/v2/dataprivacy/maskingrules
 
 

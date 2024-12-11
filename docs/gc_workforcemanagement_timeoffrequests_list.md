@@ -13,8 +13,7 @@ gc workforcemanagement timeoffrequests list [flags]
 ### Options
 
 ```
-  -h, --help                      help for list
-      --recentlyReviewed string   Limit results to requests that have been reviewed within the preceding 30 days Valid values: true, false
+  -h, --help   help for list
 ```
 
 ### Options inherited from parent commands

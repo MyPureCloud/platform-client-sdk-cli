@@ -57,7 +57,7 @@ func Cmdrouting_email_domains_routes() *cobra.Command {
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
-  "description" : "Operation was successful.",
+  "description" : "Route deletion completed.",
   "content" : { }
 }`)
 	routing_email_domains_routesCmd.AddCommand(deleteCmd)
@@ -109,7 +109,7 @@ func Cmdrouting_email_domains_routes() *cobra.Command {
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  "description" : "successful operation",
+  "description" : "Route update completed.",
   "content" : {
     "application/json" : {
       "schema" : {

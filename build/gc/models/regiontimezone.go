@@ -20,6 +20,9 @@ type RegiontimezoneDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -37,12 +40,17 @@ type Regiontimezone struct {
     Offset int `json:"offset"`
 
 
+    // CanonicalId - Canonical identifier for this time zone, if applicable
+    CanonicalId string `json:"canonicalId"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Regiontimezone) String() string {
+    
     
     
 
@@ -65,8 +73,13 @@ func (u *Regiontimezone) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         Offset int `json:"offset"`
+        
+        CanonicalId string `json:"canonicalId"`
         *Alias
     }{
+
+        
+
 
         
 

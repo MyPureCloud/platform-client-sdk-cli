@@ -91,6 +91,9 @@ type WorkitemdeltaDud struct {
 
     
 
+
+    
+
 }
 
 // Workitemdelta
@@ -167,6 +170,10 @@ type Workitemdelta struct {
     WrapupId Workitemsattributechangestring `json:"wrapupId"`
 
 
+    // Wrapup
+    Wrapup Workitemsattributechangewrapupdelta `json:"wrapup"`
+
+
     // Ttl
     Ttl Workitemsattributechangeinteger `json:"ttl"`
 
@@ -206,6 +213,7 @@ type Workitemdelta struct {
 
 // String returns a JSON representation of the model
 func (o *Workitemdelta) String() string {
+    
     
     
     
@@ -286,6 +294,8 @@ func (u *Workitemdelta) MarshalJSON() ([]byte, error) {
         
         WrapupId Workitemsattributechangestring `json:"wrapupId"`
         
+        Wrapup Workitemsattributechangewrapupdelta `json:"wrapup"`
+        
         Ttl Workitemsattributechangeinteger `json:"ttl"`
         
         DateClosed Workitemsattributechangeinstant `json:"dateClosed"`
@@ -305,6 +315,9 @@ func (u *Workitemdelta) MarshalJSON() ([]byte, error) {
         ScriptId Workitemsattributechangestring `json:"scriptId"`
         *Alias
     }{
+
+        
+
 
         
 

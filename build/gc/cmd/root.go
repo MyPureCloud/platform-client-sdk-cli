@@ -26,12 +26,14 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/downloads"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fieldconfig"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/greetings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/groups"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/identityproviders"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/ipranges"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languages"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/locations"
@@ -43,12 +45,10 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/systempresences"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/teams"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/timezones"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
@@ -74,6 +74,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/emails"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/uploads"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dataextensions"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dataprivacy"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profile"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeperformance"
@@ -106,11 +107,11 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/voicemail"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/architect"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webmessaging"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/widgets"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/taskmanagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/coaching"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeengagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/widgets"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/taskmanagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/socialmedia"
 	"os"
 )
@@ -138,7 +139,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 117.0.0")
+		fmt.Println("Current version: 118.0.0")
 		checkForNewVersion()
 	},
 }
@@ -157,7 +158,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("117.0.0", latestVersion) {
+	if versionsAreEqual("118.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -253,12 +254,14 @@ func init() {
 	rootCmd.AddCommand(conversations.Cmdconversations())
 	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(downloads.Cmddownloads())
+	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(fieldconfig.Cmdfieldconfig())
 	rootCmd.AddCommand(flows.Cmdflows())
 	rootCmd.AddCommand(greetings.Cmdgreetings())
 	rootCmd.AddCommand(groups.Cmdgroups())
-	rootCmd.AddCommand(integrations.Cmdintegrations())
+	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(identityproviders.Cmdidentityproviders())
+	rootCmd.AddCommand(integrations.Cmdintegrations())
 	rootCmd.AddCommand(ipranges.Cmdipranges())
 	rootCmd.AddCommand(languages.Cmdlanguages())
 	rootCmd.AddCommand(locations.Cmdlocations())
@@ -270,12 +273,10 @@ func init() {
 	rootCmd.AddCommand(stations.Cmdstations())
 	rootCmd.AddCommand(systempresences.Cmdsystempresences())
 	rootCmd.AddCommand(teams.Cmdteams())
-	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(timezones.Cmdtimezones())
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
-	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(autopagination.Cmdautopagination())
 	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())
@@ -301,6 +302,7 @@ func init() {
 	rootCmd.AddCommand(emails.Cmdemails())
 	rootCmd.AddCommand(uploads.Cmduploads())
 	rootCmd.AddCommand(dataextensions.Cmddataextensions())
+	rootCmd.AddCommand(dataprivacy.Cmddataprivacy())
 	rootCmd.AddCommand(outbound.Cmdoutbound())
 	rootCmd.AddCommand(profile.Cmdprofile())
 	rootCmd.AddCommand(employeeperformance.Cmdemployeeperformance())
@@ -333,11 +335,11 @@ func init() {
 	rootCmd.AddCommand(voicemail.Cmdvoicemail())
 	rootCmd.AddCommand(architect.Cmdarchitect())
 	rootCmd.AddCommand(webmessaging.Cmdwebmessaging())
+	rootCmd.AddCommand(widgets.Cmdwidgets())
+	rootCmd.AddCommand(taskmanagement.Cmdtaskmanagement())
 	rootCmd.AddCommand(coaching.Cmdcoaching())
 	rootCmd.AddCommand(employeeengagement.Cmdemployeeengagement())
 	rootCmd.AddCommand(learning.Cmdlearning())
-	rootCmd.AddCommand(widgets.Cmdwidgets())
-	rootCmd.AddCommand(taskmanagement.Cmdtaskmanagement())
 	rootCmd.AddCommand(socialmedia.Cmdsocialmedia())
 
 	if config.IsExperimentalFeatureEnabled(getProfileName(os.Args), models.DummyCommand.String()) {

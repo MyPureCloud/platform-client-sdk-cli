@@ -16,17 +16,10 @@ type QuestiongroupsettingsDud struct {
 
     
 
-
-    
-
 }
 
 // Questiongroupsettings
 type Questiongroupsettings struct { 
-    // QuestionGroupIndex - This field represents the location of the Question Group in the form. Note: Indexes are zero-based
-    QuestionGroupIndex int `json:"questionGroupIndex"`
-
-
     // QuestionGroupContextId - The context id of the question group in the form.
     QuestionGroupContextId string `json:"questionGroupContextId"`
 
@@ -38,7 +31,6 @@ type Questiongroupsettings struct {
 
 // String returns a JSON representation of the model
 func (o *Questiongroupsettings) String() string {
-    
     
      o.QuestionSettings = []Questionsettings{{}} 
 
@@ -58,16 +50,11 @@ func (u *Questiongroupsettings) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        QuestionGroupIndex int `json:"questionGroupIndex"`
-        
         QuestionGroupContextId string `json:"questionGroupContextId"`
         
         QuestionSettings []Questionsettings `json:"questionSettings"`
         *Alias
     }{
-
-        
-
 
         
 

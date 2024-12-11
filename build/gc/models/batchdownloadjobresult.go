@@ -11,9 +11,6 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type BatchdownloadjobresultDud struct { 
-    Id string `json:"id"`
-
-
     
 
 
@@ -27,24 +24,11 @@ type BatchdownloadjobresultDud struct {
 
 
     
-
-
-    
-
-
-    SelfUri string `json:"selfUri"`
 
 }
 
 // Batchdownloadjobresult
 type Batchdownloadjobresult struct { 
-    
-
-
-    // Name
-    Name string `json:"name"`
-
-
     // ConversationId - Conversation id of the result
     ConversationId string `json:"conversationId"`
 
@@ -64,14 +48,10 @@ type Batchdownloadjobresult struct {
     // ErrorMsg - An error message, in case of failed processing will indicate the cause of the failure
     ErrorMsg string `json:"errorMsg"`
 
-
-    
-
 }
 
 // String returns a JSON representation of the model
 func (o *Batchdownloadjobresult) String() string {
-    
     
     
     
@@ -94,8 +74,6 @@ func (u *Batchdownloadjobresult) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Name string `json:"name"`
-        
         ConversationId string `json:"conversationId"`
         
         RecordingId string `json:"recordingId"`
@@ -107,15 +85,6 @@ func (u *Batchdownloadjobresult) MarshalJSON() ([]byte, error) {
         ErrorMsg string `json:"errorMsg"`
         *Alias
     }{
-
-        
-
-
-        
-
-
-        
-
 
         
 

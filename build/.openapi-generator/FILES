@@ -337,6 +337,8 @@ gc/cmd/conversations_videos_participants_communications_wrapup/conversations_vid
 gc/cmd/conversations_videos_recordingstate/conversations_videos_recordingstate.go
 gc/cmd/dataextensions_coretypes/dataextensions_coretypes.go
 gc/cmd/dataextensions_limits/dataextensions_limits.go
+gc/cmd/dataprivacy_maskingrules/dataprivacy_maskingrules.go
+gc/cmd/dataprivacy_maskingrules_validate/dataprivacy_maskingrules_validate.go
 gc/cmd/date/date.go
 gc/cmd/diagnostics_logcapture_browser_entries_download_jobs/diagnostics_logcapture_browser_entries_download_jobs.go
 gc/cmd/diagnostics_logcapture_browser_entries_query/diagnostics_logcapture_browser_entries_query.go
@@ -386,6 +388,8 @@ gc/cmd/externalcontacts_import_csv_settings/externalcontacts_import_csv_settings
 gc/cmd/externalcontacts_import_csv_uploads/externalcontacts_import_csv_uploads.go
 gc/cmd/externalcontacts_import_csv_uploads_details/externalcontacts_import_csv_uploads_details.go
 gc/cmd/externalcontacts_import_csv_uploads_preview/externalcontacts_import_csv_uploads_preview.go
+gc/cmd/externalcontacts_import_jobs/externalcontacts_import_jobs.go
+gc/cmd/externalcontacts_import_settings/externalcontacts_import_settings.go
 gc/cmd/externalcontacts_merge_contacts/externalcontacts_merge_contacts.go
 gc/cmd/externalcontacts_organizations/externalcontacts_organizations.go
 gc/cmd/externalcontacts_organizations_contacts/externalcontacts_organizations_contacts.go
@@ -2028,6 +2032,16 @@ gc/models/contactcolumnconditionsettings.go
 gc/models/contactcolumntimezone.go
 gc/models/contactcolumntodataactionfieldmapping.go
 gc/models/contactidentifier.go
+gc/models/contactidentifierlisting.go
+gc/models/contactimportfield.go
+gc/models/contactimportjobentitylisting.go
+gc/models/contactimportjobmetadata.go
+gc/models/contactimportjobrequest.go
+gc/models/contactimportjobresponse.go
+gc/models/contactimportjobstatusupdaterequest.go
+gc/models/contactimportjobstatusupdateresponse.go
+gc/models/contactimportsettings.go
+gc/models/contactimportsettingsentitylisting.go
 gc/models/contactlist.go
 gc/models/contactlistdivisionview.go
 gc/models/contactlistdivisionviewlisting.go
@@ -2111,6 +2125,8 @@ gc/models/conversationcontentbuttonresponse.go
 gc/models/conversationcontentcard.go
 gc/models/conversationcontentcardaction.go
 gc/models/conversationcontentcarousel.go
+gc/models/conversationcontentdatepicker.go
+gc/models/conversationcontentdatepickeravailabletime.go
 gc/models/conversationcontentlocation.go
 gc/models/conversationcontentnotificationtemplate.go
 gc/models/conversationcontentquickreply.go
@@ -3197,6 +3213,7 @@ gc/models/knowledgeimportjobrequest.go
 gc/models/knowledgeimportjobresponse.go
 gc/models/knowledgeimportjobsettings.go
 gc/models/knowledgeimportjobstatistics.go
+gc/models/knowledgeintegrationdefaultsettings.go
 gc/models/knowledgeintegrationfilter.go
 gc/models/knowledgeintegrationfiltervalue.go
 gc/models/knowledgeintegrationoptionsresponse.go
@@ -3398,6 +3415,10 @@ gc/models/manager.go
 gc/models/markcontactaddressuncontactableactionsettings.go
 gc/models/markcontactuncontactableactionsettings.go
 gc/models/markdown.go
+gc/models/maskingrule.go
+gc/models/maskingrulelisting.go
+gc/models/maskingrulevalidaterequest.go
+gc/models/maskingrulevalidateresponse.go
 gc/models/matchcriteria.go
 gc/models/matchcriteriatestresult.go
 gc/models/matchshifttraderequest.go
@@ -4938,6 +4959,7 @@ gc/models/workitemsattributechangelist.go
 gc/models/workitemsattributechangemap.go
 gc/models/workitemsattributechangestring.go
 gc/models/workitemsattributechangeworkitemstatuscategory.go
+gc/models/workitemsattributechangewrapupdelta.go
 gc/models/workitemschangeworkbindelta.go
 gc/models/workitemschangeworkitemdelta.go
 gc/models/workitemschangeworktypedelta.go
@@ -5014,6 +5036,7 @@ gc/models/wrapupcodemapping.go
 gc/models/wrapupcodepredictionconfig.go
 gc/models/wrapupcodereference.go
 gc/models/wrapupcoderequest.go
+gc/models/wrapupdelta.go
 gc/models/wrapupidreference.go
 gc/models/wrapupinput.go
 gc/models/writabledialercontact.go

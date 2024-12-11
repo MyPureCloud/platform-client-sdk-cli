@@ -31,6 +31,9 @@ type CobrowsesettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Cobrowsesettings - Settings concerning cobrowse
@@ -45,6 +48,10 @@ type Cobrowsesettings struct {
 
     // AllowAgentNavigation - Whether the viewer should have option to request navigation
     AllowAgentNavigation bool `json:"allowAgentNavigation"`
+
+
+    // AllowDraw - Should cobrowse draw be enabled
+    AllowDraw bool `json:"allowDraw"`
 
 
     // MaskSelectors - Mask patterns that will apply to pages being shared
@@ -66,6 +73,7 @@ type Cobrowsesettings struct {
 
 // String returns a JSON representation of the model
 func (o *Cobrowsesettings) String() string {
+    
     
     
     
@@ -96,6 +104,8 @@ func (u *Cobrowsesettings) MarshalJSON() ([]byte, error) {
         
         AllowAgentNavigation bool `json:"allowAgentNavigation"`
         
+        AllowDraw bool `json:"allowDraw"`
+        
         MaskSelectors []string `json:"maskSelectors"`
         
         Channels []string `json:"channels"`
@@ -105,6 +115,9 @@ func (u *Cobrowsesettings) MarshalJSON() ([]byte, error) {
         PauseCriteria []Pausecriteria `json:"pauseCriteria"`
         *Alias
     }{
+
+        
+
 
         
 

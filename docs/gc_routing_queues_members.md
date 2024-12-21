@@ -30,7 +30,7 @@
 ### SEE ALSO
 
 * [gc routing queues](gc_routing_queues.html)	 - /api/v2/routing/queues
-* [gc routing queues members activate](gc_routing_queues_members_activate.html)	 - Join or unjoin a set of users for a queue
+* [gc routing queues members activate](gc_routing_queues_members_activate.html)	 - Join or unjoin a set of up to 100 users for a queue
 * [gc routing queues members delete](gc_routing_queues_members_delete.html)	 - Delete a queue member.
 * [gc routing queues members list](gc_routing_queues_members_list.html)	 - Get the members of this queue.
 * [gc routing queues members move](gc_routing_queues_members_move.html)	 - Bulk add or delete up to 100 queue members

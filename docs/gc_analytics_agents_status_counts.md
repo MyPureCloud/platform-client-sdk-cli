@@ -1,21 +1,15 @@
-## gc externalcontacts organizations get
+## gc analytics agents status counts
 
-Fetch an external organization
+/api/v2/analytics/agents/status/counts
 
 ### Synopsis
 
-Fetch an external organization
-
-```
-gc externalcontacts organizations get [externalOrganizationId] [flags]
-```
+/api/v2/analytics/agents/status/counts
 
 ### Options
 
 ```
-      --expand strings           which fields, if any, to expand Valid values: externalDataSources, division, identifiers, externalSources
-  -h, --help                     help for get
-      --includeTrustors string   (true or false) whether or not to include trustor information embedded in the externalOrganization Valid values: true, false
+  -h, --help   help for counts
 ```
 
 ### Options inherited from parent commands
@@ -35,6 +29,7 @@ gc externalcontacts organizations get [externalOrganizationId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
+* [gc analytics agents status](gc_analytics_agents_status.html)	 - /api/v2/analytics/agents/{userId}/status
+* [gc analytics agents status counts create](gc_analytics_agents_status_counts_create.html)	 - Count agents by segment type
 
 

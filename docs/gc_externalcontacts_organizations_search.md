@@ -14,7 +14,7 @@ gc externalcontacts organizations search [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --expand strings           which fields, if any, to expand Valid values: externalDataSources, division
+      --expand strings           which fields, if any, to expand Valid values: externalDataSources, division, identifiers, externalSources
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for search
       --includeTrustors string   (true or false) whether or not to include trustor information embedded in the externalOrganization Valid values: true, false

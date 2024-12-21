@@ -1,21 +1,22 @@
-## gc externalcontacts organizations get
+## gc taskmanagement worktypes flows datebased rules update
 
-Fetch an external organization
+Update the attributes of a date based rule
 
 ### Synopsis
 
-Fetch an external organization
+Update the attributes of a date based rule
 
 ```
-gc externalcontacts organizations get [externalOrganizationId] [flags]
+gc taskmanagement worktypes flows datebased rules update [worktypeId] [ruleId] [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings           which fields, if any, to expand Valid values: externalDataSources, division, identifiers, externalSources
-  -h, --help                     help for get
-      --includeTrustors string   (true or false) whether or not to include trustor information embedded in the externalOrganization Valid values: true, false
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for update
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -35,6 +36,6 @@ gc externalcontacts organizations get [externalOrganizationId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
+* [gc taskmanagement worktypes flows datebased rules](gc_taskmanagement_worktypes_flows_datebased_rules.html)	 - /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules
 
 

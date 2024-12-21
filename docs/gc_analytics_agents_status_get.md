@@ -1,21 +1,19 @@
-## gc externalcontacts organizations get
+## gc analytics agents status get
 
-Fetch an external organization
+Get an agent and their active sessions by user ID
 
 ### Synopsis
 
-Fetch an external organization
+Get an agent and their active sessions by user ID
 
 ```
-gc externalcontacts organizations get [externalOrganizationId] [flags]
+gc analytics agents status get [userId] [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings           which fields, if any, to expand Valid values: externalDataSources, division, identifiers, externalSources
-  -h, --help                     help for get
-      --includeTrustors string   (true or false) whether or not to include trustor information embedded in the externalOrganization Valid values: true, false
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -35,6 +33,6 @@ gc externalcontacts organizations get [externalOrganizationId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
+* [gc analytics agents status](gc_analytics_agents_status.html)	 - /api/v2/analytics/agents/{userId}/status
 
 

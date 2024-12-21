@@ -26,7 +26,7 @@ gc outbound messagingcampaigns list [flags]
       --sortBy string                 The field to sort by Valid values: campaignStatus, name, type
       --sortOrder string              The direction to sort Valid values: ascending, descending
   -s, --stream                        Paginate and stream data as it is being processed leaving page information intact
-      --varType string                Campaign Type Valid values: EMAIL, SMS
+      --varType string                Campaign Type Valid values: EMAIL, SMS, WHATSAPP
 ```
 
 ### Options inherited from parent commands

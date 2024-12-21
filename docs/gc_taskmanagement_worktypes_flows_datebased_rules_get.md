@@ -1,21 +1,19 @@
-## gc externalcontacts organizations get
+## gc taskmanagement worktypes flows datebased rules get
 
-Fetch an external organization
+Get a date based rule
 
 ### Synopsis
 
-Fetch an external organization
+Get a date based rule
 
 ```
-gc externalcontacts organizations get [externalOrganizationId] [flags]
+gc taskmanagement worktypes flows datebased rules get [worktypeId] [ruleId] [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings           which fields, if any, to expand Valid values: externalDataSources, division, identifiers, externalSources
-  -h, --help                     help for get
-      --includeTrustors string   (true or false) whether or not to include trustor information embedded in the externalOrganization Valid values: true, false
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -35,6 +33,6 @@ gc externalcontacts organizations get [externalOrganizationId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
+* [gc taskmanagement worktypes flows datebased rules](gc_taskmanagement_worktypes_flows_datebased_rules.html)	 - /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules
 
 

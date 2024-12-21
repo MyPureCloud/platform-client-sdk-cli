@@ -1,21 +1,19 @@
-## gc externalcontacts organizations get
+## gc analytics summaries aggregates jobs get
 
-Fetch an external organization
+Get status for async query for summary aggregates
 
 ### Synopsis
 
-Fetch an external organization
+Get status for async query for summary aggregates
 
 ```
-gc externalcontacts organizations get [externalOrganizationId] [flags]
+gc analytics summaries aggregates jobs get [jobId] [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings           which fields, if any, to expand Valid values: externalDataSources, division, identifiers, externalSources
-  -h, --help                     help for get
-      --includeTrustors string   (true or false) whether or not to include trustor information embedded in the externalOrganization Valid values: true, false
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -35,6 +33,6 @@ gc externalcontacts organizations get [externalOrganizationId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
+* [gc analytics summaries aggregates jobs](gc_analytics_summaries_aggregates_jobs.html)	 - /api/v2/analytics/summaries/aggregates/jobs
 
 

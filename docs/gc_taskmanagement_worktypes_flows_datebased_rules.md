@@ -1,15 +1,15 @@
-## gc taskmanagement worktypes flows
+## gc taskmanagement worktypes flows datebased rules
 
-/api/v2/taskmanagement/worktypes/{worktypeId}/flows
+/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules
 
 ### Synopsis
 
-/api/v2/taskmanagement/worktypes/{worktypeId}/flows
+/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules
 
 ### Options
 
 ```
-  -h, --help   help for flows
+  -h, --help   help for rules
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +29,11 @@
 
 ### SEE ALSO
 
-* [gc taskmanagement worktypes](gc_taskmanagement_worktypes.html)	 - /api/v2/taskmanagement/worktypes
 * [gc taskmanagement worktypes flows datebased](gc_taskmanagement_worktypes_flows_datebased.html)	 - /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased
-* [gc taskmanagement worktypes flows onattributechange](gc_taskmanagement_worktypes_flows_onattributechange.html)	 - /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange
-* [gc taskmanagement worktypes flows oncreate](gc_taskmanagement_worktypes_flows_oncreate.html)	 - /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate
+* [gc taskmanagement worktypes flows datebased rules create](gc_taskmanagement_worktypes_flows_datebased_rules_create.html)	 - Add a date based rule to a worktype
+* [gc taskmanagement worktypes flows datebased rules delete](gc_taskmanagement_worktypes_flows_datebased_rules_delete.html)	 - Delete a date based rule
+* [gc taskmanagement worktypes flows datebased rules get](gc_taskmanagement_worktypes_flows_datebased_rules_get.html)	 - Get a date based rule
+* [gc taskmanagement worktypes flows datebased rules list](gc_taskmanagement_worktypes_flows_datebased_rules_list.html)	 - Get all date based rules for a worktype
+* [gc taskmanagement worktypes flows datebased rules update](gc_taskmanagement_worktypes_flows_datebased_rules_update.html)	 - Update the attributes of a date based rule
 
 

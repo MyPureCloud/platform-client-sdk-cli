@@ -23,7 +23,7 @@ gc outbound messagingcampaigns divisionviews list [flags]
       --senderSmsPhoneNumber string   Sender SMS Phone Number
       --sortOrder string              The direction to sort Valid values: ascending, descending
   -s, --stream                        Paginate and stream data as it is being processed leaving page information intact
-      --varType string                Campaign Type Valid values: EMAIL, SMS
+      --varType string                Campaign Type Valid values: EMAIL, SMS, WHATSAPP
 ```
 
 ### Options inherited from parent commands

@@ -1,21 +1,23 @@
-## gc externalcontacts organizations get
+## gc analytics summaries aggregates jobs results list
 
-Fetch an external organization
+Fetch a page of results for an async aggregates query
 
 ### Synopsis
 
-Fetch an external organization
+Fetch a page of results for an async aggregates query
 
 ```
-gc externalcontacts organizations get [externalOrganizationId] [flags]
+gc analytics summaries aggregates jobs results list [jobId] [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings           which fields, if any, to expand Valid values: externalDataSources, division, identifiers, externalSources
-  -h, --help                     help for get
-      --includeTrustors string   (true or false) whether or not to include trustor information embedded in the externalOrganization Valid values: true, false
+  -a, --autopaginate             Automatically paginate through the results stripping page information
+      --cursor string            Cursor token to retrieve next page
+      --filtercondition string   Filter list command output based on a given condition or regular expression
+  -h, --help                     help for list
+  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands
@@ -35,6 +37,6 @@ gc externalcontacts organizations get [externalOrganizationId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
+* [gc analytics summaries aggregates jobs results](gc_analytics_summaries_aggregates_jobs_results.html)	 - /api/v2/analytics/summaries/aggregates/jobs/{jobId}/results
 
 

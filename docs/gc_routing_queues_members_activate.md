@@ -1,10 +1,10 @@
 ## gc routing queues members activate
 
-Join or unjoin a set of users for a queue
+Join or unjoin a set of up to 100 users for a queue
 
 ### Synopsis
 
-Join or unjoin a set of users for a queue
+Join or unjoin a set of up to 100 users for a queue
 
 ```
 gc routing queues members activate [queueId] [flags]

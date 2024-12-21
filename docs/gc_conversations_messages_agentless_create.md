@@ -13,10 +13,11 @@ gc conversations messages agentless create [flags]
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -d, --directory string              Directory path with files containing request bodies
+  -f, --file string                   File name containing the JSON body
+  -h, --help                          help for create
+  -b, --printrequestbody              Print the request body format of the API.
+      --useNormalizedMessage string   If true, response removes deprecated fields (textBody, messagingTemplate) Valid values: true, false
 ```
 
 ### Options inherited from parent commands

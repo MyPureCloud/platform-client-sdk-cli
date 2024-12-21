@@ -1,21 +1,22 @@
-## gc externalcontacts organizations get
+## gc analytics summaries aggregates jobs create
 
-Fetch an external organization
+Query for summary aggregates asynchronously
 
 ### Synopsis
 
-Fetch an external organization
+Query for summary aggregates asynchronously
 
 ```
-gc externalcontacts organizations get [externalOrganizationId] [flags]
+gc analytics summaries aggregates jobs create [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings           which fields, if any, to expand Valid values: externalDataSources, division, identifiers, externalSources
-  -h, --help                     help for get
-      --includeTrustors string   (true or false) whether or not to include trustor information embedded in the externalOrganization Valid values: true, false
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -35,6 +36,6 @@ gc externalcontacts organizations get [externalOrganizationId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
+* [gc analytics summaries aggregates jobs](gc_analytics_summaries_aggregates_jobs.html)	 - /api/v2/analytics/summaries/aggregates/jobs
 
 

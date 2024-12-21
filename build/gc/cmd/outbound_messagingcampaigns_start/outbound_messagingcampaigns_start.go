@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdoutbound_messagingcampaigns_start() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start", utils.FormatPermissions([]string{ "outbound:messagingCampaign:start", "outbound:emailCampaign:start",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start", utils.FormatPermissions([]string{ "outbound:messagingCampaign:start", "outbound:emailCampaign:start", "outbound:whatsAppCampaign:start",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

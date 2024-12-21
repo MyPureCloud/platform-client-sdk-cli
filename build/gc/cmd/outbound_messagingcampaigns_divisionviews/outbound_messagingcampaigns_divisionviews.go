@@ -47,7 +47,7 @@ func Cmdoutbound_messagingcampaigns_divisionviews() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "The direction to sort Valid values: ascending, descending")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
-	utils.AddFlag(listCmd.Flags(), "string", "varType", "", "Campaign Type Valid values: EMAIL, SMS")
+	utils.AddFlag(listCmd.Flags(), "string", "varType", "", "Campaign Type Valid values: EMAIL, SMS, WHATSAPP")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
 	utils.AddFlag(listCmd.Flags(), "string", "senderSmsPhoneNumber", "", "Sender SMS Phone Number")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns/divisionviews", utils.FormatPermissions([]string{ "outbound:messagingCampaign:search", "outbound:emailCampaign:search",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns/divisionviews")))

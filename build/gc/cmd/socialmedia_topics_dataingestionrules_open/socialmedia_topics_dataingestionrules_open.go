@@ -67,7 +67,7 @@ func Cmdsocialmedia_topics_dataingestionrules_open() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  "description" : "successful operation.",
+  "description" : "Successful operation.",
   "content" : {
     "application/json" : {
       "schema" : {

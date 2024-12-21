@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdoutbound_messagingcampaigns() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/messagingcampaigns", utils.FormatPermissions([]string{ "outbound:messagingCampaign:add", "outbound:emailCampaign:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/messagingcampaigns")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/messagingcampaigns", utils.FormatPermissions([]string{ "outbound:messagingCampaign:add", "outbound:emailCampaign:add", "outbound:whatsAppCampaign:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/messagingcampaigns")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Messaging Campaign",
   "content" : {
@@ -53,7 +53,7 @@ func Cmdoutbound_messagingcampaigns() *cobra.Command {
 }`)
 	outbound_messagingcampaignsCmd.AddCommand(createCmd)
 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaign:delete", "outbound:emailCampaign:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaign:delete", "outbound:emailCampaign:delete", "outbound:whatsAppCampaign:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -68,7 +68,7 @@ func Cmdoutbound_messagingcampaigns() *cobra.Command {
 }`)
 	outbound_messagingcampaignsCmd.AddCommand(deleteCmd)
 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view", "outbound:emailCampaign:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view", "outbound:emailCampaign:view", "outbound:whatsAppCampaign:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -90,10 +90,10 @@ func Cmdoutbound_messagingcampaigns() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "string", "contactListId", "", "Contact List ID")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
-	utils.AddFlag(listCmd.Flags(), "string", "varType", "", "Campaign Type Valid values: EMAIL, SMS")
+	utils.AddFlag(listCmd.Flags(), "string", "varType", "", "Campaign Type Valid values: EMAIL, SMS, WHATSAPP")
 	utils.AddFlag(listCmd.Flags(), "string", "senderSmsPhoneNumber", "", "Sender SMS Phone Number")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "A list of messaging campaign ids to bulk fetch")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view", "outbound:emailCampaign:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view", "outbound:emailCampaign:view", "outbound:whatsAppCampaign:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -108,7 +108,7 @@ func Cmdoutbound_messagingcampaigns() *cobra.Command {
 }`)
 	outbound_messagingcampaignsCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaign:edit", "outbound:emailCampaign:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaign:edit", "outbound:emailCampaign:edit", "outbound:whatsAppCampaign:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "MessagingCampaign",
   "content" : {

@@ -62,7 +62,7 @@ type Facebookdataingestionruleversionresponse struct {
     Version int `json:"version"`
 
 
-    // IntegrationId - The Integration Id from which to ingest public social posts. This entity is created using the /conversations/messaging/integrations/facebook resource
+    // IntegrationId - The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/facebook resource
     IntegrationId string `json:"integrationId"`
 
 

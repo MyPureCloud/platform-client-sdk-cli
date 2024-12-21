@@ -63,7 +63,7 @@ type Sequenceschedule struct {
     Intervals []Scheduleinterval `json:"intervals"`
 
 
-    // TimeZone - The time zone for this SequenceSchedule. For example, Africa/Abidjan.
+    // TimeZone - The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
     TimeZone string `json:"timeZone"`
 
 

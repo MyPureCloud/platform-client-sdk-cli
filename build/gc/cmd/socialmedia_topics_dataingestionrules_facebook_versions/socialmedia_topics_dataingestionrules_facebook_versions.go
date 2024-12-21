@@ -33,7 +33,7 @@ func Cmdsocialmedia_topics_dataingestionrules_facebook_versions() *cobra.Command
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  "description" : "successful operation.",
+  "description" : "Successful operation.",
   "content" : {
     "application/json" : {
       "schema" : {
@@ -51,7 +51,7 @@ func Cmdsocialmedia_topics_dataingestionrules_facebook_versions() *cobra.Command
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  "description" : "successful operation.",
+  "description" : "Successful operation.",
   "content" : {
     "application/json" : {
       "schema" : {

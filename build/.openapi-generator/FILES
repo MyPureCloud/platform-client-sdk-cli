@@ -19,6 +19,9 @@ gc/cmd/analytics_actions_aggregates_query/analytics_actions_aggregates_query.go
 gc/cmd/analytics_agentcopilots_aggregates_jobs/analytics_agentcopilots_aggregates_jobs.go
 gc/cmd/analytics_agentcopilots_aggregates_jobs_results/analytics_agentcopilots_aggregates_jobs_results.go
 gc/cmd/analytics_agentcopilots_aggregates_query/analytics_agentcopilots_aggregates_query.go
+gc/cmd/analytics_agents_status/analytics_agents_status.go
+gc/cmd/analytics_agents_status_counts/analytics_agents_status_counts.go
+gc/cmd/analytics_agents_status_query/analytics_agents_status_query.go
 gc/cmd/analytics_botflows_divisions_reportingturns/analytics_botflows_divisions_reportingturns.go
 gc/cmd/analytics_botflows_reportingturns/analytics_botflows_reportingturns.go
 gc/cmd/analytics_botflows_sessions/analytics_botflows_sessions.go
@@ -67,6 +70,9 @@ gc/cmd/analytics_reporting_settings_users_dashboards/analytics_reporting_setting
 gc/cmd/analytics_resolutions_aggregates_jobs/analytics_resolutions_aggregates_jobs.go
 gc/cmd/analytics_resolutions_aggregates_jobs_results/analytics_resolutions_aggregates_jobs_results.go
 gc/cmd/analytics_routing_activity_query/analytics_routing_activity_query.go
+gc/cmd/analytics_summaries_aggregates_jobs/analytics_summaries_aggregates_jobs.go
+gc/cmd/analytics_summaries_aggregates_jobs_results/analytics_summaries_aggregates_jobs_results.go
+gc/cmd/analytics_summaries_aggregates_query/analytics_summaries_aggregates_query.go
 gc/cmd/analytics_surveys_aggregates_jobs/analytics_surveys_aggregates_jobs.go
 gc/cmd/analytics_surveys_aggregates_jobs_results/analytics_surveys_aggregates_jobs_results.go
 gc/cmd/analytics_surveys_aggregates_query/analytics_surveys_aggregates_query.go
@@ -1007,6 +1013,7 @@ gc/cmd/taskmanagement_workitems_users_wrapups/taskmanagement_workitems_users_wra
 gc/cmd/taskmanagement_workitems_versions/taskmanagement_workitems_versions.go
 gc/cmd/taskmanagement_workitems_wrapups/taskmanagement_workitems_wrapups.go
 gc/cmd/taskmanagement_worktypes/taskmanagement_worktypes.go
+gc/cmd/taskmanagement_worktypes_flows_datebased_rules/taskmanagement_worktypes_flows_datebased_rules.go
 gc/cmd/taskmanagement_worktypes_flows_onattributechange_rules/taskmanagement_worktypes_flows_onattributechange_rules.go
 gc/cmd/taskmanagement_worktypes_flows_oncreate_rules/taskmanagement_worktypes_flows_oncreate_rules.go
 gc/cmd/taskmanagement_worktypes_history/taskmanagement_worktypes_history.go
@@ -1453,6 +1460,15 @@ gc/models/agentqueryadherenceexplanationsresponse.go
 gc/models/agentqueuetimerequest.go
 gc/models/agentsbidassignedworkplanoverriderequest.go
 gc/models/agentsintegrationslisting.go
+gc/models/agentstateagentqueryclause.go
+gc/models/agentstateagentquerypredicate.go
+gc/models/agentstatecountsrequest.go
+gc/models/agentstatequeryrequest.go
+gc/models/agentstatesegmenttypecount.go
+gc/models/agentstatesessionfilter.go
+gc/models/agentstatesessionqueryclause.go
+gc/models/agentstatesessionquerypredicate.go
+gc/models/agentstateuserfilter.go
 gc/models/agentsworkplansresponse.go
 gc/models/agenttimeoffrequestpatch.go
 gc/models/agentupdatealternativeshifttraderequest.go
@@ -1503,6 +1519,10 @@ gc/models/alternativeshifttraderesponse.go
 gc/models/alternativeshifttradesviewresponsetemplate.go
 gc/models/amazonlexrequest.go
 gc/models/analyticsagentgroup.go
+gc/models/analyticsagentstateagentresponse.go
+gc/models/analyticsagentstateagentsessionresult.go
+gc/models/analyticsagentstatecountsresponse.go
+gc/models/analyticsagentstatequeryresponse.go
 gc/models/analyticsconversation.go
 gc/models/analyticsconversationasyncqueryresponse.go
 gc/models/analyticsconversationqueryresponse.go
@@ -2571,7 +2591,6 @@ gc/models/emailcolumn.go
 gc/models/emailcommunicationansweredevent.go
 gc/models/emailcommunicationdispositionappliedevent.go
 gc/models/emailcommunicationendedevent.go
-gc/models/emailcommunicationrepliedevent.go
 gc/models/emailcommunicationsentmessageevent.go
 gc/models/emailconfig.go
 gc/models/emailconversation.go
@@ -2722,6 +2741,7 @@ gc/models/externalmetricdefinitioncreaterequest.go
 gc/models/externalmetricdefinitionlisting.go
 gc/models/externalmetricdefinitionupdaterequest.go
 gc/models/externalorganization.go
+gc/models/externalorganizationidentifier.go
 gc/models/externalorganizationlisting.go
 gc/models/externalorganizationtrustorlink.go
 gc/models/externalsegment.go
@@ -4326,6 +4346,15 @@ gc/models/suggestionlisting.go
 gc/models/suggestionscript.go
 gc/models/suggestsearchcriteria.go
 gc/models/suggestsearchrequest.go
+gc/models/summaryaggregatedatacontainer.go
+gc/models/summaryaggregatequeryclause.go
+gc/models/summaryaggregatequeryfilter.go
+gc/models/summaryaggregatequerypredicate.go
+gc/models/summaryaggregatequeryresponse.go
+gc/models/summaryaggregationquery.go
+gc/models/summaryaggregationview.go
+gc/models/summaryasyncaggregatequeryresponse.go
+gc/models/summaryasyncaggregationquery.go
 gc/models/summarygenerationconfig.go
 gc/models/supportcentercategory.go
 gc/models/supportcentercompactcategorymoduletemplate.go
@@ -4883,6 +4912,7 @@ gc/models/wfmusernotification.go
 gc/models/wfmversionedentitymetadata.go
 gc/models/whatsappavailablephonenumberdetails.go
 gc/models/whatsappavailablephonenumberdetailslisting.go
+gc/models/whatsappconfig.go
 gc/models/whatsappdefinition.go
 gc/models/whatsappembeddedsignupintegrationactivationrequest.go
 gc/models/whatsappembeddedsignupintegrationrequest.go
@@ -4922,6 +4952,12 @@ gc/models/workflowtargetsettings.go
 gc/models/workitem.go
 gc/models/workitemchangelisting.go
 gc/models/workitemcreate.go
+gc/models/workitemdatebasedcondition.go
+gc/models/workitemdatebasedconditionupdate.go
+gc/models/workitemdatebasedrule.go
+gc/models/workitemdatebasedrulecreate.go
+gc/models/workitemdatebasedrulelisting.go
+gc/models/workitemdatebasedruleupdate.go
 gc/models/workitemdelta.go
 gc/models/workitemfilter.go
 gc/models/workitemflowreference.go

@@ -63,7 +63,7 @@ type Emailcampaignschedule struct {
     Intervals []Scheduleinterval `json:"intervals"`
 
 
-    // TimeZone - The time zone for this email campaign schedule.
+    // TimeZone - The time zone for this email campaign schedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
     TimeZone string `json:"timeZone"`
 
 

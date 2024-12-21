@@ -59,7 +59,7 @@ func Cmdoutbound_messagingcampaigns_progress() *cobra.Command {
 }`)
 	outbound_messagingcampaigns_progressCmd.AddCommand(createCmd)
 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", utils.FormatPermissions([]string{ "outbound:messagingCampaign:edit", "outbound:emailCampaign:edit", "outbound:messagingCampaign:recycle", "outbound:emailCampaign:recycle",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", utils.FormatPermissions([]string{ "outbound:messagingCampaign:edit", "outbound:messagingCampaign:recycle", "outbound:emailCampaign:edit", "outbound:emailCampaign:recycle", "outbound:whatsAppCampaign:edit", "outbound:whatsAppCampaign:recycle",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -68,7 +68,7 @@ func Cmdoutbound_messagingcampaigns_progress() *cobra.Command {
 }`)
 	outbound_messagingcampaigns_progressCmd.AddCommand(deleteCmd)
 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view", "outbound:emailCampaign:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view", "outbound:emailCampaign:view", "outbound:whatsAppCampaign:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

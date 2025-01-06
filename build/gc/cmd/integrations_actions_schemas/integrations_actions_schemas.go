@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdintegrations_actions_schemas() *cobra.Command { 
+	utils.AddFlag(getCmd.Flags(), "bool", "flatten", "false", "Indicates the response should be reformatted, based on Architect`s flattening format.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/integrations/actions/{actionId}/schemas/{fileName}", utils.FormatPermissions([]string{ "integrations:action:view", "bridge:actions:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/actions/{actionId}/schemas/{fileName}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -73,6 +74,10 @@ var getCmd = &cobra.Command{
 		fileName, args := args[0], args[1:]
 		path = strings.Replace(path, "{fileName}", fmt.Sprintf("%v", fileName), -1)
 
+		flatten := utils.GetFlag(cmd.Flags(), "bool", "flatten")
+		if flatten != "" {
+			queryParams["flatten"] = flatten
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

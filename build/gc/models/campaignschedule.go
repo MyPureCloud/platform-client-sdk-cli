@@ -63,12 +63,12 @@ type Campaignschedule struct {
     Intervals []Scheduleinterval `json:"intervals"`
 
 
-    // TimeZone - The time zone for this CampaignSchedule. For example, Africa/Abidjan.
+    // TimeZone - The time zone for this CampaignSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
     TimeZone string `json:"timeZone"`
 
 
     // Campaign - The Campaign that this CampaignSchedule is for.
-    Campaign Domainentityref `json:"campaign"`
+    Campaign Divisioneddomainentityref `json:"campaign"`
 
 
     
@@ -107,7 +107,7 @@ func (u *Campaignschedule) MarshalJSON() ([]byte, error) {
         
         TimeZone string `json:"timeZone"`
         
-        Campaign Domainentityref `json:"campaign"`
+        Campaign Divisioneddomainentityref `json:"campaign"`
         *Alias
     }{
 

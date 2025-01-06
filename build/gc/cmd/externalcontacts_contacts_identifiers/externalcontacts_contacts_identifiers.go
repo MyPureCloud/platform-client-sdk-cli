@@ -36,7 +36,7 @@ func Cmdexternalcontacts_contacts_identifiers() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/EntityListing"
+        "$ref" : "#/components/schemas/ContactIdentifierListing"
       }
     }
   }

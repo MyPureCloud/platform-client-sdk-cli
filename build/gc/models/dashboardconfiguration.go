@@ -45,6 +45,9 @@ type DashboardconfigurationDud struct {
     
 
 
+    
+
+
     CreatedBy Addressableentityref `json:"createdBy"`
 
 
@@ -102,6 +105,10 @@ type Dashboardconfiguration struct {
     DateModified time.Time `json:"dateModified"`
 
 
+    // DateDeleted - The deleted date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateDeleted time.Time `json:"dateDeleted"`
+
+
     
 
 
@@ -123,6 +130,7 @@ func (o *Dashboardconfiguration) String() string {
     
     
      o.Widgets = []Widget{{}} 
+    
     
     
     
@@ -165,6 +173,8 @@ func (u *Dashboardconfiguration) MarshalJSON() ([]byte, error) {
         
         DateModified time.Time `json:"dateModified"`
         
+        DateDeleted time.Time `json:"dateDeleted"`
+        
         Shared bool `json:"shared"`
         
         DashboardsSharedWith Dashboardssharedwith `json:"dashboardsSharedWith"`
@@ -185,6 +195,9 @@ func (u *Dashboardconfiguration) MarshalJSON() ([]byte, error) {
 
         
         Widgets: []Widget{{}},
+        
+
+
         
 
 

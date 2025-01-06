@@ -33,7 +33,7 @@ func Cmdknowledge_knowledgebases_documents_variations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DocumentVariation"
+        "$ref" : "#/components/schemas/DocumentVariationRequest"
       }
     }
   },
@@ -45,7 +45,7 @@ func Cmdknowledge_knowledgebases_documents_variations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DocumentVariation"
+        "$ref" : "#/components/schemas/DocumentVariationResponse"
       }
     }
   }
@@ -62,6 +62,7 @@ func Cmdknowledge_knowledgebases_documents_variations() *cobra.Command {
 	knowledge_knowledgebases_documents_variationsCmd.AddCommand(deleteCmd)
 
 	utils.AddFlag(getCmd.Flags(), "string", "documentState", "", "The state of the document. Valid values: Draft, Published")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "The specified entity attributes will be filled. Comma separated values expected. Valid values: contentUrl")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}", utils.FormatPermissions([]string{ "knowledge:document:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -70,7 +71,7 @@ func Cmdknowledge_knowledgebases_documents_variations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DocumentVariation"
+        "$ref" : "#/components/schemas/DocumentVariationResponse"
       }
     }
   }
@@ -81,6 +82,7 @@ func Cmdknowledge_knowledgebases_documents_variations() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "documentState", "", "The state of the document. Valid values: Draft, Published")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "The specified entity attributes will be filled. Comma separated values expected. Valid values: contentUrl")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations", utils.FormatPermissions([]string{ "knowledge:document:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -101,7 +103,7 @@ func Cmdknowledge_knowledgebases_documents_variations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DocumentVariation"
+        "$ref" : "#/components/schemas/DocumentVariationRequest"
       }
     }
   },
@@ -113,7 +115,7 @@ func Cmdknowledge_knowledgebases_documents_variations() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DocumentVariation"
+        "$ref" : "#/components/schemas/DocumentVariationResponse"
       }
     }
   }
@@ -139,7 +141,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Documentvariation{}
+			reqModel := models.Documentvariationrequest{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -295,6 +297,10 @@ var getCmd = &cobra.Command{
 		if documentState != "" {
 			queryParams["documentState"] = documentState
 		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -378,6 +384,10 @@ var listCmd = &cobra.Command{
 		if documentState != "" {
 			queryParams["documentState"] = documentState
 		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -434,7 +444,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Documentvariation{}
+			reqModel := models.Documentvariationrequest{}
 			utils.Render(reqModel.String())
 			
 			return

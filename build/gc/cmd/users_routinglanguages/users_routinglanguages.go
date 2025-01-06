@@ -114,8 +114,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create [userId]",
-	Short: "Add routing language to user",
-	Long:  "Add routing language to user",
+	Short: "Assign a routing language to a user",
+	Long:  "Assign a routing language to a user",
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -182,8 +182,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [userId] [languageId]",
-	Short: "Remove routing language from user",
-	Long:  "Remove routing language from user",
+	Short: "Remove a routing language from a user",
+	Long:  "Remove a routing language from a user",
 	Args:  utils.DetermineArgs([]string{ "userId", "languageId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -249,8 +249,8 @@ var deleteCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list [userId]",
-	Short: "List routing language for user",
-	Long:  "List routing language for user",
+	Short: "List routing languages assigned to a user",
+	Long:  "List routing languages assigned to a user",
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -326,8 +326,8 @@ var listCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [userId] [languageId]",
-	Short: "Update routing language proficiency or state.",
-	Long:  "Update routing language proficiency or state.",
+	Short: "Update an assigned routing language`s proficiency",
+	Long:  "Update an assigned routing language`s proficiency",
 	Args:  utils.DetermineArgs([]string{ "userId", "languageId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -48,6 +48,7 @@ func Cmdanalytics_reporting_dashboards_users() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "A list of user IDs to fetch by bulk")
 	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Only list users of this state Valid values: active, inactive")
+	utils.AddFlag(listCmd.Flags(), "bool", "deletedOnly", "", "Only list deleted dashboards that are still recoverable")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/reporting/dashboards/users", utils.FormatPermissions([]string{ "analytics:dashboardConfigurations:view",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/reporting/dashboards/users")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -173,6 +174,10 @@ var listCmd = &cobra.Command{
 		state := utils.GetFlag(cmd.Flags(), "string", "state")
 		if state != "" {
 			queryParams["state"] = state
+		}
+		deletedOnly := utils.GetFlag(cmd.Flags(), "bool", "deletedOnly")
+		if deletedOnly != "" {
+			queryParams["deletedOnly"] = deletedOnly
 		}
 		urlString := path
 		if len(queryParams) > 0 {

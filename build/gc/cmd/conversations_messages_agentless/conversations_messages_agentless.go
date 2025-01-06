@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdconversations_messages_agentless() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "useNormalizedMessage", "false", "If true, response removes deprecated fields (textBody, messagingTemplate)")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/messages/agentless", utils.FormatPermissions([]string{ "conversation:message:create",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/messages/agentless")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Create agentless outbound messaging request",
@@ -82,6 +83,10 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/conversations/messages/agentless"
 
+		useNormalizedMessage := utils.GetFlag(cmd.Flags(), "bool", "useNormalizedMessage")
+		if useNormalizedMessage != "" {
+			queryParams["useNormalizedMessage"] = useNormalizedMessage
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

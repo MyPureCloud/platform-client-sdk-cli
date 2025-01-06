@@ -19,6 +19,9 @@ type ServicenowsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Servicenowsettings
@@ -34,6 +37,10 @@ type Servicenowsettings struct {
     // Categories - Filter source by categories.
     Categories []string `json:"categories"`
 
+
+    // BaseUrl - The base URL to resources.
+    BaseUrl string `json:"baseUrl"`
+
 }
 
 // String returns a JSON representation of the model
@@ -41,6 +48,7 @@ func (o *Servicenowsettings) String() string {
      o.KnowledgeBaseIds = []string{""} 
     
      o.Categories = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,6 +71,8 @@ func (u *Servicenowsettings) MarshalJSON() ([]byte, error) {
         Language string `json:"language"`
         
         Categories []string `json:"categories"`
+        
+        BaseUrl string `json:"baseUrl"`
         *Alias
     }{
 
@@ -76,6 +86,9 @@ func (u *Servicenowsettings) MarshalJSON() ([]byte, error) {
 
         
         Categories: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

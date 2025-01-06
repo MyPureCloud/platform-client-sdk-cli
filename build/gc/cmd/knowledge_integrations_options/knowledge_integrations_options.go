@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdknowledge_integrations_options() *cobra.Command { 
+	utils.AddFlag(getCmd.Flags(), "[]string", "knowledgeBaseIds", "", "Narrowing down filtering option results by knowledge base.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/knowledge/integrations/{integrationId}/options", utils.FormatPermissions([]string{ "knowledge:integrationOptions:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/integrations/{integrationId}/options")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -71,6 +72,10 @@ var getCmd = &cobra.Command{
 		integrationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{integrationId}", fmt.Sprintf("%v", integrationId), -1)
 
+		knowledgeBaseIds := utils.GetFlag(cmd.Flags(), "[]string", "knowledgeBaseIds")
+		if knowledgeBaseIds != "" {
+			queryParams["knowledgeBaseIds"] = knowledgeBaseIds
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

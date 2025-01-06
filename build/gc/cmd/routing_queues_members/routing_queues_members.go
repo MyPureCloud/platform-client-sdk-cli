@@ -161,8 +161,8 @@ func queryEscape(value string) string {
 
 var activateCmd = &cobra.Command{
 	Use:   "activate [queueId]",
-	Short: "Join or unjoin a set of users for a queue",
-	Long:  "Join or unjoin a set of users for a queue",
+	Short: "Join or unjoin a set of up to 100 users for a queue",
+	Long:  "Join or unjoin a set of up to 100 users for a queue",
 	Args:  utils.DetermineArgs([]string{ "queueId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

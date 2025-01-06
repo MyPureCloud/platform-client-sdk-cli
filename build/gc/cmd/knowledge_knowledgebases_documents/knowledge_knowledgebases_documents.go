@@ -33,7 +33,7 @@ func Cmdknowledge_knowledgebases_documents() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/KnowledgeDocumentReq"
+        "$ref" : "#/components/schemas/KnowledgeDocumentCreateRequest"
       }
     }
   },
@@ -147,7 +147,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Knowledgedocumentreq{}
+			reqModel := models.Knowledgedocumentcreaterequest{}
 			utils.Render(reqModel.String())
 			
 			return

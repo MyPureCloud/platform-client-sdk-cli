@@ -42,7 +42,7 @@ type Queuemediasettings struct {
 
 
     // Email - The queue media settings for email interactions.
-    Email Mediasettings `json:"email"`
+    Email Emailmediasettings `json:"email"`
 
 
     // Message - The queue media settings for message interactions.
@@ -80,7 +80,7 @@ func (u *Queuemediasettings) MarshalJSON() ([]byte, error) {
         
         Chat Mediasettings `json:"chat"`
         
-        Email Mediasettings `json:"email"`
+        Email Emailmediasettings `json:"email"`
         
         Message Mediasettings `json:"message"`
         *Alias

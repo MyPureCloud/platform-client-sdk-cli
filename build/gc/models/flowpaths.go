@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -16,12 +17,26 @@ type FlowpathsDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Flowpaths
 type Flowpaths struct { 
     // Category - Category (use case) of the paths within a given domain.
     Category string `json:"category"`
+
+
+    // DateStart - Start date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateStart time.Time `json:"dateStart"`
+
+
+    // DateEnd - End date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateEnd time.Time `json:"dateEnd"`
 
 
     // Elements - Unique element identifiers and their corresponding elements in the trie data structure representing the paths.
@@ -31,6 +46,8 @@ type Flowpaths struct {
 
 // String returns a JSON representation of the model
 func (o *Flowpaths) String() string {
+    
+    
     
      o.Elements = map[string]Flowpathselement{"": {}} 
 
@@ -52,9 +69,19 @@ func (u *Flowpaths) MarshalJSON() ([]byte, error) {
         
         Category string `json:"category"`
         
+        DateStart time.Time `json:"dateStart"`
+        
+        DateEnd time.Time `json:"dateEnd"`
+        
         Elements map[string]Flowpathselement `json:"elements"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

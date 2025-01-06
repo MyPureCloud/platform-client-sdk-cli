@@ -42,6 +42,7 @@ func Cmdquality_agents_activity() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "group", "", "group id")
 	utils.AddFlag(listCmd.Flags(), "string", "agentTeamId", "", "team id of agents requested")
 	utils.AddFlag(listCmd.Flags(), "string", "formContextId", "", "shared id between form versions")
+	utils.AddFlag(listCmd.Flags(), "string", "userState", "Legacy", "`Legacy` fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  `Any` fetches users of `active`, `inactive` and `deleted` states. Valid values: Any, Legacy")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/agents/activity", utils.FormatPermissions([]string{ "quality:evaluation:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/agents/activity")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -138,6 +139,10 @@ var listCmd = &cobra.Command{
 		formContextId := utils.GetFlag(cmd.Flags(), "string", "formContextId")
 		if formContextId != "" {
 			queryParams["formContextId"] = formContextId
+		}
+		userState := utils.GetFlag(cmd.Flags(), "string", "userState")
+		if userState != "" {
+			queryParams["userState"] = userState
 		}
 		urlString := path
 		if len(queryParams) > 0 {

@@ -22,6 +22,9 @@ type Scimv2enterpriseuserDud struct {
 
     
 
+
+    
+
 }
 
 // Scimv2enterpriseuser - Defines a SCIM enterprise user.
@@ -41,10 +44,15 @@ type Scimv2enterpriseuser struct {
     // EmployeeNumber - The user's employee number.
     EmployeeNumber string `json:"employeeNumber"`
 
+
+    // DateHire - The user's hire date. Format in JSON will be YYYY-MM-DD.
+    DateHire string `json:"dateHire"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Scimv2enterpriseuser) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Scimv2enterpriseuser) MarshalJSON() ([]byte, error) {
         Manager Manager `json:"manager"`
         
         EmployeeNumber string `json:"employeeNumber"`
+        
+        DateHire string `json:"dateHire"`
         *Alias
     }{
+
+        
+
 
         
 

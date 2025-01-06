@@ -63,12 +63,12 @@ type Emailcampaignschedule struct {
     Intervals []Scheduleinterval `json:"intervals"`
 
 
-    // TimeZone - The time zone for this email campaign schedule.
+    // TimeZone - The time zone for this email campaign schedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
     TimeZone string `json:"timeZone"`
 
 
     // EmailCampaign - The Campaign that this email campaign schedule is for.
-    EmailCampaign Domainentityref `json:"emailCampaign"`
+    EmailCampaign Divisioneddomainentityref `json:"emailCampaign"`
 
 
     
@@ -107,7 +107,7 @@ func (u *Emailcampaignschedule) MarshalJSON() ([]byte, error) {
         
         TimeZone string `json:"timeZone"`
         
-        EmailCampaign Domainentityref `json:"emailCampaign"`
+        EmailCampaign Divisioneddomainentityref `json:"emailCampaign"`
         *Alias
     }{
 

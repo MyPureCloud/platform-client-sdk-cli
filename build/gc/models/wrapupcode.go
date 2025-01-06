@@ -33,6 +33,9 @@ type WrapupcodeDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -48,6 +51,10 @@ type Wrapupcode struct {
 
     // Division - The division to which this entity belongs.
     Division Starrabledivision `json:"division"`
+
+
+    // Description - The wrap-up code description.
+    Description string `json:"description"`
 
 
     // DateCreated - Date when the wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -78,6 +85,7 @@ func (o *Wrapupcode) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -99,6 +107,8 @@ func (u *Wrapupcode) MarshalJSON() ([]byte, error) {
         
         Division Starrabledivision `json:"division"`
         
+        Description string `json:"description"`
+        
         DateCreated time.Time `json:"dateCreated"`
         
         DateModified time.Time `json:"dateModified"`
@@ -108,6 +118,9 @@ func (u *Wrapupcode) MarshalJSON() ([]byte, error) {
         ModifiedBy string `json:"modifiedBy"`
         *Alias
     }{
+
+        
+
 
         
 

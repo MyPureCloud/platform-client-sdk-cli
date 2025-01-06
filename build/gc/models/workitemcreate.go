@@ -137,20 +137,8 @@ type Workitemcreate struct {
     AssigneeId string `json:"assigneeId"`
 
 
-    // WrapupCode - The ID of the wrapup. Must be a valid UUID.
-    WrapupCode string `json:"wrapupCode"`
-
-
-    // ScoredAgents - A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.
-    ScoredAgents []Workitemscoredagentrequest `json:"scoredAgents"`
-
-
     // LanguageId - The ID of language of the Workitem. Must be a valid UUID.
     LanguageId string `json:"languageId"`
-
-
-    // UtilizationLabelId - The ID of utilization label of the Workitem. Must be a valid UUID.
-    UtilizationLabelId string `json:"utilizationLabelId"`
 
 
     // ExternalContactId - The ID of the external contact of the Workitem. Must be a valid UUID.
@@ -163,6 +151,18 @@ type Workitemcreate struct {
 
     // SkillIds - The skill IDs of the Workitem. Must be valid UUIDs.
     SkillIds []string `json:"skillIds"`
+
+
+    // WrapupCode - The ID of the wrapup. Must be a valid UUID.
+    WrapupCode string `json:"wrapupCode"`
+
+
+    // UtilizationLabelId - The ID of utilization label of the Workitem. Must be a valid UUID.
+    UtilizationLabelId string `json:"utilizationLabelId"`
+
+
+    // ScoredAgents - A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.
+    ScoredAgents []Workitemscoredagentrequest `json:"scoredAgents"`
 
 
     // PreferredAgentIds - The preferred agent IDs of the Workitem. Must be valid UUIDs.
@@ -187,12 +187,12 @@ func (o *Workitemcreate) String() string {
     
     
     
-     o.ScoredAgents = []Workitemscoredagentrequest{{}} 
-    
-    
     
     
      o.SkillIds = []string{""} 
+    
+    
+     o.ScoredAgents = []Workitemscoredagentrequest{{}} 
      o.PreferredAgentIds = []string{""} 
 
     j, _ := json.Marshal(o)
@@ -239,19 +239,19 @@ func (u *Workitemcreate) MarshalJSON() ([]byte, error) {
         
         AssigneeId string `json:"assigneeId"`
         
-        WrapupCode string `json:"wrapupCode"`
-        
-        ScoredAgents []Workitemscoredagentrequest `json:"scoredAgents"`
-        
         LanguageId string `json:"languageId"`
-        
-        UtilizationLabelId string `json:"utilizationLabelId"`
         
         ExternalContactId string `json:"externalContactId"`
         
         ExternalTag string `json:"externalTag"`
         
         SkillIds []string `json:"skillIds"`
+        
+        WrapupCode string `json:"wrapupCode"`
+        
+        UtilizationLabelId string `json:"utilizationLabelId"`
+        
+        ScoredAgents []Workitemscoredagentrequest `json:"scoredAgents"`
         
         PreferredAgentIds []string `json:"preferredAgentIds"`
         *Alias
@@ -305,17 +305,6 @@ func (u *Workitemcreate) MarshalJSON() ([]byte, error) {
 
 
         
-        ScoredAgents: []Workitemscoredagentrequest{{}},
-        
-
-
-        
-
-
-        
-
-
-        
 
 
         
@@ -323,6 +312,17 @@ func (u *Workitemcreate) MarshalJSON() ([]byte, error) {
 
         
         SkillIds: []string{""},
+        
+
+
+        
+
+
+        
+
+
+        
+        ScoredAgents: []Workitemscoredagentrequest{{}},
         
 
 

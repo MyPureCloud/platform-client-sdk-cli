@@ -43,7 +43,6 @@ func Cmdworkforcemanagement_managementunits_users_timeoffrequests() *cobra.Comma
 }`)
 	workforcemanagement_managementunits_users_timeoffrequestsCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "bool", "recentlyReviewed", "false", "Limit results to requests that have been reviewed within the preceding 30 days")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests", utils.FormatPermissions([]string{ "wfm:timeOffRequest:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -183,10 +182,6 @@ var listCmd = &cobra.Command{
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
 
-		recentlyReviewed := utils.GetFlag(cmd.Flags(), "bool", "recentlyReviewed")
-		if recentlyReviewed != "" {
-			queryParams["recentlyReviewed"] = recentlyReviewed
-		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

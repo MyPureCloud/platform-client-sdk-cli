@@ -19,6 +19,9 @@ type KnowledgeintegrationfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgeintegrationfilter
@@ -31,6 +34,10 @@ type Knowledgeintegrationfilter struct {
     VarType string `json:"type"`
 
 
+    // Action - Filter action.
+    Action string `json:"action"`
+
+
     // Values - Available options of the filter setting.
     Values []Knowledgeintegrationfiltervalue `json:"values"`
 
@@ -38,6 +45,7 @@ type Knowledgeintegrationfilter struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgeintegrationfilter) String() string {
+    
     
     
      o.Values = []Knowledgeintegrationfiltervalue{{}} 
@@ -62,9 +70,14 @@ func (u *Knowledgeintegrationfilter) MarshalJSON() ([]byte, error) {
         
         VarType string `json:"type"`
         
+        Action string `json:"action"`
+        
         Values []Knowledgeintegrationfiltervalue `json:"values"`
         *Alias
     }{
+
+        
+
 
         
 

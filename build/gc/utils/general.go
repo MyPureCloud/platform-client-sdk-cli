@@ -4,18 +4,17 @@ import (
 	"bufio"
 	"bytes"
 	"crypto/rand"
+	"crypto/sha256"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"math/big"
 	"net/http"
 	"os"
 	"regexp"
-	"strconv"
 	"strings"
 	"time"
-	"crypto/sha256"
-	"encoding/base64"
-	"math/big"
 
 	"sigs.k8s.io/yaml"
 
@@ -40,16 +39,13 @@ func AddFlag(flags *pflag.FlagSet, paramType string, name string, value string, 
 		flags.String(name, "", usage)
 		break
 	case "int":
-		intValue, _ := strconv.Atoi(value)
-		flags.Int(name, intValue, usage)
+		flags.String(name, value, usage)
 		break
 	case "float32":
-		floatValue, _ := strconv.ParseFloat(value, 32)
-		flags.Float32(name, float32(floatValue), usage)
+		flags.String(name, value, usage)
 		break
 	case "float64":
-		floatValue, _ := strconv.ParseFloat(value, 64)
-		flags.Float64(name, floatValue, usage)
+		flags.String(name, value, usage)
 		break
 	default:
 		logger.Fatal("Unknown parameter type. Support must be added for it: ", paramType)
@@ -91,20 +87,14 @@ func GetFlag(flags *pflag.FlagSet, paramType string, name string) string {
 		fallthrough
 	case "time.Time":
 		fallthrough
+	case "int":
+		fallthrough
+	case "float32":
+		fallthrough
+	case "float64":
+		fallthrough
 	case "string":
 		flag, _ = flags.GetString(name)
-		break
-	case "int":
-		flagInt, _ := flags.GetInt(name)
-		flag = strconv.Itoa(flagInt)
-		break
-	case "float32":
-		flagFloat, _ := flags.GetFloat32(name)
-		flag = strconv.FormatFloat(float64(flagFloat), 'E', -1, 32)
-		break
-	case "float64":
-		flagFloat, _ := flags.GetFloat64(name)
-		flag = strconv.FormatFloat(flagFloat, 'E', -1, 64)
 		break
 	default:
 		logger.Fatal("Unknown parameter type. Support must be added for it.", paramType)
@@ -342,7 +332,7 @@ func GeneratePKCECodeVerifier(n int) (string, error) {
 		}
 		ret[i] = unreservedCharacters[num.Int64()]
 	}
-	
+
 	return string(ret), nil
 }
 

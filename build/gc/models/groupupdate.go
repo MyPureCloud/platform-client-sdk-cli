@@ -76,7 +76,7 @@ type Groupupdate struct {
 
 
     // Images
-    Images []Userimage `json:"images"`
+    Images []Image `json:"images"`
 
 
     // Addresses
@@ -117,7 +117,7 @@ func (o *Groupupdate) String() string {
     
     
     
-     o.Images = []Userimage{{}} 
+     o.Images = []Image{{}} 
      o.Addresses = []Groupcontact{{}} 
     
     
@@ -150,7 +150,7 @@ func (u *Groupupdate) MarshalJSON() ([]byte, error) {
         
         Version int `json:"version"`
         
-        Images []Userimage `json:"images"`
+        Images []Image `json:"images"`
         
         Addresses []Groupcontact `json:"addresses"`
         
@@ -184,7 +184,7 @@ func (u *Groupupdate) MarshalJSON() ([]byte, error) {
 
 
         
-        Images: []Userimage{{}},
+        Images: []Image{{}},
         
 
 

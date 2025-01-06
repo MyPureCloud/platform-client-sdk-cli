@@ -75,6 +75,12 @@ type WorktypeDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -164,6 +170,14 @@ type Worktype struct {
     ServiceLevelTarget int `json:"serviceLevelTarget"`
 
 
+    // RuleSettings - Settings for the worktypes rules.
+    RuleSettings Workitemrulesettings `json:"ruleSettings"`
+
+
+    // Flow - The flow associated with the Worktype.
+    Flow Workitemflowreference `json:"flow"`
+
+
     
 
 }
@@ -187,6 +201,8 @@ func (o *Worktype) String() string {
     
     
      o.DefaultSkills = []Routingskillreference{{}} 
+    
+    
     
     
     
@@ -246,6 +262,10 @@ func (u *Worktype) MarshalJSON() ([]byte, error) {
         Schema Workitemschema `json:"schema"`
         
         ServiceLevelTarget int `json:"serviceLevelTarget"`
+        
+        RuleSettings Workitemrulesettings `json:"ruleSettings"`
+        
+        Flow Workitemflowreference `json:"flow"`
         *Alias
     }{
 
@@ -304,6 +324,12 @@ func (u *Worktype) MarshalJSON() ([]byte, error) {
 
         
         DefaultSkills: []Routingskillreference{{}},
+        
+
+
+        
+
+
         
 
 

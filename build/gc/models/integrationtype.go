@@ -26,7 +26,7 @@ type IntegrationtypeDud struct {
     Category string `json:"category"`
 
 
-    Images []Userimage `json:"images"`
+    Images []Image `json:"images"`
 
 
     ConfigPropertiesSchemaUri string `json:"configPropertiesSchemaUri"`

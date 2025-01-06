@@ -60,12 +60,12 @@ type Smsphonenumberentitylisting struct {
     Total int `json:"total"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
     // FirstUri
     FirstUri string `json:"firstUri"`
+
+
+    // LastUri
+    LastUri string `json:"lastUri"`
 
 
     // SelfUri
@@ -122,9 +122,9 @@ func (u *Smsphonenumberentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        LastUri string `json:"lastUri"`
-        
         FirstUri string `json:"firstUri"`
+        
+        LastUri string `json:"lastUri"`
         
         SelfUri string `json:"selfUri"`
         

@@ -37,6 +37,24 @@ type CallbackmediasettingsDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Callbackmediasettings
@@ -65,6 +83,10 @@ type Callbackmediasettings struct {
     SubTypeSettings map[string]Basemediasettings `json:"subTypeSettings"`
 
 
+    // Mode - The mode callbacks will use on this queue.
+    Mode string `json:"mode"`
+
+
     // EnableAutoDialAndEnd - Flag to enable Auto-Dial and Auto-End automation for callbacks on this queue.
     EnableAutoDialAndEnd bool `json:"enableAutoDialAndEnd"`
 
@@ -76,6 +98,26 @@ type Callbackmediasettings struct {
     // AutoEndDelaySeconds - Time in seconds after agent disconnects from the outgoing call before the encasing callback is auto-ended. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds.
     AutoEndDelaySeconds int `json:"autoEndDelaySeconds"`
 
+
+    // PacingModifier - Controls the maximum number of outbound calls at one time when mode is CustomerFirst.
+    PacingModifier float64 `json:"pacingModifier"`
+
+
+    // LiveVoiceReactionType - The action to take if a live voice is detected during the outbound call of a customer first callback.
+    LiveVoiceReactionType string `json:"liveVoiceReactionType"`
+
+
+    // LiveVoiceFlow - The inbound flow to transfer to if a live voice is detected during the outbound call of a customer first callback.
+    LiveVoiceFlow Domainentityref `json:"liveVoiceFlow"`
+
+
+    // AnsweringMachineReactionType - The action to take if an answering machine is detected during the outbound call of a customer first callback.
+    AnsweringMachineReactionType string `json:"answeringMachineReactionType"`
+
+
+    // AnsweringMachineFlow - The inbound flow to transfer to if an answering machine is detected during the outbound call of a customer first callback when answeringMachineReactionType is set to TransferToFlow.
+    AnsweringMachineFlow Domainentityref `json:"answeringMachineFlow"`
+
 }
 
 // String returns a JSON representation of the model
@@ -86,6 +128,12 @@ func (o *Callbackmediasettings) String() string {
     
     
      o.SubTypeSettings = map[string]Basemediasettings{"": {}} 
+    
+    
+    
+    
+    
+    
     
     
     
@@ -118,11 +166,23 @@ func (u *Callbackmediasettings) MarshalJSON() ([]byte, error) {
         
         SubTypeSettings map[string]Basemediasettings `json:"subTypeSettings"`
         
+        Mode string `json:"mode"`
+        
         EnableAutoDialAndEnd bool `json:"enableAutoDialAndEnd"`
         
         AutoDialDelaySeconds int `json:"autoDialDelaySeconds"`
         
         AutoEndDelaySeconds int `json:"autoEndDelaySeconds"`
+        
+        PacingModifier float64 `json:"pacingModifier"`
+        
+        LiveVoiceReactionType string `json:"liveVoiceReactionType"`
+        
+        LiveVoiceFlow Domainentityref `json:"liveVoiceFlow"`
+        
+        AnsweringMachineReactionType string `json:"answeringMachineReactionType"`
+        
+        AnsweringMachineFlow Domainentityref `json:"answeringMachineFlow"`
         *Alias
     }{
 
@@ -143,6 +203,24 @@ func (u *Callbackmediasettings) MarshalJSON() ([]byte, error) {
 
         
         SubTypeSettings: map[string]Basemediasettings{"": {}},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
 

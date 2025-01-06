@@ -38,6 +38,9 @@ type WorkitemstatusDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -79,6 +82,10 @@ type Workitemstatus struct {
     Worktype Worktypereference `json:"worktype"`
 
 
+    // AutoTerminateWorkitem - Terminate workitem on selection of status. Applicable only for statuses in the Closed category.
+    AutoTerminateWorkitem bool `json:"autoTerminateWorkitem"`
+
+
     
 
 }
@@ -88,6 +95,7 @@ func (o *Workitemstatus) String() string {
     
     
      o.DestinationStatuses = []Workitemstatusreference{{}} 
+    
     
     
     
@@ -125,6 +133,8 @@ func (u *Workitemstatus) MarshalJSON() ([]byte, error) {
         StatusTransitionTime string `json:"statusTransitionTime"`
         
         Worktype Worktypereference `json:"worktype"`
+        
+        AutoTerminateWorkitem bool `json:"autoTerminateWorkitem"`
         *Alias
     }{
 
@@ -139,6 +149,9 @@ func (u *Workitemstatus) MarshalJSON() ([]byte, error) {
 
         
         DestinationStatuses: []Workitemstatusreference{{}},
+        
+
+
         
 
 

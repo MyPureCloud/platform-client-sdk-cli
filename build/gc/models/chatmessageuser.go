@@ -46,7 +46,7 @@ type Chatmessageuser struct {
 
 
     // Images
-    Images []Userimage `json:"images"`
+    Images []Image `json:"images"`
 
 }
 
@@ -56,7 +56,7 @@ func (o *Chatmessageuser) String() string {
     
     
     
-     o.Images = []Userimage{{}} 
+     o.Images = []Image{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -82,7 +82,7 @@ func (u *Chatmessageuser) MarshalJSON() ([]byte, error) {
         
         Username string `json:"username"`
         
-        Images []Userimage `json:"images"`
+        Images []Image `json:"images"`
         *Alias
     }{
 
@@ -99,7 +99,7 @@ func (u *Chatmessageuser) MarshalJSON() ([]byte, error) {
 
 
         
-        Images: []Userimage{{}},
+        Images: []Image{{}},
         
 
         Alias: (*Alias)(u),

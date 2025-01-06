@@ -56,6 +56,9 @@ type CustomproviderDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -121,6 +124,10 @@ type Customprovider struct {
     SignAuthnRequests bool `json:"signAuthnRequests"`
 
 
+    // ProviderName
+    ProviderName string `json:"providerName"`
+
+
     
 
 }
@@ -136,6 +143,7 @@ func (o *Customprovider) String() string {
     
     
      o.Certificates = []string{""} 
+    
     
     
     
@@ -185,6 +193,8 @@ func (u *Customprovider) MarshalJSON() ([]byte, error) {
         SsoBinding string `json:"ssoBinding"`
         
         SignAuthnRequests bool `json:"signAuthnRequests"`
+        
+        ProviderName string `json:"providerName"`
         *Alias
     }{
 
@@ -217,6 +227,9 @@ func (u *Customprovider) MarshalJSON() ([]byte, error) {
 
         
         Certificates: []string{""},
+        
+
+
         
 
 

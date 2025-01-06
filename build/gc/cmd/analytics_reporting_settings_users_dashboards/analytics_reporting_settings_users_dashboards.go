@@ -33,6 +33,7 @@ func Cmdanalytics_reporting_settings_users_dashboards() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "50", "")
 	utils.AddFlag(listCmd.Flags(), "bool", "publicOnly", "", "If true, retrieve only public dashboards")
 	utils.AddFlag(listCmd.Flags(), "bool", "favoriteOnly", "", "If true, retrieve only favorite dashboards")
+	utils.AddFlag(listCmd.Flags(), "bool", "deletedOnly", "", "If true, retrieve only deleted dashboards that are still recoverable")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "retrieve dashboards that match with given name")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/analytics/reporting/settings/users/{userId}/dashboards", utils.FormatPermissions([]string{ "analytics:dashboardConfigurations:viewPrivate",  }), utils.GenerateDevCentreLink("GET", "Analytics", "/api/v2/analytics/reporting/settings/users/{userId}/dashboards")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -96,6 +97,10 @@ var listCmd = &cobra.Command{
 		favoriteOnly := utils.GetFlag(cmd.Flags(), "bool", "favoriteOnly")
 		if favoriteOnly != "" {
 			queryParams["favoriteOnly"] = favoriteOnly
+		}
+		deletedOnly := utils.GetFlag(cmd.Flags(), "bool", "deletedOnly")
+		if deletedOnly != "" {
+			queryParams["deletedOnly"] = deletedOnly
 		}
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {

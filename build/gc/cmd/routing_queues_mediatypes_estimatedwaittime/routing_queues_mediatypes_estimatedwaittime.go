@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdrouting_queues_mediatypes_estimatedwaittime() *cobra.Command { 
+	utils.AddFlag(getCmd.Flags(), "string", "labelId", "", "Unique id that represents the interaction label used with media type for EWT calculation")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime", utils.FormatPermissions([]string{ "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -73,6 +74,10 @@ var getCmd = &cobra.Command{
 		mediaType, args := args[0], args[1:]
 		path = strings.Replace(path, "{mediaType}", fmt.Sprintf("%v", mediaType), -1)
 
+		labelId := utils.GetFlag(cmd.Flags(), "string", "labelId")
+		if labelId != "" {
+			queryParams["labelId"] = labelId
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

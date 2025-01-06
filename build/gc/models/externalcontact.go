@@ -87,6 +87,9 @@ type ExternalcontactDud struct {
     
 
 
+    
+
+
     ExternalDataSources []Externaldatasource `json:"externalDataSources"`
 
 
@@ -180,6 +183,10 @@ type Externalcontact struct {
     FacebookId Facebookid `json:"facebookId"`
 
 
+    // ExternalIds - A list of external identifiers that identify this contact in an external system
+    ExternalIds []Externalid `json:"externalIds"`
+
+
     // ModifyDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     ModifyDate time.Time `json:"modifyDate"`
 
@@ -247,6 +254,7 @@ func (o *Externalcontact) String() string {
     
     
     
+     o.ExternalIds = []Externalid{{}} 
     
     
     
@@ -306,6 +314,8 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
         WhatsAppId Whatsappid `json:"whatsAppId"`
         
         FacebookId Facebookid `json:"facebookId"`
+        
+        ExternalIds []Externalid `json:"externalIds"`
         
         ModifyDate time.Time `json:"modifyDate"`
         
@@ -374,6 +384,11 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        ExternalIds: []Externalid{{}},
         
 
 

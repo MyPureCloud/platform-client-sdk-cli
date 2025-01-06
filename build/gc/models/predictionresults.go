@@ -19,6 +19,9 @@ type PredictionresultsDud struct {
 
     
 
+
+    
+
 }
 
 // Predictionresults
@@ -34,10 +37,15 @@ type Predictionresults struct {
     // EstimatedWaitTimeSeconds - Estimated wait time in seconds
     EstimatedWaitTimeSeconds int `json:"estimatedWaitTimeSeconds"`
 
+
+    // Label - This specifies the interaction label scoped to this estimated wait time calculation
+    Label Addressableentityref `json:"label"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Predictionresults) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Predictionresults) MarshalJSON() ([]byte, error) {
         Formula string `json:"formula"`
         
         EstimatedWaitTimeSeconds int `json:"estimatedWaitTimeSeconds"`
+        
+        Label Addressableentityref `json:"label"`
         *Alias
     }{
+
+        
+
 
         
 

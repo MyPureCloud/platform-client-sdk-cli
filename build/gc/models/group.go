@@ -94,7 +94,7 @@ type Group struct {
 
 
     // Images
-    Images []Userimage `json:"images"`
+    Images []Image `json:"images"`
 
 
     // Addresses
@@ -134,7 +134,7 @@ func (o *Group) String() string {
     
     
     
-     o.Images = []Userimage{{}} 
+     o.Images = []Image{{}} 
      o.Addresses = []Groupcontact{{}} 
     
     
@@ -165,7 +165,7 @@ func (u *Group) MarshalJSON() ([]byte, error) {
         
         VarType string `json:"type"`
         
-        Images []Userimage `json:"images"`
+        Images []Image `json:"images"`
         
         Addresses []Groupcontact `json:"addresses"`
         
@@ -208,7 +208,7 @@ func (u *Group) MarshalJSON() ([]byte, error) {
 
 
         
-        Images: []Userimage{{}},
+        Images: []Image{{}},
         
 
 

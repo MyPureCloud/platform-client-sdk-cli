@@ -53,7 +53,7 @@ func Cmdrouting_sms_phonenumbers() *cobra.Command {
 }`)
 	routing_sms_phonenumbersCmd.AddCommand(createCmd)
 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/sms/phonenumbers/{addressId}", utils.FormatPermissions([]string{ "sms:phoneNumber:delete",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/sms/phonenumbers/{addressId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/sms/phonenumbers/{phoneNumberId}", utils.FormatPermissions([]string{ "sms:phoneNumber:delete",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/sms/phonenumbers/{phoneNumberId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -63,7 +63,7 @@ func Cmdrouting_sms_phonenumbers() *cobra.Command {
 	routing_sms_phonenumbersCmd.AddCommand(deleteCmd)
 
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand response with additional information Valid values: compliance, supportedContent")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/sms/phonenumbers/{addressId}", utils.FormatPermissions([]string{ "sms:phoneNumber:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/sms/phonenumbers/{addressId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/sms/phonenumbers/{phoneNumberId}", utils.FormatPermissions([]string{ "sms:phoneNumber:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/sms/phonenumbers/{phoneNumberId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -104,7 +104,7 @@ func Cmdrouting_sms_phonenumbers() *cobra.Command {
 }`)
 	routing_sms_phonenumbersCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/sms/phonenumbers/{addressId}", utils.FormatPermissions([]string{ "sms:phoneNumber:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/sms/phonenumbers/{addressId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/sms/phonenumbers/{phoneNumberId}", utils.FormatPermissions([]string{ "sms:phoneNumber:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/sms/phonenumbers/{phoneNumberId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "SmsPhoneNumber",
   "content" : {
@@ -203,10 +203,10 @@ var createCmd = &cobra.Command{
 	},
 }
 var deleteCmd = &cobra.Command{
-	Use:   "delete [addressId]",
+	Use:   "delete [phoneNumberId]",
 	Short: "Delete a phone number provisioned for SMS.",
 	Long:  "Delete a phone number provisioned for SMS.",
-	Args:  utils.DetermineArgs([]string{ "addressId", }),
+	Args:  utils.DetermineArgs([]string{ "phoneNumberId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -219,9 +219,9 @@ var deleteCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/routing/sms/phonenumbers/{addressId}"
-		addressId, args := args[0], args[1:]
-		path = strings.Replace(path, "{addressId}", fmt.Sprintf("%v", addressId), -1)
+		path := "/api/v2/routing/sms/phonenumbers/{phoneNumberId}"
+		phoneNumberId, args := args[0], args[1:]
+		path = strings.Replace(path, "{phoneNumberId}", fmt.Sprintf("%v", phoneNumberId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -268,10 +268,10 @@ var deleteCmd = &cobra.Command{
 	},
 }
 var getCmd = &cobra.Command{
-	Use:   "get [addressId]",
+	Use:   "get [phoneNumberId]",
 	Short: "Get a phone number provisioned for SMS.",
 	Long:  "Get a phone number provisioned for SMS.",
-	Args:  utils.DetermineArgs([]string{ "addressId", }),
+	Args:  utils.DetermineArgs([]string{ "phoneNumberId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -284,9 +284,9 @@ var getCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/routing/sms/phonenumbers/{addressId}"
-		addressId, args := args[0], args[1:]
-		path = strings.Replace(path, "{addressId}", fmt.Sprintf("%v", addressId), -1)
+		path := "/api/v2/routing/sms/phonenumbers/{phoneNumberId}"
+		phoneNumberId, args := args[0], args[1:]
+		path = strings.Replace(path, "{phoneNumberId}", fmt.Sprintf("%v", phoneNumberId), -1)
 
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
@@ -444,10 +444,10 @@ var listCmd = &cobra.Command{
 	},
 }
 var updateCmd = &cobra.Command{
-	Use:   "update [addressId]",
+	Use:   "update [phoneNumberId]",
 	Short: "Update a phone number provisioned for SMS.",
 	Long:  "Update a phone number provisioned for SMS.",
-	Args:  utils.DetermineArgs([]string{ "addressId", }),
+	Args:  utils.DetermineArgs([]string{ "phoneNumberId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -463,9 +463,9 @@ var updateCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/routing/sms/phonenumbers/{addressId}"
-		addressId, args := args[0], args[1:]
-		path = strings.Replace(path, "{addressId}", fmt.Sprintf("%v", addressId), -1)
+		path := "/api/v2/routing/sms/phonenumbers/{phoneNumberId}"
+		phoneNumberId, args := args[0], args[1:]
+		path = strings.Replace(path, "{phoneNumberId}", fmt.Sprintf("%v", phoneNumberId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {

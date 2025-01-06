@@ -62,7 +62,7 @@ func Cmdtaskmanagement_worktypes() *cobra.Command {
 }`)
 	taskmanagement_worktypesCmd.AddCommand(deleteCmd)
 
-	utils.AddFlag(getCmd.Flags(), "[]string", "expands", "", "Which fields, if any, to expand. Valid values: defaultQueue, defaultSkills, defaultLanguage, schema, flow")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expands", "", "Which fields, if any, to expand. Valid values: defaultQueue, defaultSkills, defaultLanguage, schema, flow, defaultScript")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/taskmanagement/worktypes/{worktypeId}", utils.FormatPermissions([]string{ "workitems:worktype:view",  }), utils.GenerateDevCentreLink("GET", "Task Management", "/api/v2/taskmanagement/worktypes/{worktypeId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	

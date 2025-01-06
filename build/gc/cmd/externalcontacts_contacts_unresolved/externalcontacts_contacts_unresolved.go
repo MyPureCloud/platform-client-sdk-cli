@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdexternalcontacts_contacts_unresolved() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) Valid values: externalOrganization, externalDataSources, identifiers")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: externalOrganization, externalDataSources, identifiers, division")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/contacts/{contactId}/unresolved", utils.FormatPermissions([]string{ "externalContacts:contact:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/contacts/{contactId}/unresolved")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	

@@ -17,7 +17,7 @@ type ConversationenrichmentlanguageDud struct {
 
 // Conversationenrichmentlanguage - Detected language of this message.
 type Conversationenrichmentlanguage struct { 
-    // Language - The ISO 639-3 detected language code of this message.
+    // Language - The IETF detected language code of this message.
     Language string `json:"language"`
 
 }

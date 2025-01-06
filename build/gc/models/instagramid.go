@@ -16,6 +16,9 @@ type InstagramidDud struct {
 
     
 
+
+    
+
 }
 
 // Instagramid - User information for an Instagram account
@@ -27,11 +30,16 @@ type Instagramid struct {
     // DisplayName - The displayName of the person who owns this Instagram account
     DisplayName string `json:"displayName"`
 
+
+    // Handle - The handle of the person who owns this Instagram account
+    Handle string `json:"handle"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Instagramid) String() string {
      o.Ids = []Instagramscopedid{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -53,11 +61,16 @@ func (u *Instagramid) MarshalJSON() ([]byte, error) {
         Ids []Instagramscopedid `json:"ids"`
         
         DisplayName string `json:"displayName"`
+        
+        Handle string `json:"handle"`
         *Alias
     }{
 
         
         Ids: []Instagramscopedid{{}},
+        
+
+
         
 
 

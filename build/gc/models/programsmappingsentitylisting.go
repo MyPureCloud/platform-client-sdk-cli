@@ -41,12 +41,12 @@ type Programsmappingsentitylisting struct {
     SelfUri string `json:"selfUri"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
     // PageCount
     PageCount int `json:"pageCount"`
+
+
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 }
 
@@ -80,9 +80,9 @@ func (u *Programsmappingsentitylisting) MarshalJSON() ([]byte, error) {
         
         SelfUri string `json:"selfUri"`
         
-        NextUri string `json:"nextUri"`
-        
         PageCount int `json:"pageCount"`
+        
+        NextUri string `json:"nextUri"`
         *Alias
     }{
 

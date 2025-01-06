@@ -29,6 +29,9 @@ type BatchdownloadjobstatusresultDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -54,6 +57,10 @@ type Batchdownloadjobstatusresult struct {
     ErrorCount int `json:"errorCount"`
 
 
+    // Status - Current status of the job. A job is considered completed when all the submitted requests have been processed and fulfilled.
+    Status string `json:"status"`
+
+
     // Results - Current set of results for the job.
     Results []Batchdownloadjobresult `json:"results"`
 
@@ -64,6 +71,7 @@ type Batchdownloadjobstatusresult struct {
 
 // String returns a JSON representation of the model
 func (o *Batchdownloadjobstatusresult) String() string {
+    
     
     
     
@@ -94,9 +102,14 @@ func (u *Batchdownloadjobstatusresult) MarshalJSON() ([]byte, error) {
         
         ErrorCount int `json:"errorCount"`
         
+        Status string `json:"status"`
+        
         Results []Batchdownloadjobresult `json:"results"`
         *Alias
     }{
+
+        
+
 
         
 

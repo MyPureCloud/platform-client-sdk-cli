@@ -265,7 +265,7 @@ type Userqueue struct {
     OutboundMessagingAddresses Queuemessagingaddresses `json:"outboundMessagingAddresses"`
 
 
-    // OutboundEmailAddress
+    // OutboundEmailAddress - The default email address to use for outbound email from this queue.
     OutboundEmailAddress Queueemailaddress `json:"outboundEmailAddress"`
 
 

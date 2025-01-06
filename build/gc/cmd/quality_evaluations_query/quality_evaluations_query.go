@@ -47,6 +47,7 @@ func Cmdquality_evaluations_query() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "expandAnswerTotalScores", "", "get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.")
 	utils.AddFlag(listCmd.Flags(), "int", "maximum", "", "the maximum number of results to return")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "NOTE: Does not work when conversationId is supplied.")
+	utils.AddFlag(listCmd.Flags(), "bool", "includeDeletedUsers", "false", "Allow returning an agent or evaluator user with a `delete` status. Defaults to false.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/evaluations/query", utils.FormatPermissions([]string{ "quality:evaluation:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/evaluations/query")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -163,6 +164,10 @@ var listCmd = &cobra.Command{
 		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
 		if sortOrder != "" {
 			queryParams["sortOrder"] = sortOrder
+		}
+		includeDeletedUsers := utils.GetFlag(cmd.Flags(), "bool", "includeDeletedUsers")
+		if includeDeletedUsers != "" {
+			queryParams["includeDeletedUsers"] = includeDeletedUsers
 		}
 		urlString := path
 		if len(queryParams) > 0 {

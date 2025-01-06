@@ -1,0 +1,12 @@
+package socialmedia_topics_dataingestionrules_open
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/socialmedia_topics_dataingestionrules_open_versions"
+)
+
+func init() {
+	socialmedia_topics_dataingestionrules_openCmd.AddCommand(socialmedia_topics_dataingestionrules_open_versions.Cmdsocialmedia_topics_dataingestionrules_open_versions())
+	socialmedia_topics_dataingestionrules_openCmd.Short = utils.GenerateCustomDescription(socialmedia_topics_dataingestionrules_openCmd.Short, socialmedia_topics_dataingestionrules_open_versions.Description, )
+	socialmedia_topics_dataingestionrules_openCmd.Long = socialmedia_topics_dataingestionrules_openCmd.Short
+}

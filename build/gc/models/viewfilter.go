@@ -637,6 +637,15 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1429,6 +1438,10 @@ type Viewfilter struct {
     TranscriptDurationMilliseconds []Numericrange `json:"transcriptDurationMilliseconds"`
 
 
+    // WorkitemsStatuses - The list of workitem status with worktype
+    WorkitemsStatuses []Workitemstatusfilter `json:"workitemsStatuses"`
+
+
     // SocialCountries - List of countries for social filtering
     SocialCountries []string `json:"socialCountries"`
 
@@ -1475,6 +1488,14 @@ type Viewfilter struct {
 
     // FilterUsersByManagerIds - The manager ids used to fetch associated users for the view
     FilterUsersByManagerIds []string `json:"filterUsersByManagerIds"`
+
+
+    // SlideshowIds - List of Dashboard slideshowIds to be filtered
+    SlideshowIds []string `json:"slideshowIds"`
+
+
+    // Conferenced - Filter to indicate if the conversation has conference
+    Conferenced bool `json:"conferenced"`
 
 }
 
@@ -1677,6 +1698,7 @@ func (o *Viewfilter) String() string {
     
     
      o.TranscriptDurationMilliseconds = []Numericrange{{}} 
+     o.WorkitemsStatuses = []Workitemstatusfilter{{}} 
      o.SocialCountries = []string{""} 
      o.SocialLanguages = []string{""} 
      o.SocialChannels = []string{""} 
@@ -1689,6 +1711,8 @@ func (o *Viewfilter) String() string {
     
      o.SocialClassifications = []string{""} 
      o.FilterUsersByManagerIds = []string{""} 
+     o.SlideshowIds = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2100,6 +2124,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
         TranscriptDurationMilliseconds []Numericrange `json:"transcriptDurationMilliseconds"`
         
+        WorkitemsStatuses []Workitemstatusfilter `json:"workitemsStatuses"`
+        
         SocialCountries []string `json:"socialCountries"`
         
         SocialLanguages []string `json:"socialLanguages"`
@@ -2123,6 +2149,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         SocialClassifications []string `json:"socialClassifications"`
         
         FilterUsersByManagerIds []string `json:"filterUsersByManagerIds"`
+        
+        SlideshowIds []string `json:"slideshowIds"`
+        
+        Conferenced bool `json:"conferenced"`
         *Alias
     }{
 
@@ -2986,6 +3016,11 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
 
         
+        WorkitemsStatuses: []Workitemstatusfilter{{}},
+        
+
+
+        
         SocialCountries: []string{""},
         
 
@@ -3038,6 +3073,14 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         FilterUsersByManagerIds: []string{""},
+        
+
+
+        
+        SlideshowIds: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

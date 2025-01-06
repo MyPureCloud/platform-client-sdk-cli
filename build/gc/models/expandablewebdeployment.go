@@ -93,7 +93,7 @@ type Expandablewebdeployment struct {
 
 
     // Flow - A reference to the inboundshortmessage flow used by this deployment
-    Flow Domainentityref `json:"flow"`
+    Flow Webdeploymentflowentityref `json:"flow"`
 
 
     // Status - The current status of the deployment
@@ -145,7 +145,7 @@ func (u *Expandablewebdeployment) MarshalJSON() ([]byte, error) {
         
         SupportedContent Supportedcontentreference `json:"supportedContent"`
         
-        Flow Domainentityref `json:"flow"`
+        Flow Webdeploymentflowentityref `json:"flow"`
         
         Status string `json:"status"`
         

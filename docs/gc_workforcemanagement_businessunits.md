@@ -41,6 +41,7 @@
 * [gc workforcemanagement businessunits get](gc_workforcemanagement_businessunits_get.html)	 - Get business unit
 * [gc workforcemanagement businessunits intraday](gc_workforcemanagement_businessunits_intraday.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday
 * [gc workforcemanagement businessunits list](gc_workforcemanagement_businessunits_list.html)	 - Get business units
+* [gc workforcemanagement businessunits mainforecast](gc_workforcemanagement_businessunits_mainforecast.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast
 * [gc workforcemanagement businessunits managementunits](gc_workforcemanagement_businessunits_managementunits.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits
 * [gc workforcemanagement businessunits planninggroups](gc_workforcemanagement_businessunits_planninggroups.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups
 * [gc workforcemanagement businessunits scheduling](gc_workforcemanagement_businessunits_scheduling.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling

@@ -18,7 +18,7 @@ gc outbound campaigns all list [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --id strings               Campaign ID(s)
-      --mediaType strings        Media type(s) Valid values: email, sms, voice
+      --mediaType strings        Media type(s) Valid values: email, sms, voice, whatsapp
       --name string              Campaign name(s)
       --pageNumber string        Page number (default "1")
       --pageSize string          Page size (default "25")

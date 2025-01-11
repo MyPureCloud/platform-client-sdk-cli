@@ -1,20 +1,15 @@
-## gc analytics conversations details list
+## gc taskmanagement workitems bulk add
 
-Gets multiple conversations by id
+/api/v2/taskmanagement/workitems/bulk/add
 
 ### Synopsis
 
-Gets multiple conversations by id
-
-```
-gc analytics conversations details list [flags]
-```
+/api/v2/taskmanagement/workitems/bulk/add
 
 ### Options
 
 ```
-  -h, --help         help for list
-      --id strings   Comma-separated conversation ids
+  -h, --help   help for add
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +29,7 @@ gc analytics conversations details list [flags]
 
 ### SEE ALSO
 
-* [gc analytics conversations details](gc_analytics_conversations_details.html)	 - /api/v2/analytics/conversations/{conversationId}/details /api/v2/analytics/conversations/details
+* [gc taskmanagement workitems bulk](gc_taskmanagement_workitems_bulk.html)	 - /api/v2/taskmanagement/workitems/bulk
+* [gc taskmanagement workitems bulk add jobs](gc_taskmanagement_workitems_bulk_add_jobs.html)	 - /api/v2/taskmanagement/workitems/bulk/add/jobs
 
 

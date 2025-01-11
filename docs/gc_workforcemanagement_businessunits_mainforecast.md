@@ -1,20 +1,15 @@
-## gc analytics conversations details list
+## gc workforcemanagement businessunits mainforecast
 
-Gets multiple conversations by id
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast
 
 ### Synopsis
 
-Gets multiple conversations by id
-
-```
-gc analytics conversations details list [flags]
-```
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast
 
 ### Options
 
 ```
-  -h, --help         help for list
-      --id strings   Comma-separated conversation ids
+  -h, --help   help for mainforecast
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +29,7 @@ gc analytics conversations details list [flags]
 
 ### SEE ALSO
 
-* [gc analytics conversations details](gc_analytics_conversations_details.html)	 - /api/v2/analytics/conversations/{conversationId}/details /api/v2/analytics/conversations/details
+* [gc workforcemanagement businessunits](gc_workforcemanagement_businessunits.html)	 - /api/v2/workforcemanagement/businessunits
+* [gc workforcemanagement businessunits mainforecast continuousforecast](gc_workforcemanagement_businessunits_mainforecast_continuousforecast.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast
 
 

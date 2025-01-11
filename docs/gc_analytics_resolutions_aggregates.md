@@ -31,5 +31,6 @@
 
 * [gc analytics resolutions](gc_analytics_resolutions.html)	 - /api/v2/analytics/resolutions
 * [gc analytics resolutions aggregates jobs](gc_analytics_resolutions_aggregates_jobs.html)	 - /api/v2/analytics/resolutions/aggregates/jobs
+* [gc analytics resolutions aggregates query](gc_analytics_resolutions_aggregates_query.html)	 - /api/v2/analytics/resolutions/aggregates/query
 
 

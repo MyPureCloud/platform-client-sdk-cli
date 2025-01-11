@@ -1,20 +1,22 @@
-## gc analytics conversations details list
+## gc taskmanagement workitems bulk terminate jobs create
 
-Gets multiple conversations by id
+Create a workitem bulk terminate job.
 
 ### Synopsis
 
-Gets multiple conversations by id
+Create a workitem bulk terminate job.
 
 ```
-gc analytics conversations details list [flags]
+gc taskmanagement workitems bulk terminate jobs create [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help         help for list
-      --id strings   Comma-separated conversation ids
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +36,6 @@ gc analytics conversations details list [flags]
 
 ### SEE ALSO
 
-* [gc analytics conversations details](gc_analytics_conversations_details.html)	 - /api/v2/analytics/conversations/{conversationId}/details /api/v2/analytics/conversations/details
+* [gc taskmanagement workitems bulk terminate jobs](gc_taskmanagement_workitems_bulk_terminate_jobs.html)	 - /api/v2/taskmanagement/workitems/bulk/terminate/jobs
 
 

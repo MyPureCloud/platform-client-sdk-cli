@@ -32,6 +32,7 @@
 * [gc taskmanagement](gc_taskmanagement.html)	 - /api/v2/taskmanagement
 * [gc taskmanagement workitems acd](gc_taskmanagement_workitems_acd.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/acd
 * [gc taskmanagement workitems assignment](gc_taskmanagement_workitems_assignment.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/assignment
+* [gc taskmanagement workitems bulk](gc_taskmanagement_workitems_bulk.html)	 - /api/v2/taskmanagement/workitems/bulk
 * [gc taskmanagement workitems create](gc_taskmanagement_workitems_create.html)	 - Create a workitem
 * [gc taskmanagement workitems delete](gc_taskmanagement_workitems_delete.html)	 - Delete a workitem
 * [gc taskmanagement workitems disconnect](gc_taskmanagement_workitems_disconnect.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/disconnect

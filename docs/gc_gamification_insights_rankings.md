@@ -1,20 +1,15 @@
-## gc analytics conversations details list
+## gc gamification insights rankings
 
-Gets multiple conversations by id
+/api/v2/gamification/insights/rankings
 
 ### Synopsis
 
-Gets multiple conversations by id
-
-```
-gc analytics conversations details list [flags]
-```
+/api/v2/gamification/insights/rankings
 
 ### Options
 
 ```
-  -h, --help         help for list
-      --id strings   Comma-separated conversation ids
+  -h, --help   help for rankings
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +29,7 @@ gc analytics conversations details list [flags]
 
 ### SEE ALSO
 
-* [gc analytics conversations details](gc_analytics_conversations_details.html)	 - /api/v2/analytics/conversations/{conversationId}/details /api/v2/analytics/conversations/details
+* [gc gamification insights](gc_gamification_insights.html)	 - /api/v2/gamification/insights
+* [gc gamification insights rankings get](gc_gamification_insights_rankings_get.html)	 - Get insights rankings
 
 

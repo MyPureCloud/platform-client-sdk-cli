@@ -1,20 +1,19 @@
-## gc analytics conversations details list
+## gc taskmanagement workitems bulk terminate jobs delete
 
-Gets multiple conversations by id
+Delete a Bulk job
 
 ### Synopsis
 
-Gets multiple conversations by id
+Delete a Bulk job
 
 ```
-gc analytics conversations details list [flags]
+gc taskmanagement workitems bulk terminate jobs delete [bulkJobId] [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help         help for list
-      --id strings   Comma-separated conversation ids
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +33,6 @@ gc analytics conversations details list [flags]
 
 ### SEE ALSO
 
-* [gc analytics conversations details](gc_analytics_conversations_details.html)	 - /api/v2/analytics/conversations/{conversationId}/details /api/v2/analytics/conversations/details
+* [gc taskmanagement workitems bulk terminate jobs](gc_taskmanagement_workitems_bulk_terminate_jobs.html)	 - /api/v2/taskmanagement/workitems/bulk/terminate/jobs
 
 

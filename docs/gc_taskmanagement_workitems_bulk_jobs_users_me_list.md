@@ -1,28 +1,25 @@
-## gc outbound campaigns all divisionviews list
+## gc taskmanagement workitems bulk jobs users me list
 
-Query across all types of campaigns
+Get bulk jobs created by the currently logged in user.
 
 ### Synopsis
 
-Query across all types of campaigns
+Get bulk jobs created by the currently logged in user.
 
 ```
-gc outbound campaigns all divisionviews list [flags]
+gc taskmanagement workitems bulk jobs users me list [flags]
 ```
 
 ### Options
 
 ```
+      --action string            The bulk job action. Valid values: TerminateWorkitems, AddWorkitems
+      --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --divisionId strings       Division ID(s)
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --id strings               Campaign ID(s)
-      --mediaType strings        Media type(s) Valid values: email, sms, voice, whatsapp
-      --name string              Campaign name(s)
-      --pageNumber string        Page number (default "1")
-      --pageSize string          Page size (default "25")
-      --sortOrder string         Sort order Valid values: ascending, descending
+      --pageSize after           Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an after key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default "25")
+      --sortOrder string         Ascending or descending sort order Valid values: ascending, descending
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
@@ -43,6 +40,6 @@ gc outbound campaigns all divisionviews list [flags]
 
 ### SEE ALSO
 
-* [gc outbound campaigns all divisionviews](gc_outbound_campaigns_all_divisionviews.html)	 - /api/v2/outbound/campaigns/all/divisionviews
+* [gc taskmanagement workitems bulk jobs users me](gc_taskmanagement_workitems_bulk_jobs_users_me.html)	 - /api/v2/taskmanagement/workitems/bulk/jobs/users/me
 
 

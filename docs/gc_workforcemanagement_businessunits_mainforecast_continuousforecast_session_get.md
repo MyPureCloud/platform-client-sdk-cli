@@ -1,20 +1,19 @@
-## gc analytics conversations details list
+## gc workforcemanagement businessunits mainforecast continuousforecast session get
 
-Gets multiple conversations by id
+Get the session details for the session ID
 
 ### Synopsis
 
-Gets multiple conversations by id
+Get the session details for the session ID
 
 ```
-gc analytics conversations details list [flags]
+gc workforcemanagement businessunits mainforecast continuousforecast session get [businessUnitId] [sessionId] [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help         help for list
-      --id strings   Comma-separated conversation ids
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +33,6 @@ gc analytics conversations details list [flags]
 
 ### SEE ALSO
 
-* [gc analytics conversations details](gc_analytics_conversations_details.html)	 - /api/v2/analytics/conversations/{conversationId}/details /api/v2/analytics/conversations/details
+* [gc workforcemanagement businessunits mainforecast continuousforecast session](gc_workforcemanagement_businessunits_mainforecast_continuousforecast_session.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session
 
 

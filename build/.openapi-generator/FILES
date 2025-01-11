@@ -69,6 +69,7 @@ gc/cmd/analytics_reporting_settings_dashboards_query/analytics_reporting_setting
 gc/cmd/analytics_reporting_settings_users_dashboards/analytics_reporting_settings_users_dashboards.go
 gc/cmd/analytics_resolutions_aggregates_jobs/analytics_resolutions_aggregates_jobs.go
 gc/cmd/analytics_resolutions_aggregates_jobs_results/analytics_resolutions_aggregates_jobs_results.go
+gc/cmd/analytics_resolutions_aggregates_query/analytics_resolutions_aggregates_query.go
 gc/cmd/analytics_routing_activity_query/analytics_routing_activity_query.go
 gc/cmd/analytics_summaries_aggregates_jobs/analytics_summaries_aggregates_jobs.go
 gc/cmd/analytics_summaries_aggregates_jobs_results/analytics_summaries_aggregates_jobs_results.go
@@ -454,6 +455,7 @@ gc/cmd/gamification_insights_details/gamification_insights_details.go
 gc/cmd/gamification_insights_groups_trends/gamification_insights_groups_trends.go
 gc/cmd/gamification_insights_groups_trends_all/gamification_insights_groups_trends_all.go
 gc/cmd/gamification_insights_members/gamification_insights_members.go
+gc/cmd/gamification_insights_rankings/gamification_insights_rankings.go
 gc/cmd/gamification_insights_trends/gamification_insights_trends.go
 gc/cmd/gamification_insights_users_details/gamification_insights_users_details.go
 gc/cmd/gamification_insights_users_trends/gamification_insights_users_trends.go
@@ -1000,6 +1002,11 @@ gc/cmd/taskmanagement_workbins_versions/taskmanagement_workbins_versions.go
 gc/cmd/taskmanagement_workitems/taskmanagement_workitems.go
 gc/cmd/taskmanagement_workitems_acd_cancel/taskmanagement_workitems_acd_cancel.go
 gc/cmd/taskmanagement_workitems_assignment/taskmanagement_workitems_assignment.go
+gc/cmd/taskmanagement_workitems_bulk_add_jobs/taskmanagement_workitems_bulk_add_jobs.go
+gc/cmd/taskmanagement_workitems_bulk_add_jobs_results/taskmanagement_workitems_bulk_add_jobs_results.go
+gc/cmd/taskmanagement_workitems_bulk_jobs_users_me/taskmanagement_workitems_bulk_jobs_users_me.go
+gc/cmd/taskmanagement_workitems_bulk_terminate_jobs/taskmanagement_workitems_bulk_terminate_jobs.go
+gc/cmd/taskmanagement_workitems_bulk_terminate_jobs_results/taskmanagement_workitems_bulk_terminate_jobs_results.go
 gc/cmd/taskmanagement_workitems_disconnect/taskmanagement_workitems_disconnect.go
 gc/cmd/taskmanagement_workitems_history/taskmanagement_workitems_history.go
 gc/cmd/taskmanagement_workitems_query/taskmanagement_workitems_query.go
@@ -1222,6 +1229,8 @@ gc/cmd/workforcemanagement_businessunits_alternativeshifts_trades_search_jobs/wo
 gc/cmd/workforcemanagement_businessunits_divisionviews/workforcemanagement_businessunits_divisionviews.go
 gc/cmd/workforcemanagement_businessunits_intraday/workforcemanagement_businessunits_intraday.go
 gc/cmd/workforcemanagement_businessunits_intraday_planninggroups/workforcemanagement_businessunits_intraday_planninggroups.go
+gc/cmd/workforcemanagement_businessunits_mainforecast_continuousforecast_session/workforcemanagement_businessunits_mainforecast_continuousforecast_session.go
+gc/cmd/workforcemanagement_businessunits_mainforecast_continuousforecast_session_snapshot/workforcemanagement_businessunits_mainforecast_continuousforecast_session_snapshot.go
 gc/cmd/workforcemanagement_businessunits_managementunits/workforcemanagement_businessunits_managementunits.go
 gc/cmd/workforcemanagement_businessunits_planninggroups/workforcemanagement_businessunits_planninggroups.go
 gc/cmd/workforcemanagement_businessunits_scheduling_runs/workforcemanagement_businessunits_scheduling_runs.go
@@ -1483,6 +1492,7 @@ gc/models/agentworkplanbids.go
 gc/models/agentworkplanlistresponse.go
 gc/models/agentworkplans.go
 gc/models/agentworkplanshift.go
+gc/models/aggregatehistoricalavailability.go
 gc/models/aggregatemetricdata.go
 gc/models/aggregateviewdata.go
 gc/models/aggregationrange.go
@@ -1767,6 +1777,19 @@ gc/models/bulkfetchnotesresponse.go
 gc/models/bulkfetchorganizationsresponse.go
 gc/models/bulkfetchrelationshipsresponse.go
 gc/models/bulkidsrequest.go
+gc/models/bulkjob.go
+gc/models/bulkjobaddrequest.go
+gc/models/bulkjobaddresponse.go
+gc/models/bulkjobaddresult.go
+gc/models/bulkjobaddworkitemsummary.go
+gc/models/bulkjobentity.go
+gc/models/bulkjoberror.go
+gc/models/bulkjobslisting.go
+gc/models/bulkjobterminaterequest.go
+gc/models/bulkjobterminateresult.go
+gc/models/bulkjobterminateresultentity.go
+gc/models/bulkjobterminateresultsresponse.go
+gc/models/bulkjobupdate.go
 gc/models/bulknotesrequest.go
 gc/models/bulknotesresponse.go
 gc/models/bulkorganizationsrequest.go
@@ -2014,6 +2037,7 @@ gc/models/comparisonperiodlisting.go
 gc/models/complexvariableinfo.go
 gc/models/compliance.go
 gc/models/complianceresponse.go
+gc/models/computeddata.go
 gc/models/condition.go
 gc/models/conditionalgrouprouting.go
 gc/models/conditionalgrouproutingrule.go
@@ -2107,10 +2131,19 @@ gc/models/contentreaction.go
 gc/models/contentsetting.go
 gc/models/contentstory.go
 gc/models/contenttext.go
+gc/models/contestcompletedata.go
+gc/models/contestcompletedatascore.go
+gc/models/contestdatametrics.go
+gc/models/contestdataprizes.go
+gc/models/contestdatawinners.go
+gc/models/contestdatawinnersusers.go
 gc/models/context.go
 gc/models/contextentity.go
 gc/models/contextintent.go
 gc/models/contextpattern.go
+gc/models/continuousforecastgetsessionresponse.go
+gc/models/continuousforecastsessionresponse.go
+gc/models/continuousforecastsnapshotresponse.go
 gc/models/conversation.go
 gc/models/conversationactivitydata.go
 gc/models/conversationactivityentitydata.go
@@ -2326,6 +2359,7 @@ gc/models/customeventattribute.go
 gc/models/customeventattributelist.go
 gc/models/customi18nlabels.go
 gc/models/customprovider.go
+gc/models/daily.go
 gc/models/dailypossibleshift.go
 gc/models/dashboardconfiguration.go
 gc/models/dashboardconfigurationbulkrequest.go
@@ -2693,6 +2727,7 @@ gc/models/event.go
 gc/models/eventaction.go
 gc/models/eventaggregatesqueryrequest.go
 gc/models/eventaggregatesresponse.go
+gc/models/eventcobrowse.go
 gc/models/eventcondition.go
 gc/models/eventdefinition.go
 gc/models/eventdefinitionaggregates.go
@@ -2701,10 +2736,13 @@ gc/models/eventerror.go
 gc/models/eventlisting.go
 gc/models/eventlog.go
 gc/models/eventmessage.go
+gc/models/eventpresence.go
 gc/models/eventqueryrequest.go
 gc/models/eventqueryresponse.go
 gc/models/eventsession.go
 gc/models/eventsetting.go
+gc/models/eventtyping.go
+gc/models/eventvideo.go
 gc/models/executerecordingjobsquery.go
 gc/models/executiondataentity.go
 gc/models/executiondataflowsettingsresponse.go
@@ -2960,6 +2998,7 @@ gc/models/historicaladherenceactuals.go
 gc/models/historicaladherencedaymetrics.go
 gc/models/historicaladherenceexceptioninfo.go
 gc/models/historicaladherencequeryresult.go
+gc/models/historicaldata.go
 gc/models/historicalimportdeletejobresponse.go
 gc/models/historicalimportstatus.go
 gc/models/historicalimportstatuslisting.go
@@ -3021,6 +3060,7 @@ gc/models/insightsdetailsmetricitem.go
 gc/models/insightsdetailsmetricperiodpoints.go
 gc/models/insightsdetailsoverallitem.go
 gc/models/insightsdetailsoverallperiodpoints.go
+gc/models/insightsrankings.go
 gc/models/insightssummary.go
 gc/models/insightssummarymetricitem.go
 gc/models/insightssummarymetricperiodpoints.go
@@ -3031,6 +3071,7 @@ gc/models/insightstrend.go
 gc/models/insightstrendmetricitem.go
 gc/models/insightstrends.go
 gc/models/insightstrendtotalitem.go
+gc/models/instagramdataingestionruleresponse.go
 gc/models/instagramid.go
 gc/models/instagramintegration.go
 gc/models/instagramintegrationentitylisting.go
@@ -3480,6 +3521,7 @@ gc/models/messageconversationentitylisting.go
 gc/models/messagedata.go
 gc/models/messagedetails.go
 gc/models/messageevaluation.go
+gc/models/messageevent.go
 gc/models/messagefooter.go
 gc/models/messageheader.go
 gc/models/messageinfo.go
@@ -3555,6 +3597,9 @@ gc/models/minertopicslisting.go
 gc/models/minlength.go
 gc/models/mobilenotificationsettings.go
 gc/models/mobilesettings.go
+gc/models/modeldata.go
+gc/models/modelmetadata.go
+gc/models/modelmetadataresult.go
 gc/models/modifiableruleproperties.go
 gc/models/monthlyplanningperiodsettings.go
 gc/models/moveagentresponse.go
@@ -3817,6 +3862,7 @@ gc/models/pingidentity.go
 gc/models/pinnedmessagerequest.go
 gc/models/planninggroup.go
 gc/models/planninggrouplist.go
+gc/models/planninggroupmodel.go
 gc/models/planninggroupoutputs.go
 gc/models/planninggroupreference.go
 gc/models/planningperiodsettings.go
@@ -3889,6 +3935,7 @@ gc/models/qualityauditqueryexecutionresultsresponse.go
 gc/models/qualityauditqueryexecutionstatusresponse.go
 gc/models/qualityauditqueryfilter.go
 gc/models/qualityevaluationscoreitem.go
+gc/models/quarterhourly.go
 gc/models/queryadherenceexplanationsresponse.go
 gc/models/queryagentsintegrationsrequest.go
 gc/models/querycriteria.go
@@ -4024,6 +4071,8 @@ gc/models/resolutionaggregatedatacontainer.go
 gc/models/resolutionaggregatequeryclause.go
 gc/models/resolutionaggregatequeryfilter.go
 gc/models/resolutionaggregatequerypredicate.go
+gc/models/resolutionaggregatequeryresponse.go
+gc/models/resolutionaggregationquery.go
 gc/models/resolutionaggregationview.go
 gc/models/resolutionasyncaggregatequeryresponse.go
 gc/models/resolutionasyncaggregationquery.go
@@ -4216,8 +4265,13 @@ gc/models/servicenowsourcerequest.go
 gc/models/servicenowsourceresponse.go
 gc/models/session.go
 gc/models/sessionenddetails.go
+gc/models/sessionfiles.go
+gc/models/sessioninfo.go
 gc/models/sessionlastevent.go
 gc/models/sessionlisting.go
+gc/models/sessionmetadata.go
+gc/models/sessionmetadataresult.go
+gc/models/sessionmetricdata.go
 gc/models/sessionsegmentassignment.go
 gc/models/sessionsresponse.go
 gc/models/setcontenttemplateactionsettings.go
@@ -4293,6 +4347,12 @@ gc/models/smsphonenumberimport.go
 gc/models/smsphonenumberprovision.go
 gc/models/smsphonenumberref.go
 gc/models/smsprovisioningstatus.go
+gc/models/snapshotfiles.go
+gc/models/snapshotinfo.go
+gc/models/snapshotmetadata.go
+gc/models/snapshotmetadataresult.go
+gc/models/snapshotmetricdata.go
+gc/models/snapshots.go
 gc/models/socialexpression.go
 gc/models/socialhandle.go
 gc/models/socialkeyword.go
@@ -4508,6 +4568,7 @@ gc/models/timeoffrequestquerybody.go
 gc/models/timeoffrequestreference.go
 gc/models/timeoffrequestresponse.go
 gc/models/timeoffrequestsettings.go
+gc/models/timeseries.go
 gc/models/timeslot.go
 gc/models/timezoneentitylisting.go
 gc/models/timezonemappingpreview.go
@@ -4871,6 +4932,8 @@ gc/models/webmessagingofferfields.go
 gc/models/webmessagingofferproperties.go
 gc/models/webmessagingquickreply.go
 gc/models/webmessagingrecipient.go
+gc/models/weekly.go
+gc/models/weeks.go
 gc/models/weekschedule.go
 gc/models/weekschedulegenerationresult.go
 gc/models/weekschedulelistitemresponse.go
@@ -4912,6 +4975,7 @@ gc/models/wfmusernotification.go
 gc/models/wfmversionedentitymetadata.go
 gc/models/whatsappavailablephonenumberdetails.go
 gc/models/whatsappavailablephonenumberdetailslisting.go
+gc/models/whatsappcolumn.go
 gc/models/whatsappconfig.go
 gc/models/whatsappdefinition.go
 gc/models/whatsappembeddedsignupintegrationactivationrequest.go
@@ -4951,6 +5015,7 @@ gc/models/workdayvaluestrenditem.go
 gc/models/workflowtargetsettings.go
 gc/models/workitem.go
 gc/models/workitemchangelisting.go
+gc/models/workitemcommoncreate.go
 gc/models/workitemcreate.go
 gc/models/workitemdatebasedcondition.go
 gc/models/workitemdatebasedconditionupdate.go

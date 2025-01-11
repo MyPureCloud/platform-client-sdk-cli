@@ -34,7 +34,7 @@ type Journeyviewchartmetric struct {
     ElementId string `json:"elementId"`
 
 
-    // Aggregate - How to aggregate the given element, defaults to EventCount
+    // Aggregate - How to aggregate the given element, defaults to CustomerCount
     Aggregate string `json:"aggregate"`
 
 

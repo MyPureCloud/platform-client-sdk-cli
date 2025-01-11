@@ -3,118 +3,117 @@ package cmd
 import (
 	"github.com/hashicorp/go-version"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/alternative_formats"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/diagnostics"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/documentationfile"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/emails"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/data_format"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/data_format"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/transform_data"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/cobra/doc"
 	"github.com/spf13/viper"
 
-	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
-	"net/http"
-	"os"
 	"strings"
+	"encoding/json"
+	"io/ioutil"
 	"time"
-
+	"net/http"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dummy_command"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/assistants"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/date"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/downloads"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fieldconfig"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/greetings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/groups"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/identityproviders"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/ipranges"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languages"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/locations"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/mobiledevices"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presencedefinitions"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scripts"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/search"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/systempresences"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/teams"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/timezones"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gateway"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/proxy"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/events"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/oauth"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/organizations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/alerting"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/architect"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/assistants"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/audits"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/screenrecording"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/billing"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/carrierservices"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/certificate"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chats"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/coaching"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recording"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/contentmanagement"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/emails"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/uploads"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dataextensions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dataprivacy"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/date"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/downloads"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dummy_command"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeengagement"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profile"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeperformance"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/events"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fieldconfig"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gamification"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gateway"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/greetings"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/groups"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/identityproviders"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/infrastructureascode"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/ipranges"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languages"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languageunderstanding"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/license"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/locations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/diagnostics"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/messaging"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/mobiledevices"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/oauth"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/organizations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orgauthorization"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presence"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presencedefinitions"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/processautomation"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profile"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profiles"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/proxy"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webdeployments"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/quality"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recording"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/documentationfile"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webchat"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/notifications"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/usage"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orgauthorization"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presence"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/processautomation"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemanagement"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/screenrecording"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scripts"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/search"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/settings"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/socialmedia"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/systempresences"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/taskmanagement"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/teams"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/infrastructureascode"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/textbots"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/timezones"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/uploads"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/usage"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/voicemail"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webchat"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webdeployments"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/architect"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webmessaging"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/widgets"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/taskmanagement"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/coaching"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeengagement"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/socialmedia"
+	"os"
 )
 
 type LatestVersion struct {
@@ -122,8 +121,8 @@ type LatestVersion struct {
 }
 
 var (
-	profileName        string
-	output             string
+	profileName string
+	output string
 	externalVersionURL = "https://sdk-cdn.mypurecloud.com/external/go-cli/latest-version.json"
 	internalVersionURL = "https://sdk-cdn.mypurecloud.com/internal/go-cli/latest-version.json"
 )
@@ -140,7 +139,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 119.0.0")
+		fmt.Println("Current version: 119.1.0")
 		checkForNewVersion()
 	},
 }
@@ -159,7 +158,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("119.0.0", latestVersion) {
+	if versionsAreEqual("119.1.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -227,25 +226,9 @@ func init() {
 	initViperConfig()
 
 	rootCmd.PersistentFlags().StringVarP(&profileName, "profile", "p", "DEFAULT", "Name of the profile to use for configuring the cli")
-	rootCmd.RegisterFlagCompletionFunc("profile", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
-		return profiles.ListProfileNames(), cobra.ShellCompDirectiveDefault
-	})
-
 	rootCmd.PersistentFlags().BoolP("indicateprogress", "i", false, "Trace progress indicators to stderr")
 
 	rootCmd.PersistentFlags().StringVar(&config.Environment, "environment", "", "environment override. E.g. mypurecloud.com.au or ap-southeast-2")
-	rootCmd.RegisterFlagCompletionFunc("environment", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
-		regionMappings := &config.RegionMappings
-		possibleEnvs := make([]string, 0)
-		if regionMappings == nil {
-			logger.Fatal("No regions found! Something is terribly wrong!")
-		}
-		for region, domain := range *regionMappings {
-			possibleEnvs = append(possibleEnvs, region)
-			possibleEnvs = append(possibleEnvs, domain)
-		}
-		return possibleEnvs, cobra.ShellCompDirectiveDefault
-	})
 	rootCmd.PersistentFlags().StringVar(&config.ClientId, "clientid", "", "clientId override")
 	rootCmd.PersistentFlags().StringVar(&config.ClientSecret, "clientsecret", "", "clientSecret override")
 	rootCmd.PersistentFlags().StringVar(&config.AccessToken, "accesstoken", "", "accessToken override")
@@ -254,13 +237,7 @@ func init() {
 	rootCmd.PersistentFlags().StringVar(&transform_data.TemplateStr, "transformstr", "", "Provide a Go template string for transforming output data")
 
 	rootCmd.PersistentFlags().StringVar(&data_format.InputFormat, "inputformat", "", "Data input format. Supported formats: YAML, JSON")
-	rootCmd.RegisterFlagCompletionFunc("inputformat", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
-		return []string{"yaml", "json"}, cobra.ShellCompDirectiveDefault
-	})
 	rootCmd.PersistentFlags().StringVar(&data_format.OutputFormat, "outputformat", "", "Data output format. Supported formats: YAML, JSON")
-	rootCmd.RegisterFlagCompletionFunc("outputformat", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
-		return []string{"yaml", "json"}, cobra.ShellCompDirectiveDefault
-	})
 
 	if data_format.OutputFormat == "" {
 		data_format.OutputFormat, _ = config.GetOutputFormat(getProfileName(os.Args))
@@ -273,9 +250,8 @@ func init() {
 
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(assistants.Cmdassistants())
-	rootCmd.AddCommand(date.Cmddate())
 	rootCmd.AddCommand(conversations.Cmdconversations())
-	rootCmd.AddCommand(fax.Cmdfax())
+	rootCmd.AddCommand(date.Cmddate())
 	rootCmd.AddCommand(downloads.Cmddownloads())
 	rootCmd.AddCommand(fieldconfig.Cmdfieldconfig())
 	rootCmd.AddCommand(flows.Cmdflows())
@@ -284,24 +260,25 @@ func init() {
 	rootCmd.AddCommand(identityproviders.Cmdidentityproviders())
 	rootCmd.AddCommand(integrations.Cmdintegrations())
 	rootCmd.AddCommand(ipranges.Cmdipranges())
-	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(languages.Cmdlanguages())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(locations.Cmdlocations())
 	rootCmd.AddCommand(mobiledevices.Cmdmobiledevices())
 	rootCmd.AddCommand(orphanrecordings.Cmdorphanrecordings())
 	rootCmd.AddCommand(presencedefinitions.Cmdpresencedefinitions())
-	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(scripts.Cmdscripts())
 	rootCmd.AddCommand(search.Cmdsearch())
 	rootCmd.AddCommand(stations.Cmdstations())
 	rootCmd.AddCommand(systempresences.Cmdsystempresences())
+	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(teams.Cmdteams())
 	rootCmd.AddCommand(timezones.Cmdtimezones())
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
-	rootCmd.AddCommand(completion.Cmdcompletion())
+	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(autopagination.Cmdautopagination())
+	rootCmd.AddCommand(completion.Cmdcompletion())
 	rootCmd.AddCommand(experimental.Cmdexperimental())
 	rootCmd.AddCommand(gateway.Cmdgateway())
 	rootCmd.AddCommand(logging.Cmdlogging())
@@ -384,19 +361,20 @@ func init() {
 }
 
 func getProfileName(args []string) string {
-	name := ""
-	for i, s := range args {
-		if (s == "-p" || s == "--profile") && i < len(args)-1 {
-			return args[i+1]
-		}
-		if strings.HasPrefix(s, "--profile=") {
-			name = strings.Replace(s, "--profile=", "", -1)
-		} else if strings.HasPrefix(s, "-p=") {
-			name = strings.Replace(s, "-p=", "", -1)
-		}
-	}
-	if name == "" {
-		return "DEFAULT"
-	}
-	return name
+    name := ""
+    for i, s := range args {
+        if (s == "-p" || s == "--profile") && i < len(args)-1 {
+            return args[i+1]
+        }
+        if strings.HasPrefix(s, "--profile=") {
+            name = strings.Replace(s, "--profile=", "", -1)
+        } else if strings.HasPrefix(s, "-p=") {
+            name = strings.Replace(s, "-p=", "", -1)
+        }
+    }
+    if name == "" {
+        return "DEFAULT"
+    }
+    return name
 }
+

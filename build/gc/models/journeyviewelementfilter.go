@@ -16,6 +16,9 @@ type JourneyviewelementfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Journeyviewelementfilter - A set of filters on an element within a journey view
@@ -27,12 +30,17 @@ type Journeyviewelementfilter struct {
     // Predicates - predicates
     Predicates []Journeyviewelementfilterpredicate `json:"predicates"`
 
+
+    // NumberPredicates - numberPredicates
+    NumberPredicates []Journeyviewelementfilternumberpredicate `json:"numberPredicates"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Journeyviewelementfilter) String() string {
     
      o.Predicates = []Journeyviewelementfilterpredicate{{}} 
+     o.NumberPredicates = []Journeyviewelementfilternumberpredicate{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,6 +61,8 @@ func (u *Journeyviewelementfilter) MarshalJSON() ([]byte, error) {
         VarType string `json:"type"`
         
         Predicates []Journeyviewelementfilterpredicate `json:"predicates"`
+        
+        NumberPredicates []Journeyviewelementfilternumberpredicate `json:"numberPredicates"`
         *Alias
     }{
 
@@ -61,6 +71,11 @@ func (u *Journeyviewelementfilter) MarshalJSON() ([]byte, error) {
 
         
         Predicates: []Journeyviewelementfilterpredicate{{}},
+        
+
+
+        
+        NumberPredicates: []Journeyviewelementfilternumberpredicate{{}},
         
 
         Alias: (*Alias)(u),

@@ -33,9 +33,9 @@ func Cmdoutbound_campaigns_all_divisionviews() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Campaign ID(s)")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Campaign name(s)")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
-	utils.AddFlag(listCmd.Flags(), "[]string", "mediaType", "", "Media type(s) Valid values: email, sms, voice")
+	utils.AddFlag(listCmd.Flags(), "[]string", "mediaType", "", "Media type(s) Valid values: email, sms, voice, whatsapp")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "Sort order Valid values: ascending, descending")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns/all/divisionviews", utils.FormatPermissions([]string{ "outbound:campaign:search", "outbound:messagingCampaign:search", "outbound:emailCampaign:search",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/campaigns/all/divisionviews")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/campaigns/all/divisionviews", utils.FormatPermissions([]string{ "outbound:campaign:search", "outbound:messagingCampaign:search", "outbound:emailCampaign:search", "outbound:whatsAppCampaign:search",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/campaigns/all/divisionviews")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{

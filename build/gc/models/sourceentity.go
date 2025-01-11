@@ -17,6 +17,9 @@ type SourceentityDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -30,12 +33,17 @@ type Sourceentity struct {
     VarType string `json:"type"`
 
 
+    // ContestCompleteData - The contest data - Only supplied when celebration is of type ContestComplete
+    ContestCompleteData Contestcompletedata `json:"contestCompleteData"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Sourceentity) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -55,8 +63,13 @@ func (u *Sourceentity) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         VarType string `json:"type"`
+        
+        ContestCompleteData Contestcompletedata `json:"contestCompleteData"`
         *Alias
     }{
+
+        
+
 
         
 

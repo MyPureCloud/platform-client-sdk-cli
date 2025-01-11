@@ -71,7 +71,7 @@ var (
 	ClientId       string
 	ClientSecret   string
 	AccessToken    string
-	RegionMappings = map[string]string{
+	regionMappings = map[string]string{
 		"us-east-1":      "mypurecloud.com",
 		"eu-west-1":      "mypurecloud.ie",
 		"ap-southeast-2": "mypurecloud.com.au",
@@ -150,7 +150,7 @@ func (c *configuration) Environment() string {
 
 func MapEnvironment(env string) string {
 	if env != "localhost" && !strings.Contains(env, ".") {
-		basePath, ok := RegionMappings[env]
+		basePath, ok := regionMappings[env]
 		if !ok {
 			fmt.Println("Invalid AWS region:", env)
 			os.Exit(1)

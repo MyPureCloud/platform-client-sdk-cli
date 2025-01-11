@@ -60,12 +60,12 @@ type Screenrecordingsessionlisting struct {
     Total int `json:"total"`
 
 
-    // FirstUri
-    FirstUri string `json:"firstUri"`
-
-
     // LastUri
     LastUri string `json:"lastUri"`
+
+
+    // FirstUri
+    FirstUri string `json:"firstUri"`
 
 
     // SelfUri
@@ -122,9 +122,9 @@ func (u *Screenrecordingsessionlisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        FirstUri string `json:"firstUri"`
-        
         LastUri string `json:"lastUri"`
+        
+        FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         

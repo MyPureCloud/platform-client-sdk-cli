@@ -646,6 +646,15 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1497,6 +1506,18 @@ type Viewfilter struct {
     // Conferenced - Filter to indicate if the conversation has conference
     Conferenced bool `json:"conferenced"`
 
+
+    // Video - Filter to indicate if the conversation has video
+    Video bool `json:"video"`
+
+
+    // LinkedInteraction - Filter to indicate if the conversation has linked interaction
+    LinkedInteraction bool `json:"linkedInteraction"`
+
+
+    // RecommendationSources - List of recommendation sources for filtering recommendation details pane
+    RecommendationSources []string `json:"recommendationSources"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1713,6 +1734,9 @@ func (o *Viewfilter) String() string {
      o.FilterUsersByManagerIds = []string{""} 
      o.SlideshowIds = []string{""} 
     
+    
+    
+     o.RecommendationSources = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2153,6 +2177,12 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         SlideshowIds []string `json:"slideshowIds"`
         
         Conferenced bool `json:"conferenced"`
+        
+        Video bool `json:"video"`
+        
+        LinkedInteraction bool `json:"linkedInteraction"`
+        
+        RecommendationSources []string `json:"recommendationSources"`
         *Alias
     }{
 
@@ -3081,6 +3111,17 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+
+
+        
+        RecommendationSources: []string{""},
         
 
         Alias: (*Alias)(u),

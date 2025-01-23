@@ -36,6 +36,9 @@ type SequencescheduleDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -63,6 +66,10 @@ type Sequenceschedule struct {
     Intervals []Scheduleinterval `json:"intervals"`
 
 
+    // Recurrences - Recurring schedules of the campaign
+    Recurrences []Reoccurrence `json:"recurrences"`
+
+
     // TimeZone - The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
     TimeZone string `json:"timeZone"`
 
@@ -80,6 +87,7 @@ func (o *Sequenceschedule) String() string {
     
     
      o.Intervals = []Scheduleinterval{{}} 
+     o.Recurrences = []Reoccurrence{{}} 
     
     
 
@@ -105,6 +113,8 @@ func (u *Sequenceschedule) MarshalJSON() ([]byte, error) {
         
         Intervals []Scheduleinterval `json:"intervals"`
         
+        Recurrences []Reoccurrence `json:"recurrences"`
+        
         TimeZone string `json:"timeZone"`
         
         Sequence Domainentityref `json:"sequence"`
@@ -128,6 +138,11 @@ func (u *Sequenceschedule) MarshalJSON() ([]byte, error) {
 
         
         Intervals: []Scheduleinterval{{}},
+        
+
+
+        
+        Recurrences: []Reoccurrence{{}},
         
 
 

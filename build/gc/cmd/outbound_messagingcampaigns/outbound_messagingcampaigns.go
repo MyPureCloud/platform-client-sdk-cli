@@ -93,6 +93,8 @@ func Cmdoutbound_messagingcampaigns() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "varType", "", "Campaign Type Valid values: EMAIL, SMS, WHATSAPP")
 	utils.AddFlag(listCmd.Flags(), "string", "senderSmsPhoneNumber", "", "Sender SMS Phone Number")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "A list of messaging campaign ids to bulk fetch")
+	utils.AddFlag(listCmd.Flags(), "string", "contentTemplateId", "", "Content template ID")
+	utils.AddFlag(listCmd.Flags(), "string", "campaignStatus", "", "Campaign Status Valid values: on, stopping, off, complete, invalid, forced_off, forced_stopping")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/messagingcampaigns", utils.FormatPermissions([]string{ "outbound:messagingCampaign:view", "outbound:emailCampaign:view", "outbound:whatsAppCampaign:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/messagingcampaigns")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -394,6 +396,14 @@ var listCmd = &cobra.Command{
 		id := utils.GetFlag(cmd.Flags(), "[]string", "id")
 		if id != "" {
 			queryParams["id"] = id
+		}
+		contentTemplateId := utils.GetFlag(cmd.Flags(), "string", "contentTemplateId")
+		if contentTemplateId != "" {
+			queryParams["contentTemplateId"] = contentTemplateId
+		}
+		campaignStatus := utils.GetFlag(cmd.Flags(), "string", "campaignStatus")
+		if campaignStatus != "" {
+			queryParams["campaignStatus"] = campaignStatus
 		}
 		urlString := path
 		if len(queryParams) > 0 {

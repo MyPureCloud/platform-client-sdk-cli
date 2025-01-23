@@ -19,6 +19,15 @@ type WhatsappdefinitionDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Whatsappdefinition - A WhatsApp messaging template definition as defined in the WhatsApp Business Manager
@@ -34,11 +43,26 @@ type Whatsappdefinition struct {
     // Language - The messaging template language configured for this template. This is a WhatsApp specific value. For example, 'en_US'
     Language string `json:"language"`
 
+
+    // Buttons - List of buttons to be included in the WhatsApp messages channel
+    Buttons []Button `json:"buttons"`
+
+
+    // MessageFooter - Footer for the message in the WhatsApp messages channel
+    MessageFooter Messagefooter `json:"messageFooter"`
+
+
+    // Header - Header for the message in the WhatsApp messages channel
+    Header Messageheader `json:"header"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Whatsappdefinition) String() string {
     
+    
+    
+     o.Buttons = []Button{{}} 
     
     
 
@@ -63,9 +87,26 @@ func (u *Whatsappdefinition) MarshalJSON() ([]byte, error) {
         Namespace string `json:"namespace"`
         
         Language string `json:"language"`
+        
+        Buttons []Button `json:"buttons"`
+        
+        MessageFooter Messagefooter `json:"messageFooter"`
+        
+        Header Messageheader `json:"header"`
         *Alias
     }{
 
+        
+
+
+        
+
+
+        
+
+
+        
+        Buttons: []Button{{}},
         
 
 

@@ -10,13 +10,29 @@ var (
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type MessageheaderDud struct { }
+type MessageheaderDud struct { 
+    
+
+
+    
+
+}
 
 // Messageheader
-type Messageheader struct { }
+type Messageheader struct { 
+    // VarType - Defines the content type of the Header in message
+    VarType string `json:"type"`
+
+
+    // Content - Content associated with the header in the message
+    Content string `json:"content"`
+
+}
 
 // String returns a JSON representation of the model
 func (o *Messageheader) String() string {
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -33,8 +49,18 @@ func (u *Messageheader) MarshalJSON() ([]byte, error) {
     MessageheaderMarshalled = true
 
     return json.Marshal(&struct {
+        
+        VarType string `json:"type"`
+        
+        Content string `json:"content"`
         *Alias
     }{
+
+        
+
+
+        
+
         Alias: (*Alias)(u),
     })
 }

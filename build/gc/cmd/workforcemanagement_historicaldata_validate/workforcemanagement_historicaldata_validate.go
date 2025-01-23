@@ -42,8 +42,14 @@ func Cmdworkforcemanagement_historicaldata_validate() *cobra.Command {
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
-  "description" : "Accepted - Triggering  validation process.",
-  "content" : { }
+  "description" : "Accepted - Triggering validation process.",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ValidationServiceAsyncResponse"
+      }
+    }
+  }
 }`)
 	workforcemanagement_historicaldata_validateCmd.AddCommand(createCmd)
 	return workforcemanagement_historicaldata_validateCmd

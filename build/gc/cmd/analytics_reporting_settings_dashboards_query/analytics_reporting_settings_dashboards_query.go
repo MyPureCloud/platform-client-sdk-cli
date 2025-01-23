@@ -53,7 +53,8 @@ func Cmdanalytics_reporting_settings_dashboards_query() *cobra.Command {
 	analytics_reporting_settings_dashboards_queryCmd.AddCommand(createCmd)
 
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "name of the dashboard")
-	utils.AddFlag(listCmd.Flags(), "string", "dashboardType", "", "List dashboard of given type - REQUIRED Valid values: All, Public, Private, Shared, Favorites, Deleted")
+	utils.AddFlag(listCmd.Flags(), "string", "dashboardType", "", "List dashboard of given type - REQUIRED Valid values: All, Public, Private, Shared, Favorites")
+	utils.AddFlag(listCmd.Flags(), "string", "dashboardState", "Active", "List dashboard of given state Valid values: Active, Deleted")
 	utils.AddFlag(listCmd.Flags(), "string", "dashboardAccessFilter", "", "Filter dashboard based on the owner of dashboard - REQUIRED Valid values: OwnedByMe, OwnedByAnyone, NotOwnedByMe")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "desc", "")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "")
@@ -174,6 +175,10 @@ var listCmd = &cobra.Command{
 		dashboardType := utils.GetFlag(cmd.Flags(), "string", "dashboardType")
 		if dashboardType != "" {
 			queryParams["dashboardType"] = dashboardType
+		}
+		dashboardState := utils.GetFlag(cmd.Flags(), "string", "dashboardState")
+		if dashboardState != "" {
+			queryParams["dashboardState"] = dashboardState
 		}
 		dashboardAccessFilter := utils.GetFlag(cmd.Flags(), "string", "dashboardAccessFilter")
 		if dashboardAccessFilter != "" {

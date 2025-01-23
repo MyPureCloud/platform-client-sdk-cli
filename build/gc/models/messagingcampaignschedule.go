@@ -36,6 +36,9 @@ type MessagingcampaignscheduleDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -63,6 +66,10 @@ type Messagingcampaignschedule struct {
     Intervals []Scheduleinterval `json:"intervals"`
 
 
+    // Recurrences - Recurring schedules of the campaign
+    Recurrences []Reoccurrence `json:"recurrences"`
+
+
     // TimeZone - The time zone for this messaging campaign schedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
     TimeZone string `json:"timeZone"`
 
@@ -80,6 +87,7 @@ func (o *Messagingcampaignschedule) String() string {
     
     
      o.Intervals = []Scheduleinterval{{}} 
+     o.Recurrences = []Reoccurrence{{}} 
     
     
 
@@ -105,6 +113,8 @@ func (u *Messagingcampaignschedule) MarshalJSON() ([]byte, error) {
         
         Intervals []Scheduleinterval `json:"intervals"`
         
+        Recurrences []Reoccurrence `json:"recurrences"`
+        
         TimeZone string `json:"timeZone"`
         
         MessagingCampaign Divisioneddomainentityref `json:"messagingCampaign"`
@@ -128,6 +138,11 @@ func (u *Messagingcampaignschedule) MarshalJSON() ([]byte, error) {
 
         
         Intervals: []Scheduleinterval{{}},
+        
+
+
+        
+        Recurrences: []Reoccurrence{{}},
         
 
 

@@ -35,6 +35,9 @@ type BufulldaytimeoffmarkerDud struct {
 
     
 
+
+    
+
 }
 
 // Bufulldaytimeoffmarker
@@ -70,10 +73,15 @@ type Bufulldaytimeoffmarker struct {
     // TimeOffRequestSyncVersion - The sync version of the full day time off request for which the scheduled activity is associated
     TimeOffRequestSyncVersion int `json:"timeOffRequestSyncVersion"`
 
+
+    // Delete - Set to 'true' to delete this time off marker. Will always be null on responses, only has an effect on schedule update
+    Delete bool `json:"delete"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Bufulldaytimeoffmarker) String() string {
+    
     
     
     
@@ -114,8 +122,13 @@ func (u *Bufulldaytimeoffmarker) MarshalJSON() ([]byte, error) {
         TimeOffRequestId string `json:"timeOffRequestId"`
         
         TimeOffRequestSyncVersion int `json:"timeOffRequestSyncVersion"`
+        
+        Delete bool `json:"delete"`
         *Alias
     }{
+
+        
+
 
         
 

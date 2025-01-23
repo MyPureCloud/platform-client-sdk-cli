@@ -2170,6 +2170,7 @@ gc/models/conversationbasic.go
 gc/models/conversationcategoriesentitylisting.go
 gc/models/conversationcategory.go
 gc/models/conversationchannel.go
+gc/models/conversationchannellocation.go
 gc/models/conversationchannelmetadata.go
 gc/models/conversationchat.go
 gc/models/conversationclearsettings.go
@@ -3001,6 +3002,7 @@ gc/models/historicaladherencequeryresult.go
 gc/models/historicaldata.go
 gc/models/historicalimportdeletejobresponse.go
 gc/models/historicalimportstatus.go
+gc/models/historicalimportstatusjobresponse.go
 gc/models/historicalimportstatuslisting.go
 gc/models/historicalshrinkageactivitycategoryresponse.go
 gc/models/historicalshrinkageactivitycoderesponse.go
@@ -3929,6 +3931,7 @@ gc/models/publishscriptrequestdata.go
 gc/models/punctualityevent.go
 gc/models/purecloud.go
 gc/models/pureengage.go
+gc/models/pushintegration.go
 gc/models/qmauditqueryrequest.go
 gc/models/qualityauditlogmessage.go
 gc/models/qualityauditqueryexecutionresultsresponse.go
@@ -4850,6 +4853,7 @@ gc/models/validateworkplanresponse.go
 gc/models/validationerror.go
 gc/models/validationlimits.go
 gc/models/validationresult.go
+gc/models/validationserviceasyncresponse.go
 gc/models/validationservicerequest.go
 gc/models/valuewrapperactivityplanservicegoalimpactoverrides.go
 gc/models/valuewrapperdate.go

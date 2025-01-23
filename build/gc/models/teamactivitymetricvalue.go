@@ -16,15 +16,36 @@ type TeamactivitymetricvalueDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Teamactivitymetricvalue
 type Teamactivitymetricvalue struct { 
-    // Metric - metric
+    // Metric - Metric
     Metric string `json:"metric"`
 
 
-    // Count - metric count
+    // Qualifier - Metric qualifier
+    Qualifier string `json:"qualifier"`
+
+
+    // SecondaryQualifier - Secondary metric qualifier
+    SecondaryQualifier string `json:"secondaryQualifier"`
+
+
+    // EntityIds - Entity ids for matching entities if details were requested
+    EntityIds []string `json:"entityIds"`
+
+
+    // Count - Metric count
     Count int `json:"count"`
 
 }
@@ -32,6 +53,9 @@ type Teamactivitymetricvalue struct {
 // String returns a JSON representation of the model
 func (o *Teamactivitymetricvalue) String() string {
     
+    
+    
+     o.EntityIds = []string{""} 
     
 
     j, _ := json.Marshal(o)
@@ -52,10 +76,27 @@ func (u *Teamactivitymetricvalue) MarshalJSON() ([]byte, error) {
         
         Metric string `json:"metric"`
         
+        Qualifier string `json:"qualifier"`
+        
+        SecondaryQualifier string `json:"secondaryQualifier"`
+        
+        EntityIds []string `json:"entityIds"`
+        
         Count int `json:"count"`
         *Alias
     }{
 
+        
+
+
+        
+
+
+        
+
+
+        
+        EntityIds: []string{""},
         
 
 

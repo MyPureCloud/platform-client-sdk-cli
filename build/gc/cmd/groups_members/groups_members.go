@@ -53,7 +53,7 @@ func Cmdgroups_members() *cobra.Command {
 }`)
 	groups_membersCmd.AddCommand(addCmd)
 
-	utils.AddFlag(deleteCmd.Flags(), "string", "ids", "", "Comma separated list of userIds to remove - REQUIRED")
+	utils.AddFlag(deleteCmd.Flags(), "string", "ids", "", "Comma separated list of userIds to remove. A maximum of 50 members are allowed per request. - REQUIRED")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/groups/{groupId}/members", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Groups", "/api/v2/groups/{groupId}/members")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	deleteCmd.MarkFlagRequired("ids")

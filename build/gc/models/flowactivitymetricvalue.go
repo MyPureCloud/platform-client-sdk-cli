@@ -16,15 +16,29 @@ type FlowactivitymetricvalueDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Flowactivitymetricvalue
 type Flowactivitymetricvalue struct { 
-    // Metric - metric
+    // Metric - Metric
     Metric string `json:"metric"`
 
 
-    // Count - metric count
+    // Qualifier - Metric qualifier
+    Qualifier string `json:"qualifier"`
+
+
+    // EntityIds - Entity ids for matching entities if details were requested
+    EntityIds []string `json:"entityIds"`
+
+
+    // Count - Metric count
     Count int `json:"count"`
 
 }
@@ -32,6 +46,8 @@ type Flowactivitymetricvalue struct {
 // String returns a JSON representation of the model
 func (o *Flowactivitymetricvalue) String() string {
     
+    
+     o.EntityIds = []string{""} 
     
 
     j, _ := json.Marshal(o)
@@ -52,10 +68,22 @@ func (u *Flowactivitymetricvalue) MarshalJSON() ([]byte, error) {
         
         Metric string `json:"metric"`
         
+        Qualifier string `json:"qualifier"`
+        
+        EntityIds []string `json:"entityIds"`
+        
         Count int `json:"count"`
         *Alias
     }{
 
+        
+
+
+        
+
+
+        
+        EntityIds: []string{""},
         
 
 

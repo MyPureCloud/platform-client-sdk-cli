@@ -1,10 +1,10 @@
 ## gc analytics conversations details
 
-/api/v2/analytics/conversations/{conversationId}/details /api/v2/analytics/conversations/details
+/api/v2/analytics/conversations/details /api/v2/analytics/conversations/{conversationId}/details
 
 ### Synopsis
 
-/api/v2/analytics/conversations/{conversationId}/details /api/v2/analytics/conversations/details
+/api/v2/analytics/conversations/details /api/v2/analytics/conversations/{conversationId}/details
 
 ### Options
 

@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement historicaldata](gc_workforcemanagement_historicaldata.html)	 - /api/v2/workforcemanagement/historicaldata
+* [gc workforcemanagement historicaldata importstatus get](gc_workforcemanagement_historicaldata_importstatus_get.html)	 - Retrieves status of the historical data imports associated with job id
 * [gc workforcemanagement historicaldata importstatus list](gc_workforcemanagement_historicaldata_importstatus_list.html)	 - Retrieves status of the historical data imports of the organization
 
 

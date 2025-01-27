@@ -4140,6 +4140,7 @@
   "gc_workforcemanagement_historicaldata_deletejob_create.md",
   "gc_workforcemanagement_historicaldata_deletejob_get.md",
   "gc_workforcemanagement_historicaldata_deletejob.md",
+  "gc_workforcemanagement_historicaldata_importstatus_get.md",
   "gc_workforcemanagement_historicaldata_importstatus_list.md",
   "gc_workforcemanagement_historicaldata_importstatus.md",
   "gc_workforcemanagement_historicaldata.md",

@@ -1,20 +1,19 @@
-## gc groups members delete
+## gc workforcemanagement historicaldata importstatus get
 
-Remove members
+Retrieves status of the historical data imports associated with job id
 
 ### Synopsis
 
-Remove members
+Retrieves status of the historical data imports associated with job id
 
 ```
-gc groups members delete [groupId] [flags]
+gc workforcemanagement historicaldata importstatus get [jobId] [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help         help for delete
-      --ids string   Comma separated list of userIds to remove. A maximum of 50 members are allowed per request. - REQUIRED
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +33,6 @@ gc groups members delete [groupId] [flags]
 
 ### SEE ALSO
 
-* [gc groups members](gc_groups_members.html)	 - /api/v2/groups/{groupId}/members
+* [gc workforcemanagement historicaldata importstatus](gc_workforcemanagement_historicaldata_importstatus.html)	 - /api/v2/workforcemanagement/historicaldata/importstatus
 
 

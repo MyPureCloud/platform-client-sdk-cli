@@ -14,6 +14,8 @@ gc outbound messagingcampaigns divisionviews list [flags]
 
 ```
   -a, --autopaginate                  Automatically paginate through the results stripping page information
+      --campaignStatus string         Campaign Status Valid values: on, stopping, off, complete, invalid, forced_off, forced_stopping
+      --contentTemplateId string      Content template ID
       --filtercondition string        Filter list command output based on a given condition or regular expression
   -h, --help                          help for list
       --id strings                    id

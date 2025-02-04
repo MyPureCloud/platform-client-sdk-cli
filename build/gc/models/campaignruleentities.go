@@ -16,6 +16,12 @@ type CampaignruleentitiesDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Campaignruleentities
@@ -27,12 +33,22 @@ type Campaignruleentities struct {
     // Sequences - The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
     Sequences []Domainentityref `json:"sequences"`
 
+
+    // EmailCampaigns - The list of Email campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a Email campaign.
+    EmailCampaigns []Domainentityref `json:"emailCampaigns"`
+
+
+    // SmsCampaigns - The list of SMS campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a SMS campaign.
+    SmsCampaigns []Domainentityref `json:"smsCampaigns"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Campaignruleentities) String() string {
      o.Campaigns = []Domainentityref{{}} 
      o.Sequences = []Domainentityref{{}} 
+     o.EmailCampaigns = []Domainentityref{{}} 
+     o.SmsCampaigns = []Domainentityref{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,6 +69,10 @@ func (u *Campaignruleentities) MarshalJSON() ([]byte, error) {
         Campaigns []Domainentityref `json:"campaigns"`
         
         Sequences []Domainentityref `json:"sequences"`
+        
+        EmailCampaigns []Domainentityref `json:"emailCampaigns"`
+        
+        SmsCampaigns []Domainentityref `json:"smsCampaigns"`
         *Alias
     }{
 
@@ -63,6 +83,16 @@ func (u *Campaignruleentities) MarshalJSON() ([]byte, error) {
 
         
         Sequences: []Domainentityref{{}},
+        
+
+
+        
+        EmailCampaigns: []Domainentityref{{}},
+        
+
+
+        
+        SmsCampaigns: []Domainentityref{{}},
         
 
         Alias: (*Alias)(u),

@@ -59,6 +59,9 @@ type CustomproviderDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -128,6 +131,10 @@ type Customprovider struct {
     ProviderName string `json:"providerName"`
 
 
+    // DisplayOnLogin
+    DisplayOnLogin bool `json:"displayOnLogin"`
+
+
     
 
 }
@@ -143,6 +150,7 @@ func (o *Customprovider) String() string {
     
     
      o.Certificates = []string{""} 
+    
     
     
     
@@ -195,6 +203,8 @@ func (u *Customprovider) MarshalJSON() ([]byte, error) {
         SignAuthnRequests bool `json:"signAuthnRequests"`
         
         ProviderName string `json:"providerName"`
+        
+        DisplayOnLogin bool `json:"displayOnLogin"`
         *Alias
     }{
 
@@ -227,6 +237,9 @@ func (u *Customprovider) MarshalJSON() ([]byte, error) {
 
         
         Certificates: []string{""},
+        
+
+
         
 
 

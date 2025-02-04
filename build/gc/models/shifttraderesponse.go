@@ -101,7 +101,7 @@ type Shifttraderesponse struct {
     InitiatingShiftEnd time.Time `json:"initiatingShiftEnd"`
 
 
-    // ReceivingUser - The user matching the trade, or if the state is not Matched, the user to whom the trade request was sent
+    // ReceivingUser - The user matching the trade, or if the state is not 'Matched', the user to whom the trade request was sent
     ReceivingUser Userreference `json:"receivingUser"`
 
 
@@ -125,7 +125,7 @@ type Shifttraderesponse struct {
     OneSided bool `json:"oneSided"`
 
 
-    // AcceptableIntervals - Time frames when the initiating user is willing to accept trades.  Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+    // AcceptableIntervals - Time frames when the initiating user is willing to accept trades. Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
     AcceptableIntervals []string `json:"acceptableIntervals"`
 
 

@@ -4,6 +4,7 @@ Makefile
 README.md
 gc/cmd/alerting_alerts/alerting_alerts.go
 gc/cmd/alerting_alerts_active/alerting_alerts_active.go
+gc/cmd/alerting_alerts_all/alerting_alerts_all.go
 gc/cmd/alerting_alerts_bulk/alerting_alerts_bulk.go
 gc/cmd/alerting_alerts_query/alerting_alerts_query.go
 gc/cmd/alerting_interactionstats_alerts/alerting_interactionstats_alerts.go
@@ -973,11 +974,13 @@ gc/cmd/speechandtextanalytics_conversations/speechandtextanalytics_conversations
 gc/cmd/speechandtextanalytics_conversations_categories/speechandtextanalytics_conversations_categories.go
 gc/cmd/speechandtextanalytics_conversations_communications_transcripturl/speechandtextanalytics_conversations_communications_transcripturl.go
 gc/cmd/speechandtextanalytics_conversations_communications_transcripturls/speechandtextanalytics_conversations_communications_transcripturls.go
+gc/cmd/speechandtextanalytics_conversations_summaries/speechandtextanalytics_conversations_summaries.go
 gc/cmd/speechandtextanalytics_dictionaryfeedback/speechandtextanalytics_dictionaryfeedback.go
 gc/cmd/speechandtextanalytics_programs/speechandtextanalytics_programs.go
 gc/cmd/speechandtextanalytics_programs_general_jobs/speechandtextanalytics_programs_general_jobs.go
 gc/cmd/speechandtextanalytics_programs_mappings/speechandtextanalytics_programs_mappings.go
 gc/cmd/speechandtextanalytics_programs_publishjobs/speechandtextanalytics_programs_publishjobs.go
+gc/cmd/speechandtextanalytics_programs_settings_insights/speechandtextanalytics_programs_settings_insights.go
 gc/cmd/speechandtextanalytics_programs_transcriptionengines/speechandtextanalytics_programs_transcriptionengines.go
 gc/cmd/speechandtextanalytics_programs_transcriptionengines_dialects/speechandtextanalytics_programs_transcriptionengines_dialects.go
 gc/cmd/speechandtextanalytics_programs_unpublished/speechandtextanalytics_programs_unpublished.go
@@ -2016,6 +2019,7 @@ gc/models/commandstatus.go
 gc/models/commandstatusentitylisting.go
 gc/models/commonalert.go
 gc/models/commonalertbulkupdaterequest.go
+gc/models/commonallalertupdaterequest.go
 gc/models/commoncampaign.go
 gc/models/commoncampaigndivisionview.go
 gc/models/commoncampaigndivisionviewentitylisting.go
@@ -3063,6 +3067,7 @@ gc/models/insightsdetailsmetricperiodpoints.go
 gc/models/insightsdetailsoverallitem.go
 gc/models/insightsdetailsoverallperiodpoints.go
 gc/models/insightsrankings.go
+gc/models/insightssettingsrequest.go
 gc/models/insightssummary.go
 gc/models/insightssummarymetricitem.go
 gc/models/insightssummarymetricperiodpoints.go
@@ -3905,6 +3910,8 @@ gc/models/presencesettings.go
 gc/models/processscheduleupdateuploadrequest.go
 gc/models/profilewithdaterange.go
 gc/models/program.go
+gc/models/programinsightssettings.go
+gc/models/programinsightssettingsentitylisting.go
 gc/models/programjob.go
 gc/models/programjobrequest.go
 gc/models/programmappings.go
@@ -4372,6 +4379,8 @@ gc/models/sourceentitylisting.go
 gc/models/sourcelastsync.go
 gc/models/sourceplanninggrouprequest.go
 gc/models/sourcesyncresponse.go
+gc/models/speechtextanalyticsconversationsummary.go
+gc/models/speechtextanalyticsconversationsummarylisting.go
 gc/models/speechtextanalyticssettingsrequest.go
 gc/models/speechtextanalyticssettingsresponse.go
 gc/models/splittinginformation.go

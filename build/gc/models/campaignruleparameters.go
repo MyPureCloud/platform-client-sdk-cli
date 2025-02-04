@@ -46,6 +46,12 @@ type CampaignruleparametersDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Campaignruleparameters
@@ -90,6 +96,14 @@ type Campaignruleparameters struct {
     MessagesPerMinute int `json:"messagesPerMinute"`
 
 
+    // SmsMessagesPerMinute - The number of messages per minute to set a SMS messaging campaign to.
+    SmsMessagesPerMinute int `json:"smsMessagesPerMinute"`
+
+
+    // EmailMessagesPerMinute - The number of messages per minute to set a Email messaging campaign to.
+    EmailMessagesPerMinute int `json:"emailMessagesPerMinute"`
+
+
     // SmsContentTemplate - The content template to set a SMS campaign to.
     SmsContentTemplate Domainentityref `json:"smsContentTemplate"`
 
@@ -101,6 +115,8 @@ type Campaignruleparameters struct {
 
 // String returns a JSON representation of the model
 func (o *Campaignruleparameters) String() string {
+    
+    
     
     
     
@@ -150,11 +166,21 @@ func (u *Campaignruleparameters) MarshalJSON() ([]byte, error) {
         
         MessagesPerMinute int `json:"messagesPerMinute"`
         
+        SmsMessagesPerMinute int `json:"smsMessagesPerMinute"`
+        
+        EmailMessagesPerMinute int `json:"emailMessagesPerMinute"`
+        
         SmsContentTemplate Domainentityref `json:"smsContentTemplate"`
         
         EmailContentTemplate Domainentityref `json:"emailContentTemplate"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

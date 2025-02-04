@@ -51,6 +51,9 @@ type CampaignruleDud struct {
     
 
 
+    Warnings []Campaignrulewarning `json:"warnings"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -104,6 +107,9 @@ type Campaignrule struct {
 
     // ExecutionSettings - CampaignRule execution settings
     ExecutionSettings Campaignruleexecutionsettings `json:"executionSettings"`
+
+
+    
 
 
     
@@ -200,6 +206,9 @@ func (u *Campaignrule) MarshalJSON() ([]byte, error) {
 
         
         ConditionGroups: []Campaignruleconditiongroup{{}},
+        
+
+
         
 
 

@@ -655,6 +655,12 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1518,6 +1524,14 @@ type Viewfilter struct {
     // RecommendationSources - List of recommendation sources for filtering recommendation details pane
     RecommendationSources []string `json:"recommendationSources"`
 
+
+    // EvaluationRole - Sets the role when viewing agent evaluations
+    EvaluationRole string `json:"evaluationRole"`
+
+
+    // ComparisonQueueIds - The queue ids are used to for comparison to the primary queue filter in reporting
+    ComparisonQueueIds []string `json:"comparisonQueueIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1737,6 +1751,8 @@ func (o *Viewfilter) String() string {
     
     
      o.RecommendationSources = []string{""} 
+    
+     o.ComparisonQueueIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2183,6 +2199,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         LinkedInteraction bool `json:"linkedInteraction"`
         
         RecommendationSources []string `json:"recommendationSources"`
+        
+        EvaluationRole string `json:"evaluationRole"`
+        
+        ComparisonQueueIds []string `json:"comparisonQueueIds"`
         *Alias
     }{
 
@@ -3122,6 +3142,14 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         RecommendationSources: []string{""},
+        
+
+
+        
+
+
+        
+        ComparisonQueueIds: []string{""},
         
 
         Alias: (*Alias)(u),

@@ -45,7 +45,7 @@ type IdentityproviderentitylistingDud struct {
 // Identityproviderentitylisting
 type Identityproviderentitylisting struct { 
     // Entities
-    Entities []Identityprovider `json:"entities"`
+    Entities []Customprovider `json:"entities"`
 
 
     // PageSize
@@ -60,12 +60,12 @@ type Identityproviderentitylisting struct {
     Total int `json:"total"`
 
 
-    // FirstUri
-    FirstUri string `json:"firstUri"`
-
-
     // LastUri
     LastUri string `json:"lastUri"`
+
+
+    // FirstUri
+    FirstUri string `json:"firstUri"`
 
 
     // SelfUri
@@ -87,7 +87,7 @@ type Identityproviderentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Identityproviderentitylisting) String() string {
-     o.Entities = []Identityprovider{{}} 
+     o.Entities = []Customprovider{{}} 
     
     
     
@@ -114,7 +114,7 @@ func (u *Identityproviderentitylisting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Entities []Identityprovider `json:"entities"`
+        Entities []Customprovider `json:"entities"`
         
         PageSize int `json:"pageSize"`
         
@@ -122,9 +122,9 @@ func (u *Identityproviderentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        FirstUri string `json:"firstUri"`
-        
         LastUri string `json:"lastUri"`
+        
+        FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         
@@ -137,7 +137,7 @@ func (u *Identityproviderentitylisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Identityprovider{{}},
+        Entities: []Customprovider{{}},
         
 
 

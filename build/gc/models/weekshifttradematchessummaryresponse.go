@@ -25,7 +25,7 @@ type Weekshifttradematchessummaryresponse struct {
     WeekDate time.Time `json:"weekDate"`
 
 
-    // Count - The number of trades in the Matched state with the initiating shift in the given week
+    // Count - The number of trades in the 'Matched' state with the initiating shift in the given week
     Count int `json:"count"`
 
 }

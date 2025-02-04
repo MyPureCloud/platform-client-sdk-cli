@@ -13,6 +13,9 @@ var (
 type ChatsettingsDud struct { 
     
 
+
+    
+
 }
 
 // Chatsettings
@@ -20,10 +23,15 @@ type Chatsettings struct {
     // MessageRetentionPeriodDays - Retention time for messages in days, expressed as int in the range [10,3650]
     MessageRetentionPeriodDays int `json:"messageRetentionPeriodDays"`
 
+
+    // ReactionsEnabled - Reactions enabled for org
+    ReactionsEnabled bool `json:"reactionsEnabled"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Chatsettings) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Chatsettings) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         MessageRetentionPeriodDays int `json:"messageRetentionPeriodDays"`
+        
+        ReactionsEnabled bool `json:"reactionsEnabled"`
         *Alias
     }{
+
+        
+
 
         
 

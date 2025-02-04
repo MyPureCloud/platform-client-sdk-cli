@@ -22,8 +22,8 @@ import (
 	"net/http"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dummy_command"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/assistants"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/date"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/downloads"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fieldconfig"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows"
@@ -33,9 +33,9 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/ipranges"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languages"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/locations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/mobiledevices"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presencedefinitions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scripts"
@@ -139,7 +139,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 121.0.0")
+		fmt.Println("Current version: 122.0.0")
 		checkForNewVersion()
 	},
 }
@@ -158,7 +158,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("121.0.0", latestVersion) {
+	if versionsAreEqual("122.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -250,8 +250,8 @@ func init() {
 
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(assistants.Cmdassistants())
-	rootCmd.AddCommand(conversations.Cmdconversations())
 	rootCmd.AddCommand(date.Cmddate())
+	rootCmd.AddCommand(conversations.Cmdconversations())
 	rootCmd.AddCommand(downloads.Cmddownloads())
 	rootCmd.AddCommand(fieldconfig.Cmdfieldconfig())
 	rootCmd.AddCommand(flows.Cmdflows())
@@ -261,9 +261,9 @@ func init() {
 	rootCmd.AddCommand(integrations.Cmdintegrations())
 	rootCmd.AddCommand(ipranges.Cmdipranges())
 	rootCmd.AddCommand(languages.Cmdlanguages())
-	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(locations.Cmdlocations())
 	rootCmd.AddCommand(mobiledevices.Cmdmobiledevices())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(orphanrecordings.Cmdorphanrecordings())
 	rootCmd.AddCommand(presencedefinitions.Cmdpresencedefinitions())
 	rootCmd.AddCommand(scripts.Cmdscripts())

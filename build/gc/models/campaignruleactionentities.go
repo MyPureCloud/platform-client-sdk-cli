@@ -19,6 +19,12 @@ type CampaignruleactionentitiesDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Campaignruleactionentities
@@ -31,6 +37,14 @@ type Campaignruleactionentities struct {
     Sequences []Domainentityref `json:"sequences"`
 
 
+    // EmailCampaigns - The list of Email campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a Email campaign.
+    EmailCampaigns []Domainentityref `json:"emailCampaigns"`
+
+
+    // SmsCampaigns - The list of SMS campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a SMS campaign.
+    SmsCampaigns []Domainentityref `json:"smsCampaigns"`
+
+
     // UseTriggeringEntity - If true, the CampaignRuleAction will apply to the same entity that triggered the CampaignRuleCondition.
     UseTriggeringEntity bool `json:"useTriggeringEntity"`
 
@@ -40,6 +54,8 @@ type Campaignruleactionentities struct {
 func (o *Campaignruleactionentities) String() string {
      o.Campaigns = []Domainentityref{{}} 
      o.Sequences = []Domainentityref{{}} 
+     o.EmailCampaigns = []Domainentityref{{}} 
+     o.SmsCampaigns = []Domainentityref{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -62,6 +78,10 @@ func (u *Campaignruleactionentities) MarshalJSON() ([]byte, error) {
         
         Sequences []Domainentityref `json:"sequences"`
         
+        EmailCampaigns []Domainentityref `json:"emailCampaigns"`
+        
+        SmsCampaigns []Domainentityref `json:"smsCampaigns"`
+        
         UseTriggeringEntity bool `json:"useTriggeringEntity"`
         *Alias
     }{
@@ -73,6 +93,16 @@ func (u *Campaignruleactionentities) MarshalJSON() ([]byte, error) {
 
         
         Sequences: []Domainentityref{{}},
+        
+
+
+        
+        EmailCampaigns: []Domainentityref{{}},
+        
+
+
+        
+        SmsCampaigns: []Domainentityref{{}},
         
 
 

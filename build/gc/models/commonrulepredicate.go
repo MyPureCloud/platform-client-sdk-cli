@@ -34,6 +34,9 @@ type CommonrulepredicateDud struct {
 
     
 
+
+    
+
 }
 
 // Commonrulepredicate
@@ -58,6 +61,10 @@ type Commonrulepredicate struct {
     Status string `json:"status"`
 
 
+    // Topic - The operational console topic corresponding to the metric.
+    Topic string `json:"topic"`
+
+
     // Entity - The entity whose metric is being represented.
     Entity Commonrulepredicateentity `json:"entity"`
 
@@ -73,6 +80,7 @@ type Commonrulepredicate struct {
 
 // String returns a JSON representation of the model
 func (o *Commonrulepredicate) String() string {
+    
     
     
     
@@ -108,6 +116,8 @@ func (u *Commonrulepredicate) MarshalJSON() ([]byte, error) {
         
         Status string `json:"status"`
         
+        Topic string `json:"topic"`
+        
         Entity Commonrulepredicateentity `json:"entity"`
         
         MediaType string `json:"mediaType"`
@@ -115,6 +125,9 @@ func (u *Commonrulepredicate) MarshalJSON() ([]byte, error) {
         Metric string `json:"metric"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -25,6 +25,9 @@ type BusinessunitsettingsresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Businessunitsettingsresponse
@@ -45,6 +48,10 @@ type Businessunitsettingsresponse struct {
     Scheduling Buschedulingsettingsresponse `json:"scheduling"`
 
 
+    // Notifications - Notification settings
+    Notifications Bunotificationsettingsresponse `json:"notifications"`
+
+
     // Metadata - Version metadata for this business unit
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
@@ -52,6 +59,7 @@ type Businessunitsettingsresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Businessunitsettingsresponse) String() string {
+    
     
     
     
@@ -82,9 +90,14 @@ func (u *Businessunitsettingsresponse) MarshalJSON() ([]byte, error) {
         
         Scheduling Buschedulingsettingsresponse `json:"scheduling"`
         
+        Notifications Bunotificationsettingsresponse `json:"notifications"`
+        
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
 
         
 

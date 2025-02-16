@@ -27,10 +27,13 @@ type OpendataingestionruleversionresponseDud struct {
     
 
 
-    
+    DateCreated time.Time `json:"dateCreated"`
 
 
-    
+    DateModified time.Time `json:"dateModified"`
+
+
+    Platform string `json:"platform"`
 
 
     
@@ -54,20 +57,21 @@ type Opendataingestionruleversionresponse struct {
     Description string `json:"description"`
 
 
-    // DateCreated - Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    DateCreated time.Time `json:"dateCreated"`
-
-
-    // DateModified - Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-    DateModified time.Time `json:"dateModified"`
-
-
     // Status - The status of the data ingestion rule.
     Status string `json:"status"`
 
 
     // Version - The version number of the data ingestion rule.
     Version int `json:"version"`
+
+
+    
+
+
+    
+
+
+    
 
 
     // ExternalSource - The external source associated with this open data ingestion rule, which is used when performing identity resolution
@@ -80,8 +84,6 @@ type Opendataingestionruleversionresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Opendataingestionruleversionresponse) String() string {
-    
-    
     
     
     
@@ -111,10 +113,6 @@ func (u *Opendataingestionruleversionresponse) MarshalJSON() ([]byte, error) {
         
         Description string `json:"description"`
         
-        DateCreated time.Time `json:"dateCreated"`
-        
-        DateModified time.Time `json:"dateModified"`
-        
         Status string `json:"status"`
         
         Version int `json:"version"`
@@ -122,6 +120,9 @@ func (u *Opendataingestionruleversionresponse) MarshalJSON() ([]byte, error) {
         ExternalSource Domainentityref `json:"externalSource"`
         *Alias
     }{
+
+        
+
 
         
 

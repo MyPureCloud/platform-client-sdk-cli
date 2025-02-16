@@ -53,6 +53,7 @@ func Cmdexternalcontacts_import_jobs() *cobra.Command {
 }`)
 	externalcontacts_import_jobsCmd.AddCommand(createCmd)
 
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: division")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/import/jobs/{jobId}", utils.FormatPermissions([]string{ "externalContacts:importJob:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/import/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -68,6 +69,7 @@ func Cmdexternalcontacts_import_jobs() *cobra.Command {
 }`)
 	externalcontacts_import_jobsCmd.AddCommand(getCmd)
 
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: division")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "25", "Number of entities to return. Maximum of 100.")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "Ascending", "Direction of sorting. Valid values: Ascending, Descending")
@@ -206,6 +208,10 @@ var getCmd = &cobra.Command{
 		jobId, args := args[0], args[1:]
 		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
 
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -269,6 +275,10 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/externalcontacts/import/jobs"
 
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		after := utils.GetFlag(cmd.Flags(), "string", "after")
 		if after != "" {
 			queryParams["after"] = after

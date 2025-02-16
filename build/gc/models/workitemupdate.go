@@ -80,6 +80,9 @@ type WorkitemupdateDud struct {
 
     
 
+
+    
+
 }
 
 // Workitemupdate
@@ -175,6 +178,10 @@ type Workitemupdate struct {
     // PreferredAgentIds - The preferred agent IDs of the Workitem. Must be valid UUIDs.
     PreferredAgentIds []string `json:"preferredAgentIds"`
 
+
+    // ScriptId - The ID of the Workitems script. Must be a valid UUID.
+    ScriptId string `json:"scriptId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -202,6 +209,7 @@ func (o *Workitemupdate) String() string {
     
     
      o.PreferredAgentIds = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -264,6 +272,8 @@ func (u *Workitemupdate) MarshalJSON() ([]byte, error) {
         UtilizationLabelId string `json:"utilizationLabelId"`
         
         PreferredAgentIds []string `json:"preferredAgentIds"`
+        
+        ScriptId string `json:"scriptId"`
         *Alias
     }{
 
@@ -341,6 +351,9 @@ func (u *Workitemupdate) MarshalJSON() ([]byte, error) {
 
         
         PreferredAgentIds: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

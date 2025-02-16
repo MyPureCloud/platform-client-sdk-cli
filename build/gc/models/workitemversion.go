@@ -120,6 +120,9 @@ type WorkitemversionDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -265,6 +268,10 @@ type Workitemversion struct {
     ScoredAgents []Workitemscoredagent `json:"scoredAgents"`
 
 
+    // Script - The script that will be executed for the Workitem.
+    Script Workitemscriptreference `json:"script"`
+
+
     // Version - Version
     Version int `json:"version"`
 
@@ -309,6 +316,7 @@ func (o *Workitemversion) String() string {
      o.CustomFields = map[string]interface{}{"": Interface{}} 
     
      o.ScoredAgents = []Workitemscoredagent{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -394,6 +402,8 @@ func (u *Workitemversion) MarshalJSON() ([]byte, error) {
         AutoStatusTransitionDetail Autostatustransitiondetail `json:"autoStatusTransitionDetail"`
         
         ScoredAgents []Workitemscoredagent `json:"scoredAgents"`
+        
+        Script Workitemscriptreference `json:"script"`
         
         Version int `json:"version"`
         *Alias
@@ -509,6 +519,9 @@ func (u *Workitemversion) MarshalJSON() ([]byte, error) {
 
         
         ScoredAgents: []Workitemscoredagent{{}},
+        
+
+
         
 
 

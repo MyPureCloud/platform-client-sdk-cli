@@ -140,6 +140,13 @@ gc/cmd/authorization_divisionspermitted_me/authorization_divisionspermitted_me.g
 gc/cmd/authorization_divisionspermitted_paged/authorization_divisionspermitted_paged.go
 gc/cmd/authorization_divisionspermitted_paged_me/authorization_divisionspermitted_paged_me.go
 gc/cmd/authorization_permissions/authorization_permissions.go
+gc/cmd/authorization_policies/authorization_policies.go
+gc/cmd/authorization_policies_attributes/authorization_policies_attributes.go
+gc/cmd/authorization_policies_simulate/authorization_policies_simulate.go
+gc/cmd/authorization_policies_subject/authorization_policies_subject.go
+gc/cmd/authorization_policies_targets/authorization_policies_targets.go
+gc/cmd/authorization_policies_targets_subject/authorization_policies_targets_subject.go
+gc/cmd/authorization_policies_targets_validate/authorization_policies_targets_validate.go
 gc/cmd/authorization_products/authorization_products.go
 gc/cmd/authorization_roles/authorization_roles.go
 gc/cmd/authorization_roles_comparedefault/authorization_roles_comparedefault.go
@@ -597,6 +604,7 @@ gc/cmd/journey_sessions/journey_sessions.go
 gc/cmd/journey_sessions_events/journey_sessions_events.go
 gc/cmd/journey_sessions_outcomescores/journey_sessions_outcomescores.go
 gc/cmd/journey_views/journey_views.go
+gc/cmd/journey_views_data_details/journey_views_data_details.go
 gc/cmd/journey_views_encodings_validate/journey_views_encodings_validate.go
 gc/cmd/journey_views_eventdefinitions/journey_views_eventdefinitions.go
 gc/cmd/journey_views_jobs/journey_views_jobs.go
@@ -1277,6 +1285,7 @@ gc/cmd/workforcemanagement_businessunits_workplanbids_groups_preferences/workfor
 gc/cmd/workforcemanagement_businessunits_workplanbids_groups_summary/workforcemanagement_businessunits_workplanbids_groups_summary.go
 gc/cmd/workforcemanagement_calendar_data_ics/workforcemanagement_calendar_data_ics.go
 gc/cmd/workforcemanagement_calendar_url_ics/workforcemanagement_calendar_url_ics.go
+gc/cmd/workforcemanagement_historicaldata_bulk_remove_jobs/workforcemanagement_historicaldata_bulk_remove_jobs.go
 gc/cmd/workforcemanagement_historicaldata_deletejob/workforcemanagement_historicaldata_deletejob.go
 gc/cmd/workforcemanagement_historicaldata_importstatus/workforcemanagement_historicaldata_importstatus.go
 gc/cmd/workforcemanagement_historicaldata_validate/workforcemanagement_historicaldata_validate.go
@@ -1645,6 +1654,8 @@ gc/models/auditrealtimequeryresultsresponse.go
 gc/models/auditrealtimerelatedrequest.go
 gc/models/auditrealtimerelatedresultsresponse.go
 gc/models/authenticationsettings.go
+gc/models/authorizationpolicy.go
+gc/models/authorizationpolicyentitylisting.go
 gc/models/authorizationsettings.go
 gc/models/authzdivision.go
 gc/models/authzdivisionentitylisting.go
@@ -2209,6 +2220,7 @@ gc/models/conversationeventcobrowse.go
 gc/models/conversationeventpresence.go
 gc/models/conversationeventtyping.go
 gc/models/conversationeventvideo.go
+gc/models/conversationinsight.go
 gc/models/conversationmessagecontent.go
 gc/models/conversationmessageevent.go
 gc/models/conversationmessagemetadata.go
@@ -2378,7 +2390,9 @@ gc/models/dataactionconditionsettings.go
 gc/models/dataactioncontactcolumnfieldmapping.go
 gc/models/dataavailabilityresponse.go
 gc/models/dataingestionrules.go
+gc/models/dataingestionrulesmetadata.go
 gc/models/dataingestionrulestatuspatchrequest.go
+gc/models/datarange.go
 gc/models/dataschema.go
 gc/models/dataschemalisting.go
 gc/models/datatable.go
@@ -2387,6 +2401,8 @@ gc/models/datatableimportentitylisting.go
 gc/models/datatableimportjob.go
 gc/models/datatablerowentitylisting.go
 gc/models/datatablesdomainentitylisting.go
+gc/models/datepicker.go
+gc/models/datepickeravailabledatetime.go
 gc/models/daterange.go
 gc/models/daterangewithoptionalend.go
 gc/models/defaultgreetinglist.go
@@ -2961,6 +2977,7 @@ gc/models/gkndocumentationresult.go
 gc/models/gkndocumentationsearchcriteria.go
 gc/models/gkndocumentationsearchrequest.go
 gc/models/gkndocumentationsearchresponse.go
+gc/models/googlebusinessprofiledataingestionruleresponse.go
 gc/models/googledialogflowconfig.go
 gc/models/googledialogflowcustomsettings.go
 gc/models/grammar.go
@@ -3004,7 +3021,13 @@ gc/models/historicaladherencedaymetrics.go
 gc/models/historicaladherenceexceptioninfo.go
 gc/models/historicaladherencequeryresult.go
 gc/models/historicaldata.go
+gc/models/historicaldatadeleteentity.go
+gc/models/historicaldatadisalloweddeleteentity.go
+gc/models/historicaldatajobentitystatus.go
+gc/models/historicalimportdeletefilesjobrequest.go
+gc/models/historicalimportdeletefilesjobresponse.go
 gc/models/historicalimportdeletejobresponse.go
+gc/models/historicalimportoveralldeletestatusresponse.go
 gc/models/historicalimportstatus.go
 gc/models/historicalimportstatusjobresponse.go
 gc/models/historicalimportstatuslisting.go
@@ -3875,11 +3898,17 @@ gc/models/planninggroupreference.go
 gc/models/planningperiodsettings.go
 gc/models/policy.go
 gc/models/policyactions.go
+gc/models/policyattribute.go
+gc/models/policyattributeset.go
+gc/models/policycondition.go
+gc/models/policyconditionresult.go
 gc/models/policyconditions.go
 gc/models/policycreate.go
 gc/models/policyentitylisting.go
 gc/models/policyerrormessage.go
 gc/models/policyerrors.go
+gc/models/policytestpayload.go
+gc/models/policytestresult.go
 gc/models/policyupdate.go
 gc/models/positionsettings.go
 gc/models/possibleworkshiftsforweek.go
@@ -4224,7 +4253,6 @@ gc/models/screenrecordingmetadata.go
 gc/models/screenrecordingmetadatarequest.go
 gc/models/screenrecordingsession.go
 gc/models/screenrecordingsessionlisting.go
-gc/models/screenrecordingsessionrequest.go
 gc/models/screenrecordinguserauthenticatedinfo.go
 gc/models/screenshare.go
 gc/models/script.go
@@ -4400,6 +4428,7 @@ gc/models/storysetting.go
 gc/models/streetaddress.go
 gc/models/sttengineentity.go
 gc/models/sttengineentitylisting.go
+gc/models/subject.go
 gc/models/subjectdivisiongrants.go
 gc/models/subjectdivisiongrantsentitylisting.go
 gc/models/subjectdivisions.go
@@ -4483,6 +4512,8 @@ gc/models/systempromptentitylisting.go
 gc/models/tagqueryrequest.go
 gc/models/tagvalue.go
 gc/models/tagvalueentitylisting.go
+gc/models/targetattributes.go
+gc/models/targetattributevalue.go
 gc/models/targetperformanceprofile.go
 gc/models/taskmanagementaggregatedatacontainer.go
 gc/models/taskmanagementaggregatequeryclause.go
@@ -4681,6 +4712,7 @@ gc/models/twitterdataingestionruleresponse.go
 gc/models/twitterdataingestionruleversionresponse.go
 gc/models/twitterdataingestionruleversionresponseentitylisting.go
 gc/models/twitterid.go
+gc/models/typedattribute.go
 gc/models/typingsetting.go
 gc/models/uci10n.go
 gc/models/ucicon.go
@@ -4860,6 +4892,8 @@ gc/models/validateassignusers.go
 gc/models/validateworkplanmessages.go
 gc/models/validateworkplanresponse.go
 gc/models/validationerror.go
+gc/models/validationerrorlisting.go
+gc/models/validationerrorresponse.go
 gc/models/validationlimits.go
 gc/models/validationresult.go
 gc/models/validationserviceasyncresponse.go

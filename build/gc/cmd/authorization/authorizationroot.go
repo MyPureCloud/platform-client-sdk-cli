@@ -9,6 +9,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization_subjects"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization_roles"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization_settings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization_policies"
 )
 
 func init() {
@@ -19,6 +20,7 @@ func init() {
 	authorizationCmd.AddCommand(authorization_subjects.Cmdauthorization_subjects())
 	authorizationCmd.AddCommand(authorization_roles.Cmdauthorization_roles())
 	authorizationCmd.AddCommand(authorization_settings.Cmdauthorization_settings())
-	authorizationCmd.Short = utils.GenerateCustomDescription(authorizationCmd.Short, authorization_divisions.Description, authorization_divisionspermitted.Description, authorization_permissions.Description, authorization_products.Description, authorization_subjects.Description, authorization_roles.Description, authorization_settings.Description, )
+	authorizationCmd.AddCommand(authorization_policies.Cmdauthorization_policies())
+	authorizationCmd.Short = utils.GenerateCustomDescription(authorizationCmd.Short, authorization_divisions.Description, authorization_divisionspermitted.Description, authorization_permissions.Description, authorization_products.Description, authorization_subjects.Description, authorization_roles.Description, authorization_settings.Description, authorization_policies.Description, )
 	authorizationCmd.Long = authorizationCmd.Short
 }

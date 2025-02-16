@@ -77,12 +77,12 @@ func Cmdspeechandtextanalytics_categories() *cobra.Command {
 }`)
 	speechandtextanalytics_categoriesCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The page size for the listing. The max that will be returned is 50.")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The page size for the listing. The max that will be returned is 25.")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number for the listing")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "The category name filter applied to the listing")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "The sort order for the listing Valid values: asc, desc")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "The field to sort by for the listing Valid values: name, description")
-	utils.AddFlag(listCmd.Flags(), "[]string", "ids", "", "Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.")
+	utils.AddFlag(listCmd.Flags(), "[]string", "ids", "", "Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/categories", utils.FormatPermissions([]string{ "speechAndTextAnalytics:category:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/categories")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

@@ -38,10 +38,22 @@ type HistoricalimportstatusDud struct {
 
     VarType string `json:"type"`
 
+
+    FileName string `json:"fileName"`
+
+
+    FileSize int `json:"fileSize"`
+
 }
 
 // Historicalimportstatus
 type Historicalimportstatus struct { 
+    
+
+
+    
+
+
     
 
 
@@ -90,6 +102,12 @@ func (u *Historicalimportstatus) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

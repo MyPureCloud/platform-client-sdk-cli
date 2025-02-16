@@ -143,6 +143,9 @@ type CallbackmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Callbackmediaparticipant
@@ -287,6 +290,10 @@ type Callbackmediaparticipant struct {
     ParkTime time.Time `json:"parkTime"`
 
 
+    // ResumeTime - The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ResumeTime time.Time `json:"resumeTime"`
+
+
     // OutboundPreview - The outbound preview associated with this callback.
     OutboundPreview Dialerpreview `json:"outboundPreview"`
 
@@ -345,6 +352,7 @@ func (o *Callbackmediaparticipant) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
     
     
     
@@ -457,6 +465,8 @@ func (u *Callbackmediaparticipant) MarshalJSON() ([]byte, error) {
         
         ParkTime time.Time `json:"parkTime"`
         
+        ResumeTime time.Time `json:"resumeTime"`
+        
         OutboundPreview Dialerpreview `json:"outboundPreview"`
         
         Voicemail Voicemail `json:"voicemail"`
@@ -535,6 +545,9 @@ func (u *Callbackmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

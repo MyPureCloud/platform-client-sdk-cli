@@ -129,6 +129,9 @@ type CreatequeuerequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -191,8 +194,12 @@ type Createqueuerequest struct {
     Bullseye Bullseye `json:"bullseye"`
 
 
-    // ScoringMethod - The Scoring Method for the queue
+    // ScoringMethod - The Scoring Method for the queue.
     ScoringMethod string `json:"scoringMethod"`
+
+
+    // LastAgentRoutingMode - The Last Agent Routing Mode for the queue.
+    LastAgentRoutingMode string `json:"lastAgentRoutingMode"`
 
 
     // AcwSettings - The ACW settings for the queue.
@@ -307,6 +314,7 @@ func (o *Createqueuerequest) String() string {
     
     
     
+    
      o.MemberGroups = []Membergroup{{}} 
     
     
@@ -368,6 +376,8 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
         Bullseye Bullseye `json:"bullseye"`
         
         ScoringMethod string `json:"scoringMethod"`
+        
+        LastAgentRoutingMode string `json:"lastAgentRoutingMode"`
         
         AcwSettings Acwsettings `json:"acwSettings"`
         
@@ -455,6 +465,9 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
 
         
         RoutingRules: []Routingrule{{}},
+        
+
+
         
 
 

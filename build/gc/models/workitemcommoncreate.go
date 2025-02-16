@@ -65,6 +65,9 @@ type WorkitemcommoncreateDud struct {
 
     
 
+
+    
+
 }
 
 // Workitemcommoncreate
@@ -140,6 +143,10 @@ type Workitemcommoncreate struct {
     // SkillIds - The skill IDs of the Workitem. Must be valid UUIDs.
     SkillIds []string `json:"skillIds"`
 
+
+    // ScriptId - The ID of the Workitems script. Must be a valid UUID.
+    ScriptId string `json:"scriptId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -162,6 +169,7 @@ func (o *Workitemcommoncreate) String() string {
     
     
      o.SkillIds = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -214,6 +222,8 @@ func (u *Workitemcommoncreate) MarshalJSON() ([]byte, error) {
         ExternalTag string `json:"externalTag"`
         
         SkillIds []string `json:"skillIds"`
+        
+        ScriptId string `json:"scriptId"`
         *Alias
     }{
 
@@ -272,6 +282,9 @@ func (u *Workitemcommoncreate) MarshalJSON() ([]byte, error) {
 
         
         SkillIds: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

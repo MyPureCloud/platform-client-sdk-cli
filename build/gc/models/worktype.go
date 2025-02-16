@@ -81,6 +81,9 @@ type WorktypeDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -178,6 +181,10 @@ type Worktype struct {
     Flow Workitemflowreference `json:"flow"`
 
 
+    // DefaultScript - The default script for Workitems created from the Worktype.
+    DefaultScript Workitemscriptreference `json:"defaultScript"`
+
+
     
 
 }
@@ -201,6 +208,7 @@ func (o *Worktype) String() string {
     
     
      o.DefaultSkills = []Routingskillreference{{}} 
+    
     
     
     
@@ -266,6 +274,8 @@ func (u *Worktype) MarshalJSON() ([]byte, error) {
         RuleSettings Workitemrulesettings `json:"ruleSettings"`
         
         Flow Workitemflowreference `json:"flow"`
+        
+        DefaultScript Workitemscriptreference `json:"defaultScript"`
         *Alias
     }{
 
@@ -324,6 +334,9 @@ func (u *Worktype) MarshalJSON() ([]byte, error) {
 
         
         DefaultSkills: []Routingskillreference{{}},
+        
+
+
         
 
 

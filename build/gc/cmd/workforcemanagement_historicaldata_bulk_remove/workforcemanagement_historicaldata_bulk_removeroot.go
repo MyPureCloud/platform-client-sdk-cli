@@ -1,0 +1,12 @@
+package workforcemanagement_historicaldata_bulk_remove
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_historicaldata_bulk_remove_jobs"
+)
+
+func init() {
+	workforcemanagement_historicaldata_bulk_removeCmd.AddCommand(workforcemanagement_historicaldata_bulk_remove_jobs.Cmdworkforcemanagement_historicaldata_bulk_remove_jobs())
+	workforcemanagement_historicaldata_bulk_removeCmd.Short = utils.GenerateCustomDescription(workforcemanagement_historicaldata_bulk_removeCmd.Short, workforcemanagement_historicaldata_bulk_remove_jobs.Description, )
+	workforcemanagement_historicaldata_bulk_removeCmd.Long = workforcemanagement_historicaldata_bulk_removeCmd.Short
+}

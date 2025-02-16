@@ -114,7 +114,7 @@ type Analyticsconversationsegment struct {
     ErrorCode string `json:"errorCode"`
 
 
-    // GroupId - Unique identifier for a PureCloud group
+    // GroupId - Unique identifier for a Genesys Cloud group
     GroupId string `json:"groupId"`
 
 

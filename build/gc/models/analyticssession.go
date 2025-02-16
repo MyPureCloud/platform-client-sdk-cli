@@ -348,7 +348,7 @@ type Analyticssession struct {
     CobrowseRole string `json:"cobrowseRole"`
 
 
-    // CobrowseRoomId - A unique identifier for a PureCloud cobrowse room
+    // CobrowseRoomId - A unique identifier for a Genesys Cloud cobrowse room
     CobrowseRoomId string `json:"cobrowseRoomId"`
 
 
@@ -516,11 +516,11 @@ type Analyticssession struct {
     RoutingRuleType string `json:"routingRuleType"`
 
 
-    // ScreenShareAddressSelf - Direct ScreenShare address
+    // ScreenShareAddressSelf - Direct screen share address
     ScreenShareAddressSelf string `json:"screenShareAddressSelf"`
 
 
-    // ScreenShareRoomId - A unique identifier for a PureCloud ScreenShare room
+    // ScreenShareRoomId - A unique identifier for a Genesys Cloud screen share room
     ScreenShareRoomId string `json:"screenShareRoomId"`
 
 
@@ -544,7 +544,7 @@ type Analyticssession struct {
     SessionId string `json:"sessionId"`
 
 
-    // SharingScreen - Flag determining if screenShare is started or not (true/false)
+    // SharingScreen - Flag determining if screen share is started or not (true/false)
     SharingScreen bool `json:"sharingScreen"`
 
 
@@ -552,7 +552,7 @@ type Analyticssession struct {
     SkipEnabled bool `json:"skipEnabled"`
 
 
-    // TimeoutSeconds - The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
+    // TimeoutSeconds - The number of seconds before Genesys Cloud begins the call for a call back (0 disables automatic calling)
     TimeoutSeconds int `json:"timeoutSeconds"`
 
 
@@ -564,7 +564,7 @@ type Analyticssession struct {
     VideoAddressSelf string `json:"videoAddressSelf"`
 
 
-    // VideoRoomId - A unique identifier for a PureCloud video room
+    // VideoRoomId - A unique identifier for a Genesys Cloud video room
     VideoRoomId string `json:"videoRoomId"`
 
 

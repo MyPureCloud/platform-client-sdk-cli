@@ -661,6 +661,15 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1441,6 +1450,10 @@ type Viewfilter struct {
     ScreenMonitorUserIds []string `json:"screenMonitorUserIds"`
 
 
+    // DashboardState - The state of dashboard being filtered
+    DashboardState string `json:"dashboardState"`
+
+
     // DashboardType - The type of dashboard being filtered
     DashboardType string `json:"dashboardType"`
 
@@ -1531,6 +1544,14 @@ type Viewfilter struct {
 
     // ComparisonQueueIds - The queue ids are used to for comparison to the primary queue filter in reporting
     ComparisonQueueIds []string `json:"comparisonQueueIds"`
+
+
+    // ViewMetrics - A list of metrics selected for the view
+    ViewMetrics []string `json:"viewMetrics"`
+
+
+    // TimelineCategories - A list of timeline categories
+    TimelineCategories []string `json:"timelineCategories"`
 
 }
 
@@ -1732,6 +1753,7 @@ func (o *Viewfilter) String() string {
      o.ScreenMonitorUserIds = []string{""} 
     
     
+    
      o.TranscriptDurationMilliseconds = []Numericrange{{}} 
      o.WorkitemsStatuses = []Workitemstatusfilter{{}} 
      o.SocialCountries = []string{""} 
@@ -1753,6 +1775,8 @@ func (o *Viewfilter) String() string {
      o.RecommendationSources = []string{""} 
     
      o.ComparisonQueueIds = []string{""} 
+     o.ViewMetrics = []string{""} 
+     o.TimelineCategories = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2158,6 +2182,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
         ScreenMonitorUserIds []string `json:"screenMonitorUserIds"`
         
+        DashboardState string `json:"dashboardState"`
+        
         DashboardType string `json:"dashboardType"`
         
         DashboardAccessFilter string `json:"dashboardAccessFilter"`
@@ -2203,6 +2229,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         EvaluationRole string `json:"evaluationRole"`
         
         ComparisonQueueIds []string `json:"comparisonQueueIds"`
+        
+        ViewMetrics []string `json:"viewMetrics"`
+        
+        TimelineCategories []string `json:"timelineCategories"`
         *Alias
     }{
 
@@ -3061,6 +3091,9 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
         TranscriptDurationMilliseconds: []Numericrange{{}},
         
 
@@ -3150,6 +3183,16 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         ComparisonQueueIds: []string{""},
+        
+
+
+        
+        ViewMetrics: []string{""},
+        
+
+
+        
+        TimelineCategories: []string{""},
         
 
         Alias: (*Alias)(u),

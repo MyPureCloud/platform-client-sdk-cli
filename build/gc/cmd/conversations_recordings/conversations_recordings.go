@@ -40,7 +40,7 @@ func Cmdconversations_recordings() *cobra.Command {
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  "description" : "Success - recording is transcoding",
+  "description" : "successful operation",
   "content" : {
     "application/json" : {
       "schema" : {

@@ -30,7 +30,7 @@ type Learningscheduleslotsqueryrequest struct {
     Interval string `json:"interval"`
 
 
-    // LengthInMinutes - The duration of coaching appointment to schedule in 15 minutes granularity
+    // LengthInMinutes - The duration of Learning Assignment to schedule in 15 minutes granularity
     LengthInMinutes int `json:"lengthInMinutes"`
 
 

@@ -64,6 +64,9 @@ type WorktypecreateDud struct {
 
     
 
+
+    
+
 }
 
 // Worktypecreate
@@ -139,6 +142,10 @@ type Worktypecreate struct {
     // DefaultSkillIds - The IDs of the default skills for Workitems created from the Worktype. Must be valid UUIDs. Maximum of 20 IDs
     DefaultSkillIds []string `json:"defaultSkillIds"`
 
+
+    // DefaultScriptId - The default script for Workitems created from the Worktype. Must be a valid UUID.
+    DefaultScriptId string `json:"defaultScriptId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -161,6 +168,7 @@ func (o *Worktypecreate) String() string {
     
     
      o.DefaultSkillIds = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -213,6 +221,8 @@ func (u *Worktypecreate) MarshalJSON() ([]byte, error) {
         DefaultLanguageId string `json:"defaultLanguageId"`
         
         DefaultSkillIds []string `json:"defaultSkillIds"`
+        
+        DefaultScriptId string `json:"defaultScriptId"`
         *Alias
     }{
 
@@ -269,6 +279,9 @@ func (u *Worktypecreate) MarshalJSON() ([]byte, error) {
 
         
         DefaultSkillIds: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

@@ -131,6 +131,9 @@ type CobrowsemediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Cobrowsemediaparticipant
@@ -275,6 +278,10 @@ type Cobrowsemediaparticipant struct {
     ParkTime time.Time `json:"parkTime"`
 
 
+    // ResumeTime - The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ResumeTime time.Time `json:"resumeTime"`
+
+
     // CobrowseSessionId - The co-browse session ID.
     CobrowseSessionId string `json:"cobrowseSessionId"`
 
@@ -317,6 +324,7 @@ func (o *Cobrowsemediaparticipant) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
     
     
     
@@ -425,6 +433,8 @@ func (u *Cobrowsemediaparticipant) MarshalJSON() ([]byte, error) {
         
         ParkTime time.Time `json:"parkTime"`
         
+        ResumeTime time.Time `json:"resumeTime"`
+        
         CobrowseSessionId string `json:"cobrowseSessionId"`
         
         CobrowseRole string `json:"cobrowseRole"`
@@ -495,6 +505,9 @@ func (u *Cobrowsemediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

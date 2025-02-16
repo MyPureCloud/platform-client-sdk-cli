@@ -77,6 +77,9 @@ type WorkitemcreateDud struct {
 
     
 
+
+    
+
 }
 
 // Workitemcreate
@@ -153,6 +156,10 @@ type Workitemcreate struct {
     SkillIds []string `json:"skillIds"`
 
 
+    // ScriptId - The ID of the Workitems script. Must be a valid UUID.
+    ScriptId string `json:"scriptId"`
+
+
     // WrapupCode - The ID of the wrapup. Must be a valid UUID.
     WrapupCode string `json:"wrapupCode"`
 
@@ -190,6 +197,7 @@ func (o *Workitemcreate) String() string {
     
     
      o.SkillIds = []string{""} 
+    
     
     
      o.ScoredAgents = []Workitemscoredagentrequest{{}} 
@@ -246,6 +254,8 @@ func (u *Workitemcreate) MarshalJSON() ([]byte, error) {
         ExternalTag string `json:"externalTag"`
         
         SkillIds []string `json:"skillIds"`
+        
+        ScriptId string `json:"scriptId"`
         
         WrapupCode string `json:"wrapupCode"`
         
@@ -312,6 +322,9 @@ func (u *Workitemcreate) MarshalJSON() ([]byte, error) {
 
         
         SkillIds: []string{""},
+        
+
+
         
 
 

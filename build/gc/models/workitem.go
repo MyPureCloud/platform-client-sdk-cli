@@ -117,6 +117,9 @@ type WorkitemDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -262,6 +265,10 @@ type Workitem struct {
     ScoredAgents []Workitemscoredagent `json:"scoredAgents"`
 
 
+    // Script - The script that will be executed for the Workitem.
+    Script Workitemscriptreference `json:"script"`
+
+
     
 
 }
@@ -302,6 +309,7 @@ func (o *Workitem) String() string {
      o.CustomFields = map[string]interface{}{"": Interface{}} 
     
      o.ScoredAgents = []Workitemscoredagent{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -386,6 +394,8 @@ func (u *Workitem) MarshalJSON() ([]byte, error) {
         AutoStatusTransitionDetail Autostatustransitiondetail `json:"autoStatusTransitionDetail"`
         
         ScoredAgents []Workitemscoredagent `json:"scoredAgents"`
+        
+        Script Workitemscriptreference `json:"script"`
         *Alias
     }{
 
@@ -499,6 +509,9 @@ func (u *Workitem) MarshalJSON() ([]byte, error) {
 
         
         ScoredAgents: []Workitemscoredagent{{}},
+        
+
+
         
 
 

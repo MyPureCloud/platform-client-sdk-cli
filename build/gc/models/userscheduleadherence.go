@@ -75,6 +75,12 @@ type UserscheduleadherenceDud struct {
     RemovedFromManagementUnit bool `json:"removedFromManagementUnit"`
 
 
+    NextActivityReminders []Usernextactivityreminder `json:"nextActivityReminders"`
+
+
+    SuppressOnTimeReminder bool `json:"suppressOnTimeReminder"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -86,6 +92,12 @@ type Userscheduleadherence struct {
 
     // Name
     Name string `json:"name"`
+
+
+    
+
+
+    
 
 
     
@@ -172,6 +184,12 @@ func (u *Userscheduleadherence) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

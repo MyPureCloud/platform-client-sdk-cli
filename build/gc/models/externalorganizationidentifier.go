@@ -24,6 +24,9 @@ type ExternalorganizationidentifierDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -45,12 +48,17 @@ type Externalorganizationidentifier struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    // ExternalSource - The External Source ID of the identifier
+    ExternalSource Externalsource `json:"externalSource"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Externalorganizationidentifier) String() string {
+    
     
     
     
@@ -76,8 +84,13 @@ func (u *Externalorganizationidentifier) MarshalJSON() ([]byte, error) {
         Value string `json:"value"`
         
         DateCreated time.Time `json:"dateCreated"`
+        
+        ExternalSource Externalsource `json:"externalSource"`
         *Alias
     }{
+
+        
+
 
         
 

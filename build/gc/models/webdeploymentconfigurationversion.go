@@ -54,6 +54,9 @@ type WebdeploymentconfigurationversionDud struct {
     
 
 
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -135,6 +138,10 @@ type Webdeploymentconfigurationversion struct {
     AuthenticationSettings Authenticationsettings `json:"authenticationSettings"`
 
 
+    // Video - The settings for video
+    Video Videosettings `json:"video"`
+
+
     
 
 
@@ -169,6 +176,7 @@ func (o *Webdeploymentconfigurationversion) String() string {
      o.Languages = []string{""} 
     
      o.CustomI18nLabels = []Customi18nlabels{{}} 
+    
     
     
     
@@ -217,6 +225,8 @@ func (u *Webdeploymentconfigurationversion) MarshalJSON() ([]byte, error) {
         
         AuthenticationSettings Authenticationsettings `json:"authenticationSettings"`
         
+        Video Videosettings `json:"video"`
+        
         Status string `json:"status"`
         *Alias
     }{
@@ -246,6 +256,9 @@ func (u *Webdeploymentconfigurationversion) MarshalJSON() ([]byte, error) {
 
         
         CustomI18nLabels: []Customi18nlabels{{}},
+        
+
+
         
 
 

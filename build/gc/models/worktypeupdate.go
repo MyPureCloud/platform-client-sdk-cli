@@ -61,6 +61,9 @@ type WorktypeupdateDud struct {
 
     
 
+
+    
+
 }
 
 // Worktypeupdate
@@ -132,6 +135,10 @@ type Worktypeupdate struct {
     // DefaultQueueId - The ID of the default queue for Workitems created from the Worktype. Must be a valid UUID.
     DefaultQueueId string `json:"defaultQueueId"`
 
+
+    // DefaultScriptId - The default script for Workitems created from the Worktype. Must be a valid UUID.
+    DefaultScriptId string `json:"defaultScriptId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -152,6 +159,7 @@ func (o *Worktypeupdate) String() string {
     
     
      o.DefaultSkillIds = []string{""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -203,6 +211,8 @@ func (u *Worktypeupdate) MarshalJSON() ([]byte, error) {
         DefaultSkillIds []string `json:"defaultSkillIds"`
         
         DefaultQueueId string `json:"defaultQueueId"`
+        
+        DefaultScriptId string `json:"defaultScriptId"`
         *Alias
     }{
 
@@ -253,6 +263,9 @@ func (u *Worktypeupdate) MarshalJSON() ([]byte, error) {
 
         
         DefaultSkillIds: []string{""},
+        
+
+
         
 
 

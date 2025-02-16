@@ -16,9 +16,6 @@ type WhatsappcolumnDud struct {
 
     
 
-
-    
-
 }
 
 // Whatsappcolumn
@@ -30,15 +27,10 @@ type Whatsappcolumn struct {
     // VarType - Indicates the type of the whatsApp column. For example, 'work' or 'personal'.
     VarType string `json:"type"`
 
-
-    // ContactableTimeColumn - A column that indicates the timezone to use for a given contact when checking contactable times.
-    ContactableTimeColumn string `json:"contactableTimeColumn"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Whatsappcolumn) String() string {
-    
     
     
 
@@ -61,13 +53,8 @@ func (u *Whatsappcolumn) MarshalJSON() ([]byte, error) {
         ColumnName string `json:"columnName"`
         
         VarType string `json:"type"`
-        
-        ContactableTimeColumn string `json:"contactableTimeColumn"`
         *Alias
     }{
-
-        
-
 
         
 

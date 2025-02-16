@@ -63,7 +63,7 @@ type Browser struct {
     Fingerprint string `json:"fingerprint"`
 
 
-    // IsMobile - Flag that is true for mobile devices.
+    // IsMobile - (Deprecated, use Device.isMobile instead) Flag that is true for mobile devices.
     IsMobile bool `json:"isMobile"`
 
 

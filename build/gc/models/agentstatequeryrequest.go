@@ -52,7 +52,7 @@ type Agentstatequeryrequest struct {
     SessionOrderBy string `json:"sessionOrderBy"`
 
 
-    // SessionOrder - Search session order direction; default to desc
+    // SessionOrder - Search session order direction; default to asc
     SessionOrder string `json:"sessionOrder"`
 
 }

@@ -27,13 +27,16 @@ type FacebookdataingestionruleversionresponseDud struct {
     
 
 
-    
-
-
     DateCreated time.Time `json:"dateCreated"`
 
 
     DateModified time.Time `json:"dateModified"`
+
+
+    Platform string `json:"platform"`
+
+
+    
 
 
     SelfUri string `json:"selfUri"`
@@ -62,14 +65,17 @@ type Facebookdataingestionruleversionresponse struct {
     Version int `json:"version"`
 
 
+    
+
+
+    
+
+
+    
+
+
     // IntegrationId - The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/facebook resource
     IntegrationId string `json:"integrationId"`
-
-
-    
-
-
-    
 
 
     
@@ -114,6 +120,9 @@ func (u *Facebookdataingestionruleversionresponse) MarshalJSON() ([]byte, error)
         IntegrationId string `json:"integrationId"`
         *Alias
     }{
+
+        
+
 
         
 

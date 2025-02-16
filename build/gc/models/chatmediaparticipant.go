@@ -122,6 +122,9 @@ type ChatmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Chatmediaparticipant
@@ -266,6 +269,10 @@ type Chatmediaparticipant struct {
     ParkTime time.Time `json:"parkTime"`
 
 
+    // ResumeTime - The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ResumeTime time.Time `json:"resumeTime"`
+
+
     // RoomId - The ID of the chat room.
     RoomId string `json:"roomId"`
 
@@ -296,6 +303,7 @@ func (o *Chatmediaparticipant) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
     
     
     
@@ -401,6 +409,8 @@ func (u *Chatmediaparticipant) MarshalJSON() ([]byte, error) {
         
         ParkTime time.Time `json:"parkTime"`
         
+        ResumeTime time.Time `json:"resumeTime"`
+        
         RoomId string `json:"roomId"`
         
         AvatarImageUrl string `json:"avatarImageUrl"`
@@ -465,6 +475,9 @@ func (u *Chatmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

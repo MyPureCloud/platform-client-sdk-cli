@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type AnnotationDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -59,7 +59,8 @@ type AnnotationDud struct {
 
 // Annotation
 type Annotation struct { 
-    
+    // Id - Annotation id. All pause annotations on a recording will share an ID value, bookmark annotations will have unique IDs, and hold annotations will have randomly generated UUIDs (i.e. the ID will change at each request).
+    Id string `json:"id"`
 
 
     // Name
@@ -127,6 +128,7 @@ func (o *Annotation) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,6 +145,8 @@ func (u *Annotation) MarshalJSON() ([]byte, error) {
     AnnotationMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Name string `json:"name"`
         

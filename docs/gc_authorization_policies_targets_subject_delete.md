@@ -1,22 +1,19 @@
-## gc routing sms phonenumbers update
+## gc authorization policies targets subject delete
 
-Update a phone number provisioned for SMS.
+Delete an access control policy
 
 ### Synopsis
 
-Update a phone number provisioned for SMS.
+Delete an access control policy
 
 ```
-gc routing sms phonenumbers update [phoneNumberId] [flags]
+gc authorization policies targets subject delete [targetName] [subjectId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc routing sms phonenumbers update [phoneNumberId] [flags]
 
 ### SEE ALSO
 
-* [gc routing sms phonenumbers](gc_routing_sms_phonenumbers.html)	 - /api/v2/routing/sms/phonenumbers
+* [gc authorization policies targets subject](gc_authorization_policies_targets_subject.html)	 - /api/v2/authorization/policies/targets/{targetName}/subject
 
 

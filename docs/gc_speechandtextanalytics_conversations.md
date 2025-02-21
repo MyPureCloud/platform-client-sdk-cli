@@ -33,5 +33,6 @@
 * [gc speechandtextanalytics conversations categories](gc_speechandtextanalytics_conversations_categories.html)	 - /api/v2/speechandtextanalytics/conversations/{conversationId}/categories
 * [gc speechandtextanalytics conversations communications](gc_speechandtextanalytics_conversations_communications.html)	 - /api/v2/speechandtextanalytics/conversations/{conversationId}/communications
 * [gc speechandtextanalytics conversations get](gc_speechandtextanalytics_conversations_get.html)	 - Get Speech and Text Analytics for a specific conversation
+* [gc speechandtextanalytics conversations summaries](gc_speechandtextanalytics_conversations_summaries.html)	 - /api/v2/speechandtextanalytics/conversations/{conversationId}/summaries
 
 

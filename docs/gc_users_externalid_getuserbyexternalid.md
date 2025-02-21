@@ -1,22 +1,20 @@
-## gc users externalid create
+## gc users externalid getuserbyexternalid
 
-Create mapping between external identifier and user. Limit 100 per entity.
+Get the user associated with external identifier.
 
 ### Synopsis
 
-Create mapping between external identifier and user. Limit 100 per entity.
+Get the user associated with external identifier.
 
 ```
-gc users externalid create [userId] [flags]
+gc users externalid getuserbyexternalid [authorityName] [externalKey] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+      --expand strings   Which fields, if any, to expand Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin
+  -h, --help             help for getuserbyexternalid
 ```
 
 ### Options inherited from parent commands

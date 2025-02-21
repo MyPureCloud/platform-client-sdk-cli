@@ -1,20 +1,15 @@
-## gc externalcontacts import jobs get
+## gc authorization policies targets validate
 
-Get job based on id
+/api/v2/authorization/policies/targets/{targetName}/validate
 
 ### Synopsis
 
-Get job based on id
-
-```
-gc externalcontacts import jobs get [jobId] [flags]
-```
+/api/v2/authorization/policies/targets/{targetName}/validate
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -h, --help   help for validate
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +29,7 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc authorization policies targets](gc_authorization_policies_targets.html)	 - /api/v2/authorization/policies/targets
+* [gc authorization policies targets validate create](gc_authorization_policies_targets_validate_create.html)	 - Validate the conditions and attributes of an access control policy for a specified resource target
 
 

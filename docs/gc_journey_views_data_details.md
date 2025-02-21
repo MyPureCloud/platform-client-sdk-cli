@@ -1,20 +1,15 @@
-## gc externalcontacts import jobs get
+## gc journey views data details
 
-Get job based on id
+/api/v2/journey/views/data/details
 
 ### Synopsis
 
-Get job based on id
-
-```
-gc externalcontacts import jobs get [jobId] [flags]
-```
+/api/v2/journey/views/data/details
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -h, --help   help for details
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +29,7 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc journey views data](gc_journey_views_data.html)	 - /api/v2/journey/views/data
+* [gc journey views data details get](gc_journey_views_data_details_get.html)	 - Get details about the data available for journey queries including oldest and newest event dates
 
 

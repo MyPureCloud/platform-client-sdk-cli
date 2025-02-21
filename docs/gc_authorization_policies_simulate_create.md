@@ -1,20 +1,22 @@
-## gc externalcontacts import jobs get
+## gc authorization policies simulate create
 
-Get job based on id
+Simulate a request and evaluate the specified policy ID against the provided values
 
 ### Synopsis
 
-Get job based on id
+Simulate a request and evaluate the specified policy ID against the provided values
 
 ```
-gc externalcontacts import jobs get [jobId] [flags]
+gc authorization policies simulate create [policyId] [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +36,6 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc authorization policies simulate](gc_authorization_policies_simulate.html)	 - /api/v2/authorization/policies/{policyId}/simulate
 
 

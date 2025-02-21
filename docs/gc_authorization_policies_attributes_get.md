@@ -1,20 +1,19 @@
-## gc externalcontacts import jobs get
+## gc authorization policies attributes get
 
-Get job based on id
+Get the list of attributes used to evaluate an access control policy with the specified policy ID
 
 ### Synopsis
 
-Get job based on id
+Get the list of attributes used to evaluate an access control policy with the specified policy ID
 
 ```
-gc externalcontacts import jobs get [jobId] [flags]
+gc authorization policies attributes get [policyId] [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +33,6 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc authorization policies attributes](gc_authorization_policies_attributes.html)	 - /api/v2/authorization/policies/{policyId}/attributes
 
 

@@ -1,10 +1,10 @@
 ## gc users externalid
 
-/api/v2/users/{userId}/externalid
+/api/v2/users/{userId}/externalid /api/v2/users/{userId}/externalid/{authorityName} /api/v2/users/externalid/{authorityName}
 
 ### Synopsis
 
-/api/v2/users/{userId}/externalid
+/api/v2/users/{userId}/externalid /api/v2/users/{userId}/externalid/{authorityName} /api/v2/users/externalid/{authorityName}
 
 ### Options
 
@@ -31,5 +31,9 @@
 
 * [gc users](gc_users.html)	 - /api/v2/users
 * [gc users externalid create](gc_users_externalid_create.html)	 - Create mapping between external identifier and user. Limit 100 per entity.
+* [gc users externalid delete](gc_users_externalid_delete.html)	 - Delete the external identifier for user.
+* [gc users externalid getexternalidforuserauthority](gc_users_externalid_getexternalidforuserauthority.html)	 - Get the external identifier of user for an authority.
+* [gc users externalid getexternalidsforuser](gc_users_externalid_getexternalidsforuser.html)	 - Get the external identifiers for a user.
+* [gc users externalid getuserbyexternalid](gc_users_externalid_getuserbyexternalid.html)	 - Get the user associated with external identifier.
 
 

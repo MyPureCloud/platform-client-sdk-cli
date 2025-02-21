@@ -1,20 +1,22 @@
-## gc externalcontacts import jobs get
+## gc alerting alerts all update
 
-Get job based on id
+Updates all alerts
 
 ### Synopsis
 
-Get job based on id
+Updates all alerts
 
 ```
-gc externalcontacts import jobs get [jobId] [flags]
+gc alerting alerts all update [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for update
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +36,6 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc alerting alerts all](gc_alerting_alerts_all.html)	 - /api/v2/alerting/alerts/all
 
 

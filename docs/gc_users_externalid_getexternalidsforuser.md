@@ -1,20 +1,19 @@
-## gc externalcontacts import jobs get
+## gc users externalid getexternalidsforuser
 
-Get job based on id
+Get the external identifiers for a user.
 
 ### Synopsis
 
-Get job based on id
+Get the external identifiers for a user.
 
 ```
-gc externalcontacts import jobs get [jobId] [flags]
+gc users externalid getexternalidsforuser [userId] [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -h, --help   help for getexternalidsforuser
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +33,6 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc users externalid](gc_users_externalid.html)	 - /api/v2/users/{userId}/externalid /api/v2/users/{userId}/externalid/{authorityName} /api/v2/users/externalid/{authorityName}
 
 

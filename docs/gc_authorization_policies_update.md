@@ -1,15 +1,22 @@
-## gc authorization
+## gc authorization policies update
 
-/api/v2/authorization
+Update an access control policy with a given ID
 
 ### Synopsis
 
-/api/v2/authorization
+Update an access control policy with a given ID
+
+```
+gc authorization policies update [policyId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for authorization
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for update
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,14 +36,6 @@
 
 ### SEE ALSO
 
-* [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
-* [gc authorization divisions](gc_authorization_divisions.html)	 - /api/v2/authorization/divisions
-* [gc authorization divisionspermitted](gc_authorization_divisionspermitted.html)	 - /api/v2/authorization/divisionspermitted
-* [gc authorization permissions](gc_authorization_permissions.html)	 - /api/v2/authorization/permissions
 * [gc authorization policies](gc_authorization_policies.html)	 - /api/v2/authorization/policies
-* [gc authorization products](gc_authorization_products.html)	 - /api/v2/authorization/products
-* [gc authorization roles](gc_authorization_roles.html)	 - /api/v2/authorization/roles
-* [gc authorization settings](gc_authorization_settings.html)	 - /api/v2/authorization/settings
-* [gc authorization subjects](gc_authorization_subjects.html)	 - /api/v2/authorization/subjects
 
 

@@ -1,13 +1,13 @@
-## gc externalcontacts import jobs list
+## gc authorization policies subject list
 
-List jobs for organization
+Get a page of access policies for a given subject
 
 ### Synopsis
 
-List jobs for organization
+Get a page of access policies for a given subject
 
 ```
-gc externalcontacts import jobs list [flags]
+gc authorization policies subject list [subjectId] [flags]
 ```
 
 ### Options
@@ -15,12 +15,9 @@ gc externalcontacts import jobs list [flags]
 ```
       --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --expand strings           which fields, if any, to expand Valid values: division
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --jobStatus string         Search term to filter by jobStatus Valid values: Created, Running, Completed, Failed, Cancelled
-      --pageSize string          Number of entities to return. Maximum of 100.
-      --sortOrder string         Direction of sorting. Valid values: Ascending, Descending
+      --pageSize string          Number of entities to return. Maximum of 200. (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
@@ -41,6 +38,6 @@ gc externalcontacts import jobs list [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc authorization policies subject](gc_authorization_policies_subject.html)	 - /api/v2/authorization/policies/subject
 
 

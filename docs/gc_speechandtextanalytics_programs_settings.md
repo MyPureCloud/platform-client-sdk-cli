@@ -1,20 +1,15 @@
-## gc externalcontacts import jobs get
+## gc speechandtextanalytics programs settings
 
-Get job based on id
+/api/v2/speechandtextanalytics/programs/{programId}/settings
 
 ### Synopsis
 
-Get job based on id
-
-```
-gc externalcontacts import jobs get [jobId] [flags]
-```
+/api/v2/speechandtextanalytics/programs/{programId}/settings
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -h, --help   help for settings
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +29,7 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc speechandtextanalytics programs](gc_speechandtextanalytics_programs.html)	 - /api/v2/speechandtextanalytics/programs
+* [gc speechandtextanalytics programs settings insights](gc_speechandtextanalytics_programs_settings_insights.html)	 - /api/v2/speechandtextanalytics/programs/{programId}/settings/insights /api/v2/speechandtextanalytics/programs/settings/insights
 
 

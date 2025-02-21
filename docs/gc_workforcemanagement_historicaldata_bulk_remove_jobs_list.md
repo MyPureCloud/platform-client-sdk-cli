@@ -1,22 +1,19 @@
-## gc recordings screensessions update
+## gc workforcemanagement historicaldata bulk remove jobs list
 
-Update a screen recording session
+Retrieves all delete job status for historical data
 
 ### Synopsis
 
-Update a screen recording session
+Retrieves all delete job status for historical data
 
 ```
-gc recordings screensessions update [recordingSessionId] [flags]
+gc workforcemanagement historicaldata bulk remove jobs list [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for list
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc recordings screensessions update [recordingSessionId] [flags]
 
 ### SEE ALSO
 
-* [gc recordings screensessions](gc_recordings_screensessions.html)	 - /api/v2/recordings/screensessions
+* [gc workforcemanagement historicaldata bulk remove jobs](gc_workforcemanagement_historicaldata_bulk_remove_jobs.html)	 - /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs
 
 

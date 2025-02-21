@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement](gc_workforcemanagement.html)	 - /api/v2/workforcemanagement
+* [gc workforcemanagement historicaldata bulk](gc_workforcemanagement_historicaldata_bulk.html)	 - /api/v2/workforcemanagement/historicaldata/bulk
 * [gc workforcemanagement historicaldata deletejob](gc_workforcemanagement_historicaldata_deletejob.html)	 - /api/v2/workforcemanagement/historicaldata/deletejob
 * [gc workforcemanagement historicaldata importstatus](gc_workforcemanagement_historicaldata_importstatus.html)	 - /api/v2/workforcemanagement/historicaldata/importstatus
 * [gc workforcemanagement historicaldata validate](gc_workforcemanagement_historicaldata_validate.html)	 - /api/v2/workforcemanagement/historicaldata/validate

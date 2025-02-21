@@ -1,15 +1,24 @@
-## gc authorization
+## gc authorization policies list
 
-/api/v2/authorization
+Get a page of access policies for an organization
 
 ### Synopsis
 
-/api/v2/authorization
+Get a page of access policies for an organization
+
+```
+gc authorization policies list [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for authorization
+      --after string             The cursor that points to the end of the set of entities that has been returned.
+  -a, --autopaginate             Automatically paginate through the results stripping page information
+      --filtercondition string   Filter list command output based on a given condition or regular expression
+  -h, --help                     help for list
+      --pageSize string          Number of entities to return. Maximum of 200. (default "25")
+  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands
@@ -29,14 +38,6 @@
 
 ### SEE ALSO
 
-* [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
-* [gc authorization divisions](gc_authorization_divisions.html)	 - /api/v2/authorization/divisions
-* [gc authorization divisionspermitted](gc_authorization_divisionspermitted.html)	 - /api/v2/authorization/divisionspermitted
-* [gc authorization permissions](gc_authorization_permissions.html)	 - /api/v2/authorization/permissions
 * [gc authorization policies](gc_authorization_policies.html)	 - /api/v2/authorization/policies
-* [gc authorization products](gc_authorization_products.html)	 - /api/v2/authorization/products
-* [gc authorization roles](gc_authorization_roles.html)	 - /api/v2/authorization/roles
-* [gc authorization settings](gc_authorization_settings.html)	 - /api/v2/authorization/settings
-* [gc authorization subjects](gc_authorization_subjects.html)	 - /api/v2/authorization/subjects
 
 

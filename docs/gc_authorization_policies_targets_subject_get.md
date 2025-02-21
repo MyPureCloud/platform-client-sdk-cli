@@ -1,20 +1,19 @@
-## gc externalcontacts import jobs get
+## gc authorization policies targets subject get
 
-Get job based on id
+Get an access control policy for a specified resource target and subject
 
 ### Synopsis
 
-Get job based on id
+Get an access control policy for a specified resource target and subject
 
 ```
-gc externalcontacts import jobs get [jobId] [flags]
+gc authorization policies targets subject get [targetName] [subjectId] [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +33,6 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc authorization policies targets subject](gc_authorization_policies_targets_subject.html)	 - /api/v2/authorization/policies/targets/{targetName}/subject
 
 

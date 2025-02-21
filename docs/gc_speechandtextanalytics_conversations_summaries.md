@@ -1,20 +1,15 @@
-## gc externalcontacts import jobs get
+## gc speechandtextanalytics conversations summaries
 
-Get job based on id
+/api/v2/speechandtextanalytics/conversations/{conversationId}/summaries
 
 ### Synopsis
 
-Get job based on id
-
-```
-gc externalcontacts import jobs get [jobId] [flags]
-```
+/api/v2/speechandtextanalytics/conversations/{conversationId}/summaries
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -h, --help   help for summaries
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +29,7 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc speechandtextanalytics conversations](gc_speechandtextanalytics_conversations.html)	 - /api/v2/speechandtextanalytics/conversations
+* [gc speechandtextanalytics conversations summaries list](gc_speechandtextanalytics_conversations_summaries_list.html)	 - Get conversation summaries by conversation id.
 
 

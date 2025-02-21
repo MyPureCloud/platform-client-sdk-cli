@@ -1,20 +1,22 @@
-## gc externalcontacts import jobs get
+## gc speechandtextanalytics programs settings insights update
 
-Get job based on id
+Update AI Insights settings of a program
 
 ### Synopsis
 
-Get job based on id
+Update AI Insights settings of a program
 
 ```
-gc externalcontacts import jobs get [jobId] [flags]
+gc speechandtextanalytics programs settings insights update [programId] [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for update
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +36,6 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc speechandtextanalytics programs settings insights](gc_speechandtextanalytics_programs_settings_insights.html)	 - /api/v2/speechandtextanalytics/programs/{programId}/settings/insights /api/v2/speechandtextanalytics/programs/settings/insights
 
 

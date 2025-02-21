@@ -1,20 +1,19 @@
-## gc externalcontacts import jobs get
+## gc alerting alerts all delete
 
-Get job based on id
+Delete all alerts for the user
 
 ### Synopsis
 
-Get job based on id
+Delete all alerts for the user
 
 ```
-gc externalcontacts import jobs get [jobId] [flags]
+gc alerting alerts all delete [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +33,6 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc alerting alerts all](gc_alerting_alerts_all.html)	 - /api/v2/alerting/alerts/all
 
 

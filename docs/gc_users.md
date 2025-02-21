@@ -39,7 +39,7 @@
 * [gc users delete](gc_users_delete.html)	 - Delete user
 * [gc users development](gc_users_development.html)	 - /api/v2/users/development
 * [gc users directreports](gc_users_directreports.html)	 - /api/v2/users/{userId}/directreports
-* [gc users externalid](gc_users_externalid.html)	 - /api/v2/users/{userId}/externalid
+* [gc users externalid](gc_users_externalid.html)	 - /api/v2/users/{userId}/externalid /api/v2/users/{userId}/externalid/{authorityName} /api/v2/users/externalid/{authorityName}
 * [gc users favorites](gc_users_favorites.html)	 - /api/v2/users/{userId}/favorites
 * [gc users geolocations](gc_users_geolocations.html)	 - /api/v2/users/{userId}/geolocations
 * [gc users get](gc_users_get.html)	 - Get user.

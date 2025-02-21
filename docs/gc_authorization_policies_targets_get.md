@@ -1,20 +1,19 @@
-## gc externalcontacts import jobs get
+## gc authorization policies targets get
 
-Get job based on id
+Get a map of policy targets to valid attributes for those targets
 
 ### Synopsis
 
-Get job based on id
+Get a map of policy targets to valid attributes for those targets
 
 ```
-gc externalcontacts import jobs get [jobId] [flags]
+gc authorization policies targets get [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +33,6 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc authorization policies targets](gc_authorization_policies_targets.html)	 - /api/v2/authorization/policies/targets
 
 

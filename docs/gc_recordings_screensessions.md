@@ -34,6 +34,5 @@
 * [gc recordings screensessions details](gc_recordings_screensessions_details.html)	 - /api/v2/recordings/screensessions/details
 * [gc recordings screensessions list](gc_recordings_screensessions_list.html)	 - Retrieves a paged listing of screen recording sessions
 * [gc recordings screensessions metadata](gc_recordings_screensessions_metadata.html)	 - /api/v2/recordings/screensessions/metadata
-* [gc recordings screensessions update](gc_recordings_screensessions_update.html)	 - Update a screen recording session
 
 

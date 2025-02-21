@@ -31,6 +31,7 @@
 
 * [gc journey](gc_journey.html)	 - /api/v2/journey
 * [gc journey views create](gc_journey_views_create.html)	 - Create a new Journey View
+* [gc journey views data](gc_journey_views_data.html)	 - /api/v2/journey/views/data
 * [gc journey views delete](gc_journey_views_delete.html)	 - Delete a Journey View by ID
 * [gc journey views encodings](gc_journey_views_encodings.html)	 - /api/v2/journey/views/encodings
 * [gc journey views eventdefinitions](gc_journey_views_eventdefinitions.html)	 - /api/v2/journey/views/eventdefinitions

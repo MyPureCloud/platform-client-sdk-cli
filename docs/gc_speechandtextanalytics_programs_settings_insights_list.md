@@ -1,26 +1,24 @@
-## gc externalcontacts import jobs list
+## gc speechandtextanalytics programs settings insights list
 
-List jobs for organization
+Get the list of program AI Insights settings for the organization
 
 ### Synopsis
 
-List jobs for organization
+Get the list of program AI Insights settings for the organization
 
 ```
-gc externalcontacts import jobs list [flags]
+gc speechandtextanalytics programs settings insights list [flags]
 ```
 
 ### Options
 
 ```
-      --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --expand strings           which fields, if any, to expand Valid values: division
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --jobStatus string         Search term to filter by jobStatus Valid values: Created, Running, Completed, Failed, Cancelled
-      --pageSize string          Number of entities to return. Maximum of 100.
-      --sortOrder string         Direction of sorting. Valid values: Ascending, Descending
+      --pageNumber string        The page number for the listing (default "1")
+      --pageSize string          The page size for the listing. The max that will be returned is 100. (default "100")
+      --programIds strings       Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
@@ -41,6 +39,6 @@ gc externalcontacts import jobs list [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc speechandtextanalytics programs settings insights](gc_speechandtextanalytics_programs_settings_insights.html)	 - /api/v2/speechandtextanalytics/programs/{programId}/settings/insights /api/v2/speechandtextanalytics/programs/settings/insights
 
 

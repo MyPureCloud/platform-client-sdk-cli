@@ -37,6 +37,7 @@
 * [gc speechandtextanalytics programs list](gc_speechandtextanalytics_programs_list.html)	 - Get the list of Speech and Text Analytics programs
 * [gc speechandtextanalytics programs mappings](gc_speechandtextanalytics_programs_mappings.html)	 - /api/v2/speechandtextanalytics/programs/{programId}/mappings /api/v2/speechandtextanalytics/programs/mappings
 * [gc speechandtextanalytics programs publishjobs](gc_speechandtextanalytics_programs_publishjobs.html)	 - /api/v2/speechandtextanalytics/programs/publishjobs
+* [gc speechandtextanalytics programs settings](gc_speechandtextanalytics_programs_settings.html)	 - /api/v2/speechandtextanalytics/programs/{programId}/settings
 * [gc speechandtextanalytics programs transcriptionengines](gc_speechandtextanalytics_programs_transcriptionengines.html)	 - /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines
 * [gc speechandtextanalytics programs unpublished](gc_speechandtextanalytics_programs_unpublished.html)	 - /api/v2/speechandtextanalytics/programs/unpublished
 * [gc speechandtextanalytics programs update](gc_speechandtextanalytics_programs_update.html)	 - Update existing Speech and Text Analytics program

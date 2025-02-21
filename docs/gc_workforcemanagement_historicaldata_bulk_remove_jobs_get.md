@@ -1,20 +1,19 @@
-## gc externalcontacts import jobs get
+## gc workforcemanagement historicaldata bulk remove jobs get
 
-Get job based on id
+Retrieves delete job status for historical data imports associated with the job id
 
 ### Synopsis
 
-Get job based on id
+Retrieves delete job status for historical data imports associated with the job id
 
 ```
-gc externalcontacts import jobs get [jobId] [flags]
+gc workforcemanagement historicaldata bulk remove jobs get [jobId] [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: division
-  -h, --help             help for get
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +33,6 @@ gc externalcontacts import jobs get [jobId] [flags]
 
 ### SEE ALSO
 
-* [gc externalcontacts import jobs](gc_externalcontacts_import_jobs.html)	 - /api/v2/externalcontacts/import/jobs
+* [gc workforcemanagement historicaldata bulk remove jobs](gc_workforcemanagement_historicaldata_bulk_remove_jobs.html)	 - /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs
 
 

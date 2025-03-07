@@ -1,20 +1,15 @@
-## gc alerting interactionstats rules get
+## gc externalcontacts scan organizations divisionviews all
 
-Get an interaction stats rule
+/api/v2/externalcontacts/scan/organizations/divisionviews/all
 
 ### Synopsis
 
-Get an interaction stats rule
-
-```
-gc alerting interactionstats rules get [ruleId] [flags]
-```
+/api/v2/externalcontacts/scan/organizations/divisionviews/all
 
 ### Options
 
 ```
-      --expand strings   Which fields, if any, to expand Valid values: notificationUsers
-  -h, --help             help for get
+  -h, --help   help for all
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +29,7 @@ gc alerting interactionstats rules get [ruleId] [flags]
 
 ### SEE ALSO
 
-* [gc alerting interactionstats rules](gc_alerting_interactionstats_rules.html)	 - /api/v2/alerting/interactionstats/rules
+* [gc externalcontacts scan organizations divisionviews](gc_externalcontacts_scan_organizations_divisionviews.html)	 - /api/v2/externalcontacts/scan/organizations/divisionviews
+* [gc externalcontacts scan organizations divisionviews all list](gc_externalcontacts_scan_organizations_divisionviews_all_list.html)	 - Scan for external organizations using paging
 
 

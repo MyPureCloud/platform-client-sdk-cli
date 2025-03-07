@@ -1,19 +1,15 @@
-## gc alerting alerts active get
+## gc externalcontacts scan notes divisionviews
 
-Gets active alert count for a user
+/api/v2/externalcontacts/scan/notes/divisionviews
 
 ### Synopsis
 
-Gets active alert count for a user
-
-```
-gc alerting alerts active get [flags]
-```
+/api/v2/externalcontacts/scan/notes/divisionviews
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help   help for divisionviews
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +29,7 @@ gc alerting alerts active get [flags]
 
 ### SEE ALSO
 
-* [gc alerting alerts active](gc_alerting_alerts_active.html)	 - /api/v2/alerting/alerts/active
+* [gc externalcontacts scan notes](gc_externalcontacts_scan_notes.html)	 - /api/v2/externalcontacts/scan/notes
+* [gc externalcontacts scan notes divisionviews all](gc_externalcontacts_scan_notes_divisionviews_all.html)	 - /api/v2/externalcontacts/scan/notes/divisionviews/all
 
 

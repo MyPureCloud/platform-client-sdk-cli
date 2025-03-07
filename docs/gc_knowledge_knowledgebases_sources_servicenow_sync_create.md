@@ -13,7 +13,10 @@ gc knowledge knowledgebases sources servicenow sync create [knowledgeBaseId] [so
 ### Options
 
 ```
-  -h, --help   help for create
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands

@@ -1,23 +1,15 @@
-## gc alerting interactionstats alerts update
+## gc externalcontacts bulk organizations divisionviews
 
-Update an interaction stats alert read status
+/api/v2/externalcontacts/bulk/organizations/divisionviews
 
 ### Synopsis
 
-Update an interaction stats alert read status
-
-```
-gc alerting interactionstats alerts update [alertId] [flags]
-```
+/api/v2/externalcontacts/bulk/organizations/divisionviews
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-      --expand strings     Which fields, if any, to expand Valid values: notificationUsers
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for divisionviews
 ```
 
 ### Options inherited from parent commands
@@ -37,6 +29,7 @@ gc alerting interactionstats alerts update [alertId] [flags]
 
 ### SEE ALSO
 
-* [gc alerting interactionstats alerts](gc_alerting_interactionstats_alerts.html)	 - /api/v2/alerting/interactionstats/alerts
+* [gc externalcontacts bulk organizations](gc_externalcontacts_bulk_organizations.html)	 - /api/v2/externalcontacts/bulk/organizations
+* [gc externalcontacts bulk organizations divisionviews create](gc_externalcontacts_bulk_organizations_divisionviews_create.html)	 - Bulk fetch organizations across divisions
 
 

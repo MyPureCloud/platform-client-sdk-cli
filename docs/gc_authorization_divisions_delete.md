@@ -13,7 +13,7 @@ gc authorization divisions delete [divisionId] [flags]
 ### Options
 
 ```
-      --force string   Force delete this division as well as the grants and objects associated with it Valid values: true, false
+      --force string   DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. Valid values: true, false
   -h, --help           help for delete
 ```
 

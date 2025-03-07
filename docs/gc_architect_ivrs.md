@@ -34,6 +34,7 @@
 * [gc architect ivrs delete](gc_architect_ivrs_delete.html)	 - Delete an IVR Config.
 * [gc architect ivrs divisionviews](gc_architect_ivrs_divisionviews.html)	 - /api/v2/architect/ivrs/divisionviews
 * [gc architect ivrs get](gc_architect_ivrs_get.html)	 - Get an IVR config.
+* [gc architect ivrs identityresolution](gc_architect_ivrs_identityresolution.html)	 - /api/v2/architect/ivrs/{ivrId}/identityresolution
 * [gc architect ivrs list](gc_architect_ivrs_list.html)	 - Get IVR configs.
 * [gc architect ivrs update](gc_architect_ivrs_update.html)	 - Update an IVR Config.
 

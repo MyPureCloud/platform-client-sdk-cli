@@ -35,6 +35,7 @@
 * [gc webdeployments deployments create](gc_webdeployments_deployments_create.html)	 - Create a deployment
 * [gc webdeployments deployments delete](gc_webdeployments_deployments_delete.html)	 - Delete a deployment
 * [gc webdeployments deployments get](gc_webdeployments_deployments_get.html)	 - Get a deployment
+* [gc webdeployments deployments identityresolution](gc_webdeployments_deployments_identityresolution.html)	 - /api/v2/webdeployments/deployments/{deploymentId}/identityresolution
 * [gc webdeployments deployments list](gc_webdeployments_deployments_list.html)	 - Get deployments
 * [gc webdeployments deployments update](gc_webdeployments_deployments_update.html)	 - Update a deployment
 

@@ -1,15 +1,15 @@
-## gc alerting interactionstats alerts unread
+## gc flows export jobs
 
-/api/v2/alerting/interactionstats/alerts/unread
+/api/v2/flows/export/jobs
 
 ### Synopsis
 
-/api/v2/alerting/interactionstats/alerts/unread
+/api/v2/flows/export/jobs
 
 ### Options
 
 ```
-  -h, --help   help for unread
+  -h, --help   help for jobs
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +29,8 @@
 
 ### SEE ALSO
 
-* [gc alerting interactionstats alerts](gc_alerting_interactionstats_alerts.html)	 - /api/v2/alerting/interactionstats/alerts
-* [gc alerting interactionstats alerts unread get](gc_alerting_interactionstats_alerts_unread_get.html)	 - Gets user unread count of interaction stats alerts
+* [gc flows export](gc_flows_export.html)	 - /api/v2/flows/export
+* [gc flows export jobs create](gc_flows_export_jobs_create.html)	 - Register Architect Export Job
+* [gc flows export jobs get](gc_flows_export_jobs_get.html)	 - Fetch Architect Export Job Status
 
 

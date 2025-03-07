@@ -1,23 +1,19 @@
-## gc alerting interactionstats rules update
+## gc webdeployments deployments identityresolution get
 
-Update an interaction stats rule
+Get a deployment identity resolution setting.
 
 ### Synopsis
 
-Update an interaction stats rule
+Get a deployment identity resolution setting.
 
 ```
-gc alerting interactionstats rules update [ruleId] [flags]
+gc webdeployments deployments identityresolution get [deploymentId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-      --expand strings     Which fields, if any, to expand Valid values: notificationUsers
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -37,6 +33,6 @@ gc alerting interactionstats rules update [ruleId] [flags]
 
 ### SEE ALSO
 
-* [gc alerting interactionstats rules](gc_alerting_interactionstats_rules.html)	 - /api/v2/alerting/interactionstats/rules
+* [gc webdeployments deployments identityresolution](gc_webdeployments_deployments_identityresolution.html)	 - /api/v2/webdeployments/deployments/{deploymentId}/identityresolution
 
 

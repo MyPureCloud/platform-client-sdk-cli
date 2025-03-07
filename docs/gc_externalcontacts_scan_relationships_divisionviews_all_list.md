@@ -1,23 +1,23 @@
-## gc recordings screensessions list
+## gc externalcontacts scan relationships divisionviews all list
 
-Retrieves a paged listing of screen recording sessions
+Scan for relationships
 
 ### Synopsis
 
-Retrieves a paged listing of screen recording sessions
+Scan for relationships
 
 ```
-gc recordings screensessions list [flags]
+gc externalcontacts scan relationships divisionviews all list [flags]
 ```
 
 ### Options
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
+      --cursor string            Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageNumber string        Page number (default "1")
-      --pageSize string          Page size (default "25")
+      --limit string             The number of relationships per page; must be between 10 and 200, default is 100
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
@@ -38,6 +38,6 @@ gc recordings screensessions list [flags]
 
 ### SEE ALSO
 
-* [gc recordings screensessions](gc_recordings_screensessions.html)	 - /api/v2/recordings/screensessions
+* [gc externalcontacts scan relationships divisionviews all](gc_externalcontacts_scan_relationships_divisionviews_all.html)	 - /api/v2/externalcontacts/scan/relationships/divisionviews/all
 
 

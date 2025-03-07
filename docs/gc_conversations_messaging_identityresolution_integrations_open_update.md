@@ -1,20 +1,22 @@
-## gc alerting interactionstats alerts get
+## gc conversations messaging identityresolution integrations open update
 
-Get an interaction stats alert
+Update an open messaging integration Identity Resolution settings
 
 ### Synopsis
 
-Get an interaction stats alert
+Update an open messaging integration Identity Resolution settings
 
 ```
-gc alerting interactionstats alerts get [alertId] [flags]
+gc conversations messaging identityresolution integrations open update [integrationId] [flags]
 ```
 
 ### Options
 
 ```
-      --expand strings   Which fields, if any, to expand Valid values: notificationUsers
-  -h, --help             help for get
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for update
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +36,6 @@ gc alerting interactionstats alerts get [alertId] [flags]
 
 ### SEE ALSO
 
-* [gc alerting interactionstats alerts](gc_alerting_interactionstats_alerts.html)	 - /api/v2/alerting/interactionstats/alerts
+* [gc conversations messaging identityresolution integrations open](gc_conversations_messaging_identityresolution_integrations_open.html)	 - /api/v2/conversations/messaging/identityresolution/integrations/open
 
 

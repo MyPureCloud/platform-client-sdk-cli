@@ -33,6 +33,7 @@
 * [gc routing email domains routes create](gc_routing_email_domains_routes_create.html)	 - Create a route
 * [gc routing email domains routes delete](gc_routing_email_domains_routes_delete.html)	 - Delete a route
 * [gc routing email domains routes get](gc_routing_email_domains_routes_get.html)	 - Get a route
+* [gc routing email domains routes identityresolution](gc_routing_email_domains_routes_identityresolution.html)	 - /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution
 * [gc routing email domains routes list](gc_routing_email_domains_routes_list.html)	 - Get routes
 * [gc routing email domains routes update](gc_routing_email_domains_routes_update.html)	 - Update a route
 

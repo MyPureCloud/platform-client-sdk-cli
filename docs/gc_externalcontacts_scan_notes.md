@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc externalcontacts scan](gc_externalcontacts_scan.html)	 - /api/v2/externalcontacts/scan
+* [gc externalcontacts scan notes divisionviews](gc_externalcontacts_scan_notes_divisionviews.html)	 - /api/v2/externalcontacts/scan/notes/divisionviews
 * [gc externalcontacts scan notes list](gc_externalcontacts_scan_notes_list.html)	 - Scan for notes using paging
 
 

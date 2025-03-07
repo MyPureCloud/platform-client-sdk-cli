@@ -30,7 +30,6 @@
 ### SEE ALSO
 
 * [gc alerting](gc_alerting.html)	 - /api/v2/alerting
-* [gc alerting alerts active](gc_alerting_alerts_active.html)	 - /api/v2/alerting/alerts/active
 * [gc alerting alerts all](gc_alerting_alerts_all.html)	 - /api/v2/alerting/alerts/all
 * [gc alerting alerts bulk](gc_alerting_alerts_bulk.html)	 - /api/v2/alerting/alerts/bulk
 * [gc alerting alerts delete](gc_alerting_alerts_delete.html)	 - Delete an alert

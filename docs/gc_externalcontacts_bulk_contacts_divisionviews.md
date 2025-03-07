@@ -1,19 +1,15 @@
-## gc alerting interactionstats alerts delete
+## gc externalcontacts bulk contacts divisionviews
 
-Delete an interaction stats alert
+/api/v2/externalcontacts/bulk/contacts/divisionviews
 
 ### Synopsis
 
-Delete an interaction stats alert
-
-```
-gc alerting interactionstats alerts delete [alertId] [flags]
-```
+/api/v2/externalcontacts/bulk/contacts/divisionviews
 
 ### Options
 
 ```
-  -h, --help   help for delete
+  -h, --help   help for divisionviews
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +29,7 @@ gc alerting interactionstats alerts delete [alertId] [flags]
 
 ### SEE ALSO
 
-* [gc alerting interactionstats alerts](gc_alerting_interactionstats_alerts.html)	 - /api/v2/alerting/interactionstats/alerts
+* [gc externalcontacts bulk contacts](gc_externalcontacts_bulk_contacts.html)	 - /api/v2/externalcontacts/bulk/contacts
+* [gc externalcontacts bulk contacts divisionviews create](gc_externalcontacts_bulk_contacts_divisionviews_create.html)	 - Bulk fetch contacts across divisions
 
 

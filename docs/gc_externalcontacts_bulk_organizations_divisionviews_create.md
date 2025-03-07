@@ -1,15 +1,22 @@
-## gc alerting interactionstats
+## gc externalcontacts bulk organizations divisionviews create
 
-/api/v2/alerting/interactionstats
+Bulk fetch organizations across divisions
 
 ### Synopsis
 
-/api/v2/alerting/interactionstats
+Bulk fetch organizations across divisions
+
+```
+gc externalcontacts bulk organizations divisionviews create [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for interactionstats
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +36,6 @@
 
 ### SEE ALSO
 
-* [gc alerting](gc_alerting.html)	 - /api/v2/alerting
-* [gc alerting interactionstats alerts](gc_alerting_interactionstats_alerts.html)	 - /api/v2/alerting/interactionstats/alerts
-* [gc alerting interactionstats rules](gc_alerting_interactionstats_rules.html)	 - /api/v2/alerting/interactionstats/rules
+* [gc externalcontacts bulk organizations divisionviews](gc_externalcontacts_bulk_organizations_divisionviews.html)	 - /api/v2/externalcontacts/bulk/organizations/divisionviews
 
 

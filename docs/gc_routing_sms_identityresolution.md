@@ -1,23 +1,15 @@
-## gc alerting interactionstats rules list
+## gc routing sms identityresolution
 
-Get an interaction stats rule list
+/api/v2/routing/sms/identityresolution
 
 ### Synopsis
 
-Get an interaction stats rule list
-
-```
-gc alerting interactionstats rules list [flags]
-```
+/api/v2/routing/sms/identityresolution
 
 ### Options
 
 ```
-  -a, --autopaginate             Automatically paginate through the results stripping page information
-      --expand strings           Which fields, if any, to expand Valid values: notificationUsers
-      --filtercondition string   Filter list command output based on a given condition or regular expression
-  -h, --help                     help for list
-  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+  -h, --help   help for identityresolution
 ```
 
 ### Options inherited from parent commands
@@ -37,6 +29,7 @@ gc alerting interactionstats rules list [flags]
 
 ### SEE ALSO
 
-* [gc alerting interactionstats rules](gc_alerting_interactionstats_rules.html)	 - /api/v2/alerting/interactionstats/rules
+* [gc routing sms](gc_routing_sms.html)	 - /api/v2/routing/sms
+* [gc routing sms identityresolution phonenumbers](gc_routing_sms_identityresolution_phonenumbers.html)	 - /api/v2/routing/sms/identityresolution/phonenumbers
 
 

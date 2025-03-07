@@ -14,6 +14,7 @@ gc integrations actions get [actionId] [flags]
 
 ```
       --expand string          Indicates a field in the response which should be expanded. Valid values: contract
+      --flatten string         Indicates the response should be reformatted, based on Architect`s flattening format. Valid values: true, false Valid values: true, false
   -h, --help                   help for get
       --includeConfig string   Return config in response. Valid values: true, false Valid values: true, false
 ```

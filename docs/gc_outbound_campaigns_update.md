@@ -13,10 +13,11 @@ gc outbound campaigns update [campaignId] [flags]
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -d, --directory string                    Directory path with files containing request bodies
+  -f, --file string                         File name containing the JSON body
+  -h, --help                                help for update
+  -b, --printrequestbody                    Print the request body format of the API.
+      --useMaxCallsPerAgentDecimal string   Use maxCallsPerAgent with decimal precision Valid values: true, false Valid values: true, false
 ```
 
 ### Options inherited from parent commands

@@ -37,6 +37,7 @@
 * [gc routing queues divisionviews](gc_routing_queues_divisionviews.html)	 - /api/v2/routing/queues/divisionviews
 * [gc routing queues estimatedwaittime](gc_routing_queues_estimatedwaittime.html)	 - /api/v2/routing/queues/{queueId}/estimatedwaittime
 * [gc routing queues get](gc_routing_queues_get.html)	 - Get details about this queue.
+* [gc routing queues identityresolution](gc_routing_queues_identityresolution.html)	 - /api/v2/routing/queues/{queueId}/identityresolution
 * [gc routing queues list](gc_routing_queues_list.html)	 - Get list of queues.
 * [gc routing queues me](gc_routing_queues_me.html)	 - /api/v2/routing/queues/me
 * [gc routing queues mediatypes](gc_routing_queues_mediatypes.html)	 - /api/v2/routing/queues/{queueId}/mediatypes

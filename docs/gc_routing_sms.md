@@ -32,6 +32,7 @@
 * [gc routing](gc_routing.html)	 - /api/v2/routing
 * [gc routing sms addresses](gc_routing_sms_addresses.html)	 - /api/v2/routing/sms/addresses
 * [gc routing sms availablephonenumbers](gc_routing_sms_availablephonenumbers.html)	 - /api/v2/routing/sms/availablephonenumbers
+* [gc routing sms identityresolution](gc_routing_sms_identityresolution.html)	 - /api/v2/routing/sms/identityresolution
 * [gc routing sms phonenumbers](gc_routing_sms_phonenumbers.html)	 - /api/v2/routing/sms/phonenumbers
 
 

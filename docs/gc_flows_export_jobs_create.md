@@ -1,15 +1,22 @@
-## gc alerting alerts active
+## gc flows export jobs create
 
-/api/v2/alerting/alerts/active
+Register Architect Export Job
 
 ### Synopsis
 
-/api/v2/alerting/alerts/active
+Register Architect Export Job
+
+```
+gc flows export jobs create [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for active
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +36,6 @@
 
 ### SEE ALSO
 
-* [gc alerting alerts](gc_alerting_alerts.html)	 - /api/v2/alerting/alerts
-* [gc alerting alerts active get](gc_alerting_alerts_active_get.html)	 - Gets active alert count for a user
+* [gc flows export jobs](gc_flows_export_jobs.html)	 - /api/v2/flows/export/jobs
 
 

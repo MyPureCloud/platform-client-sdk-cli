@@ -37,6 +37,7 @@
 * [gc flows delete](gc_flows_delete.html)	 - Delete flow
 * [gc flows divisionviews](gc_flows_divisionviews.html)	 - /api/v2/flows/divisionviews
 * [gc flows executions](gc_flows_executions.html)	 - /api/v2/flows/executions
+* [gc flows export](gc_flows_export.html)	 - /api/v2/flows/export
 * [gc flows get](gc_flows_get.html)	 - Get flow
 * [gc flows history](gc_flows_history.html)	 - /api/v2/flows/{flowId}/history
 * [gc flows instances](gc_flows_instances.html)	 - /api/v2/flows/instances

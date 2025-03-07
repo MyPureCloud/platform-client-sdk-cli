@@ -15,6 +15,7 @@ gc externalcontacts scan organizations list [flags]
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --cursor string            Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+      --divisionId string        The division to scan over
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --limit string             The number of organizations per page; must be between 10 and 200, default is 100

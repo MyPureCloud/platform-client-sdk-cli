@@ -1,23 +1,15 @@
-## gc alerting interactionstats rules create
+## gc flows export
 
-Create an interaction stats rule
+/api/v2/flows/export
 
 ### Synopsis
 
-Create an interaction stats rule
-
-```
-gc alerting interactionstats rules create [flags]
-```
+/api/v2/flows/export
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-      --expand strings     Which fields, if any, to expand Valid values: notificationUsers
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for export
 ```
 
 ### Options inherited from parent commands
@@ -37,6 +29,7 @@ gc alerting interactionstats rules create [flags]
 
 ### SEE ALSO
 
-* [gc alerting interactionstats rules](gc_alerting_interactionstats_rules.html)	 - /api/v2/alerting/interactionstats/rules
+* [gc flows](gc_flows.html)	 - /api/v2/flows
+* [gc flows export jobs](gc_flows_export_jobs.html)	 - /api/v2/flows/export/jobs
 
 

@@ -1,19 +1,15 @@
-## gc alerting interactionstats alerts unread get
+## gc conversations messaging identityresolution
 
-Gets user unread count of interaction stats alerts
+/api/v2/conversations/messaging/identityresolution
 
 ### Synopsis
 
-Gets user unread count of interaction stats alerts
-
-```
-gc alerting interactionstats alerts unread get [flags]
-```
+/api/v2/conversations/messaging/identityresolution
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help   help for identityresolution
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +29,7 @@ gc alerting interactionstats alerts unread get [flags]
 
 ### SEE ALSO
 
-* [gc alerting interactionstats alerts unread](gc_alerting_interactionstats_alerts_unread.html)	 - /api/v2/alerting/interactionstats/alerts/unread
+* [gc conversations messaging](gc_conversations_messaging.html)	 - /api/v2/conversations/messaging
+* [gc conversations messaging identityresolution integrations](gc_conversations_messaging_identityresolution_integrations.html)	 - /api/v2/conversations/messaging/identityresolution/integrations
 
 

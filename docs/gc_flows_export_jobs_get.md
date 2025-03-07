@@ -1,19 +1,20 @@
-## gc alerting interactionstats rules delete
+## gc flows export jobs get
 
-Delete an interaction stats rule
+Fetch Architect Export Job Status
 
 ### Synopsis
 
-Delete an interaction stats rule
+Fetch Architect Export Job Status
 
 ```
-gc alerting interactionstats rules delete [ruleId] [flags]
+gc flows export jobs get [jobId] [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for delete
+      --expand strings   Which fields, if any, to expand. Valid values: messages
+  -h, --help             help for get
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +34,6 @@ gc alerting interactionstats rules delete [ruleId] [flags]
 
 ### SEE ALSO
 
-* [gc alerting interactionstats rules](gc_alerting_interactionstats_rules.html)	 - /api/v2/alerting/interactionstats/rules
+* [gc flows export jobs](gc_flows_export_jobs.html)	 - /api/v2/flows/export/jobs
 
 

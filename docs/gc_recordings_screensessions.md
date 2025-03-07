@@ -32,7 +32,6 @@
 * [gc recordings](gc_recordings.html)	 - /api/v2/recordings
 * [gc recordings screensessions acknowledge](gc_recordings_screensessions_acknowledge.html)	 - /api/v2/recordings/screensessions/acknowledge
 * [gc recordings screensessions details](gc_recordings_screensessions_details.html)	 - /api/v2/recordings/screensessions/details
-* [gc recordings screensessions list](gc_recordings_screensessions_list.html)	 - Retrieves a paged listing of screen recording sessions
 * [gc recordings screensessions metadata](gc_recordings_screensessions_metadata.html)	 - /api/v2/recordings/screensessions/metadata
 
 

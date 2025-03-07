@@ -19,7 +19,7 @@ gc conversations recordings get [conversationId] [recordingId] [flags]
       --fileName string          the name of the downloaded fileName
       --formatId string          The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE
   -h, --help                     help for get
-      --locale string            The locale for the requested file when downloading, as an ISO 639-1 code
+      --locale string            The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code
       --mediaFormats strings     All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
       --messageFormatId string   The desired media format when downloading a message recording. Valid values:ZIP,NONE Valid values: ZIP, NONE
 ```

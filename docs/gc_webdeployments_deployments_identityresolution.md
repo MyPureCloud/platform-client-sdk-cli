@@ -1,23 +1,15 @@
-## gc alerting interactionstats alerts list
+## gc webdeployments deployments identityresolution
 
-Get interaction stats alert list
+/api/v2/webdeployments/deployments/{deploymentId}/identityresolution
 
 ### Synopsis
 
-Get interaction stats alert list
-
-```
-gc alerting interactionstats alerts list [flags]
-```
+/api/v2/webdeployments/deployments/{deploymentId}/identityresolution
 
 ### Options
 
 ```
-  -a, --autopaginate             Automatically paginate through the results stripping page information
-      --expand strings           Which fields, if any, to expand Valid values: notificationUsers
-      --filtercondition string   Filter list command output based on a given condition or regular expression
-  -h, --help                     help for list
-  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+  -h, --help   help for identityresolution
 ```
 
 ### Options inherited from parent commands
@@ -37,6 +29,8 @@ gc alerting interactionstats alerts list [flags]
 
 ### SEE ALSO
 
-* [gc alerting interactionstats alerts](gc_alerting_interactionstats_alerts.html)	 - /api/v2/alerting/interactionstats/alerts
+* [gc webdeployments deployments](gc_webdeployments_deployments.html)	 - /api/v2/webdeployments/deployments
+* [gc webdeployments deployments identityresolution get](gc_webdeployments_deployments_identityresolution_get.html)	 - Get a deployment identity resolution setting.
+* [gc webdeployments deployments identityresolution update](gc_webdeployments_deployments_identityresolution_update.html)	 - Update identity resolution settings for a deployment.
 
 

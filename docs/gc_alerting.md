@@ -31,7 +31,6 @@
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
 * [gc alerting alerts](gc_alerting_alerts.html)	 - /api/v2/alerting/alerts
-* [gc alerting interactionstats](gc_alerting_interactionstats.html)	 - /api/v2/alerting/interactionstats
 * [gc alerting rules](gc_alerting_rules.html)	 - /api/v2/alerting/rules
 
 

@@ -14,6 +14,7 @@ gc externalcontacts organizations search [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
+      --divisionIds strings      which divisions to search, up to 50
       --expand strings           which fields, if any, to expand Valid values: externalDataSources, division, identifiers, externalSources
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for search

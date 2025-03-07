@@ -25,6 +25,9 @@ type SchedulingsettingsrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Schedulingsettingsrequest
@@ -41,8 +44,12 @@ type Schedulingsettingsrequest struct {
     ShrinkageOverrides Shrinkageoverrides `json:"shrinkageOverrides"`
 
 
-    // PlanningPeriod - Planning period settings for scheduling
+    // PlanningPeriod - Planning period settings for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined
     PlanningPeriod Valuewrapperplanningperiodsettings `json:"planningPeriod"`
+
+
+    // MonthlyPlanningPeriod - Monthly planning period setting for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined
+    MonthlyPlanningPeriod Valuewrappermonthlyplanningperiodsettings `json:"monthlyPlanningPeriod"`
 
 
     // StartDayOfWeekend - Start day of weekend for scheduling
@@ -52,6 +59,7 @@ type Schedulingsettingsrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Schedulingsettingsrequest) String() string {
+    
     
     
     
@@ -82,9 +90,14 @@ func (u *Schedulingsettingsrequest) MarshalJSON() ([]byte, error) {
         
         PlanningPeriod Valuewrapperplanningperiodsettings `json:"planningPeriod"`
         
+        MonthlyPlanningPeriod Valuewrappermonthlyplanningperiodsettings `json:"monthlyPlanningPeriod"`
+        
         StartDayOfWeekend string `json:"startDayOfWeekend"`
         *Alias
     }{
+
+        
+
 
         
 

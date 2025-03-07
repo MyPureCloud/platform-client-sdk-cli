@@ -94,6 +94,9 @@ type WidgetDud struct {
 
     
 
+
+    
+
 }
 
 // Widget
@@ -206,6 +209,10 @@ type Widget struct {
     SelectedStatuses []string `json:"selectedStatuses"`
 
 
+    // SelectedSegmentTypes - Indicates the selected segment types used to filter the agent activity in the dashboard.
+    SelectedSegmentTypes []string `json:"selectedSegmentTypes"`
+
+
     // AgentInteractionSortOrder - The sort order of the interactions in the agent status widget.
     AgentInteractionSortOrder string `json:"agentInteractionSortOrder"`
 
@@ -240,6 +247,7 @@ func (o *Widget) String() string {
     
     
      o.SelectedStatuses = []string{""} 
+     o.SelectedSegmentTypes = []string{""} 
     
 
     j, _ := json.Marshal(o)
@@ -311,6 +319,8 @@ func (u *Widget) MarshalJSON() ([]byte, error) {
         ShowOfflineAgents bool `json:"showOfflineAgents"`
         
         SelectedStatuses []string `json:"selectedStatuses"`
+        
+        SelectedSegmentTypes []string `json:"selectedSegmentTypes"`
         
         AgentInteractionSortOrder string `json:"agentInteractionSortOrder"`
         *Alias
@@ -404,6 +414,11 @@ func (u *Widget) MarshalJSON() ([]byte, error) {
 
         
         SelectedStatuses: []string{""},
+        
+
+
+        
+        SelectedSegmentTypes: []string{""},
         
 
 

@@ -40,7 +40,7 @@ type Bulkupdateshifttradestateresultitem struct {
     State string `json:"state"`
 
 
-    // ReviewedBy - The user who reviewed the request, if applicable
+    // ReviewedBy - The user who reviewed the request, if applicable. The id may be 'System' if it was an automated process
     ReviewedBy Userreference `json:"reviewedBy"`
 
 

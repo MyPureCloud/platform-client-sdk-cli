@@ -1,0 +1,12 @@
+package conversations_messaging_identityresolution
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messaging_identityresolution_integrations"
+)
+
+func init() {
+	conversations_messaging_identityresolutionCmd.AddCommand(conversations_messaging_identityresolution_integrations.Cmdconversations_messaging_identityresolution_integrations())
+	conversations_messaging_identityresolutionCmd.Short = utils.GenerateCustomDescription(conversations_messaging_identityresolutionCmd.Short, conversations_messaging_identityresolution_integrations.Description, )
+	conversations_messaging_identityresolutionCmd.Long = conversations_messaging_identityresolutionCmd.Short
+}

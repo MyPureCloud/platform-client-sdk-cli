@@ -36,7 +36,7 @@ type KnowledgedocumentpresentationDud struct {
 // Knowledgedocumentpresentation
 type Knowledgedocumentpresentation struct { 
     // Documents - The presented documents
-    Documents []Knowledgedocumentversionvariationreference `json:"documents"`
+    Documents []Presentedknowledgedocument `json:"documents"`
 
 
     // SearchId - The search that surfaced the documents that were presented.
@@ -65,7 +65,7 @@ type Knowledgedocumentpresentation struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentpresentation) String() string {
-     o.Documents = []Knowledgedocumentversionvariationreference{{}} 
+     o.Documents = []Presentedknowledgedocument{{}} 
     
     
     
@@ -88,7 +88,7 @@ func (u *Knowledgedocumentpresentation) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Documents []Knowledgedocumentversionvariationreference `json:"documents"`
+        Documents []Presentedknowledgedocument `json:"documents"`
         
         SearchId string `json:"searchId"`
         
@@ -103,7 +103,7 @@ func (u *Knowledgedocumentpresentation) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Documents: []Knowledgedocumentversionvariationreference{{}},
+        Documents: []Presentedknowledgedocument{{}},
         
 
 

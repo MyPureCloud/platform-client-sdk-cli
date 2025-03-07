@@ -65,7 +65,7 @@ type Alternativeshiftnotification struct {
     InitiatingShiftDate time.Time `json:"initiatingShiftDate"`
 
 
-    // ReceivingUser - The user on the receiving this alternative shift trade
+    // ReceivingUser - The user on the receiving side of this alternative shift trade
     ReceivingUser Userreference `json:"receivingUser"`
 
 

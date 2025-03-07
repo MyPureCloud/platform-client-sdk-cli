@@ -44,6 +44,24 @@ type PureengageDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -89,6 +107,30 @@ type Pureengage struct {
     Certificates []string `json:"certificates"`
 
 
+    // LogoImageData
+    LogoImageData string `json:"logoImageData"`
+
+
+    // NameIdentifierFormat
+    NameIdentifierFormat string `json:"nameIdentifierFormat"`
+
+
+    // SsoBinding
+    SsoBinding string `json:"ssoBinding"`
+
+
+    // SignAuthnRequests
+    SignAuthnRequests bool `json:"signAuthnRequests"`
+
+
+    // ProviderName
+    ProviderName string `json:"providerName"`
+
+
+    // DisplayOnLogin
+    DisplayOnLogin bool `json:"displayOnLogin"`
+
+
     // AutoProvisionUsers
     AutoProvisionUsers bool `json:"autoProvisionUsers"`
 
@@ -108,6 +150,12 @@ func (o *Pureengage) String() string {
     
     
      o.Certificates = []string{""} 
+    
+    
+    
+    
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -144,6 +192,18 @@ func (u *Pureengage) MarshalJSON() ([]byte, error) {
         
         Certificates []string `json:"certificates"`
         
+        LogoImageData string `json:"logoImageData"`
+        
+        NameIdentifierFormat string `json:"nameIdentifierFormat"`
+        
+        SsoBinding string `json:"ssoBinding"`
+        
+        SignAuthnRequests bool `json:"signAuthnRequests"`
+        
+        ProviderName string `json:"providerName"`
+        
+        DisplayOnLogin bool `json:"displayOnLogin"`
+        
         AutoProvisionUsers bool `json:"autoProvisionUsers"`
         *Alias
     }{
@@ -177,6 +237,24 @@ func (u *Pureengage) MarshalJSON() ([]byte, error) {
 
         
         Certificates: []string{""},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
 

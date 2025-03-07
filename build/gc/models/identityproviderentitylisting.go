@@ -45,7 +45,7 @@ type IdentityproviderentitylistingDud struct {
 // Identityproviderentitylisting
 type Identityproviderentitylisting struct { 
     // Entities
-    Entities []Customprovider `json:"entities"`
+    Entities []Samlprovider `json:"entities"`
 
 
     // PageSize
@@ -87,7 +87,7 @@ type Identityproviderentitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Identityproviderentitylisting) String() string {
-     o.Entities = []Customprovider{{}} 
+     o.Entities = []Samlprovider{{}} 
     
     
     
@@ -114,7 +114,7 @@ func (u *Identityproviderentitylisting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Entities []Customprovider `json:"entities"`
+        Entities []Samlprovider `json:"entities"`
         
         PageSize int `json:"pageSize"`
         
@@ -137,7 +137,7 @@ func (u *Identityproviderentitylisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Customprovider{{}},
+        Entities: []Samlprovider{{}},
         
 
 

@@ -25,20 +25,20 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/date"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/downloads"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fieldconfig"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/greetings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/groups"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/identityproviders"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/ipranges"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languages"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/locations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/mobiledevices"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presencedefinitions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scripts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/search"
@@ -60,7 +60,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/oauth"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/organizations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/alerting"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/audits"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/screenrecording"
@@ -82,8 +81,8 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languageunderstanding"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/license"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languageunderstanding"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/diagnostics"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/messaging"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/webdeployments"
@@ -98,6 +97,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presence"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/processautomation"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recordings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/alerting"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemanagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/settings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics"
@@ -139,7 +139,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 124.0.0")
+		fmt.Println("Current version: 125.0.0")
 		checkForNewVersion()
 	},
 }
@@ -158,7 +158,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("124.0.0", latestVersion) {
+	if versionsAreEqual("125.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -274,20 +274,20 @@ func init() {
 	rootCmd.AddCommand(conversations.Cmdconversations())
 	rootCmd.AddCommand(date.Cmddate())
 	rootCmd.AddCommand(downloads.Cmddownloads())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(fieldconfig.Cmdfieldconfig())
 	rootCmd.AddCommand(flows.Cmdflows())
-	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(greetings.Cmdgreetings())
 	rootCmd.AddCommand(groups.Cmdgroups())
 	rootCmd.AddCommand(identityproviders.Cmdidentityproviders())
 	rootCmd.AddCommand(integrations.Cmdintegrations())
-	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(ipranges.Cmdipranges())
 	rootCmd.AddCommand(languages.Cmdlanguages())
-	rootCmd.AddCommand(scim.Cmdscim())
+	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(locations.Cmdlocations())
 	rootCmd.AddCommand(mobiledevices.Cmdmobiledevices())
 	rootCmd.AddCommand(orphanrecordings.Cmdorphanrecordings())
+	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(presencedefinitions.Cmdpresencedefinitions())
 	rootCmd.AddCommand(scripts.Cmdscripts())
 	rootCmd.AddCommand(search.Cmdsearch())
@@ -309,7 +309,6 @@ func init() {
 	rootCmd.AddCommand(authorization.Cmdauthorization())
 	rootCmd.AddCommand(oauth.Cmdoauth())
 	rootCmd.AddCommand(organizations.Cmdorganizations())
-	rootCmd.AddCommand(alerting.Cmdalerting())
 	rootCmd.AddCommand(analytics.Cmdanalytics())
 	rootCmd.AddCommand(audits.Cmdaudits())
 	rootCmd.AddCommand(screenrecording.Cmdscreenrecording())
@@ -331,8 +330,8 @@ func init() {
 	rootCmd.AddCommand(geolocations.Cmdgeolocations())
 	rootCmd.AddCommand(journey.Cmdjourney())
 	rootCmd.AddCommand(knowledge.Cmdknowledge())
-	rootCmd.AddCommand(languageunderstanding.Cmdlanguageunderstanding())
 	rootCmd.AddCommand(license.Cmdlicense())
+	rootCmd.AddCommand(languageunderstanding.Cmdlanguageunderstanding())
 	rootCmd.AddCommand(diagnostics.Cmddiagnostics())
 	rootCmd.AddCommand(messaging.Cmdmessaging())
 	rootCmd.AddCommand(webdeployments.Cmdwebdeployments())
@@ -347,6 +346,7 @@ func init() {
 	rootCmd.AddCommand(presence.Cmdpresence())
 	rootCmd.AddCommand(processautomation.Cmdprocessautomation())
 	rootCmd.AddCommand(recordings.Cmdrecordings())
+	rootCmd.AddCommand(alerting.Cmdalerting())
 	rootCmd.AddCommand(responsemanagement.Cmdresponsemanagement())
 	rootCmd.AddCommand(settings.Cmdsettings())
 	rootCmd.AddCommand(speechandtextanalytics.Cmdspeechandtextanalytics())

@@ -139,7 +139,7 @@ type Timeoffrequestresponse struct {
     Notes string `json:"notes"`
 
 
-    // SubmittedBy - The user who submitted this time off request
+    // SubmittedBy - The user who submitted this time off request. The id may be 'System' if it was an automated process
     SubmittedBy Userreference `json:"submittedBy"`
 
 
@@ -147,7 +147,7 @@ type Timeoffrequestresponse struct {
     SubmittedDate time.Time `json:"submittedDate"`
 
 
-    // ReviewedBy - The user who reviewed this time off request
+    // ReviewedBy - The user who reviewed this time off request. The id may be 'System' if it was an automated process
     ReviewedBy Userreference `json:"reviewedBy"`
 
 

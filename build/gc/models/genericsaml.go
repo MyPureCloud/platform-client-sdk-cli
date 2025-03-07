@@ -50,6 +50,18 @@ type GenericsamlDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -99,12 +111,28 @@ type Genericsaml struct {
     LogoImageData string `json:"logoImageData"`
 
 
-    // EndpointCompression
-    EndpointCompression bool `json:"endpointCompression"`
-
-
     // NameIdentifierFormat
     NameIdentifierFormat string `json:"nameIdentifierFormat"`
+
+
+    // SsoBinding
+    SsoBinding string `json:"ssoBinding"`
+
+
+    // SignAuthnRequests
+    SignAuthnRequests bool `json:"signAuthnRequests"`
+
+
+    // ProviderName
+    ProviderName string `json:"providerName"`
+
+
+    // DisplayOnLogin
+    DisplayOnLogin bool `json:"displayOnLogin"`
+
+
+    // EndpointCompression
+    EndpointCompression bool `json:"endpointCompression"`
 
 
     
@@ -122,6 +150,10 @@ func (o *Genericsaml) String() string {
     
     
      o.Certificates = []string{""} 
+    
+    
+    
+    
     
     
     
@@ -162,9 +194,17 @@ func (u *Genericsaml) MarshalJSON() ([]byte, error) {
         
         LogoImageData string `json:"logoImageData"`
         
-        EndpointCompression bool `json:"endpointCompression"`
-        
         NameIdentifierFormat string `json:"nameIdentifierFormat"`
+        
+        SsoBinding string `json:"ssoBinding"`
+        
+        SignAuthnRequests bool `json:"signAuthnRequests"`
+        
+        ProviderName string `json:"providerName"`
+        
+        DisplayOnLogin bool `json:"displayOnLogin"`
+        
+        EndpointCompression bool `json:"endpointCompression"`
         *Alias
     }{
 
@@ -197,6 +237,18 @@ func (u *Genericsaml) MarshalJSON() ([]byte, error) {
 
         
         Certificates: []string{""},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
 

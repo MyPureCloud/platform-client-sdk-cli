@@ -25,6 +25,9 @@ type MessageeventDud struct {
 
     
 
+
+    
+
 }
 
 // Messageevent - Message event element.  Examples include: system messages, typing indicators, cobrowse offerings.
@@ -48,6 +51,10 @@ type Messageevent struct {
     // Video - Video event.
     Video Eventvideo `json:"video"`
 
+
+    // Reactions - A list of reactions to a message.
+    Reactions []Contentreaction `json:"reactions"`
+
 }
 
 // String returns a JSON representation of the model
@@ -57,6 +64,7 @@ func (o *Messageevent) String() string {
     
     
     
+     o.Reactions = []Contentreaction{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -83,6 +91,8 @@ func (u *Messageevent) MarshalJSON() ([]byte, error) {
         Presence Eventpresence `json:"presence"`
         
         Video Eventvideo `json:"video"`
+        
+        Reactions []Contentreaction `json:"reactions"`
         *Alias
     }{
 
@@ -98,6 +108,11 @@ func (u *Messageevent) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Reactions: []Contentreaction{{}},
         
 
         Alias: (*Alias)(u),

@@ -93,7 +93,7 @@ func Cmdalerting_alerts() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/UnreadStatus"
+        "$ref" : "#/components/schemas/AlertingUnreadStatus"
       }
     }
   }

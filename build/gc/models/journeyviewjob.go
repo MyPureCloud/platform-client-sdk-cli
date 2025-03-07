@@ -27,6 +27,9 @@ type JourneyviewjobDud struct {
     
 
 
+    DateCompletionEstimated time.Time `json:"dateCompletionEstimated"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -48,6 +51,9 @@ type Journeyviewjob struct {
 
     // JourneyView - The journey view for which the job is executed
     JourneyView Journeyview `json:"journeyView"`
+
+
+    
 
 
     
@@ -80,6 +86,9 @@ func (u *Journeyviewjob) MarshalJSON() ([]byte, error) {
         JourneyView Journeyview `json:"journeyView"`
         *Alias
     }{
+
+        
+
 
         
 

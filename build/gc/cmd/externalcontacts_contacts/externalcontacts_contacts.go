@@ -89,6 +89,7 @@ func Cmdexternalcontacts_contacts() *cobra.Command {
 	utils.AddFlag(searchCmd.Flags(), "string", "q", "", "User supplied search keywords (no special syntax is currently supported)")
 	utils.AddFlag(searchCmd.Flags(), "string", "sortOrder", "", "The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc")
 	utils.AddFlag(searchCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: externalOrganization, externalDataSources, identifiers, externalSources, division")
+	utils.AddFlag(searchCmd.Flags(), "[]string", "divisionIds", "", "which divisions to search, up to 50")
 	searchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", searchCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/contacts", utils.FormatPermissions([]string{ "relate:contact:view", "externalContacts:contact:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/contacts")))
 	utils.AddFileFlagIfUpsert(searchCmd.Flags(), "GET", ``)
 	
@@ -374,6 +375,10 @@ var searchCmd = &cobra.Command{
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
+		}
+		divisionIds := utils.GetFlag(cmd.Flags(), "[]string", "divisionIds")
+		if divisionIds != "" {
+			queryParams["divisionIds"] = divisionIds
 		}
 		urlString := path
 		if len(queryParams) > 0 {

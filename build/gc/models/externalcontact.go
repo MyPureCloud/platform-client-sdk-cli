@@ -90,6 +90,9 @@ type ExternalcontactDud struct {
     
 
 
+    
+
+
     ExternalDataSources []Externaldatasource `json:"externalDataSources"`
 
 
@@ -113,6 +116,10 @@ type ExternalcontactDud struct {
 type Externalcontact struct { 
     // Id - The globally unique identifier for the object.
     Id string `json:"id"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Writablestarrabledivision `json:"division"`
 
 
     // FirstName - The first name of the contact.
@@ -254,6 +261,7 @@ func (o *Externalcontact) String() string {
     
     
     
+    
      o.ExternalIds = []Externalid{{}} 
     
     
@@ -280,6 +288,8 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Id string `json:"id"`
+        
+        Division Writablestarrabledivision `json:"division"`
         
         FirstName string `json:"firstName"`
         
@@ -332,6 +342,9 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
         CustomFields map[string]interface{} `json:"customFields"`
         *Alias
     }{
+
+        
+
 
         
 

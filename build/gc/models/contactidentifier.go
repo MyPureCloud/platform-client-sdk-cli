@@ -27,6 +27,9 @@ type ContactidentifierDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -34,6 +37,10 @@ type ContactidentifierDud struct {
 // Contactidentifier
 type Contactidentifier struct { 
     
+
+
+    // Division - The division to which this entity belongs.
+    Division Writablestarrabledivision `json:"division"`
 
 
     // VarType - The type of this identifier
@@ -62,6 +69,7 @@ func (o *Contactidentifier) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -79,6 +87,8 @@ func (u *Contactidentifier) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Division Writablestarrabledivision `json:"division"`
+        
         VarType string `json:"type"`
         
         Value string `json:"value"`
@@ -88,6 +98,9 @@ func (u *Contactidentifier) MarshalJSON() ([]byte, error) {
         ExternalSource Externalsource `json:"externalSource"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -23,22 +23,22 @@ type BulkfetchcontactsresponseDud struct {
 
 // Bulkfetchcontactsresponse
 type Bulkfetchcontactsresponse struct { 
-    // Results
-    Results []Bulkresponseresultexternalcontactentity `json:"results"`
+    // Results - A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.
+    Results []Bulkresponseresultexternalcontactentitybulkentityerrorentity `json:"results"`
 
 
-    // ErrorCount
+    // ErrorCount - The number of failed operations in the results.
     ErrorCount int `json:"errorCount"`
 
 
-    // ErrorIndexes
+    // ErrorIndexes - The indexes of all failed operations in the results field.
     ErrorIndexes []int `json:"errorIndexes"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Bulkfetchcontactsresponse) String() string {
-     o.Results = []Bulkresponseresultexternalcontactentity{{}} 
+     o.Results = []Bulkresponseresultexternalcontactentitybulkentityerrorentity{{}} 
     
      o.ErrorIndexes = []int{0} 
 
@@ -58,7 +58,7 @@ func (u *Bulkfetchcontactsresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Results []Bulkresponseresultexternalcontactentity `json:"results"`
+        Results []Bulkresponseresultexternalcontactentitybulkentityerrorentity `json:"results"`
         
         ErrorCount int `json:"errorCount"`
         
@@ -67,7 +67,7 @@ func (u *Bulkfetchcontactsresponse) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Results: []Bulkresponseresultexternalcontactentity{{}},
+        Results: []Bulkresponseresultexternalcontactentitybulkentityerrorentity{{}},
         
 
 

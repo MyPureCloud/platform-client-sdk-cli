@@ -25,6 +25,9 @@ type ContentnotificationtemplateDud struct {
 
     
 
+
+    
+
 }
 
 // Contentnotificationtemplate - Template notification object.
@@ -45,6 +48,10 @@ type Contentnotificationtemplate struct {
     Body Notificationtemplatebody `json:"body"`
 
 
+    // Buttons - Template buttons
+    Buttons []Notificationtemplatebutton `json:"buttons"`
+
+
     // Footer - The template footer.
     Footer Notificationtemplatefooter `json:"footer"`
 
@@ -56,6 +63,7 @@ func (o *Contentnotificationtemplate) String() string {
     
     
     
+     o.Buttons = []Notificationtemplatebutton{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -82,6 +90,8 @@ func (u *Contentnotificationtemplate) MarshalJSON() ([]byte, error) {
         
         Body Notificationtemplatebody `json:"body"`
         
+        Buttons []Notificationtemplatebutton `json:"buttons"`
+        
         Footer Notificationtemplatefooter `json:"footer"`
         *Alias
     }{
@@ -95,6 +105,11 @@ func (u *Contentnotificationtemplate) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Buttons: []Notificationtemplatebutton{{}},
         
 
 

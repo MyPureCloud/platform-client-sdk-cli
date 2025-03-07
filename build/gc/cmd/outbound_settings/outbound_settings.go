@@ -43,6 +43,7 @@ func Cmdoutbound_settings() *cobra.Command {
 }`)
 	outbound_settingsCmd.AddCommand(getCmd)
 
+	utils.AddFlag(updateCmd.Flags(), "bool", "useMaxCallsPerAgentDecimal", "", "Use maxCallsPerAgent with decimal precision Valid values: true, false")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/outbound/settings", utils.FormatPermissions([]string{ "outbound:settings:edit",  }), utils.GenerateDevCentreLink("PATCH", "Outbound", "/api/v2/outbound/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "outboundSettings",
@@ -154,6 +155,10 @@ var updateCmd = &cobra.Command{
 
 		path := "/api/v2/outbound/settings"
 
+		useMaxCallsPerAgentDecimal := utils.GetFlag(cmd.Flags(), "bool", "useMaxCallsPerAgentDecimal")
+		if useMaxCallsPerAgentDecimal != "" {
+			queryParams["useMaxCallsPerAgentDecimal"] = useMaxCallsPerAgentDecimal
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

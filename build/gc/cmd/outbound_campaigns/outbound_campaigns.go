@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdoutbound_campaigns() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "useMaxCallsPerAgentDecimal", "", "Use maxCallsPerAgent with decimal precision Valid values: true, false")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/outbound/campaigns", utils.FormatPermissions([]string{ "outbound:campaign:add",  }), utils.GenerateDevCentreLink("POST", "Outbound", "/api/v2/outbound/campaigns")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Campaign",
@@ -130,6 +131,7 @@ func Cmdoutbound_campaigns() *cobra.Command {
 }`)
 	outbound_campaignsCmd.AddCommand(patchCmd)
 
+	utils.AddFlag(updateCmd.Flags(), "bool", "useMaxCallsPerAgentDecimal", "", "Use maxCallsPerAgent with decimal precision Valid values: true, false")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/campaigns/{campaignId}", utils.FormatPermissions([]string{ "outbound:campaign:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/campaigns/{campaignId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "Campaign",
@@ -184,6 +186,10 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/outbound/campaigns"
 
+		useMaxCallsPerAgentDecimal := utils.GetFlag(cmd.Flags(), "bool", "useMaxCallsPerAgentDecimal")
+		if useMaxCallsPerAgentDecimal != "" {
+			queryParams["useMaxCallsPerAgentDecimal"] = useMaxCallsPerAgentDecimal
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -565,6 +571,10 @@ var updateCmd = &cobra.Command{
 		campaignId, args := args[0], args[1:]
 		path = strings.Replace(path, "{campaignId}", fmt.Sprintf("%v", campaignId), -1)
 
+		useMaxCallsPerAgentDecimal := utils.GetFlag(cmd.Flags(), "bool", "useMaxCallsPerAgentDecimal")
+		if useMaxCallsPerAgentDecimal != "" {
+			queryParams["useMaxCallsPerAgentDecimal"] = useMaxCallsPerAgentDecimal
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

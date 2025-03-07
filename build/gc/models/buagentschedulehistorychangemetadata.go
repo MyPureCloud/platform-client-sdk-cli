@@ -25,7 +25,7 @@ type Buagentschedulehistorychangemetadata struct {
     DateModified time.Time `json:"dateModified"`
 
 
-    // ModifiedBy - The user that made the schedule change
+    // ModifiedBy - The user that made the schedule change. The id may be 'System' if it was an automated process
     ModifiedBy Userreference `json:"modifiedBy"`
 
 }

@@ -49,11 +49,11 @@ type Actionoutput struct {
 
 
     // SuccessSchemaFlattened - JSON schema that defines the transformed, successful result that will be sent back to the caller. The schema is transformed based on Architect's flattened format. If the 'flatten' query parameter is supplied as true, this field will be returned. Either successSchema or successSchemaFlattened will be returned, not both.
-    SuccessSchemaFlattened Jsonschemadocument `json:"successSchemaFlattened"`
+    SuccessSchemaFlattened Flattenedjsonschemadocument `json:"successSchemaFlattened"`
 
 
     // ErrorSchemaFlattened - JSON schema that defines the body of response when request is not successful. The schema is transformed based on Architect's flattened format. If the 'flatten' query parameter is supplied as true, this field will be returned. Either errorSchema or errorSchemaFlattened will be returned, not both.
-    ErrorSchemaFlattened interface{} `json:"errorSchemaFlattened"`
+    ErrorSchemaFlattened Flattenedjsonschemadocument `json:"errorSchemaFlattened"`
 
 }
 
@@ -64,7 +64,7 @@ func (o *Actionoutput) String() string {
     
     
     
-     o.ErrorSchemaFlattened = Interface{} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -90,9 +90,9 @@ func (u *Actionoutput) MarshalJSON() ([]byte, error) {
         
         ErrorSchemaUri string `json:"errorSchemaUri"`
         
-        SuccessSchemaFlattened Jsonschemadocument `json:"successSchemaFlattened"`
+        SuccessSchemaFlattened Flattenedjsonschemadocument `json:"successSchemaFlattened"`
         
-        ErrorSchemaFlattened interface{} `json:"errorSchemaFlattened"`
+        ErrorSchemaFlattened Flattenedjsonschemadocument `json:"errorSchemaFlattened"`
         *Alias
     }{
 
@@ -111,8 +111,6 @@ func (u *Actionoutput) MarshalJSON() ([]byte, error) {
         
 
 
-        
-        ErrorSchemaFlattened: Interface{},
         
 
         Alias: (*Alias)(u),

@@ -32,6 +32,9 @@ type KnowledgedocumentreqDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -65,6 +68,10 @@ type Knowledgedocumentreq struct {
     ExternalId string `json:"externalId"`
 
 
+    // ExternalUrl - The URL to external document.
+    ExternalUrl string `json:"externalUrl"`
+
+
     
 
 }
@@ -76,6 +83,7 @@ func (o *Knowledgedocumentreq) String() string {
      o.Alternatives = []Knowledgedocumentalternative{{}} 
     
      o.LabelIds = []string{""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -105,6 +113,8 @@ func (u *Knowledgedocumentreq) MarshalJSON() ([]byte, error) {
         LabelIds []string `json:"labelIds"`
         
         ExternalId string `json:"externalId"`
+        
+        ExternalUrl string `json:"externalUrl"`
         *Alias
     }{
 
@@ -127,6 +137,9 @@ func (u *Knowledgedocumentreq) MarshalJSON() ([]byte, error) {
 
         
         LabelIds: []string{""},
+        
+
+
         
 
 

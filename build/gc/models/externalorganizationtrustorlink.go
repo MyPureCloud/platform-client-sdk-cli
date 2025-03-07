@@ -24,6 +24,9 @@ type ExternalorganizationtrustorlinkDud struct {
     
 
 
+    
+
+
     ExternalOrganizationUri string `json:"externalOrganizationUri"`
 
 
@@ -34,6 +37,10 @@ type ExternalorganizationtrustorlinkDud struct {
 // Externalorganizationtrustorlink
 type Externalorganizationtrustorlink struct { 
     
+
+
+    // Division - The division to which this entity belongs.
+    Division Writablestarrabledivision `json:"division"`
 
 
     // ExternalOrganizationId - The id of a PureCloud External Organization entity in the External Contacts system that will be used to represent the trustor org
@@ -60,6 +67,7 @@ func (o *Externalorganizationtrustorlink) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -77,6 +85,8 @@ func (u *Externalorganizationtrustorlink) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Division Writablestarrabledivision `json:"division"`
+        
         ExternalOrganizationId string `json:"externalOrganizationId"`
         
         TrustorOrgId string `json:"trustorOrgId"`
@@ -84,6 +94,9 @@ func (u *Externalorganizationtrustorlink) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         *Alias
     }{
+
+        
+
 
         
 

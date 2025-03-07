@@ -49,6 +49,9 @@ type VoicemailgrouppolicyDud struct {
 
     
 
+
+    
+
 }
 
 // Voicemailgrouppolicy
@@ -78,6 +81,10 @@ type Voicemailgrouppolicy struct {
 
     // LanguagePreference - The language preference for the group.  Used for group voicemail transcription
     LanguagePreference string `json:"languagePreference"`
+
+
+    // EmailPolicy - The email policy for the group
+    EmailPolicy Groupemailpolicy `json:"emailPolicy"`
 
 
     // RotateCallsSecs - How many seconds to ring before rotating to the next member in the group
@@ -119,6 +126,7 @@ func (o *Voicemailgrouppolicy) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -148,6 +156,8 @@ func (u *Voicemailgrouppolicy) MarshalJSON() ([]byte, error) {
         
         LanguagePreference string `json:"languagePreference"`
         
+        EmailPolicy Groupemailpolicy `json:"emailPolicy"`
+        
         RotateCallsSecs int `json:"rotateCallsSecs"`
         
         StopRingingAfterRotations int `json:"stopRingingAfterRotations"`
@@ -161,6 +171,9 @@ func (u *Voicemailgrouppolicy) MarshalJSON() ([]byte, error) {
         InteractiveResponseRequired bool `json:"interactiveResponseRequired"`
         *Alias
     }{
+
+        
+
 
         
 

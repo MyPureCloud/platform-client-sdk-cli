@@ -23,22 +23,22 @@ type BulkrelationshipsresponseDud struct {
 
 // Bulkrelationshipsresponse
 type Bulkrelationshipsresponse struct { 
-    // Results
-    Results []Bulkresponseresultrelationshiprelationship `json:"results"`
+    // Results - A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.
+    Results []Bulkresponseresultrelationshiprelationshipbulkentityerrorrelationship `json:"results"`
 
 
-    // ErrorCount
+    // ErrorCount - The number of failed operations in the results.
     ErrorCount int `json:"errorCount"`
 
 
-    // ErrorIndexes
+    // ErrorIndexes - The indexes of all failed operations in the results field.
     ErrorIndexes []int `json:"errorIndexes"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Bulkrelationshipsresponse) String() string {
-     o.Results = []Bulkresponseresultrelationshiprelationship{{}} 
+     o.Results = []Bulkresponseresultrelationshiprelationshipbulkentityerrorrelationship{{}} 
     
      o.ErrorIndexes = []int{0} 
 
@@ -58,7 +58,7 @@ func (u *Bulkrelationshipsresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Results []Bulkresponseresultrelationshiprelationship `json:"results"`
+        Results []Bulkresponseresultrelationshiprelationshipbulkentityerrorrelationship `json:"results"`
         
         ErrorCount int `json:"errorCount"`
         
@@ -67,7 +67,7 @@ func (u *Bulkrelationshipsresponse) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Results: []Bulkresponseresultrelationshiprelationship{{}},
+        Results: []Bulkresponseresultrelationshiprelationshipbulkentityerrorrelationship{{}},
         
 
 

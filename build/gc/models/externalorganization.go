@@ -72,6 +72,9 @@ type ExternalorganizationDud struct {
     
 
 
+    
+
+
     ExternalDataSources []Externaldatasource `json:"externalDataSources"`
 
 
@@ -87,6 +90,10 @@ type Externalorganization struct {
 
     // Name - The name of the company.
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Writablestarrabledivision `json:"division"`
 
 
     // CompanyType
@@ -180,6 +187,7 @@ func (o *Externalorganization) String() string {
     
     
     
+    
      o.Tags = []string{""} 
      o.Websites = []string{""} 
      o.Tickers = []Ticker{{}} 
@@ -210,6 +218,8 @@ func (u *Externalorganization) MarshalJSON() ([]byte, error) {
         Id string `json:"id"`
         
         Name string `json:"name"`
+        
+        Division Writablestarrabledivision `json:"division"`
         
         CompanyType string `json:"companyType"`
         
@@ -248,6 +258,9 @@ func (u *Externalorganization) MarshalJSON() ([]byte, error) {
         CustomFields map[string]interface{} `json:"customFields"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -41,6 +41,12 @@ type CreatecoachingappointmentrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Createcoachingappointmentrequest - Create coaching appointment request
@@ -84,6 +90,14 @@ type Createcoachingappointmentrequest struct {
     // ExternalLinks - The list of external links related to the appointment
     ExternalLinks []string `json:"externalLinks"`
 
+
+    // Location - The location of the appointment
+    Location string `json:"location"`
+
+
+    // ShareInsightsData - Whether to share the insight data
+    ShareInsightsData bool `json:"shareInsightsData"`
+
 }
 
 // String returns a JSON representation of the model
@@ -98,6 +112,8 @@ func (o *Createcoachingappointmentrequest) String() string {
      o.DocumentIds = []string{""} 
     
      o.ExternalLinks = []string{""} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -134,6 +150,10 @@ func (u *Createcoachingappointmentrequest) MarshalJSON() ([]byte, error) {
         WfmSchedule Wfmschedulereference `json:"wfmSchedule"`
         
         ExternalLinks []string `json:"externalLinks"`
+        
+        Location string `json:"location"`
+        
+        ShareInsightsData bool `json:"shareInsightsData"`
         *Alias
     }{
 
@@ -172,6 +192,12 @@ func (u *Createcoachingappointmentrequest) MarshalJSON() ([]byte, error) {
 
         
         ExternalLinks: []string{""},
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

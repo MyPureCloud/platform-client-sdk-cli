@@ -58,6 +58,9 @@ type CreateemailrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createemailrequest
@@ -125,6 +128,10 @@ type Createemailrequest struct {
     // ExternalContactId - The external contact with which the email should be associated. This field is only valid for OUTBOUND email.
     ExternalContactId string `json:"externalContactId"`
 
+
+    // UtilizationLabel - Optional. Controls the number of agent interactions for INBOUND communications
+    UtilizationLabel string `json:"utilizationLabel"`
+
 }
 
 // String returns a JSON representation of the model
@@ -136,6 +143,7 @@ func (o *Createemailrequest) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
     
     
     
@@ -193,6 +201,8 @@ func (u *Createemailrequest) MarshalJSON() ([]byte, error) {
         TextBody string `json:"textBody"`
         
         ExternalContactId string `json:"externalContactId"`
+        
+        UtilizationLabel string `json:"utilizationLabel"`
         *Alias
     }{
 
@@ -218,6 +228,9 @@ func (u *Createemailrequest) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

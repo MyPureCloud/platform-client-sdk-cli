@@ -17,6 +17,9 @@ type OpenmessagingidentityresolutionconfigDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -24,6 +27,10 @@ type OpenmessagingidentityresolutionconfigDud struct {
 // Openmessagingidentityresolutionconfig
 type Openmessagingidentityresolutionconfig struct { 
     
+
+
+    // Division - The division to which this entity belongs.
+    Division Writablestarrabledivision `json:"division"`
 
 
     // ResolveIdentities - Whether the channel should resolve identities
@@ -36,6 +43,7 @@ type Openmessagingidentityresolutionconfig struct {
 
 // String returns a JSON representation of the model
 func (o *Openmessagingidentityresolutionconfig) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -54,9 +62,14 @@ func (u *Openmessagingidentityresolutionconfig) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Division Writablestarrabledivision `json:"division"`
+        
         ResolveIdentities bool `json:"resolveIdentities"`
         *Alias
     }{
+
+        
+
 
         
 

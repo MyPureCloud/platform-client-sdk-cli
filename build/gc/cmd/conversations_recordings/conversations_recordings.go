@@ -34,7 +34,7 @@ func Cmdconversations_recordings() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "string", "messageFormatId", "ZIP", "The desired media format when downloading a message recording. Valid values:ZIP,NONE Valid values: ZIP, NONE")
 	utils.AddFlag(getCmd.Flags(), "bool", "download", "false", "requesting a download format of the recording. Valid values:true,false Valid values: true, false")
 	utils.AddFlag(getCmd.Flags(), "string", "fileName", "", "the name of the downloaded fileName")
-	utils.AddFlag(getCmd.Flags(), "string", "locale", "", "The locale for the requested file when downloading, as an ISO 639-1 code")
+	utils.AddFlag(getCmd.Flags(), "string", "locale", "", "The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code")
 	utils.AddFlag(getCmd.Flags(), "[]string", "mediaFormats", "", "All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -54,6 +54,7 @@ func Cmdconversations_recordings() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "maxWaitMs", "5000", "The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.")
 	utils.AddFlag(listCmd.Flags(), "string", "formatId", "WEBM", "The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE")
 	utils.AddFlag(listCmd.Flags(), "[]string", "mediaFormats", "", "All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.")
+	utils.AddFlag(listCmd.Flags(), "string", "locale", "", "The locale used for redacting sensitive information in requested files, as an ISO 639-1 code")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -236,6 +237,10 @@ var listCmd = &cobra.Command{
 		mediaFormats := utils.GetFlag(cmd.Flags(), "[]string", "mediaFormats")
 		if mediaFormats != "" {
 			queryParams["mediaFormats"] = mediaFormats
+		}
+		locale := utils.GetFlag(cmd.Flags(), "string", "locale")
+		if locale != "" {
+			queryParams["locale"] = locale
 		}
 		urlString := path
 		if len(queryParams) > 0 {

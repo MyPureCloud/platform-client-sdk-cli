@@ -23,6 +23,9 @@ type RelationshipDud struct {
     
 
 
+    
+
+
     ExternalDataSources []Externaldatasource `json:"externalDataSources"`
 
 
@@ -33,6 +36,10 @@ type RelationshipDud struct {
 // Relationship
 type Relationship struct { 
     
+
+
+    // Division - The division to which this entity belongs.
+    Division Writablestarrabledivision `json:"division"`
 
 
     // User - The user associated with the external organization. When creating or updating a relationship, only User.id is required. User object is fully populated when expanding a note.
@@ -59,6 +66,7 @@ func (o *Relationship) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -76,6 +84,8 @@ func (u *Relationship) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Division Writablestarrabledivision `json:"division"`
+        
         User User `json:"user"`
         
         ExternalOrganization Externalorganization `json:"externalOrganization"`
@@ -83,6 +93,9 @@ func (u *Relationship) MarshalJSON() ([]byte, error) {
         Relationship string `json:"relationship"`
         *Alias
     }{
+
+        
+
 
         
 

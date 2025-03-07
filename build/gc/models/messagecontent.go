@@ -66,10 +66,6 @@ type Messagecontent struct {
     ContentType string `json:"contentType"`
 
 
-    // Location - Location content.
-    Location Contentlocation `json:"location"`
-
-
     // Attachment - Attachment content.
     Attachment Contentattachment `json:"attachment"`
 
@@ -125,6 +121,10 @@ type Messagecontent struct {
     // QuickReplyV2 - Quick reply V2 content.
     QuickReplyV2 Contentquickreplyv2 `json:"quickReplyV2"`
 
+
+    // DatePicker - DatePicker content.
+    DatePicker Contentdatepicker `json:"datePicker"`
+
 }
 
 // String returns a JSON representation of the model
@@ -136,8 +136,8 @@ func (o *Messagecontent) String() string {
     
     
     
-    
      o.Reactions = []Contentreaction{{}} 
+    
     
     
     
@@ -163,8 +163,6 @@ func (u *Messagecontent) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         ContentType string `json:"contentType"`
-        
-        Location Contentlocation `json:"location"`
         
         Attachment Contentattachment `json:"attachment"`
         
@@ -193,6 +191,8 @@ func (u *Messagecontent) MarshalJSON() ([]byte, error) {
         Text Contenttext `json:"text"`
         
         QuickReplyV2 Contentquickreplyv2 `json:"quickReplyV2"`
+        
+        DatePicker Contentdatepicker `json:"datePicker"`
         *Alias
     }{
 
@@ -218,10 +218,10 @@ func (u *Messagecontent) MarshalJSON() ([]byte, error) {
 
 
         
-
-
-        
         Reactions: []Contentreaction{{}},
+        
+
+
         
 
 

@@ -23,22 +23,22 @@ type BulkfetchorganizationsresponseDud struct {
 
 // Bulkfetchorganizationsresponse
 type Bulkfetchorganizationsresponse struct { 
-    // Results
-    Results []Bulkresponseresultexternalorganizationentity `json:"results"`
+    // Results - A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.
+    Results []Bulkresponseresultexternalorganizationentitybulkentityerrorentity `json:"results"`
 
 
-    // ErrorCount
+    // ErrorCount - The number of failed operations in the results.
     ErrorCount int `json:"errorCount"`
 
 
-    // ErrorIndexes
+    // ErrorIndexes - The indexes of all failed operations in the results field.
     ErrorIndexes []int `json:"errorIndexes"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Bulkfetchorganizationsresponse) String() string {
-     o.Results = []Bulkresponseresultexternalorganizationentity{{}} 
+     o.Results = []Bulkresponseresultexternalorganizationentitybulkentityerrorentity{{}} 
     
      o.ErrorIndexes = []int{0} 
 
@@ -58,7 +58,7 @@ func (u *Bulkfetchorganizationsresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Results []Bulkresponseresultexternalorganizationentity `json:"results"`
+        Results []Bulkresponseresultexternalorganizationentitybulkentityerrorentity `json:"results"`
         
         ErrorCount int `json:"errorCount"`
         
@@ -67,7 +67,7 @@ func (u *Bulkfetchorganizationsresponse) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Results: []Bulkresponseresultexternalorganizationentity{{}},
+        Results: []Bulkresponseresultexternalorganizationentitybulkentityerrorentity{{}},
         
 
 

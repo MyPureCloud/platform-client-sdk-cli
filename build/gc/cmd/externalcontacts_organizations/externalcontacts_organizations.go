@@ -92,6 +92,7 @@ func Cmdexternalcontacts_organizations() *cobra.Command {
 	utils.AddFlag(searchCmd.Flags(), "string", "sortOrder", "", "The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc")
 	utils.AddFlag(searchCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: externalDataSources, division, identifiers, externalSources")
 	utils.AddFlag(searchCmd.Flags(), "bool", "includeTrustors", "", "(true or false) whether or not to include trustor information embedded in the externalOrganization")
+	utils.AddFlag(searchCmd.Flags(), "[]string", "divisionIds", "", "which divisions to search, up to 50")
 	searchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", searchCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/organizations", utils.FormatPermissions([]string{ "relate:externalOrganization:view", "externalContacts:externalOrganization:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/organizations")))
 	utils.AddFileFlagIfUpsert(searchCmd.Flags(), "GET", ``)
 	
@@ -389,6 +390,10 @@ var searchCmd = &cobra.Command{
 		includeTrustors := utils.GetFlag(cmd.Flags(), "bool", "includeTrustors")
 		if includeTrustors != "" {
 			queryParams["includeTrustors"] = includeTrustors
+		}
+		divisionIds := utils.GetFlag(cmd.Flags(), "[]string", "divisionIds")
+		if divisionIds != "" {
+			queryParams["divisionIds"] = divisionIds
 		}
 		urlString := path
 		if len(queryParams) > 0 {

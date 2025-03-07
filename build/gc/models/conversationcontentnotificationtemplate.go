@@ -25,6 +25,9 @@ type ConversationcontentnotificationtemplateDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationcontentnotificationtemplate - Template notification object.
@@ -45,6 +48,10 @@ type Conversationcontentnotificationtemplate struct {
     Body Conversationnotificationtemplatebody `json:"body"`
 
 
+    // Buttons - Template buttons
+    Buttons []Conversationnotificationtemplatebutton `json:"buttons"`
+
+
     // Footer - The template footer.
     Footer Conversationnotificationtemplatefooter `json:"footer"`
 
@@ -56,6 +63,7 @@ func (o *Conversationcontentnotificationtemplate) String() string {
     
     
     
+     o.Buttons = []Conversationnotificationtemplatebutton{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -82,6 +90,8 @@ func (u *Conversationcontentnotificationtemplate) MarshalJSON() ([]byte, error) 
         
         Body Conversationnotificationtemplatebody `json:"body"`
         
+        Buttons []Conversationnotificationtemplatebutton `json:"buttons"`
+        
         Footer Conversationnotificationtemplatefooter `json:"footer"`
         *Alias
     }{
@@ -95,6 +105,11 @@ func (u *Conversationcontentnotificationtemplate) MarshalJSON() ([]byte, error) 
         
 
 
+        
+
+
+        
+        Buttons: []Conversationnotificationtemplatebutton{{}},
         
 
 

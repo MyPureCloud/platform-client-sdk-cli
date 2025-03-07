@@ -129,7 +129,7 @@ type Shifttraderesponse struct {
     AcceptableIntervals []string `json:"acceptableIntervals"`
 
 
-    // ReviewedBy - The user who reviewed this shift trade
+    // ReviewedBy - The user who reviewed this shift trade. The id may be 'System' if it was an automated process
     ReviewedBy Userreference `json:"reviewedBy"`
 
 

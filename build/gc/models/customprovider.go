@@ -111,10 +111,6 @@ type Customprovider struct {
     LogoImageData string `json:"logoImageData"`
 
 
-    // EndpointCompression
-    EndpointCompression bool `json:"endpointCompression"`
-
-
     // NameIdentifierFormat
     NameIdentifierFormat string `json:"nameIdentifierFormat"`
 
@@ -133,6 +129,10 @@ type Customprovider struct {
 
     // DisplayOnLogin
     DisplayOnLogin bool `json:"displayOnLogin"`
+
+
+    // EndpointCompression
+    EndpointCompression bool `json:"endpointCompression"`
 
 
     
@@ -194,8 +194,6 @@ func (u *Customprovider) MarshalJSON() ([]byte, error) {
         
         LogoImageData string `json:"logoImageData"`
         
-        EndpointCompression bool `json:"endpointCompression"`
-        
         NameIdentifierFormat string `json:"nameIdentifierFormat"`
         
         SsoBinding string `json:"ssoBinding"`
@@ -205,6 +203,8 @@ func (u *Customprovider) MarshalJSON() ([]byte, error) {
         ProviderName string `json:"providerName"`
         
         DisplayOnLogin bool `json:"displayOnLogin"`
+        
+        EndpointCompression bool `json:"endpointCompression"`
         *Alias
     }{
 

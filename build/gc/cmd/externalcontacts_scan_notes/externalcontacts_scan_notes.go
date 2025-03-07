@@ -30,6 +30,7 @@ func init() {
 func Cmdexternalcontacts_scan_notes() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "limit", "", "The number of notes per page; must be between 10 and 200, default is 100")
 	utils.AddFlag(listCmd.Flags(), "string", "cursor", "", "Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL")
+	utils.AddFlag(listCmd.Flags(), "string", "divisionId", "*", "The division to scan over")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/scan/notes", utils.FormatPermissions([]string{ "relate:contact:view", "externalContacts:contact:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/scan/notes")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -78,6 +79,10 @@ var listCmd = &cobra.Command{
 		cursor := utils.GetFlag(cmd.Flags(), "string", "cursor")
 		if cursor != "" {
 			queryParams["cursor"] = cursor
+		}
+		divisionId := utils.GetFlag(cmd.Flags(), "string", "divisionId")
+		if divisionId != "" {
+			queryParams["divisionId"] = divisionId
 		}
 		urlString := path
 		if len(queryParams) > 0 {

@@ -118,7 +118,7 @@ type Activityplanlistitem struct {
     ModifiedDate time.Time `json:"modifiedDate"`
 
 
-    // ModifiedBy - The last user to modify this activity plan
+    // ModifiedBy - The last user to modify this activity plan. The id may be 'System' if it was an automated process
     ModifiedBy Userreference `json:"modifiedBy"`
 
 

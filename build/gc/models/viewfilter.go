@@ -670,6 +670,18 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -686,12 +698,20 @@ type Viewfilter struct {
     SkillIds []string `json:"skillIds"`
 
 
+    // AssignedSkillIds - The assigned user skill ids are used to filter the view
+    AssignedSkillIds []string `json:"assignedSkillIds"`
+
+
     // SkillGroups - The skill groups used to filter the view
     SkillGroups []string `json:"skillGroups"`
 
 
     // LanguageIds - The language ids are used to filter the view
     LanguageIds []string `json:"languageIds"`
+
+
+    // AssignedLanguageIds - The assigned user language ids are used to filter the view
+    AssignedLanguageIds []string `json:"assignedLanguageIds"`
 
 
     // LanguageGroups - The language groups used to filter the view
@@ -1553,6 +1573,14 @@ type Viewfilter struct {
     // TimelineCategories - A list of timeline categories
     TimelineCategories []string `json:"timelineCategories"`
 
+
+    // Acw - Filter to indicate for acw state
+    Acw bool `json:"acw"`
+
+
+    // SegmentTypes - A list of filtered segment types
+    SegmentTypes []string `json:"segmentTypes"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1560,8 +1588,10 @@ func (o *Viewfilter) String() string {
      o.MediaTypes = []string{""} 
      o.QueueIds = []string{""} 
      o.SkillIds = []string{""} 
+     o.AssignedSkillIds = []string{""} 
      o.SkillGroups = []string{""} 
      o.LanguageIds = []string{""} 
+     o.AssignedLanguageIds = []string{""} 
      o.LanguageGroups = []string{""} 
      o.Directions = []string{""} 
      o.OriginatingDirections = []string{""} 
@@ -1777,6 +1807,8 @@ func (o *Viewfilter) String() string {
      o.ComparisonQueueIds = []string{""} 
      o.ViewMetrics = []string{""} 
      o.TimelineCategories = []string{""} 
+    
+     o.SegmentTypes = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -1800,9 +1832,13 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
         SkillIds []string `json:"skillIds"`
         
+        AssignedSkillIds []string `json:"assignedSkillIds"`
+        
         SkillGroups []string `json:"skillGroups"`
         
         LanguageIds []string `json:"languageIds"`
+        
+        AssignedLanguageIds []string `json:"assignedLanguageIds"`
         
         LanguageGroups []string `json:"languageGroups"`
         
@@ -2233,6 +2269,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         ViewMetrics []string `json:"viewMetrics"`
         
         TimelineCategories []string `json:"timelineCategories"`
+        
+        Acw bool `json:"acw"`
+        
+        SegmentTypes []string `json:"segmentTypes"`
         *Alias
     }{
 
@@ -2252,12 +2292,22 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
 
         
+        AssignedSkillIds: []string{""},
+        
+
+
+        
         SkillGroups: []string{""},
         
 
 
         
         LanguageIds: []string{""},
+        
+
+
+        
+        AssignedLanguageIds: []string{""},
         
 
 
@@ -3193,6 +3243,14 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         TimelineCategories: []string{""},
+        
+
+
+        
+
+
+        
+        SegmentTypes: []string{""},
         
 
         Alias: (*Alias)(u),

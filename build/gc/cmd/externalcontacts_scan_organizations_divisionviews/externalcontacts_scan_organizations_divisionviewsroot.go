@@ -1,0 +1,12 @@
+package externalcontacts_scan_organizations_divisionviews
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_scan_organizations_divisionviews_all"
+)
+
+func init() {
+	externalcontacts_scan_organizations_divisionviewsCmd.AddCommand(externalcontacts_scan_organizations_divisionviews_all.Cmdexternalcontacts_scan_organizations_divisionviews_all())
+	externalcontacts_scan_organizations_divisionviewsCmd.Short = utils.GenerateCustomDescription(externalcontacts_scan_organizations_divisionviewsCmd.Short, externalcontacts_scan_organizations_divisionviews_all.Description, )
+	externalcontacts_scan_organizations_divisionviewsCmd.Long = externalcontacts_scan_organizations_divisionviewsCmd.Short
+}

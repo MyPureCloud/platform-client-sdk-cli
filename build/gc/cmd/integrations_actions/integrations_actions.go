@@ -63,6 +63,7 @@ func Cmdintegrations_actions() *cobra.Command {
 	integrations_actionsCmd.AddCommand(deleteCmd)
 
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Indicates a field in the response which should be expanded. Valid values: contract")
+	utils.AddFlag(getCmd.Flags(), "bool", "flatten", "false", "Indicates the response should be reformatted, based on Architect`s flattening format. Valid values: true, false")
 	utils.AddFlag(getCmd.Flags(), "bool", "includeConfig", "false", "Return config in response. Valid values: true, false")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/integrations/actions/{actionId}", utils.FormatPermissions([]string{ "integrations:action:view", "bridge:actions:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/actions/{actionId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -292,6 +293,10 @@ var getCmd = &cobra.Command{
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
+		}
+		flatten := utils.GetFlag(cmd.Flags(), "bool", "flatten")
+		if flatten != "" {
+			queryParams["flatten"] = flatten
 		}
 		includeConfig := utils.GetFlag(cmd.Flags(), "bool", "includeConfig")
 		if includeConfig != "" {

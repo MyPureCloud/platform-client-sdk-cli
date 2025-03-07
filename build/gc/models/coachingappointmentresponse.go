@@ -66,12 +66,24 @@ type CoachingappointmentresponseDud struct {
     ExternalLinks []string `json:"externalLinks"`
 
 
+    Location string `json:"location"`
+
+
+    ShareInsightsData bool `json:"shareInsightsData"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
 
 // Coachingappointmentresponse - Coaching appointment response
 type Coachingappointmentresponse struct { 
+    
+
+
+    
+
+
     
 
 
@@ -150,6 +162,12 @@ func (u *Coachingappointmentresponse) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

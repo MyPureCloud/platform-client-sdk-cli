@@ -126,6 +126,9 @@ type CampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -272,6 +275,10 @@ type Campaign struct {
     MaxCallsPerAgent int `json:"maxCallsPerAgent"`
 
 
+    // MaxCallsPerAgentDecimal - The maximum number of calls that can be placed per agent on this campaign with decimal precision
+    MaxCallsPerAgentDecimal float64 `json:"maxCallsPerAgentDecimal"`
+
+
     // CallbackAutoAnswer - The option manages the auto-answer callback calls
     CallbackAutoAnswer bool `json:"callbackAutoAnswer"`
 
@@ -317,6 +324,7 @@ func (o *Campaign) String() string {
     
     
      o.SkillColumns = []string{""} 
+    
     
     
     
@@ -400,6 +408,8 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
         SkillColumns []string `json:"skillColumns"`
         
         MaxCallsPerAgent int `json:"maxCallsPerAgent"`
+        
+        MaxCallsPerAgentDecimal float64 `json:"maxCallsPerAgentDecimal"`
         
         CallbackAutoAnswer bool `json:"callbackAutoAnswer"`
         
@@ -521,6 +531,9 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
 
         
         SkillColumns: []string{""},
+        
+
+
         
 
 

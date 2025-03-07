@@ -53,7 +53,7 @@ func Cmdauthorization_divisions() *cobra.Command {
 }`)
 	authorization_divisionsCmd.AddCommand(createCmd)
 
-	utils.AddFlag(deleteCmd.Flags(), "bool", "force", "false", "Force delete this division as well as the grants and objects associated with it")
+	utils.AddFlag(deleteCmd.Flags(), "bool", "force", "false", "DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible.")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/authorization/divisions/{divisionId}", utils.FormatPermissions([]string{ "authorization:division:delete",  }), utils.GenerateDevCentreLink("DELETE", "Authorization", "/api/v2/authorization/divisions/{divisionId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	

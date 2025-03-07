@@ -86,7 +86,7 @@ type Adherenceexplanationresponse struct {
     Notes string `json:"notes"`
 
 
-    // ReviewedBy - The user who reviewed the adherence explanation, if applicable
+    // ReviewedBy - The user who reviewed the adherence explanation, if applicable. The id may be 'System' if it was an automated process
     ReviewedBy Userreference `json:"reviewedBy"`
 
 

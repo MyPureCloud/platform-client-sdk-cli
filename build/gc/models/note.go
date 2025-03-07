@@ -33,6 +33,9 @@ type NoteDud struct {
     
 
 
+    
+
+
     ExternalDataSources []Externaldatasource `json:"externalDataSources"`
 
 
@@ -43,6 +46,10 @@ type NoteDud struct {
 // Note
 type Note struct { 
     
+
+
+    // Division - The division to which this entity belongs.
+    Division Writablestarrabledivision `json:"division"`
 
 
     // EntityId - The id of the contact or organization to which this note refers. This only needs to be set for input when using the Bulk APIs.
@@ -84,6 +91,7 @@ func (o *Note) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -101,6 +109,8 @@ func (u *Note) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Division Writablestarrabledivision `json:"division"`
+        
         EntityId string `json:"entityId"`
         
         EntityType string `json:"entityType"`
@@ -114,6 +124,9 @@ func (u *Note) MarshalJSON() ([]byte, error) {
         CreatedBy User `json:"createdBy"`
         *Alias
     }{
+
+        
+
 
         
 

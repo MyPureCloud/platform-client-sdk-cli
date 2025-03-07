@@ -35,7 +35,7 @@ type Workplanbidmetadata struct {
     CreatedDate time.Time `json:"createdDate"`
 
 
-    // ModifiedBy - The user who modified the entity
+    // ModifiedBy - The user who modified the entity. The id may be 'System' if it was an automated process
     ModifiedBy Userreference `json:"modifiedBy"`
 
 

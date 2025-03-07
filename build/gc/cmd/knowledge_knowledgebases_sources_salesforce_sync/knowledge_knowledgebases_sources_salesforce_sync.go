@@ -29,7 +29,16 @@ func init() {
 
 func Cmdknowledge_knowledgebases_sources_salesforce_sync() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync", utils.FormatPermissions([]string{ "knowledge:integrationSource:edit",  }), utils.GenerateDevCentreLink("POST", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync")))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/KnowledgeSyncRequest"
+      }
+    }
+  },
+  "required" : false
+}`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "Another synchronization is already running for this source",
@@ -61,6 +70,9 @@ var createCmd = &cobra.Command{
 
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
+			
+			reqModel := models.Interface{}
+			utils.Render(reqModel.String())
 			
 			return
 		}

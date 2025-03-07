@@ -41,6 +41,24 @@ type OneloginDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -86,6 +104,30 @@ type Onelogin struct {
     Certificates []string `json:"certificates"`
 
 
+    // LogoImageData
+    LogoImageData string `json:"logoImageData"`
+
+
+    // NameIdentifierFormat
+    NameIdentifierFormat string `json:"nameIdentifierFormat"`
+
+
+    // SsoBinding
+    SsoBinding string `json:"ssoBinding"`
+
+
+    // SignAuthnRequests
+    SignAuthnRequests bool `json:"signAuthnRequests"`
+
+
+    // ProviderName
+    ProviderName string `json:"providerName"`
+
+
+    // DisplayOnLogin
+    DisplayOnLogin bool `json:"displayOnLogin"`
+
+
     
 
 }
@@ -101,6 +143,12 @@ func (o *Onelogin) String() string {
     
     
      o.Certificates = []string{""} 
+    
+    
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -135,6 +183,18 @@ func (u *Onelogin) MarshalJSON() ([]byte, error) {
         Certificate string `json:"certificate"`
         
         Certificates []string `json:"certificates"`
+        
+        LogoImageData string `json:"logoImageData"`
+        
+        NameIdentifierFormat string `json:"nameIdentifierFormat"`
+        
+        SsoBinding string `json:"ssoBinding"`
+        
+        SignAuthnRequests bool `json:"signAuthnRequests"`
+        
+        ProviderName string `json:"providerName"`
+        
+        DisplayOnLogin bool `json:"displayOnLogin"`
         *Alias
     }{
 
@@ -167,6 +227,24 @@ func (u *Onelogin) MarshalJSON() ([]byte, error) {
 
         
         Certificates: []string{""},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
 

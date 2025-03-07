@@ -23,22 +23,22 @@ type BulknotesresponseDud struct {
 
 // Bulknotesresponse
 type Bulknotesresponse struct { 
-    // Results
-    Results []Bulkresponseresultnotenote `json:"results"`
+    // Results - A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.
+    Results []Bulkresponseresultnotenotebulkentityerrornote `json:"results"`
 
 
-    // ErrorCount
+    // ErrorCount - The number of failed operations in the results.
     ErrorCount int `json:"errorCount"`
 
 
-    // ErrorIndexes
+    // ErrorIndexes - The indexes of all failed operations in the results field.
     ErrorIndexes []int `json:"errorIndexes"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Bulknotesresponse) String() string {
-     o.Results = []Bulkresponseresultnotenote{{}} 
+     o.Results = []Bulkresponseresultnotenotebulkentityerrornote{{}} 
     
      o.ErrorIndexes = []int{0} 
 
@@ -58,7 +58,7 @@ func (u *Bulknotesresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Results []Bulkresponseresultnotenote `json:"results"`
+        Results []Bulkresponseresultnotenotebulkentityerrornote `json:"results"`
         
         ErrorCount int `json:"errorCount"`
         
@@ -67,7 +67,7 @@ func (u *Bulknotesresponse) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Results: []Bulkresponseresultnotenote{{}},
+        Results: []Bulkresponseresultnotenotebulkentityerrornote{{}},
         
 
 

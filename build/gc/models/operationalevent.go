@@ -41,6 +41,9 @@ type OperationaleventDud struct {
 
     
 
+
+    
+
 }
 
 // Operationalevent
@@ -51,6 +54,10 @@ type Operationalevent struct {
 
     // EntityId - The unique identifier for the entity
     EntityId string `json:"entityId"`
+
+
+    // EntityToken - A token representing the entity
+    EntityToken string `json:"entityToken"`
 
 
     // EntityName - The name for the entity
@@ -98,6 +105,7 @@ func (o *Operationalevent) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -119,6 +127,8 @@ func (u *Operationalevent) MarshalJSON() ([]byte, error) {
         
         EntityId string `json:"entityId"`
         
+        EntityToken string `json:"entityToken"`
+        
         EntityName string `json:"entityName"`
         
         PreviousValue string `json:"previousValue"`
@@ -136,6 +146,9 @@ func (u *Operationalevent) MarshalJSON() ([]byte, error) {
         EntityVersion string `json:"entityVersion"`
         *Alias
     }{
+
+        
+
 
         
 

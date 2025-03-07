@@ -23,7 +23,7 @@ type UserexpandsDud struct {
     ConversationSummary Userconversationsummary `json:"conversationSummary"`
 
 
-    OutOfOffice Outofoffice `json:"outOfOffice"`
+    OutOfOffice *Outofoffice `json:"outOfOffice"`
 
 
     Geolocation Geolocation `json:"geolocation"`

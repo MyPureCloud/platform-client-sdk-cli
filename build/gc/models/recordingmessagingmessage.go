@@ -65,6 +65,12 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Recordingmessagingmessage
@@ -137,8 +143,16 @@ type Recordingmessagingmessage struct {
     Cards []Card `json:"cards"`
 
 
+    // NotificationTemplate - Template notification content.
+    NotificationTemplate Recordingnotificationtemplate `json:"notificationTemplate"`
+
+
     // ContentType - Indicates the content type for this message
     ContentType string `json:"contentType"`
+
+
+    // Events - List of event elements
+    Events []Conversationmessageevent `json:"events"`
 
 }
 
@@ -162,6 +176,8 @@ func (o *Recordingmessagingmessage) String() string {
     
      o.Cards = []Card{{}} 
     
+    
+     o.Events = []Conversationmessageevent{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -213,7 +229,11 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         
         Cards []Card `json:"cards"`
         
+        NotificationTemplate Recordingnotificationtemplate `json:"notificationTemplate"`
+        
         ContentType string `json:"contentType"`
+        
+        Events []Conversationmessageevent `json:"events"`
         *Alias
     }{
 
@@ -276,6 +296,14 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+        Events: []Conversationmessageevent{{}},
         
 
         Alias: (*Alias)(u),

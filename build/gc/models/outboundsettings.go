@@ -30,6 +30,9 @@ type OutboundsettingsDud struct {
     
 
 
+    
+
+
     MaxConfigurableCallsPerAgent int `json:"maxConfigurableCallsPerAgent"`
 
 
@@ -75,6 +78,10 @@ type Outboundsettings struct {
     MaxCallsPerAgent int `json:"maxCallsPerAgent"`
 
 
+    // MaxCallsPerAgentDecimal - The maximum number of calls that can be placed per agent on any campaign with decimal precision
+    MaxCallsPerAgentDecimal float64 `json:"maxCallsPerAgentDecimal"`
+
+
     
 
 
@@ -112,6 +119,7 @@ func (o *Outboundsettings) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -135,6 +143,8 @@ func (u *Outboundsettings) MarshalJSON() ([]byte, error) {
         
         MaxCallsPerAgent int `json:"maxCallsPerAgent"`
         
+        MaxCallsPerAgentDecimal float64 `json:"maxCallsPerAgentDecimal"`
+        
         MaxLineUtilization float64 `json:"maxLineUtilization"`
         
         AbandonSeconds float64 `json:"abandonSeconds"`
@@ -146,6 +156,9 @@ func (u *Outboundsettings) MarshalJSON() ([]byte, error) {
         RescheduleTimeZoneSkippedContacts bool `json:"rescheduleTimeZoneSkippedContacts"`
         *Alias
     }{
+
+        
+
 
         
 

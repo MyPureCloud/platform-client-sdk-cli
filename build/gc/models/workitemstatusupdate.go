@@ -28,6 +28,9 @@ type WorkitemstatusupdateDud struct {
 
     
 
+
+    
+
 }
 
 // Workitemstatusupdate
@@ -55,12 +58,17 @@ type Workitemstatusupdate struct {
     // StatusTransitionTime - Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS
     StatusTransitionTime string `json:"statusTransitionTime"`
 
+
+    // AutoTerminateWorkitem - Terminate workitem on selection of status. Applicable only for statuses in the Closed category.
+    AutoTerminateWorkitem bool `json:"autoTerminateWorkitem"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Workitemstatusupdate) String() string {
     
      o.DestinationStatusIds = []string{""} 
+    
     
     
     
@@ -93,6 +101,8 @@ func (u *Workitemstatusupdate) MarshalJSON() ([]byte, error) {
         StatusTransitionDelaySeconds int `json:"statusTransitionDelaySeconds"`
         
         StatusTransitionTime string `json:"statusTransitionTime"`
+        
+        AutoTerminateWorkitem bool `json:"autoTerminateWorkitem"`
         *Alias
     }{
 
@@ -101,6 +111,9 @@ func (u *Workitemstatusupdate) MarshalJSON() ([]byte, error) {
 
         
         DestinationStatusIds: []string{""},
+        
+
+
         
 
 

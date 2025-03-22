@@ -55,6 +55,7 @@ func Cmdconversations_recordings() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "formatId", "WEBM", "The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE")
 	utils.AddFlag(listCmd.Flags(), "[]string", "mediaFormats", "", "All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.")
 	utils.AddFlag(listCmd.Flags(), "string", "locale", "", "The locale used for redacting sensitive information in requested files, as an ISO 639-1 code")
+	utils.AddFlag(listCmd.Flags(), "bool", "includePauseAnnotationsForScreenRecordings", "false", "Include applicable Secure Pause annotations from all audio recordings to all screen recordings")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -241,6 +242,10 @@ var listCmd = &cobra.Command{
 		locale := utils.GetFlag(cmd.Flags(), "string", "locale")
 		if locale != "" {
 			queryParams["locale"] = locale
+		}
+		includePauseAnnotationsForScreenRecordings := utils.GetFlag(cmd.Flags(), "bool", "includePauseAnnotationsForScreenRecordings")
+		if includePauseAnnotationsForScreenRecordings != "" {
+			queryParams["includePauseAnnotationsForScreenRecordings"] = includePauseAnnotationsForScreenRecordings
 		}
 		urlString := path
 		if len(queryParams) > 0 {

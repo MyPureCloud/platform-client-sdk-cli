@@ -40,12 +40,19 @@ type DocumentbodytablepropertiesDud struct {
 
     
 
+
+    
+
 }
 
 // Documentbodytableproperties
 type Documentbodytableproperties struct { 
     // Width - The width of the table converted to em unit.
     Width float32 `json:"width"`
+
+
+    // WidthWithUnit - The width of the table in the specified unit.
+    WidthWithUnit Documentelementlength `json:"widthWithUnit"`
 
 
     // Height - The height for the table.
@@ -97,6 +104,7 @@ func (o *Documentbodytableproperties) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -115,6 +123,8 @@ func (u *Documentbodytableproperties) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Width float32 `json:"width"`
+        
+        WidthWithUnit Documentelementlength `json:"widthWithUnit"`
         
         Height float32 `json:"height"`
         
@@ -135,6 +145,9 @@ func (u *Documentbodytableproperties) MarshalJSON() ([]byte, error) {
         Caption Documentbodytablecaptionblock `json:"caption"`
         *Alias
     }{
+
+        
+
 
         
 

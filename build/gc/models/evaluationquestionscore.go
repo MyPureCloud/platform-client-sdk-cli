@@ -34,6 +34,9 @@ type EvaluationquestionscoreDud struct {
 
     
 
+
+    AiAnswer Aianswer `json:"aiAnswer"`
+
 }
 
 // Evaluationquestionscore
@@ -68,6 +71,9 @@ type Evaluationquestionscore struct {
 
     // Comments - Comments from the evaluator specific to this question
     Comments string `json:"comments"`
+
+
+    
 
 }
 
@@ -115,6 +121,9 @@ func (u *Evaluationquestionscore) MarshalJSON() ([]byte, error) {
         Comments string `json:"comments"`
         *Alias
     }{
+
+        
+
 
         
 

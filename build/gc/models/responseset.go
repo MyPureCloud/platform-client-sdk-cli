@@ -36,6 +36,9 @@ type ResponsesetDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -71,6 +74,10 @@ type Responseset struct {
     AmdSpeechDistinguishEnabled bool `json:"amdSpeechDistinguishEnabled"`
 
 
+    // LiveSpeakerDetectionMode - Setting level of live speaker detection based on ringbacks
+    LiveSpeakerDetectionMode string `json:"liveSpeakerDetectionMode"`
+
+
     
 
 }
@@ -80,6 +87,7 @@ func (o *Responseset) String() string {
     
     
      o.Responses = map[string]Reaction{"": {}} 
+    
     
     
 
@@ -108,6 +116,8 @@ func (u *Responseset) MarshalJSON() ([]byte, error) {
         BeepDetectionEnabled bool `json:"beepDetectionEnabled"`
         
         AmdSpeechDistinguishEnabled bool `json:"amdSpeechDistinguishEnabled"`
+        
+        LiveSpeakerDetectionMode string `json:"liveSpeakerDetectionMode"`
         *Alias
     }{
 
@@ -128,6 +138,9 @@ func (u *Responseset) MarshalJSON() ([]byte, error) {
 
         
         Responses: map[string]Reaction{"": {}},
+        
+
+
         
 
 

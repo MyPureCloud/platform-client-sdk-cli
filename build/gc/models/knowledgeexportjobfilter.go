@@ -16,6 +16,9 @@ type KnowledgeexportjobfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgeexportjobfilter
@@ -27,12 +30,17 @@ type Knowledgeexportjobfilter struct {
     // VersionFilter - Specifies what version should be exported.
     VersionFilter string `json:"versionFilter"`
 
+
+    // Exclude - Reduce the size of the export file by excluding certain items.
+    Exclude []string `json:"exclude"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgeexportjobfilter) String() string {
     
     
+     o.Exclude = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,12 +61,19 @@ func (u *Knowledgeexportjobfilter) MarshalJSON() ([]byte, error) {
         DocumentsFilter Knowledgeexportjobdocumentsfilter `json:"documentsFilter"`
         
         VersionFilter string `json:"versionFilter"`
+        
+        Exclude []string `json:"exclude"`
         *Alias
     }{
 
         
 
 
+        
+
+
+        
+        Exclude: []string{""},
         
 
         Alias: (*Alias)(u),

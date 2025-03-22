@@ -72,9 +72,6 @@ type ExternalorganizationDud struct {
     
 
 
-    
-
-
     ExternalDataSources []Externaldatasource `json:"externalDataSources"`
 
 
@@ -102,10 +99,6 @@ type Externalorganization struct {
 
     // Industry
     Industry string `json:"industry"`
-
-
-    // PrimaryContactId
-    PrimaryContactId string `json:"primaryContactId"`
 
 
     // Address
@@ -187,7 +180,6 @@ func (o *Externalorganization) String() string {
     
     
     
-    
      o.Tags = []string{""} 
      o.Websites = []string{""} 
      o.Tickers = []Ticker{{}} 
@@ -225,8 +217,6 @@ func (u *Externalorganization) MarshalJSON() ([]byte, error) {
         
         Industry string `json:"industry"`
         
-        PrimaryContactId string `json:"primaryContactId"`
-        
         Address Contactaddress `json:"address"`
         
         PhoneNumber Phonenumber `json:"phoneNumber"`
@@ -258,9 +248,6 @@ func (u *Externalorganization) MarshalJSON() ([]byte, error) {
         CustomFields map[string]interface{} `json:"customFields"`
         *Alias
     }{
-
-        
-
 
         
 

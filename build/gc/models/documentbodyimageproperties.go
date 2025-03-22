@@ -19,6 +19,15 @@ type DocumentbodyimagepropertiesDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Documentbodyimageproperties
@@ -34,10 +43,25 @@ type Documentbodyimageproperties struct {
     // Indentation - The indentation property for the image. The valid values in 'em'.
     Indentation float32 `json:"indentation"`
 
+
+    // Width - The width of the image converted to em unit.
+    Width float32 `json:"width"`
+
+
+    // WidthWithUnit - The width of the image in the specified unit.
+    WidthWithUnit Documentelementlength `json:"widthWithUnit"`
+
+
+    // AltText - Alternate text for the image for accessibility and when the image can't be loaded.
+    AltText string `json:"altText"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Documentbodyimageproperties) String() string {
+    
+    
+    
     
     
     
@@ -63,8 +87,23 @@ func (u *Documentbodyimageproperties) MarshalJSON() ([]byte, error) {
         Align string `json:"align"`
         
         Indentation float32 `json:"indentation"`
+        
+        Width float32 `json:"width"`
+        
+        WidthWithUnit Documentelementlength `json:"widthWithUnit"`
+        
+        AltText string `json:"altText"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

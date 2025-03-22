@@ -17,14 +17,14 @@ type AnalyticsagentstatecountsresponseDud struct {
 
 // Analyticsagentstatecountsresponse
 type Analyticsagentstatecountsresponse struct { 
-    // Counts - List of count by segment types
-    Counts []Agentstatesegmenttypecount `json:"counts"`
+    // SegmentCounts - List of count by segment types
+    SegmentCounts []Agentstatesegmenttypecount `json:"segmentCounts"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Analyticsagentstatecountsresponse) String() string {
-     o.Counts = []Agentstatesegmenttypecount{{}} 
+     o.SegmentCounts = []Agentstatesegmenttypecount{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -42,12 +42,12 @@ func (u *Analyticsagentstatecountsresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Counts []Agentstatesegmenttypecount `json:"counts"`
+        SegmentCounts []Agentstatesegmenttypecount `json:"segmentCounts"`
         *Alias
     }{
 
         
-        Counts: []Agentstatesegmenttypecount{{}},
+        SegmentCounts: []Agentstatesegmenttypecount{{}},
         
 
         Alias: (*Alias)(u),

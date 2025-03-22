@@ -75,7 +75,7 @@ type Conversationsummary struct {
 
 
     // EditedSummary - The edited summary of the conversation.
-    EditedSummary Conversationeditedsummary `json:"editedSummary"`
+    EditedSummary Conversationeditedinput `json:"editedSummary"`
 
 
     // Reason - The reason of the conversation summary.
@@ -145,7 +145,7 @@ func (u *Conversationsummary) MarshalJSON() ([]byte, error) {
         
         PredictedWrapupCodes []Conversationsummarywrapupcode `json:"predictedWrapupCodes"`
         
-        EditedSummary Conversationeditedsummary `json:"editedSummary"`
+        EditedSummary Conversationeditedinput `json:"editedSummary"`
         
         Reason Conversationsummaryreason `json:"reason"`
         

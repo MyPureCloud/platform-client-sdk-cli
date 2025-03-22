@@ -13,6 +13,12 @@ var (
 type SchedulingoptionsrequestDud struct { 
     
 
+
+    
+
+
+    
+
 }
 
 // Schedulingoptionsrequest
@@ -20,10 +26,20 @@ type Schedulingoptionsrequest struct {
     // NoForecastOptions - Schedule generation options to apply if no forecast is supplied
     NoForecastOptions Schedulingnoforecastoptionsrequest `json:"noForecastOptions"`
 
+
+    // ActivitySmoothingType - Overrides the default BU level activity smoothing type for this schedule generation
+    ActivitySmoothingType string `json:"activitySmoothingType"`
+
+
+    // InduceScheduleVariability - Overrides the default BU level induce schedule variability setting for this schedule generation
+    InduceScheduleVariability bool `json:"induceScheduleVariability"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Schedulingoptionsrequest) String() string {
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +59,18 @@ func (u *Schedulingoptionsrequest) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         NoForecastOptions Schedulingnoforecastoptionsrequest `json:"noForecastOptions"`
+        
+        ActivitySmoothingType string `json:"activitySmoothingType"`
+        
+        InduceScheduleVariability bool `json:"induceScheduleVariability"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

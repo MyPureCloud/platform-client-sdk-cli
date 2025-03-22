@@ -260,6 +260,9 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticssession
@@ -350,6 +353,10 @@ type Analyticssession struct {
 
     // CobrowseRoomId - A unique identifier for a Genesys Cloud cobrowse room
     CobrowseRoomId string `json:"cobrowseRoomId"`
+
+
+    // DeliveryPushed - Flag that indicates that the push delivery mechanism was used
+    DeliveryPushed bool `json:"deliveryPushed"`
 
 
     // DeliveryStatus - The email or SMS delivery status
@@ -623,6 +630,7 @@ func (o *Analyticssession) String() string {
     
     
     
+    
      o.DestinationAddresses = []string{""} 
     
     
@@ -742,6 +750,8 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         CobrowseRole string `json:"cobrowseRole"`
         
         CobrowseRoomId string `json:"cobrowseRoomId"`
+        
+        DeliveryPushed bool `json:"deliveryPushed"`
         
         DeliveryStatus string `json:"deliveryStatus"`
         
@@ -926,6 +936,9 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
         
         Cc: []string{""},
+        
+
+
         
 
 

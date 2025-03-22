@@ -46,6 +46,9 @@ type DocumentbodytablecellblockpropertiesDud struct {
 
     
 
+
+    
+
 }
 
 // Documentbodytablecellblockproperties
@@ -56,6 +59,10 @@ type Documentbodytablecellblockproperties struct {
 
     // Width - The width of the table cell converted to em unit.
     Width float32 `json:"width"`
+
+
+    // WidthWithUnit - The width of the table cell in the specified unit.
+    WidthWithUnit Documentelementlength `json:"widthWithUnit"`
 
 
     // Height - The height for the table cell.
@@ -113,6 +120,7 @@ func (o *Documentbodytablecellblockproperties) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -133,6 +141,8 @@ func (u *Documentbodytablecellblockproperties) MarshalJSON() ([]byte, error) {
         CellType string `json:"cellType"`
         
         Width float32 `json:"width"`
+        
+        WidthWithUnit Documentelementlength `json:"widthWithUnit"`
         
         Height float32 `json:"height"`
         
@@ -155,6 +165,9 @@ func (u *Documentbodytablecellblockproperties) MarshalJSON() ([]byte, error) {
         RowSpan int `json:"rowSpan"`
         *Alias
     }{
+
+        
+
 
         
 

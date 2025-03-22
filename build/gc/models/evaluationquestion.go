@@ -14,6 +14,9 @@ type EvaluationquestionDud struct {
     
 
 
+    ContextId string `json:"contextId"`
+
+
     
 
 
@@ -46,6 +49,9 @@ type EvaluationquestionDud struct {
 type Evaluationquestion struct { 
     // Id
     Id string `json:"id"`
+
+
+    
 
 
     // Text
@@ -135,6 +141,9 @@ func (u *Evaluationquestion) MarshalJSON() ([]byte, error) {
         IsCritical bool `json:"isCritical"`
         *Alias
     }{
+
+        
+
 
         
 

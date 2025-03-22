@@ -26,7 +26,7 @@ type ConsulttransfertoqueueDud struct {
 
 // Consulttransfertoqueue
 type Consulttransfertoqueue struct { 
-    // SpeakTo - Determines to whom the initiating participant is speaking. Defaults to DESTINATION
+    // SpeakTo - Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
     SpeakTo string `json:"speakTo"`
 
 

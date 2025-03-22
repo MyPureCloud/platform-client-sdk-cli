@@ -105,6 +105,9 @@ type EvaluationresponseDud struct {
     EvaluationSource Evaluationsource `json:"evaluationSource"`
 
 
+    AiScoring Aiscoring `json:"aiScoring"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -228,6 +231,9 @@ type Evaluationresponse struct {
 
     // HasAssistanceFailed - Is true when evaluation assistance didn't execute successfully
     HasAssistanceFailed bool `json:"hasAssistanceFailed"`
+
+
+    
 
 
     
@@ -433,6 +439,9 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
 
         
         AuthorizedActions: []string{""},
+        
+
+
         
 
 

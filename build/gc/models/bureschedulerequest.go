@@ -38,6 +38,12 @@ type BureschedulerequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Bureschedulerequest
@@ -77,6 +83,14 @@ type Bureschedulerequest struct {
     // DoNotChangeManuallyEditedShifts - Instructs the scheduler whether it is allowed to change manually edited shifts
     DoNotChangeManuallyEditedShifts bool `json:"doNotChangeManuallyEditedShifts"`
 
+
+    // ActivitySmoothingType - Overrides the default BU level activity smoothing type for this reschedule run
+    ActivitySmoothingType string `json:"activitySmoothingType"`
+
+
+    // InduceScheduleVariability - Overrides the default BU level induce schedule variability setting for this reschedule run
+    InduceScheduleVariability bool `json:"induceScheduleVariability"`
+
 }
 
 // String returns a JSON representation of the model
@@ -86,6 +100,8 @@ func (o *Bureschedulerequest) String() string {
      o.AgentIds = []string{""} 
      o.ActivityCodeIds = []string{""} 
      o.ManagementUnitIds = []string{""} 
+    
+    
     
     
     
@@ -124,6 +140,10 @@ func (u *Bureschedulerequest) MarshalJSON() ([]byte, error) {
         DoNotChangeShiftStartTimes bool `json:"doNotChangeShiftStartTimes"`
         
         DoNotChangeManuallyEditedShifts bool `json:"doNotChangeManuallyEditedShifts"`
+        
+        ActivitySmoothingType string `json:"activitySmoothingType"`
+        
+        InduceScheduleVariability bool `json:"induceScheduleVariability"`
         *Alias
     }{
 
@@ -145,6 +165,12 @@ func (u *Bureschedulerequest) MarshalJSON() ([]byte, error) {
 
         
         ManagementUnitIds: []string{""},
+        
+
+
+        
+
+
         
 
 

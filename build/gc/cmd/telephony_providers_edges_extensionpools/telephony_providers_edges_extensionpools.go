@@ -81,6 +81,7 @@ func Cmdtelephony_providers_edges_extensionpools() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "number", "", "Deprecated, filtering by number not supported")
+	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "List of divisionIds on which to filter.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/telephony/providers/edges/extensionpools", utils.FormatPermissions([]string{ "telephony:extensionPool:view",  }), utils.GenerateDevCentreLink("GET", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/extensionpools")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -358,6 +359,10 @@ var listCmd = &cobra.Command{
 		number := utils.GetFlag(cmd.Flags(), "string", "number")
 		if number != "" {
 			queryParams["number"] = number
+		}
+		divisionId := utils.GetFlag(cmd.Flags(), "[]string", "divisionId")
+		if divisionId != "" {
+			queryParams["divisionId"] = divisionId
 		}
 		urlString := path
 		if len(queryParams) > 0 {

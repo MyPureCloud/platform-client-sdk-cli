@@ -41,7 +41,7 @@ type Managementunitsettingsresponse struct {
 
 
     // TimeOff - Time off request settings for this management unit
-    TimeOff Timeoffrequestsettings `json:"timeOff"`
+    TimeOff Timeoffsettingsresponse `json:"timeOff"`
 
 
     // Scheduling - Scheduling settings for this management unit. These settings are only available if you have the permission wfm:managementUnit:view
@@ -86,7 +86,7 @@ func (u *Managementunitsettingsresponse) MarshalJSON() ([]byte, error) {
         
         ShortTermForecasting Shorttermforecastingsettings `json:"shortTermForecasting"`
         
-        TimeOff Timeoffrequestsettings `json:"timeOff"`
+        TimeOff Timeoffsettingsresponse `json:"timeOff"`
         
         Scheduling Schedulingsettingsresponse `json:"scheduling"`
         

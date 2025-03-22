@@ -682,6 +682,12 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1581,6 +1587,14 @@ type Viewfilter struct {
     // SegmentTypes - A list of filtered segment types
     SegmentTypes []string `json:"segmentTypes"`
 
+
+    // ProgramIds - A list of program ids for filtering
+    ProgramIds []string `json:"programIds"`
+
+
+    // CategoryIds - A list of category ids for filtering
+    CategoryIds []string `json:"categoryIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1809,6 +1823,8 @@ func (o *Viewfilter) String() string {
      o.TimelineCategories = []string{""} 
     
      o.SegmentTypes = []string{""} 
+     o.ProgramIds = []string{""} 
+     o.CategoryIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2273,6 +2289,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         Acw bool `json:"acw"`
         
         SegmentTypes []string `json:"segmentTypes"`
+        
+        ProgramIds []string `json:"programIds"`
+        
+        CategoryIds []string `json:"categoryIds"`
         *Alias
     }{
 
@@ -3251,6 +3271,16 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         SegmentTypes: []string{""},
+        
+
+
+        
+        ProgramIds: []string{""},
+        
+
+
+        
+        CategoryIds: []string{""},
         
 
         Alias: (*Alias)(u),

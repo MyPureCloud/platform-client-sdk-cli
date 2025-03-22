@@ -39,6 +39,9 @@ type EvaluationformresponseDud struct {
     
 
 
+    AiScoring Aiscoringsettings `json:"aiScoring"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -78,6 +81,9 @@ type Evaluationformresponse struct {
 
     // PublishedVersions - A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the 'expand=publishHistory' query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable).
     PublishedVersions Domainentitylistingevaluationform `json:"publishedVersions"`
+
+
+    
 
 
     
@@ -146,6 +152,9 @@ func (u *Evaluationformresponse) MarshalJSON() ([]byte, error) {
 
         
         QuestionGroups: []Evaluationquestiongroup{{}},
+        
+
+
         
 
 

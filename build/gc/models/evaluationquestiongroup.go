@@ -14,6 +14,9 @@ type EvaluationquestiongroupDud struct {
     
 
 
+    ContextId string `json:"contextId"`
+
+
     
 
 
@@ -46,6 +49,9 @@ type EvaluationquestiongroupDud struct {
 type Evaluationquestiongroup struct { 
     // Id
     Id string `json:"id"`
+
+
+    
 
 
     // Name
@@ -135,6 +141,9 @@ func (u *Evaluationquestiongroup) MarshalJSON() ([]byte, error) {
         VisibilityCondition Visibilitycondition `json:"visibilityCondition"`
         *Alias
     }{
+
+        
+
 
         
 

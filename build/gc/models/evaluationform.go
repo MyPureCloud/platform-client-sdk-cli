@@ -36,6 +36,9 @@ type EvaluationformDud struct {
     
 
 
+    AiScoring Aiscoringsettings `json:"aiScoring"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -71,6 +74,9 @@ type Evaluationform struct {
 
     // EvaluationSettings - Settings for evaluations associated with this form
     EvaluationSettings Evaluationsettings `json:"evaluationSettings"`
+
+
+    
 
 
     
@@ -136,6 +142,9 @@ func (u *Evaluationform) MarshalJSON() ([]byte, error) {
 
         
         QuestionGroups: []Evaluationquestiongroup{{}},
+        
+
+
         
 
 

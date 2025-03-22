@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdgdpr_subjects() *cobra.Command { 
-	utils.AddFlag(listCmd.Flags(), "string", "searchType", "", "Search Type - REQUIRED Valid values: NAME, ADDRESS, PHONE, EMAIL, TWITTER")
+	utils.AddFlag(listCmd.Flags(), "string", "searchType", "", "Search Type - REQUIRED Valid values: NAME, ADDRESS, PHONE, EMAIL, TWITTER, FACEBOOK")
 	utils.AddFlag(listCmd.Flags(), "string", "searchValue", "", "Search Value - REQUIRED")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/gdpr/subjects", utils.FormatPermissions([]string{ "gdpr:subject:view",  }), utils.GenerateDevCentreLink("GET", "General Data Protection Regulation", "/api/v2/gdpr/subjects")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)

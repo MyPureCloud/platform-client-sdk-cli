@@ -30,15 +30,15 @@ type Destination struct {
     Address string `json:"address"`
 
 
-    // Name
+    // Name - The name of the internal user.
     Name string `json:"name"`
 
 
-    // UserId
+    // UserId - The user ID.
     UserId string `json:"userId"`
 
 
-    // QueueId
+    // QueueId - The queue ID.
     QueueId string `json:"queueId"`
 
 }

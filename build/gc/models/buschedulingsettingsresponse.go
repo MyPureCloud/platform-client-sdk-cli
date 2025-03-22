@@ -22,6 +22,12 @@ type BuschedulingsettingsresponseDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Buschedulingsettingsresponse
@@ -41,12 +47,22 @@ type Buschedulingsettingsresponse struct {
     // AllowWorkPlanPerMinuteGranularity - Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
     AllowWorkPlanPerMinuteGranularity bool `json:"allowWorkPlanPerMinuteGranularity"`
 
+
+    // ActivitySmoothingType - The activity smoothing type for schedule generation in this business unit
+    ActivitySmoothingType string `json:"activitySmoothingType"`
+
+
+    // InduceScheduleVariability - Indicates whether to provide variability in schedule generation
+    InduceScheduleVariability bool `json:"induceScheduleVariability"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Buschedulingsettingsresponse) String() string {
      o.MessageSeverities = []Schedulermessagetypeseverity{{}} 
      o.SyncTimeOffProperties = []string{""} 
+    
+    
     
     
 
@@ -73,6 +89,10 @@ func (u *Buschedulingsettingsresponse) MarshalJSON() ([]byte, error) {
         ServiceGoalImpact Wfmservicegoalimpactsettings `json:"serviceGoalImpact"`
         
         AllowWorkPlanPerMinuteGranularity bool `json:"allowWorkPlanPerMinuteGranularity"`
+        
+        ActivitySmoothingType string `json:"activitySmoothingType"`
+        
+        InduceScheduleVariability bool `json:"induceScheduleVariability"`
         *Alias
     }{
 
@@ -83,6 +103,12 @@ func (u *Buschedulingsettingsresponse) MarshalJSON() ([]byte, error) {
 
         
         SyncTimeOffProperties: []string{""},
+        
+
+
+        
+
+
         
 
 

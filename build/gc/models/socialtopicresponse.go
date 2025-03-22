@@ -70,8 +70,8 @@ type Socialtopicresponse struct {
     Status string `json:"status"`
 
 
-    // DataIngestionRules - The data ingestion rules that apply to the social topic.
-    DataIngestionRules Dataingestionrules `json:"dataIngestionRules"`
+    // DataIngestionRulesMetadata - The data ingestion rule metadata.
+    DataIngestionRulesMetadata []Dataingestionrulesmetadata `json:"dataIngestionRulesMetadata"`
 
 
     
@@ -87,7 +87,7 @@ func (o *Socialtopicresponse) String() string {
     
     
     
-    
+     o.DataIngestionRulesMetadata = []Dataingestionrulesmetadata{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -119,7 +119,7 @@ func (u *Socialtopicresponse) MarshalJSON() ([]byte, error) {
         
         Status string `json:"status"`
         
-        DataIngestionRules Dataingestionrules `json:"dataIngestionRules"`
+        DataIngestionRulesMetadata []Dataingestionrulesmetadata `json:"dataIngestionRulesMetadata"`
         *Alias
     }{
 
@@ -144,6 +144,8 @@ func (u *Socialtopicresponse) MarshalJSON() ([]byte, error) {
         
 
 
+        
+        DataIngestionRulesMetadata: []Dataingestionrulesmetadata{{}},
         
 
 

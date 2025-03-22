@@ -23,7 +23,7 @@ type ConsulttransferDud struct {
 
 // Consulttransfer
 type Consulttransfer struct { 
-    // SpeakTo - Determines to whom the initiating participant is speaking. Defaults to DESTINATION
+    // SpeakTo - Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
     SpeakTo string `json:"speakTo"`
 
 
@@ -31,7 +31,7 @@ type Consulttransfer struct {
     ConsultingUserId string `json:"consultingUserId"`
 
 
-    // Destination - Destination phone number and name.
+    // Destination - Destination. Specify one and only one parameter from the list below.
     Destination Destination `json:"destination"`
 
 }

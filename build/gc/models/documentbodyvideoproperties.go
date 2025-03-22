@@ -19,6 +19,12 @@ type DocumentbodyvideopropertiesDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Documentbodyvideoproperties
@@ -34,10 +40,20 @@ type Documentbodyvideoproperties struct {
     // Indentation - The indentation for the video. The valid values in 'em'.
     Indentation float32 `json:"indentation"`
 
+
+    // Width - The width of the video in the specified unit.
+    Width Documentelementlength `json:"width"`
+
+
+    // Height - The height of the video in the specified unit.
+    Height Documentelementlength `json:"height"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Documentbodyvideoproperties) String() string {
+    
+    
     
     
     
@@ -63,8 +79,18 @@ func (u *Documentbodyvideoproperties) MarshalJSON() ([]byte, error) {
         Align string `json:"align"`
         
         Indentation float32 `json:"indentation"`
+        
+        Width Documentelementlength `json:"width"`
+        
+        Height Documentelementlength `json:"height"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

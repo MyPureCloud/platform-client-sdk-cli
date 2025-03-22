@@ -40,6 +40,9 @@ type ScriptentitylistingDud struct {
 
     
 
+
+    
+
 }
 
 // Scriptentitylisting
@@ -58,6 +61,10 @@ type Scriptentitylisting struct {
 
     // Total
     Total int `json:"total"`
+
+
+    // TruncatedDivisions
+    TruncatedDivisions bool `json:"truncatedDivisions"`
 
 
     // FirstUri
@@ -97,6 +104,7 @@ func (o *Scriptentitylisting) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -122,6 +130,8 @@ func (u *Scriptentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
+        TruncatedDivisions bool `json:"truncatedDivisions"`
+        
         FirstUri string `json:"firstUri"`
         
         LastUri string `json:"lastUri"`
@@ -138,6 +148,9 @@ func (u *Scriptentitylisting) MarshalJSON() ([]byte, error) {
 
         
         Entities: []Script{{}},
+        
+
+
         
 
 

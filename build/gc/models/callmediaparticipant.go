@@ -170,6 +170,9 @@ type CallmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Callmediaparticipant
@@ -276,6 +279,10 @@ type Callmediaparticipant struct {
 
     // ExternalContact - If this participant represents an external contact, then this will be the reference for the external contact.
     ExternalContact Domainentityref `json:"externalContact"`
+
+
+    // ExternalContactInitialDivisionId - If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.
+    ExternalContactInitialDivisionId string `json:"externalContactInitialDivisionId"`
 
 
     // ExternalOrganization - If this participant represents an external org, then this will be the reference for the external org.
@@ -442,6 +449,7 @@ func (o *Callmediaparticipant) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -510,6 +518,8 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
         Provider string `json:"provider"`
         
         ExternalContact Domainentityref `json:"externalContact"`
+        
+        ExternalContactInitialDivisionId string `json:"externalContactInitialDivisionId"`
         
         ExternalOrganization Domainentityref `json:"externalOrganization"`
         
@@ -625,6 +635,9 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

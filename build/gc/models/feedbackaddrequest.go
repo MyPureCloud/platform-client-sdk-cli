@@ -20,12 +20,12 @@ type FeedbackaddrequestDud struct {
 
 // Feedbackaddrequest
 type Feedbackaddrequest struct { 
-    // Summary - Agent's summary for the conversation
-    Summary string `json:"summary"`
-
-
     // Rating - Agent’s rating for the system-generated summary.
     Rating string `json:"rating"`
+
+
+    // Summary - Agent's summary for the conversation
+    Summary string `json:"summary"`
 
 }
 
@@ -50,9 +50,9 @@ func (u *Feedbackaddrequest) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Summary string `json:"summary"`
-        
         Rating string `json:"rating"`
+        
+        Summary string `json:"summary"`
         *Alias
     }{
 

@@ -38,6 +38,9 @@ type CallconversationDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -67,6 +70,10 @@ type Callconversation struct {
     UtilizationLabelId string `json:"utilizationLabelId"`
 
 
+    // Divisions - Identifiers of divisions associated with this conversation.
+    Divisions []Conversationdivisionmembership `json:"divisions"`
+
+
     // RecordingState
     RecordingState string `json:"recordingState"`
 
@@ -90,6 +97,7 @@ func (o *Callconversation) String() string {
      o.OtherMediaUris = []string{""} 
      o.RecentTransfers = []Transferresponse{{}} 
     
+     o.Divisions = []Conversationdivisionmembership{{}} 
     
     
     
@@ -120,6 +128,8 @@ func (u *Callconversation) MarshalJSON() ([]byte, error) {
         
         UtilizationLabelId string `json:"utilizationLabelId"`
         
+        Divisions []Conversationdivisionmembership `json:"divisions"`
+        
         RecordingState string `json:"recordingState"`
         
         MaxParticipants int `json:"maxParticipants"`
@@ -149,6 +159,11 @@ func (u *Callconversation) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Divisions: []Conversationdivisionmembership{{}},
         
 
 

@@ -19,6 +19,9 @@ type ConversationinsightDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationinsight
@@ -34,10 +37,15 @@ type Conversationinsight struct {
     // Description - Reasoning for the given insight
     Description string `json:"description"`
 
+
+    // Outcome - The outcome of a given resolution insight
+    Outcome string `json:"outcome"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationinsight) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Conversationinsight) MarshalJSON() ([]byte, error) {
         Title string `json:"title"`
         
         Description string `json:"description"`
+        
+        Outcome string `json:"outcome"`
         *Alias
     }{
+
+        
+
 
         
 

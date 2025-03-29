@@ -26,6 +26,12 @@ type WebmessagingmessageDud struct {
     
 
 
+    Status string `json:"status"`
+
+
+    Reasons []Reason `json:"reasons"`
+
+
     
 
 
@@ -59,6 +65,12 @@ type Webmessagingmessage struct {
 
     // Content - List of content elements.
     Content []Webmessagingcontent `json:"content"`
+
+
+    
+
+
+    
 
 
     // Events - List of event elements.
@@ -140,6 +152,12 @@ func (u *Webmessagingmessage) MarshalJSON() ([]byte, error) {
 
         
         Content: []Webmessagingcontent{{}},
+        
+
+
+        
+
+
         
 
 

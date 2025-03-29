@@ -70,8 +70,8 @@ func queryEscape(value string) string {
 
 var conversationmetadataCmd = &cobra.Command{
 	Use:   "conversationmetadata [conversationId]",
-	Short: "Get recording metadata for a conversation. Does not return playable media. Annotations won`t be included in the response if either recording:recording:view or recording:annotation:view permission is missing.",
-	Long:  "Get recording metadata for a conversation. Does not return playable media. Annotations won`t be included in the response if either recording:recording:view or recording:annotation:view permission is missing.",
+	Short: "Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.",
+	Long:  "Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.",
 	Args:  utils.DetermineArgs([]string{ "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

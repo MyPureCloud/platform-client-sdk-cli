@@ -29,6 +29,9 @@ type EmailconversationDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -58,6 +61,10 @@ type Emailconversation struct {
     UtilizationLabelId string `json:"utilizationLabelId"`
 
 
+    // Divisions - Identifiers of divisions associated with this conversation.
+    Divisions []Conversationdivisionmembership `json:"divisions"`
+
+
     
 
 }
@@ -69,6 +76,7 @@ func (o *Emailconversation) String() string {
      o.OtherMediaUris = []string{""} 
      o.RecentTransfers = []Transferresponse{{}} 
     
+     o.Divisions = []Conversationdivisionmembership{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -95,6 +103,8 @@ func (u *Emailconversation) MarshalJSON() ([]byte, error) {
         RecentTransfers []Transferresponse `json:"recentTransfers"`
         
         UtilizationLabelId string `json:"utilizationLabelId"`
+        
+        Divisions []Conversationdivisionmembership `json:"divisions"`
         *Alias
     }{
 
@@ -119,6 +129,11 @@ func (u *Emailconversation) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Divisions: []Conversationdivisionmembership{{}},
         
 
 

@@ -110,6 +110,9 @@ type CallbasicDud struct {
 
     
 
+
+    
+
 }
 
 // Callbasic
@@ -136,6 +139,10 @@ type Callbasic struct {
 
     // RecordingState - State of recording on this call.
     RecordingState string `json:"recordingState"`
+
+
+    // RecordersState - Contains the states of different recorders.
+    RecordersState Recordersstate `json:"recordersState"`
 
 
     // Muted - True if this call is muted so that remote participants can't hear any audio from this end.
@@ -260,6 +267,7 @@ func (o *Callbasic) String() string {
     
     
     
+    
      o.Segments = []Segment{{}} 
     
     
@@ -310,6 +318,8 @@ func (u *Callbasic) MarshalJSON() ([]byte, error) {
         Recording bool `json:"recording"`
         
         RecordingState string `json:"recordingState"`
+        
+        RecordersState Recordersstate `json:"recordersState"`
         
         Muted bool `json:"muted"`
         
@@ -366,6 +376,9 @@ func (u *Callbasic) MarshalJSON() ([]byte, error) {
         Disposition Disposition `json:"disposition"`
         *Alias
     }{
+
+        
+
 
         
 

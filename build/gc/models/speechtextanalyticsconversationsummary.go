@@ -29,12 +29,19 @@ type SpeechtextanalyticsconversationsummaryDud struct {
 
     
 
+
+    
+
 }
 
 // Speechtextanalyticsconversationsummary
 type Speechtextanalyticsconversationsummary struct { 
     // SummaryType - The type of summary
     SummaryType string `json:"summaryType"`
+
+
+    // MediaType - The media type of the associated interaction
+    MediaType string `json:"mediaType"`
 
 
     // Language - Language of the summary
@@ -66,6 +73,7 @@ func (o *Speechtextanalyticsconversationsummary) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -85,6 +93,8 @@ func (u *Speechtextanalyticsconversationsummary) MarshalJSON() ([]byte, error) {
         
         SummaryType string `json:"summaryType"`
         
+        MediaType string `json:"mediaType"`
+        
         Language string `json:"language"`
         
         AgentId string `json:"agentId"`
@@ -96,6 +106,9 @@ func (u *Speechtextanalyticsconversationsummary) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         *Alias
     }{
+
+        
+
 
         
 

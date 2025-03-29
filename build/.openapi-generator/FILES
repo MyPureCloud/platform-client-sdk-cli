@@ -111,6 +111,7 @@ gc/cmd/architect_prompts/architect_prompts.go
 gc/cmd/architect_prompts_history/architect_prompts_history.go
 gc/cmd/architect_prompts_resources/architect_prompts_resources.go
 gc/cmd/architect_prompts_resources_audio/architect_prompts_resources_audio.go
+gc/cmd/architect_prompts_resources_uploads/architect_prompts_resources_uploads.go
 gc/cmd/architect_schedulegroups/architect_schedulegroups.go
 gc/cmd/architect_schedulegroups_divisionviews/architect_schedulegroups_divisionviews.go
 gc/cmd/architect_schedules/architect_schedules.go
@@ -118,6 +119,7 @@ gc/cmd/architect_schedules_divisionviews/architect_schedules_divisionviews.go
 gc/cmd/architect_systemprompts/architect_systemprompts.go
 gc/cmd/architect_systemprompts_history/architect_systemprompts_history.go
 gc/cmd/architect_systemprompts_resources/architect_systemprompts_resources.go
+gc/cmd/architect_systemprompts_resources_uploads/architect_systemprompts_resources_uploads.go
 gc/cmd/assistants/assistants.go
 gc/cmd/assistants_copilot/assistants_copilot.go
 gc/cmd/assistants_queues/assistants_queues.go
@@ -366,6 +368,7 @@ gc/cmd/documentationfile_gkn_search/documentationfile_gkn_search.go
 gc/cmd/documentationfile_search/documentationfile_search.go
 gc/cmd/downloads/downloads.go
 gc/cmd/emails_settings/emails_settings.go
+gc/cmd/emails_settings_threading/emails_settings_threading.go
 gc/cmd/employeeengagement_celebrations/employeeengagement_celebrations.go
 gc/cmd/employeeengagement_recognitions/employeeengagement_recognitions.go
 gc/cmd/employeeperformance_externalmetrics_data/employeeperformance_externalmetrics_data.go
@@ -595,6 +598,7 @@ gc/cmd/integrations_types_configschemas/integrations_types_configschemas.go
 gc/cmd/integrations_unifiedcommunications_clientapps/integrations_unifiedcommunications_clientapps.go
 gc/cmd/integrations_unifiedcommunications_thirdpartypresences/integrations_unifiedcommunications_thirdpartypresences.go
 gc/cmd/integrations_userapps/integrations_userapps.go
+gc/cmd/integrations_webhooks_events/integrations_webhooks_events.go
 gc/cmd/ipranges/ipranges.go
 gc/cmd/journey_actionmaps/journey_actionmaps.go
 gc/cmd/journey_actionmaps_estimates_jobs/journey_actionmaps_estimates_jobs.go
@@ -2162,6 +2166,7 @@ gc/models/contentfileresponse.go
 gc/models/contentfilteritem.go
 gc/models/contentgeneric.go
 gc/models/contentlist.go
+gc/models/contentlocation.go
 gc/models/contentnotificationtemplate.go
 gc/models/contentoffer.go
 gc/models/contentofferstyleproperties.go
@@ -2701,6 +2706,7 @@ gc/models/emailroutingtransferevent.go
 gc/models/emailsettings.go
 gc/models/emailsetup.go
 gc/models/emailssettings.go
+gc/models/emailthreadingsettings.go
 gc/models/emailuserestablishedevent.go
 gc/models/emailusertransferevent.go
 gc/models/embeddedintegration.go
@@ -2872,6 +2878,7 @@ gc/models/faxsummary.go
 gc/models/featurestate.go
 gc/models/feedback.go
 gc/models/feedbackaddrequest.go
+gc/models/feedbackupdaterequest.go
 gc/models/fieldconfig.go
 gc/models/fieldconfigs.go
 gc/models/fieldlist.go
@@ -3994,6 +4001,7 @@ gc/models/prompt.go
 gc/models/promptasset.go
 gc/models/promptassetcreate.go
 gc/models/promptassetentitylisting.go
+gc/models/promptassetupload.go
 gc/models/promptentitylisting.go
 gc/models/propertychange.go
 gc/models/propertyindexrequest.go
@@ -4063,6 +4071,7 @@ gc/models/ratelimitaggregationquery.go
 gc/models/ratelimitaggregationview.go
 gc/models/reaction.go
 gc/models/realtimeadherenceexplanation.go
+gc/models/reason.go
 gc/models/recallentry.go
 gc/models/recipient.go
 gc/models/recipientadditionalidentifier.go
@@ -4072,6 +4081,7 @@ gc/models/recipientrequest.go
 gc/models/recognition.go
 gc/models/recognitionbase.go
 gc/models/record.go
+gc/models/recordersstate.go
 gc/models/recording.go
 gc/models/recordingannotationflow.go
 gc/models/recordingannotationqueue.go
@@ -5029,6 +5039,7 @@ gc/models/webeventdevice.go
 gc/models/webeventrequest.go
 gc/models/webeventresponse.go
 gc/models/webeventresponsesession.go
+gc/models/webhookinvocationresponse.go
 gc/models/webmessagingattachment.go
 gc/models/webmessagingbuttonresponse.go
 gc/models/webmessagingchannel.go

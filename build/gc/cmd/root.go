@@ -22,8 +22,8 @@ import (
 	"net/http"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dummy_command"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/assistants"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/date"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/downloads"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fieldconfig"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows"
@@ -46,9 +46,8 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/completion"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/experimental"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gateway"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/logging"
@@ -75,6 +74,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profile"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeperformance"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gamification"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
@@ -139,7 +139,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 126.0.0")
+		fmt.Println("Current version: 126.1.0")
 		checkForNewVersion()
 	},
 }
@@ -158,7 +158,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("126.0.0", latestVersion) {
+	if versionsAreEqual("126.1.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -271,8 +271,8 @@ func init() {
 
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(assistants.Cmdassistants())
-	rootCmd.AddCommand(conversations.Cmdconversations())
 	rootCmd.AddCommand(date.Cmddate())
+	rootCmd.AddCommand(conversations.Cmdconversations())
 	rootCmd.AddCommand(downloads.Cmddownloads())
 	rootCmd.AddCommand(fieldconfig.Cmdfieldconfig())
 	rootCmd.AddCommand(flows.Cmdflows())
@@ -295,9 +295,8 @@ func init() {
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
-	rootCmd.AddCommand(fax.Cmdfax())
-	rootCmd.AddCommand(autopagination.Cmdautopagination())
 	rootCmd.AddCommand(completion.Cmdcompletion())
+	rootCmd.AddCommand(autopagination.Cmdautopagination())
 	rootCmd.AddCommand(experimental.Cmdexperimental())
 	rootCmd.AddCommand(gateway.Cmdgateway())
 	rootCmd.AddCommand(logging.Cmdlogging())
@@ -324,6 +323,7 @@ func init() {
 	rootCmd.AddCommand(outbound.Cmdoutbound())
 	rootCmd.AddCommand(profile.Cmdprofile())
 	rootCmd.AddCommand(employeeperformance.Cmdemployeeperformance())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(gamification.Cmdgamification())
 	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(geolocations.Cmdgeolocations())

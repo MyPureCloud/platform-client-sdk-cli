@@ -58,6 +58,9 @@ type MessagecontentDud struct {
 
     
 
+
+    
+
 }
 
 // Messagecontent - Message content element. If contentType = \"Attachment\" only one item is allowed.
@@ -125,6 +128,10 @@ type Messagecontent struct {
     // DatePicker - DatePicker content.
     DatePicker Contentdatepicker `json:"datePicker"`
 
+
+    // Location - Location content.
+    Location Contentlocation `json:"location"`
+
 }
 
 // String returns a JSON representation of the model
@@ -137,6 +144,7 @@ func (o *Messagecontent) String() string {
     
     
      o.Reactions = []Contentreaction{{}} 
+    
     
     
     
@@ -193,6 +201,8 @@ func (u *Messagecontent) MarshalJSON() ([]byte, error) {
         QuickReplyV2 Contentquickreplyv2 `json:"quickReplyV2"`
         
         DatePicker Contentdatepicker `json:"datePicker"`
+        
+        Location Contentlocation `json:"location"`
         *Alias
     }{
 
@@ -219,6 +229,9 @@ func (u *Messagecontent) MarshalJSON() ([]byte, error) {
 
         
         Reactions: []Contentreaction{{}},
+        
+
+
         
 
 

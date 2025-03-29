@@ -30,6 +30,11 @@
 ### SEE ALSO
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
+* [gc socialmedia analytics](gc_socialmedia_analytics.html)	 - /api/v2/socialmedia/analytics
+* [gc socialmedia escalationrules](gc_socialmedia_escalationrules.html)	 - /api/v2/socialmedia/escalationrules
+* [gc socialmedia escalations](gc_socialmedia_escalations.html)	 - /api/v2/socialmedia/escalations
+* [gc socialmedia messages](gc_socialmedia_messages.html)	 - /api/v2/socialmedia/messages
 * [gc socialmedia topics](gc_socialmedia_topics.html)	 - /api/v2/socialmedia/topics
+* [gc socialmedia twitter](gc_socialmedia_twitter.html)	 - /api/v2/socialmedia/twitter
 
 

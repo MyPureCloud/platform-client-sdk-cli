@@ -14,6 +14,7 @@ gc telephony providers edges extensionpools list [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
+      --divisionId strings       List of divisionIds on which to filter.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --number string            Deprecated, filtering by number not supported

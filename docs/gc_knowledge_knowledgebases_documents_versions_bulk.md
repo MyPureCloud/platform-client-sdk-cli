@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases documents versions](gc_knowledge_knowledgebases_documents_versions.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions
+* [gc knowledge knowledgebases documents versions](gc_knowledge_knowledgebases_documents_versions.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions
 * [gc knowledge knowledgebases documents versions bulk add](gc_knowledge_knowledgebases_documents_versions_bulk_add.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add
 
 

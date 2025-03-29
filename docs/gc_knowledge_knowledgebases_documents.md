@@ -43,7 +43,7 @@
 * [gc knowledge knowledgebases documents search](gc_knowledge_knowledgebases_documents_search.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search
 * [gc knowledge knowledgebases documents update](gc_knowledge_knowledgebases_documents_update.html)	 - Update document.
 * [gc knowledge knowledgebases documents variations](gc_knowledge_knowledgebases_documents_variations.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations
-* [gc knowledge knowledgebases documents versions](gc_knowledge_knowledgebases_documents_versions.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions
+* [gc knowledge knowledgebases documents versions](gc_knowledge_knowledgebases_documents_versions.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions
 * [gc knowledge knowledgebases documents views](gc_knowledge_knowledgebases_documents_views.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/views
 
 

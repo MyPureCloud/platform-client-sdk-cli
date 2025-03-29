@@ -34,6 +34,7 @@
 * [gc conversations messaging integrations instagram](gc_conversations_messaging_integrations_instagram.html)	 - /api/v2/conversations/messaging/integrations/instagram
 * [gc conversations messaging integrations list](gc_conversations_messaging_integrations_list.html)	 - Get a list of Integrations
 * [gc conversations messaging integrations open](gc_conversations_messaging_integrations_open.html)	 - /api/v2/conversations/messaging/integrations/open
+* [gc conversations messaging integrations twitter](gc_conversations_messaging_integrations_twitter.html)	 - /api/v2/conversations/messaging/integrations/twitter
 * [gc conversations messaging integrations whatsapp](gc_conversations_messaging_integrations_whatsapp.html)	 - /api/v2/conversations/messaging/integrations/whatsapp
 
 

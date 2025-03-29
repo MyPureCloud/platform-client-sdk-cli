@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc organizations limits](gc_organizations_limits.html)	 - /api/v2/organizations/limits/namespaces/{namespaceName}/limits
+* [gc organizations limits](gc_organizations_limits.html)	 - /api/v2/organizations/limits
 * [gc organizations limits docs freetrial](gc_organizations_limits_docs_freetrial.html)	 - /api/v2/organizations/limits/docs/freetrial
 * [gc organizations limits docs get](gc_organizations_limits_docs_get.html)	 - Get limit documentation
 

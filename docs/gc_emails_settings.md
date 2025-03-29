@@ -31,6 +31,7 @@
 
 * [gc emails](gc_emails.html)	 - /api/v2/emails
 * [gc emails settings get](gc_emails_settings_get.html)	 - Get email Contact Center settings
+* [gc emails settings threading](gc_emails_settings_threading.html)	 - /api/v2/emails/settings/threading
 * [gc emails settings update](gc_emails_settings_update.html)	 - Patch email Contact Center settings
 
 

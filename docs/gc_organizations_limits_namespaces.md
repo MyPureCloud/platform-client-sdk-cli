@@ -29,11 +29,9 @@
 
 ### SEE ALSO
 
-* [gc organizations limits](gc_organizations_limits.html)	 - /api/v2/organizations/limits/namespaces/{namespaceName}/limits
-* [gc organizations limits namespaces counts](gc_organizations_limits_namespaces_counts.html)	 - /api/v2/organizations/limits/namespaces/{namespaceName}/counts
+* [gc organizations limits](gc_organizations_limits.html)	 - /api/v2/organizations/limits
 * [gc organizations limits namespaces defaults](gc_organizations_limits_namespaces_defaults.html)	 - /api/v2/organizations/limits/namespaces/{namespaceName}/defaults
 * [gc organizations limits namespaces get](gc_organizations_limits_namespaces_get.html)	 - Get the effective limits in a namespace for an organization
-* [gc organizations limits namespaces limits](gc_organizations_limits_namespaces_limits.html)	 - /api/v2/organizations/limits/namespaces/{namespaceName}/limits
 * [gc organizations limits namespaces list](gc_organizations_limits_namespaces_list.html)	 - Get the available limit namespaces
 
 

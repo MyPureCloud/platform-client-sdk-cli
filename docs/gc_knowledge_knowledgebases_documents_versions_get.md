@@ -34,6 +34,6 @@ gc knowledge knowledgebases documents versions get [knowledgeBaseId] [documentId
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases documents versions](gc_knowledge_knowledgebases_documents_versions.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions
+* [gc knowledge knowledgebases documents versions](gc_knowledge_knowledgebases_documents_versions.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions
 
 

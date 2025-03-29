@@ -31,6 +31,7 @@
 
 * [gc socialmedia topics](gc_socialmedia_topics.html)	 - /api/v2/socialmedia/topics
 * [gc socialmedia topics dataingestionrules facebook](gc_socialmedia_topics_dataingestionrules_facebook.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook
+* [gc socialmedia topics dataingestionrules list](gc_socialmedia_topics_dataingestionrules_list.html)	 - Retrieve all social topic data ingestion rules with pagination.
 * [gc socialmedia topics dataingestionrules open](gc_socialmedia_topics_dataingestionrules_open.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open
 * [gc socialmedia topics dataingestionrules twitter](gc_socialmedia_topics_dataingestionrules_twitter.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter
 

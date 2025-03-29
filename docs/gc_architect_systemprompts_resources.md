@@ -35,5 +35,6 @@
 * [gc architect systemprompts resources get](gc_architect_systemprompts_resources_get.html)	 - Get a system prompt resource.
 * [gc architect systemprompts resources list](gc_architect_systemprompts_resources_list.html)	 - Get system prompt resources.
 * [gc architect systemprompts resources update](gc_architect_systemprompts_resources_update.html)	 - Updates a system prompt resource override.
+* [gc architect systemprompts resources uploads](gc_architect_systemprompts_resources_uploads.html)	 - /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}/uploads
 
 

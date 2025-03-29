@@ -1,15 +1,22 @@
-## gc organizations limits namespaces counts
+## gc socialmedia analytics aggregates jobs create
 
-/api/v2/organizations/limits/namespaces/{namespaceName}/counts
+Query for social media aggregates asynchronously
 
 ### Synopsis
 
-/api/v2/organizations/limits/namespaces/{namespaceName}/counts
+Query for social media aggregates asynchronously
+
+```
+gc socialmedia analytics aggregates jobs create [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for counts
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +36,6 @@
 
 ### SEE ALSO
 
-* [gc organizations limits namespaces](gc_organizations_limits_namespaces.html)	 - /api/v2/organizations/limits/namespaces
-* [gc organizations limits namespaces counts list](gc_organizations_limits_namespaces_counts_list.html)	 - Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
+* [gc socialmedia analytics aggregates jobs](gc_socialmedia_analytics_aggregates_jobs.html)	 - /api/v2/socialmedia/analytics/aggregates/jobs
 
 

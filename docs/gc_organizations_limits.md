@@ -1,10 +1,10 @@
 ## gc organizations limits
 
-/api/v2/organizations/limits/namespaces/{namespaceName}/limits
+/api/v2/organizations/limits
 
 ### Synopsis
 
-/api/v2/organizations/limits/namespaces/{namespaceName}/limits
+/api/v2/organizations/limits
 
 ### Options
 

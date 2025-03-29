@@ -36,5 +36,6 @@
 * [gc architect prompts resources get](gc_architect_prompts_resources_get.html)	 - Get specified user prompt resource
 * [gc architect prompts resources list](gc_architect_prompts_resources_list.html)	 - Get a pageable list of user prompt resources
 * [gc architect prompts resources update](gc_architect_prompts_resources_update.html)	 - Update specified user prompt resource
+* [gc architect prompts resources uploads](gc_architect_prompts_resources_uploads.html)	 - /api/v2/architect/prompts/{promptId}/resources/{languageCode}/uploads
 
 

@@ -30,7 +30,7 @@
 ### SEE ALSO
 
 * [gc conversations](gc_conversations.html)	 - /api/v2/conversations
-* [gc conversations recordingmetadata conversationmetadata](gc_conversations_recordingmetadata_conversationmetadata.html)	 - Get recording metadata for a conversation. Does not return playable media. Annotations won`t be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+* [gc conversations recordingmetadata conversationmetadata](gc_conversations_recordingmetadata_conversationmetadata.html)	 - Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 * [gc conversations recordingmetadata recordingmetadata](gc_conversations_recordingmetadata_recordingmetadata.html)	 - Get metadata for a specific recording. Does not return playable media.
 
 

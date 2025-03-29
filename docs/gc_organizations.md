@@ -34,7 +34,7 @@
 * [gc organizations embeddedintegration](gc_organizations_embeddedintegration.html)	 - /api/v2/organizations/embeddedintegration
 * [gc organizations features](gc_organizations_features.html)	 - /api/v2/organizations/features
 * [gc organizations ipaddressauthentication](gc_organizations_ipaddressauthentication.html)	 - /api/v2/organizations/ipaddressauthentication
-* [gc organizations limits](gc_organizations_limits.html)	 - /api/v2/organizations/limits/namespaces/{namespaceName}/limits
+* [gc organizations limits](gc_organizations_limits.html)	 - /api/v2/organizations/limits
 * [gc organizations me](gc_organizations_me.html)	 - /api/v2/organizations/me
 * [gc organizations whitelist](gc_organizations_whitelist.html)	 - /api/v2/organizations/whitelist
 

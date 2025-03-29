@@ -1,10 +1,10 @@
 ## gc conversations recordingmetadata conversationmetadata
 
-Get recording metadata for a conversation. Does not return playable media. Annotations won`t be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 
 ### Synopsis
 
-Get recording metadata for a conversation. Does not return playable media. Annotations won`t be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 
 ```
 gc conversations recordingmetadata conversationmetadata [conversationId] [flags]

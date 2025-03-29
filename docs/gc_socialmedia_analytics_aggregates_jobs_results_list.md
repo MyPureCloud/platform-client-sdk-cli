@@ -1,25 +1,23 @@
-## gc organizations limits namespaces limits counts list
+## gc socialmedia analytics aggregates jobs results list
 
-Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
+Fetch a page of results for an async social media query
 
 ### Synopsis
 
-Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
+Fetch a page of results for an async social media query
 
 ```
-gc organizations limits namespaces limits counts list [namespaceName] [limitName] [flags]
+gc socialmedia analytics aggregates jobs results list [jobId] [flags]
 ```
 
 ### Options
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --cursor string            Cursor provided when retrieving the last page
-      --entityId string          entity id of the count
+      --cursor string            Cursor token to retrieve next page
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
-      --userId string            userid of the count
 ```
 
 ### Options inherited from parent commands
@@ -39,6 +37,6 @@ gc organizations limits namespaces limits counts list [namespaceName] [limitName
 
 ### SEE ALSO
 
-* [gc organizations limits namespaces limits counts](gc_organizations_limits_namespaces_limits_counts.html)	 - /api/v2/organizations/limits/namespaces/{namespaceName}/limits/{limitName}/counts
+* [gc socialmedia analytics aggregates jobs results](gc_socialmedia_analytics_aggregates_jobs_results.html)	 - /api/v2/socialmedia/analytics/aggregates/jobs/{jobId}/results
 
 

@@ -1,10 +1,10 @@
 ## gc knowledge knowledgebases documents versions
 
-/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions
+/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions
 
 ### Synopsis
 
-/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions
+/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions
 
 ### Options
 

@@ -44,5 +44,6 @@
 * [gc integrations unifiedcommunications](gc_integrations_unifiedcommunications.html)	 - /api/v2/integrations/unifiedcommunications
 * [gc integrations update](gc_integrations_update.html)	 - Update an integration.
 * [gc integrations userapps](gc_integrations_userapps.html)	 - /api/v2/integrations/userapps
+* [gc integrations webhooks](gc_integrations_webhooks.html)	 - /api/v2/integrations/webhooks
 
 

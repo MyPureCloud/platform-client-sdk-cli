@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc organizations limits](gc_organizations_limits.html)	 - /api/v2/organizations/limits/namespaces/{namespaceName}/limits
+* [gc organizations limits](gc_organizations_limits.html)	 - /api/v2/organizations/limits
 * [gc organizations limits changerequests get](gc_organizations_limits_changerequests_get.html)	 - Get a limit change request
 * [gc organizations limits changerequests list](gc_organizations_limits_changerequests_list.html)	 - Get the available limit change requests
 

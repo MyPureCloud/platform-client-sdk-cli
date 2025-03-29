@@ -1,15 +1,19 @@
-## gc organizations limits namespaces limits
+## gc conversations messaging integrations twitter delete
 
-/api/v2/organizations/limits/namespaces/{namespaceName}/limits
+Delete Twitter messaging integration
 
 ### Synopsis
 
-/api/v2/organizations/limits/namespaces/{namespaceName}/limits
+Delete Twitter messaging integration
+
+```
+gc conversations messaging integrations twitter delete [integrationId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for limits
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +33,6 @@
 
 ### SEE ALSO
 
-* [gc organizations limits namespaces](gc_organizations_limits_namespaces.html)	 - /api/v2/organizations/limits/namespaces
-* [gc organizations limits namespaces limits counts](gc_organizations_limits_namespaces_limits_counts.html)	 - /api/v2/organizations/limits/namespaces/{namespaceName}/limits/{limitName}/counts
+* [gc conversations messaging integrations twitter](gc_conversations_messaging_integrations_twitter.html)	 - /api/v2/conversations/messaging/integrations/twitter
 
 

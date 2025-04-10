@@ -33,6 +33,7 @@
 * [gc externalcontacts bulk contacts add](gc_externalcontacts_bulk_contacts_add.html)	 - /api/v2/externalcontacts/bulk/contacts/add
 * [gc externalcontacts bulk contacts create](gc_externalcontacts_bulk_contacts_create.html)	 - Bulk fetch contacts
 * [gc externalcontacts bulk contacts divisionviews](gc_externalcontacts_bulk_contacts_divisionviews.html)	 - /api/v2/externalcontacts/bulk/contacts/divisionviews
+* [gc externalcontacts bulk contacts enrich](gc_externalcontacts_bulk_contacts_enrich.html)	 - /api/v2/externalcontacts/bulk/contacts/enrich
 * [gc externalcontacts bulk contacts remove](gc_externalcontacts_bulk_contacts_remove.html)	 - /api/v2/externalcontacts/bulk/contacts/remove
 * [gc externalcontacts bulk contacts unresolved](gc_externalcontacts_bulk_contacts_unresolved.html)	 - /api/v2/externalcontacts/bulk/contacts/unresolved
 * [gc externalcontacts bulk contacts update](gc_externalcontacts_bulk_contacts_update.html)	 - /api/v2/externalcontacts/bulk/contacts/update

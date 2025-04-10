@@ -30,6 +30,8 @@
 ### SEE ALSO
 
 * [gc externalcontacts](gc_externalcontacts.html)	 - /api/v2/externalcontacts
+* [gc externalcontacts identifierlookup contacts](gc_externalcontacts_identifierlookup_contacts.html)	 - /api/v2/externalcontacts/identifierlookup/contacts
 * [gc externalcontacts identifierlookup create](gc_externalcontacts_identifierlookup_create.html)	 - Fetch a contact using an identifier type and value.
+* [gc externalcontacts identifierlookup organizations](gc_externalcontacts_identifierlookup_organizations.html)	 - /api/v2/externalcontacts/identifierlookup/organizations
 
 

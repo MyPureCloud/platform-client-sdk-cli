@@ -32,12 +32,14 @@
 * [gc authorization](gc_authorization.html)	 - /api/v2/authorization
 * [gc authorization divisions create](gc_authorization_divisions_create.html)	 - Create a division.
 * [gc authorization divisions delete](gc_authorization_divisions_delete.html)	 - Delete a division.
+* [gc authorization divisions deleted](gc_authorization_divisions_deleted.html)	 - /api/v2/authorization/divisions/deleted
 * [gc authorization divisions get](gc_authorization_divisions_get.html)	 - Returns an authorization division.
 * [gc authorization divisions grants](gc_authorization_divisions_grants.html)	 - /api/v2/authorization/divisions/{divisionId}/grants
 * [gc authorization divisions home](gc_authorization_divisions_home.html)	 - /api/v2/authorization/divisions/home
 * [gc authorization divisions limit](gc_authorization_divisions_limit.html)	 - /api/v2/authorization/divisions/limit
 * [gc authorization divisions list](gc_authorization_divisions_list.html)	 - Retrieve a list of all divisions defined for the organization
 * [gc authorization divisions objects](gc_authorization_divisions_objects.html)	 - /api/v2/authorization/divisions/{divisionId}/objects
+* [gc authorization divisions query](gc_authorization_divisions_query.html)	 - /api/v2/authorization/divisions/query
 * [gc authorization divisions restore](gc_authorization_divisions_restore.html)	 - /api/v2/authorization/divisions/{divisionId}/restore
 * [gc authorization divisions update](gc_authorization_divisions_update.html)	 - Update a division.
 

@@ -30,9 +30,11 @@
 ### SEE ALSO
 
 * [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc taskmanagement workitems schemas coretypes](gc_taskmanagement_workitems_schemas_coretypes.html)	 - /api/v2/taskmanagement/workitems/schemas/coretypes
 * [gc taskmanagement workitems schemas create](gc_taskmanagement_workitems_schemas_create.html)	 - Create a schema
 * [gc taskmanagement workitems schemas delete](gc_taskmanagement_workitems_schemas_delete.html)	 - Delete a schema
 * [gc taskmanagement workitems schemas get](gc_taskmanagement_workitems_schemas_get.html)	 - Get a schema
+* [gc taskmanagement workitems schemas limits](gc_taskmanagement_workitems_schemas_limits.html)	 - /api/v2/taskmanagement/workitems/schemas/limits
 * [gc taskmanagement workitems schemas list](gc_taskmanagement_workitems_schemas_list.html)	 - Get a list of schemas.
 * [gc taskmanagement workitems schemas update](gc_taskmanagement_workitems_schemas_update.html)	 - Update a schema
 * [gc taskmanagement workitems schemas versions](gc_taskmanagement_workitems_schemas_versions.html)	 - /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions

@@ -30,9 +30,11 @@
 ### SEE ALSO
 
 * [gc externalcontacts contacts](gc_externalcontacts_contacts.html)	 - /api/v2/externalcontacts/contacts
+* [gc externalcontacts contacts schemas coretypes](gc_externalcontacts_contacts_schemas_coretypes.html)	 - /api/v2/externalcontacts/contacts/schemas/coretypes
 * [gc externalcontacts contacts schemas create](gc_externalcontacts_contacts_schemas_create.html)	 - Create a schema
 * [gc externalcontacts contacts schemas delete](gc_externalcontacts_contacts_schemas_delete.html)	 - Delete a schema
 * [gc externalcontacts contacts schemas get](gc_externalcontacts_contacts_schemas_get.html)	 - Get a schema
+* [gc externalcontacts contacts schemas limits](gc_externalcontacts_contacts_schemas_limits.html)	 - /api/v2/externalcontacts/contacts/schemas/limits
 * [gc externalcontacts contacts schemas list](gc_externalcontacts_contacts_schemas_list.html)	 - Get a list of schemas.
 * [gc externalcontacts contacts schemas update](gc_externalcontacts_contacts_schemas_update.html)	 - Update a schema
 * [gc externalcontacts contacts schemas versions](gc_externalcontacts_contacts_schemas_versions.html)	 - /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions

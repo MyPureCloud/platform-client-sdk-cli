@@ -1,10 +1,10 @@
 ## gc workforcemanagement historicaldata deletejob create
 
-Delete the entries of the historical data imports in the organization
+Delete the entries of the historical data imports in the organization.
 
 ### Synopsis
 
-Delete the entries of the historical data imports in the organization
+Delete the entries of the historical data imports in the organization.
 
 ```
 gc workforcemanagement historicaldata deletejob create [flags]

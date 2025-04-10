@@ -14,9 +14,11 @@ gc routing email outbound domains list [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --filter string            Optional search filter
+      --filter string            Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

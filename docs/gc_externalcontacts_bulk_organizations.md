@@ -33,6 +33,7 @@
 * [gc externalcontacts bulk organizations add](gc_externalcontacts_bulk_organizations_add.html)	 - /api/v2/externalcontacts/bulk/organizations/add
 * [gc externalcontacts bulk organizations create](gc_externalcontacts_bulk_organizations_create.html)	 - Bulk fetch organizations
 * [gc externalcontacts bulk organizations divisionviews](gc_externalcontacts_bulk_organizations_divisionviews.html)	 - /api/v2/externalcontacts/bulk/organizations/divisionviews
+* [gc externalcontacts bulk organizations enrich](gc_externalcontacts_bulk_organizations_enrich.html)	 - /api/v2/externalcontacts/bulk/organizations/enrich
 * [gc externalcontacts bulk organizations remove](gc_externalcontacts_bulk_organizations_remove.html)	 - /api/v2/externalcontacts/bulk/organizations/remove
 * [gc externalcontacts bulk organizations update](gc_externalcontacts_bulk_organizations_update.html)	 - /api/v2/externalcontacts/bulk/organizations/update
 

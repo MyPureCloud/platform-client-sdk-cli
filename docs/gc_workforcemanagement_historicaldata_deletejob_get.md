@@ -1,10 +1,10 @@
 ## gc workforcemanagement historicaldata deletejob get
 
-Retrieves delete job status for historical data imports of the organization
+Retrieves delete job status for historical data imports of the organization.
 
 ### Synopsis
 
-Retrieves delete job status for historical data imports of the organization
+Retrieves delete job status for historical data imports of the organization.
 
 ```
 gc workforcemanagement historicaldata deletejob get [flags]

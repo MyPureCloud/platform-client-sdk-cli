@@ -30,7 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement historicaldata](gc_workforcemanagement_historicaldata.html)	 - /api/v2/workforcemanagement/historicaldata
-* [gc workforcemanagement historicaldata deletejob create](gc_workforcemanagement_historicaldata_deletejob_create.html)	 - Delete the entries of the historical data imports in the organization
-* [gc workforcemanagement historicaldata deletejob get](gc_workforcemanagement_historicaldata_deletejob_get.html)	 - Retrieves delete job status for historical data imports of the organization
+* [gc workforcemanagement historicaldata deletejob create](gc_workforcemanagement_historicaldata_deletejob_create.html)	 - Delete the entries of the historical data imports in the organization.
+* [gc workforcemanagement historicaldata deletejob get](gc_workforcemanagement_historicaldata_deletejob_get.html)	 - Retrieves delete job status for historical data imports of the organization.
 
 

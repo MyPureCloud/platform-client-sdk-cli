@@ -14,7 +14,7 @@ gc users favorites list [userId] [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --expand strings           Which fields, if any, to expand Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin
+      --expand strings           Which fields, if any, to expand Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --pageNumber string        Page number (default "1")

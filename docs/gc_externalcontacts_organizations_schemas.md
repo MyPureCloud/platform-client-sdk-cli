@@ -30,8 +30,10 @@
 ### SEE ALSO
 
 * [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
+* [gc externalcontacts organizations schemas coretypes](gc_externalcontacts_organizations_schemas_coretypes.html)	 - /api/v2/externalcontacts/organizations/schemas/coretypes
 * [gc externalcontacts organizations schemas create](gc_externalcontacts_organizations_schemas_create.html)	 - Create a schema
 * [gc externalcontacts organizations schemas get](gc_externalcontacts_organizations_schemas_get.html)	 - Get a schema
+* [gc externalcontacts organizations schemas limits](gc_externalcontacts_organizations_schemas_limits.html)	 - /api/v2/externalcontacts/organizations/schemas/limits
 * [gc externalcontacts organizations schemas list](gc_externalcontacts_organizations_schemas_list.html)	 - Get a list of schemas.
 * [gc externalcontacts organizations schemas update](gc_externalcontacts_organizations_schemas_update.html)	 - Update a schema
 * [gc externalcontacts organizations schemas versions](gc_externalcontacts_organizations_schemas_versions.html)	 - /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions

@@ -15,7 +15,7 @@ gc routing email domains list [flags]
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --excludeStatus string     Exclude MX record data Valid values: true, false
-      --filter string            Optional search filter
+      --filter string            Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --pageNumber string        Page number (default "1")

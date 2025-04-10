@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
+* [gc gamification contests](gc_gamification_contests.html)	 - /api/v2/gamification/contests
 * [gc gamification insights](gc_gamification_insights.html)	 - /api/v2/gamification/insights
 * [gc gamification leaderboard](gc_gamification_leaderboard.html)	 - /api/v2/gamification/leaderboard
 * [gc gamification metricdefinitions](gc_gamification_metricdefinitions.html)	 - /api/v2/gamification/metricdefinitions

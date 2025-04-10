@@ -32,10 +32,12 @@
 * [gc externalcontacts](gc_externalcontacts.html)	 - /api/v2/externalcontacts
 * [gc externalcontacts contacts create](gc_externalcontacts_contacts_create.html)	 - Create an external contact
 * [gc externalcontacts contacts delete](gc_externalcontacts_contacts_delete.html)	 - Delete an external contact
+* [gc externalcontacts contacts enrich](gc_externalcontacts_contacts_enrich.html)	 - /api/v2/externalcontacts/contacts/enrich
 * [gc externalcontacts contacts exports](gc_externalcontacts_contacts_exports.html)	 - /api/v2/externalcontacts/contacts/exports
 * [gc externalcontacts contacts get](gc_externalcontacts_contacts_get.html)	 - Fetch an external contact
 * [gc externalcontacts contacts identifiers](gc_externalcontacts_contacts_identifiers.html)	 - /api/v2/externalcontacts/contacts/{contactId}/identifiers
 * [gc externalcontacts contacts journey](gc_externalcontacts_contacts_journey.html)	 - /api/v2/externalcontacts/contacts/{contactId}/journey
+* [gc externalcontacts contacts merge](gc_externalcontacts_contacts_merge.html)	 - /api/v2/externalcontacts/contacts/merge
 * [gc externalcontacts contacts notes](gc_externalcontacts_contacts_notes.html)	 - /api/v2/externalcontacts/contacts/{contactId}/notes
 * [gc externalcontacts contacts promotion](gc_externalcontacts_contacts_promotion.html)	 - /api/v2/externalcontacts/contacts/{contactId}/promotion
 * [gc externalcontacts contacts schemas](gc_externalcontacts_contacts_schemas.html)	 - /api/v2/externalcontacts/contacts/schemas

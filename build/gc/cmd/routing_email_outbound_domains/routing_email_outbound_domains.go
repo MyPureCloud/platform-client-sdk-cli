@@ -77,7 +77,9 @@ func Cmdrouting_email_outbound_domains() *cobra.Command {
 }`)
 	routing_email_outbound_domainsCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "string", "filter", "", "Optional search filter")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
+	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
+	utils.AddFlag(listCmd.Flags(), "string", "filter", "", "Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/email/outbound/domains", utils.FormatPermissions([]string{ "routing:email:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/email/outbound/domains")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -315,6 +317,14 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/routing/email/outbound/domains"
 
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
+		if pageNumber != "" {
+			queryParams["pageNumber"] = pageNumber
+		}
 		filter := utils.GetFlag(cmd.Flags(), "string", "filter")
 		if filter != "" {
 			queryParams["filter"] = filter

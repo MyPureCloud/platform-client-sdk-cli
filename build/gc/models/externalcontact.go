@@ -93,6 +93,9 @@ type ExternalcontactDud struct {
     
 
 
+    
+
+
     ExternalDataSources []Externaldatasource `json:"externalDataSources"`
 
 
@@ -194,6 +197,10 @@ type Externalcontact struct {
     ExternalIds []Externalid `json:"externalIds"`
 
 
+    // Identifiers - Identifiers claimed by this contact
+    Identifiers []Contactidentifier `json:"identifiers"`
+
+
     // ModifyDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     ModifyDate time.Time `json:"modifyDate"`
 
@@ -263,6 +270,7 @@ func (o *Externalcontact) String() string {
     
     
      o.ExternalIds = []Externalid{{}} 
+     o.Identifiers = []Contactidentifier{{}} 
     
     
     
@@ -326,6 +334,8 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
         FacebookId Facebookid `json:"facebookId"`
         
         ExternalIds []Externalid `json:"externalIds"`
+        
+        Identifiers []Contactidentifier `json:"identifiers"`
         
         ModifyDate time.Time `json:"modifyDate"`
         
@@ -402,6 +412,11 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
 
         
         ExternalIds: []Externalid{{}},
+        
+
+
+        
+        Identifiers: []Contactidentifier{{}},
         
 
 

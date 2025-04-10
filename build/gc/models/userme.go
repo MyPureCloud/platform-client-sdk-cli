@@ -126,6 +126,9 @@ type UsermeDud struct {
     DateLastLogin time.Time `json:"dateLastLogin"`
 
 
+    DateWelcomeSent time.Time `json:"dateWelcomeSent"`
+
+
     Date Serverdate `json:"date"`
 
 
@@ -361,6 +364,9 @@ type Userme struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -483,6 +489,9 @@ func (u *Userme) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+
         
 
 

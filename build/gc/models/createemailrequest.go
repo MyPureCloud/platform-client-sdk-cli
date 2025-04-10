@@ -129,7 +129,7 @@ type Createemailrequest struct {
     ExternalContactId string `json:"externalContactId"`
 
 
-    // UtilizationLabel - Optional. Controls the number of agent interactions for INBOUND communications
+    // UtilizationLabel - Optional. The ID of the label to controls the number of agent interactions for INBOUND communications
     UtilizationLabel string `json:"utilizationLabel"`
 
 }

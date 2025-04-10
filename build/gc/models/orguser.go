@@ -123,6 +123,9 @@ type OrguserDud struct {
     DateLastLogin time.Time `json:"dateLastLogin"`
 
 
+    DateWelcomeSent time.Time `json:"dateWelcomeSent"`
+
+
     
 
 }
@@ -257,6 +260,9 @@ type Orguser struct {
     
 
 
+    
+
+
     // Organization
     Organization Organization `json:"organization"`
 
@@ -385,6 +391,9 @@ func (u *Orguser) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+
         
 
 

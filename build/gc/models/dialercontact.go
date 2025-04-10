@@ -42,6 +42,9 @@ type DialercontactDud struct {
     
 
 
+    
+
+
     ContactColumnTimeZones map[string]Contactcolumntimezone `json:"contactColumnTimeZones"`
 
 
@@ -81,6 +84,10 @@ type Dialercontact struct {
     
 
 
+    // LatestWhatsAppEvaluations - A map of whatsapp records for the contact whatsapp columns.
+    LatestWhatsAppEvaluations map[string]Messageevaluation `json:"latestWhatsAppEvaluations"`
+
+
     // Callable - Indicates whether or not the contact can be called.
     Callable bool `json:"callable"`
 
@@ -111,6 +118,7 @@ func (o *Dialercontact) String() string {
     
     
      o.Data = map[string]string{"": ""} 
+     o.LatestWhatsAppEvaluations = map[string]Messageevaluation{"": {}} 
     
      o.PhoneNumberStatus = map[string]Phonenumberstatus{"": {}} 
      o.ContactableStatus = map[string]Contactablestatus{"": {}} 
@@ -136,6 +144,8 @@ func (u *Dialercontact) MarshalJSON() ([]byte, error) {
         ContactListId string `json:"contactListId"`
         
         Data map[string]string `json:"data"`
+        
+        LatestWhatsAppEvaluations map[string]Messageevaluation `json:"latestWhatsAppEvaluations"`
         
         Callable bool `json:"callable"`
         
@@ -165,6 +175,11 @@ func (u *Dialercontact) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        LatestWhatsAppEvaluations: map[string]Messageevaluation{"": {}},
         
 
 

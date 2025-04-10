@@ -28,6 +28,9 @@ type NamedentitytypemechanismDud struct {
 
     
 
+
+    
+
 }
 
 // Namedentitytypemechanism
@@ -52,6 +55,10 @@ type Namedentitytypemechanism struct {
     MaxLength int `json:"maxLength"`
 
 
+    // MinLength - The minimum length of the entity resolved value
+    MinLength int `json:"minLength"`
+
+
     // Examples - Examples for entity detection
     Examples []Namedentitytypemechanismexample `json:"examples"`
 
@@ -60,6 +67,7 @@ type Namedentitytypemechanism struct {
 // String returns a JSON representation of the model
 func (o *Namedentitytypemechanism) String() string {
      o.Items = []Namedentitytypeitem{{}} 
+    
     
     
     
@@ -92,12 +100,17 @@ func (u *Namedentitytypemechanism) MarshalJSON() ([]byte, error) {
         
         MaxLength int `json:"maxLength"`
         
+        MinLength int `json:"minLength"`
+        
         Examples []Namedentitytypemechanismexample `json:"examples"`
         *Alias
     }{
 
         
         Items: []Namedentitytypeitem{{}},
+        
+
+
         
 
 

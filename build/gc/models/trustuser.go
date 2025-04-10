@@ -123,6 +123,9 @@ type TrustuserDud struct {
     DateLastLogin time.Time `json:"dateLastLogin"`
 
 
+    DateWelcomeSent time.Time `json:"dateWelcomeSent"`
+
+
     
 
 }
@@ -257,6 +260,9 @@ type Trustuser struct {
     
 
 
+    
+
+
     // TrustUserDetails
     TrustUserDetails Trustuserdetails `json:"trustUserDetails"`
 
@@ -385,6 +391,9 @@ func (u *Trustuser) MarshalJSON() ([]byte, error) {
 
         
         Certifications: []string{""},
+        
+
+
         
 
 

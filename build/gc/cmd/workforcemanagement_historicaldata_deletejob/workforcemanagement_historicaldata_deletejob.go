@@ -67,8 +67,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Delete the entries of the historical data imports in the organization",
-	Long:  "Delete the entries of the historical data imports in the organization",
+	Short: "Delete the entries of the historical data imports in the organization.",
+	Long:  "Delete the entries of the historical data imports in the organization.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -130,8 +130,8 @@ var createCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get",
-	Short: "Retrieves delete job status for historical data imports of the organization",
-	Long:  "Retrieves delete job status for historical data imports of the organization",
+	Short: "Retrieves delete job status for historical data imports of the organization.",
+	Long:  "Retrieves delete job status for historical data imports of the organization.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

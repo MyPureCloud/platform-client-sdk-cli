@@ -29,6 +29,9 @@ type ContactlistdivisionviewDud struct {
     
 
 
+    
+
+
     ImportStatus Importstatus `json:"importStatus"`
 
 
@@ -64,6 +67,10 @@ type Contactlistdivisionview struct {
     EmailColumns []Emailcolumn `json:"emailColumns"`
 
 
+    // WhatsAppColumns - Indicates which columns are whatsApp contacts.
+    WhatsAppColumns []Whatsappcolumn `json:"whatsAppColumns"`
+
+
     
 
 
@@ -81,6 +88,7 @@ func (o *Contactlistdivisionview) String() string {
      o.ColumnNames = []string{""} 
      o.PhoneColumns = []Contactphonenumbercolumn{{}} 
      o.EmailColumns = []Emailcolumn{{}} 
+     o.WhatsAppColumns = []Whatsappcolumn{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -107,6 +115,8 @@ func (u *Contactlistdivisionview) MarshalJSON() ([]byte, error) {
         PhoneColumns []Contactphonenumbercolumn `json:"phoneColumns"`
         
         EmailColumns []Emailcolumn `json:"emailColumns"`
+        
+        WhatsAppColumns []Whatsappcolumn `json:"whatsAppColumns"`
         *Alias
     }{
 
@@ -131,6 +141,11 @@ func (u *Contactlistdivisionview) MarshalJSON() ([]byte, error) {
 
         
         EmailColumns: []Emailcolumn{{}},
+        
+
+
+        
+        WhatsAppColumns: []Whatsappcolumn{{}},
         
 
 

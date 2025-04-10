@@ -69,6 +69,9 @@ type MessagingcampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -148,6 +151,10 @@ type Messagingcampaign struct {
     SmsConfig Smsconfig `json:"smsConfig"`
 
 
+    // WhatsAppConfig - Configuration for this messaging campaign to send WhatsApp messages.
+    WhatsAppConfig Whatsappconfig `json:"whatsAppConfig"`
+
+
     
 
 }
@@ -167,6 +174,7 @@ func (o *Messagingcampaign) String() string {
      o.RuleSets = []Domainentityref{{}} 
      o.ContactListFilters = []Domainentityref{{}} 
      o.Errors = []Resterrordetail{{}} 
+    
     
     
     
@@ -218,6 +226,8 @@ func (u *Messagingcampaign) MarshalJSON() ([]byte, error) {
         EmailConfig Emailconfig `json:"emailConfig"`
         
         SmsConfig Smsconfig `json:"smsConfig"`
+        
+        WhatsAppConfig Whatsappconfig `json:"whatsAppConfig"`
         *Alias
     }{
 
@@ -276,6 +286,9 @@ func (u *Messagingcampaign) MarshalJSON() ([]byte, error) {
 
         
         Errors: []Resterrordetail{{}},
+        
+
+
         
 
 

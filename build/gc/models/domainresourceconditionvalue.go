@@ -22,6 +22,9 @@ type DomainresourceconditionvalueDud struct {
 
     
 
+
+    
+
 }
 
 // Domainresourceconditionvalue
@@ -32,6 +35,10 @@ type Domainresourceconditionvalue struct {
 
     // Queue
     Queue Queue `json:"queue"`
+
+
+    // Team
+    Team Team `json:"team"`
 
 
     // Value
@@ -45,6 +52,7 @@ type Domainresourceconditionvalue struct {
 
 // String returns a JSON representation of the model
 func (o *Domainresourceconditionvalue) String() string {
+    
     
     
     
@@ -70,11 +78,16 @@ func (u *Domainresourceconditionvalue) MarshalJSON() ([]byte, error) {
         
         Queue Queue `json:"queue"`
         
+        Team Team `json:"team"`
+        
         Value string `json:"value"`
         
         VarType string `json:"type"`
         *Alias
     }{
+
+        
+
 
         
 

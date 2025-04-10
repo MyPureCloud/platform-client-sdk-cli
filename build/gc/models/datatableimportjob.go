@@ -48,6 +48,9 @@ type DatatableimportjobDud struct {
     
 
 
+    UploadHeaders map[string]string `json:"uploadHeaders"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -99,6 +102,9 @@ type Datatableimportjob struct {
 
     // CountRecordsFailed - The current count of the number of records that failed to import
     CountRecordsFailed int `json:"countRecordsFailed"`
+
+
+    
 
 
     
@@ -158,6 +164,9 @@ func (u *Datatableimportjob) MarshalJSON() ([]byte, error) {
         CountRecordsFailed int `json:"countRecordsFailed"`
         *Alias
     }{
+
+        
+
 
         
 

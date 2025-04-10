@@ -57,6 +57,9 @@ type ContactlisttemplateDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -90,6 +93,10 @@ type Contactlisttemplate struct {
 
     // EmailColumns - Indicates which columns are email addresses
     EmailColumns []Emailcolumn `json:"emailColumns"`
+
+
+    // WhatsAppColumns - Indicates which columns are whatsApp contacts
+    WhatsAppColumns []Whatsappcolumn `json:"whatsAppColumns"`
 
 
     // PreviewModeColumnName - A column to check if a contact should always be dialed in preview mode.
@@ -131,6 +138,7 @@ func (o *Contactlisttemplate) String() string {
      o.ColumnNames = []string{""} 
      o.PhoneColumns = []Contactphonenumbercolumn{{}} 
      o.EmailColumns = []Emailcolumn{{}} 
+     o.WhatsAppColumns = []Whatsappcolumn{{}} 
     
      o.PreviewModeAcceptedValues = []string{""} 
     
@@ -164,6 +172,8 @@ func (u *Contactlisttemplate) MarshalJSON() ([]byte, error) {
         PhoneColumns []Contactphonenumbercolumn `json:"phoneColumns"`
         
         EmailColumns []Emailcolumn `json:"emailColumns"`
+        
+        WhatsAppColumns []Whatsappcolumn `json:"whatsAppColumns"`
         
         PreviewModeColumnName string `json:"previewModeColumnName"`
         
@@ -208,6 +218,11 @@ func (u *Contactlisttemplate) MarshalJSON() ([]byte, error) {
 
         
         EmailColumns: []Emailcolumn{{}},
+        
+
+
+        
+        WhatsAppColumns: []Whatsappcolumn{{}},
         
 
 

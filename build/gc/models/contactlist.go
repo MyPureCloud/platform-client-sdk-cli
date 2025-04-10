@@ -39,6 +39,9 @@ type ContactlistDud struct {
     
 
 
+    
+
+
     ImportStatus Importstatus `json:"importStatus"`
 
 
@@ -105,6 +108,10 @@ type Contactlist struct {
     EmailColumns []Emailcolumn `json:"emailColumns"`
 
 
+    // WhatsAppColumns - Indicates which columns are whatsApp contacts
+    WhatsAppColumns []Whatsappcolumn `json:"whatsAppColumns"`
+
+
     
 
 
@@ -151,6 +158,7 @@ func (o *Contactlist) String() string {
      o.ColumnNames = []string{""} 
      o.PhoneColumns = []Contactphonenumbercolumn{{}} 
      o.EmailColumns = []Emailcolumn{{}} 
+     o.WhatsAppColumns = []Whatsappcolumn{{}} 
     
      o.PreviewModeAcceptedValues = []string{""} 
     
@@ -186,6 +194,8 @@ func (u *Contactlist) MarshalJSON() ([]byte, error) {
         PhoneColumns []Contactphonenumbercolumn `json:"phoneColumns"`
         
         EmailColumns []Emailcolumn `json:"emailColumns"`
+        
+        WhatsAppColumns []Whatsappcolumn `json:"whatsAppColumns"`
         
         PreviewModeColumnName string `json:"previewModeColumnName"`
         
@@ -233,6 +243,11 @@ func (u *Contactlist) MarshalJSON() ([]byte, error) {
 
         
         EmailColumns: []Emailcolumn{{}},
+        
+
+
+        
+        WhatsAppColumns: []Whatsappcolumn{{}},
         
 
 

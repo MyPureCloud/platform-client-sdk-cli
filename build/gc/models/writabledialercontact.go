@@ -36,6 +36,9 @@ type WritabledialercontactDud struct {
     
 
 
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 }
@@ -60,6 +63,10 @@ type Writabledialercontact struct {
     
 
 
+    // LatestWhatsAppEvaluations - A map of whatsapp records for the contact whatsapp columns.
+    LatestWhatsAppEvaluations map[string]Messageevaluation `json:"latestWhatsAppEvaluations"`
+
+
     // Callable - Indicates whether or not the contact can be called.
     Callable bool `json:"callable"`
 
@@ -81,6 +88,7 @@ func (o *Writabledialercontact) String() string {
     
     
      o.Data = map[string]string{"": ""} 
+     o.LatestWhatsAppEvaluations = map[string]Messageevaluation{"": {}} 
     
      o.PhoneNumberStatus = map[string]Phonenumberstatus{"": {}} 
      o.ContactableStatus = map[string]Contactablestatus{"": {}} 
@@ -107,6 +115,8 @@ func (u *Writabledialercontact) MarshalJSON() ([]byte, error) {
         
         Data map[string]string `json:"data"`
         
+        LatestWhatsAppEvaluations map[string]Messageevaluation `json:"latestWhatsAppEvaluations"`
+        
         Callable bool `json:"callable"`
         
         PhoneNumberStatus map[string]Phonenumberstatus `json:"phoneNumberStatus"`
@@ -129,6 +139,11 @@ func (u *Writabledialercontact) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        LatestWhatsAppEvaluations: map[string]Messageevaluation{"": {}},
         
 
 

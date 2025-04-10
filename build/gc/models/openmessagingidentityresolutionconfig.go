@@ -20,6 +20,9 @@ type OpenmessagingidentityresolutionconfigDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -37,12 +40,17 @@ type Openmessagingidentityresolutionconfig struct {
     ResolveIdentities bool `json:"resolveIdentities"`
 
 
+    // ExternalSource - The external source used for stitching this channel - used only for Open Messaging.
+    ExternalSource Addressableentityref `json:"externalSource"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Openmessagingidentityresolutionconfig) String() string {
+    
     
     
 
@@ -65,8 +73,13 @@ func (u *Openmessagingidentityresolutionconfig) MarshalJSON() ([]byte, error) {
         Division Writablestarrabledivision `json:"division"`
         
         ResolveIdentities bool `json:"resolveIdentities"`
+        
+        ExternalSource Addressableentityref `json:"externalSource"`
         *Alias
     }{
+
+        
+
 
         
 

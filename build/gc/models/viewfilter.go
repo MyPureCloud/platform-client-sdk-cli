@@ -688,6 +688,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1595,6 +1598,10 @@ type Viewfilter struct {
     // CategoryIds - A list of category ids for filtering
     CategoryIds []string `json:"categoryIds"`
 
+
+    // DeliveryPushed - Filter to indicate if push notification is sent
+    DeliveryPushed bool `json:"deliveryPushed"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1825,6 +1832,7 @@ func (o *Viewfilter) String() string {
      o.SegmentTypes = []string{""} 
      o.ProgramIds = []string{""} 
      o.CategoryIds = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2293,6 +2301,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         ProgramIds []string `json:"programIds"`
         
         CategoryIds []string `json:"categoryIds"`
+        
+        DeliveryPushed bool `json:"deliveryPushed"`
         *Alias
     }{
 
@@ -3281,6 +3291,9 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         CategoryIds: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

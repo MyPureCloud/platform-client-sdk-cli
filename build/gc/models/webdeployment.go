@@ -51,6 +51,9 @@ type WebdeploymentDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -100,6 +103,10 @@ type Webdeployment struct {
     Status string `json:"status"`
 
 
+    // PushIntegrations - The push integration objects associated with the deployment
+    PushIntegrations []Pushintegration `json:"pushIntegrations"`
+
+
     // Configuration - The config version this deployment uses
     Configuration Webdeploymentconfigurationversionentityref `json:"configuration"`
 
@@ -117,6 +124,7 @@ func (o *Webdeployment) String() string {
     
     
     
+     o.PushIntegrations = []Pushintegration{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -148,6 +156,8 @@ func (u *Webdeployment) MarshalJSON() ([]byte, error) {
         Flow Webdeploymentflowentityref `json:"flow"`
         
         Status string `json:"status"`
+        
+        PushIntegrations []Pushintegration `json:"pushIntegrations"`
         
         Configuration Webdeploymentconfigurationversionentityref `json:"configuration"`
         *Alias
@@ -188,6 +198,11 @@ func (u *Webdeployment) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        PushIntegrations: []Pushintegration{{}},
         
 
 

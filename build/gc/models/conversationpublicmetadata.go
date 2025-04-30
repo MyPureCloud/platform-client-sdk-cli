@@ -16,6 +16,9 @@ type ConversationpublicmetadataDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationpublicmetadata - Information about a public message.
@@ -27,10 +30,15 @@ type Conversationpublicmetadata struct {
     // ReplyToId - The id of the message this public message is replying to.
     ReplyToId string `json:"replyToId"`
 
+
+    // Url - The URL of the social post on the native platform.
+    Url string `json:"url"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationpublicmetadata) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Conversationpublicmetadata) MarshalJSON() ([]byte, error) {
         RootId string `json:"rootId"`
         
         ReplyToId string `json:"replyToId"`
+        
+        Url string `json:"url"`
         *Alias
     }{
+
+        
+
 
         
 

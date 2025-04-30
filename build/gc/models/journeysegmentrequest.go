@@ -40,9 +40,6 @@ type JourneysegmentrequestDud struct {
 
     
 
-
-    
-
 }
 
 // Journeysegmentrequest
@@ -65,10 +62,6 @@ type Journeysegmentrequest struct {
 
     // Color - The hexadecimal color value of the segment.
     Color string `json:"color"`
-
-
-    // Scope - The target entity that a segment applies to.
-    Scope string `json:"scope"`
 
 
     // ShouldDisplayToAgent - Whether or not the segment should be displayed to agent/supervisor users.
@@ -94,7 +87,6 @@ type Journeysegmentrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Journeysegmentrequest) String() string {
-    
     
     
     
@@ -132,8 +124,6 @@ func (u *Journeysegmentrequest) MarshalJSON() ([]byte, error) {
         
         Color string `json:"color"`
         
-        Scope string `json:"scope"`
-        
         ShouldDisplayToAgent bool `json:"shouldDisplayToAgent"`
         
         Context Requestcontext `json:"context"`
@@ -145,9 +135,6 @@ func (u *Journeysegmentrequest) MarshalJSON() ([]byte, error) {
         AssignmentExpirationDays int `json:"assignmentExpirationDays"`
         *Alias
     }{
-
-        
-
 
         
 

@@ -14,7 +14,7 @@ Documentation: https://mypurecloud.github.io/platform-client-sdk-cli/
 
 # Installation
 
-The [Developer Center](https://developer.mypurecloud.com/api/rest/command-line-interface/) contains installation instructions for supported operating systems.
+The [Developer Center](https://developer.genesys.cloud/devapps/cli/) contains installation instructions for supported operating systems.
 
 # Setup and Configuration
 
@@ -628,4 +628,4 @@ The SDK's version is incremented according to the [Semantic Versioning Specifica
 
 This package is intended to be forwards compatible with v2 of Genesys Cloud's Platform API. While the general policy for the API is not to introduce breaking changes, there are certain additions and changes to the API that cause breaking changes for the SDK, often due to the way the API is expressed in its swagger definition. Because of this, the SDK can have a major version bump while the API remains at major version 2. While the CLI SDK is intended to be forward compatible, patches will only be released to the latest version. For these reasons, it is strongly recommended that all applications using this CLI SDK are kept up to date and use the latest version of the CLI SDK.
 
-For any issues, questions, or suggestions for the CLI SDK, visit the [Genesys Cloud Developer Forum](https://developer.mypurecloud.com/forum/).
+For any issues, questions, or suggestions for the CLI SDK, visit the [Genesys Cloud Developer Community](https://community.genesys.com/communities/community-home1/digestviewer?CommunityKey=a39cc4d6-857e-43cb-be7b-019581ab9f38).

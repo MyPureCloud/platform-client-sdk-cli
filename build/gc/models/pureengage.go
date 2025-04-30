@@ -62,6 +62,9 @@ type PureengageDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -131,6 +134,10 @@ type Pureengage struct {
     DisplayOnLogin bool `json:"displayOnLogin"`
 
 
+    // MetadataURL
+    MetadataURL string `json:"metadataURL"`
+
+
     // AutoProvisionUsers
     AutoProvisionUsers bool `json:"autoProvisionUsers"`
 
@@ -150,6 +157,7 @@ func (o *Pureengage) String() string {
     
     
      o.Certificates = []string{""} 
+    
     
     
     
@@ -204,6 +212,8 @@ func (u *Pureengage) MarshalJSON() ([]byte, error) {
         
         DisplayOnLogin bool `json:"displayOnLogin"`
         
+        MetadataURL string `json:"metadataURL"`
+        
         AutoProvisionUsers bool `json:"autoProvisionUsers"`
         *Alias
     }{
@@ -237,6 +247,9 @@ func (u *Pureengage) MarshalJSON() ([]byte, error) {
 
         
         Certificates: []string{""},
+        
+
+
         
 
 

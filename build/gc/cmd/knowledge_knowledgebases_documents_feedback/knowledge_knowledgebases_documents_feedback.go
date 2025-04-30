@@ -74,7 +74,7 @@ func Cmdknowledge_knowledgebases_documents_feedback() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "documentVersionId", "", "Document version ID to filter by. Supported only if onlyCommented=true is set.")
 	utils.AddFlag(listCmd.Flags(), "string", "documentVariationId", "", "Document variation ID to filter by. Supported only if onlyCommented=true is set.")
 	utils.AddFlag(listCmd.Flags(), "string", "appType", "", "Application type to filter by. Supported only if onlyCommented=true is set. Valid values: Assistant, BotFlow, MessengerKnowledgeApp, SmartAdvisor, SupportCenter")
-	utils.AddFlag(listCmd.Flags(), "string", "queryType", "", "Query type to filter by. Supported only if onlyCommented=true is set. Valid values: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion")
+	utils.AddFlag(listCmd.Flags(), "string", "queryType", "", "Query type to filter by. Supported only if onlyCommented=true is set. Valid values: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion, ExpandedArticle")
 	utils.AddFlag(listCmd.Flags(), "string", "userId", "", "The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set.")
 	utils.AddFlag(listCmd.Flags(), "string", "queueId", "", "Queue ID to filter by. Supported only if onlyCommented=true is set.")
 	utils.AddFlag(listCmd.Flags(), "string", "state", "", "State to filter by. Supported only if onlyCommented=true is set. Default: Final Valid values: All, Draft, Final")

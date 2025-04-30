@@ -37,6 +37,9 @@ type ConversationappsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationappsettings - Conversation settings that handles chats within the messenger
@@ -76,10 +79,15 @@ type Conversationappsettings struct {
     // Notifications - The notification settings for messenger apps
     Notifications Notificationssettings `json:"notifications"`
 
+
+    // SessionDurationSeconds - The guest session duration settings for messenger conversations
+    SessionDurationSeconds int `json:"sessionDurationSeconds"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationappsettings) String() string {
+    
     
     
     
@@ -123,8 +131,13 @@ func (u *Conversationappsettings) MarshalJSON() ([]byte, error) {
         Humanize Humanize `json:"humanize"`
         
         Notifications Notificationssettings `json:"notifications"`
+        
+        SessionDurationSeconds int `json:"sessionDurationSeconds"`
         *Alias
     }{
+
+        
+
 
         
 

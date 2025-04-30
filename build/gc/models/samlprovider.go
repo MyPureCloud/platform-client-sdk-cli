@@ -59,6 +59,9 @@ type SamlproviderDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -128,6 +131,10 @@ type Samlprovider struct {
     DisplayOnLogin bool `json:"displayOnLogin"`
 
 
+    // MetadataURL
+    MetadataURL string `json:"metadataURL"`
+
+
     
 
 }
@@ -143,6 +150,7 @@ func (o *Samlprovider) String() string {
     
     
      o.Certificates = []string{""} 
+    
     
     
     
@@ -195,6 +203,8 @@ func (u *Samlprovider) MarshalJSON() ([]byte, error) {
         ProviderName string `json:"providerName"`
         
         DisplayOnLogin bool `json:"displayOnLogin"`
+        
+        MetadataURL string `json:"metadataURL"`
         *Alias
     }{
 
@@ -227,6 +237,9 @@ func (u *Samlprovider) MarshalJSON() ([]byte, error) {
 
         
         Certificates: []string{""},
+        
+
+
         
 
 

@@ -116,7 +116,7 @@ type Worktypeupdate struct {
     Description string `json:"description"`
 
 
-    // DefaultStatusId - The ID of the default status for Workitems created from the Worktype.
+    // DefaultStatusId - The ID of the default status for Workitems created from the Worktype. Must be a valid UUID.
     DefaultStatusId string `json:"defaultStatusId"`
 
 

@@ -79,7 +79,7 @@ func Cmdarchitect_schedules() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by")
-	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Sort order")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Sort order")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name of the Schedule to filter by.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "List of divisionIds on which to filter.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/schedules", utils.FormatPermissions([]string{ "routing:schedule:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/schedules")))

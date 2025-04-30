@@ -22,6 +22,9 @@ type KnowledgeconversationcontextDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgeconversationcontext
@@ -32,6 +35,10 @@ type Knowledgeconversationcontext struct {
 
     // MediaType - The media type of the conversation.
     MediaType string `json:"mediaType"`
+
+
+    // MessageType - The message type of the conversation.
+    MessageType string `json:"messageType"`
 
 
     // QueueId - The unique identifier of the queue used to assign the interaction to the user.
@@ -45,6 +52,7 @@ type Knowledgeconversationcontext struct {
 
 // String returns a JSON representation of the model
 func (o *Knowledgeconversationcontext) String() string {
+    
     
     
     
@@ -70,11 +78,16 @@ func (u *Knowledgeconversationcontext) MarshalJSON() ([]byte, error) {
         
         MediaType string `json:"mediaType"`
         
+        MessageType string `json:"messageType"`
+        
         QueueId string `json:"queueId"`
         
         ExternalContactId string `json:"externalContactId"`
         *Alias
     }{
+
+        
+
 
         
 

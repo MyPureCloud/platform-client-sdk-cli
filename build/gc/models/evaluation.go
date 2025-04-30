@@ -105,6 +105,12 @@ type EvaluationDud struct {
     
 
 
+    
+
+
+    
+
+
     EvaluationSource Evaluationsource `json:"evaluationSource"`
 
 
@@ -141,7 +147,7 @@ type Evaluation struct {
 
 
     // Calibration
-    Calibration Calibration `json:"calibration"`
+    Calibration *Calibration `json:"calibration"`
 
 
     // Status
@@ -172,8 +178,16 @@ type Evaluation struct {
     AssignedDate time.Time `json:"assignedDate"`
 
 
+    // CreatedDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    CreatedDate time.Time `json:"createdDate"`
+
+
     // ChangedDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     ChangedDate time.Time `json:"changedDate"`
+
+
+    // SubmittedDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    SubmittedDate time.Time `json:"submittedDate"`
 
 
     // RevisionCreatedDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -192,7 +206,7 @@ type Evaluation struct {
     Rescore bool `json:"rescore"`
 
 
-    // ConversationDate - Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    // ConversationDate - Creation date of the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     ConversationDate time.Time `json:"conversationDate"`
 
 
@@ -268,6 +282,8 @@ func (o *Evaluation) String() string {
     
     
     
+    
+    
      o.MediaType = []string{""} 
     
     
@@ -309,7 +325,7 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
         
         Agent User `json:"agent"`
         
-        Calibration Calibration `json:"calibration"`
+        Calibration *Calibration `json:"calibration"`
         
         Status string `json:"status"`
         
@@ -325,7 +341,11 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
         
         AssignedDate time.Time `json:"assignedDate"`
         
+        CreatedDate time.Time `json:"createdDate"`
+        
         ChangedDate time.Time `json:"changedDate"`
+        
+        SubmittedDate time.Time `json:"submittedDate"`
         
         RevisionCreatedDate time.Time `json:"revisionCreatedDate"`
         
@@ -360,6 +380,12 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
         HasAssistanceFailed bool `json:"hasAssistanceFailed"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

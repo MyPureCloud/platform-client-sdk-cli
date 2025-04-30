@@ -49,6 +49,12 @@ type ConversationnormalizedmessageDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Conversationnormalizedmessage - General rich media message structure with normalized feature support across many messaging channels.
@@ -91,8 +97,16 @@ type Conversationnormalizedmessage struct {
     
 
 
+    // RelatedMessages - A list of messages related to this one.
+    RelatedMessages []Conversationnormalizedmessage `json:"relatedMessages"`
+
+
     // Metadata - Additional metadata about this message.
     Metadata map[string]string `json:"metadata"`
+
+
+    // Enrichment - Metadata enrichments provided by the platform.
+    Enrichment Conversationenrichment `json:"enrichment"`
 
 
     // ByoSmsIntegrationId - The internal id representing the customer supplied sms integration message.
@@ -107,7 +121,9 @@ func (o *Conversationnormalizedmessage) String() string {
      o.Content = []Conversationmessagecontent{{}} 
      o.Events = []Conversationmessageevent{{}} 
     
+     o.RelatedMessages = []Conversationnormalizedmessage{{}} 
      o.Metadata = map[string]string{"": ""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -136,7 +152,11 @@ func (u *Conversationnormalizedmessage) MarshalJSON() ([]byte, error) {
         
         OriginatingEntity string `json:"originatingEntity"`
         
+        RelatedMessages []Conversationnormalizedmessage `json:"relatedMessages"`
+        
         Metadata map[string]string `json:"metadata"`
+        
+        Enrichment Conversationenrichment `json:"enrichment"`
         
         ByoSmsIntegrationId string `json:"byoSmsIntegrationId"`
         *Alias
@@ -180,7 +200,15 @@ func (u *Conversationnormalizedmessage) MarshalJSON() ([]byte, error) {
 
 
         
+        RelatedMessages: []Conversationnormalizedmessage{{}},
+        
+
+
+        
         Metadata: map[string]string{"": ""},
+        
+
+
         
 
 

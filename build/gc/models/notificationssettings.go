@@ -13,6 +13,9 @@ var (
 type NotificationssettingsDud struct { 
     
 
+
+    
+
 }
 
 // Notificationssettings - Notification settings that handles messenger notifications
@@ -20,10 +23,15 @@ type Notificationssettings struct {
     // Enabled - The toggle to enable or disable notifications
     Enabled bool `json:"enabled"`
 
+
+    // NotificationContentType - The notification content type settings for messenger
+    NotificationContentType string `json:"notificationContentType"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Notificationssettings) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Notificationssettings) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Enabled bool `json:"enabled"`
+        
+        NotificationContentType string `json:"notificationContentType"`
         *Alias
     }{
+
+        
+
 
         
 

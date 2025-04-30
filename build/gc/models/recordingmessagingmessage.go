@@ -71,6 +71,9 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Recordingmessagingmessage
@@ -151,6 +154,10 @@ type Recordingmessagingmessage struct {
     ContentType string `json:"contentType"`
 
 
+    // SocialVisibility - For social media messages, the visibility of the message in the originating social platform
+    SocialVisibility string `json:"socialVisibility"`
+
+
     // Events - List of event elements
     Events []Conversationmessageevent `json:"events"`
 
@@ -175,6 +182,7 @@ func (o *Recordingmessagingmessage) String() string {
     
     
      o.Cards = []Card{{}} 
+    
     
     
      o.Events = []Conversationmessageevent{{}} 
@@ -232,6 +240,8 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         NotificationTemplate Recordingnotificationtemplate `json:"notificationTemplate"`
         
         ContentType string `json:"contentType"`
+        
+        SocialVisibility string `json:"socialVisibility"`
         
         Events []Conversationmessageevent `json:"events"`
         *Alias
@@ -293,6 +303,9 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
 
         
         Cards: []Card{{}},
+        
+
+
         
 
 

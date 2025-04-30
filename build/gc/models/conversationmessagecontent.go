@@ -43,6 +43,9 @@ type ConversationmessagecontentDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationmessagecontent - Message content element. If contentType = \"Attachment\" only one item is allowed.
@@ -90,6 +93,10 @@ type Conversationmessagecontent struct {
     // QuickReplyV2 - Quick reply V2 content.
     QuickReplyV2 Conversationcontentquickreplyv2 `json:"quickReplyV2"`
 
+
+    // Reactions - A set of reactions to a message.
+    Reactions []Conversationcontentreaction `json:"reactions"`
+
 }
 
 // String returns a JSON representation of the model
@@ -105,6 +112,7 @@ func (o *Conversationmessagecontent) String() string {
     
     
     
+     o.Reactions = []Conversationcontentreaction{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,6 +151,8 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
         Text Conversationcontenttext `json:"text"`
         
         QuickReplyV2 Conversationcontentquickreplyv2 `json:"quickReplyV2"`
+        
+        Reactions []Conversationcontentreaction `json:"reactions"`
         *Alias
     }{
 
@@ -176,6 +186,11 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Reactions: []Conversationcontentreaction{{}},
         
 
         Alias: (*Alias)(u),

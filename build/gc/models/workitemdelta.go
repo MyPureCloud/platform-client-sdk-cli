@@ -94,6 +94,15 @@ type WorkitemdeltaDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Workitemdelta
@@ -209,10 +218,25 @@ type Workitemdelta struct {
     // ScriptId
     ScriptId Workitemsattributechangestring `json:"scriptId"`
 
+
+    // DateAssignmentStateChanged
+    DateAssignmentStateChanged Workitemsattributechangeinstant `json:"dateAssignmentStateChanged"`
+
+
+    // AlertTimeoutSeconds
+    AlertTimeoutSeconds Workitemsattributechangeinteger `json:"alertTimeoutSeconds"`
+
+
+    // ScoredAgents
+    ScoredAgents Workitemsattributechangelistworkitemscoredagentdelta `json:"scoredAgents"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Workitemdelta) String() string {
+    
+    
+    
     
     
     
@@ -313,8 +337,23 @@ func (u *Workitemdelta) MarshalJSON() ([]byte, error) {
         StatusCategory Workitemsattributechangeworkitemstatuscategory `json:"statusCategory"`
         
         ScriptId Workitemsattributechangestring `json:"scriptId"`
+        
+        DateAssignmentStateChanged Workitemsattributechangeinstant `json:"dateAssignmentStateChanged"`
+        
+        AlertTimeoutSeconds Workitemsattributechangeinteger `json:"alertTimeoutSeconds"`
+        
+        ScoredAgents Workitemsattributechangelistworkitemscoredagentdelta `json:"scoredAgents"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

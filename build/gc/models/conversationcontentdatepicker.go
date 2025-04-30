@@ -29,6 +29,9 @@ type ConversationcontentdatepickerDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationcontentdatepicker - DateTimePicker content object.
@@ -53,6 +56,10 @@ type Conversationcontentdatepicker struct {
     DateMaximum time.Time `json:"dateMaximum"`
 
 
+    // Location - Location of the event.
+    Location Conversationcontentlocation `json:"location"`
+
+
     // AvailableTimes - An array of available times objects.
     AvailableTimes []Conversationcontentdatepickeravailabletime `json:"availableTimes"`
 
@@ -60,6 +67,7 @@ type Conversationcontentdatepicker struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationcontentdatepicker) String() string {
+    
     
     
     
@@ -93,9 +101,14 @@ func (u *Conversationcontentdatepicker) MarshalJSON() ([]byte, error) {
         
         DateMaximum time.Time `json:"dateMaximum"`
         
+        Location Conversationcontentlocation `json:"location"`
+        
         AvailableTimes []Conversationcontentdatepickeravailabletime `json:"availableTimes"`
         *Alias
     }{
+
+        
+
 
         
 

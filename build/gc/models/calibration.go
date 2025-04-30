@@ -115,7 +115,7 @@ type Calibration struct {
 
 
     // ScoringIndex
-    ScoringIndex *Evaluation `json:"scoringIndex"`
+    ScoringIndex Evaluation `json:"scoringIndex"`
 
 
     // ExpertEvaluator
@@ -183,7 +183,7 @@ func (u *Calibration) MarshalJSON() ([]byte, error) {
         
         Evaluators []User `json:"evaluators"`
         
-        ScoringIndex *Evaluation `json:"scoringIndex"`
+        ScoringIndex Evaluation `json:"scoringIndex"`
         
         ExpertEvaluator User `json:"expertEvaluator"`
         *Alias

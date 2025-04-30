@@ -13,9 +13,6 @@ var (
 type ReversewhitepageslookupresultDud struct { 
     
 
-
-    
-
 }
 
 // Reversewhitepageslookupresult
@@ -23,16 +20,11 @@ type Reversewhitepageslookupresult struct {
     // Contacts
     Contacts []Externalcontact `json:"contacts"`
 
-
-    // ExternalOrganizations
-    ExternalOrganizations []Externalorganization `json:"externalOrganizations"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Reversewhitepageslookupresult) String() string {
      o.Contacts = []Externalcontact{{}} 
-     o.ExternalOrganizations = []Externalorganization{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -51,18 +43,11 @@ func (u *Reversewhitepageslookupresult) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Contacts []Externalcontact `json:"contacts"`
-        
-        ExternalOrganizations []Externalorganization `json:"externalOrganizations"`
         *Alias
     }{
 
         
         Contacts: []Externalcontact{{}},
-        
-
-
-        
-        ExternalOrganizations: []Externalorganization{{}},
         
 
         Alias: (*Alias)(u),

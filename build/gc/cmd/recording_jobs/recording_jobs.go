@@ -83,7 +83,7 @@ func Cmdrecording_jobs() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Filter by state Valid values: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED")
 	utils.AddFlag(listCmd.Flags(), "bool", "showOnlyMyJobs", "", "Show only my jobs")
 	utils.AddFlag(listCmd.Flags(), "string", "jobType", "", "Job Type (Can be left empty for both) Valid values: ARCHIVE, DELETE, EXPORT")
-	utils.AddFlag(listCmd.Flags(), "bool", "includeTotal", "", "If false, cursor will be used to locate the page instead of pageNumber.")
+	utils.AddFlag(listCmd.Flags(), "bool", "includeTotal", "", "If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.")
 	utils.AddFlag(listCmd.Flags(), "string", "cursor", "", "Indicates where to resume query results (not required for first page)")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/recording/jobs", utils.FormatPermissions([]string{ "recording:job:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/recording/jobs")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)

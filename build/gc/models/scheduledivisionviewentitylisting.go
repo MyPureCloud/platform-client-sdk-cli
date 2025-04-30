@@ -67,24 +67,24 @@ type Scheduledivisionviewentitylisting struct {
     TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
-    // FirstUri
-    FirstUri string `json:"firstUri"`
-
-
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
     // NextUri
     NextUri string `json:"nextUri"`
 
 
     // PreviousUri
     PreviousUri string `json:"previousUri"`
+
+
+    // LastUri
+    LastUri string `json:"lastUri"`
+
+
+    // FirstUri
+    FirstUri string `json:"firstUri"`
+
+
+    // SelfUri
+    SelfUri string `json:"selfUri"`
 
 
     // PageCount
@@ -132,15 +132,15 @@ func (u *Scheduledivisionviewentitylisting) MarshalJSON() ([]byte, error) {
         
         TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
-        FirstUri string `json:"firstUri"`
-        
-        LastUri string `json:"lastUri"`
-        
-        SelfUri string `json:"selfUri"`
-        
         NextUri string `json:"nextUri"`
         
         PreviousUri string `json:"previousUri"`
+        
+        LastUri string `json:"lastUri"`
+        
+        FirstUri string `json:"firstUri"`
+        
+        SelfUri string `json:"selfUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

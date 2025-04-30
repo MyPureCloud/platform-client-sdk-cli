@@ -28,9 +28,9 @@ func init() {
 }
 
 func Cmdexternalcontacts_reversewhitepageslookup() *cobra.Command { 
-	utils.AddFlag(searchCmd.Flags(), "string", "lookupVal", "", "User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) - REQUIRED")
+	utils.AddFlag(searchCmd.Flags(), "string", "lookupVal", "", "User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names) - REQUIRED")
 	utils.AddFlag(searchCmd.Flags(), "[]string", "expand", "", "which field, if any, to expand Valid values: contacts.externalOrganization, externalDataSources, division")
-	utils.AddFlag(searchCmd.Flags(), "string", "divisionId", "*", "Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value")
+	utils.AddFlag(searchCmd.Flags(), "string", "divisionId", "*", "Specifies which division to lookup contacts in, for the given lookup value")
 	searchCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", searchCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/reversewhitepageslookup", utils.FormatPermissions([]string{ "externalContacts:contact:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/reversewhitepageslookup")))
 	utils.AddFileFlagIfUpsert(searchCmd.Flags(), "GET", ``)
 	searchCmd.MarkFlagRequired("lookupVal")
@@ -56,8 +56,8 @@ func queryEscape(value string) string {
 
 var searchCmd = &cobra.Command{
 	Use:   "search",
-	Short: "Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.",
-	Long:  "Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.",
+	Short: "Look up contacts based on an attribute. Maximum of 25 values returned.",
+	Long:  "Look up contacts based on an attribute. Maximum of 25 values returned.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

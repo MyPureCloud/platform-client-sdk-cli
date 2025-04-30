@@ -70,6 +70,15 @@ type WorktypedeltaDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Worktypedelta
@@ -153,10 +162,25 @@ type Worktypedelta struct {
     // DefaultScriptId
     DefaultScriptId Workitemsattributechangestring `json:"defaultScriptId"`
 
+
+    // FlowId
+    FlowId Workitemsattributechangestring `json:"flowId"`
+
+
+    // RuleSettings
+    RuleSettings Workitemsattributechangeworkitemrulesettings `json:"ruleSettings"`
+
+
+    // UnassignedDivisionContactsEnabled
+    UnassignedDivisionContactsEnabled Workitemsattributechangeboolean `json:"unassignedDivisionContactsEnabled"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Worktypedelta) String() string {
+    
+    
+    
     
     
     
@@ -233,8 +257,23 @@ func (u *Worktypedelta) MarshalJSON() ([]byte, error) {
         ModifiedBy Workitemsattributechangestring `json:"modifiedBy"`
         
         DefaultScriptId Workitemsattributechangestring `json:"defaultScriptId"`
+        
+        FlowId Workitemsattributechangestring `json:"flowId"`
+        
+        RuleSettings Workitemsattributechangeworkitemrulesettings `json:"ruleSettings"`
+        
+        UnassignedDivisionContactsEnabled Workitemsattributechangeboolean `json:"unassignedDivisionContactsEnabled"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

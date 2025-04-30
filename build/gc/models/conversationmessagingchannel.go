@@ -18,6 +18,9 @@ type ConversationmessagingchannelDud struct {
     Platform string `json:"platform"`
 
 
+    
+
+
     MessageId string `json:"messageId"`
 
 
@@ -35,6 +38,9 @@ type ConversationmessagingchannelDud struct {
 
     DateDeleted time.Time `json:"dateDeleted"`
 
+
+    
+
 }
 
 // Conversationmessagingchannel - Channel-specific information that describes the message and the message channel/provider.
@@ -45,7 +51,8 @@ type Conversationmessagingchannel struct {
     
 
 
-    
+    // VarType - Specifies if this message is part of a private or public conversation.
+    VarType string `json:"type"`
 
 
     
@@ -61,11 +68,20 @@ type Conversationmessagingchannel struct {
 
 
     
+
+
+    
+
+
+    // PublicMetadata - Information about a public message.
+    PublicMetadata Conversationpublicmetadata `json:"publicMetadata"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationmessagingchannel) String() string {
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -82,8 +98,18 @@ func (u *Conversationmessagingchannel) MarshalJSON() ([]byte, error) {
     ConversationmessagingchannelMarshalled = true
 
     return json.Marshal(&struct {
+        
+        VarType string `json:"type"`
+        
+        PublicMetadata Conversationpublicmetadata `json:"publicMetadata"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

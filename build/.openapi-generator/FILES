@@ -287,6 +287,7 @@ gc/cmd/conversations_messages_agentless/conversations_messages_agentless.go
 gc/cmd/conversations_messages_cachedmedia/conversations_messages_cachedmedia.go
 gc/cmd/conversations_messages_communications_messages/conversations_messages_communications_messages.go
 gc/cmd/conversations_messages_communications_messages_media/conversations_messages_communications_messages_media.go
+gc/cmd/conversations_messages_communications_messages_media_uploads/conversations_messages_communications_messages_media_uploads.go
 gc/cmd/conversations_messages_communications_typing/conversations_messages_communications_typing.go
 gc/cmd/conversations_messages_details/conversations_messages_details.go
 gc/cmd/conversations_messages_inbound_open/conversations_messages_inbound_open.go
@@ -1002,6 +1003,7 @@ gc/cmd/scripts_export/scripts_export.go
 gc/cmd/scripts_pages/scripts_pages.go
 gc/cmd/scripts_published/scripts_published.go
 gc/cmd/scripts_published_divisionviews/scripts_published_divisionviews.go
+gc/cmd/scripts_published_divisionviews_variables/scripts_published_divisionviews_variables.go
 gc/cmd/scripts_published_pages/scripts_published_pages.go
 gc/cmd/scripts_published_variables/scripts_published_variables.go
 gc/cmd/scripts_uploads_status/scripts_uploads_status.go
@@ -2115,6 +2117,11 @@ gc/models/compliance.go
 gc/models/complianceresponse.go
 gc/models/computeddata.go
 gc/models/condition.go
+gc/models/conditionalgroupactivation.go
+gc/models/conditionalgroupactivationcondition.go
+gc/models/conditionalgroupactivationpilotrule.go
+gc/models/conditionalgroupactivationrule.go
+gc/models/conditionalgroupactivationsimplemetric.go
 gc/models/conditionalgrouprouting.go
 gc/models/conditionalgrouproutingrule.go
 gc/models/configurationoverrides.go
@@ -2289,6 +2296,9 @@ gc/models/conversationcontentcarousel.go
 gc/models/conversationcontentdatepicker.go
 gc/models/conversationcontentdatepickeravailabletime.go
 gc/models/conversationcontentinteractiveapplication.go
+gc/models/conversationcontentlistpicker.go
+gc/models/conversationcontentlistpickeritem.go
+gc/models/conversationcontentlistpickersection.go
 gc/models/conversationcontentlocation.go
 gc/models/conversationcontentnotificationtemplate.go
 gc/models/conversationcontentquickreply.go
@@ -2490,6 +2500,7 @@ gc/models/dataingestionrulestatuspatchrequest.go
 gc/models/datarange.go
 gc/models/dataschema.go
 gc/models/dataschemalisting.go
+gc/models/dataschemaref.go
 gc/models/datatable.go
 gc/models/datatableexportjob.go
 gc/models/datatableimportentitylisting.go
@@ -3233,6 +3244,7 @@ gc/models/integrationtypeentitylisting.go
 gc/models/intent.go
 gc/models/intentdefinition.go
 gc/models/intentfeedback.go
+gc/models/interactiveapplication.go
 gc/models/internalmessage.go
 gc/models/internalmessagedetails.go
 gc/models/intradayperformancepredictiondata.go
@@ -3570,6 +3582,7 @@ gc/models/listwrapperalternativeshiftbusettingsgranularity.go
 gc/models/listwrapperbidgroupworkplanrequest.go
 gc/models/listwrapperfixedavailability.go
 gc/models/listwrapperinterval.go
+gc/models/listwrapperoverridedate.go
 gc/models/listwrappersecondarypresence.go
 gc/models/listwrappershiftstartvariance.go
 gc/models/listwrapperstring.go
@@ -3671,6 +3684,7 @@ gc/models/messagemediaparticipant.go
 gc/models/messagemediapolicy.go
 gc/models/messagemediapolicyconditions.go
 gc/models/messagemediasettings.go
+gc/models/messagemediauploaddata.go
 gc/models/messagesticker.go
 gc/models/messagestickerattachment.go
 gc/models/messagetypingeventrequest.go
@@ -3919,6 +3933,7 @@ gc/models/outlierinfo.go
 gc/models/outofoffice.go
 gc/models/overallbestpoints.go
 gc/models/overallbestpointsitem.go
+gc/models/overridedate.go
 gc/models/overrideescalationtarget.go
 gc/models/page.go
 gc/models/pagednamespacelisting.go
@@ -4920,6 +4935,7 @@ gc/models/updateverifierrequest.go
 gc/models/updateworkplanbid.go
 gc/models/updateworkplanrotationagentrequest.go
 gc/models/updateworkplanrotationrequest.go
+gc/models/uploadmediarequest.go
 gc/models/uploadurlrequest.go
 gc/models/uploadurlrequestbody.go
 gc/models/uploadurlresponse.go
@@ -5012,6 +5028,7 @@ gc/models/usersearchcriteria.go
 gc/models/usersearchrequest.go
 gc/models/usersearchrule.go
 gc/models/usersearchrulepart.go
+gc/models/usersettingsforchat.go
 gc/models/userskillentitylisting.go
 gc/models/userskillgroupentitylisting.go
 gc/models/userssearchresponse.go
@@ -5253,8 +5270,10 @@ gc/models/workitemsattributechangeboolean.go
 gc/models/workitemsattributechangeinstant.go
 gc/models/workitemsattributechangeinteger.go
 gc/models/workitemsattributechangelist.go
+gc/models/workitemsattributechangelistworkitemscoredagentdelta.go
 gc/models/workitemsattributechangemap.go
 gc/models/workitemsattributechangestring.go
+gc/models/workitemsattributechangeworkitemrulesettings.go
 gc/models/workitemsattributechangeworkitemstatuscategory.go
 gc/models/workitemsattributechangewrapupdelta.go
 gc/models/workitemschangeworkbindelta.go
@@ -5262,6 +5281,7 @@ gc/models/workitemschangeworkitemdelta.go
 gc/models/workitemschangeworktypedelta.go
 gc/models/workitemschema.go
 gc/models/workitemscoredagent.go
+gc/models/workitemscoredagentdelta.go
 gc/models/workitemscoredagentrequest.go
 gc/models/workitemscriptreference.go
 gc/models/workitemstatus.go

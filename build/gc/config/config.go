@@ -149,7 +149,7 @@ func (c *configuration) Environment() string {
 }
 
 func MapEnvironment(env string) string {
-	if env != "localhost" && !strings.Contains(env, ".") {
+	if env != "localhost" && !strings.Contains(env, ".") && !strings.HasPrefix(env, "localhost:") {
 		basePath, ok := RegionMappings[env]
 		if !ok {
 			fmt.Println("Invalid AWS region:", env)

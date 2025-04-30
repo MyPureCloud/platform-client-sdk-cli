@@ -19,6 +19,9 @@ type DivisioneddomainentityrefDud struct {
 
     
 
+
+    Division Divisionreference `json:"division"`
+
 }
 
 // Divisioneddomainentityref
@@ -33,6 +36,9 @@ type Divisioneddomainentityref struct {
 
     // SelfUri
     SelfUri string `json:"selfUri"`
+
+
+    
 
 }
 
@@ -65,6 +71,9 @@ func (u *Divisioneddomainentityref) MarshalJSON() ([]byte, error) {
         SelfUri string `json:"selfUri"`
         *Alias
     }{
+
+        
+
 
         
 

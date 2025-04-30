@@ -36,7 +36,7 @@ func Cmdchats_users_me_settings() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ChatUserSettings"
+        "$ref" : "#/components/schemas/UserSettingsForChat"
       }
     }
   }
@@ -48,7 +48,7 @@ func Cmdchats_users_me_settings() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ChatUserSettings"
+        "$ref" : "#/components/schemas/UserSettingsForChat"
       }
     }
   },
@@ -60,7 +60,7 @@ func Cmdchats_users_me_settings() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ChatUserSettings"
+        "$ref" : "#/components/schemas/UserSettingsForChat"
       }
     }
   }
@@ -149,7 +149,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Chatusersettings{}
+			reqModel := models.Usersettingsforchat{}
 			utils.Render(reqModel.String())
 			
 			return

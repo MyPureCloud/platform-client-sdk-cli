@@ -49,7 +49,7 @@
 * [gc users me](gc_users_me.html)	 - /api/v2/users/me
 * [gc users outofoffice](gc_users_outofoffice.html)	 - /api/v2/users/{userId}/outofoffice
 * [gc users password](gc_users_password.html)	 - /api/v2/users/{userId}/password
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
+* [gc users presences](gc_users_presences.html)	 - /api/v2/users/presences /api/v2/users/{userId}/presences
 * [gc users profile](gc_users_profile.html)	 - /api/v2/users/{userId}/profile
 * [gc users profileskills](gc_users_profileskills.html)	 - /api/v2/users/{userId}/profileskills
 * [gc users queues](gc_users_queues.html)	 - /api/v2/users/{userId}/queues

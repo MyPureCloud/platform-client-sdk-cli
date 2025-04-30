@@ -17,7 +17,7 @@ gc recording jobs failedrecordings list [jobId] [flags]
       --cursor string            Indicates where to resume query results (not required for first page)
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --includeTotal string      If false, cursor will be used to locate the page instead of pageNumber. Valid values: true, false
+      --includeTotal string      If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. Valid values: true, false
       --pageNumber string        Page number (default "1")
       --pageSize string          Page size. Maximum is 100. (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

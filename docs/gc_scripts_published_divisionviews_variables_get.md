@@ -1,15 +1,23 @@
-## gc workforcemanagement agents integrations
+## gc scripts published divisionviews variables get
 
-/api/v2/workforcemanagement/agents/{agentId}/integrations
+Get the published variables
 
 ### Synopsis
 
-/api/v2/workforcemanagement/agents/{agentId}/integrations
+Get the published variables
+
+```
+gc scripts published divisionviews variables get [scriptId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for integrations
+  -h, --help                       help for get
+      --input string               input Valid values: true, false
+      --output string              output Valid values: true, false
+      --scriptDataVersion string   Advanced usage - controls the data version of the script
+      --varType string             type Valid values: string, number, boolean
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +37,6 @@
 
 ### SEE ALSO
 
-* [gc workforcemanagement agents](gc_workforcemanagement_agents.html)	 - /api/v2/workforcemanagement/agents
-* [gc workforcemanagement agents integrations hris](gc_workforcemanagement_agents_integrations_hris.html)	 - /api/v2/workforcemanagement/agents/{agentId}/integrations/hris
+* [gc scripts published divisionviews variables](gc_scripts_published_divisionviews_variables.html)	 - /api/v2/scripts/published/divisionviews/{scriptId}/variables
 
 

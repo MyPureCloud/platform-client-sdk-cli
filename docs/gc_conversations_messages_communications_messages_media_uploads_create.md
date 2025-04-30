@@ -1,15 +1,22 @@
-## gc workforcemanagement agents integrations
+## gc conversations messages communications messages media uploads create
 
-/api/v2/workforcemanagement/agents/{agentId}/integrations
+Create a URL to upload a message media file
 
 ### Synopsis
 
-/api/v2/workforcemanagement/agents/{agentId}/integrations
+Create a URL to upload a message media file
+
+```
+gc conversations messages communications messages media uploads create [conversationId] [communicationId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for integrations
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +36,6 @@
 
 ### SEE ALSO
 
-* [gc workforcemanagement agents](gc_workforcemanagement_agents.html)	 - /api/v2/workforcemanagement/agents
-* [gc workforcemanagement agents integrations hris](gc_workforcemanagement_agents_integrations_hris.html)	 - /api/v2/workforcemanagement/agents/{agentId}/integrations/hris
+* [gc conversations messages communications messages media uploads](gc_conversations_messages_communications_messages_media_uploads.html)	 - /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads
 
 

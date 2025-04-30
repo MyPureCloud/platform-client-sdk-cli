@@ -31,5 +31,6 @@
 
 * [gc scripts published](gc_scripts_published.html)	 - /api/v2/scripts/published
 * [gc scripts published divisionviews list](gc_scripts_published_divisionviews_list.html)	 - Get the published scripts metadata.
+* [gc scripts published divisionviews variables](gc_scripts_published_divisionviews_variables.html)	 - /api/v2/scripts/published/divisionviews/{scriptId}/variables
 
 

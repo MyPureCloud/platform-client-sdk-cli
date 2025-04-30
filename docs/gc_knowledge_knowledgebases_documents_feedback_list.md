@@ -23,7 +23,7 @@ gc knowledge knowledgebases documents feedback list [knowledgeBaseId] [documentI
   -h, --help                         help for list
       --onlyCommented string         If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. Valid values: true, false
       --pageSize string              Number of entities to return. Maximum of 200.
-      --queryType string             Query type to filter by. Supported only if onlyCommented=true is set. Valid values: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion
+      --queryType string             Query type to filter by. Supported only if onlyCommented=true is set. Valid values: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion, ExpandedArticle
       --queueId string               Queue ID to filter by. Supported only if onlyCommented=true is set.
       --state string                 State to filter by. Supported only if onlyCommented=true is set. Default: Final Valid values: All, Draft, Final
   -s, --stream                       Paginate and stream data as it is being processed leaving page information intact

@@ -32,7 +32,7 @@
 * [gc workforcemanagement](gc_workforcemanagement.html)	 - /api/v2/workforcemanagement
 * [gc workforcemanagement agents adherence](gc_workforcemanagement_agents_adherence.html)	 - /api/v2/workforcemanagement/agents/{agentId}/adherence
 * [gc workforcemanagement agents create](gc_workforcemanagement_agents_create.html)	 - Move agents in and out of management unit
-* [gc workforcemanagement agents integrations](gc_workforcemanagement_agents_integrations.html)	 - /api/v2/workforcemanagement/agents/integrations
+* [gc workforcemanagement agents integrations](gc_workforcemanagement_agents_integrations.html)	 - /api/v2/workforcemanagement/agents/{agentId}/integrations
 * [gc workforcemanagement agents managementunit](gc_workforcemanagement_agents_managementunit.html)	 - /api/v2/workforcemanagement/agents/{agentId}/managementunit
 * [gc workforcemanagement agents me](gc_workforcemanagement_agents_me.html)	 - /api/v2/workforcemanagement/agents/me
 

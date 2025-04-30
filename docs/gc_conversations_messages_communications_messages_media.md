@@ -32,5 +32,6 @@
 * [gc conversations messages communications messages](gc_conversations_messages_communications_messages.html)	 - /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages
 * [gc conversations messages communications messages media create](gc_conversations_messages_communications_messages_media_create.html)	 - Create media
 * [gc conversations messages communications messages media get](gc_conversations_messages_communications_messages_media_get.html)	 - Get media
+* [gc conversations messages communications messages media uploads](gc_conversations_messages_communications_messages_media_uploads.html)	 - /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads
 
 

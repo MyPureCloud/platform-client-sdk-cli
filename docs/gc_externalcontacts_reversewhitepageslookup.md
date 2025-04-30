@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc externalcontacts](gc_externalcontacts.html)	 - /api/v2/externalcontacts
-* [gc externalcontacts reversewhitepageslookup search](gc_externalcontacts_reversewhitepageslookup_search.html)	 - Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+* [gc externalcontacts reversewhitepageslookup search](gc_externalcontacts_reversewhitepageslookup_search.html)	 - Look up contacts based on an attribute. Maximum of 25 values returned.
 
 

@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc conversations](gc_conversations.html)	 - /api/v2/conversations
+* [gc conversations summaries engagements](gc_conversations_summaries_engagements.html)	 - /api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements
 * [gc conversations summaries feedback](gc_conversations_summaries_feedback.html)	 - /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback
 * [gc conversations summaries get](gc_conversations_summaries_get.html)	 - Get the summaries of the conversation.
 

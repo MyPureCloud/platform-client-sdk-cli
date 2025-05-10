@@ -13,7 +13,8 @@ gc routing email domains routes get [domainName] [routeId] [flags]
 ### Options
 
 ```
-  -h, --help   help for get
+      --expand strings   Which fields, if any, to expand Valid values: identityresolution
+  -h, --help             help for get
 ```
 
 ### Options inherited from parent commands

@@ -15,6 +15,7 @@ gc routing sms phonenumbers list [flags]
 ```
   -a, --autopaginate                Automatically paginate through the results stripping page information
       --countryCode strings         Filter on country code
+      --expand strings              Which fields, if any, to expand Valid values: identityresolution, supportedContent
       --filtercondition string      Filter list command output based on a given condition or regular expression
   -h, --help                        help for list
       --integrationId string        Filter on the Genesys Cloud integration id to which the phone number belongs to

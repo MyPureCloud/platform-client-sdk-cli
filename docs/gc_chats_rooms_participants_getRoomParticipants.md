@@ -13,7 +13,8 @@ gc chats rooms participants getRoomParticipants [roomJid] [flags]
 ### Options
 
 ```
-  -h, --help   help for getRoomParticipants
+  -h, --help            help for getRoomParticipants
+      --notify string   Whether to get users to notify Valid values: true, false
 ```
 
 ### Options inherited from parent commands

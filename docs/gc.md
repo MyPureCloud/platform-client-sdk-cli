@@ -33,6 +33,7 @@ gc is a CLI for interacting with Genesys Cloud
 * [gc authorization](gc_authorization.html)	 - /api/v2/authorization
 * [gc autopagination](gc_autopagination.html)	 - autopagination
 * [gc billing](gc_billing.html)	 - /api/v2/billing
+* [gc businessrules](gc_businessrules.html)	 - /api/v2/businessrules
 * [gc carrierservices](gc_carrierservices.html)	 - /api/v2/carrierservices
 * [gc certificate](gc_certificate.html)	 - /api/v2/certificate
 * [gc chats](gc_chats.html)	 - /api/v2/chats

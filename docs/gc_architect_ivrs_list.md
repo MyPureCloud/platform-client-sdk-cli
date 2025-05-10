@@ -15,6 +15,7 @@ gc architect ivrs list [flags]
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --dnis string              The phone number of the IVR to filter by.
+      --expand strings           Which fields, if any, to expand Valid values: identityresolution
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --name string              Name of the IVR to filter by.

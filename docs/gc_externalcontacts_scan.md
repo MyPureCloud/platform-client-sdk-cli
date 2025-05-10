@@ -1,10 +1,10 @@
 ## gc externalcontacts scan
 
-/api/v2/externalcontacts/scan
+/api/v2/externalcontacts/scan/contacts
 
 ### Synopsis
 
-/api/v2/externalcontacts/scan
+/api/v2/externalcontacts/scan/contacts
 
 ### Options
 

@@ -40,6 +40,7 @@
 * [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
 * [gc externalcontacts relationships](gc_externalcontacts_relationships.html)	 - /api/v2/externalcontacts/relationships
 * [gc externalcontacts reversewhitepageslookup](gc_externalcontacts_reversewhitepageslookup.html)	 - /api/v2/externalcontacts/reversewhitepageslookup
-* [gc externalcontacts scan](gc_externalcontacts_scan.html)	 - /api/v2/externalcontacts/scan
+* [gc externalcontacts scan](gc_externalcontacts_scan.html)	 - /api/v2/externalcontacts/scan/contacts
+* [gc externalcontacts settings](gc_externalcontacts_settings.html)	 - /api/v2/externalcontacts/settings
 
 

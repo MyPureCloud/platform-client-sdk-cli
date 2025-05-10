@@ -16,6 +16,7 @@ gc routing queues list [flags]
   -a, --autopaginate                     Automatically paginate through the results stripping page information
       --cannedResponseLibraryId string   Include only queues explicitly associated with the specified canned response library ID
       --divisionId strings               Include only queues in the specified division ID(s)
+      --expand strings                   Which fields, if any, to expand Valid values: identityresolution
       --filtercondition string           Filter list command output based on a given condition or regular expression
       --hasPeer string                   Include only queues with a peer ID Valid values: true, false
   -h, --help                             help for list

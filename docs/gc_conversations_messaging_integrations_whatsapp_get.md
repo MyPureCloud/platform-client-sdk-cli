@@ -13,7 +13,7 @@ gc conversations messaging integrations whatsapp get [integrationId] [flags]
 ### Options
 
 ```
-      --expand string   Expand instructions for the return value. Valid values: supportedContent, messagingSetting
+      --expand string   Expand instructions for the return value. Valid values: supportedContent, messagingSetting, identityresolution
   -h, --help            help for get
 ```
 

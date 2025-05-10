@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
+* [gc billing contracts](gc_billing_contracts.html)	 - /api/v2/billing/contracts
 * [gc billing reports](gc_billing_reports.html)	 - /api/v2/billing/reports
 * [gc billing trusteebillingoverview](gc_billing_trusteebillingoverview.html)	 - /api/v2/billing/trusteebillingoverview
 

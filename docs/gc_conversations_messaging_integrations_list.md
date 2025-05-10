@@ -14,7 +14,7 @@ gc conversations messaging integrations list [flags]
 
 ```
   -a, --autopaginate                Automatically paginate through the results stripping page information
-      --expand strings              Expand instructions for the return value. Valid values: supportedContent, messagingSetting
+      --expand strings              Expand instructions for the return value. Valid values: supportedContent, messagingSetting, identityresolution
       --filtercondition string      Filter list command output based on a given condition or regular expression
   -h, --help                        help for list
       --messagingSettingId string   Filter integrations returned based on the setting ID

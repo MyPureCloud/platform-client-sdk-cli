@@ -14,6 +14,7 @@ gc routing email domains routes list [domainName] [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
+      --expand strings           Which fields, if any, to expand Valid values: identityresolution
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --pageNumber string        Page number (default "1")

@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts scan](gc_externalcontacts_scan.html)	 - /api/v2/externalcontacts/scan
+* [gc externalcontacts scan](gc_externalcontacts_scan.html)	 - /api/v2/externalcontacts/scan/contacts
 * [gc externalcontacts scan contacts divisionviews](gc_externalcontacts_scan_contacts_divisionviews.html)	 - /api/v2/externalcontacts/scan/contacts/divisionviews
 * [gc externalcontacts scan contacts list](gc_externalcontacts_scan_contacts_list.html)	 - Scan for external contacts using paging
 

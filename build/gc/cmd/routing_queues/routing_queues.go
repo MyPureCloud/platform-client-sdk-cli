@@ -63,6 +63,7 @@ func Cmdrouting_queues() *cobra.Command {
 }`)
 	routing_queuesCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: identityresolution")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/{queueId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -87,6 +88,7 @@ func Cmdrouting_queues() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "peerId", "", "Include only queues with the specified peer ID(s)")
 	utils.AddFlag(listCmd.Flags(), "string", "cannedResponseLibraryId", "", "Include only queues explicitly associated with the specified canned response library ID")
 	utils.AddFlag(listCmd.Flags(), "bool", "hasPeer", "", "Include only queues with a peer ID")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: identityresolution")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues", utils.FormatPermissions([]string{ "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -290,6 +292,10 @@ var getCmd = &cobra.Command{
 		queueId, args := args[0], args[1:]
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
 
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -388,6 +394,10 @@ var listCmd = &cobra.Command{
 		hasPeer := utils.GetFlag(cmd.Flags(), "bool", "hasPeer")
 		if hasPeer != "" {
 			queryParams["hasPeer"] = hasPeer
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
 		}
 		urlString := path
 		if len(queryParams) > 0 {

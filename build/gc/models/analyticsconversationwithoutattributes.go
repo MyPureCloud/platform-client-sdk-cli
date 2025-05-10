@@ -62,6 +62,9 @@ type AnalyticsconversationwithoutattributesDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticsconversationwithoutattributes
@@ -114,6 +117,10 @@ type Analyticsconversationwithoutattributes struct {
     OriginatingDirection string `json:"originatingDirection"`
 
 
+    // OriginatingSocialMediaPublic - Indicates that the conversation originated from a public message on social media
+    OriginatingSocialMediaPublic bool `json:"originatingSocialMediaPublic"`
+
+
     // SelfServed - Indicates whether all flow sessions were self serviced
     SelfServed bool `json:"selfServed"`
 
@@ -146,6 +153,7 @@ func (o *Analyticsconversationwithoutattributes) String() string {
      o.DivisionIds = []string{""} 
     
      o.KnowledgeBaseIds = []string{""} 
+    
     
     
     
@@ -195,6 +203,8 @@ func (u *Analyticsconversationwithoutattributes) MarshalJSON() ([]byte, error) {
         
         OriginatingDirection string `json:"originatingDirection"`
         
+        OriginatingSocialMediaPublic bool `json:"originatingSocialMediaPublic"`
+        
         SelfServed bool `json:"selfServed"`
         
         Evaluations []Analyticsevaluation `json:"evaluations"`
@@ -235,6 +245,9 @@ func (u *Analyticsconversationwithoutattributes) MarshalJSON() ([]byte, error) {
 
         
         KnowledgeBaseIds: []string{""},
+        
+
+
         
 
 

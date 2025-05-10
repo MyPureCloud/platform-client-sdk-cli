@@ -48,8 +48,8 @@ type Speechtextanalyticsconversationsummary struct {
     Language string `json:"language"`
 
 
-    // AgentId - The id of the agent associated with the summary
-    AgentId string `json:"agentId"`
+    // SourceId - The id of the source (program, agent assistant, or flow) from which summarization is triggered
+    SourceId string `json:"sourceId"`
 
 
     // Summary - A summarization of the conversation transcription
@@ -97,7 +97,7 @@ func (u *Speechtextanalyticsconversationsummary) MarshalJSON() ([]byte, error) {
         
         Language string `json:"language"`
         
-        AgentId string `json:"agentId"`
+        SourceId string `json:"sourceId"`
         
         Summary string `json:"summary"`
         

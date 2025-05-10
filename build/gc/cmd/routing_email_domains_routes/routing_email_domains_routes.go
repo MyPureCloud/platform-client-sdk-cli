@@ -62,6 +62,7 @@ func Cmdrouting_email_domains_routes() *cobra.Command {
 }`)
 	routing_email_domains_routesCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: identityresolution")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/email/domains/{domainName}/routes/{routeId}", utils.FormatPermissions([]string{ "routing:email:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/email/domains/{domainName}/routes/{routeId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -80,6 +81,7 @@ func Cmdrouting_email_domains_routes() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "pattern", "", "Filter routes by the route`s pattern property")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: identityresolution")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/email/domains/{domainName}/routes", utils.FormatPermissions([]string{ "routing:email:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/email/domains/{domainName}/routes")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -285,6 +287,10 @@ var getCmd = &cobra.Command{
 		routeId, args := args[0], args[1:]
 		path = strings.Replace(path, "{routeId}", fmt.Sprintf("%v", routeId), -1)
 
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -361,6 +367,10 @@ var listCmd = &cobra.Command{
 		pattern := utils.GetFlag(cmd.Flags(), "string", "pattern")
 		if pattern != "" {
 			queryParams["pattern"] = pattern
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
 		}
 		urlString := path
 		if len(queryParams) > 0 {

@@ -83,6 +83,7 @@ func Cmdarchitect_ivrs() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name of the IVR to filter by.")
 	utils.AddFlag(listCmd.Flags(), "string", "dnis", "", "The phone number of the IVR to filter by.")
 	utils.AddFlag(listCmd.Flags(), "string", "scheduleGroup", "", "The Schedule Group of the IVR to filter by.")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: identityresolution")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/ivrs", utils.FormatPermissions([]string{ "routing:callRoute:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/ivrs")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -371,6 +372,10 @@ var listCmd = &cobra.Command{
 		scheduleGroup := utils.GetFlag(cmd.Flags(), "string", "scheduleGroup")
 		if scheduleGroup != "" {
 			queryParams["scheduleGroup"] = scheduleGroup
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
 		}
 		urlString := path
 		if len(queryParams) > 0 {

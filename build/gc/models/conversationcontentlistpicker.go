@@ -27,11 +27,11 @@ type Conversationcontentlistpicker struct {
     Sections []Conversationcontentlistpickersection `json:"sections"`
 
 
-    // ReplyMessage - The message displayed in the received message bubble.
+    // ReplyMessage - The reply message after the user has selected the options from the List Picker.
     ReplyMessage Conversationcontentreceivedreplymessage `json:"replyMessage"`
 
 
-    // ReceivedMessage - The message displayed in the reply message bubble.
+    // ReceivedMessage - The message prompt to select options in the List Picker sections.
     ReceivedMessage Conversationcontentreceivedreplymessage `json:"receivedMessage"`
 
 }

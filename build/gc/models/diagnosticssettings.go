@@ -10,13 +10,21 @@ var (
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type DiagnosticssettingsDud struct { }
+type DiagnosticssettingsDud struct { 
+    
+
+}
 
 // Diagnosticssettings
-type Diagnosticssettings struct { }
+type Diagnosticssettings struct { 
+    // ReportLowMaxCallsPerAgentAlert - Whether to report on low max calls per agent alerts.
+    ReportLowMaxCallsPerAgentAlert bool `json:"reportLowMaxCallsPerAgentAlert"`
+
+}
 
 // String returns a JSON representation of the model
 func (o *Diagnosticssettings) String() string {
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -33,8 +41,13 @@ func (u *Diagnosticssettings) MarshalJSON() ([]byte, error) {
     DiagnosticssettingsMarshalled = true
 
     return json.Marshal(&struct {
+        
+        ReportLowMaxCallsPerAgentAlert bool `json:"reportLowMaxCallsPerAgentAlert"`
         *Alias
     }{
+
+        
+
         Alias: (*Alias)(u),
     })
 }

@@ -89,6 +89,7 @@ func Cmdrouting_sms_phonenumbers() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "language", "en-US", "A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations")
 	utils.AddFlag(listCmd.Flags(), "string", "integrationId", "", "Filter on the Genesys Cloud integration id to which the phone number belongs to")
 	utils.AddFlag(listCmd.Flags(), "string", "supportedContentId", "", "Filter based on the supported content ID")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: identityresolution, supportedContent")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/sms/phonenumbers", utils.FormatPermissions([]string{ "sms:phoneNumber:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/sms/phonenumbers")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -373,6 +374,10 @@ var listCmd = &cobra.Command{
 		supportedContentId := utils.GetFlag(cmd.Flags(), "string", "supportedContentId")
 		if supportedContentId != "" {
 			queryParams["supportedContent.id"] = supportedContentId
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
 		}
 		urlString := path
 		if len(queryParams) > 0 {

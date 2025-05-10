@@ -30,6 +30,9 @@ type ContactimportjobresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -62,6 +65,10 @@ type Contactimportjobresponse struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    // Division - Division for the job
+    Division Starrabledivision `json:"division"`
+
+
     
 
 
@@ -72,6 +79,7 @@ type Contactimportjobresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Contactimportjobresponse) String() string {
+    
     
     
     
@@ -105,9 +113,14 @@ func (u *Contactimportjobresponse) MarshalJSON() ([]byte, error) {
         
         DateCreated time.Time `json:"dateCreated"`
         
+        Division Starrabledivision `json:"division"`
+        
         Settings Addressableentityref `json:"settings"`
         *Alias
     }{
+
+        
+
 
         
 

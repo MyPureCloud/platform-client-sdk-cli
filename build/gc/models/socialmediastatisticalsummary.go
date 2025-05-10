@@ -55,6 +55,9 @@ type SocialmediastatisticalsummaryDud struct {
 
     
 
+
+    
+
 }
 
 // Socialmediastatisticalsummary
@@ -89,6 +92,10 @@ type Socialmediastatisticalsummary struct {
 
     // Sum
     Sum float32 `json:"sum"`
+
+
+    // Average
+    Average float32 `json:"average"`
 
 
     // Current
@@ -137,6 +144,7 @@ func (o *Socialmediastatisticalsummary) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -170,6 +178,8 @@ func (u *Socialmediastatisticalsummary) MarshalJSON() ([]byte, error) {
         
         Sum float32 `json:"sum"`
         
+        Average float32 `json:"average"`
+        
         Current float32 `json:"current"`
         
         Ratio float32 `json:"ratio"`
@@ -185,6 +195,9 @@ func (u *Socialmediastatisticalsummary) MarshalJSON() ([]byte, error) {
         P99 int `json:"p99"`
         *Alias
     }{
+
+        
+
 
         
 

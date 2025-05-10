@@ -32,12 +32,48 @@ type CampaigndiagnosticsDud struct {
     FilteredOutContactsCount int `json:"filteredOutContactsCount"`
 
 
+    IdleAgents int `json:"idleAgents"`
+
+
+    EffectiveIdleAgents float64 `json:"effectiveIdleAgents"`
+
+
+    LinesUtilization Campaignlinesutilization `json:"linesUtilization"`
+
+
+    NumberOfContactsCalled int `json:"numberOfContactsCalled"`
+
+
+    TotalNumberOfContacts int `json:"totalNumberOfContacts"`
+
+
+    CampaignErrors []Resterrordetail `json:"campaignErrors"`
+
+
     CampaignSkillStatistics Campaignskillstatistics `json:"campaignSkillStatistics"`
 
 }
 
 // Campaigndiagnostics
 type Campaigndiagnostics struct { 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     
 
 
@@ -83,6 +119,24 @@ func (u *Campaigndiagnostics) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

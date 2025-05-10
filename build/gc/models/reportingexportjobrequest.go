@@ -70,6 +70,9 @@ type ReportingexportjobrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Reportingexportjobrequest
@@ -153,6 +156,10 @@ type Reportingexportjobrequest struct {
     // DurationFormat - Indicates the duration format for the exports
     DurationFormat string `json:"durationFormat"`
 
+
+    // ChartColumns - The list of columns for which chart is going to be displayed in export
+    ChartColumns []Chartcolumn `json:"chartColumns"`
+
 }
 
 // String returns a JSON representation of the model
@@ -177,6 +184,7 @@ func (o *Reportingexportjobrequest) String() string {
      o.RecipientEmails = []string{""} 
     
     
+     o.ChartColumns = []Chartcolumn{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -233,6 +241,8 @@ func (u *Reportingexportjobrequest) MarshalJSON() ([]byte, error) {
         IncludeDurationFormatInHeader bool `json:"includeDurationFormatInHeader"`
         
         DurationFormat string `json:"durationFormat"`
+        
+        ChartColumns []Chartcolumn `json:"chartColumns"`
         *Alias
     }{
 
@@ -297,6 +307,11 @@ func (u *Reportingexportjobrequest) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        ChartColumns: []Chartcolumn{{}},
         
 
         Alias: (*Alias)(u),

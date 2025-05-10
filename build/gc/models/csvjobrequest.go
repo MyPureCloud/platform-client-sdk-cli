@@ -16,6 +16,9 @@ type CsvjobrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Csvjobrequest
@@ -27,10 +30,15 @@ type Csvjobrequest struct {
     // SettingsId - Settings for the csv job
     SettingsId string `json:"settingsId"`
 
+
+    // Division - Division for the csv job
+    Division Writablestarrabledivision `json:"division"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Csvjobrequest) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Csvjobrequest) MarshalJSON() ([]byte, error) {
         UploadId string `json:"uploadId"`
         
         SettingsId string `json:"settingsId"`
+        
+        Division Writablestarrabledivision `json:"division"`
         *Alias
     }{
+
+        
+
 
         
 

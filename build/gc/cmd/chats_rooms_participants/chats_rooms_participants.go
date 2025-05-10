@@ -61,6 +61,7 @@ func Cmdchats_rooms_participants() *cobra.Command {
 }`)
 	chats_rooms_participantsCmd.AddCommand(getCmd)
 
+	utils.AddFlag(getRoomParticipantsCmd.Flags(), "bool", "notify", "", "Whether to get users to notify")
 	getRoomParticipantsCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getRoomParticipantsCmd.UsageTemplate(), "GET", "/api/v2/chats/rooms/{roomJid}/participants", utils.FormatPermissions([]string{ "chat:chat:access", "chat:room:view",  }), utils.GenerateDevCentreLink("GET", "Chat", "/api/v2/chats/rooms/{roomJid}/participants")))
 	utils.AddFileFlagIfUpsert(getRoomParticipantsCmd.Flags(), "GET", ``)
 	
@@ -305,6 +306,10 @@ var getRoomParticipantsCmd = &cobra.Command{
 		roomJid, args := args[0], args[1:]
 		path = strings.Replace(path, "{roomJid}", fmt.Sprintf("%v", roomJid), -1)
 
+		notify := utils.GetFlag(cmd.Flags(), "bool", "notify")
+		if notify != "" {
+			queryParams["notify"] = notify
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

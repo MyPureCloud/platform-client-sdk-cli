@@ -72,6 +72,9 @@ type RecordingmetadataDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -157,6 +160,10 @@ type Recordingmetadata struct {
     SessionId string `json:"sessionId"`
 
 
+    // Region - The region the source recording is stored in
+    Region string `json:"region"`
+
+
     
 
 }
@@ -172,6 +179,7 @@ func (o *Recordingmetadata) String() string {
     
     
      o.Annotations = []Annotation{{}} 
+    
     
     
     
@@ -236,6 +244,8 @@ func (u *Recordingmetadata) MarshalJSON() ([]byte, error) {
         RemainingRestorationsAllowedForOrg int `json:"remainingRestorationsAllowedForOrg"`
         
         SessionId string `json:"sessionId"`
+        
+        Region string `json:"region"`
         *Alias
     }{
 
@@ -268,6 +278,9 @@ func (u *Recordingmetadata) MarshalJSON() ([]byte, error) {
 
         
         Annotations: []Annotation{{}},
+        
+
+
         
 
 

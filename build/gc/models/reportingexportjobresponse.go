@@ -108,6 +108,9 @@ type ReportingexportjobresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -237,6 +240,10 @@ type Reportingexportjobresponse struct {
     ExportAllowedToRerun bool `json:"exportAllowedToRerun"`
 
 
+    // ChartColumns - The list of columns for which chart is going to be displayed in export
+    ChartColumns []Chartcolumn `json:"chartColumns"`
+
+
     // Enabled
     Enabled bool `json:"enabled"`
 
@@ -277,6 +284,7 @@ func (o *Reportingexportjobresponse) String() string {
     
     
     
+     o.ChartColumns = []Chartcolumn{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -354,6 +362,8 @@ func (u *Reportingexportjobresponse) MarshalJSON() ([]byte, error) {
         DurationFormat string `json:"durationFormat"`
         
         ExportAllowedToRerun bool `json:"exportAllowedToRerun"`
+        
+        ChartColumns []Chartcolumn `json:"chartColumns"`
         
         Enabled bool `json:"enabled"`
         *Alias
@@ -455,6 +465,11 @@ func (u *Reportingexportjobresponse) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        ChartColumns: []Chartcolumn{{}},
         
 
 

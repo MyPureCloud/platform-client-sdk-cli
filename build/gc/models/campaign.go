@@ -129,6 +129,9 @@ type CampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -287,6 +290,10 @@ type Campaign struct {
     DynamicLineBalancingSettings Dynamiclinebalancingsettings `json:"dynamicLineBalancingSettings"`
 
 
+    // DiagnosticsSettings - Campaign diagnostics settings
+    DiagnosticsSettings Diagnosticssettings `json:"diagnosticsSettings"`
+
+
     
 
 }
@@ -324,6 +331,7 @@ func (o *Campaign) String() string {
     
     
      o.SkillColumns = []string{""} 
+    
     
     
     
@@ -414,6 +422,8 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
         CallbackAutoAnswer bool `json:"callbackAutoAnswer"`
         
         DynamicLineBalancingSettings Dynamiclinebalancingsettings `json:"dynamicLineBalancingSettings"`
+        
+        DiagnosticsSettings Diagnosticssettings `json:"diagnosticsSettings"`
         *Alias
     }{
 
@@ -531,6 +541,9 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
 
         
         SkillColumns: []string{""},
+        
+
+
         
 
 

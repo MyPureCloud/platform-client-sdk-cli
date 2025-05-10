@@ -126,7 +126,7 @@ type Appeventresponse struct {
     Attributes map[string]Customeventattribute `json:"attributes"`
 
 
-    // Traits - Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, name, phone).
+    // Traits - Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, givenName, cellPhone).
     Traits map[string]Customeventattribute `json:"traits"`
 
 

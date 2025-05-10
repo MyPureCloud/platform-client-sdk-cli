@@ -72,6 +72,12 @@ type ExternalorganizationDud struct {
     
 
 
+    
+
+
+    
+
+
     ExternalDataSources []Externaldatasource `json:"externalDataSources"`
 
 
@@ -161,6 +167,14 @@ type Externalorganization struct {
     CustomFields map[string]interface{} `json:"customFields"`
 
 
+    // Identifiers - Identifiers claimed by this external org
+    Identifiers []Externalorganizationidentifier `json:"identifiers"`
+
+
+    // ExternalIds - A list of external identifiers that identify this External Organization in an external system
+    ExternalIds []Externalid `json:"externalIds"`
+
+
     
 
 
@@ -190,6 +204,8 @@ func (o *Externalorganization) String() string {
     
     
      o.CustomFields = map[string]interface{}{"": Interface{}} 
+     o.Identifiers = []Externalorganizationidentifier{{}} 
+     o.ExternalIds = []Externalid{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -246,6 +262,10 @@ func (u *Externalorganization) MarshalJSON() ([]byte, error) {
         Schema Dataschema `json:"schema"`
         
         CustomFields map[string]interface{} `json:"customFields"`
+        
+        Identifiers []Externalorganizationidentifier `json:"identifiers"`
+        
+        ExternalIds []Externalid `json:"externalIds"`
         *Alias
     }{
 
@@ -314,6 +334,16 @@ func (u *Externalorganization) MarshalJSON() ([]byte, error) {
 
         
         CustomFields: map[string]interface{}{"": Interface{}},
+        
+
+
+        
+        Identifiers: []Externalorganizationidentifier{{}},
+        
+
+
+        
+        ExternalIds: []Externalid{{}},
         
 
 

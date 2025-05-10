@@ -13,6 +13,9 @@ var (
 type ContactimportjobrequestDud struct { 
     
 
+
+    
+
 }
 
 // Contactimportjobrequest
@@ -20,10 +23,15 @@ type Contactimportjobrequest struct {
     // SettingsId - Settings id
     SettingsId string `json:"settingsId"`
 
+
+    // Division - The division to import into
+    Division Writablestarrabledivision `json:"division"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Contactimportjobrequest) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Contactimportjobrequest) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         SettingsId string `json:"settingsId"`
+        
+        Division Writablestarrabledivision `json:"division"`
         *Alias
     }{
+
+        
+
 
         
 

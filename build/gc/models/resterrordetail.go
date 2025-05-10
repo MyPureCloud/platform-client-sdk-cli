@@ -16,6 +16,9 @@ type ResterrordetailDud struct {
 
     Details string `json:"details"`
 
+
+    
+
 }
 
 // Resterrordetail
@@ -25,10 +28,15 @@ type Resterrordetail struct {
 
     
 
+
+    // UserParams - parameters to be inserted into details.
+    UserParams []Userparam `json:"userParams"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Resterrordetail) String() string {
+     o.UserParams = []Userparam{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -45,12 +53,19 @@ func (u *Resterrordetail) MarshalJSON() ([]byte, error) {
     ResterrordetailMarshalled = true
 
     return json.Marshal(&struct {
+        
+        UserParams []Userparam `json:"userParams"`
         *Alias
     }{
 
         
 
 
+        
+
+
+        
+        UserParams: []Userparam{{}},
         
 
         Alias: (*Alias)(u),

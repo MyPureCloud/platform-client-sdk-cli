@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("externalcontacts_scan", "SWAGGER_OVERRIDE_/api/v2/externalcontacts/scan")
+	Description = utils.FormatUsageDescription("externalcontacts_scan", "SWAGGER_OVERRIDE_/api/v2/externalcontacts/scan/contacts")
 	externalcontacts_scanCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("externalcontacts_scan"),
 		Short: Description,

@@ -23,6 +23,9 @@ type BotsearchresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -45,12 +48,17 @@ type Botsearchresponse struct {
     Description string `json:"description"`
 
 
+    // VirtualAgentEnabled - Whether the bot is a virtual agent or not
+    VirtualAgentEnabled bool `json:"virtualAgentEnabled"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Botsearchresponse) String() string {
+    
     
     
     
@@ -79,8 +87,13 @@ func (u *Botsearchresponse) MarshalJSON() ([]byte, error) {
         BotType string `json:"botType"`
         
         Description string `json:"description"`
+        
+        VirtualAgentEnabled bool `json:"virtualAgentEnabled"`
         *Alias
     }{
+
+        
+
 
         
 

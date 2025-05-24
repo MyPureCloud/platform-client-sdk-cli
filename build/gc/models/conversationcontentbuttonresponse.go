@@ -19,10 +19,17 @@ type ConversationcontentbuttonresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationcontentbuttonresponse - Button response object representing the click of a structured message button, such as a quick reply.
 type Conversationcontentbuttonresponse struct { 
+    // OriginatingMessageId - Reference to the ID of the original message (e.g., list picker) this button response is replying to.
+    OriginatingMessageId string `json:"originatingMessageId"`
+
+
     // VarType - Describes the button that resulted in the Button Response.
     VarType string `json:"type"`
 
@@ -38,6 +45,7 @@ type Conversationcontentbuttonresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationcontentbuttonresponse) String() string {
+    
     
     
     
@@ -58,6 +66,8 @@ func (u *Conversationcontentbuttonresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        OriginatingMessageId string `json:"originatingMessageId"`
+        
         VarType string `json:"type"`
         
         Text string `json:"text"`
@@ -65,6 +75,9 @@ func (u *Conversationcontentbuttonresponse) MarshalJSON() ([]byte, error) {
         Payload string `json:"payload"`
         *Alias
     }{
+
+        
+
 
         
 

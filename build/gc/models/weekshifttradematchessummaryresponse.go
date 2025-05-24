@@ -17,6 +17,9 @@ type WeekshifttradematchessummaryresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Weekshifttradematchessummaryresponse
@@ -28,10 +31,15 @@ type Weekshifttradematchessummaryresponse struct {
     // Count - The number of trades in the 'Matched' state with the initiating shift in the given week
     Count int `json:"count"`
 
+
+    // CrossWeekReceivingCount - The number of cross-week trades in the 'Matched' state with the receiving shift for the given week
+    CrossWeekReceivingCount int `json:"crossWeekReceivingCount"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Weekshifttradematchessummaryresponse) String() string {
+    
     
     
 
@@ -54,8 +62,13 @@ func (u *Weekshifttradematchessummaryresponse) MarshalJSON() ([]byte, error) {
         WeekDate time.Time `json:"weekDate"`
         
         Count int `json:"count"`
+        
+        CrossWeekReceivingCount int `json:"crossWeekReceivingCount"`
         *Alias
     }{
+
+        
+
 
         
 

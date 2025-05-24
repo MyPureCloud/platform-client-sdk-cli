@@ -19,9 +19,6 @@ type AdditionalmessageDud struct {
 
     
 
-
-    
-
 }
 
 // Additionalmessage
@@ -34,10 +31,6 @@ type Additionalmessage struct {
     MediaIds []string `json:"mediaIds"`
 
 
-    // StickerIds - The sticker ids associated with the text message.
-    StickerIds []string `json:"stickerIds"`
-
-
     // MessagingTemplate - The messaging template use to send a predefined canned response with the message
     MessagingTemplate Sendmessagingtemplaterequest `json:"messagingTemplate"`
 
@@ -47,7 +40,6 @@ type Additionalmessage struct {
 func (o *Additionalmessage) String() string {
     
      o.MediaIds = []string{""} 
-     o.StickerIds = []string{""} 
     
 
     j, _ := json.Marshal(o)
@@ -70,8 +62,6 @@ func (u *Additionalmessage) MarshalJSON() ([]byte, error) {
         
         MediaIds []string `json:"mediaIds"`
         
-        StickerIds []string `json:"stickerIds"`
-        
         MessagingTemplate Sendmessagingtemplaterequest `json:"messagingTemplate"`
         *Alias
     }{
@@ -81,11 +71,6 @@ func (u *Additionalmessage) MarshalJSON() ([]byte, error) {
 
         
         MediaIds: []string{""},
-        
-
-
-        
-        StickerIds: []string{""},
         
 
 

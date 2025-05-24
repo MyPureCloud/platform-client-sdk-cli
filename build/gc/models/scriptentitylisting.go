@@ -67,12 +67,12 @@ type Scriptentitylisting struct {
     TruncatedDivisions bool `json:"truncatedDivisions"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
     // PreviousUri
     PreviousUri string `json:"previousUri"`
+
+
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // LastUri
@@ -132,9 +132,9 @@ func (u *Scriptentitylisting) MarshalJSON() ([]byte, error) {
         
         TruncatedDivisions bool `json:"truncatedDivisions"`
         
-        NextUri string `json:"nextUri"`
-        
         PreviousUri string `json:"previousUri"`
+        
+        NextUri string `json:"nextUri"`
         
         LastUri string `json:"lastUri"`
         

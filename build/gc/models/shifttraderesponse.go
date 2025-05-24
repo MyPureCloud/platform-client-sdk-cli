@@ -65,6 +65,9 @@ type ShifttraderesponseDud struct {
 
     
 
+
+    
+
 }
 
 // Shifttraderesponse
@@ -99,6 +102,10 @@ type Shifttraderesponse struct {
 
     // InitiatingShiftEnd - The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     InitiatingShiftEnd time.Time `json:"initiatingShiftEnd"`
+
+
+    // ReceivingWeekDate - The start week date of the receiving shift in yyyy-MM-dd format for a cross-week shift trade or null otherwise. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+    ReceivingWeekDate time.Time `json:"receivingWeekDate"`
 
 
     // ReceivingUser - The user matching the trade, or if the state is not 'Matched', the user to whom the trade request was sent
@@ -158,6 +165,7 @@ func (o *Shifttraderesponse) String() string {
     
     
     
+    
      o.AcceptableIntervals = []string{""} 
     
     
@@ -195,6 +203,8 @@ func (u *Shifttraderesponse) MarshalJSON() ([]byte, error) {
         
         InitiatingShiftEnd time.Time `json:"initiatingShiftEnd"`
         
+        ReceivingWeekDate time.Time `json:"receivingWeekDate"`
+        
         ReceivingUser Userreference `json:"receivingUser"`
         
         ReceivingShiftId string `json:"receivingShiftId"`
@@ -216,6 +226,9 @@ func (u *Shifttraderesponse) MarshalJSON() ([]byte, error) {
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
 
         
 

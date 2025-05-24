@@ -122,6 +122,7 @@ func Cmdflows() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "secure", "", "Secure Valid values: any, checkedin, published")
 	utils.AddFlag(listCmd.Flags(), "bool", "deleted", "false", "Include deleted")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeSchemas", "false", "Include variable schemas")
+	utils.AddFlag(listCmd.Flags(), "bool", "virtualAgentEnabled", "", "Include/exclude virtual agent flows")
 	utils.AddFlag(listCmd.Flags(), "string", "publishedAfter", "", "Published after")
 	utils.AddFlag(listCmd.Flags(), "string", "publishedBefore", "", "Published before")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "division ID(s)")
@@ -524,6 +525,10 @@ var listCmd = &cobra.Command{
 		includeSchemas := utils.GetFlag(cmd.Flags(), "bool", "includeSchemas")
 		if includeSchemas != "" {
 			queryParams["includeSchemas"] = includeSchemas
+		}
+		virtualAgentEnabled := utils.GetFlag(cmd.Flags(), "bool", "virtualAgentEnabled")
+		if virtualAgentEnabled != "" {
+			queryParams["virtualAgentEnabled"] = virtualAgentEnabled
 		}
 		publishedAfter := utils.GetFlag(cmd.Flags(), "string", "publishedAfter")
 		if publishedAfter != "" {

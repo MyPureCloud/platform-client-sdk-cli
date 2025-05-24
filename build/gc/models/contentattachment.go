@@ -38,7 +38,7 @@ type ContentattachmentDud struct {
 
 // Contentattachment - Attachment object.
 type Contentattachment struct { 
-    // Id - Provider specific ID for attachment. For example, a LINE sticker ID.
+    // Id - Provider specific ID for attachment.
     Id string `json:"id"`
 
 

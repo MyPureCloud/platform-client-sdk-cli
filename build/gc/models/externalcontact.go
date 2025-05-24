@@ -96,6 +96,9 @@ type ExternalcontactDud struct {
     
 
 
+    
+
+
     ExternalDataSources []Externaldatasource `json:"externalDataSources"`
 
 
@@ -106,6 +109,12 @@ type ExternalcontactDud struct {
 
 
     MergeSet []Contactaddressableentityref `json:"mergeSet"`
+
+
+    MergedFrom []Contactaddressableentityref `json:"mergedFrom"`
+
+
+    MergedTo Contactaddressableentityref `json:"mergedTo"`
 
 
     MergeOperation Mergeoperation `json:"mergeOperation"`
@@ -193,6 +202,10 @@ type Externalcontact struct {
     FacebookId Facebookid `json:"facebookId"`
 
 
+    // InstagramId - User information for an Instagram account
+    InstagramId Instagramid `json:"instagramId"`
+
+
     // ExternalIds - A list of external identifiers that identify this contact in an external system
     ExternalIds []Externalid `json:"externalIds"`
 
@@ -246,10 +259,17 @@ type Externalcontact struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *Externalcontact) String() string {
+    
     
     
     
@@ -333,6 +353,8 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
         
         FacebookId Facebookid `json:"facebookId"`
         
+        InstagramId Instagramid `json:"instagramId"`
+        
         ExternalIds []Externalid `json:"externalIds"`
         
         Identifiers []Contactidentifier `json:"identifiers"`
@@ -352,6 +374,9 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
         CustomFields map[string]interface{} `json:"customFields"`
         *Alias
     }{
+
+        
+
 
         
 
@@ -440,6 +465,12 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
 
         
         CustomFields: map[string]interface{}{"": Interface{}},
+        
+
+
+        
+
+
         
 
 

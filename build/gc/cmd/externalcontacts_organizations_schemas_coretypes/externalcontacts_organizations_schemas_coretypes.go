@@ -51,7 +51,7 @@ func Cmdexternalcontacts_organizations_schemas_coretypes() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/Coretype"
+        "$ref" : "#/components/schemas/CoretypeListing"
       }
     }
   }
@@ -67,8 +67,8 @@ func queryEscape(value string) string {
 
 var getCmd = &cobra.Command{
 	Use:   "get [coreTypeName]",
-	Short: "Get the core types from which all schemas are built.",
-	Long:  "Get the core types from which all schemas are built.",
+	Short: "Get a specific named core type.",
+	Long:  "Get a specific named core type.",
 	Args:  utils.DetermineArgs([]string{ "coreTypeName", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

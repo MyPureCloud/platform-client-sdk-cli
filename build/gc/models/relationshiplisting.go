@@ -67,12 +67,12 @@ type Relationshiplisting struct {
     PartialResults bool `json:"partialResults"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
     // PreviousUri
     PreviousUri string `json:"previousUri"`
+
+
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // LastUri
@@ -132,9 +132,9 @@ func (u *Relationshiplisting) MarshalJSON() ([]byte, error) {
         
         PartialResults bool `json:"partialResults"`
         
-        NextUri string `json:"nextUri"`
-        
         PreviousUri string `json:"previousUri"`
+        
+        NextUri string `json:"nextUri"`
         
         LastUri string `json:"lastUri"`
         

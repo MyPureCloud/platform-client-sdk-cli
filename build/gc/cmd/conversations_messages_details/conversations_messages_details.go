@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdconversations_messages_details() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "bool", "useNormalizedMessage", "false", "If true, response removes deprecated fields (textBody, media, stickers)")
+	utils.AddFlag(getCmd.Flags(), "bool", "useNormalizedMessage", "false", "If true, response removes deprecated fields (textBody, media)")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/messages/{messageId}/details", utils.FormatPermissions([]string{ "conversation:message:view", "conversation:webmessaging:view",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/messages/{messageId}/details")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	

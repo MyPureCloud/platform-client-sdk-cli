@@ -60,12 +60,12 @@ type Flowresultentitylisting struct {
     Total int `json:"total"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
     // PreviousUri
     PreviousUri string `json:"previousUri"`
+
+
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // LastUri
@@ -122,9 +122,9 @@ func (u *Flowresultentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        NextUri string `json:"nextUri"`
-        
         PreviousUri string `json:"previousUri"`
+        
+        NextUri string `json:"nextUri"`
         
         LastUri string `json:"lastUri"`
         

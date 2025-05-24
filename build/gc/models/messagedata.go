@@ -45,9 +45,6 @@ type MessagedataDud struct {
     
 
 
-    
-
-
     NormalizedMessage Conversationnormalizedmessage `json:"normalizedMessage"`
 
 
@@ -109,10 +106,6 @@ type Messagedata struct {
     Media []Messagemedia `json:"media"`
 
 
-    // Stickers - The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment
-    Stickers []Messagesticker `json:"stickers"`
-
-
     
 
 
@@ -143,7 +136,6 @@ func (o *Messagedata) String() string {
     
     
      o.Media = []Messagemedia{{}} 
-     o.Stickers = []Messagesticker{{}} 
     
     
 
@@ -183,8 +175,6 @@ func (u *Messagedata) MarshalJSON() ([]byte, error) {
         
         Media []Messagemedia `json:"media"`
         
-        Stickers []Messagesticker `json:"stickers"`
-        
         CreatedBy User `json:"createdBy"`
         
         ConversationId string `json:"conversationId"`
@@ -223,11 +213,6 @@ func (u *Messagedata) MarshalJSON() ([]byte, error) {
 
         
         Media: []Messagemedia{{}},
-        
-
-
-        
-        Stickers: []Messagesticker{{}},
         
 
 

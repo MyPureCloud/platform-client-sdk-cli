@@ -13,6 +13,9 @@ var (
 type SummarygenerationconfigDud struct { 
     
 
+
+    
+
 }
 
 // Summarygenerationconfig
@@ -20,10 +23,15 @@ type Summarygenerationconfig struct {
     // Enabled - Copilot generated summary is enabled.
     Enabled bool `json:"enabled"`
 
+
+    // SummarySetting - Configured summary setting object.
+    SummarySetting Summarysettingentity `json:"summarySetting"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Summarygenerationconfig) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Summarygenerationconfig) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Enabled bool `json:"enabled"`
+        
+        SummarySetting Summarysettingentity `json:"summarySetting"`
         *Alias
     }{
+
+        
+
 
         
 

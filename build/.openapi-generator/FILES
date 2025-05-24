@@ -324,7 +324,9 @@ gc/cmd/conversations_messages_participants_wrapupcodes/conversations_messages_pa
 gc/cmd/conversations_messages_recordingstate/conversations_messages_recordingstate.go
 gc/cmd/conversations_messaging_facebook_app/conversations_messaging_facebook_app.go
 gc/cmd/conversations_messaging_facebook_permissions/conversations_messaging_facebook_permissions.go
+gc/cmd/conversations_messaging_identityresolution_integrations_apple/conversations_messaging_identityresolution_integrations_apple.go
 gc/cmd/conversations_messaging_identityresolution_integrations_facebook/conversations_messaging_identityresolution_integrations_facebook.go
+gc/cmd/conversations_messaging_identityresolution_integrations_instagram/conversations_messaging_identityresolution_integrations_instagram.go
 gc/cmd/conversations_messaging_identityresolution_integrations_open/conversations_messaging_identityresolution_integrations_open.go
 gc/cmd/conversations_messaging_identityresolution_integrations_whatsapp/conversations_messaging_identityresolution_integrations_whatsapp.go
 gc/cmd/conversations_messaging_integrations/conversations_messaging_integrations.go
@@ -1656,6 +1658,7 @@ gc/models/appevent.go
 gc/models/appeventrequest.go
 gc/models/appeventresponse.go
 gc/models/appeventresponsesession.go
+gc/models/appleopaqueid.go
 gc/models/approvalnamespace.go
 gc/models/architectexportjobstateresponse.go
 gc/models/architectflowfields.go
@@ -1851,7 +1854,8 @@ gc/models/buforecasttimeseriesresult.go
 gc/models/bufulldaytimeoffmarker.go
 gc/models/bugenerateschedulerequest.go
 gc/models/bugetcurrentagentschedulerequest.go
-gc/models/buheadcountforecast.go
+gc/models/buheadcountforecastbuplanninggroupheadcountforecastresult.go
+gc/models/buheadcountforecastbuplanninggroupheadcountforecastuploadschema.go
 gc/models/buheadcountforecastresponse.go
 gc/models/buimportagentscheduleuploadschema.go
 gc/models/buimportshorttermforecastschema.go
@@ -1925,7 +1929,8 @@ gc/models/bullseye.go
 gc/models/bumanagementunitschedulesummary.go
 gc/models/bunotificationsettingsrequest.go
 gc/models/bunotificationsettingsresponse.go
-gc/models/buplanninggroupheadcountforecast.go
+gc/models/buplanninggroupheadcountforecastresult.go
+gc/models/buplanninggroupheadcountforecastuploadschema.go
 gc/models/buqueryadherenceexplanationsrequest.go
 gc/models/buqueryadherenceexplanationsresponse.go
 gc/models/buqueryagentschedulesrequest.go
@@ -2330,15 +2335,20 @@ gc/models/conversationcontentcarousel.go
 gc/models/conversationcontentdatepicker.go
 gc/models/conversationcontentdatepickeravailabletime.go
 gc/models/conversationcontentinteractiveapplication.go
+gc/models/conversationcontentlineitem.go
 gc/models/conversationcontentlistpicker.go
 gc/models/conversationcontentlistpickeritem.go
 gc/models/conversationcontentlistpickersection.go
 gc/models/conversationcontentlocation.go
 gc/models/conversationcontentnotificationtemplate.go
+gc/models/conversationcontentpaymentrequest.go
+gc/models/conversationcontentpaymentresponse.go
+gc/models/conversationcontentpush.go
 gc/models/conversationcontentquickreply.go
 gc/models/conversationcontentquickreplyv2.go
 gc/models/conversationcontentreaction.go
 gc/models/conversationcontentreceivedreplymessage.go
+gc/models/conversationcontentrequiredcontactfield.go
 gc/models/conversationcontentstory.go
 gc/models/conversationcontenttext.go
 gc/models/conversationdeletionprotectionquery.go
@@ -2379,6 +2389,9 @@ gc/models/conversationparticipantsearchrequest.go
 gc/models/conversationprofile.go
 gc/models/conversationproperties.go
 gc/models/conversationpublicmetadata.go
+gc/models/conversationpushfailedmessagereferences.go
+gc/models/conversationpushnotificationmessagelabel.go
+gc/models/conversationpushproviderintegration.go
 gc/models/conversationquery.go
 gc/models/conversationqueuemediasettings.go
 gc/models/conversationreason.go
@@ -4677,6 +4690,7 @@ gc/models/summaryaggregationview.go
 gc/models/summaryasyncaggregatequeryresponse.go
 gc/models/summaryasyncaggregationquery.go
 gc/models/summarygenerationconfig.go
+gc/models/summarysettingentity.go
 gc/models/supportcentercategory.go
 gc/models/supportcentercompactcategorymoduletemplate.go
 gc/models/supportcentercustommessage.go

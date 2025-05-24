@@ -19,6 +19,9 @@ type IpaddressrangeDud struct {
 
     
 
+
+    
+
 }
 
 // Ipaddressrange
@@ -34,10 +37,15 @@ type Ipaddressrange struct {
     // Region
     Region string `json:"region"`
 
+
+    // Direction - The direction of traffic for the IP range from the perspective of Genesys Cloud (e.g. inbound to Genesys; outbound from Genesys)
+    Direction string `json:"direction"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Ipaddressrange) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Ipaddressrange) MarshalJSON() ([]byte, error) {
         Service string `json:"service"`
         
         Region string `json:"region"`
+        
+        Direction string `json:"direction"`
         *Alias
     }{
+
+        
+
 
         
 

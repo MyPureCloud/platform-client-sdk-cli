@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    BuplanninggroupheadcountforecastMarshalled = false
+    BuplanninggroupheadcountforecastuploadschemaMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type BuplanninggroupheadcountforecastDud struct { 
+type BuplanninggroupheadcountforecastuploadschemaDud struct { 
     
 
 
@@ -21,12 +21,8 @@ type BuplanninggroupheadcountforecastDud struct {
 
 }
 
-// Buplanninggroupheadcountforecast
-type Buplanninggroupheadcountforecast struct { 
-    // PlanningGroup - The planning group to which this portion of the headcount forecast applies
-    PlanningGroup Planninggroupreference `json:"planningGroup"`
-
-
+// Buplanninggroupheadcountforecastuploadschema
+type Buplanninggroupheadcountforecastuploadschema struct { 
     // RequiredPerInterval - Required headcount per interval, referenced against the reference start date
     RequiredPerInterval []float64 `json:"requiredPerInterval"`
 
@@ -34,13 +30,17 @@ type Buplanninggroupheadcountforecast struct {
     // RequiredWithoutShrinkagePerInterval - Required headcount per interval without accounting for shrinkage, referenced against the reference start date
     RequiredWithoutShrinkagePerInterval []float64 `json:"requiredWithoutShrinkagePerInterval"`
 
+
+    // PlanningGroupId - The ID of the planning group to which this portion of the headcount forecast applies
+    PlanningGroupId string `json:"planningGroupId"`
+
 }
 
 // String returns a JSON representation of the model
-func (o *Buplanninggroupheadcountforecast) String() string {
-    
+func (o *Buplanninggroupheadcountforecastuploadschema) String() string {
      o.RequiredPerInterval = []float64{0.0} 
      o.RequiredWithoutShrinkagePerInterval = []float64{0.0} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -48,26 +48,23 @@ func (o *Buplanninggroupheadcountforecast) String() string {
     return str
 }
 
-func (u *Buplanninggroupheadcountforecast) MarshalJSON() ([]byte, error) {
-    type Alias Buplanninggroupheadcountforecast
+func (u *Buplanninggroupheadcountforecastuploadschema) MarshalJSON() ([]byte, error) {
+    type Alias Buplanninggroupheadcountforecastuploadschema
 
-    if BuplanninggroupheadcountforecastMarshalled {
+    if BuplanninggroupheadcountforecastuploadschemaMarshalled {
         return []byte("{}"), nil
     }
-    BuplanninggroupheadcountforecastMarshalled = true
+    BuplanninggroupheadcountforecastuploadschemaMarshalled = true
 
     return json.Marshal(&struct {
-        
-        PlanningGroup Planninggroupreference `json:"planningGroup"`
         
         RequiredPerInterval []float64 `json:"requiredPerInterval"`
         
         RequiredWithoutShrinkagePerInterval []float64 `json:"requiredWithoutShrinkagePerInterval"`
+        
+        PlanningGroupId string `json:"planningGroupId"`
         *Alias
     }{
-
-        
-
 
         
         RequiredPerInterval: []float64{0.0},
@@ -76,6 +73,9 @@ func (u *Buplanninggroupheadcountforecast) MarshalJSON() ([]byte, error) {
 
         
         RequiredWithoutShrinkagePerInterval: []float64{0.0},
+        
+
+
         
 
         Alias: (*Alias)(u),

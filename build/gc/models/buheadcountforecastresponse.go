@@ -21,7 +21,7 @@ type BuheadcountforecastresponseDud struct {
 // Buheadcountforecastresponse
 type Buheadcountforecastresponse struct { 
     // Result - The headcount forecast, null when downloadUrl is provided
-    Result Buheadcountforecast `json:"result"`
+    Result Buheadcountforecastbuplanninggroupheadcountforecastresult `json:"result"`
 
 
     // DownloadUrl - Download URL.  Null unless the response is too large to pass directly through the api
@@ -50,7 +50,7 @@ func (u *Buheadcountforecastresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Result Buheadcountforecast `json:"result"`
+        Result Buheadcountforecastbuplanninggroupheadcountforecastresult `json:"result"`
         
         DownloadUrl string `json:"downloadUrl"`
         *Alias

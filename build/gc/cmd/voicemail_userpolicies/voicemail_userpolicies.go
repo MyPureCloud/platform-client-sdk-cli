@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdvoicemail_userpolicies() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/voicemail/userpolicies/{userId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Voicemail", "/api/v2/voicemail/userpolicies/{userId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/voicemail/userpolicies/{userId}", utils.FormatPermissions([]string{ "telephony:plugin:all", "voicemail:userPolicy:viewOther",  }), utils.GenerateDevCentreLink("GET", "Voicemail", "/api/v2/voicemail/userpolicies/{userId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -43,7 +43,7 @@ func Cmdvoicemail_userpolicies() *cobra.Command {
 }`)
 	voicemail_userpoliciesCmd.AddCommand(getCmd)
 
-	putCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", putCmd.UsageTemplate(), "PUT", "/api/v2/voicemail/userpolicies/{userId}", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("PUT", "Voicemail", "/api/v2/voicemail/userpolicies/{userId}")))
+	putCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", putCmd.UsageTemplate(), "PUT", "/api/v2/voicemail/userpolicies/{userId}", utils.FormatPermissions([]string{ "telephony:plugin:all", "voicemail:userPolicy:viewOther",  }), utils.GenerateDevCentreLink("PUT", "Voicemail", "/api/v2/voicemail/userpolicies/{userId}")))
 	utils.AddFileFlagIfUpsert(putCmd.Flags(), "PUT", `{
   "description" : "The user's voicemail policy",
   "content" : {
@@ -68,7 +68,7 @@ func Cmdvoicemail_userpolicies() *cobra.Command {
 }`)
 	voicemail_userpoliciesCmd.AddCommand(putCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/voicemail/userpolicies/{userId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("PATCH", "Voicemail", "/api/v2/voicemail/userpolicies/{userId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/voicemail/userpolicies/{userId}", utils.FormatPermissions([]string{ "telephony:plugin:all", "voicemail:userPolicy:viewOther",  }), utils.GenerateDevCentreLink("PATCH", "Voicemail", "/api/v2/voicemail/userpolicies/{userId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "The user's voicemail policy",
   "content" : {

@@ -22,6 +22,9 @@ type ShifttradematchreviewresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Shifttradematchreviewresponse
@@ -41,6 +44,10 @@ type Shifttradematchreviewresponse struct {
     // AdminReviewViolations - Constraint violations associated with this shift trade which require shift trade administrator review
     AdminReviewViolations []Shifttradematchviolation `json:"adminReviewViolations"`
 
+
+    // UnevaluatedRules - Unevaluated rules for this shift trade which require shift trade administrator review
+    UnevaluatedRules []string `json:"unevaluatedRules"`
+
 }
 
 // String returns a JSON representation of the model
@@ -49,6 +56,7 @@ func (o *Shifttradematchreviewresponse) String() string {
     
      o.Violations = []Shifttradematchviolation{{}} 
      o.AdminReviewViolations = []Shifttradematchviolation{{}} 
+     o.UnevaluatedRules = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -73,6 +81,8 @@ func (u *Shifttradematchreviewresponse) MarshalJSON() ([]byte, error) {
         Violations []Shifttradematchviolation `json:"violations"`
         
         AdminReviewViolations []Shifttradematchviolation `json:"adminReviewViolations"`
+        
+        UnevaluatedRules []string `json:"unevaluatedRules"`
         *Alias
     }{
 
@@ -89,6 +99,11 @@ func (u *Shifttradematchreviewresponse) MarshalJSON() ([]byte, error) {
 
         
         AdminReviewViolations: []Shifttradematchviolation{{}},
+        
+
+
+        
+        UnevaluatedRules: []string{""},
         
 
         Alias: (*Alias)(u),

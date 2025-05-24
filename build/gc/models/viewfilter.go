@@ -694,6 +694,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1609,6 +1612,10 @@ type Viewfilter struct {
     // SocialRatings - A set of ratings for Google Business Profile
     SocialRatings []float32 `json:"socialRatings"`
 
+
+    // VirtualAgentIds - A list of virtual agent ids for filtering.
+    VirtualAgentIds []string `json:"virtualAgentIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1841,6 +1848,7 @@ func (o *Viewfilter) String() string {
      o.CategoryIds = []string{""} 
     
      o.SocialRatings = []float32{0.0} 
+     o.VirtualAgentIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2313,6 +2321,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         DeliveryPushed bool `json:"deliveryPushed"`
         
         SocialRatings []float32 `json:"socialRatings"`
+        
+        VirtualAgentIds []string `json:"virtualAgentIds"`
         *Alias
     }{
 
@@ -3309,6 +3319,11 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         SocialRatings: []float32{0.0},
+        
+
+
+        
+        VirtualAgentIds: []string{""},
         
 
         Alias: (*Alias)(u),

@@ -49,6 +49,24 @@ type ShifttradesettingsDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Shifttradesettings
@@ -104,6 +122,30 @@ type Shifttradesettings struct {
     // ActivityCategoryRules - Rules that specify what to do with activity categories that are part of a shift defined in a trade
     ActivityCategoryRules []Shifttradeactivityrule `json:"activityCategoryRules"`
 
+
+    // MaxTradeSpanWeeks - The maximum number of weeks a shift trade can span
+    MaxTradeSpanWeeks int `json:"maxTradeSpanWeeks"`
+
+
+    // MaxTradesPerAgentPerWeek - The maximum number of shift trades an agent can submit per week
+    MaxTradesPerAgentPerWeek int `json:"maxTradesPerAgentPerWeek"`
+
+
+    // MinMinutesBetweenShifts - The minimum number of minutes between shifts
+    MinMinutesBetweenShifts int `json:"minMinutesBetweenShifts"`
+
+
+    // PlanningPeriodMinPaidViolations - How to handle shift trades which result in violations of planning period minimum paid time constraint
+    PlanningPeriodMinPaidViolations string `json:"planningPeriodMinPaidViolations"`
+
+
+    // PlanningPeriodMaxPaidViolations - How to handle shift trades which result in violations of planning period maximum paid time constraint
+    PlanningPeriodMaxPaidViolations string `json:"planningPeriodMaxPaidViolations"`
+
+
+    // MinMinutesBetweenShiftsViolations - How to handle shift trades which result in violations of minimum number of minutes between shifts constraint
+    MinMinutesBetweenShiftsViolations string `json:"minMinutesBetweenShiftsViolations"`
+
 }
 
 // String returns a JSON representation of the model
@@ -121,6 +163,12 @@ func (o *Shifttradesettings) String() string {
     
     
      o.ActivityCategoryRules = []Shifttradeactivityrule{{}} 
+    
+    
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -163,6 +211,18 @@ func (u *Shifttradesettings) MarshalJSON() ([]byte, error) {
         RequiresMatchingPlanningGroups bool `json:"requiresMatchingPlanningGroups"`
         
         ActivityCategoryRules []Shifttradeactivityrule `json:"activityCategoryRules"`
+        
+        MaxTradeSpanWeeks int `json:"maxTradeSpanWeeks"`
+        
+        MaxTradesPerAgentPerWeek int `json:"maxTradesPerAgentPerWeek"`
+        
+        MinMinutesBetweenShifts int `json:"minMinutesBetweenShifts"`
+        
+        PlanningPeriodMinPaidViolations string `json:"planningPeriodMinPaidViolations"`
+        
+        PlanningPeriodMaxPaidViolations string `json:"planningPeriodMaxPaidViolations"`
+        
+        MinMinutesBetweenShiftsViolations string `json:"minMinutesBetweenShiftsViolations"`
         *Alias
     }{
 
@@ -204,6 +264,24 @@ func (u *Shifttradesettings) MarshalJSON() ([]byte, error) {
 
         
         ActivityCategoryRules: []Shifttradeactivityrule{{}},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

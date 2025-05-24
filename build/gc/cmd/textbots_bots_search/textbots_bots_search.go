@@ -31,6 +31,7 @@ func Cmdtextbots_bots_search() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "[]string", "botType", "", "Bot types Valid values: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow, GenesysDigitalBotConnector")
 	utils.AddFlag(getCmd.Flags(), "string", "botName", "", "Bot name")
 	utils.AddFlag(getCmd.Flags(), "[]string", "botId", "", "Bot IDs. Maximum of 50")
+	utils.AddFlag(getCmd.Flags(), "bool", "virtualAgentEnabled", "", "Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows")
 	utils.AddFlag(getCmd.Flags(), "int", "pageSize", "25", "The maximum results to return. Maximum of 100")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/textbots/bots/search", utils.FormatPermissions([]string{ "integrations:integration:view",  }), utils.GenerateDevCentreLink("GET", "Textbots", "/api/v2/textbots/bots/search")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -84,6 +85,10 @@ var getCmd = &cobra.Command{
 		botId := utils.GetFlag(cmd.Flags(), "[]string", "botId")
 		if botId != "" {
 			queryParams["botId"] = botId
+		}
+		virtualAgentEnabled := utils.GetFlag(cmd.Flags(), "bool", "virtualAgentEnabled")
+		if virtualAgentEnabled != "" {
+			queryParams["virtualAgentEnabled"] = virtualAgentEnabled
 		}
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {

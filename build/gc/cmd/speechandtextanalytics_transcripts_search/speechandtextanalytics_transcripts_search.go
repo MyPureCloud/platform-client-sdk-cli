@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdspeechandtextanalytics_transcripts_search() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/speechandtextanalytics/transcripts/search", utils.FormatPermissions([]string{ "analytics:conversationDetail:view", "recording:recording:view",  }), utils.GenerateDevCentreLink("POST", "Search", "/api/v2/speechandtextanalytics/transcripts/search")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/speechandtextanalytics/transcripts/search", utils.FormatPermissions([]string{ "analytics:conversationDetail:view", "recording:recording:view", "recording:recordingSegment:view",  }), utils.GenerateDevCentreLink("POST", "Search", "/api/v2/speechandtextanalytics/transcripts/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Search request options",
   "content" : {

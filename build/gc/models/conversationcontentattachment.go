@@ -38,7 +38,7 @@ type ConversationcontentattachmentDud struct {
 
 // Conversationcontentattachment - Attachment object.
 type Conversationcontentattachment struct { 
-    // Id - Provider specific ID for attachment. For example, a LINE sticker ID.
+    // Id - Provider specific ID for attachment.
     Id string `json:"id"`
 
 

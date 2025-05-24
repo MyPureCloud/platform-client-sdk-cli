@@ -31,6 +31,9 @@ type NamedentitytypemechanismDud struct {
 
     
 
+
+    
+
 }
 
 // Namedentitytypemechanism
@@ -59,6 +62,10 @@ type Namedentitytypemechanism struct {
     MinLength int `json:"minLength"`
 
 
+    // AllowSpecialChars - Flag whether to allow for special characters during AI slot capture
+    AllowSpecialChars bool `json:"allowSpecialChars"`
+
+
     // Examples - Examples for entity detection
     Examples []Namedentitytypemechanismexample `json:"examples"`
 
@@ -67,6 +74,7 @@ type Namedentitytypemechanism struct {
 // String returns a JSON representation of the model
 func (o *Namedentitytypemechanism) String() string {
      o.Items = []Namedentitytypeitem{{}} 
+    
     
     
     
@@ -102,12 +110,17 @@ func (u *Namedentitytypemechanism) MarshalJSON() ([]byte, error) {
         
         MinLength int `json:"minLength"`
         
+        AllowSpecialChars bool `json:"allowSpecialChars"`
+        
         Examples []Namedentitytypemechanismexample `json:"examples"`
         *Alias
     }{
 
         
         Items: []Namedentitytypeitem{{}},
+        
+
+
         
 
 

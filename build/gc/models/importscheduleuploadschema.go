@@ -49,7 +49,7 @@ type Importscheduleuploadschema struct {
 
 
     // HeadcountForecast - The headcount forecast to associate with the imported schedule
-    HeadcountForecast Buheadcountforecast `json:"headcountForecast"`
+    HeadcountForecast Buheadcountforecastbuplanninggroupheadcountforecastuploadschema `json:"headcountForecast"`
 
 
     // AgentSchedules - Individual agent schedules
@@ -90,7 +90,7 @@ func (u *Importscheduleuploadschema) MarshalJSON() ([]byte, error) {
         
         ShortTermForecast Bushorttermforecastreference `json:"shortTermForecast"`
         
-        HeadcountForecast Buheadcountforecast `json:"headcountForecast"`
+        HeadcountForecast Buheadcountforecastbuplanninggroupheadcountforecastuploadschema `json:"headcountForecast"`
         
         AgentSchedules []Buimportagentscheduleuploadschema `json:"agentSchedules"`
         *Alias

@@ -45,7 +45,7 @@ type Updatescheduleuploadschema struct {
 
 
     // HeadcountForecast - The headcount forecast to associate with the schedule
-    HeadcountForecast Buheadcountforecast `json:"headcountForecast"`
+    HeadcountForecast Buheadcountforecastbuplanninggroupheadcountforecastuploadschema `json:"headcountForecast"`
 
 
     // AgentSchedules - Individual agent schedules
@@ -88,7 +88,7 @@ func (u *Updatescheduleuploadschema) MarshalJSON() ([]byte, error) {
         
         ShortTermForecast Bushorttermforecastreference `json:"shortTermForecast"`
         
-        HeadcountForecast Buheadcountforecast `json:"headcountForecast"`
+        HeadcountForecast Buheadcountforecastbuplanninggroupheadcountforecastuploadschema `json:"headcountForecast"`
         
         AgentSchedules []Buupdateagentscheduleuploadschema `json:"agentSchedules"`
         

@@ -67,12 +67,12 @@ type Outboundroutebaseentitylisting struct {
     TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
     // PreviousUri
     PreviousUri string `json:"previousUri"`
+
+
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // LastUri
@@ -132,9 +132,9 @@ func (u *Outboundroutebaseentitylisting) MarshalJSON() ([]byte, error) {
         
         TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
-        NextUri string `json:"nextUri"`
-        
         PreviousUri string `json:"previousUri"`
+        
+        NextUri string `json:"nextUri"`
         
         LastUri string `json:"lastUri"`
         

@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdconversations_emails_messages() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/emails/{conversationId}/messages", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/emails/{conversationId}/messages")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/emails/{conversationId}/messages", utils.FormatPermissions([]string{ "conversation:email:send",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/emails/{conversationId}/messages")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Reply",
   "content" : {

@@ -67,12 +67,12 @@ type Learningassignmentuserlisting struct {
     UnfilteredTotal int `json:"unfilteredTotal"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
     // PreviousUri
     PreviousUri string `json:"previousUri"`
+
+
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // LastUri
@@ -132,9 +132,9 @@ func (u *Learningassignmentuserlisting) MarshalJSON() ([]byte, error) {
         
         UnfilteredTotal int `json:"unfilteredTotal"`
         
-        NextUri string `json:"nextUri"`
-        
         PreviousUri string `json:"previousUri"`
+        
+        NextUri string `json:"nextUri"`
         
         LastUri string `json:"lastUri"`
         

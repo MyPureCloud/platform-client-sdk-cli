@@ -17,7 +17,7 @@ gc conversations messages messages bulk create [conversationId] [flags]
   -f, --file string                   File name containing the JSON body
   -h, --help                          help for create
   -b, --printrequestbody              Print the request body format of the API.
-      --useNormalizedMessage string   If true, response removes deprecated fields (textBody, media, stickers) Valid values: true, false
+      --useNormalizedMessage string   If true, response removes deprecated fields (textBody, media) Valid values: true, false
 ```
 
 ### Options inherited from parent commands

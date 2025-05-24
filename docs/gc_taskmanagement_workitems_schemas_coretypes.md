@@ -30,7 +30,7 @@
 ### SEE ALSO
 
 * [gc taskmanagement workitems schemas](gc_taskmanagement_workitems_schemas.html)	 - /api/v2/taskmanagement/workitems/schemas
-* [gc taskmanagement workitems schemas coretypes get](gc_taskmanagement_workitems_schemas_coretypes_get.html)	 - Get the core types from which all schemas are built.
+* [gc taskmanagement workitems schemas coretypes get](gc_taskmanagement_workitems_schemas_coretypes_get.html)	 - Get a specific named core type.
 * [gc taskmanagement workitems schemas coretypes list](gc_taskmanagement_workitems_schemas_coretypes_list.html)	 - Get the core types from which all schemas are built.
 
 

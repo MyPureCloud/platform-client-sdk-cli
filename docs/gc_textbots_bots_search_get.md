@@ -13,11 +13,12 @@ gc textbots bots search get [flags]
 ### Options
 
 ```
-      --botId strings     Bot IDs. Maximum of 50
-      --botName string    Bot name
-      --botType strings   Bot types Valid values: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow, GenesysDigitalBotConnector
-  -h, --help              help for get
-      --pageSize string   The maximum results to return. Maximum of 100 (default "25")
+      --botId strings                Bot IDs. Maximum of 50
+      --botName string               Bot name
+      --botType strings              Bot types Valid values: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow, GenesysDigitalBotConnector
+  -h, --help                         help for get
+      --pageSize string              The maximum results to return. Maximum of 100 (default "25")
+      --virtualAgentEnabled string   Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows Valid values: true, false
 ```
 
 ### Options inherited from parent commands

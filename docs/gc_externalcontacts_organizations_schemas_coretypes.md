@@ -30,7 +30,7 @@
 ### SEE ALSO
 
 * [gc externalcontacts organizations schemas](gc_externalcontacts_organizations_schemas.html)	 - /api/v2/externalcontacts/organizations/schemas
-* [gc externalcontacts organizations schemas coretypes get](gc_externalcontacts_organizations_schemas_coretypes_get.html)	 - Get the core types from which all schemas are built.
+* [gc externalcontacts organizations schemas coretypes get](gc_externalcontacts_organizations_schemas_coretypes_get.html)	 - Get a specific named core type.
 * [gc externalcontacts organizations schemas coretypes list](gc_externalcontacts_organizations_schemas_coretypes_list.html)	 - Get the core types from which all schemas are built.
 
 

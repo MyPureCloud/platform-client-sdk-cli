@@ -1,23 +1,22 @@
-## gc conversations messages communications messages create
+## gc conversations messaging identityresolution integrations instagram update
 
-Send message
+Create identity resolution settings for an Instagram messaging integration
 
 ### Synopsis
 
-Send message
+Create identity resolution settings for an Instagram messaging integration
 
 ```
-gc conversations messages communications messages create [conversationId] [communicationId] [flags]
+gc conversations messaging identityresolution integrations instagram update [integrationId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string              Directory path with files containing request bodies
-  -f, --file string                   File name containing the JSON body
-  -h, --help                          help for create
-  -b, --printrequestbody              Print the request body format of the API.
-      --useNormalizedMessage string   If true, response removes deprecated fields (textBody, media) Valid values: true, false
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for update
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -37,6 +36,6 @@ gc conversations messages communications messages create [conversationId] [commu
 
 ### SEE ALSO
 
-* [gc conversations messages communications messages](gc_conversations_messages_communications_messages.html)	 - /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages
+* [gc conversations messaging identityresolution integrations instagram](gc_conversations_messaging_identityresolution_integrations_instagram.html)	 - /api/v2/conversations/messaging/identityresolution/integrations/instagram
 
 

@@ -1,10 +1,10 @@
 ## gc externalcontacts contacts schemas coretypes get
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 ### Synopsis
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 ```
 gc externalcontacts contacts schemas coretypes get [coreTypeName] [flags]

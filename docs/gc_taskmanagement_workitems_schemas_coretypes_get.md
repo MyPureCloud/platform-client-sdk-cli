@@ -1,10 +1,10 @@
 ## gc taskmanagement workitems schemas coretypes get
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 ### Synopsis
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 ```
 gc taskmanagement workitems schemas coretypes get [coreTypeName] [flags]

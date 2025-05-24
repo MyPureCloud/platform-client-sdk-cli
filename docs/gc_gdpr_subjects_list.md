@@ -16,7 +16,7 @@ gc gdpr subjects list [flags]
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --searchType string        Search Type - REQUIRED Valid values: NAME, ADDRESS, PHONE, EMAIL, TWITTER, FACEBOOK, INSTAGRAM
+      --searchType string        Search Type - REQUIRED Valid values: NAME, ADDRESS, PHONE, EMAIL, TWITTER, INSTAGRAM, FACEBOOK
       --searchValue string       Search Value - REQUIRED
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```

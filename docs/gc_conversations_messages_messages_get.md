@@ -14,7 +14,7 @@ gc conversations messages messages get [conversationId] [messageId] [flags]
 
 ```
   -h, --help                          help for get
-      --useNormalizedMessage string   If true, response removes deprecated fields (textBody, media, stickers) Valid values: true, false
+      --useNormalizedMessage string   If true, response removes deprecated fields (textBody, media) Valid values: true, false
 ```
 
 ### Options inherited from parent commands

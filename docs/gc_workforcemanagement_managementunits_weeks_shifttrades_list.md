@@ -13,9 +13,10 @@ gc workforcemanagement managementunits weeks shifttrades list [managementUnitId]
 ### Options
 
 ```
-      --evaluateMatches string        Whether to evaluate the matches for violations Valid values: true, false
-      --forceDownloadService string   Force the result of this operation to be sent via download service. For testing/app development purposes Valid values: true, false
-  -h, --help                          help for list
+      --evaluateMatches string          Whether to evaluate the matches for violations Valid values: true, false
+      --forceDownloadService string     Force the result of this operation to be sent via download service. For testing/app development purposes Valid values: true, false
+  -h, --help                            help for list
+      --includeCrossWeekShifts string   Whether to include all shift trades with either the initiating shift or the receiving shift in the week Valid values: true, false
 ```
 
 ### Options inherited from parent commands

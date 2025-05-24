@@ -18,7 +18,7 @@ gc knowledge knowledgebases documents list [knowledgeBaseId] [flags]
       --before string                     The cursor that points to the start of the set of entities that has been returned.
       --categoryId strings                If specified, retrieves documents associated with category ids, comma separated values expected.
       --documentId strings                Retrieves the specified documents, comma separated values expected.
-      --expand strings                    The specified entity attributes will be filled. Comma separated values expected. Valid values: category, labels, variations
+      --expand strings                    The specified entity attributes will be filled. Comma separated values expected. Valid values: category, labels
       --externalIds strings               If specified, retrieves documents associated with external ids, comma separated values expected.
       --filtercondition string            Filter list command output based on a given condition or regular expression
   -h, --help                              help for list

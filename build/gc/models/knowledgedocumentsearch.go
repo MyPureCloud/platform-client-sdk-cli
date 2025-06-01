@@ -46,6 +46,9 @@ type KnowledgedocumentsearchDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgedocumentsearch
@@ -93,10 +96,15 @@ type Knowledgedocumentsearch struct {
     // AnswerGeneration - The results with AI-generated answer if the answerMode request property contains \"AnswerGeneration\".
     AnswerGeneration Knowledgeanswergenerationresponse `json:"answerGeneration"`
 
+
+    // PreprocessQuery - Indicates whether the search query should be preprocessed.
+    PreprocessQuery bool `json:"preprocessQuery"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgedocumentsearch) String() string {
+    
     
     
     
@@ -137,8 +145,13 @@ func (u *Knowledgedocumentsearch) MarshalJSON() ([]byte, error) {
         ConfidenceThreshold float32 `json:"confidenceThreshold"`
         
         AnswerGeneration Knowledgeanswergenerationresponse `json:"answerGeneration"`
+        
+        PreprocessQuery bool `json:"preprocessQuery"`
         *Alias
     }{
+
+        
+
 
         
 

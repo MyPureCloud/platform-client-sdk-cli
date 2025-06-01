@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_businessunits_workplanbids_groups() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -87,7 +87,7 @@ func Cmdworkforcemanagement_businessunits_workplanbids_groups() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{

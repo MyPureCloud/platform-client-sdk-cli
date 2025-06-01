@@ -39,7 +39,7 @@ func Cmdworkforcemanagement_businessunits_intraday() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

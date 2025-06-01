@@ -22,6 +22,9 @@ type ConversationactivitymetricvalueDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationactivitymetricvalue
@@ -41,6 +44,10 @@ type Conversationactivitymetricvalue struct {
     // Count - Metric count
     Count int `json:"count"`
 
+
+    // CalculatedMetricValue - Calculated metric value
+    CalculatedMetricValue int `json:"calculatedMetricValue"`
+
 }
 
 // String returns a JSON representation of the model
@@ -48,6 +55,7 @@ func (o *Conversationactivitymetricvalue) String() string {
     
     
      o.EntityIds = []string{""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -73,6 +81,8 @@ func (u *Conversationactivitymetricvalue) MarshalJSON() ([]byte, error) {
         EntityIds []string `json:"entityIds"`
         
         Count int `json:"count"`
+        
+        CalculatedMetricValue int `json:"calculatedMetricValue"`
         *Alias
     }{
 
@@ -84,6 +94,9 @@ func (u *Conversationactivitymetricvalue) MarshalJSON() ([]byte, error) {
 
         
         EntityIds: []string{""},
+        
+
+
         
 
 

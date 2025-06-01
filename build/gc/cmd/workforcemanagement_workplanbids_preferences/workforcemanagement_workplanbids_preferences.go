@@ -53,7 +53,7 @@ func Cmdworkforcemanagement_workplanbids_preferences() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{

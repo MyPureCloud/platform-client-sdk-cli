@@ -6,29 +6,17 @@ import (
 )
 
 var (
-    AddressableentityMarshalled = false
+    AutomatedanswerMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type AddressableentityDud struct { 
-    Id string `json:"id"`
+type AutomatedanswerDud struct { }
 
-
-    SelfUri string `json:"selfUri"`
-
-}
-
-// Addressableentity
-type Addressableentity struct { 
-    
-
-
-    
-
-}
+// Automatedanswer
+type Automatedanswer struct { }
 
 // String returns a JSON representation of the model
-func (o *Addressableentity) String() string {
+func (o *Automatedanswer) String() string {
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -36,23 +24,17 @@ func (o *Addressableentity) String() string {
     return str
 }
 
-func (u *Addressableentity) MarshalJSON() ([]byte, error) {
-    type Alias Addressableentity
+func (u *Automatedanswer) MarshalJSON() ([]byte, error) {
+    type Alias Automatedanswer
 
-    if AddressableentityMarshalled {
+    if AutomatedanswerMarshalled {
         return []byte("{}"), nil
     }
-    AddressableentityMarshalled = true
+    AutomatedanswerMarshalled = true
 
     return json.Marshal(&struct {
         *Alias
     }{
-
-        
-
-
-        
-
         Alias: (*Alias)(u),
     })
 }

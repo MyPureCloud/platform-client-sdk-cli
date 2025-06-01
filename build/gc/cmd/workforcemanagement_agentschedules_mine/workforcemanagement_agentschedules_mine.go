@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_agentschedules_mine() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

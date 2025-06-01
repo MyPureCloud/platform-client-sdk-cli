@@ -79,7 +79,7 @@ func Cmdbusinessrules_decisiontables() *cobra.Command {
 	businessrules_decisiontablesCmd.AddCommand(getCmd)
 
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
+	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 100.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionIds", "", "One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/businessrules/decisiontables", utils.FormatPermissions([]string{ "businessrules:decisionTable:view",  }), utils.GenerateDevCentreLink("GET", "Business Rules", "/api/v2/businessrules/decisiontables")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)

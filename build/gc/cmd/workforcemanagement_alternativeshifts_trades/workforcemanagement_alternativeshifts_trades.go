@@ -94,7 +94,7 @@ func Cmdworkforcemanagement_alternativeshifts_trades() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{

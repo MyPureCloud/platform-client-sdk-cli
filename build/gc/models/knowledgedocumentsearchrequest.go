@@ -61,6 +61,9 @@ type KnowledgedocumentsearchrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgedocumentsearchrequest
@@ -129,6 +132,10 @@ type Knowledgedocumentsearchrequest struct {
     // AnswerMode - Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight. Use this property with answerHighlightTopResults.
     AnswerMode []string `json:"answerMode"`
 
+
+    // PreprocessQuery - Indicates whether the search query should be preprocessed.
+    PreprocessQuery bool `json:"preprocessQuery"`
+
 }
 
 // String returns a JSON representation of the model
@@ -147,6 +154,7 @@ func (o *Knowledgedocumentsearchrequest) String() string {
     
     
      o.AnswerMode = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -191,6 +199,8 @@ func (u *Knowledgedocumentsearchrequest) MarshalJSON() ([]byte, error) {
         AnswerHighlightTopResults int `json:"answerHighlightTopResults"`
         
         AnswerMode []string `json:"answerMode"`
+        
+        PreprocessQuery bool `json:"preprocessQuery"`
         *Alias
     }{
 
@@ -244,6 +254,9 @@ func (u *Knowledgedocumentsearchrequest) MarshalJSON() ([]byte, error) {
 
         
         AnswerMode: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_agents_integrations_hris_query() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

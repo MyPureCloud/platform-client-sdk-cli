@@ -53,7 +53,7 @@ func Cmdworkforcemanagement_businessunits_alternativeshifts_settings() *cobra.Co
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{

@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_managementunits_timeoffrequests_waitlistpositions_qu
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

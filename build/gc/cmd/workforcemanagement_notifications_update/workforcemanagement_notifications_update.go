@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_notifications_update() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_managementunits_timeofflimits_values() *cobra.Comman
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{

@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_managementunits_workplanrotations_copy() *cobra.Comm
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

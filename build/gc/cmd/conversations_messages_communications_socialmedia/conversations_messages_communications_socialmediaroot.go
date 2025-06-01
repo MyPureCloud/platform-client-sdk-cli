@@ -1,0 +1,12 @@
+package conversations_messages_communications_socialmedia
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messages_communications_socialmedia_messages"
+)
+
+func init() {
+	conversations_messages_communications_socialmediaCmd.AddCommand(conversations_messages_communications_socialmedia_messages.Cmdconversations_messages_communications_socialmedia_messages())
+	conversations_messages_communications_socialmediaCmd.Short = utils.GenerateCustomDescription(conversations_messages_communications_socialmediaCmd.Short, conversations_messages_communications_socialmedia_messages.Description, )
+	conversations_messages_communications_socialmediaCmd.Long = conversations_messages_communications_socialmediaCmd.Short
+}

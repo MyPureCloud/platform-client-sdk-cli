@@ -32,10 +32,20 @@ type ConversationcontentdatepickerDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Conversationcontentdatepicker - DateTimePicker content object.
 type Conversationcontentdatepicker struct { 
+    // Id - Optional unique identifier to help map component replies to form messages where multiple DatePickers can be present.
+    Id string `json:"id"`
+
+
     // Title - Text to show in the title.
     Title string `json:"title"`
 
@@ -63,6 +73,10 @@ type Conversationcontentdatepicker struct {
     // AvailableTimes - An array of available times objects.
     AvailableTimes []Conversationcontentdatepickeravailabletime `json:"availableTimes"`
 
+
+    // DateDisplayFormat - The format the date should be presented to the end user.
+    DateDisplayFormat string `json:"dateDisplayFormat"`
+
 }
 
 // String returns a JSON representation of the model
@@ -73,7 +87,9 @@ func (o *Conversationcontentdatepicker) String() string {
     
     
     
+    
      o.AvailableTimes = []Conversationcontentdatepickeravailabletime{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -91,6 +107,8 @@ func (u *Conversationcontentdatepicker) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Id string `json:"id"`
+        
         Title string `json:"title"`
         
         Subtitle string `json:"subtitle"`
@@ -104,6 +122,8 @@ func (u *Conversationcontentdatepicker) MarshalJSON() ([]byte, error) {
         Location Conversationcontentlocation `json:"location"`
         
         AvailableTimes []Conversationcontentdatepickeravailabletime `json:"availableTimes"`
+        
+        DateDisplayFormat string `json:"dateDisplayFormat"`
         *Alias
     }{
 
@@ -126,7 +146,13 @@ func (u *Conversationcontentdatepicker) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
         AvailableTimes: []Conversationcontentdatepickeravailabletime{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

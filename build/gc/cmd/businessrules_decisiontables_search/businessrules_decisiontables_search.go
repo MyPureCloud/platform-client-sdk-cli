@@ -28,9 +28,8 @@ func init() {
 }
 
 func Cmdbusinessrules_decisiontables_search() *cobra.Command { 
-	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
+	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 100.")
 	utils.AddFlag(listCmd.Flags(), "string", "schemaId", "", "Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/businessrules/decisiontables/search", utils.FormatPermissions([]string{ "businessrules:decisionTable:search",  }), utils.GenerateDevCentreLink("GET", "Business Rules", "/api/v2/businessrules/decisiontables/search")))
@@ -74,10 +73,6 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/businessrules/decisiontables/search"
 
-		before := utils.GetFlag(cmd.Flags(), "string", "before")
-		if before != "" {
-			queryParams["before"] = before
-		}
 		after := utils.GetFlag(cmd.Flags(), "string", "after")
 		if after != "" {
 			queryParams["after"] = after

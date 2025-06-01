@@ -19,10 +19,17 @@ type ConversationcontentlistpickerDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationcontentlistpicker - List Picker object for presenting multiple sections of selectable items.
 type Conversationcontentlistpicker struct { 
+    // Id - Optional unique identifier to help map component replies to form messages where multiple ListPickers can be present.
+    Id string `json:"id"`
+
+
     // Sections - An array of sections in the List Picker.
     Sections []Conversationcontentlistpickersection `json:"sections"`
 
@@ -38,6 +45,7 @@ type Conversationcontentlistpicker struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationcontentlistpicker) String() string {
+    
      o.Sections = []Conversationcontentlistpickersection{{}} 
     
     
@@ -58,6 +66,8 @@ func (u *Conversationcontentlistpicker) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Id string `json:"id"`
+        
         Sections []Conversationcontentlistpickersection `json:"sections"`
         
         ReplyMessage Conversationcontentreceivedreplymessage `json:"replyMessage"`
@@ -65,6 +75,9 @@ func (u *Conversationcontentlistpicker) MarshalJSON() ([]byte, error) {
         ReceivedMessage Conversationcontentreceivedreplymessage `json:"receivedMessage"`
         *Alias
     }{
+
+        
+
 
         
         Sections: []Conversationcontentlistpickersection{{}},

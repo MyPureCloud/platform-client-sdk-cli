@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_managementunits_move() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

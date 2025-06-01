@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_timeoffrequests_estimate() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

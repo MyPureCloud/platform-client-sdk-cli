@@ -77,7 +77,7 @@ func Cmdworkforcemanagement_businessunits_scheduling_runs() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{

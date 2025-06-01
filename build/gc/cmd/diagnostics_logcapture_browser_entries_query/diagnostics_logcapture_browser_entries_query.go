@@ -28,7 +28,6 @@ func init() {
 }
 
 func Cmddiagnostics_logcapture_browser_entries_query() *cobra.Command { 
-	utils.AddFlag(createCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
 	utils.AddFlag(createCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(createCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/diagnostics/logcapture/browser/entries/query", utils.FormatPermissions([]string{ "troubleshooting:logCapture:view",  }), utils.GenerateDevCentreLink("POST", "Log Capture", "/api/v2/diagnostics/logcapture/browser/entries/query")))
@@ -84,10 +83,6 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/diagnostics/logcapture/browser/entries/query"
 
-		before := utils.GetFlag(cmd.Flags(), "string", "before")
-		if before != "" {
-			queryParams["before"] = before
-		}
 		after := utils.GetFlag(cmd.Flags(), "string", "after")
 		if after != "" {
 			queryParams["after"] = after

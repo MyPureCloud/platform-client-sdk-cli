@@ -22,6 +22,9 @@ type ConversationcontentquickreplyDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationcontentquickreply - Quick reply object.
@@ -41,10 +44,15 @@ type Conversationcontentquickreply struct {
     // Action - Specifies the type of action that is triggered upon clicking the quick reply.
     Action string `json:"action"`
 
+
+    // SummaryText - Summary of what the quick reply relates to.
+    SummaryText string `json:"summaryText"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationcontentquickreply) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Conversationcontentquickreply) MarshalJSON() ([]byte, error) {
         Image string `json:"image"`
         
         Action string `json:"action"`
+        
+        SummaryText string `json:"summaryText"`
         *Alias
     }{
+
+        
+
 
         
 

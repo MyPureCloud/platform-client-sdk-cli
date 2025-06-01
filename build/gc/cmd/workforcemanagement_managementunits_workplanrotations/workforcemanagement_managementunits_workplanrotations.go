@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_managementunits_workplanrotations() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -103,7 +103,7 @@ func Cmdworkforcemanagement_managementunits_workplanrotations() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{

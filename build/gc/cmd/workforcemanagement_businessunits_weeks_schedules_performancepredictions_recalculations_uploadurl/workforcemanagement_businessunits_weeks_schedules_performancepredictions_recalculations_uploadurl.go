@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_businessunits_weeks_schedules_performancepredictions
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

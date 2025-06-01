@@ -53,7 +53,7 @@ func Cmdworkforcemanagement_businessunits_workplanbids_groups_preferences() *cob
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{

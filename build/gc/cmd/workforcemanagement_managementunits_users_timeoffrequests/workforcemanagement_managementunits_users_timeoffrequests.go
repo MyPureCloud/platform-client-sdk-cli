@@ -68,7 +68,7 @@ func Cmdworkforcemanagement_managementunits_users_timeoffrequests() *cobra.Comma
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{

@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_businessunits_staffinggroups_query() *cobra.Command 
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

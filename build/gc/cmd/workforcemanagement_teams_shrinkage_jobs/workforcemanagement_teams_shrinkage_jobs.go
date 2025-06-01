@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_teams_shrinkage_jobs() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

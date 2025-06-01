@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_historicaldata_bulk_remove_jobs() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

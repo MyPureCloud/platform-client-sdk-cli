@@ -12,6 +12,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations_speech"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations_webhooks"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations_unifiedcommunications"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/integrations_botconnectors"
 )
 
 func init() {
@@ -25,6 +26,7 @@ func init() {
 	integrationsCmd.AddCommand(integrations_speech.Cmdintegrations_speech())
 	integrationsCmd.AddCommand(integrations_webhooks.Cmdintegrations_webhooks())
 	integrationsCmd.AddCommand(integrations_unifiedcommunications.Cmdintegrations_unifiedcommunications())
-	integrationsCmd.Short = utils.GenerateCustomDescription(integrationsCmd.Short, integrations_credentials.Description, integrations_clientapps.Description, integrations_config.Description, integrations_types.Description, integrations_userapps.Description, integrations_actions.Description, integrations_botconnector.Description, integrations_speech.Description, integrations_webhooks.Description, integrations_unifiedcommunications.Description, )
+	integrationsCmd.AddCommand(integrations_botconnectors.Cmdintegrations_botconnectors())
+	integrationsCmd.Short = utils.GenerateCustomDescription(integrationsCmd.Short, integrations_credentials.Description, integrations_clientapps.Description, integrations_config.Description, integrations_types.Description, integrations_userapps.Description, integrations_actions.Description, integrations_botconnector.Description, integrations_speech.Description, integrations_webhooks.Description, integrations_unifiedcommunications.Description, integrations_botconnectors.Description, )
 	integrationsCmd.Long = integrationsCmd.Short
 }

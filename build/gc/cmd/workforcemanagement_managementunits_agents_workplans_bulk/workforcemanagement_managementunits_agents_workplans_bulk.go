@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_managementunits_agents_workplans_bulk() *cobra.Comma
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{

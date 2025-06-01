@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    PagelessentitylistingMarshalled = false
+    LogcaptureuserconfigurationlistingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type PagelessentitylistingDud struct { 
+type LogcaptureuserconfigurationlistingDud struct { 
     
 
 
@@ -21,14 +21,14 @@ type PagelessentitylistingDud struct {
 
 }
 
-// Pagelessentitylisting
-type Pagelessentitylisting struct { 
+// Logcaptureuserconfigurationlisting - List of log capture user configurations including total count and entities
+type Logcaptureuserconfigurationlisting struct { 
     // Total
     Total int `json:"total"`
 
 
     // Entities
-    Entities []Addressableentity `json:"entities"`
+    Entities []Logcaptureuserconfiguration `json:"entities"`
 
 
     // SelfUri
@@ -37,9 +37,9 @@ type Pagelessentitylisting struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Pagelessentitylisting) String() string {
+func (o *Logcaptureuserconfigurationlisting) String() string {
     
-     o.Entities = []Addressableentity{{}} 
+     o.Entities = []Logcaptureuserconfiguration{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -48,19 +48,19 @@ func (o *Pagelessentitylisting) String() string {
     return str
 }
 
-func (u *Pagelessentitylisting) MarshalJSON() ([]byte, error) {
-    type Alias Pagelessentitylisting
+func (u *Logcaptureuserconfigurationlisting) MarshalJSON() ([]byte, error) {
+    type Alias Logcaptureuserconfigurationlisting
 
-    if PagelessentitylistingMarshalled {
+    if LogcaptureuserconfigurationlistingMarshalled {
         return []byte("{}"), nil
     }
-    PagelessentitylistingMarshalled = true
+    LogcaptureuserconfigurationlistingMarshalled = true
 
     return json.Marshal(&struct {
         
         Total int `json:"total"`
         
-        Entities []Addressableentity `json:"entities"`
+        Entities []Logcaptureuserconfiguration `json:"entities"`
         
         SelfUri string `json:"selfUri"`
         *Alias
@@ -70,7 +70,7 @@ func (u *Pagelessentitylisting) MarshalJSON() ([]byte, error) {
 
 
         
-        Entities: []Addressableentity{{}},
+        Entities: []Logcaptureuserconfiguration{{}},
         
 
 

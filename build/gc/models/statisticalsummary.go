@@ -49,6 +49,9 @@ type StatisticalsummaryDud struct {
 
     
 
+
+    
+
 }
 
 // Statisticalsummary
@@ -104,10 +107,15 @@ type Statisticalsummary struct {
     // P99
     P99 int `json:"p99"`
 
+
+    // CalculatedMetricValue
+    CalculatedMetricValue int `json:"calculatedMetricValue"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Statisticalsummary) String() string {
+    
     
     
     
@@ -163,8 +171,13 @@ func (u *Statisticalsummary) MarshalJSON() ([]byte, error) {
         P95 int `json:"p95"`
         
         P99 int `json:"p99"`
+        
+        CalculatedMetricValue int `json:"calculatedMetricValue"`
         *Alias
     }{
+
+        
+
 
         
 

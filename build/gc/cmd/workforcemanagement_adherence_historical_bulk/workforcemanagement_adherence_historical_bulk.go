@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_adherence_historical_bulk() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

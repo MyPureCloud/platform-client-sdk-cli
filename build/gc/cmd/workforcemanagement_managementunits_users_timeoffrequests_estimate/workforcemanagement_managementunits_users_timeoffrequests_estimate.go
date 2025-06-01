@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_managementunits_users_timeoffrequests_estimate() *co
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

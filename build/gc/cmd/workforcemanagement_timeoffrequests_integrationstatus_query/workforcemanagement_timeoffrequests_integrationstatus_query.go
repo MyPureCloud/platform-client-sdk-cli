@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_timeoffrequests_integrationstatus_query() *cobra.Com
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

@@ -55,7 +55,7 @@ func Cmdworkforcemanagement_managementunits_agents() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{

@@ -69,7 +69,7 @@ func Cmddiagnostics_logcapture_browser_users() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/LogCaptureUserConfiguration"
+        "$ref" : "#/components/schemas/LogCaptureUserConfigurationResponse"
       }
     }
   }
@@ -85,7 +85,7 @@ func Cmddiagnostics_logcapture_browser_users() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/PagelessEntityListing"
+        "$ref" : "#/components/schemas/LogCaptureUserConfigurationListing"
       }
     }
   }

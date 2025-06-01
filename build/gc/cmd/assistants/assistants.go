@@ -82,6 +82,7 @@ func Cmdassistants() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Return the assistant by the given name.")
+	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Which fields, if any, to expand Valid values: copilot")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/assistants", utils.FormatPermissions([]string{ "assistants:assistant:view",  }), utils.GenerateDevCentreLink("GET", "Agent Assistants", "/api/v2/assistants")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -366,6 +367,10 @@ var listCmd = &cobra.Command{
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {
 			queryParams["name"] = name
+		}
+		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
 		}
 		urlString := path
 		if len(queryParams) > 0 {

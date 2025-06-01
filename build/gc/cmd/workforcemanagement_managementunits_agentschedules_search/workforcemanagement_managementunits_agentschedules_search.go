@@ -40,7 +40,7 @@ func Cmdworkforcemanagement_managementunits_agentschedules_search() *cobra.Comma
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

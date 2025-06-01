@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdoutbound_schedules_messagingcampaigns() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaignSchedule:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaignSchedule:delete", "outbound:messagingCampaign:deleteSchedule",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -37,7 +37,7 @@ func Cmdoutbound_schedules_messagingcampaigns() *cobra.Command {
 }`)
 	outbound_schedules_messagingcampaignsCmd.AddCommand(deleteCmd)
 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaignSchedule:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaignSchedule:view", "outbound:messagingCampaign:viewSchedule",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -52,7 +52,7 @@ func Cmdoutbound_schedules_messagingcampaigns() *cobra.Command {
 }`)
 	outbound_schedules_messagingcampaignsCmd.AddCommand(getCmd)
 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/schedules/messagingcampaigns", utils.FormatPermissions([]string{ "outbound:messagingCampaignSchedule:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/schedules/messagingcampaigns")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/schedules/messagingcampaigns", utils.FormatPermissions([]string{ "outbound:messagingCampaignSchedule:view", "outbound:messagingCampaign:viewSchedule",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/schedules/messagingcampaigns")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -67,7 +67,7 @@ func Cmdoutbound_schedules_messagingcampaigns() *cobra.Command {
 }`)
 	outbound_schedules_messagingcampaignsCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaignSchedule:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}", utils.FormatPermissions([]string{ "outbound:messagingCampaignSchedule:edit", "outbound:messagingCampaign:editSchedule",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "MessagingCampaignSchedule",
   "content" : {

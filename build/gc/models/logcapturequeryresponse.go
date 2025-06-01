@@ -19,9 +19,6 @@ type LogcapturequeryresponseDud struct {
 
     
 
-
-    
-
 }
 
 // Logcapturequeryresponse
@@ -37,16 +34,11 @@ type Logcapturequeryresponse struct {
     // SelfUri
     SelfUri string `json:"selfUri"`
 
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Logcapturequeryresponse) String() string {
      o.Entities = []Logentry{{}} 
-    
     
     
 
@@ -71,16 +63,11 @@ func (u *Logcapturequeryresponse) MarshalJSON() ([]byte, error) {
         NextUri string `json:"nextUri"`
         
         SelfUri string `json:"selfUri"`
-        
-        PreviousUri string `json:"previousUri"`
         *Alias
     }{
 
         
         Entities: []Logentry{{}},
-        
-
-
         
 
 

@@ -39,7 +39,7 @@ func Cmdworkforcemanagement_managementunits_agents_workplans_query() *cobra.Comm
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

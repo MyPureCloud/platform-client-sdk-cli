@@ -33,7 +33,9 @@
 * [gc socialmedia topics dataingestionrules open create](gc_socialmedia_topics_dataingestionrules_open_create.html)	 - Create an open data ingestion rule.
 * [gc socialmedia topics dataingestionrules open delete](gc_socialmedia_topics_dataingestionrules_open_delete.html)	 - Delete a open data ingestion rule.
 * [gc socialmedia topics dataingestionrules open get](gc_socialmedia_topics_dataingestionrules_open_get.html)	 - Get a single open data ingestion rule.
+* [gc socialmedia topics dataingestionrules open messages](gc_socialmedia_topics_dataingestionrules_open_messages.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages
 * [gc socialmedia topics dataingestionrules open patch](gc_socialmedia_topics_dataingestionrules_open_patch.html)	 - Update the status of a open data ingestion rule.
+* [gc socialmedia topics dataingestionrules open reactions](gc_socialmedia_topics_dataingestionrules_open_reactions.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/reactions
 * [gc socialmedia topics dataingestionrules open update](gc_socialmedia_topics_dataingestionrules_open_update.html)	 - Update the open data ingestion rule.
 * [gc socialmedia topics dataingestionrules open versions](gc_socialmedia_topics_dataingestionrules_open_versions.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions
 

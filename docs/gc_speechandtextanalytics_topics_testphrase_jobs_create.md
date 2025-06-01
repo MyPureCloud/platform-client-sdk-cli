@@ -1,15 +1,22 @@
-## gc users presences bulk
+## gc speechandtextanalytics topics testphrase jobs create
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Create new Speech and Text Analytics publish topics job
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Create new Speech and Text Analytics publish topics job
+
+```
+gc speechandtextanalytics topics testphrase jobs create [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +36,6 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc speechandtextanalytics topics testphrase jobs](gc_speechandtextanalytics_topics_testphrase_jobs.html)	 - /api/v2/speechandtextanalytics/topics/testphrase/jobs
 
 

@@ -1,10 +1,10 @@
-## gc users presences bulk
+## gc socialmedia topics dataingestionrules open reactions bulk
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/reactions/bulk
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/reactions/bulk
 
 ### Options
 
@@ -29,8 +29,7 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc socialmedia topics dataingestionrules open reactions](gc_socialmedia_topics_dataingestionrules_open_reactions.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/reactions
+* [gc socialmedia topics dataingestionrules open reactions bulk create](gc_socialmedia_topics_dataingestionrules_open_reactions_bulk_create.html)	 - Ingest a list of Open Social Reactions
 
 

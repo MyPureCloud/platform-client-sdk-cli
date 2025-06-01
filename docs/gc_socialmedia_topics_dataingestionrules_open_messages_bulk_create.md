@@ -1,15 +1,22 @@
-## gc users presences bulk
+## gc socialmedia topics dataingestionrules open messages bulk create
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Ingest a list of Open Social Messages
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Ingest a list of Open Social Messages
+
+```
+gc socialmedia topics dataingestionrules open messages bulk create [topicId] [ruleId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +36,6 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc socialmedia topics dataingestionrules open messages bulk](gc_socialmedia_topics_dataingestionrules_open_messages_bulk.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages/bulk
 
 

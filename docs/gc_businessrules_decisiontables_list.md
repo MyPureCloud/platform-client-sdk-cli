@@ -18,7 +18,7 @@ gc businessrules decisiontables list [flags]
       --divisionIds strings      One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageSize string          Number of entities to return. Maximum of 200.
+      --pageSize string          Number of entities to return. Maximum of 100.
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

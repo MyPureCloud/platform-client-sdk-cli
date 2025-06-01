@@ -1,15 +1,15 @@
-## gc users presences bulk
+## gc speechandtextanalytics topics testphrase jobs
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/speechandtextanalytics/topics/testphrase/jobs
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/speechandtextanalytics/topics/testphrase/jobs
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -h, --help   help for jobs
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +29,8 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc speechandtextanalytics topics testphrase](gc_speechandtextanalytics_topics_testphrase.html)	 - /api/v2/speechandtextanalytics/topics/testphrase
+* [gc speechandtextanalytics topics testphrase jobs create](gc_speechandtextanalytics_topics_testphrase_jobs_create.html)	 - Create new Speech and Text Analytics publish topics job
+* [gc speechandtextanalytics topics testphrase jobs get](gc_speechandtextanalytics_topics_testphrase_jobs_get.html)	 - Get a Speech and Text Analytics test topics phrase job by id
 
 

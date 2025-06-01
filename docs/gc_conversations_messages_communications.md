@@ -31,6 +31,7 @@
 
 * [gc conversations messages](gc_conversations_messages.html)	 - /api/v2/conversations/messages
 * [gc conversations messages communications messages](gc_conversations_messages_communications_messages.html)	 - /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages
+* [gc conversations messages communications socialmedia](gc_conversations_messages_communications_socialmedia.html)	 - /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia
 * [gc conversations messages communications typing](gc_conversations_messages_communications_typing.html)	 - /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing
 
 

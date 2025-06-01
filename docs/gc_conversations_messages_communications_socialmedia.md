@@ -1,15 +1,15 @@
-## gc users presences bulk
+## gc conversations messages communications socialmedia
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -h, --help   help for socialmedia
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +29,7 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc conversations messages communications](gc_conversations_messages_communications.html)	 - /api/v2/conversations/messages/{conversationId}/communications
+* [gc conversations messages communications socialmedia messages](gc_conversations_messages_communications_socialmedia_messages.html)	 - /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages
 
 

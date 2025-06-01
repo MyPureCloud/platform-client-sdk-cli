@@ -1,15 +1,15 @@
-## gc users presences bulk
+## gc integrations botconnectors
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/integrations/botconnectors
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/integrations/botconnectors
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -h, --help   help for botconnectors
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +29,9 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc integrations](gc_integrations.html)	 - /api/v2/integrations
+* [gc integrations botconnectors bots](gc_integrations_botconnectors_bots.html)	 - /api/v2/integrations/botconnectors/{integrationId}/bots
+* [gc integrations botconnectors incoming](gc_integrations_botconnectors_incoming.html)	 - /api/v2/integrations/botconnectors/incoming
+* [gc integrations botconnectors outgoing](gc_integrations_botconnectors_outgoing.html)	 - /api/v2/integrations/botconnectors/outgoing
 
 

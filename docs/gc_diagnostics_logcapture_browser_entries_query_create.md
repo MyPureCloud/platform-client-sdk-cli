@@ -14,7 +14,6 @@ gc diagnostics logcapture browser entries query create [flags]
 
 ```
       --after string       The cursor that points to the end of the set of entities that has been returned.
-      --before string      The cursor that points to the start of the set of entities that has been returned.
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
   -h, --help               help for create

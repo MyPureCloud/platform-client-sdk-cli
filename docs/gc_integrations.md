@@ -32,6 +32,7 @@
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
 * [gc integrations actions](gc_integrations_actions.html)	 - /api/v2/integrations/actions
 * [gc integrations botconnector](gc_integrations_botconnector.html)	 - /api/v2/integrations/botconnector
+* [gc integrations botconnectors](gc_integrations_botconnectors.html)	 - /api/v2/integrations/botconnectors
 * [gc integrations clientapps](gc_integrations_clientapps.html)	 - /api/v2/integrations/clientapps
 * [gc integrations config](gc_integrations_config.html)	 - /api/v2/integrations/{integrationId}/config
 * [gc integrations create](gc_integrations_create.html)	 - Create an integration.

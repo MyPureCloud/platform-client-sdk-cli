@@ -1,10 +1,10 @@
-## gc users presences bulk
+## gc socialmedia topics dataingestionrules open messages bulk
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages/bulk
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages/bulk
 
 ### Options
 
@@ -29,8 +29,7 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc socialmedia topics dataingestionrules open messages](gc_socialmedia_topics_dataingestionrules_open_messages.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages
+* [gc socialmedia topics dataingestionrules open messages bulk create](gc_socialmedia_topics_dataingestionrules_open_messages_bulk_create.html)	 - Ingest a list of Open Social Messages
 
 

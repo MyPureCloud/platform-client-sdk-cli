@@ -15,11 +15,10 @@ gc businessrules decisiontables search list [flags]
 ```
       --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --before string            The cursor that points to the start of the set of entities that has been returned.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --name string              Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.
-      --pageSize string          Number of entities to return. Maximum of 200.
+      --pageSize string          Number of entities to return. Maximum of 100.
       --schemaId string          Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```

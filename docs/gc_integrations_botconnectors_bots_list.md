@@ -1,27 +1,23 @@
-## gc assistants list
+## gc integrations botconnectors bots list
 
-Get all assistants.
+Get the list of bots for this integration.
 
 ### Synopsis
 
-Get all assistants.
+Get the list of bots for this integration.
 
 ```
-gc assistants list [flags]
+gc integrations botconnectors bots list [integrationId] [flags]
 ```
 
 ### Options
 
 ```
-      --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --before string            The cursor that points to the start of the set of entities that has been returned.
-      --expand string            Which fields, if any, to expand Valid values: copilot
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --limit string             Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
-      --name string              Return the assistant by the given name.
-      --pageSize string          Number of entities to return. Maximum of 200.
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
@@ -42,6 +38,6 @@ gc assistants list [flags]
 
 ### SEE ALSO
 
-* [gc assistants](gc_assistants.html)	 - /api/v2/assistants
+* [gc integrations botconnectors bots](gc_integrations_botconnectors_bots.html)	 - /api/v2/integrations/botconnectors/{integrationId}/bots
 
 

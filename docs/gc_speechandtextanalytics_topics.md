@@ -37,6 +37,7 @@
 * [gc speechandtextanalytics topics get](gc_speechandtextanalytics_topics_get.html)	 - Get a Speech and Text Analytics topic by id
 * [gc speechandtextanalytics topics list](gc_speechandtextanalytics_topics_list.html)	 - Get the list of Speech and Text Analytics topics
 * [gc speechandtextanalytics topics publishjobs](gc_speechandtextanalytics_topics_publishjobs.html)	 - /api/v2/speechandtextanalytics/topics/publishjobs
+* [gc speechandtextanalytics topics testphrase](gc_speechandtextanalytics_topics_testphrase.html)	 - /api/v2/speechandtextanalytics/topics/testphrase
 * [gc speechandtextanalytics topics update](gc_speechandtextanalytics_topics_update.html)	 - Update existing Speech and Text Analytics topic
 
 

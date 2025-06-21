@@ -16,12 +16,19 @@ type DecisiontablerowexecutionoutputDud struct {
 
     
 
+
+    
+
 }
 
 // Decisiontablerowexecutionoutput
 type Decisiontablerowexecutionoutput struct { 
     // RowId - Unique rule identifier.
     RowId string `json:"rowId"`
+
+
+    // RowIndex - Unique rule identifier.
+    RowIndex int `json:"rowIndex"`
 
 
     // Outputs - The JSON output produced by this rule. Valid according to the execution output contract.
@@ -31,6 +38,7 @@ type Decisiontablerowexecutionoutput struct {
 
 // String returns a JSON representation of the model
 func (o *Decisiontablerowexecutionoutput) String() string {
+    
     
      o.Outputs = map[string]interface{}{"": Interface{}} 
 
@@ -52,9 +60,14 @@ func (u *Decisiontablerowexecutionoutput) MarshalJSON() ([]byte, error) {
         
         RowId string `json:"rowId"`
         
+        RowIndex int `json:"rowIndex"`
+        
         Outputs map[string]interface{} `json:"outputs"`
         *Alias
     }{
+
+        
+
 
         
 

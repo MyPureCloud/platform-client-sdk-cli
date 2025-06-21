@@ -28,6 +28,8 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_summaries"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_recordingmetadata"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_recordings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_internalmessages"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_communications"
 )
 
 func init() {
@@ -57,6 +59,8 @@ func init() {
 	conversationsCmd.AddCommand(conversations_summaries.Cmdconversations_summaries())
 	conversationsCmd.AddCommand(conversations_recordingmetadata.Cmdconversations_recordingmetadata())
 	conversationsCmd.AddCommand(conversations_recordings.Cmdconversations_recordings())
-	conversationsCmd.Short = utils.GenerateCustomDescription(conversationsCmd.Short, conversations_cobrowse.Description, conversations_keyconfigurations.Description, conversations_participants.Description, conversations_barge.Description, conversations_disconnect.Description, conversations_assign.Description, conversations_tags.Description, conversations_utilizationlabel.Description, conversations_secureattributes.Description, conversations_faxes.Description, conversations_settings.Description, conversations_aftercallwork.Description, conversations_callbacks.Description, conversations_calls.Description, conversations_chats.Description, conversations_cobrowsesessions.Description, conversations_emails.Description, conversations_messages.Description, conversations_screenshares.Description, conversations_socials.Description, conversations_videos.Description, conversations_messaging.Description, conversations_suggestions.Description, conversations_summaries.Description, conversations_recordingmetadata.Description, conversations_recordings.Description, )
+	conversationsCmd.AddCommand(conversations_internalmessages.Cmdconversations_internalmessages())
+	conversationsCmd.AddCommand(conversations_communications.Cmdconversations_communications())
+	conversationsCmd.Short = utils.GenerateCustomDescription(conversationsCmd.Short, conversations_cobrowse.Description, conversations_keyconfigurations.Description, conversations_participants.Description, conversations_barge.Description, conversations_disconnect.Description, conversations_assign.Description, conversations_tags.Description, conversations_utilizationlabel.Description, conversations_secureattributes.Description, conversations_faxes.Description, conversations_settings.Description, conversations_aftercallwork.Description, conversations_callbacks.Description, conversations_calls.Description, conversations_chats.Description, conversations_cobrowsesessions.Description, conversations_emails.Description, conversations_messages.Description, conversations_screenshares.Description, conversations_socials.Description, conversations_videos.Description, conversations_messaging.Description, conversations_suggestions.Description, conversations_summaries.Description, conversations_recordingmetadata.Description, conversations_recordings.Description, conversations_internalmessages.Description, conversations_communications.Description, )
 	conversationsCmd.Long = conversationsCmd.Short
 }

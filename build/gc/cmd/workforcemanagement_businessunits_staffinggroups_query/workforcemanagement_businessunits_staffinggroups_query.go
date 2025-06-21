@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdworkforcemanagement_businessunits_staffinggroups_query() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "forceDownloadService", "", "Force the result of this operation to be sent via download service")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query", utils.FormatPermissions([]string{ "wfm:staffingGroup:view",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "body",
@@ -84,6 +85,10 @@ var createCmd = &cobra.Command{
 		businessUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 
+		forceDownloadService := utils.GetFlag(cmd.Flags(), "bool", "forceDownloadService")
+		if forceDownloadService != "" {
+			queryParams["forceDownloadService"] = forceDownloadService
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

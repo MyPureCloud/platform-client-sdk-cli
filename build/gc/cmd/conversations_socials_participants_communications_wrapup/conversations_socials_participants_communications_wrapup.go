@@ -47,7 +47,7 @@ func Cmdconversations_socials_participants_communications_wrapup() *cobra.Comman
 }`)
 	conversations_socials_participants_communications_wrapupCmd.AddCommand(createCmd)
 
-	utils.AddFlag(getCmd.Flags(), "bool", "provisional", "false", "Indicates if the wrap-up code is provisional.")
+	utils.AddFlag(getCmd.Flags(), "bool", "provisional", "false", "Indicates whether or not to fetch provisional wrap-up code.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	

@@ -4,13 +4,15 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messages_inbound_open_event"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messages_inbound_open_message"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messages_inbound_open_structured"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messages_inbound_open_receipt"
 )
 
 func init() {
 	conversations_messages_inbound_openCmd.AddCommand(conversations_messages_inbound_open_event.Cmdconversations_messages_inbound_open_event())
 	conversations_messages_inbound_openCmd.AddCommand(conversations_messages_inbound_open_message.Cmdconversations_messages_inbound_open_message())
+	conversations_messages_inbound_openCmd.AddCommand(conversations_messages_inbound_open_structured.Cmdconversations_messages_inbound_open_structured())
 	conversations_messages_inbound_openCmd.AddCommand(conversations_messages_inbound_open_receipt.Cmdconversations_messages_inbound_open_receipt())
-	conversations_messages_inbound_openCmd.Short = utils.GenerateCustomDescription(conversations_messages_inbound_openCmd.Short, conversations_messages_inbound_open_event.Description, conversations_messages_inbound_open_message.Description, conversations_messages_inbound_open_receipt.Description, )
+	conversations_messages_inbound_openCmd.Short = utils.GenerateCustomDescription(conversations_messages_inbound_openCmd.Short, conversations_messages_inbound_open_event.Description, conversations_messages_inbound_open_message.Description, conversations_messages_inbound_open_structured.Description, conversations_messages_inbound_open_receipt.Description, )
 	conversations_messages_inbound_openCmd.Long = conversations_messages_inbound_openCmd.Short
 }

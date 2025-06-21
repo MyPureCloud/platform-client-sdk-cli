@@ -62,6 +62,9 @@ type AnalyticsevaluationDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticsevaluation
@@ -122,6 +125,10 @@ type Analyticsevaluation struct {
     Rescored bool `json:"rescored"`
 
 
+    // SystemSubmitted - Whether the evaluation was auto submitted by the system
+    SystemSubmitted bool `json:"systemSubmitted"`
+
+
     // UserId - ID of the agent the evaluation was performed against
     UserId string `json:"userId"`
 
@@ -137,6 +144,7 @@ type Analyticsevaluation struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticsevaluation) String() string {
+    
     
     
     
@@ -199,6 +207,8 @@ func (u *Analyticsevaluation) MarshalJSON() ([]byte, error) {
         
         Rescored bool `json:"rescored"`
         
+        SystemSubmitted bool `json:"systemSubmitted"`
+        
         UserId string `json:"userId"`
         
         OTotalCriticalScore int `json:"oTotalCriticalScore"`
@@ -206,6 +216,9 @@ func (u *Analyticsevaluation) MarshalJSON() ([]byte, error) {
         OTotalScore int `json:"oTotalScore"`
         *Alias
     }{
+
+        
+
 
         
 

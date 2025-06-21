@@ -32,6 +32,9 @@ func Cmdbusinessrules_decisiontables_search() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 100.")
 	utils.AddFlag(listCmd.Flags(), "string", "schemaId", "", "Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.")
+	utils.AddFlag(listCmd.Flags(), "bool", "withPublishedVersion", "", "Filters results to only decision tables that have at least one version in Published status")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in response Valid values: ExecutionInputSchema, ExecutionOutputSchema")
+	utils.AddFlag(listCmd.Flags(), "[]string", "ids", "", "Decision table IDs to search for")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/businessrules/decisiontables/search", utils.FormatPermissions([]string{ "businessrules:decisionTable:search",  }), utils.GenerateDevCentreLink("GET", "Business Rules", "/api/v2/businessrules/decisiontables/search")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -88,6 +91,18 @@ var listCmd = &cobra.Command{
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {
 			queryParams["name"] = name
+		}
+		withPublishedVersion := utils.GetFlag(cmd.Flags(), "bool", "withPublishedVersion")
+		if withPublishedVersion != "" {
+			queryParams["withPublishedVersion"] = withPublishedVersion
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
+		ids := utils.GetFlag(cmd.Flags(), "[]string", "ids")
+		if ids != "" {
+			queryParams["ids"] = ids
 		}
 		urlString := path
 		if len(queryParams) > 0 {

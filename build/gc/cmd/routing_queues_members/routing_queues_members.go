@@ -68,7 +68,7 @@ func Cmdrouting_queues_members() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Max value is 100")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Note: results are sorted by name. Valid values: asc, desc")
-	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by queue member name (contains-style search)")
 	utils.AddFlag(listCmd.Flags(), "[]string", "profileSkills", "", "Filter by profile skill (contains-style search)")
 	utils.AddFlag(listCmd.Flags(), "[]string", "skills", "", "Filter by skill (contains-style search)")

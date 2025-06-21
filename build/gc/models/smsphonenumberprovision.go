@@ -29,6 +29,9 @@ type SmsphonenumberprovisionDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -58,12 +61,17 @@ type Smsphonenumberprovision struct {
     AddressId string `json:"addressId"`
 
 
+    // SupportedContent - Defines the media SupportedContent profile configured for an MMS capable phone number.
+    SupportedContent Supportedcontentreference `json:"supportedContent"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Smsphonenumberprovision) String() string {
+    
     
     
     
@@ -95,8 +103,13 @@ func (u *Smsphonenumberprovision) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         AddressId string `json:"addressId"`
+        
+        SupportedContent Supportedcontentreference `json:"supportedContent"`
         *Alias
     }{
+
+        
+
 
         
 

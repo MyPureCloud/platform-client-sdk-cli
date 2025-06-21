@@ -32,6 +32,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_bulk"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_search"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_development"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_query"
 )
 
 func init() {
@@ -65,6 +66,7 @@ func init() {
 	usersCmd.AddCommand(users_bulk.Cmdusers_bulk())
 	usersCmd.AddCommand(users_search.Cmdusers_search())
 	usersCmd.AddCommand(users_development.Cmdusers_development())
-	usersCmd.Short = utils.GenerateCustomDescription(usersCmd.Short, users_verifiers.Description, users_agentui.Description, users_roles.Description, users_callforwarding.Description, users_favorites.Description, users_adjacents.Description, users_superiors.Description, users_directreports.Description, users_profile.Description, users_geolocations.Description, users_greetings.Description, users_outofoffice.Description, users_presences.Description, users_chats.Description, users_externalid.Description, users_me.Description, users_password.Description, users_profileskills.Description, users_queues.Description, users_invite.Description, users_routinglanguages.Description, users_routingskills.Description, users_routingstatus.Description, users_skillgroups.Description, users_state.Description, users_station.Description, users_trustors.Description, users_bulk.Description, users_search.Description, users_development.Description, )
+	usersCmd.AddCommand(users_query.Cmdusers_query())
+	usersCmd.Short = utils.GenerateCustomDescription(usersCmd.Short, users_verifiers.Description, users_agentui.Description, users_roles.Description, users_callforwarding.Description, users_favorites.Description, users_adjacents.Description, users_superiors.Description, users_directreports.Description, users_profile.Description, users_geolocations.Description, users_greetings.Description, users_outofoffice.Description, users_presences.Description, users_chats.Description, users_externalid.Description, users_me.Description, users_password.Description, users_profileskills.Description, users_queues.Description, users_invite.Description, users_routinglanguages.Description, users_routingskills.Description, users_routingstatus.Description, users_skillgroups.Description, users_state.Description, users_station.Description, users_trustors.Description, users_bulk.Description, users_search.Description, users_development.Description, users_query.Description, )
 	usersCmd.Long = usersCmd.Short
 }

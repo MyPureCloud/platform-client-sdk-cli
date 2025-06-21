@@ -36,6 +36,9 @@ type FacebookdataingestionruleresponseDud struct {
     Platform string `json:"platform"`
 
 
+    Countries []string `json:"countries"`
+
+
     
 
 
@@ -63,6 +66,9 @@ type Facebookdataingestionruleresponse struct {
 
     // Version - The version number of the data ingestion rule.
     Version int `json:"version"`
+
+
+    
 
 
     
@@ -120,6 +126,9 @@ func (u *Facebookdataingestionruleresponse) MarshalJSON() ([]byte, error) {
         IntegrationId string `json:"integrationId"`
         *Alias
     }{
+
+        
+
 
         
 

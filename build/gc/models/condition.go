@@ -58,6 +58,15 @@ type ConditionDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Condition
@@ -125,6 +134,18 @@ type Condition struct {
     // Predicates - A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.
     Predicates []Dataactionconditionpredicate `json:"predicates"`
 
+
+    // SubConditions - A list of sub-conditions to evaluate. Required for a timeAndDateCondition.
+    SubConditions []Timeanddatesubcondition `json:"subConditions"`
+
+
+    // MatchAnyConditions - If true, only one sub-condition must match for the condition to be true. If false, all sub-conditions must match. Default is false. Required for a timeAndDateCondition.
+    MatchAnyConditions bool `json:"matchAnyConditions"`
+
+
+    // TimeZoneId - The time zone to use for this condition. Required for a timeAndDateCondition.
+    TimeZoneId string `json:"timeZoneId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -145,6 +166,9 @@ func (o *Condition) String() string {
     
      o.ContactColumnToDataActionFieldMappings = []Contactcolumntodataactionfieldmapping{{}} 
      o.Predicates = []Dataactionconditionpredicate{{}} 
+     o.SubConditions = []Timeanddatesubcondition{{}} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -193,6 +217,12 @@ func (u *Condition) MarshalJSON() ([]byte, error) {
         ContactColumnToDataActionFieldMappings []Contactcolumntodataactionfieldmapping `json:"contactColumnToDataActionFieldMappings"`
         
         Predicates []Dataactionconditionpredicate `json:"predicates"`
+        
+        SubConditions []Timeanddatesubcondition `json:"subConditions"`
+        
+        MatchAnyConditions bool `json:"matchAnyConditions"`
+        
+        TimeZoneId string `json:"timeZoneId"`
         *Alias
     }{
 
@@ -247,6 +277,17 @@ func (u *Condition) MarshalJSON() ([]byte, error) {
 
         
         Predicates: []Dataactionconditionpredicate{{}},
+        
+
+
+        
+        SubConditions: []Timeanddatesubcondition{{}},
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

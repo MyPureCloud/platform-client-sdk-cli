@@ -57,6 +57,9 @@ type ConversationDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -102,7 +105,7 @@ type Conversation struct {
     RecordingState string `json:"recordingState"`
 
 
-    // State - The conversation's state
+    // State - On update, 'disconnected' will disconnect the conversation. No other values are valid. When reading conversations, this field will never have a value present.
     State string `json:"state"`
 
 
@@ -120,6 +123,10 @@ type Conversation struct {
 
     // UtilizationLabelId - An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
     UtilizationLabelId string `json:"utilizationLabelId"`
+
+
+    // InactivityTimeout - The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    InactivityTimeout time.Time `json:"inactivityTimeout"`
 
 
     
@@ -140,6 +147,7 @@ func (o *Conversation) String() string {
     
      o.Divisions = []Conversationdivisionmembership{{}} 
      o.RecentTransfers = []Transferresponse{{}} 
+    
     
     
 
@@ -186,6 +194,8 @@ func (u *Conversation) MarshalJSON() ([]byte, error) {
         SecurePause bool `json:"securePause"`
         
         UtilizationLabelId string `json:"utilizationLabelId"`
+        
+        InactivityTimeout time.Time `json:"inactivityTimeout"`
         *Alias
     }{
 
@@ -233,6 +243,9 @@ func (u *Conversation) MarshalJSON() ([]byte, error) {
 
         
         RecentTransfers: []Transferresponse{{}},
+        
+
+
         
 
 

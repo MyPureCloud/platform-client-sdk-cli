@@ -28,6 +28,12 @@ type MediaendpointstatisticsDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Mediaendpointstatistics
@@ -52,13 +58,23 @@ type Mediaendpointstatistics struct {
     Rtp Mediartpstatistics `json:"rtp"`
 
 
-    // ReconnectAttemptCount - Media reconnect attempt count
-    ReconnectAttemptCount int `json:"reconnectAttemptCount"`
+    // ReconnectAttempts - Media reconnect attempt count
+    ReconnectAttempts int `json:"reconnectAttempts"`
+
+
+    // SourceType - Source type of media endpoint
+    SourceType string `json:"sourceType"`
+
+
+    // ClientInfo - Client information associated with media endpoint
+    ClientInfo Mediastatisticsclientinfo `json:"clientInfo"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Mediaendpointstatistics) String() string {
+    
+    
     
     
     
@@ -92,9 +108,19 @@ func (u *Mediaendpointstatistics) MarshalJSON() ([]byte, error) {
         
         Rtp Mediartpstatistics `json:"rtp"`
         
-        ReconnectAttemptCount int `json:"reconnectAttemptCount"`
+        ReconnectAttempts int `json:"reconnectAttempts"`
+        
+        SourceType string `json:"sourceType"`
+        
+        ClientInfo Mediastatisticsclientinfo `json:"clientInfo"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

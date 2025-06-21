@@ -29,7 +29,7 @@ type SendmessagingtemplaterequestDud struct {
 
 // Sendmessagingtemplaterequest
 type Sendmessagingtemplaterequest struct { 
-    // ResponseId - A Response Management response identifier for a messaging template defined response
+    // ResponseId - Unique identifier for a Response Management response to fetch and apply pre-configured message content when sending outbound responses.
     ResponseId string `json:"responseId"`
 
 

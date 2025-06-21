@@ -24,6 +24,9 @@ type MinerDud struct {
     
 
 
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -99,6 +102,10 @@ type Miner struct {
     MinerType string `json:"minerType"`
 
 
+    // Seeding - Flag to indicate whether seeding is supported for this miner.
+    Seeding bool `json:"seeding"`
+
+
     
 
 
@@ -162,6 +169,7 @@ func (o *Miner) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -184,8 +192,13 @@ func (u *Miner) MarshalJSON() ([]byte, error) {
         Language string `json:"language"`
         
         MinerType string `json:"minerType"`
+        
+        Seeding bool `json:"seeding"`
         *Alias
     }{
+
+        
+
 
         
 

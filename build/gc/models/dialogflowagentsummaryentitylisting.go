@@ -72,12 +72,12 @@ type Dialogflowagentsummaryentitylisting struct {
     SelfUri string `json:"selfUri"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
     // PreviousUri
     PreviousUri string `json:"previousUri"`
+
+
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // PageCount
@@ -128,9 +128,9 @@ func (u *Dialogflowagentsummaryentitylisting) MarshalJSON() ([]byte, error) {
         
         SelfUri string `json:"selfUri"`
         
-        NextUri string `json:"nextUri"`
-        
         PreviousUri string `json:"previousUri"`
+        
+        NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

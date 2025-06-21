@@ -62,8 +62,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Count agents by segment type",
-	Long:  "Count agents by segment type",
+	Short: "Count agents by different groupings",
+	Long:  "Count agents by different groupings",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -43,7 +43,7 @@ type Wfmhistoricaladherencebulkuserresult struct {
     AdherencePercentage float64 `json:"adherencePercentage"`
 
 
-    // ConformancePercentage - Conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.
+    // ConformancePercentage - Conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on-queue time is greater than the scheduled on-queue time for the same period.
     ConformancePercentage float64 `json:"conformancePercentage"`
 
 

@@ -27,7 +27,7 @@ type Querytimeofflimitvaluesrequest struct {
     TimeOffLimitId string `json:"timeOffLimitId"`
 
 
-    // ActivityCodeId - The activity code id to filter the affected limit objects by. Required if timeOffLimitId is not specified
+    // ActivityCodeId - The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified
     ActivityCodeId string `json:"activityCodeId"`
 
 

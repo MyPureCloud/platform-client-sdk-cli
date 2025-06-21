@@ -53,7 +53,7 @@ func Cmdconversations_calls_participants() *cobra.Command {
 }`)
 	conversations_calls_participantsCmd.AddCommand(createCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/calls/{conversationId}/participants/{participantId}", utils.FormatPermissions([]string{ "conversation:participant:wrapup", "conversation:call:record",  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/calls/{conversationId}/participants/{participantId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/calls/{conversationId}/participants/{participantId}", utils.FormatPermissions([]string{ "conversation:participant:wrapup", "conversation:call:record", "conversation:communication:disconnect",  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/calls/{conversationId}/participants/{participantId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "Participant request",
   "content" : {

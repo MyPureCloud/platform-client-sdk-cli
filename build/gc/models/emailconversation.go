@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -12,6 +13,9 @@ var (
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type EmailconversationDud struct { 
     Id string `json:"id"`
+
+
+    
 
 
     
@@ -61,6 +65,10 @@ type Emailconversation struct {
     UtilizationLabelId string `json:"utilizationLabelId"`
 
 
+    // InactivityTimeout - The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    InactivityTimeout time.Time `json:"inactivityTimeout"`
+
+
     // Divisions - Identifiers of divisions associated with this conversation.
     Divisions []Conversationdivisionmembership `json:"divisions"`
 
@@ -75,6 +83,7 @@ func (o *Emailconversation) String() string {
      o.Participants = []Emailmediaparticipant{{}} 
      o.OtherMediaUris = []string{""} 
      o.RecentTransfers = []Transferresponse{{}} 
+    
     
      o.Divisions = []Conversationdivisionmembership{{}} 
 
@@ -104,6 +113,8 @@ func (u *Emailconversation) MarshalJSON() ([]byte, error) {
         
         UtilizationLabelId string `json:"utilizationLabelId"`
         
+        InactivityTimeout time.Time `json:"inactivityTimeout"`
+        
         Divisions []Conversationdivisionmembership `json:"divisions"`
         *Alias
     }{
@@ -126,6 +137,9 @@ func (u *Emailconversation) MarshalJSON() ([]byte, error) {
 
         
         RecentTransfers: []Transferresponse{{}},
+        
+
+
         
 
 

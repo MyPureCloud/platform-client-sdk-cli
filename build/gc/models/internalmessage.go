@@ -53,6 +53,9 @@ type InternalmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Internalmessage
@@ -75,6 +78,10 @@ type Internalmessage struct {
 
     // DisconnectType - System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
     DisconnectType string `json:"disconnectType"`
+
+
+    // StartAlertingTime - The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    StartAlertingTime time.Time `json:"startAlertingTime"`
 
 
     // ConnectedTime - The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -129,6 +136,7 @@ func (o *Internalmessage) String() string {
     
     
     
+    
      o.Messages = []Internalmessagedetails{{}} 
 
     j, _ := json.Marshal(o)
@@ -156,6 +164,8 @@ func (u *Internalmessage) MarshalJSON() ([]byte, error) {
         Segments []Segment `json:"segments"`
         
         DisconnectType string `json:"disconnectType"`
+        
+        StartAlertingTime time.Time `json:"startAlertingTime"`
         
         ConnectedTime time.Time `json:"connectedTime"`
         
@@ -188,6 +198,9 @@ func (u *Internalmessage) MarshalJSON() ([]byte, error) {
 
         
         Segments: []Segment{{}},
+        
+
+
         
 
 

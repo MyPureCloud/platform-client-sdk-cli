@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type BuschedulemetadataDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -45,7 +45,8 @@ type BuschedulemetadataDud struct {
 
 // Buschedulemetadata
 type Buschedulemetadata struct { 
-    
+    // Id - The ID of the schedule
+    Id string `json:"id"`
 
 
     // WeekDate - The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
@@ -93,6 +94,7 @@ func (o *Buschedulemetadata) String() string {
     
     
     
+    
      o.ManagementUnits = []Bumanagementunitschedulesummary{{}} 
 
     j, _ := json.Marshal(o)
@@ -110,6 +112,8 @@ func (u *Buschedulemetadata) MarshalJSON() ([]byte, error) {
     BuschedulemetadataMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         WeekDate time.Time `json:"weekDate"`
         

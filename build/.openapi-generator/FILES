@@ -277,6 +277,7 @@ gc/cmd/conversations_cobrowsesessions_participants_replace/conversations_cobrows
 gc/cmd/conversations_cobrowsesessions_participants_wrapup/conversations_cobrowsesessions_participants_wrapup.go
 gc/cmd/conversations_cobrowsesessions_participants_wrapupcodes/conversations_cobrowsesessions_participants_wrapupcodes.go
 gc/cmd/conversations_cobrowsesessions_recordingstate/conversations_cobrowsesessions_recordingstate.go
+gc/cmd/conversations_communications_internalmessages/conversations_communications_internalmessages.go
 gc/cmd/conversations_disconnect/conversations_disconnect.go
 gc/cmd/conversations_emails/conversations_emails.go
 gc/cmd/conversations_emails_agentless/conversations_emails_agentless.go
@@ -297,6 +298,7 @@ gc/cmd/conversations_emails_reconnect/conversations_emails_reconnect.go
 gc/cmd/conversations_emails_recordingstate/conversations_emails_recordingstate.go
 gc/cmd/conversations_emails_settings/conversations_emails_settings.go
 gc/cmd/conversations_faxes/conversations_faxes.go
+gc/cmd/conversations_internalmessages/conversations_internalmessages.go
 gc/cmd/conversations_keyconfigurations/conversations_keyconfigurations.go
 gc/cmd/conversations_keyconfigurations_validate/conversations_keyconfigurations_validate.go
 gc/cmd/conversations_messages/conversations_messages.go
@@ -312,6 +314,7 @@ gc/cmd/conversations_messages_inbound_open/conversations_messages_inbound_open.g
 gc/cmd/conversations_messages_inbound_open_event/conversations_messages_inbound_open_event.go
 gc/cmd/conversations_messages_inbound_open_message/conversations_messages_inbound_open_message.go
 gc/cmd/conversations_messages_inbound_open_receipt/conversations_messages_inbound_open_receipt.go
+gc/cmd/conversations_messages_inbound_open_structured_response/conversations_messages_inbound_open_structured_response.go
 gc/cmd/conversations_messages_messages/conversations_messages_messages.go
 gc/cmd/conversations_messages_messages_bulk/conversations_messages_messages_bulk.go
 gc/cmd/conversations_messages_participants/conversations_messages_participants.go
@@ -329,6 +332,7 @@ gc/cmd/conversations_messaging_identityresolution_integrations_apple/conversatio
 gc/cmd/conversations_messaging_identityresolution_integrations_facebook/conversations_messaging_identityresolution_integrations_facebook.go
 gc/cmd/conversations_messaging_identityresolution_integrations_instagram/conversations_messaging_identityresolution_integrations_instagram.go
 gc/cmd/conversations_messaging_identityresolution_integrations_open/conversations_messaging_identityresolution_integrations_open.go
+gc/cmd/conversations_messaging_identityresolution_integrations_twitter/conversations_messaging_identityresolution_integrations_twitter.go
 gc/cmd/conversations_messaging_identityresolution_integrations_whatsapp/conversations_messaging_identityresolution_integrations_whatsapp.go
 gc/cmd/conversations_messaging_integrations/conversations_messaging_integrations.go
 gc/cmd/conversations_messaging_integrations_facebook/conversations_messaging_integrations_facebook.go
@@ -350,6 +354,7 @@ gc/cmd/conversations_participants_callbacks/conversations_participants_callbacks
 gc/cmd/conversations_participants_codes/conversations_participants_codes.go
 gc/cmd/conversations_participants_digits/conversations_participants_digits.go
 gc/cmd/conversations_participants_flaggedreason/conversations_participants_flaggedreason.go
+gc/cmd/conversations_participants_internalmessages_users_communications/conversations_participants_internalmessages_users_communications.go
 gc/cmd/conversations_participants_replace/conversations_participants_replace.go
 gc/cmd/conversations_participants_replace_agent/conversations_participants_replace_agent.go
 gc/cmd/conversations_participants_replace_external/conversations_participants_replace_external.go
@@ -568,7 +573,10 @@ gc/cmd/gdpr_subjects/gdpr_subjects.go
 gc/cmd/geolocations_settings/geolocations_settings.go
 gc/cmd/greetings/greetings.go
 gc/cmd/greetings_defaults/greetings_defaults.go
+gc/cmd/greetings_downloads/greetings_downloads.go
+gc/cmd/greetings_groups_downloads/greetings_groups_downloads.go
 gc/cmd/greetings_media/greetings_media.go
+gc/cmd/greetings_users_downloads/greetings_users_downloads.go
 gc/cmd/groups/groups.go
 gc/cmd/groups_dynamicsettings/groups_dynamicsettings.go
 gc/cmd/groups_dynamicsettings_preview/groups_dynamicsettings_preview.go
@@ -578,6 +586,10 @@ gc/cmd/groups_individuals/groups_individuals.go
 gc/cmd/groups_members/groups_members.go
 gc/cmd/groups_profile/groups_profile.go
 gc/cmd/groups_search/groups_search.go
+gc/cmd/guides/guides.go
+gc/cmd/guides_jobs/guides_jobs.go
+gc/cmd/guides_versions/guides_versions.go
+gc/cmd/guides_versions_jobs/guides_versions_jobs.go
 gc/cmd/identityproviders/identityproviders.go
 gc/cmd/identityproviders_adfs/identityproviders_adfs.go
 gc/cmd/identityproviders_cic/identityproviders_cic.go
@@ -623,6 +635,7 @@ gc/cmd/integrations_clientapps/integrations_clientapps.go
 gc/cmd/integrations_clientapps_unifiedcommunications/integrations_clientapps_unifiedcommunications.go
 gc/cmd/integrations_config_current/integrations_config_current.go
 gc/cmd/integrations_credentials/integrations_credentials.go
+gc/cmd/integrations_credentials_listing/integrations_credentials_listing.go
 gc/cmd/integrations_credentials_types/integrations_credentials_types.go
 gc/cmd/integrations_speech_audioconnector/integrations_speech_audioconnector.go
 gc/cmd/integrations_speech_dialogflow_agents/integrations_speech_dialogflow_agents.go
@@ -1148,6 +1161,7 @@ gc/cmd/telephony_providers_edges_logs_jobs/telephony_providers_edges_logs_jobs.g
 gc/cmd/telephony_providers_edges_logs_jobs_upload/telephony_providers_edges_logs_jobs_upload.go
 gc/cmd/telephony_providers_edges_mediastatistics_conversations/telephony_providers_edges_mediastatistics_conversations.go
 gc/cmd/telephony_providers_edges_mediastatistics_conversations_communications/telephony_providers_edges_mediastatistics_conversations_communications.go
+gc/cmd/telephony_providers_edges_mediastatistics_conversations_communications_mediaresources/telephony_providers_edges_mediastatistics_conversations_communications_mediaresources.go
 gc/cmd/telephony_providers_edges_metrics/telephony_providers_edges_metrics.go
 gc/cmd/telephony_providers_edges_outboundroutes/telephony_providers_edges_outboundroutes.go
 gc/cmd/telephony_providers_edges_phonebasesettings/telephony_providers_edges_phonebasesettings.go
@@ -1229,6 +1243,7 @@ gc/cmd/users_presences_purecloud/users_presences_purecloud.go
 gc/cmd/users_presences_purecloud_bulk/users_presences_purecloud_bulk.go
 gc/cmd/users_profile/users_profile.go
 gc/cmd/users_profileskills/users_profileskills.go
+gc/cmd/users_query/users_query.go
 gc/cmd/users_queues/users_queues.go
 gc/cmd/users_roles/users_roles.go
 gc/cmd/users_routinglanguages/users_routinglanguages.go
@@ -1564,7 +1579,10 @@ gc/models/agentsintegrationslisting.go
 gc/models/agentstateagentqueryclause.go
 gc/models/agentstateagentquerypredicate.go
 gc/models/agentstatecountsrequest.go
+gc/models/agentstateisoutofofficecount.go
+gc/models/agentstatepresencecount.go
 gc/models/agentstatequeryrequest.go
+gc/models/agentstateroutingstatuscount.go
 gc/models/agentstatesegmenttypecount.go
 gc/models/agentstatesessionfilter.go
 gc/models/agentstatesessionqueryclause.go
@@ -2429,6 +2447,7 @@ gc/models/conversationsecureattributes.go
 gc/models/conversationsessionsummary.go
 gc/models/conversationsummariesgetresponse.go
 gc/models/conversationsummary.go
+gc/models/conversationsummaryextractedentity.go
 gc/models/conversationsummaryfollowup.go
 gc/models/conversationsummaryreason.go
 gc/models/conversationsummaryresolution.go
@@ -2476,6 +2495,8 @@ gc/models/createdecisiontablecolumnsrequest.go
 gc/models/createdecisiontablerequest.go
 gc/models/createdecisiontablerowrequest.go
 gc/models/createemailrequest.go
+gc/models/createguide.go
+gc/models/createguideversion.go
 gc/models/createintegrationrequest.go
 gc/models/createmanagementunitapirequest.go
 gc/models/createmanagementunitsettingsrequest.go
@@ -2518,6 +2539,7 @@ gc/models/createworkplanbid.go
 gc/models/createworkplanshift.go
 gc/models/credential.go
 gc/models/credentialinfo.go
+gc/models/credentialinfocursorlisting.go
 gc/models/credentialinfolisting.go
 gc/models/credentialspecification.go
 gc/models/credentialtype.go
@@ -2568,6 +2590,7 @@ gc/models/dashboardconfigurationqueryrequest.go
 gc/models/dashboardssharedwith.go
 gc/models/dashboarduser.go
 gc/models/dashboarduserlisting.go
+gc/models/dataaction.go
 gc/models/dataactionconditionpredicate.go
 gc/models/dataactionconditionsettings.go
 gc/models/dataactioncontactcolumnfieldmapping.go
@@ -2603,6 +2626,7 @@ gc/models/decisiontablelisting.go
 gc/models/decisiontableoutputcolumn.go
 gc/models/decisiontableoutputcolumnrequest.go
 gc/models/decisiontablerow.go
+gc/models/decisiontablerowentityref.go
 gc/models/decisiontablerowexecutionoutput.go
 gc/models/decisiontablerowlisting.go
 gc/models/decisiontablerowparametervalue.go
@@ -2621,6 +2645,7 @@ gc/models/dependencyobjectentitylisting.go
 gc/models/dependencystatus.go
 gc/models/dependencytype.go
 gc/models/dependencytypeentitylisting.go
+gc/models/deploymentidentityresolutionconfig.go
 gc/models/deploymentping.go
 gc/models/deploymentwebaction.go
 gc/models/destination.go
@@ -3178,6 +3203,8 @@ gc/models/generalprogramjobrequest.go
 gc/models/generaltopic.go
 gc/models/generaltopicsentitylisting.go
 gc/models/generatebuforecastrequest.go
+gc/models/generatedguidecontent.go
+gc/models/generateguidecontentrequest.go
 gc/models/generatemeetingidrequest.go
 gc/models/genericsaml.go
 gc/models/generictemplate.go
@@ -3233,6 +3260,16 @@ gc/models/guestcategoryreference.go
 gc/models/guestcategoryresponselisting.go
 gc/models/guestmemberinfo.go
 gc/models/guestresponsecategory.go
+gc/models/guide.go
+gc/models/guidecontentgenerationjob.go
+gc/models/guideentitylisting.go
+gc/models/guidejob.go
+gc/models/guideversion.go
+gc/models/guideversionpublish.go
+gc/models/guideversionpublishjob.go
+gc/models/guideversionpublishjobrequest.go
+gc/models/guideversionref.go
+gc/models/guideversionresources.go
 gc/models/headcountforecast.go
 gc/models/headcountinterval.go
 gc/models/header.go
@@ -3274,6 +3311,7 @@ gc/models/identifierclaimrequest.go
 gc/models/identitynow.go
 gc/models/identityprovider.go
 gc/models/identityproviderentitylisting.go
+gc/models/identityresolutionautomergeconfig.go
 gc/models/identityresolutionconfig.go
 gc/models/identityresolutionqueueconfig.go
 gc/models/idleeventtrigger.go
@@ -3349,7 +3387,13 @@ gc/models/intentdefinition.go
 gc/models/intentfeedback.go
 gc/models/interactiveapplication.go
 gc/models/internalmessage.go
+gc/models/internalmessageconversation.go
+gc/models/internalmessageconversationentitylisting.go
+gc/models/internalmessagedata.go
+gc/models/internalmessagedataentitylisting.go
 gc/models/internalmessagedetails.go
+gc/models/internalmessagemediaparticipant.go
+gc/models/internalmessagerequest.go
 gc/models/intradayperformancepredictiondata.go
 gc/models/intradayplanninggrouprequest.go
 gc/models/invalidassignment.go
@@ -3760,7 +3804,9 @@ gc/models/mediaresult.go
 gc/models/mediartpstatistics.go
 gc/models/mediasettings.go
 gc/models/mediastatistics.go
+gc/models/mediastatisticsclientinfo.go
 gc/models/mediastatisticslisting.go
+gc/models/mediastatisticspostrequest.go
 gc/models/mediastatisticstrunkinfo.go
 gc/models/mediasummary.go
 gc/models/mediasummarydetail.go
@@ -3809,6 +3855,8 @@ gc/models/messagingcampaignscheduleentitylisting.go
 gc/models/messagingcommunicationansweredevent.go
 gc/models/messagingcommunicationdispositionappliedevent.go
 gc/models/messagingcommunicationendedevent.go
+gc/models/messagingconferresponse.go
+gc/models/messagingconferwithuserrequest.go
 gc/models/messagingconfiglisting.go
 gc/models/messagingendtransferevent.go
 gc/models/messagingexternalestablishedevent.go
@@ -3970,6 +4018,8 @@ gc/models/openinboundmessagingreceiptchannel.go
 gc/models/openinboundnormalizedevent.go
 gc/models/openinboundnormalizedmessage.go
 gc/models/openinboundnormalizedreceipt.go
+gc/models/openinboundstructuredresponsemessage.go
+gc/models/openinboundstructuredresponsenormalizedmessagecontent.go
 gc/models/openintegration.go
 gc/models/openintegrationentitylisting.go
 gc/models/openintegrationrequest.go
@@ -3996,6 +4046,7 @@ gc/models/opensocialmediarecipient.go
 gc/models/opensocialmediarecipientadditionalidentifier.go
 gc/models/opensocialnormalizedmessageentitylisting.go
 gc/models/opensocialreactionsnormalizedevententitylisting.go
+gc/models/openstructuredresponsenormalizedmessage.go
 gc/models/operand.go
 gc/models/operandposition.go
 gc/models/operation.go
@@ -4113,6 +4164,9 @@ gc/models/patchuser.go
 gc/models/patchwebmessagingofferfields.go
 gc/models/pattern.go
 gc/models/pausecriteria.go
+gc/models/paymentlineitem.go
+gc/models/paymentrequest.go
+gc/models/paymentresponse.go
 gc/models/performancepredictionoutputs.go
 gc/models/performancepredictionrecalculationresponse.go
 gc/models/performancepredictionrecalculationuploadresponse.go
@@ -4227,6 +4281,7 @@ gc/models/punctualityevent.go
 gc/models/purecloud.go
 gc/models/pureengage.go
 gc/models/pushintegration.go
+gc/models/putdecisiontablerowrequest.go
 gc/models/qmauditqueryrequest.go
 gc/models/qualityauditlogmessage.go
 gc/models/qualityauditqueryexecutionresultsresponse.go
@@ -4598,6 +4653,7 @@ gc/models/shareentitylisting.go
 gc/models/shiftstartvariance.go
 gc/models/shifttradeactivitypreviewresponse.go
 gc/models/shifttradeactivityrule.go
+gc/models/shifttradeexternalactivityrule.go
 gc/models/shifttradelistresponse.go
 gc/models/shifttradematchessummaryresponse.go
 gc/models/shifttradematchreviewresponse.go
@@ -4649,6 +4705,7 @@ gc/models/smsconfig.go
 gc/models/smsphonenumber.go
 gc/models/smsphonenumberentitylisting.go
 gc/models/smsphonenumberimport.go
+gc/models/smsphonenumberpatchrequest.go
 gc/models/smsphonenumberprovision.go
 gc/models/smsphonenumberref.go
 gc/models/smsprovisioningstatus.go
@@ -5052,6 +5109,7 @@ gc/models/updatedecisiontablerowrequest.go
 gc/models/updatedecisiontableversionrequest.go
 gc/models/updatedraftinput.go
 gc/models/updatedsettingsresponse.go
+gc/models/updateguideversion.go
 gc/models/updatemanagementunitrequest.go
 gc/models/updatemuagentrequest.go
 gc/models/updatemuagentsrequest.go
@@ -5117,6 +5175,7 @@ gc/models/userbestpoints.go
 gc/models/userbestpointsitem.go
 gc/models/userchatsettings.go
 gc/models/userconversationsummary.go
+gc/models/usercursorentitylisting.go
 gc/models/userdetailqueryclause.go
 gc/models/userdetailqueryfilter.go
 gc/models/userdetailquerypredicate.go
@@ -5216,6 +5275,7 @@ gc/models/valuewrappermonthlyplanningperiodsettings.go
 gc/models/valuewrapperplanningperiodsettings.go
 gc/models/valuewrapperstring.go
 gc/models/valuewrapperusersearchrule.go
+gc/models/variable.go
 gc/models/verificationresult.go
 gc/models/verifier.go
 gc/models/verifierentitylisting.go

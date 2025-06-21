@@ -23,11 +23,11 @@ type WfmhistoricaladherencebulkjobreferenceDud struct {
 
 // Wfmhistoricaladherencebulkjobreference
 type Wfmhistoricaladherencebulkjobreference struct { 
-    // Id - The ID of the historical adherence bulk job to listen for via notification or query using the jobs route
+    // Id - The ID of the historical adherence job to listen for via notification or query using the jobs route
     Id string `json:"id"`
 
 
-    // Status - The status of the historical adherence bulk job
+    // Status - The status of the historical adherence job
     Status string `json:"status"`
 
 

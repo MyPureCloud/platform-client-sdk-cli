@@ -31,7 +31,7 @@ type Additionalmessage struct {
     MediaIds []string `json:"mediaIds"`
 
 
-    // MessagingTemplate - The messaging template use to send a predefined canned response with the message
+    // MessagingTemplate - Pre-defined message templates for structured communications. Supports various template types including WhatsApp business messaging templates, forms and canned responses with variable substitution.
     MessagingTemplate Sendmessagingtemplaterequest `json:"messagingTemplate"`
 
 }

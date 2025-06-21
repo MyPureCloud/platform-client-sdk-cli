@@ -35,7 +35,7 @@ type SystempromptassetDud struct {
     
 
 
-    
+    UploadUri string `json:"uploadUri"`
 
 
     
@@ -87,8 +87,7 @@ type Systempromptasset struct {
     Text string `json:"text"`
 
 
-    // UploadUri
-    UploadUri string `json:"uploadUri"`
+    
 
 
     // UploadStatus
@@ -113,7 +112,6 @@ type Systempromptasset struct {
 
 // String returns a JSON representation of the model
 func (o *Systempromptasset) String() string {
-    
     
     
     
@@ -155,8 +153,6 @@ func (u *Systempromptasset) MarshalJSON() ([]byte, error) {
         TtsString string `json:"ttsString"`
         
         Text string `json:"text"`
-        
-        UploadUri string `json:"uploadUri"`
         
         UploadStatus string `json:"uploadStatus"`
         

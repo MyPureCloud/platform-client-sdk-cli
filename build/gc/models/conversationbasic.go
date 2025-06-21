@@ -36,6 +36,9 @@ type ConversationbasicDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -76,6 +79,10 @@ type Conversationbasic struct {
     UtilizationLabelId string `json:"utilizationLabelId"`
 
 
+    // InactivityTimeout - The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    InactivityTimeout time.Time `json:"inactivityTimeout"`
+
+
     
 
 
@@ -90,6 +97,7 @@ func (o *Conversationbasic) String() string {
     
     
      o.Divisions = []Conversationdivisionmembership{{}} 
+    
     
     
 
@@ -122,6 +130,8 @@ func (u *Conversationbasic) MarshalJSON() ([]byte, error) {
         SecurePause bool `json:"securePause"`
         
         UtilizationLabelId string `json:"utilizationLabelId"`
+        
+        InactivityTimeout time.Time `json:"inactivityTimeout"`
         *Alias
     }{
 
@@ -142,6 +152,9 @@ func (u *Conversationbasic) MarshalJSON() ([]byte, error) {
 
         
         Divisions: []Conversationdivisionmembership{{}},
+        
+
+
         
 
 

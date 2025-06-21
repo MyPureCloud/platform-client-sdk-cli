@@ -82,7 +82,7 @@ func Cmdteams() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Return only teams whose names start with this value (case-insensitive matching)")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the next item in the complete list of teams")
 	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the previous item in the complete list of teams")
-	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Expand the name on each user Valid values: entities.division")
+	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Expand the division on each team Valid values: entities.division")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/teams", utils.FormatPermissions([]string{ "groups:team:view",  }), utils.GenerateDevCentreLink("GET", "Teams", "/api/v2/teams")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

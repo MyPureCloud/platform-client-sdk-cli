@@ -36,6 +36,9 @@ type OpendataingestionruleresponseDud struct {
     Platform string `json:"platform"`
 
 
+    Countries []string `json:"countries"`
+
+
     
 
 
@@ -63,6 +66,9 @@ type Opendataingestionruleresponse struct {
 
     // Version - The version number of the data ingestion rule.
     Version int `json:"version"`
+
+
+    
 
 
     
@@ -120,6 +126,9 @@ func (u *Opendataingestionruleresponse) MarshalJSON() ([]byte, error) {
         ExternalSource Domainentityref `json:"externalSource"`
         *Alias
     }{
+
+        
+
 
         
 

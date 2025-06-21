@@ -36,7 +36,7 @@ func Cmdwebdeployments_deployments_identityresolution() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/DeploymentIdentityResolutionConfig"
       }
     }
   }
@@ -48,7 +48,7 @@ func Cmdwebdeployments_deployments_identityresolution() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/DeploymentIdentityResolutionConfig"
       }
     }
   },
@@ -60,7 +60,7 @@ func Cmdwebdeployments_deployments_identityresolution() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/DeploymentIdentityResolutionConfig"
       }
     }
   }
@@ -151,7 +151,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Identityresolutionconfig{}
+			reqModel := models.Deploymentidentityresolutionconfig{}
 			utils.Render(reqModel.String())
 			
 			return

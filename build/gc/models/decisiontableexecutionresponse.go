@@ -16,6 +16,12 @@ type DecisiontableexecutionresponseDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Decisiontableexecutionresponse
@@ -24,7 +30,15 @@ type Decisiontableexecutionresponse struct {
     Table Decisiontableversionentity `json:"table"`
 
 
-    // RowExecutionOutputs - The output data for each executed row for which output is collected. 
+    // TotalMatchRowCount - Total number of rows that matched execution input and would return results
+    TotalMatchRowCount int `json:"totalMatchRowCount"`
+
+
+    // TopMatchRows - Top 5 rows matching execution input, excluding the one produced the result.
+    TopMatchRows []Decisiontablerowentityref `json:"topMatchRows"`
+
+
+    // RowExecutionOutputs - The output data for each executed row for which output is collected.
     RowExecutionOutputs []Decisiontablerowexecutionoutput `json:"rowExecutionOutputs"`
 
 }
@@ -32,6 +46,8 @@ type Decisiontableexecutionresponse struct {
 // String returns a JSON representation of the model
 func (o *Decisiontableexecutionresponse) String() string {
     
+    
+     o.TopMatchRows = []Decisiontablerowentityref{{}} 
      o.RowExecutionOutputs = []Decisiontablerowexecutionoutput{{}} 
 
     j, _ := json.Marshal(o)
@@ -52,10 +68,22 @@ func (u *Decisiontableexecutionresponse) MarshalJSON() ([]byte, error) {
         
         Table Decisiontableversionentity `json:"table"`
         
+        TotalMatchRowCount int `json:"totalMatchRowCount"`
+        
+        TopMatchRows []Decisiontablerowentityref `json:"topMatchRows"`
+        
         RowExecutionOutputs []Decisiontablerowexecutionoutput `json:"rowExecutionOutputs"`
         *Alias
     }{
 
+        
+
+
+        
+
+
+        
+        TopMatchRows: []Decisiontablerowentityref{{}},
         
 
 

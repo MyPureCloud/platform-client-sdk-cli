@@ -36,6 +36,9 @@ type DataingestionruleresponseDud struct {
     Platform string `json:"platform"`
 
 
+    Countries []string `json:"countries"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -60,6 +63,9 @@ type Dataingestionruleresponse struct {
 
     // Version - The version number of the data ingestion rule.
     Version int `json:"version"`
+
+
+    
 
 
     
@@ -110,6 +116,9 @@ func (u *Dataingestionruleresponse) MarshalJSON() ([]byte, error) {
         Version int `json:"version"`
         *Alias
     }{
+
+        
+
 
         
 

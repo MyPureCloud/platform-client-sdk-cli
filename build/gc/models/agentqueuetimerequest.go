@@ -19,6 +19,9 @@ type AgentqueuetimerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Agentqueuetimerequest
@@ -31,8 +34,12 @@ type Agentqueuetimerequest struct {
     StartOffsetMinutes []int `json:"startOffsetMinutes"`
 
 
-    // OnQueueLengthMinutesPerInterval - List of on queue time lengths in minutes per interval of elements in startOffsetMinutes
+    // OnQueueLengthMinutesPerInterval - List of on-queue time lengths in minutes per interval of elements in startOffsetMinutes
     OnQueueLengthMinutesPerInterval []int `json:"onQueueLengthMinutesPerInterval"`
+
+
+    // OnQueueActivityCodeIds - List of on-queue activity code ids
+    OnQueueActivityCodeIds []string `json:"onQueueActivityCodeIds"`
 
 }
 
@@ -41,6 +48,7 @@ func (o *Agentqueuetimerequest) String() string {
     
      o.StartOffsetMinutes = []int{0} 
      o.OnQueueLengthMinutesPerInterval = []int{0} 
+     o.OnQueueActivityCodeIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,6 +71,8 @@ func (u *Agentqueuetimerequest) MarshalJSON() ([]byte, error) {
         StartOffsetMinutes []int `json:"startOffsetMinutes"`
         
         OnQueueLengthMinutesPerInterval []int `json:"onQueueLengthMinutesPerInterval"`
+        
+        OnQueueActivityCodeIds []string `json:"onQueueActivityCodeIds"`
         *Alias
     }{
 
@@ -76,6 +86,11 @@ func (u *Agentqueuetimerequest) MarshalJSON() ([]byte, error) {
 
         
         OnQueueLengthMinutesPerInterval: []int{0},
+        
+
+
+        
+        OnQueueActivityCodeIds: []string{""},
         
 
         Alias: (*Alias)(u),

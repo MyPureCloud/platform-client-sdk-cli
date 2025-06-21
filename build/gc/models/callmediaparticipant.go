@@ -173,6 +173,12 @@ type CallmediaparticipantDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Callmediaparticipant
@@ -191,6 +197,10 @@ type Callmediaparticipant struct {
 
     // StartTime - The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     StartTime time.Time `json:"startTime"`
+
+
+    // StartAlertingTime - The timestamp when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    StartAlertingTime time.Time `json:"startAlertingTime"`
 
 
     // ConnectedTime - The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -341,6 +351,10 @@ type Callmediaparticipant struct {
     RecordingState string `json:"recordingState"`
 
 
+    // RecordersState - Contains the states of different recorders.
+    RecordersState Recordersstate `json:"recordersState"`
+
+
     // Group - The group involved in the group ring call.
     Group Domainentityref `json:"group"`
 
@@ -410,11 +424,13 @@ func (o *Callmediaparticipant) String() string {
     
     
     
+    
      o.MediaRoles = []string{""} 
     
     
     
      o.Attributes = map[string]string{"": ""} 
+    
     
     
     
@@ -474,6 +490,8 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
         Address string `json:"address"`
         
         StartTime time.Time `json:"startTime"`
+        
+        StartAlertingTime time.Time `json:"startAlertingTime"`
         
         ConnectedTime time.Time `json:"connectedTime"`
         
@@ -549,6 +567,8 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
         
         RecordingState string `json:"recordingState"`
         
+        RecordersState Recordersstate `json:"recordersState"`
+        
         Group Domainentityref `json:"group"`
         
         Ani string `json:"ani"`
@@ -620,6 +640,9 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
         MediaRoles: []string{""},
         
 
@@ -635,6 +658,9 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

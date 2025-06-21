@@ -25,6 +25,9 @@ type MediartpstatisticsDud struct {
 
     
 
+
+    
+
 }
 
 // Mediartpstatistics
@@ -48,10 +51,15 @@ type Mediartpstatistics struct {
     // EstimatedAverageMos - The estimated average MOS score
     EstimatedAverageMos float64 `json:"estimatedAverageMos"`
 
+
+    // AverageJitter - The average jitter
+    AverageJitter float64 `json:"averageJitter"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Mediartpstatistics) String() string {
+    
     
     
     
@@ -83,8 +91,13 @@ func (u *Mediartpstatistics) MarshalJSON() ([]byte, error) {
         RtpEventsSent int `json:"rtpEventsSent"`
         
         EstimatedAverageMos float64 `json:"estimatedAverageMos"`
+        
+        AverageJitter float64 `json:"averageJitter"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -25,7 +25,7 @@ type Performancepredictionuploadschema struct {
     CalculationStartDate time.Time `json:"calculationStartDate"`
 
 
-    // OnQueueTimes - List of agent on queue times by management unit
+    // OnQueueTimes - List of agent on-queue times by management unit
     OnQueueTimes []Muagentqueuetimerequest `json:"onQueueTimes"`
 
 }

@@ -38,7 +38,7 @@ func Cmdworkforcemanagement_businessunits_workplanbids_copy() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{

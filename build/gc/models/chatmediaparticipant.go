@@ -128,6 +128,9 @@ type ChatmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Chatmediaparticipant
@@ -146,6 +149,10 @@ type Chatmediaparticipant struct {
 
     // StartTime - The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     StartTime time.Time `json:"startTime"`
+
+
+    // StartAlertingTime - The timestamp when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    StartAlertingTime time.Time `json:"startAlertingTime"`
 
 
     // ConnectedTime - The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -305,6 +312,7 @@ func (o *Chatmediaparticipant) String() string {
     
     
     
+    
      o.MediaRoles = []string{""} 
     
     
@@ -354,6 +362,8 @@ func (u *Chatmediaparticipant) MarshalJSON() ([]byte, error) {
         Address string `json:"address"`
         
         StartTime time.Time `json:"startTime"`
+        
+        StartAlertingTime time.Time `json:"startAlertingTime"`
         
         ConnectedTime time.Time `json:"connectedTime"`
         
@@ -426,6 +436,9 @@ func (u *Chatmediaparticipant) MarshalJSON() ([]byte, error) {
         AvatarImageUrl string `json:"avatarImageUrl"`
         *Alias
     }{
+
+        
+
 
         
 

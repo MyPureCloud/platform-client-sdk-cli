@@ -90,6 +90,9 @@ type SmsphonenumberDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -197,12 +200,17 @@ type Smsphonenumber struct {
     Compliance Compliance `json:"compliance"`
 
 
+    // SupportedContent - Defines the media SupportedContent profile configured for an MMS capable phone number.
+    SupportedContent Supportedcontentreference `json:"supportedContent"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Smsphonenumber) String() string {
+    
     
     
     
@@ -288,8 +296,13 @@ func (u *Smsphonenumber) MarshalJSON() ([]byte, error) {
         Integration Domainentityref `json:"integration"`
         
         Compliance Compliance `json:"compliance"`
+        
+        SupportedContent Supportedcontentreference `json:"supportedContent"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdconversations_cobrowsesessions_participants_wrapup() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "bool", "provisional", "false", "Indicates if the wrap-up code is provisional.")
+	utils.AddFlag(getCmd.Flags(), "bool", "provisional", "false", "Indicates whether or not to fetch provisional wrap-up code.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	

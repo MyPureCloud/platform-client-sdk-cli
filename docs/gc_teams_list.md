@@ -16,7 +16,7 @@ gc teams list [flags]
       --after string             The cursor that points to the next item in the complete list of teams
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --before string            The cursor that points to the previous item in the complete list of teams
-      --expand string            Expand the name on each user Valid values: entities.division
+      --expand string            Expand the division on each team Valid values: entities.division
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --name string              Return only teams whose names start with this value (case-insensitive matching)

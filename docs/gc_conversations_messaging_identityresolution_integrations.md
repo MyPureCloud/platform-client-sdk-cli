@@ -34,6 +34,7 @@
 * [gc conversations messaging identityresolution integrations facebook](gc_conversations_messaging_identityresolution_integrations_facebook.html)	 - /api/v2/conversations/messaging/identityresolution/integrations/facebook
 * [gc conversations messaging identityresolution integrations instagram](gc_conversations_messaging_identityresolution_integrations_instagram.html)	 - /api/v2/conversations/messaging/identityresolution/integrations/instagram
 * [gc conversations messaging identityresolution integrations open](gc_conversations_messaging_identityresolution_integrations_open.html)	 - /api/v2/conversations/messaging/identityresolution/integrations/open
+* [gc conversations messaging identityresolution integrations twitter](gc_conversations_messaging_identityresolution_integrations_twitter.html)	 - /api/v2/conversations/messaging/identityresolution/integrations/twitter
 * [gc conversations messaging identityresolution integrations whatsapp](gc_conversations_messaging_identityresolution_integrations_whatsapp.html)	 - /api/v2/conversations/messaging/identityresolution/integrations/whatsapp
 
 

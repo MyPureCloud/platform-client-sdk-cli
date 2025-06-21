@@ -34,6 +34,7 @@
 * [gc integrations credentials delete](gc_integrations_credentials_delete.html)	 - Delete a set of credentials
 * [gc integrations credentials get](gc_integrations_credentials_get.html)	 - Get a single credential with sensitive fields redacted
 * [gc integrations credentials list](gc_integrations_credentials_list.html)	 - List multiple sets of credentials
+* [gc integrations credentials listing](gc_integrations_credentials_listing.html)	 - /api/v2/integrations/credentials/listing
 * [gc integrations credentials types](gc_integrations_credentials_types.html)	 - /api/v2/integrations/credentials/types
 * [gc integrations credentials update](gc_integrations_credentials_update.html)	 - Update a set of credentials
 

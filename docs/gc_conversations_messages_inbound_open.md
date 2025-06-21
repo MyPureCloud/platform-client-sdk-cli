@@ -34,5 +34,6 @@
 * [gc conversations messages inbound open event](gc_conversations_messages_inbound_open_event.html)	 - /api/v2/conversations/messages/{integrationId}/inbound/open/event
 * [gc conversations messages inbound open message](gc_conversations_messages_inbound_open_message.html)	 - /api/v2/conversations/messages/{integrationId}/inbound/open/message
 * [gc conversations messages inbound open receipt](gc_conversations_messages_inbound_open_receipt.html)	 - /api/v2/conversations/messages/{integrationId}/inbound/open/receipt
+* [gc conversations messages inbound open structured](gc_conversations_messages_inbound_open_structured.html)	 - /api/v2/conversations/messages/{integrationId}/inbound/open/structured
 
 

@@ -62,6 +62,7 @@ gc is a CLI for interacting with Genesys Cloud
 * [gc geolocations](gc_geolocations.html)	 - /api/v2/geolocations
 * [gc greetings](gc_greetings.html)	 - /api/v2/greetings
 * [gc groups](gc_groups.html)	 - /api/v2/groups
+* [gc guides](gc_guides.html)	 - /api/v2/guides
 * [gc identityproviders](gc_identityproviders.html)	 - /api/v2/identityproviders
 * [gc infrastructureascode](gc_infrastructureascode.html)	 - /api/v2/infrastructureascode
 * [gc integrations](gc_integrations.html)	 - /api/v2/integrations

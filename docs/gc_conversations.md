@@ -38,10 +38,12 @@
 * [gc conversations chats](gc_conversations_chats.html)	 - /api/v2/conversations/chats
 * [gc conversations cobrowse](gc_conversations_cobrowse.html)	 - /api/v2/conversations/{conversationId}/cobrowse
 * [gc conversations cobrowsesessions](gc_conversations_cobrowsesessions.html)	 - /api/v2/conversations/cobrowsesessions
+* [gc conversations communications](gc_conversations_communications.html)	 - /api/v2/conversations/{conversationId}/communications
 * [gc conversations disconnect](gc_conversations_disconnect.html)	 - /api/v2/conversations/{conversationId}/disconnect
 * [gc conversations emails](gc_conversations_emails.html)	 - /api/v2/conversations/emails
 * [gc conversations faxes](gc_conversations_faxes.html)	 - /api/v2/conversations/faxes
 * [gc conversations get](gc_conversations_get.html)	 - Get conversation
+* [gc conversations internalmessages](gc_conversations_internalmessages.html)	 - /api/v2/conversations/internalmessages
 * [gc conversations keyconfigurations](gc_conversations_keyconfigurations.html)	 - /api/v2/conversations/keyconfigurations
 * [gc conversations list](gc_conversations_list.html)	 - Get active conversations for the logged in user
 * [gc conversations messages](gc_conversations_messages.html)	 - /api/v2/conversations/messages

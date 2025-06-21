@@ -1,10 +1,10 @@
 ## gc businessrules decisiontables versions rows update
 
-Update a decision table row
+Full update a decision table row
 
 ### Synopsis
 
-Update a decision table row
+Full update a decision table row
 
 ```
 gc businessrules decisiontables versions rows update [tableId] [tableVersion] [rowId] [flags]

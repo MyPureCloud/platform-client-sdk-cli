@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc analytics agents status](gc_analytics_agents_status.html)	 - /api/v2/analytics/agents/{userId}/status
-* [gc analytics agents status counts create](gc_analytics_agents_status_counts_create.html)	 - Count agents by segment type
+* [gc analytics agents status counts create](gc_analytics_agents_status_counts_create.html)	 - Count agents by different groupings
 
 

@@ -1,10 +1,10 @@
 ## gc analytics agents status counts create
 
-Count agents by segment type
+Count agents by different groupings
 
 ### Synopsis
 
-Count agents by segment type
+Count agents by different groupings
 
 ```
 gc analytics agents status counts create [flags]

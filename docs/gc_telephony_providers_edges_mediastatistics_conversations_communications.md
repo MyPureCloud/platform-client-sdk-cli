@@ -31,5 +31,6 @@
 
 * [gc telephony providers edges mediastatistics conversations](gc_telephony_providers_edges_mediastatistics_conversations.html)	 - /api/v2/telephony/providers/edges/mediastatistics/conversations
 * [gc telephony providers edges mediastatistics conversations communications get](gc_telephony_providers_edges_mediastatistics_conversations_communications_get.html)	 - Get media endpoint statistics event.
+* [gc telephony providers edges mediastatistics conversations communications mediaresources](gc_telephony_providers_edges_mediastatistics_conversations_communications_mediaresources.html)	 - /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}/mediaresources
 
 

@@ -36,5 +36,6 @@
 * [gc routing sms phonenumbers get](gc_routing_sms_phonenumbers_get.html)	 - Get a phone number provisioned for SMS.
 * [gc routing sms phonenumbers import](gc_routing_sms_phonenumbers_import.html)	 - /api/v2/routing/sms/phonenumbers/import
 * [gc routing sms phonenumbers list](gc_routing_sms_phonenumbers_list.html)	 - Get a list of provisioned phone numbers.
+* [gc routing sms phonenumbers patch](gc_routing_sms_phonenumbers_patch.html)	 - Update a phone number provisioned for SMS.
 
 

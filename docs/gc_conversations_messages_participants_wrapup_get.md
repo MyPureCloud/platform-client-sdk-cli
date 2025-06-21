@@ -14,7 +14,7 @@ gc conversations messages participants wrapup get [conversationId] [participantI
 
 ```
   -h, --help                 help for get
-      --provisional string   Indicates if the wrap-up code is provisional. Valid values: true, false
+      --provisional string   Indicates whether or not to fetch provisional wrap-up code. Valid values: true, false
 ```
 
 ### Options inherited from parent commands

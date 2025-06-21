@@ -52,6 +52,7 @@
 * [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
 * [gc users profile](gc_users_profile.html)	 - /api/v2/users/{userId}/profile
 * [gc users profileskills](gc_users_profileskills.html)	 - /api/v2/users/{userId}/profileskills
+* [gc users query](gc_users_query.html)	 - /api/v2/users/query
 * [gc users queues](gc_users_queues.html)	 - /api/v2/users/{userId}/queues
 * [gc users roles](gc_users_roles.html)	 - /api/v2/users/{subjectId}/roles
 * [gc users routinglanguages](gc_users_routinglanguages.html)	 - /api/v2/users/{userId}/routinglanguages

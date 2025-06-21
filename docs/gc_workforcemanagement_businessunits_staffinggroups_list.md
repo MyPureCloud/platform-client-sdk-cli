@@ -13,8 +13,9 @@ gc workforcemanagement businessunits staffinggroups list [businessUnitId] [flags
 ### Options
 
 ```
-  -h, --help                      help for list
-      --managementUnitId string   The ID of the management unit to get management unit specific staffing groups
+      --forceDownloadService string   Force the result of this operation to be sent via download service. For testing/app development purposes Valid values: true, false
+  -h, --help                          help for list
+      --managementUnitId string       The ID of the management unit to get management unit specific staffing groups
 ```
 
 ### Options inherited from parent commands

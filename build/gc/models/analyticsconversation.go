@@ -65,6 +65,9 @@ type AnalyticsconversationDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticsconversation
@@ -99,6 +102,10 @@ type Analyticsconversation struct {
 
     // ExternalTag - External tag for the conversation
     ExternalTag string `json:"externalTag"`
+
+
+    // InactivityTimeout - The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    InactivityTimeout time.Time `json:"inactivityTimeout"`
 
 
     // KnowledgeBaseIds - The unique identifier(s) of the knowledge base(s) used
@@ -152,6 +159,7 @@ func (o *Analyticsconversation) String() string {
     
      o.DivisionIds = []string{""} 
     
+    
      o.KnowledgeBaseIds = []string{""} 
     
     
@@ -195,6 +203,8 @@ func (u *Analyticsconversation) MarshalJSON() ([]byte, error) {
         
         ExternalTag string `json:"externalTag"`
         
+        InactivityTimeout time.Time `json:"inactivityTimeout"`
+        
         KnowledgeBaseIds []string `json:"knowledgeBaseIds"`
         
         MediaStatsMinConversationMos float64 `json:"mediaStatsMinConversationMos"`
@@ -237,6 +247,9 @@ func (u *Analyticsconversation) MarshalJSON() ([]byte, error) {
 
         
         DivisionIds: []string{""},
+        
+
+
         
 
 

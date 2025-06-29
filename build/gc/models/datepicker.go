@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -19,10 +20,20 @@ type DatepickerDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Datepicker
 type Datepicker struct { 
+    // Id - Optional unique identifier to help map component replies to form messages where multiple DatePickers can be present.
+    Id string `json:"id"`
+
+
     // Title - Text to show in the title.
     Title string `json:"title"`
 
@@ -34,13 +45,19 @@ type Datepicker struct {
     // DatePickerAvailableDateTimes - An array of available times objects.
     DatePickerAvailableDateTimes []Datepickeravailabledatetime `json:"datePickerAvailableDateTimes"`
 
+
+    // DateSelected - Selected date response from end customer. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateSelected time.Time `json:"dateSelected"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Datepicker) String() string {
     
     
+    
      o.DatePickerAvailableDateTimes = []Datepickeravailabledatetime{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -58,11 +75,15 @@ func (u *Datepicker) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Id string `json:"id"`
+        
         Title string `json:"title"`
         
         Subtitle string `json:"subtitle"`
         
         DatePickerAvailableDateTimes []Datepickeravailabledatetime `json:"datePickerAvailableDateTimes"`
+        
+        DateSelected time.Time `json:"dateSelected"`
         *Alias
     }{
 
@@ -73,7 +94,13 @@ func (u *Datepicker) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
         DatePickerAvailableDateTimes: []Datepickeravailabledatetime{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

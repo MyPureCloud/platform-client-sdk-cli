@@ -17,6 +17,9 @@ type ContestuserrankDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -31,12 +34,17 @@ type Contestuserrank struct {
     Rank int `json:"rank"`
 
 
+    // Score - The user's contest score
+    Score float64 `json:"score"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Contestuserrank) String() string {
+    
     
     
 
@@ -59,8 +67,13 @@ func (u *Contestuserrank) MarshalJSON() ([]byte, error) {
         Id string `json:"id"`
         
         Rank int `json:"rank"`
+        
+        Score float64 `json:"score"`
         *Alias
     }{
+
+        
+
 
         
 

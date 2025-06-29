@@ -12,6 +12,12 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type VoicemailmailboxinfoDud struct { 
+    Id string `json:"id"`
+
+
+    OwnerType string `json:"ownerType"`
+
+
     UsageSizeBytes int `json:"usageSizeBytes"`
 
 
@@ -41,10 +47,22 @@ type VoicemailmailboxinfoDud struct {
 
     OldestReadDate time.Time `json:"oldestReadDate"`
 
+
+    SelfUri string `json:"selfUri"`
+
 }
 
 // Voicemailmailboxinfo
 type Voicemailmailboxinfo struct { 
+    
+
+
+    
+
+
+    
+
+
     
 
 
@@ -96,6 +114,15 @@ func (u *Voicemailmailboxinfo) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

@@ -19,10 +19,17 @@ type ListpickerDud struct {
 
     
 
+
+    
+
 }
 
 // Listpicker
 type Listpicker struct { 
+    // Id - Optional unique identifier to help map component replies to form messages where multiple List Pickers can be present.
+    Id string `json:"id"`
+
+
     // Title - Text to show in the title.
     Title string `json:"title"`
 
@@ -38,6 +45,7 @@ type Listpicker struct {
 
 // String returns a JSON representation of the model
 func (o *Listpicker) String() string {
+    
     
     
      o.Sections = []Listpickersection{{}} 
@@ -58,6 +66,8 @@ func (u *Listpicker) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Id string `json:"id"`
+        
         Title string `json:"title"`
         
         Subtitle string `json:"subtitle"`
@@ -65,6 +75,9 @@ func (u *Listpicker) MarshalJSON() ([]byte, error) {
         Sections []Listpickersection `json:"sections"`
         *Alias
     }{
+
+        
+
 
         
 

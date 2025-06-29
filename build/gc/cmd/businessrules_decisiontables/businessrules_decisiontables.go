@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdbusinessrules_decisiontables() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/businessrules/decisiontables", utils.FormatPermissions([]string{ "businessrules:decisionTable:add", "businessrules:businessRulesSchema:view",  }), utils.GenerateDevCentreLink("POST", "Business Rules", "/api/v2/businessrules/decisiontables")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/businessrules/decisiontables", utils.FormatPermissions([]string{ "businessrules:decisionTable:add", "businessrules:businessRulesSchema:view", "routing:queue:view",  }), utils.GenerateDevCentreLink("POST", "Business Rules", "/api/v2/businessrules/decisiontables")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Decision Table",
   "content" : {
@@ -96,7 +96,7 @@ func Cmdbusinessrules_decisiontables() *cobra.Command {
 }`)
 	businessrules_decisiontablesCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/businessrules/decisiontables/{tableId}", utils.FormatPermissions([]string{ "businessrules:decisionTable:edit", "businessrules:businessRulesSchema:view",  }), utils.GenerateDevCentreLink("PATCH", "Business Rules", "/api/v2/businessrules/decisiontables/{tableId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/businessrules/decisiontables/{tableId}", utils.FormatPermissions([]string{ "businessrules:decisionTable:edit", "businessrules:businessRulesSchema:view", "routing:queue:view",  }), utils.GenerateDevCentreLink("PATCH", "Business Rules", "/api/v2/businessrules/decisiontables/{tableId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "Decision Table",
   "content" : {

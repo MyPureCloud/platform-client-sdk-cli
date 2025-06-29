@@ -70,6 +70,7 @@ func Cmdrouting_queues_wrapupcodes() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Wrapup code`s name (trailing asterisks allowed)")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/wrapupcodes", utils.FormatPermissions([]string{ "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/{queueId}/wrapupcodes")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -255,6 +256,10 @@ var listCmd = &cobra.Command{
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
+		}
+		name := utils.GetFlag(cmd.Flags(), "string", "name")
+		if name != "" {
+			queryParams["name"] = name
 		}
 		urlString := path
 		if len(queryParams) > 0 {

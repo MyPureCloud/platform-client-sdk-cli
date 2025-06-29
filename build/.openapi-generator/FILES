@@ -248,10 +248,12 @@ gc/cmd/conversations_calls_participants_communications_uuidata/conversations_cal
 gc/cmd/conversations_calls_participants_communications_wrapup/conversations_calls_participants_communications_wrapup.go
 gc/cmd/conversations_calls_participants_consult/conversations_calls_participants_consult.go
 gc/cmd/conversations_calls_participants_consult_agent/conversations_calls_participants_consult_agent.go
+gc/cmd/conversations_calls_participants_consult_contact_external/conversations_calls_participants_consult_contact_external.go
 gc/cmd/conversations_calls_participants_consult_external/conversations_calls_participants_consult_external.go
 gc/cmd/conversations_calls_participants_consult_queue/conversations_calls_participants_consult_queue.go
 gc/cmd/conversations_calls_participants_monitor/conversations_calls_participants_monitor.go
 gc/cmd/conversations_calls_participants_replace/conversations_calls_participants_replace.go
+gc/cmd/conversations_calls_participants_voice_consult/conversations_calls_participants_voice_consult.go
 gc/cmd/conversations_calls_participants_wrapup/conversations_calls_participants_wrapup.go
 gc/cmd/conversations_calls_participants_wrapupcodes/conversations_calls_participants_wrapupcodes.go
 gc/cmd/conversations_calls_recordingstate/conversations_calls_recordingstate.go
@@ -357,9 +359,11 @@ gc/cmd/conversations_participants_flaggedreason/conversations_participants_flagg
 gc/cmd/conversations_participants_internalmessages_users_communications/conversations_participants_internalmessages_users_communications.go
 gc/cmd/conversations_participants_replace/conversations_participants_replace.go
 gc/cmd/conversations_participants_replace_agent/conversations_participants_replace_agent.go
+gc/cmd/conversations_participants_replace_contact_external/conversations_participants_replace_contact_external.go
 gc/cmd/conversations_participants_replace_external/conversations_participants_replace_external.go
 gc/cmd/conversations_participants_replace_queue/conversations_participants_replace_queue.go
 gc/cmd/conversations_participants_secureivrsessions/conversations_participants_secureivrsessions.go
+gc/cmd/conversations_participants_transfer/conversations_participants_transfer.go
 gc/cmd/conversations_participants_wrapup/conversations_participants_wrapup.go
 gc/cmd/conversations_participants_wrapupcodes/conversations_participants_wrapupcodes.go
 gc/cmd/conversations_recordingmetadata/conversations_recordingmetadata.go
@@ -1382,7 +1386,6 @@ gc/cmd/workforcemanagement_businessunits_workplanbids_groups_summary/workforcema
 gc/cmd/workforcemanagement_calendar_data_ics/workforcemanagement_calendar_data_ics.go
 gc/cmd/workforcemanagement_calendar_url_ics/workforcemanagement_calendar_url_ics.go
 gc/cmd/workforcemanagement_historicaldata_bulk_remove_jobs/workforcemanagement_historicaldata_bulk_remove_jobs.go
-gc/cmd/workforcemanagement_historicaldata_deletejob/workforcemanagement_historicaldata_deletejob.go
 gc/cmd/workforcemanagement_historicaldata_importstatus/workforcemanagement_historicaldata_importstatus.go
 gc/cmd/workforcemanagement_historicaldata_validate/workforcemanagement_historicaldata_validate.go
 gc/cmd/workforcemanagement_integrations_hris/workforcemanagement_integrations_hris.go
@@ -2212,8 +2215,10 @@ gc/models/constraintconflictmessage.go
 gc/models/consulttransfer.go
 gc/models/consulttransferevent.go
 gc/models/consulttransferresponse.go
+gc/models/consulttransfertoaddress.go
 gc/models/consulttransfertoagent.go
 gc/models/consulttransfertoexternal.go
+gc/models/consulttransfertoexternalcontact.go
 gc/models/consulttransfertoqueue.go
 gc/models/consulttransferupdate.go
 gc/models/consumedresourcesentitylisting.go
@@ -2272,7 +2277,6 @@ gc/models/contactsexportqueryconditions.go
 gc/models/contactsexportrequest.go
 gc/models/contactsort.go
 gc/models/contentactions.go
-gc/models/contentattachment.go
 gc/models/contentbuttonresponse.go
 gc/models/contentcard.go
 gc/models/contentcardaction.go
@@ -2282,21 +2286,12 @@ gc/models/contentdatepickeravailabletime.go
 gc/models/contentfilerequest.go
 gc/models/contentfileresponse.go
 gc/models/contentfilteritem.go
-gc/models/contentgeneric.go
-gc/models/contentlist.go
-gc/models/contentlocation.go
-gc/models/contentnotificationtemplate.go
 gc/models/contentoffer.go
 gc/models/contentofferstyleproperties.go
 gc/models/contentofferstylingconfiguration.go
 gc/models/contentpositionproperties.go
-gc/models/contentpostback.go
-gc/models/contentquickreply.go
-gc/models/contentquickreplyv2.go
 gc/models/contentreaction.go
 gc/models/contentsetting.go
-gc/models/contentstory.go
-gc/models/contenttext.go
 gc/models/contestcompletedata.go
 gc/models/contestcompletedatascore.go
 gc/models/contestdatametrics.go
@@ -2388,6 +2383,7 @@ gc/models/conversationcontentquickreplyv2.go
 gc/models/conversationcontentreaction.go
 gc/models/conversationcontentreceivedreplymessage.go
 gc/models/conversationcontentrequiredcontactfield.go
+gc/models/conversationcontentroadsideassistance.go
 gc/models/conversationcontentstory.go
 gc/models/conversationcontenttext.go
 gc/models/conversationcontentwheelpicker.go
@@ -3286,7 +3282,6 @@ gc/models/historicaldatadisalloweddeleteentity.go
 gc/models/historicaldatajobentitystatus.go
 gc/models/historicalimportdeletefilesjobrequest.go
 gc/models/historicalimportdeletefilesjobresponse.go
-gc/models/historicalimportdeletejobresponse.go
 gc/models/historicalimportoveralldeletestatusresponse.go
 gc/models/historicalimportstatus.go
 gc/models/historicalimportstatusjobresponse.go
@@ -3649,6 +3644,8 @@ gc/models/learningassignmentuserquery.go
 gc/models/learningcoverartthumbnail.go
 gc/models/learningcoverartuploadurlrequest.go
 gc/models/learningmodule.go
+gc/models/learningmoduleautoassignrequest.go
+gc/models/learningmoduleautoassignresponse.go
 gc/models/learningmodulecoverartrequest.go
 gc/models/learningmodulecoverartresponse.go
 gc/models/learningmoduleinformstep.go
@@ -3724,7 +3721,6 @@ gc/models/listeddictionaryfeedback.go
 gc/models/listedprogram.go
 gc/models/listedtopic.go
 gc/models/listing.go
-gc/models/listitemcomponent.go
 gc/models/listpicker.go
 gc/models/listpickeritem.go
 gc/models/listpickersection.go
@@ -3824,7 +3820,6 @@ gc/models/mergecontactsrequest.go
 gc/models/mergeoperation.go
 gc/models/mergerequest.go
 gc/models/message.go
-gc/models/messagecontent.go
 gc/models/messageconversation.go
 gc/models/messageconversationentitylisting.go
 gc/models/messagedata.go
@@ -3866,7 +3861,6 @@ gc/models/messaginginitialconfiguration.go
 gc/models/messagingintegration.go
 gc/models/messagingintegrationentitylisting.go
 gc/models/messagingprogresstransferevent.go
-gc/models/messagingrecipient.go
 gc/models/messagingroutingestablishedevent.go
 gc/models/messagingroutingtransferevent.go
 gc/models/messagingsetting.go
@@ -3963,11 +3957,6 @@ gc/models/note.go
 gc/models/notelisting.go
 gc/models/notificationsresponse.go
 gc/models/notificationssettings.go
-gc/models/notificationtemplatebody.go
-gc/models/notificationtemplatebutton.go
-gc/models/notificationtemplatefooter.go
-gc/models/notificationtemplateheader.go
-gc/models/notificationtemplateparameter.go
 gc/models/ntpsettings.go
 gc/models/nuanceapplication.go
 gc/models/nuancebot.go
@@ -4341,6 +4330,7 @@ gc/models/reaction.go
 gc/models/realtimeadherenceexplanation.go
 gc/models/reason.go
 gc/models/recallentry.go
+gc/models/receivedreplymessage.go
 gc/models/recipient.go
 gc/models/recipientadditionalidentifier.go
 gc/models/recipientflow.go
@@ -4360,6 +4350,13 @@ gc/models/recordingcontentstory.go
 gc/models/recordingemailmessage.go
 gc/models/recordingencryptionconfiguration.go
 gc/models/recordingencryptionconfigurationlisting.go
+gc/models/recordingform.go
+gc/models/recordingformpage.go
+gc/models/recordingformpagecomponent.go
+gc/models/recordingformresponsecomponent.go
+gc/models/recordingformresponsecontent.go
+gc/models/recordinginput.go
+gc/models/recordingintroduction.go
 gc/models/recordingjob.go
 gc/models/recordingjobentitylisting.go
 gc/models/recordingjobfailedrecording.go
@@ -4376,6 +4373,8 @@ gc/models/recordingtemplatefooter.go
 gc/models/recordingtemplateheader.go
 gc/models/recordinguploadreport.go
 gc/models/recordinguploadreportrequest.go
+gc/models/recordingwheelpicker.go
+gc/models/recordingwheelpickeritem.go
 gc/models/recurrenceendsettings.go
 gc/models/recurrenceperiod.go
 gc/models/recurrencesettings.go
@@ -5006,7 +5005,9 @@ gc/models/transferinitiator.go
 gc/models/transferrequest.go
 gc/models/transferresponse.go
 gc/models/transferresponsemodifiedby.go
+gc/models/transfertoaddressrequest.go
 gc/models/transfertoagentrequest.go
+gc/models/transfertoexternalcontactrequest.go
 gc/models/transfertoexternalrequest.go
 gc/models/transfertoqueuerequest.go
 gc/models/translatesupportedlanguage.go
@@ -5235,6 +5236,7 @@ gc/models/usersearchrulepart.go
 gc/models/usersettingsforchat.go
 gc/models/userskillentitylisting.go
 gc/models/userskillgroupentitylisting.go
+gc/models/usersrulesrulereference.go
 gc/models/userssearchresponse.go
 gc/models/userstaffinggrouplisting.go
 gc/models/userstaffinggroupresponse.go

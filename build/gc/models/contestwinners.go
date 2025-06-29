@@ -16,12 +16,19 @@ type ContestwinnersDud struct {
 
     
 
+
+    
+
 }
 
 // Contestwinners
 type Contestwinners struct { 
     // Tier - The Contest Winner tier
     Tier int `json:"tier"`
+
+
+    // WinnersCount - The number of Contest Winners in a tier
+    WinnersCount int `json:"winnersCount"`
 
 
     // Users - The Contest Winner users at the tier
@@ -31,6 +38,7 @@ type Contestwinners struct {
 
 // String returns a JSON representation of the model
 func (o *Contestwinners) String() string {
+    
     
      o.Users = []Contestuserrank{{}} 
 
@@ -52,9 +60,14 @@ func (u *Contestwinners) MarshalJSON() ([]byte, error) {
         
         Tier int `json:"tier"`
         
+        WinnersCount int `json:"winnersCount"`
+        
         Users []Contestuserrank `json:"users"`
         *Alias
     }{
+
+        
+
 
         
 

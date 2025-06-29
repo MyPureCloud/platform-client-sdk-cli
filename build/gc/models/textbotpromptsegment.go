@@ -39,7 +39,7 @@ type Textbotpromptsegment struct {
 
 
     // Content - Details to display Rich Media content. This is only populated when the segment 'type' is 'Rich Media'.
-    Content []Messagecontent `json:"content"`
+    Content []Conversationmessagecontent `json:"content"`
 
 }
 
@@ -48,7 +48,7 @@ func (o *Textbotpromptsegment) String() string {
     
     
     
-     o.Content = []Messagecontent{{}} 
+     o.Content = []Conversationmessagecontent{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -72,7 +72,7 @@ func (u *Textbotpromptsegment) MarshalJSON() ([]byte, error) {
         
         Format Format `json:"format"`
         
-        Content []Messagecontent `json:"content"`
+        Content []Conversationmessagecontent `json:"content"`
         *Alias
     }{
 
@@ -86,7 +86,7 @@ func (u *Textbotpromptsegment) MarshalJSON() ([]byte, error) {
 
 
         
-        Content: []Messagecontent{{}},
+        Content: []Conversationmessagecontent{{}},
         
 
         Alias: (*Alias)(u),

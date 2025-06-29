@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    ContenttextMarshalled = false
+    ReceivedreplymessageMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ContenttextDud struct { 
+type ReceivedreplymessageDud struct { 
     
 
 
@@ -18,19 +18,19 @@ type ContenttextDud struct {
 
 }
 
-// Contenttext - Message content element containing text only.
-type Contenttext struct { 
-    // VarType - Type of text content.
-    VarType string `json:"type"`
+// Receivedreplymessage
+type Receivedreplymessage struct { 
+    // Title - Text to show in the title.
+    Title string `json:"title"`
 
 
-    // Body - Text to be shown for this content element.
-    Body string `json:"body"`
+    // Subtitle - Text to show in the subtitle.
+    Subtitle string `json:"subtitle"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Contenttext) String() string {
+func (o *Receivedreplymessage) String() string {
     
     
 
@@ -40,19 +40,19 @@ func (o *Contenttext) String() string {
     return str
 }
 
-func (u *Contenttext) MarshalJSON() ([]byte, error) {
-    type Alias Contenttext
+func (u *Receivedreplymessage) MarshalJSON() ([]byte, error) {
+    type Alias Receivedreplymessage
 
-    if ContenttextMarshalled {
+    if ReceivedreplymessageMarshalled {
         return []byte("{}"), nil
     }
-    ContenttextMarshalled = true
+    ReceivedreplymessageMarshalled = true
 
     return json.Marshal(&struct {
         
-        VarType string `json:"type"`
+        Title string `json:"title"`
         
-        Body string `json:"body"`
+        Subtitle string `json:"subtitle"`
         *Alias
     }{
 

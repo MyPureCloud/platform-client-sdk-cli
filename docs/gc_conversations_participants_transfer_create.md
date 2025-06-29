@@ -1,13 +1,13 @@
-## gc users presences update
+## gc conversations participants transfer create
 
-Patch a user`s Presence
+Replace this participant by another one using the address of the destination.
 
 ### Synopsis
 
-Patch a user`s Presence
+Replace this participant by another one using the address of the destination.
 
 ```
-gc users presences update [userId] [sourceId] [flags]
+gc conversations participants transfer create [conversationId] [participantId] [flags]
 ```
 
 ### Options
@@ -15,7 +15,7 @@ gc users presences update [userId] [sourceId] [flags]
 ```
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
-  -h, --help               help for update
+  -h, --help               help for create
   -b, --printrequestbody   Print the request body format of the API.
 ```
 
@@ -36,6 +36,6 @@ gc users presences update [userId] [sourceId] [flags]
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/presences /api/v2/users/{userId}/presences
+* [gc conversations participants transfer](gc_conversations_participants_transfer.html)	 - /api/v2/conversations/{conversationId}/participants/{participantId}/transfer
 
 

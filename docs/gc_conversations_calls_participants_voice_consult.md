@@ -1,19 +1,15 @@
-## gc workforcemanagement historicaldata deletejob get
+## gc conversations calls participants voice consult
 
-Retrieves delete job status for historical data imports of the organization.
+/api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult
 
 ### Synopsis
 
-Retrieves delete job status for historical data imports of the organization.
-
-```
-gc workforcemanagement historicaldata deletejob get [flags]
-```
+/api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help   help for consult
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +29,7 @@ gc workforcemanagement historicaldata deletejob get [flags]
 
 ### SEE ALSO
 
-* [gc workforcemanagement historicaldata deletejob](gc_workforcemanagement_historicaldata_deletejob.html)	 - /api/v2/workforcemanagement/historicaldata/deletejob
+* [gc conversations calls participants voice](gc_conversations_calls_participants_voice.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice
+* [gc conversations calls participants voice consult create](gc_conversations_calls_participants_voice_consult_create.html)	 - Initiate voice consult transfer
 
 

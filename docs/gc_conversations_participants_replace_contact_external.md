@@ -1,22 +1,15 @@
-## gc users presences update
+## gc conversations participants replace contact external
 
-Patch a user`s Presence
+/api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external
 
 ### Synopsis
 
-Patch a user`s Presence
-
-```
-gc users presences update [userId] [sourceId] [flags]
-```
+/api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for external
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc users presences update [userId] [sourceId] [flags]
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/presences /api/v2/users/{userId}/presences
+* [gc conversations participants replace contact](gc_conversations_participants_replace_contact.html)	 - /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact
+* [gc conversations participants replace contact external create](gc_conversations_participants_replace_contact_external_create.html)	 - Replace this participant with the an external contact
 
 

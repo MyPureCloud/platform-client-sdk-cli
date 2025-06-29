@@ -1,22 +1,15 @@
-## gc users presences update
+## gc conversations calls participants consult contact external
 
-Patch a user`s Presence
+/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external
 
 ### Synopsis
 
-Patch a user`s Presence
-
-```
-gc users presences update [userId] [sourceId] [flags]
-```
+/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for external
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc users presences update [userId] [sourceId] [flags]
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/presences /api/v2/users/{userId}/presences
+* [gc conversations calls participants consult contact](gc_conversations_calls_participants_consult_contact.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact
+* [gc conversations calls participants consult contact external create](gc_conversations_calls_participants_consult_contact_external_create.html)	 - Initiate a consult transfer to an external contact
 
 

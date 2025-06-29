@@ -1,19 +1,15 @@
-## gc workforcemanagement historicaldata deletejob create
+## gc conversations calls participants consult contact
 
-Delete the entries of the historical data imports in the organization.
+/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact
 
 ### Synopsis
 
-Delete the entries of the historical data imports in the organization.
-
-```
-gc workforcemanagement historicaldata deletejob create [flags]
-```
+/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact
 
 ### Options
 
 ```
-  -h, --help   help for create
+  -h, --help   help for contact
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +29,7 @@ gc workforcemanagement historicaldata deletejob create [flags]
 
 ### SEE ALSO
 
-* [gc workforcemanagement historicaldata deletejob](gc_workforcemanagement_historicaldata_deletejob.html)	 - /api/v2/workforcemanagement/historicaldata/deletejob
+* [gc conversations calls participants consult](gc_conversations_calls_participants_consult.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
+* [gc conversations calls participants consult contact external](gc_conversations_calls_participants_consult_contact_external.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external
 
 

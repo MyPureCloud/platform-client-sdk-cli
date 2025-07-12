@@ -1436,6 +1436,7 @@ gc/cmd/workforcemanagement_schedules/workforcemanagement_schedules.go
 gc/cmd/workforcemanagement_schedulingjobs/workforcemanagement_schedulingjobs.go
 gc/cmd/workforcemanagement_shifttrades/workforcemanagement_shifttrades.go
 gc/cmd/workforcemanagement_shrinkage_jobs/workforcemanagement_shrinkage_jobs.go
+gc/cmd/workforcemanagement_teams_adherence/workforcemanagement_teams_adherence.go
 gc/cmd/workforcemanagement_teams_adherence_historical/workforcemanagement_teams_adherence_historical.go
 gc/cmd/workforcemanagement_teams_shrinkage_jobs/workforcemanagement_teams_shrinkage_jobs.go
 gc/cmd/workforcemanagement_timeoffbalance_jobs/workforcemanagement_timeoffbalance_jobs.go
@@ -2577,6 +2578,7 @@ gc/models/customeventattribute.go
 gc/models/customeventattributelist.go
 gc/models/customi18nlabels.go
 gc/models/customprovider.go
+gc/models/customsmtpserverrequest.go
 gc/models/daily.go
 gc/models/dailypossibleshift.go
 gc/models/dashboardconfiguration.go
@@ -3308,6 +3310,7 @@ gc/models/identityprovider.go
 gc/models/identityproviderentitylisting.go
 gc/models/identityresolutionautomergeconfig.go
 gc/models/identityresolutionconfig.go
+gc/models/identityresolutionexternalsource.go
 gc/models/identityresolutionqueueconfig.go
 gc/models/idleeventtrigger.go
 gc/models/idletokentimeout.go
@@ -4063,6 +4066,7 @@ gc/models/orphanupdaterequest.go
 gc/models/otherprofileassignment.go
 gc/models/outbounddomain.go
 gc/models/outbounddomainentitylisting.go
+gc/models/outbounddomainrequest.go
 gc/models/outboundonlysetting.go
 gc/models/outboundroute.go
 gc/models/outboundroutebase.go
@@ -5175,6 +5179,7 @@ gc/models/useravailabletimes.go
 gc/models/userbestpoints.go
 gc/models/userbestpointsitem.go
 gc/models/userchatsettings.go
+gc/models/userchatsettingspost.go
 gc/models/userconversationsummary.go
 gc/models/usercursorentitylisting.go
 gc/models/userdetailqueryclause.go

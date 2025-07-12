@@ -43,6 +43,9 @@ type EvaluationquestionDud struct {
 
     
 
+
+    
+
 }
 
 // Evaluationquestion
@@ -82,6 +85,10 @@ type Evaluationquestion struct {
     AnswerOptions []Answeroption `json:"answerOptions"`
 
 
+    // MultipleSelectOptionQuestions - Only used by Multiple Select type questions. A list of multiple choice questions representing selectable options.
+    MultipleSelectOptionQuestions []Evaluationquestion `json:"multipleSelectOptionQuestions"`
+
+
     // IsKill
     IsKill bool `json:"isKill"`
 
@@ -101,6 +108,7 @@ func (o *Evaluationquestion) String() string {
     
     
      o.AnswerOptions = []Answeroption{{}} 
+     o.MultipleSelectOptionQuestions = []Evaluationquestion{{}} 
     
     
 
@@ -136,6 +144,8 @@ func (u *Evaluationquestion) MarshalJSON() ([]byte, error) {
         
         AnswerOptions []Answeroption `json:"answerOptions"`
         
+        MultipleSelectOptionQuestions []Evaluationquestion `json:"multipleSelectOptionQuestions"`
+        
         IsKill bool `json:"isKill"`
         
         IsCritical bool `json:"isCritical"`
@@ -168,6 +178,11 @@ func (u *Evaluationquestion) MarshalJSON() ([]byte, error) {
 
         
         AnswerOptions: []Answeroption{{}},
+        
+
+
+        
+        MultipleSelectOptionQuestions: []Evaluationquestion{{}},
         
 
 

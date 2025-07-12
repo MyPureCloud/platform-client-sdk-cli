@@ -37,6 +37,9 @@ type EvaluationquestionscoreDud struct {
 
     AiAnswer Aianswer `json:"aiAnswer"`
 
+
+    
+
 }
 
 // Evaluationquestionscore
@@ -75,6 +78,10 @@ type Evaluationquestionscore struct {
 
     
 
+
+    // MultipleSelectQuestionOptionScores - Only applicable to Multiple Select questions. Scores corresponding to the options of Multiple Select questions.
+    MultipleSelectQuestionOptionScores []Evaluationquestionscore `json:"multipleSelectQuestionOptionScores"`
+
 }
 
 // String returns a JSON representation of the model
@@ -87,6 +94,7 @@ func (o *Evaluationquestionscore) String() string {
     
     
     
+     o.MultipleSelectQuestionOptionScores = []Evaluationquestionscore{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -119,6 +127,8 @@ func (u *Evaluationquestionscore) MarshalJSON() ([]byte, error) {
         FailedKillQuestion bool `json:"failedKillQuestion"`
         
         Comments string `json:"comments"`
+        
+        MultipleSelectQuestionOptionScores []Evaluationquestionscore `json:"multipleSelectQuestionOptionScores"`
         *Alias
     }{
 
@@ -146,6 +156,11 @@ func (u *Evaluationquestionscore) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        MultipleSelectQuestionOptionScores: []Evaluationquestionscore{{}},
         
 
         Alias: (*Alias)(u),

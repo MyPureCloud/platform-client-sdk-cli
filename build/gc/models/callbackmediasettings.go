@@ -55,6 +55,12 @@ type CallbackmediasettingsDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Callbackmediasettings
@@ -103,6 +109,14 @@ type Callbackmediasettings struct {
     PacingModifier float64 `json:"pacingModifier"`
 
 
+    // MaxRetryCount - Maximum number of retries that should be attempted to try and connect a customer first callback to a customer when the initial callback attempt did not connect.
+    MaxRetryCount int `json:"maxRetryCount"`
+
+
+    // RetryDelaySeconds - Delay in seconds between each retry of a customer first callback.
+    RetryDelaySeconds int `json:"retryDelaySeconds"`
+
+
     // LiveVoiceReactionType - The action to take if a live voice is detected during the outbound call of a customer first callback.
     LiveVoiceReactionType string `json:"liveVoiceReactionType"`
 
@@ -128,6 +142,8 @@ func (o *Callbackmediasettings) String() string {
     
     
      o.SubTypeSettings = map[string]Basemediasettings{"": {}} 
+    
+    
     
     
     
@@ -176,6 +192,10 @@ func (u *Callbackmediasettings) MarshalJSON() ([]byte, error) {
         
         PacingModifier float64 `json:"pacingModifier"`
         
+        MaxRetryCount int `json:"maxRetryCount"`
+        
+        RetryDelaySeconds int `json:"retryDelaySeconds"`
+        
         LiveVoiceReactionType string `json:"liveVoiceReactionType"`
         
         LiveVoiceFlow Domainentityref `json:"liveVoiceFlow"`
@@ -203,6 +223,12 @@ func (u *Callbackmediasettings) MarshalJSON() ([]byte, error) {
 
         
         SubTypeSettings: map[string]Basemediasettings{"": {}},
+        
+
+
+        
+
+
         
 
 

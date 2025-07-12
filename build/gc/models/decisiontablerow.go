@@ -46,7 +46,7 @@ type Decisiontablerow struct {
     Table Decisiontableversionentity `json:"table"`
 
 
-    // RowIndex - The absolute index of this row in the decision table, starting at 0
+    // RowIndex - The absolute index of this row in the decision table, starting at 1
     RowIndex int `json:"rowIndex"`
 
 

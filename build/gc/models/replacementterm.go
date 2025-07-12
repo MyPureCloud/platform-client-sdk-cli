@@ -23,7 +23,7 @@ type ReplacementtermDud struct {
 
 // Replacementterm
 type Replacementterm struct { 
-    // VarType - Subject search type
+    // VarType - Replacement term type
     VarType string `json:"type"`
 
 

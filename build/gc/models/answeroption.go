@@ -22,12 +22,19 @@ type AnsweroptionDud struct {
 
     
 
+
+    
+
 }
 
 // Answeroption
 type Answeroption struct { 
     // Id
     Id string `json:"id"`
+
+
+    // BuiltInType - The built-in type of this answer option. Only used for built-in answer options such as selection states for Multiple Select answer options. Possible values include: Selected, Unselected
+    BuiltInType string `json:"builtInType"`
 
 
     // Text
@@ -45,6 +52,7 @@ type Answeroption struct {
 
 // String returns a JSON representation of the model
 func (o *Answeroption) String() string {
+    
     
     
     
@@ -68,6 +76,8 @@ func (u *Answeroption) MarshalJSON() ([]byte, error) {
         
         Id string `json:"id"`
         
+        BuiltInType string `json:"builtInType"`
+        
         Text string `json:"text"`
         
         Value int `json:"value"`
@@ -75,6 +85,9 @@ func (u *Answeroption) MarshalJSON() ([]byte, error) {
         AssistanceConditions []Assistancecondition `json:"assistanceConditions"`
         *Alias
     }{
+
+        
+
 
         
 

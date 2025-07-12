@@ -51,7 +51,7 @@ func Cmdexternalcontacts_contacts_schemas_versions() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DataSchema"
+        "$ref" : "#/components/schemas/DataSchemaListing"
       }
     }
   }

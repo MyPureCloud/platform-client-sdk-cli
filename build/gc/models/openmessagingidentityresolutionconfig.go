@@ -40,8 +40,8 @@ type Openmessagingidentityresolutionconfig struct {
     ResolveIdentities bool `json:"resolveIdentities"`
 
 
-    // ExternalSource - The external source used for stitching this channel - used only for Open Messaging.
-    ExternalSource Addressableentityref `json:"externalSource"`
+    // ExternalSource - The external source used for stitching this channel.
+    ExternalSource Identityresolutionexternalsource `json:"externalSource"`
 
 
     
@@ -74,7 +74,7 @@ func (u *Openmessagingidentityresolutionconfig) MarshalJSON() ([]byte, error) {
         
         ResolveIdentities bool `json:"resolveIdentities"`
         
-        ExternalSource Addressableentityref `json:"externalSource"`
+        ExternalSource Identityresolutionexternalsource `json:"externalSource"`
         *Alias
     }{
 

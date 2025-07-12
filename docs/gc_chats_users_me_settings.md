@@ -30,6 +30,8 @@
 ### SEE ALSO
 
 * [gc chats users me](gc_chats_users_me.html)	 - /api/v2/chats/users/me
+* [gc chats users me settings create](gc_chats_users_me_settings_create.html)	 - Create a user`s chat settings
+* [gc chats users me settings delete](gc_chats_users_me_settings_delete.html)	 - Delete a user`s chat settings
 * [gc chats users me settings get](gc_chats_users_me_settings_get.html)	 - Get a user`s chat settings
 * [gc chats users me settings update](gc_chats_users_me_settings_update.html)	 - Update a user`s chat settings
 

@@ -1,15 +1,19 @@
-## gc users presences bulk
+## gc chats users me settings delete
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Delete a user`s chat settings
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Delete a user`s chat settings
+
+```
+gc chats users me settings delete [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +33,6 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc chats users me settings](gc_chats_users_me_settings.html)	 - /api/v2/chats/users/me/settings
 
 

@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement teams](gc_workforcemanagement_teams.html)	 - /api/v2/workforcemanagement/teams
+* [gc workforcemanagement teams adherence get](gc_workforcemanagement_teams_adherence_get.html)	 - Get a list of user schedule adherence records for the requested team
 * [gc workforcemanagement teams adherence historical](gc_workforcemanagement_teams_adherence_historical.html)	 - /api/v2/workforcemanagement/teams/{teamId}/adherence/historical
 
 

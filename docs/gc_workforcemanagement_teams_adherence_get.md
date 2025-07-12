@@ -1,15 +1,19 @@
-## gc users presences bulk
+## gc workforcemanagement teams adherence get
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Get a list of user schedule adherence records for the requested team
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Get a list of user schedule adherence records for the requested team
+
+```
+gc workforcemanagement teams adherence get [teamId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +33,6 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc workforcemanagement teams adherence](gc_workforcemanagement_teams_adherence.html)	 - /api/v2/workforcemanagement/teams/{teamId}/adherence
 
 

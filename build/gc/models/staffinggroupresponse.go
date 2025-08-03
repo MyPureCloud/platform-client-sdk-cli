@@ -26,6 +26,9 @@ type StaffinggroupresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -47,6 +50,10 @@ type Staffinggroupresponse struct {
     ManagementUnit Managementunitreference `json:"managementUnit"`
 
 
+    // PlanningGroups - The list of planning groups that are associated with the staffing group
+    PlanningGroups []Planninggroupreference `json:"planningGroups"`
+
+
     // Metadata - Version metadata for the staffing group
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
@@ -60,6 +67,7 @@ func (o *Staffinggroupresponse) String() string {
     
      o.Users = []Userreference{{}} 
     
+     o.PlanningGroups = []Planninggroupreference{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -84,6 +92,8 @@ func (u *Staffinggroupresponse) MarshalJSON() ([]byte, error) {
         
         ManagementUnit Managementunitreference `json:"managementUnit"`
         
+        PlanningGroups []Planninggroupreference `json:"planningGroups"`
+        
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
@@ -99,6 +109,11 @@ func (u *Staffinggroupresponse) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        PlanningGroups: []Planninggroupreference{{}},
         
 
 

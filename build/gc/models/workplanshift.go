@@ -85,6 +85,9 @@ type WorkplanshiftDud struct {
 
     
 
+
+    
+
 }
 
 // Workplanshift
@@ -173,6 +176,10 @@ type Workplanshift struct {
     DayOffRule string `json:"dayOffRule"`
 
 
+    // PlanningPeriodConstraints - Planning period constraints
+    PlanningPeriodConstraints Planningperiodshiftconstraints `json:"planningPeriodConstraints"`
+
+
     // Activities - Activities configured for this shift
     Activities []Workplanactivity `json:"activities"`
 
@@ -192,6 +199,7 @@ type Workplanshift struct {
 
 // String returns a JSON representation of the model
 func (o *Workplanshift) String() string {
+    
     
     
     
@@ -276,6 +284,8 @@ func (u *Workplanshift) MarshalJSON() ([]byte, error) {
         
         DayOffRule string `json:"dayOffRule"`
         
+        PlanningPeriodConstraints Planningperiodshiftconstraints `json:"planningPeriodConstraints"`
+        
         Activities []Workplanactivity `json:"activities"`
         
         Id string `json:"id"`
@@ -285,6 +295,9 @@ func (u *Workplanshift) MarshalJSON() ([]byte, error) {
         ValidationId string `json:"validationId"`
         *Alias
     }{
+
+        
+
 
         
 

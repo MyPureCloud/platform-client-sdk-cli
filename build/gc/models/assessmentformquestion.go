@@ -14,6 +14,9 @@ type AssessmentformquestionDud struct {
     
 
 
+    ContextId string `json:"contextId"`
+
+
     
 
 
@@ -49,6 +52,9 @@ type AssessmentformquestionDud struct {
 type Assessmentformquestion struct { 
     // Id
     Id string `json:"id"`
+
+
+    
 
 
     // VarType
@@ -145,6 +151,9 @@ func (u *Assessmentformquestion) MarshalJSON() ([]byte, error) {
         IsCritical bool `json:"isCritical"`
         *Alias
     }{
+
+        
+
 
         
 

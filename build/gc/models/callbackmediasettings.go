@@ -58,9 +58,6 @@ type CallbackmediasettingsDud struct {
 
     
 
-
-    
-
 }
 
 // Callbackmediasettings
@@ -83,10 +80,6 @@ type Callbackmediasettings struct {
 
     // ManualAnswerAlertToneSeconds - How long to play the alerting tone for a manual-answer interaction
     ManualAnswerAlertToneSeconds float64 `json:"manualAnswerAlertToneSeconds"`
-
-
-    // SubTypeSettings - Map of media subtype to media subtype specific settings.
-    SubTypeSettings map[string]Basemediasettings `json:"subTypeSettings"`
 
 
     // Mode - The mode callbacks will use on this queue.
@@ -141,7 +134,6 @@ func (o *Callbackmediasettings) String() string {
     
     
     
-     o.SubTypeSettings = map[string]Basemediasettings{"": {}} 
     
     
     
@@ -180,8 +172,6 @@ func (u *Callbackmediasettings) MarshalJSON() ([]byte, error) {
         
         ManualAnswerAlertToneSeconds float64 `json:"manualAnswerAlertToneSeconds"`
         
-        SubTypeSettings map[string]Basemediasettings `json:"subTypeSettings"`
-        
         Mode string `json:"mode"`
         
         EnableAutoDialAndEnd bool `json:"enableAutoDialAndEnd"`
@@ -218,11 +208,6 @@ func (u *Callbackmediasettings) MarshalJSON() ([]byte, error) {
         
 
 
-        
-
-
-        
-        SubTypeSettings: map[string]Basemediasettings{"": {}},
         
 
 

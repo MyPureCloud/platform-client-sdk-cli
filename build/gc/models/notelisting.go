@@ -67,12 +67,12 @@ type Notelisting struct {
     PartialResults bool `json:"partialResults"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
-
     // NextUri
     NextUri string `json:"nextUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // LastUri
@@ -132,9 +132,9 @@ func (u *Notelisting) MarshalJSON() ([]byte, error) {
         
         PartialResults bool `json:"partialResults"`
         
-        PreviousUri string `json:"previousUri"`
-        
         NextUri string `json:"nextUri"`
+        
+        PreviousUri string `json:"previousUri"`
         
         LastUri string `json:"lastUri"`
         

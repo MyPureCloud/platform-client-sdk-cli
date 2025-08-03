@@ -66,6 +66,9 @@ type FlowversionDud struct {
     
 
 
+    
+
+
     DatePublished time.Time `json:"datePublished"`
 
 
@@ -159,6 +162,10 @@ type Flowversion struct {
     VirtualAgentEnabled bool `json:"virtualAgentEnabled"`
 
 
+    // AgenticVirtualAgentEnabled
+    AgenticVirtualAgentEnabled bool `json:"agenticVirtualAgentEnabled"`
+
+
     
 
 
@@ -180,6 +187,7 @@ type Flowversion struct {
 
 // String returns a JSON representation of the model
 func (o *Flowversion) String() string {
+    
     
     
     
@@ -250,8 +258,13 @@ func (u *Flowversion) MarshalJSON() ([]byte, error) {
         OutputSchema Jsonschemadocument `json:"outputSchema"`
         
         VirtualAgentEnabled bool `json:"virtualAgentEnabled"`
+        
+        AgenticVirtualAgentEnabled bool `json:"agenticVirtualAgentEnabled"`
         *Alias
     }{
+
+        
+
 
         
 

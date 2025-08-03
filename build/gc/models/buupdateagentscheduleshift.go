@@ -32,6 +32,12 @@ type BuupdateagentscheduleshiftDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Buupdateagentscheduleshift
@@ -57,6 +63,14 @@ type Buupdateagentscheduleshift struct {
     
 
 
+    // WorkPlanId - The ID of the work plan for which the work plan shift emanates from
+    WorkPlanId Valuewrapperstring `json:"workPlanId"`
+
+
+    // WorkPlanShiftId - The ID of the work plan shift that was used in schedule generation
+    WorkPlanShiftId Valuewrapperstring `json:"workPlanShiftId"`
+
+
     // Delete - Set to true to delete the shift from the agent's schedule
     Delete bool `json:"delete"`
 
@@ -66,6 +80,8 @@ type Buupdateagentscheduleshift struct {
 func (o *Buupdateagentscheduleshift) String() string {
     
      o.Activities = []Buagentscheduleactivity{{}} 
+    
+    
     
     
 
@@ -91,6 +107,10 @@ func (u *Buupdateagentscheduleshift) MarshalJSON() ([]byte, error) {
         
         ManuallyEdited bool `json:"manuallyEdited"`
         
+        WorkPlanId Valuewrapperstring `json:"workPlanId"`
+        
+        WorkPlanShiftId Valuewrapperstring `json:"workPlanShiftId"`
+        
         Delete bool `json:"delete"`
         *Alias
     }{
@@ -106,6 +126,12 @@ func (u *Buupdateagentscheduleshift) MarshalJSON() ([]byte, error) {
 
         
         Activities: []Buagentscheduleactivity{{}},
+        
+
+
+        
+
+
         
 
 

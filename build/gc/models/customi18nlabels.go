@@ -18,13 +18,13 @@ type Customi18nlabelsDud struct {
 
 }
 
-// Customi18nlabels - The localization settings for homescreen
+// Customi18nlabels - The localization settings for homescreen and push notification
 type Customi18nlabels struct { 
-    // Language - Language of localized labels in homescreen app (eg. en-us, de-de)
+    // Language - Language of localized labels in homescreen app (eg. en-us, de-de) and push notification
     Language string `json:"language"`
 
 
-    // LocalizedLabels - Contains localized labels used in homescreen app
+    // LocalizedLabels - Contains localized labels used in messenger apps and push notification. PushNotificationTitle and PushNotificationBody are required when notifications are enabled.
     LocalizedLabels []Localizedlabels `json:"localizedLabels"`
 
 }

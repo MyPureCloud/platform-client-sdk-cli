@@ -14,6 +14,9 @@ type SurveyquestionDud struct {
     
 
 
+    ContextId string `json:"contextId"`
+
+
     
 
 
@@ -43,6 +46,9 @@ type SurveyquestionDud struct {
 type Surveyquestion struct { 
     // Id
     Id string `json:"id"`
+
+
+    
 
 
     // Text
@@ -125,6 +131,9 @@ func (u *Surveyquestion) MarshalJSON() ([]byte, error) {
         ExplanationPrompt string `json:"explanationPrompt"`
         *Alias
     }{
+
+        
+
 
         
 

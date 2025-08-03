@@ -80,6 +80,7 @@ func Cmdchats_rooms_messages() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "The maximum number of messages to retrieve")
 	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cutoff date for messages to retrieve")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The beginning date for messages to retrieve")
+	utils.AddFlag(listCmd.Flags(), "bool", "excludeMetadata", "", "Whether to exclude metadata for messages")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/chats/rooms/{roomJid}/messages", utils.FormatPermissions([]string{ "chat:chat:access", "chat:room:view",  }), utils.GenerateDevCentreLink("GET", "Chat", "/api/v2/chats/rooms/{roomJid}/messages")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -361,6 +362,10 @@ var listCmd = &cobra.Command{
 		after := utils.GetFlag(cmd.Flags(), "string", "after")
 		if after != "" {
 			queryParams["after"] = after
+		}
+		excludeMetadata := utils.GetFlag(cmd.Flags(), "bool", "excludeMetadata")
+		if excludeMetadata != "" {
+			queryParams["excludeMetadata"] = excludeMetadata
 		}
 		urlString := path
 		if len(queryParams) > 0 {

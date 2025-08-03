@@ -20,11 +20,11 @@ type LocalizedlabelsDud struct {
 
 // Localizedlabels - Contains localized labels used in messenger apps
 type Localizedlabels struct { 
-    // Key - Contains localized label key used in messenger homescreen
+    // Key - Contains localized label key used in messenger homescreen and push notification. PushNotificationTitle and PushNotificationBody keys are required when notifications are enabled.
     Key string `json:"key"`
 
 
-    // Value - Contains localized label value used in messenger homescreen
+    // Value - Contains localized label value used in messenger homescreen and push notification
     Value string `json:"value"`
 
 }

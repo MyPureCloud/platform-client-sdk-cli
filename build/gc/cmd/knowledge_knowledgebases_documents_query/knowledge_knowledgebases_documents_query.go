@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdknowledge_knowledgebases_documents_query() *cobra.Command { 
-	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "Fields, if any, to expand for each document in the search result matching the query. Valid values: documentVariations, documentAlternatives, knowledgeBaseLanguageCode")
+	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "Fields, if any, to expand for each document in the search result matching the query. Valid values: documentVariations, documentAlternatives, knowledgeBaseLanguageCode, variationChunks")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query", utils.FormatPermissions([]string{ "knowledge:document:view",  }), utils.GenerateDevCentreLink("POST", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "content" : {

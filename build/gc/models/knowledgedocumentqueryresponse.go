@@ -23,7 +23,7 @@ type KnowledgedocumentqueryresponseDud struct {
     PageCount int `json:"pageCount"`
 
 
-    Results []Knowledgedocumentresponse `json:"results"`
+    
 
 }
 
@@ -43,7 +43,8 @@ type Knowledgedocumentqueryresponse struct {
     
 
 
-    
+    // Results - Documents matching the query.
+    Results []Knowledgedocumentqueryresult `json:"results"`
 
 }
 
@@ -51,6 +52,7 @@ type Knowledgedocumentqueryresponse struct {
 func (o *Knowledgedocumentqueryresponse) String() string {
     
     
+     o.Results = []Knowledgedocumentqueryresult{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -71,6 +73,8 @@ func (u *Knowledgedocumentqueryresponse) MarshalJSON() ([]byte, error) {
         PageSize int `json:"pageSize"`
         
         PageNumber int `json:"pageNumber"`
+        
+        Results []Knowledgedocumentqueryresult `json:"results"`
         *Alias
     }{
 
@@ -86,6 +90,8 @@ func (u *Knowledgedocumentqueryresponse) MarshalJSON() ([]byte, error) {
         
 
 
+        
+        Results: []Knowledgedocumentqueryresult{{}},
         
 
         Alias: (*Alias)(u),

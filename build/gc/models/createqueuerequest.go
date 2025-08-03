@@ -132,6 +132,9 @@ type CreatequeuerequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -188,6 +191,10 @@ type Createqueuerequest struct {
 
     // ConditionalGroupRouting - The Conditional Group Routing settings for the queue.
     ConditionalGroupRouting Conditionalgrouprouting `json:"conditionalGroupRouting"`
+
+
+    // ConditionalGroupActivation - The Conditional Group Activation settings for the queue.
+    ConditionalGroupActivation Conditionalgroupactivation `json:"conditionalGroupActivation"`
 
 
     // Bullseye - The bullseye settings for the queue.
@@ -315,6 +322,7 @@ func (o *Createqueuerequest) String() string {
     
     
     
+    
      o.MemberGroups = []Membergroup{{}} 
     
     
@@ -372,6 +380,8 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
         RoutingRules []Routingrule `json:"routingRules"`
         
         ConditionalGroupRouting Conditionalgrouprouting `json:"conditionalGroupRouting"`
+        
+        ConditionalGroupActivation Conditionalgroupactivation `json:"conditionalGroupActivation"`
         
         Bullseye Bullseye `json:"bullseye"`
         
@@ -465,6 +475,9 @@ func (u *Createqueuerequest) MarshalJSON() ([]byte, error) {
 
         
         RoutingRules: []Routingrule{{}},
+        
+
+
         
 
 

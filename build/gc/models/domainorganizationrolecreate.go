@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -36,6 +37,15 @@ type DomainorganizationrolecreateDud struct {
 
 
     
+
+
+    
+
+
+    
+
+
+    DateLicenseLastUpdated time.Time `json:"dateLicenseLastUpdated"`
 
 
     
@@ -85,12 +95,23 @@ type Domainorganizationrolecreate struct {
     RoleNeedsUpdate bool `json:"roleNeedsUpdate"`
 
 
-    // Base
-    Base bool `json:"base"`
+    // BaseLicense
+    BaseLicense string `json:"baseLicense"`
+
+
+    // AddonLicenses
+    AddonLicenses []string `json:"addonLicenses"`
+
+
+    
 
 
     // VarDefault
     VarDefault bool `json:"default"`
+
+
+    // Base
+    Base bool `json:"base"`
 
 
     
@@ -107,6 +128,8 @@ func (o *Domainorganizationrolecreate) String() string {
      o.PermissionPolicies = []Domainpermissionpolicy{{}} 
     
     
+    
+     o.AddonLicenses = []string{""} 
     
     
 
@@ -142,9 +165,13 @@ func (u *Domainorganizationrolecreate) MarshalJSON() ([]byte, error) {
         
         RoleNeedsUpdate bool `json:"roleNeedsUpdate"`
         
-        Base bool `json:"base"`
+        BaseLicense string `json:"baseLicense"`
+        
+        AddonLicenses []string `json:"addonLicenses"`
         
         VarDefault bool `json:"default"`
+        
+        Base bool `json:"base"`
         *Alias
     }{
 
@@ -173,6 +200,17 @@ func (u *Domainorganizationrolecreate) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+
+
+        
+        AddonLicenses: []string{""},
         
 
 

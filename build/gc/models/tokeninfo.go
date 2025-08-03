@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -23,12 +24,18 @@ type TokeninfoDud struct {
     ClonedUser Tokeninfocloneduser `json:"clonedUser"`
 
 
+    DateTokenIdles time.Time `json:"dateTokenIdles"`
+
+
     
 
 }
 
 // Tokeninfo
 type Tokeninfo struct { 
+    
+
+
     
 
 
@@ -69,6 +76,9 @@ func (u *Tokeninfo) MarshalJSON() ([]byte, error) {
         OAuthClient Orgoauthclient `json:"OAuthClient"`
         *Alias
     }{
+
+        
+
 
         
 

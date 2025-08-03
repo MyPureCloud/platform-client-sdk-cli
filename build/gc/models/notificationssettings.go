@@ -20,7 +20,7 @@ type NotificationssettingsDud struct {
 
 // Notificationssettings - Notification settings that handles messenger notifications
 type Notificationssettings struct { 
-    // Enabled - The toggle to enable or disable notifications
+    // Enabled - The toggle to enable or disable notifications. When enabled, PushNotificationTitle and PushNotificationBody localization keys are required.
     Enabled bool `json:"enabled"`
 
 

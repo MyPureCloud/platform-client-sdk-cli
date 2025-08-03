@@ -35,6 +35,9 @@ type HistoryentryDud struct {
 
     
 
+
+    
+
 }
 
 // Historyentry
@@ -70,10 +73,15 @@ type Historyentry struct {
     // VirtualAgentEnabled
     VirtualAgentEnabled bool `json:"virtualAgentEnabled"`
 
+
+    // AgenticVirtualAgentEnabled
+    AgenticVirtualAgentEnabled bool `json:"agenticVirtualAgentEnabled"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Historyentry) String() string {
+    
     
     
     
@@ -114,8 +122,13 @@ func (u *Historyentry) MarshalJSON() ([]byte, error) {
         Secure bool `json:"secure"`
         
         VirtualAgentEnabled bool `json:"virtualAgentEnabled"`
+        
+        AgenticVirtualAgentEnabled bool `json:"agenticVirtualAgentEnabled"`
         *Alias
     }{
+
+        
+
 
         
 

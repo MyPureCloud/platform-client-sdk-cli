@@ -19,6 +19,9 @@ type TranscriptsDud struct {
 
     
 
+
+    
+
 }
 
 // Transcripts
@@ -34,6 +37,10 @@ type Transcripts struct {
     // DoesNotContain - List of transcript contents which needs to satisfy does not contain criteria
     DoesNotContain []string `json:"doesNotContain"`
 
+
+    // NotSimilarTo - List of words or phrases used to filter out transcripts that contain content similar to any item in this list
+    NotSimilarTo []string `json:"notSimilarTo"`
+
 }
 
 // String returns a JSON representation of the model
@@ -41,6 +48,7 @@ func (o *Transcripts) String() string {
      o.ExactMatch = []string{""} 
      o.Contains = []string{""} 
      o.DoesNotContain = []string{""} 
+     o.NotSimilarTo = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,6 +71,8 @@ func (u *Transcripts) MarshalJSON() ([]byte, error) {
         Contains []string `json:"contains"`
         
         DoesNotContain []string `json:"doesNotContain"`
+        
+        NotSimilarTo []string `json:"notSimilarTo"`
         *Alias
     }{
 
@@ -78,6 +88,11 @@ func (u *Transcripts) MarshalJSON() ([]byte, error) {
 
         
         DoesNotContain: []string{""},
+        
+
+
+        
+        NotSimilarTo: []string{""},
         
 
         Alias: (*Alias)(u),

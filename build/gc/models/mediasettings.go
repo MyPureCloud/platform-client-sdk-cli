@@ -25,9 +25,6 @@ type MediasettingsDud struct {
 
     
 
-
-    
-
 }
 
 // Mediasettings
@@ -51,10 +48,6 @@ type Mediasettings struct {
     // ManualAnswerAlertToneSeconds - How long to play the alerting tone for a manual-answer interaction
     ManualAnswerAlertToneSeconds float64 `json:"manualAnswerAlertToneSeconds"`
 
-
-    // SubTypeSettings - Map of media subtype to media subtype specific settings.
-    SubTypeSettings map[string]Basemediasettings `json:"subTypeSettings"`
-
 }
 
 // String returns a JSON representation of the model
@@ -64,7 +57,6 @@ func (o *Mediasettings) String() string {
     
     
     
-     o.SubTypeSettings = map[string]Basemediasettings{"": {}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -91,8 +83,6 @@ func (u *Mediasettings) MarshalJSON() ([]byte, error) {
         AutoAnswerAlertToneSeconds float64 `json:"autoAnswerAlertToneSeconds"`
         
         ManualAnswerAlertToneSeconds float64 `json:"manualAnswerAlertToneSeconds"`
-        
-        SubTypeSettings map[string]Basemediasettings `json:"subTypeSettings"`
         *Alias
     }{
 
@@ -108,11 +98,6 @@ func (u *Mediasettings) MarshalJSON() ([]byte, error) {
         
 
 
-        
-
-
-        
-        SubTypeSettings: map[string]Basemediasettings{"": {}},
         
 
         Alias: (*Alias)(u),

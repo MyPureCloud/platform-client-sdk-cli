@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("businessrules_decisiontables_versions_rows", "SWAGGER_OVERRIDE_/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows", "SWAGGER_OVERRIDE_/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows", "SWAGGER_OVERRIDE_/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows", "SWAGGER_OVERRIDE_/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows", "SWAGGER_OVERRIDE_/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows", "SWAGGER_OVERRIDE_/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows", )
+	Description = utils.FormatUsageDescription("businessrules_decisiontables_versions_rows", "SWAGGER_OVERRIDE_/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows", "SWAGGER_OVERRIDE_/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows", "SWAGGER_OVERRIDE_/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows", "SWAGGER_OVERRIDE_/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows", "SWAGGER_OVERRIDE_/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows", )
 	businessrules_decisiontables_versions_rowsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("businessrules_decisiontables_versions_rows"),
 		Short: Description,
@@ -93,31 +93,6 @@ func Cmdbusinessrules_decisiontables_versions_rows() *cobra.Command {
   }
 }`)
 	businessrules_decisiontables_versions_rowsCmd.AddCommand(listCmd)
-
-	partialupdateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", partialupdateCmd.UsageTemplate(), "PATCH", "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}", utils.FormatPermissions([]string{ "businessrules:decisionTableRow:edit", "routing:queue:view",  }), utils.GenerateDevCentreLink("PATCH", "Business Rules", "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}")))
-	utils.AddFileFlagIfUpsert(partialupdateCmd.Flags(), "PATCH", `{
-  "description" : "Partially update decision table row request",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/UpdateDecisionTableRowRequest"
-      }
-    }
-  },
-  "required" : true
-}`)
-	
-	utils.AddPaginateFlagsIfListingResponse(partialupdateCmd.Flags(), "PATCH", `{
-  "description" : "successful operation",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/DecisionTableRow"
-      }
-    }
-  }
-}`)
-	businessrules_decisiontables_versions_rowsCmd.AddCommand(partialupdateCmd)
 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}", utils.FormatPermissions([]string{ "businessrules:decisionTableRow:edit", "routing:queue:view",  }), utils.GenerateDevCentreLink("PUT", "Business Rules", "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
@@ -405,78 +380,6 @@ var listCmd = &cobra.Command{
 
 		const opId = "list"
 		const httpMethod = "GET"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
-		// TODO read from config file
-		retryConfig := &retry.RetryConfiguration{
-			RetryWaitMin: 5 * time.Second,
-			RetryWaitMax: 60 * time.Second,
-			RetryMax:     20,
-		}
-		results, err := retryFunc(retryConfig)
-		if err != nil {
-			if httpMethod == "HEAD" {
-				if httpErr, ok := err.(models.HttpStatusError); ok {
-					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
-				}
-			}
-			logger.Fatal(err)
-		}
-
-		filterCondition, _ := cmd.Flags().GetString("filtercondition")
-		if filterCondition != "" {
-			filteredResults, err := utils.FilterByCondition(results, filterCondition)
-			if err != nil {
-				logger.Fatal(err)
-			}
-			results = filteredResults
-		}
-
-		utils.Render(results)
-	},
-}
-var partialupdateCmd = &cobra.Command{
-	Use:   "partialupdate [tableId] [tableVersion] [rowId]",
-	Short: "Partially update a decision table row. Will be deprecated, we should use PUT request.",
-	Long:  "Partially update a decision table row. Will be deprecated, we should use PUT request.",
-	Args:  utils.DetermineArgs([]string{ "tableId", "tableVersion", "rowId", }),
-
-	Run: func(cmd *cobra.Command, args []string) {
-		_ = models.Entities{}
-
-		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
-		if printReqBody {
-			
-			reqModel := models.Updatedecisiontablerowrequest{}
-			utils.Render(reqModel.String())
-			
-			return
-		}
-
-		queryParams := make(map[string]string)
-
-		path := "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}"
-		tableId, args := args[0], args[1:]
-		path = strings.Replace(path, "{tableId}", fmt.Sprintf("%v", tableId), -1)
-		tableVersion, args := args[0], args[1:]
-		path = strings.Replace(path, "{tableVersion}", fmt.Sprintf("%v", tableVersion), -1)
-		rowId, args := args[0], args[1:]
-		path = strings.Replace(path, "{rowId}", fmt.Sprintf("%v", rowId), -1)
-
-		urlString := path
-		if len(queryParams) > 0 {
-			urlString = fmt.Sprintf("%v?", path)
-			for k, v := range queryParams {
-				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
-			}
-			urlString = strings.TrimSuffix(urlString, "&")
-		}
-
-		if strings.Contains(urlString, "varType") {
-			urlString = strings.Replace(urlString, "varType", "type", -1)
-		}
-
-		const opId = "partialupdate"
-		const httpMethod = "PATCH"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

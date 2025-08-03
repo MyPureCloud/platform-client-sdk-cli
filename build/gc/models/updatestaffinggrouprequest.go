@@ -19,6 +19,9 @@ type UpdatestaffinggrouprequestDud struct {
 
     
 
+
+    
+
 }
 
 // Updatestaffinggrouprequest
@@ -31,6 +34,10 @@ type Updatestaffinggrouprequest struct {
     UserIds Setwrapperstring `json:"userIds"`
 
 
+    // PlanningGroupIds - The set of planning group Ids to associate with the staffing group
+    PlanningGroupIds Setwrapperstring `json:"planningGroupIds"`
+
+
     // Metadata - Version metadata for the staffing group
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
@@ -38,6 +45,7 @@ type Updatestaffinggrouprequest struct {
 
 // String returns a JSON representation of the model
 func (o *Updatestaffinggrouprequest) String() string {
+    
     
     
     
@@ -62,9 +70,14 @@ func (u *Updatestaffinggrouprequest) MarshalJSON() ([]byte, error) {
         
         UserIds Setwrapperstring `json:"userIds"`
         
+        PlanningGroupIds Setwrapperstring `json:"planningGroupIds"`
+        
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
 
         
 

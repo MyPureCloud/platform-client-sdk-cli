@@ -67,12 +67,12 @@ type Emergencygroupdivisionviewentitylisting struct {
     TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
-
     // NextUri
     NextUri string `json:"nextUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // LastUri
@@ -132,9 +132,9 @@ func (u *Emergencygroupdivisionviewentitylisting) MarshalJSON() ([]byte, error) 
         
         TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
-        PreviousUri string `json:"previousUri"`
-        
         NextUri string `json:"nextUri"`
+        
+        PreviousUri string `json:"previousUri"`
         
         LastUri string `json:"lastUri"`
         

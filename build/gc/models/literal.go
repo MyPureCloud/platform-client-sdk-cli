@@ -40,11 +40,11 @@ type Literal struct {
     VarString string `json:"string"`
 
 
-    // Integer - An integer value
+    // Integer - A positive or negative whole number, including zero
     Integer int `json:"integer"`
 
 
-    // Number - A decimal value
+    // Number - A positive or negative decimal number, including zero
     Number float64 `json:"number"`
 
 

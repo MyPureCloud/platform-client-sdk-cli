@@ -81,6 +81,7 @@ func Cmdbusinessrules_decisiontables() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 100.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionIds", "", "One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.")
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/businessrules/decisiontables", utils.FormatPermissions([]string{ "businessrules:decisionTable:view",  }), utils.GenerateDevCentreLink("GET", "Business Rules", "/api/v2/businessrules/decisiontables")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -358,6 +359,10 @@ var listCmd = &cobra.Command{
 		divisionIds := utils.GetFlag(cmd.Flags(), "[]string", "divisionIds")
 		if divisionIds != "" {
 			queryParams["divisionIds"] = divisionIds
+		}
+		name := utils.GetFlag(cmd.Flags(), "string", "name")
+		if name != "" {
+			queryParams["name"] = name
 		}
 		urlString := path
 		if len(queryParams) > 0 {

@@ -14,7 +14,7 @@ type NluinfoDud struct {
     Domain Addressableentityref `json:"domain"`
 
 
-    Version *Nludomainversion `json:"version"`
+    Version Nludomainversion `json:"version"`
 
 
     

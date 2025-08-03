@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdoutbound_schedules_sequences() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/schedules/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:schedule:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/schedules/sequences/{sequenceId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/outbound/schedules/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:schedule:delete", "outbound:campaignSequenceSchedule:delete",  }), utils.GenerateDevCentreLink("DELETE", "Outbound", "/api/v2/outbound/schedules/sequences/{sequenceId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -37,7 +37,7 @@ func Cmdoutbound_schedules_sequences() *cobra.Command {
 }`)
 	outbound_schedules_sequencesCmd.AddCommand(deleteCmd)
 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/schedules/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:schedule:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/schedules/sequences/{sequenceId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/outbound/schedules/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:schedule:view", "outbound:campaignSequenceSchedule:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/schedules/sequences/{sequenceId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -52,7 +52,7 @@ func Cmdoutbound_schedules_sequences() *cobra.Command {
 }`)
 	outbound_schedules_sequencesCmd.AddCommand(getCmd)
 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/schedules/sequences", utils.FormatPermissions([]string{ "outbound:schedule:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/schedules/sequences")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/schedules/sequences", utils.FormatPermissions([]string{ "outbound:schedule:view", "outbound:campaignSequenceSchedule:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/schedules/sequences")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -70,7 +70,7 @@ func Cmdoutbound_schedules_sequences() *cobra.Command {
 }`)
 	outbound_schedules_sequencesCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/schedules/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:schedule:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/schedules/sequences/{sequenceId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/outbound/schedules/sequences/{sequenceId}", utils.FormatPermissions([]string{ "outbound:schedule:edit", "outbound:campaignSequenceSchedule:edit",  }), utils.GenerateDevCentreLink("PUT", "Outbound", "/api/v2/outbound/schedules/sequences/{sequenceId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "SequenceSchedule",
   "content" : {

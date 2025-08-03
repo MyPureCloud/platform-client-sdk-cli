@@ -62,8 +62,8 @@ func queryEscape(value string) string {
 
 var updateCmd = &cobra.Command{
 	Use:   "update [conversationId] [participantId] [communicationId]",
-	Short: "Update conversation participant`s communication by disconnecting it.",
-	Long:  "Update conversation participant`s communication by disconnecting it.",
+	Short: "Update conversation participant`s communication by disconnecting it. This endpoint does not update wrapup.",
+	Long:  "Update conversation participant`s communication by disconnecting it. This endpoint does not update wrapup.",
 	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", "communicationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

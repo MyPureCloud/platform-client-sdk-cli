@@ -104,6 +104,12 @@ type WorkplanvalidationrequestDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -208,6 +214,14 @@ type Workplanvalidationrequest struct {
     MaximumPaidMinutesPerPlanningPeriod int `json:"maximumPaidMinutesPerPlanningPeriod"`
 
 
+    // ConstrainMaximumWorkingWeekendsPerPlanningPeriod - Whether to constrain the maximum working weekends in the planning period
+    ConstrainMaximumWorkingWeekendsPerPlanningPeriod bool `json:"constrainMaximumWorkingWeekendsPerPlanningPeriod"`
+
+
+    // MaximumWorkingWeekendsPerPlanningPeriod - Maximum working weekends in the planning period
+    MaximumWorkingWeekendsPerPlanningPeriod int `json:"maximumWorkingWeekendsPerPlanningPeriod"`
+
+
     // OptionalDays - Optional days to schedule for this work plan
     OptionalDays Setwrapperdayofweek `json:"optionalDays"`
 
@@ -238,6 +252,8 @@ type Workplanvalidationrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Workplanvalidationrequest) String() string {
+    
+    
     
     
     
@@ -330,6 +346,10 @@ func (u *Workplanvalidationrequest) MarshalJSON() ([]byte, error) {
         
         MaximumPaidMinutesPerPlanningPeriod int `json:"maximumPaidMinutesPerPlanningPeriod"`
         
+        ConstrainMaximumWorkingWeekendsPerPlanningPeriod bool `json:"constrainMaximumWorkingWeekendsPerPlanningPeriod"`
+        
+        MaximumWorkingWeekendsPerPlanningPeriod int `json:"maximumWorkingWeekendsPerPlanningPeriod"`
+        
         OptionalDays Setwrapperdayofweek `json:"optionalDays"`
         
         ShiftStartVarianceType string `json:"shiftStartVarianceType"`
@@ -343,6 +363,12 @@ func (u *Workplanvalidationrequest) MarshalJSON() ([]byte, error) {
         AgentCount int `json:"agentCount"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

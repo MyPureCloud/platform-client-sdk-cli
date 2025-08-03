@@ -53,7 +53,7 @@ type Messagemediasettings struct {
 
 
     // SubTypeSettings - Map of media subtype to media subtype specific settings.
-    SubTypeSettings map[string]Basemediasettings `json:"subTypeSettings"`
+    SubTypeSettings map[string]Messagesubtypesettings `json:"subTypeSettings"`
 
 }
 
@@ -64,7 +64,7 @@ func (o *Messagemediasettings) String() string {
     
     
     
-     o.SubTypeSettings = map[string]Basemediasettings{"": {}} 
+     o.SubTypeSettings = map[string]Messagesubtypesettings{"": {}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -92,7 +92,7 @@ func (u *Messagemediasettings) MarshalJSON() ([]byte, error) {
         
         ManualAnswerAlertToneSeconds float64 `json:"manualAnswerAlertToneSeconds"`
         
-        SubTypeSettings map[string]Basemediasettings `json:"subTypeSettings"`
+        SubTypeSettings map[string]Messagesubtypesettings `json:"subTypeSettings"`
         *Alias
     }{
 
@@ -112,7 +112,7 @@ func (u *Messagemediasettings) MarshalJSON() ([]byte, error) {
 
 
         
-        SubTypeSettings: map[string]Basemediasettings{"": {}},
+        SubTypeSettings: map[string]Messagesubtypesettings{"": {}},
         
 
         Alias: (*Alias)(u),

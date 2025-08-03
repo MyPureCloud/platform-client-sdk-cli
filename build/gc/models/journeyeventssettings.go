@@ -40,6 +40,9 @@ type JourneyeventssettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Journeyeventssettings - Settings concerning journey events
@@ -48,15 +51,15 @@ type Journeyeventssettings struct {
     Enabled bool `json:"enabled"`
 
 
-    // ExcludedQueryParameters - List of parameters to be excluded from the query string.
+    // ExcludedQueryParameters - (deprecated) List of parameters to be excluded from the query string.
     ExcludedQueryParameters []string `json:"excludedQueryParameters"`
 
 
-    // ShouldKeepUrlFragment - Whether or not to keep the URL fragment.
+    // ShouldKeepUrlFragment - (deprecated) Whether or not to keep the URL fragment.
     ShouldKeepUrlFragment bool `json:"shouldKeepUrlFragment"`
 
 
-    // SearchQueryParameters - List of query parameters used for search (e.g. 'q').
+    // SearchQueryParameters - (deprecated) List of query parameters used for search (e.g. 'q').
     SearchQueryParameters []string `json:"searchQueryParameters"`
 
 
@@ -83,6 +86,10 @@ type Journeyeventssettings struct {
     // ScrollDepthEvents - Tracks when a visitor scrolls to a specific percentage of a webpage.
     ScrollDepthEvents []Scrollpercentageeventtrigger `json:"scrollDepthEvents"`
 
+
+    // TrackingSettings - Configuration settings for tracking behavior and filtering
+    TrackingSettings interface{} `json:"trackingSettings"`
+
 }
 
 // String returns a JSON representation of the model
@@ -97,6 +104,7 @@ func (o *Journeyeventssettings) String() string {
      o.IdleEvents = []Idleeventtrigger{{}} 
      o.InViewportEvents = []Selectoreventtrigger{{}} 
      o.ScrollDepthEvents = []Scrollpercentageeventtrigger{{}} 
+     o.TrackingSettings = Interface{} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -133,6 +141,8 @@ func (u *Journeyeventssettings) MarshalJSON() ([]byte, error) {
         InViewportEvents []Selectoreventtrigger `json:"inViewportEvents"`
         
         ScrollDepthEvents []Scrollpercentageeventtrigger `json:"scrollDepthEvents"`
+        
+        TrackingSettings interface{} `json:"trackingSettings"`
         *Alias
     }{
 
@@ -177,6 +187,11 @@ func (u *Journeyeventssettings) MarshalJSON() ([]byte, error) {
 
         
         ScrollDepthEvents: []Scrollpercentageeventtrigger{{}},
+        
+
+
+        
+        TrackingSettings: Interface{},
         
 
         Alias: (*Alias)(u),

@@ -19,6 +19,9 @@ type CreatestaffinggrouprequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createstaffinggrouprequest
@@ -34,6 +37,10 @@ type Createstaffinggrouprequest struct {
     // ManagementUnitId - The ID of the management unit to which the staffing group users belong. If undefined the staffing group can include users from the entire business unit
     ManagementUnitId string `json:"managementUnitId"`
 
+
+    // PlanningGroupIds - The set of planning group IDs to associate with the staffing group
+    PlanningGroupIds []string `json:"planningGroupIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -41,6 +48,7 @@ func (o *Createstaffinggrouprequest) String() string {
     
      o.UserIds = []string{""} 
     
+     o.PlanningGroupIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,6 +71,8 @@ func (u *Createstaffinggrouprequest) MarshalJSON() ([]byte, error) {
         UserIds []string `json:"userIds"`
         
         ManagementUnitId string `json:"managementUnitId"`
+        
+        PlanningGroupIds []string `json:"planningGroupIds"`
         *Alias
     }{
 
@@ -74,6 +84,11 @@ func (u *Createstaffinggrouprequest) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        PlanningGroupIds: []string{""},
         
 
         Alias: (*Alias)(u),

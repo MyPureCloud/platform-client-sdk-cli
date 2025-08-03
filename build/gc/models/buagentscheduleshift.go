@@ -29,6 +29,12 @@ type BuagentscheduleshiftDud struct {
 
     Schedule Buschedulereference `json:"schedule"`
 
+
+    
+
+
+    
+
 }
 
 // Buagentscheduleshift
@@ -53,12 +59,22 @@ type Buagentscheduleshift struct {
 
     
 
+
+    // WorkPlanId - The ID of the work plan for which the work plan shift emanates from
+    WorkPlanId string `json:"workPlanId"`
+
+
+    // WorkPlanShiftId - The ID of the work plan shift that was used in schedule generation
+    WorkPlanShiftId string `json:"workPlanShiftId"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Buagentscheduleshift) String() string {
     
      o.Activities = []Buagentscheduleactivity{{}} 
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -82,6 +98,10 @@ func (u *Buagentscheduleshift) MarshalJSON() ([]byte, error) {
         Activities []Buagentscheduleactivity `json:"activities"`
         
         ManuallyEdited bool `json:"manuallyEdited"`
+        
+        WorkPlanId string `json:"workPlanId"`
+        
+        WorkPlanShiftId string `json:"workPlanShiftId"`
         *Alias
     }{
 
@@ -96,6 +116,12 @@ func (u *Buagentscheduleshift) MarshalJSON() ([]byte, error) {
 
         
         Activities: []Buagentscheduleactivity{{}},
+        
+
+
+        
+
+
         
 
 

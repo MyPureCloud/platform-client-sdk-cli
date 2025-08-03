@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdworkforcemanagement_businessunits() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "includeSchedulingDefaultMessageSeverities", "", "Whether to include scheduling default message severities")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits", utils.FormatPermissions([]string{ "wfm:businessUnit:add",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "body",
@@ -63,6 +64,7 @@ func Cmdworkforcemanagement_businessunits() *cobra.Command {
 	workforcemanagement_businessunitsCmd.AddCommand(deleteCmd)
 
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Include to access additional data on the business unit Valid values: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling, settings.notifications.scheduling, settings.learning, settings.coaching")
+	utils.AddFlag(getCmd.Flags(), "bool", "includeSchedulingDefaultMessageSeverities", "", "Whether to include scheduling default message severities")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}", utils.FormatPermissions([]string{ "wfm:activityCode:add", "wfm:activityCode:delete", "wfm:activityCode:edit", "wfm:activityCode:view", "wfm:agent:edit", "wfm:agentSchedule:view", "wfm:agentTimeOffRequest:submit", "wfm:agent:view", "wfm:businessUnit:add", "wfm:businessUnit:delete", "wfm:businessUnit:edit", "wfm:businessUnit:view", "wfm:historicalAdherence:view", "wfm:shrinkage:view", "wfm:intraday:view", "wfm:managementUnit:add", "wfm:managementUnit:delete", "wfm:managementUnit:edit", "wfm:managementUnit:view", "wfm:publishedSchedule:view", "wfm:realtimeAdherence:view", "wfm:schedule:add", "wfm:schedule:delete", "wfm:schedule:edit", "wfm:schedule:generate", "wfm:schedule:view", "wfm:serviceGoalTemplate:add", "wfm:serviceGoalTemplate:delete", "wfm:serviceGoalTemplate:edit", "wfm:serviceGoalTemplate:view", "wfm:planningGroup:add", "wfm:planningGroup:delete", "wfm:planningGroup:edit", "wfm:planningGroup:view", "wfm:shiftTradeRequest:edit", "wfm:shiftTradeRequest:view", "wfm:agentShiftTradeRequest:participate", "wfm:shortTermForecast:add", "wfm:shortTermForecast:delete", "wfm:shortTermForecast:edit", "wfm:shortTermForecast:view", "wfm:staffingGroup:add", "wfm:staffingGroup:delete", "wfm:staffingGroup:edit", "wfm:staffingGroup:view", "wfm:timeOffRequest:add", "wfm:timeOffRequest:edit", "wfm:timeOffRequest:view", "wfm:timeOffLimit:add", "wfm:timeOffLimit:delete", "wfm:timeOffLimit:edit", "wfm:timeOffLimit:view", "wfm:timeOffPlan:add", "wfm:timeOffPlan:delete", "wfm:timeOffPlan:edit", "wfm:timeOffPlan:view", "wfm:timeOffRequest:add", "wfm:timeOffRequest:edit", "wfm:timeOffRequest:view", "wfm:workPlan:add", "wfm:workPlan:delete", "wfm:workPlan:edit", "wfm:workPlan:view", "wfm:workPlanRotation:add", "wfm:workPlanRotation:delete", "wfm:workPlanRotation:edit", "wfm:workPlanRotation:view", "coaching:appointment:add", "coaching:appointment:edit", "learning:assignment:add", "learning:assignment:reschedule",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -95,6 +97,7 @@ func Cmdworkforcemanagement_businessunits() *cobra.Command {
 }`)
 	workforcemanagement_businessunitsCmd.AddCommand(listCmd)
 
+	utils.AddFlag(updateCmd.Flags(), "bool", "includeSchedulingDefaultMessageSeverities", "", "Whether to include scheduling default message severities")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}", utils.FormatPermissions([]string{ "wfm:businessUnit:edit",  }), utils.GenerateDevCentreLink("PATCH", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "body",
@@ -149,6 +152,10 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/workforcemanagement/businessunits"
 
+		includeSchedulingDefaultMessageSeverities := utils.GetFlag(cmd.Flags(), "bool", "includeSchedulingDefaultMessageSeverities")
+		if includeSchedulingDefaultMessageSeverities != "" {
+			queryParams["includeSchedulingDefaultMessageSeverities"] = includeSchedulingDefaultMessageSeverities
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -282,6 +289,10 @@ var getCmd = &cobra.Command{
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
+		}
+		includeSchedulingDefaultMessageSeverities := utils.GetFlag(cmd.Flags(), "bool", "includeSchedulingDefaultMessageSeverities")
+		if includeSchedulingDefaultMessageSeverities != "" {
+			queryParams["includeSchedulingDefaultMessageSeverities"] = includeSchedulingDefaultMessageSeverities
 		}
 		urlString := path
 		if len(queryParams) > 0 {
@@ -422,6 +433,10 @@ var updateCmd = &cobra.Command{
 		businessUnitId, args := args[0], args[1:]
 		path = strings.Replace(path, "{businessUnitId}", fmt.Sprintf("%v", businessUnitId), -1)
 
+		includeSchedulingDefaultMessageSeverities := utils.GetFlag(cmd.Flags(), "bool", "includeSchedulingDefaultMessageSeverities")
+		if includeSchedulingDefaultMessageSeverities != "" {
+			queryParams["includeSchedulingDefaultMessageSeverities"] = includeSchedulingDefaultMessageSeverities
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

@@ -60,12 +60,12 @@ type Datatablerowentitylisting struct {
     Total int `json:"total"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
-
     // NextUri
     NextUri string `json:"nextUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // LastUri
@@ -122,9 +122,9 @@ func (u *Datatablerowentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        PreviousUri string `json:"previousUri"`
-        
         NextUri string `json:"nextUri"`
+        
+        PreviousUri string `json:"previousUri"`
         
         LastUri string `json:"lastUri"`
         

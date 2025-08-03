@@ -21,10 +21,10 @@ type NludomainDud struct {
     
 
 
-    DraftVersion Nludomainversion `json:"draftVersion"`
+    DraftVersion *Nludomainversionreference `json:"draftVersion"`
 
 
-    LastPublishedVersion Nludomainversion `json:"lastPublishedVersion"`
+    LastPublishedVersion Nludomainversionreference `json:"lastPublishedVersion"`
 
 
     DateCreated time.Time `json:"dateCreated"`

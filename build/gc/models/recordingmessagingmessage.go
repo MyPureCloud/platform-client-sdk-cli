@@ -74,6 +74,9 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Recordingmessagingmessage
@@ -150,6 +153,10 @@ type Recordingmessagingmessage struct {
     NotificationTemplate Recordingnotificationtemplate `json:"notificationTemplate"`
 
 
+    // DatePicker - DatePicker content object.
+    DatePicker Datepicker `json:"datePicker"`
+
+
     // ContentType - Indicates the content type for this message
     ContentType string `json:"contentType"`
 
@@ -182,6 +189,7 @@ func (o *Recordingmessagingmessage) String() string {
     
     
      o.Cards = []Card{{}} 
+    
     
     
     
@@ -238,6 +246,8 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         Cards []Card `json:"cards"`
         
         NotificationTemplate Recordingnotificationtemplate `json:"notificationTemplate"`
+        
+        DatePicker Datepicker `json:"datePicker"`
         
         ContentType string `json:"contentType"`
         
@@ -303,6 +313,9 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
 
         
         Cards: []Card{{}},
+        
+
+
         
 
 

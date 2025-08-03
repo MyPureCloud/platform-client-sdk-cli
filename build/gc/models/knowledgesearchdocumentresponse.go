@@ -162,7 +162,7 @@ type Knowledgesearchdocumentresponse struct {
 
 
     // Variations - Variations of the document.
-    Variations []Documentvariationanswer `json:"variations"`
+    Variations []Knowledgedocumentsearchvariation `json:"variations"`
 
 
     // Answer - The answer to the query.
@@ -192,7 +192,7 @@ func (o *Knowledgesearchdocumentresponse) String() string {
     
     
     
-     o.Variations = []Documentvariationanswer{{}} 
+     o.Variations = []Knowledgedocumentsearchvariation{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -245,7 +245,7 @@ func (u *Knowledgesearchdocumentresponse) MarshalJSON() ([]byte, error) {
         
         Readonly bool `json:"readonly"`
         
-        Variations []Documentvariationanswer `json:"variations"`
+        Variations []Knowledgedocumentsearchvariation `json:"variations"`
         
         Answer string `json:"answer"`
         *Alias
@@ -316,7 +316,7 @@ func (u *Knowledgesearchdocumentresponse) MarshalJSON() ([]byte, error) {
 
 
         
-        Variations: []Documentvariationanswer{{}},
+        Variations: []Knowledgedocumentsearchvariation{{}},
         
 
 

@@ -20,6 +20,9 @@ type AssessmentformquestiongroupDud struct {
     
 
 
+    ContextId string `json:"contextId"`
+
+
     
 
 
@@ -57,6 +60,9 @@ type Assessmentformquestiongroup struct {
 
     // VarType - The question group type
     VarType string `json:"type"`
+
+
+    
 
 
     // DefaultAnswersToHighest
@@ -141,6 +147,9 @@ func (u *Assessmentformquestiongroup) MarshalJSON() ([]byte, error) {
         VisibilityCondition Visibilitycondition `json:"visibilityCondition"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -111,6 +111,9 @@ type EvaluationDud struct {
     
 
 
+    
+
+
     EvaluationSource Evaluationsource `json:"evaluationSource"`
 
 
@@ -202,6 +205,10 @@ type Evaluation struct {
     MediaType []string `json:"mediaType"`
 
 
+    // DivisionIds - Evaluation is assigned in the following division(s).
+    DivisionIds []string `json:"divisionIds"`
+
+
     // Rescore - Is only true when evaluation is re-scored.
     Rescore bool `json:"rescore"`
 
@@ -285,6 +292,7 @@ func (o *Evaluation) String() string {
     
     
      o.MediaType = []string{""} 
+     o.DivisionIds = []string{""} 
     
     
     
@@ -352,6 +360,8 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
         Queue Queue `json:"queue"`
         
         MediaType []string `json:"mediaType"`
+        
+        DivisionIds []string `json:"divisionIds"`
         
         Rescore bool `json:"rescore"`
         
@@ -440,6 +450,11 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
 
         
         MediaType: []string{""},
+        
+
+
+        
+        DivisionIds: []string{""},
         
 
 

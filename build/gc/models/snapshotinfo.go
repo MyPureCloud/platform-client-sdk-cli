@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -37,8 +38,8 @@ type Snapshotinfo struct {
     SnapshotId string `json:"snapshotId"`
 
 
-    // SessionId - Session Id of the continuous forecast session
-    SessionId string `json:"sessionId"`
+    // DateSnapshot - Date of snapshot generation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateSnapshot time.Time `json:"dateSnapshot"`
 
 
     // BusinessUnitId - Business unit ID of the continuous forecast session
@@ -78,7 +79,7 @@ func (u *Snapshotinfo) MarshalJSON() ([]byte, error) {
         
         SnapshotId string `json:"snapshotId"`
         
-        SessionId string `json:"sessionId"`
+        DateSnapshot time.Time `json:"dateSnapshot"`
         
         BusinessUnitId string `json:"businessUnitId"`
         

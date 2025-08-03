@@ -697,6 +697,15 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1616,6 +1625,18 @@ type Viewfilter struct {
     // VirtualAgentIds - A list of virtual agent ids for filtering.
     VirtualAgentIds []string `json:"virtualAgentIds"`
 
+
+    // EmpathyScoreCategories - A set of Empathy Score Categories for filtering
+    EmpathyScoreCategories []string `json:"empathyScoreCategories"`
+
+
+    // SentimentScoreCategories - A set of Sentiment Score Categories  for filtering
+    SentimentScoreCategories []string `json:"sentimentScoreCategories"`
+
+
+    // SentimentTrendCategories - A set of Sentiment Trend Categories for filtering
+    SentimentTrendCategories []string `json:"sentimentTrendCategories"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1849,6 +1870,9 @@ func (o *Viewfilter) String() string {
     
      o.SocialRatings = []float32{0.0} 
      o.VirtualAgentIds = []string{""} 
+     o.EmpathyScoreCategories = []string{""} 
+     o.SentimentScoreCategories = []string{""} 
+     o.SentimentTrendCategories = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2323,6 +2347,12 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         SocialRatings []float32 `json:"socialRatings"`
         
         VirtualAgentIds []string `json:"virtualAgentIds"`
+        
+        EmpathyScoreCategories []string `json:"empathyScoreCategories"`
+        
+        SentimentScoreCategories []string `json:"sentimentScoreCategories"`
+        
+        SentimentTrendCategories []string `json:"sentimentTrendCategories"`
         *Alias
     }{
 
@@ -3324,6 +3354,21 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         VirtualAgentIds: []string{""},
+        
+
+
+        
+        EmpathyScoreCategories: []string{""},
+        
+
+
+        
+        SentimentScoreCategories: []string{""},
+        
+
+
+        
+        SentimentTrendCategories: []string{""},
         
 
         Alias: (*Alias)(u),

@@ -34,6 +34,7 @@
 * [gc workforcemanagement businessunits staffinggroups delete](gc_workforcemanagement_businessunits_staffinggroups_delete.html)	 - Deletes a staffing group
 * [gc workforcemanagement businessunits staffinggroups get](gc_workforcemanagement_businessunits_staffinggroups_get.html)	 - Gets a staffing group
 * [gc workforcemanagement businessunits staffinggroups list](gc_workforcemanagement_businessunits_staffinggroups_list.html)	 - Gets a list of staffing groups
+* [gc workforcemanagement businessunits staffinggroups planninggroups](gc_workforcemanagement_businessunits_staffinggroups_planninggroups.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/planninggroups
 * [gc workforcemanagement businessunits staffinggroups query](gc_workforcemanagement_businessunits_staffinggroups_query.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query
 * [gc workforcemanagement businessunits staffinggroups update](gc_workforcemanagement_businessunits_staffinggroups_update.html)	 - Updates a staffing group
 

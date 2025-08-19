@@ -13,8 +13,9 @@ gc workforcemanagement businessunits get [businessUnitId] [flags]
 ### Options
 
 ```
-      --expand strings   Include to access additional data on the business unit Valid values: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling, settings.notifications.scheduling, settings.learning, settings.coaching
-  -h, --help             help for get
+      --expand strings                                     Include to access additional data on the business unit Valid values: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling, settings.notifications.scheduling, settings.learning, settings.coaching
+  -h, --help                                               help for get
+      --includeSchedulingDefaultMessageSeverities string   Whether to include scheduling default message severities Valid values: true, false
 ```
 
 ### Options inherited from parent commands

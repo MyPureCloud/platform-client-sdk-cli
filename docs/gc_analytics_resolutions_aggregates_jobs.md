@@ -31,6 +31,7 @@
 
 * [gc analytics resolutions aggregates](gc_analytics_resolutions_aggregates.html)	 - /api/v2/analytics/resolutions/aggregates
 * [gc analytics resolutions aggregates jobs create](gc_analytics_resolutions_aggregates_jobs_create.html)	 - Query for resolution aggregates asynchronously
+* [gc analytics resolutions aggregates jobs delete](gc_analytics_resolutions_aggregates_jobs_delete.html)	 - Delete/cancel an async request for resolution aggregates
 * [gc analytics resolutions aggregates jobs get](gc_analytics_resolutions_aggregates_jobs_get.html)	 - Get status for async query for resolution aggregates
 * [gc analytics resolutions aggregates jobs results](gc_analytics_resolutions_aggregates_jobs_results.html)	 - /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results
 

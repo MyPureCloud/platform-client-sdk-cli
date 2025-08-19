@@ -31,6 +31,7 @@
 
 * [gc analytics taskmanagement aggregates](gc_analytics_taskmanagement_aggregates.html)	 - /api/v2/analytics/taskmanagement/aggregates
 * [gc analytics taskmanagement aggregates jobs create](gc_analytics_taskmanagement_aggregates_jobs_create.html)	 - Query for task management aggregates asynchronously
+* [gc analytics taskmanagement aggregates jobs delete](gc_analytics_taskmanagement_aggregates_jobs_delete.html)	 - Delete/cancel an async request for task management aggregates
 * [gc analytics taskmanagement aggregates jobs get](gc_analytics_taskmanagement_aggregates_jobs_get.html)	 - Get status for async query for task management aggregates
 * [gc analytics taskmanagement aggregates jobs results](gc_analytics_taskmanagement_aggregates_jobs_results.html)	 - /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results
 

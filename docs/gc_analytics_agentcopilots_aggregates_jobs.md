@@ -31,6 +31,7 @@
 
 * [gc analytics agentcopilots aggregates](gc_analytics_agentcopilots_aggregates.html)	 - /api/v2/analytics/agentcopilots/aggregates
 * [gc analytics agentcopilots aggregates jobs create](gc_analytics_agentcopilots_aggregates_jobs_create.html)	 - Query for agent copilot aggregates asynchronously
+* [gc analytics agentcopilots aggregates jobs delete](gc_analytics_agentcopilots_aggregates_jobs_delete.html)	 - Delete/cancel an async request for agent copilot aggregates
 * [gc analytics agentcopilots aggregates jobs get](gc_analytics_agentcopilots_aggregates_jobs_get.html)	 - Get status for async query for agent copilot aggregates
 * [gc analytics agentcopilots aggregates jobs results](gc_analytics_agentcopilots_aggregates_jobs_results.html)	 - /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results
 

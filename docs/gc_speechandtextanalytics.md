@@ -34,6 +34,7 @@
 * [gc speechandtextanalytics conversations](gc_speechandtextanalytics_conversations.html)	 - /api/v2/speechandtextanalytics/conversations
 * [gc speechandtextanalytics dictionaryfeedback](gc_speechandtextanalytics_dictionaryfeedback.html)	 - /api/v2/speechandtextanalytics/dictionaryfeedback
 * [gc speechandtextanalytics programs](gc_speechandtextanalytics_programs.html)	 - /api/v2/speechandtextanalytics/programs
+* [gc speechandtextanalytics reprocessing](gc_speechandtextanalytics_reprocessing.html)	 - /api/v2/speechandtextanalytics/reprocessing
 * [gc speechandtextanalytics sentiment](gc_speechandtextanalytics_sentiment.html)	 - /api/v2/speechandtextanalytics/sentiment
 * [gc speechandtextanalytics sentimentfeedback](gc_speechandtextanalytics_sentimentfeedback.html)	 - /api/v2/speechandtextanalytics/sentimentfeedback
 * [gc speechandtextanalytics settings](gc_speechandtextanalytics_settings.html)	 - /api/v2/speechandtextanalytics/settings

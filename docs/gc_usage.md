@@ -30,6 +30,8 @@
 ### SEE ALSO
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
+* [gc usage aggregates](gc_usage_aggregates.html)	 - /api/v2/usage/aggregates
+* [gc usage client](gc_usage_client.html)	 - /api/v2/usage/client
 * [gc usage events](gc_usage_events.html)	 - /api/v2/usage/events
 * [gc usage query](gc_usage_query.html)	 - /api/v2/usage/query
 * [gc usage simplesearch](gc_usage_simplesearch.html)	 - /api/v2/usage/simplesearch

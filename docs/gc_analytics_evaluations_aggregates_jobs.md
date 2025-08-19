@@ -31,6 +31,7 @@
 
 * [gc analytics evaluations aggregates](gc_analytics_evaluations_aggregates.html)	 - /api/v2/analytics/evaluations/aggregates
 * [gc analytics evaluations aggregates jobs create](gc_analytics_evaluations_aggregates_jobs_create.html)	 - Query for evaluation aggregates asynchronously
+* [gc analytics evaluations aggregates jobs delete](gc_analytics_evaluations_aggregates_jobs_delete.html)	 - Delete/cancel an async request for evaluation aggregates
 * [gc analytics evaluations aggregates jobs get](gc_analytics_evaluations_aggregates_jobs_get.html)	 - Get status for async query for evaluation aggregates
 * [gc analytics evaluations aggregates jobs results](gc_analytics_evaluations_aggregates_jobs_results.html)	 - /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results
 

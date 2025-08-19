@@ -15,7 +15,6 @@ gc businessrules decisiontables versions list [tableId] [flags]
 ```
       --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --divisionIds strings      One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --pageSize string          Number of entities to return. Maximum of 100.

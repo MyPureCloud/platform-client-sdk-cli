@@ -31,6 +31,7 @@
 
 * [gc knowledge](gc_knowledge.html)	 - /api/v2/knowledge
 * [gc knowledge knowledgebases categories](gc_knowledge_knowledgebases_categories.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories
+* [gc knowledge knowledgebases chunks](gc_knowledge_knowledgebases_chunks.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks
 * [gc knowledge knowledgebases create](gc_knowledge_knowledgebases_create.html)	 - Create new knowledge base
 * [gc knowledge knowledgebases delete](gc_knowledge_knowledgebases_delete.html)	 - Delete knowledge base
 * [gc knowledge knowledgebases documents](gc_knowledge_knowledgebases_documents.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents

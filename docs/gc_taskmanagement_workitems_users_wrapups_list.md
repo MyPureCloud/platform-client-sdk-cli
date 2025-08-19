@@ -1,4 +1,4 @@
-## gc taskmanagement workitems users wrapups get
+## gc taskmanagement workitems users wrapups list
 
 Get all wrapup codes added for the given user for a workitem.
 
@@ -7,17 +7,20 @@ Get all wrapup codes added for the given user for a workitem.
 Get all wrapup codes added for the given user for a workitem.
 
 ```
-gc taskmanagement workitems users wrapups get [workitemId] [userId] [flags]
+gc taskmanagement workitems users wrapups list [workitemId] [userId] [flags]
 ```
 
 ### Options
 
 ```
-      --after string       The cursor that points to the end of the set of entities that has been returned.
-      --expands string     Which fields, if any, to expand. Valid values: wrapupCode
-  -h, --help               help for get
-      --pageSize after     Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an after key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default "25")
-      --sortOrder string   Ascending or descending sort order Valid values: ascending, descending
+      --after string             The cursor that points to the end of the set of entities that has been returned.
+  -a, --autopaginate             Automatically paginate through the results stripping page information
+      --expands string           Which fields, if any, to expand. Valid values: wrapupCode
+      --filtercondition string   Filter list command output based on a given condition or regular expression
+  -h, --help                     help for list
+      --pageSize after           Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an after key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default "25")
+      --sortOrder string         Ascending or descending sort order Valid values: ascending, descending
+  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands

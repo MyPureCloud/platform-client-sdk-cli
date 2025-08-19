@@ -31,6 +31,7 @@
 
 * [gc analytics users aggregates](gc_analytics_users_aggregates.html)	 - /api/v2/analytics/users/aggregates
 * [gc analytics users aggregates jobs create](gc_analytics_users_aggregates_jobs_create.html)	 - Query for user aggregates asynchronously
+* [gc analytics users aggregates jobs delete](gc_analytics_users_aggregates_jobs_delete.html)	 - Delete/cancel an async request for user aggregates
 * [gc analytics users aggregates jobs get](gc_analytics_users_aggregates_jobs_get.html)	 - Get status for async query for user aggregates
 * [gc analytics users aggregates jobs results](gc_analytics_users_aggregates_jobs_results.html)	 - /api/v2/analytics/users/aggregates/jobs/{jobId}/results
 

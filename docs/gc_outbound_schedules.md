@@ -34,5 +34,6 @@
 * [gc outbound schedules emailcampaigns](gc_outbound_schedules_emailcampaigns.html)	 - /api/v2/outbound/schedules/emailcampaigns
 * [gc outbound schedules messagingcampaigns](gc_outbound_schedules_messagingcampaigns.html)	 - /api/v2/outbound/schedules/messagingcampaigns
 * [gc outbound schedules sequences](gc_outbound_schedules_sequences.html)	 - /api/v2/outbound/schedules/sequences
+* [gc outbound schedules whatsappcampaigns](gc_outbound_schedules_whatsappcampaigns.html)	 - /api/v2/outbound/schedules/whatsappcampaigns
 
 

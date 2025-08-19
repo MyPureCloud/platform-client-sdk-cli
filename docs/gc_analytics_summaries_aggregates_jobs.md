@@ -31,6 +31,7 @@
 
 * [gc analytics summaries aggregates](gc_analytics_summaries_aggregates.html)	 - /api/v2/analytics/summaries/aggregates
 * [gc analytics summaries aggregates jobs create](gc_analytics_summaries_aggregates_jobs_create.html)	 - Query for summary aggregates asynchronously
+* [gc analytics summaries aggregates jobs delete](gc_analytics_summaries_aggregates_jobs_delete.html)	 - Delete/cancel an async request for summary aggregates
 * [gc analytics summaries aggregates jobs get](gc_analytics_summaries_aggregates_jobs_get.html)	 - Get status for async query for summary aggregates
 * [gc analytics summaries aggregates jobs results](gc_analytics_summaries_aggregates_jobs_results.html)	 - /api/v2/analytics/summaries/aggregates/jobs/{jobId}/results
 

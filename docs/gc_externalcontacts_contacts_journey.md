@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc externalcontacts contacts](gc_externalcontacts_contacts.html)	 - /api/v2/externalcontacts/contacts
+* [gc externalcontacts contacts journey segments](gc_externalcontacts_contacts_journey_segments.html)	 - /api/v2/externalcontacts/contacts/{contactId}/journey/segments
 * [gc externalcontacts contacts journey sessions](gc_externalcontacts_contacts_journey_sessions.html)	 - /api/v2/externalcontacts/contacts/{contactId}/journey/sessions
 
 

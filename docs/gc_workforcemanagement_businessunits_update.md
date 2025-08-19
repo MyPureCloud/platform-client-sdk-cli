@@ -13,10 +13,11 @@ gc workforcemanagement businessunits update [businessUnitId] [flags]
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -d, --directory string                                   Directory path with files containing request bodies
+  -f, --file string                                        File name containing the JSON body
+  -h, --help                                               help for update
+      --includeSchedulingDefaultMessageSeverities string   Whether to include scheduling default message severities Valid values: true, false
+  -b, --printrequestbody                                   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands

@@ -31,6 +31,7 @@
 
 * [gc analytics conversations aggregates](gc_analytics_conversations_aggregates.html)	 - /api/v2/analytics/conversations/aggregates
 * [gc analytics conversations aggregates jobs create](gc_analytics_conversations_aggregates_jobs_create.html)	 - Query for conversation aggregates asynchronously
+* [gc analytics conversations aggregates jobs delete](gc_analytics_conversations_aggregates_jobs_delete.html)	 - Delete/cancel an async request for conversation aggregates
 * [gc analytics conversations aggregates jobs get](gc_analytics_conversations_aggregates_jobs_get.html)	 - Get status for async query for conversation aggregates
 * [gc analytics conversations aggregates jobs results](gc_analytics_conversations_aggregates_jobs_results.html)	 - /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results
 

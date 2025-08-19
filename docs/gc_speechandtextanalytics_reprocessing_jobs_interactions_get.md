@@ -1,15 +1,19 @@
-## gc analytics conversations transcripts query
+## gc speechandtextanalytics reprocessing jobs interactions get
 
-/api/v2/analytics/conversations/transcripts/query
+Get a Speech and Text Analytics Reprocessing interactions statuses by job id
 
 ### Synopsis
 
-/api/v2/analytics/conversations/transcripts/query
+Get a Speech and Text Analytics Reprocessing interactions statuses by job id
+
+```
+gc speechandtextanalytics reprocessing jobs interactions get [jobId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for query
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +33,6 @@
 
 ### SEE ALSO
 
-* [gc analytics conversations transcripts](gc_analytics_conversations_transcripts.html)	 - /api/v2/analytics/conversations/transcripts
-* [gc analytics conversations transcripts query create](gc_analytics_conversations_transcripts_query_create.html)	 - Search resources.
+* [gc speechandtextanalytics reprocessing jobs interactions](gc_speechandtextanalytics_reprocessing_jobs_interactions.html)	 - /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}/interactions
 
 

@@ -31,6 +31,7 @@
 
 * [gc analytics bots aggregates](gc_analytics_bots_aggregates.html)	 - /api/v2/analytics/bots/aggregates
 * [gc analytics bots aggregates jobs create](gc_analytics_bots_aggregates_jobs_create.html)	 - Query for bot aggregates asynchronously
+* [gc analytics bots aggregates jobs delete](gc_analytics_bots_aggregates_jobs_delete.html)	 - Delete/cancel an async request for bot aggregates
 * [gc analytics bots aggregates jobs get](gc_analytics_bots_aggregates_jobs_get.html)	 - Get status for async query for bot aggregates
 * [gc analytics bots aggregates jobs results](gc_analytics_bots_aggregates_jobs_results.html)	 - /api/v2/analytics/bots/aggregates/jobs/{jobId}/results
 

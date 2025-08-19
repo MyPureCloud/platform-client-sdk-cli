@@ -31,6 +31,7 @@
 
 * [gc analytics flowexecutions aggregates](gc_analytics_flowexecutions_aggregates.html)	 - /api/v2/analytics/flowexecutions/aggregates
 * [gc analytics flowexecutions aggregates jobs create](gc_analytics_flowexecutions_aggregates_jobs_create.html)	 - Query for flow execution aggregates asynchronously
+* [gc analytics flowexecutions aggregates jobs delete](gc_analytics_flowexecutions_aggregates_jobs_delete.html)	 - Delete/cancel an async request for flow execution aggregates
 * [gc analytics flowexecutions aggregates jobs get](gc_analytics_flowexecutions_aggregates_jobs_get.html)	 - Get status for async query for flow execution aggregates
 * [gc analytics flowexecutions aggregates jobs results](gc_analytics_flowexecutions_aggregates_jobs_results.html)	 - /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results
 

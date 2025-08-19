@@ -30,7 +30,7 @@
 ### SEE ALSO
 
 * [gc conversations chats participants](gc_conversations_chats_participants.html)	 - /api/v2/conversations/chats/{conversationId}/participants
-* [gc conversations chats participants communications update](gc_conversations_chats_participants_communications_update.html)	 - Update conversation participant`s communication by disconnecting it.
+* [gc conversations chats participants communications update](gc_conversations_chats_participants_communications_update.html)	 - Update conversation participant`s communication by disconnecting it. This endpoint does not update wrapup.
 * [gc conversations chats participants communications wrapup](gc_conversations_chats_participants_communications_wrapup.html)	 - /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
 
 

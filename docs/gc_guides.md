@@ -34,6 +34,7 @@
 * [gc guides get](gc_guides_get.html)	 - Get guide.
 * [gc guides jobs](gc_guides_jobs.html)	 - /api/v2/guides/jobs /api/v2/guides/{guideId}/jobs
 * [gc guides list](gc_guides_list.html)	 - Get all guides.
+* [gc guides update](gc_guides_update.html)	 - Update a guide.
 * [gc guides versions](gc_guides_versions.html)	 - /api/v2/guides/{guideId}/versions
 
 

@@ -1,15 +1,15 @@
-## gc analytics conversations transcripts
+## gc usage client aggregates
 
-/api/v2/analytics/conversations/transcripts
+/api/v2/usage/client/{clientId}/aggregates
 
 ### Synopsis
 
-/api/v2/analytics/conversations/transcripts
+/api/v2/usage/client/{clientId}/aggregates
 
 ### Options
 
 ```
-  -h, --help   help for transcripts
+  -h, --help   help for aggregates
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc analytics conversations](gc_analytics_conversations.html)	 - /api/v2/analytics/conversations
-* [gc analytics conversations transcripts query](gc_analytics_conversations_transcripts_query.html)	 - /api/v2/analytics/conversations/transcripts/query
+* [gc usage client](gc_usage_client.html)	 - /api/v2/usage/client
+* [gc usage client aggregates query](gc_usage_client_aggregates_query.html)	 - /api/v2/usage/client/{clientId}/aggregates/query
 
 

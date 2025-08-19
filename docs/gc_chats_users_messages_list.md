@@ -13,10 +13,11 @@ gc chats users messages list [userId] [flags]
 ### Options
 
 ```
-      --after string    The beginning date for messages to retrieve
-      --before string   The cutoff date for messages to retrieve
-  -h, --help            help for list
-      --limit string    The maximum number of messages to retrieve
+      --after string             The beginning date for messages to retrieve
+      --before string            The cutoff date for messages to retrieve
+      --excludeMetadata string   Whether to exclude metadata for messages Valid values: true, false
+  -h, --help                     help for list
+      --limit string             The maximum number of messages to retrieve
 ```
 
 ### Options inherited from parent commands

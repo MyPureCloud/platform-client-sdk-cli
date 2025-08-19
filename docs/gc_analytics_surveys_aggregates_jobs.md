@@ -31,6 +31,7 @@
 
 * [gc analytics surveys aggregates](gc_analytics_surveys_aggregates.html)	 - /api/v2/analytics/surveys/aggregates
 * [gc analytics surveys aggregates jobs create](gc_analytics_surveys_aggregates_jobs_create.html)	 - Query for survey aggregates asynchronously
+* [gc analytics surveys aggregates jobs delete](gc_analytics_surveys_aggregates_jobs_delete.html)	 - Delete/cancel an async request for survey aggregates
 * [gc analytics surveys aggregates jobs get](gc_analytics_surveys_aggregates_jobs_get.html)	 - Get status for async query for survey aggregates
 * [gc analytics surveys aggregates jobs results](gc_analytics_surveys_aggregates_jobs_results.html)	 - /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results
 

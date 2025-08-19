@@ -31,6 +31,7 @@
 
 * [gc analytics knowledge aggregates](gc_analytics_knowledge_aggregates.html)	 - /api/v2/analytics/knowledge/aggregates
 * [gc analytics knowledge aggregates jobs create](gc_analytics_knowledge_aggregates_jobs_create.html)	 - Query for knowledge aggregates asynchronously
+* [gc analytics knowledge aggregates jobs delete](gc_analytics_knowledge_aggregates_jobs_delete.html)	 - Delete/cancel an async request for knowledge aggregates
 * [gc analytics knowledge aggregates jobs get](gc_analytics_knowledge_aggregates_jobs_get.html)	 - Get status for async query for knowledge aggregates
 * [gc analytics knowledge aggregates jobs results](gc_analytics_knowledge_aggregates_jobs_results.html)	 - /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results
 

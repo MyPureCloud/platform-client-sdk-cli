@@ -1,22 +1,19 @@
-## gc analytics conversations transcripts query create
+## gc analytics agentcopilots aggregates jobs delete
 
-Search resources.
+Delete/cancel an async request for agent copilot aggregates
 
 ### Synopsis
 
-Search resources.
+Delete/cancel an async request for agent copilot aggregates
 
 ```
-gc analytics conversations transcripts query create [flags]
+gc analytics agentcopilots aggregates jobs delete [jobId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc analytics conversations transcripts query create [flags]
 
 ### SEE ALSO
 
-* [gc analytics conversations transcripts query](gc_analytics_conversations_transcripts_query.html)	 - /api/v2/analytics/conversations/transcripts/query
+* [gc analytics agentcopilots aggregates jobs](gc_analytics_agentcopilots_aggregates_jobs.html)	 - /api/v2/analytics/agentcopilots/aggregates/jobs
 
 

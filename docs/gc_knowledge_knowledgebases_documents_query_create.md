@@ -14,7 +14,7 @@ gc knowledge knowledgebases documents query create [knowledgeBaseId] [flags]
 
 ```
   -d, --directory string   Directory path with files containing request bodies
-      --expand strings     Fields, if any, to expand for each document in the search result matching the query. Valid values: documentVariations, documentAlternatives, knowledgeBaseLanguageCode
+      --expand strings     Fields, if any, to expand for each document in the search result matching the query. Valid values: documentVariations, documentAlternatives, knowledgeBaseLanguageCode, variationChunks
   -f, --file string        File name containing the JSON body
   -h, --help               help for create
   -b, --printrequestbody   Print the request body format of the API.

@@ -1,22 +1,15 @@
-## gc businessrules decisiontables versions rows partialupdate
+## gc telephony agents
 
-Partially update a decision table row. Will be deprecated, we should use PUT request.
+/api/v2/telephony/agents
 
 ### Synopsis
 
-Partially update a decision table row. Will be deprecated, we should use PUT request.
-
-```
-gc businessrules decisiontables versions rows partialupdate [tableId] [tableVersion] [rowId] [flags]
-```
+/api/v2/telephony/agents
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for partialupdate
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for agents
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc businessrules decisiontables versions rows partialupdate [tableId] [tableVers
 
 ### SEE ALSO
 
-* [gc businessrules decisiontables versions rows](gc_businessrules_decisiontables_versions_rows.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows
+* [gc telephony](gc_telephony.html)	 - /api/v2/telephony
+* [gc telephony agents greetings](gc_telephony_agents_greetings.html)	 - /api/v2/telephony/agents/{agentId}/greetings
 
 

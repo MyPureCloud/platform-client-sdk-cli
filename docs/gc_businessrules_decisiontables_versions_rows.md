@@ -34,7 +34,6 @@
 * [gc businessrules decisiontables versions rows delete](gc_businessrules_decisiontables_versions_rows_delete.html)	 - Delete a decision table row
 * [gc businessrules decisiontables versions rows get](gc_businessrules_decisiontables_versions_rows_get.html)	 - Get a decision table row
 * [gc businessrules decisiontables versions rows list](gc_businessrules_decisiontables_versions_rows_list.html)	 - Get a list of decision table rows.
-* [gc businessrules decisiontables versions rows partialupdate](gc_businessrules_decisiontables_versions_rows_partialupdate.html)	 - Partially update a decision table row. Will be deprecated, we should use PUT request.
 * [gc businessrules decisiontables versions rows search](gc_businessrules_decisiontables_versions_rows_search.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/search
 * [gc businessrules decisiontables versions rows update](gc_businessrules_decisiontables_versions_rows_update.html)	 - Full update a decision table row
 

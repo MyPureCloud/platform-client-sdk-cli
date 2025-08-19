@@ -31,6 +31,7 @@
 
 * [gc analytics actions aggregates](gc_analytics_actions_aggregates.html)	 - /api/v2/analytics/actions/aggregates
 * [gc analytics actions aggregates jobs create](gc_analytics_actions_aggregates_jobs_create.html)	 - Query for action aggregates asynchronously
+* [gc analytics actions aggregates jobs delete](gc_analytics_actions_aggregates_jobs_delete.html)	 - Delete/cancel an async request for action aggregates
 * [gc analytics actions aggregates jobs get](gc_analytics_actions_aggregates_jobs_get.html)	 - Get status for async query for action aggregates
 * [gc analytics actions aggregates jobs results](gc_analytics_actions_aggregates_jobs_results.html)	 - /api/v2/analytics/actions/aggregates/jobs/{jobId}/results
 

@@ -1,10 +1,10 @@
 ## gc conversations emails participants communications update
 
-Update conversation participant`s communication by disconnecting it.
+Update conversation participant`s communication by disconnecting it. This endpoint does not update wrapup.
 
 ### Synopsis
 
-Update conversation participant`s communication by disconnecting it.
+Update conversation participant`s communication by disconnecting it. This endpoint does not update wrapup.
 
 ```
 gc conversations emails participants communications update [conversationId] [participantId] [communicationId] [flags]

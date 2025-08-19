@@ -31,6 +31,7 @@
 
 * [gc analytics journeys aggregates](gc_analytics_journeys_aggregates.html)	 - /api/v2/analytics/journeys/aggregates
 * [gc analytics journeys aggregates jobs create](gc_analytics_journeys_aggregates_jobs_create.html)	 - Query for journey aggregates asynchronously
+* [gc analytics journeys aggregates jobs delete](gc_analytics_journeys_aggregates_jobs_delete.html)	 - Delete/cancel an async request for journey aggregates
 * [gc analytics journeys aggregates jobs get](gc_analytics_journeys_aggregates_jobs_get.html)	 - Get status for async query for journey aggregates
 * [gc analytics journeys aggregates jobs results](gc_analytics_journeys_aggregates_jobs_results.html)	 - /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results
 

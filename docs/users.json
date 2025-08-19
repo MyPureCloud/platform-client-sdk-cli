@@ -1,0 +1,431 @@
+{
+  "supercommand": "users",
+  "description": "/api/v2/users",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/verifiers",
+      "description": "Get a list of verifiers"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/verifiers/{verifierId}",
+      "description": "Update a verifier"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/verifiers/{verifierId}",
+      "description": "Delete a verifier"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings",
+      "description": "Get agent auto answer settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings",
+      "description": "Set agent auto answer settings"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings",
+      "description": "Delete agent auto answer settings"
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings",
+      "description": "Update agent auto answer settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{subjectId}/roles",
+      "description": "Returns a listing of roles and permissions for a user."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{subjectId}/roles",
+      "description": "Sets the user's roles"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/callforwarding",
+      "description": "Get a user's CallForwarding"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/callforwarding",
+      "description": "Update a user's CallForwarding"
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/users/{userId}/callforwarding",
+      "description": "Patch a user's CallForwarding"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/favorites",
+      "description": "Deprecated; will be revived with new contract"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/adjacents",
+      "description": "Get adjacents"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/superiors",
+      "description": "Get superiors"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/directreports",
+      "description": "Get direct reports"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/profile",
+      "description": "Get user profile"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/geolocations/{clientId}",
+      "description": "Get a user's Geolocation"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/geolocations/{clientId}",
+      "description": "Patch a user's Geolocation"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/greetings/defaults",
+      "description": "Grabs the list of Default Greetings given a User's ID"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/greetings/defaults",
+      "description": "Updates the DefaultGreetingList of the specified User"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/greetings",
+      "description": "Get a list of the User's Greetings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/greetings",
+      "description": "Creates a Greeting for a User"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/outofoffice",
+      "description": "Get a OutOfOffice"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/outofoffice",
+      "description": "Update an OutOfOffice"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/presences/purecloud/bulk",
+      "description": "Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/presences/{sourceId}/bulk",
+      "description": "Get bulk user presences for a single presence source"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/presences/bulk",
+      "description": "Update bulk user Presences"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/presences/purecloud",
+      "description": "Get a user's Genesys Cloud presence."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/presences/purecloud",
+      "description": "Patch a Genesys Cloud user's presence"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/presences/{sourceId}",
+      "description": "Get a user's Presence"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/presences/{sourceId}",
+      "description": "Patch a user's Presence"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/chats/me",
+      "description": "Get chats for a user"
+    },
+    {
+      "name": "getuserbyexternalid",
+      "path": "/api/v2/users/externalid/{authorityName}/{externalKey}",
+      "description": "Get the user associated with external identifier."
+    },
+    {
+      "name": "getexternalidforuserauthority",
+      "path": "/api/v2/users/{userId}/externalid/{authorityName}",
+      "description": "Get the external identifier of user for an authority."
+    },
+    {
+      "name": "getexternalidsforuser",
+      "path": "/api/v2/users/{userId}/externalid",
+      "description": "Get the external identifiers for a user."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/externalid",
+      "description": "Create mapping between external identifier and user. Limit 100 per entity."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
+      "description": "Delete the external identifier for user."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/me/password",
+      "description": "Change your password"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/me",
+      "description": "Get current user details."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/password",
+      "description": "Change a users password"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/profileskills",
+      "description": "List profile skills for a user"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/profileskills",
+      "description": "Update profile skills for a user"
+    },
+    {
+      "name": "join",
+      "path": "/api/v2/users/{userId}/queues/{queueId}",
+      "description": "Join or unjoin a queue for a user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/queues",
+      "description": "Get queues for user"
+    },
+    {
+      "name": "joinset",
+      "path": "/api/v2/users/{userId}/queues",
+      "description": "Join or unjoin a set of queues for a user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}",
+      "description": "Get user."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}",
+      "description": "Delete user"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}",
+      "description": "Update user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/invite",
+      "description": "Send an activation email to the user"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/routinglanguages/{languageId}",
+      "description": "Remove a routing language from a user"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/routinglanguages/{languageId}",
+      "description": "Update an assigned routing language's proficiency"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/routinglanguages",
+      "description": "List routing languages assigned to a user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/routinglanguages",
+      "description": "Assign a routing language to a user"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/routinglanguages/bulk",
+      "description": "Assign multiple routing languages to a user. Max 50 routing languages in request body"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/routingskills/{skillId}",
+      "description": "Update an assigned routing skill's proficiency"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/routingskills/{skillId}",
+      "description": "Remove a routing skill from a user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/routingskills",
+      "description": "List routing skills assigned to a user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/routingskills",
+      "description": "Assign a routing skill to a user"
+    },
+    {
+      "name": "bulkupdate",
+      "path": "/api/v2/users/{userId}/routingskills/bulk",
+      "description": "Assign multiple routing skills to a user, replacing any current assignments"
+    },
+    {
+      "name": "bulkadd",
+      "path": "/api/v2/users/{userId}/routingskills/bulk",
+      "description": "Assign multiple routing skills to a user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/routingstatus",
+      "description": "Fetch the routing status of a user"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/routingstatus",
+      "description": "Update the routing status of a user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/skillgroups",
+      "description": "Get skill groups for a user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/state",
+      "description": "Get user state information."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/state",
+      "description": "Update user state information."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/station",
+      "description": "Get station information for user"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/station/associatedstation",
+      "description": "Clear associated station"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
+      "description": "Set associated station"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/station/defaultstation/{stationId}",
+      "description": "Set default station"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/station/defaultstation",
+      "description": "Clear default station"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/trustors",
+      "description": "List the organizations that have authorized/trusted the user."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/bulk",
+      "description": "Update bulk acd autoanswer on users. Max 50 users can be updated at a time."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users",
+      "description": "Get the list of available users."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users",
+      "description": "Create user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/search",
+      "description": "Search users using the q64 value returned from a previous search"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/search",
+      "description": "Search users"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/search/teams/assign",
+      "description": "Search users assigned to teams"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/development/activities",
+      "description": "Get list of Development Activities"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/development/activities/me",
+      "description": "Get list of Development Activities for current user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/development/activities/aggregates/query",
+      "description": "Retrieve aggregated development activity data"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/query",
+      "description": "Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/search/conversation/target",
+      "description": "Search users as conversation targets"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/search/queuemembers/manage",
+      "description": "Search manage queue member"
+    }
+  ]
+}

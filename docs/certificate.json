@@ -1,0 +1,11 @@
+{
+  "supercommand": "certificate",
+  "description": "/api/v2/certificate",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/certificate/details",
+      "description": "Returns the information about an X509 PEM encoded certificate or certificate chain."
+    }
+  ]
+}

@@ -1,0 +1,1351 @@
+{
+  "supercommand": "conversations",
+  "description": "/api/v2/conversations",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/cobrowse",
+      "description": "Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/keyconfigurations/{keyconfigurationsId}",
+      "description": "Get the encryption key configurations"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/keyconfigurations/{keyconfigurationsId}",
+      "description": "Update the encryption key configurations"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/keyconfigurations",
+      "description": "Get a list of key configurations data"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/keyconfigurations",
+      "description": "Setup configurations for encryption key creation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/keyconfigurations/validate",
+      "description": "Validate encryption key configurations without saving it"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/participants/attributes/search",
+      "description": "Search conversations"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}",
+      "description": "Get conversation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/barge",
+      "description": "Barge a conversation creating a barged in conference of connected participants."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/disconnect",
+      "description": "Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/assign",
+      "description": "Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/tags",
+      "description": "Update the tags on a conversation."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/utilizationlabel",
+      "description": "Update the utilization label on a conversation. When there is no value provided, the system default label is applied"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/secureattributes",
+      "description": "Get the secure attributes on a conversation."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/secureattributes",
+      "description": "Set the secure attributes on a conversation."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/conversations/{conversationId}/secureattributes",
+      "description": "Update the secure attributes on a conversation."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations",
+      "description": "Get active conversations for the logged in user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/faxes",
+      "description": "Create Fax Conversation"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/settings",
+      "description": "Get Settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/settings",
+      "description": "Update Settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update after-call work for this conversation communication."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/callbacks/bulk/update",
+      "description": "Update multiple scheduled callbacks"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/callbacks/bulk/disconnect",
+      "description": "Disconnect multiple scheduled callbacks"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/calls",
+      "description": "Get active call conversations for the logged in user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls",
+      "description": "Create a call conversation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace",
+      "description": "Replace this participant with the specified user and/or address"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor",
+      "description": "Listen in on the conversation from the point of view of a given participant."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/calls/{conversationId}",
+      "description": "Get call conversation"
+    },
+    {
+      "name": "placecallbackcall",
+      "path": "/api/v2/conversations/calls/{conversationId}",
+      "description": "Place a new call as part of a callback conversation."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/calls/{conversationId}",
+      "description": "Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/calls/{conversationId}/recordingstate",
+      "description": "Update a conversation by setting its recording state"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes",
+      "description": "Update the attributes on a conversation participant."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup",
+      "description": "Get the wrap-up for this conversation participant. "
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}",
+      "description": "Update conversation participant"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/calls/maximumconferenceparties",
+      "description": "Get the maximum number of participants that this user can have on a conference"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach",
+      "description": "Listen in on the conversation from the point of view of a given participant while speaking to just the given participant."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge",
+      "description": "Barge a given participant's call creating a barged in conference of connected participants."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult",
+      "description": "Initiate and update consult transfer"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult",
+      "description": "Cancel the transfer"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult",
+      "description": "Change who can speak"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent",
+      "description": "Initiate a consult transfer to an agent"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue",
+      "description": "Initiate a consult transfer to a queue"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external",
+      "description": "Initiate a consult transfer to an external contact"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants",
+      "description": "Add participants to a conversation"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/calls/history",
+      "description": "Get call history"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata",
+      "description": "Set uuiData to be sent on future commands."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/callbacks",
+      "description": "Get active callback conversations for the logged in user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/callbacks",
+      "description": "Create a Callback"
+    },
+    {
+      "name": "updatescheduledcallback",
+      "path": "/api/v2/conversations/callbacks",
+      "description": "Update a scheduled callback"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace",
+      "description": "Replace this participant with the specified user and/or address"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/callbacks/{conversationId}",
+      "description": "Get callback conversation"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/callbacks/{conversationId}",
+      "description": "Update a conversation by disconnecting all of the participants"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/recordingstate",
+      "description": "Update a conversation by setting its recording state"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes",
+      "description": "Update the attributes on a conversation participant."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup",
+      "description": "Get the wrap-up for this conversation participant. "
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update conversation participant's communication by disconnecting it."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}",
+      "description": "Update conversation participant"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/chats/{conversationId}/messages/{messageId}",
+      "description": "Get a web chat conversation message"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/chats/{conversationId}/messages",
+      "description": "Get the messages of a chat conversation."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages",
+      "description": "Send a message on behalf of a communication in a chat conversation."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing",
+      "description": "Send a typing-indicator on behalf of a communication in a chat conversation."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/chats",
+      "description": "Get active chat conversations for the logged in user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/chats",
+      "description": "Create a web chat conversation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace",
+      "description": "Replace this participant with the specified user and/or address"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/chats/{conversationId}",
+      "description": "Get chat conversation"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/chats/{conversationId}",
+      "description": "Update a conversation by disconnecting all of the participants"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/chats/{conversationId}/recordingstate",
+      "description": "Update a conversation by setting its recording state"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes",
+      "description": "Update the attributes on a conversation participant."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup",
+      "description": "Get the wrap-up for this conversation participant. "
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}",
+      "description": "Update conversation participant"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace",
+      "description": "Replace this participant with the specified user and/or address"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/cobrowsesessions",
+      "description": "Get active cobrowse conversations for the logged in user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}",
+      "description": "Get cobrowse conversation"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}",
+      "description": "Update a conversation by disconnecting all of the participants"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate",
+      "description": "Update a conversation by setting its recording state"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes",
+      "description": "Update the attributes on a conversation participant."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup",
+      "description": "Get the wrap-up for this conversation participant. "
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update conversation participant's communication by disconnecting it."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}",
+      "description": "Update conversation participant"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace",
+      "description": "Replace this participant with the specified user and/or address"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/emails/{conversationId}/messages/{messageId}",
+      "description": "Get conversation message"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/emails",
+      "description": "Get active email conversations for the logged in user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/emails",
+      "description": "Create an email conversation"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/emails/{conversationId}/messages",
+      "description": "Get conversation messages"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/emails/{conversationId}/messages",
+      "description": "Send an email reply"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/emails/{conversationId}",
+      "description": "Get email conversation"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/emails/{conversationId}",
+      "description": "Update a conversation by disconnecting all of the participants"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/emails/{conversationId}/recordingstate",
+      "description": "Update a conversation by setting its recording state"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes",
+      "description": "Update the attributes on a conversation participant."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup",
+      "description": "Get the wrap-up for this conversation participant. "
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}",
+      "description": "Update conversation participant"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/emails/{conversationId}/settings",
+      "description": "Get emails settings for a given conversation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/emails/{conversationId}/reconnect",
+      "description": "Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}",
+      "description": "Delete attachment from draft"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy",
+      "description": "Copy attachments from an email message to the current draft."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/emails/{conversationId}/messages/draft",
+      "description": "Get conversation draft reply"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/emails/{conversationId}/messages/draft",
+      "description": "Update conversation draft reply"
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/conversations/emails/{conversationId}/messages/draft",
+      "description": "Reset conversation draft to its initial state and/or auto-fill draft content"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/emails/{conversationId}/inboundmessages",
+      "description": "Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate",
+      "description": "Update conversation by setting its parking state"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/emails/agentless",
+      "description": "Create an email conversation, per API"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}",
+      "description": "Get a cached media item"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}",
+      "description": "Remove a cached media item asychronously"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messages/cachedmedia",
+      "description": "Get a list of cached media items"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace",
+      "description": "Replace this participant with the specified user and/or address"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messages/{messageId}/details",
+      "description": "Get message"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messages",
+      "description": "Get active message conversations for the logged in user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages",
+      "description": "Create an outbound messaging conversation."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor",
+      "description": "Listen in on the conversation from the point of view of a given participant."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages",
+      "description": "Send message"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/messages/bulk",
+      "description": "Get messages in batch"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messages/{conversationId}",
+      "description": "Get message conversation"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messages/{conversationId}",
+      "description": "Update a conversation by disconnecting all of the participants"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messages/{conversationId}/recordingstate",
+      "description": "Update a conversation by setting its recording state"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes",
+      "description": "Update the attributes on a conversation participant."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup",
+      "description": "Get the wrap-up for this conversation participant. "
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}",
+      "description": "Update conversation participant"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messages/{conversationId}/messages/{messageId}",
+      "description": "Get conversation message"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages",
+      "description": "Send a social media message"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media",
+      "description": "Create media"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads",
+      "description": "Create a URL to upload a message media file"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}",
+      "description": "Get media"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/agentless",
+      "description": "Send an agentless outbound message"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/inbound/open",
+      "description": "Send an inbound Open Message"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{integrationId}/inbound/open/event",
+      "description": "Send an inbound Open Event Message"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{integrationId}/inbound/open/message",
+      "description": "Send inbound Open Message"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{integrationId}/inbound/open/structured/response",
+      "description": "Send inbound Open Response"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{integrationId}/inbound/open/receipt",
+      "description": "Send an inbound Open Receipt Message"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing",
+      "description": "Send message typing event"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/screenshares/{conversationId}/recordingstate",
+      "description": "Update a conversation by setting its recording state"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/socials/{conversationId}/recordingstate",
+      "description": "Update a conversation by setting its recording state"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/videos/{conversationId}/recordingstate",
+      "description": "Update a conversation by setting its recording state"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messaging/integrations",
+      "description": "Get a list of Integrations"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/threadingtimeline",
+      "description": "Get conversation threading window timeline for each messaging type"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/threadingtimeline",
+      "description": "Update conversation threading window timeline for each messaging type"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/facebook/app",
+      "description": "Get Genesys Facebook App Id"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}",
+      "description": "Get Facebook messaging integration identity resolution settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}",
+      "description": "Create an identity resolution settings for a Facebook messaging integration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/integrations/facebook/{integrationId}",
+      "description": "Get a Facebook messaging integration"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/messaging/integrations/facebook/{integrationId}",
+      "description": "Delete a Facebook messaging integration"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/integrations/facebook/{integrationId}",
+      "description": "Update Facebook messaging integration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messaging/integrations/facebook",
+      "description": "Get a list of Facebook Integrations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messaging/integrations/facebook",
+      "description": "Create a Facebook Integration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messaging/facebook/permissions",
+      "description": "Get a list of Facebook Permissions"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}",
+      "description": "Get an Instagram integration identity resolution settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}",
+      "description": "Create identity resolution settings for an Instagram messaging integration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/integrations/instagram/{integrationId}",
+      "description": "Get Instagram messaging integration"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/messaging/integrations/instagram/{integrationId}",
+      "description": "Delete Instagram messaging integration"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/integrations/instagram/{integrationId}",
+      "description": "Update Instagram messaging integration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messaging/integrations/instagram",
+      "description": "Get a list of Instagram Integrations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messaging/integrations/instagram",
+      "description": "Create Instagram Integration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId}",
+      "description": "Get an open messaging integration Identity Resolution settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId}",
+      "description": "Update an open messaging integration Identity Resolution settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/integrations/open/{integrationId}",
+      "description": "Get an Open messaging integration"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/messaging/integrations/open/{integrationId}",
+      "description": "Delete an Open messaging integration"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/integrations/open/{integrationId}",
+      "description": "Update an Open messaging integration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messaging/integrations/open",
+      "description": "Get a list of Open messaging integrations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messaging/integrations/open",
+      "description": "Create an Open messaging integration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/settings/default",
+      "description": "Get the organization's default settings that will be used as the default when creating an integration."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/settings/default",
+      "description": "Set the organization's default setting that may be applied to to integrations without settings"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/messaging/settings/default",
+      "description": "Delete the organization's default setting, a global default will be applied to integrations without settings"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messaging/settings",
+      "description": "Get a list of messaging settings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messaging/settings",
+      "description": "Create a messaging setting"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/settings/{messageSettingId}",
+      "description": "Get a messaging setting"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/messaging/settings/{messageSettingId}",
+      "description": "Delete a messaging setting"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/settings/{messageSettingId}",
+      "description": "Update a messaging setting"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/supportedcontent/default",
+      "description": "Get the organization's default supported content profile that will be used as the default when creating an integration."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/supportedcontent/default",
+      "description": "Set the organization's default supported content profile that may be assigned to an integration when it is created."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/supportedcontent/{supportedContentId}",
+      "description": "Get a supported content profile"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/messaging/supportedcontent/{supportedContentId}",
+      "description": "Delete a supported content profile"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/supportedcontent/{supportedContentId}",
+      "description": "Update a supported content profile"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messaging/supportedcontent",
+      "description": "Get a list of Supported Content profiles"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messaging/supportedcontent",
+      "description": "Create a Supported Content profile"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}",
+      "description": "Get X (Formally Twitter) messaging integration identity resolution settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}",
+      "description": "Create an identity resolution settings for an X (Formally Twitter) messaging integration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/integrations/twitter/{integrationId}",
+      "description": "Get Twitter messaging integration"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/messaging/integrations/twitter/{integrationId}",
+      "description": "Delete Twitter messaging integration"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/integrations/twitter/{integrationId}",
+      "description": "Update a Twitter messaging integration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messaging/integrations/twitter",
+      "description": "Get a list of Twitter Integrations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messaging/integrations/twitter",
+      "description": "Create Twitter Integration"
+    },
+    {
+      "name": "getAllTwitterOauthSettings",
+      "path": "/api/v2/conversations/messaging/integrations/twitter/oauth/settings",
+      "description": "Get twitter oauth settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings",
+      "description": "Get twitter oauth settings to patch an integration"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId}",
+      "description": "Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup",
+      "description": "Create a WhatsApp Integration using the WhatsApp embedded signup flow"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}",
+      "description": "Get a whatsApp integration Identity Resolution settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}",
+      "description": "Update a whatsApp integration Identity Resolution settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}",
+      "description": "Get a WhatsApp messaging integration"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}",
+      "description": "Delete a WhatsApp messaging integration"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}",
+      "description": "Update a WhatsApp messaging integration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messaging/integrations/whatsapp",
+      "description": "Get a list of WhatsApp Integrations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messaging/integrations/whatsapp",
+      "description": "[This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}",
+      "description": "Delete a code used to add a communication to this participant"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks",
+      "description": "Create a new callback for the specified participant on the conversation."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}",
+      "description": "Update a participant."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/replace",
+      "description": "Replace this participant with the specified user and/or address"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/digits",
+      "description": "Sends DTMF to the participant"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/attributes",
+      "description": "Update the attributes on a conversation participant."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/wrapup",
+      "description": "Get the wrap-up for this conversation participant. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent",
+      "description": "Replace this participant with the specified agent"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue",
+      "description": "Replace this participant with the specified queue"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/replace/external",
+      "description": "Replace this participant with the an external contact"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason",
+      "description": "Set flagged reason on conversation participant to indicate bad conversation quality."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason",
+      "description": "Remove flagged reason from conversation participant."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}",
+      "description": "Fetch info on a secure session"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions",
+      "description": "Get a list of secure sessions for this participant."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions",
+      "description": "Create secure IVR session. Only a participant in the conversation can invoke a secure IVR."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/suggestions/feedback",
+      "description": "Suggestion feedback."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/{conversationId}/suggestions",
+      "description": "Get all suggestions for a conversation."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}",
+      "description": "Get Suggestion."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement",
+      "description": "Save an engagement on the suggestion."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/summaries",
+      "description": "Get the summaries of the conversation."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements",
+      "description": "Update agent's engagement for the summary."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback",
+      "description": "Submit feedback for the summary."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback",
+      "description": "Update the feedback for the summary."
+    },
+    {
+      "name": "recordingmetadata",
+      "path": "/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}",
+      "description": "Get metadata for a specific recording. Does not return playable media."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/recordings/{recordingId}",
+      "description": "Gets a specific recording."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/recordings/{recordingId}",
+      "description": "Updates the retention records on a recording."
+    },
+    {
+      "name": "conversationmetadata",
+      "path": "/api/v2/conversations/{conversationId}/recordingmetadata",
+      "description": "Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/{conversationId}/recordings",
+      "description": "Get all of a Conversation's Recordings."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}",
+      "description": "Get annotation"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}",
+      "description": "Update annotation"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}",
+      "description": "Delete annotation"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations",
+      "description": "Get annotations for recording"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations",
+      "description": "Create annotation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult",
+      "description": "Initiate voice consult transfer"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external",
+      "description": "Initiate a consult transfer to an external contact"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/internalmessages",
+      "description": "Get active internal message conversations for the logged in user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/internalmessages/{conversationId}",
+      "description": "Get internal message conversation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}",
+      "description": "Create an Agent-Type video conference and assign an agent to it"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/videos/meetings/{meetingId}",
+      "description": "Gets a record for a given meetingId"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/videos/meetings",
+      "description": "Generate a meetingId for a given conferenceId"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/videos/{conferenceId}/details",
+      "description": "Get video conference details (e.g. the current number of active participants)."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId}",
+      "description": "Get message"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages",
+      "description": "Get messages for communication"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages",
+      "description": "Send internal message"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}",
+      "description": "Get Apple messaging integration identity resolution settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}",
+      "description": "Create an identity resolution settings for a Apple messaging integration"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/transfer",
+      "description": "Replace this participant by another one using the address of the destination."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external",
+      "description": "Replace this participant with the an external contact"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications",
+      "description": "Setup internal message communication with user"
+    }
+  ]
+}

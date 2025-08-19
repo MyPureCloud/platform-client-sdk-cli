@@ -1,0 +1,371 @@
+{
+  "supercommand": "flows",
+  "description": "/api/v2/flows",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/flows/datatables/divisionviews/{datatableId}",
+      "description": "Returns a specific datatable by id"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}",
+      "description": "Returns the state information about an export job"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/datatables/{datatableId}/export/jobs",
+      "description": "Begin an export process for exporting all rows from a datatable"
+    },
+    {
+      "name": "getstateinformation",
+      "path": "/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}",
+      "description": "Returns the state information about an import job"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/datatables/{datatableId}/import/jobs",
+      "description": "Get all recent import jobs"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/datatables/{datatableId}/import/jobs",
+      "description": "Begin an import process for importing rows into a datatable"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/datatables/{datatableId}",
+      "description": "Returns a specific datatable by id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/flows/datatables/{datatableId}",
+      "description": "Updates a specific datatable by id"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/flows/datatables/{datatableId}",
+      "description": "deletes a specific datatable by id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/datatables/divisionviews",
+      "description": "Retrieve a list of datatables for the org"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/datatables",
+      "description": "Retrieve a list of datatables for the org"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/datatables",
+      "description": "Create a new datatable with the specified json-schema definition"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/datatables/{datatableId}/rows/{rowId}",
+      "description": "Returns a specific row for the datatable"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/flows/datatables/{datatableId}/rows/{rowId}",
+      "description": "Update a row entry"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/flows/datatables/{datatableId}/rows/{rowId}",
+      "description": "Delete a row entry"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/datatables/{datatableId}/rows",
+      "description": "Returns the rows for the datatable with the given id"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/datatables/{datatableId}/rows",
+      "description": "Create a new row entry for the datatable."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/instances/{instanceId}",
+      "description": "Start a process (job) to prepare a download of a singular flow execution data instance by Id"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/instances/jobs/{jobId}",
+      "description": "Get the status and/or results of an asynchronous flow execution data retrieval job"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/instances/jobs",
+      "description": "Start a process (job) that will prepare a list of execution data IDs for download."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/instances/querycapabilities",
+      "description": "Retrieve a list of capabilities that the org can use to query for execution data"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/instances/query",
+      "description": "Query the database of existing flow histories to look for particular flow criteria"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/instances/settings/executiondata",
+      "description": "Get the execution history enabled setting."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/flows/instances/settings/executiondata",
+      "description": "Edit the execution history enabled setting."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/instances/settings/loglevels/default",
+      "description": "Returns the flow default log level."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/flows/instances/settings/loglevels/default",
+      "description": "Edit the flow default log level."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/flows/instances/settings/loglevels/default",
+      "description": "Resets the org log level to default, base"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/{flowId}/instances/settings/loglevels",
+      "description": "Retrieves the log level for a flow by flow id."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/{flowId}/instances/settings/loglevels",
+      "description": "Set the logLevel for a particular flow id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/flows/{flowId}/instances/settings/loglevels",
+      "description": "Edit the logLevel for a particular flow id"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/flows/{flowId}/instances/settings/loglevels",
+      "description": "Deletes a log level for a flow by flow id."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/instances/settings/loglevels",
+      "description": "Retrieve a list of LogLevels for the organization."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/instances/settings/loglevels/characteristics",
+      "description": "Gets the available flow log level characteristics for this organization."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/export/jobs",
+      "description": "Register Architect Export Job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/export/jobs/{jobId}",
+      "description": "Fetch Architect Export Job Status"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/jobs",
+      "description": "Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/jobs/{jobId}",
+      "description": "Fetch Architect Job Status"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/actions/unlock",
+      "description": "Unlock flow"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/actions/publish",
+      "description": "Publish flow"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/actions/checkin",
+      "description": "Check-in flow"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/actions/checkout",
+      "description": "Check-out flow"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/actions/deactivate",
+      "description": "Deactivate flow"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/actions/revert",
+      "description": "Revert flow"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/executions/{flowExecutionId}",
+      "description": "Get a flow execution's details. Flow execution details are available for several days after the flow is started."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/executions",
+      "description": "Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/health",
+      "description": "Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/utterances/{utteranceId}/health",
+      "description": "Get health metrics associated with a specific utterance of an intent."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/{flowId}/versions/{versionId}/health",
+      "description": "Get overall health scores for all intents present in the NLU domain version associated with the bot flow version."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/milestones/{milestoneId}",
+      "description": "Get a flow milestone"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/flows/milestones/{milestoneId}",
+      "description": "Updates a flow milestone"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/flows/milestones/{milestoneId}",
+      "description": "Delete a flow milestone."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/milestones/divisionviews",
+      "description": "Get a pageable list of basic flow milestone information objects filterable by query parameters."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/milestones",
+      "description": "Get a pageable list of flow milestones, filtered by query parameters"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/milestones",
+      "description": "Create a flow milestone"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/outcomes/{flowOutcomeId}",
+      "description": "Get a flow outcome"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/flows/outcomes/{flowOutcomeId}",
+      "description": "Updates a flow outcome"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/outcomes/divisionviews",
+      "description": "Get a pageable list of basic flow outcome information objects filterable by query parameters."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/outcomes",
+      "description": "Get a pageable list of flow outcomes, filtered by query parameters"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/outcomes",
+      "description": "Create a flow outcome"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/{flowId}/history",
+      "description": "Generate flow history"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/{flowId}/history/{historyId}",
+      "description": "Get generated flow history"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/{flowId}",
+      "description": "Get flow"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/flows/{flowId}",
+      "description": "Update flow"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/flows/{flowId}",
+      "description": "Delete flow"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/{flowId}/latestconfiguration",
+      "description": "Get the latest configuration for flow"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/{flowId}/versions/{versionId}",
+      "description": "Get flow version"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/{flowId}/versions/{versionId}/configuration",
+      "description": "Get flow version configuration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/{flowId}/versions",
+      "description": "Get flow version list"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/{flowId}/versions",
+      "description": "Create flow version"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/divisionviews",
+      "description": "Get a pageable list of basic flow information objects filterable by query parameters."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows",
+      "description": "Get a pageable list of flows, filtered by query parameters"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows",
+      "description": "Create flow"
+    },
+    {
+      "name": "batchdelete",
+      "path": "/api/v2/flows",
+      "description": "Batch-delete a list of flows"
+    }
+  ]
+}

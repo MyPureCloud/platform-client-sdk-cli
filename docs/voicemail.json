@@ -1,0 +1,141 @@
+{
+  "supercommand": "voicemail",
+  "description": "/api/v2/voicemail",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/voicemail/groups/{groupId}/messages",
+      "description": "List voicemail messages"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/voicemail/queues/{queueId}/messages",
+      "description": "List voicemail messages"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/voicemail/users/{userId}/messages",
+      "description": "List voicemail messages"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/voicemail/groups/{groupId}/policy",
+      "description": "Get a group's voicemail policy"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/voicemail/groups/{groupId}/policy",
+      "description": "Update a group's voicemail policy"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/voicemail/mailbox",
+      "description": "Get the current user's mailbox information"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/voicemail/me/mailbox",
+      "description": "Get the current user's mailbox information"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/voicemail/groups/{groupId}/mailbox",
+      "description": "Get the group's mailbox information"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/voicemail/users/{userId}/mailbox",
+      "description": "Get a user's mailbox information"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/voicemail/me/messages",
+      "description": "List voicemail messages"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/voicemail/me/policy",
+      "description": "Get the current user's voicemail policy"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/voicemail/me/policy",
+      "description": "Update the current user's voicemail policy"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/voicemail/messages/{messageId}",
+      "description": "Get a voicemail message"
+    },
+    {
+      "name": "put",
+      "path": "/api/v2/voicemail/messages/{messageId}",
+      "description": "Update a voicemail message"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/voicemail/messages/{messageId}",
+      "description": "Delete a voicemail message."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/voicemail/messages/{messageId}",
+      "description": "Update a voicemail message"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/voicemail/messages/{messageId}/media",
+      "description": "Get media playback URI for this voicemail message"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/voicemail/messages",
+      "description": "List voicemail messages"
+    },
+    {
+      "name": "copy",
+      "path": "/api/v2/voicemail/messages",
+      "description": "Copy a voicemail message to a user or group"
+    },
+    {
+      "name": "deleteall",
+      "path": "/api/v2/voicemail/messages",
+      "description": "Delete all voicemail messages"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/voicemail/policy",
+      "description": "Get a policy"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/voicemail/policy",
+      "description": "Update a policy"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/voicemail/userpolicies/{userId}",
+      "description": "Get a user's voicemail policy"
+    },
+    {
+      "name": "put",
+      "path": "/api/v2/voicemail/userpolicies/{userId}",
+      "description": "Update a user's voicemail policy"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/voicemail/userpolicies/{userId}",
+      "description": "Update a user's voicemail policy"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/voicemail/search",
+      "description": "Search voicemails using the q64 value returned from a previous search"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/voicemail/search",
+      "description": "Search voicemails"
+    }
+  ]
+}

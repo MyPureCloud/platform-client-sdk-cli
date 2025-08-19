@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_capacityplans_requirement
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_capacityplans_requirement_generate"
+)
+
+func init() {
+	workforcemanagement_businessunits_capacityplans_requirementCmd.AddCommand(workforcemanagement_businessunits_capacityplans_requirement_generate.Cmdworkforcemanagement_businessunits_capacityplans_requirement_generate())
+	workforcemanagement_businessunits_capacityplans_requirementCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_capacityplans_requirementCmd.Short, workforcemanagement_businessunits_capacityplans_requirement_generate.Description, )
+	workforcemanagement_businessunits_capacityplans_requirementCmd.Long = workforcemanagement_businessunits_capacityplans_requirementCmd.Short
+}

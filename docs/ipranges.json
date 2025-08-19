@@ -1,0 +1,11 @@
+{
+  "supercommand": "ipranges",
+  "description": "/api/v2/ipranges",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/ipranges",
+      "description": "Get public ip address ranges for Genesys Cloud"
+    }
+  ]
+}

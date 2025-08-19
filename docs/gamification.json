@@ -1,0 +1,361 @@
+{
+  "supercommand": "gamification",
+  "description": "/api/v2/gamification",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/contests/uploads/prizeimages",
+      "description": "Generates pre-signed URL to upload a prize image for gamification contests"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/status",
+      "description": "Gamification activation status"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/gamification/status",
+      "description": "Update gamification activation status"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/leaderboard",
+      "description": "Leaderboard of the requesting user's division or performance profile"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/leaderboard/bestpoints",
+      "description": "Best Points of the requesting user's current performance profile or division"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/leaderboard/all",
+      "description": "Leaderboard by filter type"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/leaderboard/all/bestpoints",
+      "description": "Best Points by division or performance profile"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/metricdefinitions/{metricDefinitionId}",
+      "description": "Metric definition by id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/metricdefinitions",
+      "description": "All metric definitions"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/templates/{templateId}",
+      "description": "Objective template by id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/templates",
+      "description": "All objective templates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/profiles/users/{userId}/query",
+      "description": "Query performance profiles in date range for a user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/profiles/users/me/query",
+      "description": "Query performance profiles in date range for the current user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/profiles/{profileId}",
+      "description": "Performance profile by id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/gamification/profiles/{profileId}",
+      "description": "Updates a performance profile"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/profiles/{profileId}/activate",
+      "description": "Activate a performance profile"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/profiles/{profileId}/deactivate",
+      "description": "Deactivate a performance profile"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/profiles/users/me",
+      "description": "Performance profile of the requesting user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/profiles/users/{userId}",
+      "description": "Performance profile of a user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/profiles",
+      "description": "All performance profiles"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/profiles",
+      "description": "Create a new custom performance profile"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link",
+      "description": "Creates a linked metric"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/profiles/{profileId}/metrics/{metricId}",
+      "description": "Performance profile gamified metric by id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/gamification/profiles/{profileId}/metrics/{metricId}",
+      "description": "Updates a metric in performance profile"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/profiles/{profileId}/metrics/objectivedetails",
+      "description": "All metrics for a given performance profile with objective details such as order and maxPoints"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/profiles/{profileId}/metrics",
+      "description": "All gamified metrics for a given performance profile"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/profiles/{profileId}/metrics",
+      "description": "Creates a gamified metric with a given metric definition and metric objective under in a performance profile"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId}",
+      "description": "Get a Contest Prize Image by Id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/contests",
+      "description": "Get a List of Contests (Admin)"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/contests",
+      "description": "Creates a Contest"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/contests/me",
+      "description": "Get a List of Contests (Agent/Supervisor)"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/contests/{contestId}",
+      "description": "Get a Contest by Id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/gamification/contests/{contestId}",
+      "description": "Update a Contest by Id"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/gamification/contests/{contestId}",
+      "description": "Delete a Contest by Id"
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/gamification/contests/{contestId}",
+      "description": "Finalize a Contest by Id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/contests/{contestId}/agents/scores",
+      "description": "Get Contest Scores (Admin)"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/contests/{contestId}/agents/scores/me",
+      "description": "Get Contest Scores for the requesting Agent/Supervisor"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/contests/{contestId}/agents/scores/trends/me",
+      "description": "Get a Contest Score Trend for the requesting Agent"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/contests/{contestId}/agents/scores/trends",
+      "description": "Get a Contest Score Trend (Average Trend)"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/insights/users/{userId}/details",
+      "description": "Get insights details for the user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/insights/details",
+      "description": "Get insights details for the current user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/insights/members",
+      "description": "Query users in a profile during a period of time"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/insights/groups/trends/all",
+      "description": "Get insights overall trend"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/insights/groups/trends",
+      "description": "Get insights overall trend for the current user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/insights/rankings",
+      "description": "Get insights rankings"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/insights",
+      "description": "Get insights summary"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/insights/trends",
+      "description": "Get insights user trend for the current user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/insights/users/{userId}/trends",
+      "description": "Get insights user trend for the user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/profiles/{profileId}/members",
+      "description": "Members of a given performance profile"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/profiles/{profileId}/members",
+      "description": "Assign members to a given performance profile"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/profiles/{profileId}/members/validate",
+      "description": "Validate member assignment"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends",
+      "description": "Average performance values trends by metric of the requesting user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends",
+      "description": "Average performance values trends by metric of a division or a performance profile"
+    },
+    {
+      "name": "getusertrends",
+      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends",
+      "description": "Average performance values trends by metric of a user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/bestpoints",
+      "description": "Best points of the requesting user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/scorecards",
+      "description": "Workday performance metrics of the requesting user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/attendance",
+      "description": "Attendance status metrics of the requesting user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/points/alltime",
+      "description": "All-time points of the requesting user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/points/average",
+      "description": "Average points of the requesting user's division or performance profile"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/points/trends",
+      "description": "Points trends of the requesting user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/values/trends",
+      "description": "Values trends of the requesting user or group"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/values/average",
+      "description": "Average values of the requesting user's division or performance profile"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/{userId}",
+      "description": "Workday performance metrics for a user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/{userId}/bestpoints",
+      "description": "Best points of a user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/{userId}/attendance",
+      "description": "Attendance status metrics for a user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/{userId}/points/trends",
+      "description": "Points trend for a user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/{userId}/points/alltime",
+      "description": "All-time points for a user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/scorecards/users/{userId}/values/trends",
+      "description": "Values trends of a user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/points/average",
+      "description": "Workday average points by target group"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/values/average",
+      "description": "Workday average values by target group"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/values/trends",
+      "description": "Values trend by target group"
+    }
+  ]
+}

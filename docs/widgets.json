@@ -1,0 +1,31 @@
+{
+  "supercommand": "widgets",
+  "description": "/api/v2/widgets",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/widgets/deployments/{deploymentId}",
+      "description": "Get a Widget deployment"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/widgets/deployments/{deploymentId}",
+      "description": "Update a Widget deployment"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/widgets/deployments/{deploymentId}",
+      "description": "Delete a Widget deployment"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/widgets/deployments",
+      "description": "List Widget deployments"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/widgets/deployments",
+      "description": "Create Widget deployment"
+    }
+  ]
+}

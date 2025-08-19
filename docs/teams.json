@@ -1,0 +1,51 @@
+{
+  "supercommand": "teams",
+  "description": "/api/v2/teams",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/teams/{teamId}/members",
+      "description": "Get team membership"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/teams/{teamId}/members",
+      "description": "Add team members"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/teams/{teamId}/members",
+      "description": "Delete team members"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/teams/{teamId}",
+      "description": "Get team"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/teams/{teamId}",
+      "description": "Delete team"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/teams/{teamId}",
+      "description": "Update team"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/teams",
+      "description": "Get Team listing"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/teams",
+      "description": "Create a team"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/teams/search",
+      "description": "Search resources."
+    }
+  ]
+}

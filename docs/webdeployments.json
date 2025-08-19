@@ -1,0 +1,111 @@
+{
+  "supercommand": "webdeployments",
+  "description": "/api/v2/webdeployments",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}",
+      "description": "Retrieves a cobrowse session"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}",
+      "description": "Deletes a cobrowse session"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/webdeployments/token/refresh",
+      "description": "Refresh a JWT."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/webdeployments/token/oauthcodegrantjwtexchange",
+      "description": "Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/webdeployments/configurations/{configurationId}",
+      "description": "Delete all versions of a configuration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/webdeployments/configurations",
+      "description": "View configuration drafts"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/webdeployments/configurations",
+      "description": "Create a configuration draft"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions",
+      "description": "Get the versions of a configuration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}",
+      "description": "Get a configuration version"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions/draft",
+      "description": "Get the configuration draft"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions/draft",
+      "description": "Update the configuration draft"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish",
+      "description": "Publish the configuration draft and create a new version"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/webdeployments/deployments/{deploymentId}/identityresolution",
+      "description": "Get a deployment identity resolution setting."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/webdeployments/deployments/{deploymentId}/identityresolution",
+      "description": "Update identity resolution settings for a deployment."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/webdeployments/deployments/{deploymentId}",
+      "description": "Get a deployment"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/webdeployments/deployments/{deploymentId}",
+      "description": "Update a deployment"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/webdeployments/deployments/{deploymentId}",
+      "description": "Delete a deployment"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/webdeployments/deployments/{deploymentId}/configurations",
+      "description": "Get active configuration for a given deployment"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/webdeployments/token/revoke",
+      "description": "Invalidate JWT"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/webdeployments/deployments",
+      "description": "Get deployments"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/webdeployments/deployments",
+      "description": "Create a deployment"
+    }
+  ]
+}

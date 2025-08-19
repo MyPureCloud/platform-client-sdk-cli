@@ -1,0 +1,31 @@
+{
+  "supercommand": "orphanrecordings",
+  "description": "/api/v2/orphanrecordings",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/orphanrecordings/{orphanId}/media",
+      "description": "Gets the media of a single orphan recording"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orphanrecordings/{orphanId}",
+      "description": "Gets a single orphan recording"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/orphanrecordings/{orphanId}",
+      "description": "Updates an orphan recording to a regular recording with retention values"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/orphanrecordings/{orphanId}",
+      "description": "Deletes a single orphan recording"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/orphanrecordings",
+      "description": "Gets all orphan recordings"
+    }
+  ]
+}

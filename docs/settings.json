@@ -1,0 +1,16 @@
+{
+  "supercommand": "settings",
+  "description": "/api/v2/settings",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/settings/executiondata",
+      "description": "Get the execution history enabled setting."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/settings/executiondata",
+      "description": "Edit the execution history on off setting."
+    }
+  ]
+}

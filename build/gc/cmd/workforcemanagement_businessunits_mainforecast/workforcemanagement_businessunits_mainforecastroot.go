@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_mainforecast
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_mainforecast_continuousforecast"
+)
+
+func init() {
+	workforcemanagement_businessunits_mainforecastCmd.AddCommand(workforcemanagement_businessunits_mainforecast_continuousforecast.Cmdworkforcemanagement_businessunits_mainforecast_continuousforecast())
+	workforcemanagement_businessunits_mainforecastCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_mainforecastCmd.Short, workforcemanagement_businessunits_mainforecast_continuousforecast.Description, )
+	workforcemanagement_businessunits_mainforecastCmd.Long = workforcemanagement_businessunits_mainforecastCmd.Short
+}

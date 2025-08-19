@@ -1,0 +1,466 @@
+{
+  "supercommand": "integrations",
+  "description": "/api/v2/integrations",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/credentials/listing",
+      "description": "List multiple sets of credentials using cursor-based paging"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/credentials/{credentialId}",
+      "description": "Get a single credential with sensitive fields redacted"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/credentials/{credentialId}",
+      "description": "Update a set of credentials"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/integrations/credentials/{credentialId}",
+      "description": "Delete a set of credentials"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/credentials/types",
+      "description": "List all credential types"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/credentials",
+      "description": "List multiple sets of credentials"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/credentials",
+      "description": "Create a set of credentials"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/clientapps",
+      "description": "List permitted client app integrations for the logged in user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/{integrationId}/config/current",
+      "description": "Get integration configuration."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/{integrationId}/config/current",
+      "description": "Update integration configuration."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/{integrationId}",
+      "description": "Get integration."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/integrations/{integrationId}",
+      "description": "Delete integration."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/{integrationId}",
+      "description": "Update an integration."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/types/{typeId}/configschemas/{configType}",
+      "description": "Get properties config schema for an integration type."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/types/{typeId}",
+      "description": "Get integration type."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/types",
+      "description": "List integration types"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations",
+      "description": "List integrations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations",
+      "description": "Create an integration."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/userapps",
+      "description": "List permitted user app integrations for the logged in user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/actions/categories",
+      "description": "Retrieves all categories of available Actions"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/actions/certificates",
+      "description": "Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/certificates/truststore",
+      "description": "Retrieves basic info about trusted root CA certificates"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/draft",
+      "description": "Retrieve a Draft"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/actions/{actionId}/draft",
+      "description": "Create a new Draft from existing Action"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/integrations/actions/{actionId}/draft",
+      "description": "Delete a Draft"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/actions/{actionId}/draft",
+      "description": "Update an existing Draft"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/actions/{actionId}/draft/test",
+      "description": "Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}",
+      "description": "Retrieve schema for a Draft based on filename."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/draft/templates/{fileName}",
+      "description": "Retrieve templates for a Draft based on filename."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/actions/{actionId}/draft/publish",
+      "description": "Publish a Draft and make it the active Action configuration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/draft/validation",
+      "description": "Validate current Draft configuration."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/actions/{actionId}/execute",
+      "description": "Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}",
+      "description": "Retrieves a single Action matching id."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/integrations/actions/{actionId}",
+      "description": "Delete an Action"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/actions/{actionId}",
+      "description": "Patch an Action"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/actions/{actionId}/test",
+      "description": "Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/schemas/{fileName}",
+      "description": "Retrieve schema for an action based on filename."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/templates/{fileName}",
+      "description": "Retrieve text of templates for an action based on filename."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/draft/function",
+      "description": "Get draft function settings for Action"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/actions/{actionId}/draft/function",
+      "description": "Update draft function settings."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/actions/{actionId}/draft/function/upload",
+      "description": "Create upload presigned URL for draft function package file."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/actions/drafts",
+      "description": "Retrieves all action drafts associated with the filters passed in via query param."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/actions/drafts",
+      "description": "Create a new Draft"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/function",
+      "description": "Get published function settings for Action"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/actions/functions/runtimes",
+      "description": "Get action function settings for Action"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/actions",
+      "description": "Retrieves all actions associated with filters passed in via query param."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/actions",
+      "description": "Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/botconnector/{integrationId}/bots",
+      "description": "Get a list of botConnector bots for this integration"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/botconnector/{integrationId}/bots",
+      "description": "Set a list of botConnector bots plus versions for this integration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/botconnector/{integrationId}/bots/{botId}",
+      "description": "Get a specific botConnector bot, plus versions, for this integration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/botconnector/{integrationId}/bots/summaries",
+      "description": "Get a summary list of botConnector bots for this integration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions",
+      "description": "Get a list of bot versions for a bot"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/speech/audioconnector/{integrationId}",
+      "description": "Get an Audio Connector integration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/audioconnector",
+      "description": "Get a list of Audio Connector integrations"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/speech/dialogflow/agents/{agentId}",
+      "description": "Get details about a Dialogflow agent"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/dialogflow/agents",
+      "description": "Get a list of Dialogflow agents in the customers' Google accounts"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/speech/dialogflowcx/agents/{agentId}",
+      "description": "Get details about a Dialogflow CX agent"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/dialogflowcx/agents",
+      "description": "Get a list of Dialogflow CX agents in the customers' Google accounts"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/speech/lex/bot/alias/{aliasId}",
+      "description": "Get details about a Lex bot alias"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/lex/bot/{botId}/aliases",
+      "description": "Get a list of aliases for a bot in the customer's AWS accounts"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/lex/bots",
+      "description": "Get a list of Lex bots in the customers' AWS accounts"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/speech/lexv2/bot/alias/{aliasId}",
+      "description": "Get details about a Lex V2 bot alias"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/lexv2/bot/{botId}/aliases",
+      "description": "Get a list of aliases for a Lex V2 bot"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/lexv2/bots",
+      "description": "Get a list of Lex V2 bots"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}",
+      "description": "Get the status of an asynchronous Nuance bot GET job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results",
+      "description": "Get the result of an asynchronous Nuance bot GET job"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs",
+      "description": "Get a Nuance bot in the specified Integration asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}",
+      "description": "Get a Nuance bot in the specified Integration"
+    },
+    {
+      "name": "listBotsJob",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}",
+      "description": "Get the status of an asynchronous Nuance bots GET job"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results",
+      "description": "Get the result of an asynchronous Nuance bots GET job"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs",
+      "description": "Get a list of Nuance bots in the specified Integration asynchronously"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings",
+      "description": "Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate",
+      "description": "Try out a single credential for a Nuance bot to know if the secret is correct"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots",
+      "description": "Get a list of Nuance bots available in the specified Integration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/speech/stt/engines/{engineId}",
+      "description": "Get details about a STT engine"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/stt/engines",
+      "description": "Get a list of STT engines enabled for org"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/speech/tts/engines/{engineId}",
+      "description": "Get details about a TTS engine"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/tts/engines",
+      "description": "Get a list of TTS engines enabled for org"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/speech/tts/settings",
+      "description": "Get TTS settings for an org"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/speech/tts/settings",
+      "description": "Update TTS settings for an org"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId}",
+      "description": "Get details about a specific voice for a TTS engine"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/tts/engines/{engineId}/voices",
+      "description": "Get a list of voices for a TTS engine"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/webhooks/{tokenId}/events",
+      "description": "Invoke Webhook"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}",
+      "description": "UC integration client application configuration."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/unifiedcommunications/clientapps",
+      "description": "List UC integration client application configurations."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/clientapps/unifiedcommunications",
+      "description": "UC integration client application configuration."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences",
+      "description": "Bulk integration presence ingestion"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/botconnectors/{integrationId}/bots/{botId}",
+      "description": "Get a specific Bot details"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/botconnectors/{integrationId}/bots/summaries",
+      "description": "Get the summary list of bots for this integration."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/botconnectors/{integrationId}/bots",
+      "description": "Get the list of bots for this integration."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/botconnectors/incoming/messages",
+      "description": "Send an incoming message to the bot."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/botconnectors/outgoing/messages",
+      "description": "Send an outgoing message to the end user."
+    }
+  ]
+}

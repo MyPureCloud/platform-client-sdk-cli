@@ -1,0 +1,66 @@
+{
+  "supercommand": "usage",
+  "description": "/api/v2/usage",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/usage/events/definitions",
+      "description": "Get all operational event definitions"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/usage/events/definitions/{eventDefinitionId}",
+      "description": "Get an operational event definition by its id"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/usage/events/query",
+      "description": "Query operational events in a timeframe."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/usage/events/aggregates/query",
+      "description": "Get aggregates for operational events in a timeframe."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/usage/query",
+      "description": "Query organization API Usage - "
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/usage/query/{executionId}/results",
+      "description": "Get the results of a usage query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/usage/simplesearch",
+      "description": "Search organization API Usage"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/usage/simplesearch/{executionId}/results",
+      "description": "Get the results of a usage search. Number of records to be returned is limited to 20,000 results."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/usage/client/{clientId}/aggregates/query/jobs",
+      "description": "Query your client's public api usage."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId}",
+      "description": "Get the status and results of the usage query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/usage/aggregates/query/jobs",
+      "description": "Query your organization's public api usage."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/usage/aggregates/query/jobs/{jobId}",
+      "description": "Get the status and results of the usage query"
+    }
+  ]
+}

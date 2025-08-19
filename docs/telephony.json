@@ -1,0 +1,686 @@
+{
+  "supercommand": "telephony",
+  "description": "/api/v2/telephony",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/mediaregions",
+      "description": "Retrieve the list of AWS regions media can stream through."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/sipmessages/conversations/{conversationId}/headers",
+      "description": "Get SIP headers."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/sipmessages/conversations/{conversationId}",
+      "description": "Get a SIP message."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/addressvalidation",
+      "description": "Validates a street address"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/certificateauthorities",
+      "description": "Get the list of certificate authorities."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/certificateauthorities",
+      "description": "Create a certificate authority."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/certificateauthorities/{certificateId}",
+      "description": "Get a certificate authority."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/certificateauthorities/{certificateId}",
+      "description": "Update a certificate authority."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/certificateauthorities/{certificateId}",
+      "description": "Delete a certificate authority."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
+      "description": "Get networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
+      "description": "Ping Request command to collect networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath",
+      "description": "Get networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath",
+      "description": "Tracepath request command to collect networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup",
+      "description": "Get networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup",
+      "description": "Nslookup request command to collect networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/route",
+      "description": "Get networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/route",
+      "description": "Route request command to collect networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/reboot",
+      "description": "Reboot an Edge"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}",
+      "description": "Get edge."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}",
+      "description": "Update a edge."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}",
+      "description": "Delete a edge."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/statuscode",
+      "description": "Take an Edge in or out of service"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/softwareupdate",
+      "description": "Gets software update status information about any edge."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/softwareupdate",
+      "description": "Starts a software update for this edge."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/softwareupdate",
+      "description": "Cancels any in-progress update for this edge."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/softwareversions",
+      "description": "Gets all the available software versions for this edge."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/timezones",
+      "description": "Get a list of Edge-compatible time zones"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/unpair",
+      "description": "Unpair an Edge"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/edgeversionreport",
+      "description": "Get the edge version report."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/logicalinterfaces",
+      "description": "Get edge logical interfaces."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/physicalinterfaces",
+      "description": "Get physical interfaces for edges."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges",
+      "description": "Get the list of edges."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges",
+      "description": "Create an edge."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}",
+      "description": "Get an edge logical interface"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}",
+      "description": "Update an edge logical interface."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}",
+      "description": "Delete an edge logical interface"
+    },
+    {
+      "name": "getedgelogicalinterfaces",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces",
+      "description": "Get edge logical interfaces."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces",
+      "description": "Create an edge logical interface."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId}",
+      "description": "Get edge physical interface."
+    },
+    {
+      "name": "listedgeinterfaces",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces",
+      "description": "Retrieve a list of all configured physical interfaces from a specific edge."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/alertablepresences",
+      "description": "Get the list alertable presences. The 'type' query parameter can be used to If there are any overrides, this is the list of overrides; if there are no overrides, it is the default list."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/alertablepresences",
+      "description": "Creates or updates alertable presences overrides."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/alertablepresences",
+      "description": "Deletes alertable presences overrides."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/didpools/{didPoolId}",
+      "description": "Get a DID Pool by ID."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/didpools/{didPoolId}",
+      "description": "Update a DID Pool by ID."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/didpools/{didPoolId}",
+      "description": "Delete a DID Pool by ID."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/didpools/dids",
+      "description": "Get a listing of unassigned and/or assigned numbers in a set of DID Pools."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/didpools",
+      "description": "Get a listing of DID Pools"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/didpools",
+      "description": "Create a new DID pool"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/dids/{didId}",
+      "description": "Get a DID by ID."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/dids",
+      "description": "Get a listing of DIDs"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}",
+      "description": "Get edge group."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}",
+      "description": "Update an edge group."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}",
+      "description": "Delete an edge group."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}",
+      "description": "Gets the edge trunk base associated with the edge group"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}",
+      "description": "Update the edge trunk base associated with the edge group"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/edgegroups",
+      "description": "Get the list of edge groups."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/edgegroups",
+      "description": "Create an edge group."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}",
+      "description": "Get an extension pool by ID"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}",
+      "description": "Update an extension pool by ID"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}",
+      "description": "Delete an extension pool by ID"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/extensionpools/divisionviews",
+      "description": "Get a pageable list of basic extension pool objects filterable by query parameters."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/extensionpools",
+      "description": "Get a listing of extension pools"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/extensionpools",
+      "description": "Create a new extension pool"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/extensions/{extensionId}",
+      "description": "Get an extension by ID."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/extensions",
+      "description": "Get a listing of extensions"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/linebasesettings/{lineBaseId}",
+      "description": "Get a line base settings object by ID"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/linebasesettings",
+      "description": "Get a listing of line base settings objects"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/lines/{lineId}",
+      "description": "Get a Line by ID"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/lines",
+      "description": "Get a list of Lines"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/lines/template",
+      "description": "Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}",
+      "description": "Get an Edge logs job."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload",
+      "description": "Request that the specified fileIds be uploaded from the Edge."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/logs/jobs",
+      "description": "Create a job to upload a list of Edge logs."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/metrics",
+      "description": "Get the edge metrics."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/metrics",
+      "description": "Get the metrics for a list of edges."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications",
+      "description": "Get a list of Classifications for this Site"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}",
+      "description": "Get a Number Plan by ID."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans",
+      "description": "Get the list of Number Plans for this Site. Only fetches the first 200 records."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans",
+      "description": "Update the list of Number Plans. A user can update maximum 200 number plans at a time."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/outboundroutes",
+      "description": "Get outbound routes"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/phonebasesettings/template",
+      "description": "Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}",
+      "description": "Get a Phone Base Settings object by ID"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}",
+      "description": "Update a Phone Base Settings by ID"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}",
+      "description": "Delete a Phone Base Settings by ID"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/phonebasesettings",
+      "description": "Get a list of Phone Base Settings objects"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/phonebasesettings",
+      "description": "Create a new Phone Base Settings object"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/phonebasesettings/availablemetabases",
+      "description": "Get a list of available makes and models to create a new Phone Base Settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/phones/template",
+      "description": "Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/phones/{phoneId}",
+      "description": "Get a Phone by ID"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/phones/{phoneId}",
+      "description": "Update a Phone by ID"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/phones/{phoneId}",
+      "description": "Delete a Phone by ID"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/phones",
+      "description": "Get a list of Phone Instances. A maximum of 10,000 results is returned when filtering the results or sorting by a field other than the ID. Sorting by only the ID has no result limit. Each filter supports a wildcard, *, as a value to search for partial values."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/phones",
+      "description": "Create a new Phone"
+    },
+    {
+      "name": "reboot",
+      "path": "/api/v2/telephony/providers/edges/phones/{phoneId}/reboot",
+      "description": "Reboot a Phone"
+    },
+    {
+      "name": "rebootphones",
+      "path": "/api/v2/telephony/providers/edges/phones/reboot",
+      "description": "Reboot Multiple Phones"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/expired",
+      "description": "List of edges more than 4 edge versions behind the latest software."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections",
+      "description": "Get site connections for a site."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections",
+      "description": "Update site connections for a site."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections",
+      "description": "Disable site connections for a site."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}",
+      "description": "Get a Site by ID."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}",
+      "description": "Update a Site by ID."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}",
+      "description": "Delete a Site by ID"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/sites",
+      "description": "Get the list of Sites."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/sites",
+      "description": "Create a Site."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/sites/search",
+      "description": "Search sites using the q64 value returned from a previous search"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/sites/search",
+      "description": "Search sites"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}",
+      "description": "Get an outbound route"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}",
+      "description": "Update outbound route"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}",
+      "description": "Delete Outbound Route"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes",
+      "description": "Get outbound routes"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes",
+      "description": "Create outbound route"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/trunks/{trunkId}/metrics",
+      "description": "Get the trunk metrics."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/trunks/metrics",
+      "description": "Get the metrics for a list of trunks."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/trunkbasesettings/template",
+      "description": "Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}",
+      "description": "Get a Trunk Base Settings object by ID"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}",
+      "description": "Update a Trunk Base Settings object by ID"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}",
+      "description": "Delete a Trunk Base Settings object by ID"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/trunkbasesettings",
+      "description": "Get Trunk Base Settings listing"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/trunkbasesettings",
+      "description": "Create a Trunk Base Settings object"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases",
+      "description": "Get a list of available makes and models to create a new Trunk Base Settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/trunkswithrecording",
+      "description": "Get Counts of trunks that have recording disabled or enabled"
+    },
+    {
+      "name": "listedgetrunks",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/trunks",
+      "description": "Get the list of available trunks for the given Edge."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/trunks/{trunkId}",
+      "description": "Get a Trunk by ID"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/providers/edges/trunks",
+      "description": "Get the list of available trunks."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/setuppackage",
+      "description": "Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/siptraces/download",
+      "description": "Request a download of a pcap file to S3"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/siptraces/download/{downloadId}",
+      "description": "Get signed S3 URL for a pcap download"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/siptraces",
+      "description": "Fetch SIP metadata"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/agents/{agentId}/greetings",
+      "description": "Get an agent's greetings."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/agents/{agentId}/greetings",
+      "description": "Updates an agent's greetings."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/agents/greetings/me",
+      "description": "Get the agent's own greetings."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/agents/greetings/me",
+      "description": "Updates the agent's own greetings."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}",
+      "description": "Get media endpoint statistics event."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}",
+      "description": "Get media endpoint statistics events."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}/mediaresources/{mediaResourceId}",
+      "description": "Post media endpoint statistics event."
+    }
+  ]
+}

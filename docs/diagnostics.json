@@ -1,0 +1,41 @@
+{
+  "supercommand": "diagnostics",
+  "description": "/api/v2/diagnostics",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/diagnostics/logcapture/browser/entries/download/jobs/{jobId}",
+      "description": "Gets status of async download execution"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/diagnostics/logcapture/browser/entries/download/jobs",
+      "description": "Creates an async download execution"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/diagnostics/logcapture/browser/entries/query",
+      "description": "Query collected log entries. It returns a limited amount of records, to get all records use download endpoint."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/diagnostics/logcapture/browser/users",
+      "description": "Get all log capture enabled users for an org"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/diagnostics/logcapture/browser/users/{userId}",
+      "description": "Get log capture configuration for the user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/diagnostics/logcapture/browser/users/{userId}",
+      "description": "Enable log capture for a user or update expiration"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/diagnostics/logcapture/browser/users/{userId}",
+      "description": "Disable browser log capture for the user"
+    }
+  ]
+}

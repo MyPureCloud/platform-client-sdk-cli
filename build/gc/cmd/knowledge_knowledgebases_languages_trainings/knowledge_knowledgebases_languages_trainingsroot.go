@@ -1,0 +1,12 @@
+package knowledge_knowledgebases_languages_trainings
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_languages_trainings_promote"
+)
+
+func init() {
+	knowledge_knowledgebases_languages_trainingsCmd.AddCommand(knowledge_knowledgebases_languages_trainings_promote.Cmdknowledge_knowledgebases_languages_trainings_promote())
+	knowledge_knowledgebases_languages_trainingsCmd.Short = utils.GenerateCustomDescription(knowledge_knowledgebases_languages_trainingsCmd.Short, knowledge_knowledgebases_languages_trainings_promote.Description, )
+	knowledge_knowledgebases_languages_trainingsCmd.Long = knowledge_knowledgebases_languages_trainingsCmd.Short
+}

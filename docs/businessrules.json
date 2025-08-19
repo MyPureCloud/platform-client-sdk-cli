@@ -1,0 +1,151 @@
+{
+  "supercommand": "businessrules",
+  "description": "/api/v2/businessrules",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}",
+      "description": "Get a decision table"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}",
+      "description": "Delete a decision table"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}",
+      "description": "Update a decision table"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/execute",
+      "description": "Execute a published decision table"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}",
+      "description": "Get a decision table version"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}",
+      "description": "Delete a decision table version"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}",
+      "description": "Update a decision table version"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/copy",
+      "description": "Copy a decision table version"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute",
+      "description": "Execute a decision table version"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/publish",
+      "description": "Publish a decision table version"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/sync",
+      "description": "Update the Business Rules Schema to the latest version for a given decision table version"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions",
+      "description": "Get a list of decision table versions"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions",
+      "description": "Create a new decision table version"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/businessrules/decisiontables",
+      "description": "Get a list of decision tables."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables",
+      "description": "Create a decision table"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/businessrules/decisiontables/search",
+      "description": "Search for decision tables."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}",
+      "description": "Get a decision table row"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}",
+      "description": "Full update a decision table row"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}",
+      "description": "Delete a decision table row"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows",
+      "description": "Get a list of decision table rows."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows",
+      "description": "Create a decision table row"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/search",
+      "description": "Search for decision table rows"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/businessrules/schemas/coretypes/{coreTypeName}",
+      "description": "Get a specific named core type."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/businessrules/schemas/coretypes",
+      "description": "Get the core types from which all schemas are built."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/businessrules/schemas/{schemaId}",
+      "description": "Get a schema"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/businessrules/schemas/{schemaId}",
+      "description": "Update a schema"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/businessrules/schemas/{schemaId}",
+      "description": "Delete a schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/businessrules/schemas",
+      "description": "Get a list of schemas."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/schemas",
+      "description": "Create a schema"
+    }
+  ]
+}

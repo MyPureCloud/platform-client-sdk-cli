@@ -1,0 +1,196 @@
+{
+  "supercommand": "identityproviders",
+  "description": "/api/v2/identityproviders",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/identityproviders/adfs",
+      "description": "Get ADFS Identity Provider"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/identityproviders/adfs",
+      "description": "Update/Create ADFS Identity Provider"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/identityproviders/adfs",
+      "description": "Delete ADFS Identity Provider"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/identityproviders/cic",
+      "description": "Get Customer Interaction Center (CIC) Identity Provider"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/identityproviders/cic",
+      "description": "Update/Create Customer Interaction Center (CIC) Identity Provider"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/identityproviders/cic",
+      "description": "Delete Customer Interaction Center (CIC) Identity Provider"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/identityproviders/gsuite",
+      "description": "Get G Suite Identity Provider"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/identityproviders/gsuite",
+      "description": "Update/Create G Suite Identity Provider"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/identityproviders/gsuite",
+      "description": "Delete G Suite Identity Provider"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/identityproviders/generic",
+      "description": "Get Generic SAML Identity Provider"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/identityproviders/generic",
+      "description": "Update/Create Generic SAML Identity Provider"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/identityproviders/generic",
+      "description": "Delete Generic SAML Identity Provider"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/identityproviders/identitynow",
+      "description": "Get IdentityNow Provider"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/identityproviders/identitynow",
+      "description": "Update/Create IdentityNow Provider"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/identityproviders/identitynow",
+      "description": "Delete IdentityNow Provider"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/identityproviders",
+      "description": "The list of identity providers"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/identityproviders",
+      "description": "Create Identity Provider"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/identityproviders/{providerId}",
+      "description": "Get Identity Provider"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/identityproviders/{providerId}",
+      "description": "Update Identity Provider"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/identityproviders/{providerId}",
+      "description": "Delete Identity Provider"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/identityproviders/okta",
+      "description": "Get Okta Identity Provider"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/identityproviders/okta",
+      "description": "Update/Create Okta Identity Provider"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/identityproviders/okta",
+      "description": "Delete Okta Identity Provider"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/identityproviders/onelogin",
+      "description": "Get OneLogin Identity Provider"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/identityproviders/onelogin",
+      "description": "Update/Create OneLogin Identity Provider"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/identityproviders/onelogin",
+      "description": "Delete OneLogin Identity Provider"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/identityproviders/ping",
+      "description": "Get Ping Identity Provider"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/identityproviders/ping",
+      "description": "Update/Create Ping Identity Provider"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/identityproviders/ping",
+      "description": "Delete Ping Identity Provider"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/identityproviders/purecloud",
+      "description": "Get PureCloud Identity Provider"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/identityproviders/purecloud",
+      "description": "Update/Create PureCloud Identity Provider"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/identityproviders/purecloud",
+      "description": "Delete PureCloud Identity Provider"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/identityproviders/pureengage",
+      "description": "Get PureEngage Identity Provider"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/identityproviders/pureengage",
+      "description": "Update/Create PureEngage Identity Provider"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/identityproviders/pureengage",
+      "description": "Delete PureEngage Identity Provider"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/identityproviders/salesforce",
+      "description": "Get Salesforce Identity Provider"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/identityproviders/salesforce",
+      "description": "Update/Create Salesforce Identity Provider"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/identityproviders/salesforce",
+      "description": "Delete Salesforce Identity Provider"
+    }
+  ]
+}

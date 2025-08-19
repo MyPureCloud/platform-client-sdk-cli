@@ -1,0 +1,11 @@
+{
+  "supercommand": "downloads",
+  "description": "/api/v2/downloads",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/downloads/{downloadId}",
+      "description": "Issues a redirect to a signed secure download URL for specified download"
+    }
+  ]
+}

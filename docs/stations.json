@@ -1,0 +1,21 @@
+{
+  "supercommand": "stations",
+  "description": "/api/v2/stations",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/stations/{stationId}",
+      "description": "Get station."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/stations/{stationId}/associateduser",
+      "description": "Unassigns the user assigned to this station"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/stations",
+      "description": "Get the list of available stations."
+    }
+  ]
+}

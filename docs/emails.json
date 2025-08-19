@@ -1,0 +1,31 @@
+{
+  "supercommand": "emails",
+  "description": "/api/v2/emails",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/emails/settings",
+      "description": "Get email Contact Center settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/emails/settings",
+      "description": "Patch email Contact Center settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/emails/settings/threading",
+      "description": "Get email threading settings"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/emails/settings/threading",
+      "description": "Reset email threading settings to default"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/emails/settings/threading",
+      "description": "Patch email threading settings"
+    }
+  ]
+}

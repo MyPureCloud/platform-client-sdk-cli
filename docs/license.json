@@ -1,0 +1,51 @@
+{
+  "supercommand": "license",
+  "description": "/api/v2/license",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/license/definitions/{licenseId}",
+      "description": "Get PureCloud license definition."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/license/definitions",
+      "description": "Get all PureCloud license definitions available for the organization."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/license/infer",
+      "description": "Get a list of licenses inferred based on a list of roleIds"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/license/toggles/{featureName}",
+      "description": "Deprecated - no alternative required. This operation will always return 'true' for requested toggles"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/license/toggles/{featureName}",
+      "description": "Deprecated. No alternative required - this endpoint has no effect"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/license/organization",
+      "description": "Update the organization's license assignments in a batch."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/license/users/{userId}",
+      "description": "Get licenses for specified user."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/license/users",
+      "description": "Get a page of users and their licenses"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/license/users",
+      "description": "Fetch user licenses in a batch."
+    }
+  ]
+}

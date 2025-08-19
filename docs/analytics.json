@@ -1,0 +1,601 @@
+{
+  "supercommand": "analytics",
+  "description": "/api/v2/analytics",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/actions/aggregates/query",
+      "description": "Query for action aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/agentcopilots/aggregates/query",
+      "description": "Query for agent copilot aggregates"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/agents/{userId}/status",
+      "description": "Get an agent and their active sessions by user ID"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/agents/status/counts",
+      "description": "Count agents by different groupings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/agents/status/query",
+      "description": "Retrieve the top 50 agents matching the query filters"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/bots/aggregates/query",
+      "description": "Query for bot aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/conversations/aggregates/query",
+      "description": "Query for conversation aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/conversations/activity/query",
+      "description": "Query for conversation activity observations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/conversations/details/query",
+      "description": "Query for conversation details"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/conversations/{conversationId}/details",
+      "description": "Get a conversation by id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/conversations/details",
+      "description": "Gets multiple conversations by id"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/conversations/{conversationId}/details/properties",
+      "description": "Index conversation properties"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/conversations/details/jobs",
+      "description": "Query for conversation details asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/conversations/details/jobs/{jobId}",
+      "description": "Get status for async query for conversation details"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/conversations/details/jobs/{jobId}",
+      "description": "Delete/cancel an async details job"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/conversations/details/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async details job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/conversations/details/jobs/availability",
+      "description": "Lookup the datalake availability date and time"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/evaluations/aggregates/query",
+      "description": "Query for evaluation aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/flowexecutions/aggregates/query",
+      "description": "Query for flow execution aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/flows/aggregates/query",
+      "description": "Query for flow aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/flows/observations/query",
+      "description": "Query for flow observations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/flows/activity/query",
+      "description": "Query for flow activity observations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/journeys/aggregates/query",
+      "description": "Query for journey aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/knowledge/aggregates/query",
+      "description": "Query for knowledge aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/queues/observations/query",
+      "description": "Query for queue observations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/ratelimits/aggregates/query",
+      "description": "Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/resolutions/aggregates/query",
+      "description": "Query for resolution aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/routing/activity/query",
+      "description": "Query for user activity observations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/summaries/aggregates/query",
+      "description": "Query for summary aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/surveys/aggregates/query",
+      "description": "Query for survey aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/taskmanagement/aggregates/query",
+      "description": "Query for task management aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/teams/activity/query",
+      "description": "Query for team activity observations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/transcripts/aggregates/query",
+      "description": "Query for transcript aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/users/aggregates/query",
+      "description": "Query for user aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/users/details/query",
+      "description": "Query for user details"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/users/observations/query",
+      "description": "Query for user observations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/users/activity/query",
+      "description": "Query for user activity observations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/users/details/jobs",
+      "description": "Query for user details asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/users/details/jobs/{jobId}",
+      "description": "Get status for async query for user details"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/users/details/jobs/{jobId}",
+      "description": "Delete/cancel an async request"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/users/details/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async query"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/users/details/jobs/availability",
+      "description": "Lookup the datalake availability date and time"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns",
+      "description": "Get Reporting Turns (division aware)."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/botflows/{botFlowId}/reportingturns",
+      "description": "Get Reporting Turns."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/botflows/{botFlowId}/sessions",
+      "description": "Get Bot Flow Sessions."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/dataretention/settings",
+      "description": "Get analytics data retention setting"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/analytics/dataretention/settings",
+      "description": "Update analytics data retention setting"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/reporting/settings",
+      "description": "Get AnalyticsReportingSettings for an organization"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/analytics/reporting/settings",
+      "description": "Patch AnalyticsReportingSettings values for an organization"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/reporting/settings/dashboards/bulk/remove",
+      "description": "Bulk soft delete dashboard configurations"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/reporting/settings/dashboards/query",
+      "description": "Get list of dashboard configurations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/reporting/settings/dashboards/query",
+      "description": "Query dashboard configurations"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/reporting/dashboards/users/{userId}",
+      "description": "Get dashboards summary for a user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/reporting/dashboards/users",
+      "description": "Get dashboards summary for users in a org"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/reporting/dashboards/users/bulk/remove",
+      "description": "Bulk soft delete dashboards owned by other user(s)"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/reporting/settings/users/{userId}/dashboards",
+      "description": "Get list of dashboards for an user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/reporting/exports/metadata",
+      "description": "Get all export metadata"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/reporting/exports",
+      "description": "Get all view export requests for a user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/reporting/exports",
+      "description": "Generate a view export request"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/actions/aggregates/jobs",
+      "description": "Query for action aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/actions/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for action aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/actions/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for action aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/actions/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/agentcopilots/aggregates/jobs",
+      "description": "Query for agent copilot aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for agent copilot aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for agent copilot aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/bots/aggregates/jobs",
+      "description": "Query for bot aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/bots/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for bot aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/bots/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for bot aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/bots/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/conversations/aggregates/jobs",
+      "description": "Query for conversation aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/conversations/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for conversation aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/conversations/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for conversation aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/conversations/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/evaluations/aggregates/jobs",
+      "description": "Query for evaluation aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/evaluations/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for evaluation aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/evaluations/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for evaluation aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/flowexecutions/aggregates/jobs",
+      "description": "Query for flow execution aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for flow execution aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for flow execution aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/flows/aggregates/jobs",
+      "description": "Query for flow aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/flows/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for Flow aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/flows/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for flow aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/flows/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/journeys/aggregates/jobs",
+      "description": "Query for journey aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/journeys/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for journey aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/journeys/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for journey aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/journeys/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/knowledge/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for knowledge aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/knowledge/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for knowledge aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/knowledge/aggregates/jobs",
+      "description": "Query for knowledge aggregates asynchronously"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/resolutions/aggregates/jobs",
+      "description": "Query for resolution aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/resolutions/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for resolution aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/resolutions/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for resolution aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/summaries/aggregates/jobs",
+      "description": "Query for summary aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/summaries/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for summary aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/summaries/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for summary aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/summaries/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/surveys/aggregates/jobs",
+      "description": "Query for survey aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/surveys/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for survey aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/surveys/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for survey aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/surveys/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/taskmanagement/aggregates/jobs",
+      "description": "Query for task management aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for task management aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for task management aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async task management query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/transcripts/aggregates/jobs",
+      "description": "Query for transcript aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/transcripts/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for transcript aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/transcripts/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for transcript aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/users/aggregates/jobs",
+      "description": "Query for user aggregates asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/users/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for user aggregates"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/analytics/users/aggregates/jobs/{jobId}",
+      "description": "Delete/cancel an async request for user aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/users/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+package workforcemanagement_managementunits_shrinkage
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_managementunits_shrinkage_jobs"
+)
+
+func init() {
+	workforcemanagement_managementunits_shrinkageCmd.AddCommand(workforcemanagement_managementunits_shrinkage_jobs.Cmdworkforcemanagement_managementunits_shrinkage_jobs())
+	workforcemanagement_managementunits_shrinkageCmd.Short = utils.GenerateCustomDescription(workforcemanagement_managementunits_shrinkageCmd.Short, workforcemanagement_managementunits_shrinkage_jobs.Description, )
+	workforcemanagement_managementunits_shrinkageCmd.Long = workforcemanagement_managementunits_shrinkageCmd.Short
+}

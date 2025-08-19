@@ -1,0 +1,101 @@
+{
+  "supercommand": "webchat",
+  "description": "/api/v2/webchat",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/webchat/guest/conversations",
+      "description": "Create an ACD chat conversation from an external customer."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/webchat/deployments/{deploymentId}",
+      "description": "Get a WebChat deployment"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/webchat/deployments/{deploymentId}",
+      "description": "Update a WebChat deployment"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/webchat/deployments/{deploymentId}",
+      "description": "Delete a WebChat deployment"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/webchat/deployments",
+      "description": "List WebChat deployments"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/webchat/deployments",
+      "description": "Create WebChat deployment"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/webchat/settings",
+      "description": "Get WebChat deployment settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/webchat/settings",
+      "description": "Update WebChat deployment settings"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/webchat/settings",
+      "description": "Remove WebChat deployment settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}",
+      "description": "Get a media request in the conversation"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}",
+      "description": "Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/mediarequests",
+      "description": "Get all media requests to the guest in the conversation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages",
+      "description": "Send a message in a chat conversation."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing",
+      "description": "Send a typing-indicator in a chat conversation."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}",
+      "description": "Get a web chat conversation member"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}",
+      "description": "Remove a member from a chat conversation"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/members",
+      "description": "Get the members of a chat conversation."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId}",
+      "description": "Get a web chat conversation message"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/messages",
+      "description": "Get the messages of a chat conversation."
+    }
+  ]
+}

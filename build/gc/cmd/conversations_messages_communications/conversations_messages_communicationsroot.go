@@ -1,0 +1,16 @@
+package conversations_messages_communications
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messages_communications_messages"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messages_communications_socialmedia"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messages_communications_typing"
+)
+
+func init() {
+	conversations_messages_communicationsCmd.AddCommand(conversations_messages_communications_messages.Cmdconversations_messages_communications_messages())
+	conversations_messages_communicationsCmd.AddCommand(conversations_messages_communications_socialmedia.Cmdconversations_messages_communications_socialmedia())
+	conversations_messages_communicationsCmd.AddCommand(conversations_messages_communications_typing.Cmdconversations_messages_communications_typing())
+	conversations_messages_communicationsCmd.Short = utils.GenerateCustomDescription(conversations_messages_communicationsCmd.Short, conversations_messages_communications_messages.Description, conversations_messages_communications_socialmedia.Description, conversations_messages_communications_typing.Description, )
+	conversations_messages_communicationsCmd.Long = conversations_messages_communicationsCmd.Short
+}

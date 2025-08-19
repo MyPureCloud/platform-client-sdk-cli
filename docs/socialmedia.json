@@ -1,0 +1,221 @@
+{
+  "supercommand": "socialmedia",
+  "description": "/api/v2/socialmedia",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/analytics/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for social media aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/socialmedia/analytics/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async social media query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/analytics/aggregates/jobs",
+      "description": "Query for social media aggregates asynchronously"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/analytics/messages/jobs",
+      "description": "Query for social media messages asynchronously"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/analytics/messages/jobs/{jobId}",
+      "description": "Get status for async query for social media messages job"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/socialmedia/analytics/messages/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async social media messages query"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules",
+      "description": "Retrieve all social topic data ingestion rules with pagination."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}",
+      "description": "Get a single Facebook data ingestion rule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}",
+      "description": "Update the Facebook data ingestion rule."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}",
+      "description": "Delete a Facebook data ingestion rule."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}",
+      "description": "Update the status of a Facebook data ingestion rule."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions/{dataIngestionRuleVersion}",
+      "description": "Get a single Facebook data ingestion rule version."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions",
+      "description": "Get the Facebook data ingestion rule versions."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook",
+      "description": "Create an Facebook data ingestion rule."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}",
+      "description": "Get a single open data ingestion rule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}",
+      "description": "Update the open data ingestion rule."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}",
+      "description": "Delete a open data ingestion rule."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}",
+      "description": "Update the status of a open data ingestion rule."
+    },
+    {
+      "name": "getVersion",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions/{dataIngestionRuleVersion}",
+      "description": "Get a single Open data ingestion rule version."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions",
+      "description": "Get the Open data ingestion rule versions."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open",
+      "description": "Create an open data ingestion rule."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}",
+      "description": "Get a single X (formally Twitter) data ingestion rule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}",
+      "description": "Update the X (formally Twitter) data ingestion rule."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}",
+      "description": "Delete a X (formally Twitter) data ingestion rule."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}",
+      "description": "Update the status of a X (formally Twitter) data ingestion rule."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}/versions/{dataIngestionRuleVersion}",
+      "description": "Get a single X (formally Twitter) data ingestion rule version."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}/versions",
+      "description": "Get the Open data ingestion rule versions."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter",
+      "description": "Create an twitter data ingestion rule."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/twitter/historical/tweets",
+      "description": "Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/escalationrules/{escalationRuleId}",
+      "description": "Get a single escalation rule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/socialmedia/escalationrules/{escalationRuleId}",
+      "description": "Update the escalation rule."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/socialmedia/escalationrules/{escalationRuleId}",
+      "description": "Delete an escalation rule."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/socialmedia/escalationrules",
+      "description": "Retrieve all escalation rules for a division."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/escalationrules",
+      "description": "Create an escalation rule."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/escalations/messages",
+      "description": "Escalate message to a conversation manually"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/reactions/bulk",
+      "description": "Ingest a list of Open Social Reactions"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages/bulk",
+      "description": "Ingest a list of Open Social Messages"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/topics/{topicId}",
+      "description": "Get a single social topic."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/socialmedia/topics/{topicId}",
+      "description": "Delete a social topic."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/socialmedia/topics/{topicId}",
+      "description": "Update a social topic."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/socialmedia/topics",
+      "description": "Retrieve all social topics."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/topics",
+      "description": "Create a social topic."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/socialmedia/messages/{messageId}",
+      "description": "Delete a social media message."
+    }
+  ]
+}

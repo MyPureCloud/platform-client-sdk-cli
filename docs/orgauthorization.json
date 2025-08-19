@@ -1,0 +1,246 @@
+{
+  "supercommand": "orgauthorization",
+  "description": "/api/v2/orgauthorization",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/orgauthorization/trustees/audits",
+      "description": "Get Org Trustee Audits"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orgauthorization/trustees/care",
+      "description": "Get Customer Care organization ids."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/orgauthorization/trustees/care",
+      "description": "Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}",
+      "description": "Get Cloned User"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}",
+      "description": "Creates a clone of the trustee user in the trustor org."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}",
+      "description": "Delete Cloned User"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers",
+      "description": "The list of cloned users in the trustor organization (i.e. users with a native user record)."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orgauthorization/trustees/default",
+      "description": "Get organization authorization trust with Customer Care, if one exists."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/orgauthorization/trustees/default",
+      "description": "Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orgauthorization/pairings/{pairingId}",
+      "description": "Get Pairing Info"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/orgauthorization/pairings",
+      "description": "A pairing id is created by the trustee and given to the trustor to create a trust."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}",
+      "description": "Get Trustee Group"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}",
+      "description": "Delete Trustee Group"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roledivisions",
+      "description": "Update Trustee Group Roles"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles",
+      "description": "Get Trustee Group Roles"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles",
+      "description": "Update Trustee Group Roles"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles",
+      "description": "Delete Trustee Group Roles"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups",
+      "description": "The list of trustee groups for this organization (i.e. groups granted access to this organization)."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups",
+      "description": "Add a group to the trust."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}",
+      "description": "Get Org Trust"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}",
+      "description": "Update Org Trust"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}",
+      "description": "Delete Org Trust"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}",
+      "description": "Get Trustee User"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}",
+      "description": "Delete Trustee User"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions",
+      "description": "Update Trustee User Roles"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles",
+      "description": "Get Trustee User Roles"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles",
+      "description": "Update Trustee User Roles"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles",
+      "description": "Delete Trustee User Roles"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users",
+      "description": "The list of trustee users for this organization (i.e. users granted access to this organization)."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/users",
+      "description": "Add a user to the trust."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers",
+      "description": "The list of cloned users from the trustee organization (i.e. users with a native user record)."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}",
+      "description": "Deletes cloned user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/orgauthorization/trustor/audits",
+      "description": "Get Org Trustor Audits"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}",
+      "description": "Get Trustee Group"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}",
+      "description": "Add a Trustee Group to the trust."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}",
+      "description": "Delete Trustee Group"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}/groups",
+      "description": "The list of groups in the trustor organization (i.e. groups granted access)."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}",
+      "description": "Get Org Trust"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}",
+      "description": "Delete Org Trust"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}",
+      "description": "Get Trustee User"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}",
+      "description": "Add a Trustee user to the trust."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}",
+      "description": "Delete Trustee User"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/orgauthorization/trustors/{trustorOrgId}/users",
+      "description": "The list of users in the trustor organization (i.e. users granted access)."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/orgauthorization/trustors",
+      "description": "The list of organizations that have authorized/trusted your organization."
+    },
+    {
+      "name": "bulkdelete",
+      "path": "/api/v2/orgauthorization/trustors",
+      "description": "Delete Bulk Org Trustors"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/orgauthorization/trustees",
+      "description": "The list of trustees for this organization (i.e. organizations granted access to this organization)."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/orgauthorization/trustees",
+      "description": "Create a new organization authorization trust. This is required to grant other organizations access to your organization."
+    },
+    {
+      "name": "bulkdelete",
+      "path": "/api/v2/orgauthorization/trustees",
+      "description": "Delete Bulk Org Trustees"
+    }
+  ]
+}

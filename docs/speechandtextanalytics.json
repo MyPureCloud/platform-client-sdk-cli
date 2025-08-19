@@ -1,0 +1,321 @@
+{
+  "supercommand": "speechandtextanalytics",
+  "description": "/api/v2/speechandtextanalytics",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/categories",
+      "description": "Get the list of Speech and Text Analytics categories"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/speechandtextanalytics/categories",
+      "description": "Create new Speech & Text Analytics category"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/categories/{categoryId}",
+      "description": "Get a Speech & Text Analytics Category by ID"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/speechandtextanalytics/categories/{categoryId}",
+      "description": "Update a Speech & Text Analytics category by ID"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/speechandtextanalytics/categories/{categoryId}",
+      "description": "Delete a Speech & Text Analytics category by ID"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/conversations/{conversationId}",
+      "description": "Get Speech and Text Analytics for a specific conversation"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/conversations/{conversationId}/summaries",
+      "description": "Get conversation summaries by conversation id."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}",
+      "description": "Get a Speech & Text Analytics dictionary feedback by id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}",
+      "description": "Update existing Speech & Text Analytics dictionary feedback by id"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}",
+      "description": "Delete a Speech & Text Analytics DictionaryFeedback by Id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/dictionaryfeedback",
+      "description": "Get the list of Speech & Text Analytics dictionary feedbacks"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/speechandtextanalytics/dictionaryfeedback",
+      "description": "Create a Speech & Text Analytics DictionaryFeedback"
+    },
+    {
+      "name": "deletebyid",
+      "path": "/api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}",
+      "description": "Delete a Speech & Text Analytics SentimentFeedback by Id"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/sentimentfeedback",
+      "description": "Get the list of Speech & Text Analytics SentimentFeedback"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/speechandtextanalytics/sentimentfeedback",
+      "description": "Create a Speech & Text Analytics SentimentFeedback"
+    },
+    {
+      "name": "deleteallsentimentfeedback",
+      "path": "/api/v2/speechandtextanalytics/sentimentfeedback",
+      "description": "Delete All Speech & Text Analytics SentimentFeedback"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}/settings/insights",
+      "description": "Get AI Insights settings of a program"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}/settings/insights",
+      "description": "Update AI Insights settings of a program"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines",
+      "description": "Get transcription engine settings of a program"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines",
+      "description": "Update transcription engine settings of a program"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/programs/settings/insights",
+      "description": "Get the list of program AI Insights settings for the organization"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/programs/transcriptionengines/dialects",
+      "description": "Get supported dialects for each transcription engine"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/sentiment/dialects",
+      "description": "Get the list of Speech & Text Analytics sentiment supported dialects"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/conversations/{conversationId}/sentiments",
+      "description": "Get sentiment data"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/settings",
+      "description": "Get Speech And Text Analytics Settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/speechandtextanalytics/settings",
+      "description": "Update Speech And Text Analytics Settings"
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/speechandtextanalytics/settings",
+      "description": "Patch Speech And Text Analytics Settings"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/conversations/{conversationId}/categories",
+      "description": "Get the list of detected Speech and Text Analytics categories of conversation"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/programs/general/jobs/{jobId}",
+      "description": "Get a Speech & Text Analytics general program job by id"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/speechandtextanalytics/programs/general/jobs",
+      "description": "Create new Speech & Text Analytics general program job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/topics/general",
+      "description": "Get the Speech & Text Analytics general topics for a given dialect"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}/mappings",
+      "description": "Get Speech & Text Analytics program mappings to queues and flows by id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}/mappings",
+      "description": "Set Speech & Text Analytics program mappings to queues and flows"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/programs/publishjobs/{jobId}",
+      "description": "Get a Speech & Text Analytics publish programs job by id"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/speechandtextanalytics/programs/publishjobs",
+      "description": "Create new Speech & Text Analytics publish programs job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}",
+      "description": "Get a Speech & Text Analytics program by id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}",
+      "description": "Update existing Speech & Text Analytics program"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}",
+      "description": "Delete a Speech & Text Analytics program by id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/programs/mappings",
+      "description": "Get the list of Speech & Text Analytics programs mappings to queues and flows"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/programs",
+      "description": "Get the list of Speech & Text Analytics programs"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/speechandtextanalytics/programs",
+      "description": "Create new Speech & Text Analytics program"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/topics/testphrase/jobs/{jobId}",
+      "description": "Get a Speech & Text Analytics test topics phrase job by id"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/speechandtextanalytics/topics/testphrase/jobs",
+      "description": "Create new Speech & Text Analytics publish topics job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/topics/publishjobs/{jobId}",
+      "description": "Get a Speech & Text Analytics publish topics job by id"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/speechandtextanalytics/topics/publishjobs",
+      "description": "Create new Speech & Text Analytics publish topics job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/topics/{topicId}",
+      "description": "Get a Speech & Text Analytics topic by id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/speechandtextanalytics/topics/{topicId}",
+      "description": "Update existing Speech & Text Analytics topic"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/speechandtextanalytics/topics/{topicId}",
+      "description": "Delete a Speech & Text Analytics topic by id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/topics/dialects",
+      "description": "Get list of supported Speech & Text Analytics topics dialects"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/topics",
+      "description": "Get the list of Speech & Text Analytics topics"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/speechandtextanalytics/topics",
+      "description": "Create new Speech & Text Analytics topic"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/topics/general/status",
+      "description": "Get the list of general topics from the org and the system with their current status"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/programs/unpublished",
+      "description": "Get the list of Speech & Text Analytics unpublished programs"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/speechandtextanalytics/transcripts/search",
+      "description": "Search resources."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl",
+      "description": "Get the pre-signed S3 URL for the transcript of a specific communication of a conversation"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturls",
+      "description": "Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/translations/languages",
+      "description": "Get supported translation languages"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}",
+      "description": "Translate a single interaction recording (or an email conversation)"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}/interactions",
+      "description": "Get a Speech & Text Analytics Reprocessing interactions statuses by job id"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}",
+      "description": "Get a Speech & Text Analytics reprocess job by id"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}",
+      "description": "Delete a Speech & Text Analytics Reprocessing job by Id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/reprocessing/jobs",
+      "description": "Get the list of Speech & Text Analytics reprocess jobs"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/speechandtextanalytics/reprocessing/jobs",
+      "description": "Create a Speech & Text Analytics reprocess job."
+    }
+  ]
+}

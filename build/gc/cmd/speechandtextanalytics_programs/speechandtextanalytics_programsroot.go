@@ -1,0 +1,22 @@
+package speechandtextanalytics_programs
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_programs_settings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_programs_transcriptionengines"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_programs_general"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_programs_mappings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_programs_publishjobs"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_programs_unpublished"
+)
+
+func init() {
+	speechandtextanalytics_programsCmd.AddCommand(speechandtextanalytics_programs_settings.Cmdspeechandtextanalytics_programs_settings())
+	speechandtextanalytics_programsCmd.AddCommand(speechandtextanalytics_programs_transcriptionengines.Cmdspeechandtextanalytics_programs_transcriptionengines())
+	speechandtextanalytics_programsCmd.AddCommand(speechandtextanalytics_programs_general.Cmdspeechandtextanalytics_programs_general())
+	speechandtextanalytics_programsCmd.AddCommand(speechandtextanalytics_programs_mappings.Cmdspeechandtextanalytics_programs_mappings())
+	speechandtextanalytics_programsCmd.AddCommand(speechandtextanalytics_programs_publishjobs.Cmdspeechandtextanalytics_programs_publishjobs())
+	speechandtextanalytics_programsCmd.AddCommand(speechandtextanalytics_programs_unpublished.Cmdspeechandtextanalytics_programs_unpublished())
+	speechandtextanalytics_programsCmd.Short = utils.GenerateCustomDescription(speechandtextanalytics_programsCmd.Short, speechandtextanalytics_programs_settings.Description, speechandtextanalytics_programs_transcriptionengines.Description, speechandtextanalytics_programs_general.Description, speechandtextanalytics_programs_mappings.Description, speechandtextanalytics_programs_publishjobs.Description, speechandtextanalytics_programs_unpublished.Description, )
+	speechandtextanalytics_programsCmd.Long = speechandtextanalytics_programsCmd.Short
+}

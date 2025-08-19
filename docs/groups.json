@@ -1,0 +1,106 @@
+{
+  "supercommand": "groups",
+  "description": "/api/v2/groups",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/groups/{groupId}/individuals",
+      "description": "Get all individuals associated with the group"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/groups/{groupId}/members",
+      "description": "Get group members, includes individuals, owners, and dynamically included people"
+    },
+    {
+      "name": "add",
+      "path": "/api/v2/groups/{groupId}/members",
+      "description": "Add members"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/groups/{groupId}/members",
+      "description": "Remove members"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/groups/{groupId}/profile",
+      "description": "Get group profile"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/groups/{groupId}",
+      "description": "Get group"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/groups/{groupId}",
+      "description": "Update group"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/groups/{groupId}",
+      "description": "Delete group"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/groups",
+      "description": "Get a group list"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/groups",
+      "description": "Create a group"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/groups/search",
+      "description": "Search groups using the q64 value returned from a previous search"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/groups/search",
+      "description": "Search groups"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/groups/{groupId}/greetings/defaults",
+      "description": "Grabs the list of Default Greetings given a Group's ID"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/groups/{groupId}/greetings/defaults",
+      "description": "Updates the DefaultGreetingList of the specified Group"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/groups/{groupId}/greetings",
+      "description": "Get a list of the Group's Greetings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/groups/{groupId}/greetings",
+      "description": "Creates a Greeting for a Group"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/groups/dynamicsettings/preview",
+      "description": "Preview the number of users selected for a dynamic group definition query"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/groups/{groupId}/dynamicsettings",
+      "description": "Get dynamic group definition"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/groups/{groupId}/dynamicsettings",
+      "description": "Create / Update dynamic group definition"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/groups/{groupId}/dynamicsettings",
+      "description": "Remove dynamic group definition"
+    }
+  ]
+}

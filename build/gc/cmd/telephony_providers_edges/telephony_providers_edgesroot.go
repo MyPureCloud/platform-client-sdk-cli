@@ -1,0 +1,74 @@
+package telephony_providers_edges
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_addressvalidation"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_certificateauthorities"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_diagnostic"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_reboot"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_statuscode"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_softwareupdate"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_softwareversions"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_timezones"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_unpair"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_edgeversionreport"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_logicalinterfaces"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_physicalinterfaces"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_alertablepresences"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_didpools"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_dids"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_edgegroups"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_extensionpools"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_extensions"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_linebasesettings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_lines"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_logs"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_metrics"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_sites"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_outboundroutes"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_phonebasesettings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_phones"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_expired"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_trunks"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_trunkbasesettings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_trunkswithrecording"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_setuppackage"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_mediastatistics"
+)
+
+func init() {
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_addressvalidation.Cmdtelephony_providers_edges_addressvalidation())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_certificateauthorities.Cmdtelephony_providers_edges_certificateauthorities())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_diagnostic.Cmdtelephony_providers_edges_diagnostic())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_reboot.Cmdtelephony_providers_edges_reboot())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_statuscode.Cmdtelephony_providers_edges_statuscode())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_softwareupdate.Cmdtelephony_providers_edges_softwareupdate())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_softwareversions.Cmdtelephony_providers_edges_softwareversions())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_timezones.Cmdtelephony_providers_edges_timezones())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_unpair.Cmdtelephony_providers_edges_unpair())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_edgeversionreport.Cmdtelephony_providers_edges_edgeversionreport())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_logicalinterfaces.Cmdtelephony_providers_edges_logicalinterfaces())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_physicalinterfaces.Cmdtelephony_providers_edges_physicalinterfaces())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_alertablepresences.Cmdtelephony_providers_edges_alertablepresences())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_didpools.Cmdtelephony_providers_edges_didpools())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_dids.Cmdtelephony_providers_edges_dids())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_edgegroups.Cmdtelephony_providers_edges_edgegroups())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_extensionpools.Cmdtelephony_providers_edges_extensionpools())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_extensions.Cmdtelephony_providers_edges_extensions())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_linebasesettings.Cmdtelephony_providers_edges_linebasesettings())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_lines.Cmdtelephony_providers_edges_lines())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_logs.Cmdtelephony_providers_edges_logs())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_metrics.Cmdtelephony_providers_edges_metrics())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_sites.Cmdtelephony_providers_edges_sites())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_outboundroutes.Cmdtelephony_providers_edges_outboundroutes())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_phonebasesettings.Cmdtelephony_providers_edges_phonebasesettings())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_phones.Cmdtelephony_providers_edges_phones())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_expired.Cmdtelephony_providers_edges_expired())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_trunks.Cmdtelephony_providers_edges_trunks())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_trunkbasesettings.Cmdtelephony_providers_edges_trunkbasesettings())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_trunkswithrecording.Cmdtelephony_providers_edges_trunkswithrecording())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_setuppackage.Cmdtelephony_providers_edges_setuppackage())
+	telephony_providers_edgesCmd.AddCommand(telephony_providers_edges_mediastatistics.Cmdtelephony_providers_edges_mediastatistics())
+	telephony_providers_edgesCmd.Short = utils.GenerateCustomDescription(telephony_providers_edgesCmd.Short, telephony_providers_edges_addressvalidation.Description, telephony_providers_edges_certificateauthorities.Description, telephony_providers_edges_diagnostic.Description, telephony_providers_edges_reboot.Description, telephony_providers_edges_statuscode.Description, telephony_providers_edges_softwareupdate.Description, telephony_providers_edges_softwareversions.Description, telephony_providers_edges_timezones.Description, telephony_providers_edges_unpair.Description, telephony_providers_edges_edgeversionreport.Description, telephony_providers_edges_logicalinterfaces.Description, telephony_providers_edges_physicalinterfaces.Description, telephony_providers_edges_alertablepresences.Description, telephony_providers_edges_didpools.Description, telephony_providers_edges_dids.Description, telephony_providers_edges_edgegroups.Description, telephony_providers_edges_extensionpools.Description, telephony_providers_edges_extensions.Description, telephony_providers_edges_linebasesettings.Description, telephony_providers_edges_lines.Description, telephony_providers_edges_logs.Description, telephony_providers_edges_metrics.Description, telephony_providers_edges_sites.Description, telephony_providers_edges_outboundroutes.Description, telephony_providers_edges_phonebasesettings.Description, telephony_providers_edges_phones.Description, telephony_providers_edges_expired.Description, telephony_providers_edges_trunks.Description, telephony_providers_edges_trunkbasesettings.Description, telephony_providers_edges_trunkswithrecording.Description, telephony_providers_edges_setuppackage.Description, telephony_providers_edges_mediastatistics.Description, )
+	telephony_providers_edgesCmd.Long = telephony_providers_edgesCmd.Short
+}

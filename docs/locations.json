@@ -1,0 +1,46 @@
+{
+  "supercommand": "locations",
+  "description": "/api/v2/locations",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/locations/{locationId}",
+      "description": "Get Location by ID."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/locations/{locationId}",
+      "description": "Delete a location"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/locations/{locationId}",
+      "description": "Update a location"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/locations/{locationId}/sublocations",
+      "description": "Get sublocations for location ID."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/locations",
+      "description": "Get a list of all locations."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/locations",
+      "description": "Create a location"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/locations/search",
+      "description": "Search locations using the q64 value returned from a previous search"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/locations/search",
+      "description": "Search locations"
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "supercommand": "taskmanagement",
+  "description": "/api/v2/taskmanagement",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/bulk/jobs/users/me",
+      "description": "Get bulk jobs created by the currently logged in user."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}",
+      "description": "Get the bulk add job associated with the job id."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}",
+      "description": "Delete a bulk add job"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}",
+      "description": "Update workitem bulk add job."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}/results",
+      "description": "Get bulk add job results."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/bulk/add/jobs",
+      "description": "Create a workitem bulk add job."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}",
+      "description": "Get the bulk job associated with the job id."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}",
+      "description": "Delete a Bulk job"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}",
+      "description": "Update workitem bulk terminate job."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results",
+      "description": "Get bulk terminate job results."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs",
+      "description": "Create a workitem bulk terminate job."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workbins/query",
+      "description": "Query for workbins"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}",
+      "description": "Get a workbin"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}",
+      "description": "Delete a workbin"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}",
+      "description": "Update the attributes of a workbin"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}/versions",
+      "description": "Get all versions of a workbin"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}",
+      "description": "Get a version of a workbin"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}/history",
+      "description": "Get a listing of a workbin's attribute change history"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workbins",
+      "description": "Create a workbin"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems",
+      "description": "Create a workitem"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/query/jobs",
+      "description": "Create a workitem query job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}",
+      "description": "Get the workitem query job associated with the job id."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results",
+      "description": "Get results from for workitem query job "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
+      "description": "Disconnect the assignee of the workitem"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/terminate",
+      "description": "Terminate a workitem"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}",
+      "description": "Get a workitem"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}",
+      "description": "Delete a workitem"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}",
+      "description": "Update the attributes of a workitem"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/assignment",
+      "description": "Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/versions",
+      "description": "Get all versions of a workitem"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}",
+      "description": "Get a version of a workitem"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/history",
+      "description": "Get a listing of a workitem's attribute change history"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/acd/cancel",
+      "description": "Cancel the assignment process for a workitem that is currently queued for assignment through ACD."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName}",
+      "description": "Get a specific named core type."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/schemas/coretypes",
+      "description": "Get the core types from which all schemas are built."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/schemas/limits",
+      "description": "Get quantitative limits on schemas"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/schemas/{schemaId}",
+      "description": "Get a schema"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/workitems/schemas/{schemaId}",
+      "description": "Update a schema"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/taskmanagement/workitems/schemas/{schemaId}",
+      "description": "Delete a schema"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId}",
+      "description": "Get a specific version of a schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/schemas/{schemaId}/versions",
+      "description": "Get all versions of a schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/schemas",
+      "description": "Get a list of schemas."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/schemas",
+      "description": "Create a schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups",
+      "description": "Get all wrapup codes added for the given user for a workitem."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups",
+      "description": "Add/Remove a wrapup code for a given user in a workitem."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups",
+      "description": "Add/Remove a wrapup code for the current user in a workitem."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/wrapups",
+      "description": "Get all wrapup codes added for all users for a workitem."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}",
+      "description": "Get a status"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}",
+      "description": "Delete a status"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}",
+      "description": "Update the attributes of a status"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/statuses",
+      "description": "Get list of statuses for this worktype."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/statuses",
+      "description": "Add a status to a worktype"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/worktypes/query",
+      "description": "Query for worktypes"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}",
+      "description": "Get a worktype"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}",
+      "description": "Delete a worktype"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}",
+      "description": "Update the attributes of a worktype"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/versions",
+      "description": "Get all versions of a worktype"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion}",
+      "description": "Get a version of a worktype"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/history",
+      "description": "Get a listing of a worktype's attribute change history"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/worktypes",
+      "description": "Create a worktype"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}",
+      "description": "Get a date based rule"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}",
+      "description": "Delete a date based rule"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}",
+      "description": "Update the attributes of a date based rule"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules",
+      "description": "Get all date based rules for a worktype"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules",
+      "description": "Add a date based rule to a worktype"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}",
+      "description": "Get an attribute change rule"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}",
+      "description": "Delete a rule"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}",
+      "description": "Update the attributes of a rule"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules",
+      "description": "Get all attribute-change rules for a worktype"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules",
+      "description": "Add an attribute-change rule to a worktype"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}",
+      "description": "Get an on-create rule"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}",
+      "description": "Delete a rule"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}",
+      "description": "Update the attributes of a rule"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules",
+      "description": "Get all on-create rules for a worktype"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules",
+      "description": "Add an on-create rule to a worktype"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/query",
+      "description": "Query for workitems"
+    }
+  ]
+}

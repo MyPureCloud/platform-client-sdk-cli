@@ -1,0 +1,101 @@
+{
+  "supercommand": "coaching",
+  "description": "/api/v2/coaching",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}",
+      "description": "Retrieve an annotation."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}",
+      "description": "Delete an existing annotation"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}",
+      "description": "Update an existing annotation."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/coaching/appointments/{appointmentId}/annotations",
+      "description": "Get a list of annotations."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/coaching/appointments/{appointmentId}/annotations",
+      "description": "Create a new annotation."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/coaching/appointments/{appointmentId}",
+      "description": "Retrieve an appointment"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/coaching/appointments/{appointmentId}",
+      "description": "Delete an existing appointment"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/coaching/appointments/{appointmentId}",
+      "description": "Update an existing appointment"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/coaching/appointments/{appointmentId}/conversations",
+      "description": "Add a conversation to an appointment"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/coaching/appointments/{appointmentId}/statuses",
+      "description": "Get the list of status changes for a coaching appointment."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/coaching/appointments/{appointmentId}/status",
+      "description": "Update the status of a coaching appointment"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/coaching/appointments/aggregates/query",
+      "description": "Retrieve aggregated appointment data"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/coaching/appointments",
+      "description": "Get appointments for users and optional date range"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/coaching/appointments",
+      "description": "Create a new appointment"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/coaching/notifications/{notificationId}",
+      "description": "Get an existing notification"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/coaching/notifications/{notificationId}",
+      "description": "Update an existing notification."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/coaching/notifications",
+      "description": "Retrieve the list of your notifications."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/coaching/scheduleslots/query",
+      "description": "Get list of possible slots where a coaching appointment can be scheduled."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/coaching/appointments/me",
+      "description": "Get my appointments for a given date range"
+    }
+  ]
+}

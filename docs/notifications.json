@@ -1,0 +1,46 @@
+{
+  "supercommand": "notifications",
+  "description": "/api/v2/notifications",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/notifications/availabletopics",
+      "description": "Get available notification topics."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/notifications/channels",
+      "description": "The list of existing channels"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/notifications/channels",
+      "description": "Create a new channel"
+    },
+    {
+      "name": "head",
+      "path": "/api/v2/notifications/channels/{channelId}",
+      "description": "Verify a channel still exists and is valid"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/notifications/channels/{channelId}/subscriptions",
+      "description": "The list of all subscriptions for this channel"
+    },
+    {
+      "name": "subscribe",
+      "path": "/api/v2/notifications/channels/{channelId}/subscriptions",
+      "description": "Add a list of subscriptions to the existing list of subscriptions"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/notifications/channels/{channelId}/subscriptions",
+      "description": "Replace the current list of subscriptions with a new list."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/notifications/channels/{channelId}/subscriptions",
+      "description": "Remove all subscriptions"
+    }
+  ]
+}

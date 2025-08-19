@@ -1,0 +1,701 @@
+{
+  "supercommand": "routing",
+  "description": "/api/v2/routing",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/routing/queues/{queueId}/estimatedwaittime",
+      "description": "Get Estimated Wait Time"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime",
+      "description": "Get Estimated Wait Time"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/availablemediatypes",
+      "description": "Get available media types"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/languages/{languageId}",
+      "description": "Get a routing language"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/languages/{languageId}",
+      "description": "Delete a routing language"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/languages",
+      "description": "Get the list of supported languages."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/languages",
+      "description": "Create Language"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/queues/divisionviews",
+      "description": "Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s)."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/queues/divisionviews/all",
+      "description": "Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/queues/{queueId}/identityresolution",
+      "description": "Get Queue IdentityResolution Settings."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/queues/{queueId}/identityresolution",
+      "description": "Update Queue IdentityResolution Settings."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/queues/{queueId}",
+      "description": "Get details about this queue."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/queues/{queueId}",
+      "description": "Update a queue"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/queues/{queueId}",
+      "description": "Delete a queue"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/queues/{queueId}/wrapupcodes",
+      "description": "Get the wrap-up codes for a queue"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/queues/{queueId}/wrapupcodes",
+      "description": "Add up to 100 wrap-up codes to a queue"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}",
+      "description": "Delete a wrap-up code from a queue"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/queues/me",
+      "description": "Get a paged listing of queues the user is a member of."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/queues",
+      "description": "Get list of queues."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/queues",
+      "description": "Create a queue"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/settings/transcription",
+      "description": "Get Transcription Settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/settings/transcription",
+      "description": "Update Transcription Settings"
+    },
+    {
+      "name": "modify",
+      "path": "/api/v2/routing/settings/transcription",
+      "description": "Patch Transcription Settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/settings/contactcenter",
+      "description": "Get Contact Center Settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/settings/contactcenter",
+      "description": "Update Contact Center Settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/settings",
+      "description": "Get an organization's routing settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/settings",
+      "description": "Update an organization's routing settings"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/settings",
+      "description": "Delete an organization's routing settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/skills/{skillId}",
+      "description": "Get Routing Skill"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/skills/{skillId}",
+      "description": "Delete Routing Skill"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/skills",
+      "description": "Get the list of routing skills."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/skills",
+      "description": "Create Skill"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/utilization/labels/{labelId}",
+      "description": "Get details about this utilization label"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/utilization/labels/{labelId}",
+      "description": "Update a utilization label"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/utilization/labels/{labelId}",
+      "description": "Delete a utilization label"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/utilization/labels/{labelId}/agents",
+      "description": "Get list of agent ids associated with a utilization label"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/utilization/labels",
+      "description": "Get list of utilization labels"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/utilization/labels",
+      "description": "Create a utilization label"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/utilization",
+      "description": "Get the organization-wide max utilization settings."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/utilization",
+      "description": "Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/utilization",
+      "description": "Delete the organization-wide max utilization settings and revert to the system default."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/assessments/{assessmentId}",
+      "description": "Retrieve a single benefit assessment."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/assessments/{assessmentId}",
+      "description": "Delete single benefit assessment."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/assessments",
+      "description": "Retrieve all benefit assessments."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/assessments",
+      "description": "Create a benefit assessment."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/assessments/jobs/{jobId}",
+      "description": "Retrieve a single benefit assessments job."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/assessments/jobs",
+      "description": "Retrieve all benefit assessment jobs."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/assessments/jobs",
+      "description": "Create a benefit assessment job."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/conversations/{conversationId}",
+      "description": "Update attributes of an in-queue conversation"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/email/domains/{domainId}",
+      "description": "Get domain"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/email/domains/{domainId}",
+      "description": "Delete a domain"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/email/domains/{domainId}",
+      "description": "Update domain settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/email/domains/{domainId}/validate",
+      "description": "Validate domain settings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/email/domains/{domainId}/testconnection",
+      "description": "Tests the custom SMTP server integration connection set on this domain"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/email/domains",
+      "description": "Get domains"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/email/domains",
+      "description": "Create a domain"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/email/setup",
+      "description": "Get email setup"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/email/outbound/domains/{domainId}",
+      "description": "Get domain"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/email/outbound/domains/{domainId}",
+      "description": "Delete an outbound domain"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/email/outbound/domains/{domainId}/search",
+      "description": "Search a domain across organizations"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/email/outbound/domains/{domainId}/activation",
+      "description": "Get activation status (cname + dkim) of an outbound domain"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/email/outbound/domains/{domainId}/activation",
+      "description": "Request an activation status (cname + dkim) update of an outbound domain"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/email/outbound/domains",
+      "description": "Get outbound domains"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/email/outbound/domains",
+      "description": "Create a domain"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution",
+      "description": "Get a route identity resolution setting."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution",
+      "description": "Update identity resolution settings for a route."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/email/domains/{domainName}/routes/{routeId}",
+      "description": "Get a route"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/email/domains/{domainName}/routes/{routeId}",
+      "description": "Update a route"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/email/domains/{domainName}/routes/{routeId}",
+      "description": "Delete a route"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/email/domains/{domainName}/routes",
+      "description": "Get routes"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/email/domains/{domainName}/routes",
+      "description": "Create a route"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/email/outbound/domains/simulated",
+      "description": "Create a simulated domain"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/message/recipients/{recipientId}",
+      "description": "Get a recipient"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/message/recipients/{recipientId}",
+      "description": "Update a recipient"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/message/recipients",
+      "description": "Get recipients"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/sms/addresses/{addressId}",
+      "description": "Get an Address by Id for SMS"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/sms/addresses/{addressId}",
+      "description": "Delete an Address by Id for SMS"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/sms/addresses",
+      "description": "Get a list of Addresses for SMS"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/sms/addresses",
+      "description": "Provision an Address for SMS"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/sms/availablephonenumbers",
+      "description": "Get a list of available phone numbers for SMS provisioning."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}",
+      "description": "Get a SMS identity resolution settings."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}",
+      "description": "Update an SMS identity resolution settings."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/sms/phonenumbers/import",
+      "description": "Imports a phone number for SMS"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/sms/phonenumbers/{phoneNumberId}",
+      "description": "Get a phone number provisioned for SMS."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/sms/phonenumbers/{phoneNumberId}",
+      "description": "Delete a phone number provisioned for SMS."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/routing/sms/phonenumbers/{phoneNumberId}",
+      "description": "Update a phone number provisioned for SMS."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/sms/phonenumbers",
+      "description": "Get a list of provisioned phone numbers."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/sms/phonenumbers",
+      "description": "Provision a phone number for SMS"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/predictors/{predictorId}",
+      "description": "Retrieve a single predictor."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/predictors/{predictorId}",
+      "description": "Delete single predictor."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/predictors/{predictorId}",
+      "description": "Update single predictor."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/predictors",
+      "description": "Retrieve all predictors."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/predictors",
+      "description": "Create a predictor."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/predictors/keyperformanceindicators",
+      "description": "Get a list of Key Performance Indicators"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/predictors/{predictorId}/models/{modelId}/features",
+      "description": "Retrieve Predictor Model Features."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/predictors/{predictorId}/models",
+      "description": "Retrieve Predictor Models and Top Features."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/queues/{queueId}/members/{memberId}",
+      "description": "Delete a queue member."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/queues/{queueId}/members/{memberId}",
+      "description": "Update the ring number OR joined status for a queue member."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/queues/{queueId}/members",
+      "description": "Get the members of this queue."
+    },
+    {
+      "name": "move",
+      "path": "/api/v2/routing/queues/{queueId}/members",
+      "description": "Bulk add or delete up to 100 queue members"
+    },
+    {
+      "name": "activate",
+      "path": "/api/v2/routing/queues/{queueId}/members",
+      "description": "Join or unjoin a set of up to 100 users for a queue"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/queues/{queueId}/users/{memberId}",
+      "description": "DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/queues/{queueId}/users/{memberId}",
+      "description": "DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/queues/{queueId}/users",
+      "description": "DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue."
+    },
+    {
+      "name": "move",
+      "path": "/api/v2/routing/queues/{queueId}/users",
+      "description": "DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members."
+    },
+    {
+      "name": "activate",
+      "path": "/api/v2/routing/queues/{queueId}/users",
+      "description": "DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/queues/{queueId}/assistant",
+      "description": "Get an assistant associated with a queue."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}",
+      "description": "Get a Comparison Period."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/queues/{queueId}/comparisonperiods",
+      "description": "Get list of comparison periods"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/skillgroups/{skillGroupId}/members/divisions",
+      "description": "Get list of member divisions for this skill group."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/skillgroups/{skillGroupId}/members/divisions",
+      "description": "Add or remove member divisions for this skill group."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/skillgroups/{skillGroupId}",
+      "description": "Get skill group"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/skillgroups/{skillGroupId}",
+      "description": "Remove skill group definition"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/skillgroups/{skillGroupId}",
+      "description": "Update skill group definition"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/skillgroups/{skillGroupId}/members",
+      "description": "Get skill group members"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/skillgroups",
+      "description": "Get skill group listing"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/skillgroups",
+      "description": "Create a skill group"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/directroutingbackup/settings/me",
+      "description": "Get the user's Direct Routing Backup settings."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/directroutingbackup/settings/me",
+      "description": "Update the user's Direct Routing Backup settings."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/directroutingbackup/settings/me",
+      "description": "Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/users/{userId}/directroutingbackup/settings",
+      "description": "Get the user's Direct Routing Backup settings."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/users/{userId}/directroutingbackup/settings",
+      "description": "Update the user's Direct Routing Backup settings."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/users/{userId}/directroutingbackup/settings",
+      "description": "Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/users/{userId}/utilization",
+      "description": "Get the user's max utilization settings.  If not configured, the organization-wide default is returned."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/users/{userId}/utilization",
+      "description": "Update the user's max utilization settings.  Include only those media types requiring custom configuration."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/users/{userId}/utilization",
+      "description": "Delete the user's max utilization settings and revert to the organization-wide default."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/wrapupcodes/divisionviews/{codeId}",
+      "description": "Get a simplified wrap-up code."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/wrapupcodes/divisionviews",
+      "description": "Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s)."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/wrapupcodes/{codeId}",
+      "description": "Get details about this wrap-up code."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/wrapupcodes/{codeId}",
+      "description": "Update wrap-up code"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/wrapupcodes/{codeId}",
+      "description": "Delete wrap-up code"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/wrapupcodes",
+      "description": "Get list of wrapup codes."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/wrapupcodes",
+      "description": "Create a wrap-up code"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/utilization/tags/{tagId}",
+      "description": "Get details about this utilization tag"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/utilization/tags/{tagId}",
+      "description": "Delete an utilization tag"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/utilization/tags/{tagId}/agents",
+      "description": "Get list of agent ids associated with a utilization tag"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/utilization/tags",
+      "description": "Get list of utilization tags"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/utilization/tags",
+      "description": "Create an utilization tag"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/sms/phonenumbers/alphanumeric",
+      "description": "Provision an alphanumeric number for SMS"
+    }
+  ]
+}

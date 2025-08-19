@@ -1,0 +1,81 @@
+{
+  "supercommand": "alerting",
+  "description": "/api/v2/alerting",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/alerting/alerts/{alertId}",
+      "description": "Get an alert"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/alerting/alerts/{alertId}",
+      "description": "Update an alert read status"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/alerting/alerts/{alertId}",
+      "description": "Delete an alert"
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/alerting/alerts/{alertId}",
+      "description": "Allows an entity to mute/snooze an alert or update the unread status of the alert."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/alerting/alerts/bulk",
+      "description": "Bulk alert updates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/alerting/alerts/query",
+      "description": "Gets a paged list of alerts. The max page size is 50"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/alerting/alerts/all",
+      "description": "Delete all alerts for the user"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/alerting/alerts/all",
+      "description": "Updates all alerts"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/alerting/rules/{ruleId}",
+      "description": "Get a rule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/alerting/rules/{ruleId}",
+      "description": "Update a rule"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/alerting/rules/{ruleId}",
+      "description": "Delete a rule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/alerting/rules/bulk",
+      "description": "Bulk update of notification lists"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/alerting/rules/bulk/remove",
+      "description": "Bulk remove rules"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/alerting/rules/query",
+      "description": "Get a paged list of rules.  The max size of the page is 50 items."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/alerting/rules",
+      "description": "Create a Rule."
+    }
+  ]
+}

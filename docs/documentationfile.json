@@ -1,0 +1,31 @@
+{
+  "supercommand": "documentationfile",
+  "description": "/api/v2/documentationfile",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/documentation/search",
+      "description": "Search documentation using the q64 value returned from a previous search"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/documentation/search",
+      "description": "Search documentation"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/documentation/gkn/search",
+      "description": "Search gkn documentation using the q64 value returned from a previous search"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/documentation/gkn/search",
+      "description": "Search gkn documentation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/documentation/all/search",
+      "description": "Search all documents"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "supercommand": "employeeperformance",
+  "description": "/api/v2/employeeperformance",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/employeeperformance/externalmetrics/data",
+      "description": "Write External Metric Data"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/employeeperformance/externalmetrics/definitions/{metricId}",
+      "description": "Get an External Metric Definition"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/employeeperformance/externalmetrics/definitions/{metricId}",
+      "description": "Delete an External Metric Definition"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/employeeperformance/externalmetrics/definitions/{metricId}",
+      "description": "Update External Metric Definition"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/employeeperformance/externalmetrics/definitions",
+      "description": "Get a list of External Metric Definitions of an organization, sorted by name in ascending order"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/employeeperformance/externalmetrics/definitions",
+      "description": "Create External Metric Definition"
+    }
+  ]
+}

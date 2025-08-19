@@ -1,0 +1,31 @@
+{
+  "supercommand": "infrastructureascode",
+  "description": "/api/v2/infrastructureascode",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/infrastructureascode/accelerators/{acceleratorId}",
+      "description": "Get information about an accelerator"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/infrastructureascode/accelerators",
+      "description": "Get a list of available accelerators"
+    },
+    {
+      "name": "getjob",
+      "path": "/api/v2/infrastructureascode/jobs/{jobId}",
+      "description": "Get job status and results"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/infrastructureascode/jobs",
+      "description": "Get job history"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/infrastructureascode/jobs",
+      "description": "Create a Job"
+    }
+  ]
+}

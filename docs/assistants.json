@@ -1,0 +1,76 @@
+{
+  "supercommand": "assistants",
+  "description": "/api/v2/assistants",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/assistants/{assistantId}/copilot",
+      "description": "Get copilot configuration of an assistant."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/assistants/{assistantId}/copilot",
+      "description": "Update agent copilot configuration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/assistants/{assistantId}/queues/{queueId}",
+      "description": "Get queue Information for an assistant."
+    },
+    {
+      "name": "createAssistantQueue",
+      "path": "/api/v2/assistants/{assistantId}/queues/{queueId}",
+      "description": "Create a queue assistant association."
+    },
+    {
+      "name": "removeQueueFromAssistant",
+      "path": "/api/v2/assistants/{assistantId}/queues/{queueId}",
+      "description": "Disassociate a queue from an assistant."
+    },
+    {
+      "name": "getAssistantQueues",
+      "path": "/api/v2/assistants/{assistantId}/queues",
+      "description": "Get all the queues associated with an assistant."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/assistants/{assistantId}/queues",
+      "description": "Disassociate the queues from an assistant for the given assistant ID and queue IDs."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/assistants/{assistantId}/queues",
+      "description": "Update Queues for an Assistant."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/assistants/{assistantId}",
+      "description": "Get an assistant."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/assistants/{assistantId}",
+      "description": "Delete an assistant."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/assistants/{assistantId}",
+      "description": "Update an assistant."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/assistants",
+      "description": "Get all assistants."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/assistants",
+      "description": "Create an Assistant."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/assistants/queues",
+      "description": "Get all queues assigned to any assistant."
+    }
+  ]
+}

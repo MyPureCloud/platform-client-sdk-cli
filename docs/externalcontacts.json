@@ -1,0 +1,621 @@
+{
+  "supercommand": "externalcontacts",
+  "description": "/api/v2/externalcontacts",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/contacts/add",
+      "description": "Bulk add contacts"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/contacts/remove",
+      "description": "Bulk remove contacts"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/contacts",
+      "description": "Bulk fetch contacts"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/contacts/update",
+      "description": "Bulk update contacts"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/contacts/unresolved",
+      "description": "Bulk fetch unresolved ancestor contacts"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/contacts/divisionviews",
+      "description": "Bulk fetch contacts across divisions"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/contacts/enrich",
+      "description": "Bulk Enrich Contacts - Run up to 10 Enrich operations per request"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/notes/add",
+      "description": "Bulk add notes"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/notes/remove",
+      "description": "Bulk remove notes"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/notes",
+      "description": "Bulk fetch notes"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/notes/update",
+      "description": "Bulk update notes"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/update",
+      "description": "Bulk update organizations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/divisionviews",
+      "description": "Bulk fetch organizations across divisions"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/enrich",
+      "description": "Bulk enrich external organizations - Run up to 10 Enrich operations per request"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/add",
+      "description": "Bulk add organizations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/remove",
+      "description": "Bulk remove organizations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations",
+      "description": "Bulk fetch organizations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/relationships/add",
+      "description": "Bulk add relationships"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/relationships/remove",
+      "description": "Bulk remove relationships"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/relationships",
+      "description": "Bulk fetch relationships"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/relationships/update",
+      "description": "Bulk update relationships"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}",
+      "description": "Fetch a note for an external contact"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}",
+      "description": "Update a note for an external contact"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}",
+      "description": "Delete a note for an external contact"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/notes",
+      "description": "List notes for an external contact"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/notes",
+      "description": "Create a note for an external contact"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
+      "description": "List the identifiers for a contact"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
+      "description": "Claim or release identifiers for a contact"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}",
+      "description": "Fetch an external contact"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}",
+      "description": "Update an external contact"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}",
+      "description": "Delete an external contact"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/promotion",
+      "description": "Promote an observed contact (ephemeral or identified) to a curated contact"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/contacts/schemas/{schemaId}",
+      "description": "Get a schema"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/contacts/schemas/{schemaId}",
+      "description": "Update a schema"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/externalcontacts/contacts/schemas/{schemaId}",
+      "description": "Delete a schema"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}",
+      "description": "Get a specific version of a schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/contacts/schemas/{schemaId}/versions",
+      "description": "Get all versions of an external contact's schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/contacts/schemas",
+      "description": "Get a list of schemas."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts/schemas",
+      "description": "Create a schema"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/merge/contacts",
+      "description": "Merge two contacts into a new contact record"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts/merge",
+      "description": "Merge up to 25 contacts into a new contact record"
+    },
+    {
+      "name": "search",
+      "path": "/api/v2/externalcontacts/contacts",
+      "description": "Search for external contacts"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts",
+      "description": "Create an external contact"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/scan/contacts/divisionviews/all",
+      "description": "Scan for external contacts using paging"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/scan/contacts",
+      "description": "Scan for external contacts using paging"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/conversations/{conversationId}",
+      "description": "Associate/disassociate an external contact with a conversation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts/enrich",
+      "description": "Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/organizations/enrich",
+      "description": "Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs."
+    },
+    {
+      "name": "search",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts",
+      "description": "Search for external contacts in an external organization"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers",
+      "description": "List the identifiers for an external organization"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers",
+      "description": "Claim or release identifiers for an external organization"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}",
+      "description": "Fetch a note for an external organization"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}",
+      "description": "Update a note for an external organization"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}",
+      "description": "Delete a note for an external organization"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes",
+      "description": "List notes for an external organization"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes",
+      "description": "Create a note for an external organization"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships",
+      "description": "Fetch a relationship for an external organization"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}",
+      "description": "Fetch an external organization"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}",
+      "description": "Update an external organization"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}",
+      "description": "Delete an external organization"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/organizations/schemas/{schemaId}",
+      "description": "Get a schema"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/organizations/schemas/{schemaId}",
+      "description": "Update a schema"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}",
+      "description": "Get a specific version of a schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/organizations/schemas/{schemaId}/versions",
+      "description": "Get all versions of an external organization's schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/organizations/schemas",
+      "description": "Get a list of schemas."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/organizations/schemas",
+      "description": "Create a schema"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}",
+      "description": "Links a Trustor with an External Organization"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor",
+      "description": "Unlink the Trustor for this External Organization"
+    },
+    {
+      "name": "search",
+      "path": "/api/v2/externalcontacts/organizations",
+      "description": "Search for external organizations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/organizations",
+      "description": "Create an external organization"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/scan/organizations/divisionviews/all",
+      "description": "Scan for external organizations using paging"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/scan/organizations",
+      "description": "Scan for external organizations using paging"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/externalsources/{externalSourceId}",
+      "description": "Fetch an External Source"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/externalsources/{externalSourceId}",
+      "description": "Update an External Source"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/externalcontacts/externalsources/{externalSourceId}",
+      "description": "Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/externalsources",
+      "description": "Fetch a list of External Sources"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/externalsources",
+      "description": "Create an External Source"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/identifierlookup",
+      "description": "Fetch a contact using an identifier type and value."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/identifierlookup/contacts",
+      "description": "Fetch a contact using an identifier type and value."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/identifierlookup/organizations",
+      "description": "Fetch an external organization using an identifier type and value."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/journey/segments",
+      "description": "Retrieve segment assignments by external contact ID."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/journey/segments",
+      "description": "Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/journey/sessions",
+      "description": "Retrieve all sessions for a given external contact."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/scan/notes/divisionviews/all",
+      "description": "Scan for notes using paging"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/scan/notes",
+      "description": "Scan for notes using paging"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/relationships/{relationshipId}",
+      "description": "Fetch a relationship"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/relationships/{relationshipId}",
+      "description": "Update a relationship"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/externalcontacts/relationships/{relationshipId}",
+      "description": "Delete a relationship"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/relationships",
+      "description": "Create a relationship"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/scan/relationships/divisionviews/all",
+      "description": "Scan for relationships"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/scan/relationships",
+      "description": "Scan for relationships"
+    },
+    {
+      "name": "search",
+      "path": "/api/v2/externalcontacts/reversewhitepageslookup",
+      "description": "Look up contacts based on an attribute. Maximum of 25 values returned."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/unresolved",
+      "description": "Fetch an unresolved external contact"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/contacts/schemas/coretypes/{coreTypeName}",
+      "description": "Get a specific named core type."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/contacts/schemas/coretypes",
+      "description": "Get the core types from which all schemas are built."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/contacts/schemas/limits",
+      "description": "Get quantitative limits on schemas"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/organizations/schemas/coretypes/{coreTypeName}",
+      "description": "Get a specific named core type."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/organizations/schemas/coretypes",
+      "description": "Get the core types from which all schemas are built."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/organizations/schemas/limits",
+      "description": "Get quantitative limits on schemas"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/contacts/exports/{exportId}",
+      "description": "Get export for exportId"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/contacts/exports",
+      "description": "List exports for organization"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts/exports",
+      "description": "Create bulk export"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/import/jobs/{jobId}",
+      "description": "Get job based on id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/import/jobs/{jobId}",
+      "description": "Update Job's workflow status"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/import/jobs",
+      "description": "List jobs for organization"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/import/jobs",
+      "description": "Create a new job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/import/settings/{settingsId}",
+      "description": "Get setting based on id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/import/settings/{settingsId}",
+      "description": "Update settings"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/externalcontacts/import/settings/{settingsId}",
+      "description": "Delete Settings"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/import/settings",
+      "description": "List settings for organization"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/import/settings",
+      "description": "Create a new settings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/import/csv/jobs",
+      "description": "Create CSV import job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/import/csv/settings/{settingsId}",
+      "description": "Get settings for CSV import"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/import/csv/settings/{settingsId}",
+      "description": "Update settings for CSV import"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/externalcontacts/import/csv/settings/{settingsId}",
+      "description": "Delete settings for CSV import"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/import/csv/settings",
+      "description": "Retrieve all settings for organization filtered by externalSettingsId if provided"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/import/csv/settings",
+      "description": "Create settings for CSV import"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/import/csv/uploads/{uploadId}/details",
+      "description": "Get details for CSV upload"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/import/csv/uploads/{uploadId}/preview",
+      "description": "Get preview for CSV upload"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/import/csv/uploads",
+      "description": "Get url for CSV upload"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/settings",
+      "description": "Get settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/settings",
+      "description": "Set settings"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/externalcontacts/settings",
+      "description": "Delete settings"
+    }
+  ]
+}

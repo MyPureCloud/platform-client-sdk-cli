@@ -1,0 +1,12 @@
+package conversations_calls_participants_consult_contact
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_calls_participants_consult_contact_external"
+)
+
+func init() {
+	conversations_calls_participants_consult_contactCmd.AddCommand(conversations_calls_participants_consult_contact_external.Cmdconversations_calls_participants_consult_contact_external())
+	conversations_calls_participants_consult_contactCmd.Short = utils.GenerateCustomDescription(conversations_calls_participants_consult_contactCmd.Short, conversations_calls_participants_consult_contact_external.Description, )
+	conversations_calls_participants_consult_contactCmd.Long = conversations_calls_participants_consult_contactCmd.Short
+}

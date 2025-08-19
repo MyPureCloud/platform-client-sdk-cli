@@ -1,0 +1,26 @@
+{
+  "supercommand": "uploads",
+  "description": "/api/v2/uploads",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/uploads/learning/coverart",
+      "description": "Generates pre-signed URL to upload cover art for learning modules"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/uploads/workforcemanagement/historicaldata/csv",
+      "description": "Creates presigned url for uploading WFM historical data file. Requires data in csv format."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/uploads/publicassets/images",
+      "description": "Creates presigned url for uploading a public asset image"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/uploads/recordings",
+      "description": "Creates presigned url for uploading a recording file"
+    }
+  ]
+}

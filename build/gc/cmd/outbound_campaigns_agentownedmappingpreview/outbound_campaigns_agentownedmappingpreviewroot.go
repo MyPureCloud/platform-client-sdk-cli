@@ -1,0 +1,12 @@
+package outbound_campaigns_agentownedmappingpreview
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_campaigns_agentownedmappingpreview_results"
+)
+
+func init() {
+	outbound_campaigns_agentownedmappingpreviewCmd.AddCommand(outbound_campaigns_agentownedmappingpreview_results.Cmdoutbound_campaigns_agentownedmappingpreview_results())
+	outbound_campaigns_agentownedmappingpreviewCmd.Short = utils.GenerateCustomDescription(outbound_campaigns_agentownedmappingpreviewCmd.Short, outbound_campaigns_agentownedmappingpreview_results.Description, )
+	outbound_campaigns_agentownedmappingpreviewCmd.Long = outbound_campaigns_agentownedmappingpreviewCmd.Short
+}

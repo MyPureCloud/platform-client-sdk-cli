@@ -1,0 +1,156 @@
+{
+  "supercommand": "scim",
+  "description": "/api/v2/scim",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/scim/resourcetypes/{resourceType}",
+      "description": "Get a resource type"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scim/resourcetypes",
+      "description": "Get a list of resource types"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scim/schemas/{schemaId}",
+      "description": "Get a SCIM schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scim/schemas",
+      "description": "Get a list of SCIM schemas"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scim/groups",
+      "description": "Get a list of groups"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scim/groups/{groupId}",
+      "description": "Get a group"
+    },
+    {
+      "name": "replace",
+      "path": "/api/v2/scim/groups/{groupId}",
+      "description": "Replace a group"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/scim/groups/{groupId}",
+      "description": "Modify a group"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scim/serviceproviderconfig",
+      "description": "Get a service provider's configuration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scim/users/{userId}",
+      "description": "Get a user"
+    },
+    {
+      "name": "replace",
+      "path": "/api/v2/scim/users/{userId}",
+      "description": "Replace a user"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/scim/users/{userId}",
+      "description": "Delete a user"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/scim/users/{userId}",
+      "description": "Modify a user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scim/users",
+      "description": "Get a list of users"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/scim/users",
+      "description": "Create a user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scim/v2/resourcetypes/{resourceType}",
+      "description": "Get a resource type"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scim/v2/resourcetypes",
+      "description": "Get a list of resource types"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scim/v2/schemas/{schemaId}",
+      "description": "Get a SCIM schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scim/v2/schemas",
+      "description": "Get a list of SCIM schemas"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scim/v2/groups",
+      "description": "Get a list of groups"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scim/v2/groups/{groupId}",
+      "description": "Get a group"
+    },
+    {
+      "name": "replace",
+      "path": "/api/v2/scim/v2/groups/{groupId}",
+      "description": "Replace a group"
+    },
+    {
+      "name": "modify",
+      "path": "/api/v2/scim/v2/groups/{groupId}",
+      "description": "Modify a group"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scim/v2/serviceproviderconfig",
+      "description": "Get a service provider's configuration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scim/v2/users/{userId}",
+      "description": "Get a user"
+    },
+    {
+      "name": "replace",
+      "path": "/api/v2/scim/v2/users/{userId}",
+      "description": "Replace a user"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/scim/v2/users/{userId}",
+      "description": "Delete a user"
+    },
+    {
+      "name": "modify",
+      "path": "/api/v2/scim/v2/users/{userId}",
+      "description": "Modify a user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scim/v2/users",
+      "description": "Get a list of users"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/scim/v2/users",
+      "description": "Create a user"
+    }
+  ]
+}

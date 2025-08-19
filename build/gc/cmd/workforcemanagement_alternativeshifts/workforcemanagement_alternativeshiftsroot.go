@@ -1,0 +1,16 @@
+package workforcemanagement_alternativeshifts
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_alternativeshifts_offers"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_alternativeshifts_trades"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_alternativeshifts_settings"
+)
+
+func init() {
+	workforcemanagement_alternativeshiftsCmd.AddCommand(workforcemanagement_alternativeshifts_offers.Cmdworkforcemanagement_alternativeshifts_offers())
+	workforcemanagement_alternativeshiftsCmd.AddCommand(workforcemanagement_alternativeshifts_trades.Cmdworkforcemanagement_alternativeshifts_trades())
+	workforcemanagement_alternativeshiftsCmd.AddCommand(workforcemanagement_alternativeshifts_settings.Cmdworkforcemanagement_alternativeshifts_settings())
+	workforcemanagement_alternativeshiftsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_alternativeshiftsCmd.Short, workforcemanagement_alternativeshifts_offers.Description, workforcemanagement_alternativeshifts_trades.Description, workforcemanagement_alternativeshifts_settings.Description, )
+	workforcemanagement_alternativeshiftsCmd.Long = workforcemanagement_alternativeshiftsCmd.Short
+}

@@ -1,0 +1,96 @@
+{
+  "supercommand": "organizations",
+  "description": "/api/v2/organizations",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/organizations/embeddedintegration",
+      "description": "Get the list of domains that will be allowed to embed PureCloud applications"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/organizations/embeddedintegration",
+      "description": "Update the list of domains that will be allowed to embed PureCloud applications"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/organizations/ipaddressauthentication",
+      "description": "Get organization IP address whitelist settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/organizations/ipaddressauthentication",
+      "description": "Update organization IP address whitelist settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/organizations/whitelist",
+      "description": "This route is deprecated, please use /api/v2/organizations/authentication/settings instead"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/organizations/whitelist",
+      "description": "This route is deprecated, please use /api/v2/organizations/authentication/settings instead"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/organizations/authentication/settings",
+      "description": "Gets the organization's settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/organizations/authentication/settings",
+      "description": "Update the organization's settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/organizations/features/{featureName}",
+      "description": "Update organization"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/organizations/me",
+      "description": "Get organization."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/organizations/me",
+      "description": "Update organization."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/organizations/limits/changerequests/{requestId}",
+      "description": "Get a limit change request"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/organizations/limits/changerequests",
+      "description": "Get the available limit change requests"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/organizations/limits/docs",
+      "description": "Get limit documentation"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/organizations/limits/docs/freetrial",
+      "description": "Get free trial limit documentation"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/organizations/limits/namespaces",
+      "description": "Get the available limit namespaces"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/organizations/limits/namespaces/{namespaceName}",
+      "description": "Get the effective limits in a namespace for an organization"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/organizations/limits/namespaces/{namespaceName}/defaults",
+      "description": "Get the default limits in a namespace for an organization"
+    }
+  ]
+}

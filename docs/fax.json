@@ -1,0 +1,46 @@
+{
+  "supercommand": "fax",
+  "description": "/api/v2/fax",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/fax/settings",
+      "description": "Get organization config for given organization"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/fax/settings",
+      "description": "Update/write organization config for given organization"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/fax/documents/{documentId}/content",
+      "description": "Download a fax document."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/fax/documents/{documentId}",
+      "description": "Get a document."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/fax/documents/{documentId}",
+      "description": "Update a fax document."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/fax/documents/{documentId}",
+      "description": "Delete a fax document."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/fax/documents",
+      "description": "Get a list of fax documents."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/fax/summary",
+      "description": "Get fax summary"
+    }
+  ]
+}

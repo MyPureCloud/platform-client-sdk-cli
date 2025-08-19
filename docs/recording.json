@@ -1,0 +1,186 @@
+{
+  "supercommand": "recording",
+  "description": "/api/v2/recording",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/recording/crossplatform/mediaretentionpolicies",
+      "description": "Gets media retention policy list with query options to filter on name and enabled."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/recording/crossplatform/mediaretentionpolicies",
+      "description": "Create media retention policy"
+    },
+    {
+      "name": "deletepolicies",
+      "path": "/api/v2/recording/crossplatform/mediaretentionpolicies",
+      "description": "Delete media retention policies"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}",
+      "description": "Get a media retention policy"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}",
+      "description": "Update a media retention policy"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}",
+      "description": "Delete a media retention policy"
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}",
+      "description": "Patch a media retention policy"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/recording/mediaretentionpolicies",
+      "description": "Gets media retention policy list with query options to filter on name and enabled."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/recording/mediaretentionpolicies",
+      "description": "Create media retention policy"
+    },
+    {
+      "name": "deletepolicies",
+      "path": "/api/v2/recording/mediaretentionpolicies",
+      "description": "Delete media retention policies"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/recording/mediaretentionpolicies/{policyId}",
+      "description": "Get a media retention policy"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/recording/mediaretentionpolicies/{policyId}",
+      "description": "Update a media retention policy"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/recording/mediaretentionpolicies/{policyId}",
+      "description": "Delete a media retention policy"
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/recording/mediaretentionpolicies/{policyId}",
+      "description": "Patch a media retention policy"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/recording/recordingkeys",
+      "description": "Get encryption key list"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/recording/recordingkeys",
+      "description": "Create encryption key"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/recording/recordingkeys/rotationschedule",
+      "description": "Get key rotation schedule"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/recording/recordingkeys/rotationschedule",
+      "description": "Update key rotation schedule"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/recording/localkeys",
+      "description": "create a local key management recording key"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/recording/keyconfigurations/{keyConfigurationId}",
+      "description": "Get the encryption key configurations"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/recording/keyconfigurations/{keyConfigurationId}",
+      "description": "Update the encryption key configurations"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/recording/keyconfigurations",
+      "description": "Get a list of key configurations data"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/recording/keyconfigurations",
+      "description": "Setup configurations for encryption key creation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/recording/keyconfigurations/validate",
+      "description": "Validate encryption key configurations without saving it"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/recording/batchrequests",
+      "description": "Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/recording/batchrequests/{jobId}",
+      "description": "Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/recording/jobs/{jobId}/failedrecordings",
+      "description": "Get IDs of recordings that the bulk job failed for"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/recording/jobs/{jobId}",
+      "description": "Get the status of the job associated with the job id."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/recording/jobs/{jobId}",
+      "description": "Execute the recording bulk job."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/recording/jobs/{jobId}",
+      "description": "Delete the recording bulk job"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/recording/jobs",
+      "description": "Get the status of all jobs within the user's organization"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/recording/jobs",
+      "description": "Create a recording bulk job."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/recording/settings",
+      "description": "Get the Recording Settings for the Organization"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/recording/settings",
+      "description": "Update the Recording Settings for the Organization"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/recording/uploads/reports/{reportId}",
+      "description": "Get the status of a recording upload status report"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/recording/uploads/reports",
+      "description": "Creates a recording upload status report"
+    }
+  ]
+}

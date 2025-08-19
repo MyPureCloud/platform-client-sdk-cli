@@ -1,0 +1,46 @@
+{
+  "supercommand": "billing",
+  "description": "/api/v2/billing",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/billing/reports/billableusage",
+      "description": "Get a report of the billable license usages"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/billing/trusteebillingoverview/{trustorOrgId}",
+      "description": "Get the billing overview for an organization that is managed by a partner."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/billing/contracts/{contractId}/billingperiods/{billingPeriodId}",
+      "description": "Get contract billing period"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/billing/contracts/{contractId}",
+      "description": "Get billing contract"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/billing/contracts",
+      "description": "Get billing contracts"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/billing/contracts/invoices/{invoiceId}/document",
+      "description": "Get invoice document"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/billing/contracts/invoices/{invoiceId}/lines",
+      "description": "Get invoice lines"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/billing/contracts/invoices",
+      "description": "Get invoices"
+    }
+  ]
+}

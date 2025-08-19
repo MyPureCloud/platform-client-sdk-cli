@@ -1,0 +1,12 @@
+package conversations_participants_internalmessages_users
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_participants_internalmessages_users_communications"
+)
+
+func init() {
+	conversations_participants_internalmessages_usersCmd.AddCommand(conversations_participants_internalmessages_users_communications.Cmdconversations_participants_internalmessages_users_communications())
+	conversations_participants_internalmessages_usersCmd.Short = utils.GenerateCustomDescription(conversations_participants_internalmessages_usersCmd.Short, conversations_participants_internalmessages_users_communications.Description, )
+	conversations_participants_internalmessages_usersCmd.Long = conversations_participants_internalmessages_usersCmd.Short
+}

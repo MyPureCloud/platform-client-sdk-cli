@@ -1,0 +1,866 @@
+{
+  "supercommand": "outbound",
+  "description": "/api/v2/outbound",
+  "resources": [
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/agents/{userId}",
+      "description": "Send notification that an agent's state changed "
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/attemptlimits/{attemptLimitsId}",
+      "description": "Get attempt limits"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/attemptlimits/{attemptLimitsId}",
+      "description": "Update attempt limits"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/attemptlimits/{attemptLimitsId}",
+      "description": "Delete attempt limits"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/attemptlimits",
+      "description": "Query attempt limits list"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/attemptlimits",
+      "description": "Create attempt limits"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}",
+      "description": "Get a dialer call analysis response set."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}",
+      "description": "Update a dialer call analysis response set."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}",
+      "description": "Delete a dialer call analysis response set."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/callanalysisresponsesets",
+      "description": "Query a list of dialer call analysis response sets."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/callanalysisresponsesets",
+      "description": "Create a dialer call analysis response set."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/callabletimesets/{callableTimeSetId}",
+      "description": "Get callable time set"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/callabletimesets/{callableTimeSetId}",
+      "description": "Update callable time set"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/callabletimesets/{callableTimeSetId}",
+      "description": "Delete callable time set"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/callabletimesets",
+      "description": "Query callable time set list"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/callabletimesets",
+      "description": "Create callable time set"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/callback/schedule",
+      "description": "Schedule a Callback for a Dialer Campaign (Deprecated)"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/campaigns/divisionviews/{campaignId}",
+      "description": "Get a basic Campaign information object"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/campaigns/divisionviews",
+      "description": "Query a list of basic Campaign information objects"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/interactions",
+      "description": "Get dialer campaign interactions."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/linedistribution",
+      "description": "Get line distribution information for campaigns using same Edge Group or Site as given campaign"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
+      "description": "Get campaign progress"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
+      "description": "Reset campaign progress and recycle the campaign"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/campaigns/{campaignId}",
+      "description": "Get dialer campaign."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/campaigns/{campaignId}",
+      "description": "Update a campaign."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/campaigns/{campaignId}",
+      "description": "Delete a campaign."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/outbound/campaigns/{campaignId}",
+      "description": "Update a campaign."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results",
+      "description": "Get a preview of how agents will be mapped to this campaign's contact list."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview",
+      "description": "Initiate request for a preview of how agents will be mapped to this campaign's contact list."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/diagnostics",
+      "description": "Get campaign diagnostics"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/skillcombinations",
+      "description": "Get the remaining and total contact count for each skill combination in a skills campaign"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/start",
+      "description": "Start the campaign"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/stop",
+      "description": "Stop the campaign"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/campaignrules/{campaignRuleId}",
+      "description": "Get Campaign Rule"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/campaignrules/{campaignRuleId}",
+      "description": "Update Campaign Rule"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/campaignrules/{campaignRuleId}",
+      "description": "Delete Campaign Rule"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/campaignrules",
+      "description": "Query Campaign Rule list"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/campaignrules",
+      "description": "Create Campaign Rule"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/schedules/campaigns/{campaignId}",
+      "description": "Get a dialer campaign schedule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/schedules/campaigns/{campaignId}",
+      "description": "Update a new campaign schedule."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/schedules/campaigns/{campaignId}",
+      "description": "Delete a dialer campaign schedule."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/schedules/campaigns",
+      "description": "Query for a list of dialer campaign schedules."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/stats",
+      "description": "Get statistics about a Dialer Campaign"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/campaigns/progress",
+      "description": "Get progress for a list of campaigns"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/campaigns",
+      "description": "Query a list of dialer campaigns."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/campaigns",
+      "description": "Create a campaign."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/campaigns/all/divisionviews",
+      "description": "Query across all types of campaigns"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/campaigns/all",
+      "description": "Query across all types of campaigns by division"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/contactlists/divisionviews/{contactListId}",
+      "description": "Get a basic ContactList information object"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/contactlists/divisionviews",
+      "description": "Query a list of simplified contact list objects."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/export",
+      "description": "Get the URI of a contact list export."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/export",
+      "description": "Initiate the export of a contact list."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlistfilters/preview",
+      "description": "Get a preview of the output of a contact list filter"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/contactlistfilters/{contactListFilterId}",
+      "description": "Get Contact list filter"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/contactlistfilters/{contactListFilterId}",
+      "description": "Update Contact List Filter"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/contactlistfilters/{contactListFilterId}",
+      "description": "Delete Contact List Filter"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlistfilters/bulk/retrieve",
+      "description": "Retrieve multiple contact list filters"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/contactlistfilters",
+      "description": "Query Contact list filters"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlistfilters",
+      "description": "Create Contact List Filter"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/importstatus",
+      "description": "Get dialer contactList import status."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/contactlists/{contactListId}",
+      "description": "Get a dialer contact list."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/contactlists/{contactListId}",
+      "description": "Update a contact list."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/contactlists/{contactListId}",
+      "description": "Delete a contact list."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview",
+      "description": "Preview the result of applying Automatic Time Zone Mapping to a contact list"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/contactlisttemplates/{contactListTemplateId}",
+      "description": "Get Contact List Template"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/contactlisttemplates/{contactListTemplateId}",
+      "description": "Update a contact list template."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/contactlisttemplates/{contactListTemplateId}",
+      "description": "Delete Contact List Template"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/contactlisttemplates",
+      "description": "Query a list of contact list templates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlisttemplates",
+      "description": "Create Contact List Template"
+    },
+    {
+      "name": "deleteall",
+      "path": "/api/v2/outbound/contactlisttemplates",
+      "description": "Delete multiple contact list templates."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlisttemplates/bulk/add",
+      "description": "Add multiple contact list templates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlisttemplates/bulk/retrieve",
+      "description": "Get multiple contact list templates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/contactlists",
+      "description": "Query a list of contact lists."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlists",
+      "description": "Create a contact List."
+    },
+    {
+      "name": "deletecontactlists",
+      "path": "/api/v2/outbound/contactlists",
+      "description": "Delete multiple contact lists."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}",
+      "description": "Get a contact."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}",
+      "description": "Update a contact."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}",
+      "description": "Delete a contact."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/clear",
+      "description": "Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs",
+      "description": "Get 10 most recent bulk operation jobs associated with contact list."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}",
+      "description": "Get bulk operation job."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update",
+      "description": "Start an async job to bulk edit contacts."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk",
+      "description": "Get contacts from a contact list."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove",
+      "description": "Start an async job to delete contacts using a filter."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/search",
+      "description": "Query contacts from a contact list."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts",
+      "description": "Add contacts to a contact list."
+    },
+    {
+      "name": "deletecontacts",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts",
+      "description": "Delete contacts from a contact list."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/conversations/{conversationId}/dnc",
+      "description": "Add phone numbers to a Dialer DNC list."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns",
+      "description": "Deletes all or expired custom exclusion column entries from a DNC list."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns",
+      "description": "Add entries to or delete entries from a DNC list."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/dnclists/divisionviews/{dncListId}",
+      "description": "Get a basic DncList information object"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/dnclists/divisionviews",
+      "description": "Query a list of simplified dnc list objects."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/emailaddresses",
+      "description": "Add email addresses to a DNC list."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/emailaddresses",
+      "description": "Deletes all or expired email addresses from a DNC list."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/emailaddresses",
+      "description": "Add emails to or Delete emails from a DNC list."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/export",
+      "description": "Get the URI of a DNC list export."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/export",
+      "description": "Initiate the export of a dnc list."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/importstatus",
+      "description": "Get dialer dncList import status."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/phonenumbers",
+      "description": "Add phone numbers to a DNC list."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/phonenumbers",
+      "description": "Deletes all or expired phone numbers from a DNC list."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/phonenumbers",
+      "description": "Add numbers to or delete numbers from a DNC list."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/dnclists/{dncListId}",
+      "description": "Get dialer DNC list"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/dnclists/{dncListId}",
+      "description": "Update dialer DNC list"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/dnclists/{dncListId}",
+      "description": "Delete dialer DNC list"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/whatsappnumbers",
+      "description": "Deletes all or expired whatsApp numbers from a DNC list."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/dnclists/{dncListId}/whatsappnumbers",
+      "description": "Add entries to or delete entries from a DNC list."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/dnclists",
+      "description": "Query dialer DNC lists"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/dnclists",
+      "description": "Create dialer DNC list"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/events/{eventId}",
+      "description": "Get Dialer Event"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/events",
+      "description": "Query Event Logs"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/filespecificationtemplates/bulk",
+      "description": "Delete multiple file specification templates."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/filespecificationtemplates",
+      "description": "Query File Specification Templates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/filespecificationtemplates",
+      "description": "Create File Specification Template"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}",
+      "description": "Get File Specification Template"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}",
+      "description": "Update File Specification Template"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}",
+      "description": "Delete File Specification Template"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/importtemplates/{importTemplateId}/importstatus",
+      "description": "Get the import status for an import template."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/importtemplates/{importTemplateId}",
+      "description": "Get Import Template"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/importtemplates/{importTemplateId}",
+      "description": "Update Import Template"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/importtemplates/{importTemplateId}",
+      "description": "Delete Import Template"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/importtemplates",
+      "description": "Query Import Templates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/importtemplates",
+      "description": "Create Import Template"
+    },
+    {
+      "name": "deleteall",
+      "path": "/api/v2/outbound/importtemplates",
+      "description": "Delete multiple import templates."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/importtemplates/bulk/add",
+      "description": "Add multiple import templates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/messagingcampaigns/progress",
+      "description": "Get progress for a list of messaging campaigns"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/settings",
+      "description": "Get the outbound settings for this organization"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/settings",
+      "description": "Update the outbound settings for this organization"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/rulesets/{ruleSetId}",
+      "description": "Get a Rule Set by ID."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/rulesets/{ruleSetId}",
+      "description": "Update a Rule Set."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/rulesets/{ruleSetId}",
+      "description": "Delete a Rule Set."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/rulesets",
+      "description": "Query a list of Rule Sets."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/rulesets",
+      "description": "Create a Rule Set."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/sequences/{sequenceId}",
+      "description": "Get a dialer campaign sequence."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/sequences/{sequenceId}",
+      "description": "Update a new campaign sequence."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/sequences/{sequenceId}",
+      "description": "Delete a dialer campaign sequence."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/schedules/sequences/{sequenceId}",
+      "description": "Get a dialer sequence schedule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/schedules/sequences/{sequenceId}",
+      "description": "Update a new sequence schedule."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/schedules/sequences/{sequenceId}",
+      "description": "Delete a dialer sequence schedule."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/schedules/sequences",
+      "description": "Query for a list of dialer sequence schedules."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/sequences",
+      "description": "Query a list of dialer campaign sequences."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/sequences",
+      "description": "Create a new campaign sequence."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/wrapupcodemappings",
+      "description": "Get the Dialer wrap up code mapping."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/wrapupcodemappings",
+      "description": "Update the Dialer wrap up code mapping."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/digitalrulesets/{digitalRuleSetId}",
+      "description": "Get an Outbound Digital Rule Set"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/digitalrulesets/{digitalRuleSetId}",
+      "description": "Update an Outbound Digital Rule Set"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/digitalrulesets/{digitalRuleSetId}",
+      "description": "Delete an Outbound Digital Rule Set"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/digitalrulesets",
+      "description": "Query a list of Outbound Digital Rule Sets"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/digitalrulesets",
+      "description": "Create an Outbound Digital Rule Set"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}",
+      "description": "Get a basic Messaging Campaign information object"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/messagingcampaigns/divisionviews",
+      "description": "Query a list of basic Messaging Campaign information objects"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}",
+      "description": "Get an Outbound Messaging Campaign"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}",
+      "description": "Update an Outbound Messaging Campaign"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}",
+      "description": "Delete an Outbound Messaging Campaign"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress",
+      "description": "Get messaging campaign's progress"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress",
+      "description": "Reset messaging campaign progress and recycle the messaging campaign"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics",
+      "description": "Get messaging campaign diagnostics"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start",
+      "description": "Start the campaign"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop",
+      "description": "Stop the campaign"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/messagingcampaigns",
+      "description": "Query a list of Messaging Campaigns"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/messagingcampaigns",
+      "description": "Create a Messaging Campaign"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}",
+      "description": "Get an email campaign schedule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}",
+      "description": "Update an email campaign schedule."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}",
+      "description": "Delete an email campaign schedule."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/schedules/emailcampaigns",
+      "description": "Query for a list of email campaign schedules."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}",
+      "description": "Get a messaging campaign schedule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}",
+      "description": "Update a new messaging campaign schedule."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}",
+      "description": "Delete a messaging campaign schedule."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/schedules/messagingcampaigns",
+      "description": "Query for a list of messaging campaign schedules."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}",
+      "description": "Get a WhatsApp campaign schedule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}",
+      "description": "Update a WhatsApp campaign schedule."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}",
+      "description": "Delete a WhatsApp campaign schedule."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/outbound/schedules/whatsappcampaigns",
+      "description": "Query for a list of WhatsApp campaign schedules."
+    }
+  ]
+}

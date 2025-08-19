@@ -1,0 +1,176 @@
+{
+  "supercommand": "chats",
+  "description": "/api/v2/chats",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/chats/settings",
+      "description": "Get Chat Settings."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/chats/settings",
+      "description": "Update Chat Settings."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/chats/settings",
+      "description": "Patch Chat Settings."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages/{messageIds}",
+      "description": "Get messages by id(s) from a room"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/chats/users/{userId}/messages/{messageIds}",
+      "description": "Get messages by id(s) from a 1on1"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/chats/messages/{messageId}",
+      "description": "Get a message"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/chats/messages/{messageId}/reactions",
+      "description": "Update reactions to a message"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages",
+      "description": "Get a room's message history"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages",
+      "description": "Send a message to a room"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages/{messageId}",
+      "description": "Delete a message in a room"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages/{messageId}",
+      "description": "Edit a message in a room"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/chats/users/{userId}",
+      "description": "Get information for a 1on1"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/chats/users/{userId}/messages",
+      "description": "Get 1on1 History between a user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/chats/users/{userId}/messages",
+      "description": "Send a message to a user"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/chats/users/{userId}/messages/{messageId}",
+      "description": "Delete a message to a user"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/chats/users/{userId}/messages/{messageId}",
+      "description": "Edit a message to a user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/chats/users/{userId}/messages/pins",
+      "description": "Add pinned messages for a 1on1, up to a maximum of 5 pinned messages"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId}",
+      "description": "Remove a pinned message from a 1on1"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/chats/rooms/{roomJid}/participants/{userId}",
+      "description": "Join a room"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/chats/rooms/{roomJid}/participants/{userId}",
+      "description": "Remove a user from a room."
+    },
+    {
+      "name": "getRoomParticipants",
+      "path": "/api/v2/chats/rooms/{roomJid}/participants",
+      "description": "Get room participants in a room"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/chats/rooms/{roomJid}/participants/{participantJid}",
+      "description": "Get a room participant"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/chats/rooms/{roomJid}",
+      "description": "Get a room"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/chats/rooms/{roomJid}",
+      "description": "Set properties for a room"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/chats/rooms",
+      "description": "Create an adhoc room"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages/pins",
+      "description": "Add pinned messages for a room, up to a maximum of 5 pinned messages"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId}",
+      "description": "Remove a pinned message from a room"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/chats/threads/{threadId}/messages",
+      "description": "Get history by thread"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/chats/users/me/settings",
+      "description": "Get a user's chat settings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/chats/users/me/settings",
+      "description": "Create a user's chat settings"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/chats/users/me/settings",
+      "description": "Delete a user's chat settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/chats/users/me/settings",
+      "description": "Update a user's chat settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/chats/users/{userId}/settings",
+      "description": "Get a user's chat settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/chats/users/{userId}/settings",
+      "description": "Update a user's chat settings"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "supercommand": "screenrecording",
+  "description": "/api/v2/screenrecording",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/screenrecording/token",
+      "description": "Sign identifying information for screen recording"
+    }
+  ]
+}

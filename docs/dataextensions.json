@@ -1,0 +1,21 @@
+{
+  "supercommand": "dataextensions",
+  "description": "/api/v2/dataextensions",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/dataextensions/coretypes/{coretypeName}",
+      "description": "Get a specific named core type."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/dataextensions/coretypes",
+      "description": "Get the core types from which all schemas are built."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/dataextensions/limits",
+      "description": "Get quantitative limits on schemas"
+    }
+  ]
+}

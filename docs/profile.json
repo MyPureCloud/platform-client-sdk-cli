@@ -1,0 +1,16 @@
+{
+  "supercommand": "profile",
+  "description": "/api/v2/profile",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/profiles/groups",
+      "description": "Get group profile listing"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/profiles/users",
+      "description": "Get a user profile listing"
+    }
+  ]
+}

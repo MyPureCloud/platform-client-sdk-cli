@@ -1,0 +1,36 @@
+{
+  "supercommand": "dataprivacy",
+  "description": "/api/v2/dataprivacy",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/dataprivacy/maskingrules/{ruleId}",
+      "description": "Fetch details about a masking rule."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/dataprivacy/maskingrules/{ruleId}",
+      "description": "Delete a masking rule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/dataprivacy/maskingrules/{ruleId}",
+      "description": "Update information about a masking rule."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/dataprivacy/maskingrules",
+      "description": "Retrieve the list of masking rules."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/dataprivacy/maskingrules",
+      "description": "Create a new masking rule resource."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/dataprivacy/maskingrules/validate",
+      "description": "Validate masking before creating."
+    }
+  ]
+}

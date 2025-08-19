@@ -1,0 +1,36 @@
+{
+  "supercommand": "recordings",
+  "description": "/api/v2/recordings",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/recordings/deletionprotection",
+      "description": "Get a list of conversations with protected recordings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/recordings/deletionprotection",
+      "description": "Apply or revoke recording protection for conversations"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/recordings/retention/query",
+      "description": "Query for recording retention data"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/recordings/screensessions/metadata",
+      "description": "Provide meta-data a screen recording."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/recordings/screensessions/details",
+      "description": "Retrieves an object containing the total number of concurrent active screen recordings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/recordings/screensessions/acknowledge",
+      "description": "Acknowledge a screen recording."
+    }
+  ]
+}

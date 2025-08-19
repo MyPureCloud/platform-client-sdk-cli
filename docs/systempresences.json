@@ -1,0 +1,11 @@
+{
+  "supercommand": "systempresences",
+  "description": "/api/v2/systempresences",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/systempresences",
+      "description": "Get the list of SystemPresences"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "supercommand": "textbots",
+  "description": "/api/v2/textbots",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/textbots/botflows/sessions/{sessionId}/turns",
+      "description": "Issue a bot flow turn event"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/textbots/botflows/sessions",
+      "description": "Create an execution instance of a bot flow definition."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/textbots/bots/execute",
+      "description": "Send an intent to a bot to start a dialog/interact with it via text"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/textbots/bots/search",
+      "description": "Find bots using the currently configured friendly name or ID."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+package conversations_messaging_integrations_twitter_oauth
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messaging_integrations_twitter_oauth_settings"
+)
+
+func init() {
+	conversations_messaging_integrations_twitter_oauthCmd.AddCommand(conversations_messaging_integrations_twitter_oauth_settings.Cmdconversations_messaging_integrations_twitter_oauth_settings())
+	conversations_messaging_integrations_twitter_oauthCmd.Short = utils.GenerateCustomDescription(conversations_messaging_integrations_twitter_oauthCmd.Short, conversations_messaging_integrations_twitter_oauth_settings.Description, )
+	conversations_messaging_integrations_twitter_oauthCmd.Long = conversations_messaging_integrations_twitter_oauthCmd.Short
+}

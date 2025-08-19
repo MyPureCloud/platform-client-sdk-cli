@@ -1,0 +1,11 @@
+{
+  "supercommand": "timezones",
+  "description": "/api/v2/timezones",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/timezones",
+      "description": "Get time zones list"
+    }
+  ]
+}

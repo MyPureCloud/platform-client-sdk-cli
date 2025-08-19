@@ -1,0 +1,16 @@
+{
+  "supercommand": "geolocations",
+  "description": "/api/v2/geolocations",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/geolocations/settings",
+      "description": "Get a organization's GeolocationSettings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/geolocations/settings",
+      "description": "Patch a organization's GeolocationSettings"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "supercommand": "contentmanagement",
+  "description": "/api/v2/contentmanagement",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/contentmanagement/documents/{documentId}/content",
+      "description": "Download a document."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/contentmanagement/documents/{documentId}/content",
+      "description": "Replace the contents of a document."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/contentmanagement/documents/{documentId}",
+      "description": "Get a document."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/contentmanagement/documents/{documentId}",
+      "description": "Update a document."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/contentmanagement/documents/{documentId}",
+      "description": "Delete a document."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/contentmanagement/documents",
+      "description": "Get a list of documents."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/contentmanagement/documents",
+      "description": "Add a document."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/contentmanagement/query",
+      "description": "Query content"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/contentmanagement/query",
+      "description": "Query content"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/contentmanagement/securityprofiles/{securityProfileId}",
+      "description": "Get a Security Profile"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/contentmanagement/securityprofiles",
+      "description": "Get a List of Security Profiles"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/contentmanagement/shares/{shareId}",
+      "description": "Retrieve details about an existing share."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/contentmanagement/shares/{shareId}",
+      "description": "Deletes an existing share."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/contentmanagement/shared/{sharedId}",
+      "description": "Get shared documents. Securely download a shared document."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/contentmanagement/shares",
+      "description": "Gets a list of shares.  You must specify at least one filter (e.g. entityId)."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/contentmanagement/shares",
+      "description": "Creates a new share or updates an existing share if the entity has already been shared"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/contentmanagement/status/{statusId}",
+      "description": "Get a status."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/contentmanagement/status/{statusId}",
+      "description": "Cancel the command for this status"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/contentmanagement/status",
+      "description": "Get a list of statuses for pending operations"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}",
+      "description": "Get a workspace tag"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}",
+      "description": "Update a workspace tag. Will update all documents with the new tag value."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}",
+      "description": "Delete workspace tag"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query",
+      "description": "Perform a prefix query on tags in the workspace"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues",
+      "description": "Get a list of workspace tags"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues",
+      "description": "Create a workspace tag"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/contentmanagement/usage",
+      "description": "Get usage details."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}/documents",
+      "description": "Get a list of documents."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}",
+      "description": "Get a workspace member"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}",
+      "description": "Add a member to a workspace"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}",
+      "description": "Delete a member from a workspace"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}/members",
+      "description": "Get a list workspace members"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}",
+      "description": "Get a workspace."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}",
+      "description": "Update a workspace"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/contentmanagement/workspaces/{workspaceId}",
+      "description": "Delete a workspace"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/contentmanagement/workspaces",
+      "description": "Get a list of workspaces."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/contentmanagement/workspaces",
+      "description": "Create a group workspace"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+package taskmanagement_worktypes_flows_onattributechange
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/taskmanagement_worktypes_flows_onattributechange_rules"
+)
+
+func init() {
+	taskmanagement_worktypes_flows_onattributechangeCmd.AddCommand(taskmanagement_worktypes_flows_onattributechange_rules.Cmdtaskmanagement_worktypes_flows_onattributechange_rules())
+	taskmanagement_worktypes_flows_onattributechangeCmd.Short = utils.GenerateCustomDescription(taskmanagement_worktypes_flows_onattributechangeCmd.Short, taskmanagement_worktypes_flows_onattributechange_rules.Description, )
+	taskmanagement_worktypes_flows_onattributechangeCmd.Long = taskmanagement_worktypes_flows_onattributechangeCmd.Short
+}

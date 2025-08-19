@@ -1,0 +1,31 @@
+{
+  "supercommand": "mobiledevices",
+  "description": "/api/v2/mobiledevices",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/mobiledevices/{deviceId}",
+      "description": "Get device"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/mobiledevices/{deviceId}",
+      "description": "Update device"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/mobiledevices/{deviceId}",
+      "description": "Delete device"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/mobiledevices",
+      "description": "Get a list of all devices."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/mobiledevices",
+      "description": "Create User device"
+    }
+  ]
+}

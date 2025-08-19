@@ -1,0 +1,276 @@
+{
+  "supercommand": "quality",
+  "description": "/api/v2/quality",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/quality/surveys/scorable",
+      "description": "Get a survey as an end-customer, for the purposes of scoring it."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/quality/surveys/scorable",
+      "description": "Update a survey as an end-customer, for the purposes of scoring it."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/agents/activity",
+      "description": "Gets a list of Agent Activities"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/quality/calibrations/{calibrationId}",
+      "description": "Get a calibration by id.  Requires either calibrator id or conversation id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/quality/calibrations/{calibrationId}",
+      "description": "Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/quality/calibrations/{calibrationId}",
+      "description": "Delete a calibration by id."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/calibrations",
+      "description": "Get the list of calibrations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/calibrations",
+      "description": "Create a calibration"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/conversations/audits/query",
+      "description": "Create audit query execution"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/quality/conversations/audits/query/{transactionId}",
+      "description": "Get status of audit query execution"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/conversations/audits/query/{transactionId}/results",
+      "description": "Get results of audit query"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}",
+      "description": "Get an evaluation"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}",
+      "description": "Update an evaluation"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}",
+      "description": "Delete an evaluation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/conversations/{conversationId}/evaluations",
+      "description": "Create an evaluation"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/conversations/{conversationId}/surveys",
+      "description": "Get the surveys for a conversation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/evaluations/aggregates/query/me",
+      "description": "Query for evaluation aggregates for the current user"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/quality/forms/evaluations/{formId}/aiscoring/settings",
+      "description": "Update the AI Scoring settings of an evaluation form."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/quality/forms/evaluations/{formId}",
+      "description": "Get an evaluation form"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/quality/forms/evaluations/{formId}",
+      "description": "Update an evaluation form."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/quality/forms/evaluations/{formId}",
+      "description": "Delete an evaluation form."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/forms/evaluations/{formId}/versions",
+      "description": "Gets all the revisions for a specific evaluation."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/forms/evaluations/bulk/contexts",
+      "description": "Retrieve a list of the latest published evaluation form versions by context ids"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/forms/evaluations",
+      "description": "Get the list of evaluation forms"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/forms/evaluations",
+      "description": "Create an evaluation form."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/evaluations/query",
+      "description": "Queries Evaluations and returns a paged list"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/evaluations/scoring",
+      "description": "Score evaluation"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/evaluators/activity",
+      "description": "Get an evaluator activity"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/quality/publishedforms/evaluations/{formId}",
+      "description": "Get the most recent published version of an evaluation form."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/publishedforms/evaluations",
+      "description": "Get the published evaluation forms."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/publishedforms/evaluations",
+      "description": "Publish an evaluation form."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/quality/publishedforms/surveys/{formId}",
+      "description": "Get the most recent published version of a survey form."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/publishedforms/surveys",
+      "description": "Get the published survey forms."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/publishedforms/surveys",
+      "description": "Publish a survey form."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/quality/forms/surveys/{formId}",
+      "description": "Get a survey form"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/quality/forms/surveys/{formId}",
+      "description": "Update a survey form."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/quality/forms/surveys/{formId}",
+      "description": "Delete a survey form."
+    },
+    {
+      "name": "disable",
+      "path": "/api/v2/quality/forms/surveys/{formId}",
+      "description": "Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/forms/surveys/{formId}/versions",
+      "description": "Gets all the revisions for a specific survey."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/forms/surveys/bulk",
+      "description": "Retrieve a list of survey forms by their ids"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/forms/surveys/bulk/contexts",
+      "description": "Retrieve a list of the latest form versions by context ids"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/forms/surveys",
+      "description": "Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/forms/surveys",
+      "description": "Create a survey form."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/quality/surveys/{surveyId}",
+      "description": "Get a survey for a conversation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/surveys/scoring",
+      "description": "Score survey"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/quality/forms/{formId}",
+      "description": "Get an evaluation form"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/quality/forms/{formId}",
+      "description": "Update an evaluation form."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/quality/forms/{formId}",
+      "description": "Delete an evaluation form."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/forms/{formId}/versions",
+      "description": "Gets all the revisions for a specific evaluation."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/forms",
+      "description": "Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/forms",
+      "description": "Create an evaluation form."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/quality/publishedforms/{formId}",
+      "description": "Get the published evaluation forms."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/publishedforms",
+      "description": "Get the published evaluation forms."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/publishedforms",
+      "description": "Publish an evaluation form."
+    }
+  ]
+}

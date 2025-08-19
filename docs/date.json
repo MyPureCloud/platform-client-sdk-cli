@@ -1,0 +1,11 @@
+{
+  "supercommand": "date",
+  "description": "/api/v2/date",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/date",
+      "description": "Get the current system date/time"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "supercommand": "messaging",
+  "description": "/api/v2/messaging",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/messaging/settings",
+      "description": "Get a list of messaging settings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/messaging/settings",
+      "description": "Create a messaging setting"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/messaging/settings/default",
+      "description": "Get the organization's default settings that will be used as the default when creating an integration."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/messaging/settings/default",
+      "description": "Set the organization's default settings that may be applied to an integration when it is created."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/messaging/settings/default",
+      "description": "Delete the organization's default setting, a global default will be applied to integrations without settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/messaging/settings/{messageSettingId}",
+      "description": "Get a messaging setting"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/messaging/settings/{messageSettingId}",
+      "description": "Delete a messaging setting"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/messaging/settings/{messageSettingId}",
+      "description": "Update a messaging setting"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/messaging/supportedcontent/{supportedContentId}",
+      "description": "Get a supported content profile"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/messaging/supportedcontent/{supportedContentId}",
+      "description": "Delete a supported content profile"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/messaging/supportedcontent/{supportedContentId}",
+      "description": "Update a supported content profile"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/messaging/supportedcontent",
+      "description": "Get a list of Supported Content profiles"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/messaging/supportedcontent",
+      "description": "Create a Supported Content profile"
+    }
+  ]
+}

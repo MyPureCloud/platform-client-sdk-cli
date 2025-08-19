@@ -1,0 +1,31 @@
+{
+  "supercommand": "employeeengagement",
+  "description": "/api/v2/employeeengagement",
+  "resources": [
+    {
+      "name": "delete",
+      "path": "/api/v2/employeeengagement/celebrations/{celebrationId}",
+      "description": "Deletes a celebration"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/employeeengagement/celebrations/{celebrationId}",
+      "description": "Set a state for a celebration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/employeeengagement/celebrations",
+      "description": "Get all celebrations"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/employeeengagement/recognitions/{recognitionId}",
+      "description": "Gets a single recognition"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/employeeengagement/recognitions",
+      "description": "Creates a recognition"
+    }
+  ]
+}

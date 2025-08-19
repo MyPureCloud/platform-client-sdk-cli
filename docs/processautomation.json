@@ -1,0 +1,46 @@
+{
+  "supercommand": "processautomation",
+  "description": "/api/v2/processautomation",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/processautomation/triggers/topics/{topicName}/test",
+      "description": "Test the matching of all organization Triggers on given topic using provided event body"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/processautomation/triggers/topics",
+      "description": "Get topics available for organization"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/processautomation/triggers/{triggerId}",
+      "description": "Retrieve a single Trigger matching id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/processautomation/triggers/{triggerId}",
+      "description": "Update a Trigger"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/processautomation/triggers/{triggerId}",
+      "description": "Delete a Trigger"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/processautomation/triggers/{triggerId}/test",
+      "description": "Test the matching of a Trigger based on provided event body"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/processautomation/triggers",
+      "description": "Retrieves all triggers, optionally filtered by query parameters."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/processautomation/triggers",
+      "description": "Create a Trigger"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+package telephony_providers_edges_sites_numberplans
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers_edges_sites_numberplans_classifications"
+)
+
+func init() {
+	telephony_providers_edges_sites_numberplansCmd.AddCommand(telephony_providers_edges_sites_numberplans_classifications.Cmdtelephony_providers_edges_sites_numberplans_classifications())
+	telephony_providers_edges_sites_numberplansCmd.Short = utils.GenerateCustomDescription(telephony_providers_edges_sites_numberplansCmd.Short, telephony_providers_edges_sites_numberplans_classifications.Description, )
+	telephony_providers_edges_sites_numberplansCmd.Long = telephony_providers_edges_sites_numberplansCmd.Short
+}

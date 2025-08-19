@@ -1,0 +1,16 @@
+{
+  "supercommand": "carrierservices",
+  "description": "/api/v2/carrierservices",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/carrierservices/integrations/emergencylocations/me",
+      "description": "Get location for the logged in user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/carrierservices/integrations/emergencylocations/me",
+      "description": "Set current location for the logged in user"
+    }
+  ]
+}

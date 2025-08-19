@@ -1,0 +1,76 @@
+{
+  "supercommand": "presence",
+  "description": "/api/v2/presence",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/presence/definitions/{definitionId}",
+      "description": "Get a Presence Definition"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/presence/definitions/{definitionId}",
+      "description": "Update a Presence Definition"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/presence/definitions/{definitionId}",
+      "description": "Delete a Presence Definition"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/presence/definitions",
+      "description": "Get a list of Presence Definitions"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/presence/definitions",
+      "description": "Create a Presence Definition"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/presence/settings",
+      "description": "Get the presence settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/presence/settings",
+      "description": "Update the presence settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/presence/sources/{sourceId}",
+      "description": "Get a Presence Source"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/presence/sources/{sourceId}",
+      "description": "Update a Presence Source"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/presence/sources/{sourceId}",
+      "description": "Delete a Presence Source"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/presence/sources",
+      "description": "Get a list of Presence Sources"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/presence/sources",
+      "description": "Create a Presence Source"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/presence/users/{userId}/primarysource",
+      "description": "Get a user's Primary Presence Source"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/presence/users/{userId}/primarysource",
+      "description": "Update a user's Primary Presence Source"
+    }
+  ]
+}

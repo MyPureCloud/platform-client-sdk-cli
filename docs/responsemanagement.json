@@ -1,0 +1,96 @@
+{
+  "supercommand": "responsemanagement",
+  "description": "/api/v2/responsemanagement",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/responsemanagement/libraries/bulk",
+      "description": "Get response libraries."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/responsemanagement/libraries",
+      "description": "Gets a list of existing response libraries."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/responsemanagement/libraries",
+      "description": "Create a response library."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/responsemanagement/libraries/{libraryId}",
+      "description": "Get details about an existing response library."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/responsemanagement/libraries/{libraryId}",
+      "description": "Update an existing response library."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/responsemanagement/libraries/{libraryId}",
+      "description": "Delete an existing response library."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/responsemanagement/responses/query",
+      "description": "Query responses"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/responsemanagement/responses/{responseId}",
+      "description": "Get details about an existing response."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/responsemanagement/responses/{responseId}",
+      "description": "Update an existing response."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/responsemanagement/responses/{responseId}",
+      "description": "Delete an existing response."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/responsemanagement/responses",
+      "description": "Gets a list of existing responses."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/responsemanagement/responses",
+      "description": "Create a response."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/responsemanagement/responseassets/{responseAssetId}",
+      "description": "Get response asset information"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/responsemanagement/responseassets/{responseAssetId}",
+      "description": "Update response asset"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/responsemanagement/responseassets/{responseAssetId}",
+      "description": "Delete response asset"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/responsemanagement/responseassets/status/{statusId}",
+      "description": "Get response asset upload status"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/responsemanagement/responseassets/uploads",
+      "description": "Creates pre-signed url for uploading response asset"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/responsemanagement/responseassets/search",
+      "description": "Search response assets"
+    }
+  ]
+}

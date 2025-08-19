@@ -1,0 +1,71 @@
+{
+  "supercommand": "guides",
+  "description": "/api/v2/guides",
+  "resources": [
+    {
+      "name": "getjobforguide",
+      "path": "/api/v2/guides/{guideId}/jobs/{jobId}",
+      "description": "Get the specified guide deletion job."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/guides/{guideId}",
+      "description": "Get guide."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/guides/{guideId}",
+      "description": "Update a guide."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/guides/{guideId}/jobs",
+      "description": "Start the deletion of a guide."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs",
+      "description": "Start the publishing of a guide version."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/guides/{guideId}/versions/{versionId}",
+      "description": "Get a guide version."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/guides/{guideId}/versions/{versionId}",
+      "description": "Update a guide version."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}",
+      "description": "Get the status of the publishing job for this guide version."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/guides/{guideId}/versions",
+      "description": "Create a guide version."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/guides/jobs",
+      "description": "Start a guide content generation job."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/guides/jobs/{jobId}",
+      "description": "Get the status of the guide content generation job."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/guides",
+      "description": "Get all guides."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/guides",
+      "description": "Create a guide."
+    }
+  ]
+}

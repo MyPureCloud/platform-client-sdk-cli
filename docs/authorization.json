@@ -1,0 +1,291 @@
+{
+  "supercommand": "authorization",
+  "description": "/api/v2/authorization",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/divisions/home",
+      "description": "Retrieve the home division for the organization."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/divisions/limit",
+      "description": "Returns the maximum allowed number of divisions."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/divisions/{divisionId}",
+      "description": "Returns an authorization division."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/divisions/{divisionId}",
+      "description": "Update a division."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/authorization/divisions/{divisionId}",
+      "description": "Delete a division."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/divisions/{divisionId}/restore",
+      "description": "Recreate a previously deleted division."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/divisions/deleted",
+      "description": "Get a list of soft deleted divisions for the org"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/divisions/query",
+      "description": "Retrieve a list of all divisions defined for the organization with cursor"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/divisions",
+      "description": "Retrieve a list of all divisions defined for the organization"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/divisions",
+      "description": "Create a division."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/divisionspermitted/me",
+      "description": "Returns which divisions the current user has the given permission in."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/divisionspermitted/paged/me",
+      "description": "Returns which divisions the current user has the given permission in."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/divisionspermitted/paged/{subjectId}",
+      "description": "Returns which divisions the specified user has the given permission in."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/permissions",
+      "description": "Get all permissions."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/products",
+      "description": "Get the list of enabled products"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/divisions/{divisionId}/objects/{objectType}",
+      "description": "Assign a list of objects to a division"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/subjects/me",
+      "description": "Returns a listing of roles and permissions for the currently authenticated user."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/subjects/{subjectId}",
+      "description": "Returns a listing of roles and permissions for a user."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}",
+      "description": "Make a grant of a role in a division"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}",
+      "description": "Delete a grant of a role in a division"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/subjects/{subjectId}/bulkadd",
+      "description": "Bulk-grant roles and divisions to a subject."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/subjects/{subjectId}/bulkreplace",
+      "description": "Replace subject's roles and divisions with the exact list supplied in the request."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/subjects/{subjectId}/bulkremove",
+      "description": "Bulk-remove grants from a subject."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/roles/{roleId}/users/remove",
+      "description": "Removes the users from the role"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/roles/{roleId}/users",
+      "description": "Get a list of the users in a specified role."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/roles/{roleId}/users/add",
+      "description": "Sets the users for the role"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/divisions/{divisionId}/grants",
+      "description": "Gets all grants for a given division."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/settings",
+      "description": "Get authorization settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/settings",
+      "description": "Change authorization settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/roles/settings",
+      "description": "Get authorization role settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/roles/settings",
+      "description": "Change authorization role settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/roles/{roleId}",
+      "description": "Get a single organization role."
+    },
+    {
+      "name": "bulkgrant",
+      "path": "/api/v2/authorization/roles/{roleId}",
+      "description": "Bulk-grant subjects and divisions with an organization role."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/roles/{roleId}",
+      "description": "Update an organization role."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/authorization/roles/{roleId}",
+      "description": "Delete an organization role."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/authorization/roles/{roleId}",
+      "description": "Patch Organization Role for needsUpdate Field"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/roles",
+      "description": "Retrieve a list of all roles defined for the organization"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/roles",
+      "description": "Create an organization role."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/roles/default",
+      "description": "Restores all default roles"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/roles/default",
+      "description": "Restore specified default roles"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}",
+      "description": "Get an org role to default role comparison"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}",
+      "description": "Get an unsaved org role to default role comparison"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/roles/{roleId}/subjectgrants",
+      "description": "Get the subjects' granted divisions in the specified role."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/subjects/rolecounts",
+      "description": "Get the count of roles granted to a list of subjects"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/policies/targets/{targetName}",
+      "description": "Get a page of access policies for a given policy target"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/policies/targets/{targetName}",
+      "description": "Add an access control policy for a specified resource target and subject"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/policies/targets/{targetName}",
+      "description": "Add an access control policy for a specified resource target and subject, overwriting any existing policy"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/policies",
+      "description": "Get a page of access policies for an organization"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/policies/subject/{subjectId}",
+      "description": "Get a page of access policies for a given subject"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}",
+      "description": "Get an access control policy for a specified resource target and subject"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}",
+      "description": "Delete an access control policy"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/policies/{policyId}",
+      "description": "Get an access control policy with the specified policy ID"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/policies/{policyId}",
+      "description": "Update an access control policy with a given ID"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/policies/{policyId}/attributes",
+      "description": "Get the list of attributes used to evaluate an access control policy with the specified policy ID"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/policies/{policyId}/simulate",
+      "description": "Simulate a request and evaluate the specified policy ID against the provided values"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/policies/targets",
+      "description": "Get a map of policy targets to valid attributes for those targets"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/policies/targets/{targetName}/validate",
+      "description": "Validate the conditions and attributes of an access control policy for a specified resource target"
+    }
+  ]
+}

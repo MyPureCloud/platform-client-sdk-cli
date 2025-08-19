@@ -1,0 +1,12 @@
+package workforcemanagement_managementunits_timeoffrequests_users
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_managementunits_timeoffrequests_users_integrationstatus"
+)
+
+func init() {
+	workforcemanagement_managementunits_timeoffrequests_usersCmd.AddCommand(workforcemanagement_managementunits_timeoffrequests_users_integrationstatus.Cmdworkforcemanagement_managementunits_timeoffrequests_users_integrationstatus())
+	workforcemanagement_managementunits_timeoffrequests_usersCmd.Short = utils.GenerateCustomDescription(workforcemanagement_managementunits_timeoffrequests_usersCmd.Short, workforcemanagement_managementunits_timeoffrequests_users_integrationstatus.Description, )
+	workforcemanagement_managementunits_timeoffrequests_usersCmd.Long = workforcemanagement_managementunits_timeoffrequests_usersCmd.Short
+}

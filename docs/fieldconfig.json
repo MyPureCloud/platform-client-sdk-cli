@@ -1,0 +1,11 @@
+{
+  "supercommand": "fieldconfig",
+  "description": "/api/v2/fieldconfig",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/fieldconfig",
+      "description": "Fetch field config for an entity type"
+    }
+  ]
+}

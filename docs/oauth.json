@@ -1,0 +1,71 @@
+{
+  "supercommand": "oauth",
+  "description": "/api/v2/oauth",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/oauth/authorizations/{clientId}",
+      "description": "Get a client that is authorized by the resource owner"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/oauth/authorizations",
+      "description": "List clients that have been authorized, requested, or revoked by the resource owner"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/oauth/scopes/{scopeId}",
+      "description": "An OAuth scope"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/oauth/scopes",
+      "description": "The list of OAuth scopes"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/oauth/clients/{clientId}",
+      "description": "Get OAuth Client"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/oauth/clients/{clientId}",
+      "description": "Update OAuth Client"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/oauth/clients/{clientId}",
+      "description": "Delete OAuth Client"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/oauth/clients/{clientId}/secret",
+      "description": "Regenerate Client Secret"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/oauth/clients/{clientId}/usage/query",
+      "description": "Query for OAuth client API usage"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/oauth/clients/{clientId}/usage/summary",
+      "description": "Get a summary of OAuth client API usage"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}",
+      "description": "Get the results of a usage query"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/oauth/clients",
+      "description": "The list of OAuth clients"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/oauth/clients",
+      "description": "Create OAuth client"
+    }
+  ]
+}

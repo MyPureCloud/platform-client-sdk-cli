@@ -1,0 +1,26 @@
+{
+  "supercommand": "search",
+  "description": "/api/v2/search",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/search",
+      "description": "Search using the q64 value returned from a previous search."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/search",
+      "description": "Search resources."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/search/suggest",
+      "description": "Suggest resources using the q64 value returned from a previous suggest query."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/search/suggest",
+      "description": "Suggest resources."
+    }
+  ]
+}

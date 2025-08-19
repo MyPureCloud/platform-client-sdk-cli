@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_capacityplans_bulk
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_capacityplans_bulk_remove"
+)
+
+func init() {
+	workforcemanagement_businessunits_capacityplans_bulkCmd.AddCommand(workforcemanagement_businessunits_capacityplans_bulk_remove.Cmdworkforcemanagement_businessunits_capacityplans_bulk_remove())
+	workforcemanagement_businessunits_capacityplans_bulkCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_capacityplans_bulkCmd.Short, workforcemanagement_businessunits_capacityplans_bulk_remove.Description, )
+	workforcemanagement_businessunits_capacityplans_bulkCmd.Long = workforcemanagement_businessunits_capacityplans_bulkCmd.Short
+}

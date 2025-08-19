@@ -1,0 +1,61 @@
+{
+  "supercommand": "greetings",
+  "description": "/api/v2/greetings",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/greetings/{greetingId}/media",
+      "description": "Get media playback URI for this greeting"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/greetings/{greetingId}/users/downloads",
+      "description": "Download a user greeting recording"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/greetings/{greetingId}/groups/downloads",
+      "description": "Download a group greeting recording"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/greetings/{greetingId}/downloads",
+      "description": "Download a organization greeting recording"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/greetings/{greetingId}",
+      "description": "Get a Greeting with the given GreetingId"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/greetings/{greetingId}",
+      "description": "Updates the Greeting with the given GreetingId"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/greetings/{greetingId}",
+      "description": "Deletes a Greeting with the given GreetingId"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/greetings/defaults",
+      "description": "Get an Organization's DefaultGreetingList"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/greetings/defaults",
+      "description": "Update an Organization's DefaultGreetingList"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/greetings",
+      "description": "Gets an Organization's Greetings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/greetings",
+      "description": "Create a Greeting for an Organization"
+    }
+  ]
+}

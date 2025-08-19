@@ -1,0 +1,81 @@
+{
+  "supercommand": "scripts",
+  "description": "/api/v2/scripts",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/scripts/{scriptId}/export",
+      "description": "Export a script via download service."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scripts/uploads/{uploadId}/status",
+      "description": "Get the upload status of an imported script"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scripts/{scriptId}/pages/{pageId}",
+      "description": "Get a page"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scripts/{scriptId}/pages",
+      "description": "Get the list of pages"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scripts/published/{scriptId}/pages/{pageId}",
+      "description": "Get the published page."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scripts/published/{scriptId}/pages",
+      "description": "Get the list of published pages"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scripts/published/{scriptId}",
+      "description": "Get the published script."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scripts/published/divisionviews",
+      "description": "Get the published scripts metadata."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scripts/published",
+      "description": "Get the published scripts."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/scripts/published",
+      "description": "Publish a script."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scripts/published/divisionviews/{scriptId}/variables",
+      "description": "Get the published variables"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scripts/published/{scriptId}/variables",
+      "description": "Get the published variables"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scripts/{scriptId}",
+      "description": "Get a script"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scripts/divisionviews",
+      "description": "Get the metadata for a list of scripts"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scripts",
+      "description": "Get the list of scripts"
+    }
+  ]
+}

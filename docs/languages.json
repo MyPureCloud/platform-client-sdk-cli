@@ -1,0 +1,46 @@
+{
+  "supercommand": "languages",
+  "description": "/api/v2/languages",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/languages/{languageId}",
+      "description": "Get Language (Deprecated)"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/languages/{languageId}",
+      "description": "Delete Language (Deprecated)"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/languages",
+      "description": "Get the list of supported languages. (Deprecated)"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/languages",
+      "description": "Create Language (Deprecated)"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/languages/translations/builtin",
+      "description": "Get the builtin translation for a language"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/languages/translations/organization",
+      "description": "Get effective translation for an organization by language"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/languages/translations",
+      "description": "Get all available languages for translation"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/languages/translations/users/{userId}",
+      "description": "Get effective language translation for a user"
+    }
+  ]
+}

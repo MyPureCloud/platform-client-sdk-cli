@@ -1,0 +1,26 @@
+{
+  "supercommand": "gdpr",
+  "description": "/api/v2/gdpr",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/gdpr/requests/{requestId}",
+      "description": "Get an existing GDPR request"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gdpr/requests",
+      "description": "Get all GDPR requests"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gdpr/requests",
+      "description": "Submit a new GDPR request"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gdpr/subjects",
+      "description": "Get GDPR subjects"
+    }
+  ]
+}

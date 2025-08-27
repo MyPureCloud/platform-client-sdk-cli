@@ -67,6 +67,10 @@ type Trunkmetabaseentitylisting struct {
     TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
+    // FirstUri
+    FirstUri string `json:"firstUri"`
+
+
     // NextUri
     NextUri string `json:"nextUri"`
 
@@ -77,10 +81,6 @@ type Trunkmetabaseentitylisting struct {
 
     // LastUri
     LastUri string `json:"lastUri"`
-
-
-    // FirstUri
-    FirstUri string `json:"firstUri"`
 
 
     // SelfUri
@@ -132,13 +132,13 @@ func (u *Trunkmetabaseentitylisting) MarshalJSON() ([]byte, error) {
         
         TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
+        FirstUri string `json:"firstUri"`
+        
         NextUri string `json:"nextUri"`
         
         PreviousUri string `json:"previousUri"`
         
         LastUri string `json:"lastUri"`
-        
-        FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         

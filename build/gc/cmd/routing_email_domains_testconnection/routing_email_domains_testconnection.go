@@ -62,8 +62,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create [domainId]",
-	Short: "Tests the custom SMTP server integration connection set on this domain",
-	Long:  "Tests the custom SMTP server integration connection set on this domain",
+	Short: "Tests the custom SMTP server integration connection set on this ACD domain",
+	Long:  "Tests the custom SMTP server integration connection set on this ACD domain",
 	Args:  utils.DetermineArgs([]string{ "domainId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

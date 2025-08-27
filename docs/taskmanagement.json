@@ -34,6 +34,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results",
+      "description": "Get bulk terminate job results."
+    },
+    {
+      "name": "get",
       "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}",
       "description": "Get the bulk job associated with the job id."
     },
@@ -48,11 +53,6 @@
       "description": "Update workitem bulk terminate job."
     },
     {
-      "name": "get",
-      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results",
-      "description": "Get bulk terminate job results."
-    },
-    {
       "name": "create",
       "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs",
       "description": "Create a workitem bulk terminate job."
@@ -61,21 +61,6 @@
       "name": "create",
       "path": "/api/v2/taskmanagement/workbins/query",
       "description": "Query for workbins"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/taskmanagement/workbins/{workbinId}",
-      "description": "Get a workbin"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/taskmanagement/workbins/{workbinId}",
-      "description": "Delete a workbin"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/taskmanagement/workbins/{workbinId}",
-      "description": "Update the attributes of a workbin"
     },
     {
       "name": "list",
@@ -91,6 +76,21 @@
       "name": "list",
       "path": "/api/v2/taskmanagement/workbins/{workbinId}/history",
       "description": "Get a listing of a workbin's attribute change history"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}",
+      "description": "Get a workbin"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}",
+      "description": "Delete a workbin"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}",
+      "description": "Update the attributes of a workbin"
     },
     {
       "name": "create",
@@ -116,11 +116,6 @@
       "name": "list",
       "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results",
       "description": "Get results from for workitem query job "
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
-      "description": "Disconnect the assignee of the workitem"
     },
     {
       "name": "create",
@@ -166,6 +161,11 @@
       "name": "create",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/acd/cancel",
       "description": "Cancel the assignment process for a workitem that is currently queued for assignment through ACD."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
+      "description": "Disconnect the assignee of the workitem"
     },
     {
       "name": "get",

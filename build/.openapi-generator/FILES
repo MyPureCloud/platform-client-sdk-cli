@@ -122,6 +122,9 @@ gc/cmd/architect_systemprompts_resources_uploads/architect_systemprompts_resourc
 gc/cmd/assistants/assistants.go
 gc/cmd/assistants_copilot/assistants_copilot.go
 gc/cmd/assistants_queues/assistants_queues.go
+gc/cmd/assistants_queues_users_bulk_add/assistants_queues_users_bulk_add.go
+gc/cmd/assistants_queues_users_bulk_remove/assistants_queues_users_bulk_remove.go
+gc/cmd/assistants_queues_users_query/assistants_queues_users_query.go
 gc/cmd/audits_query/audits_query.go
 gc/cmd/audits_query_realtime/audits_query_realtime.go
 gc/cmd/audits_query_realtime_related/audits_query_realtime_related.go
@@ -236,6 +239,7 @@ gc/cmd/conversations_callbacks_participants_wrapup/conversations_callbacks_parti
 gc/cmd/conversations_callbacks_participants_wrapupcodes/conversations_callbacks_participants_wrapupcodes.go
 gc/cmd/conversations_callbacks_recordingstate/conversations_callbacks_recordingstate.go
 gc/cmd/conversations_calls/conversations_calls.go
+gc/cmd/conversations_calls_conference/conversations_calls_conference.go
 gc/cmd/conversations_calls_history/conversations_calls_history.go
 gc/cmd/conversations_calls_maximumconferenceparties/conversations_calls_maximumconferenceparties.go
 gc/cmd/conversations_calls_participants/conversations_calls_participants.go
@@ -368,6 +372,7 @@ gc/cmd/conversations_participants_wrapupcodes/conversations_participants_wrapupc
 gc/cmd/conversations_recordingmetadata/conversations_recordingmetadata.go
 gc/cmd/conversations_recordings/conversations_recordings.go
 gc/cmd/conversations_recordings_annotations/conversations_recordings_annotations.go
+gc/cmd/conversations_recordingstate/conversations_recordingstate.go
 gc/cmd/conversations_screenshares_participants_communications_wrapup/conversations_screenshares_participants_communications_wrapup.go
 gc/cmd/conversations_screenshares_recordingstate/conversations_screenshares_recordingstate.go
 gc/cmd/conversations_secureattributes/conversations_secureattributes.go
@@ -988,7 +993,6 @@ gc/cmd/routing_email_domains_testconnection/routing_email_domains_testconnection
 gc/cmd/routing_email_domains_validate/routing_email_domains_validate.go
 gc/cmd/routing_email_outbound_domains/routing_email_outbound_domains.go
 gc/cmd/routing_email_outbound_domains_activation/routing_email_outbound_domains_activation.go
-gc/cmd/routing_email_outbound_domains_search/routing_email_outbound_domains_search.go
 gc/cmd/routing_email_outbound_domains_simulated/routing_email_outbound_domains_simulated.go
 gc/cmd/routing_email_setup/routing_email_setup.go
 gc/cmd/routing_languages/routing_languages.go
@@ -1310,6 +1314,7 @@ gc/cmd/webdeployments_deployments_identityresolution/webdeployments_deployments_
 gc/cmd/webdeployments_token_oauthcodegrantjwtexchange/webdeployments_token_oauthcodegrantjwtexchange.go
 gc/cmd/webdeployments_token_refresh/webdeployments_token_refresh.go
 gc/cmd/webdeployments_token_revoke/webdeployments_token_revoke.go
+gc/cmd/webmessaging_deployments_pushdevices/webmessaging_deployments_pushdevices.go
 gc/cmd/webmessaging_messages/webmessaging_messages.go
 gc/cmd/widgets_deployments/widgets_deployments.go
 gc/cmd/workforcemanagement_adherence/workforcemanagement_adherence.go
@@ -1539,6 +1544,7 @@ gc/models/addconversationrequest.go
 gc/models/addconversationresponse.go
 gc/models/additionallanguagesintent.go
 gc/models/additionallanguagessynonyms.go
+gc/models/additionalmatchcriteria.go
 gc/models/additionalmessage.go
 gc/models/additionalsocialmediamessage.go
 gc/models/address.go
@@ -1743,6 +1749,11 @@ gc/models/assistant.go
 gc/models/assistantlisting.go
 gc/models/assistantqueue.go
 gc/models/assistantqueuelisting.go
+gc/models/assistantqueueuser.go
+gc/models/assistantqueueusersbulkaddrequest.go
+gc/models/assistantqueueusersbulkremoverequest.go
+gc/models/assistantqueueusersqueryrequest.go
+gc/models/assistantqueueusersqueryresponse.go
 gc/models/associatedvaluefield.go
 gc/models/asyncconversationquery.go
 gc/models/asyncforecastoperationresult.go
@@ -2094,14 +2105,28 @@ gc/models/campaignprogress.go
 gc/models/campaignrule.go
 gc/models/campaignruleaction.go
 gc/models/campaignruleactionentities.go
+gc/models/campaignrulecampaignruntimesettings.go
+gc/models/campaignrulecampaignwaittimesettings.go
 gc/models/campaignrulecondition.go
 gc/models/campaignruleconditiongroup.go
+gc/models/campaignruledatetimeconditionparameters.go
+gc/models/campaignruledayofmonthinterval.go
+gc/models/campaignruledayofmonthparameters.go
+gc/models/campaignruledayofweekinterval.go
+gc/models/campaignruledayofweekparameters.go
 gc/models/campaignruleentities.go
 gc/models/campaignruleentitylisting.go
 gc/models/campaignruleexecutionsettings.go
 gc/models/campaignruleparameters.go
+gc/models/campaignrulespecificdateinterval.go
+gc/models/campaignrulespecificdateparameters.go
+gc/models/campaignruletimeofdayinterval.go
+gc/models/campaignruletimeofdayparameters.go
 gc/models/campaignrulewarning.go
 gc/models/campaignrulewarningparameters.go
+gc/models/campaignruleweekdayofmonth.go
+gc/models/campaignruleweekdayofmonthinterval.go
+gc/models/campaignruleweekdayofmonthparameters.go
 gc/models/campaignschedule.go
 gc/models/campaignsequence.go
 gc/models/campaignsequenceentitylisting.go
@@ -2632,6 +2657,7 @@ gc/models/dataactionconditionpredicate.go
 gc/models/dataactionconditionsettings.go
 gc/models/dataactioncontactcolumnfieldmapping.go
 gc/models/dataavailabilityresponse.go
+gc/models/dataingestionrulecriteria.go
 gc/models/dataingestionruleresponse.go
 gc/models/dataingestionruleresponseentitylisting.go
 gc/models/dataingestionrulesmetadata.go
@@ -2856,7 +2882,8 @@ gc/models/domainorganizationrolecreate.go
 gc/models/domainorganizationroleupdate.go
 gc/models/domainorgroledifference.go
 gc/models/domainpermission.go
-gc/models/domainpermissioncollection.go
+gc/models/domainpermissioncollectiondomainpermission.go
+gc/models/domainpermissionentitylisting.go
 gc/models/domainpermissionpolicy.go
 gc/models/domainphysicalcapabilities.go
 gc/models/domainphysicalinterface.go
@@ -3031,7 +3058,6 @@ gc/models/event.go
 gc/models/eventaction.go
 gc/models/eventaggregatesqueryrequest.go
 gc/models/eventaggregatesresponse.go
-gc/models/eventcobrowse.go
 gc/models/eventcondition.go
 gc/models/eventdefinition.go
 gc/models/eventdefinitionaggregates.go
@@ -3040,13 +3066,10 @@ gc/models/eventerror.go
 gc/models/eventlisting.go
 gc/models/eventlog.go
 gc/models/eventmessage.go
-gc/models/eventpresence.go
 gc/models/eventqueryrequest.go
 gc/models/eventqueryresponse.go
 gc/models/eventsession.go
 gc/models/eventsetting.go
-gc/models/eventtyping.go
-gc/models/eventvideo.go
 gc/models/executerecordingjobsquery.go
 gc/models/executiondataentity.go
 gc/models/executiondataflowsettingsresponse.go
@@ -3898,7 +3921,6 @@ gc/models/messageconversationentitylisting.go
 gc/models/messagedata.go
 gc/models/messagedetails.go
 gc/models/messageevaluation.go
-gc/models/messageevent.go
 gc/models/messagefooter.go
 gc/models/messageheader.go
 gc/models/messageinfo.go
@@ -4242,7 +4264,6 @@ gc/models/performancepredictionrecalculationuploadresponse.go
 gc/models/performancepredictionresponse.go
 gc/models/performancepredictionuploadschema.go
 gc/models/performanceprofile.go
-gc/models/permissioncollectionentitylisting.go
 gc/models/permissiondetails.go
 gc/models/permissions.go
 gc/models/phone.go
@@ -4352,6 +4373,8 @@ gc/models/publishscriptrequestdata.go
 gc/models/punctualityevent.go
 gc/models/purecloud.go
 gc/models/pureengage.go
+gc/models/pushdeviceinsertrequest.go
+gc/models/pushdeviceupdaterequest.go
 gc/models/pushintegration.go
 gc/models/putdecisiontablerowrequest.go
 gc/models/qmauditqueryrequest.go
@@ -5026,6 +5049,7 @@ gc/models/textbotmodeconstraints.go
 gc/models/textbotmodeoutputprompts.go
 gc/models/textbotoutputprompts.go
 gc/models/textbotpromptsegment.go
+gc/models/textbotsrichmediainputevent.go
 gc/models/textbottextmodeconstraints.go
 gc/models/textbottranscript.go
 gc/models/textbotturnreference.go
@@ -5073,6 +5097,7 @@ gc/models/timezonemappingpreview.go
 gc/models/tokeninfo.go
 gc/models/tokeninfocloneduser.go
 gc/models/topic.go
+gc/models/topiccriteria.go
 gc/models/topiccursorentitylisting.go
 gc/models/topicduration.go
 gc/models/topicjob.go
@@ -5211,6 +5236,7 @@ gc/models/updatebusinessunitrequest.go
 gc/models/updatebusinessunitsettingsrequest.go
 gc/models/updatecapacityplanrequest.go
 gc/models/updatecoachingappointmentrequest.go
+gc/models/updateconferencerequest.go
 gc/models/updatecontactcolumnactionsettings.go
 gc/models/updatedecisiontablecolumnsrequest.go
 gc/models/updatedecisiontablerequest.go

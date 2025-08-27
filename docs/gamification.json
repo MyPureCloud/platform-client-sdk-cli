@@ -59,13 +59,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/{userId}/query",
-      "description": "Query performance profiles in date range for a user"
+      "path": "/api/v2/gamification/profiles/users/me/query",
+      "description": "Query performance profiles in date range for the current user"
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/me/query",
-      "description": "Query performance profiles in date range for the current user"
+      "path": "/api/v2/gamification/profiles/users/{userId}/query",
+      "description": "Query performance profiles in date range for a user"
     },
     {
       "name": "get",

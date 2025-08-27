@@ -43,6 +43,16 @@
       "description": "Get conversation"
     },
     {
+      "name": "delete",
+      "path": "/api/v2/conversations/{conversationId}",
+      "description": "Update a conversation by disconnecting all of the participants"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/recordingstate",
+      "description": "Update a conversation by setting its recording state"
+    },
+    {
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/barge",
       "description": "Barge a conversation creating a barged in conference of connected participants."
@@ -131,16 +141,6 @@
       "name": "create",
       "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace",
       "description": "Replace this participant with the specified user and/or address"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor",
-      "description": "Listen in on the conversation from the point of view of a given participant."
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes",
-      "description": "Get list of wrapup codes for this conversation participant"
     },
     {
       "name": "get",
@@ -238,6 +238,11 @@
       "description": "Initiate a consult transfer to an external contact"
     },
     {
+      "name": "update",
+      "path": "/api/v2/conversations/calls/{conversationId}/conference",
+      "description": "Update a conversation by merging in other conversations to create a conference"
+    },
+    {
       "name": "create",
       "path": "/api/v2/conversations/calls/{conversationId}/participants",
       "description": "Add participants to a conversation"
@@ -251,6 +256,16 @@
       "name": "update",
       "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata",
       "description": "Set uuiData to be sent on future commands."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor",
+      "description": "Listen in on the conversation from the point of view of a given participant."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
     },
     {
       "name": "list",
@@ -271,11 +286,6 @@
       "name": "create",
       "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace",
       "description": "Replace this participant with the specified user and/or address"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes",
-      "description": "Get list of wrapup codes for this conversation participant"
     },
     {
       "name": "get",
@@ -323,6 +333,11 @@
       "description": "Update conversation participant"
     },
     {
+      "name": "list",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
       "name": "get",
       "path": "/api/v2/conversations/chats/{conversationId}/messages/{messageId}",
       "description": "Get a web chat conversation message"
@@ -356,11 +371,6 @@
       "name": "create",
       "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace",
       "description": "Replace this participant with the specified user and/or address"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes",
-      "description": "Get list of wrapup codes for this conversation participant"
     },
     {
       "name": "get",
@@ -408,6 +418,11 @@
       "description": "Apply wrap-up for this conversation communication"
     },
     {
+      "name": "list",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
       "name": "create",
       "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace",
       "description": "Replace this participant with the specified user and/or address"
@@ -416,11 +431,6 @@
       "name": "list",
       "path": "/api/v2/conversations/cobrowsesessions",
       "description": "Get active cobrowse conversations for the logged in user"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes",
-      "description": "Get list of wrapup codes for this conversation participant"
     },
     {
       "name": "get",
@@ -468,6 +478,11 @@
       "description": "Update conversation participant"
     },
     {
+      "name": "list",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
       "name": "create",
       "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace",
       "description": "Replace this participant with the specified user and/or address"
@@ -486,11 +501,6 @@
       "name": "create",
       "path": "/api/v2/conversations/emails",
       "description": "Create an email conversation"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes",
-      "description": "Get list of wrapup codes for this conversation participant"
     },
     {
       "name": "list",
@@ -598,6 +608,11 @@
       "description": "Create an email conversation, per API"
     },
     {
+      "name": "list",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
       "name": "get",
       "path": "/api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}",
       "description": "Get a cached media item"
@@ -631,16 +646,6 @@
       "name": "create",
       "path": "/api/v2/conversations/messages",
       "description": "Create an outbound messaging conversation."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor",
-      "description": "Listen in on the conversation from the point of view of a given participant."
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes",
-      "description": "Get list of wrapup codes for this conversation participant"
     },
     {
       "name": "create",
@@ -756,6 +761,16 @@
       "name": "create",
       "path": "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing",
       "description": "Send message typing event"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor",
+      "description": "Listen in on the conversation from the point of view of a given participant."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
     },
     {
       "name": "update",
@@ -1103,11 +1118,6 @@
       "description": "Delete a code used to add a communication to this participant"
     },
     {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks",
-      "description": "Create a new callback for the specified participant on the conversation."
-    },
-    {
       "name": "update",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}",
       "description": "Update a participant."
@@ -1123,9 +1133,9 @@
       "description": "Sends DTMF to the participant"
     },
     {
-      "name": "list",
-      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes",
-      "description": "Get list of wrapup codes for this conversation participant"
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks",
+      "description": "Create a new callback for the specified participant on the conversation."
     },
     {
       "name": "update",
@@ -1161,6 +1171,11 @@
       "name": "delete",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason",
       "description": "Remove flagged reason from conversation participant."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes",
+      "description": "Get list of wrapup codes for this conversation participant"
     },
     {
       "name": "get",

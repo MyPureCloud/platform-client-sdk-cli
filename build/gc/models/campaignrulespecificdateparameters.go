@@ -6,31 +6,17 @@ import (
 )
 
 var (
-    EventtypingMarshalled = false
+    CampaignrulespecificdateparametersMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type EventtypingDud struct { 
-    
+type CampaignrulespecificdateparametersDud struct { }
 
-
-    Duration int `json:"duration"`
-
-}
-
-// Eventtyping - A Typing event.
-type Eventtyping struct { 
-    // VarType - Describes the type of Typing event.
-    VarType string `json:"type"`
-
-
-    
-
-}
+// Campaignrulespecificdateparameters
+type Campaignrulespecificdateparameters struct { }
 
 // String returns a JSON representation of the model
-func (o *Eventtyping) String() string {
-    
+func (o *Campaignrulespecificdateparameters) String() string {
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -38,25 +24,17 @@ func (o *Eventtyping) String() string {
     return str
 }
 
-func (u *Eventtyping) MarshalJSON() ([]byte, error) {
-    type Alias Eventtyping
+func (u *Campaignrulespecificdateparameters) MarshalJSON() ([]byte, error) {
+    type Alias Campaignrulespecificdateparameters
 
-    if EventtypingMarshalled {
+    if CampaignrulespecificdateparametersMarshalled {
         return []byte("{}"), nil
     }
-    EventtypingMarshalled = true
+    CampaignrulespecificdateparametersMarshalled = true
 
     return json.Marshal(&struct {
-        
-        VarType string `json:"type"`
         *Alias
     }{
-
-        
-
-
-        
-
         Alias: (*Alias)(u),
     })
 }

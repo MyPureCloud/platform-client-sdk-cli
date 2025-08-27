@@ -99,6 +99,9 @@ type ExternalcontactDud struct {
     
 
 
+    
+
+
     ExternalDataSources []Externaldatasource `json:"externalDataSources"`
 
 
@@ -206,6 +209,10 @@ type Externalcontact struct {
     InstagramId Instagramid `json:"instagramId"`
 
 
+    // AppleOpaqueIds - User information for an Apple account
+    AppleOpaqueIds []Appleopaqueid `json:"appleOpaqueIds"`
+
+
     // ExternalIds - A list of external identifiers that identify this contact in an external system
     ExternalIds []Externalid `json:"externalIds"`
 
@@ -289,6 +296,7 @@ func (o *Externalcontact) String() string {
     
     
     
+     o.AppleOpaqueIds = []Appleopaqueid{{}} 
      o.ExternalIds = []Externalid{{}} 
      o.Identifiers = []Contactidentifier{{}} 
     
@@ -354,6 +362,8 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
         FacebookId Facebookid `json:"facebookId"`
         
         InstagramId Instagramid `json:"instagramId"`
+        
+        AppleOpaqueIds []Appleopaqueid `json:"appleOpaqueIds"`
         
         ExternalIds []Externalid `json:"externalIds"`
         
@@ -432,6 +442,11 @@ func (u *Externalcontact) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        AppleOpaqueIds: []Appleopaqueid{{}},
         
 
 

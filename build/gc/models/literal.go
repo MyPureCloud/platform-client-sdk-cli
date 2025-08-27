@@ -32,6 +32,9 @@ type LiteralDud struct {
 
     
 
+
+    
+
 }
 
 // Literal
@@ -60,6 +63,10 @@ type Literal struct {
     Special string `json:"special"`
 
 
+    // Strings - A string list value
+    Strings []string `json:"strings"`
+
+
     // Boolean - A boolean value
     Boolean bool `json:"boolean"`
 
@@ -73,6 +80,7 @@ func (o *Literal) String() string {
     
     
     
+     o.Strings = []string{""} 
     
 
     j, _ := json.Marshal(o)
@@ -103,6 +111,8 @@ func (u *Literal) MarshalJSON() ([]byte, error) {
         
         Special string `json:"special"`
         
+        Strings []string `json:"strings"`
+        
         Boolean bool `json:"boolean"`
         *Alias
     }{
@@ -122,6 +132,11 @@ func (u *Literal) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Strings: []string{""},
         
 
 

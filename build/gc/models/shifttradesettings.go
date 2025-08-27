@@ -67,6 +67,12 @@ type ShifttradesettingsDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Shifttradesettings
@@ -123,6 +129,14 @@ type Shifttradesettings struct {
     ActivityCategoryRules []Shifttradeactivityrule `json:"activityCategoryRules"`
 
 
+    // ExternalActivityRules - Rules that specify what to do with external activities that are part of a shift
+    ExternalActivityRules []Shifttradeexternalactivityrule `json:"externalActivityRules"`
+
+
+    // ExternalActivityRuleIgnoresActivityCategoryRule - Whether external activity rules ignore activity category rules
+    ExternalActivityRuleIgnoresActivityCategoryRule bool `json:"externalActivityRuleIgnoresActivityCategoryRule"`
+
+
     // MaxTradeSpanWeeks - The maximum number of weeks a shift trade can span
     MaxTradeSpanWeeks int `json:"maxTradeSpanWeeks"`
 
@@ -163,6 +177,8 @@ func (o *Shifttradesettings) String() string {
     
     
      o.ActivityCategoryRules = []Shifttradeactivityrule{{}} 
+     o.ExternalActivityRules = []Shifttradeexternalactivityrule{{}} 
+    
     
     
     
@@ -211,6 +227,10 @@ func (u *Shifttradesettings) MarshalJSON() ([]byte, error) {
         RequiresMatchingPlanningGroups bool `json:"requiresMatchingPlanningGroups"`
         
         ActivityCategoryRules []Shifttradeactivityrule `json:"activityCategoryRules"`
+        
+        ExternalActivityRules []Shifttradeexternalactivityrule `json:"externalActivityRules"`
+        
+        ExternalActivityRuleIgnoresActivityCategoryRule bool `json:"externalActivityRuleIgnoresActivityCategoryRule"`
         
         MaxTradeSpanWeeks int `json:"maxTradeSpanWeeks"`
         
@@ -264,6 +284,14 @@ func (u *Shifttradesettings) MarshalJSON() ([]byte, error) {
 
         
         ActivityCategoryRules: []Shifttradeactivityrule{{}},
+        
+
+
+        
+        ExternalActivityRules: []Shifttradeexternalactivityrule{{}},
+        
+
+
         
 
 

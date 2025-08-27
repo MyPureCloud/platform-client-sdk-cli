@@ -148,11 +148,11 @@ type Recordingmetadata struct {
     ExportedDate time.Time `json:"exportedDate"`
 
 
-    // MaxAllowedRestorationsForOrg - How many archive restorations the organization is allowed to have.
+    // MaxAllowedRestorationsForOrg - How many archive restorations the organization is allowed to have. Deprecated - Always returns 10000 since the restoration limit is no longer enforced.
     MaxAllowedRestorationsForOrg int `json:"maxAllowedRestorationsForOrg"`
 
 
-    // RemainingRestorationsAllowedForOrg - The remaining archive restorations the organization has.
+    // RemainingRestorationsAllowedForOrg - The remaining archive restorations the organization has. Deprecated - Always returns 10000 since the restoration limit is no longer enforced.
     RemainingRestorationsAllowedForOrg int `json:"remainingRestorationsAllowedForOrg"`
 
 

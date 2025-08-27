@@ -270,7 +270,7 @@
     {
       "name": "create",
       "path": "/api/v2/routing/email/domains/{domainId}/testconnection",
-      "description": "Tests the custom SMTP server integration connection set on this domain"
+      "description": "Tests the custom SMTP server integration connection set on this ACD domain"
     },
     {
       "name": "list",
@@ -296,11 +296,6 @@
       "name": "delete",
       "path": "/api/v2/routing/email/outbound/domains/{domainId}",
       "description": "Delete an outbound domain"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/routing/email/outbound/domains/{domainId}/search",
-      "description": "Search a domain across organizations"
     },
     {
       "name": "get",

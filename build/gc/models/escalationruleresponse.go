@@ -93,19 +93,19 @@ type Escalationruleresponse struct {
     Status string `json:"status"`
 
 
-    // OpenEscalation - The target integration configuration used for an open social media message if the match criteria returns true.
+    // OpenEscalation - The target integration configuration used for an open message escalation.
     OpenEscalation Escalationtarget `json:"openEscalation"`
 
 
-    // FacebookEscalation - The target integration configuration used for a Facebook social media message if the match criteria returns true.
+    // FacebookEscalation - The target integration configuration used for a Facebook message escalation.
     FacebookEscalation Escalationtarget `json:"facebookEscalation"`
 
 
-    // InstagramEscalation - The target integration configuration used for an Instagram social media message if the match criteria returns true.
+    // InstagramEscalation - The target integration configuration used for an Instagram message escalation.
     InstagramEscalation Escalationtarget `json:"instagramEscalation"`
 
 
-    // TwitterEscalation - The target integration configuration used for a X (formerly Twitter) social media message if the match criteria returns true.
+    // TwitterEscalation - The target integration configuration used for a X (formerly Twitter) message escalation.
     TwitterEscalation Escalationtarget `json:"twitterEscalation"`
 
 

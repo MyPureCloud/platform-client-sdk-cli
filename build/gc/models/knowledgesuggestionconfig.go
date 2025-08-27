@@ -19,6 +19,9 @@ type KnowledgesuggestionconfigDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgesuggestionconfig
@@ -34,6 +37,10 @@ type Knowledgesuggestionconfig struct {
     // KnowledgeBases - The knowledge bases to query based on dialect, when Genesys is the knowledge suggestions provider.
     KnowledgeBases []Knowledgebasewithdialectreference `json:"knowledgeBases"`
 
+
+    // ReceiveSegmentedArticles - Include segmented articles in knowledge suggestions.
+    ReceiveSegmentedArticles bool `json:"receiveSegmentedArticles"`
+
 }
 
 // String returns a JSON representation of the model
@@ -41,6 +48,7 @@ func (o *Knowledgesuggestionconfig) String() string {
     
     
      o.KnowledgeBases = []Knowledgebasewithdialectreference{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,6 +71,8 @@ func (u *Knowledgesuggestionconfig) MarshalJSON() ([]byte, error) {
         KnowledgeBase Knowledgebasereference `json:"knowledgeBase"`
         
         KnowledgeBases []Knowledgebasewithdialectreference `json:"knowledgeBases"`
+        
+        ReceiveSegmentedArticles bool `json:"receiveSegmentedArticles"`
         *Alias
     }{
 
@@ -74,6 +84,9 @@ func (u *Knowledgesuggestionconfig) MarshalJSON() ([]byte, error) {
 
         
         KnowledgeBases: []Knowledgebasewithdialectreference{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

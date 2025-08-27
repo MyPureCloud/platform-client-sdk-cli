@@ -16,12 +16,19 @@ type DecisiontablecolumndefaultrowvalueDud struct {
 
     
 
+
+    
+
 }
 
 // Decisiontablecolumndefaultrowvalue - Must provide a valid value for exactly one of the fields in this class.
 type Decisiontablecolumndefaultrowvalue struct { 
     // Value - A default string value for this column, will be cast to appropriate type according to the relevant contract schema property.
     Value string `json:"value"`
+
+
+    // Values - A default list of values for this column, items will be cast to appropriate type according to the relevant contract schema property
+    Values []string `json:"values"`
 
 
     // Special - A default special value enum for this column.
@@ -32,6 +39,7 @@ type Decisiontablecolumndefaultrowvalue struct {
 // String returns a JSON representation of the model
 func (o *Decisiontablecolumndefaultrowvalue) String() string {
     
+     o.Values = []string{""} 
     
 
     j, _ := json.Marshal(o)
@@ -52,10 +60,17 @@ func (u *Decisiontablecolumndefaultrowvalue) MarshalJSON() ([]byte, error) {
         
         Value string `json:"value"`
         
+        Values []string `json:"values"`
+        
         Special string `json:"special"`
         *Alias
     }{
 
+        
+
+
+        
+        Values: []string{""},
         
 
 

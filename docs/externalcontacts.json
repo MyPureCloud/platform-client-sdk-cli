@@ -39,11 +39,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/notes/add",
-      "description": "Bulk add notes"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/notes/remove",
       "description": "Bulk remove notes"
     },
@@ -54,23 +49,13 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/notes/add",
+      "description": "Bulk add notes"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/notes/update",
       "description": "Bulk update notes"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/organizations/update",
-      "description": "Bulk update organizations"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/organizations/divisionviews",
-      "description": "Bulk fetch organizations across divisions"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/organizations/enrich",
-      "description": "Bulk enrich external organizations - Run up to 10 Enrich operations per request"
     },
     {
       "name": "create",
@@ -86,6 +71,21 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/organizations",
       "description": "Bulk fetch organizations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/update",
+      "description": "Bulk update organizations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/divisionviews",
+      "description": "Bulk fetch organizations across divisions"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/enrich",
+      "description": "Bulk enrich external organizations - Run up to 10 Enrich operations per request"
     },
     {
       "name": "create",

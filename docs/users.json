@@ -64,6 +64,11 @@
     },
     {
       "name": "list",
+      "path": "/api/v2/users/{userId}/directreports",
+      "description": "Get direct reports"
+    },
+    {
+      "name": "list",
       "path": "/api/v2/users/{userId}/favorites",
       "description": "Deprecated; will be revived with new contract"
     },
@@ -76,11 +81,6 @@
       "name": "list",
       "path": "/api/v2/users/{userId}/superiors",
       "description": "Get superiors"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/users/{userId}/directreports",
-      "description": "Get direct reports"
     },
     {
       "name": "get",
@@ -173,6 +173,11 @@
       "description": "Get the user associated with external identifier."
     },
     {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
+      "description": "Delete the external identifier for user."
+    },
+    {
       "name": "getexternalidforuserauthority",
       "path": "/api/v2/users/{userId}/externalid/{authorityName}",
       "description": "Get the external identifier of user for an authority."
@@ -186,11 +191,6 @@
       "name": "create",
       "path": "/api/v2/users/{userId}/externalid",
       "description": "Create mapping between external identifier and user. Limit 100 per entity."
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
-      "description": "Delete the external identifier for user."
     },
     {
       "name": "create",
@@ -338,14 +338,14 @@
       "description": "Get station information for user"
     },
     {
-      "name": "delete",
-      "path": "/api/v2/users/{userId}/station/associatedstation",
-      "description": "Clear associated station"
-    },
-    {
       "name": "update",
       "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
       "description": "Set associated station"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/station/associatedstation",
+      "description": "Clear associated station"
     },
     {
       "name": "update",
@@ -393,11 +393,6 @@
       "description": "Search users assigned to teams"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/development/activities",
       "description": "Get list of Development Activities"
@@ -406,6 +401,11 @@
       "name": "list",
       "path": "/api/v2/users/development/activities/me",
       "description": "Get list of Development Activities for current user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
     },
     {
       "name": "create",

@@ -173,9 +173,14 @@
       "description": "Retrieve a single session."
     },
     {
-      "name": "create",
-      "path": "/api/v2/journey/views/{viewId}/versions",
-      "description": "Update a Journey View by ID"
+      "name": "get",
+      "path": "/api/v2/journey/views/{viewId}",
+      "description": "Get a Journey View by ID"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/journey/views/{viewId}",
+      "description": "Delete a Journey View by ID"
     },
     {
       "name": "get",
@@ -188,14 +193,9 @@
       "description": "Update a Journey View by ID and version"
     },
     {
-      "name": "get",
-      "path": "/api/v2/journey/views/{viewId}",
-      "description": "Get a Journey View by ID"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/journey/views/{viewId}",
-      "description": "Delete a Journey View by ID"
+      "name": "create",
+      "path": "/api/v2/journey/views/{viewId}/versions",
+      "description": "Update a Journey View by ID"
     },
     {
       "name": "list",

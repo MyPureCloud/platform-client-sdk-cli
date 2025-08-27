@@ -28,6 +28,21 @@
       "description": "Disassociate a queue from an assistant."
     },
     {
+      "name": "create",
+      "path": "/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add",
+      "description": "Bulk add users to assistant-queue (requires manual assignment mode)."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove",
+      "description": "Bulk remove users from assistant-queue (requires manual assignment mode)."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/assistants/{assistantId}/queues/{queueId}/users/query",
+      "description": "Query for users in the assistant-queue (requires manual assignment mode)."
+    },
+    {
       "name": "getAssistantQueues",
       "path": "/api/v2/assistants/{assistantId}/queues",
       "description": "Get all the queues associated with an assistant."

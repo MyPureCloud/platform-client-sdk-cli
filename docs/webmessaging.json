@@ -3,6 +3,21 @@
   "description": "/api/v2/webmessaging",
   "resources": [
     {
+      "name": "create",
+      "path": "/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}",
+      "description": "Add a new device information"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}",
+      "description": "Delete device information"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}",
+      "description": "Edit device information"
+    },
+    {
       "name": "list",
       "path": "/api/v2/webmessaging/messages",
       "description": "Get the messages for a web messaging session."

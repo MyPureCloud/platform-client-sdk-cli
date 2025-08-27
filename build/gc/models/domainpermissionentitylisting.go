@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    PermissioncollectionentitylistingMarshalled = false
+    DomainpermissionentitylistingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type PermissioncollectionentitylistingDud struct { 
+type DomainpermissionentitylistingDud struct { 
     
 
 
@@ -42,10 +42,10 @@ type PermissioncollectionentitylistingDud struct {
 
 }
 
-// Permissioncollectionentitylisting
-type Permissioncollectionentitylisting struct { 
+// Domainpermissionentitylisting
+type Domainpermissionentitylisting struct { 
     // Entities
-    Entities []Domainpermissioncollection `json:"entities"`
+    Entities []Domainpermissioncollectiondomainpermission `json:"entities"`
 
 
     // PageSize
@@ -60,6 +60,10 @@ type Permissioncollectionentitylisting struct {
     Total int `json:"total"`
 
 
+    // FirstUri
+    FirstUri string `json:"firstUri"`
+
+
     // NextUri
     NextUri string `json:"nextUri"`
 
@@ -72,10 +76,6 @@ type Permissioncollectionentitylisting struct {
     LastUri string `json:"lastUri"`
 
 
-    // FirstUri
-    FirstUri string `json:"firstUri"`
-
-
     // SelfUri
     SelfUri string `json:"selfUri"`
 
@@ -86,8 +86,8 @@ type Permissioncollectionentitylisting struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Permissioncollectionentitylisting) String() string {
-     o.Entities = []Domainpermissioncollection{{}} 
+func (o *Domainpermissionentitylisting) String() string {
+     o.Entities = []Domainpermissioncollectiondomainpermission{{}} 
     
     
     
@@ -104,17 +104,17 @@ func (o *Permissioncollectionentitylisting) String() string {
     return str
 }
 
-func (u *Permissioncollectionentitylisting) MarshalJSON() ([]byte, error) {
-    type Alias Permissioncollectionentitylisting
+func (u *Domainpermissionentitylisting) MarshalJSON() ([]byte, error) {
+    type Alias Domainpermissionentitylisting
 
-    if PermissioncollectionentitylistingMarshalled {
+    if DomainpermissionentitylistingMarshalled {
         return []byte("{}"), nil
     }
-    PermissioncollectionentitylistingMarshalled = true
+    DomainpermissionentitylistingMarshalled = true
 
     return json.Marshal(&struct {
         
-        Entities []Domainpermissioncollection `json:"entities"`
+        Entities []Domainpermissioncollectiondomainpermission `json:"entities"`
         
         PageSize int `json:"pageSize"`
         
@@ -122,13 +122,13 @@ func (u *Permissioncollectionentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
+        FirstUri string `json:"firstUri"`
+        
         NextUri string `json:"nextUri"`
         
         PreviousUri string `json:"previousUri"`
         
         LastUri string `json:"lastUri"`
-        
-        FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         
@@ -137,7 +137,7 @@ func (u *Permissioncollectionentitylisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Domainpermissioncollection{{}},
+        Entities: []Domainpermissioncollectiondomainpermission{{}},
         
 
 

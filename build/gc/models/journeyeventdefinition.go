@@ -20,6 +20,12 @@ type JourneyeventdefinitionDud struct {
     Source string `json:"source"`
 
 
+    Rank int `json:"rank"`
+
+
+    DisplayName string `json:"displayName"`
+
+
     Description string `json:"description"`
 
 
@@ -32,6 +38,12 @@ type JourneyeventdefinitionDud struct {
 
 // Journeyeventdefinition - An event definition used when creating journey views
 type Journeyeventdefinition struct { 
+    
+
+
+    
+
+
     
 
 
@@ -71,6 +83,12 @@ func (u *Journeyeventdefinition) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

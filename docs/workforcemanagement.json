@@ -314,8 +314,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk",
-      "description": "Updates the state of a batch of shift trades"
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search",
+      "description": "Searches for potential shift trade matches for the current agent"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match",
+      "description": "Matches a shift trade. This route can only be called by the receiving agent"
     },
     {
       "name": "update",
@@ -324,13 +329,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search",
-      "description": "Searches for potential shift trade matches for the current agent"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match",
-      "description": "Matches a shift trade. This route can only be called by the receiving agent"
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk",
+      "description": "Updates the state of a batch of shift trades"
     },
     {
       "name": "create",
@@ -638,16 +638,6 @@
       "description": "Disable generated calendar link for the current user"
     },
     {
-      "name": "list",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans",
-      "description": "Get list of capacity plans for a business unit"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans",
-      "description": "Create a new capacity plan"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}",
       "description": "Get a capacity plan"
@@ -656,6 +646,16 @@
       "name": "update",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}",
       "description": "Update a capacity plan configuration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans",
+      "description": "Get list of capacity plans for a business unit"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans",
+      "description": "Create a new capacity plan"
     },
     {
       "name": "create",
@@ -739,11 +739,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/workforcemanagement/workplanbids",
-      "description": "Gets the list of work plan bids that belong to an agent"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/workforcemanagement/workplanbids/{bidId}/preferences",
       "description": "Gets an agent's work plan bidding preference"
     },
@@ -751,6 +746,11 @@
       "name": "update",
       "path": "/api/v2/workforcemanagement/workplanbids/{bidId}/preferences",
       "description": "Update an agent's work plan bidding preference"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/workplanbids",
+      "description": "Gets the list of work plan bids that belong to an agent"
     },
     {
       "name": "list",
@@ -808,14 +808,14 @@
       "description": "Delete the list of the historical data import entries"
     },
     {
-      "name": "list",
-      "path": "/api/v2/workforcemanagement/historicaldata/importstatus",
-      "description": "Retrieves status of the historical data imports of the organization"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/historicaldata/importstatus/{jobId}",
       "description": "Retrieves status of the historical data imports associated with job id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/historicaldata/importstatus",
+      "description": "Retrieves status of the historical data imports of the organization"
     },
     {
       "name": "create",
@@ -838,14 +838,14 @@
       "description": "Query the results of time off types job"
     },
     {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs",
-      "description": "Get list of time off types configured in integration"
-    },
-    {
       "name": "list",
       "path": "/api/v2/workforcemanagement/integrations/hris",
       "description": "Get integrations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs",
+      "description": "Get list of time off types configured in integration"
     },
     {
       "name": "get",
@@ -868,6 +868,11 @@
       "description": "Get recalculated performance prediction result"
     },
     {
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs",
+      "description": "Get the list of scheduling runs"
+    },
+    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}",
       "description": "Get a scheduling run"
@@ -881,11 +886,6 @@
       "name": "update",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}",
       "description": "Mark a schedule run as applied"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs",
-      "description": "Get the list of scheduling runs"
     },
     {
       "name": "get",
@@ -974,23 +974,23 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search",
-      "description": "Query published schedules for given given time range for set of users"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search",
       "description": "Query published schedules for given given time range for set of users"
     },
     {
-      "name": "get",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}",
-      "description": "Deprecated.  Use the equivalent business unit resource instead. Get a week schedule"
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search",
+      "description": "Query published schedules for given given time range for set of users"
     },
     {
       "name": "list",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules",
       "description": "Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}",
+      "description": "Deprecated.  Use the equivalent business unit resource instead. Get a week schedule"
     },
     {
       "name": "get",
@@ -1068,14 +1068,14 @@
       "description": "Estimates available time off for an agent"
     },
     {
-      "name": "update",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus",
-      "description": "Set integration status for a time off request."
-    },
-    {
       "name": "create",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query",
       "description": "Retrieves integration statuses for a list of time off requests"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus",
+      "description": "Set integration status for a time off request."
     },
     {
       "name": "list",

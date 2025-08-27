@@ -5,13 +5,13 @@
     "resources": [
       {
         "name": "create",
-        "path": "/api/v2/events/conversations",
-        "description": "Publish Conversation Batch Events"
+        "path": "/api/v2/events/users/presence",
+        "description": "Publish User Presence Status Batch Events"
       },
       {
         "name": "create",
-        "path": "/api/v2/events/users/presence",
-        "description": "Publish User Presence Status Batch Events"
+        "path": "/api/v2/events/conversations",
+        "description": "Publish Conversation Batch Events"
       },
       {
         "name": "create",
@@ -377,6 +377,11 @@
       },
       {
         "name": "list",
+        "path": "/api/v2/users/{userId}/directreports",
+        "description": "Get direct reports"
+      },
+      {
+        "name": "list",
         "path": "/api/v2/users/{userId}/favorites",
         "description": "Deprecated; will be revived with new contract"
       },
@@ -389,11 +394,6 @@
         "name": "list",
         "path": "/api/v2/users/{userId}/superiors",
         "description": "Get superiors"
-      },
-      {
-        "name": "list",
-        "path": "/api/v2/users/{userId}/directreports",
-        "description": "Get direct reports"
       },
       {
         "name": "get",
@@ -486,6 +486,11 @@
         "description": "Get the user associated with external identifier."
       },
       {
+        "name": "delete",
+        "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
+        "description": "Delete the external identifier for user."
+      },
+      {
         "name": "getexternalidforuserauthority",
         "path": "/api/v2/users/{userId}/externalid/{authorityName}",
         "description": "Get the external identifier of user for an authority."
@@ -499,11 +504,6 @@
         "name": "create",
         "path": "/api/v2/users/{userId}/externalid",
         "description": "Create mapping between external identifier and user. Limit 100 per entity."
-      },
-      {
-        "name": "delete",
-        "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
-        "description": "Delete the external identifier for user."
       },
       {
         "name": "create",
@@ -651,14 +651,14 @@
         "description": "Get station information for user"
       },
       {
-        "name": "delete",
-        "path": "/api/v2/users/{userId}/station/associatedstation",
-        "description": "Clear associated station"
-      },
-      {
         "name": "update",
         "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
         "description": "Set associated station"
+      },
+      {
+        "name": "delete",
+        "path": "/api/v2/users/{userId}/station/associatedstation",
+        "description": "Clear associated station"
       },
       {
         "name": "update",
@@ -706,11 +706,6 @@
         "description": "Search users assigned to teams"
       },
       {
-        "name": "get",
-        "path": "/api/v2/users/development/activities/{activityId}",
-        "description": "Get a Development Activity"
-      },
-      {
         "name": "list",
         "path": "/api/v2/users/development/activities",
         "description": "Get list of Development Activities"
@@ -719,6 +714,11 @@
         "name": "list",
         "path": "/api/v2/users/development/activities/me",
         "description": "Get list of Development Activities for current user"
+      },
+      {
+        "name": "get",
+        "path": "/api/v2/users/development/activities/{activityId}",
+        "description": "Get a Development Activity"
       },
       {
         "name": "create",
@@ -1242,11 +1242,6 @@
       },
       {
         "name": "create",
-        "path": "/api/v2/analytics/flows/aggregates/query",
-        "description": "Query for flow aggregates"
-      },
-      {
-        "name": "create",
         "path": "/api/v2/analytics/flows/observations/query",
         "description": "Query for flow observations"
       },
@@ -1254,6 +1249,11 @@
         "name": "create",
         "path": "/api/v2/analytics/flows/activity/query",
         "description": "Query for flow activity observations"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/analytics/flows/aggregates/query",
+        "description": "Query for flow aggregates"
       },
       {
         "name": "create",
@@ -1441,11 +1441,6 @@
         "description": "Generate a view export request"
       },
       {
-        "name": "create",
-        "path": "/api/v2/analytics/actions/aggregates/jobs",
-        "description": "Query for action aggregates asynchronously"
-      },
-      {
         "name": "get",
         "path": "/api/v2/analytics/actions/aggregates/jobs/{jobId}",
         "description": "Get status for async query for action aggregates"
@@ -1459,6 +1454,11 @@
         "name": "list",
         "path": "/api/v2/analytics/actions/aggregates/jobs/{jobId}/results",
         "description": "Fetch a page of results for an async aggregates query"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/analytics/actions/aggregates/jobs",
+        "description": "Query for action aggregates asynchronously"
       },
       {
         "name": "create",
@@ -1561,11 +1561,6 @@
         "description": "Fetch a page of results for an async aggregates query"
       },
       {
-        "name": "create",
-        "path": "/api/v2/analytics/flows/aggregates/jobs",
-        "description": "Query for flow aggregates asynchronously"
-      },
-      {
         "name": "get",
         "path": "/api/v2/analytics/flows/aggregates/jobs/{jobId}",
         "description": "Get status for async query for Flow aggregates"
@@ -1582,8 +1577,8 @@
       },
       {
         "name": "create",
-        "path": "/api/v2/analytics/journeys/aggregates/jobs",
-        "description": "Query for journey aggregates asynchronously"
+        "path": "/api/v2/analytics/flows/aggregates/jobs",
+        "description": "Query for flow aggregates asynchronously"
       },
       {
         "name": "get",
@@ -1599,6 +1594,11 @@
         "name": "list",
         "path": "/api/v2/analytics/journeys/aggregates/jobs/{jobId}/results",
         "description": "Fetch a page of results for an async aggregates query"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/analytics/journeys/aggregates/jobs",
+        "description": "Query for journey aggregates asynchronously"
       },
       {
         "name": "get",
@@ -1770,6 +1770,21 @@
         "name": "removeQueueFromAssistant",
         "path": "/api/v2/assistants/{assistantId}/queues/{queueId}",
         "description": "Disassociate a queue from an assistant."
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add",
+        "description": "Bulk add users to assistant-queue (requires manual assignment mode)."
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove",
+        "description": "Bulk remove users from assistant-queue (requires manual assignment mode)."
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/assistants/{assistantId}/queues/{queueId}/users/query",
+        "description": "Query for users in the assistant-queue (requires manual assignment mode)."
       },
       {
         "name": "getAssistantQueues",
@@ -2038,6 +2053,11 @@
         "description": "Remove a pinned message from a 1on1"
       },
       {
+        "name": "get",
+        "path": "/api/v2/chats/rooms/{roomJid}/participants/{participantJid}",
+        "description": "Get a room participant"
+      },
+      {
         "name": "create",
         "path": "/api/v2/chats/rooms/{roomJid}/participants/{userId}",
         "description": "Join a room"
@@ -2051,11 +2071,6 @@
         "name": "getRoomParticipants",
         "path": "/api/v2/chats/rooms/{roomJid}/participants",
         "description": "Get room participants in a room"
-      },
-      {
-        "name": "get",
-        "path": "/api/v2/chats/rooms/{roomJid}/participants/{participantJid}",
-        "description": "Get a room participant"
       },
       {
         "name": "get",
@@ -2164,6 +2179,16 @@
         "description": "Get conversation"
       },
       {
+        "name": "delete",
+        "path": "/api/v2/conversations/{conversationId}",
+        "description": "Update a conversation by disconnecting all of the participants"
+      },
+      {
+        "name": "update",
+        "path": "/api/v2/conversations/{conversationId}/recordingstate",
+        "description": "Update a conversation by setting its recording state"
+      },
+      {
         "name": "create",
         "path": "/api/v2/conversations/{conversationId}/barge",
         "description": "Barge a conversation creating a barged in conference of connected participants."
@@ -2252,16 +2277,6 @@
         "name": "create",
         "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace",
         "description": "Replace this participant with the specified user and/or address"
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor",
-        "description": "Listen in on the conversation from the point of view of a given participant."
-      },
-      {
-        "name": "list",
-        "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes",
-        "description": "Get list of wrapup codes for this conversation participant"
       },
       {
         "name": "get",
@@ -2359,6 +2374,11 @@
         "description": "Initiate a consult transfer to an external contact"
       },
       {
+        "name": "update",
+        "path": "/api/v2/conversations/calls/{conversationId}/conference",
+        "description": "Update a conversation by merging in other conversations to create a conference"
+      },
+      {
         "name": "create",
         "path": "/api/v2/conversations/calls/{conversationId}/participants",
         "description": "Add participants to a conversation"
@@ -2372,6 +2392,16 @@
         "name": "update",
         "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata",
         "description": "Set uuiData to be sent on future commands."
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor",
+        "description": "Listen in on the conversation from the point of view of a given participant."
+      },
+      {
+        "name": "list",
+        "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes",
+        "description": "Get list of wrapup codes for this conversation participant"
       },
       {
         "name": "list",
@@ -2392,11 +2422,6 @@
         "name": "create",
         "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace",
         "description": "Replace this participant with the specified user and/or address"
-      },
-      {
-        "name": "list",
-        "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes",
-        "description": "Get list of wrapup codes for this conversation participant"
       },
       {
         "name": "get",
@@ -2444,6 +2469,11 @@
         "description": "Update conversation participant"
       },
       {
+        "name": "list",
+        "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes",
+        "description": "Get list of wrapup codes for this conversation participant"
+      },
+      {
         "name": "get",
         "path": "/api/v2/conversations/chats/{conversationId}/messages/{messageId}",
         "description": "Get a web chat conversation message"
@@ -2477,11 +2507,6 @@
         "name": "create",
         "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace",
         "description": "Replace this participant with the specified user and/or address"
-      },
-      {
-        "name": "list",
-        "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes",
-        "description": "Get list of wrapup codes for this conversation participant"
       },
       {
         "name": "get",
@@ -2529,6 +2554,11 @@
         "description": "Apply wrap-up for this conversation communication"
       },
       {
+        "name": "list",
+        "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes",
+        "description": "Get list of wrapup codes for this conversation participant"
+      },
+      {
         "name": "create",
         "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace",
         "description": "Replace this participant with the specified user and/or address"
@@ -2537,11 +2567,6 @@
         "name": "list",
         "path": "/api/v2/conversations/cobrowsesessions",
         "description": "Get active cobrowse conversations for the logged in user"
-      },
-      {
-        "name": "list",
-        "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes",
-        "description": "Get list of wrapup codes for this conversation participant"
       },
       {
         "name": "get",
@@ -2589,6 +2614,11 @@
         "description": "Update conversation participant"
       },
       {
+        "name": "list",
+        "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes",
+        "description": "Get list of wrapup codes for this conversation participant"
+      },
+      {
         "name": "create",
         "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace",
         "description": "Replace this participant with the specified user and/or address"
@@ -2607,11 +2637,6 @@
         "name": "create",
         "path": "/api/v2/conversations/emails",
         "description": "Create an email conversation"
-      },
-      {
-        "name": "list",
-        "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes",
-        "description": "Get list of wrapup codes for this conversation participant"
       },
       {
         "name": "list",
@@ -2719,6 +2744,11 @@
         "description": "Create an email conversation, per API"
       },
       {
+        "name": "list",
+        "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes",
+        "description": "Get list of wrapup codes for this conversation participant"
+      },
+      {
         "name": "get",
         "path": "/api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}",
         "description": "Get a cached media item"
@@ -2752,16 +2782,6 @@
         "name": "create",
         "path": "/api/v2/conversations/messages",
         "description": "Create an outbound messaging conversation."
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor",
-        "description": "Listen in on the conversation from the point of view of a given participant."
-      },
-      {
-        "name": "list",
-        "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes",
-        "description": "Get list of wrapup codes for this conversation participant"
       },
       {
         "name": "create",
@@ -2877,6 +2897,16 @@
         "name": "create",
         "path": "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing",
         "description": "Send message typing event"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor",
+        "description": "Listen in on the conversation from the point of view of a given participant."
+      },
+      {
+        "name": "list",
+        "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes",
+        "description": "Get list of wrapup codes for this conversation participant"
       },
       {
         "name": "update",
@@ -3224,11 +3254,6 @@
         "description": "Delete a code used to add a communication to this participant"
       },
       {
-        "name": "create",
-        "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks",
-        "description": "Create a new callback for the specified participant on the conversation."
-      },
-      {
         "name": "update",
         "path": "/api/v2/conversations/{conversationId}/participants/{participantId}",
         "description": "Update a participant."
@@ -3244,9 +3269,9 @@
         "description": "Sends DTMF to the participant"
       },
       {
-        "name": "list",
-        "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes",
-        "description": "Get list of wrapup codes for this conversation participant"
+        "name": "create",
+        "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks",
+        "description": "Create a new callback for the specified participant on the conversation."
       },
       {
         "name": "update",
@@ -3282,6 +3307,11 @@
         "name": "delete",
         "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason",
         "description": "Remove flagged reason from conversation participant."
+      },
+      {
+        "name": "list",
+        "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes",
+        "description": "Get list of wrapup codes for this conversation participant"
       },
       {
         "name": "get",
@@ -3676,14 +3706,14 @@
         "description": "Validate encryption key configurations without saving it"
       },
       {
-        "name": "create",
-        "path": "/api/v2/recording/batchrequests",
-        "description": "Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration."
-      },
-      {
         "name": "get",
         "path": "/api/v2/recording/batchrequests/{jobId}",
         "description": "Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results."
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/recording/batchrequests",
+        "description": "Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration."
       },
       {
         "name": "list",
@@ -3778,11 +3808,6 @@
       },
       {
         "name": "create",
-        "path": "/api/v2/externalcontacts/bulk/notes/add",
-        "description": "Bulk add notes"
-      },
-      {
-        "name": "create",
         "path": "/api/v2/externalcontacts/bulk/notes/remove",
         "description": "Bulk remove notes"
       },
@@ -3793,23 +3818,13 @@
       },
       {
         "name": "create",
+        "path": "/api/v2/externalcontacts/bulk/notes/add",
+        "description": "Bulk add notes"
+      },
+      {
+        "name": "create",
         "path": "/api/v2/externalcontacts/bulk/notes/update",
         "description": "Bulk update notes"
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/externalcontacts/bulk/organizations/update",
-        "description": "Bulk update organizations"
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/externalcontacts/bulk/organizations/divisionviews",
-        "description": "Bulk fetch organizations across divisions"
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/externalcontacts/bulk/organizations/enrich",
-        "description": "Bulk enrich external organizations - Run up to 10 Enrich operations per request"
       },
       {
         "name": "create",
@@ -3825,6 +3840,21 @@
         "name": "create",
         "path": "/api/v2/externalcontacts/bulk/organizations",
         "description": "Bulk fetch organizations"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/externalcontacts/bulk/organizations/update",
+        "description": "Bulk update organizations"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/externalcontacts/bulk/organizations/divisionviews",
+        "description": "Bulk fetch organizations across divisions"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/externalcontacts/bulk/organizations/enrich",
+        "description": "Bulk enrich external organizations - Run up to 10 Enrich operations per request"
       },
       {
         "name": "create",
@@ -4680,14 +4710,14 @@
         "description": "Retrieves all categories of available Actions"
       },
       {
-        "name": "list",
-        "path": "/api/v2/integrations/actions/certificates",
-        "description": "Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress."
-      },
-      {
         "name": "get",
         "path": "/api/v2/integrations/actions/certificates/truststore",
         "description": "Retrieves basic info about trusted root CA certificates"
+      },
+      {
+        "name": "list",
+        "path": "/api/v2/integrations/actions/certificates",
+        "description": "Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress."
       },
       {
         "name": "get",
@@ -5102,13 +5132,13 @@
       },
       {
         "name": "create",
-        "path": "/api/v2/gamification/profiles/users/{userId}/query",
-        "description": "Query performance profiles in date range for a user"
+        "path": "/api/v2/gamification/profiles/users/me/query",
+        "description": "Query performance profiles in date range for the current user"
       },
       {
         "name": "create",
-        "path": "/api/v2/gamification/profiles/users/me/query",
-        "description": "Query performance profiles in date range for the current user"
+        "path": "/api/v2/gamification/profiles/users/{userId}/query",
+        "description": "Query performance profiles in date range for a user"
       },
       {
         "name": "get",
@@ -5645,14 +5675,14 @@
         "description": "Deletes a log level for a flow by flow id."
       },
       {
-        "name": "list",
-        "path": "/api/v2/flows/instances/settings/loglevels",
-        "description": "Retrieve a list of LogLevels for the organization."
-      },
-      {
         "name": "get",
         "path": "/api/v2/flows/instances/settings/loglevels/characteristics",
         "description": "Gets the available flow log level characteristics for this organization."
+      },
+      {
+        "name": "list",
+        "path": "/api/v2/flows/instances/settings/loglevels",
+        "description": "Retrieve a list of LogLevels for the organization."
       },
       {
         "name": "create",
@@ -5978,16 +6008,6 @@
       },
       {
         "name": "get",
-        "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
-        "description": "Get campaign progress"
-      },
-      {
-        "name": "delete",
-        "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
-        "description": "Reset campaign progress and recycle the campaign"
-      },
-      {
-        "name": "get",
         "path": "/api/v2/outbound/campaigns/{campaignId}",
         "description": "Get dialer campaign."
       },
@@ -6035,6 +6055,16 @@
         "name": "create",
         "path": "/api/v2/outbound/campaigns/{campaignId}/stop",
         "description": "Stop the campaign"
+      },
+      {
+        "name": "get",
+        "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
+        "description": "Get campaign progress"
+      },
+      {
+        "name": "delete",
+        "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
+        "description": "Reset campaign progress and recycle the campaign"
       },
       {
         "name": "get",
@@ -6207,6 +6237,16 @@
         "description": "Delete Contact List Template"
       },
       {
+        "name": "create",
+        "path": "/api/v2/outbound/contactlisttemplates/bulk/add",
+        "description": "Add multiple contact list templates"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/outbound/contactlisttemplates/bulk/retrieve",
+        "description": "Get multiple contact list templates"
+      },
+      {
         "name": "list",
         "path": "/api/v2/outbound/contactlisttemplates",
         "description": "Query a list of contact list templates"
@@ -6220,16 +6260,6 @@
         "name": "deleteall",
         "path": "/api/v2/outbound/contactlisttemplates",
         "description": "Delete multiple contact list templates."
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/outbound/contactlisttemplates/bulk/add",
-        "description": "Add multiple contact list templates"
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/outbound/contactlisttemplates/bulk/retrieve",
-        "description": "Get multiple contact list templates"
       },
       {
         "name": "list",
@@ -6278,11 +6308,6 @@
       },
       {
         "name": "create",
-        "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update",
-        "description": "Start an async job to bulk edit contacts."
-      },
-      {
-        "name": "create",
         "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk",
         "description": "Get contacts from a contact list."
       },
@@ -6290,6 +6315,11 @@
         "name": "create",
         "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove",
         "description": "Start an async job to delete contacts using a filter."
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update",
+        "description": "Start an async job to bulk edit contacts."
       },
       {
         "name": "create",
@@ -7360,9 +7390,14 @@
         "description": "Retrieve a single session."
       },
       {
-        "name": "create",
-        "path": "/api/v2/journey/views/{viewId}/versions",
-        "description": "Update a Journey View by ID"
+        "name": "get",
+        "path": "/api/v2/journey/views/{viewId}",
+        "description": "Get a Journey View by ID"
+      },
+      {
+        "name": "delete",
+        "path": "/api/v2/journey/views/{viewId}",
+        "description": "Delete a Journey View by ID"
       },
       {
         "name": "get",
@@ -7375,14 +7410,9 @@
         "description": "Update a Journey View by ID and version"
       },
       {
-        "name": "get",
-        "path": "/api/v2/journey/views/{viewId}",
-        "description": "Get a Journey View by ID"
-      },
-      {
-        "name": "delete",
-        "path": "/api/v2/journey/views/{viewId}",
-        "description": "Delete a Journey View by ID"
+        "name": "create",
+        "path": "/api/v2/journey/views/{viewId}/versions",
+        "description": "Update a Journey View by ID"
       },
       {
         "name": "list",
@@ -7581,14 +7611,14 @@
         "description": "Update category"
       },
       {
-        "name": "create",
-        "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads",
-        "description": "Upload Article Content"
-      },
-      {
         "name": "get",
         "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}",
         "description": "Get document content upload status"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads",
+        "description": "Upload Article Content"
       },
       {
         "name": "get",
@@ -7677,11 +7707,6 @@
       },
       {
         "name": "get",
-        "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}",
-        "description": "Get knowledge base unanswered group for a particular groupId"
-      },
-      {
-        "name": "get",
         "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}",
         "description": "Get knowledge base unanswered phrase group for a particular phraseGroupId"
       },
@@ -7689,6 +7714,11 @@
         "name": "update",
         "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}",
         "description": "Update a Knowledge base unanswered phrase group"
+      },
+      {
+        "name": "get",
+        "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}",
+        "description": "Get knowledge base unanswered group for a particular groupId"
       },
       {
         "name": "get",
@@ -7846,16 +7876,6 @@
         "description": "Creates or restores a document version."
       },
       {
-        "name": "list",
-        "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents",
-        "description": "Get documents."
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents",
-        "description": "Create document."
-      },
-      {
         "name": "create",
         "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove",
         "description": "Bulk remove documents."
@@ -7869,6 +7889,16 @@
         "name": "create",
         "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add",
         "description": "Bulk add document versions."
+      },
+      {
+        "name": "list",
+        "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents",
+        "description": "Get documents."
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents",
+        "description": "Create document."
       },
       {
         "name": "get",
@@ -8056,14 +8086,19 @@
         "description": "Give feedback on a document"
       },
       {
+        "name": "list",
+        "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
+        "description": "Get documents."
+      },
+      {
         "name": "get",
         "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}",
         "description": "Get a knowledge document by ID."
       },
       {
-        "name": "list",
-        "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
-        "description": "Get documents."
+        "name": "create",
+        "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations",
+        "description": "Indicate that documents were presented to the user."
       },
       {
         "name": "create",
@@ -8076,19 +8111,9 @@
         "description": "Indicate that the document was copied by the user."
       },
       {
-        "name": "create",
-        "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations",
-        "description": "Indicate that documents were presented to the user."
-      },
-      {
         "name": "list",
         "path": "/api/v2/knowledge/guest/sessions/{sessionId}/categories",
         "description": "Get categories"
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search",
-        "description": "Search the documents in a guest session."
       },
       {
         "name": "create",
@@ -8099,6 +8124,11 @@
         "name": "update",
         "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId}",
         "description": "Update search result."
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search",
+        "description": "Search the documents in a guest session."
       },
       {
         "name": "create",
@@ -8570,6 +8600,32 @@
         "name": "create",
         "path": "/api/v2/webdeployments/deployments",
         "description": "Create a deployment"
+      }
+    ]
+  },
+  {
+    "supercommand": "webmessaging",
+    "description": "/api/v2/webmessaging",
+    "resources": [
+      {
+        "name": "create",
+        "path": "/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}",
+        "description": "Add a new device information"
+      },
+      {
+        "name": "delete",
+        "path": "/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}",
+        "description": "Delete device information"
+      },
+      {
+        "name": "update",
+        "path": "/api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId}",
+        "description": "Edit device information"
+      },
+      {
+        "name": "list",
+        "path": "/api/v2/webmessaging/messages",
+        "description": "Get the messages for a web messaging session."
       }
     ]
   },
@@ -9297,8 +9353,13 @@
       },
       {
         "name": "create",
-        "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk",
-        "description": "Updates the state of a batch of shift trades"
+        "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search",
+        "description": "Searches for potential shift trade matches for the current agent"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match",
+        "description": "Matches a shift trade. This route can only be called by the receiving agent"
       },
       {
         "name": "update",
@@ -9307,13 +9368,8 @@
       },
       {
         "name": "create",
-        "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search",
-        "description": "Searches for potential shift trade matches for the current agent"
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match",
-        "description": "Matches a shift trade. This route can only be called by the receiving agent"
+        "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk",
+        "description": "Updates the state of a batch of shift trades"
       },
       {
         "name": "create",
@@ -9621,16 +9677,6 @@
         "description": "Disable generated calendar link for the current user"
       },
       {
-        "name": "list",
-        "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans",
-        "description": "Get list of capacity plans for a business unit"
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans",
-        "description": "Create a new capacity plan"
-      },
-      {
         "name": "get",
         "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}",
         "description": "Get a capacity plan"
@@ -9639,6 +9685,16 @@
         "name": "update",
         "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}",
         "description": "Update a capacity plan configuration"
+      },
+      {
+        "name": "list",
+        "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans",
+        "description": "Get list of capacity plans for a business unit"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans",
+        "description": "Create a new capacity plan"
       },
       {
         "name": "create",
@@ -9722,11 +9778,6 @@
       },
       {
         "name": "get",
-        "path": "/api/v2/workforcemanagement/workplanbids",
-        "description": "Gets the list of work plan bids that belong to an agent"
-      },
-      {
-        "name": "get",
         "path": "/api/v2/workforcemanagement/workplanbids/{bidId}/preferences",
         "description": "Gets an agent's work plan bidding preference"
       },
@@ -9734,6 +9785,11 @@
         "name": "update",
         "path": "/api/v2/workforcemanagement/workplanbids/{bidId}/preferences",
         "description": "Update an agent's work plan bidding preference"
+      },
+      {
+        "name": "get",
+        "path": "/api/v2/workforcemanagement/workplanbids",
+        "description": "Gets the list of work plan bids that belong to an agent"
       },
       {
         "name": "list",
@@ -9791,14 +9847,14 @@
         "description": "Delete the list of the historical data import entries"
       },
       {
-        "name": "list",
-        "path": "/api/v2/workforcemanagement/historicaldata/importstatus",
-        "description": "Retrieves status of the historical data imports of the organization"
-      },
-      {
         "name": "get",
         "path": "/api/v2/workforcemanagement/historicaldata/importstatus/{jobId}",
         "description": "Retrieves status of the historical data imports associated with job id"
+      },
+      {
+        "name": "list",
+        "path": "/api/v2/workforcemanagement/historicaldata/importstatus",
+        "description": "Retrieves status of the historical data imports of the organization"
       },
       {
         "name": "create",
@@ -9821,14 +9877,14 @@
         "description": "Query the results of time off types job"
       },
       {
-        "name": "create",
-        "path": "/api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs",
-        "description": "Get list of time off types configured in integration"
-      },
-      {
         "name": "list",
         "path": "/api/v2/workforcemanagement/integrations/hris",
         "description": "Get integrations"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs",
+        "description": "Get list of time off types configured in integration"
       },
       {
         "name": "get",
@@ -9851,6 +9907,11 @@
         "description": "Get recalculated performance prediction result"
       },
       {
+        "name": "list",
+        "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs",
+        "description": "Get the list of scheduling runs"
+      },
+      {
         "name": "get",
         "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}",
         "description": "Get a scheduling run"
@@ -9864,11 +9925,6 @@
         "name": "update",
         "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}",
         "description": "Mark a schedule run as applied"
-      },
-      {
-        "name": "list",
-        "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs",
-        "description": "Get the list of scheduling runs"
       },
       {
         "name": "get",
@@ -9957,23 +10013,23 @@
       },
       {
         "name": "create",
-        "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search",
-        "description": "Query published schedules for given given time range for set of users"
-      },
-      {
-        "name": "create",
         "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search",
         "description": "Query published schedules for given given time range for set of users"
       },
       {
-        "name": "get",
-        "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}",
-        "description": "Deprecated.  Use the equivalent business unit resource instead. Get a week schedule"
+        "name": "create",
+        "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search",
+        "description": "Query published schedules for given given time range for set of users"
       },
       {
         "name": "list",
         "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules",
         "description": "Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit"
+      },
+      {
+        "name": "get",
+        "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}",
+        "description": "Deprecated.  Use the equivalent business unit resource instead. Get a week schedule"
       },
       {
         "name": "get",
@@ -10051,14 +10107,14 @@
         "description": "Estimates available time off for an agent"
       },
       {
-        "name": "update",
-        "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus",
-        "description": "Set integration status for a time off request."
-      },
-      {
         "name": "create",
         "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query",
         "description": "Retrieves integration statuses for a list of time off requests"
+      },
+      {
+        "name": "update",
+        "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus",
+        "description": "Set integration status for a time off request."
       },
       {
         "name": "list",
@@ -10912,7 +10968,7 @@
       {
         "name": "create",
         "path": "/api/v2/routing/email/domains/{domainId}/testconnection",
-        "description": "Tests the custom SMTP server integration connection set on this domain"
+        "description": "Tests the custom SMTP server integration connection set on this ACD domain"
       },
       {
         "name": "list",
@@ -10938,11 +10994,6 @@
         "name": "delete",
         "path": "/api/v2/routing/email/outbound/domains/{domainId}",
         "description": "Delete an outbound domain"
-      },
-      {
-        "name": "get",
-        "path": "/api/v2/routing/email/outbound/domains/{domainId}/search",
-        "description": "Search a domain across organizations"
       },
       {
         "name": "get",
@@ -11754,14 +11805,14 @@
     "description": "/api/v2/scim",
     "resources": [
       {
-        "name": "get",
-        "path": "/api/v2/scim/resourcetypes/{resourceType}",
-        "description": "Get a resource type"
-      },
-      {
         "name": "list",
         "path": "/api/v2/scim/resourcetypes",
         "description": "Get a list of resource types"
+      },
+      {
+        "name": "get",
+        "path": "/api/v2/scim/resourcetypes/{resourceType}",
+        "description": "Get a resource type"
       },
       {
         "name": "get",
@@ -11829,14 +11880,14 @@
         "description": "Create a user"
       },
       {
-        "name": "get",
-        "path": "/api/v2/scim/v2/resourcetypes/{resourceType}",
-        "description": "Get a resource type"
-      },
-      {
         "name": "list",
         "path": "/api/v2/scim/v2/resourcetypes",
         "description": "Get a list of resource types"
+      },
+      {
+        "name": "get",
+        "path": "/api/v2/scim/v2/resourcetypes/{resourceType}",
+        "description": "Get a resource type"
       },
       {
         "name": "get",
@@ -11952,6 +12003,11 @@
     "description": "/api/v2/socialmedia",
     "resources": [
       {
+        "name": "create",
+        "path": "/api/v2/socialmedia/analytics/aggregates/jobs",
+        "description": "Query for social media aggregates asynchronously"
+      },
+      {
         "name": "get",
         "path": "/api/v2/socialmedia/analytics/aggregates/jobs/{jobId}",
         "description": "Get status for async query for social media aggregates"
@@ -11960,11 +12016,6 @@
         "name": "list",
         "path": "/api/v2/socialmedia/analytics/aggregates/jobs/{jobId}/results",
         "description": "Fetch a page of results for an async social media query"
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/socialmedia/analytics/aggregates/jobs",
-        "description": "Query for social media aggregates asynchronously"
       },
       {
         "name": "create",
@@ -13175,6 +13226,11 @@
         "description": "Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge."
       },
       {
+        "name": "get",
+        "path": "/api/v2/telephony/siptraces",
+        "description": "Fetch SIP metadata"
+      },
+      {
         "name": "create",
         "path": "/api/v2/telephony/siptraces/download",
         "description": "Request a download of a pcap file to S3"
@@ -13183,11 +13239,6 @@
         "name": "get",
         "path": "/api/v2/telephony/siptraces/download/{downloadId}",
         "description": "Get signed S3 URL for a pcap download"
-      },
-      {
-        "name": "get",
-        "path": "/api/v2/telephony/siptraces",
-        "description": "Fetch SIP metadata"
       },
       {
         "name": "get",
@@ -13211,11 +13262,6 @@
       },
       {
         "name": "get",
-        "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}",
-        "description": "Get media endpoint statistics event."
-      },
-      {
-        "name": "get",
         "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}",
         "description": "Get media endpoint statistics events."
       },
@@ -13223,6 +13269,11 @@
         "name": "create",
         "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}/mediaresources/{mediaResourceId}",
         "description": "Post media endpoint statistics event."
+      },
+      {
+        "name": "get",
+        "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}",
+        "description": "Get media endpoint statistics event."
       }
     ]
   },
@@ -13874,17 +13925,6 @@
     ]
   },
   {
-    "supercommand": "webmessaging",
-    "description": "/api/v2/webmessaging",
-    "resources": [
-      {
-        "name": "list",
-        "path": "/api/v2/webmessaging/messages",
-        "description": "Get the messages for a web messaging session."
-      }
-    ]
-  },
-  {
     "supercommand": "widgets",
     "description": "/api/v2/widgets",
     "resources": [
@@ -13951,6 +13991,11 @@
       },
       {
         "name": "get",
+        "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results",
+        "description": "Get bulk terminate job results."
+      },
+      {
+        "name": "get",
         "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}",
         "description": "Get the bulk job associated with the job id."
       },
@@ -13965,11 +14010,6 @@
         "description": "Update workitem bulk terminate job."
       },
       {
-        "name": "get",
-        "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results",
-        "description": "Get bulk terminate job results."
-      },
-      {
         "name": "create",
         "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs",
         "description": "Create a workitem bulk terminate job."
@@ -13978,21 +14018,6 @@
         "name": "create",
         "path": "/api/v2/taskmanagement/workbins/query",
         "description": "Query for workbins"
-      },
-      {
-        "name": "get",
-        "path": "/api/v2/taskmanagement/workbins/{workbinId}",
-        "description": "Get a workbin"
-      },
-      {
-        "name": "delete",
-        "path": "/api/v2/taskmanagement/workbins/{workbinId}",
-        "description": "Delete a workbin"
-      },
-      {
-        "name": "update",
-        "path": "/api/v2/taskmanagement/workbins/{workbinId}",
-        "description": "Update the attributes of a workbin"
       },
       {
         "name": "list",
@@ -14008,6 +14033,21 @@
         "name": "list",
         "path": "/api/v2/taskmanagement/workbins/{workbinId}/history",
         "description": "Get a listing of a workbin's attribute change history"
+      },
+      {
+        "name": "get",
+        "path": "/api/v2/taskmanagement/workbins/{workbinId}",
+        "description": "Get a workbin"
+      },
+      {
+        "name": "delete",
+        "path": "/api/v2/taskmanagement/workbins/{workbinId}",
+        "description": "Delete a workbin"
+      },
+      {
+        "name": "update",
+        "path": "/api/v2/taskmanagement/workbins/{workbinId}",
+        "description": "Update the attributes of a workbin"
       },
       {
         "name": "create",
@@ -14033,11 +14073,6 @@
         "name": "list",
         "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results",
         "description": "Get results from for workitem query job "
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
-        "description": "Disconnect the assignee of the workitem"
       },
       {
         "name": "create",
@@ -14083,6 +14118,11 @@
         "name": "create",
         "path": "/api/v2/taskmanagement/workitems/{workitemId}/acd/cancel",
         "description": "Cancel the assignment process for a workitem that is currently queued for assignment through ACD."
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
+        "description": "Disconnect the assignee of the workitem"
       },
       {
         "name": "get",
@@ -14458,9 +14498,34 @@
         "description": "Create Learning Assignment"
       },
       {
+        "name": "get",
+        "path": "/api/v2/learning/assignments/{assignmentId}",
+        "description": "Get Learning Assignment"
+      },
+      {
+        "name": "delete",
+        "path": "/api/v2/learning/assignments/{assignmentId}",
+        "description": "Delete a learning assignment"
+      },
+      {
+        "name": "update",
+        "path": "/api/v2/learning/assignments/{assignmentId}",
+        "description": "Update Learning Assignment"
+      },
+      {
         "name": "create",
         "path": "/api/v2/learning/assignments/{assignmentId}/reset",
         "description": "Reset Learning Assignment"
+      },
+      {
+        "name": "update",
+        "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
+        "description": "Reschedule Learning Assignment"
+      },
+      {
+        "name": "list",
+        "path": "/api/v2/learning/assignments/me",
+        "description": "List of Learning Assignments assigned to current user"
       },
       {
         "name": "create",
@@ -14479,31 +14544,6 @@
       },
       {
         "name": "get",
-        "path": "/api/v2/learning/assignments/{assignmentId}",
-        "description": "Get Learning Assignment"
-      },
-      {
-        "name": "delete",
-        "path": "/api/v2/learning/assignments/{assignmentId}",
-        "description": "Delete a learning assignment"
-      },
-      {
-        "name": "update",
-        "path": "/api/v2/learning/assignments/{assignmentId}",
-        "description": "Update Learning Assignment"
-      },
-      {
-        "name": "update",
-        "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
-        "description": "Reschedule Learning Assignment"
-      },
-      {
-        "name": "list",
-        "path": "/api/v2/learning/assignments/me",
-        "description": "List of Learning Assignments assigned to current user"
-      },
-      {
-        "name": "get",
         "path": "/api/v2/learning/assignments/{assignmentId}/steps/{stepId}",
         "description": "Get Learning Assignment Step"
       },
@@ -14516,6 +14556,16 @@
         "name": "create",
         "path": "/api/v2/learning/rules/query",
         "description": "Get users for learning module rule"
+      },
+      {
+        "name": "list",
+        "path": "/api/v2/learning/modules",
+        "description": "Get all learning modules of an organization"
+      },
+      {
+        "name": "create",
+        "path": "/api/v2/learning/modules",
+        "description": "Create a new learning module"
       },
       {
         "name": "get",
@@ -14543,16 +14593,6 @@
         "description": "Update a learning module preview"
       },
       {
-        "name": "list",
-        "path": "/api/v2/learning/modules",
-        "description": "Get all learning modules of an organization"
-      },
-      {
-        "name": "create",
-        "path": "/api/v2/learning/modules",
-        "description": "Create a new learning module"
-      },
-      {
         "name": "get",
         "path": "/api/v2/learning/modules/{moduleId}/jobs/{jobId}",
         "description": "Get a specific Learning Module job status"
@@ -14568,6 +14608,11 @@
         "description": "Get a specific Learning Module cover art using ID"
       },
       {
+        "name": "update",
+        "path": "/api/v2/learning/modules/{moduleId}/users/{userId}/assignments",
+        "description": "Update an external assignment for a specific user"
+      },
+      {
         "name": "create",
         "path": "/api/v2/learning/modules/{moduleId}/publish",
         "description": "Publish a Learning module"
@@ -14581,11 +14626,6 @@
         "name": "list",
         "path": "/api/v2/learning/modules/assignments",
         "description": "Get all learning modules of an organization including assignments for a specific user"
-      },
-      {
-        "name": "update",
-        "path": "/api/v2/learning/modules/{moduleId}/users/{userId}/assignments",
-        "description": "Update an external assignment for a specific user"
       },
       {
         "name": "get",
@@ -14770,11 +14810,6 @@
     "description": "/api/v2/guides",
     "resources": [
       {
-        "name": "getjobforguide",
-        "path": "/api/v2/guides/{guideId}/jobs/{jobId}",
-        "description": "Get the specified guide deletion job."
-      },
-      {
         "name": "get",
         "path": "/api/v2/guides/{guideId}",
         "description": "Get guide."
@@ -14790,9 +14825,19 @@
         "description": "Start the deletion of a guide."
       },
       {
+        "name": "getjobforguide",
+        "path": "/api/v2/guides/{guideId}/jobs/{jobId}",
+        "description": "Get the specified guide deletion job."
+      },
+      {
         "name": "create",
         "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs",
         "description": "Start the publishing of a guide version."
+      },
+      {
+        "name": "get",
+        "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}",
+        "description": "Get the status of the publishing job for this guide version."
       },
       {
         "name": "get",
@@ -14803,11 +14848,6 @@
         "name": "update",
         "path": "/api/v2/guides/{guideId}/versions/{versionId}",
         "description": "Update a guide version."
-      },
-      {
-        "name": "get",
-        "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}",
-        "description": "Get the status of the publishing job for this guide version."
       },
       {
         "name": "create",

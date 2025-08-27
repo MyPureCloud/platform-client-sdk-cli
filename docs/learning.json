@@ -23,9 +23,34 @@
       "description": "Create Learning Assignment"
     },
     {
+      "name": "get",
+      "path": "/api/v2/learning/assignments/{assignmentId}",
+      "description": "Get Learning Assignment"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/learning/assignments/{assignmentId}",
+      "description": "Delete a learning assignment"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/learning/assignments/{assignmentId}",
+      "description": "Update Learning Assignment"
+    },
+    {
       "name": "create",
       "path": "/api/v2/learning/assignments/{assignmentId}/reset",
       "description": "Reset Learning Assignment"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
+      "description": "Reschedule Learning Assignment"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/learning/assignments/me",
+      "description": "List of Learning Assignments assigned to current user"
     },
     {
       "name": "create",
@@ -44,31 +69,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/learning/assignments/{assignmentId}",
-      "description": "Get Learning Assignment"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/learning/assignments/{assignmentId}",
-      "description": "Delete a learning assignment"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/learning/assignments/{assignmentId}",
-      "description": "Update Learning Assignment"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
-      "description": "Reschedule Learning Assignment"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/learning/assignments/me",
-      "description": "List of Learning Assignments assigned to current user"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/learning/assignments/{assignmentId}/steps/{stepId}",
       "description": "Get Learning Assignment Step"
     },
@@ -81,6 +81,16 @@
       "name": "create",
       "path": "/api/v2/learning/rules/query",
       "description": "Get users for learning module rule"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/learning/modules",
+      "description": "Get all learning modules of an organization"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/modules",
+      "description": "Create a new learning module"
     },
     {
       "name": "get",
@@ -108,16 +118,6 @@
       "description": "Update a learning module preview"
     },
     {
-      "name": "list",
-      "path": "/api/v2/learning/modules",
-      "description": "Get all learning modules of an organization"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/learning/modules",
-      "description": "Create a new learning module"
-    },
-    {
       "name": "get",
       "path": "/api/v2/learning/modules/{moduleId}/jobs/{jobId}",
       "description": "Get a specific Learning Module job status"
@@ -133,6 +133,11 @@
       "description": "Get a specific Learning Module cover art using ID"
     },
     {
+      "name": "update",
+      "path": "/api/v2/learning/modules/{moduleId}/users/{userId}/assignments",
+      "description": "Update an external assignment for a specific user"
+    },
+    {
       "name": "create",
       "path": "/api/v2/learning/modules/{moduleId}/publish",
       "description": "Publish a Learning module"
@@ -146,11 +151,6 @@
       "name": "list",
       "path": "/api/v2/learning/modules/assignments",
       "description": "Get all learning modules of an organization including assignments for a specific user"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/learning/modules/{moduleId}/users/{userId}/assignments",
-      "description": "Update an external assignment for a specific user"
     },
     {
       "name": "get",

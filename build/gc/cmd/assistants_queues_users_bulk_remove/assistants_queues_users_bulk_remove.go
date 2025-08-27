@@ -1,4 +1,4 @@
-package routing_email_outbound_domains_search
+package assistants_queues_users_bulk_remove
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("routing_email_outbound_domains_search", "SWAGGER_OVERRIDE_/api/v2/routing/email/outbound/domains/{domainId}/search", )
-	routing_email_outbound_domains_searchCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("routing_email_outbound_domains_search"),
+	Description = utils.FormatUsageDescription("assistants_queues_users_bulk_remove", "SWAGGER_OVERRIDE_/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove", )
+	assistants_queues_users_bulk_removeCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("assistants_queues_users_bulk_remove"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,25 +24,34 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(routing_email_outbound_domains_searchCmd)
+	CommandService = services.NewCommandService(assistants_queues_users_bulk_removeCmd)
 }
 
-func Cmdrouting_email_outbound_domains_search() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/email/outbound/domains/{domainId}/search", utils.FormatPermissions([]string{ "routing:email:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/email/outbound/domains/{domainId}/search")))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
-	
-	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  "description" : "successful operation",
+func Cmdassistants_queues_users_bulk_remove() *cobra.Command { 
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove", utils.FormatPermissions([]string{ "assistants:queueUserAssignment:delete",  }), utils.GenerateDevCentreLink("POST", "Agent Assistants", "/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove")))
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/OutboundDomain"
+        "$ref" : "#/components/schemas/AssistantQueueUsersBulkRemoveRequest"
+      }
+    }
+  },
+  "required" : true
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+  "description" : "Request was partially successful.",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/BulkResponse"
       }
     }
   }
 }`)
-	routing_email_outbound_domains_searchCmd.AddCommand(getCmd)
-	return routing_email_outbound_domains_searchCmd
+	assistants_queues_users_bulk_removeCmd.AddCommand(createCmd)
+	return assistants_queues_users_bulk_removeCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -50,11 +59,11 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
-var getCmd = &cobra.Command{
-	Use:   "get [domainId]",
-	Short: "Search a domain across organizations",
-	Long:  "Search a domain across organizations",
-	Args:  utils.DetermineArgs([]string{ "domainId", }),
+var createCmd = &cobra.Command{
+	Use:   "create [assistantId] [queueId]",
+	Short: "Bulk remove users from assistant-queue (requires manual assignment mode).",
+	Long:  "Bulk remove users from assistant-queue (requires manual assignment mode).",
+	Args:  utils.DetermineArgs([]string{ "assistantId", "queueId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -62,14 +71,19 @@ var getCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
+			reqModel := models.Assistantqueueusersbulkremoverequest{}
+			utils.Render(reqModel.String())
+			
 			return
 		}
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/routing/email/outbound/domains/{domainId}/search"
-		domainId, args := args[0], args[1:]
-		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
+		path := "/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove"
+		assistantId, args := args[0], args[1:]
+		path = strings.Replace(path, "{assistantId}", fmt.Sprintf("%v", assistantId), -1)
+		queueId, args := args[0], args[1:]
+		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -84,8 +98,8 @@ var getCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "get"
-		const httpMethod = "GET"
+		const opId = "create"
+		const httpMethod = "POST"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

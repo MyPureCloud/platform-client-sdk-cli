@@ -26,6 +26,12 @@ type ShifttradeactivitypreviewresponseDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Shifttradeactivitypreviewresponse
@@ -49,10 +55,20 @@ type Shifttradeactivitypreviewresponse struct {
     // PayableMinutes - Payable minutes for this activity
     PayableMinutes int `json:"payableMinutes"`
 
+
+    // ExternalActivityType - The type of the external activity associated with this activity, if applicable
+    ExternalActivityType string `json:"externalActivityType"`
+
+
+    // ExternalActivityId - The ID of the external activity associated with this activity, if applicable
+    ExternalActivityId string `json:"externalActivityId"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Shifttradeactivitypreviewresponse) String() string {
+    
+    
     
     
     
@@ -84,8 +100,18 @@ func (u *Shifttradeactivitypreviewresponse) MarshalJSON() ([]byte, error) {
         CountsAsPaidTime bool `json:"countsAsPaidTime"`
         
         PayableMinutes int `json:"payableMinutes"`
+        
+        ExternalActivityType string `json:"externalActivityType"`
+        
+        ExternalActivityId string `json:"externalActivityId"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

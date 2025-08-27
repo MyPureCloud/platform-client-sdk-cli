@@ -103,14 +103,14 @@
       "description": "Retrieves all categories of available Actions"
     },
     {
-      "name": "list",
-      "path": "/api/v2/integrations/actions/certificates",
-      "description": "Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress."
-    },
-    {
       "name": "get",
       "path": "/api/v2/integrations/actions/certificates/truststore",
       "description": "Retrieves basic info about trusted root CA certificates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/actions/certificates",
+      "description": "Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress."
     },
     {
       "name": "get",

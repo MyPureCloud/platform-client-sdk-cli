@@ -1,13 +1,13 @@
-## gc routing email domains testconnection create
+## gc assistants queues users bulk remove create
 
-Tests the custom SMTP server integration connection set on this ACD domain
+Bulk remove users from assistant-queue (requires manual assignment mode).
 
 ### Synopsis
 
-Tests the custom SMTP server integration connection set on this ACD domain
+Bulk remove users from assistant-queue (requires manual assignment mode).
 
 ```
-gc routing email domains testconnection create [domainId] [flags]
+gc assistants queues users bulk remove create [assistantId] [queueId] [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc routing email domains testconnection create [domainId] [flags]
 
 ### SEE ALSO
 
-* [gc routing email domains testconnection](gc_routing_email_domains_testconnection.html)	 - /api/v2/routing/email/domains/{domainId}/testconnection
+* [gc assistants queues users bulk remove](gc_assistants_queues_users_bulk_remove.html)	 - /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove
 
 

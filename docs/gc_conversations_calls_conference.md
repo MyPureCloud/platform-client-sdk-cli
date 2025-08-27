@@ -1,22 +1,15 @@
-## gc routing email domains testconnection create
+## gc conversations calls conference
 
-Tests the custom SMTP server integration connection set on this ACD domain
+/api/v2/conversations/calls/{conversationId}/conference
 
 ### Synopsis
 
-Tests the custom SMTP server integration connection set on this ACD domain
-
-```
-gc routing email domains testconnection create [domainId] [flags]
-```
+/api/v2/conversations/calls/{conversationId}/conference
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for conference
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc routing email domains testconnection create [domainId] [flags]
 
 ### SEE ALSO
 
-* [gc routing email domains testconnection](gc_routing_email_domains_testconnection.html)	 - /api/v2/routing/email/domains/{domainId}/testconnection
+* [gc conversations calls](gc_conversations_calls.html)	 - /api/v2/conversations/calls
+* [gc conversations calls conference update](gc_conversations_calls_conference_update.html)	 - Update a conversation by merging in other conversations to create a conference
 
 

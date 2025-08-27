@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
+* [gc webmessaging deployments](gc_webmessaging_deployments.html)	 - /api/v2/webmessaging/deployments
 * [gc webmessaging messages](gc_webmessaging_messages.html)	 - /api/v2/webmessaging/messages
 
 

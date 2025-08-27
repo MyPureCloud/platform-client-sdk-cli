@@ -1,15 +1,22 @@
-## gc routing email outbound domains search
+## gc conversations calls conference update
 
-/api/v2/routing/email/outbound/domains/{domainId}/search
+Update a conversation by merging in other conversations to create a conference
 
 ### Synopsis
 
-/api/v2/routing/email/outbound/domains/{domainId}/search
+Update a conversation by merging in other conversations to create a conference
+
+```
+gc conversations calls conference update [conversationId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for search
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for update
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +36,6 @@
 
 ### SEE ALSO
 
-* [gc routing email outbound domains](gc_routing_email_outbound_domains.html)	 - /api/v2/routing/email/outbound/domains
-* [gc routing email outbound domains search get](gc_routing_email_outbound_domains_search_get.html)	 - Search a domain across organizations
+* [gc conversations calls conference](gc_conversations_calls_conference.html)	 - /api/v2/conversations/calls/{conversationId}/conference
 
 

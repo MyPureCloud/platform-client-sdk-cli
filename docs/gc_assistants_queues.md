@@ -37,5 +37,6 @@
 * [gc assistants queues list](gc_assistants_queues_list.html)	 - Get all queues assigned to any assistant.
 * [gc assistants queues removeQueueFromAssistant](gc_assistants_queues_removeQueueFromAssistant.html)	 - Disassociate a queue from an assistant.
 * [gc assistants queues update](gc_assistants_queues_update.html)	 - Update Queues for an Assistant.
+* [gc assistants queues users](gc_assistants_queues_users.html)	 - /api/v2/assistants/{assistantId}/queues/{queueId}/users
 
 

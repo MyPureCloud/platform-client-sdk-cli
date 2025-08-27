@@ -1,22 +1,15 @@
-## gc routing email domains testconnection create
+## gc assistants queues users
 
-Tests the custom SMTP server integration connection set on this ACD domain
+/api/v2/assistants/{assistantId}/queues/{queueId}/users
 
 ### Synopsis
 
-Tests the custom SMTP server integration connection set on this ACD domain
-
-```
-gc routing email domains testconnection create [domainId] [flags]
-```
+/api/v2/assistants/{assistantId}/queues/{queueId}/users
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for users
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,8 @@ gc routing email domains testconnection create [domainId] [flags]
 
 ### SEE ALSO
 
-* [gc routing email domains testconnection](gc_routing_email_domains_testconnection.html)	 - /api/v2/routing/email/domains/{domainId}/testconnection
+* [gc assistants queues](gc_assistants_queues.html)	 - /api/v2/assistants/{assistantId}/queues /api/v2/assistants/queues
+* [gc assistants queues users bulk](gc_assistants_queues_users_bulk.html)	 - /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk
+* [gc assistants queues users query](gc_assistants_queues_users_query.html)	 - /api/v2/assistants/{assistantId}/queues/{queueId}/users/query
 
 

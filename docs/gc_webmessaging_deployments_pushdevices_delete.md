@@ -1,22 +1,19 @@
-## gc routing email domains testconnection create
+## gc webmessaging deployments pushdevices delete
 
-Tests the custom SMTP server integration connection set on this ACD domain
+Delete device information
 
 ### Synopsis
 
-Tests the custom SMTP server integration connection set on this ACD domain
+Delete device information
 
 ```
-gc routing email domains testconnection create [domainId] [flags]
+gc webmessaging deployments pushdevices delete [deploymentId] [tokenId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc routing email domains testconnection create [domainId] [flags]
 
 ### SEE ALSO
 
-* [gc routing email domains testconnection](gc_routing_email_domains_testconnection.html)	 - /api/v2/routing/email/domains/{domainId}/testconnection
+* [gc webmessaging deployments pushdevices](gc_webmessaging_deployments_pushdevices.html)	 - /api/v2/webmessaging/deployments/{deploymentId}/pushdevices
 
 

@@ -35,7 +35,6 @@
 * [gc routing email outbound domains delete](gc_routing_email_outbound_domains_delete.html)	 - Delete an outbound domain
 * [gc routing email outbound domains get](gc_routing_email_outbound_domains_get.html)	 - Get domain
 * [gc routing email outbound domains list](gc_routing_email_outbound_domains_list.html)	 - Get outbound domains
-* [gc routing email outbound domains search](gc_routing_email_outbound_domains_search.html)	 - /api/v2/routing/email/outbound/domains/{domainId}/search
 * [gc routing email outbound domains simulated](gc_routing_email_outbound_domains_simulated.html)	 - /api/v2/routing/email/outbound/domains/simulated
 
 

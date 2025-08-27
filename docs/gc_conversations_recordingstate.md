@@ -1,19 +1,15 @@
-## gc routing email outbound domains search get
+## gc conversations recordingstate
 
-Search a domain across organizations
+/api/v2/conversations/{conversationId}/recordingstate
 
 ### Synopsis
 
-Search a domain across organizations
-
-```
-gc routing email outbound domains search get [domainId] [flags]
-```
+/api/v2/conversations/{conversationId}/recordingstate
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help   help for recordingstate
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +29,7 @@ gc routing email outbound domains search get [domainId] [flags]
 
 ### SEE ALSO
 
-* [gc routing email outbound domains search](gc_routing_email_outbound_domains_search.html)	 - /api/v2/routing/email/outbound/domains/{domainId}/search
+* [gc conversations](gc_conversations.html)	 - /api/v2/conversations
+* [gc conversations recordingstate update](gc_conversations_recordingstate_update.html)	 - Update a conversation by setting its recording state
 
 

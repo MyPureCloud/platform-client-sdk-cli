@@ -1,22 +1,15 @@
-## gc routing email domains testconnection create
+## gc assistants queues users bulk
 
-Tests the custom SMTP server integration connection set on this ACD domain
+/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk
 
 ### Synopsis
 
-Tests the custom SMTP server integration connection set on this ACD domain
-
-```
-gc routing email domains testconnection create [domainId] [flags]
-```
+/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for bulk
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,8 @@ gc routing email domains testconnection create [domainId] [flags]
 
 ### SEE ALSO
 
-* [gc routing email domains testconnection](gc_routing_email_domains_testconnection.html)	 - /api/v2/routing/email/domains/{domainId}/testconnection
+* [gc assistants queues users](gc_assistants_queues_users.html)	 - /api/v2/assistants/{assistantId}/queues/{queueId}/users
+* [gc assistants queues users bulk add](gc_assistants_queues_users_bulk_add.html)	 - /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add
+* [gc assistants queues users bulk remove](gc_assistants_queues_users_bulk_remove.html)	 - /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove
 
 

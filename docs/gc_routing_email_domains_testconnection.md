@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc routing email domains](gc_routing_email_domains.html)	 - /api/v2/routing/email/domains
-* [gc routing email domains testconnection create](gc_routing_email_domains_testconnection_create.html)	 - Tests the custom SMTP server integration connection set on this domain
+* [gc routing email domains testconnection create](gc_routing_email_domains_testconnection_create.html)	 - Tests the custom SMTP server integration connection set on this ACD domain
 
 

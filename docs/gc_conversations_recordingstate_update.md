@@ -1,13 +1,13 @@
-## gc routing email domains testconnection create
+## gc conversations recordingstate update
 
-Tests the custom SMTP server integration connection set on this ACD domain
+Update a conversation by setting its recording state
 
 ### Synopsis
 
-Tests the custom SMTP server integration connection set on this ACD domain
+Update a conversation by setting its recording state
 
 ```
-gc routing email domains testconnection create [domainId] [flags]
+gc conversations recordingstate update [conversationId] [flags]
 ```
 
 ### Options
@@ -15,7 +15,7 @@ gc routing email domains testconnection create [domainId] [flags]
 ```
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
-  -h, --help               help for create
+  -h, --help               help for update
   -b, --printrequestbody   Print the request body format of the API.
 ```
 
@@ -36,6 +36,6 @@ gc routing email domains testconnection create [domainId] [flags]
 
 ### SEE ALSO
 
-* [gc routing email domains testconnection](gc_routing_email_domains_testconnection.html)	 - /api/v2/routing/email/domains/{domainId}/testconnection
+* [gc conversations recordingstate](gc_conversations_recordingstate.html)	 - /api/v2/conversations/{conversationId}/recordingstate
 
 

@@ -39,6 +39,7 @@
 * [gc conversations cobrowse](gc_conversations_cobrowse.html)	 - /api/v2/conversations/{conversationId}/cobrowse
 * [gc conversations cobrowsesessions](gc_conversations_cobrowsesessions.html)	 - /api/v2/conversations/cobrowsesessions
 * [gc conversations communications](gc_conversations_communications.html)	 - /api/v2/conversations/{conversationId}/communications
+* [gc conversations delete](gc_conversations_delete.html)	 - Update a conversation by disconnecting all of the participants
 * [gc conversations disconnect](gc_conversations_disconnect.html)	 - /api/v2/conversations/{conversationId}/disconnect
 * [gc conversations emails](gc_conversations_emails.html)	 - /api/v2/conversations/emails
 * [gc conversations faxes](gc_conversations_faxes.html)	 - /api/v2/conversations/faxes
@@ -51,6 +52,7 @@
 * [gc conversations participants](gc_conversations_participants.html)	 - /api/v2/conversations/{conversationId}/participants
 * [gc conversations recordingmetadata](gc_conversations_recordingmetadata.html)	 - /api/v2/conversations/{conversationId}/recordingmetadata
 * [gc conversations recordings](gc_conversations_recordings.html)	 - /api/v2/conversations/{conversationId}/recordings
+* [gc conversations recordingstate](gc_conversations_recordingstate.html)	 - /api/v2/conversations/{conversationId}/recordingstate
 * [gc conversations screenshares](gc_conversations_screenshares.html)	 - /api/v2/conversations/screenshares
 * [gc conversations secureattributes](gc_conversations_secureattributes.html)	 - /api/v2/conversations/{conversationId}/secureattributes
 * [gc conversations settings](gc_conversations_settings.html)	 - /api/v2/conversations/settings

@@ -13,7 +13,8 @@ gc routing email outbound domains get [domainId] [flags]
 ### Options
 
 ```
-  -h, --help   help for get
+      --expand string   Expand options. Valid values: settings Valid values: settings
+  -h, --help            help for get
 ```
 
 ### Options inherited from parent commands

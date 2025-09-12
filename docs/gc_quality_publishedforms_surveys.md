@@ -31,6 +31,7 @@
 
 * [gc quality publishedforms](gc_quality_publishedforms.html)	 - /api/v2/quality/publishedforms
 * [gc quality publishedforms surveys create](gc_quality_publishedforms_surveys_create.html)	 - Publish a survey form.
+* [gc quality publishedforms surveys divisionviews](gc_quality_publishedforms_surveys_divisionviews.html)	 - /api/v2/quality/publishedforms/surveys/divisionviews
 * [gc quality publishedforms surveys get](gc_quality_publishedforms_surveys_get.html)	 - Get the most recent published version of a survey form.
 * [gc quality publishedforms surveys list](gc_quality_publishedforms_surveys_list.html)	 - Get the published survey forms.
 

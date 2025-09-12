@@ -39,6 +39,7 @@
 * [gc conversations calls participants monitor](gc_conversations_calls_participants_monitor.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor
 * [gc conversations calls participants replace](gc_conversations_calls_participants_replace.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace
 * [gc conversations calls participants update](gc_conversations_calls_participants_update.html)	 - Update conversation participant
+* [gc conversations calls participants user](gc_conversations_calls_participants_user.html)	 - /api/v2/conversations/calls/{conversationId}/participants/user
 * [gc conversations calls participants voice](gc_conversations_calls_participants_voice.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice
 * [gc conversations calls participants wrapup](gc_conversations_calls_participants_wrapup.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup
 * [gc conversations calls participants wrapupcodes](gc_conversations_calls_participants_wrapupcodes.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes

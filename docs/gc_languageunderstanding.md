@@ -31,6 +31,8 @@
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
 * [gc languageunderstanding domains](gc_languageunderstanding_domains.html)	 - /api/v2/languageunderstanding/domains
+* [gc languageunderstanding ignorephrases](gc_languageunderstanding_ignorephrases.html)	 - /api/v2/languageunderstanding/ignorephrases
+* [gc languageunderstanding ignoretopics](gc_languageunderstanding_ignoretopics.html)	 - /api/v2/languageunderstanding/ignoretopics
 * [gc languageunderstanding miners](gc_languageunderstanding_miners.html)	 - /api/v2/languageunderstanding/miners
 * [gc languageunderstanding settings](gc_languageunderstanding_settings.html)	 - /api/v2/languageunderstanding/settings
 

@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc conversations summaries](gc_conversations_summaries.html)	 - /api/v2/conversations/{conversationId}/summaries
+* [gc conversations summaries](gc_conversations_summaries.html)	 - /api/v2/conversations/{conversationId}/summaries /api/v2/conversations/summaries
 * [gc conversations summaries engagements update](gc_conversations_summaries_engagements_update.html)	 - Update agent`s engagement for the summary.
 
 

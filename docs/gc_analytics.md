@@ -36,6 +36,7 @@
 * [gc analytics botflows](gc_analytics_botflows.html)	 - /api/v2/analytics/botflows
 * [gc analytics bots](gc_analytics_bots.html)	 - /api/v2/analytics/bots
 * [gc analytics conversations](gc_analytics_conversations.html)	 - /api/v2/analytics/conversations
+* [gc analytics dataextraction](gc_analytics_dataextraction.html)	 - /api/v2/analytics/dataextraction
 * [gc analytics dataretention](gc_analytics_dataretention.html)	 - /api/v2/analytics/dataretention
 * [gc analytics evaluations](gc_analytics_evaluations.html)	 - /api/v2/analytics/evaluations
 * [gc analytics flowexecutions](gc_analytics_flowexecutions.html)	 - /api/v2/analytics/flowexecutions

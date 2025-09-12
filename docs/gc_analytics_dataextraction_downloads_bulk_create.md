@@ -1,21 +1,22 @@
-## gc userrecordings media get
+## gc analytics dataextraction downloads bulk create
 
-Download a user recording.
+Get download URLs for analytics data warehouse files
 
 ### Synopsis
 
-Download a user recording.
+Get download URLs for analytics data warehouse files
 
 ```
-gc userrecordings media get [recordingId] [flags]
+gc analytics dataextraction downloads bulk create [flags]
 ```
 
 ### Options
 
 ```
-      --async string      When set to true, api will return 202 response until the recording is ready for download Valid values: true, false
-      --formatId string   The desired media format. Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE
-  -h, --help              help for get
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -35,6 +36,6 @@ gc userrecordings media get [recordingId] [flags]
 
 ### SEE ALSO
 
-* [gc userrecordings media](gc_userrecordings_media.html)	 - /api/v2/userrecordings/{recordingId}/media
+* [gc analytics dataextraction downloads bulk](gc_analytics_dataextraction_downloads_bulk.html)	 - /api/v2/analytics/dataextraction/downloads/bulk
 
 

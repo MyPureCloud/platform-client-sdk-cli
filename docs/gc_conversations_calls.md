@@ -40,5 +40,6 @@
 * [gc conversations calls placecallbackcall](gc_conversations_calls_placecallbackcall.html)	 - Place a new call as part of a callback conversation.
 * [gc conversations calls recordingstate](gc_conversations_calls_recordingstate.html)	 - /api/v2/conversations/calls/{conversationId}/recordingstate
 * [gc conversations calls update](gc_conversations_calls_update.html)	 - Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+* [gc conversations calls user](gc_conversations_calls_user.html)	 - /api/v2/conversations/calls/user
 
 

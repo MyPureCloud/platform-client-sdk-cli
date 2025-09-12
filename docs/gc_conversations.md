@@ -58,7 +58,7 @@
 * [gc conversations settings](gc_conversations_settings.html)	 - /api/v2/conversations/settings
 * [gc conversations socials](gc_conversations_socials.html)	 - /api/v2/conversations/socials
 * [gc conversations suggestions](gc_conversations_suggestions.html)	 - /api/v2/conversations/{conversationId}/suggestions
-* [gc conversations summaries](gc_conversations_summaries.html)	 - /api/v2/conversations/{conversationId}/summaries
+* [gc conversations summaries](gc_conversations_summaries.html)	 - /api/v2/conversations/{conversationId}/summaries /api/v2/conversations/summaries
 * [gc conversations tags](gc_conversations_tags.html)	 - /api/v2/conversations/{conversationId}/tags
 * [gc conversations utilizationlabel](gc_conversations_utilizationlabel.html)	 - /api/v2/conversations/{conversationId}/utilizationlabel
 * [gc conversations videos](gc_conversations_videos.html)	 - /api/v2/conversations/videos

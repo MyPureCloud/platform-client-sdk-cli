@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc conversations summaries](gc_conversations_summaries.html)	 - /api/v2/conversations/{conversationId}/summaries
+* [gc conversations summaries](gc_conversations_summaries.html)	 - /api/v2/conversations/{conversationId}/summaries /api/v2/conversations/summaries
 * [gc conversations summaries feedback create](gc_conversations_summaries_feedback_create.html)	 - Submit feedback for the summary.
 * [gc conversations summaries feedback update](gc_conversations_summaries_feedback_update.html)	 - Update the feedback for the summary.
 

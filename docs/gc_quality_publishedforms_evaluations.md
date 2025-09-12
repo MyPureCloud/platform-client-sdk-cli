@@ -31,6 +31,7 @@
 
 * [gc quality publishedforms](gc_quality_publishedforms.html)	 - /api/v2/quality/publishedforms
 * [gc quality publishedforms evaluations create](gc_quality_publishedforms_evaluations_create.html)	 - Publish an evaluation form.
+* [gc quality publishedforms evaluations divisionviews](gc_quality_publishedforms_evaluations_divisionviews.html)	 - /api/v2/quality/publishedforms/evaluations/divisionviews
 * [gc quality publishedforms evaluations get](gc_quality_publishedforms_evaluations_get.html)	 - Get the most recent published version of an evaluation form.
 * [gc quality publishedforms evaluations list](gc_quality_publishedforms_evaluations_list.html)	 - Get the published evaluation forms.
 

@@ -31,5 +31,6 @@
 
 * [gc journey views](gc_journey_views.html)	 - /api/v2/journey/views
 * [gc journey views jobs list](gc_journey_views_jobs_list.html)	 - Get the jobs for an organization.
+* [gc journey views jobs me](gc_journey_views_jobs_me.html)	 - /api/v2/journey/views/jobs/me
 
 

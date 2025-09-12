@@ -33,7 +33,6 @@
 * [gc userrecordings delete](gc_userrecordings_delete.html)	 - Delete a user recording.
 * [gc userrecordings get](gc_userrecordings_get.html)	 - Get a user recording.
 * [gc userrecordings list](gc_userrecordings_list.html)	 - Get a list of user recordings.
-* [gc userrecordings media](gc_userrecordings_media.html)	 - /api/v2/userrecordings/{recordingId}/media
 * [gc userrecordings summary](gc_userrecordings_summary.html)	 - /api/v2/userrecordings/summary
 * [gc userrecordings transcoding](gc_userrecordings_transcoding.html)	 - /api/v2/userrecordings/{recordingId}/transcoding
 * [gc userrecordings update](gc_userrecordings_update.html)	 - Update a user recording.

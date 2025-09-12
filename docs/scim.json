@@ -3,14 +3,14 @@
   "description": "/api/v2/scim",
   "resources": [
     {
-      "name": "list",
-      "path": "/api/v2/scim/resourcetypes",
-      "description": "Get a list of resource types"
-    },
-    {
       "name": "get",
       "path": "/api/v2/scim/resourcetypes/{resourceType}",
       "description": "Get a resource type"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scim/resourcetypes",
+      "description": "Get a list of resource types"
     },
     {
       "name": "get",
@@ -78,14 +78,14 @@
       "description": "Create a user"
     },
     {
-      "name": "list",
-      "path": "/api/v2/scim/v2/resourcetypes",
-      "description": "Get a list of resource types"
-    },
-    {
       "name": "get",
       "path": "/api/v2/scim/v2/resourcetypes/{resourceType}",
       "description": "Get a resource type"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scim/v2/resourcetypes",
+      "description": "Get a list of resource types"
     },
     {
       "name": "get",

@@ -83,7 +83,7 @@ func Cmdconversations_messages() *cobra.Command {
 }`)
 	conversations_messagesCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/messages/{conversationId}", utils.FormatPermissions([]string{ "conversation:communication:disconnect",  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/messages/{conversationId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/conversations/messages/{conversationId}", utils.FormatPermissions([]string{ "conversation:communication:disconnect", "conversation:message:park",  }), utils.GenerateDevCentreLink("PATCH", "Conversations", "/api/v2/conversations/messages/{conversationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "Conversation",
   "content" : {

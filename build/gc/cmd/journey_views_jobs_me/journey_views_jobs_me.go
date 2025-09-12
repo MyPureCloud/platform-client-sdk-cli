@@ -1,4 +1,4 @@
-package userrecordings_media
+package journey_views_jobs_me
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("userrecordings_media", "SWAGGER_OVERRIDE_/api/v2/userrecordings/{recordingId}/media", )
-	userrecordings_mediaCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("userrecordings_media"),
+	Description = utils.FormatUsageDescription("journey_views_jobs_me", "SWAGGER_OVERRIDE_/api/v2/journey/views/jobs/me", )
+	journey_views_jobs_meCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("journey_views_jobs_me"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,27 +24,29 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(userrecordings_mediaCmd)
+	CommandService = services.NewCommandService(journey_views_jobs_meCmd)
 }
 
-func Cmduserrecordings_media() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "formatId", "WEBM", "The desired media format. Valid values: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE")
-	utils.AddFlag(getCmd.Flags(), "bool", "async", "", "When set to true, api will return 202 response until the recording is ready for download")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/userrecordings/{recordingId}/media", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "User Recordings", "/api/v2/userrecordings/{recordingId}/media")))
-	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+func Cmdjourney_views_jobs_me() *cobra.Command { 
+	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The number of the page to return")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Max number of entities to return")
+	utils.AddFlag(listCmd.Flags(), "string", "interval", "", "An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.")
+	utils.AddFlag(listCmd.Flags(), "string", "statuses", "", "Job statuses to filter for")
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/views/jobs/me", utils.FormatPermissions([]string{ "journey:viewsJobs:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/views/jobs/me")))
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
-	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  "description" : "Operation was successful",
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  "description" : "Request completed successfully",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DownloadResponse"
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
       }
     }
   }
 }`)
-	userrecordings_mediaCmd.AddCommand(getCmd)
-	return userrecordings_mediaCmd
+	journey_views_jobs_meCmd.AddCommand(listCmd)
+	return journey_views_jobs_meCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -52,11 +54,11 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
-var getCmd = &cobra.Command{
-	Use:   "get [recordingId]",
-	Short: "Download a user recording.",
-	Long:  "Download a user recording.",
-	Args:  utils.DetermineArgs([]string{ "recordingId", }),
+var listCmd = &cobra.Command{
+	Use:   "list",
+	Short: "Get my jobs",
+	Long:  "Get my jobs",
+	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -69,17 +71,23 @@ var getCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/userrecordings/{recordingId}/media"
-		recordingId, args := args[0], args[1:]
-		path = strings.Replace(path, "{recordingId}", fmt.Sprintf("%v", recordingId), -1)
+		path := "/api/v2/journey/views/jobs/me"
 
-		formatId := utils.GetFlag(cmd.Flags(), "string", "formatId")
-		if formatId != "" {
-			queryParams["formatId"] = formatId
+		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
+		if pageNumber != "" {
+			queryParams["pageNumber"] = pageNumber
 		}
-		async := utils.GetFlag(cmd.Flags(), "bool", "async")
-		if async != "" {
-			queryParams["async"] = async
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		interval := utils.GetFlag(cmd.Flags(), "string", "interval")
+		if interval != "" {
+			queryParams["interval"] = interval
+		}
+		statuses := utils.GetFlag(cmd.Flags(), "string", "statuses")
+		if statuses != "" {
+			queryParams["statuses"] = statuses
 		}
 		urlString := path
 		if len(queryParams) > 0 {
@@ -94,7 +102,7 @@ var getCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "get"
+		const opId = "list"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file

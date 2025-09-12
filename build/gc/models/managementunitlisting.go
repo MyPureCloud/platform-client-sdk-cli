@@ -64,12 +64,12 @@ type Managementunitlisting struct {
     FirstUri string `json:"firstUri"`
 
 
-    // NextUri - Deprecated, paging is not supported
-    NextUri string `json:"nextUri"`
-
-
     // PreviousUri - Deprecated, paging is not supported
     PreviousUri string `json:"previousUri"`
+
+
+    // NextUri - Deprecated, paging is not supported
+    NextUri string `json:"nextUri"`
 
 
     // LastUri - Deprecated, paging is not supported
@@ -124,9 +124,9 @@ func (u *Managementunitlisting) MarshalJSON() ([]byte, error) {
         
         FirstUri string `json:"firstUri"`
         
-        NextUri string `json:"nextUri"`
-        
         PreviousUri string `json:"previousUri"`
+        
+        NextUri string `json:"nextUri"`
         
         LastUri string `json:"lastUri"`
         

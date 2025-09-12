@@ -38,11 +38,6 @@
       "description": "Update Learning Assignment"
     },
     {
-      "name": "create",
-      "path": "/api/v2/learning/assignments/{assignmentId}/reset",
-      "description": "Reset Learning Assignment"
-    },
-    {
       "name": "update",
       "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
       "description": "Reschedule Learning Assignment"
@@ -51,6 +46,11 @@
       "name": "list",
       "path": "/api/v2/learning/assignments/me",
       "description": "List of Learning Assignments assigned to current user"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/assignments/{assignmentId}/reset",
+      "description": "Reset Learning Assignment"
     },
     {
       "name": "create",
@@ -108,6 +108,26 @@
       "description": "Delete a learning module"
     },
     {
+      "name": "create",
+      "path": "/api/v2/learning/modules/{moduleId}/publish",
+      "description": "Publish a Learning module"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/modules/{moduleId}/jobs",
+      "description": "Starts a specified operation on learning module"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/learning/modules/assignments",
+      "description": "Get all learning modules of an organization including assignments for a specific user"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/learning/modules/{moduleId}/users/{userId}/assignments",
+      "description": "Update an external assignment for a specific user"
+    },
+    {
       "name": "get",
       "path": "/api/v2/learning/modules/{moduleId}/preview",
       "description": "Get a learning module preview"
@@ -133,26 +153,6 @@
       "description": "Get a specific Learning Module cover art using ID"
     },
     {
-      "name": "update",
-      "path": "/api/v2/learning/modules/{moduleId}/users/{userId}/assignments",
-      "description": "Update an external assignment for a specific user"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/learning/modules/{moduleId}/publish",
-      "description": "Publish a Learning module"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/learning/modules/{moduleId}/jobs",
-      "description": "Starts a specified operation on learning module"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/learning/modules/assignments",
-      "description": "Get all learning modules of an organization including assignments for a specific user"
-    },
-    {
       "name": "get",
       "path": "/api/v2/learning/modules/{moduleId}/rule",
       "description": "Get a learning module rule"
@@ -168,14 +168,14 @@
       "description": "Get list of possible slots where a learning activity can be scheduled."
     },
     {
-      "name": "get",
-      "path": "/api/v2/learning/scorm/{scormId}",
-      "description": "Get Learning SCORM Result"
-    },
-    {
       "name": "create",
       "path": "/api/v2/learning/scorm",
       "description": "Create a SCORM package upload request"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/learning/scorm/{scormId}",
+      "description": "Get Learning SCORM Result"
     }
   ]
 }

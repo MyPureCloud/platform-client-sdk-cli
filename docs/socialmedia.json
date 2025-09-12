@@ -3,11 +3,6 @@
   "description": "/api/v2/socialmedia",
   "resources": [
     {
-      "name": "create",
-      "path": "/api/v2/socialmedia/analytics/aggregates/jobs",
-      "description": "Query for social media aggregates asynchronously"
-    },
-    {
       "name": "get",
       "path": "/api/v2/socialmedia/analytics/aggregates/jobs/{jobId}",
       "description": "Get status for async query for social media aggregates"
@@ -19,8 +14,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/socialmedia/analytics/messages/jobs",
-      "description": "Query for social media messages asynchronously"
+      "path": "/api/v2/socialmedia/analytics/aggregates/jobs",
+      "description": "Query for social media aggregates asynchronously"
     },
     {
       "name": "get",
@@ -31,6 +26,11 @@
       "name": "list",
       "path": "/api/v2/socialmedia/analytics/messages/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async social media messages query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/analytics/messages/jobs",
+      "description": "Query for social media messages asynchronously"
     },
     {
       "name": "list",
@@ -71,6 +71,41 @@
       "name": "create",
       "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook",
       "description": "Create an Facebook data ingestion rule."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}",
+      "description": "Get a single Instagram data ingestion rule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}",
+      "description": "Update the Instagram data ingestion rule."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}",
+      "description": "Delete a Instagram data ingestion rule."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}",
+      "description": "Update the status of a Instagram data ingestion rule."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions/{dataIngestionRuleVersion}",
+      "description": "Get a single Instagram data ingestion rule version."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions",
+      "description": "Get the Instagram data ingestion rule versions."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram",
+      "description": "Create an Instagram data ingestion rule."
     },
     {
       "name": "get",

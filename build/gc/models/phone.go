@@ -81,6 +81,9 @@ type PhoneDud struct {
     
 
 
+    StandAlone bool `json:"standAlone"`
+
+
     
 
 
@@ -174,6 +177,9 @@ type Phone struct {
 
     // WebRtcUser - This is the user associated with a WebRTC type phone.  It is required for all WebRTC phones.
     WebRtcUser Domainentityref `json:"webRtcUser"`
+
+
+    
 
 
     // PrimaryEdge
@@ -321,6 +327,9 @@ func (u *Phone) MarshalJSON() ([]byte, error) {
 
         
         Properties: map[string]interface{}{"": Interface{}},
+        
+
+
         
 
 

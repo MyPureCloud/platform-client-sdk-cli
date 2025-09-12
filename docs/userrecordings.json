@@ -4,11 +4,6 @@
   "resources": [
     {
       "name": "get",
-      "path": "/api/v2/userrecordings/{recordingId}/media",
-      "description": "Download a user recording."
-    },
-    {
-      "name": "get",
       "path": "/api/v2/userrecordings/{recordingId}",
       "description": "Get a user recording."
     },

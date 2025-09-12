@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -11,6 +12,9 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type MediastatisticspostrequestDud struct { 
+    
+
+
     
 
 
@@ -41,10 +45,15 @@ type Mediastatisticspostrequest struct {
     // ReconnectAttempts - Media reconnect attempt count
     ReconnectAttempts int `json:"reconnectAttempts"`
 
+
+    // DateCreated - Media endpoint statistics creation time. Format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateCreated time.Time `json:"dateCreated"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Mediastatisticspostrequest) String() string {
+    
     
     
     
@@ -73,8 +82,13 @@ func (u *Mediastatisticspostrequest) MarshalJSON() ([]byte, error) {
         Rtp Mediartpstatistics `json:"rtp"`
         
         ReconnectAttempts int `json:"reconnectAttempts"`
+        
+        DateCreated time.Time `json:"dateCreated"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -54,6 +54,9 @@ type NludomainversionDud struct {
     
 
 
+    LanguageVersions map[string]string `json:"languageVersions"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -105,6 +108,9 @@ type Nludomainversion struct {
 
     // Entities - The entities defined for this NLU domain version.This field is mutually exclusive with entityTypeBindings
     Entities []Namedentitydefinition `json:"entities"`
+
+
+    
 
 
     
@@ -192,6 +198,9 @@ func (u *Nludomainversion) MarshalJSON() ([]byte, error) {
 
         
         Entities: []Namedentitydefinition{{}},
+        
+
+
         
 
 

@@ -41,8 +41,8 @@ type CallmediapolicyconditionsDud struct {
 
 // Callmediapolicyconditions
 type Callmediapolicyconditions struct { 
-    // ForUsers
-    ForUsers []User `json:"forUsers"`
+    // ForUsers - List of users to apply this policy to. Each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
+    ForUsers []Policyuser `json:"forUsers"`
 
 
     // DateRanges
@@ -80,7 +80,7 @@ type Callmediapolicyconditions struct {
 
 // String returns a JSON representation of the model
 func (o *Callmediapolicyconditions) String() string {
-     o.ForUsers = []User{{}} 
+     o.ForUsers = []Policyuser{{}} 
      o.DateRanges = []string{""} 
      o.ForQueues = []Queue{{}} 
      o.WrapupCodes = []Wrapupcode{{}} 
@@ -106,7 +106,7 @@ func (u *Callmediapolicyconditions) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        ForUsers []User `json:"forUsers"`
+        ForUsers []Policyuser `json:"forUsers"`
         
         DateRanges []string `json:"dateRanges"`
         
@@ -127,7 +127,7 @@ func (u *Callmediapolicyconditions) MarshalJSON() ([]byte, error) {
     }{
 
         
-        ForUsers: []User{{}},
+        ForUsers: []Policyuser{{}},
         
 
 

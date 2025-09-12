@@ -29,6 +29,9 @@ type InbounddomainDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -59,12 +62,17 @@ type Inbounddomain struct {
     CustomSMTPServer Domainentityref `json:"customSMTPServer"`
 
 
+    // EmailSetting - The email settings associated with this domain.
+    EmailSetting Emailsetting `json:"emailSetting"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Inbounddomain) String() string {
+    
     
     
     
@@ -99,8 +107,13 @@ func (u *Inbounddomain) MarshalJSON() ([]byte, error) {
         MailFromSettings Mailfromresult `json:"mailFromSettings"`
         
         CustomSMTPServer Domainentityref `json:"customSMTPServer"`
+        
+        EmailSetting Emailsetting `json:"emailSetting"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -103,14 +103,14 @@
       "description": "Retrieves all categories of available Actions"
     },
     {
-      "name": "get",
-      "path": "/api/v2/integrations/actions/certificates/truststore",
-      "description": "Retrieves basic info about trusted root CA certificates"
-    },
-    {
       "name": "list",
       "path": "/api/v2/integrations/actions/certificates",
       "description": "Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/certificates/truststore",
+      "description": "Retrieves basic info about trusted root CA certificates"
     },
     {
       "name": "get",
@@ -133,11 +133,6 @@
       "description": "Update an existing Draft"
     },
     {
-      "name": "create",
-      "path": "/api/v2/integrations/actions/{actionId}/draft/test",
-      "description": "Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging."
-    },
-    {
       "name": "get",
       "path": "/api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}",
       "description": "Retrieve schema for a Draft based on filename."
@@ -156,6 +151,11 @@
       "name": "get",
       "path": "/api/v2/integrations/actions/{actionId}/draft/validation",
       "description": "Validate current Draft configuration."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/actions/{actionId}/draft/test",
+      "description": "Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging."
     },
     {
       "name": "create",
@@ -358,14 +358,14 @@
       "description": "Get a list of Nuance bots in the specified Integration asynchronously"
     },
     {
-      "name": "update",
-      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings",
-      "description": "Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration"
-    },
-    {
       "name": "create",
       "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate",
       "description": "Try out a single credential for a Nuance bot to know if the secret is correct"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings",
+      "description": "Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration"
     },
     {
       "name": "list",

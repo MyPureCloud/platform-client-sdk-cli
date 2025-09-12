@@ -35,6 +35,9 @@ gc/cmd/analytics_conversations_details_jobs_availability/analytics_conversations
 gc/cmd/analytics_conversations_details_jobs_results/analytics_conversations_details_jobs_results.go
 gc/cmd/analytics_conversations_details_properties/analytics_conversations_details_properties.go
 gc/cmd/analytics_conversations_details_query/analytics_conversations_details_query.go
+gc/cmd/analytics_dataextraction_downloads/analytics_dataextraction_downloads.go
+gc/cmd/analytics_dataextraction_downloads_bulk/analytics_dataextraction_downloads_bulk.go
+gc/cmd/analytics_dataextraction_downloads_metadata/analytics_dataextraction_downloads_metadata.go
 gc/cmd/analytics_dataretention_settings/analytics_dataretention_settings.go
 gc/cmd/analytics_evaluations_aggregates_jobs/analytics_evaluations_aggregates_jobs.go
 gc/cmd/analytics_evaluations_aggregates_jobs_results/analytics_evaluations_aggregates_jobs_results.go
@@ -256,10 +259,12 @@ gc/cmd/conversations_calls_participants_consult_external/conversations_calls_par
 gc/cmd/conversations_calls_participants_consult_queue/conversations_calls_participants_consult_queue.go
 gc/cmd/conversations_calls_participants_monitor/conversations_calls_participants_monitor.go
 gc/cmd/conversations_calls_participants_replace/conversations_calls_participants_replace.go
+gc/cmd/conversations_calls_participants_user/conversations_calls_participants_user.go
 gc/cmd/conversations_calls_participants_voice_consult/conversations_calls_participants_voice_consult.go
 gc/cmd/conversations_calls_participants_wrapup/conversations_calls_participants_wrapup.go
 gc/cmd/conversations_calls_participants_wrapupcodes/conversations_calls_participants_wrapupcodes.go
 gc/cmd/conversations_calls_recordingstate/conversations_calls_recordingstate.go
+gc/cmd/conversations_calls_user/conversations_calls_user.go
 gc/cmd/conversations_chats/conversations_chats.go
 gc/cmd/conversations_chats_communications_messages/conversations_chats_communications_messages.go
 gc/cmd/conversations_chats_communications_typing/conversations_chats_communications_typing.go
@@ -385,6 +390,8 @@ gc/cmd/conversations_suggestions_feedback/conversations_suggestions_feedback.go
 gc/cmd/conversations_summaries/conversations_summaries.go
 gc/cmd/conversations_summaries_engagements/conversations_summaries_engagements.go
 gc/cmd/conversations_summaries_feedback/conversations_summaries_feedback.go
+gc/cmd/conversations_summaries_preview/conversations_summaries_preview.go
+gc/cmd/conversations_summaries_settings/conversations_summaries_settings.go
 gc/cmd/conversations_tags/conversations_tags.go
 gc/cmd/conversations_utilizationlabel/conversations_utilizationlabel.go
 gc/cmd/conversations_videos_agentconference_communications/conversations_videos_agentconference_communications.go
@@ -694,6 +701,7 @@ gc/cmd/journey_views_data_details/journey_views_data_details.go
 gc/cmd/journey_views_encodings_validate/journey_views_encodings_validate.go
 gc/cmd/journey_views_eventdefinitions/journey_views_eventdefinitions.go
 gc/cmd/journey_views_jobs/journey_views_jobs.go
+gc/cmd/journey_views_jobs_me/journey_views_jobs_me.go
 gc/cmd/journey_views_schedules/journey_views_schedules.go
 gc/cmd/journey_views_versions/journey_views_versions.go
 gc/cmd/journey_views_versions_charts/journey_views_versions_charts.go
@@ -767,6 +775,10 @@ gc/cmd/languageunderstanding_domains_versions_detect/languageunderstanding_domai
 gc/cmd/languageunderstanding_domains_versions_publish/languageunderstanding_domains_versions_publish.go
 gc/cmd/languageunderstanding_domains_versions_report/languageunderstanding_domains_versions_report.go
 gc/cmd/languageunderstanding_domains_versions_train/languageunderstanding_domains_versions_train.go
+gc/cmd/languageunderstanding_ignorephrases/languageunderstanding_ignorephrases.go
+gc/cmd/languageunderstanding_ignorephrases_remove/languageunderstanding_ignorephrases_remove.go
+gc/cmd/languageunderstanding_ignoretopics/languageunderstanding_ignoretopics.go
+gc/cmd/languageunderstanding_ignoretopics_remove/languageunderstanding_ignoretopics_remove.go
 gc/cmd/languageunderstanding_miners/languageunderstanding_miners.go
 gc/cmd/languageunderstanding_miners_drafts/languageunderstanding_miners_drafts.go
 gc/cmd/languageunderstanding_miners_execute/languageunderstanding_miners_execute.go
@@ -951,7 +963,9 @@ gc/cmd/quality_forms_surveys_versions/quality_forms_surveys_versions.go
 gc/cmd/quality_forms_versions/quality_forms_versions.go
 gc/cmd/quality_publishedforms/quality_publishedforms.go
 gc/cmd/quality_publishedforms_evaluations/quality_publishedforms_evaluations.go
+gc/cmd/quality_publishedforms_evaluations_divisionviews/quality_publishedforms_evaluations_divisionviews.go
 gc/cmd/quality_publishedforms_surveys/quality_publishedforms_surveys.go
+gc/cmd/quality_publishedforms_surveys_divisionviews/quality_publishedforms_surveys_divisionviews.go
 gc/cmd/quality_surveys/quality_surveys.go
 gc/cmd/quality_surveys_scorable/quality_surveys_scorable.go
 gc/cmd/quality_surveys_scoring/quality_surveys_scoring.go
@@ -1070,6 +1084,8 @@ gc/cmd/socialmedia_topics/socialmedia_topics.go
 gc/cmd/socialmedia_topics_dataingestionrules/socialmedia_topics_dataingestionrules.go
 gc/cmd/socialmedia_topics_dataingestionrules_facebook/socialmedia_topics_dataingestionrules_facebook.go
 gc/cmd/socialmedia_topics_dataingestionrules_facebook_versions/socialmedia_topics_dataingestionrules_facebook_versions.go
+gc/cmd/socialmedia_topics_dataingestionrules_instagram/socialmedia_topics_dataingestionrules_instagram.go
+gc/cmd/socialmedia_topics_dataingestionrules_instagram_versions/socialmedia_topics_dataingestionrules_instagram_versions.go
 gc/cmd/socialmedia_topics_dataingestionrules_open/socialmedia_topics_dataingestionrules_open.go
 gc/cmd/socialmedia_topics_dataingestionrules_open_messages_bulk/socialmedia_topics_dataingestionrules_open_messages_bulk.go
 gc/cmd/socialmedia_topics_dataingestionrules_open_reactions_bulk/socialmedia_topics_dataingestionrules_open_reactions_bulk.go
@@ -1231,7 +1247,6 @@ gc/cmd/usage_query_results/usage_query_results.go
 gc/cmd/usage_simplesearch/usage_simplesearch.go
 gc/cmd/usage_simplesearch_results/usage_simplesearch_results.go
 gc/cmd/userrecordings/userrecordings.go
-gc/cmd/userrecordings_media/userrecordings_media.go
 gc/cmd/userrecordings_summary/userrecordings_summary.go
 gc/cmd/userrecordings_transcoding/userrecordings_transcoding.go
 gc/cmd/users/users.go
@@ -1794,6 +1809,7 @@ gc/models/authenticationsettings.go
 gc/models/authorizationpolicy.go
 gc/models/authorizationpolicyentitylisting.go
 gc/models/authorizationsettings.go
+gc/models/authorizeddomains.go
 gc/models/authzdivision.go
 gc/models/authzdivisioncursorlisting.go
 gc/models/authzdivisionentitylisting.go
@@ -1806,6 +1822,7 @@ gc/models/autoanswersetting.go
 gc/models/autoanswersettings.go
 gc/models/automatedanswer.go
 gc/models/automatictimezonemappingsettings.go
+gc/models/autosearchconfig.go
 gc/models/autostart.go
 gc/models/autostatustransitiondetail.go
 gc/models/availabilityrange.go
@@ -2347,6 +2364,7 @@ gc/models/contentdatepickeravailabletime.go
 gc/models/contentfilerequest.go
 gc/models/contentfileresponse.go
 gc/models/contentfilteritem.go
+gc/models/contentmoderation.go
 gc/models/contentoffer.go
 gc/models/contentofferstyleproperties.go
 gc/models/contentofferstylingconfiguration.go
@@ -2657,6 +2675,10 @@ gc/models/dataactionconditionpredicate.go
 gc/models/dataactionconditionsettings.go
 gc/models/dataactioncontactcolumnfieldmapping.go
 gc/models/dataavailabilityresponse.go
+gc/models/dataextractionfileschema.go
+gc/models/dataextractionfileschemalisting.go
+gc/models/dataextractionfileurl.go
+gc/models/dataextractionfileurllisting.go
 gc/models/dataingestionrulecriteria.go
 gc/models/dataingestionruleresponse.go
 gc/models/dataingestionruleresponseentitylisting.go
@@ -2890,8 +2912,10 @@ gc/models/domainphysicalinterface.go
 gc/models/domainresourceconditionnode.go
 gc/models/domainresourceconditionvalue.go
 gc/models/domainrole.go
+gc/models/domains.go
 gc/models/donotsendactionsettings.go
 gc/models/downloadresponse.go
+gc/models/downloadservicerequest.go
 gc/models/draft.go
 gc/models/draftintents.go
 gc/models/draftlisting.go
@@ -2971,6 +2995,8 @@ gc/models/emailoutbounddomainresult.go
 gc/models/emailprogresstransferevent.go
 gc/models/emailroutingestablishedevent.go
 gc/models/emailroutingtransferevent.go
+gc/models/emailsetting.go
+gc/models/emailsettingreference.go
 gc/models/emailsettings.go
 gc/models/emailsetup.go
 gc/models/emailssettings.go
@@ -3039,6 +3065,8 @@ gc/models/evaluationdetailquerypredicate.go
 gc/models/evaluationentitylisting.go
 gc/models/evaluationform.go
 gc/models/evaluationformandscoringset.go
+gc/models/evaluationformdivisionview.go
+gc/models/evaluationformdivisionviewlisting.go
 gc/models/evaluationformresponse.go
 gc/models/evaluationformresponseentitylisting.go
 gc/models/evaluationquestion.go
@@ -3395,6 +3423,15 @@ gc/models/idleeventtrigger.go
 gc/models/idletokentimeout.go
 gc/models/ignoredactivitycategories.go
 gc/models/ignoredactivitycodeids.go
+gc/models/ignoredminedentity.go
+gc/models/ignoredminedphraselisting.go
+gc/models/ignoredminedtopiclisting.go
+gc/models/ignorephrase.go
+gc/models/ignorephrasesrequest.go
+gc/models/ignorephrasesresponse.go
+gc/models/ignoretopic.go
+gc/models/ignoretopicsrequest.go
+gc/models/ignoretopicsresponse.go
 gc/models/image.go
 gc/models/imapsettings.go
 gc/models/importerror.go
@@ -3410,6 +3447,7 @@ gc/models/importtemplate.go
 gc/models/importtemplateentitylisting.go
 gc/models/inactivitytimeoutsettings.go
 gc/models/inbounddomain.go
+gc/models/inbounddomaincreaterequest.go
 gc/models/inbounddomainentitylisting.go
 gc/models/inbounddomainpatchrequest.go
 gc/models/inboundmessagerequest.go
@@ -3445,6 +3483,10 @@ gc/models/insightstrend.go
 gc/models/insightstrendmetricitem.go
 gc/models/insightstrends.go
 gc/models/insightstrendtotalitem.go
+gc/models/instagramdataingestionrulerequest.go
+gc/models/instagramdataingestionruleresponse.go
+gc/models/instagramdataingestionruleversionresponse.go
+gc/models/instagramdataingestionruleversionresponseentitylisting.go
 gc/models/instagramid.go
 gc/models/instagramintegration.go
 gc/models/instagramintegrationentitylisting.go
@@ -3871,6 +3913,7 @@ gc/models/managementunitsettingsresponse.go
 gc/models/manager.go
 gc/models/manualescalationrequest.go
 gc/models/manualescalationresponse.go
+gc/models/manualsearchconfig.go
 gc/models/markcontactaddressuncontactableactionsettings.go
 gc/models/markcontactuncontactableactionsettings.go
 gc/models/markdown.go
@@ -4163,8 +4206,8 @@ gc/models/orphanrecordinglisting.go
 gc/models/orphanupdaterequest.go
 gc/models/otherprofileassignment.go
 gc/models/outbounddomain.go
+gc/models/outbounddomaincreaterequest.go
 gc/models/outbounddomainentitylisting.go
-gc/models/outbounddomainrequest.go
 gc/models/outboundonlysetting.go
 gc/models/outboundroute.go
 gc/models/outboundroutebase.go
@@ -4312,6 +4355,7 @@ gc/models/policyerrors.go
 gc/models/policytestpayload.go
 gc/models/policytestresult.go
 gc/models/policyupdate.go
+gc/models/policyuser.go
 gc/models/positionsettings.go
 gc/models/possibleworkshiftsforweek.go
 gc/models/postactioninput.go
@@ -4495,6 +4539,8 @@ gc/models/registerarchitectexportjobresponse.go
 gc/models/registerarchitectjobresponse.go
 gc/models/relationship.go
 gc/models/relationshiplisting.go
+gc/models/removeentitiesrequest.go
+gc/models/removeentity.go
 gc/models/reoccurrence.go
 gc/models/replacementterm.go
 gc/models/replacerequest.go
@@ -4925,7 +4971,13 @@ gc/models/summaryaggregationview.go
 gc/models/summaryasyncaggregatequeryresponse.go
 gc/models/summaryasyncaggregationquery.go
 gc/models/summarygenerationconfig.go
+gc/models/summarysetting.go
+gc/models/summarysettingcustomentity.go
 gc/models/summarysettingentity.go
+gc/models/summarysettingentitylisting.go
+gc/models/summarysettingparticipantlabels.go
+gc/models/summarysettingpii.go
+gc/models/summarysettingwithtranscript.go
 gc/models/supportcentercategory.go
 gc/models/supportcentercompactcategorymoduletemplate.go
 gc/models/supportcentercustommessage.go
@@ -4966,6 +5018,8 @@ gc/models/surveydetailquerypredicate.go
 gc/models/surveyerrordetails.go
 gc/models/surveyform.go
 gc/models/surveyformandscoringset.go
+gc/models/surveyformdivisionview.go
+gc/models/surveyformdivisionviewlisting.go
 gc/models/surveyformentitylisting.go
 gc/models/surveyquestion.go
 gc/models/surveyquestiongroup.go

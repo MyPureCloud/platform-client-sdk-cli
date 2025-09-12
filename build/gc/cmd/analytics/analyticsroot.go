@@ -25,6 +25,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_botflows"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_dataretention"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_reporting"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_dataextraction"
 )
 
 func init() {
@@ -51,6 +52,7 @@ func init() {
 	analyticsCmd.AddCommand(analytics_botflows.Cmdanalytics_botflows())
 	analyticsCmd.AddCommand(analytics_dataretention.Cmdanalytics_dataretention())
 	analyticsCmd.AddCommand(analytics_reporting.Cmdanalytics_reporting())
-	analyticsCmd.Short = utils.GenerateCustomDescription(analyticsCmd.Short, analytics_actions.Description, analytics_agentcopilots.Description, analytics_agents.Description, analytics_bots.Description, analytics_conversations.Description, analytics_evaluations.Description, analytics_flowexecutions.Description, analytics_flows.Description, analytics_journeys.Description, analytics_knowledge.Description, analytics_queues.Description, analytics_ratelimits.Description, analytics_resolutions.Description, analytics_routing.Description, analytics_summaries.Description, analytics_surveys.Description, analytics_taskmanagement.Description, analytics_teams.Description, analytics_transcripts.Description, analytics_users.Description, analytics_botflows.Description, analytics_dataretention.Description, analytics_reporting.Description, )
+	analyticsCmd.AddCommand(analytics_dataextraction.Cmdanalytics_dataextraction())
+	analyticsCmd.Short = utils.GenerateCustomDescription(analyticsCmd.Short, analytics_actions.Description, analytics_agentcopilots.Description, analytics_agents.Description, analytics_bots.Description, analytics_conversations.Description, analytics_evaluations.Description, analytics_flowexecutions.Description, analytics_flows.Description, analytics_journeys.Description, analytics_knowledge.Description, analytics_queues.Description, analytics_ratelimits.Description, analytics_resolutions.Description, analytics_routing.Description, analytics_summaries.Description, analytics_surveys.Description, analytics_taskmanagement.Description, analytics_teams.Description, analytics_transcripts.Description, analytics_users.Description, analytics_botflows.Description, analytics_dataretention.Description, analytics_reporting.Description, analytics_dataextraction.Description, )
 	analyticsCmd.Long = analyticsCmd.Short
 }

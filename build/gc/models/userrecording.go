@@ -45,9 +45,6 @@ type UserrecordingDud struct {
     
 
 
-    
-
-
     SelfUri string `json:"selfUri"`
 
 }
@@ -67,10 +64,6 @@ type Userrecording struct {
 
     // DateModified - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateModified time.Time `json:"dateModified"`
-
-
-    // ContentUri
-    ContentUri string `json:"contentUri"`
 
 
     // Workspace
@@ -115,7 +108,6 @@ func (o *Userrecording) String() string {
     
     
     
-    
      o.Thumbnails = []Documentthumbnail{{}} 
     
 
@@ -141,8 +133,6 @@ func (u *Userrecording) MarshalJSON() ([]byte, error) {
         
         DateModified time.Time `json:"dateModified"`
         
-        ContentUri string `json:"contentUri"`
-        
         Workspace Domainentityref `json:"workspace"`
         
         CreatedBy Domainentityref `json:"createdBy"`
@@ -158,9 +148,6 @@ func (u *Userrecording) MarshalJSON() ([]byte, error) {
         Read bool `json:"read"`
         *Alias
     }{
-
-        
-
 
         
 

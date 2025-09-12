@@ -63,21 +63,6 @@
       "description": "Query for workbins"
     },
     {
-      "name": "list",
-      "path": "/api/v2/taskmanagement/workbins/{workbinId}/versions",
-      "description": "Get all versions of a workbin"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}",
-      "description": "Get a version of a workbin"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/taskmanagement/workbins/{workbinId}/history",
-      "description": "Get a listing of a workbin's attribute change history"
-    },
-    {
       "name": "get",
       "path": "/api/v2/taskmanagement/workbins/{workbinId}",
       "description": "Get a workbin"
@@ -91,6 +76,21 @@
       "name": "update",
       "path": "/api/v2/taskmanagement/workbins/{workbinId}",
       "description": "Update the attributes of a workbin"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}/versions",
+      "description": "Get all versions of a workbin"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}",
+      "description": "Get a version of a workbin"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}/history",
+      "description": "Get a listing of a workbin's attribute change history"
     },
     {
       "name": "create",
@@ -116,6 +116,11 @@
       "name": "list",
       "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results",
       "description": "Get results from for workitem query job "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
+      "description": "Disconnect the assignee of the workitem"
     },
     {
       "name": "create",
@@ -161,11 +166,6 @@
       "name": "create",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/acd/cancel",
       "description": "Cancel the assignment process for a workitem that is currently queued for assignment through ACD."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
-      "description": "Disconnect the assignee of the workitem"
     },
     {
       "name": "get",

@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -11,6 +12,12 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type MediaendpointstatisticsDud struct { 
+    
+
+
+    
+
+
     
 
 
@@ -69,10 +76,20 @@ type Mediaendpointstatistics struct {
     // ClientInfo - Client information associated with media endpoint
     ClientInfo Mediastatisticsclientinfo `json:"clientInfo"`
 
+
+    // DateCreated - Media endpoint statistics creation time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateCreated time.Time `json:"dateCreated"`
+
+
+    // DateProcessed - Media endpoint statistics processed time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateProcessed time.Time `json:"dateProcessed"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Mediaendpointstatistics) String() string {
+    
+    
     
     
     
@@ -113,8 +130,18 @@ func (u *Mediaendpointstatistics) MarshalJSON() ([]byte, error) {
         SourceType string `json:"sourceType"`
         
         ClientInfo Mediastatisticsclientinfo `json:"clientInfo"`
+        
+        DateCreated time.Time `json:"dateCreated"`
+        
+        DateProcessed time.Time `json:"dateProcessed"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

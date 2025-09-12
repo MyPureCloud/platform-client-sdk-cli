@@ -271,6 +271,26 @@
       "name": "create",
       "path": "/api/v2/quality/publishedforms",
       "description": "Publish an evaluation form."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId}",
+      "description": "Get the most recent published version of an evaluation form across any division."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/publishedforms/evaluations/divisionviews",
+      "description": "Get the published evaluation forms across any division."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}",
+      "description": "Get the most recent published version of an enabled survey form across any division."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/publishedforms/surveys/divisionviews",
+      "description": "Get the published and enabled survey forms across any division."
     }
   ]
 }

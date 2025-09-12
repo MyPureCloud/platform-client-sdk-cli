@@ -73,6 +73,36 @@
       "description": "Create a new draft resource."
     },
     {
+      "name": "list",
+      "path": "/api/v2/languageunderstanding/ignorephrases/{languageCode}",
+      "description": "Get list of all ignored phrases of the specified language code"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/languageunderstanding/ignorephrases/{languageCode}",
+      "description": "Add phrases to the ignored phrases list"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/languageunderstanding/ignorephrases/{languageCode}/remove",
+      "description": "Delete ignored phrases"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/languageunderstanding/ignoretopics/{languageCode}",
+      "description": "Get list of all ignored topics of the specified language code"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/languageunderstanding/ignoretopics/{languageCode}",
+      "description": "Add topics to the ignored topics list"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/languageunderstanding/ignoretopics/{languageCode}/remove",
+      "description": "Delete ignored topics"
+    },
+    {
       "name": "get",
       "path": "/api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}",
       "description": "Get information about a mined intent"

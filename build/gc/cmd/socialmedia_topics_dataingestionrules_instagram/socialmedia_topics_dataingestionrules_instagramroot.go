@@ -1,0 +1,12 @@
+package socialmedia_topics_dataingestionrules_instagram
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/socialmedia_topics_dataingestionrules_instagram_versions"
+)
+
+func init() {
+	socialmedia_topics_dataingestionrules_instagramCmd.AddCommand(socialmedia_topics_dataingestionrules_instagram_versions.Cmdsocialmedia_topics_dataingestionrules_instagram_versions())
+	socialmedia_topics_dataingestionrules_instagramCmd.Short = utils.GenerateCustomDescription(socialmedia_topics_dataingestionrules_instagramCmd.Short, socialmedia_topics_dataingestionrules_instagram_versions.Description, )
+	socialmedia_topics_dataingestionrules_instagramCmd.Long = socialmedia_topics_dataingestionrules_instagramCmd.Short
+}

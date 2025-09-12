@@ -254,6 +254,11 @@
     },
     {
       "name": "list",
+      "path": "/api/v2/journey/views/jobs/me",
+      "description": "Get my jobs"
+    },
+    {
+      "name": "list",
       "path": "/api/v2/journey/views/jobs",
       "description": "Get the jobs for an organization."
     },
@@ -323,14 +328,14 @@
       "description": "Create Outcome Attributions"
     },
     {
-      "name": "list",
-      "path": "/api/v2/journey/outcomes/attributions/jobs/{jobId}/results",
-      "description": "Get outcome attribution entities from completed job."
-    },
-    {
       "name": "get",
       "path": "/api/v2/journey/outcomes/attributions/jobs/{jobId}",
       "description": "Get job status."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/journey/outcomes/attributions/jobs/{jobId}/results",
+      "description": "Get outcome attribution entities from completed job."
     }
   ]
 }

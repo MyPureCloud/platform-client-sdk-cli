@@ -59,13 +59,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/me/query",
-      "description": "Query performance profiles in date range for the current user"
+      "path": "/api/v2/gamification/profiles/users/{userId}/query",
+      "description": "Query performance profiles in date range for a user"
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/{userId}/query",
-      "description": "Query performance profiles in date range for a user"
+      "path": "/api/v2/gamification/profiles/users/me/query",
+      "description": "Query performance profiles in date range for the current user"
     },
     {
       "name": "get",
@@ -89,13 +89,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/profiles/users/me",
-      "description": "Performance profile of the requesting user"
+      "path": "/api/v2/gamification/profiles/users/{userId}",
+      "description": "Performance profile of a user"
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/profiles/users/{userId}",
-      "description": "Performance profile of a user"
+      "path": "/api/v2/gamification/profiles/users/me",
+      "description": "Performance profile of the requesting user"
     },
     {
       "name": "list",
@@ -199,13 +199,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/insights/users/{userId}/details",
-      "description": "Get insights details for the user"
+      "path": "/api/v2/gamification/insights/details",
+      "description": "Get insights details for the current user"
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/insights/details",
-      "description": "Get insights details for the current user"
+      "path": "/api/v2/gamification/insights/users/{userId}/details",
+      "description": "Get insights details for the user"
     },
     {
       "name": "list",

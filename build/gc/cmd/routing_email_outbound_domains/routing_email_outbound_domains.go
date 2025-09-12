@@ -34,7 +34,7 @@ func Cmdrouting_email_outbound_domains() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/OutboundDomainRequest"
+        "$ref" : "#/components/schemas/OutboundDomainCreateRequest"
       }
     }
   },
@@ -62,6 +62,7 @@ func Cmdrouting_email_outbound_domains() *cobra.Command {
 }`)
 	routing_email_outbound_domainsCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand options. Valid values: settings Valid values: settings")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/email/outbound/domains/{domainId}", utils.FormatPermissions([]string{ "routing:email:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/email/outbound/domains/{domainId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -80,6 +81,7 @@ func Cmdrouting_email_outbound_domains() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "filter", "", "Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.")
+	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "Expand options. Valid values: settings Valid values: settings")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/email/outbound/domains", utils.FormatPermissions([]string{ "routing:email:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/email/outbound/domains")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -114,7 +116,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Outbounddomainrequest{}
+			reqModel := models.Outbounddomaincreaterequest{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -254,6 +256,10 @@ var getCmd = &cobra.Command{
 		domainId, args := args[0], args[1:]
 		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
 
+		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -328,6 +334,10 @@ var listCmd = &cobra.Command{
 		filter := utils.GetFlag(cmd.Flags(), "string", "filter")
 		if filter != "" {
 			queryParams["filter"] = filter
+		}
+		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
 		}
 		urlString := path
 		if len(queryParams) > 0 {

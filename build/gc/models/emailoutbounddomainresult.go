@@ -25,6 +25,9 @@ type EmailoutbounddomainresultDud struct {
 
     
 
+
+    
+
 }
 
 // Emailoutbounddomainresult
@@ -48,10 +51,15 @@ type Emailoutbounddomainresult struct {
     // SenderType
     SenderType string `json:"senderType"`
 
+
+    // EmailSetting - The email settings associated with this domain.
+    EmailSetting Emailsetting `json:"emailSetting"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Emailoutbounddomainresult) String() string {
+    
     
     
     
@@ -83,8 +91,13 @@ func (u *Emailoutbounddomainresult) MarshalJSON() ([]byte, error) {
         SenderStatus string `json:"senderStatus"`
         
         SenderType string `json:"senderType"`
+        
+        EmailSetting Emailsetting `json:"emailSetting"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -19,6 +19,9 @@ type SocialmediadetailmessagecontainerDud struct {
 
     
 
+
+    
+
 }
 
 // Socialmediadetailmessagecontainer
@@ -34,10 +37,15 @@ type Socialmediadetailmessagecontainer struct {
     // EscalationInfo
     EscalationInfo Socialmediamessageescalationinfo `json:"escalationInfo"`
 
+
+    // ContentModeration
+    ContentModeration Contentmoderation `json:"contentModeration"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Socialmediadetailmessagecontainer) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Socialmediadetailmessagecontainer) MarshalJSON() ([]byte, error) {
         NormalizedMessage Conversationnormalizedmessage `json:"normalizedMessage"`
         
         EscalationInfo Socialmediamessageescalationinfo `json:"escalationInfo"`
+        
+        ContentModeration Contentmoderation `json:"contentModeration"`
         *Alias
     }{
+
+        
+
 
         
 

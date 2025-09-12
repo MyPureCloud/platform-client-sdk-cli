@@ -109,6 +109,16 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
+      "description": "Get campaign progress"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
+      "description": "Reset campaign progress and recycle the campaign"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/outbound/campaigns/{campaignId}",
       "description": "Get dialer campaign."
     },
@@ -156,16 +166,6 @@
       "name": "create",
       "path": "/api/v2/outbound/campaigns/{campaignId}/stop",
       "description": "Stop the campaign"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
-      "description": "Get campaign progress"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
-      "description": "Reset campaign progress and recycle the campaign"
     },
     {
       "name": "get",

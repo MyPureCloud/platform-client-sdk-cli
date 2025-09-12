@@ -19,6 +19,9 @@ type InbounddomainpatchrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Inbounddomainpatchrequest
@@ -34,10 +37,15 @@ type Inbounddomainpatchrequest struct {
     // ImapSettings - The IMAP server integration and settings to use for processing inbound emails.
     ImapSettings Imapsettings `json:"imapSettings"`
 
+
+    // EmailSetting - The email settings to associate with this domain.
+    EmailSetting Emailsettingreference `json:"emailSetting"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Inbounddomainpatchrequest) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Inbounddomainpatchrequest) MarshalJSON() ([]byte, error) {
         CustomSMTPServer Domainentityref `json:"customSMTPServer"`
         
         ImapSettings Imapsettings `json:"imapSettings"`
+        
+        EmailSetting Emailsettingreference `json:"emailSetting"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -26,6 +26,9 @@ type OutbounddomainDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -52,12 +55,17 @@ type Outbounddomain struct {
     SenderType string `json:"senderType"`
 
 
+    // EmailSetting - The email settings associated with this domain.
+    EmailSetting Emailsetting `json:"emailSetting"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Outbounddomain) String() string {
+    
     
     
     
@@ -89,8 +97,13 @@ func (u *Outbounddomain) MarshalJSON() ([]byte, error) {
         DkimVerificationResult Verificationresult `json:"dkimVerificationResult"`
         
         SenderType string `json:"senderType"`
+        
+        EmailSetting Emailsetting `json:"emailSetting"`
         *Alias
     }{
+
+        
+
 
         
 

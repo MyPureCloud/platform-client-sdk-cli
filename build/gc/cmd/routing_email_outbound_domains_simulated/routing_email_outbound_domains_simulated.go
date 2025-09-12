@@ -34,7 +34,7 @@ func Cmdrouting_email_outbound_domains_simulated() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/OutboundDomainRequest"
+        "$ref" : "#/components/schemas/OutboundDomainCreateRequest"
       }
     }
   },
@@ -72,7 +72,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Outbounddomainrequest{}
+			reqModel := models.Outbounddomaincreaterequest{}
 			utils.Render(reqModel.String())
 			
 			return

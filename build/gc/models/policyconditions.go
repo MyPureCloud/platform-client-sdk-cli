@@ -44,8 +44,8 @@ type PolicyconditionsDud struct {
 
 // Policyconditions
 type Policyconditions struct { 
-    // ForUsers
-    ForUsers []User `json:"forUsers"`
+    // ForUsers - List of users to apply this policy to. Each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
+    ForUsers []Policyuser `json:"forUsers"`
 
 
     // Directions
@@ -87,7 +87,7 @@ type Policyconditions struct {
 
 // String returns a JSON representation of the model
 func (o *Policyconditions) String() string {
-     o.ForUsers = []User{{}} 
+     o.ForUsers = []Policyuser{{}} 
      o.Directions = []string{""} 
      o.DateRanges = []string{""} 
      o.MediaTypes = []string{""} 
@@ -114,7 +114,7 @@ func (u *Policyconditions) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        ForUsers []User `json:"forUsers"`
+        ForUsers []Policyuser `json:"forUsers"`
         
         Directions []string `json:"directions"`
         
@@ -137,7 +137,7 @@ func (u *Policyconditions) MarshalJSON() ([]byte, error) {
     }{
 
         
-        ForUsers: []User{{}},
+        ForUsers: []Policyuser{{}},
         
 
 

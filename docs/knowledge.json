@@ -154,6 +154,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}",
+      "description": "Get knowledge base unanswered group for a particular groupId"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}",
       "description": "Get knowledge base unanswered phrase group for a particular phraseGroupId"
     },
@@ -161,11 +166,6 @@
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}",
       "description": "Update a Knowledge base unanswered phrase group"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}",
-      "description": "Get knowledge base unanswered group for a particular groupId"
     },
     {
       "name": "get",
@@ -323,6 +323,16 @@
       "description": "Creates or restores a document version."
     },
     {
+      "name": "list",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents",
+      "description": "Get documents."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents",
+      "description": "Create document."
+    },
+    {
       "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove",
       "description": "Bulk remove documents."
@@ -336,16 +346,6 @@
       "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add",
       "description": "Bulk add document versions."
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents",
-      "description": "Get documents."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents",
-      "description": "Create document."
     },
     {
       "name": "get",
@@ -483,6 +483,11 @@
       "description": "Get ids of operation creator users and oauth clients"
     },
     {
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
+      "description": "Import the parsed articles"
+    },
+    {
       "name": "get",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}",
       "description": "Get parse job report"
@@ -491,11 +496,6 @@
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}",
       "description": "Send update to the parse operation"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
-      "description": "Import the parsed articles"
     },
     {
       "name": "create",
@@ -533,19 +533,14 @@
       "description": "Give feedback on a document"
     },
     {
-      "name": "list",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
-      "description": "Get documents."
-    },
-    {
       "name": "get",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}",
       "description": "Get a knowledge document by ID."
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations",
-      "description": "Indicate that documents were presented to the user."
+      "name": "list",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
+      "description": "Get documents."
     },
     {
       "name": "create",
@@ -558,9 +553,19 @@
       "description": "Indicate that the document was copied by the user."
     },
     {
+      "name": "create",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations",
+      "description": "Indicate that documents were presented to the user."
+    },
+    {
       "name": "list",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/categories",
       "description": "Get categories"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search",
+      "description": "Search the documents in a guest session."
     },
     {
       "name": "create",
@@ -571,11 +576,6 @@
       "name": "update",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId}",
       "description": "Update search result."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search",
-      "description": "Search the documents in a guest session."
     },
     {
       "name": "create",

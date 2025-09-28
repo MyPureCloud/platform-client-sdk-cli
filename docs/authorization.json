@@ -243,19 +243,14 @@
       "description": "Get a page of access policies for an organization"
     },
     {
-      "name": "list",
-      "path": "/api/v2/authorization/policies/subject/{subjectId}",
-      "description": "Get a page of access policies for a given subject"
+      "name": "create",
+      "path": "/api/v2/authorization/policies/{policyId}/simulate",
+      "description": "Simulate a request and evaluate the specified policy ID against the provided values"
     },
     {
       "name": "get",
-      "path": "/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}",
-      "description": "Get an access control policy for a specified resource target and subject"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}",
-      "description": "Delete an access control policy"
+      "path": "/api/v2/authorization/policies/targets",
+      "description": "Get a map of policy targets to valid attributes for those targets"
     },
     {
       "name": "get",
@@ -268,24 +263,29 @@
       "description": "Update an access control policy with a given ID"
     },
     {
-      "name": "get",
-      "path": "/api/v2/authorization/policies/{policyId}/attributes",
-      "description": "Get the list of attributes used to evaluate an access control policy with the specified policy ID"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/authorization/policies/{policyId}/simulate",
-      "description": "Simulate a request and evaluate the specified policy ID against the provided values"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/authorization/policies/targets",
-      "description": "Get a map of policy targets to valid attributes for those targets"
-    },
-    {
       "name": "create",
       "path": "/api/v2/authorization/policies/targets/{targetName}/validate",
       "description": "Validate the conditions and attributes of an access control policy for a specified resource target"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}",
+      "description": "Get an access control policy for a specified resource target and subject"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}",
+      "description": "Delete an access control policy"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/policies/subject/{subjectId}",
+      "description": "Get a page of access policies for a given subject"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/policies/{policyId}/attributes",
+      "description": "Get the list of attributes used to evaluate an access control policy with the specified policy ID"
     }
   ]
 }

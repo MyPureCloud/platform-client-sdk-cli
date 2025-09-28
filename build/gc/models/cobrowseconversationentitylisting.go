@@ -72,12 +72,12 @@ type Cobrowseconversationentitylisting struct {
     NextUri string `json:"nextUri"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
     // SelfUri
     SelfUri string `json:"selfUri"`
+
+
+    // LastUri
+    LastUri string `json:"lastUri"`
 
 
     // PageCount
@@ -128,9 +128,9 @@ func (u *Cobrowseconversationentitylisting) MarshalJSON() ([]byte, error) {
         
         NextUri string `json:"nextUri"`
         
-        LastUri string `json:"lastUri"`
-        
         SelfUri string `json:"selfUri"`
+        
+        LastUri string `json:"lastUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

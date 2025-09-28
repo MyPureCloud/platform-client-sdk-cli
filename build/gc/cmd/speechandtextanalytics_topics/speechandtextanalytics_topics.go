@@ -83,7 +83,7 @@ func Cmdspeechandtextanalytics_topics() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Case insensitive partial name to filter by")
 	utils.AddFlag(listCmd.Flags(), "[]string", "ids", "", "Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "dialects", "", "Comma separated dialect strings to filter by. Maximum of 15 dialects allowed. Valid values: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR, pl-PL, pt-PT, nl-NL, ko-KR")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort results by. Defaults to name Valid values: name")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort results by. Defaults to name Valid values: name, matchingType")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Sort order. Defaults to asc Valid values: asc, desc")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/topics", utils.FormatPermissions([]string{ "speechAndTextAnalytics:topic:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/topics")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)

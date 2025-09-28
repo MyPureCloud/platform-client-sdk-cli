@@ -64,8 +64,8 @@ func queryEscape(value string) string {
 
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get an evaluator activity",
-	Long:  "Get an evaluator activity",
+	Short: "Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.",
+	Long:  "Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

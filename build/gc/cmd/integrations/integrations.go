@@ -95,6 +95,9 @@ func Cmdintegrations() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "variable name requested by expand list")
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "next page token")
 	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
+	utils.AddFlag(listCmd.Flags(), "[]string", "ids", "", "Comma-separated list of integration IDs to filter by (max 100)")
+	utils.AddFlag(listCmd.Flags(), "string", "integrationType", "", "Filter integrations by integration type ID")
+	utils.AddFlag(listCmd.Flags(), "string", "reportedState", "", "Filter integrations by reported state (case-insensitive) Valid values: ACTIVE, ACTIVATING, INACTIVE, DEACTIVATING, ERROR")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations", utils.FormatPermissions([]string{ "integrations:integration:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -410,6 +413,18 @@ var listCmd = &cobra.Command{
 		previousPage := utils.GetFlag(cmd.Flags(), "string", "previousPage")
 		if previousPage != "" {
 			queryParams["previousPage"] = previousPage
+		}
+		ids := utils.GetFlag(cmd.Flags(), "[]string", "ids")
+		if ids != "" {
+			queryParams["ids"] = ids
+		}
+		integrationType := utils.GetFlag(cmd.Flags(), "string", "integrationType")
+		if integrationType != "" {
+			queryParams["integrationType"] = integrationType
+		}
+		reportedState := utils.GetFlag(cmd.Flags(), "string", "reportedState")
+		if reportedState != "" {
+			queryParams["reportedState"] = reportedState
 		}
 		urlString := path
 		if len(queryParams) > 0 {

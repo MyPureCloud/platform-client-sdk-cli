@@ -48,6 +48,9 @@ type ListedtopicDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -71,6 +74,10 @@ type Listedtopic struct {
 
     // Strictness
     Strictness string `json:"strictness"`
+
+
+    // MatchingType
+    MatchingType string `json:"matchingType"`
 
 
     // ProgramsCount
@@ -112,6 +119,7 @@ func (o *Listedtopic) String() string {
     
     
     
+    
      o.Tags = []string{""} 
     
     
@@ -143,6 +151,8 @@ func (u *Listedtopic) MarshalJSON() ([]byte, error) {
         
         Strictness string `json:"strictness"`
         
+        MatchingType string `json:"matchingType"`
+        
         ProgramsCount int `json:"programsCount"`
         
         Tags []string `json:"tags"`
@@ -158,6 +168,9 @@ func (u *Listedtopic) MarshalJSON() ([]byte, error) {
         DateModified time.Time `json:"dateModified"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -63,7 +63,7 @@ func Cmdrouting_email_domains() *cobra.Command {
 	routing_email_domainsCmd.AddCommand(deleteCmd)
 
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Expand options. Valid values: settings Valid values: settings")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/email/domains/{domainId}", utils.FormatPermissions([]string{ "routing:email:manage",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/email/domains/{domainId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/email/domains/{domainId}", utils.FormatPermissions([]string{ "routing:email:manage", "routing:email:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/email/domains/{domainId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{

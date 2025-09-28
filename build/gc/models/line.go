@@ -129,7 +129,7 @@ type Line struct {
     EdgeGroup Domainentityref `json:"edgeGroup"`
 
 
-    // Template
+    // Template - The station base/template. (Deprecated - Please use the lineBaseSettings field instead, as it contains the same data)
     Template Domainentityref `json:"template"`
 
 
@@ -137,7 +137,7 @@ type Line struct {
     Site Domainentityref `json:"site"`
 
 
-    // LineBaseSettings
+    // LineBaseSettings - The station base/template.
     LineBaseSettings Domainentityref `json:"lineBaseSettings"`
 
 

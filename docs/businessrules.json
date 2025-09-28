@@ -98,11 +98,6 @@
       "description": "Delete a decision table row"
     },
     {
-      "name": "create",
-      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/search",
-      "description": "Search for decision table rows"
-    },
-    {
       "name": "list",
       "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows",
       "description": "Get a list of decision table rows."
@@ -111,6 +106,11 @@
       "name": "create",
       "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows",
       "description": "Create a decision table row"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/search",
+      "description": "Search for decision table rows"
     },
     {
       "name": "get",

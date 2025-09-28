@@ -36,6 +36,9 @@ type MaskingruleDud struct {
     
 
 
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -72,6 +75,10 @@ type Maskingrule struct {
     VarType string `json:"type"`
 
 
+    // Direction - inbound/outbound
+    Direction string `json:"direction"`
+
+
     // Integrations - Associated integration channels
     Integrations []string `json:"integrations"`
 
@@ -85,6 +92,7 @@ type Maskingrule struct {
 
 // String returns a JSON representation of the model
 func (o *Maskingrule) String() string {
+    
     
     
     
@@ -121,9 +129,14 @@ func (u *Maskingrule) MarshalJSON() ([]byte, error) {
         
         VarType string `json:"type"`
         
+        Direction string `json:"direction"`
+        
         Integrations []string `json:"integrations"`
         *Alias
     }{
+
+        
+
 
         
 

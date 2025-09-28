@@ -101,6 +101,9 @@ type MessageDud struct {
 
     
 
+
+    
+
 }
 
 // Message
@@ -224,6 +227,10 @@ type Message struct {
     // QueueMediaSettings - Represents the queue settings for this media type.
     QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
 
+
+    // EngagementSource
+    EngagementSource string `json:"engagementSource"`
+
 }
 
 // String returns a JSON representation of the model
@@ -251,6 +258,7 @@ func (o *Message) String() string {
     
     
      o.Messages = []Messagedetails{{}} 
+    
     
     
     
@@ -334,6 +342,8 @@ func (u *Message) MarshalJSON() ([]byte, error) {
         ByoSmsIntegrationId string `json:"byoSmsIntegrationId"`
         
         QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
+        
+        EngagementSource string `json:"engagementSource"`
         *Alias
     }{
 
@@ -407,6 +417,9 @@ func (u *Message) MarshalJSON() ([]byte, error) {
 
         
         Messages: []Messagedetails{{}},
+        
+
+
         
 
 

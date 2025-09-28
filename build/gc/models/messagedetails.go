@@ -65,11 +65,11 @@ type Messagedetails struct {
     MessageTime time.Time `json:"messageTime"`
 
 
-    // Media - The media (images, files, etc) associated with this message, if any
+    // Media - Deprecated: Use the API /api/v2/conversations/messages/{conversationId}/messages/{messageId} to get the associated media.
     Media []Messagemedia `json:"media"`
 
 
-    // Stickers - One or more stickers associated with this message, if any
+    // Stickers - Deprecated: This attribute is no longer used. Messages have not included associated stickers for a long time.
     Stickers []Messagesticker `json:"stickers"`
 
 

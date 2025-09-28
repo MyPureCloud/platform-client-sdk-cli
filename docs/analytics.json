@@ -33,16 +33,6 @@
       "description": "Query for bot aggregates"
     },
     {
-      "name": "create",
-      "path": "/api/v2/analytics/conversations/activity/query",
-      "description": "Query for conversation activity observations"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/conversations/details/query",
-      "description": "Query for conversation details"
-    },
-    {
       "name": "get",
       "path": "/api/v2/analytics/conversations/{conversationId}/details",
       "description": "Get a conversation by id"
@@ -86,6 +76,16 @@
       "name": "create",
       "path": "/api/v2/analytics/conversations/aggregates/query",
       "description": "Query for conversation aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/conversations/activity/query",
+      "description": "Query for conversation activity observations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/conversations/details/query",
+      "description": "Query for conversation details"
     },
     {
       "name": "create",

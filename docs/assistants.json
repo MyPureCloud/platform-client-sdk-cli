@@ -86,6 +86,11 @@
       "name": "list",
       "path": "/api/v2/assistants/queues",
       "description": "Get all queues assigned to any assistant."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/assistants/copilot/featuresupport",
+      "description": "Get information about the support of features for all the languages or only for a certain language."
     }
   ]
 }

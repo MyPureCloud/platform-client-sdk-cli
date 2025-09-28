@@ -43,6 +43,7 @@ func Cmdlearning_modules_rule() *cobra.Command {
 }`)
 	learning_modules_ruleCmd.AddCommand(getCmd)
 
+	utils.AddFlag(updateCmd.Flags(), "bool", "assign", "true", "Whether to assign the module to users or not")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/learning/modules/{moduleId}/rule", utils.FormatPermissions([]string{ "learning:rule:edit",  }), utils.GenerateDevCentreLink("PUT", "Learning", "/api/v2/learning/modules/{moduleId}/rule")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "The learning module rule to be updated",
@@ -164,6 +165,10 @@ var updateCmd = &cobra.Command{
 		moduleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{moduleId}", fmt.Sprintf("%v", moduleId), -1)
 
+		assign := utils.GetFlag(cmd.Flags(), "bool", "assign")
+		if assign != "" {
+			queryParams["assign"] = assign
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

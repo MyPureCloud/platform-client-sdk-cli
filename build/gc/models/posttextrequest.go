@@ -76,7 +76,7 @@ type Posttextrequest struct {
     PostTextMessage Posttextmessage `json:"postTextMessage"`
 
 
-    // LanguageCode - The launguage code the bot will run under
+    // LanguageCode - The language code the bot will run under
     LanguageCode string `json:"languageCode"`
 
 

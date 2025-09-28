@@ -124,6 +124,7 @@ gc/cmd/architect_systemprompts_resources/architect_systemprompts_resources.go
 gc/cmd/architect_systemprompts_resources_uploads/architect_systemprompts_resources_uploads.go
 gc/cmd/assistants/assistants.go
 gc/cmd/assistants_copilot/assistants_copilot.go
+gc/cmd/assistants_copilot_featuresupport/assistants_copilot_featuresupport.go
 gc/cmd/assistants_queues/assistants_queues.go
 gc/cmd/assistants_queues_users_bulk_add/assistants_queues_users_bulk_add.go
 gc/cmd/assistants_queues_users_bulk_remove/assistants_queues_users_bulk_remove.go
@@ -345,6 +346,7 @@ gc/cmd/conversations_messaging_identityresolution_integrations_open/conversation
 gc/cmd/conversations_messaging_identityresolution_integrations_twitter/conversations_messaging_identityresolution_integrations_twitter.go
 gc/cmd/conversations_messaging_identityresolution_integrations_whatsapp/conversations_messaging_identityresolution_integrations_whatsapp.go
 gc/cmd/conversations_messaging_integrations/conversations_messaging_integrations.go
+gc/cmd/conversations_messaging_integrations_apple/conversations_messaging_integrations_apple.go
 gc/cmd/conversations_messaging_integrations_facebook/conversations_messaging_integrations_facebook.go
 gc/cmd/conversations_messaging_integrations_instagram/conversations_messaging_integrations_instagram.go
 gc/cmd/conversations_messaging_integrations_open/conversations_messaging_integrations_open.go
@@ -352,6 +354,7 @@ gc/cmd/conversations_messaging_integrations_twitter/conversations_messaging_inte
 gc/cmd/conversations_messaging_integrations_twitter_oauth_settings/conversations_messaging_integrations_twitter_oauth_settings.go
 gc/cmd/conversations_messaging_integrations_whatsapp/conversations_messaging_integrations_whatsapp.go
 gc/cmd/conversations_messaging_integrations_whatsapp_embeddedsignup/conversations_messaging_integrations_whatsapp_embeddedsignup.go
+gc/cmd/conversations_messaging_oauth_apple_callback/conversations_messaging_oauth_apple_callback.go
 gc/cmd/conversations_messaging_settings/conversations_messaging_settings.go
 gc/cmd/conversations_messaging_settings_default/conversations_messaging_settings_default.go
 gc/cmd/conversations_messaging_supportedcontent/conversations_messaging_supportedcontent.go
@@ -1348,6 +1351,7 @@ gc/cmd/workforcemanagement_agents_integrations_hris_query/workforcemanagement_ag
 gc/cmd/workforcemanagement_agents_managementunit/workforcemanagement_agents_managementunit.go
 gc/cmd/workforcemanagement_agents_me_managementunit/workforcemanagement_agents_me_managementunit.go
 gc/cmd/workforcemanagement_agents_me_possibleworkshifts/workforcemanagement_agents_me_possibleworkshifts.go
+gc/cmd/workforcemanagement_agentschedules_managementunits_mine/workforcemanagement_agentschedules_managementunits_mine.go
 gc/cmd/workforcemanagement_agentschedules_mine/workforcemanagement_agentschedules_mine.go
 gc/cmd/workforcemanagement_alternativeshifts_offers_jobs/workforcemanagement_alternativeshifts_offers_jobs.go
 gc/cmd/workforcemanagement_alternativeshifts_offers_search_jobs/workforcemanagement_alternativeshifts_offers_search_jobs.go
@@ -1612,6 +1616,11 @@ gc/models/agentlessemailsendrequestdto.go
 gc/models/agentlessemailsendresponsedto.go
 gc/models/agentmanagementunitreference.go
 gc/models/agentmaxutilizationresponse.go
+gc/models/agentmuqueryresponse.go
+gc/models/agentmuscheduleitem.go
+gc/models/agentmuschedulequery.go
+gc/models/agentmuscheduleresult.go
+gc/models/agentmuscheduleshift.go
 gc/models/agentownedmappingpreview.go
 gc/models/agentownedmappingpreviewlisting.go
 gc/models/agentownedrouting.go
@@ -1621,6 +1630,7 @@ gc/models/agentqueryadherenceexplanationsrequest.go
 gc/models/agentqueryadherenceexplanationsresponse.go
 gc/models/agentqueuetimerequest.go
 gc/models/agentsbidassignedworkplanoverriderequest.go
+gc/models/agentscheduleshiftactivity.go
 gc/models/agentsintegrationslisting.go
 gc/models/agentstateagentqueryclause.go
 gc/models/agentstateagentquerypredicate.go
@@ -1730,7 +1740,14 @@ gc/models/appevent.go
 gc/models/appeventrequest.go
 gc/models/appeventresponse.go
 gc/models/appeventresponsesession.go
+gc/models/appleauthentication.go
+gc/models/appleimessageapp.go
+gc/models/appleintegration.go
+gc/models/appleintegrationentitylisting.go
+gc/models/appleintegrationrequest.go
+gc/models/appleintegrationupdaterequest.go
 gc/models/appleopaqueid.go
+gc/models/applepay.go
 gc/models/approvalnamespace.go
 gc/models/architectexportjobstateresponse.go
 gc/models/architectflowfields.go
@@ -2796,7 +2813,9 @@ gc/models/disallowedentitylearningassignmentitem.go
 gc/models/disallowedentitylearningassignmentreference.go
 gc/models/disconnectreason.go
 gc/models/disposition.go
+gc/models/dispositionamdtimeout.go
 gc/models/dispositionparameters.go
+gc/models/dispositionsilentcalltimeout.go
 gc/models/division.go
 gc/models/divisioneddomainentityref.go
 gc/models/divisionentityref.go
@@ -2904,8 +2923,7 @@ gc/models/domainorganizationrolecreate.go
 gc/models/domainorganizationroleupdate.go
 gc/models/domainorgroledifference.go
 gc/models/domainpermission.go
-gc/models/domainpermissioncollectiondomainpermission.go
-gc/models/domainpermissionentitylisting.go
+gc/models/domainpermissioncollection.go
 gc/models/domainpermissionpolicy.go
 gc/models/domainphysicalcapabilities.go
 gc/models/domainphysicalinterface.go
@@ -3174,6 +3192,7 @@ gc/models/faxsendresponse.go
 gc/models/faxstatus.go
 gc/models/faxsummary.go
 gc/models/featurestate.go
+gc/models/featuresupport.go
 gc/models/feedback.go
 gc/models/feedbackaddrequest.go
 gc/models/feedbackupdaterequest.go
@@ -3738,6 +3757,8 @@ gc/models/language.go
 gc/models/languageentitylisting.go
 gc/models/languageoverride.go
 gc/models/languagereference.go
+gc/models/languagesupportinforecord.go
+gc/models/languagesupportresponse.go
 gc/models/lastattemptbycolumnconditionsettings.go
 gc/models/lastattemptoverallconditionsettings.go
 gc/models/lastresultbycolumnconditionsettings.go
@@ -4113,6 +4134,8 @@ gc/models/nuanceorganization.go
 gc/models/number.go
 gc/models/numberplan.go
 gc/models/numericrange.go
+gc/models/oauthappleauthorizationresponse.go
+gc/models/oauthappleauthorizationresponseerror.go
 gc/models/oauthauthorization.go
 gc/models/oauthauthorizationlisting.go
 gc/models/oauthclient.go
@@ -4307,6 +4330,7 @@ gc/models/performancepredictionrecalculationuploadresponse.go
 gc/models/performancepredictionresponse.go
 gc/models/performancepredictionuploadschema.go
 gc/models/performanceprofile.go
+gc/models/permissioncollectionentitylisting.go
 gc/models/permissiondetails.go
 gc/models/permissions.go
 gc/models/phone.go

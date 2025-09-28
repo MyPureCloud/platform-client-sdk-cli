@@ -3,6 +3,11 @@
   "description": "/api/v2/guides",
   "resources": [
     {
+      "name": "delete",
+      "path": "/api/v2/guides/{guideId}/jobs",
+      "description": "Start the deletion of a guide."
+    },
+    {
       "name": "getjobforguide",
       "path": "/api/v2/guides/{guideId}/jobs/{jobId}",
       "description": "Get the specified guide deletion job."
@@ -18,9 +23,9 @@
       "description": "Update a guide."
     },
     {
-      "name": "delete",
-      "path": "/api/v2/guides/{guideId}/jobs",
-      "description": "Start the deletion of a guide."
+      "name": "get",
+      "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}",
+      "description": "Get the status of the publishing job for this guide version."
     },
     {
       "name": "get",
@@ -36,11 +41,6 @@
       "name": "create",
       "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs",
       "description": "Start the publishing of a guide version."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}",
-      "description": "Get the status of the publishing job for this guide version."
     },
     {
       "name": "create",

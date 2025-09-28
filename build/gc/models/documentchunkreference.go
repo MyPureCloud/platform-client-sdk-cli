@@ -16,6 +16,9 @@ type DocumentchunkreferenceDud struct {
 
     
 
+
+    SelfUri string `json:"selfUri"`
+
 }
 
 // Documentchunkreference
@@ -26,6 +29,9 @@ type Documentchunkreference struct {
 
     // Title - The title of the document.
     Title string `json:"title"`
+
+
+    
 
 }
 
@@ -55,6 +61,9 @@ func (u *Documentchunkreference) MarshalJSON() ([]byte, error) {
         Title string `json:"title"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -19,6 +19,9 @@ type SearchupdaterequestDud struct {
 
     
 
+
+    
+
 }
 
 // Searchupdaterequest
@@ -33,12 +36,17 @@ type Searchupdaterequest struct {
     // SelectedAnswer - The selected search result chosen as the answer.
     SelectedAnswer Selectedanswer `json:"selectedAnswer"`
 
+
+    // SelectedAnswers - The search results selected as answers
+    SelectedAnswers []Selectedanswer `json:"selectedAnswers"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Searchupdaterequest) String() string {
     
     
+     o.SelectedAnswers = []Selectedanswer{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -59,6 +67,8 @@ func (u *Searchupdaterequest) MarshalJSON() ([]byte, error) {
         Answered bool `json:"answered"`
         
         SelectedAnswer Selectedanswer `json:"selectedAnswer"`
+        
+        SelectedAnswers []Selectedanswer `json:"selectedAnswers"`
         *Alias
     }{
 
@@ -68,6 +78,11 @@ func (u *Searchupdaterequest) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        SelectedAnswers: []Selectedanswer{{}},
         
 
         Alias: (*Alias)(u),

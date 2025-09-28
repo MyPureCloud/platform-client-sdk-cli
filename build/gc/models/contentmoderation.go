@@ -13,6 +13,9 @@ var (
 type ContentmoderationDud struct { 
     
 
+
+    
+
 }
 
 // Contentmoderation
@@ -20,11 +23,16 @@ type Contentmoderation struct {
     // Flag - The Content Moderation Flag of the message.
     Flag string `json:"flag"`
 
+
+    // Categories - The Content Moderation Categories of the message.
+    Categories []string `json:"categories"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Contentmoderation) String() string {
     
+     o.Categories = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -43,9 +51,16 @@ func (u *Contentmoderation) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Flag string `json:"flag"`
+        
+        Categories []string `json:"categories"`
         *Alias
     }{
 
+        
+
+
+        
+        Categories: []string{""},
         
 
         Alias: (*Alias)(u),

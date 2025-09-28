@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdrouting_queues_assistant() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Which fields, if any, to expand. Valid values: assistant")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: assistant, copilot")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/assistant", utils.FormatPermissions([]string{ "assistants:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/{queueId}/assistant")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -72,7 +72,7 @@ var getCmd = &cobra.Command{
 		queueId, args := args[0], args[1:]
 		path = strings.Replace(path, "{queueId}", fmt.Sprintf("%v", queueId), -1)
 
-		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
 		}

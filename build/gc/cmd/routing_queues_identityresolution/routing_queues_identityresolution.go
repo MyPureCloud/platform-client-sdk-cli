@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdrouting_queues_identityresolution() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/identityresolution", utils.FormatPermissions([]string{ "routing:queue:view", "routing:identityResolution:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/{queueId}/identityresolution")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}/identityresolution", utils.FormatPermissions([]string{ "routing:queue:view", "queue:identityResolution:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/{queueId}/identityresolution")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -43,7 +43,7 @@ func Cmdrouting_queues_identityresolution() *cobra.Command {
 }`)
 	routing_queues_identityresolutionCmd.AddCommand(getCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/queues/{queueId}/identityresolution", utils.FormatPermissions([]string{ "routing:queue:edit", "routing:identityResolution:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/queues/{queueId}/identityresolution")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/queues/{queueId}/identityresolution", utils.FormatPermissions([]string{ "routing:queue:edit", "queue:identityResolution:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/queues/{queueId}/identityresolution")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "content" : {
     "application/json" : {

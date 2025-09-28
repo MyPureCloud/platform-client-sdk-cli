@@ -1,0 +1,12 @@
+package workforcemanagement_agentschedules_managementunits
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_agentschedules_managementunits_mine"
+)
+
+func init() {
+	workforcemanagement_agentschedules_managementunitsCmd.AddCommand(workforcemanagement_agentschedules_managementunits_mine.Cmdworkforcemanagement_agentschedules_managementunits_mine())
+	workforcemanagement_agentschedules_managementunitsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_agentschedules_managementunitsCmd.Short, workforcemanagement_agentschedules_managementunits_mine.Description, )
+	workforcemanagement_agentschedules_managementunitsCmd.Long = workforcemanagement_agentschedules_managementunitsCmd.Short
+}

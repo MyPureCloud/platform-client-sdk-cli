@@ -49,6 +49,24 @@ type ConversationmessagecontentDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Conversationmessagecontent - Message content element. If contentType = \"Attachment\" only one item is allowed.
@@ -101,8 +119,32 @@ type Conversationmessagecontent struct {
     Reactions []Conversationcontentreaction `json:"reactions"`
 
 
+    // DatePicker - Date picker content.
+    DatePicker Conversationcontentdatepicker `json:"datePicker"`
+
+
+    // InteractiveApplication - InteractiveApplication content.
+    InteractiveApplication Conversationcontentinteractiveapplication `json:"interactiveApplication"`
+
+
+    // ListPicker - List picker content.
+    ListPicker Conversationcontentlistpicker `json:"listPicker"`
+
+
+    // PaymentRequest - Payment request content.
+    PaymentRequest Conversationcontentpaymentrequest `json:"paymentRequest"`
+
+
+    // PaymentResponse - Payment response content.
+    PaymentResponse Conversationcontentpaymentresponse `json:"paymentResponse"`
+
+
     // Push - Push content.
     Push Conversationcontentpush `json:"push"`
+
+
+    // Form - Form content.
+    Form Conversationcontentform `json:"form"`
 
 }
 
@@ -120,6 +162,12 @@ func (o *Conversationmessagecontent) String() string {
     
     
      o.Reactions = []Conversationcontentreaction{{}} 
+    
+    
+    
+    
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -162,7 +210,19 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
         
         Reactions []Conversationcontentreaction `json:"reactions"`
         
+        DatePicker Conversationcontentdatepicker `json:"datePicker"`
+        
+        InteractiveApplication Conversationcontentinteractiveapplication `json:"interactiveApplication"`
+        
+        ListPicker Conversationcontentlistpicker `json:"listPicker"`
+        
+        PaymentRequest Conversationcontentpaymentrequest `json:"paymentRequest"`
+        
+        PaymentResponse Conversationcontentpaymentresponse `json:"paymentResponse"`
+        
         Push Conversationcontentpush `json:"push"`
+        
+        Form Conversationcontentform `json:"form"`
         *Alias
     }{
 
@@ -201,6 +261,24 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
 
         
         Reactions: []Conversationcontentreaction{{}},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
 

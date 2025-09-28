@@ -263,6 +263,9 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticssession
@@ -401,6 +404,10 @@ type Analyticssession struct {
 
     // EligibleAgentCounts - Number of eligible agents for each predictive routing attempt
     EligibleAgentCounts []int `json:"eligibleAgentCounts"`
+
+
+    // EngagementSource - Open Messaging engagement source type
+    EngagementSource string `json:"engagementSource"`
 
 
     // ExtendedDeliveryStatus - Extended delivery status
@@ -664,6 +671,7 @@ func (o *Analyticssession) String() string {
     
     
     
+    
      o.RemovedSkillIds = []string{""} 
      o.RequestedRoutings = []string{""} 
     
@@ -774,6 +782,8 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         EdgeId string `json:"edgeId"`
         
         EligibleAgentCounts []int `json:"eligibleAgentCounts"`
+        
+        EngagementSource string `json:"engagementSource"`
         
         ExtendedDeliveryStatus string `json:"extendedDeliveryStatus"`
         
@@ -988,6 +998,9 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
         
         EligibleAgentCounts: []int{0},
+        
+
+
         
 
 

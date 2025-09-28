@@ -184,7 +184,7 @@ type Activityplanresponse struct {
     ModifiedBy Userreference `json:"modifiedBy"`
 
 
-    // LastRunDate - The date the activity plan was last run, in ISO-8601 format
+    // LastRunDate - The date on which the activity plan was last manually run, in ISO-8601 format
     LastRunDate time.Time `json:"lastRunDate"`
 
 

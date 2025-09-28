@@ -77,6 +77,9 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Recordingmessagingmessage
@@ -168,6 +171,10 @@ type Recordingmessagingmessage struct {
     // Events - List of event elements
     Events []Conversationmessageevent `json:"events"`
 
+
+    // InteractiveApplication - InteractiveApplication content.
+    InteractiveApplication Interactiveapplication `json:"interactiveApplication"`
+
 }
 
 // String returns a JSON representation of the model
@@ -194,6 +201,7 @@ func (o *Recordingmessagingmessage) String() string {
     
     
      o.Events = []Conversationmessageevent{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -254,6 +262,8 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         SocialVisibility string `json:"socialVisibility"`
         
         Events []Conversationmessageevent `json:"events"`
+        
+        InteractiveApplication Interactiveapplication `json:"interactiveApplication"`
         *Alias
     }{
 
@@ -330,6 +340,9 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
 
         
         Events: []Conversationmessageevent{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

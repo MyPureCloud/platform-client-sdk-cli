@@ -129,13 +129,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/users/presences/{sourceId}/bulk",
-      "description": "Get bulk user presences for a single presence source"
+      "path": "/api/v2/users/presences/purecloud/bulk",
+      "description": "Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source"
     },
     {
       "name": "get",
-      "path": "/api/v2/users/presences/purecloud/bulk",
-      "description": "Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source"
+      "path": "/api/v2/users/presences/{sourceId}/bulk",
+      "description": "Get bulk user presences for a single presence source"
     },
     {
       "name": "update",
@@ -338,11 +338,6 @@
       "description": "Get station information for user"
     },
     {
-      "name": "update",
-      "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
-      "description": "Set associated station"
-    },
-    {
       "name": "delete",
       "path": "/api/v2/users/{userId}/station/associatedstation",
       "description": "Clear associated station"
@@ -356,6 +351,11 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/station/defaultstation",
       "description": "Clear default station"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
+      "description": "Set associated station"
     },
     {
       "name": "list",
@@ -393,11 +393,6 @@
       "description": "Search users assigned to teams"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/development/activities",
       "description": "Get list of Development Activities"
@@ -406,6 +401,11 @@
       "name": "list",
       "path": "/api/v2/users/development/activities/me",
       "description": "Get list of Development Activities for current user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
     },
     {
       "name": "create",

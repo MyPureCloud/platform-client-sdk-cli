@@ -54,6 +54,9 @@ type TopicDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -77,6 +80,10 @@ type Topic struct {
 
     // Strictness
     Strictness string `json:"strictness"`
+
+
+    // MatchingType
+    MatchingType string `json:"matchingType"`
 
 
     // Programs
@@ -125,6 +132,7 @@ func (o *Topic) String() string {
     
     
     
+    
      o.Programs = []Baseprogramentity{{}} 
      o.Tags = []string{""} 
     
@@ -159,6 +167,8 @@ func (u *Topic) MarshalJSON() ([]byte, error) {
         
         Strictness string `json:"strictness"`
         
+        MatchingType string `json:"matchingType"`
+        
         Programs []Baseprogramentity `json:"programs"`
         
         Tags []string `json:"tags"`
@@ -178,6 +188,9 @@ func (u *Topic) MarshalJSON() ([]byte, error) {
         DatePublished time.Time `json:"datePublished"`
         *Alias
     }{
+
+        
+
 
         
 

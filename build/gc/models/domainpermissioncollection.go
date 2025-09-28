@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    DomainpermissioncollectiondomainpermissionMarshalled = false
+    DomainpermissioncollectionMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type DomainpermissioncollectiondomainpermissionDud struct { 
+type DomainpermissioncollectionDud struct { 
     Id string `json:"id"`
 
 
@@ -27,8 +27,8 @@ type DomainpermissioncollectiondomainpermissionDud struct {
 
 }
 
-// Domainpermissioncollectiondomainpermission
-type Domainpermissioncollectiondomainpermission struct { 
+// Domainpermissioncollection
+type Domainpermissioncollection struct { 
     
 
 
@@ -49,7 +49,7 @@ type Domainpermissioncollectiondomainpermission struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Domainpermissioncollectiondomainpermission) String() string {
+func (o *Domainpermissioncollection) String() string {
     
     
      o.PermissionMap = map[string][]Domainpermission{"": {}} 
@@ -60,13 +60,13 @@ func (o *Domainpermissioncollectiondomainpermission) String() string {
     return str
 }
 
-func (u *Domainpermissioncollectiondomainpermission) MarshalJSON() ([]byte, error) {
-    type Alias Domainpermissioncollectiondomainpermission
+func (u *Domainpermissioncollection) MarshalJSON() ([]byte, error) {
+    type Alias Domainpermissioncollection
 
-    if DomainpermissioncollectiondomainpermissionMarshalled {
+    if DomainpermissioncollectionMarshalled {
         return []byte("{}"), nil
     }
-    DomainpermissioncollectiondomainpermissionMarshalled = true
+    DomainpermissioncollectionMarshalled = true
 
     return json.Marshal(&struct {
         

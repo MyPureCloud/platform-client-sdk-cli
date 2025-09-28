@@ -706,6 +706,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1637,6 +1640,10 @@ type Viewfilter struct {
     // SentimentTrendCategories - A set of Sentiment Trend Categories for filtering
     SentimentTrendCategories []string `json:"sentimentTrendCategories"`
 
+
+    // ContentModerationFlags - A set of Content Moderation Flags for filtering
+    ContentModerationFlags []string `json:"contentModerationFlags"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1873,6 +1880,7 @@ func (o *Viewfilter) String() string {
      o.EmpathyScoreCategories = []string{""} 
      o.SentimentScoreCategories = []string{""} 
      o.SentimentTrendCategories = []string{""} 
+     o.ContentModerationFlags = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2353,6 +2361,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         SentimentScoreCategories []string `json:"sentimentScoreCategories"`
         
         SentimentTrendCategories []string `json:"sentimentTrendCategories"`
+        
+        ContentModerationFlags []string `json:"contentModerationFlags"`
         *Alias
     }{
 
@@ -3369,6 +3379,11 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         SentimentTrendCategories: []string{""},
+        
+
+
+        
+        ContentModerationFlags: []string{""},
         
 
         Alias: (*Alias)(u),

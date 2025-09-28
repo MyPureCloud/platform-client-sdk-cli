@@ -48,14 +48,14 @@
       "description": "Add a conversation to an appointment"
     },
     {
-      "name": "update",
-      "path": "/api/v2/coaching/appointments/{appointmentId}/status",
-      "description": "Update the status of a coaching appointment"
-    },
-    {
       "name": "list",
       "path": "/api/v2/coaching/appointments/{appointmentId}/statuses",
       "description": "Get the list of status changes for a coaching appointment."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/coaching/appointments/{appointmentId}/status",
+      "description": "Update the status of a coaching appointment"
     },
     {
       "name": "create",

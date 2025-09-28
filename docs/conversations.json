@@ -265,7 +265,7 @@
     {
       "name": "create",
       "path": "/api/v2/conversations/calls/{conversationId}/participants/user/{userId}",
-      "description": "Add participants to a conversation without a user context"
+      "description": "Add participants to a conversation on behalf of a user"
     },
     {
       "name": "list",
@@ -844,6 +844,41 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}",
+      "description": "Get Apple messaging integration identity resolution settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}",
+      "description": "Create an identity resolution settings for a Apple messaging integration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/integrations/apple/{integrationId}",
+      "description": "Get an Apple messaging integration"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/messaging/integrations/apple/{integrationId}",
+      "description": "Delete an Apple messaging integration"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/integrations/apple/{integrationId}",
+      "description": "Update an Apple messaging integration"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messaging/integrations/apple",
+      "description": "Get a list of Apple Integrations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messaging/integrations/apple",
+      "description": "Create Apple Integration"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/conversations/messaging/facebook/app",
       "description": "Get Genesys Facebook App Id"
     },
@@ -1128,6 +1163,11 @@
       "description": "Delete a code used to add a communication to this participant"
     },
     {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks",
+      "description": "Create a new callback for the specified participant on the conversation."
+    },
+    {
       "name": "update",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}",
       "description": "Update a participant."
@@ -1146,11 +1186,6 @@
       "name": "list",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes",
       "description": "Get list of wrapup codes for this conversation participant"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks",
-      "description": "Create a new callback for the specified participant on the conversation."
     },
     {
       "name": "update",
@@ -1203,6 +1238,11 @@
       "description": "Create secure IVR session. Only a participant in the conversation can invoke a secure IVR."
     },
     {
+      "name": "list",
+      "path": "/api/v2/conversations/{conversationId}/suggestions",
+      "description": "Get all suggestions for a conversation."
+    },
+    {
       "name": "get",
       "path": "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}",
       "description": "Get Suggestion."
@@ -1216,11 +1256,6 @@
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/suggestions/feedback",
       "description": "Suggestion feedback."
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/conversations/{conversationId}/suggestions",
-      "description": "Get all suggestions for a conversation."
     },
     {
       "name": "get",
@@ -1271,6 +1306,11 @@
       "name": "delete",
       "path": "/api/v2/conversations/summaries/settings/{summarySettingId}",
       "description": "Delete a summary setting."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/oauth/apple/callback",
+      "description": "Call Authentication provider callback to validate state and code"
     },
     {
       "name": "recordingmetadata",
@@ -1376,16 +1416,6 @@
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages",
       "description": "Send internal message"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}",
-      "description": "Get Apple messaging integration identity resolution settings"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}",
-      "description": "Create an identity resolution settings for a Apple messaging integration"
     },
     {
       "name": "create",

@@ -81,6 +81,8 @@ func Cmdrouting_predictors() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 200. Deprecated in favour of pageSize")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queueId", "", "Comma-separated list of queue Ids to filter by.")
+	utils.AddFlag(listCmd.Flags(), "string", "kpiId", "", "Standard or custom KPI id used to filter predictors.")
+	utils.AddFlag(listCmd.Flags(), "string", "state", "", "The state used to filter predictors. Valid values: Created, Error, Active")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/predictors", utils.FormatPermissions([]string{ "routing:predictor:view", "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/predictors")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -361,6 +363,14 @@ var listCmd = &cobra.Command{
 		queueId := utils.GetFlag(cmd.Flags(), "[]string", "queueId")
 		if queueId != "" {
 			queryParams["queueId"] = queueId
+		}
+		kpiId := utils.GetFlag(cmd.Flags(), "string", "kpiId")
+		if kpiId != "" {
+			queryParams["kpiId"] = kpiId
+		}
+		state := utils.GetFlag(cmd.Flags(), "string", "state")
+		if state != "" {
+			queryParams["state"] = state
 		}
 		urlString := path
 		if len(queryParams) > 0 {

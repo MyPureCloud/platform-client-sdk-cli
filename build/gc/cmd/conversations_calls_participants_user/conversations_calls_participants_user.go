@@ -62,8 +62,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create [conversationId] [userId]",
-	Short: "Add participants to a conversation without a user context",
-	Long:  "Add participants to a conversation without a user context",
+	Short: "Add participants to a conversation on behalf of a user",
+	Long:  "Add participants to a conversation on behalf of a user",
 	Args:  utils.DetermineArgs([]string{ "conversationId", "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

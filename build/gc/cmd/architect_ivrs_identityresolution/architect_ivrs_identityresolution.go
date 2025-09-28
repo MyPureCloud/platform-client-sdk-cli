@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdarchitect_ivrs_identityresolution() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/ivrs/{ivrId}/identityresolution", utils.FormatPermissions([]string{ "routing:callRoute:view", "routing:identityResolution:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/ivrs/{ivrId}/identityresolution")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/architect/ivrs/{ivrId}/identityresolution", utils.FormatPermissions([]string{ "routing:callRoute:view", "routing:identityResolutionIvr:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/ivrs/{ivrId}/identityresolution")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -43,7 +43,7 @@ func Cmdarchitect_ivrs_identityresolution() *cobra.Command {
 }`)
 	architect_ivrs_identityresolutionCmd.AddCommand(getCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/architect/ivrs/{ivrId}/identityresolution", utils.FormatPermissions([]string{ "routing:callRoute:edit", "routing:identityResolution:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/architect/ivrs/{ivrId}/identityresolution")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/architect/ivrs/{ivrId}/identityresolution", utils.FormatPermissions([]string{ "routing:callRoute:edit", "routing:identityResolutionIvr:edit",  }), utils.GenerateDevCentreLink("PUT", "Architect", "/api/v2/architect/ivrs/{ivrId}/identityresolution")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "content" : {
     "application/json" : {

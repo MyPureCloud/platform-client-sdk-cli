@@ -58,14 +58,14 @@
       "description": "Update category"
     },
     {
-      "name": "get",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}",
-      "description": "Get document content upload status"
-    },
-    {
       "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads",
       "description": "Upload Article Content"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}",
+      "description": "Get document content upload status"
     },
     {
       "name": "get",
@@ -473,19 +473,14 @@
       "description": "Create synchronization job"
     },
     {
-      "name": "list",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations",
-      "description": "Get operations"
-    },
-    {
       "name": "get",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query",
       "description": "Get ids of operation creator users and oauth clients"
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
-      "description": "Import the parsed articles"
+      "name": "list",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations",
+      "description": "Get operations"
     },
     {
       "name": "get",
@@ -496,6 +491,11 @@
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}",
       "description": "Send update to the parse operation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
+      "description": "Import the parsed articles"
     },
     {
       "name": "create",

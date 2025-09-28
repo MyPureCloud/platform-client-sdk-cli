@@ -26,6 +26,12 @@ type DispositionDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Disposition
@@ -49,10 +55,20 @@ type Disposition struct {
     // DetectedSpeechEnd - Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DetectedSpeechEnd time.Time `json:"detectedSpeechEnd"`
 
+
+    // AmdTimeout - Answering Machine Detection timeout configuration.
+    AmdTimeout Dispositionamdtimeout `json:"amdTimeout"`
+
+
+    // SilentCallTimeout - Silent Call timeout configuration.
+    SilentCallTimeout Dispositionsilentcalltimeout `json:"silentCallTimeout"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Disposition) String() string {
+    
+    
     
     
     
@@ -84,8 +100,18 @@ func (u *Disposition) MarshalJSON() ([]byte, error) {
         DetectedSpeechStart time.Time `json:"detectedSpeechStart"`
         
         DetectedSpeechEnd time.Time `json:"detectedSpeechEnd"`
+        
+        AmdTimeout Dispositionamdtimeout `json:"amdTimeout"`
+        
+        SilentCallTimeout Dispositionsilentcalltimeout `json:"silentCallTimeout"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

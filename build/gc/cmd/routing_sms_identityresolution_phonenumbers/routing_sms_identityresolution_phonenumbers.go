@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdrouting_sms_identityresolution_phonenumbers() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}", utils.FormatPermissions([]string{ "sms:phoneNumber:view", "routing:identityResolution:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}", utils.FormatPermissions([]string{ "sms:phoneNumber:view", "sms:identityResolution:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -43,7 +43,7 @@ func Cmdrouting_sms_identityresolution_phonenumbers() *cobra.Command {
 }`)
 	routing_sms_identityresolution_phonenumbersCmd.AddCommand(getCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}", utils.FormatPermissions([]string{ "sms:phoneNumber:edit", "routing:identityResolution:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}", utils.FormatPermissions([]string{ "sms:phoneNumber:edit", "sms:identityResolution:edit",  }), utils.GenerateDevCentreLink("PUT", "Routing", "/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "content" : {
     "application/json" : {

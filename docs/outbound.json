@@ -338,16 +338,6 @@
       "description": "Delete Contact List Template"
     },
     {
-      "name": "create",
-      "path": "/api/v2/outbound/contactlisttemplates/bulk/add",
-      "description": "Add multiple contact list templates"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/outbound/contactlisttemplates/bulk/retrieve",
-      "description": "Get multiple contact list templates"
-    },
-    {
       "name": "list",
       "path": "/api/v2/outbound/contactlisttemplates",
       "description": "Query a list of contact list templates"
@@ -361,6 +351,16 @@
       "name": "deleteall",
       "path": "/api/v2/outbound/contactlisttemplates",
       "description": "Delete multiple contact list templates."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlisttemplates/bulk/add",
+      "description": "Add multiple contact list templates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlisttemplates/bulk/retrieve",
+      "description": "Get multiple contact list templates"
     },
     {
       "name": "list",

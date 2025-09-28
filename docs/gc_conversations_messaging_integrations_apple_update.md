@@ -1,15 +1,22 @@
-## gc users presences bulk
+## gc conversations messaging integrations apple update
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Update an Apple messaging integration
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Update an Apple messaging integration
+
+```
+gc conversations messaging integrations apple update [integrationId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for update
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +36,6 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc conversations messaging integrations apple](gc_conversations_messaging_integrations_apple.html)	 - /api/v2/conversations/messaging/integrations/apple
 
 

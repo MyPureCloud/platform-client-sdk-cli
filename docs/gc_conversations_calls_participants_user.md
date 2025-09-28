@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc conversations calls participants](gc_conversations_calls_participants.html)	 - /api/v2/conversations/calls/{conversationId}/participants
-* [gc conversations calls participants user create](gc_conversations_calls_participants_user_create.html)	 - Add participants to a conversation without a user context
+* [gc conversations calls participants user create](gc_conversations_calls_participants_user_create.html)	 - Add participants to a conversation on behalf of a user
 
 

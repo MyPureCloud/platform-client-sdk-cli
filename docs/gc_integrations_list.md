@@ -17,10 +17,13 @@ gc integrations list [flags]
       --expand strings           variable name requested by expand list
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
+      --ids strings              Comma-separated list of integration IDs to filter by (max 100)
+      --integrationType string   Filter integrations by integration type ID
       --nextPage string          next page token
       --pageNumber string        The page number requested (default "1")
       --pageSize string          The total page size requested (default "25")
       --previousPage string      Previous page token
+      --reportedState string     Filter integrations by reported state (case-insensitive) Valid values: ACTIVE, ACTIVATING, INACTIVE, DEACTIVATING, ERROR
       --sortBy string            variable name requested to sort by
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```

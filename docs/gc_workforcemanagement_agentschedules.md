@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement](gc_workforcemanagement.html)	 - /api/v2/workforcemanagement
+* [gc workforcemanagement agentschedules managementunits](gc_workforcemanagement_agentschedules_managementunits.html)	 - /api/v2/workforcemanagement/agentschedules/managementunits
 * [gc workforcemanagement agentschedules mine](gc_workforcemanagement_agentschedules_mine.html)	 - /api/v2/workforcemanagement/agentschedules/mine
 
 

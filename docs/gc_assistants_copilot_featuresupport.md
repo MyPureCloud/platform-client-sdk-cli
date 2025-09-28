@@ -1,15 +1,15 @@
-## gc users presences bulk
+## gc assistants copilot featuresupport
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/assistants/copilot/featuresupport
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/assistants/copilot/featuresupport
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -h, --help   help for featuresupport
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +29,7 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc assistants copilot](gc_assistants_copilot.html)	 - /api/v2/assistants/{assistantId}/copilot
+* [gc assistants copilot featuresupport get](gc_assistants_copilot_featuresupport_get.html)	 - Get information about the support of features for all the languages or only for a certain language.
 
 

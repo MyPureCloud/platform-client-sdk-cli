@@ -1,10 +1,10 @@
 ## gc quality evaluators activity list
 
-Get an evaluator activity
+Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
 
 ### Synopsis
 
-Get an evaluator activity
+Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
 
 ```
 gc quality evaluators activity list [flags]

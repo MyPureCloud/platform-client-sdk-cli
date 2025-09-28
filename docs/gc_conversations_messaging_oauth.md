@@ -1,15 +1,15 @@
-## gc users presences bulk
+## gc conversations messaging oauth
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/conversations/messaging/oauth
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/conversations/messaging/oauth
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -h, --help   help for oauth
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +29,7 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc conversations messaging](gc_conversations_messaging.html)	 - /api/v2/conversations/messaging
+* [gc conversations messaging oauth apple](gc_conversations_messaging_oauth_apple.html)	 - /api/v2/conversations/messaging/oauth/apple
 
 

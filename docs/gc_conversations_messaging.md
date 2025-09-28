@@ -33,6 +33,7 @@
 * [gc conversations messaging facebook](gc_conversations_messaging_facebook.html)	 - /api/v2/conversations/messaging/facebook
 * [gc conversations messaging identityresolution](gc_conversations_messaging_identityresolution.html)	 - /api/v2/conversations/messaging/identityresolution
 * [gc conversations messaging integrations](gc_conversations_messaging_integrations.html)	 - /api/v2/conversations/messaging/integrations
+* [gc conversations messaging oauth](gc_conversations_messaging_oauth.html)	 - /api/v2/conversations/messaging/oauth
 * [gc conversations messaging settings](gc_conversations_messaging_settings.html)	 - /api/v2/conversations/messaging/settings
 * [gc conversations messaging supportedcontent](gc_conversations_messaging_supportedcontent.html)	 - /api/v2/conversations/messaging/supportedcontent
 * [gc conversations messaging threadingtimeline](gc_conversations_messaging_threadingtimeline.html)	 - /api/v2/conversations/messaging/threadingtimeline

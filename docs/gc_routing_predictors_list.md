@@ -18,9 +18,11 @@ gc routing predictors list [flags]
       --before string            The cursor that points to the start of the set of entities that has been returned.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
+      --kpiId string             Standard or custom KPI id used to filter predictors.
       --limit string             Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
       --pageSize string          Number of entities to return. Maximum of 200.
       --queueId strings          Comma-separated list of queue Ids to filter by.
+      --state string             The state used to filter predictors. Valid values: Created, Error, Active
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

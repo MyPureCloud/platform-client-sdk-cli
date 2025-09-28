@@ -13,6 +13,7 @@ gc learning modules rule update [moduleId] [flags]
 ### Options
 
 ```
+      --assign string      Whether to assign the module to users or not Valid values: true, false
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
   -h, --help               help for update

@@ -32,6 +32,6 @@
 * [gc analytics](gc_analytics.html)	 - /api/v2/analytics
 * [gc analytics conversations activity](gc_analytics_conversations_activity.html)	 - /api/v2/analytics/conversations/activity
 * [gc analytics conversations aggregates](gc_analytics_conversations_aggregates.html)	 - /api/v2/analytics/conversations/aggregates
-* [gc analytics conversations details](gc_analytics_conversations_details.html)	 - /api/v2/analytics/conversations/details /api/v2/analytics/conversations/{conversationId}/details
+* [gc analytics conversations details](gc_analytics_conversations_details.html)	 - /api/v2/analytics/conversations/{conversationId}/details /api/v2/analytics/conversations/details
 
 

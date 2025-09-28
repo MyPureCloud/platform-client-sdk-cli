@@ -1,15 +1,20 @@
-## gc users presences bulk
+## gc conversations messaging integrations apple get
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Get an Apple messaging integration
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Get an Apple messaging integration
+
+```
+gc conversations messaging integrations apple get [integrationId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+      --expand string   Expand instructions for the return value. Valid values: supportedContent, messagingSetting, identityresolution
+  -h, --help            help for get
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +34,6 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc conversations messaging integrations apple](gc_conversations_messaging_integrations_apple.html)	 - /api/v2/conversations/messaging/integrations/apple
 
 

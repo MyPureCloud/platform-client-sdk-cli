@@ -1,10 +1,10 @@
 ## gc conversations calls participants user create
 
-Add participants to a conversation without a user context
+Add participants to a conversation on behalf of a user
 
 ### Synopsis
 
-Add participants to a conversation without a user context
+Add participants to a conversation on behalf of a user
 
 ```
 gc conversations calls participants user create [conversationId] [userId] [flags]

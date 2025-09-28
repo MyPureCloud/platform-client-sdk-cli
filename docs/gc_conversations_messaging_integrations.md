@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc conversations messaging](gc_conversations_messaging.html)	 - /api/v2/conversations/messaging
+* [gc conversations messaging integrations apple](gc_conversations_messaging_integrations_apple.html)	 - /api/v2/conversations/messaging/integrations/apple
 * [gc conversations messaging integrations facebook](gc_conversations_messaging_integrations_facebook.html)	 - /api/v2/conversations/messaging/integrations/facebook
 * [gc conversations messaging integrations instagram](gc_conversations_messaging_integrations_instagram.html)	 - /api/v2/conversations/messaging/integrations/instagram
 * [gc conversations messaging integrations list](gc_conversations_messaging_integrations_list.html)	 - Get a list of Integrations

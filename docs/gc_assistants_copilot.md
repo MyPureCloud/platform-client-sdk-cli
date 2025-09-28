@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc assistants](gc_assistants.html)	 - /api/v2/assistants
+* [gc assistants copilot featuresupport](gc_assistants_copilot_featuresupport.html)	 - /api/v2/assistants/copilot/featuresupport
 * [gc assistants copilot get](gc_assistants_copilot_get.html)	 - Get copilot configuration of an assistant.
 * [gc assistants copilot update](gc_assistants_copilot_update.html)	 - Update agent copilot configuration
 

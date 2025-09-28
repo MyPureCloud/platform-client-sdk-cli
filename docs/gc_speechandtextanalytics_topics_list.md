@@ -21,7 +21,7 @@ gc speechandtextanalytics topics list [flags]
       --name string              Case insensitive partial name to filter by
       --nextPage string          The key for listing the next page
       --pageSize string          The page size for the listing. The max that will be returned is 500. (default "20")
-      --sortBy string            Sort results by. Defaults to name Valid values: name
+      --sortBy string            Sort results by. Defaults to name Valid values: name, matchingType
       --sortOrder string         Sort order. Defaults to asc Valid values: asc, desc
       --state string             Topic state. Defaults to latest Valid values: latest, published
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

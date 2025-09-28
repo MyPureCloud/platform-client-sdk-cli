@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc quality evaluators](gc_quality_evaluators.html)	 - /api/v2/quality/evaluators
-* [gc quality evaluators activity list](gc_quality_evaluators_activity_list.html)	 - Get an evaluator activity
+* [gc quality evaluators activity list](gc_quality_evaluators_activity_list.html)	 - Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
 
 

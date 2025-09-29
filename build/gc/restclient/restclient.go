@@ -586,11 +586,24 @@ func getOAuthResponseDataFromURL(c config.Configuration, url string, codeVerifie
         return response
 }
 
+func isWSL() bool {
+    data, err := os.ReadFile("/proc/version")
+    if err != nil {
+        return false
+    }
+    return strings.Contains(strings.ToLower(string(data)), "microsoft")
+}
+
 func openBrowserForLoginFunc(loginURL string) {
         var err error
         switch runtime.GOOS {
         case "linux":
                 err = exec.Command("xdg-open", loginURL).Start()
+
+                // Try explorer.exe in WSL
+                if err != nil && isWSL() {
+                    err = exec.Command("explorer.exe", loginURL).Start()
+                }
         case "windows":
                 err = exec.Command("rundll32", "url.dll,FileProtocolHandler", loginURL).Start()
         case "darwin":

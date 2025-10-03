@@ -19,6 +19,7 @@ gc gamification insights rankings get [flags]
       --granularity string                     Granularity - REQUIRED Valid values: Weekly, Monthly
   -h, --help                                   help for get
       --primaryPeriodStartWorkday string       The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED
+      --reportsTo string                       The reportsTo used by ABAC policies.
       --sectionSize string                     The number of top and bottom users to return before ties
       --sortKey string                         Sort key - REQUIRED Valid values: percentOfGoal, percentOfGoalChange, overallPercentOfGoal, overallPercentOfGoalChange, value, valueChange
       --sortMetricId string                    Sort Metric Id

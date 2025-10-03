@@ -13,8 +13,8 @@ gc taskmanagement workitems get [workitemId] [flags]
 ### Options
 
 ```
-      --expands string   Which fields to expand. Comma separated if more than one. Valid values: type, workbin, status, queue, assignee
-  -h, --help             help for get
+      --expands strings   Which fields to expand. Comma separated if more than one. Valid values: type, workbin, status, queue, assignee
+  -h, --help              help for get
 ```
 
 ### Options inherited from parent commands

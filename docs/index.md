@@ -309,6 +309,8 @@ Running any API operation command followed by '--help' will print out the follow
 
 When creating a profile with the `gc profiles new` command, you may choose between using a Client Credential Grant, an Implicit Grant or a PKCE Grant. During the Implicit Login process, the user is redirected to their browser where they can authenticate themselves by logging into their Genesys Cloud org. This method can be preferable as it provides context about the user to which the access token was distributed. Unlike the Client Credential Grant, which is a general grant.
 
+When creating an Implicit Grant profile with the `gc profiles new` command, you can use the preset default port (i.e. 8080) for your redirect URI (e.g. `http://localhost:8080`), or you can define another port number that you prefer to use (e.g. `7788` - `http://localhost:7788`). If you need to modify an existing profile, you can edit the `.gc/config.toml` file directly and modify the `redirect_uri` property value under the corresponding profile (e.g. `redirect_uri = 'http://localhost:7788'`).
+
 To perform an implicit login, the OAuth Client under **`Admin > Integrations > OAuth`** needs to be configured properly by setting the **Grant Types** property to "Token Implicit Grant (Browser)", and by adding the permissible redirect URIs (e.g. `http://localhost:8080`).
 
 Optionally, and for added security, you can choose to open an HTTPS connection for this procedure. In this case, a self-signed certificate is generated locally, and you will need to select **Advanced > Proceed to 127.0.0.1** in the browser window as this certificate is not recognized by an official Certificate Authority. For secure HTTP connections, be sure to prepend the Client's redirect URI with "https://" instead of "http://" in your Genesys Cloud org.
@@ -318,6 +320,8 @@ For more information about the Implicit Grant login process, check out [this art
 # OAuth PKCE Grant
 
 When creating a profile with the `gc profiles new` command, you may choose between using a Client Credential Grant, an Implicit Grant or a PKCE Grant. During the PKCE Login process, the user is redirected to their browser where they can authenticate themselves by logging into their Genesys Cloud org. This method can be preferable as it provides context about the user to which the access token was distributed. Unlike the Client Credential Grant, which is a general grant.
+
+When creating a PKCE Grant profile with the `gc profiles new` command, you can use the preset default port (i.e. 8080) for your redirect URI (e.g. `http://localhost:8080`), or you can define another port number that you prefer to use (e.g. `7788` - `http://localhost:7788`). If you need to modify an existing profile, you can edit the `.gc/config.toml` file directly and modify the `redirect_uri` property value under the corresponding profile (e.g. `redirect_uri = 'http://localhost:7788'`).
 
 To perform a PKCE login, the OAuth Client under **`Admin > Integrations > OAuth`** needs to be configured properly by setting the **Grant Types** property to "Code Authorization", and by adding the permissible redirect URIs (e.g. `http://localhost:8080`).
 

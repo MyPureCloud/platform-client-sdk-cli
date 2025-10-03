@@ -20,6 +20,7 @@ gc speechandtextanalytics topics list [flags]
       --ids strings              Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
       --name string              Case insensitive partial name to filter by
       --nextPage string          The key for listing the next page
+      --pageNumber string        The page number for the listing
       --pageSize string          The page size for the listing. The max that will be returned is 500. (default "20")
       --sortBy string            Sort results by. Defaults to name Valid values: name, matchingType
       --sortOrder string         Sort order. Defaults to asc Valid values: asc, desc

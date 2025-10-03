@@ -17,6 +17,7 @@ gc gamification insights members list [flags]
       --filterType string     Filter type for the query request. - REQUIRED Valid values: PerformanceProfile, Division
       --granularity string    Granularity - REQUIRED Valid values: Weekly, Monthly
   -h, --help                  help for list
+      --reportsTo string      The reportsTo used by ABAC policies.
       --startWorkday string   The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED
 ```
 

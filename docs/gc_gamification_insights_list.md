@@ -23,6 +23,7 @@ gc gamification insights list [flags]
       --pageNumber string                      Page number (default "1")
       --pageSize string                        Page size (default "25")
       --primaryPeriodStartWorkday string       The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED
+      --reportsTo string                       The reportsTo used by ABAC policies.
       --sortKey string                         Sort key Valid values: percentOfGoal, percentOfGoalChange, overallPercentOfGoal, overallPercentOfGoalChange, value, valueChange
       --sortMetricId string                    Sort Metric Id
       --sortOrder string                       Sort order Valid values: asc, desc

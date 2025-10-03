@@ -80,6 +80,18 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Recordingmessagingmessage
@@ -144,6 +156,10 @@ type Recordingmessagingmessage struct {
     ButtonResponse Buttonresponse `json:"buttonResponse"`
 
 
+    // ButtonResponses - List of Button Response selected by user for this message.
+    ButtonResponses []Buttonresponse `json:"buttonResponses"`
+
+
     // Story - Ephemeral story content.
     Story Recordingcontentstory `json:"story"`
 
@@ -160,6 +176,10 @@ type Recordingmessagingmessage struct {
     DatePicker Datepicker `json:"datePicker"`
 
 
+    // ListPicker - ListPicker content object.
+    ListPicker Listpicker `json:"listPicker"`
+
+
     // ContentType - Indicates the content type for this message
     ContentType string `json:"contentType"`
 
@@ -174,6 +194,14 @@ type Recordingmessagingmessage struct {
 
     // InteractiveApplication - InteractiveApplication content.
     InteractiveApplication Interactiveapplication `json:"interactiveApplication"`
+
+
+    // PaymentRequest - Payment request content.
+    PaymentRequest Paymentrequest `json:"paymentRequest"`
+
+
+    // PaymentResponse - Payment response content.
+    PaymentResponse Paymentresponse `json:"paymentResponse"`
 
 }
 
@@ -194,13 +222,17 @@ func (o *Recordingmessagingmessage) String() string {
      o.MessageStickerAttachments = []Messagestickerattachment{{}} 
      o.QuickReplies = []Quickreply{{}} 
     
+     o.ButtonResponses = []Buttonresponse{{}} 
     
      o.Cards = []Card{{}} 
     
     
     
     
+    
      o.Events = []Conversationmessageevent{{}} 
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -249,6 +281,8 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         
         ButtonResponse Buttonresponse `json:"buttonResponse"`
         
+        ButtonResponses []Buttonresponse `json:"buttonResponses"`
+        
         Story Recordingcontentstory `json:"story"`
         
         Cards []Card `json:"cards"`
@@ -257,6 +291,8 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         
         DatePicker Datepicker `json:"datePicker"`
         
+        ListPicker Listpicker `json:"listPicker"`
+        
         ContentType string `json:"contentType"`
         
         SocialVisibility string `json:"socialVisibility"`
@@ -264,6 +300,10 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         Events []Conversationmessageevent `json:"events"`
         
         InteractiveApplication Interactiveapplication `json:"interactiveApplication"`
+        
+        PaymentRequest Paymentrequest `json:"paymentRequest"`
+        
+        PaymentResponse Paymentresponse `json:"paymentResponse"`
         *Alias
     }{
 
@@ -319,6 +359,11 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
 
 
         
+        ButtonResponses: []Buttonresponse{{}},
+        
+
+
+        
 
 
         
@@ -339,7 +384,16 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
         Events: []Conversationmessageevent{{}},
+        
+
+
+        
+
+
         
 
 

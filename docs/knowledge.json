@@ -473,14 +473,14 @@
       "description": "Create synchronization job"
     },
     {
-      "name": "get",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query",
-      "description": "Get ids of operation creator users and oauth clients"
-    },
-    {
       "name": "list",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations",
       "description": "Get operations"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query",
+      "description": "Get ids of operation creator users and oauth clients"
     },
     {
       "name": "get",

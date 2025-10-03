@@ -32,6 +32,7 @@ func Cmdgamification_insights_members() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "filterId", "", "ID for the filter type. - REQUIRED")
 	utils.AddFlag(listCmd.Flags(), "string", "granularity", "", "Granularity - REQUIRED Valid values: Weekly, Monthly")
 	utils.AddFlag(listCmd.Flags(), "time.Time", "startWorkday", "", "The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd - REQUIRED")
+	utils.AddFlag(listCmd.Flags(), "string", "reportsTo", "", "The reportsTo used by ABAC policies.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/gamification/insights/members", utils.FormatPermissions([]string{ "gamification:insights:viewAll",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/insights/members")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("filterType")
@@ -92,6 +93,10 @@ var listCmd = &cobra.Command{
 		startWorkday := utils.GetFlag(cmd.Flags(), "time.Time", "startWorkday")
 		if startWorkday != "" {
 			queryParams["startWorkday"] = startWorkday
+		}
+		reportsTo := utils.GetFlag(cmd.Flags(), "string", "reportsTo")
+		if reportsTo != "" {
+			queryParams["reportsTo"] = reportsTo
 		}
 		urlString := path
 		if len(queryParams) > 0 {

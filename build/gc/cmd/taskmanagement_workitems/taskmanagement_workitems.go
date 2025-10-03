@@ -62,7 +62,7 @@ func Cmdtaskmanagement_workitems() *cobra.Command {
 }`)
 	taskmanagement_workitemsCmd.AddCommand(deleteCmd)
 
-	utils.AddFlag(getCmd.Flags(), "string", "expands", "", "Which fields to expand. Comma separated if more than one. Valid values: type, workbin, status, queue, assignee")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expands", "", "Which fields to expand. Comma separated if more than one. Valid values: type, workbin, status, queue, assignee")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/taskmanagement/workitems/{workitemId}", utils.FormatPermissions([]string{ "workitems:workitem:view",  }), utils.GenerateDevCentreLink("GET", "Task Management", "/api/v2/taskmanagement/workitems/{workitemId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -262,7 +262,7 @@ var getCmd = &cobra.Command{
 		workitemId, args := args[0], args[1:]
 		path = strings.Replace(path, "{workitemId}", fmt.Sprintf("%v", workitemId), -1)
 
-		expands := utils.GetFlag(cmd.Flags(), "string", "expands")
+		expands := utils.GetFlag(cmd.Flags(), "[]string", "expands")
 		if expands != "" {
 			queryParams["expands"] = expands
 		}

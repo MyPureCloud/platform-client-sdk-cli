@@ -4,6 +4,11 @@
   "resources": [
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/contacts/add",
+      "description": "Bulk add contacts"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/contacts/remove",
       "description": "Bulk remove contacts"
     },
@@ -26,11 +31,6 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/contacts/divisionviews",
       "description": "Bulk fetch contacts across divisions"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/contacts/add",
-      "description": "Bulk add contacts"
     },
     {
       "name": "create",
@@ -59,6 +59,16 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/add",
+      "description": "Bulk add organizations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/remove",
+      "description": "Bulk remove organizations"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/organizations",
       "description": "Bulk fetch organizations"
     },
@@ -79,21 +89,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/organizations/add",
-      "description": "Bulk add organizations"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/organizations/remove",
-      "description": "Bulk remove organizations"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/relationships/add",
-      "description": "Bulk add relationships"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/remove",
       "description": "Bulk remove relationships"
     },
@@ -106,6 +101,11 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/update",
       "description": "Bulk update relationships"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/relationships/add",
+      "description": "Bulk add relationships"
     },
     {
       "name": "get",
@@ -389,11 +389,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/identifierlookup",
-      "description": "Fetch a contact using an identifier type and value."
-    },
-    {
-      "name": "create",
       "path": "/api/v2/externalcontacts/identifierlookup/contacts",
       "description": "Fetch a contact using an identifier type and value."
     },
@@ -401,6 +396,11 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/identifierlookup/organizations",
       "description": "Fetch an external organization using an identifier type and value."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/identifierlookup",
+      "description": "Fetch a contact using an identifier type and value."
     },
     {
       "name": "list",

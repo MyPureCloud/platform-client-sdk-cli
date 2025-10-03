@@ -30,11 +30,11 @@ func init() {
 func Cmdbusinessrules_schemas() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/businessrules/schemas", utils.FormatPermissions([]string{ "businessrules:businessRulesSchema:add",  }), utils.GenerateDevCentreLink("POST", "Business Rules", "/api/v2/businessrules/schemas")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "description" : "Schema",
+  "description" : "Business Rules Schema Create Request",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DataSchema"
+        "$ref" : "#/components/schemas/BusinessRulesSchemaCreateRequest"
       }
     }
   },
@@ -46,7 +46,7 @@ func Cmdbusinessrules_schemas() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DataSchema"
+        "$ref" : "#/components/schemas/BusinessRulesDataSchema"
       }
     }
   }
@@ -70,7 +70,7 @@ func Cmdbusinessrules_schemas() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DataSchema"
+        "$ref" : "#/components/schemas/BusinessRulesDataSchema"
       }
     }
   }
@@ -85,7 +85,7 @@ func Cmdbusinessrules_schemas() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DataSchemaListing"
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
       }
     }
   }
@@ -94,11 +94,11 @@ func Cmdbusinessrules_schemas() *cobra.Command {
 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/businessrules/schemas/{schemaId}", utils.FormatPermissions([]string{ "businessrules:businessRulesSchema:edit",  }), utils.GenerateDevCentreLink("PUT", "Business Rules", "/api/v2/businessrules/schemas/{schemaId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "description" : "Data Schema",
+  "description" : "Business Rules Schema Update Request",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DataSchema"
+        "$ref" : "#/components/schemas/BusinessRulesSchemaUpdateRequest"
       }
     }
   },
@@ -110,7 +110,7 @@ func Cmdbusinessrules_schemas() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/DataSchema"
+        "$ref" : "#/components/schemas/BusinessRulesDataSchema"
       }
     }
   }
@@ -136,7 +136,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Dataschema{}
+			reqModel := models.Businessrulesschemacreaterequest{}
 			utils.Render(reqModel.String())
 			
 			return
@@ -395,7 +395,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Dataschema{}
+			reqModel := models.Businessrulesschemaupdaterequest{}
 			utils.Render(reqModel.String())
 			
 			return

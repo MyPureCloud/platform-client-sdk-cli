@@ -39,6 +39,7 @@ func Cmdgamification_insights() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortMetricId", "", "Sort Metric Id")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Sort order Valid values: asc, desc")
 	utils.AddFlag(listCmd.Flags(), "string", "userIds", "", "A list of up to 100 comma-separated user Ids")
+	utils.AddFlag(listCmd.Flags(), "string", "reportsTo", "", "The reportsTo used by ABAC policies.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/gamification/insights", utils.FormatPermissions([]string{ "gamification:insights:viewAll",  }), utils.GenerateDevCentreLink("GET", "Gamification", "/api/v2/gamification/insights")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	listCmd.MarkFlagRequired("filterType")
@@ -128,6 +129,10 @@ var listCmd = &cobra.Command{
 		userIds := utils.GetFlag(cmd.Flags(), "string", "userIds")
 		if userIds != "" {
 			queryParams["userIds"] = userIds
+		}
+		reportsTo := utils.GetFlag(cmd.Flags(), "string", "reportsTo")
+		if reportsTo != "" {
+			queryParams["reportsTo"] = reportsTo
 		}
 		urlString := path
 		if len(queryParams) > 0 {

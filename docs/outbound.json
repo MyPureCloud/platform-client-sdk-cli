@@ -409,13 +409,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk",
-      "description": "Get contacts from a contact list."
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove",
+      "description": "Start an async job to delete contacts using a filter."
     },
     {
       "name": "create",
-      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove",
-      "description": "Start an async job to delete contacts using a filter."
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk",
+      "description": "Get contacts from a contact list."
     },
     {
       "name": "create",

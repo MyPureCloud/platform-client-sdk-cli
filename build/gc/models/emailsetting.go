@@ -29,7 +29,7 @@ type Emailsetting struct {
     
 
 
-    // Name
+    // Name - The name of the email setting.
     Name string `json:"name"`
 
 

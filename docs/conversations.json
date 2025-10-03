@@ -119,13 +119,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/callbacks/bulk/update",
-      "description": "Update multiple scheduled callbacks"
+      "path": "/api/v2/conversations/callbacks/bulk/disconnect",
+      "description": "Disconnect multiple scheduled callbacks"
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/callbacks/bulk/disconnect",
-      "description": "Disconnect multiple scheduled callbacks"
+      "path": "/api/v2/conversations/callbacks/bulk/update",
+      "description": "Update multiple scheduled callbacks"
     },
     {
       "name": "list",
@@ -151,6 +151,26 @@
       "name": "list",
       "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes",
       "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}",
+      "description": "Update conversation participant"
     },
     {
       "name": "get",
@@ -181,26 +201,6 @@
       "name": "get",
       "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup",
       "description": "Get the wrap-up for this conversation participant. "
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}",
-      "description": "Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Get the wrap-up for this conversation communication. "
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Apply wrap-up for this conversation communication"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}",
-      "description": "Update conversation participant"
     },
     {
       "name": "create",
@@ -303,6 +303,26 @@
       "description": "Get list of wrapup codes for this conversation participant"
     },
     {
+      "name": "update",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update conversation participant's communication by disconnecting it."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}",
+      "description": "Update conversation participant"
+    },
+    {
       "name": "get",
       "path": "/api/v2/conversations/callbacks/{conversationId}",
       "description": "Get callback conversation"
@@ -326,26 +346,6 @@
       "name": "get",
       "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup",
       "description": "Get the wrap-up for this conversation participant. "
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}",
-      "description": "Update conversation participant's communication by disconnecting it."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Get the wrap-up for this conversation communication. "
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Apply wrap-up for this conversation communication"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}",
-      "description": "Update conversation participant"
     },
     {
       "name": "get",
@@ -388,6 +388,26 @@
       "description": "Get list of wrapup codes for this conversation participant"
     },
     {
+      "name": "update",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}",
+      "description": "Update conversation participant"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
       "name": "get",
       "path": "/api/v2/conversations/chats/{conversationId}",
       "description": "Get chat conversation"
@@ -413,26 +433,6 @@
       "description": "Get the wrap-up for this conversation participant. "
     },
     {
-      "name": "update",
-      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}",
-      "description": "Update conversation participant"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}",
-      "description": "Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Get the wrap-up for this conversation communication. "
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Apply wrap-up for this conversation communication"
-    },
-    {
       "name": "create",
       "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace",
       "description": "Replace this participant with the specified user and/or address"
@@ -446,6 +446,26 @@
       "name": "list",
       "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes",
       "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update conversation participant's communication by disconnecting it."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}",
+      "description": "Update conversation participant"
     },
     {
       "name": "get",
@@ -471,26 +491,6 @@
       "name": "get",
       "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup",
       "description": "Get the wrap-up for this conversation participant. "
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}",
-      "description": "Update conversation participant's communication by disconnecting it."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Get the wrap-up for this conversation communication. "
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Apply wrap-up for this conversation communication"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}",
-      "description": "Update conversation participant"
     },
     {
       "name": "create",
@@ -528,6 +528,31 @@
       "description": "Send an email reply"
     },
     {
+      "name": "update",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate",
+      "description": "Update conversation by setting its parking state"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}",
+      "description": "Update conversation participant"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
       "name": "get",
       "path": "/api/v2/conversations/emails/{conversationId}",
       "description": "Get email conversation"
@@ -551,31 +576,6 @@
       "name": "get",
       "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup",
       "description": "Get the wrap-up for this conversation participant. "
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}",
-      "description": "Update conversation participant"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}",
-      "description": "Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Get the wrap-up for this conversation communication. "
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Apply wrap-up for this conversation communication"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate",
-      "description": "Update conversation by setting its parking state"
     },
     {
       "name": "get",
@@ -678,56 +678,6 @@
       "description": "Get messages in batch"
     },
     {
-      "name": "get",
-      "path": "/api/v2/conversations/messages/{conversationId}",
-      "description": "Get message conversation"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/messages/{conversationId}",
-      "description": "Update a conversation by disconnecting all of the participants"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/messages/{conversationId}/recordingstate",
-      "description": "Update a conversation by setting its recording state"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes",
-      "description": "Update the attributes on a conversation participant."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup",
-      "description": "Get the wrap-up for this conversation participant. "
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}",
-      "description": "Update conversation participant"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}",
-      "description": "Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Get the wrap-up for this conversation communication. "
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Apply wrap-up for this conversation communication"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/messages/{conversationId}/messages/{messageId}",
-      "description": "Get conversation message"
-    },
-    {
       "name": "create",
       "path": "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages",
       "description": "Send a social media message"
@@ -784,8 +734,53 @@
     },
     {
       "name": "update",
-      "path": "/api/v2/conversations/screenshares/{conversationId}/recordingstate",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}",
+      "description": "Update conversation participant"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}",
+      "description": "Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messages/{conversationId}",
+      "description": "Get message conversation"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messages/{conversationId}",
+      "description": "Update a conversation by disconnecting all of the participants"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messages/{conversationId}/recordingstate",
       "description": "Update a conversation by setting its recording state"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes",
+      "description": "Update the attributes on a conversation participant."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup",
+      "description": "Get the wrap-up for this conversation participant. "
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messages/{conversationId}/messages/{messageId}",
+      "description": "Get conversation message"
     },
     {
       "name": "get",
@@ -795,6 +790,21 @@
     {
       "name": "create",
       "path": "/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/screenshares/{conversationId}/recordingstate",
+      "description": "Update a conversation by setting its recording state"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
       "description": "Apply wrap-up for this conversation communication"
     },
     {
@@ -804,28 +814,18 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "path": "/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
       "description": "Get the wrap-up for this conversation communication. "
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "path": "/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
       "description": "Apply wrap-up for this conversation communication"
     },
     {
       "name": "update",
       "path": "/api/v2/conversations/videos/{conversationId}/recordingstate",
       "description": "Update a conversation by setting its recording state"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Get the wrap-up for this conversation communication. "
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Apply wrap-up for this conversation communication"
     },
     {
       "name": "list",
@@ -1163,11 +1163,6 @@
       "description": "Delete a code used to add a communication to this participant"
     },
     {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks",
-      "description": "Create a new callback for the specified participant on the conversation."
-    },
-    {
       "name": "update",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}",
       "description": "Update a participant."
@@ -1186,6 +1181,11 @@
       "name": "list",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes",
       "description": "Get list of wrapup codes for this conversation participant"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks",
+      "description": "Create a new callback for the specified participant on the conversation."
     },
     {
       "name": "update",

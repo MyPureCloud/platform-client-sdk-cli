@@ -158,14 +158,14 @@
       "description": "Deletes a log level for a flow by flow id."
     },
     {
-      "name": "list",
-      "path": "/api/v2/flows/instances/settings/loglevels",
-      "description": "Retrieve a list of LogLevels for the organization."
-    },
-    {
       "name": "get",
       "path": "/api/v2/flows/instances/settings/loglevels/characteristics",
       "description": "Gets the available flow log level characteristics for this organization."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/instances/settings/loglevels",
+      "description": "Retrieve a list of LogLevels for the organization."
     },
     {
       "name": "create",
@@ -298,16 +298,6 @@
       "description": "Create a flow outcome"
     },
     {
-      "name": "create",
-      "path": "/api/v2/flows/{flowId}/history",
-      "description": "Generate flow history"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/flows/{flowId}/history/{historyId}",
-      "description": "Get generated flow history"
-    },
-    {
       "name": "get",
       "path": "/api/v2/flows/{flowId}",
       "description": "Get flow"
@@ -326,6 +316,16 @@
       "name": "get",
       "path": "/api/v2/flows/{flowId}/latestconfiguration",
       "description": "Get the latest configuration for flow"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/{flowId}/history",
+      "description": "Generate flow history"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/{flowId}/history/{historyId}",
+      "description": "Get generated flow history"
     },
     {
       "name": "get",

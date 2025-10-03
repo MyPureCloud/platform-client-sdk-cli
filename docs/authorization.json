@@ -89,11 +89,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/authorization/subjects/{subjectId}/bulkadd",
-      "description": "Bulk-grant roles and divisions to a subject."
-    },
-    {
-      "name": "create",
       "path": "/api/v2/authorization/subjects/{subjectId}/bulkreplace",
       "description": "Replace subject's roles and divisions with the exact list supplied in the request."
     },
@@ -118,6 +113,16 @@
       "description": "Returns a listing of roles and permissions for a user."
     },
     {
+      "name": "create",
+      "path": "/api/v2/authorization/subjects/{subjectId}/bulkadd",
+      "description": "Bulk-grant roles and divisions to a subject."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/roles/{roleId}/users/add",
+      "description": "Sets the users for the role"
+    },
+    {
       "name": "update",
       "path": "/api/v2/authorization/roles/{roleId}/users/remove",
       "description": "Removes the users from the role"
@@ -126,11 +131,6 @@
       "name": "list",
       "path": "/api/v2/authorization/roles/{roleId}/users",
       "description": "Get a list of the users in a specified role."
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/authorization/roles/{roleId}/users/add",
-      "description": "Sets the users for the role"
     },
     {
       "name": "list",
@@ -243,29 +243,9 @@
       "description": "Get a page of access policies for an organization"
     },
     {
-      "name": "create",
-      "path": "/api/v2/authorization/policies/{policyId}/simulate",
-      "description": "Simulate a request and evaluate the specified policy ID against the provided values"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/authorization/policies/targets",
-      "description": "Get a map of policy targets to valid attributes for those targets"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/authorization/policies/{policyId}",
-      "description": "Get an access control policy with the specified policy ID"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/authorization/policies/{policyId}",
-      "description": "Update an access control policy with a given ID"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/authorization/policies/targets/{targetName}/validate",
-      "description": "Validate the conditions and attributes of an access control policy for a specified resource target"
+      "name": "list",
+      "path": "/api/v2/authorization/policies/subject/{subjectId}",
+      "description": "Get a page of access policies for a given subject"
     },
     {
       "name": "get",
@@ -278,14 +258,34 @@
       "description": "Delete an access control policy"
     },
     {
-      "name": "list",
-      "path": "/api/v2/authorization/policies/subject/{subjectId}",
-      "description": "Get a page of access policies for a given subject"
+      "name": "get",
+      "path": "/api/v2/authorization/policies/{policyId}",
+      "description": "Get an access control policy with the specified policy ID"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/policies/{policyId}",
+      "description": "Update an access control policy with a given ID"
     },
     {
       "name": "get",
       "path": "/api/v2/authorization/policies/{policyId}/attributes",
       "description": "Get the list of attributes used to evaluate an access control policy with the specified policy ID"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/policies/{policyId}/simulate",
+      "description": "Simulate a request and evaluate the specified policy ID against the provided values"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/policies/targets",
+      "description": "Get a map of policy targets to valid attributes for those targets"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/policies/targets/{targetName}/validate",
+      "description": "Validate the conditions and attributes of an access control policy for a specified resource target"
     }
   ]
 }

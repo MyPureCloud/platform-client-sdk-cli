@@ -93,19 +93,19 @@
       "description": "Create a new learning module"
     },
     {
-      "name": "get",
-      "path": "/api/v2/learning/modules/{moduleId}",
-      "description": "Get a learning module"
+      "name": "create",
+      "path": "/api/v2/learning/modules/{moduleId}/publish",
+      "description": "Publish a Learning module"
     },
     {
-      "name": "update",
-      "path": "/api/v2/learning/modules/{moduleId}",
-      "description": "Update a learning module"
+      "name": "create",
+      "path": "/api/v2/learning/modules/{moduleId}/jobs",
+      "description": "Starts a specified operation on learning module"
     },
     {
-      "name": "delete",
-      "path": "/api/v2/learning/modules/{moduleId}",
-      "description": "Delete a learning module"
+      "name": "list",
+      "path": "/api/v2/learning/modules/assignments",
+      "description": "Get all learning modules of an organization including assignments for a specific user"
     },
     {
       "name": "get",
@@ -133,19 +133,19 @@
       "description": "Get a specific Learning Module cover art using ID"
     },
     {
-      "name": "create",
-      "path": "/api/v2/learning/modules/{moduleId}/publish",
-      "description": "Publish a Learning module"
+      "name": "get",
+      "path": "/api/v2/learning/modules/{moduleId}",
+      "description": "Get a learning module"
     },
     {
-      "name": "create",
-      "path": "/api/v2/learning/modules/{moduleId}/jobs",
-      "description": "Starts a specified operation on learning module"
+      "name": "update",
+      "path": "/api/v2/learning/modules/{moduleId}",
+      "description": "Update a learning module"
     },
     {
-      "name": "list",
-      "path": "/api/v2/learning/modules/assignments",
-      "description": "Get all learning modules of an organization including assignments for a specific user"
+      "name": "delete",
+      "path": "/api/v2/learning/modules/{moduleId}",
+      "description": "Delete a learning module"
     },
     {
       "name": "update",

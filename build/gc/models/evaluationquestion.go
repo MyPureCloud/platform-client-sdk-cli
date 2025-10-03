@@ -89,12 +89,12 @@ type Evaluationquestion struct {
     MultipleSelectOptionQuestions []Evaluationquestion `json:"multipleSelectOptionQuestions"`
 
 
-    // IsKill
-    IsKill bool `json:"isKill"`
-
-
     // IsCritical
     IsCritical bool `json:"isCritical"`
+
+
+    // IsKill
+    IsKill bool `json:"isKill"`
 
 }
 
@@ -146,9 +146,9 @@ func (u *Evaluationquestion) MarshalJSON() ([]byte, error) {
         
         MultipleSelectOptionQuestions []Evaluationquestion `json:"multipleSelectOptionQuestions"`
         
-        IsKill bool `json:"isKill"`
-        
         IsCritical bool `json:"isCritical"`
+        
+        IsKill bool `json:"isKill"`
         *Alias
     }{
 

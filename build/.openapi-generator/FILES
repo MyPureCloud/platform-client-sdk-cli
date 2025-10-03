@@ -2063,6 +2063,10 @@ gc/models/bushorttermforecastlisting.go
 gc/models/bushorttermforecastlistitem.go
 gc/models/bushorttermforecastreference.go
 gc/models/bushorttermforecastweekreference.go
+gc/models/businessrulesdataschema.go
+gc/models/businessrulesdataschemalisting.go
+gc/models/businessrulesschemacreaterequest.go
+gc/models/businessrulesschemaupdaterequest.go
 gc/models/businessunitactivitycode.go
 gc/models/businessunitactivitycodelisting.go
 gc/models/businessunitlisting.go
@@ -2423,6 +2427,10 @@ gc/models/contextpattern.go
 gc/models/continuousforecastgetsessionresponse.go
 gc/models/continuousforecastsessionresponse.go
 gc/models/continuousforecastsnapshotresponse.go
+gc/models/contractdefinition.go
+gc/models/contractitems.go
+gc/models/contractjsonschema.go
+gc/models/contractpropertydefinition.go
 gc/models/contractual.go
 gc/models/conversation.go
 gc/models/conversationactivitydata.go

@@ -298,6 +298,11 @@
       "description": "Generate a view export request"
     },
     {
+      "name": "create",
+      "path": "/api/v2/analytics/actions/aggregates/jobs",
+      "description": "Query for action aggregates asynchronously"
+    },
+    {
       "name": "get",
       "path": "/api/v2/analytics/actions/aggregates/jobs/{jobId}",
       "description": "Get status for async query for action aggregates"
@@ -311,11 +316,6 @@
       "name": "list",
       "path": "/api/v2/analytics/actions/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/actions/aggregates/jobs",
-      "description": "Query for action aggregates asynchronously"
     },
     {
       "name": "create",
@@ -478,11 +478,6 @@
       "description": "Fetch a page of results for an async aggregates query"
     },
     {
-      "name": "create",
-      "path": "/api/v2/analytics/resolutions/aggregates/jobs",
-      "description": "Query for resolution aggregates asynchronously"
-    },
-    {
       "name": "get",
       "path": "/api/v2/analytics/resolutions/aggregates/jobs/{jobId}",
       "description": "Get status for async query for resolution aggregates"
@@ -496,6 +491,11 @@
       "name": "list",
       "path": "/api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/resolutions/aggregates/jobs",
+      "description": "Query for resolution aggregates asynchronously"
     },
     {
       "name": "create",

@@ -26,20 +26,20 @@ type DecisiontablecontractDud struct {
 
 // Decisiontablecontract
 type Decisiontablecontract struct { 
-    // ParentSchema - DSS V1 schema entity defining source properties for the decision table contract schemas
+    // ParentSchema - DSS schema entity defining source properties for the decision table contract schemas
     ParentSchema Domainentityref `json:"parentSchema"`
 
 
     // RowAuthoringSchema - JSON schema describing required value types for each column in every row in a decision table
-    RowAuthoringSchema Jsonschemawithdefinitions `json:"rowAuthoringSchema"`
+    RowAuthoringSchema Contractjsonschema `json:"rowAuthoringSchema"`
 
 
     // ExecutionInputSchema - JSON schema for execution input data for a decision table
-    ExecutionInputSchema Jsonschemawithdefinitions `json:"executionInputSchema"`
+    ExecutionInputSchema Contractjsonschema `json:"executionInputSchema"`
 
 
     // ExecutionOutputSchema - JSON schema for execution output data for a decision table
-    ExecutionOutputSchema Jsonschemawithdefinitions `json:"executionOutputSchema"`
+    ExecutionOutputSchema Contractjsonschema `json:"executionOutputSchema"`
 
 }
 
@@ -68,11 +68,11 @@ func (u *Decisiontablecontract) MarshalJSON() ([]byte, error) {
         
         ParentSchema Domainentityref `json:"parentSchema"`
         
-        RowAuthoringSchema Jsonschemawithdefinitions `json:"rowAuthoringSchema"`
+        RowAuthoringSchema Contractjsonschema `json:"rowAuthoringSchema"`
         
-        ExecutionInputSchema Jsonschemawithdefinitions `json:"executionInputSchema"`
+        ExecutionInputSchema Contractjsonschema `json:"executionInputSchema"`
         
-        ExecutionOutputSchema Jsonschemawithdefinitions `json:"executionOutputSchema"`
+        ExecutionOutputSchema Contractjsonschema `json:"executionOutputSchema"`
         *Alias
     }{
 

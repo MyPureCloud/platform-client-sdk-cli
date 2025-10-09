@@ -329,6 +329,18 @@ Optionally, and for added security, you can choose to open an HTTPS connection f
 
 For more information about the PKCE Grant login process, check out [this article](https://developer.genesys.cloud/api/rest/authorization/use-pkce) on our Developer Center.
 
+# Windows Subsystem for Linux (WSL)
+
+When creating a profile with the `gc profiles new` command, for an Implicit Grant or a PKCE Grant, the user is redirected to their browser where they can authenticate themselves by logging into their Genesys Cloud org.
+
+By default, the linux version of the CLI will use the "xdg-open" command to open the browser.
+
+In order to provide flexibility on WSL, where "xdg-open" may not be installed, you can make use of the GENESYSCLOUD_BROWSER environment variable to change the browser command. Set the GENESYSCLOUD_BROWSER environment variable with the desired command before running the CLI.
+
+e.g. If you want to use explorer.exe and the the location of the explorer.exe is in your $PATH, you can use `export GENESYSCLOUD_BROWSER="explorer.exe"`
+
+e.g. If you want to use Chrome and the location of chrome is NOT in your $PATH, find the path to your chrome application from wsl. The path to your C drive may vary based on your installation (i.e. /mnt/c or /mnt/host/c or ...). Once you have located the chrome.exe, set the full path in the environment variable: `export GENESYSCLOUD_BROWSER="/mnt/host/c/Program Files/Google/Chrome/Application/chrome.exe"`
+
 # Experimental Features
 
 Experimental `CLI` features were released in version 18.0.0 of the `Genesys Cloud CLI`. Experimental features allow us to release ideas around the `CLI` early and give customers an opportunity to give feedback on the features before the work on them is finalized. Experimental features are tied to the `CLI` binary, so when we release an experimental feature or promote an experimental feature, you will need to download the `CLI` binary that matches the release or promotion of that feature.

@@ -120,7 +120,7 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "141.0.0")
+        request.Header.Set("purecloud-sdk", "142.0.0")
 
         if data != "" {
                 request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
@@ -313,7 +313,7 @@ func authorizePKCEGrant(c config.Configuration, code string, codeVerifier string
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "141.0.0")
+        request.Header.Set("purecloud-sdk", "142.0.0")
 
         //Setting up the form data
         form := url.Values{}
@@ -396,7 +396,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "141.0.0")
+        request.Header.Set("purecloud-sdk", "142.0.0")
 
         //Setting up the form data
         form := url.Values{}
@@ -590,7 +590,12 @@ func openBrowserForLoginFunc(loginURL string) {
         var err error
         switch runtime.GOOS {
         case "linux":
-                err = exec.Command("xdg-open", loginURL).Start()
+                linuxBrowser := os.Getenv("GENESYSCLOUD_BROWSER")
+                if linuxBrowser != "" {
+                        err = exec.Command(linuxBrowser, loginURL).Start()
+                } else {
+                        err = exec.Command("xdg-open", loginURL).Start()
+                }
         case "windows":
                 err = exec.Command("rundll32", "url.dll,FileProtocolHandler", loginURL).Start()
         case "darwin":

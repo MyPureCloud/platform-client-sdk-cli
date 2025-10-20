@@ -3,8 +3,6 @@ package knowledge_knowledgebases
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_categories"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_search"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_languages"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_unanswered"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_labels"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge_knowledgebases_sources"
@@ -20,8 +18,6 @@ import (
 
 func init() {
 	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_categories.Cmdknowledge_knowledgebases_categories())
-	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_search.Cmdknowledge_knowledgebases_search())
-	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_languages.Cmdknowledge_knowledgebases_languages())
 	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_unanswered.Cmdknowledge_knowledgebases_unanswered())
 	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_labels.Cmdknowledge_knowledgebases_labels())
 	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_sources.Cmdknowledge_knowledgebases_sources())
@@ -33,6 +29,6 @@ func init() {
 	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_synchronize.Cmdknowledge_knowledgebases_synchronize())
 	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_operations.Cmdknowledge_knowledgebases_operations())
 	knowledge_knowledgebasesCmd.AddCommand(knowledge_knowledgebases_parse.Cmdknowledge_knowledgebases_parse())
-	knowledge_knowledgebasesCmd.Short = utils.GenerateCustomDescription(knowledge_knowledgebasesCmd.Short, knowledge_knowledgebases_categories.Description, knowledge_knowledgebases_search.Description, knowledge_knowledgebases_languages.Description, knowledge_knowledgebases_unanswered.Description, knowledge_knowledgebases_labels.Description, knowledge_knowledgebases_sources.Description, knowledge_knowledgebases_uploads.Description, knowledge_knowledgebases_documents.Description, knowledge_knowledgebases_chunks.Description, knowledge_knowledgebases_export.Description, knowledge_knowledgebases_import.Description, knowledge_knowledgebases_synchronize.Description, knowledge_knowledgebases_operations.Description, knowledge_knowledgebases_parse.Description, )
+	knowledge_knowledgebasesCmd.Short = utils.GenerateCustomDescription(knowledge_knowledgebasesCmd.Short, knowledge_knowledgebases_categories.Description, knowledge_knowledgebases_unanswered.Description, knowledge_knowledgebases_labels.Description, knowledge_knowledgebases_sources.Description, knowledge_knowledgebases_uploads.Description, knowledge_knowledgebases_documents.Description, knowledge_knowledgebases_chunks.Description, knowledge_knowledgebases_export.Description, knowledge_knowledgebases_import.Description, knowledge_knowledgebases_synchronize.Description, knowledge_knowledgebases_operations.Description, knowledge_knowledgebases_parse.Description, )
 	knowledge_knowledgebasesCmd.Long = knowledge_knowledgebasesCmd.Short
 }

@@ -46,6 +46,9 @@ type SummaryasyncaggregationqueryDud struct {
 
     
 
+
+    
+
 }
 
 // Summaryasyncaggregationquery
@@ -86,11 +89,15 @@ type Summaryasyncaggregationquery struct {
     AlternateTimeDimension string `json:"alternateTimeDimension"`
 
 
-    // QueryType - Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)
+    // QueryType - Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
     QueryType string `json:"queryType"`
 
 
-    // Limit - How many results you want in the topN list. Only applicable for topN query type.
+    // SortMetric - Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+    SortMetric Summaryaggregationsort `json:"sortMetric"`
+
+
+    // Limit - How many results you want in an ordered list. Only applicable for topN/bottomN query type.
     Limit int `json:"limit"`
 
 
@@ -109,6 +116,7 @@ func (o *Summaryasyncaggregationquery) String() string {
      o.Metrics = []string{""} 
     
      o.Views = []Summaryaggregationview{{}} 
+    
     
     
     
@@ -150,6 +158,8 @@ func (u *Summaryasyncaggregationquery) MarshalJSON() ([]byte, error) {
         
         QueryType string `json:"queryType"`
         
+        SortMetric Summaryaggregationsort `json:"sortMetric"`
+        
         Limit int `json:"limit"`
         
         PageSize int `json:"pageSize"`
@@ -183,6 +193,9 @@ func (u *Summaryasyncaggregationquery) MarshalJSON() ([]byte, error) {
 
         
         Views: []Summaryaggregationview{{}},
+        
+
+
         
 
 

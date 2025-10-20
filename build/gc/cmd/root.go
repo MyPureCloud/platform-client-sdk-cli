@@ -47,7 +47,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/timezones"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/autopagination"
@@ -65,6 +64,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/audits"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/screenrecording"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/billing"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/businessrules"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/carrierservices"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/certificate"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/chats"
@@ -101,6 +101,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/alerting"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/responsemanagement"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scim"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/settings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/socialmedia"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics"
@@ -114,7 +115,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/coaching"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeengagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/businessrules"
 	"os"
 )
 
@@ -141,7 +141,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 142.0.0")
+		fmt.Println("Current version: 143.0.0")
 		checkForNewVersion()
 	},
 }
@@ -160,7 +160,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("142.0.0", latestVersion) {
+	if versionsAreEqual("143.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -298,7 +298,6 @@ func init() {
 	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(timezones.Cmdtimezones())
 	rootCmd.AddCommand(tokens.Cmdtokens())
-	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
 	rootCmd.AddCommand(users.Cmdusers())
 	rootCmd.AddCommand(autopagination.Cmdautopagination())
@@ -316,6 +315,7 @@ func init() {
 	rootCmd.AddCommand(audits.Cmdaudits())
 	rootCmd.AddCommand(screenrecording.Cmdscreenrecording())
 	rootCmd.AddCommand(billing.Cmdbilling())
+	rootCmd.AddCommand(businessrules.Cmdbusinessrules())
 	rootCmd.AddCommand(carrierservices.Cmdcarrierservices())
 	rootCmd.AddCommand(certificate.Cmdcertificate())
 	rootCmd.AddCommand(chats.Cmdchats())
@@ -352,6 +352,7 @@ func init() {
 	rootCmd.AddCommand(recordings.Cmdrecordings())
 	rootCmd.AddCommand(alerting.Cmdalerting())
 	rootCmd.AddCommand(responsemanagement.Cmdresponsemanagement())
+	rootCmd.AddCommand(scim.Cmdscim())
 	rootCmd.AddCommand(settings.Cmdsettings())
 	rootCmd.AddCommand(socialmedia.Cmdsocialmedia())
 	rootCmd.AddCommand(speechandtextanalytics.Cmdspeechandtextanalytics())
@@ -365,7 +366,6 @@ func init() {
 	rootCmd.AddCommand(coaching.Cmdcoaching())
 	rootCmd.AddCommand(employeeengagement.Cmdemployeeengagement())
 	rootCmd.AddCommand(learning.Cmdlearning())
-	rootCmd.AddCommand(businessrules.Cmdbusinessrules())
 
 	if config.IsExperimentalFeatureEnabled(getProfileName(os.Args), models.DummyCommand.String()) {
 		rootCmd.AddCommand(dummy_command.Cmddummy_command())

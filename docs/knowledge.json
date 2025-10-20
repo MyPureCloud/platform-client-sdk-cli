@@ -28,96 +28,6 @@
       "description": "Update category"
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search",
-      "description": "Search Documents"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories",
-      "description": "Get categories"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories",
-      "description": "Create new category"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}",
-      "description": "Get category"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}",
-      "description": "Delete category"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}",
-      "description": "Update category"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads",
-      "description": "Upload Article Content"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}",
-      "description": "Get document content upload status"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}",
-      "description": "Get import operation report"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}",
-      "description": "Delete import operation"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}",
-      "description": "Start import operation"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports",
-      "description": "Create import operation"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}",
-      "description": "Get document"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}",
-      "description": "Delete document"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}",
-      "description": "Update document"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents",
-      "description": "Get documents"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents",
-      "description": "Create document"
-    },
-    {
-      "name": "updatecollection",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents",
-      "description": "Update documents collection"
-    },
-    {
       "name": "get",
       "path": "/api/v2/knowledge/integrations/{integrationId}/options",
       "description": "Get sync options available for a knowledge-connect integration"
@@ -148,14 +58,14 @@
       "description": "Create new knowledge base"
     },
     {
-      "name": "list",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups",
-      "description": "Get knowledge base unanswered groups"
-    },
-    {
       "name": "get",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}",
       "description": "Get knowledge base unanswered group for a particular groupId"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups",
+      "description": "Get knowledge base unanswered groups"
     },
     {
       "name": "get",
@@ -246,26 +156,6 @@
       "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow",
       "description": "Create ServiceNow Knowledge integration source"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}",
-      "description": "Get training detail"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote",
-      "description": "Promote trained documents from draft state to active."
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings",
-      "description": "Get all trainings information for a knowledgebase"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings",
-      "description": "Trigger training"
     },
     {
       "name": "get",
@@ -483,6 +373,11 @@
       "description": "Get ids of operation creator users and oauth clients"
     },
     {
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
+      "description": "Import the parsed articles"
+    },
+    {
       "name": "get",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}",
       "description": "Get parse job report"
@@ -491,11 +386,6 @@
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}",
       "description": "Send update to the parse operation"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
-      "description": "Import the parsed articles"
     },
     {
       "name": "create",
@@ -533,14 +423,19 @@
       "description": "Give feedback on a document"
     },
     {
+      "name": "list",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
+      "description": "Get documents."
+    },
+    {
       "name": "get",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}",
       "description": "Get a knowledge document by ID."
     },
     {
-      "name": "list",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
-      "description": "Get documents."
+      "name": "create",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations",
+      "description": "Indicate that documents were presented to the user."
     },
     {
       "name": "create",
@@ -553,19 +448,9 @@
       "description": "Indicate that the document was copied by the user."
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations",
-      "description": "Indicate that documents were presented to the user."
-    },
-    {
       "name": "list",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/categories",
       "description": "Get categories"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search",
-      "description": "Search the documents in a guest session."
     },
     {
       "name": "create",
@@ -576,6 +461,11 @@
       "name": "update",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId}",
       "description": "Update search result."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search",
+      "description": "Search the documents in a guest session."
     },
     {
       "name": "create",

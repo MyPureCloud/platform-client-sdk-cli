@@ -71,20 +71,20 @@ type Ivrentitylisting struct {
     FirstUri string `json:"firstUri"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
 
     // NextUri
     NextUri string `json:"nextUri"`
+
+
+    // LastUri
+    LastUri string `json:"lastUri"`
+
+
+    // SelfUri
+    SelfUri string `json:"selfUri"`
 
 
     // PageCount
@@ -134,13 +134,13 @@ func (u *Ivrentitylisting) MarshalJSON() ([]byte, error) {
         
         FirstUri string `json:"firstUri"`
         
-        LastUri string `json:"lastUri"`
-        
-        SelfUri string `json:"selfUri"`
-        
         PreviousUri string `json:"previousUri"`
         
         NextUri string `json:"nextUri"`
+        
+        LastUri string `json:"lastUri"`
+        
+        SelfUri string `json:"selfUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

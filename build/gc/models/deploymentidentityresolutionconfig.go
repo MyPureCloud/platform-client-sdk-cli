@@ -29,7 +29,7 @@ type Deploymentidentityresolutionconfig struct {
     
 
 
-    // Division - The division to which this entity belongs.
+    // Division - The division to use when performing identity resolution.
     Division Writablestarrabledivision `json:"division"`
 
 

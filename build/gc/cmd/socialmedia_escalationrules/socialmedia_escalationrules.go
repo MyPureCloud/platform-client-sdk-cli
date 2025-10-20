@@ -61,6 +61,7 @@ func Cmdsocialmedia_escalationrules() *cobra.Command {
 }`)
 	socialmedia_escalationrulesCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "which fields, if any, to expand Valid values: dataIngestionRule")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/socialmedia/escalationrules/{escalationRuleId}", utils.FormatPermissions([]string{ "socialmedia:escalationRules:view",  }), utils.GenerateDevCentreLink("GET", "Social Media", "/api/v2/socialmedia/escalationrules/{escalationRuleId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -278,6 +279,10 @@ var getCmd = &cobra.Command{
 		escalationRuleId, args := args[0], args[1:]
 		path = strings.Replace(path, "{escalationRuleId}", fmt.Sprintf("%v", escalationRuleId), -1)
 
+		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

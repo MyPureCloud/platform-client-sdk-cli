@@ -113,6 +113,9 @@ type CallDud struct {
 
     
 
+
+    
+
 }
 
 // Call
@@ -245,6 +248,10 @@ type Call struct {
     AgentAssistantId string `json:"agentAssistantId"`
 
 
+    // TransferSource - Indicates how call reaches the agent.
+    TransferSource string `json:"transferSource"`
+
+
     // QueueMediaSettings - Represents the queue settings for this media type.
     QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
 
@@ -277,6 +284,7 @@ func (o *Call) String() string {
     
     
      o.DisconnectReasons = []Disconnectreason{{}} 
+    
     
     
     
@@ -371,6 +379,8 @@ func (u *Call) MarshalJSON() ([]byte, error) {
         
         AgentAssistantId string `json:"agentAssistantId"`
         
+        TransferSource string `json:"transferSource"`
+        
         QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
         
         Disposition Disposition `json:"disposition"`
@@ -441,6 +451,9 @@ func (u *Call) MarshalJSON() ([]byte, error) {
 
         
         DisconnectReasons: []Disconnectreason{{}},
+        
+
+
         
 
 

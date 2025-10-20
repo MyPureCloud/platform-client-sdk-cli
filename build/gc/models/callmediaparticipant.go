@@ -179,6 +179,9 @@ type CallmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Callmediaparticipant
@@ -406,6 +409,10 @@ type Callmediaparticipant struct {
     // Disposition - Call resolution data for Dialer bulk make calls commands.
     Disposition Disposition `json:"disposition"`
 
+
+    // TransferSource - Indicates how call reaches the agent.
+    TransferSource string `json:"transferSource"`
+
 }
 
 // String returns a JSON representation of the model
@@ -430,6 +437,7 @@ func (o *Callmediaparticipant) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
     
     
     
@@ -594,6 +602,8 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
         SecurePause bool `json:"securePause"`
         
         Disposition Disposition `json:"disposition"`
+        
+        TransferSource string `json:"transferSource"`
         *Alias
     }{
 
@@ -658,6 +668,9 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

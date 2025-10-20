@@ -219,6 +219,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/outbound/campaigns/performance/query",
+      "description": "Get performance data for a list of campaigns"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/outbound/campaigns/progress",
       "description": "Get progress for a list of campaigns"
     },
@@ -409,8 +414,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove",
-      "description": "Start an async job to delete contacts using a filter."
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update",
+      "description": "Start an async job to bulk edit contacts."
     },
     {
       "name": "create",
@@ -419,8 +424,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update",
-      "description": "Start an async job to bulk edit contacts."
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove",
+      "description": "Start an async job to delete contacts using a filter."
     },
     {
       "name": "create",

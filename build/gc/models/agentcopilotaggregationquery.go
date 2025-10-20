@@ -43,6 +43,9 @@ type AgentcopilotaggregationqueryDud struct {
 
     
 
+
+    
+
 }
 
 // Agentcopilotaggregationquery
@@ -83,11 +86,15 @@ type Agentcopilotaggregationquery struct {
     AlternateTimeDimension string `json:"alternateTimeDimension"`
 
 
-    // QueryType - Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)
+    // QueryType - Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
     QueryType string `json:"queryType"`
 
 
-    // Limit - How many results you want in the topN list. Only applicable for topN query type.
+    // SortMetric - Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+    SortMetric Agentcopilotaggregationsort `json:"sortMetric"`
+
+
+    // Limit - How many results you want in an ordered list. Only applicable for topN/bottomN query type.
     Limit int `json:"limit"`
 
 }
@@ -102,6 +109,7 @@ func (o *Agentcopilotaggregationquery) String() string {
      o.Metrics = []string{""} 
     
      o.Views = []Agentcopilotaggregationview{{}} 
+    
     
     
     
@@ -142,6 +150,8 @@ func (u *Agentcopilotaggregationquery) MarshalJSON() ([]byte, error) {
         
         QueryType string `json:"queryType"`
         
+        SortMetric Agentcopilotaggregationsort `json:"sortMetric"`
+        
         Limit int `json:"limit"`
         *Alias
     }{
@@ -173,6 +183,9 @@ func (u *Agentcopilotaggregationquery) MarshalJSON() ([]byte, error) {
 
         
         Views: []Agentcopilotaggregationview{{}},
+        
+
+
         
 
 

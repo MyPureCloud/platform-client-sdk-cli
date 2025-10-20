@@ -40,6 +40,9 @@ type CreateactivitycoderequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createactivitycoderequest
@@ -83,6 +86,10 @@ type Createactivitycoderequest struct {
     // SecondaryPresences - The secondary presences of this activity code
     SecondaryPresences []Secondarypresence `json:"secondaryPresences"`
 
+
+    // PlanningGroupIds - The planning group IDs associated with this activity code
+    PlanningGroupIds []string `json:"planningGroupIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -97,6 +104,7 @@ func (o *Createactivitycoderequest) String() string {
     
     
      o.SecondaryPresences = []Secondarypresence{{}} 
+     o.PlanningGroupIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -133,6 +141,8 @@ func (u *Createactivitycoderequest) MarshalJSON() ([]byte, error) {
         Interruptible bool `json:"interruptible"`
         
         SecondaryPresences []Secondarypresence `json:"secondaryPresences"`
+        
+        PlanningGroupIds []string `json:"planningGroupIds"`
         *Alias
     }{
 
@@ -165,6 +175,11 @@ func (u *Createactivitycoderequest) MarshalJSON() ([]byte, error) {
 
         
         SecondaryPresences: []Secondarypresence{{}},
+        
+
+
+        
+        PlanningGroupIds: []string{""},
         
 
         Alias: (*Alias)(u),

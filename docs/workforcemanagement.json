@@ -13,6 +13,16 @@
       "description": "Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes"
     },
     {
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes",
+      "description": "Get activity codes"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes",
+      "description": "Create a new activity code"
+    },
+    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}",
       "description": "Get an activity code"
@@ -26,16 +36,6 @@
       "name": "update",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}",
       "description": "Update an activity code"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes",
-      "description": "Get activity codes"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes",
-      "description": "Create a new activity code"
     },
     {
       "name": "list",
@@ -178,6 +178,11 @@
       "description": "Get management units across divisions"
     },
     {
+      "name": "update",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents",
+      "description": "Update agent configurations"
+    },
+    {
       "name": "list",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades",
       "description": "Gets all the shift trades for a given agent"
@@ -186,11 +191,6 @@
       "name": "get",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}",
       "description": "Get data for agent in the management unit"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents",
-      "description": "Update agent configurations"
     },
     {
       "name": "create",
@@ -308,6 +308,16 @@
       "description": "Searches for potential shift trade matches for the current agent"
     },
     {
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades",
+      "description": "Gets all the shift trades for a given week"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades",
+      "description": "Adds a shift trade"
+    },
+    {
       "name": "create",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk",
       "description": "Updates the state of a batch of shift trades"
@@ -323,14 +333,9 @@
       "description": "Matches a shift trade. This route can only be called by the receiving agent"
     },
     {
-      "name": "list",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades",
-      "description": "Gets all the shift trades for a given week"
-    },
-    {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades",
-      "description": "Adds a shift trade"
+      "path": "/api/v2/workforcemanagement/agents",
+      "description": "Move agents in and out of management unit"
     },
     {
       "name": "get",
@@ -341,11 +346,6 @@
       "name": "get",
       "path": "/api/v2/workforcemanagement/agents/me/managementunit",
       "description": "Get the management unit to which the currently logged in agent belongs"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/agents",
-      "description": "Move agents in and out of management unit"
     },
     {
       "name": "create",
@@ -383,16 +383,6 @@
       "description": "Create a copy of work plan"
     },
     {
-      "name": "list",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations",
-      "description": "Get work plan rotations"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations",
-      "description": "Create a new work plan rotation"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}",
       "description": "Get a work plan rotation"
@@ -408,6 +398,16 @@
       "description": "Update a work plan rotation"
     },
     {
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations",
+      "description": "Get work plan rotations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations",
+      "description": "Create a new work plan rotation"
+    },
+    {
       "name": "create",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy",
       "description": "Create a copy of work plan rotation"
@@ -418,16 +418,6 @@
       "description": "Gets the latest job for all activity plans in the business unit"
     },
     {
-      "name": "list",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans",
-      "description": "Get activity plans"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans",
-      "description": "Create an activity plan"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}",
       "description": "Get an activity plan"
@@ -436,6 +426,16 @@
       "name": "update",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}",
       "description": "Update an activity plan"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans",
+      "description": "Get activity plans"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans",
+      "description": "Create an activity plan"
     },
     {
       "name": "create",
@@ -569,16 +569,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/alternativeshifts/offers/jobs",
-      "description": "Request a list of alternative shift offers for a given schedule"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/workforcemanagement/alternativeshifts/offers/jobs/{jobId}",
-      "description": "Query the status of an alternative shift offers operation. Only the user who started the operation can query the status"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/workforcemanagement/alternativeshifts/offers/search/jobs",
       "description": "Request a search of alternative shift offers for a given shift"
     },
@@ -588,14 +578,24 @@
       "description": "Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status"
     },
     {
-      "name": "list",
-      "path": "/api/v2/workforcemanagement/alternativeshifts/trades",
-      "description": "Get a list of my alternative shifts trades"
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/alternativeshifts/offers/jobs",
+      "description": "Request a list of alternative shift offers for a given schedule"
     },
     {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/alternativeshifts/trades",
-      "description": "Create my alternative shift trade using an existing offer's jobId"
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/alternativeshifts/offers/jobs/{jobId}",
+      "description": "Query the status of an alternative shift offers operation. Only the user who started the operation can query the status"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/workforcemanagement/alternativeshifts/trades/state/jobs",
+      "description": "Bulk update alternative shift trade states"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/alternativeshifts/trades/state/jobs/{jobId}",
+      "description": "Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status"
     },
     {
       "name": "get",
@@ -613,14 +613,14 @@
       "description": "Update my alternative shifts trade by trade ID"
     },
     {
-      "name": "update",
-      "path": "/api/v2/workforcemanagement/alternativeshifts/trades/state/jobs",
-      "description": "Bulk update alternative shift trade states"
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/alternativeshifts/trades",
+      "description": "Get a list of my alternative shifts trades"
     },
     {
-      "name": "get",
-      "path": "/api/v2/workforcemanagement/alternativeshifts/trades/state/jobs/{jobId}",
-      "description": "Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status"
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/alternativeshifts/trades",
+      "description": "Create my alternative shift trade using an existing offer's jobId"
     },
     {
       "name": "get",
@@ -698,14 +698,14 @@
       "description": "Delete staffing group allocations history created for a capacity plan before the given date"
     },
     {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate",
-      "description": "Force regenerate the latest long term staffing requirements for a business unit"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}",
       "description": "Get the latest long term staffing requirements for a business unit"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate",
+      "description": "Force regenerate the latest long term staffing requirements for a business unit"
     },
     {
       "name": "create",
@@ -798,6 +798,11 @@
       "description": "Mark a list of notifications as read or unread"
     },
     {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs/{jobId}",
+      "description": "Retrieves delete job status for historical data imports associated with the job id"
+    },
+    {
       "name": "list",
       "path": "/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs",
       "description": "Retrieves all delete job status for historical data"
@@ -806,11 +811,6 @@
       "name": "create",
       "path": "/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs",
       "description": "Delete the list of the historical data import entries"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs/{jobId}",
-      "description": "Retrieves delete job status for historical data imports associated with the job id"
     },
     {
       "name": "get",
@@ -888,14 +888,14 @@
       "description": "Mark a schedule run as applied"
     },
     {
-      "name": "get",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result",
-      "description": "Get the result of a rescheduling operation"
-    },
-    {
       "name": "list",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs",
       "description": "Get the list of scheduling runs"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result",
+      "description": "Get the result of a rescheduling operation"
     },
     {
       "name": "create",
@@ -1208,14 +1208,14 @@
       "description": "Retrieves daily waitlist position for a list of time off requests"
     },
     {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups",
-      "description": "Add a bid group in a given work plan bid"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/summary",
       "description": "Get summary of bid groups that belong to a work plan bid"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups",
+      "description": "Add a bid group in a given work plan bid"
     },
     {
       "name": "get",
@@ -1258,6 +1258,11 @@
       "description": "Update work plan bid ranks for a user"
     },
     {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy",
+      "description": "Copy a work plan bid"
+    },
+    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}",
       "description": "Get a work plan bid"
@@ -1281,11 +1286,6 @@
       "name": "create",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids",
       "description": "Create a new work plan bid"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy",
-      "description": "Copy a work plan bid"
     },
     {
       "name": "getAllSessions",

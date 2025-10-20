@@ -22,6 +22,9 @@ type AgentvideosettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Agentvideosettings - The settings for Agent Video
@@ -32,6 +35,10 @@ type Agentvideosettings struct {
 
     // AllowScreenShare - whether or not agent screen share is allowed
     AllowScreenShare bool `json:"allowScreenShare"`
+
+
+    // AllowMicrophone - whether or not agent microphone is allowed
+    AllowMicrophone bool `json:"allowMicrophone"`
 
 
     // Background - background for agent
@@ -45,6 +52,7 @@ type Agentvideosettings struct {
 
 // String returns a JSON representation of the model
 func (o *Agentvideosettings) String() string {
+    
     
     
     
@@ -70,11 +78,16 @@ func (u *Agentvideosettings) MarshalJSON() ([]byte, error) {
         
         AllowScreenShare bool `json:"allowScreenShare"`
         
+        AllowMicrophone bool `json:"allowMicrophone"`
+        
         Background string `json:"background"`
         
         BackgroundImage Backgroundimagesettings `json:"backgroundImage"`
         *Alias
     }{
+
+        
+
 
         
 

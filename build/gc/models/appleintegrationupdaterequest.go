@@ -29,6 +29,15 @@ type AppleintegrationupdaterequestDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -58,12 +67,27 @@ type Appleintegrationupdaterequest struct {
     LogoUrl string `json:"logoUrl"`
 
 
+    // AppleIMessageApp - Interactive Application (iMessage App) Settings.
+    AppleIMessageApp Appleimessageapp `json:"appleIMessageApp"`
+
+
+    // AppleAuthentication - The Apple Messages for Business authentication setting.
+    AppleAuthentication Appleauthentication `json:"appleAuthentication"`
+
+
+    // ApplePay - Apple Pay settings.
+    ApplePay Applepay `json:"applePay"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Appleintegrationupdaterequest) String() string {
+    
+    
+    
     
     
     
@@ -95,8 +119,23 @@ func (u *Appleintegrationupdaterequest) MarshalJSON() ([]byte, error) {
         BusinessName string `json:"businessName"`
         
         LogoUrl string `json:"logoUrl"`
+        
+        AppleIMessageApp Appleimessageapp `json:"appleIMessageApp"`
+        
+        AppleAuthentication Appleauthentication `json:"appleAuthentication"`
+        
+        ApplePay Applepay `json:"applePay"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

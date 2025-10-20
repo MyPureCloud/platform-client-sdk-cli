@@ -57,7 +57,16 @@ type AppleintegrationDud struct {
     CreateError Errorbody `json:"createError"`
 
 
-    IdentityResolution Identityresolutionconfig `json:"identityResolution"`
+    
+
+
+    
+
+
+    
+
+
+    IdentityResolution Appleidentityresolutionconfig `json:"identityResolution"`
 
 
     SelfUri string `json:"selfUri"`
@@ -122,6 +131,18 @@ type Appleintegration struct {
     
 
 
+    // AppleIMessageApp - Interactive Application (iMessage App) Settings.
+    AppleIMessageApp Appleimessageapp `json:"appleIMessageApp"`
+
+
+    // AppleAuthentication - The Apple Messages for Business authentication setting.
+    AppleAuthentication Appleauthentication `json:"appleAuthentication"`
+
+
+    // ApplePay - Apple Pay settings.
+    ApplePay Applepay `json:"applePay"`
+
+
     
 
 
@@ -131,6 +152,9 @@ type Appleintegration struct {
 
 // String returns a JSON representation of the model
 func (o *Appleintegration) String() string {
+    
+    
+    
     
     
     
@@ -180,8 +204,23 @@ func (u *Appleintegration) MarshalJSON() ([]byte, error) {
         CreatedBy Domainentityref `json:"createdBy"`
         
         ModifiedBy Domainentityref `json:"modifiedBy"`
+        
+        AppleIMessageApp Appleimessageapp `json:"appleIMessageApp"`
+        
+        AppleAuthentication Appleauthentication `json:"appleAuthentication"`
+        
+        ApplePay Applepay `json:"applePay"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

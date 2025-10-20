@@ -23,6 +23,15 @@ type PatchcallbackrequestDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Patchcallbackrequest
@@ -42,6 +51,18 @@ type Patchcallbackrequest struct {
     // CallbackScheduledTime - The scheduled date-time for the callback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     CallbackScheduledTime time.Time `json:"callbackScheduledTime"`
 
+
+    // CountryCode - The countryCode
+    CountryCode string `json:"countryCode"`
+
+
+    // CallbackNumbers - The callbackNumbers
+    CallbackNumbers []string `json:"callbackNumbers"`
+
+
+    // ValidateCallbackNumbers - validateCallbackNumbers
+    ValidateCallbackNumbers bool `json:"validateCallbackNumbers"`
+
 }
 
 // String returns a JSON representation of the model
@@ -49,6 +70,9 @@ func (o *Patchcallbackrequest) String() string {
     
     
     
+    
+    
+     o.CallbackNumbers = []string{""} 
     
 
     j, _ := json.Marshal(o)
@@ -74,6 +98,12 @@ func (u *Patchcallbackrequest) MarshalJSON() ([]byte, error) {
         AgentId string `json:"agentId"`
         
         CallbackScheduledTime time.Time `json:"callbackScheduledTime"`
+        
+        CountryCode string `json:"countryCode"`
+        
+        CallbackNumbers []string `json:"callbackNumbers"`
+        
+        ValidateCallbackNumbers bool `json:"validateCallbackNumbers"`
         *Alias
     }{
 
@@ -83,6 +113,17 @@ func (u *Patchcallbackrequest) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+
+
+        
+        CallbackNumbers: []string{""},
         
 
 

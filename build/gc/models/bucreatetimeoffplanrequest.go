@@ -37,6 +37,12 @@ type BucreatetimeoffplanrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Bucreatetimeoffplanrequest
@@ -55,6 +61,14 @@ type Bucreatetimeoffplanrequest struct {
 
     // DaysBeforeStartToExpireFromWaitlist - The number of days before the time-off request start date for when the request will be expired from the waitlist. Default is 0
     DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
+
+
+    // AutoPublishApprovedTimeOffRequests - Whether newly approved time-off requests with activity codes associated with this time-off plan should be automatically published to the schedule
+    AutoPublishApprovedTimeOffRequests bool `json:"autoPublishApprovedTimeOffRequests"`
+
+
+    // RestrictedActivityCodeIds - The IDs of non time-off activity codes to check for conflicts in case the auto approval rule specifies checking activity codes. If these activity codes are present in schedule and overlap with the time-off request duration, the request will not be auto approved
+    RestrictedActivityCodeIds []string `json:"restrictedActivityCodeIds"`
 
 
     // HrisTimeOffType - Time-off type, if this time-off plan is associated with the integration
@@ -85,6 +99,8 @@ func (o *Bucreatetimeoffplanrequest) String() string {
     
     
     
+     o.RestrictedActivityCodeIds = []string{""} 
+    
     
     
     
@@ -114,6 +130,10 @@ func (u *Bucreatetimeoffplanrequest) MarshalJSON() ([]byte, error) {
         
         DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
         
+        AutoPublishApprovedTimeOffRequests bool `json:"autoPublishApprovedTimeOffRequests"`
+        
+        RestrictedActivityCodeIds []string `json:"restrictedActivityCodeIds"`
+        
         HrisTimeOffType Hristimeofftype `json:"hrisTimeOffType"`
         
         Enabled bool `json:"enabled"`
@@ -137,6 +157,14 @@ func (u *Bucreatetimeoffplanrequest) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+        RestrictedActivityCodeIds: []string{""},
         
 
 

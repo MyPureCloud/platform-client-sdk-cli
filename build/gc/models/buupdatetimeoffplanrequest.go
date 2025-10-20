@@ -40,6 +40,12 @@ type BuupdatetimeoffplanrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Buupdatetimeoffplanrequest
@@ -58,6 +64,14 @@ type Buupdatetimeoffplanrequest struct {
 
     // DaysBeforeStartToExpireFromWaitlist - The number of days before the time-off request start date for when the request will be expired from the waitlist
     DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
+
+
+    // AutoPublishApprovedTimeOffRequests - Whether newly approved time-off requests with activity codes associated with this time-off plan should be automatically published to the schedule
+    AutoPublishApprovedTimeOffRequests bool `json:"autoPublishApprovedTimeOffRequests"`
+
+
+    // RestrictedActivityCodeIds - The IDs of non time-off activity codes to check for conflicts in case the auto approval rule specifies checking activity codes. If these activity codes are present in schedule and overlap with the time-off request duration, the request will not be auto approved
+    RestrictedActivityCodeIds Setwrapperstring `json:"restrictedActivityCodeIds"`
 
 
     // HrisTimeOffType - Time-off type, if this time-off plan is associated with the integration
@@ -97,6 +111,8 @@ func (o *Buupdatetimeoffplanrequest) String() string {
     
     
     
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -122,6 +138,10 @@ func (u *Buupdatetimeoffplanrequest) MarshalJSON() ([]byte, error) {
         
         DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
         
+        AutoPublishApprovedTimeOffRequests bool `json:"autoPublishApprovedTimeOffRequests"`
+        
+        RestrictedActivityCodeIds Setwrapperstring `json:"restrictedActivityCodeIds"`
+        
         HrisTimeOffType Valuewrapperhristimeofftype `json:"hrisTimeOffType"`
         
         Enabled bool `json:"enabled"`
@@ -135,6 +155,12 @@ func (u *Buupdatetimeoffplanrequest) MarshalJSON() ([]byte, error) {
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

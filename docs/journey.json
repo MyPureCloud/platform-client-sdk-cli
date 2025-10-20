@@ -69,13 +69,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/actionmaps/estimates/jobs/{jobId}/results",
-      "description": "Get estimates from completed job."
+      "path": "/api/v2/journey/actionmaps/estimates/jobs/{jobId}",
+      "description": "Get status of job."
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/actionmaps/estimates/jobs/{jobId}",
-      "description": "Get status of job."
+      "path": "/api/v2/journey/actionmaps/estimates/jobs/{jobId}/results",
+      "description": "Get estimates from completed job."
     },
     {
       "name": "create",

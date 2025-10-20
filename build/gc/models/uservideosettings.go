@@ -16,6 +16,9 @@ type UservideosettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Uservideosettings - The settings for User Video
@@ -27,10 +30,15 @@ type Uservideosettings struct {
     // AllowScreenShare - whether or not user screen share is allowed
     AllowScreenShare bool `json:"allowScreenShare"`
 
+
+    // AllowMicrophone - whether or not user microphone is allowed
+    AllowMicrophone bool `json:"allowMicrophone"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Uservideosettings) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Uservideosettings) MarshalJSON() ([]byte, error) {
         AllowCamera bool `json:"allowCamera"`
         
         AllowScreenShare bool `json:"allowScreenShare"`
+        
+        AllowMicrophone bool `json:"allowMicrophone"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -36,7 +36,7 @@ func Cmdarchitect_ivrs_identityresolution() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/IVRIdentityResolutionConfig"
       }
     }
   }
@@ -48,7 +48,7 @@ func Cmdarchitect_ivrs_identityresolution() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/IVRIdentityResolutionConfig"
       }
     }
   },
@@ -60,7 +60,7 @@ func Cmdarchitect_ivrs_identityresolution() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/IVRIdentityResolutionConfig"
       }
     }
   }
@@ -151,7 +151,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Identityresolutionconfig{}
+			reqModel := models.Ivridentityresolutionconfig{}
 			utils.Render(reqModel.String())
 			
 			return

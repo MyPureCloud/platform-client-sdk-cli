@@ -36,7 +36,7 @@ func Cmdrouting_sms_identityresolution_phonenumbers() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/SmsIdentityResolutionConfig"
       }
     }
   }
@@ -48,7 +48,7 @@ func Cmdrouting_sms_identityresolution_phonenumbers() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/SmsIdentityResolutionConfig"
       }
     }
   },
@@ -60,7 +60,7 @@ func Cmdrouting_sms_identityresolution_phonenumbers() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/SmsIdentityResolutionConfig"
       }
     }
   }
@@ -151,7 +151,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Identityresolutionconfig{}
+			reqModel := models.Smsidentityresolutionconfig{}
 			utils.Render(reqModel.String())
 			
 			return

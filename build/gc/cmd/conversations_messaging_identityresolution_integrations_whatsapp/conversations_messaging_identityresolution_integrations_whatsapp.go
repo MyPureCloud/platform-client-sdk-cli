@@ -36,7 +36,7 @@ func Cmdconversations_messaging_identityresolution_integrations_whatsapp() *cobr
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/WhatsAppIdentityResolutionConfig"
       }
     }
   }
@@ -48,7 +48,7 @@ func Cmdconversations_messaging_identityresolution_integrations_whatsapp() *cobr
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/WhatsAppIdentityResolutionConfig"
       }
     }
   },
@@ -60,7 +60,7 @@ func Cmdconversations_messaging_identityresolution_integrations_whatsapp() *cobr
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/WhatsAppIdentityResolutionConfig"
       }
     }
   }
@@ -151,7 +151,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Identityresolutionconfig{}
+			reqModel := models.Whatsappidentityresolutionconfig{}
 			utils.Render(reqModel.String())
 			
 			return

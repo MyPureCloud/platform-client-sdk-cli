@@ -43,7 +43,7 @@ type Mediaparticipantrequest struct {
     State string `json:"state"`
 
 
-    // Recording - True to enable recording of this participant, otherwise false to disable recording.
+    // Recording - True to enable ad-hoc recording of this participant, otherwise false to disable recording.
     Recording bool `json:"recording"`
 
 

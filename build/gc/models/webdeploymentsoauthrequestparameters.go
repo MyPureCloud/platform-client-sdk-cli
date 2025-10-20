@@ -28,12 +28,19 @@ type WebdeploymentsoauthrequestparametersDud struct {
 
     
 
+
+    
+
 }
 
 // Webdeploymentsoauthrequestparameters
 type Webdeploymentsoauthrequestparameters struct { 
     // Code - The authorization code to be sent to the authentication server during the token request.  Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest
     Code string `json:"code"`
+
+
+    // IdToken - The implicit id_token to be sent to the authentication server during the token request.  Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest
+    IdToken string `json:"idToken"`
 
 
     // RedirectUri - Redirect URI sent in the \"Authentication Request\"Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest
@@ -65,6 +72,7 @@ func (o *Webdeploymentsoauthrequestparameters) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -84,6 +92,8 @@ func (u *Webdeploymentsoauthrequestparameters) MarshalJSON() ([]byte, error) {
         
         Code string `json:"code"`
         
+        IdToken string `json:"idToken"`
+        
         RedirectUri string `json:"redirectUri"`
         
         Nonce string `json:"nonce"`
@@ -95,6 +105,9 @@ func (u *Webdeploymentsoauthrequestparameters) MarshalJSON() ([]byte, error) {
         Iss string `json:"iss"`
         *Alias
     }{
+
+        
+
 
         
 

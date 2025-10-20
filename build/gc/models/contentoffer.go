@@ -34,6 +34,9 @@ type ContentofferDud struct {
 
     
 
+
+    
+
 }
 
 // Contentoffer
@@ -69,10 +72,15 @@ type Contentoffer struct {
     // Style - Properties customizing the styling of the content offer.
     Style Contentofferstylingconfiguration `json:"style"`
 
+
+    // ImageAltText - Image description text for accessibility compliance and assistive technology support.
+    ImageAltText string `json:"imageAltText"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Contentoffer) String() string {
+    
     
     
     
@@ -113,8 +121,13 @@ func (u *Contentoffer) MarshalJSON() ([]byte, error) {
         CallToAction Calltoaction `json:"callToAction"`
         
         Style Contentofferstylingconfiguration `json:"style"`
+        
+        ImageAltText string `json:"imageAltText"`
         *Alias
     }{
+
+        
+
 
         
 

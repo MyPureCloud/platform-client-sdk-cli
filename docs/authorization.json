@@ -89,6 +89,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/authorization/subjects/{subjectId}/bulkadd",
+      "description": "Bulk-grant roles and divisions to a subject."
+    },
+    {
+      "name": "create",
       "path": "/api/v2/authorization/subjects/{subjectId}/bulkreplace",
       "description": "Replace subject's roles and divisions with the exact list supplied in the request."
     },
@@ -113,9 +118,9 @@
       "description": "Returns a listing of roles and permissions for a user."
     },
     {
-      "name": "create",
-      "path": "/api/v2/authorization/subjects/{subjectId}/bulkadd",
-      "description": "Bulk-grant roles and divisions to a subject."
+      "name": "list",
+      "path": "/api/v2/authorization/roles/{roleId}/users",
+      "description": "Get a list of the users in a specified role."
     },
     {
       "name": "update",
@@ -126,11 +131,6 @@
       "name": "update",
       "path": "/api/v2/authorization/roles/{roleId}/users/remove",
       "description": "Removes the users from the role"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/authorization/roles/{roleId}/users",
-      "description": "Get a list of the users in a specified role."
     },
     {
       "name": "list",

@@ -298,6 +298,16 @@
       "description": "Create a flow outcome"
     },
     {
+      "name": "create",
+      "path": "/api/v2/flows/{flowId}/history",
+      "description": "Generate flow history"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/{flowId}/history/{historyId}",
+      "description": "Get generated flow history"
+    },
+    {
       "name": "get",
       "path": "/api/v2/flows/{flowId}",
       "description": "Get flow"
@@ -316,16 +326,6 @@
       "name": "get",
       "path": "/api/v2/flows/{flowId}/latestconfiguration",
       "description": "Get the latest configuration for flow"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/flows/{flowId}/history",
-      "description": "Generate flow history"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/flows/{flowId}/history/{historyId}",
-      "description": "Get generated flow history"
     },
     {
       "name": "get",

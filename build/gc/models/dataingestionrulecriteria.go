@@ -16,6 +16,9 @@ type DataingestionrulecriteriaDud struct {
 
     
 
+
+    Name string `json:"name"`
+
 }
 
 // Dataingestionrulecriteria
@@ -26,6 +29,9 @@ type Dataingestionrulecriteria struct {
 
     // Id - The ID of the data ingestion rule.
     Id string `json:"id"`
+
+
+    
 
 }
 
@@ -55,6 +61,9 @@ func (u *Dataingestionrulecriteria) MarshalJSON() ([]byte, error) {
         Id string `json:"id"`
         *Alias
     }{
+
+        
+
 
         
 

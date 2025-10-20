@@ -36,7 +36,7 @@ func Cmdconversations_messaging_identityresolution_integrations_facebook() *cobr
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/FacebookIdentityResolutionConfig"
       }
     }
   }
@@ -49,7 +49,7 @@ func Cmdconversations_messaging_identityresolution_integrations_facebook() *cobr
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/FacebookIdentityResolutionConfig"
       }
     }
   },
@@ -61,7 +61,7 @@ func Cmdconversations_messaging_identityresolution_integrations_facebook() *cobr
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/FacebookIdentityResolutionConfig"
       }
     }
   }
@@ -152,7 +152,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Identityresolutionconfig{}
+			reqModel := models.Facebookidentityresolutionconfig{}
 			utils.Render(reqModel.String())
 			
 			return

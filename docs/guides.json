@@ -3,6 +3,11 @@
   "description": "/api/v2/guides",
   "resources": [
     {
+      "name": "getjobforguide",
+      "path": "/api/v2/guides/{guideId}/jobs/{jobId}",
+      "description": "Get the specified guide deletion job."
+    },
+    {
       "name": "get",
       "path": "/api/v2/guides/{guideId}",
       "description": "Get guide."
@@ -16,11 +21,6 @@
       "name": "delete",
       "path": "/api/v2/guides/{guideId}/jobs",
       "description": "Start the deletion of a guide."
-    },
-    {
-      "name": "getjobforguide",
-      "path": "/api/v2/guides/{guideId}/jobs/{jobId}",
-      "description": "Get the specified guide deletion job."
     },
     {
       "name": "get",

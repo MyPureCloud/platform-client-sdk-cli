@@ -63,6 +63,9 @@ type WhatsappintegrationDud struct {
     CreateError Errorbody `json:"createError"`
 
 
+    WhatsAppBusinessAccountId string `json:"whatsAppBusinessAccountId"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -132,6 +135,9 @@ type Whatsappintegration struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -184,6 +190,9 @@ func (u *Whatsappintegration) MarshalJSON() ([]byte, error) {
         Version int `json:"version"`
         *Alias
     }{
+
+        
+
 
         
 

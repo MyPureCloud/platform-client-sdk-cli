@@ -47,6 +47,12 @@ type ButimeoffplanresponseDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -74,6 +80,14 @@ type Butimeoffplanresponse struct {
 
     // DaysBeforeStartToExpireFromWaitlist - The number of days before the time-off request start date for when the request will be expired from the waitlist
     DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
+
+
+    // AutoPublishApprovedTimeOffRequests - Whether newly approved time-off requests with activity codes associated with this time-off plan should be automatically published to the schedule
+    AutoPublishApprovedTimeOffRequests bool `json:"autoPublishApprovedTimeOffRequests"`
+
+
+    // RestrictedActivityCodes - The IDs of non time-off activity codes to check for conflicts in case the auto approval rule specifies checking activity codes. If these activity codes are present in schedule and overlap with the time-off request duration, the request will not be auto approved
+    RestrictedActivityCodes Activitycodesreference `json:"restrictedActivityCodes"`
 
 
     // HrisTimeOffType - Time-off type, if this time-off plan is associated with the integration
@@ -117,6 +131,8 @@ func (o *Butimeoffplanresponse) String() string {
     
     
     
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -143,6 +159,10 @@ func (u *Butimeoffplanresponse) MarshalJSON() ([]byte, error) {
         AutoApprovalRule string `json:"autoApprovalRule"`
         
         DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
+        
+        AutoPublishApprovedTimeOffRequests bool `json:"autoPublishApprovedTimeOffRequests"`
+        
+        RestrictedActivityCodes Activitycodesreference `json:"restrictedActivityCodes"`
         
         HrisTimeOffType Hristimeofftype `json:"hrisTimeOffType"`
         
@@ -171,6 +191,12 @@ func (u *Butimeoffplanresponse) MarshalJSON() ([]byte, error) {
 
         
         TimeOffLimits: []Butimeofflimitreference{{}},
+        
+
+
+        
+
+
         
 
 

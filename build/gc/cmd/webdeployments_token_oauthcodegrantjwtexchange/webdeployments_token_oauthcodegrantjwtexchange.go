@@ -62,8 +62,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.",
-	Long:  "Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.",
+	Short: "Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.",
+	Long:  "Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

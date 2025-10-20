@@ -36,7 +36,7 @@ func Cmdrouting_email_domains_routes_identityresolution() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/RouteIdentityResolutionConfig"
       }
     }
   }
@@ -48,7 +48,7 @@ func Cmdrouting_email_domains_routes_identityresolution() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/RouteIdentityResolutionConfig"
       }
     }
   },
@@ -60,7 +60,7 @@ func Cmdrouting_email_domains_routes_identityresolution() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/IdentityResolutionConfig"
+        "$ref" : "#/components/schemas/RouteIdentityResolutionConfig"
       }
     }
   }
@@ -153,7 +153,7 @@ var updateCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Identityresolutionconfig{}
+			reqModel := models.Routeidentityresolutionconfig{}
 			utils.Render(reqModel.String())
 			
 			return

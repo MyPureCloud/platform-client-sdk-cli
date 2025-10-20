@@ -18,7 +18,7 @@ type IdentityresolutionqueueconfigDud struct {
 // Identityresolutionqueueconfig
 type Identityresolutionqueueconfig struct { 
     // CallOnBehalfOfQueue
-    CallOnBehalfOfQueue Identityresolutionconfig `json:"callOnBehalfOfQueue"`
+    CallOnBehalfOfQueue Outboundqueueidentityresolutionconfig `json:"callOnBehalfOfQueue"`
 
 }
 
@@ -42,7 +42,7 @@ func (u *Identityresolutionqueueconfig) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        CallOnBehalfOfQueue Identityresolutionconfig `json:"callOnBehalfOfQueue"`
+        CallOnBehalfOfQueue Outboundqueueidentityresolutionconfig `json:"callOnBehalfOfQueue"`
         *Alias
     }{
 

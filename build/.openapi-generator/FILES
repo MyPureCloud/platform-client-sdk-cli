@@ -746,17 +746,10 @@ gc/cmd/knowledge_knowledgebases_documents_views/knowledge_knowledgebases_documen
 gc/cmd/knowledge_knowledgebases_export_jobs/knowledge_knowledgebases_export_jobs.go
 gc/cmd/knowledge_knowledgebases_import_jobs/knowledge_knowledgebases_import_jobs.go
 gc/cmd/knowledge_knowledgebases_labels/knowledge_knowledgebases_labels.go
-gc/cmd/knowledge_knowledgebases_languages_categories/knowledge_knowledgebases_languages_categories.go
-gc/cmd/knowledge_knowledgebases_languages_documents/knowledge_knowledgebases_languages_documents.go
-gc/cmd/knowledge_knowledgebases_languages_documents_imports/knowledge_knowledgebases_languages_documents_imports.go
-gc/cmd/knowledge_knowledgebases_languages_documents_uploads/knowledge_knowledgebases_languages_documents_uploads.go
-gc/cmd/knowledge_knowledgebases_languages_trainings/knowledge_knowledgebases_languages_trainings.go
-gc/cmd/knowledge_knowledgebases_languages_trainings_promote/knowledge_knowledgebases_languages_trainings_promote.go
 gc/cmd/knowledge_knowledgebases_operations/knowledge_knowledgebases_operations.go
 gc/cmd/knowledge_knowledgebases_operations_users_query/knowledge_knowledgebases_operations_users_query.go
 gc/cmd/knowledge_knowledgebases_parse_jobs/knowledge_knowledgebases_parse_jobs.go
 gc/cmd/knowledge_knowledgebases_parse_jobs_import/knowledge_knowledgebases_parse_jobs_import.go
-gc/cmd/knowledge_knowledgebases_search/knowledge_knowledgebases_search.go
 gc/cmd/knowledge_knowledgebases_sources/knowledge_knowledgebases_sources.go
 gc/cmd/knowledge_knowledgebases_sources_salesforce/knowledge_knowledgebases_sources_salesforce.go
 gc/cmd/knowledge_knowledgebases_sources_salesforce_sync/knowledge_knowledgebases_sources_salesforce_sync.go
@@ -879,6 +872,7 @@ gc/cmd/outbound_campaigns_diagnostics/outbound_campaigns_diagnostics.go
 gc/cmd/outbound_campaigns_divisionviews/outbound_campaigns_divisionviews.go
 gc/cmd/outbound_campaigns_interactions/outbound_campaigns_interactions.go
 gc/cmd/outbound_campaigns_linedistribution/outbound_campaigns_linedistribution.go
+gc/cmd/outbound_campaigns_performance_query/outbound_campaigns_performance_query.go
 gc/cmd/outbound_campaigns_progress/outbound_campaigns_progress.go
 gc/cmd/outbound_campaigns_skillcombinations/outbound_campaigns_skillcombinations.go
 gc/cmd/outbound_campaigns_start/outbound_campaigns_start.go
@@ -1004,10 +998,13 @@ gc/cmd/routing_availablemediatypes/routing_availablemediatypes.go
 gc/cmd/routing_conversations/routing_conversations.go
 gc/cmd/routing_directroutingbackup_settings_me/routing_directroutingbackup_settings_me.go
 gc/cmd/routing_email_domains/routing_email_domains.go
+gc/cmd/routing_email_domains_dkim/routing_email_domains_dkim.go
+gc/cmd/routing_email_domains_mailfrom/routing_email_domains_mailfrom.go
 gc/cmd/routing_email_domains_routes/routing_email_domains_routes.go
 gc/cmd/routing_email_domains_routes_identityresolution/routing_email_domains_routes_identityresolution.go
 gc/cmd/routing_email_domains_testconnection/routing_email_domains_testconnection.go
 gc/cmd/routing_email_domains_validate/routing_email_domains_validate.go
+gc/cmd/routing_email_domains_verification/routing_email_domains_verification.go
 gc/cmd/routing_email_outbound_domains/routing_email_outbound_domains.go
 gc/cmd/routing_email_outbound_domains_activation/routing_email_outbound_domains_activation.go
 gc/cmd/routing_email_outbound_domains_simulated/routing_email_outbound_domains_simulated.go
@@ -1508,6 +1505,7 @@ gc/models/actionaggregatequeryfilter.go
 gc/models/actionaggregatequerypredicate.go
 gc/models/actionaggregatequeryresponse.go
 gc/models/actionaggregationquery.go
+gc/models/actionaggregationsort.go
 gc/models/actionaggregationview.go
 gc/models/actionasyncaggregatequeryresponse.go
 gc/models/actionasyncaggregationquery.go
@@ -1601,6 +1599,7 @@ gc/models/agentcopilotaggregatequeryfilter.go
 gc/models/agentcopilotaggregatequerypredicate.go
 gc/models/agentcopilotaggregatequeryresponse.go
 gc/models/agentcopilotaggregationquery.go
+gc/models/agentcopilotaggregationsort.go
 gc/models/agentcopilotaggregationview.go
 gc/models/agentcopilotasyncaggregatequeryresponse.go
 gc/models/agentcopilotasyncaggregationquery.go
@@ -1741,6 +1740,7 @@ gc/models/appeventrequest.go
 gc/models/appeventresponse.go
 gc/models/appeventresponsesession.go
 gc/models/appleauthentication.go
+gc/models/appleidentityresolutionconfig.go
 gc/models/appleimessageapp.go
 gc/models/appleintegration.go
 gc/models/appleintegrationentitylisting.go
@@ -1757,8 +1757,6 @@ gc/models/architectjobstateresponse.go
 gc/models/archiveretention.go
 gc/models/arraynode.go
 gc/models/article.go
-gc/models/articlecontent.go
-gc/models/articlecontentbody.go
 gc/models/articlesfilter.go
 gc/models/assessmentform.go
 gc/models/assessmentformquestion.go
@@ -1892,6 +1890,7 @@ gc/models/botaggregatequeryfilter.go
 gc/models/botaggregatequerypredicate.go
 gc/models/botaggregatequeryresponse.go
 gc/models/botaggregationquery.go
+gc/models/botaggregationsort.go
 gc/models/botaggregationview.go
 gc/models/botasyncaggregatequeryresponse.go
 gc/models/botasyncaggregationquery.go
@@ -2139,6 +2138,10 @@ gc/models/campaignoutboundlinesallocation.go
 gc/models/campaignoutboundlinesdistribution.go
 gc/models/campaignoutboundlinesreservation.go
 gc/models/campaignpatchrequest.go
+gc/models/campaignperformancedata.go
+gc/models/campaignperformancedatacontactrate.go
+gc/models/campaignperformancedatalisting.go
+gc/models/campaignperformancedataprogress.go
 gc/models/campaignprogress.go
 gc/models/campaignrule.go
 gc/models/campaignruleaction.go
@@ -2191,7 +2194,6 @@ gc/models/category.go
 gc/models/categorycreaterequest.go
 gc/models/categoryentity.go
 gc/models/categoryentitylisting.go
-gc/models/categorylisting.go
 gc/models/categoryreference.go
 gc/models/categoryrequest.go
 gc/models/categoryresponse.go
@@ -2449,6 +2451,7 @@ gc/models/conversationaggregatequeryfilter.go
 gc/models/conversationaggregatequerypredicate.go
 gc/models/conversationaggregatequeryresponse.go
 gc/models/conversationaggregationquery.go
+gc/models/conversationaggregationsort.go
 gc/models/conversationaggregationview.go
 gc/models/conversationappsettings.go
 gc/models/conversationassociation.go
@@ -2840,7 +2843,6 @@ gc/models/dncpatchphonenumbersrequest.go
 gc/models/dncpatchwhatsappnumbersrequest.go
 gc/models/dnsrecordentry.go
 gc/models/document.go
-gc/models/documentarticle.go
 gc/models/documentationresult.go
 gc/models/documentationsearchcriteria.go
 gc/models/documentationsearchrequest.go
@@ -2879,7 +2881,6 @@ gc/models/documentbodytablewithhighlight.go
 gc/models/documentbodyvideo.go
 gc/models/documentbodyvideoproperties.go
 gc/models/documentbodywithhighlight.go
-gc/models/documentcategoryinput.go
 gc/models/documentchunkblock.go
 gc/models/documentchunkreference.go
 gc/models/documentcontentblock.go
@@ -2887,10 +2888,8 @@ gc/models/documentcontentblockwithhighlight.go
 gc/models/documentcontenthighlightindex.go
 gc/models/documentelementlength.go
 gc/models/documententitylisting.go
-gc/models/documentfaq.go
 gc/models/documentlistcontentblock.go
 gc/models/documentlistcontentblockwithhighlight.go
-gc/models/documentlisting.go
 gc/models/documentquery.go
 gc/models/documentqueryclause.go
 gc/models/documentqueryinterval.go
@@ -3176,6 +3175,7 @@ gc/models/facebookdataingestionruleresponse.go
 gc/models/facebookdataingestionruleversionresponse.go
 gc/models/facebookdataingestionruleversionresponseentitylisting.go
 gc/models/facebookid.go
+gc/models/facebookidentityresolutionconfig.go
 gc/models/facebookintegration.go
 gc/models/facebookintegrationentitylisting.go
 gc/models/facebookintegrationrequest.go
@@ -3232,6 +3232,7 @@ gc/models/flowaggregatequeryfilter.go
 gc/models/flowaggregatequerypredicate.go
 gc/models/flowaggregatequeryresponse.go
 gc/models/flowaggregationquery.go
+gc/models/flowaggregationsort.go
 gc/models/flowaggregationview.go
 gc/models/flowasyncaggregatequeryresponse.go
 gc/models/flowasyncaggregationquery.go
@@ -3246,6 +3247,7 @@ gc/models/flowexecutionaggregatequeryfilter.go
 gc/models/flowexecutionaggregatequerypredicate.go
 gc/models/flowexecutionaggregatequeryresponse.go
 gc/models/flowexecutionaggregationquery.go
+gc/models/flowexecutionaggregationsort.go
 gc/models/flowexecutionaggregationview.go
 gc/models/flowexecutionasyncaggregatequeryresponse.go
 gc/models/flowexecutionasyncaggregationquery.go
@@ -3443,7 +3445,6 @@ gc/models/identitynow.go
 gc/models/identityprovider.go
 gc/models/identityproviderentitylisting.go
 gc/models/identityresolutionautomergeconfig.go
-gc/models/identityresolutionconfig.go
 gc/models/identityresolutionexternalsource.go
 gc/models/identityresolutionqueueconfig.go
 gc/models/idleeventtrigger.go
@@ -3461,10 +3462,8 @@ gc/models/ignoretopicsrequest.go
 gc/models/ignoretopicsresponse.go
 gc/models/image.go
 gc/models/imapsettings.go
-gc/models/importerror.go
 gc/models/importforecastresponse.go
 gc/models/importforecastuploadresponse.go
-gc/models/importreport.go
 gc/models/importscheduleuploadresponse.go
 gc/models/importscheduleuploadschema.go
 gc/models/importscriptstatusresponse.go
@@ -3515,6 +3514,7 @@ gc/models/instagramdataingestionruleresponse.go
 gc/models/instagramdataingestionruleversionresponse.go
 gc/models/instagramdataingestionruleversionresponseentitylisting.go
 gc/models/instagramid.go
+gc/models/instagramidentityresolutionconfig.go
 gc/models/instagramintegration.go
 gc/models/instagramintegrationentitylisting.go
 gc/models/instagramintegrationrequest.go
@@ -3558,6 +3558,7 @@ gc/models/ivrdivisionview.go
 gc/models/ivrdivisionviewentitylisting.go
 gc/models/ivrentitylisting.go
 gc/models/ivrestablishedevent.go
+gc/models/ivridentityresolutionconfig.go
 gc/models/journey.go
 gc/models/journeyaction.go
 gc/models/journeyactionmap.go
@@ -3567,6 +3568,7 @@ gc/models/journeyaggregatequeryfilter.go
 gc/models/journeyaggregatequerypredicate.go
 gc/models/journeyaggregatequeryresponse.go
 gc/models/journeyaggregationquery.go
+gc/models/journeyaggregationsort.go
 gc/models/journeyaggregationview.go
 gc/models/journeyapp.go
 gc/models/journeyasyncaggregatequeryresponse.go
@@ -3629,6 +3631,7 @@ gc/models/knowledgeaggregatequeryfilter.go
 gc/models/knowledgeaggregatequerypredicate.go
 gc/models/knowledgeaggregatequeryresponse.go
 gc/models/knowledgeaggregationquery.go
+gc/models/knowledgeaggregationsort.go
 gc/models/knowledgeaggregationview.go
 gc/models/knowledgeanswerconfig.go
 gc/models/knowledgeanswerdocumentresponse.go
@@ -3642,23 +3645,18 @@ gc/models/knowledgebaselisting.go
 gc/models/knowledgebasereference.go
 gc/models/knowledgebaseupdaterequest.go
 gc/models/knowledgebasewithdialectreference.go
-gc/models/knowledgecategory.go
-gc/models/knowledgecategoryrequest.go
 gc/models/knowledgecontextreference.go
 gc/models/knowledgecontextvaluereference.go
 gc/models/knowledgeconversationcontext.go
 gc/models/knowledgeconversationcontextresponse.go
-gc/models/knowledgedocument.go
 gc/models/knowledgedocumentalternative.go
 gc/models/knowledgedocumentbulkremoverequest.go
-gc/models/knowledgedocumentbulkrequest.go
 gc/models/knowledgedocumentbulkupdateentity.go
 gc/models/knowledgedocumentbulkupdaterequest.go
 gc/models/knowledgedocumentbulkversionaddentity.go
 gc/models/knowledgedocumentbulkversionaddrequest.go
 gc/models/knowledgedocumentchunkrequest.go
 gc/models/knowledgedocumentchunkresponse.go
-gc/models/knowledgedocumentcontentupload.go
 gc/models/knowledgedocumentcopy.go
 gc/models/knowledgedocumentcreaterequest.go
 gc/models/knowledgedocumentdescriptor.go
@@ -3676,7 +3674,6 @@ gc/models/knowledgedocumentqueryresult.go
 gc/models/knowledgedocumentqueryvariation.go
 gc/models/knowledgedocumentreference.go
 gc/models/knowledgedocumentreq.go
-gc/models/knowledgedocumentrequest.go
 gc/models/knowledgedocumentresponse.go
 gc/models/knowledgedocumentresponselisting.go
 gc/models/knowledgedocumentsanswerfilter.go
@@ -3698,7 +3695,6 @@ gc/models/knowledgeexportjobdocumentsfilter.go
 gc/models/knowledgeexportjobfilter.go
 gc/models/knowledgeexportjobrequest.go
 gc/models/knowledgeexportjobresponse.go
-gc/models/knowledgeextendedcategory.go
 gc/models/knowledgegroupstatistics.go
 gc/models/knowledgeguestanswerdocumentresponse.go
 gc/models/knowledgeguestanswerdocumentsresponse.go
@@ -3720,7 +3716,6 @@ gc/models/knowledgeguestsearchdocumentresponse.go
 gc/models/knowledgeguestsession.go
 gc/models/knowledgeguestsessionapp.go
 gc/models/knowledgeguestsessioncontext.go
-gc/models/knowledgeimport.go
 gc/models/knowledgeimportjoberror.go
 gc/models/knowledgeimportjobreport.go
 gc/models/knowledgeimportjobrequest.go
@@ -3741,16 +3736,12 @@ gc/models/knowledgeparsejobresponse.go
 gc/models/knowledgeparserecord.go
 gc/models/knowledgesearchclientapplication.go
 gc/models/knowledgesearchdocumentresponse.go
-gc/models/knowledgesearchdocumentv1.go
-gc/models/knowledgesearchrequest.go
-gc/models/knowledgesearchresponse.go
 gc/models/knowledgesuggestionconfig.go
 gc/models/knowledgesyncjobreport.go
 gc/models/knowledgesyncjobrequest.go
 gc/models/knowledgesyncjobresponse.go
 gc/models/knowledgesyncjobstatistics.go
 gc/models/knowledgesyncrequest.go
-gc/models/knowledgetraining.go
 gc/models/kpiresult.go
 gc/models/label.go
 gc/models/labelcreaterequest.go
@@ -4025,6 +4016,7 @@ gc/models/messagingendtransferevent.go
 gc/models/messagingexternalestablishedevent.go
 gc/models/messagingflowestablishedevent.go
 gc/models/messagingholdupdatedevent.go
+gc/models/messagingidentityresolutionconfig.go
 gc/models/messaginginitialconfiguration.go
 gc/models/messagingintegration.go
 gc/models/messagingintegrationentitylisting.go
@@ -4240,6 +4232,7 @@ gc/models/outbounddomain.go
 gc/models/outbounddomaincreaterequest.go
 gc/models/outbounddomainentitylisting.go
 gc/models/outboundonlysetting.go
+gc/models/outboundqueueidentityresolutionconfig.go
 gc/models/outboundroute.go
 gc/models/outboundroutebase.go
 gc/models/outboundroutebaseentitylisting.go
@@ -4509,6 +4502,7 @@ gc/models/ratelimitaggregatequeryfilter.go
 gc/models/ratelimitaggregatequerypredicate.go
 gc/models/ratelimitaggregatequeryresponse.go
 gc/models/ratelimitaggregationquery.go
+gc/models/ratelimitaggregationsort.go
 gc/models/ratelimitaggregationview.go
 gc/models/reaction.go
 gc/models/realtimeadherenceexplanation.go
@@ -4621,6 +4615,7 @@ gc/models/resolutionaggregatequeryfilter.go
 gc/models/resolutionaggregatequerypredicate.go
 gc/models/resolutionaggregatequeryresponse.go
 gc/models/resolutionaggregationquery.go
+gc/models/resolutionaggregationsort.go
 gc/models/resolutionaggregationview.go
 gc/models/resolutionasyncaggregatequeryresponse.go
 gc/models/resolutionasyncaggregationquery.go
@@ -4650,7 +4645,6 @@ gc/models/responsesubstitution.go
 gc/models/responsetext.go
 gc/models/resterrordetail.go
 gc/models/restorepresencesettings.go
-gc/models/resultcounters.go
 gc/models/retentionduration.go
 gc/models/reversewhitepageslookupresult.go
 gc/models/reviewassessmentresults.go
@@ -4664,6 +4658,7 @@ gc/models/roomparticipant.go
 gc/models/roomparticipantresponse.go
 gc/models/roomparticipantsresponse.go
 gc/models/roomupdaterequest.go
+gc/models/routeidentityresolutionconfig.go
 gc/models/routepathrequest.go
 gc/models/routepathresponse.go
 gc/models/routingactivitydata.go
@@ -4904,6 +4899,7 @@ gc/models/smsalphanumericprovision.go
 gc/models/smsavailablephonenumber.go
 gc/models/smsavailablephonenumberentitylisting.go
 gc/models/smsconfig.go
+gc/models/smsidentityresolutionconfig.go
 gc/models/smsphonenumber.go
 gc/models/smsphonenumberentitylisting.go
 gc/models/smsphonenumberimport.go
@@ -4999,6 +4995,7 @@ gc/models/summaryaggregatequeryfilter.go
 gc/models/summaryaggregatequerypredicate.go
 gc/models/summaryaggregatequeryresponse.go
 gc/models/summaryaggregationquery.go
+gc/models/summaryaggregationsort.go
 gc/models/summaryaggregationview.go
 gc/models/summaryasyncaggregatequeryresponse.go
 gc/models/summaryasyncaggregationquery.go
@@ -5040,6 +5037,7 @@ gc/models/surveyaggregatequeryfilter.go
 gc/models/surveyaggregatequerypredicate.go
 gc/models/surveyaggregatequeryresponse.go
 gc/models/surveyaggregationquery.go
+gc/models/surveyaggregationsort.go
 gc/models/surveyaggregationview.go
 gc/models/surveyassignment.go
 gc/models/surveyasyncaggregatequeryresponse.go
@@ -5076,6 +5074,7 @@ gc/models/taskmanagementaggregatequeryfilter.go
 gc/models/taskmanagementaggregatequerypredicate.go
 gc/models/taskmanagementaggregatequeryresponse.go
 gc/models/taskmanagementaggregationquery.go
+gc/models/taskmanagementaggregationsort.go
 gc/models/taskmanagementaggregationview.go
 gc/models/taskmanagementasyncaggregatequeryresponse.go
 gc/models/taskmanagementasyncaggregationquery.go
@@ -5195,13 +5194,13 @@ gc/models/topicsentitylisting.go
 gc/models/touchpoint.go
 gc/models/touchpointresponse.go
 gc/models/trackingsettings.go
-gc/models/traininglisting.go
 gc/models/transcriptaggregatedatacontainer.go
 gc/models/transcriptaggregatequeryclause.go
 gc/models/transcriptaggregatequeryfilter.go
 gc/models/transcriptaggregatequerypredicate.go
 gc/models/transcriptaggregatequeryresponse.go
 gc/models/transcriptaggregationquery.go
+gc/models/transcriptaggregationsort.go
 gc/models/transcriptaggregationview.go
 gc/models/transcriptasyncaggregatequeryresponse.go
 gc/models/transcriptasyncaggregationquery.go
@@ -5283,6 +5282,7 @@ gc/models/twitterdataingestionruleresponse.go
 gc/models/twitterdataingestionruleversionresponse.go
 gc/models/twitterdataingestionruleversionresponseentitylisting.go
 gc/models/twitterid.go
+gc/models/twitteridentityresolutionconfig.go
 gc/models/twitterintegration.go
 gc/models/twitterintegrationentitylisting.go
 gc/models/twitterintegrationrequest.go
@@ -5630,6 +5630,7 @@ gc/models/whatsappdefinition.go
 gc/models/whatsappembeddedsignupintegrationactivationrequest.go
 gc/models/whatsappembeddedsignupintegrationrequest.go
 gc/models/whatsappid.go
+gc/models/whatsappidentityresolutionconfig.go
 gc/models/whatsappintegration.go
 gc/models/whatsappintegrationentitylisting.go
 gc/models/whatsappintegrationrequest.go

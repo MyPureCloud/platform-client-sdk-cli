@@ -1,10 +1,10 @@
 ## gc conversations calls participants user
 
-/api/v2/conversations/calls/{conversationId}/participants/user
+/api/v2/conversations/calls/{conversationId}/participants/user /api/v2/conversations/calls/{conversationId}/participants/{participantId}/user
 
 ### Synopsis
 
-/api/v2/conversations/calls/{conversationId}/participants/user
+/api/v2/conversations/calls/{conversationId}/participants/user /api/v2/conversations/calls/{conversationId}/participants/{participantId}/user
 
 ### Options
 
@@ -31,5 +31,6 @@
 
 * [gc conversations calls participants](gc_conversations_calls_participants.html)	 - /api/v2/conversations/calls/{conversationId}/participants
 * [gc conversations calls participants user create](gc_conversations_calls_participants_user_create.html)	 - Add participants to a conversation on behalf of a user
+* [gc conversations calls participants user update](gc_conversations_calls_participants_user_update.html)	 - Update conversation participant on behalf of a user
 
 

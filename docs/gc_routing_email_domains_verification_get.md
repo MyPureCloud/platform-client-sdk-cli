@@ -1,22 +1,19 @@
-## gc knowledge knowledgebases languages documents updatecollection
+## gc routing email domains verification get
 
-Update documents collection
+Get domain verification settings
 
 ### Synopsis
 
-Update documents collection
+Get domain verification settings
 
 ```
-gc knowledge knowledgebases languages documents updatecollection [knowledgeBaseId] [languageCode] [flags]
+gc routing email domains verification get [domainId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for updatecollection
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc knowledge knowledgebases languages documents updatecollection [knowledgeBaseI
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases languages documents](gc_knowledge_knowledgebases_languages_documents.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents
+* [gc routing email domains verification](gc_routing_email_domains_verification.html)	 - /api/v2/routing/email/domains/{domainId}/verification
 
 

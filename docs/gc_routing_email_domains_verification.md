@@ -1,19 +1,15 @@
-## gc knowledge knowledgebases languages documents uploads get
+## gc routing email domains verification
 
-Get document content upload status
+/api/v2/routing/email/domains/{domainId}/verification
 
 ### Synopsis
 
-Get document content upload status
-
-```
-gc knowledge knowledgebases languages documents uploads get [documentId] [knowledgeBaseId] [languageCode] [uploadId] [flags]
-```
+/api/v2/routing/email/domains/{domainId}/verification
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help   help for verification
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +29,8 @@ gc knowledge knowledgebases languages documents uploads get [documentId] [knowle
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases languages documents uploads](gc_knowledge_knowledgebases_languages_documents_uploads.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads
+* [gc routing email domains](gc_routing_email_domains.html)	 - /api/v2/routing/email/domains
+* [gc routing email domains verification create](gc_routing_email_domains_verification_create.html)	 - Restart domain verification
+* [gc routing email domains verification get](gc_routing_email_domains_verification_get.html)	 - Get domain verification settings
 
 

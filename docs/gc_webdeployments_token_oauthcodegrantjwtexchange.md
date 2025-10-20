@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc webdeployments token](gc_webdeployments_token.html)	 - /api/v2/webdeployments/token
-* [gc webdeployments token oauthcodegrantjwtexchange create](gc_webdeployments_token_oauthcodegrantjwtexchange_create.html)	 - Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+* [gc webdeployments token oauthcodegrantjwtexchange create](gc_webdeployments_token_oauthcodegrantjwtexchange_create.html)	 - Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
 
 

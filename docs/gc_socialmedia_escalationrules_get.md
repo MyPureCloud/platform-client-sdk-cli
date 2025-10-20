@@ -13,7 +13,8 @@ gc socialmedia escalationrules get [escalationRuleId] [flags]
 ### Options
 
 ```
-  -h, --help   help for get
+      --expand string   which fields, if any, to expand Valid values: dataIngestionRule
+  -h, --help            help for get
 ```
 
 ### Options inherited from parent commands

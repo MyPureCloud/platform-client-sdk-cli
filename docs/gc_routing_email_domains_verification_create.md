@@ -1,15 +1,19 @@
-## gc knowledge knowledgebases languages trainings promote
+## gc routing email domains verification create
 
-/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote
+Restart domain verification
 
 ### Synopsis
 
-/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote
+Restart domain verification
+
+```
+gc routing email domains verification create [domainId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for promote
+  -h, --help   help for create
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +33,6 @@
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases languages trainings](gc_knowledge_knowledgebases_languages_trainings.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings
-* [gc knowledge knowledgebases languages trainings promote create](gc_knowledge_knowledgebases_languages_trainings_promote_create.html)	 - Promote trained documents from draft state to active.
+* [gc routing email domains verification](gc_routing_email_domains_verification.html)	 - /api/v2/routing/email/domains/{domainId}/verification
 
 

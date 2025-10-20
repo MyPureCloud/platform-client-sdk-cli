@@ -39,11 +39,9 @@
 * [gc knowledge knowledgebases get](gc_knowledge_knowledgebases_get.html)	 - Get knowledge base
 * [gc knowledge knowledgebases import](gc_knowledge_knowledgebases_import.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import
 * [gc knowledge knowledgebases labels](gc_knowledge_knowledgebases_labels.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels
-* [gc knowledge knowledgebases languages](gc_knowledge_knowledgebases_languages.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages
 * [gc knowledge knowledgebases list](gc_knowledge_knowledgebases_list.html)	 - Get knowledge bases
 * [gc knowledge knowledgebases operations](gc_knowledge_knowledgebases_operations.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations
 * [gc knowledge knowledgebases parse](gc_knowledge_knowledgebases_parse.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse
-* [gc knowledge knowledgebases search](gc_knowledge_knowledgebases_search.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search
 * [gc knowledge knowledgebases sources](gc_knowledge_knowledgebases_sources.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources
 * [gc knowledge knowledgebases synchronize](gc_knowledge_knowledgebases_synchronize.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize
 * [gc knowledge knowledgebases unanswered](gc_knowledge_knowledgebases_unanswered.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered

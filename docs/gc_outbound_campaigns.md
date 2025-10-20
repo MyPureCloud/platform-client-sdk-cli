@@ -43,6 +43,7 @@
 * [gc outbound campaigns linedistribution](gc_outbound_campaigns_linedistribution.html)	 - /api/v2/outbound/campaigns/{campaignId}/linedistribution
 * [gc outbound campaigns list](gc_outbound_campaigns_list.html)	 - Query a list of dialer campaigns.
 * [gc outbound campaigns patch](gc_outbound_campaigns_patch.html)	 - Update a campaign.
+* [gc outbound campaigns performance](gc_outbound_campaigns_performance.html)	 - /api/v2/outbound/campaigns/performance
 * [gc outbound campaigns progress](gc_outbound_campaigns_progress.html)	 - /api/v2/outbound/campaigns/progress /api/v2/outbound/campaigns/{campaignId}/progress
 * [gc outbound campaigns skillcombinations](gc_outbound_campaigns_skillcombinations.html)	 - /api/v2/outbound/campaigns/{campaignId}/skillcombinations
 * [gc outbound campaigns start](gc_outbound_campaigns_start.html)	 - /api/v2/outbound/campaigns/{campaignId}/start

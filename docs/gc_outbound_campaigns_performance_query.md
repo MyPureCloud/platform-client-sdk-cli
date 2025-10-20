@@ -1,22 +1,15 @@
-## gc knowledge knowledgebases languages categories update
+## gc outbound campaigns performance query
 
-Update category
+/api/v2/outbound/campaigns/performance/query
 
 ### Synopsis
 
-Update category
-
-```
-gc knowledge knowledgebases languages categories update [categoryId] [knowledgeBaseId] [languageCode] [flags]
-```
+/api/v2/outbound/campaigns/performance/query
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for query
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc knowledge knowledgebases languages categories update [categoryId] [knowledgeB
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases languages categories](gc_knowledge_knowledgebases_languages_categories.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories
+* [gc outbound campaigns performance](gc_outbound_campaigns_performance.html)	 - /api/v2/outbound/campaigns/performance
+* [gc outbound campaigns performance query create](gc_outbound_campaigns_performance_query_create.html)	 - Get performance data for a list of campaigns
 
 

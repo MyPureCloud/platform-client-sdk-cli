@@ -1,22 +1,15 @@
-## gc knowledge knowledgebases languages documents uploads create
+## gc routing email domains dkim
 
-Upload Article Content
+/api/v2/routing/email/domains/{domainId}/dkim
 
 ### Synopsis
 
-Upload Article Content
-
-```
-gc knowledge knowledgebases languages documents uploads create [documentId] [knowledgeBaseId] [languageCode] [flags]
-```
+/api/v2/routing/email/domains/{domainId}/dkim
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for dkim
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,8 @@ gc knowledge knowledgebases languages documents uploads create [documentId] [kno
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases languages documents uploads](gc_knowledge_knowledgebases_languages_documents_uploads.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads
+* [gc routing email domains](gc_routing_email_domains.html)	 - /api/v2/routing/email/domains
+* [gc routing email domains dkim create](gc_routing_email_domains_dkim_create.html)	 - Restart domain dkim
+* [gc routing email domains dkim get](gc_routing_email_domains_dkim_get.html)	 - Get domain dkim settings
 
 

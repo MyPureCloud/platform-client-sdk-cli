@@ -1,19 +1,15 @@
-## gc knowledge knowledgebases languages trainings get
+## gc routing email domains mailfrom
 
-Get training detail
+/api/v2/routing/email/domains/{domainId}/mailfrom
 
 ### Synopsis
 
-Get training detail
-
-```
-gc knowledge knowledgebases languages trainings get [knowledgeBaseId] [languageCode] [trainingId] [flags]
-```
+/api/v2/routing/email/domains/{domainId}/mailfrom
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help   help for mailfrom
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +29,8 @@ gc knowledge knowledgebases languages trainings get [knowledgeBaseId] [languageC
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases languages trainings](gc_knowledge_knowledgebases_languages_trainings.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings
+* [gc routing email domains](gc_routing_email_domains.html)	 - /api/v2/routing/email/domains
+* [gc routing email domains mailfrom create](gc_routing_email_domains_mailfrom_create.html)	 - Set domain mail from settings
+* [gc routing email domains mailfrom get](gc_routing_email_domains_mailfrom_get.html)	 - Get domain mail from settings
 
 

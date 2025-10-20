@@ -1,19 +1,22 @@
-## gc knowledge knowledgebases languages documents get
+## gc conversations calls participants user update
 
-Get document
+Update conversation participant on behalf of a user
 
 ### Synopsis
 
-Get document
+Update conversation participant on behalf of a user
 
 ```
-gc knowledge knowledgebases languages documents get [documentId] [knowledgeBaseId] [languageCode] [flags]
+gc conversations calls participants user update [conversationId] [participantId] [userId] [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for update
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +36,6 @@ gc knowledge knowledgebases languages documents get [documentId] [knowledgeBaseI
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases languages documents](gc_knowledge_knowledgebases_languages_documents.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents
+* [gc conversations calls participants user](gc_conversations_calls_participants_user.html)	 - /api/v2/conversations/calls/{conversationId}/participants/user /api/v2/conversations/calls/{conversationId}/participants/{participantId}/user
 
 

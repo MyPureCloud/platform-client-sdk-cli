@@ -1,19 +1,22 @@
-## gc knowledge knowledgebases languages categories delete
+## gc routing email domains mailfrom create
 
-Delete category
+Set domain mail from settings
 
 ### Synopsis
 
-Delete category
+Set domain mail from settings
 
 ```
-gc knowledge knowledgebases languages categories delete [categoryId] [knowledgeBaseId] [languageCode] [flags]
+gc routing email domains mailfrom create [domainId] [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for delete
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +36,6 @@ gc knowledge knowledgebases languages categories delete [categoryId] [knowledgeB
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases languages categories](gc_knowledge_knowledgebases_languages_categories.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories
+* [gc routing email domains mailfrom](gc_routing_email_domains_mailfrom.html)	 - /api/v2/routing/email/domains/{domainId}/mailfrom
 
 

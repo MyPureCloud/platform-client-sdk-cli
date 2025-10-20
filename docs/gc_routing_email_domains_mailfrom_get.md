@@ -1,15 +1,19 @@
-## gc knowledge knowledgebases search
+## gc routing email domains mailfrom get
 
-/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search
+Get domain mail from settings
 
 ### Synopsis
 
-/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search
+Get domain mail from settings
+
+```
+gc routing email domains mailfrom get [domainId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for search
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +33,6 @@
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases](gc_knowledge_knowledgebases.html)	 - /api/v2/knowledge/knowledgebases
-* [gc knowledge knowledgebases search create](gc_knowledge_knowledgebases_search_create.html)	 - Search Documents
+* [gc routing email domains mailfrom](gc_routing_email_domains_mailfrom.html)	 - /api/v2/routing/email/domains/{domainId}/mailfrom
 
 

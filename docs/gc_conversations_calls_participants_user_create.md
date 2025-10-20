@@ -36,6 +36,6 @@ gc conversations calls participants user create [conversationId] [userId] [flags
 
 ### SEE ALSO
 
-* [gc conversations calls participants user](gc_conversations_calls_participants_user.html)	 - /api/v2/conversations/calls/{conversationId}/participants/user
+* [gc conversations calls participants user](gc_conversations_calls_participants_user.html)	 - /api/v2/conversations/calls/{conversationId}/participants/user /api/v2/conversations/calls/{conversationId}/participants/{participantId}/user
 
 

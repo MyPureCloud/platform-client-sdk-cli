@@ -1,13 +1,13 @@
-## gc knowledge knowledgebases search create
+## gc outbound campaigns performance query create
 
-Search Documents
+Get performance data for a list of campaigns
 
 ### Synopsis
 
-Search Documents
+Get performance data for a list of campaigns
 
 ```
-gc knowledge knowledgebases search create [knowledgeBaseId] [flags]
+gc outbound campaigns performance query create [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc knowledge knowledgebases search create [knowledgeBaseId] [flags]
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases search](gc_knowledge_knowledgebases_search.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search
+* [gc outbound campaigns performance query](gc_outbound_campaigns_performance_query.html)	 - /api/v2/outbound/campaigns/performance/query
 
 

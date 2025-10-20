@@ -1,22 +1,19 @@
-## gc knowledge knowledgebases languages documents create
+## gc routing email domains dkim get
 
-Create document
+Get domain dkim settings
 
 ### Synopsis
 
-Create document
+Get domain dkim settings
 
 ```
-gc knowledge knowledgebases languages documents create [knowledgeBaseId] [languageCode] [flags]
+gc routing email domains dkim get [domainId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc knowledge knowledgebases languages documents create [knowledgeBaseId] [langua
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases languages documents](gc_knowledge_knowledgebases_languages_documents.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents
+* [gc routing email domains dkim](gc_routing_email_domains_dkim.html)	 - /api/v2/routing/email/domains/{domainId}/dkim
 
 

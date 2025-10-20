@@ -1,15 +1,15 @@
-## gc knowledge knowledgebases languages documents uploads
+## gc outbound campaigns performance
 
-/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads
+/api/v2/outbound/campaigns/performance
 
 ### Synopsis
 
-/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads
+/api/v2/outbound/campaigns/performance
 
 ### Options
 
 ```
-  -h, --help   help for uploads
+  -h, --help   help for performance
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +29,7 @@
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases languages documents](gc_knowledge_knowledgebases_languages_documents.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents
-* [gc knowledge knowledgebases languages documents uploads create](gc_knowledge_knowledgebases_languages_documents_uploads_create.html)	 - Upload Article Content
-* [gc knowledge knowledgebases languages documents uploads get](gc_knowledge_knowledgebases_languages_documents_uploads_get.html)	 - Get document content upload status
+* [gc outbound campaigns](gc_outbound_campaigns.html)	 - /api/v2/outbound/campaigns
+* [gc outbound campaigns performance query](gc_outbound_campaigns_performance_query.html)	 - /api/v2/outbound/campaigns/performance/query
 
 

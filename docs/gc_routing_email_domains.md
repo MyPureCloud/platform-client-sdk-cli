@@ -32,11 +32,14 @@
 * [gc routing email](gc_routing_email.html)	 - /api/v2/routing/email
 * [gc routing email domains create](gc_routing_email_domains_create.html)	 - Create a domain
 * [gc routing email domains delete](gc_routing_email_domains_delete.html)	 - Delete a domain
+* [gc routing email domains dkim](gc_routing_email_domains_dkim.html)	 - /api/v2/routing/email/domains/{domainId}/dkim
 * [gc routing email domains get](gc_routing_email_domains_get.html)	 - Get domain
 * [gc routing email domains list](gc_routing_email_domains_list.html)	 - Get domains
+* [gc routing email domains mailfrom](gc_routing_email_domains_mailfrom.html)	 - /api/v2/routing/email/domains/{domainId}/mailfrom
 * [gc routing email domains routes](gc_routing_email_domains_routes.html)	 - /api/v2/routing/email/domains/{domainName}/routes
 * [gc routing email domains testconnection](gc_routing_email_domains_testconnection.html)	 - /api/v2/routing/email/domains/{domainId}/testconnection
 * [gc routing email domains update](gc_routing_email_domains_update.html)	 - Update domain settings
 * [gc routing email domains validate](gc_routing_email_domains_validate.html)	 - /api/v2/routing/email/domains/{domainId}/validate
+* [gc routing email domains verification](gc_routing_email_domains_verification.html)	 - /api/v2/routing/email/domains/{domainId}/verification
 
 

@@ -33,6 +33,6 @@ gc analytics conversations details get [conversationId] [flags]
 
 ### SEE ALSO
 
-* [gc analytics conversations details](gc_analytics_conversations_details.html)	 - /api/v2/analytics/conversations/{conversationId}/details /api/v2/analytics/conversations/details
+* [gc analytics conversations details](gc_analytics_conversations_details.html)	 - /api/v2/analytics/conversations/details /api/v2/analytics/conversations/{conversationId}/details
 
 

@@ -1,10 +1,10 @@
 ## gc webdeployments token oauthcodegrantjwtexchange create
 
-Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
 
 ### Synopsis
 
-Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
 
 ```
 gc webdeployments token oauthcodegrantjwtexchange create [flags]

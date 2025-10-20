@@ -1,22 +1,19 @@
-## gc knowledge knowledgebases languages documents imports update
+## gc routing email domains dkim create
 
-Start import operation
+Restart domain dkim
 
 ### Synopsis
 
-Start import operation
+Restart domain dkim
 
 ```
-gc knowledge knowledgebases languages documents imports update [knowledgeBaseId] [languageCode] [importId] [flags]
+gc routing email domains dkim create [domainId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for create
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc knowledge knowledgebases languages documents imports update [knowledgeBaseId]
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases languages documents imports](gc_knowledge_knowledgebases_languages_documents_imports.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports
+* [gc routing email domains dkim](gc_routing_email_domains_dkim.html)	 - /api/v2/routing/email/domains/{domainId}/dkim
 
 

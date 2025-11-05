@@ -43,6 +43,11 @@
       "description": "Create a calibration"
     },
     {
+      "name": "list",
+      "path": "/api/v2/quality/conversations/audits/query/{transactionId}/results",
+      "description": "Get results of audit query"
+    },
+    {
       "name": "create",
       "path": "/api/v2/quality/conversations/audits/query",
       "description": "Create audit query execution"
@@ -51,11 +56,6 @@
       "name": "get",
       "path": "/api/v2/quality/conversations/audits/query/{transactionId}",
       "description": "Get status of audit query execution"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/quality/conversations/audits/query/{transactionId}/results",
-      "description": "Get results of audit query"
     },
     {
       "name": "get",
@@ -271,26 +271,6 @@
       "name": "create",
       "path": "/api/v2/quality/publishedforms",
       "description": "Publish an evaluation form."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId}",
-      "description": "Get the most recent published version of an evaluation form across any division."
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/quality/publishedforms/evaluations/divisionviews",
-      "description": "Get the published evaluation forms across any division."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}",
-      "description": "Get the most recent published version of an enabled survey form across any division."
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/quality/publishedforms/surveys/divisionviews",
-      "description": "Get the published and enabled survey forms across any division."
     }
   ]
 }

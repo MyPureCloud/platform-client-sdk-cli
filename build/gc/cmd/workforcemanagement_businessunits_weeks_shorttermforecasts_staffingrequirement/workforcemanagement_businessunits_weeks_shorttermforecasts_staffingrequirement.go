@@ -29,6 +29,7 @@ func init() {
 
 func Cmdworkforcemanagement_businessunits_weeks_shorttermforecasts_staffingrequirement() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "[]string", "weekNumbers", "", "The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values) Valid values: results.planningGroupStaffingRequirements.minimumStaffPerInterval, results.planningGroupStaffingRequirements.effectiveStaffPerInterval")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement", utils.FormatPermissions([]string{ "wfm:staffingRequirement:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -79,6 +80,10 @@ var getCmd = &cobra.Command{
 		weekNumbers := utils.GetFlag(cmd.Flags(), "[]string", "weekNumbers")
 		if weekNumbers != "" {
 			queryParams["weekNumbers"] = weekNumbers
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
 		}
 		urlString := path
 		if len(queryParams) > 0 {

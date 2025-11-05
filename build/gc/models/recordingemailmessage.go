@@ -41,9 +41,6 @@ type RecordingemailmessageDud struct {
 
     
 
-
-    
-
 }
 
 // Recordingemailmessage
@@ -76,10 +73,6 @@ type Recordingemailmessage struct {
     From Emailaddress `json:"from"`
 
 
-    // ReplyTo
-    ReplyTo Emailaddress `json:"replyTo"`
-
-
     // Subject
     Subject string `json:"subject"`
 
@@ -101,7 +94,6 @@ func (o *Recordingemailmessage) String() string {
      o.To = []Emailaddress{{}} 
      o.Cc = []Emailaddress{{}} 
      o.Bcc = []Emailaddress{{}} 
-    
     
     
      o.Attachments = []Emailattachment{{}} 
@@ -137,8 +129,6 @@ func (u *Recordingemailmessage) MarshalJSON() ([]byte, error) {
         
         From Emailaddress `json:"from"`
         
-        ReplyTo Emailaddress `json:"replyTo"`
-        
         Subject string `json:"subject"`
         
         Attachments []Emailattachment `json:"attachments"`
@@ -168,9 +158,6 @@ func (u *Recordingemailmessage) MarshalJSON() ([]byte, error) {
 
         
         Bcc: []Emailaddress{{}},
-        
-
-
         
 
 

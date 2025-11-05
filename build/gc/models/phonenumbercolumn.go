@@ -16,6 +16,9 @@ type PhonenumbercolumnDud struct {
 
     
 
+
+    
+
 }
 
 // Phonenumbercolumn
@@ -27,10 +30,15 @@ type Phonenumbercolumn struct {
     // VarType
     VarType string `json:"type"`
 
+
+    // CallableTimeColumnName
+    CallableTimeColumnName string `json:"callableTimeColumnName"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Phonenumbercolumn) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Phonenumbercolumn) MarshalJSON() ([]byte, error) {
         ColumnName string `json:"columnName"`
         
         VarType string `json:"type"`
+        
+        CallableTimeColumnName string `json:"callableTimeColumnName"`
         *Alias
     }{
+
+        
+
 
         
 

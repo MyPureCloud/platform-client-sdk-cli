@@ -309,9 +309,21 @@ Running any API operation command followed by '--help' will print out the follow
 
 When creating a profile with the `gc profiles new` command, you may choose between using a Client Credential Grant, an Implicit Grant or a PKCE Grant. During the Implicit Login process, the user is redirected to their browser where they can authenticate themselves by logging into their Genesys Cloud org. This method can be preferable as it provides context about the user to which the access token was distributed. Unlike the Client Credential Grant, which is a general grant.
 
-When creating an Implicit Grant profile with the `gc profiles new` command, you can use the preset default port (i.e. 8080) for your redirect URI (e.g. `http://localhost:8080`), or you can define another port number that you prefer to use (e.g. `7788` - `http://localhost:7788`). If you need to modify an existing profile, you can edit the `.gc/config.toml` file directly and modify the `redirect_uri` property value under the corresponding profile (e.g. `redirect_uri = 'http://localhost:7788'`).
+**Dynamic Port**: Genesys Cloud now allows any port to be specified at the time of the request for loopback IP redirect URIs, to accommodate clients that obtain an available ephemeral port from the operating system at the time of the request.
 
-To perform an implicit login, the OAuth Client under **`Admin > Integrations > OAuth`** needs to be configured properly by setting the **Grant Types** property to "Token Implicit Grant (Browser)", and by adding the permissible redirect URIs (e.g. `http://localhost:8080`).
+## Dynamic Port
+
+When creating an Implicit Grant profile with the `gc profiles new` command, you can use the preset default port (i.e. 0) for your redirect URI (e.g. `http://localhost:0`). The CLI will interpret port 0 as a request to use a dynamic and ephemeral port. If you need to modify an existing profile, you can edit the `.gc/config.toml` file directly and modify the `redirect_uri` property value under the corresponding profile (e.g. `redirect_uri = 'http://localhost:0'`).
+
+To perform an implicit login using an ephemeral port, the OAuth Client under **`Admin > Integrations > OAuth`** needs to be configured properly by setting the **Grant Types** property to "Token Implicit Grant (Browser)", and by adding the permissible redirect URIs without specifying a port number (e.g. `http://localhost`).
+
+## Explicit Port
+
+When creating an Implicit Grant profile with the `gc profiles new` command, you can also set a specific port number that you want to use (e.g. `7788`) for your redirect URI (e.g. `http://localhost:7788`). If you need to modify an existing profile, you can edit the `.gc/config.toml` file directly and modify the `redirect_uri` property value under the corresponding profile (e.g. `redirect_uri = 'http://localhost:7788'`).
+
+To perform an implicit login using an explicit port, the OAuth Client under **`Admin > Integrations > OAuth`** needs to be configured properly by setting the **Grant Types** property to "Token Implicit Grant (Browser)", and by adding the permissible redirect URIs (e.g. `http://localhost:7788`).
+
+## Added Security
 
 Optionally, and for added security, you can choose to open an HTTPS connection for this procedure. In this case, a self-signed certificate is generated locally, and you will need to select **Advanced > Proceed to 127.0.0.1** in the browser window as this certificate is not recognized by an official Certificate Authority. For secure HTTP connections, be sure to prepend the Client's redirect URI with "https://" instead of "http://" in your Genesys Cloud org.
 
@@ -321,9 +333,21 @@ For more information about the Implicit Grant login process, check out [this art
 
 When creating a profile with the `gc profiles new` command, you may choose between using a Client Credential Grant, an Implicit Grant or a PKCE Grant. During the PKCE Login process, the user is redirected to their browser where they can authenticate themselves by logging into their Genesys Cloud org. This method can be preferable as it provides context about the user to which the access token was distributed. Unlike the Client Credential Grant, which is a general grant.
 
-When creating a PKCE Grant profile with the `gc profiles new` command, you can use the preset default port (i.e. 8080) for your redirect URI (e.g. `http://localhost:8080`), or you can define another port number that you prefer to use (e.g. `7788` - `http://localhost:7788`). If you need to modify an existing profile, you can edit the `.gc/config.toml` file directly and modify the `redirect_uri` property value under the corresponding profile (e.g. `redirect_uri = 'http://localhost:7788'`).
+**Dynamic Port**: Genesys Cloud now allows any port to be specified at the time of the request for loopback IP redirect URIs, to accommodate clients that obtain an available ephemeral port from the operating system at the time of the request.
 
-To perform a PKCE login, the OAuth Client under **`Admin > Integrations > OAuth`** needs to be configured properly by setting the **Grant Types** property to "Code Authorization", and by adding the permissible redirect URIs (e.g. `http://localhost:8080`).
+## Dynamic Port
+
+When creating a PKCE Grant profile with the `gc profiles new` command, you can use the preset default port (i.e. 0) for your redirect URI (e.g. `http://localhost:0`). The CLI will interpret port 0 as a request to use a dynamic and ephemeral port. If you need to modify an existing profile, you can edit the `.gc/config.toml` file directly and modify the `redirect_uri` property value under the corresponding profile (e.g. `redirect_uri = 'http://localhost:0'`).
+
+To perform an PKCE login using an ephemeral port, the OAuth Client under **`Admin > Integrations > OAuth`** needs to be configured properly by setting the **Grant Types** property to "Code Authorization", and by adding the permissible redirect URIs without specifying a port number (e.g. `http://localhost`).
+
+## Explicit Port
+
+When creating a PKCE Grant profile with the `gc profiles new` command, you can also set a specific port number that you want to use (e.g. `7788`) for your redirect URI (e.g. `http://localhost:7788`). If you need to modify an existing profile, you can edit the `.gc/config.toml` file directly and modify the `redirect_uri` property value under the corresponding profile (e.g. `redirect_uri = 'http://localhost:7788'`).
+
+To perform an PKCE login using an explicit port, the OAuth Client under **`Admin > Integrations > OAuth`** needs to be configured properly by setting the **Grant Types** property to "Code Authorization", and by adding the permissible redirect URIs (e.g. `http://localhost:7788`).
+
+## Added Security
 
 Optionally, and for added security, you can choose to open an HTTPS connection for this procedure. In this case, a self-signed certificate is generated locally, and you will need to select **Advanced > Proceed to 127.0.0.1** in the browser window as this certificate is not recognized by an official Certificate Authority. For secure HTTP connections, be sure to prepend the Client's redirect URI with "https://" instead of "http://" in your Genesys Cloud org.
 

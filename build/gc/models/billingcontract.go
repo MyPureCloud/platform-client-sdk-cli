@@ -72,8 +72,8 @@ type Billingcontract struct {
     CommercialModel string `json:"commercialModel"`
 
 
-    // GetpurchaseOrderNumbers - List of po numbers periods for this contract.
-    GetpurchaseOrderNumbers []string `json:"getpurchaseOrderNumbers"`
+    // PurchaseOrderNumbers - List of po numbers periods for this contract.
+    PurchaseOrderNumbers []string `json:"purchaseOrderNumbers"`
 
 
     // BillToCustomer - The bill to customer.
@@ -118,7 +118,7 @@ func (o *Billingcontract) String() string {
     
     
     
-     o.GetpurchaseOrderNumbers = []string{""} 
+     o.PurchaseOrderNumbers = []string{""} 
     
     
     
@@ -151,7 +151,7 @@ func (u *Billingcontract) MarshalJSON() ([]byte, error) {
         
         CommercialModel string `json:"commercialModel"`
         
-        GetpurchaseOrderNumbers []string `json:"getpurchaseOrderNumbers"`
+        PurchaseOrderNumbers []string `json:"purchaseOrderNumbers"`
         
         BillToCustomer Customer `json:"billToCustomer"`
         
@@ -186,7 +186,7 @@ func (u *Billingcontract) MarshalJSON() ([]byte, error) {
 
 
         
-        GetpurchaseOrderNumbers: []string{""},
+        PurchaseOrderNumbers: []string{""},
         
 
 

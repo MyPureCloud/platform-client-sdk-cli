@@ -57,8 +57,8 @@ type InvoiceaddressDud struct {
 
 // Invoiceaddress
 type Invoiceaddress struct { 
-    // GetdateEffective - The date when the Address became effective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-    GetdateEffective time.Time `json:"getdateEffective"`
+    // DateEffective - The date when the Address became effective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+    DateEffective time.Time `json:"dateEffective"`
 
 
     // AddressType - The type of address.
@@ -97,8 +97,8 @@ type Invoiceaddress struct {
     CountryCode string `json:"countryCode"`
 
 
-    // GetcitySubdivision1 - The primary subdivision within a city (e.g., district, neighborhood).
-    GetcitySubdivision1 string `json:"getcitySubdivision1"`
+    // CitySubdivision1 - The primary subdivision within a city (e.g., district, neighborhood).
+    CitySubdivision1 string `json:"citySubdivision1"`
 
 
     // RegionSubdivision1 - The primary administrative division within a region (e.g., state, province).
@@ -147,7 +147,7 @@ func (u *Invoiceaddress) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        GetdateEffective time.Time `json:"getdateEffective"`
+        DateEffective time.Time `json:"dateEffective"`
         
         AddressType string `json:"addressType"`
         
@@ -167,7 +167,7 @@ func (u *Invoiceaddress) MarshalJSON() ([]byte, error) {
         
         CountryCode string `json:"countryCode"`
         
-        GetcitySubdivision1 string `json:"getcitySubdivision1"`
+        CitySubdivision1 string `json:"citySubdivision1"`
         
         RegionSubdivision1 string `json:"regionSubdivision1"`
         

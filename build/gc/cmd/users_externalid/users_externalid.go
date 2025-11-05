@@ -97,7 +97,7 @@ func Cmdusers_externalid() *cobra.Command {
 }`)
 	users_externalidCmd.AddCommand(getexternalidsforuserCmd)
 
-	utils.AddFlag(getuserbyexternalidCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent")
+	utils.AddFlag(getuserbyexternalidCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent")
 	getuserbyexternalidCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getuserbyexternalidCmd.UsageTemplate(), "GET", "/api/v2/users/externalid/{authorityName}/{externalKey}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/externalid/{authorityName}/{externalKey}")))
 	utils.AddFileFlagIfUpsert(getuserbyexternalidCmd.Flags(), "GET", ``)
 	

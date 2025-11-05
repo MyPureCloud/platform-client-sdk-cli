@@ -338,14 +338,14 @@
       "description": "Create system prompt resource override."
     },
     {
-      "name": "get",
-      "path": "/api/v2/architect/systemprompts/{promptId}",
-      "description": "Get a system prompt"
-    },
-    {
       "name": "create",
       "path": "/api/v2/architect/systemprompts/{promptId}/history",
       "description": "Generate system prompt history"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/architect/systemprompts/{promptId}",
+      "description": "Get a system prompt"
     },
     {
       "name": "list",

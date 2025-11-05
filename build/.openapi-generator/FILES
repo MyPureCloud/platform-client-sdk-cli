@@ -213,6 +213,7 @@ gc/cmd/coaching_appointments_me/coaching_appointments_me.go
 gc/cmd/coaching_appointments_status/coaching_appointments_status.go
 gc/cmd/coaching_appointments_statuses/coaching_appointments_statuses.go
 gc/cmd/coaching_notifications/coaching_notifications.go
+gc/cmd/coaching_scheduleslots_jobs/coaching_scheduleslots_jobs.go
 gc/cmd/coaching_scheduleslots_query/coaching_scheduleslots_query.go
 gc/cmd/contentmanagement_documents/contentmanagement_documents.go
 gc/cmd/contentmanagement_documents_content/contentmanagement_documents_content.go
@@ -545,6 +546,7 @@ gc/cmd/gamification_insights/gamification_insights.go
 gc/cmd/gamification_insights_details/gamification_insights_details.go
 gc/cmd/gamification_insights_groups_trends/gamification_insights_groups_trends.go
 gc/cmd/gamification_insights_groups_trends_all/gamification_insights_groups_trends_all.go
+gc/cmd/gamification_insights_managers/gamification_insights_managers.go
 gc/cmd/gamification_insights_members/gamification_insights_members.go
 gc/cmd/gamification_insights_rankings/gamification_insights_rankings.go
 gc/cmd/gamification_insights_trends/gamification_insights_trends.go
@@ -803,6 +805,7 @@ gc/cmd/learning_modules_rule/learning_modules_rule.go
 gc/cmd/learning_modules_users_assignments/learning_modules_users_assignments.go
 gc/cmd/learning_modules_versions/learning_modules_versions.go
 gc/cmd/learning_rules_query/learning_rules_query.go
+gc/cmd/learning_scheduleslots_jobs/learning_scheduleslots_jobs.go
 gc/cmd/learning_scheduleslots_query/learning_scheduleslots_query.go
 gc/cmd/learning_scorm/learning_scorm.go
 gc/cmd/license_definitions/license_definitions.go
@@ -960,9 +963,7 @@ gc/cmd/quality_forms_surveys_versions/quality_forms_surveys_versions.go
 gc/cmd/quality_forms_versions/quality_forms_versions.go
 gc/cmd/quality_publishedforms/quality_publishedforms.go
 gc/cmd/quality_publishedforms_evaluations/quality_publishedforms_evaluations.go
-gc/cmd/quality_publishedforms_evaluations_divisionviews/quality_publishedforms_evaluations_divisionviews.go
 gc/cmd/quality_publishedforms_surveys/quality_publishedforms_surveys.go
-gc/cmd/quality_publishedforms_surveys_divisionviews/quality_publishedforms_surveys_divisionviews.go
 gc/cmd/quality_surveys/quality_surveys.go
 gc/cmd/quality_surveys_scorable/quality_surveys_scorable.go
 gc/cmd/quality_surveys_scoring/quality_surveys_scoring.go
@@ -2255,6 +2256,11 @@ gc/models/coachingappointmentstatusresponse.go
 gc/models/coachingappointmentstatusresponselist.go
 gc/models/coachingnotification.go
 gc/models/coachingnotificationlist.go
+gc/models/coachingscheduleslotsjobrequest.go
+gc/models/coachingscheduleslotsjobresponse.go
+gc/models/coachingscheduleslotsjobresult.go
+gc/models/coachingscheduleslotsjobschedule.go
+gc/models/coachingscheduleslotsjobslot.go
 gc/models/coachingslot.go
 gc/models/coachingslotsrequest.go
 gc/models/coachingslotsresponse.go
@@ -2457,6 +2463,7 @@ gc/models/conversationappsettings.go
 gc/models/conversationassociation.go
 gc/models/conversationasyncaggregatequeryresponse.go
 gc/models/conversationasyncaggregationquery.go
+gc/models/conversationattributefilter.go
 gc/models/conversationbasic.go
 gc/models/conversationcategoriesentitylisting.go
 gc/models/conversationcategory.go
@@ -2546,6 +2553,9 @@ gc/models/conversationreason.go
 gc/models/conversationrecipientadditionalidentifier.go
 gc/models/conversationreference.go
 gc/models/conversationroutingdata.go
+gc/models/conversationschemaattribute.go
+gc/models/conversationschemadata.go
+gc/models/conversationschemareference.go
 gc/models/conversationsecureattributes.go
 gc/models/conversationsessionsummary.go
 gc/models/conversationsummariesgetresponse.go
@@ -3090,8 +3100,6 @@ gc/models/evaluationdetailquerypredicate.go
 gc/models/evaluationentitylisting.go
 gc/models/evaluationform.go
 gc/models/evaluationformandscoringset.go
-gc/models/evaluationformdivisionview.go
-gc/models/evaluationformdivisionviewlisting.go
 gc/models/evaluationformresponse.go
 gc/models/evaluationformresponseentitylisting.go
 gc/models/evaluationquestion.go
@@ -3736,6 +3744,7 @@ gc/models/knowledgeparsejobresponse.go
 gc/models/knowledgeparserecord.go
 gc/models/knowledgesearchclientapplication.go
 gc/models/knowledgesearchdocumentresponse.go
+gc/models/knowledgesetting.go
 gc/models/knowledgesuggestionconfig.go
 gc/models/knowledgesyncjobreport.go
 gc/models/knowledgesyncjobrequest.go
@@ -3824,6 +3833,11 @@ gc/models/learningmodulerule.go
 gc/models/learningmoduleruleparts.go
 gc/models/learningmodulesdomainentitylisting.go
 gc/models/learningmodulesummary.go
+gc/models/learningscheduleslotsjobrequest.go
+gc/models/learningscheduleslotsjobresponse.go
+gc/models/learningscheduleslotsjobresult.go
+gc/models/learningscheduleslotsjobschedule.go
+gc/models/learningscheduleslotsjobslot.go
 gc/models/learningscheduleslotsqueryrequest.go
 gc/models/learningscheduleslotsqueryresponse.go
 gc/models/learningscormresponse.go
@@ -4977,11 +4991,13 @@ gc/models/subjectdivisions.go
 gc/models/subscriberresponse.go
 gc/models/subscription.go
 gc/models/subscriptionoverviewusage.go
+gc/models/suggestedsearchchunk.go
 gc/models/suggestion.go
 gc/models/suggestioncannedresponse.go
 gc/models/suggestioncontext.go
 gc/models/suggestionengagement.go
 gc/models/suggestionfeedback.go
+gc/models/suggestiongeneratedknowledgeanswer.go
 gc/models/suggestionknowledgeanswer.go
 gc/models/suggestionknowledgearticle.go
 gc/models/suggestionknowledgesearch.go
@@ -5048,8 +5064,6 @@ gc/models/surveydetailquerypredicate.go
 gc/models/surveyerrordetails.go
 gc/models/surveyform.go
 gc/models/surveyformandscoringset.go
-gc/models/surveyformdivisionview.go
-gc/models/surveyformdivisionviewlisting.go
 gc/models/surveyformentitylisting.go
 gc/models/surveyquestion.go
 gc/models/surveyquestiongroup.go
@@ -5221,6 +5235,7 @@ gc/models/transferinitiator.go
 gc/models/transferrequest.go
 gc/models/transferresponse.go
 gc/models/transferresponsemodifiedby.go
+gc/models/transfersfulltimeequivalent.go
 gc/models/transfertoaddressrequest.go
 gc/models/transfertoagentrequest.go
 gc/models/transfertoexternalcontactrequest.go
@@ -5401,6 +5416,7 @@ gc/models/userchatsettings.go
 gc/models/userchatsettingspost.go
 gc/models/userconversationsummary.go
 gc/models/usercursorentitylisting.go
+gc/models/usercustomattributes.go
 gc/models/userdetailqueryclause.go
 gc/models/userdetailqueryfilter.go
 gc/models/userdetailquerypredicate.go

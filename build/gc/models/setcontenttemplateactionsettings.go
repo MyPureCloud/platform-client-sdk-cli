@@ -20,11 +20,11 @@ type SetcontenttemplateactionsettingsDud struct {
 
 // Setcontenttemplateactionsettings
 type Setcontenttemplateactionsettings struct { 
-    // SmsContentTemplateId - A string of sms contentTemplateId.
+    // SmsContentTemplateId - A String containing the SMS contentTemplateId.
     SmsContentTemplateId string `json:"smsContentTemplateId"`
 
 
-    // EmailContentTemplateId - A string of email contentTemplateId.
+    // EmailContentTemplateId - A String containing the Email contentTemplateId.
     EmailContentTemplateId string `json:"emailContentTemplateId"`
 
 }

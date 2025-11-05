@@ -23,6 +23,12 @@ type AgentgreetingDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -36,12 +42,20 @@ type Agentgreeting struct {
     Name string `json:"name"`
 
 
-    // InboundPrompt - The agent greeting prompt to use when the call is connected
+    // InboundPrompt - The agent greeting prompt to use when inbound calls are connected
     InboundPrompt Prompt `json:"inboundPrompt"`
 
 
-    // OutboundPrompt - The agent greeting prompt to use when the call is about to be disconnected
+    // OutboundPrompt - The agent greeting prompt to use when outbound calls are connected
     OutboundPrompt Prompt `json:"outboundPrompt"`
+
+
+    // InboundPromptDefaultLanguage - The default language to use for the agent greeting inbound prompt
+    InboundPromptDefaultLanguage string `json:"inboundPromptDefaultLanguage"`
+
+
+    // OutboundPromptDefaultLanguage - The default language to use for the agent greeting outbound prompt
+    OutboundPromptDefaultLanguage string `json:"outboundPromptDefaultLanguage"`
 
 
     
@@ -50,6 +64,8 @@ type Agentgreeting struct {
 
 // String returns a JSON representation of the model
 func (o *Agentgreeting) String() string {
+    
+    
     
     
     
@@ -75,8 +91,18 @@ func (u *Agentgreeting) MarshalJSON() ([]byte, error) {
         InboundPrompt Prompt `json:"inboundPrompt"`
         
         OutboundPrompt Prompt `json:"outboundPrompt"`
+        
+        InboundPromptDefaultLanguage string `json:"inboundPromptDefaultLanguage"`
+        
+        OutboundPromptDefaultLanguage string `json:"outboundPromptDefaultLanguage"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

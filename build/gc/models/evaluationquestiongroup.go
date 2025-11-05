@@ -43,6 +43,9 @@ type EvaluationquestiongroupDud struct {
 
     
 
+
+    
+
 }
 
 // Evaluationquestiongroup
@@ -89,6 +92,10 @@ type Evaluationquestiongroup struct {
     // VisibilityCondition
     VisibilityCondition Visibilitycondition `json:"visibilityCondition"`
 
+
+    // DefaultAnswersTo - Default scoring settings for the questions within this question group.
+    DefaultAnswersTo Defaultanswersto `json:"defaultAnswersTo"`
+
 }
 
 // String returns a JSON representation of the model
@@ -102,6 +109,7 @@ func (o *Evaluationquestiongroup) String() string {
     
     
      o.Questions = []Evaluationquestion{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -139,6 +147,8 @@ func (u *Evaluationquestiongroup) MarshalJSON() ([]byte, error) {
         Questions []Evaluationquestion `json:"questions"`
         
         VisibilityCondition Visibilitycondition `json:"visibilityCondition"`
+        
+        DefaultAnswersTo Defaultanswersto `json:"defaultAnswersTo"`
         *Alias
     }{
 
@@ -171,6 +181,9 @@ func (u *Evaluationquestiongroup) MarshalJSON() ([]byte, error) {
 
         
         Questions: []Evaluationquestion{{}},
+        
+
+
         
 
 

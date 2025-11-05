@@ -88,7 +88,7 @@ type Journeyeventssettings struct {
 
 
     // TrackingSettings - Configuration settings for tracking behavior and filtering
-    TrackingSettings interface{} `json:"trackingSettings"`
+    TrackingSettings Trackingsettings `json:"trackingSettings"`
 
 }
 
@@ -104,7 +104,7 @@ func (o *Journeyeventssettings) String() string {
      o.IdleEvents = []Idleeventtrigger{{}} 
      o.InViewportEvents = []Selectoreventtrigger{{}} 
      o.ScrollDepthEvents = []Scrollpercentageeventtrigger{{}} 
-     o.TrackingSettings = Interface{} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -142,7 +142,7 @@ func (u *Journeyeventssettings) MarshalJSON() ([]byte, error) {
         
         ScrollDepthEvents []Scrollpercentageeventtrigger `json:"scrollDepthEvents"`
         
-        TrackingSettings interface{} `json:"trackingSettings"`
+        TrackingSettings Trackingsettings `json:"trackingSettings"`
         *Alias
     }{
 
@@ -190,8 +190,6 @@ func (u *Journeyeventssettings) MarshalJSON() ([]byte, error) {
         
 
 
-        
-        TrackingSettings: Interface{},
         
 
         Alias: (*Alias)(u),

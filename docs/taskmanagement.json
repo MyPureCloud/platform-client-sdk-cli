@@ -119,6 +119,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
+      "description": "Disconnect the assignee of the workitem"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/terminate",
       "description": "Terminate a workitem"
     },
@@ -161,11 +166,6 @@
       "name": "create",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/acd/cancel",
       "description": "Cancel the assignment process for a workitem that is currently queued for assignment through ACD."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
-      "description": "Disconnect the assignee of the workitem"
     },
     {
       "name": "get",

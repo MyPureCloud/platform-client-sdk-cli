@@ -39,11 +39,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/notes/add",
-      "description": "Bulk add notes"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/notes/remove",
       "description": "Bulk remove notes"
     },
@@ -56,6 +51,11 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/notes/update",
       "description": "Bulk update notes"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/notes/add",
+      "description": "Bulk add notes"
     },
     {
       "name": "create",

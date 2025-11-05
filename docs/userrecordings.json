@@ -4,11 +4,6 @@
   "resources": [
     {
       "name": "get",
-      "path": "/api/v2/userrecordings/{recordingId}/transcoding",
-      "description": "Download a user recording."
-    },
-    {
-      "name": "get",
       "path": "/api/v2/userrecordings/{recordingId}",
       "description": "Get a user recording."
     },
@@ -21,6 +16,11 @@
       "name": "delete",
       "path": "/api/v2/userrecordings/{recordingId}",
       "description": "Delete a user recording."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/userrecordings/{recordingId}/transcoding",
+      "description": "Download a user recording."
     },
     {
       "name": "get",

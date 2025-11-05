@@ -46,6 +46,9 @@ type EvaluationquestionDud struct {
 
     
 
+
+    
+
 }
 
 // Evaluationquestion
@@ -89,12 +92,16 @@ type Evaluationquestion struct {
     MultipleSelectOptionQuestions []Evaluationquestion `json:"multipleSelectOptionQuestions"`
 
 
-    // IsCritical
-    IsCritical bool `json:"isCritical"`
+    // DefaultAnswer - The default selected answer for the question
+    DefaultAnswer Defaultanswer `json:"defaultAnswer"`
 
 
     // IsKill
     IsKill bool `json:"isKill"`
+
+
+    // IsCritical
+    IsCritical bool `json:"isCritical"`
 
 }
 
@@ -109,6 +116,7 @@ func (o *Evaluationquestion) String() string {
     
      o.AnswerOptions = []Answeroption{{}} 
      o.MultipleSelectOptionQuestions = []Evaluationquestion{{}} 
+    
     
     
 
@@ -146,9 +154,11 @@ func (u *Evaluationquestion) MarshalJSON() ([]byte, error) {
         
         MultipleSelectOptionQuestions []Evaluationquestion `json:"multipleSelectOptionQuestions"`
         
-        IsCritical bool `json:"isCritical"`
+        DefaultAnswer Defaultanswer `json:"defaultAnswer"`
         
         IsKill bool `json:"isKill"`
+        
+        IsCritical bool `json:"isCritical"`
         *Alias
     }{
 
@@ -183,6 +193,9 @@ func (u *Evaluationquestion) MarshalJSON() ([]byte, error) {
 
         
         MultipleSelectOptionQuestions: []Evaluationquestion{{}},
+        
+
+
         
 
 

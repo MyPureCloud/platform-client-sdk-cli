@@ -1,4 +1,4 @@
-package quality_publishedforms_surveys_divisionviews
+package learning_scheduleslots_jobs
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("quality_publishedforms_surveys_divisionviews", "SWAGGER_OVERRIDE_/api/v2/quality/publishedforms/surveys/divisionviews", "SWAGGER_OVERRIDE_/api/v2/quality/publishedforms/surveys/divisionviews", )
-	quality_publishedforms_surveys_divisionviewsCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("quality_publishedforms_surveys_divisionviews"),
+	Description = utils.FormatUsageDescription("learning_scheduleslots_jobs", "SWAGGER_OVERRIDE_/api/v2/learning/scheduleslots/jobs", "SWAGGER_OVERRIDE_/api/v2/learning/scheduleslots/jobs", )
+	learning_scheduleslots_jobsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("learning_scheduleslots_jobs"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,43 +24,50 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(quality_publishedforms_surveys_divisionviewsCmd)
+	CommandService = services.NewCommandService(learning_scheduleslots_jobsCmd)
 }
 
-func Cmdquality_publishedforms_surveys_divisionviews() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}", utils.FormatPermissions([]string{ "quality:surveyForm:search",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}")))
+func Cmdlearning_scheduleslots_jobs() *cobra.Command { 
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/learning/scheduleslots/jobs", utils.FormatPermissions([]string{ "learning:scheduleSlotJob:add",  }), utils.GenerateDevCentreLink("POST", "Learning", "/api/v2/learning/scheduleslots/jobs")))
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "description" : "The slots search request",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningScheduleSlotsJobRequest"
+      }
+    }
+  },
+  "required" : true
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+  "description" : "Learning schedule slots job accepted.",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/LearningScheduleSlotsJobResponse"
+      }
+    }
+  }
+}`)
+	learning_scheduleslots_jobsCmd.AddCommand(createCmd)
+
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/learning/scheduleslots/jobs/{jobId}", utils.FormatPermissions([]string{ "learning:scheduleSlotJob:view",  }), utils.GenerateDevCentreLink("GET", "Learning", "/api/v2/learning/scheduleslots/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
-  "description" : "successful operation",
+  "description" : "Learning schedule slots job retrieved.",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/SurveyFormDivisionView"
+        "$ref" : "#/components/schemas/LearningScheduleSlotsJobResponse"
       }
     }
   }
 }`)
-	quality_publishedforms_surveys_divisionviewsCmd.AddCommand(getCmd)
-
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
-	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
-	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/publishedforms/surveys/divisionviews", utils.FormatPermissions([]string{ "quality:surveyForm:search",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/publishedforms/surveys/divisionviews")))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
-	
-	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
-  "description" : "successful operation",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
-      }
-    }
-  }
-}`)
-	quality_publishedforms_surveys_divisionviewsCmd.AddCommand(listCmd)
-	return quality_publishedforms_surveys_divisionviewsCmd
+	learning_scheduleslots_jobsCmd.AddCommand(getCmd)
+	return learning_scheduleslots_jobsCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -68,11 +75,11 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
-var getCmd = &cobra.Command{
-	Use:   "get [surveyFormId]",
-	Short: "Get the most recent published version of an enabled survey form across any division.",
-	Long:  "Get the most recent published version of an enabled survey form across any division.",
-	Args:  utils.DetermineArgs([]string{ "surveyFormId", }),
+var createCmd = &cobra.Command{
+	Use:   "create",
+	Short: "Start job to retrieve slots where a learning activity can be scheduled.",
+	Long:  "Start job to retrieve slots where a learning activity can be scheduled.",
+	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -80,14 +87,15 @@ var getCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
+			reqModel := models.Learningscheduleslotsjobrequest{}
+			utils.Render(reqModel.String())
+			
 			return
 		}
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}"
-		surveyFormId, args := args[0], args[1:]
-		path = strings.Replace(path, "{surveyFormId}", fmt.Sprintf("%v", surveyFormId), -1)
+		path := "/api/v2/learning/scheduleslots/jobs"
 
 		urlString := path
 		if len(queryParams) > 0 {
@@ -102,8 +110,8 @@ var getCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "get"
-		const httpMethod = "GET"
+		const opId = "create"
+		const httpMethod = "POST"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
@@ -133,11 +141,11 @@ var getCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var listCmd = &cobra.Command{
-	Use:   "list",
-	Short: "Get the published and enabled survey forms across any division.",
-	Long:  "Get the published and enabled survey forms across any division.",
-	Args:  utils.DetermineArgs([]string{ }),
+var getCmd = &cobra.Command{
+	Use:   "get [jobId]",
+	Short: "Retrieve the status of the job for the slots where a learning activity can be scheduled.",
+	Long:  "Retrieve the status of the job for the slots where a learning activity can be scheduled.",
+	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -150,20 +158,10 @@ var listCmd = &cobra.Command{
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/quality/publishedforms/surveys/divisionviews"
+		path := "/api/v2/learning/scheduleslots/jobs/{jobId}"
+		jobId, args := args[0], args[1:]
+		path = strings.Replace(path, "{jobId}", fmt.Sprintf("%v", jobId), -1)
 
-		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
-		if pageSize != "" {
-			queryParams["pageSize"] = pageSize
-		}
-		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
-		if pageNumber != "" {
-			queryParams["pageNumber"] = pageNumber
-		}
-		name := utils.GetFlag(cmd.Flags(), "string", "name")
-		if name != "" {
-			queryParams["name"] = name
-		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -177,7 +175,7 @@ var listCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "list"
+		const opId = "get"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file

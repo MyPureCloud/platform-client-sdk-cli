@@ -34,6 +34,16 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/analytics/conversations/aggregates/query",
+      "description": "Query for conversation aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/conversations/activity/query",
+      "description": "Query for conversation activity observations"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/analytics/conversations/details/query",
       "description": "Query for conversation details"
     },
@@ -76,16 +86,6 @@
       "name": "get",
       "path": "/api/v2/analytics/conversations/details/jobs/availability",
       "description": "Lookup the datalake availability date and time"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/conversations/aggregates/query",
-      "description": "Query for conversation aggregates"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/conversations/activity/query",
-      "description": "Query for conversation activity observations"
     },
     {
       "name": "create",
@@ -318,11 +318,6 @@
       "description": "Fetch a page of results for an async aggregates query"
     },
     {
-      "name": "create",
-      "path": "/api/v2/analytics/agentcopilots/aggregates/jobs",
-      "description": "Query for agent copilot aggregates asynchronously"
-    },
-    {
       "name": "get",
       "path": "/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}",
       "description": "Get status for async query for agent copilot aggregates"
@@ -336,6 +331,11 @@
       "name": "list",
       "path": "/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/agentcopilots/aggregates/jobs",
+      "description": "Query for agent copilot aggregates asynchronously"
     },
     {
       "name": "create",
@@ -378,6 +378,11 @@
       "description": "Fetch a page of results for an async aggregates query"
     },
     {
+      "name": "create",
+      "path": "/api/v2/analytics/evaluations/aggregates/jobs",
+      "description": "Query for evaluation aggregates asynchronously"
+    },
+    {
       "name": "get",
       "path": "/api/v2/analytics/evaluations/aggregates/jobs/{jobId}",
       "description": "Get status for async query for evaluation aggregates"
@@ -391,11 +396,6 @@
       "name": "list",
       "path": "/api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/evaluations/aggregates/jobs",
-      "description": "Query for evaluation aggregates asynchronously"
     },
     {
       "name": "create",

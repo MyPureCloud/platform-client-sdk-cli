@@ -668,11 +668,6 @@
       "description": "Updates the agent's own greetings."
     },
     {
-      "name": "create",
-      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}/mediaresources/{mediaResourceId}",
-      "description": "Post media endpoint statistics event."
-    },
-    {
       "name": "get",
       "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}",
       "description": "Get media endpoint statistics event."
@@ -681,6 +676,11 @@
       "name": "get",
       "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}",
       "description": "Get media endpoint statistics events."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}/mediaresources/{mediaResourceId}",
+      "description": "Post media endpoint statistics event."
     }
   ]
 }

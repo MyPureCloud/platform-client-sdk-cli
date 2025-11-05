@@ -437,7 +437,7 @@ func readSensitiveInput() string {
 
 func requestRedirectURIPort() string {
 	var inputPort string
-	defaultPort := "8080"
+	defaultPort := "0"
 
 	fmt.Printf("Redirect URI port [%s]: ", defaultPort)
 	_, _ = fmt.Scanln(&inputPort)

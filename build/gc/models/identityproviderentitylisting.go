@@ -64,20 +64,20 @@ type Identityproviderentitylisting struct {
     FirstUri string `json:"firstUri"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
-
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
     // LastUri
     LastUri string `json:"lastUri"`
 
 
     // SelfUri
     SelfUri string `json:"selfUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
+
+
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // PageCount
@@ -124,13 +124,13 @@ func (u *Identityproviderentitylisting) MarshalJSON() ([]byte, error) {
         
         FirstUri string `json:"firstUri"`
         
-        PreviousUri string `json:"previousUri"`
-        
-        NextUri string `json:"nextUri"`
-        
         LastUri string `json:"lastUri"`
         
         SelfUri string `json:"selfUri"`
+        
+        PreviousUri string `json:"previousUri"`
+        
+        NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

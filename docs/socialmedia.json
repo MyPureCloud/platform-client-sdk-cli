@@ -3,6 +3,11 @@
   "description": "/api/v2/socialmedia",
   "resources": [
     {
+      "name": "get",
+      "path": "/api/v2/socialmedia/analytics/aggregates/jobs/{jobId}",
+      "description": "Get status for async query for social media aggregates"
+    },
+    {
       "name": "list",
       "path": "/api/v2/socialmedia/analytics/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async social media query"
@@ -11,11 +16,6 @@
       "name": "create",
       "path": "/api/v2/socialmedia/analytics/aggregates/jobs",
       "description": "Query for social media aggregates asynchronously"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/socialmedia/analytics/aggregates/jobs/{jobId}",
-      "description": "Get status for async query for social media aggregates"
     },
     {
       "name": "create",

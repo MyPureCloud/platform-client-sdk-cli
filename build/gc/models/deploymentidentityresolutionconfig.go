@@ -20,6 +20,12 @@ type DeploymentidentityresolutionconfigDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -37,12 +43,22 @@ type Deploymentidentityresolutionconfig struct {
     ResolveIdentities bool `json:"resolveIdentities"`
 
 
+    // ExternalSource - The external source used for stitching this channel.
+    ExternalSource Identityresolutionexternalsource `json:"externalSource"`
+
+
+    // Automerge - Whether automerging of contacts should be enabled for each channel.
+    Automerge Identityresolutionautomergeconfig `json:"automerge"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Deploymentidentityresolutionconfig) String() string {
+    
+    
     
     
 
@@ -65,8 +81,18 @@ func (u *Deploymentidentityresolutionconfig) MarshalJSON() ([]byte, error) {
         Division Writablestarrabledivision `json:"division"`
         
         ResolveIdentities bool `json:"resolveIdentities"`
+        
+        ExternalSource Identityresolutionexternalsource `json:"externalSource"`
+        
+        Automerge Identityresolutionautomergeconfig `json:"automerge"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

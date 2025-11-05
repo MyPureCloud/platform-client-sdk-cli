@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc gamification scorecards users points](gc_gamification_scorecards_users_points.html)	 - /api/v2/gamification/scorecards/users/{userId}/points /api/v2/gamification/scorecards/users/points
+* [gc gamification scorecards users points](gc_gamification_scorecards_users_points.html)	 - /api/v2/gamification/scorecards/users/points /api/v2/gamification/scorecards/users/{userId}/points
 * [gc gamification scorecards users points average get](gc_gamification_scorecards_users_points_average_get.html)	 - Workday average points by target group
 
 

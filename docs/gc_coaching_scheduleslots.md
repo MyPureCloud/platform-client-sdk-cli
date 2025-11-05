@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc coaching](gc_coaching.html)	 - /api/v2/coaching
+* [gc coaching scheduleslots jobs](gc_coaching_scheduleslots_jobs.html)	 - /api/v2/coaching/scheduleslots/jobs
 * [gc coaching scheduleslots query](gc_coaching_scheduleslots_query.html)	 - /api/v2/coaching/scheduleslots/query
 
 

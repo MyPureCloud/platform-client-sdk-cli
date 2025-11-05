@@ -1,15 +1,19 @@
-## gc quality publishedforms evaluations divisionviews
+## gc coaching scheduleslots jobs get
 
-/api/v2/quality/publishedforms/evaluations/divisionviews
+Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
 
 ### Synopsis
 
-/api/v2/quality/publishedforms/evaluations/divisionviews
+Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+
+```
+gc coaching scheduleslots jobs get [jobId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for divisionviews
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +33,6 @@
 
 ### SEE ALSO
 
-* [gc quality publishedforms evaluations](gc_quality_publishedforms_evaluations.html)	 - /api/v2/quality/publishedforms/evaluations
-* [gc quality publishedforms evaluations divisionviews get](gc_quality_publishedforms_evaluations_divisionviews_get.html)	 - Get the most recent published version of an evaluation form across any division.
-* [gc quality publishedforms evaluations divisionviews list](gc_quality_publishedforms_evaluations_divisionviews_list.html)	 - Get the published evaluation forms across any division.
+* [gc coaching scheduleslots jobs](gc_coaching_scheduleslots_jobs.html)	 - /api/v2/coaching/scheduleslots/jobs
 
 

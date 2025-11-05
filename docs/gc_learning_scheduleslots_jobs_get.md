@@ -1,15 +1,19 @@
-## gc gamification scorecards users points trends
+## gc learning scheduleslots jobs get
 
-/api/v2/gamification/scorecards/users/{userId}/points/trends
+Retrieve the status of the job for the slots where a learning activity can be scheduled.
 
 ### Synopsis
 
-/api/v2/gamification/scorecards/users/{userId}/points/trends
+Retrieve the status of the job for the slots where a learning activity can be scheduled.
+
+```
+gc learning scheduleslots jobs get [jobId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for trends
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +33,6 @@
 
 ### SEE ALSO
 
-* [gc gamification scorecards users points](gc_gamification_scorecards_users_points.html)	 - /api/v2/gamification/scorecards/users/points /api/v2/gamification/scorecards/users/{userId}/points
-* [gc gamification scorecards users points trends get](gc_gamification_scorecards_users_points_trends_get.html)	 - Points trend for a user
+* [gc learning scheduleslots jobs](gc_learning_scheduleslots_jobs.html)	 - /api/v2/learning/scheduleslots/jobs
 
 

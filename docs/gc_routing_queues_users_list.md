@@ -14,7 +14,7 @@ gc routing queues users list [queueId] [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --expand strings           Which fields, if any, to expand. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent
+      --expand strings           Which fields, if any, to expand. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --joined string            Filter by joined status Valid values: true, false

@@ -33,6 +33,7 @@
 * [gc gamification insights details](gc_gamification_insights_details.html)	 - /api/v2/gamification/insights/details
 * [gc gamification insights groups](gc_gamification_insights_groups.html)	 - /api/v2/gamification/insights/groups
 * [gc gamification insights list](gc_gamification_insights_list.html)	 - Get insights summary
+* [gc gamification insights managers](gc_gamification_insights_managers.html)	 - /api/v2/gamification/insights/managers
 * [gc gamification insights members](gc_gamification_insights_members.html)	 - /api/v2/gamification/insights/members
 * [gc gamification insights rankings](gc_gamification_insights_rankings.html)	 - /api/v2/gamification/insights/rankings
 * [gc gamification insights trends](gc_gamification_insights_trends.html)	 - /api/v2/gamification/insights/trends

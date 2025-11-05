@@ -1,19 +1,15 @@
-## gc quality publishedforms surveys divisionviews get
+## gc coaching scheduleslots jobs
 
-Get the most recent published version of an enabled survey form across any division.
+/api/v2/coaching/scheduleslots/jobs
 
 ### Synopsis
 
-Get the most recent published version of an enabled survey form across any division.
-
-```
-gc quality publishedforms surveys divisionviews get [surveyFormId] [flags]
-```
+/api/v2/coaching/scheduleslots/jobs
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help   help for jobs
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +29,8 @@ gc quality publishedforms surveys divisionviews get [surveyFormId] [flags]
 
 ### SEE ALSO
 
-* [gc quality publishedforms surveys divisionviews](gc_quality_publishedforms_surveys_divisionviews.html)	 - /api/v2/quality/publishedforms/surveys/divisionviews
+* [gc coaching scheduleslots](gc_coaching_scheduleslots.html)	 - /api/v2/coaching/scheduleslots
+* [gc coaching scheduleslots jobs create](gc_coaching_scheduleslots_jobs_create.html)	 - Start job to retrieve the slots where a coaching appointment can be scheduled.
+* [gc coaching scheduleslots jobs get](gc_coaching_scheduleslots_jobs_get.html)	 - Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
 
 

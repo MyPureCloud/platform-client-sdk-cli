@@ -1,15 +1,22 @@
-## gc gamification scorecards users points trends
+## gc coaching scheduleslots jobs create
 
-/api/v2/gamification/scorecards/users/{userId}/points/trends
+Start job to retrieve the slots where a coaching appointment can be scheduled.
 
 ### Synopsis
 
-/api/v2/gamification/scorecards/users/{userId}/points/trends
+Start job to retrieve the slots where a coaching appointment can be scheduled.
+
+```
+gc coaching scheduleslots jobs create [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for trends
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +36,6 @@
 
 ### SEE ALSO
 
-* [gc gamification scorecards users points](gc_gamification_scorecards_users_points.html)	 - /api/v2/gamification/scorecards/users/points /api/v2/gamification/scorecards/users/{userId}/points
-* [gc gamification scorecards users points trends get](gc_gamification_scorecards_users_points_trends_get.html)	 - Points trend for a user
+* [gc coaching scheduleslots jobs](gc_coaching_scheduleslots_jobs.html)	 - /api/v2/coaching/scheduleslots/jobs
 
 

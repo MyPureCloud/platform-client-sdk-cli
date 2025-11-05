@@ -1,15 +1,15 @@
-## gc quality publishedforms surveys divisionviews
+## gc gamification insights managers
 
-/api/v2/quality/publishedforms/surveys/divisionviews
+/api/v2/gamification/insights/managers
 
 ### Synopsis
 
-/api/v2/quality/publishedforms/surveys/divisionviews
+/api/v2/gamification/insights/managers
 
 ### Options
 
 ```
-  -h, --help   help for divisionviews
+  -h, --help   help for managers
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +29,7 @@
 
 ### SEE ALSO
 
-* [gc quality publishedforms surveys](gc_quality_publishedforms_surveys.html)	 - /api/v2/quality/publishedforms/surveys
-* [gc quality publishedforms surveys divisionviews get](gc_quality_publishedforms_surveys_divisionviews_get.html)	 - Get the most recent published version of an enabled survey form across any division.
-* [gc quality publishedforms surveys divisionviews list](gc_quality_publishedforms_surveys_divisionviews_list.html)	 - Get the published and enabled survey forms across any division.
+* [gc gamification insights](gc_gamification_insights.html)	 - /api/v2/gamification/insights
+* [gc gamification insights managers list](gc_gamification_insights_managers_list.html)	 - Query managers in a profile during a period of time
 
 

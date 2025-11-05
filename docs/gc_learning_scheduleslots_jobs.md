@@ -1,19 +1,15 @@
-## gc quality publishedforms evaluations divisionviews get
+## gc learning scheduleslots jobs
 
-Get the most recent published version of an evaluation form across any division.
+/api/v2/learning/scheduleslots/jobs
 
 ### Synopsis
 
-Get the most recent published version of an evaluation form across any division.
-
-```
-gc quality publishedforms evaluations divisionviews get [evaluationFormId] [flags]
-```
+/api/v2/learning/scheduleslots/jobs
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help   help for jobs
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +29,8 @@ gc quality publishedforms evaluations divisionviews get [evaluationFormId] [flag
 
 ### SEE ALSO
 
-* [gc quality publishedforms evaluations divisionviews](gc_quality_publishedforms_evaluations_divisionviews.html)	 - /api/v2/quality/publishedforms/evaluations/divisionviews
+* [gc learning scheduleslots](gc_learning_scheduleslots.html)	 - /api/v2/learning/scheduleslots
+* [gc learning scheduleslots jobs create](gc_learning_scheduleslots_jobs_create.html)	 - Start job to retrieve slots where a learning activity can be scheduled.
+* [gc learning scheduleslots jobs get](gc_learning_scheduleslots_jobs_get.html)	 - Retrieve the status of the job for the slots where a learning activity can be scheduled.
 
 

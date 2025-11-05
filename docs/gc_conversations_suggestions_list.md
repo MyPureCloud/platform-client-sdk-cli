@@ -21,7 +21,7 @@ gc conversations suggestions list [conversationId] [flags]
       --pageSize string          Number of entities to return. Maximum of 200.
       --state string             Suggestion state to filter Copilot suggestions. Valid values: Suggested, Accepted, Dismissed, Failed, Rated
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
-      --varType string           Suggestion type to filter by. Valid values: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script
+      --varType string           Suggestion type to filter by. Valid values: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer
 ```
 
 ### Options inherited from parent commands

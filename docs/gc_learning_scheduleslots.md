@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc learning](gc_learning.html)	 - /api/v2/learning
+* [gc learning scheduleslots jobs](gc_learning_scheduleslots_jobs.html)	 - /api/v2/learning/scheduleslots/jobs
 * [gc learning scheduleslots query](gc_learning_scheduleslots_query.html)	 - /api/v2/learning/scheduleslots/query
 
 

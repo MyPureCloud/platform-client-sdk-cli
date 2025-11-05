@@ -13,6 +13,7 @@ gc workforcemanagement businessunits weeks shorttermforecasts staffingrequiremen
 ### Options
 
 ```
+      --expand strings        Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values) Valid values: results.planningGroupStaffingRequirements.minimumStaffPerInterval, results.planningGroupStaffingRequirements.effectiveStaffPerInterval
   -h, --help                  help for get
       --weekNumbers strings   The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
 ```

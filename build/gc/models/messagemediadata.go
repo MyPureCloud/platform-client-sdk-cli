@@ -32,6 +32,12 @@ type MessagemediadataDud struct {
     Status string `json:"status"`
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -64,12 +70,22 @@ type Messagemediadata struct {
     
 
 
+    // ConversationId
+    ConversationId string `json:"conversationId"`
+
+
+    // CommunicationId
+    CommunicationId string `json:"communicationId"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Messagemediadata) String() string {
+    
+    
     
     
     
@@ -101,8 +117,18 @@ func (u *Messagemediadata) MarshalJSON() ([]byte, error) {
         ContentLengthBytes int `json:"contentLengthBytes"`
         
         UploadUrl string `json:"uploadUrl"`
+        
+        ConversationId string `json:"conversationId"`
+        
+        CommunicationId string `json:"communicationId"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

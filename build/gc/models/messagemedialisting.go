@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    LearningmodulesdomainentitylistingMarshalled = false
+    MessagemedialistingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type LearningmodulesdomainentitylistingDud struct { 
+type MessagemedialistingDud struct { 
     
 
 
@@ -42,10 +42,10 @@ type LearningmodulesdomainentitylistingDud struct {
 
 }
 
-// Learningmodulesdomainentitylisting
-type Learningmodulesdomainentitylisting struct { 
+// Messagemedialisting
+type Messagemedialisting struct { 
     // Entities
-    Entities []Learningmodule `json:"entities"`
+    Entities []Messagemediadata `json:"entities"`
 
 
     // PageSize
@@ -60,18 +60,6 @@ type Learningmodulesdomainentitylisting struct {
     Total int `json:"total"`
 
 
-    // FirstUri
-    FirstUri string `json:"firstUri"`
-
-
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
@@ -80,14 +68,26 @@ type Learningmodulesdomainentitylisting struct {
     NextUri string `json:"nextUri"`
 
 
+    // LastUri
+    LastUri string `json:"lastUri"`
+
+
+    // FirstUri
+    FirstUri string `json:"firstUri"`
+
+
+    // SelfUri
+    SelfUri string `json:"selfUri"`
+
+
     // PageCount
     PageCount int `json:"pageCount"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Learningmodulesdomainentitylisting) String() string {
-     o.Entities = []Learningmodule{{}} 
+func (o *Messagemedialisting) String() string {
+     o.Entities = []Messagemediadata{{}} 
     
     
     
@@ -104,17 +104,17 @@ func (o *Learningmodulesdomainentitylisting) String() string {
     return str
 }
 
-func (u *Learningmodulesdomainentitylisting) MarshalJSON() ([]byte, error) {
-    type Alias Learningmodulesdomainentitylisting
+func (u *Messagemedialisting) MarshalJSON() ([]byte, error) {
+    type Alias Messagemedialisting
 
-    if LearningmodulesdomainentitylistingMarshalled {
+    if MessagemedialistingMarshalled {
         return []byte("{}"), nil
     }
-    LearningmodulesdomainentitylistingMarshalled = true
+    MessagemedialistingMarshalled = true
 
     return json.Marshal(&struct {
         
-        Entities []Learningmodule `json:"entities"`
+        Entities []Messagemediadata `json:"entities"`
         
         PageSize int `json:"pageSize"`
         
@@ -122,22 +122,22 @@ func (u *Learningmodulesdomainentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        FirstUri string `json:"firstUri"`
-        
-        LastUri string `json:"lastUri"`
-        
-        SelfUri string `json:"selfUri"`
-        
         PreviousUri string `json:"previousUri"`
         
         NextUri string `json:"nextUri"`
+        
+        LastUri string `json:"lastUri"`
+        
+        FirstUri string `json:"firstUri"`
+        
+        SelfUri string `json:"selfUri"`
         
         PageCount int `json:"pageCount"`
         *Alias
     }{
 
         
-        Entities: []Learningmodule{{}},
+        Entities: []Messagemediadata{{}},
         
 
 

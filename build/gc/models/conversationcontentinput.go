@@ -28,6 +28,12 @@ type ConversationcontentinputDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Conversationcontentinput - Single or multiline text input component.
@@ -55,10 +61,20 @@ type Conversationcontentinput struct {
     // IsMultipleLine - Whether the input should allow multiple lines of text.
     IsMultipleLine bool `json:"isMultipleLine"`
 
+
+    // KeyboardType - Type of keyboard to be shown.
+    KeyboardType string `json:"keyboardType"`
+
+
+    // AutoCompleteType - A string value representing the keyboard and system information about the expected semantic meaning for the content that users enter.
+    AutoCompleteType string `json:"autoCompleteType"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationcontentinput) String() string {
+    
+    
     
     
     
@@ -93,8 +109,18 @@ func (u *Conversationcontentinput) MarshalJSON() ([]byte, error) {
         IsRequired bool `json:"isRequired"`
         
         IsMultipleLine bool `json:"isMultipleLine"`
+        
+        KeyboardType string `json:"keyboardType"`
+        
+        AutoCompleteType string `json:"autoCompleteType"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

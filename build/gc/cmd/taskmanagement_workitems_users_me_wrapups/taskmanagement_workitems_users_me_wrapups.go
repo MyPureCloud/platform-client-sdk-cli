@@ -42,14 +42,8 @@ func Cmdtaskmanagement_workitems_users_me_wrapups() *cobra.Command {
 }`)
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  "description" : "successful operation",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/WorkitemWrapup"
-      }
-    }
-  }
+  "description" : "Wrapup code updated successfully",
+  "content" : { }
 }`)
 	taskmanagement_workitems_users_me_wrapupsCmd.AddCommand(updateCmd)
 	return taskmanagement_workitems_users_me_wrapupsCmd

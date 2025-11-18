@@ -28,6 +28,9 @@ type AdherencesettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Adherencesettings
@@ -55,10 +58,15 @@ type Adherencesettings struct {
     // IgnoredActivityCategories - Activity categories that should be ignored for adherence purposes
     IgnoredActivityCategories Ignoredactivitycategories `json:"ignoredActivityCategories"`
 
+
+    // IgnoredActivityCodeIds - Activity code IDs that should be ignored for adherence purposes
+    IgnoredActivityCodeIds Ignoredactivitycodeids `json:"ignoredActivityCodeIds"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Adherencesettings) String() string {
+    
     
     
     
@@ -93,8 +101,13 @@ func (u *Adherencesettings) MarshalJSON() ([]byte, error) {
         TrackOnQueueActivity bool `json:"trackOnQueueActivity"`
         
         IgnoredActivityCategories Ignoredactivitycategories `json:"ignoredActivityCategories"`
+        
+        IgnoredActivityCodeIds Ignoredactivitycodeids `json:"ignoredActivityCodeIds"`
         *Alias
     }{
+
+        
+
 
         
 

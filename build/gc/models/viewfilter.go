@@ -709,6 +709,12 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1644,6 +1650,14 @@ type Viewfilter struct {
     // ContentModerationFlags - A set of Content Moderation Flags for filtering
     ContentModerationFlags []string `json:"contentModerationFlags"`
 
+
+    // SessionExpired - Filter to indicate for if session is expired
+    SessionExpired bool `json:"sessionExpired"`
+
+
+    // EngagementSource - The engagement sources used to filter the view
+    EngagementSource []string `json:"engagementSource"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1881,6 +1895,8 @@ func (o *Viewfilter) String() string {
      o.SentimentScoreCategories = []string{""} 
      o.SentimentTrendCategories = []string{""} 
      o.ContentModerationFlags = []string{""} 
+    
+     o.EngagementSource = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2363,6 +2379,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         SentimentTrendCategories []string `json:"sentimentTrendCategories"`
         
         ContentModerationFlags []string `json:"contentModerationFlags"`
+        
+        SessionExpired bool `json:"sessionExpired"`
+        
+        EngagementSource []string `json:"engagementSource"`
         *Alias
     }{
 
@@ -3384,6 +3404,14 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         ContentModerationFlags: []string{""},
+        
+
+
+        
+
+
+        
+        EngagementSource: []string{""},
         
 
         Alias: (*Alias)(u),

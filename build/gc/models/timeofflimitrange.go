@@ -28,7 +28,7 @@ type Timeofflimitrange struct {
     StartDate time.Time `json:"startDate"`
 
 
-    // Granularity - Granularity choice for the time off limit
+    // Granularity - Granularity choice for the time-off limit
     Granularity string `json:"granularity"`
 
 

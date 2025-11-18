@@ -19,16 +19,30 @@ type ConversationcontentreceivedreplymessageDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Conversationcontentreceivedreplymessage - ReceivedReplyMessage content object.
 type Conversationcontentreceivedreplymessage struct { 
+    // Header - Text to show in the header.
+    Header string `json:"header"`
+
+
     // Title - Text to show in the title.
     Title string `json:"title"`
 
 
     // Subtitle - Text to show in the subtitle.
     Subtitle string `json:"subtitle"`
+
+
+    // ButtonLabel - Text to show on the button label.
+    ButtonLabel string `json:"buttonLabel"`
 
 
     // ImageUrl - URL of an image.
@@ -38,6 +52,8 @@ type Conversationcontentreceivedreplymessage struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationcontentreceivedreplymessage) String() string {
+    
+    
     
     
     
@@ -58,13 +74,23 @@ func (u *Conversationcontentreceivedreplymessage) MarshalJSON() ([]byte, error) 
 
     return json.Marshal(&struct {
         
+        Header string `json:"header"`
+        
         Title string `json:"title"`
         
         Subtitle string `json:"subtitle"`
         
+        ButtonLabel string `json:"buttonLabel"`
+        
         ImageUrl string `json:"imageUrl"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

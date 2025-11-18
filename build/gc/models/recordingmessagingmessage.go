@@ -92,6 +92,12 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Recordingmessagingmessage
@@ -203,6 +209,14 @@ type Recordingmessagingmessage struct {
     // PaymentResponse - Payment response content.
     PaymentResponse Paymentresponse `json:"paymentResponse"`
 
+
+    // Form - Form content.
+    Form Recordingform `json:"form"`
+
+
+    // RoadsideAssistance - Roadside Assistance content.
+    RoadsideAssistance Recordingroadsideassistance `json:"roadsideAssistance"`
+
 }
 
 // String returns a JSON representation of the model
@@ -231,6 +245,8 @@ func (o *Recordingmessagingmessage) String() string {
     
     
      o.Events = []Conversationmessageevent{{}} 
+    
+    
     
     
     
@@ -304,6 +320,10 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         PaymentRequest Paymentrequest `json:"paymentRequest"`
         
         PaymentResponse Paymentresponse `json:"paymentResponse"`
+        
+        Form Recordingform `json:"form"`
+        
+        RoadsideAssistance Recordingroadsideassistance `json:"roadsideAssistance"`
         *Alias
     }{
 
@@ -388,6 +408,12 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
 
         
         Events: []Conversationmessageevent{{}},
+        
+
+
+        
+
+
         
 
 

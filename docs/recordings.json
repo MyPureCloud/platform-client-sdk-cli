@@ -19,8 +19,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/recordings/screensessions/metadata",
-      "description": "Provide meta-data a screen recording."
+      "path": "/api/v2/recordings/screensessions/acknowledge",
+      "description": "Acknowledge a screen recording."
     },
     {
       "name": "get",
@@ -29,8 +29,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/recordings/screensessions/acknowledge",
-      "description": "Acknowledge a screen recording."
+      "path": "/api/v2/recordings/screensessions/metadata",
+      "description": "Provide meta-data a screen recording."
     }
   ]
 }

@@ -30,7 +30,7 @@ func init() {
 func Cmdauthorization_divisions_query() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
+	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "25", "Page size (max 200, default 25)")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "Optionally request specific divisions by their IDs")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Optionally request specific divisions by division name")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/authorization/divisions/query", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Authorization", "/api/v2/authorization/divisions/query")))

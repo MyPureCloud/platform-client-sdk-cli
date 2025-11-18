@@ -80,7 +80,7 @@ type Facebookdataingestionruleresponse struct {
     
 
 
-    // IntegrationId - The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/facebook resource
+    // IntegrationId - Id of the Integration when source is owned (Authenticated). This entity is created using the /conversations/messaging/integrations/facebook resource. Optional when configuring non-owned pages.
     IntegrationId string `json:"integrationId"`
 
 

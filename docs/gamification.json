@@ -209,13 +209,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/managers",
-      "description": "Query managers in a profile during a period of time"
+      "path": "/api/v2/gamification/insights/members",
+      "description": "Query users in a profile during a period of time"
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/members",
-      "description": "Query users in a profile during a period of time"
+      "path": "/api/v2/gamification/insights/managers",
+      "description": "Query managers in a profile during a period of time"
     },
     {
       "name": "get",
@@ -279,8 +279,8 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/scorecards/attendance",
-      "description": "Attendance status metrics of the requesting user"
+      "path": "/api/v2/gamification/scorecards/bestpoints",
+      "description": "Best points of the requesting user"
     },
     {
       "name": "get",
@@ -308,34 +308,14 @@
       "description": "Average values of the requesting user's division or performance profile"
     },
     {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/bestpoints",
-      "description": "Best points of the requesting user"
-    },
-    {
       "name": "list",
       "path": "/api/v2/gamification/scorecards",
       "description": "Workday performance metrics of the requesting user"
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/points/average",
-      "description": "Workday average points by target group"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/values/average",
-      "description": "Workday average values by target group"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/values/trends",
-      "description": "Values trend by target group"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/{userId}",
-      "description": "Workday performance metrics for a user"
+      "path": "/api/v2/gamification/scorecards/attendance",
+      "description": "Attendance status metrics of the requesting user"
     },
     {
       "name": "get",
@@ -361,6 +341,26 @@
       "name": "list",
       "path": "/api/v2/gamification/scorecards/users/{userId}/values/trends",
       "description": "Values trends of a user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/points/average",
+      "description": "Workday average points by target group"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/values/average",
+      "description": "Workday average values by target group"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/values/trends",
+      "description": "Values trend by target group"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/{userId}",
+      "description": "Workday performance metrics for a user"
     }
   ]
 }

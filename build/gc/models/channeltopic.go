@@ -20,6 +20,9 @@ type ChanneltopicDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -38,6 +41,10 @@ type Channeltopic struct {
     RejectionReason string `json:"rejectionReason"`
 
 
+    // MissingPermissions
+    MissingPermissions []string `json:"missingPermissions"`
+
+
     
 
 }
@@ -47,6 +54,7 @@ func (o *Channeltopic) String() string {
     
     
     
+     o.MissingPermissions = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -69,6 +77,8 @@ func (u *Channeltopic) MarshalJSON() ([]byte, error) {
         State string `json:"state"`
         
         RejectionReason string `json:"rejectionReason"`
+        
+        MissingPermissions []string `json:"missingPermissions"`
         *Alias
     }{
 
@@ -78,6 +88,11 @@ func (u *Channeltopic) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        MissingPermissions: []string{""},
         
 
 

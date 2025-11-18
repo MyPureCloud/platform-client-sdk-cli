@@ -2497,6 +2497,8 @@ gc/models/conversationcontentquickreplyv2.go
 gc/models/conversationcontentreaction.go
 gc/models/conversationcontentreceivedreplymessage.go
 gc/models/conversationcontentrequiredcontactfield.go
+gc/models/conversationcontentrichlink.go
+gc/models/conversationcontentrichlinkheader.go
 gc/models/conversationcontentroadsideassistance.go
 gc/models/conversationcontentstory.go
 gc/models/conversationcontenttext.go
@@ -3175,6 +3177,7 @@ gc/models/externalorganizationidentifierclaimrequest.go
 gc/models/externalorganizationidentifierlisting.go
 gc/models/externalorganizationlisting.go
 gc/models/externalorganizationtrustorlink.go
+gc/models/externalpagemetadata.go
 gc/models/externalsegment.go
 gc/models/externalsource.go
 gc/models/facebookappcredentials.go
@@ -3582,6 +3585,7 @@ gc/models/journeyapp.go
 gc/models/journeyasyncaggregatequeryresponse.go
 gc/models/journeyasyncaggregationquery.go
 gc/models/journeycampaign.go
+gc/models/journeycaseassociation.go
 gc/models/journeycontext.go
 gc/models/journeycustomer.go
 gc/models/journeycustomersession.go
@@ -3814,6 +3818,7 @@ gc/models/learningmoduleinformstep.go
 gc/models/learningmoduleinformsteprequest.go
 gc/models/learningmodulejobrequest.go
 gc/models/learningmodulejobresponse.go
+gc/models/learningmodulelist.go
 gc/models/learningmodulepreviewgetresponse.go
 gc/models/learningmodulepreviewgetresponseassignment.go
 gc/models/learningmodulepreviewgetresponsestep.go
@@ -3831,7 +3836,6 @@ gc/models/learningmodulereassignsummary.go
 gc/models/learningmodulerequest.go
 gc/models/learningmodulerule.go
 gc/models/learningmoduleruleparts.go
-gc/models/learningmodulesdomainentitylisting.go
 gc/models/learningmodulesummary.go
 gc/models/learningscheduleslotsjobrequest.go
 gc/models/learningscheduleslotsjobresponse.go
@@ -4004,6 +4008,7 @@ gc/models/messageinfo.go
 gc/models/messagemedia.go
 gc/models/messagemediaattachment.go
 gc/models/messagemediadata.go
+gc/models/messagemedialisting.go
 gc/models/messagemediaparticipant.go
 gc/models/messagemediapolicy.go
 gc/models/messagemediapolicyconditions.go
@@ -4853,6 +4858,7 @@ gc/models/settimeofflimitvaluesrequest.go
 gc/models/settingdirection.go
 gc/models/settings.go
 gc/models/setuuidatarequest.go
+gc/models/setwhatsappintegrationactionsettings.go
 gc/models/setwrapperdayofweek.go
 gc/models/setwrapperroutepathrequest.go
 gc/models/setwrapperstring.go

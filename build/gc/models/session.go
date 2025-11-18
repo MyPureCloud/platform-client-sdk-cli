@@ -141,16 +141,16 @@ type SessionDud struct {
     
 
 
-    ExternalContact Addressableentityref `json:"externalContact"`
-
-
     
 
 
     
 
 
-    Conversation Addressableentityref `json:"conversation"`
+    
+
+
+    
 
 }
 
@@ -327,7 +327,8 @@ type Session struct {
     EndedDate time.Time `json:"endedDate"`
 
 
-    
+    // ExternalContact - The external contact associated with this session.
+    ExternalContact Addressableentityref `json:"externalContact"`
 
 
     // AwayDate - Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -338,7 +339,8 @@ type Session struct {
     IdleDate time.Time `json:"idleDate"`
 
 
-    
+    // Conversation - The conversation for this session.
+    Conversation Addressableentityref `json:"conversation"`
 
 }
 
@@ -383,6 +385,8 @@ func (o *Session) String() string {
     
     
      o.DivisionIds = []string{""} 
+    
+    
     
     
     
@@ -489,9 +493,13 @@ func (u *Session) MarshalJSON() ([]byte, error) {
         
         EndedDate time.Time `json:"endedDate"`
         
+        ExternalContact Addressableentityref `json:"externalContact"`
+        
         AwayDate time.Time `json:"awayDate"`
         
         IdleDate time.Time `json:"idleDate"`
+        
+        Conversation Addressableentityref `json:"conversation"`
         *Alias
     }{
 

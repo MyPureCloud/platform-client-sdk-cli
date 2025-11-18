@@ -58,6 +58,11 @@
       "description": "Create new knowledge base"
     },
     {
+      "name": "list",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups",
+      "description": "Get knowledge base unanswered groups"
+    },
+    {
       "name": "get",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}",
       "description": "Get knowledge base unanswered group for a particular groupId"
@@ -71,11 +76,6 @@
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}",
       "description": "Update a Knowledge base unanswered phrase group"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups",
-      "description": "Get knowledge base unanswered groups"
     },
     {
       "name": "get",
@@ -363,14 +363,19 @@
       "description": "Create synchronization job"
     },
     {
+      "name": "get",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query",
+      "description": "Get ids of operation creator users and oauth clients"
+    },
+    {
       "name": "list",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations",
       "description": "Get operations"
     },
     {
-      "name": "get",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query",
-      "description": "Get ids of operation creator users and oauth clients"
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
+      "description": "Import the parsed articles"
     },
     {
       "name": "get",
@@ -381,11 +386,6 @@
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}",
       "description": "Send update to the parse operation"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
-      "description": "Import the parsed articles"
     },
     {
       "name": "create",

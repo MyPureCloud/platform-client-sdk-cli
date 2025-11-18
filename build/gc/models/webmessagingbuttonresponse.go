@@ -22,6 +22,9 @@ type WebmessagingbuttonresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Webmessagingbuttonresponse - Button response object representing the click of a structured message button, such as a quick reply.
@@ -41,10 +44,15 @@ type Webmessagingbuttonresponse struct {
     // Payload - The response payload associated with the clicked button.
     Payload string `json:"payload"`
 
+
+    // OriginatingMessageId - Id of original structured message that this message responds to.
+    OriginatingMessageId string `json:"originatingMessageId"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Webmessagingbuttonresponse) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Webmessagingbuttonresponse) MarshalJSON() ([]byte, error) {
         Text string `json:"text"`
         
         Payload string `json:"payload"`
+        
+        OriginatingMessageId string `json:"originatingMessageId"`
         *Alias
     }{
+
+        
+
 
         
 

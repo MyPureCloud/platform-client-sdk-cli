@@ -964,6 +964,7 @@
   "gc_conversations_messages_communications_messages.md",
   "gc_conversations_messages_communications_messages_media_create.md",
   "gc_conversations_messages_communications_messages_media_get.md",
+  "gc_conversations_messages_communications_messages_media_list.md",
   "gc_conversations_messages_communications_messages_media.md",
   "gc_conversations_messages_communications_messages_media_uploads_create.md",
   "gc_conversations_messages_communications_messages_media_uploads.md",

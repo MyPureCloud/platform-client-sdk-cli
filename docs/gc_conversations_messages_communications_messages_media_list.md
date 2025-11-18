@@ -1,26 +1,24 @@
-## gc authorization divisions query list
+## gc conversations messages communications messages media list
 
-Retrieve a list of all divisions defined for the organization with cursor
+Get message media list by status
 
 ### Synopsis
 
-Retrieve a list of all divisions defined for the organization with cursor
+Get message media list by status
 
 ```
-gc authorization divisions query list [flags]
+gc conversations messages communications messages media list [conversationId] [communicationId] [flags]
 ```
 
 ### Options
 
 ```
-      --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --before string            The cursor that points to the start of the set of entities that has been returned.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --id strings               Optionally request specific divisions by their IDs
-      --name string              Optionally request specific divisions by division name
-      --pageSize string          Page size (max 200, default 25)
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
+      --status string            The status on which to filter the response. Valid values: uploading, valid, invalid
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
@@ -41,6 +39,6 @@ gc authorization divisions query list [flags]
 
 ### SEE ALSO
 
-* [gc authorization divisions query](gc_authorization_divisions_query.html)	 - /api/v2/authorization/divisions/query
+* [gc conversations messages communications messages media](gc_conversations_messages_communications_messages_media.html)	 - /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media
 
 

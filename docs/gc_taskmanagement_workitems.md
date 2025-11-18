@@ -1,10 +1,10 @@
 ## gc taskmanagement workitems
 
-/api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+/api/v2/taskmanagement/workitems
 
 ### Synopsis
 
-/api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+/api/v2/taskmanagement/workitems
 
 ### Options
 
@@ -42,7 +42,7 @@
 * [gc taskmanagement workitems schemas](gc_taskmanagement_workitems_schemas.html)	 - /api/v2/taskmanagement/workitems/schemas
 * [gc taskmanagement workitems terminate](gc_taskmanagement_workitems_terminate.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/terminate
 * [gc taskmanagement workitems update](gc_taskmanagement_workitems_update.html)	 - Update the attributes of a workitem
-* [gc taskmanagement workitems users](gc_taskmanagement_workitems_users.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/users/me
+* [gc taskmanagement workitems users](gc_taskmanagement_workitems_users.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/users
 * [gc taskmanagement workitems versions](gc_taskmanagement_workitems_versions.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/versions
 * [gc taskmanagement workitems wrapups](gc_taskmanagement_workitems_wrapups.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/wrapups
 

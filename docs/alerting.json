@@ -58,14 +58,14 @@
       "description": "Delete a rule."
     },
     {
-      "name": "create",
-      "path": "/api/v2/alerting/rules/bulk/remove",
-      "description": "Bulk remove rules"
-    },
-    {
       "name": "update",
       "path": "/api/v2/alerting/rules/bulk",
       "description": "Bulk update of notification lists"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/alerting/rules/bulk/remove",
+      "description": "Bulk remove rules"
     },
     {
       "name": "create",

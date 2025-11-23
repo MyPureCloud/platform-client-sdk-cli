@@ -4,6 +4,11 @@
   "resources": [
     {
       "name": "create",
+      "path": "/api/v2/events/users/presence",
+      "description": "Publish User Presence Status Batch Events"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/events/conversations",
       "description": "Publish Conversation Batch Events"
     },
@@ -11,11 +16,6 @@
       "name": "create",
       "path": "/api/v2/events/users/routingstatus",
       "description": "Publish Agent Routing Status Batch Events"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/events/users/presence",
-      "description": "Publish User Presence Status Batch Events"
     }
   ]
 }

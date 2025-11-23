@@ -802,6 +802,7 @@ gc/cmd/learning_modules_jobs/learning_modules_jobs.go
 gc/cmd/learning_modules_preview/learning_modules_preview.go
 gc/cmd/learning_modules_publish/learning_modules_publish.go
 gc/cmd/learning_modules_rule/learning_modules_rule.go
+gc/cmd/learning_modules_rule_migrate/learning_modules_rule_migrate.go
 gc/cmd/learning_modules_users_assignments/learning_modules_users_assignments.go
 gc/cmd/learning_modules_versions/learning_modules_versions.go
 gc/cmd/learning_rules_query/learning_rules_query.go
@@ -1284,6 +1285,10 @@ gc/cmd/users_routinglanguages_bulk/users_routinglanguages_bulk.go
 gc/cmd/users_routingskills/users_routingskills.go
 gc/cmd/users_routingskills_bulk/users_routingskills_bulk.go
 gc/cmd/users_routingstatus/users_routingstatus.go
+gc/cmd/users_rules/users_rules.go
+gc/cmd/users_rules_dependents/users_rules_dependents.go
+gc/cmd/users_rules_query/users_rules_query.go
+gc/cmd/users_rules_settings/users_rules_settings.go
 gc/cmd/users_search/users_search.go
 gc/cmd/users_search_conversation_target/users_search_conversation_target.go
 gc/cmd/users_search_queuemembers_manage/users_search_queuemembers_manage.go
@@ -1347,6 +1352,7 @@ gc/cmd/workforcemanagement_agents_adherence_explanations_query/workforcemanageme
 gc/cmd/workforcemanagement_agents_integrations_hris/workforcemanagement_agents_integrations_hris.go
 gc/cmd/workforcemanagement_agents_integrations_hris_query/workforcemanagement_agents_integrations_hris_query.go
 gc/cmd/workforcemanagement_agents_managementunit/workforcemanagement_agents_managementunit.go
+gc/cmd/workforcemanagement_agents_me_adherence_historical_jobs/workforcemanagement_agents_me_adherence_historical_jobs.go
 gc/cmd/workforcemanagement_agents_me_managementunit/workforcemanagement_agents_me_managementunit.go
 gc/cmd/workforcemanagement_agents_me_possibleworkshifts/workforcemanagement_agents_me_possibleworkshifts.go
 gc/cmd/workforcemanagement_agentschedules_managementunits_mine/workforcemanagement_agentschedules_managementunits_mine.go
@@ -1593,6 +1599,8 @@ gc/models/aftercallworkupdate.go
 gc/models/agent.go
 gc/models/agentactivity.go
 gc/models/agentactivityentitylisting.go
+gc/models/agentadherencedaymetrics.go
+gc/models/agentadherencescheduledactivity.go
 gc/models/agentbidworkplanoverriderequest.go
 gc/models/agentcopilotaggregatedatacontainer.go
 gc/models/agentcopilotaggregatequeryclause.go
@@ -3819,6 +3827,7 @@ gc/models/learningmoduleinformsteprequest.go
 gc/models/learningmodulejobrequest.go
 gc/models/learningmodulejobresponse.go
 gc/models/learningmodulelist.go
+gc/models/learningmodulemigrateresponse.go
 gc/models/learningmodulepreviewgetresponse.go
 gc/models/learningmodulepreviewgetresponseassignment.go
 gc/models/learningmodulepreviewgetresponsestep.go
@@ -4794,6 +4803,7 @@ gc/models/searchshifttradesresponse.go
 gc/models/searchsort.go
 gc/models/searchupdaterequest.go
 gc/models/secondarypresence.go
+gc/models/secondarypresencelookupitem.go
 gc/models/section.go
 gc/models/securesession.go
 gc/models/securesessionentitylisting.go
@@ -5482,7 +5492,22 @@ gc/models/usersearchrulepart.go
 gc/models/usersettingsforchat.go
 gc/models/userskillentitylisting.go
 gc/models/userskillgroupentitylisting.go
+gc/models/usersrulescreaterulerequest.go
+gc/models/usersrulescriteria.go
+gc/models/usersrulesdependent.go
+gc/models/usersrulesdependentlist.go
+gc/models/usersrulesgroupitem.go
+gc/models/usersruleslastrunmetadata.go
+gc/models/usersruleslockedcriteriasettingscriteria.go
+gc/models/usersruleslockedcriteriasettingsgroup.go
+gc/models/usersrulesqueryresponse.go
+gc/models/usersrulesqueryrulerequest.go
+gc/models/usersrulesrule.go
+gc/models/usersrulesrulelist.go
 gc/models/usersrulesrulereference.go
+gc/models/usersrulesrulesettings.go
+gc/models/usersrulesupdaterulerequest.go
+gc/models/usersrulesvalue.go
 gc/models/userssearchresponse.go
 gc/models/userstaffinggrouplisting.go
 gc/models/userstaffinggroupresponse.go
@@ -5611,6 +5636,9 @@ gc/models/weekshifttradelistresponse.go
 gc/models/weekshifttradematchessummaryresponse.go
 gc/models/weekshifttraderesponse.go
 gc/models/wfmagent.go
+gc/models/wfmagenthistoricaladherencejobreference.go
+gc/models/wfmagenthistoricaladherenceresponse.go
+gc/models/wfmagenthistoricaladherenceresult.go
 gc/models/wfmbusinessunitreference.go
 gc/models/wfmforecastmodificationintervaloffsetvalue.go
 gc/models/wfmhistoricaladherencebulkitem.go
@@ -5621,6 +5649,7 @@ gc/models/wfmhistoricaladherencebulkresult.go
 gc/models/wfmhistoricaladherencebulkuserdaymetrics.go
 gc/models/wfmhistoricaladherencebulkuserresult.go
 gc/models/wfmhistoricaladherencequery.go
+gc/models/wfmhistoricaladherencequeryforagent.go
 gc/models/wfmhistoricaladherencequeryforteams.go
 gc/models/wfmhistoricaladherencequeryforusers.go
 gc/models/wfmhistoricaladherenceresponse.go

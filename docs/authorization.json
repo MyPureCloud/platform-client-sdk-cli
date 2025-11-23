@@ -118,11 +118,6 @@
       "description": "Bulk-remove grants from a subject."
     },
     {
-      "name": "update",
-      "path": "/api/v2/authorization/roles/{roleId}/users/remove",
-      "description": "Removes the users from the role"
-    },
-    {
       "name": "list",
       "path": "/api/v2/authorization/roles/{roleId}/users",
       "description": "Get a list of the users in a specified role."
@@ -131,6 +126,11 @@
       "name": "update",
       "path": "/api/v2/authorization/roles/{roleId}/users/add",
       "description": "Sets the users for the role"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/roles/{roleId}/users/remove",
+      "description": "Removes the users from the role"
     },
     {
       "name": "list",

@@ -67,6 +67,10 @@ type Reprocessjobentitylistingresponse struct {
     QueueTotal int `json:"queueTotal"`
 
 
+    // FirstUri
+    FirstUri string `json:"firstUri"`
+
+
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
@@ -77,10 +81,6 @@ type Reprocessjobentitylistingresponse struct {
 
     // LastUri
     LastUri string `json:"lastUri"`
-
-
-    // FirstUri
-    FirstUri string `json:"firstUri"`
 
 
     // SelfUri
@@ -132,13 +132,13 @@ func (u *Reprocessjobentitylistingresponse) MarshalJSON() ([]byte, error) {
         
         QueueTotal int `json:"queueTotal"`
         
+        FirstUri string `json:"firstUri"`
+        
         PreviousUri string `json:"previousUri"`
         
         NextUri string `json:"nextUri"`
         
         LastUri string `json:"lastUri"`
-        
-        FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         

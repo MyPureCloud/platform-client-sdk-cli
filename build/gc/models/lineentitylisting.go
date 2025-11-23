@@ -67,6 +67,10 @@ type Lineentitylisting struct {
     TotalNumberOfEntities int `json:"totalNumberOfEntities"`
 
 
+    // FirstUri
+    FirstUri string `json:"firstUri"`
+
+
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
@@ -77,10 +81,6 @@ type Lineentitylisting struct {
 
     // LastUri
     LastUri string `json:"lastUri"`
-
-
-    // FirstUri
-    FirstUri string `json:"firstUri"`
 
 
     // SelfUri
@@ -132,13 +132,13 @@ func (u *Lineentitylisting) MarshalJSON() ([]byte, error) {
         
         TotalNumberOfEntities int `json:"totalNumberOfEntities"`
         
+        FirstUri string `json:"firstUri"`
+        
         PreviousUri string `json:"previousUri"`
         
         NextUri string `json:"nextUri"`
         
         LastUri string `json:"lastUri"`
-        
-        FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         

@@ -1,0 +1,12 @@
+package workforcemanagement_agents_me_adherence_historical
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_agents_me_adherence_historical_jobs"
+)
+
+func init() {
+	workforcemanagement_agents_me_adherence_historicalCmd.AddCommand(workforcemanagement_agents_me_adherence_historical_jobs.Cmdworkforcemanagement_agents_me_adherence_historical_jobs())
+	workforcemanagement_agents_me_adherence_historicalCmd.Short = utils.GenerateCustomDescription(workforcemanagement_agents_me_adherence_historicalCmd.Short, workforcemanagement_agents_me_adherence_historical_jobs.Description, )
+	workforcemanagement_agents_me_adherence_historicalCmd.Long = workforcemanagement_agents_me_adherence_historicalCmd.Short
+}

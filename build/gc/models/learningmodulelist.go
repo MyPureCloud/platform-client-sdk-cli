@@ -67,6 +67,10 @@ type Learningmodulelist struct {
     TotalLegacyRules int `json:"totalLegacyRules"`
 
 
+    // FirstUri
+    FirstUri string `json:"firstUri"`
+
+
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
@@ -77,10 +81,6 @@ type Learningmodulelist struct {
 
     // LastUri
     LastUri string `json:"lastUri"`
-
-
-    // FirstUri
-    FirstUri string `json:"firstUri"`
 
 
     // SelfUri
@@ -132,13 +132,13 @@ func (u *Learningmodulelist) MarshalJSON() ([]byte, error) {
         
         TotalLegacyRules int `json:"totalLegacyRules"`
         
+        FirstUri string `json:"firstUri"`
+        
         PreviousUri string `json:"previousUri"`
         
         NextUri string `json:"nextUri"`
         
         LastUri string `json:"lastUri"`
-        
-        FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         

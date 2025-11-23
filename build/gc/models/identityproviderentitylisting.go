@@ -60,6 +60,10 @@ type Identityproviderentitylisting struct {
     Total int `json:"total"`
 
 
+    // FirstUri
+    FirstUri string `json:"firstUri"`
+
+
     // PreviousUri
     PreviousUri string `json:"previousUri"`
 
@@ -70,10 +74,6 @@ type Identityproviderentitylisting struct {
 
     // LastUri
     LastUri string `json:"lastUri"`
-
-
-    // FirstUri
-    FirstUri string `json:"firstUri"`
 
 
     // SelfUri
@@ -122,13 +122,13 @@ func (u *Identityproviderentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
+        FirstUri string `json:"firstUri"`
+        
         PreviousUri string `json:"previousUri"`
         
         NextUri string `json:"nextUri"`
         
         LastUri string `json:"lastUri"`
-        
-        FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
         

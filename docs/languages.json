@@ -24,11 +24,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/languages/translations/users/{userId}",
-      "description": "Get effective language translation for a user"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/languages/translations/builtin",
       "description": "Get the builtin translation for a language"
     },
@@ -41,6 +36,11 @@
       "name": "get",
       "path": "/api/v2/languages/translations",
       "description": "Get all available languages for translation"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/languages/translations/users/{userId}",
+      "description": "Get effective language translation for a user"
     }
   ]
 }

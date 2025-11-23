@@ -21,10 +21,10 @@ type JourneycaseassociationDud struct {
     
 
 
-    SelfUri string `json:"selfUri"`
-
-
     
+
+
+    SelfUri string `json:"selfUri"`
 
 }
 
@@ -32,6 +32,10 @@ type JourneycaseassociationDud struct {
 type Journeycaseassociation struct { 
     // Id - The ID of the association.
     Id string `json:"id"`
+
+
+    // AssociatedCase - The case that was associated with the journey session.
+    AssociatedCase Addressableentityref `json:"associatedCase"`
 
 
     // CaseReference - The reference for the case that was associated with the journey session.
@@ -43,10 +47,6 @@ type Journeycaseassociation struct {
 
 
     
-
-
-    // VarCase - The case that was associated with the journey session.
-    VarCase Addressableentityref `json:"case"`
 
 }
 
@@ -75,11 +75,11 @@ func (u *Journeycaseassociation) MarshalJSON() ([]byte, error) {
         
         Id string `json:"id"`
         
+        AssociatedCase Addressableentityref `json:"associatedCase"`
+        
         CaseReference string `json:"caseReference"`
         
         DateAssociated time.Time `json:"dateAssociated"`
-        
-        VarCase Addressableentityref `json:"case"`
         *Alias
     }{
 

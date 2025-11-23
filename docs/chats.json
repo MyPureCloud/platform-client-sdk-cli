@@ -28,14 +28,14 @@
       "description": "Get messages by id(s) from a 1on1"
     },
     {
-      "name": "update",
-      "path": "/api/v2/chats/messages/{messageId}/reactions",
-      "description": "Update reactions to a message"
-    },
-    {
       "name": "get",
       "path": "/api/v2/chats/messages/{messageId}",
       "description": "Get a message"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/chats/messages/{messageId}/reactions",
+      "description": "Update reactions to a message"
     },
     {
       "name": "list",

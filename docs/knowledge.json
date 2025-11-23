@@ -363,19 +363,14 @@
       "description": "Create synchronization job"
     },
     {
-      "name": "get",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query",
-      "description": "Get ids of operation creator users and oauth clients"
-    },
-    {
       "name": "list",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations",
       "description": "Get operations"
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
-      "description": "Import the parsed articles"
+      "name": "get",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query",
+      "description": "Get ids of operation creator users and oauth clients"
     },
     {
       "name": "get",
@@ -386,6 +381,11 @@
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}",
       "description": "Send update to the parse operation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
+      "description": "Import the parsed articles"
     },
     {
       "name": "create",
@@ -454,13 +454,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search",
-      "description": "Search the documents in a guest session."
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search/suggestions",
+      "description": "Query the knowledge documents to provide suggestions for auto completion."
     },
     {
       "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search/suggestions",
-      "description": "Query the knowledge documents to provide suggestions for auto completion."
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search",
+      "description": "Search the documents in a guest session."
     },
     {
       "name": "update",

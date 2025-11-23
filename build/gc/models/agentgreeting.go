@@ -26,9 +26,6 @@ type AgentgreetingDud struct {
     
 
 
-    
-
-
     SelfUri string `json:"selfUri"`
 
 }
@@ -36,10 +33,6 @@ type AgentgreetingDud struct {
 // Agentgreeting
 type Agentgreeting struct { 
     
-
-
-    // Name
-    Name string `json:"name"`
 
 
     // InboundPrompt - The agent greeting prompt to use when inbound calls are connected
@@ -68,7 +61,6 @@ func (o *Agentgreeting) String() string {
     
     
     
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -86,8 +78,6 @@ func (u *Agentgreeting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Name string `json:"name"`
-        
         InboundPrompt Prompt `json:"inboundPrompt"`
         
         OutboundPrompt Prompt `json:"outboundPrompt"`
@@ -97,9 +87,6 @@ func (u *Agentgreeting) MarshalJSON() ([]byte, error) {
         OutboundPromptDefaultLanguage string `json:"outboundPromptDefaultLanguage"`
         *Alias
     }{
-
-        
-
 
         
 

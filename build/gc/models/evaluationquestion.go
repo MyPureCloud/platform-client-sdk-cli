@@ -96,12 +96,12 @@ type Evaluationquestion struct {
     DefaultAnswer Defaultanswer `json:"defaultAnswer"`
 
 
-    // IsCritical
-    IsCritical bool `json:"isCritical"`
-
-
     // IsKill
     IsKill bool `json:"isKill"`
+
+
+    // IsCritical
+    IsCritical bool `json:"isCritical"`
 
 }
 
@@ -156,9 +156,9 @@ func (u *Evaluationquestion) MarshalJSON() ([]byte, error) {
         
         DefaultAnswer Defaultanswer `json:"defaultAnswer"`
         
-        IsCritical bool `json:"isCritical"`
-        
         IsKill bool `json:"isKill"`
+        
+        IsCritical bool `json:"isCritical"`
         *Alias
     }{
 

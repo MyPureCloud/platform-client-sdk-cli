@@ -13,16 +13,6 @@
       "description": "Retrieve aggregated assignment data"
     },
     {
-      "name": "list",
-      "path": "/api/v2/learning/assignments",
-      "description": "List of Learning module Assignments"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/learning/assignments",
-      "description": "Create Learning Assignment"
-    },
-    {
       "name": "get",
       "path": "/api/v2/learning/assignments/{assignmentId}",
       "description": "Get Learning Assignment"
@@ -46,6 +36,16 @@
       "name": "list",
       "path": "/api/v2/learning/assignments/me",
       "description": "List of Learning Assignments assigned to current user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/learning/assignments",
+      "description": "List of Learning module Assignments"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/assignments",
+      "description": "Create Learning Assignment"
     },
     {
       "name": "create",
@@ -164,8 +164,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/learning/scheduleslots/jobs",
-      "description": "Start job to retrieve slots where a learning activity can be scheduled."
+      "path": "/api/v2/learning/scheduleslots/query",
+      "description": "Get list of possible slots where a learning activity can be scheduled."
     },
     {
       "name": "get",
@@ -174,8 +174,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/learning/scheduleslots/query",
-      "description": "Get list of possible slots where a learning activity can be scheduled."
+      "path": "/api/v2/learning/scheduleslots/jobs",
+      "description": "Start job to retrieve slots where a learning activity can be scheduled."
     },
     {
       "name": "get",
@@ -186,6 +186,11 @@
       "name": "create",
       "path": "/api/v2/learning/scorm",
       "description": "Create a SCORM package upload request"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/modules/{moduleId}/rule/migrate",
+      "description": "Migrate a legacy learning module rule to a users rule."
     }
   ]
 }

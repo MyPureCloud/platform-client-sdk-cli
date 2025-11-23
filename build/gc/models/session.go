@@ -132,13 +132,13 @@ type SessionDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
-
-
-    
-
-
-    
 
 
     
@@ -158,6 +158,10 @@ type SessionDud struct {
 type Session struct { 
     // Id - The ID of the session.
     Id string `json:"id"`
+
+
+    // ExternalContact - The external contact associated with this session.
+    ExternalContact Addressableentityref `json:"externalContact"`
 
 
     // CustomerId - Primary identifier of the customer in the source where the events for the session originate from.
@@ -272,6 +276,10 @@ type Session struct {
     LastEvent Sessionlastevent `json:"lastEvent"`
 
 
+    // Conversation - The conversation for this session.
+    Conversation Addressableentityref `json:"conversation"`
+
+
     // LastConnectedQueue - The last queue connected to this session.
     LastConnectedQueue Connectedqueue `json:"lastConnectedQueue"`
 
@@ -327,10 +335,6 @@ type Session struct {
     EndedDate time.Time `json:"endedDate"`
 
 
-    // ExternalContact - The external contact associated with this session.
-    ExternalContact Addressableentityref `json:"externalContact"`
-
-
     // AwayDate - Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     AwayDate time.Time `json:"awayDate"`
 
@@ -338,14 +342,11 @@ type Session struct {
     // IdleDate - Timestamp indicating when the visitor should be considered as idle. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     IdleDate time.Time `json:"idleDate"`
 
-
-    // Conversation - The conversation for this session.
-    Conversation Addressableentityref `json:"conversation"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Session) String() string {
+    
     
     
     
@@ -378,6 +379,7 @@ func (o *Session) String() string {
     
     
     
+    
      o.ConversationChannels = []Conversationchannel{{}} 
     
     
@@ -385,8 +387,6 @@ func (o *Session) String() string {
     
     
      o.DivisionIds = []string{""} 
-    
-    
     
     
     
@@ -410,6 +410,8 @@ func (u *Session) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Id string `json:"id"`
+        
+        ExternalContact Addressableentityref `json:"externalContact"`
         
         CustomerId string `json:"customerId"`
         
@@ -467,6 +469,8 @@ func (u *Session) MarshalJSON() ([]byte, error) {
         
         LastEvent Sessionlastevent `json:"lastEvent"`
         
+        Conversation Addressableentityref `json:"conversation"`
+        
         LastConnectedQueue Connectedqueue `json:"lastConnectedQueue"`
         
         LastConnectedUser Connecteduser `json:"lastConnectedUser"`
@@ -493,15 +497,14 @@ func (u *Session) MarshalJSON() ([]byte, error) {
         
         EndedDate time.Time `json:"endedDate"`
         
-        ExternalContact Addressableentityref `json:"externalContact"`
-        
         AwayDate time.Time `json:"awayDate"`
         
         IdleDate time.Time `json:"idleDate"`
-        
-        Conversation Addressableentityref `json:"conversation"`
         *Alias
     }{
+
+        
+
 
         
 
@@ -610,6 +613,9 @@ func (u *Session) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
         ConversationChannels: []Conversationchannel{{}},
         
 
@@ -631,12 +637,6 @@ func (u *Session) MarshalJSON() ([]byte, error) {
 
         
         DivisionIds: []string{""},
-        
-
-
-        
-
-
         
 
 

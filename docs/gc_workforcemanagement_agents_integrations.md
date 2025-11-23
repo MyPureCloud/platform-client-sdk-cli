@@ -1,10 +1,10 @@
 ## gc workforcemanagement agents integrations
 
-/api/v2/workforcemanagement/agents/integrations
+/api/v2/workforcemanagement/agents/{agentId}/integrations
 
 ### Synopsis
 
-/api/v2/workforcemanagement/agents/integrations
+/api/v2/workforcemanagement/agents/{agentId}/integrations
 
 ### Options
 

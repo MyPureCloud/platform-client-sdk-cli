@@ -58,6 +58,7 @@
 * [gc users routinglanguages](gc_users_routinglanguages.html)	 - /api/v2/users/{userId}/routinglanguages
 * [gc users routingskills](gc_users_routingskills.html)	 - /api/v2/users/{userId}/routingskills
 * [gc users routingstatus](gc_users_routingstatus.html)	 - /api/v2/users/{userId}/routingstatus
+* [gc users rules](gc_users_rules.html)	 - /api/v2/users/rules/{ruleId}/dependents /api/v2/users/rules
 * [gc users search](gc_users_search.html)	 - /api/v2/users/search
 * [gc users skillgroups](gc_users_skillgroups.html)	 - /api/v2/users/{userId}/skillgroups
 * [gc users state](gc_users_state.html)	 - /api/v2/users/{userId}/state

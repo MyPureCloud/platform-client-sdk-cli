@@ -1,22 +1,15 @@
-## gc taskmanagement workitems create
+## gc workforcemanagement agents me adherence historical jobs
 
-Create a workitem
+/api/v2/workforcemanagement/agents/me/adherence/historical/jobs
 
 ### Synopsis
 
-Create a workitem
-
-```
-gc taskmanagement workitems create [flags]
-```
+/api/v2/workforcemanagement/agents/me/adherence/historical/jobs
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for jobs
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,8 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc workforcemanagement agents me adherence historical](gc_workforcemanagement_agents_me_adherence_historical.html)	 - /api/v2/workforcemanagement/agents/me/adherence/historical
+* [gc workforcemanagement agents me adherence historical jobs create](gc_workforcemanagement_agents_me_adherence_historical_jobs_create.html)	 - Request an agent historical adherence report
+* [gc workforcemanagement agents me adherence historical jobs get](gc_workforcemanagement_agents_me_adherence_historical_jobs_get.html)	 - Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
 
 

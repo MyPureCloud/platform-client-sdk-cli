@@ -31,6 +31,7 @@
 
 * [gc learning modules](gc_learning_modules.html)	 - /api/v2/learning/modules
 * [gc learning modules rule get](gc_learning_modules_rule_get.html)	 - Get a learning module rule
+* [gc learning modules rule migrate](gc_learning_modules_rule_migrate.html)	 - /api/v2/learning/modules/{moduleId}/rule/migrate
 * [gc learning modules rule update](gc_learning_modules_rule_update.html)	 - Update a learning module rule
 
 

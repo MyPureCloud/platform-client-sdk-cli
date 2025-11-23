@@ -1,22 +1,15 @@
-## gc taskmanagement workitems create
+## gc learning modules rule migrate
 
-Create a workitem
+/api/v2/learning/modules/{moduleId}/rule/migrate
 
 ### Synopsis
 
-Create a workitem
-
-```
-gc taskmanagement workitems create [flags]
-```
+/api/v2/learning/modules/{moduleId}/rule/migrate
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for migrate
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc learning modules rule](gc_learning_modules_rule.html)	 - /api/v2/learning/modules/{moduleId}/rule
+* [gc learning modules rule migrate create](gc_learning_modules_rule_migrate_create.html)	 - Migrate a legacy learning module rule to a users rule.
 
 

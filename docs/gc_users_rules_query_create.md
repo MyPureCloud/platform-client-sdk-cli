@@ -1,22 +1,24 @@
-## gc taskmanagement workitems create
+## gc users rules query create
 
-Create a workitem
+Query the result of a users rule
 
 ### Synopsis
 
-Create a workitem
+Query the result of a users rule
 
 ```
-gc taskmanagement workitems create [flags]
+gc users rules query create [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -d, --directory string    Directory path with files containing request bodies
+  -f, --file string         File name containing the JSON body
+  -h, --help                help for create
+      --pageNumber string   Page number (default "1")
+      --pageSize string     Number of results per page (default "25")
+  -b, --printrequestbody    Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +38,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc users rules query](gc_users_rules_query.html)	 - /api/v2/users/rules/query
 
 

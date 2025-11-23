@@ -1,22 +1,15 @@
-## gc taskmanagement workitems create
+## gc workforcemanagement agents me adherence historical
 
-Create a workitem
+/api/v2/workforcemanagement/agents/me/adherence/historical
 
 ### Synopsis
 
-Create a workitem
-
-```
-gc taskmanagement workitems create [flags]
-```
+/api/v2/workforcemanagement/agents/me/adherence/historical
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for historical
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc workforcemanagement agents me adherence](gc_workforcemanagement_agents_me_adherence.html)	 - /api/v2/workforcemanagement/agents/me/adherence
+* [gc workforcemanagement agents me adherence historical jobs](gc_workforcemanagement_agents_me_adherence_historical_jobs.html)	 - /api/v2/workforcemanagement/agents/me/adherence/historical/jobs
 
 

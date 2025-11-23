@@ -1,22 +1,15 @@
-## gc taskmanagement workitems create
+## gc users rules dependents
 
-Create a workitem
+/api/v2/users/rules/{ruleId}/dependents/{ruleType} /api/v2/users/rules/{ruleId}/dependents
 
 ### Synopsis
 
-Create a workitem
-
-```
-gc taskmanagement workitems create [flags]
-```
+/api/v2/users/rules/{ruleId}/dependents/{ruleType} /api/v2/users/rules/{ruleId}/dependents
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for dependents
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,8 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc users rules](gc_users_rules.html)	 - /api/v2/users/rules/{ruleId}/dependents /api/v2/users/rules
+* [gc users rules dependents get](gc_users_rules_dependents_get.html)	 - Get dependent of a users rule
+* [gc users rules dependents list](gc_users_rules_dependents_list.html)	 - Get dependents for a users rule
 
 

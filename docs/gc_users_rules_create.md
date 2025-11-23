@@ -1,13 +1,13 @@
-## gc taskmanagement workitems create
+## gc users rules create
 
-Create a workitem
+Create a new rule
 
 ### Synopsis
 
-Create a workitem
+Create a new rule
 
 ```
-gc taskmanagement workitems create [flags]
+gc users rules create [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc users rules](gc_users_rules.html)	 - /api/v2/users/rules/{ruleId}/dependents /api/v2/users/rules
 
 

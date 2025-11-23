@@ -1,19 +1,20 @@
-## gc taskmanagement workitems create
+## gc workforcemanagement agents me adherence historical jobs create
 
-Create a workitem
+Request an agent historical adherence report
 
 ### Synopsis
 
-Create a workitem
+Request an agent historical adherence report
 
 ```
-gc taskmanagement workitems create [flags]
+gc workforcemanagement agents me adherence historical jobs create [flags]
 ```
 
 ### Options
 
 ```
   -d, --directory string   Directory path with files containing request bodies
+      --expand strings     Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities. Valid values: exceptionInfo, actuals, scheduledActivities, conformance
   -f, --file string        File name containing the JSON body
   -h, --help               help for create
   -b, --printrequestbody   Print the request body format of the API.
@@ -36,6 +37,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc workforcemanagement agents me adherence historical jobs](gc_workforcemanagement_agents_me_adherence_historical_jobs.html)	 - /api/v2/workforcemanagement/agents/me/adherence/historical/jobs
 
 

@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement agents](gc_workforcemanagement_agents.html)	 - /api/v2/workforcemanagement/agents
+* [gc workforcemanagement agents me adherence](gc_workforcemanagement_agents_me_adherence.html)	 - /api/v2/workforcemanagement/agents/me/adherence
 * [gc workforcemanagement agents me managementunit](gc_workforcemanagement_agents_me_managementunit.html)	 - /api/v2/workforcemanagement/agents/me/managementunit
 * [gc workforcemanagement agents me possibleworkshifts](gc_workforcemanagement_agents_me_possibleworkshifts.html)	 - /api/v2/workforcemanagement/agents/me/possibleworkshifts
 

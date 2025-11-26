@@ -19,7 +19,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-//CommandService holds the method signatures for all common Command object invocations
+// CommandService holds the method signatures for all common Command object invocations
 type CommandService interface {
 	Get(uri string) (string, error)
 	Head(uri string) (string, error)
@@ -53,7 +53,7 @@ var (
 	hasReAuthenticated bool
 )
 
-//NewCommandService initializes a new command Service object
+// NewCommandService initializes a new command Service object
 func NewCommandService(cmd *cobra.Command) *commandService {
 	return &commandService{cmd: cmd}
 }
@@ -61,6 +61,7 @@ func NewCommandService(cmd *cobra.Command) *commandService {
 func (c *commandService) Stream(uri string) (string, error) {
 	profileName, _ := c.cmd.Root().Flags().GetString("profile")
 	config, err := configGetConfig(profileName)
+	consecutiveEmptyPages := 0
 	if err != nil {
 		return "", err
 	}
@@ -93,7 +94,12 @@ func (c *commandService) Stream(uri string) (string, error) {
 	case cursorPagination:
 		cursor, cursorQueryParamName := getCursorAndQueryParamName(firstPage)
 		pagedURI := updateCursorPagingURI(uri, cursorQueryParamName, cursor)
-		for ok := true; ok; ok = cursor != "" {
+		//This verification is necessary for some API endpoints with infinite nextUri like getting organizations limits changerequests endpoint
+		nbPageResults := getPageObjectsLength(firstPage)
+		if nbPageResults == 0 {
+			consecutiveEmptyPages++
+		}
+		for ok := true; ok; ok = cursor != "" && consecutiveEmptyPages < 3 {
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
 			retryFunc := retry.Retry(pagedURI, restClient.Get)
@@ -106,6 +112,12 @@ func (c *commandService) Stream(uri string) (string, error) {
 			err = json.Unmarshal([]byte(data), pageData)
 			if err != nil {
 				return "", err
+			}
+			nbPageResults = getPageObjectsLength(pageData)
+			if nbPageResults == 0 {
+				consecutiveEmptyPages++
+			} else {
+				consecutiveEmptyPages = 0
 			}
 
 			if pageDataMap[data] {
@@ -191,6 +203,7 @@ func (c *commandService) Stream(uri string) (string, error) {
 func (c *commandService) List(uri string) (string, error) {
 	profileName, _ := c.cmd.Root().Flags().GetString("profile")
 	config, err := configGetConfig(profileName)
+	consecutiveEmptyPages := 0
 	if err != nil {
 		return "", err
 	}
@@ -229,7 +242,12 @@ func (c *commandService) List(uri string) (string, error) {
 	case cursorPagination:
 		cursor, cursorQueryParamName := getCursorAndQueryParamName(firstPage)
 		pagedURI := updateCursorPagingURI(uri, cursorQueryParamName, cursor)
-		for ok := true; ok; ok = cursor != "" {
+		//This verification is necessary for some API endpoints with infinite nextUri like getting organizations limits changerequests endpoint
+		nbPageResults := getPageObjectsLength(firstPage)
+		if nbPageResults == 0 {
+			consecutiveEmptyPages++
+		}
+		for ok := true; ok; ok = cursor != "" && consecutiveEmptyPages < 3 {
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
 			retryFunc := retry.Retry(pagedURI, restClient.Get)
@@ -242,6 +260,12 @@ func (c *commandService) List(uri string) (string, error) {
 			err = json.Unmarshal([]byte(data), pageData)
 			if err != nil {
 				return "", err
+			}
+			nbPageResults = getPageObjectsLength(pageData)
+			if nbPageResults == 0 {
+				consecutiveEmptyPages++
+			} else {
+				consecutiveEmptyPages = 0
 			}
 
 			if pageDataMap[data] {
@@ -370,6 +394,22 @@ func getPageObjects(entities *models.Entities) []json.RawMessage {
 	}
 
 	return entities.Conversations
+}
+
+func getPageObjectsLength(entities *models.Entities) int {
+	if len(entities.Resources) > 0 {
+		return len(entities.Resources)
+	}
+
+	if len(entities.Entities) > 0 {
+		return len(entities.Entities)
+	}
+
+	if len(entities.Conversations) > 0 {
+		return len(entities.Conversations)
+	}
+
+	return 0
 }
 
 func updateCursorPagingURI(pagedURI, paramName, cursor string) string {

@@ -4544,6 +4544,7 @@ gc/models/recipientlisting.go
 gc/models/recipientrequest.go
 gc/models/recognition.go
 gc/models/recognitionbase.go
+gc/models/recognitions.go
 gc/models/record.go
 gc/models/recordersstate.go
 gc/models/recording.go
@@ -4568,6 +4569,8 @@ gc/models/recordingjobentitylisting.go
 gc/models/recordingjobfailedrecording.go
 gc/models/recordingjobsquery.go
 gc/models/recordinglocation.go
+gc/models/recordingmessagereceipt.go
+gc/models/recordingmessagereceiptreason.go
 gc/models/recordingmessagingmessage.go
 gc/models/recordingmetadata.go
 gc/models/recordingnotificationtemplate.go

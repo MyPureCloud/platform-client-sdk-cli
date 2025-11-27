@@ -393,6 +393,11 @@
       "description": "Search users assigned to teams"
     },
     {
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
+    },
+    {
       "name": "list",
       "path": "/api/v2/users/development/activities",
       "description": "Get list of Development Activities"
@@ -401,11 +406,6 @@
       "name": "list",
       "path": "/api/v2/users/development/activities/me",
       "description": "Get list of Development Activities for current user"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
     },
     {
       "name": "create",
@@ -428,14 +428,14 @@
       "description": "Search manage queue member"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
-      "description": "Get dependent of a users rule"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/rules/{ruleId}/dependents",
       "description": "Get dependents for a users rule"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
+      "description": "Get dependent of a users rule"
     },
     {
       "name": "get",
@@ -453,16 +453,6 @@
       "description": "Update an existing users rule"
     },
     {
-      "name": "list",
-      "path": "/api/v2/users/rules",
-      "description": "Get the list of users rules"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/rules",
-      "description": "Create a new rule"
-    },
-    {
       "name": "create",
       "path": "/api/v2/users/rules/query",
       "description": "Query the result of a users rule"
@@ -471,6 +461,16 @@
       "name": "get",
       "path": "/api/v2/users/rules/settings/{ruleType}",
       "description": "Get the settings for a specific users rule type"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/rules",
+      "description": "Get the list of users rules"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/rules",
+      "description": "Create a new rule"
     }
   ]
 }

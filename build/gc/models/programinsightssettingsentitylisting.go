@@ -60,24 +60,24 @@ type Programinsightssettingsentitylisting struct {
     Total int `json:"total"`
 
 
+    // LastUri
+    LastUri string `json:"lastUri"`
+
+
     // FirstUri
     FirstUri string `json:"firstUri"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
+    // SelfUri
+    SelfUri string `json:"selfUri"`
 
 
     // NextUri
     NextUri string `json:"nextUri"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // PageCount
@@ -122,15 +122,15 @@ func (u *Programinsightssettingsentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
+        LastUri string `json:"lastUri"`
+        
         FirstUri string `json:"firstUri"`
         
-        PreviousUri string `json:"previousUri"`
+        SelfUri string `json:"selfUri"`
         
         NextUri string `json:"nextUri"`
         
-        LastUri string `json:"lastUri"`
-        
-        SelfUri string `json:"selfUri"`
+        PreviousUri string `json:"previousUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

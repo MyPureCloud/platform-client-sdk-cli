@@ -23,7 +23,7 @@ type WorkitemqueryjobfilterDud struct {
 
 // Workitemqueryjobfilter
 type Workitemqueryjobfilter struct { 
-    // Name - Attribute name.
+    // Name - Attribute name. Valid filter names are: 'workbinId', 'id', 'typeId', 'priority', 'dateCreated', 'dateDue', 'statusId', 'dateClosed', 'externalContactId', 'assigneeId', 'assignmentState', 'queueId', 'externalTag', 'divisionId'
     Name string `json:"name"`
 
 

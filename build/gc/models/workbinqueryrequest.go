@@ -40,7 +40,7 @@ type Workbinqueryrequest struct {
     VarSelect string `json:"select"`
 
 
-    // Filters - List of filter objects to be used in the search.
+    // Filters - List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'description', 'divisionId', 'dateCreated', 'dateModified', 'modifiedBy'
     Filters []Workitemfilter `json:"filters"`
 
 

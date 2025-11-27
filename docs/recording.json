@@ -123,14 +123,14 @@
       "description": "Validate encryption key configurations without saving it"
     },
     {
-      "name": "get",
-      "path": "/api/v2/recording/batchrequests/{jobId}",
-      "description": "Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results."
-    },
-    {
       "name": "create",
       "path": "/api/v2/recording/batchrequests",
       "description": "Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/recording/batchrequests/{jobId}",
+      "description": "Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results."
     },
     {
       "name": "list",

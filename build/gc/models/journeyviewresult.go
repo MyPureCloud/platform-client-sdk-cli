@@ -13,10 +13,16 @@ var (
 type JourneyviewresultDud struct { 
     Elements []Journeyviewresultelement `json:"elements"`
 
+
+    Charts []Journeyviewchartresult `json:"charts"`
+
 }
 
 // Journeyviewresult - A journey view result
 type Journeyviewresult struct { 
+    
+
+
     
 
 }
@@ -41,6 +47,9 @@ func (u *Journeyviewresult) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

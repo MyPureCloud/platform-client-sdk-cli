@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("employeeengagement_recognitions", "SWAGGER_OVERRIDE_/api/v2/employeeengagement/recognitions", "SWAGGER_OVERRIDE_/api/v2/employeeengagement/recognitions", )
+	Description = utils.FormatUsageDescription("employeeengagement_recognitions", "SWAGGER_OVERRIDE_/api/v2/employeeengagement/recognitions", "SWAGGER_OVERRIDE_/api/v2/employeeengagement/recognitions", "SWAGGER_OVERRIDE_/api/v2/employeeengagement/recognitions", )
 	employeeengagement_recognitionsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("employeeengagement_recognitions"),
 		Short: Description,
@@ -67,6 +67,27 @@ func Cmdemployeeengagement_recognitions() *cobra.Command {
   }
 }`)
 	employeeengagement_recognitionsCmd.AddCommand(getCmd)
+
+	utils.AddFlag(listCmd.Flags(), "string", "direction", "received", "The direction of the recognitions. Valid values: sent, received")
+	utils.AddFlag(listCmd.Flags(), "string", "recipient", "", "The ID of the recipient (when direction is sent).")
+	utils.AddFlag(listCmd.Flags(), "time.Time", "dateStart", "", "The start date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+	utils.AddFlag(listCmd.Flags(), "time.Time", "dateEnd", "", "The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "100", "Page size")
+	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/employeeengagement/recognitions", utils.FormatPermissions([]string{ "engagement:recognition:view",  }), utils.GenerateDevCentreLink("GET", "Employee Engagement", "/api/v2/employeeengagement/recognitions")))
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+	
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
+  }
+}`)
+	employeeengagement_recognitionsCmd.AddCommand(listCmd)
 	return employeeengagement_recognitionsCmd
 }
 
@@ -176,6 +197,93 @@ var getCmd = &cobra.Command{
 		}
 
 		const opId = "get"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var listCmd = &cobra.Command{
+	Use:   "list",
+	Short: "Gets sent recognitions",
+	Long:  "Gets sent recognitions",
+	Args:  utils.DetermineArgs([]string{ }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/employeeengagement/recognitions"
+
+		direction := utils.GetFlag(cmd.Flags(), "string", "direction")
+		if direction != "" {
+			queryParams["direction"] = direction
+		}
+		recipient := utils.GetFlag(cmd.Flags(), "string", "recipient")
+		if recipient != "" {
+			queryParams["recipient"] = recipient
+		}
+		dateStart := utils.GetFlag(cmd.Flags(), "time.Time", "dateStart")
+		if dateStart != "" {
+			queryParams["dateStart"] = dateStart
+		}
+		dateEnd := utils.GetFlag(cmd.Flags(), "time.Time", "dateEnd")
+		if dateEnd != "" {
+			queryParams["dateEnd"] = dateEnd
+		}
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
+		if pageNumber != "" {
+			queryParams["pageNumber"] = pageNumber
+		}
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		const opId = "list"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file

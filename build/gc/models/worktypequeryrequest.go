@@ -40,7 +40,7 @@ type Worktypequeryrequest struct {
     VarSelect string `json:"select"`
 
 
-    // Filters - List of filter objects to be used in the search.
+    // Filters - List of filter objects to be used in the search. Valid filter names are: 'divisionId', 'id', 'name', 'description', 'defaultWorkbinId', 'defaultDurationSeconds', 'defaultExpirationSeconds', 'defaultDueDurationSeconds', 'defaultPriority', 'defaultLanguageId', 'defaultTtlSeconds', 'assignmentEnabled', 'defaultQueueId', 'schemaId', 'schemaVersion', 'dateCreated', 'dateModified', 'modifiedBy'
     Filters []Workitemfilter `json:"filters"`
 
 

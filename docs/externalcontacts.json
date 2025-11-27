@@ -59,6 +59,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/add",
+      "description": "Bulk add organizations"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/organizations/remove",
       "description": "Bulk remove organizations"
     },
@@ -84,16 +89,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/organizations/add",
-      "description": "Bulk add organizations"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/relationships/add",
-      "description": "Bulk add relationships"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/remove",
       "description": "Bulk remove relationships"
     },
@@ -106,6 +101,11 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/update",
       "description": "Bulk update relationships"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/relationships/add",
+      "description": "Bulk add relationships"
     },
     {
       "name": "get",

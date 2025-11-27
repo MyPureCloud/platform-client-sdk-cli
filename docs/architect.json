@@ -78,6 +78,21 @@
       "description": "Creates a new emergency group"
     },
     {
+      "name": "get",
+      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}",
+      "description": "Get a grammar language."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}",
+      "description": "Delete specified grammar language"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}",
+      "description": "Updates a grammar language"
+    },
+    {
       "name": "create",
       "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice",
       "description": "Creates a presigned URL for uploading a grammar voice mode file"
@@ -96,21 +111,6 @@
       "name": "delete",
       "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf",
       "description": "Clear the DTMF mode file for the grammar language if there is one"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}",
-      "description": "Get a grammar language."
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}",
-      "description": "Delete specified grammar language"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}",
-      "description": "Updates a grammar language"
     },
     {
       "name": "create",

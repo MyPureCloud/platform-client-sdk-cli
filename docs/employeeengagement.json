@@ -23,6 +23,11 @@
       "description": "Gets a single recognition"
     },
     {
+      "name": "list",
+      "path": "/api/v2/employeeengagement/recognitions",
+      "description": "Gets sent recognitions"
+    },
+    {
       "name": "create",
       "path": "/api/v2/employeeengagement/recognitions",
       "description": "Creates a recognition"

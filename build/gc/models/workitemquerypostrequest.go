@@ -43,7 +43,7 @@ type Workitemquerypostrequest struct {
     VarSelect string `json:"select"`
 
 
-    // Filters - List of filter objects to be used in the search.
+    // Filters - List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'description', 'languageId', 'priority', 'dateCreated', 'dateModified', 'dateDue', 'dateExpires', 'durationInSeconds', 'ttl', 'statusId', 'statusCategory', 'dateClosed', 'externalContactId', 'reporterId', 'queueId', 'externalTag', 'modifiedBy', 'assignmentState', 'divisionId', 'customFields.<custom field name>'
     Filters []Workitemfilter `json:"filters"`
 
 

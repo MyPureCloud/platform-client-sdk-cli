@@ -3,21 +3,6 @@
   "description": "/api/v2/audits",
   "resources": [
     {
-      "name": "get",
-      "path": "/api/v2/audits/query/servicemapping",
-      "description": "Get service mapping information used in audits."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/audits/query/realtime/servicemapping",
-      "description": "Get service mapping information used in realtime audits."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/audits/query/realtime",
-      "description": "This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits."
-    },
-    {
       "name": "create",
       "path": "/api/v2/audits/query",
       "description": "Create audit query execution"
@@ -34,8 +19,23 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/audits/query/realtime",
+      "description": "This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits."
+    },
+    {
+      "name": "create",
       "path": "/api/v2/audits/query/realtime/related",
       "description": "Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/audits/query/servicemapping",
+      "description": "Get service mapping information used in audits."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/audits/query/realtime/servicemapping",
+      "description": "Get service mapping information used in realtime audits."
     }
   ]
 }

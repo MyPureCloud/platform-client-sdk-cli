@@ -199,23 +199,23 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/insights/details",
-      "description": "Get insights details for the current user"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/gamification/insights/users/{userId}/details",
       "description": "Get insights details for the user"
     },
     {
-      "name": "list",
-      "path": "/api/v2/gamification/insights/members",
-      "description": "Query users in a profile during a period of time"
+      "name": "get",
+      "path": "/api/v2/gamification/insights/details",
+      "description": "Get insights details for the current user"
     },
     {
       "name": "list",
       "path": "/api/v2/gamification/insights/managers",
       "description": "Query managers in a profile during a period of time"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/insights/members",
+      "description": "Query users in a profile during a period of time"
     },
     {
       "name": "get",
@@ -264,6 +264,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends",
+      "description": "Average performance values trends by metric of the requesting user"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends",
       "description": "Average performance values trends by metric of a division or a performance profile"
     },
@@ -271,11 +276,6 @@
       "name": "getusertrends",
       "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends",
       "description": "Average performance values trends by metric of a user"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends",
-      "description": "Average performance values trends by metric of the requesting user"
     },
     {
       "name": "get",

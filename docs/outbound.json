@@ -343,16 +343,6 @@
       "description": "Delete Contact List Template"
     },
     {
-      "name": "create",
-      "path": "/api/v2/outbound/contactlisttemplates/bulk/add",
-      "description": "Add multiple contact list templates"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/outbound/contactlisttemplates/bulk/retrieve",
-      "description": "Get multiple contact list templates"
-    },
-    {
       "name": "list",
       "path": "/api/v2/outbound/contactlisttemplates",
       "description": "Query a list of contact list templates"
@@ -366,6 +356,16 @@
       "name": "deleteall",
       "path": "/api/v2/outbound/contactlisttemplates",
       "description": "Delete multiple contact list templates."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlisttemplates/bulk/add",
+      "description": "Add multiple contact list templates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlisttemplates/bulk/retrieve",
+      "description": "Get multiple contact list templates"
     },
     {
       "name": "list",
@@ -414,13 +414,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove",
-      "description": "Start an async job to delete contacts using a filter."
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk",
+      "description": "Get contacts from a contact list."
     },
     {
       "name": "create",
-      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk",
-      "description": "Get contacts from a contact list."
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove",
+      "description": "Start an async job to delete contacts using a filter."
     },
     {
       "name": "create",

@@ -32,5 +32,6 @@
 * [gc employeeengagement](gc_employeeengagement.html)	 - /api/v2/employeeengagement
 * [gc employeeengagement recognitions create](gc_employeeengagement_recognitions_create.html)	 - Creates a recognition
 * [gc employeeengagement recognitions get](gc_employeeengagement_recognitions_get.html)	 - Gets a single recognition
+* [gc employeeengagement recognitions list](gc_employeeengagement_recognitions_list.html)	 - Gets sent recognitions
 
 

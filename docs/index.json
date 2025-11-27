@@ -1292,6 +1292,7 @@
   "gc_employeeengagement.md",
   "gc_employeeengagement_recognitions_create.md",
   "gc_employeeengagement_recognitions_get.md",
+  "gc_employeeengagement_recognitions_list.md",
   "gc_employeeengagement_recognitions.md",
   "gc_employeeperformance_externalmetrics_data_create.md",
   "gc_employeeperformance_externalmetrics_data.md",

@@ -24,6 +24,7 @@ gc outbound messagingcampaigns list [flags]
       --name string                   Name
       --pageNumber string             Page number (default "1")
       --pageSize string               Page size. The max that will be returned is 100. (default "25")
+      --ruleSetIds strings            Ruleset ID(s)
       --senderSmsPhoneNumber string   Sender SMS Phone Number
       --sortBy string                 The field to sort by Valid values: campaignStatus, name, type
       --sortOrder string              The direction to sort Valid values: ascending, descending

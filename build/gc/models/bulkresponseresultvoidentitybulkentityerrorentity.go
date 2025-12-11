@@ -22,6 +22,9 @@ type BulkresponseresultvoidentitybulkentityerrorentityDud struct {
 
     
 
+
+    
+
 }
 
 // Bulkresponseresultvoidentitybulkentityerrorentity
@@ -41,6 +44,10 @@ type Bulkresponseresultvoidentitybulkentityerrorentity struct {
     // VarError - An error describing why this Bulk operation failed. Only returned on failure.
     VarError Bulkentityerrorentity `json:"error"`
 
+
+    // Status - Status Code for the requested operation.
+    Status int `json:"status"`
+
 }
 
 // String returns a JSON representation of the model
@@ -48,6 +55,7 @@ func (o *Bulkresponseresultvoidentitybulkentityerrorentity) String() string {
     
     
      o.Entity = Interface{} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -73,6 +81,8 @@ func (u *Bulkresponseresultvoidentitybulkentityerrorentity) MarshalJSON() ([]byt
         Entity interface{} `json:"entity"`
         
         VarError Bulkentityerrorentity `json:"error"`
+        
+        Status int `json:"status"`
         *Alias
     }{
 
@@ -84,6 +94,9 @@ func (u *Bulkresponseresultvoidentitybulkentityerrorentity) MarshalJSON() ([]byt
 
         
         Entity: Interface{},
+        
+
+
         
 
 

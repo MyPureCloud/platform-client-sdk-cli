@@ -33,9 +33,6 @@ type SocialtopicresponseDud struct {
     
 
 
-    
-
-
     SelfUri string `json:"selfUri"`
 
 }
@@ -70,10 +67,6 @@ type Socialtopicresponse struct {
     Status string `json:"status"`
 
 
-    // DataIngestionRulesMetadata - The data ingestion rule metadata.
-    DataIngestionRulesMetadata []Dataingestionrulesmetadata `json:"dataIngestionRulesMetadata"`
-
-
     
 
 }
@@ -87,7 +80,6 @@ func (o *Socialtopicresponse) String() string {
     
     
     
-     o.DataIngestionRulesMetadata = []Dataingestionrulesmetadata{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -118,8 +110,6 @@ func (u *Socialtopicresponse) MarshalJSON() ([]byte, error) {
         DivisionId string `json:"divisionId"`
         
         Status string `json:"status"`
-        
-        DataIngestionRulesMetadata []Dataingestionrulesmetadata `json:"dataIngestionRulesMetadata"`
         *Alias
     }{
 
@@ -141,11 +131,6 @@ func (u *Socialtopicresponse) MarshalJSON() ([]byte, error) {
         
 
 
-        
-
-
-        
-        DataIngestionRulesMetadata: []Dataingestionrulesmetadata{{}},
         
 
 

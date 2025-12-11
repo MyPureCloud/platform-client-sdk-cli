@@ -36,7 +36,7 @@ func Cmdconversations_recordings() *cobra.Command {
 	utils.AddFlag(getCmd.Flags(), "string", "fileName", "", "the name of the downloaded fileName")
 	utils.AddFlag(getCmd.Flags(), "string", "locale", "", "The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code")
 	utils.AddFlag(getCmd.Flags(), "[]string", "mediaFormats", "", "All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -56,7 +56,7 @@ func Cmdconversations_recordings() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "mediaFormats", "", "All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.")
 	utils.AddFlag(listCmd.Flags(), "string", "locale", "", "The locale used for redacting sensitive information in requested files, as an ISO 639-1 code")
 	utils.AddFlag(listCmd.Flags(), "bool", "includePauseAnnotationsForScreenRecordings", "false", "Include applicable Secure Pause annotations from all audio recordings to all screen recordings")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -75,7 +75,7 @@ func Cmdconversations_recordings() *cobra.Command {
 	conversations_recordingsCmd.AddCommand(listCmd)
 
 	utils.AddFlag(updateCmd.Flags(), "bool", "clearExport", "", "Whether to clear the pending export for the recording")
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recording:editRetention", "recording:screenRecording:editRetention",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recording:editRetention", "recording:screenRecording:editRetention", "recording:snippetRecording:view", "recording:snippetRecording:editRetention",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "recording",
   "content" : {

@@ -363,19 +363,14 @@
       "description": "Create synchronization job"
     },
     {
-      "name": "list",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations",
-      "description": "Get operations"
-    },
-    {
       "name": "get",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query",
       "description": "Get ids of operation creator users and oauth clients"
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
-      "description": "Import the parsed articles"
+      "name": "list",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations",
+      "description": "Get operations"
     },
     {
       "name": "get",
@@ -389,8 +384,18 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
+      "description": "Import the parsed articles"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs",
       "description": "Create parse job"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search",
+      "description": "Search the documents in a knowledge base."
     },
     {
       "name": "update",
@@ -401,11 +406,6 @@
       "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions",
       "description": "Query the knowledge documents to provide suggestions for auto completion."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search",
-      "description": "Search the documents in a knowledge base."
     },
     {
       "name": "create",

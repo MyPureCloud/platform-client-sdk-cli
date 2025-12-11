@@ -28,6 +28,11 @@
       "description": "Create a new annotation."
     },
     {
+      "name": "create",
+      "path": "/api/v2/coaching/appointments/{appointmentId}/conversations",
+      "description": "Add a conversation to an appointment"
+    },
+    {
       "name": "get",
       "path": "/api/v2/coaching/appointments/{appointmentId}",
       "description": "Retrieve an appointment"
@@ -41,11 +46,6 @@
       "name": "update",
       "path": "/api/v2/coaching/appointments/{appointmentId}",
       "description": "Update an existing appointment"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/coaching/appointments/{appointmentId}/conversations",
-      "description": "Add a conversation to an appointment"
     },
     {
       "name": "list",
@@ -88,11 +88,6 @@
       "description": "Retrieve the list of your notifications."
     },
     {
-      "name": "get",
-      "path": "/api/v2/coaching/scheduleslots/jobs/{jobId}",
-      "description": "Retrieve the status of the job for the slots where a coaching appointment can be scheduled."
-    },
-    {
       "name": "create",
       "path": "/api/v2/coaching/scheduleslots/query",
       "description": "Get list of possible slots where a coaching appointment can be scheduled."
@@ -101,6 +96,11 @@
       "name": "create",
       "path": "/api/v2/coaching/scheduleslots/jobs",
       "description": "Start job to retrieve the slots where a coaching appointment can be scheduled."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/coaching/scheduleslots/jobs/{jobId}",
+      "description": "Retrieve the status of the job for the slots where a coaching appointment can be scheduled."
     },
     {
       "name": "list",

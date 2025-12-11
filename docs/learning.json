@@ -13,6 +13,16 @@
       "description": "Retrieve aggregated assignment data"
     },
     {
+      "name": "list",
+      "path": "/api/v2/learning/assignments",
+      "description": "List of Learning module Assignments"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/assignments",
+      "description": "Create Learning Assignment"
+    },
+    {
       "name": "get",
       "path": "/api/v2/learning/assignments/{assignmentId}",
       "description": "Get Learning Assignment"
@@ -26,16 +36,6 @@
       "name": "update",
       "path": "/api/v2/learning/assignments/{assignmentId}",
       "description": "Update Learning Assignment"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/learning/assignments",
-      "description": "List of Learning module Assignments"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/learning/assignments",
-      "description": "Create Learning Assignment"
     },
     {
       "name": "update",
@@ -83,16 +83,6 @@
       "description": "Get users for learning module rule"
     },
     {
-      "name": "get",
-      "path": "/api/v2/learning/modules/{moduleId}/jobs/{jobId}",
-      "description": "Get a specific Learning Module job status"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/learning/modules/{moduleId}/versions/{versionId}",
-      "description": "Get specific version of a published module"
-    },
-    {
       "name": "list",
       "path": "/api/v2/learning/modules",
       "description": "Get all learning modules of an organization"
@@ -101,6 +91,11 @@
       "name": "create",
       "path": "/api/v2/learning/modules",
       "description": "Create a new learning module"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/modules/{moduleId}/jobs",
+      "description": "Starts a specified operation on learning module"
     },
     {
       "name": "list",
@@ -143,9 +138,14 @@
       "description": "Publish a Learning module"
     },
     {
-      "name": "create",
-      "path": "/api/v2/learning/modules/{moduleId}/jobs",
-      "description": "Starts a specified operation on learning module"
+      "name": "get",
+      "path": "/api/v2/learning/modules/{moduleId}/jobs/{jobId}",
+      "description": "Get a specific Learning Module job status"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/learning/modules/{moduleId}/versions/{versionId}",
+      "description": "Get specific version of a published module"
     },
     {
       "name": "get",
@@ -163,11 +163,6 @@
       "description": "Update a learning module rule"
     },
     {
-      "name": "get",
-      "path": "/api/v2/learning/scheduleslots/jobs/{jobId}",
-      "description": "Retrieve the status of the job for the slots where a learning activity can be scheduled."
-    },
-    {
       "name": "create",
       "path": "/api/v2/learning/scheduleslots/query",
       "description": "Get list of possible slots where a learning activity can be scheduled."
@@ -176,6 +171,11 @@
       "name": "create",
       "path": "/api/v2/learning/scheduleslots/jobs",
       "description": "Start job to retrieve slots where a learning activity can be scheduled."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/learning/scheduleslots/jobs/{jobId}",
+      "description": "Retrieve the status of the job for the slots where a learning activity can be scheduled."
     },
     {
       "name": "get",

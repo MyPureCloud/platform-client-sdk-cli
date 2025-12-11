@@ -28,6 +28,9 @@ type ConversationnotificationtemplatebuttonDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationnotificationtemplatebutton - Template button object
@@ -52,6 +55,10 @@ type Conversationnotificationtemplatebutton struct {
     Url string `json:"url"`
 
 
+    // Payload - Content of the payload to be included in the quick reply response when the button is pressed.
+    Payload string `json:"payload"`
+
+
     // Parameters - Template parameters for placeholders in the button.
     Parameters []Conversationnotificationtemplateparameter `json:"parameters"`
 
@@ -59,6 +66,7 @@ type Conversationnotificationtemplatebutton struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationnotificationtemplatebutton) String() string {
+    
     
     
     
@@ -92,9 +100,14 @@ func (u *Conversationnotificationtemplatebutton) MarshalJSON() ([]byte, error) {
         
         Url string `json:"url"`
         
+        Payload string `json:"payload"`
+        
         Parameters []Conversationnotificationtemplateparameter `json:"parameters"`
         *Alias
     }{
+
+        
+
 
         
 

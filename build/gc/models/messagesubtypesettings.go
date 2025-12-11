@@ -13,6 +13,9 @@ var (
 type MessagesubtypesettingsDud struct { 
     
 
+
+    
+
 }
 
 // Messagesubtypesettings
@@ -20,10 +23,15 @@ type Messagesubtypesettings struct {
     // EnableAutoAnswer - Indicates if auto-answer is enabled for the given media type or subtype (default is false).  Subtype settings take precedence over media type settings.
     EnableAutoAnswer bool `json:"enableAutoAnswer"`
 
+
+    // EnableInactivityTimeout - Indicates if inactivity timeout is enabled for the given subtype.
+    EnableInactivityTimeout bool `json:"enableInactivityTimeout"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Messagesubtypesettings) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Messagesubtypesettings) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         EnableAutoAnswer bool `json:"enableAutoAnswer"`
+        
+        EnableInactivityTimeout bool `json:"enableInactivityTimeout"`
         *Alias
     }{
+
+        
+
 
         
 

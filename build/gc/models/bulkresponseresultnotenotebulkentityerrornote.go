@@ -22,6 +22,9 @@ type BulkresponseresultnotenotebulkentityerrornoteDud struct {
 
     
 
+
+    
+
 }
 
 // Bulkresponseresultnotenotebulkentityerrornote
@@ -41,10 +44,15 @@ type Bulkresponseresultnotenotebulkentityerrornote struct {
     // VarError - An error describing why this Bulk operation failed. Only returned on failure.
     VarError Bulkentityerrornote `json:"error"`
 
+
+    // Status - Status Code for the requested operation.
+    Status int `json:"status"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Bulkresponseresultnotenotebulkentityerrornote) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Bulkresponseresultnotenotebulkentityerrornote) MarshalJSON() ([]byte, e
         Entity Note `json:"entity"`
         
         VarError Bulkentityerrornote `json:"error"`
+        
+        Status int `json:"status"`
         *Alias
     }{
+
+        
+
 
         
 

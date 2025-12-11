@@ -28,6 +28,12 @@ type MessagemediasettingsDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Messagemediasettings
@@ -55,6 +61,14 @@ type Messagemediasettings struct {
     // SubTypeSettings - Map of media subtype to media subtype specific settings.
     SubTypeSettings map[string]Messagesubtypesettings `json:"subTypeSettings"`
 
+
+    // EnableInactivityTimeout - Indicates if inactivity timeout is enabled for all subtypes.
+    EnableInactivityTimeout bool `json:"enableInactivityTimeout"`
+
+
+    // InactivityTimeoutSettings - Inactivity timeout settings for messages
+    InactivityTimeoutSettings Inactivitytimeoutsettings `json:"inactivityTimeoutSettings"`
+
 }
 
 // String returns a JSON representation of the model
@@ -65,6 +79,8 @@ func (o *Messagemediasettings) String() string {
     
     
      o.SubTypeSettings = map[string]Messagesubtypesettings{"": {}} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -93,6 +109,10 @@ func (u *Messagemediasettings) MarshalJSON() ([]byte, error) {
         ManualAnswerAlertToneSeconds float64 `json:"manualAnswerAlertToneSeconds"`
         
         SubTypeSettings map[string]Messagesubtypesettings `json:"subTypeSettings"`
+        
+        EnableInactivityTimeout bool `json:"enableInactivityTimeout"`
+        
+        InactivityTimeoutSettings Inactivitytimeoutsettings `json:"inactivityTimeoutSettings"`
         *Alias
     }{
 
@@ -113,6 +133,12 @@ func (u *Messagemediasettings) MarshalJSON() ([]byte, error) {
 
         
         SubTypeSettings: map[string]Messagesubtypesettings{"": {}},
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

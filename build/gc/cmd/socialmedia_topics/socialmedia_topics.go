@@ -71,7 +71,7 @@ func Cmdsocialmedia_topics() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/SocialTopicResponse"
+        "$ref" : "#/components/schemas/SocialTopicWithDataIngestionRuleMetadataResponse"
       }
     }
   }
@@ -82,6 +82,7 @@ func Cmdsocialmedia_topics() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionIds", "", "One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeDeleted", "", "Determines whether to include soft-deleted items in the result.")
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Search for topic by name that contains the given search string, search is case insensitive")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/socialmedia/topics", utils.FormatPermissions([]string{ "socialmedia:topic:view",  }), utils.GenerateDevCentreLink("GET", "Social Media", "/api/v2/socialmedia/topics")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -366,6 +367,10 @@ var listCmd = &cobra.Command{
 		includeDeleted := utils.GetFlag(cmd.Flags(), "bool", "includeDeleted")
 		if includeDeleted != "" {
 			queryParams["includeDeleted"] = includeDeleted
+		}
+		name := utils.GetFlag(cmd.Flags(), "string", "name")
+		if name != "" {
+			queryParams["name"] = name
 		}
 		urlString := path
 		if len(queryParams) > 0 {

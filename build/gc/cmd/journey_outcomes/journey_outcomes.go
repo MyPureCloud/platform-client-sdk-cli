@@ -81,7 +81,7 @@ func Cmdjourney_outcomes() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with `-` for descending (e.g. sortBy=displayName,-createdDate).")
 	utils.AddFlag(listCmd.Flags(), "[]string", "outcomeIds", "", "IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queryFields", "", "Outcome field(s) to query on. Requires `queryValue` to also be set.")
-	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on. Requires `queryFields` to also be set.")
+	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on using fuzzy matching. Requires `queryFields` to also be set.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/outcomes", utils.FormatPermissions([]string{ "journey:outcome:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/outcomes")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

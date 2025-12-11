@@ -22,6 +22,9 @@ type BulkresponseresultexternalcontactentitybulkentityerrorentityDud struct {
 
     
 
+
+    
+
 }
 
 // Bulkresponseresultexternalcontactentitybulkentityerrorentity
@@ -41,10 +44,15 @@ type Bulkresponseresultexternalcontactentitybulkentityerrorentity struct {
     // VarError - An error describing why this Bulk operation failed. Only returned on failure.
     VarError Bulkentityerrorentity `json:"error"`
 
+
+    // Status - Status Code for the requested operation.
+    Status int `json:"status"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Bulkresponseresultexternalcontactentitybulkentityerrorentity) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Bulkresponseresultexternalcontactentitybulkentityerrorentity) MarshalJS
         Entity Externalcontact `json:"entity"`
         
         VarError Bulkentityerrorentity `json:"error"`
+        
+        Status int `json:"status"`
         *Alias
     }{
+
+        
+
 
         
 

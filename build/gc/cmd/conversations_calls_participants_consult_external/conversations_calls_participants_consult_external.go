@@ -62,8 +62,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create [conversationId] [participantId]",
-	Short: "Initiate a consult transfer to an external contact",
-	Long:  "Initiate a consult transfer to an external contact",
+	Short: "Initiate a consult transfer to an external contact (Deprecated)",
+	Long:  "Initiate a consult transfer to an external contact (Deprecated)",
 	Args:  utils.DetermineArgs([]string{ "conversationId", "participantId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

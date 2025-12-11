@@ -87,7 +87,7 @@ func Cmdknowledge_knowledgebases() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "limit", "", "Number of entities to return. Maximum of 100. Deprecated in favour of pageSize")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 100.")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by Name.")
-	utils.AddFlag(listCmd.Flags(), "string", "coreLanguage", "", "Filter by core language. Valid values: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA, cs-CZ")
+	utils.AddFlag(listCmd.Flags(), "string", "coreLanguage", "", "Filter by core language. Valid values: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA, cs-CZ, fil-PH, ms-MY, he-IL, el-GR")
 	utils.AddFlag(listCmd.Flags(), "bool", "published", "", "Filter by published status.")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by. Valid values: Name, Date")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Sort Order. Valid values: ASC, ascending, DESC, descending")

@@ -268,11 +268,6 @@
       "description": "Validate domain settings"
     },
     {
-      "name": "create",
-      "path": "/api/v2/routing/email/domains/{domainId}/testconnection",
-      "description": "Tests the custom SMTP server integration connection set on this ACD domain"
-    },
-    {
       "name": "get",
       "path": "/api/v2/routing/email/domains/{domainId}/dkim",
       "description": "Get domain dkim settings"
@@ -301,6 +296,11 @@
       "name": "create",
       "path": "/api/v2/routing/email/domains/{domainId}/mailfrom",
       "description": "Set domain mail from settings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/email/domains/{domainId}/testconnection",
+      "description": "Tests the custom SMTP server integration connection set on this ACD domain"
     },
     {
       "name": "list",
@@ -496,6 +496,11 @@
       "name": "list",
       "path": "/api/v2/routing/predictors/keyperformanceindicators",
       "description": "Get a list of Key Performance Indicators"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/predictors/keyperformanceindicators",
+      "description": "Create a custom Key Performance Indicator."
     },
     {
       "name": "list",
@@ -721,6 +726,26 @@
       "name": "create",
       "path": "/api/v2/routing/sms/phonenumbers/alphanumeric",
       "description": "Provision an alphanumeric number for SMS"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/predictors/keyperformanceindicators/{kpiId}",
+      "description": "Retrieve a single Key Performance Indicator."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/predictors/keyperformanceindicators/{kpiId}",
+      "description": "Delete a custom Key Performance Indicator."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/predictors/keyperformanceindicators/{kpiId}",
+      "description": "Update a custom Key Performance Indicator."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/predictors/keyperformanceindicatortypes",
+      "description": "Get a list of Key Performance Indicators Types available."
     }
   ]
 }

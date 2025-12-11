@@ -100,7 +100,7 @@ func Cmdrecording_jobs() *cobra.Command {
 }`)
 	recording_jobsCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/jobs/{jobId}", utils.FormatPermissions([]string{ "recording:job:edit", "recording:recording:editRetention", "recording:screenRecording:editRetention",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/jobs/{jobId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/jobs/{jobId}", utils.FormatPermissions([]string{ "recording:job:edit", "recording:recording:editRetention", "recording:screenRecording:editRetention", "recording:snippetRecording:editRetention",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "query",
   "content" : {

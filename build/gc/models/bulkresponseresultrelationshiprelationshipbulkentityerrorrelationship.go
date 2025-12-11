@@ -22,6 +22,9 @@ type BulkresponseresultrelationshiprelationshipbulkentityerrorrelationshipDud st
 
     
 
+
+    
+
 }
 
 // Bulkresponseresultrelationshiprelationshipbulkentityerrorrelationship
@@ -41,10 +44,15 @@ type Bulkresponseresultrelationshiprelationshipbulkentityerrorrelationship struc
     // VarError - An error describing why this Bulk operation failed. Only returned on failure.
     VarError Bulkentityerrorrelationship `json:"error"`
 
+
+    // Status - Status Code for the requested operation.
+    Status int `json:"status"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Bulkresponseresultrelationshiprelationshipbulkentityerrorrelationship) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Bulkresponseresultrelationshiprelationshipbulkentityerrorrelationship) 
         Entity Relationship `json:"entity"`
         
         VarError Bulkentityerrorrelationship `json:"error"`
+        
+        Status int `json:"status"`
         *Alias
     }{
+
+        
+
 
         
 

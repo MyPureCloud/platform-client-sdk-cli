@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -19,12 +20,19 @@ type RecordingmessagereceiptDud struct {
 
     
 
+
+    
+
 }
 
 // Recordingmessagereceipt
 type Recordingmessagereceipt struct { 
     // Id - The id of the message receipt. Message receipts will have the same ID as the message they reference.
     Id string `json:"id"`
+
+
+    // ReceiptTime - Original time of the event (receipt). Example: delivery receipt time, read receipt time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ReceiptTime time.Time `json:"receiptTime"`
 
 
     // Status - The message receipt status
@@ -38,6 +46,7 @@ type Recordingmessagereceipt struct {
 
 // String returns a JSON representation of the model
 func (o *Recordingmessagereceipt) String() string {
+    
     
     
      o.Reasons = []Recordingmessagereceiptreason{{}} 
@@ -60,11 +69,16 @@ func (u *Recordingmessagereceipt) MarshalJSON() ([]byte, error) {
         
         Id string `json:"id"`
         
+        ReceiptTime time.Time `json:"receiptTime"`
+        
         Status string `json:"status"`
         
         Reasons []Recordingmessagereceiptreason `json:"reasons"`
         *Alias
     }{
+
+        
+
 
         
 

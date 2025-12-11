@@ -82,7 +82,7 @@ func Cmdjourney_segments() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "isActive", "", "Determines whether or not to show only active segments.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "segmentIds", "", "IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queryFields", "", "Segment field(s) to query on. Requires `queryValue` to also be set.")
-	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on. Requires `queryFields` to also be set.")
+	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on using fuzzy matching. Requires `queryFields` to also be set.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/segments", utils.FormatPermissions([]string{ "journey:segment:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/segments")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

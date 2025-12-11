@@ -4,13 +4,13 @@
   "resources": [
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/contacts/add",
-      "description": "Bulk add contacts"
+      "path": "/api/v2/externalcontacts/bulk/contacts/remove",
+      "description": "Bulk remove contacts"
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/contacts/remove",
-      "description": "Bulk remove contacts"
+      "path": "/api/v2/externalcontacts/bulk/contacts/add",
+      "description": "Bulk add contacts"
     },
     {
       "name": "create",
@@ -89,6 +89,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/relationships/add",
+      "description": "Bulk add relationships"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/remove",
       "description": "Bulk remove relationships"
     },
@@ -101,11 +106,6 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/update",
       "description": "Bulk update relationships"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/relationships/add",
-      "description": "Bulk add relationships"
     },
     {
       "name": "get",
@@ -133,16 +133,6 @@
       "description": "Create a note for an external contact"
     },
     {
-      "name": "list",
-      "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
-      "description": "List the identifiers for a contact"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
-      "description": "Claim or release identifiers for a contact"
-    },
-    {
       "name": "get",
       "path": "/api/v2/externalcontacts/contacts/{contactId}",
       "description": "Fetch an external contact"
@@ -156,6 +146,16 @@
       "name": "delete",
       "path": "/api/v2/externalcontacts/contacts/{contactId}",
       "description": "Delete an external contact"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
+      "description": "List the identifiers for a contact"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
+      "description": "Claim or release identifiers for a contact"
     },
     {
       "name": "create",

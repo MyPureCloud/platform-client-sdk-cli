@@ -393,11 +393,6 @@
       "description": "Search users assigned to teams"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/development/activities",
       "description": "Get list of Development Activities"
@@ -406,6 +401,11 @@
       "name": "list",
       "path": "/api/v2/users/development/activities/me",
       "description": "Get list of Development Activities for current user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
     },
     {
       "name": "create",

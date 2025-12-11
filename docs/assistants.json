@@ -3,6 +3,36 @@
   "description": "/api/v2/assistants",
   "resources": [
     {
+      "name": "list",
+      "path": "/api/v2/assistants/agentchecklists/languages",
+      "description": "Get the list of supported languages"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/assistants/agentchecklists/{agentChecklistId}",
+      "description": "Get an agent checklist"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/assistants/agentchecklists/{agentChecklistId}",
+      "description": "Update an agent checklist"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/assistants/agentchecklists/{agentChecklistId}",
+      "description": "Delete an agent checklist"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/assistants/agentchecklists",
+      "description": "Get the list of agent checklists"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/assistants/agentchecklists",
+      "description": "Create an agent checklist"
+    },
+    {
       "name": "get",
       "path": "/api/v2/assistants/{assistantId}/copilot",
       "description": "Get copilot configuration of an assistant."

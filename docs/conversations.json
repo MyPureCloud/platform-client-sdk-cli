@@ -38,6 +38,11 @@
       "description": "Search conversations"
     },
     {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/assign",
+      "description": "Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages."
+    },
+    {
       "name": "get",
       "path": "/api/v2/conversations/{conversationId}",
       "description": "Get conversation"
@@ -61,11 +66,6 @@
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/disconnect",
       "description": "Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/assign",
-      "description": "Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages."
     },
     {
       "name": "update",
@@ -113,19 +113,54 @@
       "description": "Update Settings"
     },
     {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/finalize",
+      "description": "API invoked to finalize agent checklist evaluation."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}",
+      "description": "Get checklist info for a single checklist."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}",
+      "description": "Agent Checklist activation API"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs",
+      "description": "Create inference job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId}",
+      "description": "Get inference job status"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists",
+      "description": "Get information of all checklists associated with a conversation."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction",
+      "description": "API invoked to capture an agent action."
+    },
+    {
       "name": "update",
       "path": "/api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId}",
       "description": "Update after-call work for this conversation communication."
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/callbacks/bulk/update",
-      "description": "Update multiple scheduled callbacks"
+      "path": "/api/v2/conversations/callbacks/bulk/disconnect",
+      "description": "Disconnect multiple scheduled callbacks"
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/callbacks/bulk/disconnect",
-      "description": "Disconnect multiple scheduled callbacks"
+      "path": "/api/v2/conversations/callbacks/bulk/update",
+      "description": "Update multiple scheduled callbacks"
     },
     {
       "name": "list",
@@ -225,7 +260,7 @@
     {
       "name": "create",
       "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult",
-      "description": "Initiate and update consult transfer"
+      "description": "Initiate and update consult transfer (Deprecated)"
     },
     {
       "name": "delete",
@@ -236,6 +271,11 @@
       "name": "update",
       "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult",
       "description": "Change who can speak"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult",
+      "description": "Initiate voice consult transfer"
     },
     {
       "name": "create",
@@ -250,6 +290,11 @@
     {
       "name": "create",
       "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external",
+      "description": "Initiate a consult transfer to an external contact (Deprecated)"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external",
       "description": "Initiate a consult transfer to an external contact"
     },
     {
@@ -364,13 +409,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing",
-      "description": "Send a typing-indicator on behalf of a communication in a chat conversation."
+      "path": "/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages",
+      "description": "Send a message on behalf of a communication in a chat conversation."
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages",
-      "description": "Send a message on behalf of a communication in a chat conversation."
+      "path": "/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing",
+      "description": "Send a typing-indicator on behalf of a communication in a chat conversation."
     },
     {
       "name": "list",
@@ -729,16 +774,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Get the wrap-up for this conversation communication. "
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
-      "description": "Apply wrap-up for this conversation communication"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/conversations/messages/{conversationId}/messages/{messageId}",
       "description": "Get conversation message"
     },
@@ -771,6 +806,16 @@
       "name": "create",
       "path": "/api/v2/conversations/messages/agentless",
       "description": "Send an agentless outbound message"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Get the wrap-up for this conversation communication. "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
+      "description": "Apply wrap-up for this conversation communication"
     },
     {
       "name": "create",
@@ -1220,7 +1265,12 @@
     {
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/replace",
-      "description": "Replace this participant with the specified user and/or address"
+      "description": "Replace this participant (Deprecated)"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/transfer",
+      "description": "Replace this participant by another one using the address of the destination."
     },
     {
       "name": "create",
@@ -1255,6 +1305,11 @@
     {
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/replace/external",
+      "description": "Replace this participant with the an external contact (Deprecated)"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external",
       "description": "Replace this participant with the an external contact"
     },
     {
@@ -1414,16 +1469,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult",
-      "description": "Initiate voice consult transfer"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external",
-      "description": "Initiate a consult transfer to an external contact"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}",
       "description": "Create an Agent-Type video conference and assign an agent to it"
     },
@@ -1431,16 +1476,6 @@
       "name": "get",
       "path": "/api/v2/conversations/videos/{conferenceId}/details",
       "description": "Get video conference details (e.g. the current number of active participants)."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/transfer",
-      "description": "Replace this participant by another one using the address of the destination."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external",
-      "description": "Replace this participant with the an external contact"
     }
   ]
 }

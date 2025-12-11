@@ -266,6 +266,9 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticssession
@@ -530,6 +533,10 @@ type Analyticssession struct {
     RoutingRuleType string `json:"routingRuleType"`
 
 
+    // ScreenMonitoredUserId - The user ID for the participant who is being screen monitored.
+    ScreenMonitoredUserId string `json:"screenMonitoredUserId"`
+
+
     // ScreenShareAddressSelf - Direct screen share address
     ScreenShareAddressSelf string `json:"screenShareAddressSelf"`
 
@@ -674,6 +681,7 @@ func (o *Analyticssession) String() string {
     
      o.RemovedSkillIds = []string{""} 
      o.RequestedRoutings = []string{""} 
+    
     
     
     
@@ -844,6 +852,8 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         RoutingRule string `json:"routingRule"`
         
         RoutingRuleType string `json:"routingRuleType"`
+        
+        ScreenMonitoredUserId string `json:"screenMonitoredUserId"`
         
         ScreenShareAddressSelf string `json:"screenShareAddressSelf"`
         
@@ -1083,6 +1093,9 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
         
         RequestedRoutings: []string{""},
+        
+
+
         
 
 

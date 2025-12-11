@@ -87,6 +87,9 @@ type WorktypeversionDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -188,6 +191,10 @@ type Worktypeversion struct {
     DefaultScript Workitemscriptreference `json:"defaultScript"`
 
 
+    // UnassignedDivisionContactsEnabled - When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true.
+    UnassignedDivisionContactsEnabled bool `json:"unassignedDivisionContactsEnabled"`
+
+
     // Version - Version
     Version int `json:"version"`
 
@@ -215,6 +222,7 @@ func (o *Worktypeversion) String() string {
     
     
      o.DefaultSkills = []Routingskillreference{{}} 
+    
     
     
     
@@ -285,6 +293,8 @@ func (u *Worktypeversion) MarshalJSON() ([]byte, error) {
         
         DefaultScript Workitemscriptreference `json:"defaultScript"`
         
+        UnassignedDivisionContactsEnabled bool `json:"unassignedDivisionContactsEnabled"`
+        
         Version int `json:"version"`
         *Alias
     }{
@@ -344,6 +354,9 @@ func (u *Worktypeversion) MarshalJSON() ([]byte, error) {
 
         
         DefaultSkills: []Routingskillreference{{}},
+        
+
+
         
 
 

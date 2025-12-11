@@ -22,6 +22,9 @@ type Bulkresponseresultexternalorganizationexternalorganizationenrichrequestbulk
 
     
 
+
+    
+
 }
 
 // Bulkresponseresultexternalorganizationexternalorganizationenrichrequestbulkentityerrorexternalorganizationenrichrequest
@@ -41,10 +44,15 @@ type Bulkresponseresultexternalorganizationexternalorganizationenrichrequestbulk
     // VarError - An error describing why this Bulk operation failed. Only returned on failure.
     VarError Bulkentityerrorexternalorganizationenrichrequest `json:"error"`
 
+
+    // Status - Status Code for the requested operation.
+    Status int `json:"status"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Bulkresponseresultexternalorganizationexternalorganizationenrichrequestbulkentityerrorexternalorganizationenrichrequest) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Bulkresponseresultexternalorganizationexternalorganizationenrichrequest
         Entity Externalorganization `json:"entity"`
         
         VarError Bulkentityerrorexternalorganizationenrichrequest `json:"error"`
+        
+        Status int `json:"status"`
         *Alias
     }{
+
+        
+
 
         
 

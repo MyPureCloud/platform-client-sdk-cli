@@ -83,7 +83,7 @@ func Cmdjourney_actionmaps() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "filterValue", "", "Value to filter by. Requires `filterValue` to also be set.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "actionMapIds", "", "IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queryFields", "", "Action Map field(s) to query on. Requires `queryValue` to also be set.")
-	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on. Requires `queryFields` to also be set.")
+	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on using fuzzy matching. Requires `queryFields` to also be set.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/actionmaps", utils.FormatPermissions([]string{ "journey:actionmap:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/actionmaps")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

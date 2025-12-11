@@ -25,6 +25,9 @@ gc/cmd/analytics_botflows_sessions/analytics_botflows_sessions.go
 gc/cmd/analytics_bots_aggregates_jobs/analytics_bots_aggregates_jobs.go
 gc/cmd/analytics_bots_aggregates_jobs_results/analytics_bots_aggregates_jobs_results.go
 gc/cmd/analytics_bots_aggregates_query/analytics_bots_aggregates_query.go
+gc/cmd/analytics_casemanagement_aggregates_jobs/analytics_casemanagement_aggregates_jobs.go
+gc/cmd/analytics_casemanagement_aggregates_jobs_results/analytics_casemanagement_aggregates_jobs_results.go
+gc/cmd/analytics_casemanagement_aggregates_query/analytics_casemanagement_aggregates_query.go
 gc/cmd/analytics_conversations_activity_query/analytics_conversations_activity_query.go
 gc/cmd/analytics_conversations_aggregates_jobs/analytics_conversations_aggregates_jobs.go
 gc/cmd/analytics_conversations_aggregates_jobs_results/analytics_conversations_aggregates_jobs_results.go
@@ -123,6 +126,8 @@ gc/cmd/architect_systemprompts_history/architect_systemprompts_history.go
 gc/cmd/architect_systemprompts_resources/architect_systemprompts_resources.go
 gc/cmd/architect_systemprompts_resources_uploads/architect_systemprompts_resources_uploads.go
 gc/cmd/assistants/assistants.go
+gc/cmd/assistants_agentchecklists/assistants_agentchecklists.go
+gc/cmd/assistants_agentchecklists_languages/assistants_agentchecklists_languages.go
 gc/cmd/assistants_copilot/assistants_copilot.go
 gc/cmd/assistants_copilot_featuresupport/assistants_copilot_featuresupport.go
 gc/cmd/assistants_queues/assistants_queues.go
@@ -289,6 +294,10 @@ gc/cmd/conversations_cobrowsesessions_participants_replace/conversations_cobrows
 gc/cmd/conversations_cobrowsesessions_participants_wrapup/conversations_cobrowsesessions_participants_wrapup.go
 gc/cmd/conversations_cobrowsesessions_participants_wrapupcodes/conversations_cobrowsesessions_participants_wrapupcodes.go
 gc/cmd/conversations_cobrowsesessions_recordingstate/conversations_cobrowsesessions_recordingstate.go
+gc/cmd/conversations_communications_agentchecklists/conversations_communications_agentchecklists.go
+gc/cmd/conversations_communications_agentchecklists_agentaction/conversations_communications_agentchecklists_agentaction.go
+gc/cmd/conversations_communications_agentchecklists_finalize/conversations_communications_agentchecklists_finalize.go
+gc/cmd/conversations_communications_agentchecklists_jobs/conversations_communications_agentchecklists_jobs.go
 gc/cmd/conversations_communications_internalmessages/conversations_communications_internalmessages.go
 gc/cmd/conversations_disconnect/conversations_disconnect.go
 gc/cmd/conversations_emails/conversations_emails.go
@@ -609,6 +618,7 @@ gc/cmd/groups_profile/groups_profile.go
 gc/cmd/groups_search/groups_search.go
 gc/cmd/guides/guides.go
 gc/cmd/guides_jobs/guides_jobs.go
+gc/cmd/guides_sessions_turns/guides_sessions_turns.go
 gc/cmd/guides_versions/guides_versions.go
 gc/cmd/guides_versions_jobs/guides_versions_jobs.go
 gc/cmd/identityproviders/identityproviders.go
@@ -1015,6 +1025,7 @@ gc/cmd/routing_languages/routing_languages.go
 gc/cmd/routing_message_recipients/routing_message_recipients.go
 gc/cmd/routing_predictors/routing_predictors.go
 gc/cmd/routing_predictors_keyperformanceindicators/routing_predictors_keyperformanceindicators.go
+gc/cmd/routing_predictors_keyperformanceindicatortypes/routing_predictors_keyperformanceindicatortypes.go
 gc/cmd/routing_predictors_models/routing_predictors_models.go
 gc/cmd/routing_predictors_models_features/routing_predictors_models_features.go
 gc/cmd/routing_queues/routing_queues.go
@@ -1543,6 +1554,7 @@ gc/models/actiontargetlisting.go
 gc/models/actiontemplate.go
 gc/models/actiontemplatelisting.go
 gc/models/activation.go
+gc/models/activationtrigger.go
 gc/models/activitycode.go
 gc/models/activitycodecontainer.go
 gc/models/activitycodereference.go
@@ -1597,11 +1609,19 @@ gc/models/admintimeoffrequestpatch.go
 gc/models/aftercallwork.go
 gc/models/aftercallworkupdate.go
 gc/models/agent.go
+gc/models/agentaction.go
+gc/models/agentactionpayload.go
 gc/models/agentactivity.go
 gc/models/agentactivityentitylisting.go
 gc/models/agentadherencedaymetrics.go
 gc/models/agentadherencescheduledactivity.go
 gc/models/agentbidworkplanoverriderequest.go
+gc/models/agentchecklist.go
+gc/models/agentchecklistinfo.go
+gc/models/agentchecklistitem.go
+gc/models/agentchecklistlisting.go
+gc/models/agentchecklistresponse.go
+gc/models/agentchecklistresponselist.go
 gc/models/agentcopilotaggregatedatacontainer.go
 gc/models/agentcopilotaggregatequeryclause.go
 gc/models/agentcopilotaggregatequeryfilter.go
@@ -2187,6 +2207,8 @@ gc/models/cannedresponselibraries.go
 gc/models/capacityplandeleterequest.go
 gc/models/capacityplanlistitem.go
 gc/models/capacityplanmetadata.go
+gc/models/capacityplanmetricssummary.go
+gc/models/capacityplanningplanninggroupallocation.go
 gc/models/capacityplanreference.go
 gc/models/capacityplanrequest.go
 gc/models/capacityplanresponse.go
@@ -2197,6 +2219,18 @@ gc/models/capacityplanstaffinggroupmetricchangeresponse.go
 gc/models/capacityplanstaffingrequirementresult.go
 gc/models/card.go
 gc/models/cardaction.go
+gc/models/cardparameters.go
+gc/models/carouselparameters.go
+gc/models/casemanagementaggregatedatacontainer.go
+gc/models/casemanagementaggregatequeryclause.go
+gc/models/casemanagementaggregatequeryfilter.go
+gc/models/casemanagementaggregatequerypredicate.go
+gc/models/casemanagementaggregatequeryresponse.go
+gc/models/casemanagementaggregationquery.go
+gc/models/casemanagementaggregationsort.go
+gc/models/casemanagementaggregationview.go
+gc/models/casemanagementasyncaggregatequeryresponse.go
+gc/models/casemanagementasyncaggregationquery.go
 gc/models/categoriesentitylisting.go
 gc/models/categoriesfilter.go
 gc/models/category.go
@@ -2241,6 +2275,12 @@ gc/models/chatsettings.go
 gc/models/chatuserref.go
 gc/models/chatusersettings.go
 gc/models/check.go
+gc/models/checklistactivationpayload.go
+gc/models/checklistfinalizepayload.go
+gc/models/checklistinferencejobcreationresponse.go
+gc/models/checklistinferencejobpayload.go
+gc/models/checklistinferencejobresponse.go
+gc/models/checklistitem.go
 gc/models/clientapp.go
 gc/models/clientappconfigurationinfo.go
 gc/models/clientappentitylisting.go
@@ -2512,6 +2552,7 @@ gc/models/conversationcontentstory.go
 gc/models/conversationcontenttext.go
 gc/models/conversationcontentwheelpicker.go
 gc/models/conversationcontentwheelpickeritem.go
+gc/models/conversationcontext.go
 gc/models/conversationdeletionprotectionquery.go
 gc/models/conversationdetailqueryclause.go
 gc/models/conversationdetailqueryfilter.go
@@ -2546,6 +2587,8 @@ gc/models/conversationmetrics.go
 gc/models/conversationnormalizedmessage.go
 gc/models/conversationnotificationtemplatebody.go
 gc/models/conversationnotificationtemplatebutton.go
+gc/models/conversationnotificationtemplatecard.go
+gc/models/conversationnotificationtemplatecarousel.go
 gc/models/conversationnotificationtemplatefooter.go
 gc/models/conversationnotificationtemplateheader.go
 gc/models/conversationnotificationtemplateparameter.go
@@ -2584,6 +2627,9 @@ gc/models/conversationutilizationlabelupdate.go
 gc/models/copilot.go
 gc/models/copilotaction.go
 gc/models/copilotcondition.go
+gc/models/copilotcontext.go
+gc/models/copilotcontextfilter.go
+gc/models/copilotcontextvalue.go
 gc/models/copilotfallbackaction.go
 gc/models/copilotnludomain.go
 gc/models/copilotnludomainversion.go
@@ -2623,6 +2669,7 @@ gc/models/createemailrequest.go
 gc/models/createguide.go
 gc/models/createguideversion.go
 gc/models/createintegrationrequest.go
+gc/models/createkpirequest.go
 gc/models/createmanagementunitapirequest.go
 gc/models/createmanagementunitsettingsrequest.go
 gc/models/createmetric.go
@@ -3417,6 +3464,14 @@ gc/models/guide.go
 gc/models/guidecontentgenerationjob.go
 gc/models/guideentitylisting.go
 gc/models/guidejob.go
+gc/models/guidesessioninputevent.go
+gc/models/guidesessionturninvocationdata.go
+gc/models/guidesessionturninvocationparameters.go
+gc/models/guidesessionturninvocationresponse.go
+gc/models/guidesessionturnrequest.go
+gc/models/guidesessionturnresponse.go
+gc/models/guidesessionturnresponsedata.go
+gc/models/guidesessionvariable.go
 gc/models/guideversion.go
 gc/models/guideversionpublish.go
 gc/models/guideversionpublishjob.go
@@ -3642,6 +3697,7 @@ gc/models/jsonschemawithdefinitions.go
 gc/models/jsonsearchresponse.go
 gc/models/keyperformanceindicator.go
 gc/models/keyperformanceindicatorassessment.go
+gc/models/keyperformanceindicatortype.go
 gc/models/keyrotationschedule.go
 gc/models/keyvalue.go
 gc/models/knowledge.go
@@ -4308,6 +4364,7 @@ gc/models/parsedcertificate.go
 gc/models/participant.go
 gc/models/participantattributes.go
 gc/models/participantbasic.go
+gc/models/participantdataproperties.go
 gc/models/participantinfo.go
 gc/models/participantmetrics.go
 gc/models/passwordrequirements.go
@@ -4969,6 +5026,7 @@ gc/models/socialtopicpatchrequest.go
 gc/models/socialtopicrequest.go
 gc/models/socialtopicresponse.go
 gc/models/socialtopicresponseentitylisting.go
+gc/models/socialtopicwithdataingestionrulemetadataresponse.go
 gc/models/sortitem.go
 gc/models/source.go
 gc/models/sourcebaseresponse.go
@@ -4986,6 +5044,7 @@ gc/models/splittinginformation.go
 gc/models/stacategory.go
 gc/models/staffinggroupallocation.go
 gc/models/staffinggroupallocationsresponsetemplate.go
+gc/models/staffinggroupfulltimeequivalentcontribution.go
 gc/models/staffinggrouplisting.go
 gc/models/staffinggroupmetricchangeresponse.go
 gc/models/staffinggroupreference.go
@@ -5365,6 +5424,7 @@ gc/models/updatedraftinput.go
 gc/models/updatedsettingsresponse.go
 gc/models/updateguide.go
 gc/models/updateguideversion.go
+gc/models/updatekpirequest.go
 gc/models/updatemanagementunitrequest.go
 gc/models/updatemuagentrequest.go
 gc/models/updatemuagentsrequest.go
@@ -5853,4 +5913,5 @@ gc/models/writabledialercontact.go
 gc/models/writabledivision.go
 gc/models/writableentity.go
 gc/models/writablestarrabledivision.go
+gc/models/yearmonth.go
 gc/restclient/restclient.go

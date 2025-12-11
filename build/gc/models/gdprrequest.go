@@ -39,6 +39,9 @@ type GdprrequestDud struct {
     ResultsUrl string `json:"resultsUrl"`
 
 
+    ResultsUrls []string `json:"resultsUrls"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -71,6 +74,9 @@ type Gdprrequest struct {
 
     // Subject - The subject of the GDPR request
     Subject Gdprsubject `json:"subject"`
+
+
+    
 
 
     
@@ -124,6 +130,9 @@ func (u *Gdprrequest) MarshalJSON() ([]byte, error) {
 
         
         ReplacementTerms: []Replacementterm{{}},
+        
+
+
         
 
 

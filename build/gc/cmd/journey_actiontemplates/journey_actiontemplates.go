@@ -83,7 +83,7 @@ func Cmdjourney_actiontemplates() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "mediaType", "", "Media type Valid values: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction")
 	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Action template state. Valid values: Active, Inactive, Deleted")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queryFields", "", "ActionTemplate field(s) to query on. Requires `queryValue` to also be set.")
-	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on. Requires `queryFields` to also be set.")
+	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on using fuzzy matching. Requires `queryFields` to also be set.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/actiontemplates", utils.FormatPermissions([]string{ "journey:actiontemplate:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/actiontemplates")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

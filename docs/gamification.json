@@ -59,13 +59,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/{userId}/query",
-      "description": "Query performance profiles in date range for a user"
+      "path": "/api/v2/gamification/profiles/users/me/query",
+      "description": "Query performance profiles in date range for the current user"
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/me/query",
-      "description": "Query performance profiles in date range for the current user"
+      "path": "/api/v2/gamification/profiles/users/{userId}/query",
+      "description": "Query performance profiles in date range for a user"
     },
     {
       "name": "get",
@@ -209,13 +209,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/managers",
-      "description": "Query managers in a profile during a period of time"
+      "path": "/api/v2/gamification/insights/members",
+      "description": "Query users in a profile during a period of time"
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/members",
-      "description": "Query users in a profile during a period of time"
+      "path": "/api/v2/gamification/insights/managers",
+      "description": "Query managers in a profile during a period of time"
     },
     {
       "name": "get",
@@ -239,13 +239,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/trends",
-      "description": "Get insights user trend for the current user"
+      "path": "/api/v2/gamification/insights/users/{userId}/trends",
+      "description": "Get insights user trend for the user"
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/users/{userId}/trends",
-      "description": "Get insights user trend for the user"
+      "path": "/api/v2/gamification/insights/trends",
+      "description": "Get insights user trend for the current user"
     },
     {
       "name": "list",

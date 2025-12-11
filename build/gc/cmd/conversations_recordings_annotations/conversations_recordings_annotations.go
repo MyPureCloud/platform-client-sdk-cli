@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdconversations_recordings_annotations() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations", utils.FormatPermissions([]string{ "recording:annotation:add",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations", utils.FormatPermissions([]string{ "recording:annotation:add", "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "annotation",
   "content" : {
@@ -53,7 +53,7 @@ func Cmdconversations_recordings_annotations() *cobra.Command {
 }`)
 	conversations_recordings_annotationsCmd.AddCommand(createCmd)
 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "recording:annotation:delete",  }), utils.GenerateDevCentreLink("DELETE", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "recording:annotation:delete", "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view",  }), utils.GenerateDevCentreLink("DELETE", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -72,7 +72,7 @@ func Cmdconversations_recordings_annotations() *cobra.Command {
 }`)
 	conversations_recordings_annotationsCmd.AddCommand(deleteCmd)
 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "recording:annotation:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "recording:annotation:view", "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -87,7 +87,7 @@ func Cmdconversations_recordings_annotations() *cobra.Command {
 }`)
 	conversations_recordings_annotationsCmd.AddCommand(getCmd)
 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations", utils.FormatPermissions([]string{ "recording:annotation:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations", utils.FormatPermissions([]string{ "recording:annotation:view", "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
@@ -105,7 +105,7 @@ func Cmdconversations_recordings_annotations() *cobra.Command {
 }`)
 	conversations_recordings_annotationsCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "recording:annotation:edit", "recording:recording:view", "recording:recordingSegment:view",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "recording:annotation:edit", "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "annotation",
   "content" : {

@@ -1,0 +1,16 @@
+package conversations_communications_agentchecklists
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_communications_agentchecklists_finalize"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_communications_agentchecklists_jobs"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_communications_agentchecklists_agentaction"
+)
+
+func init() {
+	conversations_communications_agentchecklistsCmd.AddCommand(conversations_communications_agentchecklists_finalize.Cmdconversations_communications_agentchecklists_finalize())
+	conversations_communications_agentchecklistsCmd.AddCommand(conversations_communications_agentchecklists_jobs.Cmdconversations_communications_agentchecklists_jobs())
+	conversations_communications_agentchecklistsCmd.AddCommand(conversations_communications_agentchecklists_agentaction.Cmdconversations_communications_agentchecklists_agentaction())
+	conversations_communications_agentchecklistsCmd.Short = utils.GenerateCustomDescription(conversations_communications_agentchecklistsCmd.Short, conversations_communications_agentchecklists_finalize.Description, conversations_communications_agentchecklists_jobs.Description, conversations_communications_agentchecklists_agentaction.Description, )
+	conversations_communications_agentchecklistsCmd.Long = conversations_communications_agentchecklistsCmd.Short
+}

@@ -64,6 +64,9 @@ type WorktypeupdateDud struct {
 
     
 
+
+    
+
 }
 
 // Worktypeupdate
@@ -112,6 +115,10 @@ type Worktypeupdate struct {
     RuleSettings Workitemrulesettings `json:"ruleSettings"`
 
 
+    // UnassignedDivisionContactsEnabled - When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true.
+    UnassignedDivisionContactsEnabled bool `json:"unassignedDivisionContactsEnabled"`
+
+
     // Description - The description of the Worktype. Maximum length of 512 characters.
     Description string `json:"description"`
 
@@ -143,6 +150,7 @@ type Worktypeupdate struct {
 
 // String returns a JSON representation of the model
 func (o *Worktypeupdate) String() string {
+    
     
     
     
@@ -200,6 +208,8 @@ func (u *Worktypeupdate) MarshalJSON() ([]byte, error) {
         
         RuleSettings Workitemrulesettings `json:"ruleSettings"`
         
+        UnassignedDivisionContactsEnabled bool `json:"unassignedDivisionContactsEnabled"`
+        
         Description string `json:"description"`
         
         DefaultStatusId string `json:"defaultStatusId"`
@@ -215,6 +225,9 @@ func (u *Worktypeupdate) MarshalJSON() ([]byte, error) {
         DefaultScriptId string `json:"defaultScriptId"`
         *Alias
     }{
+
+        
+
 
         
 

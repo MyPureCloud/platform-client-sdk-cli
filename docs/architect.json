@@ -213,11 +213,6 @@
       "description": "Create a new user prompt resource"
     },
     {
-      "name": "create",
-      "path": "/api/v2/architect/prompts/{promptId}/history",
-      "description": "Generate prompt history"
-    },
-    {
       "name": "get",
       "path": "/api/v2/architect/prompts/{promptId}",
       "description": "Get specified user prompt"
@@ -231,6 +226,11 @@
       "name": "delete",
       "path": "/api/v2/architect/prompts/{promptId}",
       "description": "Delete specified user prompt"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/architect/prompts/{promptId}/history",
+      "description": "Generate prompt history"
     },
     {
       "name": "list",
@@ -338,11 +338,6 @@
       "description": "Create system prompt resource override."
     },
     {
-      "name": "create",
-      "path": "/api/v2/architect/systemprompts/{promptId}/history",
-      "description": "Generate system prompt history"
-    },
-    {
       "name": "get",
       "path": "/api/v2/architect/systemprompts/{promptId}",
       "description": "Get a system prompt"
@@ -351,6 +346,11 @@
       "name": "list",
       "path": "/api/v2/architect/systemprompts/{promptId}/history/{historyId}",
       "description": "Get generated prompt history"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/architect/systemprompts/{promptId}/history",
+      "description": "Generate system prompt history"
     },
     {
       "name": "list",

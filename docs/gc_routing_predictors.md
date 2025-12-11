@@ -34,6 +34,7 @@
 * [gc routing predictors delete](gc_routing_predictors_delete.html)	 - Delete single predictor.
 * [gc routing predictors get](gc_routing_predictors_get.html)	 - Retrieve a single predictor.
 * [gc routing predictors keyperformanceindicators](gc_routing_predictors_keyperformanceindicators.html)	 - /api/v2/routing/predictors/keyperformanceindicators
+* [gc routing predictors keyperformanceindicatortypes](gc_routing_predictors_keyperformanceindicatortypes.html)	 - /api/v2/routing/predictors/keyperformanceindicatortypes
 * [gc routing predictors list](gc_routing_predictors_list.html)	 - Retrieve all predictors.
 * [gc routing predictors models](gc_routing_predictors_models.html)	 - /api/v2/routing/predictors/{predictorId}/models
 * [gc routing predictors update](gc_routing_predictors_update.html)	 - Update single predictor.

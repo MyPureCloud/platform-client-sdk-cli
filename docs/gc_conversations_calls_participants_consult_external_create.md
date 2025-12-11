@@ -1,10 +1,10 @@
 ## gc conversations calls participants consult external create
 
-Initiate a consult transfer to an external contact
+Initiate a consult transfer to an external contact (Deprecated)
 
 ### Synopsis
 
-Initiate a consult transfer to an external contact
+Initiate a consult transfer to an external contact (Deprecated)
 
 ```
 gc conversations calls participants consult external create [conversationId] [participantId] [flags]

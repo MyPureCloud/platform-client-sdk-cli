@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc conversations calls participants consult](gc_conversations_calls_participants_consult.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
-* [gc conversations calls participants consult external create](gc_conversations_calls_participants_consult_external_create.html)	 - Initiate a consult transfer to an external contact
+* [gc conversations calls participants consult external create](gc_conversations_calls_participants_consult_external_create.html)	 - Initiate a consult transfer to an external contact (Deprecated)
 
 

@@ -22,7 +22,7 @@ gc journey actionmaps list [flags]
       --pageNumber string         Page number (default "1")
       --pageSize string           Page size (default "25")
       --queryFields queryValue    Action Map field(s) to query on. Requires queryValue to also be set.
-      --queryValue queryFields    Value to query on. Requires queryFields to also be set.
+      --queryValue queryFields    Value to query on using fuzzy matching. Requires queryFields to also be set.
       --sortBy -                  Field(s) to sort by. Prefix with - for descending (e.g. sortBy=displayName,-createdDate).
   -s, --stream                    Paginate and stream data as it is being processed leaving page information intact
 ```

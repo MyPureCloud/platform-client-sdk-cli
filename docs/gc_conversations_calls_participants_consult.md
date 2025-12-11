@@ -32,7 +32,7 @@
 * [gc conversations calls participants](gc_conversations_calls_participants.html)	 - /api/v2/conversations/calls/{conversationId}/participants
 * [gc conversations calls participants consult agent](gc_conversations_calls_participants_consult_agent.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent
 * [gc conversations calls participants consult contact](gc_conversations_calls_participants_consult_contact.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact
-* [gc conversations calls participants consult create](gc_conversations_calls_participants_consult_create.html)	 - Initiate and update consult transfer
+* [gc conversations calls participants consult create](gc_conversations_calls_participants_consult_create.html)	 - Initiate and update consult transfer (Deprecated)
 * [gc conversations calls participants consult delete](gc_conversations_calls_participants_consult_delete.html)	 - Cancel the transfer
 * [gc conversations calls participants consult external](gc_conversations_calls_participants_consult_external.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external
 * [gc conversations calls participants consult queue](gc_conversations_calls_participants_consult_queue.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue

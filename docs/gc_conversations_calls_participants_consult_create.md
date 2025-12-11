@@ -1,10 +1,10 @@
 ## gc conversations calls participants consult create
 
-Initiate and update consult transfer
+Initiate and update consult transfer (Deprecated)
 
 ### Synopsis
 
-Initiate and update consult transfer
+Initiate and update consult transfer (Deprecated)
 
 ```
 gc conversations calls participants consult create [conversationId] [participantId] [flags]

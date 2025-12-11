@@ -1,10 +1,10 @@
 ## gc conversations participants replace create
 
-Replace this participant with the specified user and/or address
+Replace this participant (Deprecated)
 
 ### Synopsis
 
-Replace this participant with the specified user and/or address
+Replace this participant (Deprecated)
 
 ```
 gc conversations participants replace create [conversationId] [participantId] [flags]

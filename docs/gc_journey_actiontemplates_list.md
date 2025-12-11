@@ -20,7 +20,7 @@ gc journey actiontemplates list [flags]
       --pageNumber string        Page number (default "1")
       --pageSize string          Page size (default "25")
       --queryFields queryValue   ActionTemplate field(s) to query on. Requires queryValue to also be set.
-      --queryValue queryFields   Value to query on. Requires queryFields to also be set.
+      --queryValue queryFields   Value to query on using fuzzy matching. Requires queryFields to also be set.
       --sortBy -                 Field(s) to sort by. Prefix with - for descending (e.g. sortBy=name,-createdDate).
       --state string             Action template state. Valid values: Active, Inactive, Deleted
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

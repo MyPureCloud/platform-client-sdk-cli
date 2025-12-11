@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc conversations participants replace](gc_conversations_participants_replace.html)	 - /api/v2/conversations/{conversationId}/participants/{participantId}/replace
-* [gc conversations participants replace external create](gc_conversations_participants_replace_external_create.html)	 - Replace this participant with the an external contact
+* [gc conversations participants replace external create](gc_conversations_participants_replace_external_create.html)	 - Replace this participant with the an external contact (Deprecated)
 
 

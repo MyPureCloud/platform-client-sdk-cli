@@ -1,10 +1,10 @@
 ## gc conversations participants replace external create
 
-Replace this participant with the an external contact
+Replace this participant with the an external contact (Deprecated)
 
 ### Synopsis
 
-Replace this participant with the an external contact
+Replace this participant with the an external contact (Deprecated)
 
 ```
 gc conversations participants replace external create [conversationId] [participantId] [flags]

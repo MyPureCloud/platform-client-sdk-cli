@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
+* [gc assistants agentchecklists](gc_assistants_agentchecklists.html)	 - /api/v2/assistants/agentchecklists
 * [gc assistants copilot](gc_assistants_copilot.html)	 - /api/v2/assistants/{assistantId}/copilot
 * [gc assistants create](gc_assistants_create.html)	 - Create an Assistant.
 * [gc assistants delete](gc_assistants_delete.html)	 - Delete an assistant.

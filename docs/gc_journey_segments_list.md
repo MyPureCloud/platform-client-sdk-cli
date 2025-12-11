@@ -20,7 +20,7 @@ gc journey segments list [flags]
       --pageNumber string        Page number (default "1")
       --pageSize string          Page size (default "25")
       --queryFields queryValue   Segment field(s) to query on. Requires queryValue to also be set.
-      --queryValue queryFields   Value to query on. Requires queryFields to also be set.
+      --queryValue queryFields   Value to query on using fuzzy matching. Requires queryFields to also be set.
       --segmentIds strings       IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
       --sortBy -                 Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with - for descending (e.g. sortBy=displayName,-createdDate).
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

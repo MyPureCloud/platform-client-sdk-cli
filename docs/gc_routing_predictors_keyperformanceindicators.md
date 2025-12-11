@@ -30,6 +30,10 @@
 ### SEE ALSO
 
 * [gc routing predictors](gc_routing_predictors.html)	 - /api/v2/routing/predictors
+* [gc routing predictors keyperformanceindicators create](gc_routing_predictors_keyperformanceindicators_create.html)	 - Create a custom Key Performance Indicator.
+* [gc routing predictors keyperformanceindicators delete](gc_routing_predictors_keyperformanceindicators_delete.html)	 - Delete a custom Key Performance Indicator.
+* [gc routing predictors keyperformanceindicators get](gc_routing_predictors_keyperformanceindicators_get.html)	 - Retrieve a single Key Performance Indicator.
 * [gc routing predictors keyperformanceindicators list](gc_routing_predictors_keyperformanceindicators_list.html)	 - Get a list of Key Performance Indicators
+* [gc routing predictors keyperformanceindicators update](gc_routing_predictors_keyperformanceindicators_update.html)	 - Update a custom Key Performance Indicator.
 
 

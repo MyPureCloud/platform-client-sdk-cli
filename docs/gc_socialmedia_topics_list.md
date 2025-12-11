@@ -18,6 +18,7 @@ gc socialmedia topics list [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --includeDeleted string    Determines whether to include soft-deleted items in the result. Valid values: true, false
+      --name string              Search for topic by name that contains the given search string, search is case insensitive
       --pageNumber string        Page number (default "1")
       --pageSize string          Page size (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact

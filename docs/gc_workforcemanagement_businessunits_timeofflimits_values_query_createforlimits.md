@@ -1,4 +1,4 @@
-## gc workforcemanagement businessunits timeofflimits values query create
+## gc workforcemanagement businessunits timeofflimits values query createforlimits
 
 Retrieves time-off limit related values based on a given set of filters.
 
@@ -7,7 +7,7 @@ Retrieves time-off limit related values based on a given set of filters.
 Retrieves time-off limit related values based on a given set of filters.
 
 ```
-gc workforcemanagement businessunits timeofflimits values query create [businessUnitId] [flags]
+gc workforcemanagement businessunits timeofflimits values query createforlimits [businessUnitId] [flags]
 ```
 
 ### Options
@@ -15,7 +15,7 @@ gc workforcemanagement businessunits timeofflimits values query create [business
 ```
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
-  -h, --help               help for create
+  -h, --help               help for createforlimits
   -b, --printrequestbody   Print the request body format of the API.
 ```
 

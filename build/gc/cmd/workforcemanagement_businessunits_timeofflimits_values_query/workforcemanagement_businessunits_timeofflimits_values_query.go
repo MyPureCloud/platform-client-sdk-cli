@@ -28,8 +28,8 @@ func init() {
 }
 
 func Cmdworkforcemanagement_businessunits_timeofflimits_values_query() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query", utils.FormatPermissions([]string{ "wfm:timeOffLimit:view",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query")))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+	createforlimitsCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createforlimitsCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query", utils.FormatPermissions([]string{ "wfm:timeOffLimit:view",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query")))
+	utils.AddFileFlagIfUpsert(createforlimitsCmd.Flags(), "POST", `{
   "description" : "body",
   "content" : {
     "application/json" : {
@@ -41,7 +41,7 @@ func Cmdworkforcemanagement_businessunits_timeofflimits_values_query() *cobra.Co
   "required" : true
 }`)
 	
-	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+	utils.AddPaginateFlagsIfListingResponse(createforlimitsCmd.Flags(), "POST", `{
   "description" : "successful operation",
   "content" : {
     "application/json" : {
@@ -51,7 +51,7 @@ func Cmdworkforcemanagement_businessunits_timeofflimits_values_query() *cobra.Co
     }
   }
 }`)
-	workforcemanagement_businessunits_timeofflimits_values_queryCmd.AddCommand(createCmd)
+	workforcemanagement_businessunits_timeofflimits_values_queryCmd.AddCommand(createforlimitsCmd)
 	return workforcemanagement_businessunits_timeofflimits_values_queryCmd
 }
 
@@ -60,8 +60,8 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
-var createCmd = &cobra.Command{
-	Use:   "create [businessUnitId]",
+var createforlimitsCmd = &cobra.Command{
+	Use:   "createforlimits [businessUnitId]",
 	Short: "Retrieves time-off limit related values based on a given set of filters.",
 	Long:  "Retrieves time-off limit related values based on a given set of filters.",
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", }),
@@ -97,7 +97,7 @@ var createCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "create"
+		const opId = "createforlimits"
 		const httpMethod = "POST"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file

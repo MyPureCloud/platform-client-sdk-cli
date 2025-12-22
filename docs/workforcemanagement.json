@@ -1118,7 +1118,7 @@
       "description": "Sets daily values for a date range of time-off limit object"
     },
     {
-      "name": "create",
+      "name": "createforlimits",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query",
       "description": "Retrieves time-off limit related values based on a given set of filters."
     },

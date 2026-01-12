@@ -31,6 +31,7 @@
 
 * [gc assistants queues](gc_assistants_queues.html)	 - /api/v2/assistants/{assistantId}/queues /api/v2/assistants/queues
 * [gc assistants queues users bulk](gc_assistants_queues_users_bulk.html)	 - /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk
+* [gc assistants queues users jobs](gc_assistants_queues_users_jobs.html)	 - /api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs
 * [gc assistants queues users query](gc_assistants_queues_users_query.html)	 - /api/v2/assistants/{assistantId}/queues/{queueId}/users/query
 
 

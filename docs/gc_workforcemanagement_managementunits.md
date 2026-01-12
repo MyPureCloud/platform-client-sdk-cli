@@ -47,6 +47,7 @@
 * [gc workforcemanagement managementunits timeofflimits](gc_workforcemanagement_managementunits_timeofflimits.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits
 * [gc workforcemanagement managementunits timeoffplans](gc_workforcemanagement_managementunits_timeoffplans.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans
 * [gc workforcemanagement managementunits timeoffrequests](gc_workforcemanagement_managementunits_timeoffrequests.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests
+* [gc workforcemanagement managementunits unavailabletimes](gc_workforcemanagement_managementunits_unavailabletimes.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/unavailabletimes
 * [gc workforcemanagement managementunits update](gc_workforcemanagement_managementunits_update.html)	 - Update the requested management unit
 * [gc workforcemanagement managementunits users](gc_workforcemanagement_managementunits_users.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/users
 * [gc workforcemanagement managementunits weeks](gc_workforcemanagement_managementunits_weeks.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks

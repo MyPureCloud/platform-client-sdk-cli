@@ -18,6 +18,7 @@ gc quality forms versions list [formId] [flags]
   -h, --help                     help for list
       --pageNumber string        Page number (default "1")
       --pageSize string          Page size (default "25")
+      --sortOrder string         Sort order
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

@@ -15,6 +15,7 @@ gc analytics agents status counts create [flags]
 ```
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
+      --groupBy strings    Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType Valid values: segmentType, presence, routingStatus, isOutOfOffice
   -h, --help               help for create
   -b, --printrequestbody   Print the request body format of the API.
 ```

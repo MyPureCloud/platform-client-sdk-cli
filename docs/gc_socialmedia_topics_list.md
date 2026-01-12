@@ -17,6 +17,7 @@ gc socialmedia topics list [flags]
       --divisionIds strings      One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
+      --ids strings              One or more topic IDs to search through the topics.
       --includeDeleted string    Determines whether to include soft-deleted items in the result. Valid values: true, false
       --name string              Search for topic by name that contains the given search string, search is case insensitive
       --pageNumber string        Page number (default "1")

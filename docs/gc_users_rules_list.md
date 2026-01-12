@@ -22,7 +22,7 @@ gc users rules list [flags]
       --searchTerm string        a search term for finding a rule by name
       --sortOrder string         sort rules by name, ascending, descending Valid values: ascending, descending
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
-      --types strings            The types of the rule - REQUIRED Valid values: Learning
+      --types strings            The types of the rule - REQUIRED Valid values: Learning, ActivityPlan
 ```
 
 ### Options inherited from parent commands

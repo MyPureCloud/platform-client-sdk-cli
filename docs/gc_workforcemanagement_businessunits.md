@@ -51,6 +51,7 @@
 * [gc workforcemanagement businessunits staffinggroups](gc_workforcemanagement_businessunits_staffinggroups.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups
 * [gc workforcemanagement businessunits timeofflimits](gc_workforcemanagement_businessunits_timeofflimits.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits
 * [gc workforcemanagement businessunits timeoffplans](gc_workforcemanagement_businessunits_timeoffplans.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans
+* [gc workforcemanagement businessunits unavailabletimes](gc_workforcemanagement_businessunits_unavailabletimes.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes
 * [gc workforcemanagement businessunits update](gc_workforcemanagement_businessunits_update.html)	 - Update business unit
 * [gc workforcemanagement businessunits weeks](gc_workforcemanagement_businessunits_weeks.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks
 * [gc workforcemanagement businessunits workplanbids](gc_workforcemanagement_businessunits_workplanbids.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids

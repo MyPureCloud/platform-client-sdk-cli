@@ -36,6 +36,7 @@
 * [gc quality evaluations](gc_quality_evaluations.html)	 - /api/v2/quality/evaluations
 * [gc quality evaluators](gc_quality_evaluators.html)	 - /api/v2/quality/evaluators
 * [gc quality forms](gc_quality_forms.html)	 - /api/v2/quality/forms
+* [gc quality programs](gc_quality_programs.html)	 - /api/v2/quality/programs
 * [gc quality publishedforms](gc_quality_publishedforms.html)	 - /api/v2/quality/publishedforms
 * [gc quality surveys](gc_quality_surveys.html)	 - /api/v2/quality/surveys
 

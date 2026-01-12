@@ -48,6 +48,7 @@
 * [gc workforcemanagement timeoffbalance](gc_workforcemanagement_timeoffbalance.html)	 - /api/v2/workforcemanagement/timeoffbalance
 * [gc workforcemanagement timeofflimits](gc_workforcemanagement_timeofflimits.html)	 - /api/v2/workforcemanagement/timeofflimits
 * [gc workforcemanagement timeoffrequests](gc_workforcemanagement_timeoffrequests.html)	 - /api/v2/workforcemanagement/timeoffrequests
+* [gc workforcemanagement unavailabletimes](gc_workforcemanagement_unavailabletimes.html)	 - /api/v2/workforcemanagement/unavailabletimes
 * [gc workforcemanagement users](gc_workforcemanagement_users.html)	 - /api/v2/workforcemanagement/users
 * [gc workforcemanagement workplanbids](gc_workforcemanagement_workplanbids.html)	 - /api/v2/workforcemanagement/workplanbids
 
